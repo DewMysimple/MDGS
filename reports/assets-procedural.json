@@ -1,0 +1,3992 @@
+[
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\一\\牡丹与女帝_叙事复合运镜.blend",
+    "name": "淡墨接地影",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "TEX_COORD",
+        "name": "Texture Coordinate",
+        "inputs": []
+      },
+      {
+        "type": "VECT_MATH",
+        "name": "Vector Math",
+        "inputs": [
+          {
+            "name": "Vector",
+            "value": [
+              0.5,
+              0.5,
+              0.0
+            ]
+          },
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Scale",
+            "value": 1.0
+          }
+        ],
+        "operation": "DISTANCE"
+      },
+      {
+        "type": "VALTORGB",
+        "name": "Color Ramp",
+        "inputs": [],
+        "colorRamp": [
+          {
+            "position": 0.019999999552965164,
+            "color": [
+              0.15000000596046448,
+              0.15000000596046448,
+              0.15000000596046448,
+              1.0
+            ]
+          },
+          {
+            "position": 0.5199999809265137,
+            "color": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.2199999988079071,
+              0.2199999988079071,
+              0.1599999964237213,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "BSDF_TRANSPARENT",
+        "name": "Transparent BSDF",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "MIX_SHADER",
+        "name": "Mix Shader",
+        "inputs": []
+      }
+    ],
+    "links": [
+      {
+        "from": "Texture Coordinate",
+        "socket": "UV",
+        "to": "Vector Math",
+        "input": "Vector"
+      },
+      {
+        "from": "Vector Math",
+        "socket": "Value",
+        "to": "Color Ramp",
+        "input": "Factor"
+      },
+      {
+        "from": "Color Ramp",
+        "socket": "Color",
+        "to": "Mix Shader",
+        "input": "Factor"
+      },
+      {
+        "from": "Transparent BSDF",
+        "socket": "BSDF",
+        "to": "Mix Shader",
+        "input": "Shader"
+      },
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Mix Shader",
+        "input": "Shader"
+      },
+      {
+        "from": "Mix Shader",
+        "socket": "Shader",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\一\\牡丹与女帝_叙事复合运镜.blend",
+    "name": "绢本_纤维与浅墨",
+    "nodes": [
+      {
+        "type": "BSDF_PRINCIPLED",
+        "name": "Principled BSDF",
+        "inputs": [
+          {
+            "name": "Metallic",
+            "value": 0.0
+          },
+          {
+            "name": "Roughness",
+            "value": 1.0
+          },
+          {
+            "name": "IOR",
+            "value": 1.5
+          },
+          {
+            "name": "Alpha",
+            "value": 1.0
+          },
+          {
+            "name": "Normal",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          },
+          {
+            "name": "Diffuse Roughness",
+            "value": 0.0
+          },
+          {
+            "name": "Subsurface Weight",
+            "value": 0.0
+          },
+          {
+            "name": "Subsurface Radius",
+            "value": [
+              1.0,
+              0.20000000298023224,
+              0.10000000149011612
+            ]
+          },
+          {
+            "name": "Subsurface Scale",
+            "value": 0.004999999888241291
+          },
+          {
+            "name": "Subsurface IOR",
+            "value": 1.399999976158142
+          },
+          {
+            "name": "Subsurface Anisotropy",
+            "value": 0.0
+          },
+          {
+            "name": "Specular IOR Level",
+            "value": 0.029999999329447746
+          },
+          {
+            "name": "Specular Tint",
+            "value": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Anisotropic",
+            "value": 0.0
+          },
+          {
+            "name": "Anisotropic Rotation",
+            "value": 0.0
+          },
+          {
+            "name": "Tangent",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Transmission Weight",
+            "value": 0.0
+          },
+          {
+            "name": "Coat Weight",
+            "value": 0.0
+          },
+          {
+            "name": "Coat Roughness",
+            "value": 0.029999999329447746
+          },
+          {
+            "name": "Coat IOR",
+            "value": 1.5
+          },
+          {
+            "name": "Coat Tint",
+            "value": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Coat Normal",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Sheen Weight",
+            "value": 0.0
+          },
+          {
+            "name": "Sheen Roughness",
+            "value": 0.5
+          },
+          {
+            "name": "Sheen Tint",
+            "value": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Emission Strength",
+            "value": 0.44999998807907104
+          },
+          {
+            "name": "Thin Film Thickness",
+            "value": 0.0
+          },
+          {
+            "name": "Thin Film IOR",
+            "value": 1.3300000429153442
+          }
+        ]
+      },
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "TEX_NOISE",
+        "name": "Noise Texture",
+        "inputs": [
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "W",
+            "value": 0.0
+          },
+          {
+            "name": "Scale",
+            "value": 22.0
+          },
+          {
+            "name": "Detail",
+            "value": 2.0
+          },
+          {
+            "name": "Roughness",
+            "value": 0.5
+          },
+          {
+            "name": "Lacunarity",
+            "value": 2.0
+          },
+          {
+            "name": "Offset",
+            "value": 0.0
+          },
+          {
+            "name": "Gain",
+            "value": 1.0
+          },
+          {
+            "name": "Distortion",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "VALTORGB",
+        "name": "Color Ramp",
+        "inputs": [],
+        "colorRamp": [
+          {
+            "position": 0.0,
+            "color": [
+              0.6399999856948853,
+              0.6050000190734863,
+              0.5,
+              1.0
+            ]
+          },
+          {
+            "position": 1.0,
+            "color": [
+              0.8199999928474426,
+              0.7900000214576721,
+              0.6899999976158142,
+              1.0
+            ]
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Principled BSDF",
+        "socket": "BSDF",
+        "to": "Material Output",
+        "input": "Surface"
+      },
+      {
+        "from": "Noise Texture",
+        "socket": "Factor",
+        "to": "Color Ramp",
+        "input": "Factor"
+      },
+      {
+        "from": "Color Ramp",
+        "socket": "Color",
+        "to": "Principled BSDF",
+        "input": "Base Color"
+      },
+      {
+        "from": "Color Ramp",
+        "socket": "Color",
+        "to": "Principled BSDF",
+        "input": "Emission Color"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\一\\牡丹与女帝_叙事复合运镜.blend",
+    "name": "过渡_云气留白",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "TEX_COORD",
+        "name": "Texture Coordinate",
+        "inputs": []
+      },
+      {
+        "type": "VECT_MATH",
+        "name": "Vector Math",
+        "inputs": [
+          {
+            "name": "Vector",
+            "value": [
+              0.5,
+              0.5,
+              0.0
+            ]
+          },
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Scale",
+            "value": 1.0
+          }
+        ],
+        "operation": "DISTANCE"
+      },
+      {
+        "type": "VALTORGB",
+        "name": "Color Ramp",
+        "inputs": [],
+        "colorRamp": [
+          {
+            "position": 0.019999999552965164,
+            "color": [
+              0.3799999952316284,
+              0.3799999952316284,
+              0.3799999952316284,
+              1.0
+            ]
+          },
+          {
+            "position": 0.5199999809265137,
+            "color": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.8299999833106995,
+              0.8100000023841858,
+              0.7200000286102295,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "BSDF_TRANSPARENT",
+        "name": "Transparent BSDF",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "MIX_SHADER",
+        "name": "Mix Shader",
+        "inputs": []
+      }
+    ],
+    "links": [
+      {
+        "from": "Texture Coordinate",
+        "socket": "UV",
+        "to": "Vector Math",
+        "input": "Vector"
+      },
+      {
+        "from": "Vector Math",
+        "socket": "Value",
+        "to": "Color Ramp",
+        "input": "Factor"
+      },
+      {
+        "from": "Color Ramp",
+        "socket": "Color",
+        "to": "Mix Shader",
+        "input": "Factor"
+      },
+      {
+        "from": "Transparent BSDF",
+        "socket": "BSDF",
+        "to": "Mix Shader",
+        "input": "Shader"
+      },
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Mix Shader",
+        "input": "Shader"
+      },
+      {
+        "from": "Mix Shader",
+        "socket": "Shader",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\二\\画卷二_长卷叙事.blend",
+    "name": "卷边淡金",
+    "nodes": [
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.5520114302635193,
+              0.41788506507873535,
+              0.18782077729701996,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\二\\画卷二_长卷叙事.blend",
+    "name": "墨色题签",
+    "nodes": [
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.0802198201417923,
+              0.06480326503515244,
+              0.040915198624134064,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\二\\画卷二_长卷叙事.blend",
+    "name": "宣纸 温润纤维",
+    "nodes": [
+      {
+        "type": "TEX_NOISE",
+        "name": "Noise Texture",
+        "inputs": [
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "W",
+            "value": 0.0
+          },
+          {
+            "name": "Scale",
+            "value": 320.0
+          },
+          {
+            "name": "Detail",
+            "value": 2.0
+          },
+          {
+            "name": "Roughness",
+            "value": 0.5
+          },
+          {
+            "name": "Lacunarity",
+            "value": 2.0
+          },
+          {
+            "name": "Offset",
+            "value": 0.0
+          },
+          {
+            "name": "Gain",
+            "value": 1.0
+          },
+          {
+            "name": "Distortion",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "VALTORGB",
+        "name": "Color Ramp",
+        "inputs": [],
+        "colorRamp": [
+          {
+            "position": 0.0,
+            "color": [
+              0.8468732237815857,
+              0.7681511640548706,
+              0.6104955673217773,
+              1.0
+            ]
+          },
+          {
+            "position": 1.0,
+            "color": [
+              0.8879231214523315,
+              0.8148465752601624,
+              0.672443151473999,
+              1.0
+            ]
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Noise Texture",
+        "socket": "Factor",
+        "to": "Color Ramp",
+        "input": "Factor"
+      },
+      {
+        "from": "Color Ramp",
+        "socket": "Color",
+        "to": "Emission",
+        "input": "Color"
+      },
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\二\\画卷二_长卷叙事.blend",
+    "name": "朱印",
+    "nodes": [
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.35640013217926025,
+              0.08228270709514618,
+              0.052860647439956665,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "云线浅金",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.8187917470932007,
+              0.7343857884407043,
+              0.5833476781845093,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "山脊淡墨细笔",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.763007640838623,
+              0.7132026553153992,
+              0.5902583003044128,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "水岸树冠淡染_1",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.6979037523269653,
+              0.6720860004425049,
+              0.5519977807998657,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "水岸树冠淡染_2",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.6979037523269653,
+              0.6720860004425049,
+              0.5519977807998657,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "水岸树冠淡染_3",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.6979037523269653,
+              0.6720860004425049,
+              0.5519977807998657,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "水岸树冠淡染_4",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.6979037523269653,
+              0.6720860004425049,
+              0.5519977807998657,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "水岸树冠淡染_5",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.6979037523269653,
+              0.6720860004425049,
+              0.5519977807998657,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "水岸树冠淡染_6",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.6979037523269653,
+              0.6720860004425049,
+              0.5519977807998657,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "水岸树冠淡染_7",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.6979037523269653,
+              0.6720860004425049,
+              0.5519977807998657,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "水岸树冠淡染_8",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.6979037523269653,
+              0.6720860004425049,
+              0.5519977807998657,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "水岸留金色",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.7643118500709534,
+              0.6645892262458801,
+              0.5065717101097107,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "水岸疏林淡墨_1",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.590908944606781,
+              0.5653886198997498,
+              0.46227678656578064,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "水岸疏林淡墨_2",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.590908944606781,
+              0.5653886198997498,
+              0.46227678656578064,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "水岸疏林淡墨_3",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.590908944606781,
+              0.5653886198997498,
+              0.46227678656578064,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "水岸疏林淡墨_4",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.590908944606781,
+              0.5653886198997498,
+              0.46227678656578064,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "水岸疏林淡墨_5",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.590908944606781,
+              0.5653886198997498,
+              0.46227678656578064,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "水岸疏林淡墨_6",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.590908944606781,
+              0.5653886198997498,
+              0.46227678656578064,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "水岸疏林淡墨_7",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.590908944606781,
+              0.5653886198997498,
+              0.46227678656578064,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "水岸疏林淡墨_8",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.590908944606781,
+              0.5653886198997498,
+              0.46227678656578064,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "淡墨远山_1",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.6797827482223511,
+              0.6515419483184814,
+              0.5399322509765625,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "淡墨远山_2",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.7389404773712158,
+              0.7017548084259033,
+              0.5753176212310791,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "淡墨远山_3",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.8054239153862,
+              0.7463218569755554,
+              0.6071078181266785,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "连续水脉色",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.7484488487243652,
+              0.7309649586677551,
+              0.6061424016952515,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "通幅宣纸｜轻微纤维",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "TEX_NOISE",
+        "name": "Noise Texture",
+        "inputs": [
+          {
+            "name": "W",
+            "value": 0.0
+          },
+          {
+            "name": "Scale",
+            "value": 180.0
+          },
+          {
+            "name": "Detail",
+            "value": 2.0
+          },
+          {
+            "name": "Roughness",
+            "value": 0.5
+          },
+          {
+            "name": "Lacunarity",
+            "value": 2.0
+          },
+          {
+            "name": "Offset",
+            "value": 0.0
+          },
+          {
+            "name": "Gain",
+            "value": 1.0
+          },
+          {
+            "name": "Distortion",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "TEX_COORD",
+        "name": "Texture Coordinate",
+        "inputs": []
+      },
+      {
+        "type": "VALTORGB",
+        "name": "Color Ramp",
+        "inputs": [],
+        "colorRamp": [
+          {
+            "position": 0.0,
+            "color": [
+              0.8549926280975342,
+              0.7605245113372803,
+              0.6038273572921753,
+              1.0
+            ]
+          },
+          {
+            "position": 1.0,
+            "color": [
+              0.9215818643569946,
+              0.8468732237815857,
+              0.7230551242828369,
+              1.0
+            ]
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      },
+      {
+        "from": "Texture Coordinate",
+        "socket": "Generated",
+        "to": "Noise Texture",
+        "input": "Vector"
+      },
+      {
+        "from": "Noise Texture",
+        "socket": "Factor",
+        "to": "Color Ramp",
+        "input": "Factor"
+      },
+      {
+        "from": "Color Ramp",
+        "socket": "Color",
+        "to": "Emission",
+        "input": "Color"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\三\\画卷三_中国长卷_复合运镜_v07.blend",
+    "name": "题词墨色",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.0382043719291687,
+              0.028426039963960648,
+              0.01850022003054619,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\四\\Fourth_Scroll.blend",
+    "name": "云气 · 绢白透明边",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "MIX_SHADER",
+        "name": "Mix Shader",
+        "inputs": []
+      },
+      {
+        "type": "BSDF_TRANSPARENT",
+        "name": "Transparent BSDF",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.8549926280975342,
+              0.7758222222328186,
+              0.6307571530342102,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "TEX_COORD",
+        "name": "Texture Coordinate",
+        "inputs": []
+      },
+      {
+        "type": "VECT_MATH",
+        "name": "Vector Math",
+        "inputs": [
+          {
+            "name": "Vector",
+            "value": [
+              0.5,
+              0.5,
+              0.0
+            ]
+          },
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Scale",
+            "value": 1.0
+          }
+        ],
+        "operation": "SUBTRACT"
+      },
+      {
+        "type": "VECT_MATH",
+        "name": "Vector Math.001",
+        "inputs": [
+          {
+            "name": "Vector",
+            "value": [
+              2.0,
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Scale",
+            "value": 1.0
+          }
+        ],
+        "operation": "MULTIPLY"
+      },
+      {
+        "type": "VECT_MATH",
+        "name": "Vector Math.002",
+        "inputs": [
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Scale",
+            "value": 1.0
+          }
+        ],
+        "operation": "LENGTH"
+      },
+      {
+        "type": "MAP_RANGE",
+        "name": "Map Range",
+        "inputs": [
+          {
+            "name": "From Min",
+            "value": 0.10000000149011612
+          },
+          {
+            "name": "From Max",
+            "value": 1.0
+          },
+          {
+            "name": "To Min",
+            "value": 0.6499999761581421
+          },
+          {
+            "name": "To Max",
+            "value": 0.0
+          },
+          {
+            "name": "Steps",
+            "value": 4.0
+          },
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "From Min",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "From Max",
+            "value": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "name": "To Min",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "To Max",
+            "value": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Steps",
+            "value": [
+              4.0,
+              4.0,
+              4.0
+            ]
+          }
+        ],
+        "interpolation": "LINEAR"
+      },
+      {
+        "type": "TEX_NOISE",
+        "name": "Noise Texture",
+        "inputs": [
+          {
+            "name": "W",
+            "value": 0.0
+          },
+          {
+            "name": "Scale",
+            "value": 4.0
+          },
+          {
+            "name": "Detail",
+            "value": 2.0
+          },
+          {
+            "name": "Roughness",
+            "value": 0.5
+          },
+          {
+            "name": "Lacunarity",
+            "value": 2.0
+          },
+          {
+            "name": "Offset",
+            "value": 0.0
+          },
+          {
+            "name": "Gain",
+            "value": 1.0
+          },
+          {
+            "name": "Distortion",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "MATH",
+        "name": "Math",
+        "inputs": [
+          {
+            "name": "Value",
+            "value": 0.5
+          }
+        ],
+        "operation": "MULTIPLY"
+      }
+    ],
+    "links": [
+      {
+        "from": "Texture Coordinate",
+        "socket": "UV",
+        "to": "Vector Math",
+        "input": "Vector"
+      },
+      {
+        "from": "Vector Math",
+        "socket": "Vector",
+        "to": "Vector Math.001",
+        "input": "Vector"
+      },
+      {
+        "from": "Vector Math.001",
+        "socket": "Vector",
+        "to": "Vector Math.002",
+        "input": "Vector"
+      },
+      {
+        "from": "Vector Math.002",
+        "socket": "Value",
+        "to": "Map Range",
+        "input": "Value"
+      },
+      {
+        "from": "Texture Coordinate",
+        "socket": "Generated",
+        "to": "Noise Texture",
+        "input": "Vector"
+      },
+      {
+        "from": "Map Range",
+        "socket": "Result",
+        "to": "Math",
+        "input": "Value"
+      },
+      {
+        "from": "Noise Texture",
+        "socket": "Factor",
+        "to": "Math",
+        "input": "Value"
+      },
+      {
+        "from": "Math",
+        "socket": "Value",
+        "to": "Mix Shader",
+        "input": "Factor"
+      },
+      {
+        "from": "Transparent BSDF",
+        "socket": "BSDF",
+        "to": "Mix Shader",
+        "input": "Shader"
+      },
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Mix Shader",
+        "input": "Shader"
+      },
+      {
+        "from": "Mix Shader",
+        "socket": "Shader",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\四\\Fourth_Scroll.blend",
+    "name": "墨 · 赭黑",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.040915198624134064,
+              0.024157632142305374,
+              0.014443843625485897,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\四\\Fourth_Scroll.blend",
+    "name": "绢本 · 连续纸纹底色",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "TEX_COORD",
+        "name": "Texture Coordinate",
+        "inputs": []
+      },
+      {
+        "type": "TEX_NOISE",
+        "name": "Noise Texture",
+        "inputs": [
+          {
+            "name": "W",
+            "value": 0.0
+          },
+          {
+            "name": "Scale",
+            "value": 2.799999952316284
+          },
+          {
+            "name": "Detail",
+            "value": 3.0
+          },
+          {
+            "name": "Roughness",
+            "value": 0.5
+          },
+          {
+            "name": "Lacunarity",
+            "value": 2.0
+          },
+          {
+            "name": "Offset",
+            "value": 0.0
+          },
+          {
+            "name": "Gain",
+            "value": 1.0
+          },
+          {
+            "name": "Distortion",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "VALTORGB",
+        "name": "Color Ramp",
+        "inputs": [],
+        "colorRamp": [
+          {
+            "position": 0.10000000149011612,
+            "color": [
+              0.6938717365264893,
+              0.5972017645835876,
+              0.43415364623069763,
+              1.0
+            ]
+          },
+          {
+            "position": 0.8999999761581421,
+            "color": [
+              0.8631572127342224,
+              0.7835378050804138,
+              0.6307571530342102,
+              1.0
+            ]
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Texture Coordinate",
+        "socket": "Object",
+        "to": "Noise Texture",
+        "input": "Vector"
+      },
+      {
+        "from": "Noise Texture",
+        "socket": "Factor",
+        "to": "Color Ramp",
+        "input": "Factor"
+      },
+      {
+        "from": "Color Ramp",
+        "socket": "Color",
+        "to": "Emission",
+        "input": "Color"
+      },
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\四\\Fourth_Scroll.blend",
+    "name": "远山淡墨 · 冷青",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "MIX_SHADER",
+        "name": "Mix Shader",
+        "inputs": []
+      },
+      {
+        "type": "BSDF_TRANSPARENT",
+        "name": "Transparent BSDF",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.09989872574806213,
+              0.15896083414554596,
+              0.16202937066555023,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "TEX_COORD",
+        "name": "Texture Coordinate",
+        "inputs": []
+      },
+      {
+        "type": "VECT_MATH",
+        "name": "Vector Math",
+        "inputs": [
+          {
+            "name": "Vector",
+            "value": [
+              0.5,
+              0.5,
+              0.0
+            ]
+          },
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Scale",
+            "value": 1.0
+          }
+        ],
+        "operation": "SUBTRACT"
+      },
+      {
+        "type": "VECT_MATH",
+        "name": "Vector Math.001",
+        "inputs": [
+          {
+            "name": "Vector",
+            "value": [
+              2.0,
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Scale",
+            "value": 1.0
+          }
+        ],
+        "operation": "MULTIPLY"
+      },
+      {
+        "type": "VECT_MATH",
+        "name": "Vector Math.002",
+        "inputs": [
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Scale",
+            "value": 1.0
+          }
+        ],
+        "operation": "LENGTH"
+      },
+      {
+        "type": "MAP_RANGE",
+        "name": "Map Range",
+        "inputs": [
+          {
+            "name": "From Min",
+            "value": 0.10000000149011612
+          },
+          {
+            "name": "From Max",
+            "value": 1.0
+          },
+          {
+            "name": "To Min",
+            "value": 0.15000000596046448
+          },
+          {
+            "name": "To Max",
+            "value": 0.0
+          },
+          {
+            "name": "Steps",
+            "value": 4.0
+          },
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "From Min",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "From Max",
+            "value": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "name": "To Min",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "To Max",
+            "value": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Steps",
+            "value": [
+              4.0,
+              4.0,
+              4.0
+            ]
+          }
+        ],
+        "interpolation": "LINEAR"
+      },
+      {
+        "type": "TEX_NOISE",
+        "name": "Noise Texture",
+        "inputs": [
+          {
+            "name": "W",
+            "value": 0.0
+          },
+          {
+            "name": "Scale",
+            "value": 4.0
+          },
+          {
+            "name": "Detail",
+            "value": 2.0
+          },
+          {
+            "name": "Roughness",
+            "value": 0.5
+          },
+          {
+            "name": "Lacunarity",
+            "value": 2.0
+          },
+          {
+            "name": "Offset",
+            "value": 0.0
+          },
+          {
+            "name": "Gain",
+            "value": 1.0
+          },
+          {
+            "name": "Distortion",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "MATH",
+        "name": "Math",
+        "inputs": [
+          {
+            "name": "Value",
+            "value": 0.5
+          }
+        ],
+        "operation": "MULTIPLY"
+      }
+    ],
+    "links": [
+      {
+        "from": "Texture Coordinate",
+        "socket": "UV",
+        "to": "Vector Math",
+        "input": "Vector"
+      },
+      {
+        "from": "Vector Math",
+        "socket": "Vector",
+        "to": "Vector Math.001",
+        "input": "Vector"
+      },
+      {
+        "from": "Vector Math.001",
+        "socket": "Vector",
+        "to": "Vector Math.002",
+        "input": "Vector"
+      },
+      {
+        "from": "Vector Math.002",
+        "socket": "Value",
+        "to": "Map Range",
+        "input": "Value"
+      },
+      {
+        "from": "Texture Coordinate",
+        "socket": "Generated",
+        "to": "Noise Texture",
+        "input": "Vector"
+      },
+      {
+        "from": "Map Range",
+        "socket": "Result",
+        "to": "Math",
+        "input": "Value"
+      },
+      {
+        "from": "Noise Texture",
+        "socket": "Factor",
+        "to": "Math",
+        "input": "Value"
+      },
+      {
+        "from": "Math",
+        "socket": "Value",
+        "to": "Mix Shader",
+        "input": "Factor"
+      },
+      {
+        "from": "Transparent BSDF",
+        "socket": "BSDF",
+        "to": "Mix Shader",
+        "input": "Shader"
+      },
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Mix Shader",
+        "input": "Shader"
+      },
+      {
+        "from": "Mix Shader",
+        "socket": "Shader",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\四\\Fourth_Scroll.blend",
+    "name": "远山淡墨 · 暖青",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "MIX_SHADER",
+        "name": "Mix Shader",
+        "inputs": []
+      },
+      {
+        "type": "BSDF_TRANSPARENT",
+        "name": "Transparent BSDF",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.25015828013420105,
+              0.28744083642959595,
+              0.23074005544185638,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "TEX_COORD",
+        "name": "Texture Coordinate",
+        "inputs": []
+      },
+      {
+        "type": "VECT_MATH",
+        "name": "Vector Math",
+        "inputs": [
+          {
+            "name": "Vector",
+            "value": [
+              0.5,
+              0.5,
+              0.0
+            ]
+          },
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Scale",
+            "value": 1.0
+          }
+        ],
+        "operation": "SUBTRACT"
+      },
+      {
+        "type": "VECT_MATH",
+        "name": "Vector Math.001",
+        "inputs": [
+          {
+            "name": "Vector",
+            "value": [
+              2.0,
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Scale",
+            "value": 1.0
+          }
+        ],
+        "operation": "MULTIPLY"
+      },
+      {
+        "type": "VECT_MATH",
+        "name": "Vector Math.002",
+        "inputs": [
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Scale",
+            "value": 1.0
+          }
+        ],
+        "operation": "LENGTH"
+      },
+      {
+        "type": "MAP_RANGE",
+        "name": "Map Range",
+        "inputs": [
+          {
+            "name": "From Min",
+            "value": 0.10000000149011612
+          },
+          {
+            "name": "From Max",
+            "value": 1.0
+          },
+          {
+            "name": "To Min",
+            "value": 0.11999999731779099
+          },
+          {
+            "name": "To Max",
+            "value": 0.0
+          },
+          {
+            "name": "Steps",
+            "value": 4.0
+          },
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "From Min",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "From Max",
+            "value": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "name": "To Min",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "To Max",
+            "value": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Steps",
+            "value": [
+              4.0,
+              4.0,
+              4.0
+            ]
+          }
+        ],
+        "interpolation": "LINEAR"
+      },
+      {
+        "type": "TEX_NOISE",
+        "name": "Noise Texture",
+        "inputs": [
+          {
+            "name": "W",
+            "value": 0.0
+          },
+          {
+            "name": "Scale",
+            "value": 4.0
+          },
+          {
+            "name": "Detail",
+            "value": 2.0
+          },
+          {
+            "name": "Roughness",
+            "value": 0.5
+          },
+          {
+            "name": "Lacunarity",
+            "value": 2.0
+          },
+          {
+            "name": "Offset",
+            "value": 0.0
+          },
+          {
+            "name": "Gain",
+            "value": 1.0
+          },
+          {
+            "name": "Distortion",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "MATH",
+        "name": "Math",
+        "inputs": [
+          {
+            "name": "Value",
+            "value": 0.5
+          }
+        ],
+        "operation": "MULTIPLY"
+      }
+    ],
+    "links": [
+      {
+        "from": "Texture Coordinate",
+        "socket": "UV",
+        "to": "Vector Math",
+        "input": "Vector"
+      },
+      {
+        "from": "Vector Math",
+        "socket": "Vector",
+        "to": "Vector Math.001",
+        "input": "Vector"
+      },
+      {
+        "from": "Vector Math.001",
+        "socket": "Vector",
+        "to": "Vector Math.002",
+        "input": "Vector"
+      },
+      {
+        "from": "Vector Math.002",
+        "socket": "Value",
+        "to": "Map Range",
+        "input": "Value"
+      },
+      {
+        "from": "Texture Coordinate",
+        "socket": "Generated",
+        "to": "Noise Texture",
+        "input": "Vector"
+      },
+      {
+        "from": "Map Range",
+        "socket": "Result",
+        "to": "Math",
+        "input": "Value"
+      },
+      {
+        "from": "Noise Texture",
+        "socket": "Factor",
+        "to": "Math",
+        "input": "Value"
+      },
+      {
+        "from": "Math",
+        "socket": "Value",
+        "to": "Mix Shader",
+        "input": "Factor"
+      },
+      {
+        "from": "Transparent BSDF",
+        "socket": "BSDF",
+        "to": "Mix Shader",
+        "input": "Shader"
+      },
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Mix Shader",
+        "input": "Shader"
+      },
+      {
+        "from": "Mix Shader",
+        "socket": "Shader",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\四\\Fourth_Scroll.blend",
+    "name": "金 · 淡金线",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.4564110338687897,
+              0.32314321398735046,
+              0.12743768095970154,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  },
+  {
+    "source": "F:\\牡丹\\场景blender搭建\\四\\Fourth_Scroll.blend",
+    "name": "题字留白 · 绢本",
+    "nodes": [
+      {
+        "type": "OUTPUT_MATERIAL",
+        "name": "Material Output",
+        "inputs": [
+          {
+            "name": "Displacement",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Thickness",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "MIX_SHADER",
+        "name": "Mix Shader",
+        "inputs": []
+      },
+      {
+        "type": "BSDF_TRANSPARENT",
+        "name": "Transparent BSDF",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "EMISSION",
+        "name": "Emission",
+        "inputs": [
+          {
+            "name": "Color",
+            "value": [
+              0.8468732237815857,
+              0.7529422044754028,
+              0.5647115111351013,
+              1.0
+            ]
+          },
+          {
+            "name": "Strength",
+            "value": 1.0
+          },
+          {
+            "name": "Weight",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "TEX_COORD",
+        "name": "Texture Coordinate",
+        "inputs": []
+      },
+      {
+        "type": "VECT_MATH",
+        "name": "Vector Math",
+        "inputs": [
+          {
+            "name": "Vector",
+            "value": [
+              0.5,
+              0.5,
+              0.0
+            ]
+          },
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Scale",
+            "value": 1.0
+          }
+        ],
+        "operation": "SUBTRACT"
+      },
+      {
+        "type": "VECT_MATH",
+        "name": "Vector Math.001",
+        "inputs": [
+          {
+            "name": "Vector",
+            "value": [
+              2.0,
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Scale",
+            "value": 1.0
+          }
+        ],
+        "operation": "MULTIPLY"
+      },
+      {
+        "type": "VECT_MATH",
+        "name": "Vector Math.002",
+        "inputs": [
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Scale",
+            "value": 1.0
+          }
+        ],
+        "operation": "LENGTH"
+      },
+      {
+        "type": "MAP_RANGE",
+        "name": "Map Range",
+        "inputs": [
+          {
+            "name": "From Min",
+            "value": 0.10000000149011612
+          },
+          {
+            "name": "From Max",
+            "value": 1.0
+          },
+          {
+            "name": "To Min",
+            "value": 1.0
+          },
+          {
+            "name": "To Max",
+            "value": 0.0
+          },
+          {
+            "name": "Steps",
+            "value": 4.0
+          },
+          {
+            "name": "Vector",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "From Min",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "From Max",
+            "value": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "name": "To Min",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "name": "To Max",
+            "value": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Steps",
+            "value": [
+              4.0,
+              4.0,
+              4.0
+            ]
+          }
+        ],
+        "interpolation": "LINEAR"
+      },
+      {
+        "type": "TEX_NOISE",
+        "name": "Noise Texture",
+        "inputs": [
+          {
+            "name": "W",
+            "value": 0.0
+          },
+          {
+            "name": "Scale",
+            "value": 4.0
+          },
+          {
+            "name": "Detail",
+            "value": 2.0
+          },
+          {
+            "name": "Roughness",
+            "value": 0.5
+          },
+          {
+            "name": "Lacunarity",
+            "value": 2.0
+          },
+          {
+            "name": "Offset",
+            "value": 0.0
+          },
+          {
+            "name": "Gain",
+            "value": 1.0
+          },
+          {
+            "name": "Distortion",
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "type": "MATH",
+        "name": "Math",
+        "inputs": [
+          {
+            "name": "Value",
+            "value": 0.5
+          }
+        ],
+        "operation": "MULTIPLY"
+      }
+    ],
+    "links": [
+      {
+        "from": "Texture Coordinate",
+        "socket": "UV",
+        "to": "Vector Math",
+        "input": "Vector"
+      },
+      {
+        "from": "Vector Math",
+        "socket": "Vector",
+        "to": "Vector Math.001",
+        "input": "Vector"
+      },
+      {
+        "from": "Vector Math.001",
+        "socket": "Vector",
+        "to": "Vector Math.002",
+        "input": "Vector"
+      },
+      {
+        "from": "Vector Math.002",
+        "socket": "Value",
+        "to": "Map Range",
+        "input": "Value"
+      },
+      {
+        "from": "Texture Coordinate",
+        "socket": "Generated",
+        "to": "Noise Texture",
+        "input": "Vector"
+      },
+      {
+        "from": "Map Range",
+        "socket": "Result",
+        "to": "Math",
+        "input": "Value"
+      },
+      {
+        "from": "Noise Texture",
+        "socket": "Factor",
+        "to": "Math",
+        "input": "Value"
+      },
+      {
+        "from": "Math",
+        "socket": "Value",
+        "to": "Mix Shader",
+        "input": "Factor"
+      },
+      {
+        "from": "Transparent BSDF",
+        "socket": "BSDF",
+        "to": "Mix Shader",
+        "input": "Shader"
+      },
+      {
+        "from": "Emission",
+        "socket": "Emission",
+        "to": "Mix Shader",
+        "input": "Shader"
+      },
+      {
+        "from": "Mix Shader",
+        "socket": "Shader",
+        "to": "Material Output",
+        "input": "Surface"
+      }
+    ]
+  }
+]

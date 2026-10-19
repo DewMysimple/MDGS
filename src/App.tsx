@@ -1,0 +1,198 @@
+import { useCallback, useEffect, useRef, useState } from 'react';
+import type { CSSProperties, KeyboardEvent } from 'react';
+import { ArrowRight, BookOpen, ChevronLeft, ChevronRight, Maximize, Minimize, Mouse, MoveHorizontal, Pause, Play, RotateCcw } from 'lucide-react';
+import ScrollViewport from './components/ScrollViewport';
+import CulturePanel from './components/CulturePanel';
+import AudioController from './components/AudioController';
+import { BrocadeBorder, ExhibitionAtmosphere, ScrollRoller } from './components/ScrollOrnaments';
+import { useScrollController } from './hooks/useScrollController';
+import { chapters } from './data/chapters';
+import type { SceneManifest } from './types';
+import './styles.css';
+
+const ordinal = ['一', '二', '三', '四'];
+const clamp = (value: number) => Math.min(1, Math.max(0, value));
+
+export default function App() {
+  const [chapterId, setChapterId] = useState<number>(chapters[0].id);
+  const [cultureOpen, setCultureOpen] = useState(false);
+  const [fullscreen, setFullscreen] = useState(Boolean(document.fullscreenElement));
+  const [notice, setNotice] = useState('');
+  const [manifests, setManifests] = useState<Record<number, Pick<SceneManifest, 'id' | 'stops'>>>({});
+  const { progress, target, seek, nudge, playing, togglePlaying, stop } = useScrollController(chapterId);
+  const chapterIndex = chapters.findIndex(item => item.id === chapterId);
+  const chapter = chapters[chapterIndex];
+  const manifest = manifests[chapterId];
+  const stops = manifest?.stops?.length ? manifest.stops : [{ name: '卷首', progress: 0 }, { name: '卷末', progress: 1 }];
+  const currentIndex = stops.reduce((latest, item, index) => progress + 0.012 >= item.progress ? index : latest, 0);
+  const currentStop = stops[currentIndex];
+  const finished = progress >= 0.995;
+  const stageRef = useRef<HTMLDivElement>(null);
+  const closeCulture = useCallback(() => setCultureOpen(false), []);
+  const receiveManifest = useCallback((data: SceneManifest) => {
+    setManifests(previous => ({ ...previous, [chapterId]: { id: data.id, stops: data.stops } }));
+  }, [chapterId]);
+
+  const changeChapter = useCallback((id: number) => {
+    stop();
+    setChapterId(id);
+    setCultureOpen(false);
+  }, [stop]);
+
+  const goTo = useCallback((value: number) => {
+    stop();
+    seek(clamp(value));
+  }, [seek, stop]);
+
+  function previousScene() {
+    const previous = [...stops].reverse().find(item => item.progress < progress - 0.002);
+    goTo(previous?.progress ?? 0);
+  }
+
+  function nextScene() {
+    const next = stops.find(item => item.progress > progress + 0.002);
+    goTo(next?.progress ?? 1);
+  }
+
+  async function toggleFullscreen() {
+    try {
+      if (document.fullscreenElement) await document.exitFullscreen();
+      else await document.documentElement.requestFullscreen();
+    } catch {
+      setNotice('当前浏览器暂不支持全屏显示。');
+      window.setTimeout(() => setNotice(''), 4000);
+    }
+  }
+
+  useEffect(() => {
+    const update = () => setFullscreen(Boolean(document.fullscreenElement));
+    document.addEventListener('fullscreenchange', update);
+    return () => document.removeEventListener('fullscreenchange', update);
+  }, []);
+
+  function stageKeydown(event: KeyboardEvent<HTMLDivElement>) {
+    if ((event.target as HTMLElement).closest('button, a, input, select, textarea')) return;
+    if (event.defaultPrevented) return;
+    if (event.target !== event.currentTarget && event.key !== ' ') return;
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+      event.preventDefault();
+      stop();
+      nudge(0.035);
+    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      stop();
+      nudge(-0.035);
+    } else if (event.key === 'Home' || event.key === 'End') {
+      event.preventDefault();
+      goTo(event.key === 'Home' ? 0 : 1);
+    } else if (event.key === ' ') {
+      event.preventDefault();
+      togglePlaying();
+    }
+  }
+
+  return (
+    <div className="app-shell">
+      <ExhibitionAtmosphere />
+      <a className="skip-link" href="#scroll-artwork">跳至画卷</a>
+      <header className="site-header">
+        <button className="brand" type="button" onClick={() => changeChapter(chapters[0].id)} aria-label="国色芳华，返回第一卷">
+          <span className="brand-seal" aria-hidden="true">牡<br />丹</span>
+          <span className="brand-wordmark">国色芳华<span>THE PEONY SCROLLS</span></span>
+        </button>
+        <nav className="chapter-nav" aria-label="四卷导航">
+          {chapters.map((item, index) => (
+            <button
+              type="button"
+              key={item.id}
+              className={`chapter-link${chapterId === item.id ? ' is-current' : ''}`}
+              onClick={() => changeChapter(item.id)}
+              aria-current={chapterId === item.id ? 'page' : undefined}
+              aria-label={`第${ordinal[index]}卷，${item.title}`}
+            ><span className="chapter-numeral">{item.numeral}</span><span className="chapter-nav-name">{item.title}</span></button>
+          ))}
+        </nav>
+        <span className="header-divider" />
+        <button className="fullscreen-button icon-button" type="button" onClick={() => void toggleFullscreen()} aria-label={fullscreen ? '退出全屏' : '进入全屏'} title={fullscreen ? '退出全屏' : '全屏观画'}>
+          {fullscreen ? <Minimize size={18} strokeWidth={1.4} /> : <Maximize size={18} strokeWidth={1.4} />}<span>{fullscreen ? '退出' : '全屏'}</span>
+        </button>
+      </header>
+
+      <main className="exhibition">
+        <h1 className="visually-hidden" id="chapter-title">第{ordinal[chapterIndex]}卷 · {chapter.title}</h1>
+
+        <section className="scroll-exhibition" aria-label={`第${ordinal[chapterIndex]}卷：${chapter.title}`}>
+          <div className="scroll-mount">
+            <BrocadeBorder edge="top" />
+            <div
+              className="painting"
+              id="scroll-artwork"
+              ref={stageRef}
+              tabIndex={0}
+              onKeyDown={stageKeydown}
+              role="region"
+              aria-label={`${chapter.title}画卷，使用滚轮或拖拽游观，也可用方向键移动，空格键自动展卷`}
+            >
+              <ScrollViewport
+                chapterId={chapterId}
+                progress={progress}
+                onNudge={nudge}
+                onSeek={seek}
+                onManualInput={stop}
+                onManifest={receiveManifest}
+              />
+              {finished && (
+                <aside className="end-colophon" aria-label="卷末题跋">
+                  <span className="end-seal" aria-hidden="true">阅<br />毕</span>
+                  <p className="eyebrow">第{ordinal[chapterIndex]}卷 · 卷末</p>
+                  <h2>花事有尽，余韵悠长</h2>
+                  <p className="end-colophon-text">{chapter.colophon}</p>
+                  <div className="end-actions">
+                    <button className="text-button" type="button" onClick={() => goTo(0)}><RotateCcw size={14} strokeWidth={1.4} />再观此卷</button>
+                    <button className="text-button" type="button" onClick={() => changeChapter(chapters[(chapterIndex + 1) % chapters.length].id)}>{chapterIndex === chapters.length - 1 ? '重游四卷' : '展开下一卷'}<ArrowRight size={15} strokeWidth={1.4} /></button>
+                  </div>
+                </aside>
+              )}
+            </div>
+            <BrocadeBorder edge="bottom" />
+            <ScrollRoller side="left" />
+            <ScrollRoller side="right" />
+          </div>
+        </section>
+
+        <section className="scroll-controls" aria-label="画卷游观控制">
+          <div className="control-topline">
+            <div className="current-scene" aria-live="polite" aria-atomic="true"><span className="scene-counter">{String(currentIndex + 1).padStart(2, '0')}<i>/ {String(stops.length).padStart(2, '0')}</i></span><span className="scene-name">{currentStop.name}</span>{finished && <span className="viewed-label">此卷已阅</span>}</div>
+            <span className="progress-caption"><span>{finished ? '卷末' : progress < 0.005 ? '卷首' : '游观中'}</span><b>{Math.round(progress * 100).toString().padStart(2, '0')}<small>%</small></b></span>
+          </div>
+          <div className="chapter-timeline" style={{ '--progress': `${progress * 100}%` } as CSSProperties}>
+            <div className="timeline-rule" aria-hidden="true"><span /></div>
+            <input type="range" min="0" max="1" step="0.001" value={progress}
+              onInput={event => goTo(Number(event.currentTarget.value))}
+              onKeyDown={event => {
+                const keys: Record<string, number> = { Home: 0, End: 1, ArrowRight: target + 0.01, ArrowUp: target + 0.01, ArrowLeft: target - 0.01, ArrowDown: target - 0.01, PageUp: target + 0.1, PageDown: target - 0.1 };
+                if (event.key in keys) { event.preventDefault(); goTo(keys[event.key]); }
+              }}
+              aria-label="画卷游观进度" aria-valuetext={`已观赏 ${Math.round(progress * 100)}%，${currentStop.name}`} />
+            <div className="timeline-stops">
+              {stops.map((item, index) => <button type="button" key={`${index}-${item.name}`} className={`timeline-stop${index <= currentIndex ? ' is-passed' : ''}`} style={{ left: `${item.progress * 100}%` }} onClick={() => goTo(item.progress)} aria-label={`游观至${item.name}`} title={item.name}><i /></button>)}
+            </div>
+            <span className="timeline-cursor" aria-hidden="true" />
+          </div>
+          <div className="control-bottomline">
+            <p className="interaction-hint"><Mouse size={14} strokeWidth={1.25} /><span>滚轮游观</span><i /><MoveHorizontal size={16} strokeWidth={1.25} /><span>左右拖拽</span></p>
+            <div className="playback-controls">
+              <button className="step-button" type="button" onClick={previousScene} disabled={progress < 0.005} aria-label="上一分镜" title="上一分镜"><ChevronLeft size={18} strokeWidth={1.35} /><span>上一景</span></button>
+              <button className={`play-button${playing ? ' is-playing' : ''}`} type="button" onClick={togglePlaying} aria-pressed={playing}>{playing ? <Pause size={13} strokeWidth={1.5} fill="currentColor" /> : <Play size={13} strokeWidth={1.5} fill="currentColor" />}<span>{playing ? '暂停展卷' : '自动展卷'}</span></button>
+              <button className="step-button" type="button" onClick={nextScene} disabled={finished} aria-label="下一分镜" title="下一分镜"><span>下一景</span><ChevronRight size={18} strokeWidth={1.35} /></button>
+            </div>
+            <div className="secondary-controls"><AudioController /><span className="secondary-divider" /><button type="button" className="utility-button" onClick={() => { stop(); setCultureOpen(true); }} aria-label="打开文化解读"><BookOpen size={16} strokeWidth={1.4} /><span>画外拾遗</span></button></div>
+          </div>
+        </section>
+      </main>
+
+      {notice && <div className="status-notice" role="status">{notice}</div>}
+      <CulturePanel chapter={chapter} open={cultureOpen} onClose={closeCulture} />
+    </div>
+  );
+}

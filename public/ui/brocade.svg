@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="64" viewBox="0 0 240 64">
+  <defs>
+    <pattern id="weave" width="4" height="4" patternUnits="userSpaceOnUse">
+      <path d="M0 .5h4M.5 0v4" stroke="#e5d6ac" stroke-width=".32" opacity=".2"/>
+      <path d="M2 0v4M0 2h4" stroke="#294d4a" stroke-width=".3" opacity=".13"/>
+    </pattern>
+    <g id="flower" fill="none" stroke="currentColor" stroke-width=".72" stroke-linejoin="round">
+      <path d="M0-3C-5-9-9-4-7 0c-7-2-10 4-4 7-4 7 3 10 8 5 4 7 10 4 8-2 7 1 10-6 4-9 3-6-4-10-8-5C0-8-3-6 0-3Z"/>
+      <path d="M-1-8c-2-7 5-11 10-8 4-6 11-3 10 3 7-1 11 6 6 10 6 3 4 11-3 11 3 6-3 11-9 8-2 7-10 7-12 1-5 4-12 0-10-6-7 2-11-5-7-10-6-5-2-12 4-11-1-6 6-10 11-6Z"/>
+      <path d="M-3-7c-3-7-10-4-10 1M9-12c3-1 7 2 6 5M17-2c5-1 7 4 4 7M6 11c2 5 7 6 10 2M-7 9c-6 3-7 0-7-3"/>
+      <path d="M-2-2c-4 1-2 6 1 6s4-5 0-5M-6 1l2 3M4 1l-1 4M-1 6l1 2"/>
+      <path d="M-8-14l3 5M10-18l-2 6M21-9l-6 3M25 4l-7 1M17 18l-4-6M3 22l-2-7M-10 17l4-5M-20 6l6-1M-18-9l6 3" opacity=".65"/>
+    </g>
+    <g id="leaf" fill="none" stroke="currentColor" stroke-width=".68">
+      <path d="M0 0C3-7 10-8 18-9 14-2 8 3 0 0ZM0 0l15-7M7-3l2-4M10-4l5 1"/>
+    </g>
+  </defs>
+  <path fill="#748e87" d="M0 0h240v64H0z"/>
+  <path fill="url(#weave)" d="M0 0h240v64H0z"/>
+  <g color="#d1bd8d" stroke="#d1bd8d" fill="none">
+    <path d="M0 32C18 6 35 6 52 32s35 27 53 0 35-26 53 0 34 27 52 0 26-21 30-16" stroke-width="1"/>
+    <path d="M0 32c18 26 35 26 52 0s35-27 53 0 35 26 53 0 34-27 52 0 26 21 30 16" stroke-width=".8" opacity=".85"/>
+    <g transform="translate(80 31) scale(.91)"><use href="#flower"/></g>
+    <g transform="translate(199 32) rotate(180) scale(.91)"><use href="#flower"/></g>
+    <use href="#leaf" transform="translate(26 15) rotate(167) scale(.76)"/>
+    <use href="#leaf" transform="translate(30 48) rotate(8) scale(.8)"/>
+    <use href="#leaf" transform="translate(51 28) rotate(-107) scale(.67)"/>
+    <use href="#leaf" transform="translate(108 37) rotate(72) scale(.65)"/>
+    <use href="#leaf" transform="translate(145 15) rotate(167) scale(.76)"/>
+    <use href="#leaf" transform="translate(149 48) rotate(8) scale(.8)"/>
+    <use href="#leaf" transform="translate(170 28) rotate(-107) scale(.67)"/>
+    <use href="#leaf" transform="translate(227 37) rotate(72) scale(.65)"/>
+    <path d="M14 29c-4-9-12-5-9 1 2 4 9 1 7-2M37 36c4 9 12 5 9-1-2-4-9-1-7 2M132 29c-4-9-12-5-9 1 2 4 9 1 7-2M156 36c4 9 12 5 9-1-2-4-9-1-7 2" stroke-width=".72"/>
+    <path d="M0 4h240M0 7h240M0 57h240M0 60h240" stroke-width=".7"/>
+    <path d="M0 1h240M0 63h240" stroke="#ad976e" stroke-width="2"/>
+    <path d="m19 8 3 3 3-3m23 0 3 3 3-3m64 0 3 3 3-3m23 0 3 3 3-3m65 0 3 3 3-3M19 56l3-3 3 3m23 0 3-3 3 3m64 0 3-3 3 3m23 0 3-3 3 3m65 0 3-3 3 3" stroke-width=".55" opacity=".75"/>
+  </g>
+</svg>

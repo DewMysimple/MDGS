@@ -1,0 +1,21 @@
+/* Shared desktop exhibition tokens; Blender data stays separate. */
+:root {
+  --paper: #eae0cf;
+  --paper-light: #f4ebdd;
+  --painting-paper: #f5ecdc;
+  --ink: #302820;
+  --muted: #88765d;
+  --cinnabar: #a34b3a;
+  --brocade: #748e87;
+  --brocade-gold: #c1a577;
+  --pattern-gold: #dcc698;
+  --wood: #302117;
+  --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "SimSun", serif;
+  --calligraphy: "STXingkai", "KaiTi", "STKaiti", "SimSun", serif;
+  --header-height: clamp(148px, 18.5svh, 176px);
+  --scroll-height: clamp(550px, 58.6svh, 620px);
+  --controls-height: clamp(104px, 13.2svh, 126px);
+  --brocade-height: clamp(30px, 2.35vw, 40px);
+  --roller-width: clamp(36px, 2.65vw, 46px);
+  --scroll-inset: clamp(24px, 1.85vw, 34px);
+}
