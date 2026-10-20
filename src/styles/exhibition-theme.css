@@ -1,4 +1,4 @@
-/* Shared desktop exhibition tokens; Blender data stays separate. */
+/* Shared exhibition tokens; Blender data stays separate. */
 :root {
   --paper: #eae0cf;
   --paper-light: #f4ebdd;
@@ -12,10 +12,13 @@
   --wood: #302117;
   --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "SimSun", serif;
   --calligraphy: "STXingkai", "KaiTi", "STKaiti", "SimSun", serif;
-  --header-height: clamp(148px, 18.5svh, 176px);
-  --scroll-height: clamp(550px, 58.6svh, 620px);
-  --controls-height: clamp(104px, 13.2svh, 126px);
-  --brocade-height: clamp(30px, 2.35vw, 40px);
-  --roller-width: clamp(36px, 2.65vw, 46px);
-  --scroll-inset: clamp(24px, 1.85vw, 34px);
+  --header-height: clamp(6.5rem, 18.5dvh, 11rem);
+  --controls-height: clamp(6.5rem, 13.2dvh, 7.875rem);
+  --footer-height: clamp(2rem, 8dvh, 5rem);
+  /* Reserve space for the controls; very short windows scroll the document. */
+  --scroll-height: max(14rem, calc(100dvh - var(--header-height) - var(--controls-height) - var(--footer-height)));
+  --brocade-height: clamp(1.125rem, 2.35vw, 2.5rem);
+  --roller-width: clamp(1.5rem, 2.65vw, 2.875rem);
+  --roller-overhang: clamp(1.5rem, 4.6dvh, 2.625rem);
+  --scroll-inset: max(1.125rem, 1.85vw);
 }

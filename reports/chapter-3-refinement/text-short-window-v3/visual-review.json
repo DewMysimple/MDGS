@@ -1,0 +1,450 @@
+{
+  "schemaVersion": 1,
+  "chapter": 3,
+  "status": "passed",
+  "passed": true,
+  "canonicalSha256": "4433928f6e6160acbd275ba6430d65fa3128df736a7eb59ef7607e61312d10cb",
+  "capture": "capture.json",
+  "sourceHashes": [
+    {
+      "path": "src/scene/CalligraphyLayer.ts",
+      "sha256": "8ce0d9d17d28330f3ff2f04b32bf2a5482848ff5b4a42ee2a5bc477ba302cabf"
+    },
+    {
+      "path": "src/scene/CalligraphyLayer.css",
+      "sha256": "707b020f2ebeaf1826e49d9dea1ce684a8511a91a5cdce649cccbef11101c250"
+    },
+    {
+      "path": "src/scene/ArtDirectionLayer.ts",
+      "sha256": "d51dfea871ed4363d453ce8ebaa82d920987ca1d06a0925127f3deda14d37a72"
+    },
+    {
+      "path": "src/scene/SceneRenderer.ts",
+      "sha256": "d77e1669131d74b30478b8f5e84576c2f8ad18300ecf4cdf89aac8a3c1ed9b60"
+    },
+    {
+      "path": "src/styles/handscroll.css",
+      "sha256": "d73911deba855f1ab39085c172dabd4ea11dc0b09838eefe9e921b0be5067f21"
+    }
+  ],
+  "sourcesUnchangedAtCaptureAndReview": true,
+  "reviewedIndividually": 8,
+  "passCount": 8,
+  "issueCount": 0,
+  "visualReviewEvidence": {
+    "currentFileViewed": 8,
+    "byteIdenticalPriorIndividualReview": 0,
+    "allCurrentNormalAndUnderlayHashesVerified": true
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedResources": [],
+  "approvalBoundary": [
+    "只批准所列实际anchor的文字内容、字界、顺序、字号、顶部留白与无遮挡；动态边界/全33分镜/Blender另由对应验收证明。",
+    "新增15组与compact开题正文至少14px、标题至少18px；原宽/中开题保原版字号层级，不冒称全部旧字均新规则。",
+    "窄短窗画心由内容最小字带高度自动增长至约365px，允许页面纵滚；纸题带约40%，下部主景约219px高，未压为旧63px缩略条。",
+    "Blender维持宽世界anchor可编辑FONT；网页响应式排版不等同于另建Blender窄版。"
+  ],
+  "views": [
+    {
+      "id": "chapter-3-opening",
+      "title": "锦绣花意",
+      "viewport": [
+        360,
+        640
+      ],
+      "painting": {
+        "width": 324,
+        "height": 365
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "current-file-view_image",
+        "priorCapture": null
+      },
+      "observation": "宽/中保留原侧题并护边；compact仅显示上纸题首，锦绣花意、两短句和牡丹印完整，未压人物。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 113.3795166015625,
+        "right": 210.62681579589844,
+        "top": 28.48846435546875,
+        "bottom": 117.4296875,
+        "width": 97.24729919433594,
+        "height": 88.94122314453125
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.588235294117645",
+      "compactReserve": "0.3997743755036261",
+      "screenshot": "360x640/chapter-3-opening.png",
+      "sha256": "8d2bac0aaa46554a6da01be675f5ff3ce99fb665b41c602bf1af8f4b84bbaed0",
+      "underlay": "360x640/chapter-3-opening-underlay.png",
+      "underlaySha256": "5894e1644dbe23e61d81cf673c2587bb9adbf127fe41cc36447f9f3a7f316c88"
+    },
+    {
+      "id": "c3-type-gap-02",
+      "title": "经纬生芳",
+      "viewport": [
+        360,
+        640
+      ],
+      "painting": {
+        "width": 324,
+        "height": 365
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "current-file-view_image",
+        "priorCapture": null
+      },
+      "observation": "题字在锦架上方纸空，锦架脚点内收后未触文字；中窗芳字已离红布。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 124.57437133789062,
+        "right": 199.42552185058594,
+        "top": 28.48846435546875,
+        "bottom": 117.4296875,
+        "width": 74.85115051269531,
+        "height": 88.94122314453125
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0.3997743755036261",
+      "screenshot": "360x640/c3-type-gap-02.png",
+      "sha256": "f8f766978316e2df010f99bac6d0acf139fb1173bb9f8ca8b9522e8d686df138",
+      "underlay": "360x640/c3-type-gap-02-underlay.png",
+      "underlaySha256": "768940b6c4a4c03c561657fd59d17279c1d4a5fb5f6b04880cf8a1b55a75d84d"
+    },
+    {
+      "id": "c3-type-stop-03",
+      "title": "凤穿牡丹",
+      "viewport": [
+        360,
+        640
+      ],
+      "painting": {
+        "width": 324,
+        "height": 365
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "current-file-view_image",
+        "priorCapture": null
+      },
+      "observation": "宽/中题签在凤凰右侧纸空；compact题带与凤头、翅及人物分开。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 124.57437133789062,
+        "right": 199.42552185058594,
+        "top": 28.48846435546875,
+        "bottom": 117.4296875,
+        "width": 74.85115051269531,
+        "height": 88.94122314453125
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0.3997743755036261",
+      "screenshot": "360x640/c3-type-stop-03.png",
+      "sha256": "82529c3012d53073ddc230f6d4c87ff45841299ee153f7f6efe118499baaeec1",
+      "underlay": "360x640/c3-type-stop-03-underlay.png",
+      "underlaySha256": "0ca11466548dac75b4274b151b3c039d70076c9e5d7f845943c0d185ce5d8dbf"
+    },
+    {
+      "id": "c3-type-stop-06",
+      "title": "针线传情",
+      "viewport": [
+        360,
+        640
+      ],
+      "painting": {
+        "width": 324,
+        "height": 365
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "current-file-view_image",
+        "priorCapture": null
+      },
+      "observation": "侧题/独立纸题带不再压屋檐与人物，正文完整。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 124.57437133789062,
+        "right": 199.42552185058594,
+        "top": 28.48846435546875,
+        "bottom": 117.4296875,
+        "width": 74.85115051269531,
+        "height": 88.94122314453125
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.588235294117645",
+      "compactReserve": "0.3997743755036261",
+      "screenshot": "360x640/c3-type-stop-06.png",
+      "sha256": "edac29b773aad9e750cb3781ac91addf10e24bd3f947691d86ba6bc9bae2c575",
+      "underlay": "360x640/c3-type-stop-06-underlay.png",
+      "underlaySha256": "d8ef13260f47d8ca5493e1bba40b4bf1b300d056b2ef170d29c4a66c183d776d"
+    },
+    {
+      "id": "chapter-3-opening",
+      "title": "锦绣花意",
+      "viewport": [
+        620,
+        360
+      ],
+      "painting": {
+        "width": 584,
+        "height": 365
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "current-file-view_image",
+        "priorCapture": null
+      },
+      "observation": "宽/中保留原侧题并护边；compact仅显示上纸题首，锦绣花意、两短句和牡丹印完整，未压人物。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 243.37945556640625,
+        "right": 340.6267395019531,
+        "top": 28.48846435546875,
+        "bottom": 117.42969512939453,
+        "width": 97.24728393554688,
+        "height": 88.94123077392578
+      },
+      "screenBodySize": "14.000000000000002",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0.3997743755036261",
+      "screenshot": "620x360/chapter-3-opening.png",
+      "sha256": "981f3bf07855a23ab87b0812c77aec0c36a02326c46a104087c07aa4ace09c1e",
+      "underlay": "620x360/chapter-3-opening-underlay.png",
+      "underlaySha256": "96cbe720df2a64c423af0806ea1f370451975284f5cf53ee527f95ba7b1eec53"
+    },
+    {
+      "id": "c3-type-gap-02",
+      "title": "经纬生芳",
+      "viewport": [
+        620,
+        360
+      ],
+      "painting": {
+        "width": 584,
+        "height": 365
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "current-file-view_image",
+        "priorCapture": null
+      },
+      "observation": "题字在锦架上方纸空，锦架脚点内收后未触文字；中窗芳字已离红布。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 254.57431030273438,
+        "right": 329.4254455566406,
+        "top": 28.48846435546875,
+        "bottom": 117.4296875,
+        "width": 74.85113525390625,
+        "height": 88.94122314453125
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0.3997743755036261",
+      "screenshot": "620x360/c3-type-gap-02.png",
+      "sha256": "42a2fce4bb3f3acf4cf00a09b180fe74e0d3455aa9beda4fd756089447f5cf49",
+      "underlay": "620x360/c3-type-gap-02-underlay.png",
+      "underlaySha256": "51b54bdd89fab8277ff4b0d91f82aadf449db30907508a56eacff8227060d2f7"
+    },
+    {
+      "id": "c3-type-stop-03",
+      "title": "凤穿牡丹",
+      "viewport": [
+        620,
+        360
+      ],
+      "painting": {
+        "width": 584,
+        "height": 365
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "current-file-view_image",
+        "priorCapture": null
+      },
+      "observation": "宽/中题签在凤凰右侧纸空；compact题带与凤头、翅及人物分开。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 254.57431030273438,
+        "right": 329.4254455566406,
+        "top": 28.48846435546875,
+        "bottom": 117.4296875,
+        "width": 74.85113525390625,
+        "height": 88.94122314453125
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0.3997743755036261",
+      "screenshot": "620x360/c3-type-stop-03.png",
+      "sha256": "46e864094c65f921da3976f9c3e94d07dfe9d9d7fb3f41138fe2f86d6d9b5f7a",
+      "underlay": "620x360/c3-type-stop-03-underlay.png",
+      "underlaySha256": "8926e6352cc39ee1264d74cef5fb53de364122a64a19253c9fd8274b89ac0c1a"
+    },
+    {
+      "id": "c3-type-stop-06",
+      "title": "针线传情",
+      "viewport": [
+        620,
+        360
+      ],
+      "painting": {
+        "width": 584,
+        "height": 365
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "current-file-view_image",
+        "priorCapture": null
+      },
+      "observation": "侧题/独立纸题带不再压屋檐与人物，正文完整。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 254.57431030273438,
+        "right": 329.4254455566406,
+        "top": 28.48846435546875,
+        "bottom": 117.4296875,
+        "width": 74.85113525390625,
+        "height": 88.94122314453125
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.588235294117645",
+      "compactReserve": "0.3997743755036261",
+      "screenshot": "620x360/c3-type-stop-06.png",
+      "sha256": "b8df249c29a90c4844e4566c041eaeda7957ecbe8ae1df8a994932bbd2bfb74d",
+      "underlay": "620x360/c3-type-stop-06-underlay.png",
+      "underlaySha256": "993dc50ede3cb000a0fefe12090aa2cad07e5ac4c968f89fac9c4ebef7bd7280"
+    }
+  ]
+}

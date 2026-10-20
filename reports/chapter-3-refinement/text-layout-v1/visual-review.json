@@ -1,0 +1,1475 @@
+{
+  "schemaVersion": 1,
+  "status": "issues-found-not-approved",
+  "canonicalSha256": "97940aec8987ee3464b41e87fd0c00cf4f3b5e91524d396bfb87dbb7f8ba8701",
+  "reviewedImages": 45,
+  "scope": "15组实际产品anchor在3窗口，45张正常图逐张view_image；每字DOM、同帧underlay随capture.json。未审其间动态与四分点，不冒称整卷通过。",
+  "counts": {
+    "clearAtAnchor": 35,
+    "mustAdjust": 7,
+    "minorContact": 3
+  },
+  "allStructuralChecksPassed": true,
+  "sourceHashes": [
+    {
+      "path": "src/scene/CalligraphyLayer.ts",
+      "sha256": "fdf2a5e16358ace28ade6f6f5e33c735f2109fc57cf29c4b5655568e61dcd0c7"
+    },
+    {
+      "path": "src/scene/CalligraphyLayer.css",
+      "sha256": "707b020f2ebeaf1826e49d9dea1ce684a8511a91a5cdce649cccbef11101c250"
+    },
+    {
+      "path": "src/scene/ArtDirectionLayer.ts",
+      "sha256": "d51dfea871ed4363d453ce8ebaa82d920987ca1d06a0925127f3deda14d37a72"
+    },
+    {
+      "path": "src/scene/SceneRenderer.ts",
+      "sha256": "38fc20a31074cc5eb9d737a2111123a568c06f46842b674f0de04d18c6a50378"
+    }
+  ],
+  "runtimeErrors": [],
+  "followup": "本批后新增getCompactLayout，仅存在vertical且aspect<=1.2，将题签置独立上纸带，源景缩入下区；此新实现尚未由本批证明。Blender保持宽世界anchor，自适应差异须另说明。",
+  "views": [
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "id": "c3-type-gap-01",
+      "title": "一花百用",
+      "progress": 0.06170822215550957,
+      "actualInputProgress": 0.062,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "1920x1080/c3-type-gap-01.png",
+      "sha256": "1cc15968b6c203095e556040bdda708086708db4f144d43117380d954f436fbe",
+      "underlay": "1920x1080/c3-type-gap-01-underlay.png",
+      "underlaySha256": "128079cfad6a5f23782b61da960d68a6357fbddc6161491895daf7db3725c6b6"
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "id": "c3-type-gap-02",
+      "title": "经纬生芳",
+      "progress": 0.18527723828993936,
+      "actualInputProgress": 0.185,
+      "status": "must-adjust",
+      "observation": "下半题签压到锦架红布，部分字与凤纹重叠。",
+      "nextAction": "x=.54,y=.30,height=.33为下一候选；需重拍，不能用字号下限绕过。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "1920x1080/c3-type-gap-02.png",
+      "sha256": "ba13ca8e3fb2edb1ed7ce18d72a9a7ad0b19a603da62cdb999bd51cd5d5daaf0",
+      "underlay": "1920x1080/c3-type-gap-02-underlay.png",
+      "underlaySha256": "88583accfbc1c8c46a992fcbe472b3146090cf6b6c1d6eef8f794063d4c75324"
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "id": "c3-type-stop-03",
+      "title": "凤穿牡丹",
+      "progress": 0.24713803226885958,
+      "actualInputProgress": 0.247,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "1920x1080/c3-type-stop-03.png",
+      "sha256": "62f7558e154d8e2fcde24859f5e030fb5450fa64b5c9928e1eeb0eaeee23c056",
+      "underlay": "1920x1080/c3-type-stop-03-underlay.png",
+      "underlaySha256": "ffbc9432cf12c9913742f84a000661faf1ca817e9132177e13d649cf75bf5f96"
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "id": "c3-type-gap-03",
+      "title": "案头清供",
+      "progress": 0.30891527606479746,
+      "actualInputProgress": 0.309,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "1920x1080/c3-type-gap-03.png",
+      "sha256": "92d941775ac7716283dd4e41df17a0a7ea945767445a32d30f73967ef7e6b222",
+      "underlay": "1920x1080/c3-type-gap-03-underlay.png",
+      "underlaySha256": "ddf9f1cb39d454d8d543a6f29116d2b887f49d5ede04897e56b754fb5df0d5ff"
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "id": "c3-type-stop-04",
+      "title": "同心成礼",
+      "progress": 0.37069251986073537,
+      "actualInputProgress": 0.371,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "1920x1080/c3-type-stop-04.png",
+      "sha256": "1829224f763db639a784cad09005365160c3e937a6153bb6625ad90ffc3f9356",
+      "underlay": "1920x1080/c3-type-stop-04-underlay.png",
+      "underlaySha256": "d3c2a6d9e76412f365bdf636961b03558314edd18f27d848cc1ac6d8b03cc4a1"
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "id": "c3-type-gap-04",
+      "title": "门庭有喜",
+      "progress": 0.43273851796258755,
+      "actualInputProgress": 0.433,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "1920x1080/c3-type-gap-04.png",
+      "sha256": "12af15bb9c4cc8ac68788ac1863bc7540ba0d02b222a0e6a3ea58b3fd9be8768",
+      "underlay": "1920x1080/c3-type-gap-04-underlay.png",
+      "underlaySha256": "e2b381c995047200933be1906e0c0541ec4b63ffdf2347b55f10713e9b8dd5f1"
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "id": "c3-type-stop-05",
+      "title": "灯彩迎新",
+      "progress": 0.4947845160644397,
+      "actualInputProgress": 0.495,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "1920x1080/c3-type-stop-05.png",
+      "sha256": "7a0c20614929411252098c6031c5c1301f7063b8260e1554476fe80eae16020e",
+      "underlay": "1920x1080/c3-type-stop-05-underlay.png",
+      "underlaySha256": "548650819f852500d5a37d6703f47a891a71079ac47c22b2cf73e5c5f006c3d7"
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "id": "c3-type-gap-05",
+      "title": "尺素寄愿",
+      "progress": 0.5569328988363655,
+      "actualInputProgress": 0.557,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "1920x1080/c3-type-gap-05.png",
+      "sha256": "65c5c09338abadb4e71650a577c86d48d8eee33b8c4a2cc5f109f3254fcc24b2",
+      "underlay": "1920x1080/c3-type-gap-05-underlay.png",
+      "underlaySha256": "b929a8e81689e6aa6410b4cd123f6e782600c7a66ea1840485282e94dc93b04b"
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "id": "c3-type-stop-06",
+      "title": "针线传情",
+      "progress": 0.6190812816082915,
+      "actualInputProgress": 0.619,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "1920x1080/c3-type-stop-06.png",
+      "sha256": "518660ea357f4005e8dfffc47c3510a3f03a59d4d6104bc28079ea561a307318",
+      "underlay": "1920x1080/c3-type-stop-06-underlay.png",
+      "underlaySha256": "df128159e97ffe58042cbdb4dbc4fb1d8dcb049d6c32847b3ef30794cafaa167"
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "id": "c3-type-gap-06",
+      "title": "日用见美",
+      "progress": 0.6811709334158138,
+      "actualInputProgress": 0.681,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "1920x1080/c3-type-gap-06.png",
+      "sha256": "f25cbe4da423936244c0c668ee92fd30f6aa4e952e7fb57059aa0a85f5001e9a",
+      "underlay": "1920x1080/c3-type-gap-06-underlay.png",
+      "underlaySha256": "62ea3b0e849d1a160c91be6b928521e2b240da9091c917d1830536abc402852a"
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "id": "c3-type-stop-07",
+      "title": "吉意入器",
+      "progress": 0.7432605852233363,
+      "actualInputProgress": 0.743,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "1920x1080/c3-type-stop-07.png",
+      "sha256": "c5e67e18c0e8c0e4055f45cbcc3cb07866d4ac623c21fe9193cb97a17fae9074",
+      "underlay": "1920x1080/c3-type-stop-07-underlay.png",
+      "underlaySha256": "22a68afb483dc0c41c1c260942fbf582348d160e43fa91fbbf34e14af93e5cbb"
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "id": "c3-type-gap-07",
+      "title": "雅意随身",
+      "progress": 0.8052932435579894,
+      "actualInputProgress": 0.805,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "1920x1080/c3-type-gap-07.png",
+      "sha256": "92f0198c18a57e1ec1a462513211f4e0092045ea5ad3d89137413ea41a0ce7fc",
+      "underlay": "1920x1080/c3-type-gap-07-underlay.png",
+      "underlaySha256": "319c87586404346a6d32a87eed7d809c4163678210aad12313ccac26cc5742c6"
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "id": "c3-type-stop-08",
+      "title": "端庄自持",
+      "progress": 0.8673259018926424,
+      "actualInputProgress": 0.867,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "1920x1080/c3-type-stop-08.png",
+      "sha256": "a30f4c7ebecab45b36bff9438bc22185115da09c42107c074ad067d754e09b0b",
+      "underlay": "1920x1080/c3-type-stop-08-underlay.png",
+      "underlaySha256": "be116d493009f710172956d87bd4006c18517c07f775a8cfd77f34f92262048f"
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "id": "c3-type-gap-08",
+      "title": "满城和乐",
+      "progress": 0.9288563525873003,
+      "actualInputProgress": 0.929,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "1920x1080/c3-type-gap-08.png",
+      "sha256": "a5f56ed065a38dab1ca69bfc2c139d65e7218dc2c492b5598ec8e62cd37d8d40",
+      "underlay": "1920x1080/c3-type-gap-08-underlay.png",
+      "underlaySha256": "dc3f707512a0da449de4c370a8f89fe2d0aeb6b1e1b142c75089f9b9576f910b"
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "id": "c3-type-stop-09",
+      "title": "安泰人间",
+      "progress": 0.9903868032819582,
+      "actualInputProgress": 0.99,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "1920x1080/c3-type-stop-09.png",
+      "sha256": "716511735ee910a1d656c6e629013721b98f0ece88af9bc6c145429ec520184d",
+      "underlay": "1920x1080/c3-type-stop-09-underlay.png",
+      "underlaySha256": "dee02912f6c208985bbd98ff399ed108a60396ec73bbb7b968f0fe6294935414"
+    },
+    {
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "id": "c3-type-gap-01",
+      "title": "一花百用",
+      "progress": 0.06170822215550957,
+      "actualInputProgress": 0.062,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "960x700/c3-type-gap-01.png",
+      "sha256": "e0d818d6535293eb1cdd47f968a63f0397301ceb0098c6663088e17421f19e51",
+      "underlay": "960x700/c3-type-gap-01-underlay.png",
+      "underlaySha256": "84875ff3d1bda615681526a4449621969d58e847234782c9a1e904fc5c4d44c9"
+    },
+    {
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "id": "c3-type-gap-02",
+      "title": "经纬生芳",
+      "progress": 0.18527723828993936,
+      "actualInputProgress": 0.185,
+      "status": "must-adjust",
+      "observation": "下半题签和正文末字压红布；14px正文下限使减框高不一定减小实际字带。",
+      "nextAction": "优先x=.54,y=.30,height=.33或降低锦架，重新检视字末。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "960x700/c3-type-gap-02.png",
+      "sha256": "f60310f766ed889b66a937d14c9990bb794036e40a1a4b9c8042e7c7d9b8d1f3",
+      "underlay": "960x700/c3-type-gap-02-underlay.png",
+      "underlaySha256": "facd8eaca780e70aa50054e7b6c1b928db58cb5fa6676ff7c853f2aaaef128aa"
+    },
+    {
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "id": "c3-type-stop-03",
+      "title": "凤穿牡丹",
+      "progress": 0.24713803226885958,
+      "actualInputProgress": 0.247,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "960x700/c3-type-stop-03.png",
+      "sha256": "02186c1f38b28b52f57545f8ecaceb454b080264f80343c3ac1eaa118f61fa06",
+      "underlay": "960x700/c3-type-stop-03-underlay.png",
+      "underlaySha256": "b811af756a3c1c87b5e58341bc623e3b20d37fdf942fb575f17c2220616b6dab"
+    },
+    {
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "id": "c3-type-gap-03",
+      "title": "案头清供",
+      "progress": 0.30891527606479746,
+      "actualInputProgress": 0.309,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "960x700/c3-type-gap-03.png",
+      "sha256": "b569dd4200b70e4c178a62d93192564a2af24894080a44b830cd5dabb6784e97",
+      "underlay": "960x700/c3-type-gap-03-underlay.png",
+      "underlaySha256": "23adde5270dbb18fc925f79e94eeaa0af7d54bcf4f6ebfab49ea50da695dd83a"
+    },
+    {
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "id": "c3-type-stop-04",
+      "title": "同心成礼",
+      "progress": 0.37069251986073537,
+      "actualInputProgress": 0.371,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "960x700/c3-type-stop-04.png",
+      "sha256": "fe02d04bb012f0c3e84a787247ef8dcf2a4e704359a467e01b6a96c0a6bf07a0",
+      "underlay": "960x700/c3-type-stop-04-underlay.png",
+      "underlaySha256": "a7edd176aafdc68ab317c5e699b16743159108f57cb8b42878579e60ce7c608d"
+    },
+    {
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "id": "c3-type-gap-04",
+      "title": "门庭有喜",
+      "progress": 0.43273851796258755,
+      "actualInputProgress": 0.433,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "960x700/c3-type-gap-04.png",
+      "sha256": "6ebc1ed9420cd8f33fa3c04d84a29d12d011ef00719f7ad18ffb311f2bed0d60",
+      "underlay": "960x700/c3-type-gap-04-underlay.png",
+      "underlaySha256": "3a17d372810df209efddd063baacd6eafed513ccb6ad5bcd764eec5dfe2b329e"
+    },
+    {
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "id": "c3-type-stop-05",
+      "title": "灯彩迎新",
+      "progress": 0.4947845160644397,
+      "actualInputProgress": 0.495,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "960x700/c3-type-stop-05.png",
+      "sha256": "958767e40355e971fc38388a766851807ced8d05b54bf928a57f8b6d51f8b2ee",
+      "underlay": "960x700/c3-type-stop-05-underlay.png",
+      "underlaySha256": "c38511489b7dfcd4f6826753c99223098bca6e06a17737f546ae5ca51b58795c"
+    },
+    {
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "id": "c3-type-gap-05",
+      "title": "尺素寄愿",
+      "progress": 0.5569328988363655,
+      "actualInputProgress": 0.557,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "960x700/c3-type-gap-05.png",
+      "sha256": "d11b2686b24c00db41844f689defba678b237e4c18d941cc37559073d090b52a",
+      "underlay": "960x700/c3-type-gap-05-underlay.png",
+      "underlaySha256": "3d7172ccfc7aacba10a8de9f268a3f915942c78b93bcb447c1c769112232f48d"
+    },
+    {
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "id": "c3-type-stop-06",
+      "title": "针线传情",
+      "progress": 0.6190812816082915,
+      "actualInputProgress": 0.619,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "960x700/c3-type-stop-06.png",
+      "sha256": "65dd1f855fea68c28c066d70441ef713d39d10938a82ad70fb10769b96855559",
+      "underlay": "960x700/c3-type-stop-06-underlay.png",
+      "underlaySha256": "3c21737f65966aea4a18d039ed1e87b861b120992d2f0f4880409dced1f2f3e9"
+    },
+    {
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "id": "c3-type-gap-06",
+      "title": "日用见美",
+      "progress": 0.6811709334158138,
+      "actualInputProgress": 0.681,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "960x700/c3-type-gap-06.png",
+      "sha256": "9c8ce743036ae6b97348570c30b1471da4468f278dd8f7ac2f2f34a6f0a2e48e",
+      "underlay": "960x700/c3-type-gap-06-underlay.png",
+      "underlaySha256": "37bd674f5cf0064aad97c33cca866ef19ee5fd01181cdd79ecda2f68713d768c"
+    },
+    {
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "id": "c3-type-stop-07",
+      "title": "吉意入器",
+      "progress": 0.7432605852233363,
+      "actualInputProgress": 0.743,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "960x700/c3-type-stop-07.png",
+      "sha256": "0f8fb8b5fc5ab1f0b5257a8e25aa22c1f9271384c67e82be859b9079451cc669",
+      "underlay": "960x700/c3-type-stop-07-underlay.png",
+      "underlaySha256": "2bc5e98f89ba7937a61feba0d31c1e6e3f294e9ae92aebc4e4839249bb952816"
+    },
+    {
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "id": "c3-type-gap-07",
+      "title": "雅意随身",
+      "progress": 0.8052932435579894,
+      "actualInputProgress": 0.805,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "960x700/c3-type-gap-07.png",
+      "sha256": "d3a4b026654db09d50a2d3d428b743d3894b0cac75be14003bd415af67e555f0",
+      "underlay": "960x700/c3-type-gap-07-underlay.png",
+      "underlaySha256": "4567fdc793fef86b74b89fb4da06ab9fe443c013ca8f4fb51ae2ca7e438d2990"
+    },
+    {
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "id": "c3-type-stop-08",
+      "title": "端庄自持",
+      "progress": 0.8673259018926424,
+      "actualInputProgress": 0.867,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "960x700/c3-type-stop-08.png",
+      "sha256": "3503bedd40cea5f13044cd320eae29c59f62c5eba7006304140f795cd0f5ffd2",
+      "underlay": "960x700/c3-type-stop-08-underlay.png",
+      "underlaySha256": "b4055a7299fed0341588c6d1872feac6e2c8d4eb3775cde716670912040ca0ad"
+    },
+    {
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "id": "c3-type-gap-08",
+      "title": "满城和乐",
+      "progress": 0.9288563525873003,
+      "actualInputProgress": 0.929,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "960x700/c3-type-gap-08.png",
+      "sha256": "2ed2911c69960f28c50714b554d1065aa689368cc7fbde741c321c897dede293",
+      "underlay": "960x700/c3-type-gap-08-underlay.png",
+      "underlaySha256": "9ca7bfdb8c295e225870e79ea00620d4c534e837fa2008beab4fc2592e910b5b"
+    },
+    {
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "id": "c3-type-stop-09",
+      "title": "安泰人间",
+      "progress": 0.9903868032819582,
+      "actualInputProgress": 0.99,
+      "status": "minor-contact",
+      "observation": "左正文末字与右侧山峰近接或轻叠，宽屏无此问题。",
+      "nextAction": "主景第9组内收后复拍；字组y=.30可试，不能只看DOM无溢出。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "960x700/c3-type-stop-09.png",
+      "sha256": "02c1438f8a0ac54ae3f869632845b39a11328fa94aa49ac51bb38b7e52590c39",
+      "underlay": "960x700/c3-type-stop-09-underlay.png",
+      "underlaySha256": "bde86837491bf6ad4d46f80321e994523752eece0330fc1dc78f820dc559695f"
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "id": "c3-type-gap-01",
+      "title": "一花百用",
+      "progress": 0.06170822215550957,
+      "actualInputProgress": 0.062,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "360x800/c3-type-gap-01.png",
+      "sha256": "f029b09c96f4029096ad84848f82dafd3a031207091b002474d479be91ba0389",
+      "underlay": "360x800/c3-type-gap-01-underlay.png",
+      "underlaySha256": "02a0cd30a82f0125043e439e7d2895a507d52d76f6723afc4ce8425af45d331b"
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "id": "c3-type-gap-02",
+      "title": "经纬生芳",
+      "progress": 0.18527723828993936,
+      "actualInputProgress": 0.185,
+      "status": "must-adjust",
+      "observation": "题签下半压红布，中央锦架没有留出完整字带。",
+      "nextAction": "新版compact题签纸带与下方原景分区后再验。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "360x800/c3-type-gap-02.png",
+      "sha256": "5a006325ccc47b4db44a3cca8fe994f1f887092c230c0eaf3884b1540ffe5408",
+      "underlay": "360x800/c3-type-gap-02-underlay.png",
+      "underlaySha256": "d90637c9baf84d6307ceb14b65bf05d916e370b49df1a8d6497949ddd95f22af"
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "id": "c3-type-stop-03",
+      "title": "凤穿牡丹",
+      "progress": 0.24713803226885958,
+      "actualInputProgress": 0.247,
+      "status": "must-adjust",
+      "observation": "正文左列压凤凰头/翅，右侧护边可见不等于未遮盖。",
+      "nextAction": "当前y=.24..70内无完整侧纸空；采用compact独立纸题签带。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "360x800/c3-type-stop-03.png",
+      "sha256": "eb6551cd2cc6451632001c8d2b5786d045b67398268b98142bf7d931c406d317",
+      "underlay": "360x800/c3-type-stop-03-underlay.png",
+      "underlaySha256": "d8231db9d793201af83c7feb6c0e8c4c5892c5ff18ec91ebd0822470f2585fb0"
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "id": "c3-type-gap-03",
+      "title": "案头清供",
+      "progress": 0.30891527606479746,
+      "actualInputProgress": 0.309,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "360x800/c3-type-gap-03.png",
+      "sha256": "eb9d57edd5cf262e1fa7d038b1439dc26bbdfd58d6ebb756b187953714214a70",
+      "underlay": "360x800/c3-type-gap-03-underlay.png",
+      "underlaySha256": "5d8c2abc65f0b2d98bc0953dd32cb254a2abd708ec72e6c1b22edac656e5e71a"
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "id": "c3-type-stop-04",
+      "title": "同心成礼",
+      "progress": 0.37069251986073537,
+      "actualInputProgress": 0.371,
+      "status": "must-adjust",
+      "observation": "正文末端与凤凰冠及飘尾接触，四字标题下端也过近。",
+      "nextAction": "采用compact独立纸题签带，不能挪到左侧人物上。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "360x800/c3-type-stop-04.png",
+      "sha256": "3e92e22ccbc8b5e3c828fe4f4f01e68864091b51718b375a84a4d351a0434bf3",
+      "underlay": "360x800/c3-type-stop-04-underlay.png",
+      "underlaySha256": "ebdf77c81ea12b600ac889e745b638f92937097289ab44615f50348e02c44d73"
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "id": "c3-type-gap-04",
+      "title": "门庭有喜",
+      "progress": 0.43273851796258755,
+      "actualInputProgress": 0.433,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "360x800/c3-type-gap-04.png",
+      "sha256": "f850ccd75a43f5318091932b35274844a24ab3d7990d698d090f756958747c94",
+      "underlay": "360x800/c3-type-gap-04-underlay.png",
+      "underlaySha256": "29a78624dd07ed8426d993cf6894409f279bbac54b7849806583fdf4782cf3b4"
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "id": "c3-type-stop-05",
+      "title": "灯彩迎新",
+      "progress": 0.4947845160644397,
+      "actualInputProgress": 0.495,
+      "status": "minor-contact",
+      "observation": "左正文末字与雪巷山形轻叠。",
+      "nextAction": "新版compact；原侧题备选x=.18,y=.30，但必须实际看新图。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "360x800/c3-type-stop-05.png",
+      "sha256": "cc873dda6163785d9b8e6bc5e58d2820a4e39460c936bcbb12abcd7f0bdef404",
+      "underlay": "360x800/c3-type-stop-05-underlay.png",
+      "underlaySha256": "53f01332c57b8e80f676e8db6ab2347915abe9d91473b0126614a058e8e5dbfa"
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "id": "c3-type-gap-05",
+      "title": "尺素寄愿",
+      "progress": 0.5569328988363655,
+      "actualInputProgress": 0.557,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "360x800/c3-type-gap-05.png",
+      "sha256": "c1d19bce8bd9237c23433f5f7af5d69fa3d34733c5afb28d0ea2a30416784d40",
+      "underlay": "360x800/c3-type-gap-05-underlay.png",
+      "underlaySha256": "4a56b92c66ac63d8260f4dadfba3deb52500d2652fc0e0348243ce8b7b98dbcb"
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "id": "c3-type-stop-06",
+      "title": "针线传情",
+      "progress": 0.6190812816082915,
+      "actualInputProgress": 0.619,
+      "status": "must-adjust",
+      "observation": "整组落在屋檐和人物上，正文视觉上几乎读不出。",
+      "nextAction": "新版compact优先；原侧题可选x=.75,y=.34右上纸空。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "360x800/c3-type-stop-06.png",
+      "sha256": "82002a64846040b911911ff507b1ef4ac8ae6ea1b7eaae4c877c87b08025dc51",
+      "underlay": "360x800/c3-type-stop-06-underlay.png",
+      "underlaySha256": "395610270c02c375004b1812130aa974a0b68460c9723cecf68a9aa83bbadba3"
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "id": "c3-type-gap-06",
+      "title": "日用见美",
+      "progress": 0.6811709334158138,
+      "actualInputProgress": 0.681,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "360x800/c3-type-gap-06.png",
+      "sha256": "3f492618407ebba05c225ae99b54cd1f58a18a208ce5b989d786e481056929bf",
+      "underlay": "360x800/c3-type-gap-06-underlay.png",
+      "underlaySha256": "41f6d426a17c3282ae9b8234b748290d2047c9de37e4c5abbcf1b01a2fd2aab3"
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "id": "c3-type-stop-07",
+      "title": "吉意入器",
+      "progress": 0.7432605852233363,
+      "actualInputProgress": 0.743,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "360x800/c3-type-stop-07.png",
+      "sha256": "f0eb5af5ab3868550ea32bdc89ca456048c231797c69227706369f78b566d9d4",
+      "underlay": "360x800/c3-type-stop-07-underlay.png",
+      "underlaySha256": "b179ab50d1a1f344546fce78f41e35eb7d46cafa685d9ffb2fc53e96338f54cc"
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "id": "c3-type-gap-07",
+      "title": "雅意随身",
+      "progress": 0.8052932435579894,
+      "actualInputProgress": 0.805,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "360x800/c3-type-gap-07.png",
+      "sha256": "7f7703118085ea42c233fd53480dc9bcf5850b4f94dbffb11bc77fbd34208bb3",
+      "underlay": "360x800/c3-type-gap-07-underlay.png",
+      "underlaySha256": "befe28ec27dd2834571b6ca7f267610d1acf72b1b0a653ab775707f867c1465f"
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "id": "c3-type-stop-08",
+      "title": "端庄自持",
+      "progress": 0.8673259018926424,
+      "actualInputProgress": 0.867,
+      "status": "minor-contact",
+      "observation": "标题末字靠近或擦到左侧屋檐尖，正文相对安全。",
+      "nextAction": "新版compact，保圆屏原题不重复。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "360x800/c3-type-stop-08.png",
+      "sha256": "5d550e50287ead1dacc534961c1e3155898f1a897c9311e7cba354e72f948636",
+      "underlay": "360x800/c3-type-stop-08-underlay.png",
+      "underlaySha256": "4fd4ad8d44bd434f5be07dc54c7f70024dcc1b8516cef06bb6b9a954551c2aa5"
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "id": "c3-type-gap-08",
+      "title": "满城和乐",
+      "progress": 0.9288563525873003,
+      "actualInputProgress": 0.929,
+      "status": "clear-at-anchor",
+      "observation": "本张字列完整、顺序正确，与主体无可见交叠；上方留白未被此文字侵占。",
+      "nextAction": "保持候选，新的构图/compact版本仍须重新验证。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "360x800/c3-type-gap-08.png",
+      "sha256": "67d54ee4ddb79a316bc49f3f711c8ea8b1920e0facd09a94b89baeadf841817e",
+      "underlay": "360x800/c3-type-gap-08-underlay.png",
+      "underlaySha256": "6a4b21951ecfd985805a3a67e44b014be5b2f6c3c058b86d09b7ac250d2dedcc"
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "id": "c3-type-stop-09",
+      "title": "安泰人间",
+      "progress": 0.9903868032819582,
+      "actualInputProgress": 0.99,
+      "status": "must-adjust",
+      "observation": "两列正文落在人物/花束上，右侧仅标题清楚。",
+      "nextAction": "现行中侧无足够纸空；采用compact独立纸题签带。",
+      "structuralChecks": {
+        "onlyExpectedTextOpaque": true,
+        "minimumBodyAtLeast14": true,
+        "minimumTitleAtLeast18": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "noBlockOrDocumentOverflow": true,
+        "verticalUpright": true,
+        "noLegacyWhiteTextStroke": true
+      },
+      "reviewedWithViewImage": true,
+      "screenshot": "360x800/c3-type-stop-09.png",
+      "sha256": "d387a442b6ce97c4f05e53ff29ae5019a06afd494838593ac83be659b60a6cc1",
+      "underlay": "360x800/c3-type-stop-09-underlay.png",
+      "underlaySha256": "76a95cba79c471e1caf7603678d4c3d1a002ddd7b96403f913f1fcac47ff5b50"
+    }
+  ]
+}

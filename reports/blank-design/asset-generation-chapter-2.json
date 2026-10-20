@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "chapter": 2,
+  "status": "production-assets-ready-scene-and-blender-review-separate",
+  "method": "Three separate built-in image_gen.imagegen calls with transparent_background=true; no CLI fallback, no Python painting or creative editing",
+  "assets": [
+    {
+      "id": "bd2-river-shore",
+      "prompt": "Use case: historical-scene. Asset type: ONE new independent transparent RGBA connection layer for chapter 2 of a traditional Chinese 2.5D peony handscroll: the peony moving from court gardens into private and everyday spring gardens. Subject: a low, wide, gently curving PRIVATE GARDEN WATER BANK with a softly bending low pale-stone footpath, shallow pale-celadon water with sparse delicate ripple strokes, a few small mineral rocks and two restrained small peony shrubs, one sparse willow tip at an outer bank. The shore and walkable footpath are the main content. No full bridge, pavilion, palace, roof, imperial balustrade, statue, human, crowd, boat, sky or distant mountains. Style: refined hand-painted Chinese gongbi and blue-green landscape on silk, gentle warm-gray ink line, pale celadon water, mineral gray/ivory stone, muted spring green and small dusty-pink flowers. Light, relaxed, domestic and poetic rather than imperial; no saturated gold or red. Composition: roughly 3:1 horizontal low strip, slightly elevated oblique handscroll perspective; both curving shore ends and all plants fully visible with natural complete irregular footprint. Place the subject inside the central 75% width with generous actual alpha margins all sides. Water becomes genuinely transparent along broken hand-painted outer edges; no cream/white paper backdrop, rectangular blue water sheet or ground rectangle. Output real transparent-background PNG, preserving fine soft ink edges and intact subject. No lettering, seals, watermark, decorative frame, collage, photographs, 3D render or vector icons.",
+      "builtInOutputHint": "Generated images are saved to C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-a9c6-7311-bab5-acf00524fdc2 as C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-a9c6-7311-bab5-acf00524fdc2\\exec-40087a0b-83cf-4ba8-a9f9-94ad1c040d9a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "rawPath": "artwork/blank-design/raw/bd2-river-shore.png",
+      "rawViewed": true,
+      "transparentBackgroundRequested": true,
+      "types": [
+        "A",
+        "D",
+        "E"
+      ],
+      "use": "第二卷宫墙外花市、春游水岸至私园之间，延伸可行走的低石径与浅水岸，避开原人群衣摆。",
+      "regions": [
+        "c2-stop-01-r01",
+        "c2-stop-02-r01",
+        "c2-gap-01-r01"
+      ],
+      "finding": "完整低石岸与弯曲步道、稀柳梢和两处小牡丹；水色温浅，水边自然透明，无整桥亭/人群/皇家装饰。",
+      "limitation": "局部柳梢高于低岸，布局须避开人物脸和题字；不要把同一宽岸复制堆成第二条饱和水墙。",
+      "rawSha256": "05285d3daebecf47677d1516d78b528d07ed602da12c601cc8d76e19a3e847b8",
+      "rawSize": [
+        2172,
+        724
+      ],
+      "rawAlphaRange": [
+        0,
+        255
+      ],
+      "rawTransparentPixelPercent": 60.905243,
+      "rawNonzeroAlphaBounds": [
+        0,
+        7,
+        2150,
+        724
+      ],
+      "production": {
+        "path": "artwork/blank-design/chapter-2/bd2-river-shore.png",
+        "width": 2666,
+        "height": 890,
+        "aspect": 2.995505617977528,
+        "bytes": 1569548,
+        "sha256": "d9f9963b35840fb0a6ed71fbf506b27879bec9666496bc5cb91ac21ef5bac343",
+        "contentRgbaSha256": "af0c29811bc7c008507c72c883382a3453856c524ffd23ce8767d25f63cf044a",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          258,
+          86,
+          2408,
+          803
+        ],
+        "visibleAlphaBounds": [
+          316,
+          182,
+          2369,
+          721
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 258,
+          "top": 86,
+          "right": 258,
+          "bottom": 87
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.677419,
+          "top": 9.662921,
+          "right": 9.677419,
+          "bottom": 9.775281
+        },
+        "transparentPixelPercent": 74.090039,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-2/bd2-river-shore.webp",
+        "url": "assets/blank-design/chapter-2/bd2-river-shore.webp",
+        "width": 2048,
+        "height": 684,
+        "aspect": 2.9941520467836256,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.768192048012003,
+        "scaleY": 0.7685393258426966,
+        "bytes": 262150,
+        "sha256": "9d3cfc8b591d0dfca50edd9b8b633f99308bcde1d30d645ed20397674bb4d050",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          66,
+          1850,
+          617
+        ],
+        "visibleAlphaBounds": [
+          243,
+          139,
+          1820,
+          554
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 66,
+          "right": 198,
+          "bottom": 67
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.649123,
+          "right": 9.667969,
+          "bottom": 9.795322
+        },
+        "transparentPixelPercent": 74.096251,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "packing": {
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            0,
+            7,
+            2150,
+            724
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            2150,
+            717
+          ]
+        },
+        "contentAspect": 2.99860529986053,
+        "requestedGutterPerSide": 0.12,
+        "paddingPx": {
+          "left": 258,
+          "top": 86,
+          "right": 258,
+          "bottom": 87
+        },
+        "actualGutterContentPercent": {
+          "left": 12.0,
+          "right": 12.0,
+          "top": 11.994421199442119,
+          "bottom": 12.133891213389122
+        },
+        "paddingScaleX": 1.24,
+        "paddingScaleY": 1.2412831241283124
+      },
+      "rawViewerCaveat": {
+        "saturatedYellowPixels": 3818,
+        "yellowPixelsAlphaAbove8": 0,
+        "note": "Raw viewer may display RGB in alpha=1–2 pixels; actual delivered-WebP browser compositing on paper/dark surfaces was checked, no visible neon rim. No image cleanup/repainting was performed."
+      },
+      "visualQa": {
+        "raw": "copied project raw individually inspected with view_image",
+        "delivery": "actual Chromium CSS compositing on current #f5ecdc paper and dark #22292c, then view_image inspected screenshot",
+        "screenshot": "reports/blank-design/chapter-2-assets-paper-qa.png",
+        "browserEvidence": "reports/blank-design/chapter-2-assets-browser-qa.json",
+        "subjectCompleteness": "complete readable left/right ends and low ground/plant/object footprint; no visibly cropped subject",
+        "transparency": "actual alpha with about 12% content-size safety margin per side after technical packing",
+        "approvedFor": "chapter-2 world-space placement and later scene review; final scene fit is separate"
+      }
+    },
+    {
+      "id": "bd2-spring-path",
+      "prompt": "Use case: historical-scene. Asset type: ONE independent transparent 2.5D layer for the second scroll 'flowers entering everyday homes', a quiet spring private garden rather than an imperial courtyard. Subject: a long LOW MIXED GARDEN FLOWER PATH, with a softly bending simple irregular gray-stone path, low earth garden-bed edging, small restrained peony foliage mixed with ordinary tiny spring flowers, a few soft grasses and low flowering twigs. The legible path and planted earth are the structure, with sparse small flowers as accents. No large peony flower heads, people, buildings, whole garden scene, palace, roof, pavilion, bridge, golden or imperial stone railing, wall, tall tree, sky or mountains. Traditional Chinese gongbi and blue-green landscape painting on silk: delicate varied warm-gray ink lines, muted sage/celadon, pale mineral gray stone, warm earth, small dusty pink/cream/lilac blossoms. Warm, graceful, relaxed and lived-in, minimal gold, not saturated. Composition: roughly 3:1 very wide horizontal connection strip, low silhouette, slightly elevated oblique scroll perspective. Both path ends and all roots/plant tips are complete, naturally irregular and gently faded into real alpha; keep everything inside the central 75% of canvas width with generous transparent safety margin on every side. The center should retain a few open pale stones and earth gaps rather than become a dense hedge. No solid rectangular ground/background plate. Output genuine transparent-background PNG; no painted white/cream silk background, no checkerboard pixels, no border, letters, seals, watermark or collage. It must be a finished independently placeable hand-painted layer, not a photograph, 3D render or vector graphic.",
+      "builtInOutputHint": "Generated images are saved to C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-a9c6-7311-bab5-acf00524fdc2 as C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-a9c6-7311-bab5-acf00524fdc2\\exec-19c783a3-30c5-4c69-affe-b9dd5732d77c.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "rawPath": "artwork/blank-design/raw/bd2-spring-path.png",
+      "rawViewed": true,
+      "transparentBackgroundRequested": true,
+      "types": [
+        "A",
+        "C",
+        "D"
+      ],
+      "use": "第二卷私园门口、雅宴至静赏的地面承接，普通春花混植与石路建立生活化步行路线。",
+      "regions": [
+        "c2-stop-03-r01",
+        "c2-stop-05-r01",
+        "c2-stop-06-r01",
+        "c2-gap-03-r01",
+        "c2-gap-05-r02",
+        "c2-gap-06-r01"
+      ],
+      "finding": "浅灰不规则石径、低土埂与普通白粉紫小春花混植，主体低位完整，路心可读；无大牡丹花头/人物/金栏/建筑。",
+      "limitation": "为中前景连接条；局部叶丛不应遮挡原前景花石主轮廓，且需控制重复频率。",
+      "rawSha256": "2f27d6daf7611f84deafafa7347aaa35d88e683b2f7a29329c4878f0bf185615",
+      "rawSize": [
+        2172,
+        724
+      ],
+      "rawAlphaRange": [
+        0,
+        255
+      ],
+      "rawTransparentPixelPercent": 56.447516,
+      "rawNonzeroAlphaBounds": [
+        18,
+        16,
+        2158,
+        724
+      ],
+      "production": {
+        "path": "artwork/blank-design/chapter-2/bd2-spring-path.png",
+        "width": 2654,
+        "height": 878,
+        "aspect": 3.0227790432801824,
+        "bytes": 1895213,
+        "sha256": "ec404ed3149d65f0986dc3b956e51b33ead1dceb9cf989a36964b2ede883d7e8",
+        "contentRgbaSha256": "51757b09c7b2ba6877a9f6daecb145386053ae6009df1083a4f073665ed9694e",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          257,
+          85,
+          2397,
+          793
+        ],
+        "visibleAlphaBounds": [
+          265,
+          193,
+          2383,
+          706
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 257,
+          "top": 85,
+          "right": 257,
+          "bottom": 85
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.683497,
+          "top": 9.681093,
+          "right": 9.683497,
+          "bottom": 9.681093
+        },
+        "transparentPixelPercent": 70.608897,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-2/bd2-spring-path.webp",
+        "url": "assets/blank-design/chapter-2/bd2-spring-path.webp",
+        "width": 2048,
+        "height": 678,
+        "aspect": 3.0206489675516224,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.771665410700829,
+        "scaleY": 0.7722095671981777,
+        "bytes": 365780,
+        "sha256": "b4867d99f4fd91c32e7b3ca77b5544af57283d31d01e563ea95e0b82f3489ab0",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          66,
+          1850,
+          594
+        ],
+        "visibleAlphaBounds": [
+          204,
+          149,
+          1839,
+          545
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 66,
+          "right": 198,
+          "bottom": 84
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.734513,
+          "right": 9.667969,
+          "bottom": 12.389381
+        },
+        "transparentPixelPercent": 70.658618,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "packing": {
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            18,
+            16,
+            2158,
+            724
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            2140,
+            708
+          ]
+        },
+        "contentAspect": 3.022598870056497,
+        "requestedGutterPerSide": 0.12,
+        "paddingPx": {
+          "left": 257,
+          "top": 85,
+          "right": 257,
+          "bottom": 85
+        },
+        "actualGutterContentPercent": {
+          "left": 12.009345794392523,
+          "right": 12.009345794392523,
+          "top": 12.005649717514125,
+          "bottom": 12.005649717514125
+        },
+        "paddingScaleX": 1.2401869158878505,
+        "paddingScaleY": 1.2401129943502824
+      },
+      "rawViewerCaveat": {
+        "saturatedYellowPixels": 19106,
+        "yellowPixelsAlphaAbove8": 3,
+        "note": "Raw viewer may display RGB in alpha=1–2 pixels; actual delivered-WebP browser compositing on paper/dark surfaces was checked, no visible neon rim. No image cleanup/repainting was performed."
+      },
+      "visualQa": {
+        "raw": "copied project raw individually inspected with view_image",
+        "delivery": "actual Chromium CSS compositing on current #f5ecdc paper and dark #22292c, then view_image inspected screenshot",
+        "screenshot": "reports/blank-design/chapter-2-assets-paper-qa.png",
+        "browserEvidence": "reports/blank-design/chapter-2-assets-browser-qa.json",
+        "subjectCompleteness": "complete readable left/right ends and low ground/plant/object footprint; no visibly cropped subject",
+        "transparency": "actual alpha with about 12% content-size safety margin per side after technical packing",
+        "approvedFor": "chapter-2 world-space placement and later scene review; final scene fit is separate"
+      }
+    },
+    {
+      "id": "bd2-study-court",
+      "prompt": "Use case: historical-scene. Asset type: ONE independent transparent RGBA 2.5D ground-and-object layer outside a scholar's modest private garden study in the second Chinese handscroll, quiet everyday spring appreciation. Subject: a LOW PALE STONE COURTYARD with a short simple LOW BAMBOO FENCE at one side, a single modest woven sitting mat with one tiny plain tea set grouped on a low serving board, restrained grasses and small leafy spring plants at the edges. The pale low courtyard ground is the main design. No whole study/room, building, roof, pavilion, tall wall, imperial balustrade, gold decoration, human, crowd, chair, big table, large flowers, calligraphy scroll, sky or mountains. Fine traditional hand-painted Chinese gongbi and blue-green landscape on silk, gentle varied warm ink lines and dry-brush pigment texture, muted celadon and sage green, warm bamboo, mineral gray/ivory stone, tiny dusty-pink/cream flowers only if very sparse. Light, calm, lived-in and graceful; not opulent. Composition: roughly 3:1 horizontal low silhouette, elevated oblique handscroll perspective. The complete open courtyard and every bamboo end, mat corner, tea utensil, plant root and stone edge must be visible inside the central 75% canvas, with genuinely transparent safety margin all sides. Irregular finished ground footprint, natural edges tapering into alpha rather than a hard floor rectangle; leave the center pale and quiet. Output real transparent-background PNG. No white/cream paper backdrop or checkerboard baked into pixels, no text, seals, labels, watermark, border or collage. No photography, no 3D rendering, no vector icon style.",
+      "builtInOutputHint": "Generated images are saved to C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-a9c6-7311-bab5-acf00524fdc2 as C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-a9c6-7311-bab5-acf00524fdc2\\exec-06e10d4f-d728-4443-9548-bdbe12ceabcf.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "rawPath": "artwork/blank-design/raw/bd2-study-court.png",
+      "rawViewed": true,
+      "transparentBackgroundRequested": true,
+      "types": [
+        "A",
+        "B",
+        "D",
+        "F"
+      ],
+      "use": "书斋外静赏小庭院：低石地、矮竹栏和一组坐席茶具，连接原书房与相邻花径，避免再造第二间书房。",
+      "regions": [
+        "c2-stop-06-r02",
+        "c2-gap-05-r01",
+        "c2-gap-06-r02"
+      ],
+      "finding": "完整石地端部、矮竹栏、竹植与一张坐席/小茶具，器物克制且无人物，整体不带任何书房/大建筑或文字。",
+      "limitation": "坐席茶具为本资产内一组静态细节，未拆成新独立动效。实际场景应放在原书房外侧，勿重复覆盖原书案。",
+      "rawSha256": "27e1529663b72a8c568892812f8c3dfa1a14506523f6062cd14e6f15c44b1c3d",
+      "rawSize": [
+        2172,
+        724
+      ],
+      "rawAlphaRange": [
+        0,
+        255
+      ],
+      "rawTransparentPixelPercent": 58.248375,
+      "rawNonzeroAlphaBounds": [
+        0,
+        17,
+        2166,
+        700
+      ],
+      "production": {
+        "path": "artwork/blank-design/chapter-2/bd2-study-court.png",
+        "width": 2686,
+        "height": 847,
+        "aspect": 3.1711924439197166,
+        "bytes": 1663421,
+        "sha256": "273b797526a565b6ca3c58fff68df8da1559d4bd072124031e634c66ca32f100",
+        "contentRgbaSha256": "f73cb9b4dfaaf959a9f0340173b71074bfe940fcbfcffa071ff4918948e15e03",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          260,
+          82,
+          2426,
+          765
+        ],
+        "visibleAlphaBounds": [
+          295,
+          182,
+          2398,
+          710
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 260,
+          "top": 82,
+          "right": 260,
+          "bottom": 82
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.679821,
+          "top": 9.681228,
+          "right": 9.679821,
+          "bottom": 9.681228
+        },
+        "transparentPixelPercent": 71.140928,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-2/bd2-study-court.webp",
+        "url": "assets/blank-design/chapter-2/bd2-study-court.webp",
+        "width": 2048,
+        "height": 646,
+        "aspect": 3.170278637770898,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.7624720774385704,
+        "scaleY": 0.7626918536009445,
+        "bytes": 289670,
+        "sha256": "6513052d146b61a5628eda0fecdaeb57d86b8935437fcd233a0642f1133333e1",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          62,
+          1850,
+          584
+        ],
+        "visibleAlphaBounds": [
+          225,
+          139,
+          1828,
+          542
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 62,
+          "right": 198,
+          "bottom": 62
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.597523,
+          "right": 9.667969,
+          "bottom": 9.597523
+        },
+        "transparentPixelPercent": 71.178632,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "packing": {
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            0,
+            17,
+            2166,
+            700
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            2166,
+            683
+          ]
+        },
+        "contentAspect": 3.171303074670571,
+        "requestedGutterPerSide": 0.12,
+        "paddingPx": {
+          "left": 260,
+          "top": 82,
+          "right": 260,
+          "bottom": 82
+        },
+        "actualGutterContentPercent": {
+          "left": 12.003693444136658,
+          "right": 12.003693444136658,
+          "top": 12.005856515373353,
+          "bottom": 12.005856515373353
+        },
+        "paddingScaleX": 1.240073868882733,
+        "paddingScaleY": 1.240117130307467
+      },
+      "rawViewerCaveat": {
+        "saturatedYellowPixels": 1872,
+        "yellowPixelsAlphaAbove8": 0,
+        "note": "Raw viewer may display RGB in alpha=1–2 pixels; actual delivered-WebP browser compositing on paper/dark surfaces was checked, no visible neon rim. No image cleanup/repainting was performed."
+      },
+      "visualQa": {
+        "raw": "copied project raw individually inspected with view_image",
+        "delivery": "actual Chromium CSS compositing on current #f5ecdc paper and dark #22292c, then view_image inspected screenshot",
+        "screenshot": "reports/blank-design/chapter-2-assets-paper-qa.png",
+        "browserEvidence": "reports/blank-design/chapter-2-assets-browser-qa.json",
+        "subjectCompleteness": "complete readable left/right ends and low ground/plant/object footprint; no visibly cropped subject",
+        "transparency": "actual alpha with about 12% content-size safety margin per side after technical packing",
+        "approvedFor": "chapter-2 world-space placement and later scene review; final scene fit is separate"
+      }
+    }
+  ],
+  "count": 3,
+  "updatedAtUtc": "2026-10-20T01:06:49.437596+00:00",
+  "webBytesTotal": 917600,
+  "qaScreenshotSha256": "b620f3c0125b5e04a1f236e663a8dd983d269f626cafec21e0ef73b0a17780d3",
+  "integrationOwner": "Main agent owns canonical/layout/web integration; no scene/manifest edits or new chapter blend saves in this asset task.",
+  "worldPaperImplementation": {
+    "schema": {
+      "color": "#f5ecdc",
+      "strength": 1,
+      "narrative": "退役弯曲纸地后的显式纸色World"
+    },
+    "preflightTests": 26,
+    "nativeBlenderMemoryCheck": "reports/blank-design/blender/world-paper-memory-check.json",
+    "savedBlendFilesDuringThisTask": 0,
+    "note": "Dedicated World is explicit worldModified=true; source World shader retained in the derived copy; full chapter save/reopen awaits reviewed layout."
+  }
+}

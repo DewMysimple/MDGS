@@ -1,0 +1,724 @@
+{
+  "scope": "Read-only source geometry ray test, no renderer/material mutation. Baseline painting aspect 1388/476. Image alpha >32, 24x24 UV lattice inside actual triangles. Paper opacity/depthWrite from source. Other painted layers are not tested here, so paper hit is geometric risk, not necessarily final visible difference.",
+  "chapters": {
+    "2": {
+      "paperObjects": [
+        {
+          "id": "c2-m-ce9ca1e39dfd",
+          "name": "宣纸 连续长卷 19.8米",
+          "materialIndex": 7,
+          "material": {
+            "id": 7,
+            "name": "宣纸 温润纤维",
+            "texture": null,
+            "color": [
+              0.86739817265,
+              0.7914988697,
+              0.6414693594
+            ],
+            "opacity": 1.0,
+            "transparent": false,
+            "alphaTest": 0,
+            "side": "double",
+            "depthWrite": true,
+            "sourceAlphaLinked": false,
+            "proceduralApproximation": true
+          },
+          "bounds": {
+            "min": [
+              -1.6008658,
+              -1.0548054,
+              -0.8862
+            ],
+            "max": [
+              13.8365116,
+              1.2052749,
+              0.0510523
+            ]
+          },
+          "triangleCount": 16640
+        }
+      ],
+      "readingStops": [
+        {
+          "paperName": "宣纸 连续长卷 19.8米",
+          "stop": 1,
+          "name": "2-1 阅读",
+          "sourceProgress": 0.023622,
+          "camera": {
+            "position": [
+              -0.1839804,
+              -1.4621886,
+              3.4558752
+            ],
+            "quaternion": [
+              0.2016771,
+              -0.0155955,
+              -0.0032117,
+              0.9793226
+            ],
+            "fov": 23.8224307,
+            "frame": 145.0,
+            "progress": 0.023622
+          },
+          "visibleImageSamples": 1694,
+          "risks": []
+        },
+        {
+          "paperName": "宣纸 连续长卷 19.8米",
+          "stop": 2,
+          "name": "2-2 阅读",
+          "sourceProgress": 0.1181102,
+          "camera": {
+            "position": [
+              2.4160197,
+              -1.1821886,
+              3.4858751
+            ],
+            "quaternion": [
+              0.2016771,
+              -0.0155955,
+              -0.0032117,
+              0.9793226
+            ],
+            "fov": 23.8224307,
+            "frame": 721.0,
+            "progress": 0.1181102
+          },
+          "visibleImageSamples": 2354,
+          "risks": []
+        },
+        {
+          "paperName": "宣纸 连续长卷 19.8米",
+          "stop": 3,
+          "name": "2-3 阅读",
+          "sourceProgress": 0.2125984,
+          "camera": {
+            "position": [
+              4.9966617,
+              -1.689997,
+              3.4534128
+            ],
+            "quaternion": [
+              0.2017018,
+              -0.0182033,
+              -0.0037494,
+              0.9792706
+            ],
+            "fov": 23.8224307,
+            "frame": 1297.0,
+            "progress": 0.2125984
+          },
+          "visibleImageSamples": 2503,
+          "risks": []
+        },
+        {
+          "paperName": "宣纸 连续长卷 19.8米",
+          "stop": 4,
+          "name": "2-4 阅读",
+          "sourceProgress": 0.3070866,
+          "camera": {
+            "position": [
+              7.6121554,
+              -1.2729121,
+              3.4682603
+            ],
+            "quaternion": [
+              0.2016228,
+              -0.0159089,
+              -0.0032753,
+              0.9793286
+            ],
+            "fov": 23.8224307,
+            "frame": 1873.0,
+            "progress": 0.3070866
+          },
+          "visibleImageSamples": 1556,
+          "risks": []
+        },
+        {
+          "paperName": "宣纸 连续长卷 19.8米",
+          "stop": 5,
+          "name": "2-5 阅读",
+          "sourceProgress": 0.4291339,
+          "camera": {
+            "position": [
+              10.2067881,
+              -1.5529059,
+              3.4833364
+            ],
+            "quaternion": [
+              0.2016136,
+              -0.0166333,
+              -0.0034243,
+              0.9793179
+            ],
+            "fov": 23.8224307,
+            "frame": 2617.0,
+            "progress": 0.4291339
+          },
+          "visibleImageSamples": 2390,
+          "risks": []
+        },
+        {
+          "paperName": "宣纸 连续长卷 19.8米",
+          "stop": 6,
+          "name": "2-6 阅读",
+          "sourceProgress": 0.5590551,
+          "camera": {
+            "position": [
+              12.5157652,
+              -0.9485207,
+              3.1434257
+            ],
+            "quaternion": [
+              0.2008886,
+              -0.0178556,
+              -0.0036623,
+              0.9794445
+            ],
+            "fov": 23.8224307,
+            "frame": 3409.0,
+            "progress": 0.5590551
+          },
+          "visibleImageSamples": 1660,
+          "risks": []
+        },
+        {
+          "paperName": "宣纸 连续长卷 19.8米",
+          "stop": 7,
+          "name": "2-7 阅读",
+          "sourceProgress": 0.7913386,
+          "camera": {
+            "position": [
+              15.4109125,
+              -1.4131451,
+              3.4590275
+            ],
+            "quaternion": [
+              0.2016054,
+              -0.0160095,
+              -0.0032957,
+              0.9793304
+            ],
+            "fov": 23.8224307,
+            "frame": 4825.0,
+            "progress": 0.7913386
+          },
+          "visibleImageSamples": 2066,
+          "risks": []
+        }
+      ],
+      "allCameraGroundRisks": []
+    },
+    "4": {
+      "paperObjects": [
+        {
+          "id": "c4-m-a3227a1c7f7d",
+          "name": "连续绢本背景 · 756米",
+          "materialIndex": 5,
+          "material": {
+            "id": 5,
+            "name": "绢本 · 连续纸纹底色",
+            "texture": null,
+            "color": [
+              0.7785144746,
+              0.69036978485,
+              0.5324553996
+            ],
+            "opacity": 1.0,
+            "transparent": false,
+            "alphaTest": 0,
+            "side": "double",
+            "depthWrite": true,
+            "sourceAlphaLinked": false,
+            "proceduralApproximation": true
+          },
+          "bounds": {
+            "min": [
+              22.3999996,
+              -714.0,
+              -9.0
+            ],
+            "max": [
+              23.5999641,
+              42.0,
+              33.0
+            ]
+          },
+          "triangleCount": 300
+        },
+        {
+          "id": "c4-m-d15ec14c38ae",
+          "name": "长卷承托地面",
+          "materialIndex": 5,
+          "material": {
+            "id": 5,
+            "name": "绢本 · 连续纸纹底色",
+            "texture": null,
+            "color": [
+              0.7785144746,
+              0.69036978485,
+              0.5324553996
+            ],
+            "opacity": 1.0,
+            "transparent": false,
+            "alphaTest": 0,
+            "side": "double",
+            "depthWrite": true,
+            "sourceAlphaLinked": false,
+            "proceduralApproximation": true
+          },
+          "bounds": {
+            "min": [
+              -22.0,
+              -717.0,
+              -7.0
+            ],
+            "max": [
+              25.0,
+              45.0,
+              -7.0
+            ]
+          },
+          "triangleCount": 2
+        }
+      ],
+      "readingStops": [
+        {
+          "paperName": "连续绢本背景 · 756米",
+          "stop": 1,
+          "name": "4-1 人花合一 · 阅读停留",
+          "sourceProgress": 0.0198061,
+          "camera": {
+            "position": [
+              -42.0,
+              0.0,
+              9.5625
+            ],
+            "quaternion": [
+              0.5,
+              -0.5,
+              -0.5,
+              0.5
+            ],
+            "fov": 25.6527518,
+            "frame": 97.0,
+            "progress": 0.0198061
+          },
+          "visibleImageSamples": 2021,
+          "risks": []
+        },
+        {
+          "paperName": "连续绢本背景 · 756米",
+          "stop": 2,
+          "name": "4-2 花王配美人 · 阅读停留",
+          "sourceProgress": 0.1287394,
+          "camera": {
+            "position": [
+              -42.0,
+              -84.0,
+              9.5625
+            ],
+            "quaternion": [
+              0.5,
+              -0.5,
+              -0.5,
+              0.5
+            ],
+            "fov": 25.6527518,
+            "frame": 625.0,
+            "progress": 0.1287394
+          },
+          "visibleImageSamples": 1606,
+          "risks": []
+        },
+        {
+          "paperName": "连续绢本背景 · 756米",
+          "stop": 3,
+          "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+          "sourceProgress": 0.2475758,
+          "camera": {
+            "position": [
+              -42.0,
+              -168.0,
+              9.5625
+            ],
+            "quaternion": [
+              0.5,
+              -0.5,
+              -0.5,
+              0.5
+            ],
+            "fov": 25.6527518,
+            "frame": 1201.0,
+            "progress": 0.2475758
+          },
+          "visibleImageSamples": 1855,
+          "risks": []
+        },
+        {
+          "paperName": "连续绢本背景 · 756米",
+          "stop": 4,
+          "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+          "sourceProgress": 0.4010728,
+          "camera": {
+            "position": [
+              -42.0,
+              -252.0,
+              9.5625
+            ],
+            "quaternion": [
+              0.5,
+              -0.5,
+              -0.5,
+              0.5
+            ],
+            "fov": 25.6527518,
+            "frame": 1945.0,
+            "progress": 0.4010728
+          },
+          "visibleImageSamples": 2463,
+          "risks": []
+        },
+        {
+          "paperName": "连续绢本背景 · 756米",
+          "stop": 5,
+          "name": "4-5 繁华落幕 · 阅读停留",
+          "sourceProgress": 0.5199092,
+          "camera": {
+            "position": [
+              -42.0,
+              -336.0,
+              9.5625
+            ],
+            "quaternion": [
+              0.5,
+              -0.5,
+              -0.5,
+              0.5
+            ],
+            "fov": 25.6527518,
+            "frame": 2521.0,
+            "progress": 0.5199092
+          },
+          "visibleImageSamples": 1199,
+          "risks": []
+        },
+        {
+          "paperName": "连续绢本背景 · 756米",
+          "stop": 6,
+          "name": "4-6 游宴渐冷 · 阅读停留",
+          "sourceProgress": 0.613988,
+          "camera": {
+            "position": [
+              -42.0,
+              -420.0,
+              9.5625
+            ],
+            "quaternion": [
+              0.5,
+              -0.5,
+              -0.5,
+              0.5
+            ],
+            "fov": 25.6527518,
+            "frame": 2977.0,
+            "progress": 0.613988
+          },
+          "visibleImageSamples": 2257,
+          "risks": []
+        },
+        {
+          "paperName": "连续绢本背景 · 756米",
+          "stop": 7,
+          "name": "4-7 盛世与乱世 · 阅读停留",
+          "sourceProgress": 0.7130184,
+          "camera": {
+            "position": [
+              -42.0,
+              -504.0,
+              9.5625
+            ],
+            "quaternion": [
+              0.5,
+              -0.5,
+              -0.5,
+              0.5
+            ],
+            "fov": 25.6527518,
+            "frame": 3457.0,
+            "progress": 0.7130184
+          },
+          "visibleImageSamples": 1941,
+          "risks": []
+        },
+        {
+          "paperName": "连续绢本背景 · 756米",
+          "stop": 8,
+          "name": "4-8 晚唐追忆 · 阅读停留",
+          "sourceProgress": 0.8269032,
+          "camera": {
+            "position": [
+              -42.0,
+              -588.0,
+              9.5625
+            ],
+            "quaternion": [
+              0.5,
+              -0.5,
+              -0.5,
+              0.5
+            ],
+            "fov": 25.6527518,
+            "frame": 4009.0,
+            "progress": 0.8269032
+          },
+          "visibleImageSamples": 1865,
+          "risks": []
+        },
+        {
+          "paperName": "连续绢本背景 · 756米",
+          "stop": 9,
+          "name": "4-9 千古兴衰 · 阅读停留",
+          "sourceProgress": 0.9209821,
+          "camera": {
+            "position": [
+              -42.0,
+              -672.0,
+              9.5625
+            ],
+            "quaternion": [
+              0.5,
+              -0.5,
+              -0.5,
+              0.5
+            ],
+            "fov": 25.6527518,
+            "frame": 4465.0,
+            "progress": 0.9209821
+          },
+          "visibleImageSamples": 1908,
+          "risks": []
+        },
+        {
+          "paperName": "长卷承托地面",
+          "stop": 1,
+          "name": "4-1 人花合一 · 阅读停留",
+          "sourceProgress": 0.0198061,
+          "camera": {
+            "position": [
+              -42.0,
+              0.0,
+              9.5625
+            ],
+            "quaternion": [
+              0.5,
+              -0.5,
+              -0.5,
+              0.5
+            ],
+            "fov": 25.6527518,
+            "frame": 97.0,
+            "progress": 0.0198061
+          },
+          "visibleImageSamples": 2021,
+          "risks": []
+        },
+        {
+          "paperName": "长卷承托地面",
+          "stop": 2,
+          "name": "4-2 花王配美人 · 阅读停留",
+          "sourceProgress": 0.1287394,
+          "camera": {
+            "position": [
+              -42.0,
+              -84.0,
+              9.5625
+            ],
+            "quaternion": [
+              0.5,
+              -0.5,
+              -0.5,
+              0.5
+            ],
+            "fov": 25.6527518,
+            "frame": 625.0,
+            "progress": 0.1287394
+          },
+          "visibleImageSamples": 1606,
+          "risks": []
+        },
+        {
+          "paperName": "长卷承托地面",
+          "stop": 3,
+          "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+          "sourceProgress": 0.2475758,
+          "camera": {
+            "position": [
+              -42.0,
+              -168.0,
+              9.5625
+            ],
+            "quaternion": [
+              0.5,
+              -0.5,
+              -0.5,
+              0.5
+            ],
+            "fov": 25.6527518,
+            "frame": 1201.0,
+            "progress": 0.2475758
+          },
+          "visibleImageSamples": 1855,
+          "risks": []
+        },
+        {
+          "paperName": "长卷承托地面",
+          "stop": 4,
+          "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+          "sourceProgress": 0.4010728,
+          "camera": {
+            "position": [
+              -42.0,
+              -252.0,
+              9.5625
+            ],
+            "quaternion": [
+              0.5,
+              -0.5,
+              -0.5,
+              0.5
+            ],
+            "fov": 25.6527518,
+            "frame": 1945.0,
+            "progress": 0.4010728
+          },
+          "visibleImageSamples": 2463,
+          "risks": []
+        },
+        {
+          "paperName": "长卷承托地面",
+          "stop": 5,
+          "name": "4-5 繁华落幕 · 阅读停留",
+          "sourceProgress": 0.5199092,
+          "camera": {
+            "position": [
+              -42.0,
+              -336.0,
+              9.5625
+            ],
+            "quaternion": [
+              0.5,
+              -0.5,
+              -0.5,
+              0.5
+            ],
+            "fov": 25.6527518,
+            "frame": 2521.0,
+            "progress": 0.5199092
+          },
+          "visibleImageSamples": 1199,
+          "risks": []
+        },
+        {
+          "paperName": "长卷承托地面",
+          "stop": 6,
+          "name": "4-6 游宴渐冷 · 阅读停留",
+          "sourceProgress": 0.613988,
+          "camera": {
+            "position": [
+              -42.0,
+              -420.0,
+              9.5625
+            ],
+            "quaternion": [
+              0.5,
+              -0.5,
+              -0.5,
+              0.5
+            ],
+            "fov": 25.6527518,
+            "frame": 2977.0,
+            "progress": 0.613988
+          },
+          "visibleImageSamples": 2257,
+          "risks": []
+        },
+        {
+          "paperName": "长卷承托地面",
+          "stop": 7,
+          "name": "4-7 盛世与乱世 · 阅读停留",
+          "sourceProgress": 0.7130184,
+          "camera": {
+            "position": [
+              -42.0,
+              -504.0,
+              9.5625
+            ],
+            "quaternion": [
+              0.5,
+              -0.5,
+              -0.5,
+              0.5
+            ],
+            "fov": 25.6527518,
+            "frame": 3457.0,
+            "progress": 0.7130184
+          },
+          "visibleImageSamples": 1941,
+          "risks": []
+        },
+        {
+          "paperName": "长卷承托地面",
+          "stop": 8,
+          "name": "4-8 晚唐追忆 · 阅读停留",
+          "sourceProgress": 0.8269032,
+          "camera": {
+            "position": [
+              -42.0,
+              -588.0,
+              9.5625
+            ],
+            "quaternion": [
+              0.5,
+              -0.5,
+              -0.5,
+              0.5
+            ],
+            "fov": 25.6527518,
+            "frame": 4009.0,
+            "progress": 0.8269032
+          },
+          "visibleImageSamples": 1865,
+          "risks": []
+        },
+        {
+          "paperName": "长卷承托地面",
+          "stop": 9,
+          "name": "4-9 千古兴衰 · 阅读停留",
+          "sourceProgress": 0.9209821,
+          "camera": {
+            "position": [
+              -42.0,
+              -672.0,
+              9.5625
+            ],
+            "quaternion": [
+              0.5,
+              -0.5,
+              -0.5,
+              0.5
+            ],
+            "fov": 25.6527518,
+            "frame": 4465.0,
+            "progress": 0.9209821
+          },
+          "visibleImageSamples": 1908,
+          "risks": []
+        }
+      ],
+      "allCameraGroundRisks": []
+    }
+  }
+}

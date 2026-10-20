@@ -1,0 +1,18 @@
+{
+  "label": "C1-T036",
+  "textureId": "c1-t-0a5d34c4eb6cffe6",
+  "mesh": "05_03_园丁与牡丹",
+  "alphaOutsideUVRatio": 0.0,
+  "sourceHasBakedText": false,
+  "repair": "No bitmap or UV rebuild needed; explicitly declared paper terrain must stop depth-occluding complete painted cards",
+  "sourceImageComplete": true,
+  "geometryRebuildNeeded": false,
+  "rootCause": "untextured opaque paper terrain writes depth in front of the lower painting",
+  "occluderMesh": "长卷_连续绢本地形",
+  "occluderMaterial": "绢本_纤维与浅墨",
+  "evidence": [
+    "reports/reconstruction/pilot-diagnostics/no-paper-depth-stop05.png",
+    "reports/reconstruction/pilot-diagnostics/untextured-depth.json"
+  ],
+  "derivedBlenderPolicy": "keep original paper object/matrix/material/geometry; hide only horizontal paper terrain in render, retain distant paper sky backdrop"
+}

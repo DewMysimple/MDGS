@@ -1,0 +1,4035 @@
+{
+  "schemaVersion": 1,
+  "reportType": "visual-blank-region-audit-and-content-plan",
+  "status": "audit-complete-production-not-executed",
+  "generatedAt": "2026-10-20T00:02:14.591480+00:00",
+  "reviewer": "blank_audit_34; all 34 originals individually opened with view_image",
+  "scope": {
+    "chapters": [
+      3,
+      4
+    ],
+    "views": 34,
+    "stops": 18,
+    "gaps": 16,
+    "sourceImages": "reports/reconstruction/after",
+    "captureSize": [
+      1388,
+      476
+    ],
+    "sourceViewport": [
+      1440,
+      900
+    ],
+    "reducedMotion": true,
+    "canonicalManifest": "public/assets/reconstruction/manifest.json",
+    "canonicalSha256": "290e865749ec5a27c48c1c6b7f3dda55bcd809e0d9610ab98d791fd5042ef115",
+    "head": "9f632a085f8bbde754751e3916e17b8bc2a9b3d5",
+    "branch": "main with existing local modifications",
+    "originalFilesModified": false,
+    "productionManifestModified": false,
+    "codeModified": false,
+    "blendModified": false
+  },
+  "coordinates": {
+    "format": "[x,y,width,height], all 0..1; rectangles are observed visual regions, not placement commands",
+    "origin": "top-left of inner painting paper, excluding approximately 22px scroll rollers at left and right",
+    "paperPixelRect": [
+      22,
+      0,
+      1344,
+      476
+    ],
+    "pixelMapping": "imageX=22+normalizedX*1344; imageY=normalizedY*476",
+    "precision": "visual approximate +-0.025 in normalized coordinates; validate projected geometry against the actual current view before integration",
+    "regionOverlap": "Where lower support overlaps central gap, the support is a separately planned depth role, not additional area to fill twice."
+  },
+  "classification": {
+    "1": "叙事缺失型空白",
+    "2": "转场断裂型空白",
+    "3": "层次不足型空白",
+    "4": "气氛不足型空白",
+    "5": "视觉节奏失衡型空白",
+    "6": "可保留留白"
+  },
+  "additionTypes": {
+    "A": "过渡层",
+    "B": "场景物体层",
+    "C": "前景遮挡层",
+    "D": "中景承接层",
+    "E": "后景连续层",
+    "F": "装饰叙事层"
+  },
+  "summary": {
+    "regions": 84,
+    "decisions": {
+      "保留留白": 36,
+      "衔接补充": 31,
+      "叙事补充": 17
+    },
+    "priorities": {
+      "保留": 36,
+      "P2": 13,
+      "P1": 23,
+      "P0": 12
+    },
+    "criticalFinding": "Both chapters have genuine empty midpoint gaps, not only sparse tail stops. C4 all8 midpoint gaps chiefly show paper+one thin gold line. C3 all8 chiefly repeat the same grey-green hill filler. Dense authored stop composites do not prove long-scroll continuity.",
+    "lateScrollFinding": "C3 gaps3–7 and C4 gaps5–8 need purposeful low/middle continuity. C4 tails keep broad upper silence but receive empty pavilion/poem scroll/fallen branch as restrained narrative anchors.",
+    "historicalAcceptanceBoundary": "Earlier visual-acceptance-chapter-3/4 passed targeted clipping/source integrity revisions; its declarations do not establish this new density/continuous-scene requirement. This report explicitly finds unresolved blank design in those same images."
+  },
+  "sampleRecommendation": {
+    "chapter": 4,
+    "reason": "C4 is the most visibly empty at all8 midpoints and must demonstrate both flourishing palace links and restrained declining afterglow; use this chapter as complete pilot before the other3.",
+    "mustInclude": [
+      "8 midpoint gaps plus all9 authored stops",
+      "at least garden bank/platform connection, autonomous palace/poetry object, empty pavilion/poem scroll/fallen flower tail",
+      "browser actual scene and derived Blender integration",
+      "all17 screenshots at the same progress as baseline; intermediate quarterpoints to ensure transitions do not simply move the hole"
+    ],
+    "prioritySampleViews": [
+      "c4-gap-02",
+      "c4-gap-03",
+      "c4-gap-06",
+      "c4-gap-08"
+    ],
+    "scopeAvoidance": "Do not satisfy the pilot with only four selected gaps; those are diagnostic examples, full chapter remains required.",
+    "candidateUniqueAssets": [
+      "c4-garden-bank",
+      "c4-palace-rail",
+      "c4-poetry-table",
+      "c4-palace-lamp",
+      "c4-empty-pavilion",
+      "c4-fallen-branch"
+    ],
+    "nextChapter": 3
+  },
+  "plannedAssetCatalog": {
+    "c3-workshop-court": {
+      "types": [
+        "A",
+        "D"
+      ],
+      "objects": [
+        "作坊低院墙",
+        "斜向花砖地台",
+        "少量庭院花木"
+      ],
+      "narrative": "把绣作、绘瓷、婚嫁器用放在同一生活空间，连接工艺与礼俗。",
+      "depth": "中景承接为主，低墙后有更淡树影。",
+      "reuse": "C3-T009 园林楼阁可作风格/朝向参考；现有整组含人物的建筑不能原样再复制。"
+    },
+    "c3-brocade-rail": {
+      "types": [
+        "B",
+        "C",
+        "F"
+      ],
+      "objects": [
+        "低矮织锦陈列架",
+        "两段垂布",
+        "团扇或妆匣"
+      ],
+      "narrative": "让凤穿牡丹由抽象大图案落到可用的织物器具。",
+      "depth": "中近景，架脚和地面接触完整，垂布有自然外缘。",
+      "reuse": "C3-T005 织锦飘带可少量复用；C3-T014 陈列组合仅作参考，不能裁半人物/复制大案。"
+    },
+    "c3-lantern-lane": {
+      "types": [
+        "A",
+        "D",
+        "F"
+      ],
+      "objects": [
+        "民居短巷与院门",
+        "牡丹花灯两盏",
+        "弯曲园路"
+      ],
+      "narrative": "连接迎亲与岁时祈福，说明纹样进入普通家庭。",
+      "depth": "中景巷口和路沿，后景很淡屋脊；不生成满幅街市人物。",
+      "reuse": "C3-T048 独立红灯笼可复用一次；C3-T028/T035 街景整图不可重复铺三次。"
+    },
+    "c3-wares-step": {
+      "types": [
+        "B",
+        "C",
+        "F"
+      ],
+      "objects": [
+        "矮台",
+        "花瓶",
+        "镜匣",
+        "一卷刺绣布"
+      ],
+      "narrative": "承接家庭传承、妆奁、器物中的吉祥牡丹。",
+      "depth": "前中景低位锚点，占画心高度不超过约三分之一。",
+      "reuse": "C3-T060 首饰罐盒组合可原样完整复用一次，但主镜台 C3-T056 不再复制。"
+    },
+    "c3-scholars-bank": {
+      "types": [
+        "A",
+        "D",
+        "E"
+      ],
+      "objects": [
+        "疏柳小庭院",
+        "淡墨远村屋脊",
+        "弯曲水岸或书院园路"
+      ],
+      "narrative": "把日用器物过渡到书斋修身与家国安宁，避免突然跳入空山。",
+      "depth": "后景远村+中景曲岸，不添宏大皇城。",
+      "reuse": "C3-T042 山水建筑可只作一次低对比延展；已有 shared ridge/mist 只能辅助散边，不能承担主要叙事。"
+    },
+    "c4-garden-bank": {
+      "types": [
+        "A",
+        "D",
+        "E"
+      ],
+      "objects": [
+        "连续曲岸",
+        "浅水纹",
+        "低矮宫苑花圃",
+        "远处小型亭影"
+      ],
+      "narrative": "把宫廷美人、沉香亭与赏花空间接成可以游历的苑囿。",
+      "depth": "中景曲岸连续，后景亭影很淡，水面局部留白。",
+      "reuse": "C4-T019 石桥花木和 C4-T032 湖景可作画法/透视参考；整组桥亭不再次复制。"
+    },
+    "c4-palace-rail": {
+      "types": [
+        "B",
+        "C",
+        "D"
+      ],
+      "objects": [
+        "宫苑短栏",
+        "完整石阶转角",
+        "一侧帷幔角"
+      ],
+      "narrative": "在美人肖像、题诗和宫廷陈设之间建立实体平台。",
+      "depth": "中近景偏下，低栏斜向引导，避免横线切断人物腰部。",
+      "reuse": "C4-T030 湖边栅栏可完整复用一段；已有 C4-T002 栏杆大图重复会形成节奏机械。"
+    },
+    "c4-poetry-table": {
+      "types": [
+        "B",
+        "F"
+      ],
+      "objects": [
+        "低诗案",
+        "无可辨长正文的展开诗卷",
+        "砚",
+        "花器"
+      ],
+      "narrative": "以题诗器用连接李白《清平调》及后世追忆，不能伪造历史书迹。",
+      "depth": "前中景低位独立物体，脚完整，不盖原人物/题签。",
+      "reuse": "C4-T017/T040 是人物书案整组，不能再复制整个人；新制无人低案更合适。"
+    },
+    "c4-palace-lamp": {
+      "types": [
+        "B",
+        "C",
+        "F"
+      ],
+      "objects": [
+        "宫灯一盏",
+        "小香炉",
+        "一角织物"
+      ],
+      "narrative": "前段繁华陈设与后段无人余韵共用器物语言，后段淡化色彩。",
+      "depth": "中近景小重心，灯体与支座完整，不另加新人物。",
+      "reuse": "C4-T023 香炉整景可作风格参考；不可通过把含亭台群像的整张贴图放大实现。"
+    },
+    "c4-empty-pavilion": {
+      "types": [
+        "A",
+        "D",
+        "E"
+      ],
+      "objects": [
+        "无人空亭",
+        "低石岸",
+        "疏芦或枝影",
+        "淡水纹"
+      ],
+      "narrative": "后段繁华消歇后的空亭仍承接前段沉香亭，提供有物可寄的余韵。",
+      "depth": "中远景偏下，亭不居正中，不配新游宴人群。",
+      "reuse": "C4-T032 湖面建筑只作风格参考；现有素材没有干净无人空亭，建议独立新制。"
+    },
+    "c4-fallen-branch": {
+      "types": [
+        "A",
+        "C"
+      ],
+      "objects": [
+        "低位残花枝",
+        "少量落瓣",
+        "石岸断续草叶"
+      ],
+      "narrative": "盛花变残花，弱化原来漂浮的大牡丹小簇所造成的补丁感。",
+      "depth": "前景贴下缘，枝根有岸石承托，不能凭空漂浮。",
+      "reuse": "已有牡丹 atlas 只可极少量落瓣，不能作为实体接地层；需稀疏残枝新图。"
+    },
+    "shared-atmosphere": {
+      "types": [
+        "A",
+        "E"
+      ],
+      "objects": [
+        "疏淡云气",
+        "低对比远山"
+      ],
+      "narrative": "只缓和新旧实体层散边，不独自顶替地台、水岸或叙事物件。",
+      "depth": "远景和局部散边。",
+      "reuse": "现有 ink-mist-bridge / distant-ridge-bridge 可克制复用，严禁再铺一套同峰轮廓。"
+    }
+  },
+  "integrationRules": [
+    "Plan first; all asset IDs here are proposed concepts, not existing files or implementation claims.",
+    "Create separate transparent full-subject layers with natural edges and safe gutters; preserve original source assets and Blender camera route.",
+    "One world-space continuous layer may serve neighboring gap/stop margins; never make one screen-fixed picture for every screenshot.",
+    "Use the same world positions in browser and derived Blender; preserve original narrative subjects and original source blends.",
+    "Avoid copying entire existing composite paintings: repeated people, bridges, facades or giant peony balls worsen collage quality.",
+    "Current shared mist/ridge assets can soften joins only; a thin line, cloud wash or floating petals alone cannot close a failed narrative/ground continuity region.",
+    "Keep new central gaps low/middle; each view retains the explicit region tagged 保留留白.",
+    "New object foot/shore relation must persist across all progress values; test original motion on and off and narrowing windows.",
+    "If a proposed asset overlaps original HTML title/caption, adjust the new object placement/depth or select another nearby space; do not remove the original caption to hide overlap."
+  ],
+  "risks": [
+    {
+      "risk": "填补变为新一张大拼贴",
+      "mitigation": "优先6项第四卷独立物体/空间资产，再做世界层组合；不生成整幅场景死图。"
+    },
+    {
+      "risk": "把末段加回盛景",
+      "mitigation": "p>=.5 降饱和、减少物件；无人空亭、诗卷、落花低置，上方大留白明确保留。"
+    },
+    {
+      "risk": "同一条岸/同一亭连续重复",
+      "mitigation": "岸线须延展而非镜像连续贴，亭最多作少数清楚停顿，前后有密淡变化。"
+    },
+    {
+      "risk": "旧内容层次跳动影响新层验收",
+      "mitigation": "先锁定原层级/透明排序证据；新增层稳定深度，并于动效开/关与多个进度检验遮挡。"
+    },
+    {
+      "risk": "只看中点忽略中途穿帮",
+      "mitigation": "34图是明确基线，还需每gap至少两个非中点抽样及连续拖拽视频。"
+    },
+    {
+      "risk": "本审图为宽屏静帧",
+      "mitigation": "本报告不证明移动窄窗/动态/显存验收；整合后需实测。"
+    }
+  ],
+  "views": [
+    {
+      "id": "c3-stop-01",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 1,
+      "storyboardName": "第一景",
+      "progress": 0,
+      "screenshot": "reports/reconstruction/after/chapter-3-stop-01.jpg",
+      "sha256": "1dceba5590985d428ac3e182069b0b70f2a560e07a3f8bf54f0e5605d02f3b7d",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-3-stop-01.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "卷首左题首清楚、绣娘/绘瓷/器物密度足；左下浅灰山地突然横切到作坊底脚，需轻量落地而非再加人物。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.03,
+            0.04,
+            0.15,
+            0.54
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "卷首“锦绣花意”及小字、印章的阅读留白。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "卷首“锦绣花意”及小字、印章的阅读留白。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c3-stop-01-r1"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.01,
+            0.62,
+            0.19,
+            0.36
+          ],
+          "classCodes": [
+            3,
+            5
+          ],
+          "classes": [
+            "层次不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "左下只有同一灰绿山形和几条细线，不能说明近处作坊所在地。",
+          "existingDiscontinuity": "左下只有同一灰绿山形和几条细线，不能说明近处作坊所在地。",
+          "action": "相邻 gap 的作坊低墙/花砖角延伸少量进来；主体不再扩大。",
+          "plannedAssetIds": [
+            "c3-workshop-court"
+          ],
+          "newTypes": [
+            "A",
+            "D"
+          ],
+          "objects": [
+            "作坊低院墙",
+            "斜向花砖地台",
+            "少量庭院花木"
+          ],
+          "narrative": "从器用陈列进入民俗生活。",
+          "depth": "低中景，左低右高连接作坊脚。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P2",
+          "id": "c3-stop-01-r2"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-02",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 2,
+      "storyboardName": "第二景",
+      "progress": 0.12341644431101914,
+      "screenshot": "reports/reconstruction/after/chapter-3-stop-02.jpg",
+      "sha256": "a48defded39235b651150af883c3855cc30cae16a24f69fd5757908b330e2f43",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-3-stop-02.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "上下宫廷/街市组本身很满；两侧山纸带重复，右侧从婚礼屋檐向空底硬收，中央大花不应再增大。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.02,
+            0.02,
+            0.13,
+            0.32
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "上左留出色彩缓冲，不再加凤凰或灯笼。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "上左留出色彩缓冲，不再加凤凰或灯笼。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c3-stop-02-r1"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.87,
+            0.55,
+            0.13,
+            0.43
+          ],
+          "classCodes": [
+            2,
+            3
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白"
+          ],
+          "observation": "右边婚礼街市地面和屋檐结束后直接落纸，场景接到下一卷锦帛之前缺承托。",
+          "existingDiscontinuity": "右边婚礼街市地面和屋檐结束后直接落纸，场景接到下一卷锦帛之前缺承托。",
+          "action": "从相邻 gap 引入低矮巷沿和一小段锦架，保留右上天空。",
+          "plannedAssetIds": [
+            "c3-lantern-lane",
+            "c3-brocade-rail"
+          ],
+          "newTypes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "F"
+          ],
+          "objects": [
+            "民居短巷与院门",
+            "牡丹花灯两盏",
+            "弯曲园路",
+            "低矮织锦陈列架",
+            "两段垂布",
+            "团扇或妆匣"
+          ],
+          "narrative": "从仪式展示转入穿戴与手作。",
+          "depth": "低中景，不高于原上方人物裙摆。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P2",
+          "id": "c3-stop-02-r2"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-03",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 3,
+      "storyboardName": "第三景",
+      "progress": 0.24713803226885958,
+      "screenshot": "reports/reconstruction/after/chapter-3-stop-03.jpg",
+      "sha256": "72bc45e81d251a5f096f2b987cdaa51a57f241ec82bfe90800c6d2aa4976a9bc",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-3-stop-03.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "嫁衣/凤纹主体完整且密，右上题诗有纸底；两侧下部仍是平铺山纸，与婚嫁室内不属于同一空间。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.59,
+            0.14,
+            0.18,
+            0.19
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "“凤穿牡丹”题字及周围纸底必须呼吸。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "“凤穿牡丹”题字及周围纸底必须呼吸。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c3-stop-03-r1"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.02,
+            0.58,
+            0.12,
+            0.4
+          ],
+          "classCodes": [
+            2,
+            3
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白"
+          ],
+          "observation": "左下室内侍女和衣摆外侧没有地面层，平山像占位符。",
+          "existingDiscontinuity": "左下室内侍女和衣摆外侧没有地面层，平山像占位符。",
+          "action": "只让相邻的花砖地台与锦布尾角延入；不加新人群或更大花簇。",
+          "plannedAssetIds": [
+            "c3-workshop-court",
+            "c3-brocade-rail"
+          ],
+          "newTypes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "F"
+          ],
+          "objects": [
+            "作坊低院墙",
+            "斜向花砖地台",
+            "少量庭院花木",
+            "低矮织锦陈列架",
+            "两段垂布",
+            "团扇或妆匣"
+          ],
+          "narrative": "婚嫁纹样须有生活器具和礼俗空间承载。",
+          "depth": "前中景偏下。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P2",
+          "id": "c3-stop-03-r2"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-04",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 4,
+      "storyboardName": "第四景",
+      "progress": 0.37069251986073537,
+      "screenshot": "reports/reconstruction/after/chapter-3-stop-04.jpg",
+      "sha256": "770c8c14acbc00d9d55c22a3a1278a5bdc69fc217ca7f94a8e3f0d7d51022532",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-3-stop-04.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "婚礼、凤凰与迎亲上下拼贴已密；右上题字要保留，左下及右下街道外侧缺低位承接。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.64,
+            0.12,
+            0.22,
+            0.24
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "“花结良缘”两行正文与标题不可用花枝遮盖。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "“花结良缘”两行正文与标题不可用花枝遮盖。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c3-stop-04-r1"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.03,
+            0.65,
+            0.16,
+            0.33
+          ],
+          "classCodes": [
+            2,
+            3
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白"
+          ],
+          "observation": "迎亲与左下陈设两端未落在同一地面，侧边纸底面积失衡。",
+          "existingDiscontinuity": "迎亲与左下陈设两端未落在同一地面，侧边纸底面积失衡。",
+          "action": "一段铺地和淡民居墙角从 gap 接入即可，中央凤凰留空边。",
+          "plannedAssetIds": [
+            "c3-lantern-lane"
+          ],
+          "newTypes": [
+            "A",
+            "D",
+            "F"
+          ],
+          "objects": [
+            "民居短巷与院门",
+            "牡丹花灯两盏",
+            "弯曲园路"
+          ],
+          "narrative": "礼俗从家门走入民间街巷。",
+          "depth": "中景地面，以斜向路沿引向下一景。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P2",
+          "id": "c3-stop-04-r2"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-05",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 5,
+      "storyboardName": "第五景",
+      "progress": 0.4947845160644397,
+      "screenshot": "reports/reconstruction/after/chapter-3-stop-05.jpg",
+      "sha256": "4bedd119a71e3c79ec6d449a0e33f802cb8e15b0bc634db65ed7ae9d044c48e0",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-3-stop-05.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "屋檐与贴年画人物成为右侧大主体，左下街景完整；左上到街口之间只有重复山形，岁时氛围未连续。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.02,
+            0.01,
+            0.35,
+            0.17
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "屋檐上方和远街上方保留冬日/节庆纸天空，不铺满灯。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "屋檐上方和远街上方保留冬日/节庆纸天空，不铺满灯。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c3-stop-05-r1"
+        },
+        {
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.02,
+            0.34,
+            0.16,
+            0.62
+          ],
+          "classCodes": [
+            1,
+            3,
+            4
+          ],
+          "classes": [
+            "叙事缺失型空白",
+            "层次不足型空白",
+            "气氛不足型空白"
+          ],
+          "observation": "近街左缘没有院墙/地台承托，民居侧面外突然是空山底。",
+          "existingDiscontinuity": "近街左缘没有院墙/地台承托，民居侧面外突然是空山底。",
+          "action": "低位延续巷口、花灯及疏枝；一盏独立灯即可，不堆春花。",
+          "plannedAssetIds": [
+            "c3-lantern-lane"
+          ],
+          "newTypes": [
+            "A",
+            "D",
+            "F"
+          ],
+          "objects": [
+            "民居短巷与院门",
+            "牡丹花灯两盏",
+            "弯曲园路"
+          ],
+          "narrative": "岁时祈福进入普通家庭。",
+          "depth": "中景路沿，后景屋脊更淡。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P2",
+          "id": "c3-stop-05-r2"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-06",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 6,
+      "storyboardName": "第六景",
+      "progress": 0.6190812816082915,
+      "screenshot": "reports/reconstruction/after/chapter-3-stop-06.jpg",
+      "sha256": "e72f2b69d029cb70c5ef8356d437f592e23dbe5cb251c687565e6fe4663687de",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-3-stop-06.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "家庭绣作/传承组与右侧器物密度足，上方岁岁圆满题字清楚；左下组脚外仍悬纸。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.54,
+            0.03,
+            0.34,
+            0.26
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "岁岁圆满和吉庆印的纸底，飞燕与文字之间保留间距。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "岁岁圆满和吉庆印的纸底，飞燕与文字之间保留间距。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c3-stop-06-r1"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.02,
+            0.65,
+            0.15,
+            0.33
+          ],
+          "classCodes": [
+            3
+          ],
+          "classes": [
+            "层次不足型空白"
+          ],
+          "observation": "作坊太湖石与绣桌外缘没有邻接地坪。",
+          "existingDiscontinuity": "作坊太湖石与绣桌外缘没有邻接地坪。",
+          "action": "相邻低台与花砖一角进入，不增加第二个镜台。",
+          "plannedAssetIds": [
+            "c3-wares-step",
+            "c3-workshop-court"
+          ],
+          "newTypes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "F"
+          ],
+          "objects": [
+            "矮台",
+            "花瓶",
+            "镜匣",
+            "一卷刺绣布",
+            "作坊低院墙",
+            "斜向花砖地台",
+            "少量庭院花木"
+          ],
+          "narrative": "手作器用成为家传日用。",
+          "depth": "低近景，物件低于原人物手部。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P2",
+          "id": "c3-stop-06-r2"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-07",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 7,
+      "storyboardName": "第七景",
+      "progress": 0.7432605852233363,
+      "screenshot": "reports/reconstruction/after/chapter-3-stop-07.jpg",
+      "sha256": "a618503c70bde07e876a0fed7e1185983adeb7fc0c64c30177f61ed151953742",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-3-stop-07.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "大镜台与右下作坊都完整，右上宫苑像悬挂画片；上/下组之间较大白洞需一层器物到空间的转接。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.01,
+            0.03,
+            0.15,
+            0.35
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "镜台左上纸天空为大花组让出呼吸。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "镜台左上纸天空为大花组让出呼吸。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c3-stop-07-r1"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.55,
+            0.34,
+            0.23,
+            0.18
+          ],
+          "classCodes": [
+            3,
+            5
+          ],
+          "classes": [
+            "层次不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "上方宫苑平台与下方作坊之间是悬空槽，镜台飘带只能装饰，未提供空间承托。",
+          "existingDiscontinuity": "上方宫苑平台与下方作坊之间是悬空槽，镜台飘带只能装饰，未提供空间承托。",
+          "action": "以低对比窗棂/疏院墙与矮器物台形成斜线，不能再添整座宫殿。",
+          "plannedAssetIds": [
+            "c3-workshop-court",
+            "c3-wares-step"
+          ],
+          "newTypes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "F"
+          ],
+          "objects": [
+            "作坊低院墙",
+            "斜向花砖地台",
+            "少量庭院花木",
+            "矮台",
+            "花瓶",
+            "镜匣",
+            "一卷刺绣布"
+          ],
+          "narrative": "上层陈设与民间器用之间形成实际空间关系。",
+          "depth": "中景在原镜台后、原上方平台前，保持遮挡顺序。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c3-stop-07-r2"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-08",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 8,
+      "storyboardName": "第八景",
+      "progress": 0.8673259018926424,
+      "screenshot": "reports/reconstruction/after/chapter-3-stop-08.jpg",
+      "sha256": "cd01e01393906b60e934399768b4b643fb5a4c84868f6e0f6dfde1edc2295220",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-3-stop-08.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "右侧器物/圆屏/婚俗与书案组信息丰富，左上空天是合适气口，左下山根和书案脚需接到邻景。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.02,
+            0.01,
+            0.4,
+            0.28
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "书画修身段的上左纸天空，减轻右侧器物密度。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "书画修身段的上左纸天空，减轻右侧器物密度。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c3-stop-08-r1"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.02,
+            0.71,
+            0.17,
+            0.27
+          ],
+          "classCodes": [
+            2,
+            3
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白"
+          ],
+          "observation": "左下远山像剪贴片，书案垫地在边缘消失，难与前景连读。",
+          "existingDiscontinuity": "左下远山像剪贴片，书案垫地在边缘消失，难与前景连读。",
+          "action": "用疏柳小庭/书院路与低岸延伸，把相邻 gap 的地面接入。",
+          "plannedAssetIds": [
+            "c3-scholars-bank"
+          ],
+          "newTypes": [
+            "A",
+            "D",
+            "E"
+          ],
+          "objects": [
+            "疏柳小庭院",
+            "淡墨远村屋脊",
+            "弯曲水岸或书院园路"
+          ],
+          "narrative": "器用吉祥转为士人修身与安宁愿景。",
+          "depth": "中远景，岸线不穿书案腿。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P2",
+          "id": "c3-stop-08-r2"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-09",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 9,
+      "storyboardName": "第九景",
+      "progress": 0.9903868032819582,
+      "screenshot": "reports/reconstruction/after/chapter-3-stop-09.jpg",
+      "sha256": "20604d8c00c1e5b20e7f52ab3b2aefaac50d22240bba1794487273ba0f34b23a",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-3-stop-09.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "大花、书画、民生与城景均在；左侧空纸可作卷尾喘息，但不能只靠统一灰绿山形。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.02,
+            0.02,
+            0.14,
+            0.36
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "终景左上作为卷尾气口，与右侧民生远景相衡。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "终景左上作为卷尾气口，与右侧民生远景相衡。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c3-stop-09-r1"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.01,
+            0.64,
+            0.14,
+            0.34
+          ],
+          "classCodes": [
+            3,
+            4
+          ],
+          "classes": [
+            "层次不足型空白",
+            "气氛不足型空白"
+          ],
+          "observation": "书画场景左缘树石外到纸底无自然延续，灰绿山形太平。",
+          "existingDiscontinuity": "书画场景左缘树石外到纸底无自然延续，灰绿山形太平。",
+          "action": "只引入低墨疏岸和一枝小景；末端逐步散开，不添新主角。",
+          "plannedAssetIds": [
+            "c3-scholars-bank"
+          ],
+          "newTypes": [
+            "A",
+            "D",
+            "E"
+          ],
+          "objects": [
+            "疏柳小庭院",
+            "淡墨远村屋脊",
+            "弯曲水岸或书院园路"
+          ],
+          "narrative": "家国安宁的愿望落在可居可游的民生日常。",
+          "depth": "中远景低位。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P2",
+          "id": "c3-stop-09-r2"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-01",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 1,
+      "storyboardName": "第一景 → 第二景",
+      "progress": 0.06170822215550957,
+      "screenshot": "reports/reconstruction/after/chapter-3-gap-01.jpg",
+      "sha256": "b99502bd06441550d11dffdbebc1e90ae873eb8ad68a7b708d778410ce671ffd",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-3-gap-01.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "左作坊与右上宫廷/右下婚礼市集之间宽纸洞，只有灰山剪影。 这不是可直接保留的国画气口，须补实体/空间承接。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.45,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "中央上方纸天空留作章节节奏；下方承接补好后，上方仍应显著见纸。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "中央上方纸天空留作章节节奏；下方承接补好后，上方仍应显著见纸。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c3-gap-01-r1"
+        },
+        {
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.45,
+            0.3,
+            0.21,
+            0.54
+          ],
+          "classCodes": [
+            1,
+            2,
+            3
+          ],
+          "classes": [
+            "叙事缺失型空白",
+            "转场断裂型空白",
+            "层次不足型空白"
+          ],
+          "observation": "左作坊与右上宫廷/右下婚礼市集之间宽纸洞，只有灰山剪影。",
+          "existingDiscontinuity": "左作坊与右上宫廷/右下婚礼市集之间宽纸洞，只有灰山剪影。",
+          "action": "作坊院墙和锦架连接工艺—婚俗，右侧低路沿进街市。",
+          "plannedAssetIds": [
+            "c3-workshop-court",
+            "c3-brocade-rail"
+          ],
+          "newTypes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "F"
+          ],
+          "objects": [
+            "作坊低院墙",
+            "斜向花砖地台",
+            "少量庭院花木",
+            "低矮织锦陈列架",
+            "两段垂布",
+            "团扇或妆匣"
+          ],
+          "narrative": "手作之美进入婚嫁吉祥。",
+          "depth": "以中景为主，远景比原复合主体更淡；不能放在最前盖人物。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c3-gap-01-r2"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.42,
+            0.78,
+            0.27,
+            0.2
+          ],
+          "classCodes": [
+            2,
+            3,
+            5
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "下部没有共享地面，左右素材各自悬在纸上。",
+          "existingDiscontinuity": "下部没有共享地面，左右素材各自悬在纸上。",
+          "action": "少量花砖/锦布垂角接上作坊脚与街市地面。",
+          "plannedAssetIds": [
+            "c3-workshop-court"
+          ],
+          "newTypes": [
+            "A",
+            "D"
+          ],
+          "objects": [
+            "作坊低院墙",
+            "斜向花砖地台",
+            "少量庭院花木"
+          ],
+          "narrative": "手作之美进入婚嫁吉祥。",
+          "depth": "低位前中景；只占边角，不铺满纸底。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c3-gap-01-r3"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-02",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 2,
+      "storyboardName": "第二景 → 第三景",
+      "progress": 0.18527723828993936,
+      "screenshot": "reports/reconstruction/after/chapter-3-gap-02.jpg",
+      "sha256": "07d3ecbfb75a778b02aa5634ca2345684b0cfdb2b3a6cad84866d860e17cd316",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-3-gap-02.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "左上下两块婚礼市集退场，右婚服入场，中间无实体承接，灰山重复。 这不是可直接保留的国画气口，须补实体/空间承接。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.36,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "中央上方纸天空留作章节节奏；下方承接补好后，上方仍应显著见纸。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "中央上方纸天空留作章节节奏；下方承接补好后，上方仍应显著见纸。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c3-gap-02-r1"
+        },
+        {
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.36,
+            0.27,
+            0.29,
+            0.49
+          ],
+          "classCodes": [
+            1,
+            2,
+            3
+          ],
+          "classes": [
+            "叙事缺失型空白",
+            "转场断裂型空白",
+            "层次不足型空白"
+          ],
+          "observation": "左上下两块婚礼市集退场，右婚服入场，中间无实体承接，灰山重复。",
+          "existingDiscontinuity": "左上下两块婚礼市集退场，右婚服入场，中间无实体承接，灰山重复。",
+          "action": "一架独立织锦与小院门居中偏下，形成从庆典到嫁衣的视线。",
+          "plannedAssetIds": [
+            "c3-brocade-rail",
+            "c3-workshop-court"
+          ],
+          "newTypes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "F"
+          ],
+          "objects": [
+            "低矮织锦陈列架",
+            "两段垂布",
+            "团扇或妆匣",
+            "作坊低院墙",
+            "斜向花砖地台",
+            "少量庭院花木"
+          ],
+          "narrative": "凤穿牡丹从公共礼俗落到可触的婚衣织物。",
+          "depth": "以中景为主，远景比原复合主体更淡；不能放在最前盖人物。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c3-gap-02-r2"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.34,
+            0.76,
+            0.32,
+            0.22
+          ],
+          "classCodes": [
+            2,
+            3,
+            5
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "下部没有共享地面，左右素材各自悬在纸上。",
+          "existingDiscontinuity": "下部没有共享地面，左右素材各自悬在纸上。",
+          "action": "用碎石/花砖地台接锦架，保留飘带上方空天。",
+          "plannedAssetIds": [
+            "c3-workshop-court"
+          ],
+          "newTypes": [
+            "A",
+            "D"
+          ],
+          "objects": [
+            "作坊低院墙",
+            "斜向花砖地台",
+            "少量庭院花木"
+          ],
+          "narrative": "凤穿牡丹从公共礼俗落到可触的婚衣织物。",
+          "depth": "低位前中景；只占边角，不铺满纸底。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c3-gap-02-r3"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-03",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 3,
+      "storyboardName": "第三景 → 第四景",
+      "progress": 0.30891527606479746,
+      "screenshot": "reports/reconstruction/after/chapter-3-gap-03.jpg",
+      "sha256": "a5db6bbe95b7bc72e712aae78aed2131306fb022744491e083c78b7caa7ba52b",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-3-gap-03.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "左迎亲队伍与右婚礼室内被中央山形和空纸切开，像两张海报。 这不是可直接保留的国画气口，须补实体/空间承接。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.32,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "中央上方纸天空留作章节节奏；下方承接补好后，上方仍应显著见纸。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "中央上方纸天空留作章节节奏；下方承接补好后，上方仍应显著见纸。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c3-gap-03-r1"
+        },
+        {
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.32,
+            0.32,
+            0.33,
+            0.43
+          ],
+          "classCodes": [
+            1,
+            2,
+            3
+          ],
+          "classes": [
+            "叙事缺失型空白",
+            "转场断裂型空白",
+            "层次不足型空白"
+          ],
+          "observation": "左迎亲队伍与右婚礼室内被中央山形和空纸切开，像两张海报。",
+          "existingDiscontinuity": "左迎亲队伍与右婚礼室内被中央山形和空纸切开，像两张海报。",
+          "action": "路沿/低墙斜接仪仗与家门，一盏灯和锦架作低位节奏。",
+          "plannedAssetIds": [
+            "c3-lantern-lane",
+            "c3-brocade-rail"
+          ],
+          "newTypes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "F"
+          ],
+          "objects": [
+            "民居短巷与院门",
+            "牡丹花灯两盏",
+            "弯曲园路",
+            "低矮织锦陈列架",
+            "两段垂布",
+            "团扇或妆匣"
+          ],
+          "narrative": "迎亲走进家门，礼俗空间而非宏大山水。",
+          "depth": "以中景为主，远景比原复合主体更淡；不能放在最前盖人物。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P0",
+          "id": "c3-gap-03-r2"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.28,
+            0.76,
+            0.5,
+            0.22
+          ],
+          "classCodes": [
+            2,
+            3,
+            5
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "下部没有共享地面，左右素材各自悬在纸上。",
+          "existingDiscontinuity": "下部没有共享地面，左右素材各自悬在纸上。",
+          "action": "铺地断续延续，留出两段纸底气口。",
+          "plannedAssetIds": [
+            "c3-workshop-court"
+          ],
+          "newTypes": [
+            "A",
+            "D"
+          ],
+          "objects": [
+            "作坊低院墙",
+            "斜向花砖地台",
+            "少量庭院花木"
+          ],
+          "narrative": "迎亲走进家门，礼俗空间而非宏大山水。",
+          "depth": "低位前中景；只占边角，不铺满纸底。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c3-gap-03-r3"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-04",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 4,
+      "storyboardName": "第四景 → 第五景",
+      "progress": 0.43273851796258755,
+      "screenshot": "reports/reconstruction/after/chapter-3-gap-04.jpg",
+      "sha256": "4ad6706bc1c6824a66eb34f23621fd89ea02309c02fb5bc746d28680eab8cacd",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-3-gap-04.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "迎亲门楼退场到雪街入场，中间几乎整片空山底，没有时令转场。 这不是可直接保留的国画气口，须补实体/空间承接。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.34,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "中央上方纸天空留作章节节奏；下方承接补好后，上方仍应显著见纸。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "中央上方纸天空留作章节节奏；下方承接补好后，上方仍应显著见纸。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c3-gap-04-r1"
+        },
+        {
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.34,
+            0.29,
+            0.31,
+            0.45
+          ],
+          "classCodes": [
+            1,
+            2,
+            3
+          ],
+          "classes": [
+            "叙事缺失型空白",
+            "转场断裂型空白",
+            "层次不足型空白"
+          ],
+          "observation": "迎亲门楼退场到雪街入场，中间几乎整片空山底，没有时令转场。",
+          "existingDiscontinuity": "迎亲门楼退场到雪街入场，中间几乎整片空山底，没有时令转场。",
+          "action": "淡民居院墙/短巷与花灯连接，两端节庆红色逐步降强，保持雪街原色。",
+          "plannedAssetIds": [
+            "c3-lantern-lane"
+          ],
+          "newTypes": [
+            "A",
+            "D",
+            "F"
+          ],
+          "objects": [
+            "民居短巷与院门",
+            "牡丹花灯两盏",
+            "弯曲园路"
+          ],
+          "narrative": "婚嫁家门过渡到岁时家运祈愿。",
+          "depth": "以中景为主，远景比原复合主体更淡；不能放在最前盖人物。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P0",
+          "id": "c3-gap-04-r2"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.29,
+            0.74,
+            0.4,
+            0.24
+          ],
+          "classCodes": [
+            2,
+            3,
+            5
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "下部没有共享地面，左右素材各自悬在纸上。",
+          "existingDiscontinuity": "下部没有共享地面，左右素材各自悬在纸上。",
+          "action": "屋脚与街口以低地台和疏枝连接，不另复制整街。",
+          "plannedAssetIds": [
+            "c3-workshop-court"
+          ],
+          "newTypes": [
+            "A",
+            "D"
+          ],
+          "objects": [
+            "作坊低院墙",
+            "斜向花砖地台",
+            "少量庭院花木"
+          ],
+          "narrative": "婚嫁家门过渡到岁时家运祈愿。",
+          "depth": "低位前中景；只占边角，不铺满纸底。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c3-gap-04-r3"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-05",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 5,
+      "storyboardName": "第五景 → 第六景",
+      "progress": 0.5569328988363655,
+      "screenshot": "reports/reconstruction/after/chapter-3-gap-05.jpg",
+      "sha256": "d949f3e7db82ba045f06eb22b060a02ae4623f2eec1d2a48f903e3b156b16d47",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-3-gap-05.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "左右两组大建筑对峙，中央灰山底与两端居家场景不属同一空间。 这不是可直接保留的国画气口，须补实体/空间承接。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.4,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "中央上方纸天空留作章节节奏；下方承接补好后，上方仍应显著见纸。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "中央上方纸天空留作章节节奏；下方承接补好后，上方仍应显著见纸。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c3-gap-05-r1"
+        },
+        {
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.4,
+            0.25,
+            0.24,
+            0.47
+          ],
+          "classCodes": [
+            1,
+            2,
+            3
+          ],
+          "classes": [
+            "叙事缺失型空白",
+            "转场断裂型空白",
+            "层次不足型空白"
+          ],
+          "observation": "左右两组大建筑对峙，中央灰山底与两端居家场景不属同一空间。",
+          "existingDiscontinuity": "左右两组大建筑对峙，中央灰山底与两端居家场景不属同一空间。",
+          "action": "低院墙弯向右侧家庭绣作，矮器物台可小量点景。",
+          "plannedAssetIds": [
+            "c3-workshop-court",
+            "c3-wares-step"
+          ],
+          "newTypes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "F"
+          ],
+          "objects": [
+            "作坊低院墙",
+            "斜向花砖地台",
+            "少量庭院花木",
+            "矮台",
+            "花瓶",
+            "镜匣",
+            "一卷刺绣布"
+          ],
+          "narrative": "年节装饰落到代际手作传承。",
+          "depth": "以中景为主，远景比原复合主体更淡；不能放在最前盖人物。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c3-gap-05-r2"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.4,
+            0.74,
+            0.25,
+            0.24
+          ],
+          "classCodes": [
+            2,
+            3,
+            5
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "下部没有共享地面，左右素材各自悬在纸上。",
+          "existingDiscontinuity": "下部没有共享地面，左右素材各自悬在纸上。",
+          "action": "地砖层下缘淡出，不能横成一条硬底板。",
+          "plannedAssetIds": [
+            "c3-workshop-court"
+          ],
+          "newTypes": [
+            "A",
+            "D"
+          ],
+          "objects": [
+            "作坊低院墙",
+            "斜向花砖地台",
+            "少量庭院花木"
+          ],
+          "narrative": "年节装饰落到代际手作传承。",
+          "depth": "低位前中景；只占边角，不铺满纸底。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c3-gap-05-r3"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-06",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 6,
+      "storyboardName": "第六景 → 第七景",
+      "progress": 0.6811709334158138,
+      "screenshot": "reports/reconstruction/after/chapter-3-gap-06.jpg",
+      "sha256": "1e8d556b859201c4af729922d9eb57396e606d0eeced035fb12708ecaa753dd8",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-3-gap-06.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "最宽空洞之一：左家人桌屏和右镜台相隔约半幅画心，山形像占位符。 这不是可直接保留的国画气口，须补实体/空间承接。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.35,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "中央上方纸天空留作章节节奏；下方承接补好后，上方仍应显著见纸。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "中央上方纸天空留作章节节奏；下方承接补好后，上方仍应显著见纸。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c3-gap-06-r1"
+        },
+        {
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.35,
+            0.28,
+            0.43,
+            0.48
+          ],
+          "classCodes": [
+            1,
+            2,
+            3
+          ],
+          "classes": [
+            "叙事缺失型空白",
+            "转场断裂型空白",
+            "层次不足型空白"
+          ],
+          "observation": "最宽空洞之一：左家人桌屏和右镜台相隔约半幅画心，山形像占位符。",
+          "existingDiscontinuity": "最宽空洞之一：左家人桌屏和右镜台相隔约半幅画心，山形像占位符。",
+          "action": "矮器物台（小瓶/镜匣/绣布）配院中低栏，形成中近景双锚点。",
+          "plannedAssetIds": [
+            "c3-wares-step",
+            "c3-workshop-court"
+          ],
+          "newTypes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "F"
+          ],
+          "objects": [
+            "矮台",
+            "花瓶",
+            "镜匣",
+            "一卷刺绣布",
+            "作坊低院墙",
+            "斜向花砖地台",
+            "少量庭院花木"
+          ],
+          "narrative": "代际手作成为可日用、可传家的器物。",
+          "depth": "以中景为主，远景比原复合主体更淡；不能放在最前盖人物。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P0",
+          "id": "c3-gap-06-r2"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.35,
+            0.76,
+            0.44,
+            0.22
+          ],
+          "classCodes": [
+            2,
+            3,
+            5
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "下部没有共享地面，左右素材各自悬在纸上。",
+          "existingDiscontinuity": "下部没有共享地面，左右素材各自悬在纸上。",
+          "action": "低台脚下落地，疏枝只遮一角；不要再添第三个大牡丹球。",
+          "plannedAssetIds": [
+            "c3-workshop-court"
+          ],
+          "newTypes": [
+            "A",
+            "D"
+          ],
+          "objects": [
+            "作坊低院墙",
+            "斜向花砖地台",
+            "少量庭院花木"
+          ],
+          "narrative": "代际手作成为可日用、可传家的器物。",
+          "depth": "低位前中景；只占边角，不铺满纸底。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c3-gap-06-r3"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-07",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 7,
+      "storyboardName": "第七景 → 第八景",
+      "progress": 0.8052932435579894,
+      "screenshot": "reports/reconstruction/after/chapter-3-gap-07.jpg",
+      "sha256": "80dd6430e9269d5c460e5f449f25244760f2d53fcd03061477733fcc347e9749",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-3-gap-07.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "作坊退场到书画人物入场，中段只见同轮廓山形，工艺到文人缺叙事转折。 这不是可直接保留的国画气口，须补实体/空间承接。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.3,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "中央上方纸天空留作章节节奏；下方承接补好后，上方仍应显著见纸。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "中央上方纸天空留作章节节奏；下方承接补好后，上方仍应显著见纸。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c3-gap-07-r1"
+        },
+        {
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.3,
+            0.25,
+            0.31,
+            0.46
+          ],
+          "classCodes": [
+            1,
+            2,
+            3
+          ],
+          "classes": [
+            "叙事缺失型空白",
+            "转场断裂型空白",
+            "层次不足型空白"
+          ],
+          "observation": "作坊退场到书画人物入场，中段只见同轮廓山形，工艺到文人缺叙事转折。",
+          "existingDiscontinuity": "作坊退场到书画人物入场，中段只见同轮廓山形，工艺到文人缺叙事转折。",
+          "action": "疏柳小庭/书院低墙和一组小器用接力，由近及远连续。",
+          "plannedAssetIds": [
+            "c3-scholars-bank",
+            "c3-wares-step"
+          ],
+          "newTypes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F"
+          ],
+          "objects": [
+            "疏柳小庭院",
+            "淡墨远村屋脊",
+            "弯曲水岸或书院园路",
+            "矮台",
+            "花瓶",
+            "镜匣",
+            "一卷刺绣布"
+          ],
+          "narrative": "牡丹器用纹样进入书斋品格与修身。",
+          "depth": "以中景为主，远景比原复合主体更淡；不能放在最前盖人物。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P0",
+          "id": "c3-gap-07-r2"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.28,
+            0.74,
+            0.37,
+            0.24
+          ],
+          "classCodes": [
+            2,
+            3,
+            5
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "下部没有共享地面，左右素材各自悬在纸上。",
+          "existingDiscontinuity": "下部没有共享地面，左右素材各自悬在纸上。",
+          "action": "曲岸/园路轻斜接书案景根部，留上天空。",
+          "plannedAssetIds": [
+            "c3-scholars-bank"
+          ],
+          "newTypes": [
+            "A",
+            "D",
+            "E"
+          ],
+          "objects": [
+            "疏柳小庭院",
+            "淡墨远村屋脊",
+            "弯曲水岸或书院园路"
+          ],
+          "narrative": "牡丹器用纹样进入书斋品格与修身。",
+          "depth": "低位前中景；只占边角，不铺满纸底。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c3-gap-07-r3"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-08",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 8,
+      "storyboardName": "第八景 → 第九景",
+      "progress": 0.9288563525873003,
+      "screenshot": "reports/reconstruction/after/chapter-3-gap-08.jpg",
+      "sha256": "6249dcbc331456a07aa92876c84fed6645ee1b0b7ab45b58e70014b313364af4",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-3-gap-08.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "左器物/游园拼贴退场与右民生/书画拼贴入场之间裸纸洞。 这不是可直接保留的国画气口，须补实体/空间承接。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.45,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "中央上方纸天空留作章节节奏；下方承接补好后，上方仍应显著见纸。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "中央上方纸天空留作章节节奏；下方承接补好后，上方仍应显著见纸。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c3-gap-08-r1"
+        },
+        {
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.45,
+            0.28,
+            0.22,
+            0.42
+          ],
+          "classCodes": [
+            1,
+            2,
+            3
+          ],
+          "classes": [
+            "叙事缺失型空白",
+            "转场断裂型空白",
+            "层次不足型空白"
+          ],
+          "observation": "左器物/游园拼贴退场与右民生/书画拼贴入场之间裸纸洞。",
+          "existingDiscontinuity": "左器物/游园拼贴退场与右民生/书画拼贴入场之间裸纸洞。",
+          "action": "淡远村屋脊和疏岸接向右城景，避免新增更大的皇城。",
+          "plannedAssetIds": [
+            "c3-scholars-bank"
+          ],
+          "newTypes": [
+            "A",
+            "D",
+            "E"
+          ],
+          "objects": [
+            "疏柳小庭院",
+            "淡墨远村屋脊",
+            "弯曲水岸或书院园路"
+          ],
+          "narrative": "从居家美满收束到家国民生安宁。",
+          "depth": "以中景为主，远景比原复合主体更淡；不能放在最前盖人物。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c3-gap-08-r2"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.45,
+            0.72,
+            0.22,
+            0.26
+          ],
+          "classCodes": [
+            2,
+            3,
+            5
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "下部没有共享地面，左右素材各自悬在纸上。",
+          "existingDiscontinuity": "下部没有共享地面，左右素材各自悬在纸上。",
+          "action": "一段低岸和极少花木接地，卷尾留淡。",
+          "plannedAssetIds": [
+            "c3-scholars-bank"
+          ],
+          "newTypes": [
+            "A",
+            "D",
+            "E"
+          ],
+          "objects": [
+            "疏柳小庭院",
+            "淡墨远村屋脊",
+            "弯曲水岸或书院园路"
+          ],
+          "narrative": "从居家美满收束到家国民生安宁。",
+          "depth": "低位前中景；只占边角，不铺满纸底。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c3-gap-08-r3"
+        }
+      ]
+    },
+    {
+      "id": "c4-stop-01",
+      "chapter": 4,
+      "kind": "stop",
+      "index": 1,
+      "storyboardName": "人花合一",
+      "progress": 0,
+      "screenshot": "reports/reconstruction/after/chapter-4-stop-01.jpg",
+      "sha256": "fe658d98a160253dc8757bbee85d3863958686baf83f1a1958ffde2307007871",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-4-stop-01.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "主体、花簇和宫廷群像足够密；左侧题签下缘已压树影，不能往题字区再添图。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.16,
+            0.12,
+            0.25,
+            0.28
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "“人花合一”及正文需纸底，现有树影压近，后续新层不得再侵入。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "“人花合一”及正文需纸底，现有树影压近，后续新层不得再侵入。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "原题签世界锚点保持；补层只走其下缘，必要仅审邻接纹理避让。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-stop-01-r1"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.01,
+            0.73,
+            0.12,
+            0.25
+          ],
+          "classCodes": [
+            3
+          ],
+          "classes": [
+            "层次不足型空白"
+          ],
+          "observation": "左下宴游人群外侧突然结束，纸底未承接苑岸。",
+          "existingDiscontinuity": "左下宴游人群外侧突然结束，纸底未承接苑岸。",
+          "action": "沿 gap1 方向加入极低曲岸/花圃一角，避免再加贵妃肖像。",
+          "plannedAssetIds": [
+            "c4-garden-bank"
+          ],
+          "newTypes": [
+            "A",
+            "D",
+            "E"
+          ],
+          "objects": [
+            "连续曲岸",
+            "浅水纹",
+            "低矮宫苑花圃",
+            "远处小型亭影"
+          ],
+          "narrative": "美人、赏花人与苑囿共享空间。",
+          "depth": "低中景。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P2",
+          "id": "c4-stop-01-r2"
+        }
+      ]
+    },
+    {
+      "id": "c4-stop-02",
+      "chapter": 4,
+      "kind": "stop",
+      "index": 2,
+      "storyboardName": "花王配美人",
+      "progress": 0.12459732974759095,
+      "screenshot": "reports/reconstruction/after/chapter-4-stop-02.jpg",
+      "sha256": "67c26aa14e7018534bc0b939b966ccf4b631ad6ae107052f7e59af795ff379be",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-4-stop-02.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "贵妃屏风组非常满，右端小亭与栅栏已提供空间；右上纸天空适合保留。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.71,
+            0.02,
+            0.27,
+            0.33
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "贵妃右上留出天空，平衡左下大牡丹。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "贵妃右上留出天空，平衡左下大牡丹。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-stop-02-r1"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.88,
+            0.59,
+            0.1,
+            0.39
+          ],
+          "classCodes": [
+            2,
+            3
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白"
+          ],
+          "observation": "最右栏杆与小亭的湖面边缘突然落纸，与下一幅桥景缺岸线。",
+          "existingDiscontinuity": "最右栏杆与小亭的湖面边缘突然落纸，与下一幅桥景缺岸线。",
+          "action": "只把 gap2 的低水纹/曲岸延续到右角，不再造第二屏风。",
+          "plannedAssetIds": [
+            "c4-garden-bank"
+          ],
+          "newTypes": [
+            "A",
+            "D",
+            "E"
+          ],
+          "objects": [
+            "连续曲岸",
+            "浅水纹",
+            "低矮宫苑花圃",
+            "远处小型亭影"
+          ],
+          "narrative": "从贵妃形象走到沉香亭实体场所。",
+          "depth": "中景水岸。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P2",
+          "id": "c4-stop-02-r2"
+        }
+      ]
+    },
+    {
+      "id": "c4-stop-03",
+      "chapter": 4,
+      "kind": "stop",
+      "index": 3,
+      "storyboardName": "沉香亭赏花题诗",
+      "progress": 0.24928625962250903,
+      "screenshot": "reports/reconstruction/after/chapter-4-stop-03.jpg",
+      "sha256": "475bda4a93c162348ac40678d83de80b506bfc97168212697ccf5a6566defa28",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-4-stop-03.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "李白、贵妃、玄宗与沉香亭完整；左右天空留白正当，下缘书案外尚缺接地。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.02,
+            0.02,
+            0.15,
+            0.46
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "沉香亭外左上天空与桥景之间的呼吸，不添加宫楼。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "沉香亭外左上天空与桥景之间的呼吸，不添加宫楼。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-stop-03-r1"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.86,
+            0.72,
+            0.12,
+            0.26
+          ],
+          "classCodes": [
+            3
+          ],
+          "classes": [
+            "层次不足型空白"
+          ],
+          "observation": "书案脚与原诗卷外侧直接落纸，接入陈设盛景前缺地台。",
+          "existingDiscontinuity": "书案脚与原诗卷外侧直接落纸，接入陈设盛景前缺地台。",
+          "action": "低石阶/短栏转角承书案脚，从 gap3 连续进入即可；不用重造李白。",
+          "plannedAssetIds": [
+            "c4-palace-rail"
+          ],
+          "newTypes": [
+            "B",
+            "C",
+            "D"
+          ],
+          "objects": [
+            "宫苑短栏",
+            "完整石阶转角",
+            "一侧帷幔角"
+          ],
+          "narrative": "题诗发生在可居的亭台，不悬于空中。",
+          "depth": "低中景，原诗卷始终在前。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P2",
+          "id": "c4-stop-03-r2"
+        }
+      ]
+    },
+    {
+      "id": "c4-stop-04",
+      "chapter": 4,
+      "kind": "stop",
+      "index": 4,
+      "storyboardName": "牡丹风尚鼎盛",
+      "progress": 0.373794634033139,
+      "screenshot": "reports/reconstruction/after/chapter-4-stop-04.jpg",
+      "sha256": "3f5af85e1f8723b96f44ae36ca50331a64deb53779f02c92ed8b16adf7ab5d12",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-4-stop-04.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "盛景主体与上下图组已经足够繁盛；两侧纸底给屏风、飘带与香炉让出呼吸。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.02,
+            0.02,
+            0.11,
+            0.53
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "左侧窄纸天空保留，不再加一片更大的花。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "左侧窄纸天空保留，不再加一片更大的花。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-stop-04-r1"
+        },
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.88,
+            0.03,
+            0.1,
+            0.45
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "右上侧纸天空给盛景复合组降密；需补的是 gap4 中央而非此边框。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "右上侧纸天空给盛景复合组降密；需补的是 gap4 中央而非此边框。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-stop-04-r2"
+        }
+      ]
+    },
+    {
+      "id": "c4-stop-05",
+      "chapter": 4,
+      "kind": "stop",
+      "index": 5,
+      "storyboardName": "繁华落幕",
+      "progress": 0.5004329353980085,
+      "screenshot": "reports/reconstruction/after/chapter-4-stop-05.jpg",
+      "sha256": "f7164b53d2e47b52c595698d31f927ab89cc673a74799be69b680ce3a0206d9c",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-4-stop-05.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "马嵬/兵马转折主体层次足，左上/左侧纸底是情绪断点；不应再添加战火或尸身。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.01,
+            0.02,
+            0.14,
+            0.56
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "骤变处的左侧纸底承担沉默与情绪停顿。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "骤变处的左侧纸底承担沉默与情绪停顿。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-stop-05-r1"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.83,
+            0.83,
+            0.15,
+            0.15
+          ],
+          "classCodes": [
+            2,
+            3
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白"
+          ],
+          "observation": "骑兵尽端地面接纸处缺淡土岸，易显贴片。",
+          "existingDiscontinuity": "骑兵尽端地面接纸处缺淡土岸，易显贴片。",
+          "action": "仅从 gap5 补一段低灰岸线/水雾散边，兵马和人物不动。",
+          "plannedAssetIds": [
+            "c4-garden-bank",
+            "shared-atmosphere"
+          ],
+          "newTypes": [
+            "A",
+            "D",
+            "E"
+          ],
+          "objects": [
+            "连续曲岸",
+            "浅水纹",
+            "低矮宫苑花圃",
+            "远处小型亭影",
+            "疏淡云气",
+            "低对比远山"
+          ],
+          "narrative": "繁华离场的路仍连续，气氛降强。",
+          "depth": "低中景后方，去鲜花。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P2",
+          "id": "c4-stop-05-r2"
+        }
+      ]
+    },
+    {
+      "id": "c4-stop-06",
+      "chapter": 4,
+      "kind": "stop",
+      "index": 6,
+      "storyboardName": "游宴渐冷",
+      "progress": 0.6251036729348165,
+      "screenshot": "reports/reconstruction/after/chapter-4-stop-06.jpg",
+      "sha256": "6550b1a2c0b663851326fec7eda628345e4a247e1f33f01d5c690843171cfa76",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-4-stop-06.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "女子、花案、平台与湖景已完整；上方记忆群像退场后，右上空天需留，尾部平台外可少量接水。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.64,
+            0.02,
+            0.34,
+            0.37
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "繁华渐息阶段右上留出大块安静天空，不补宫廷群像。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "繁华渐息阶段右上留出大块安静天空，不补宫廷群像。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-stop-06-r1"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.01,
+            0.75,
+            0.16,
+            0.23
+          ],
+          "classCodes": [
+            2,
+            4
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "气氛不足型空白"
+          ],
+          "observation": "平台外侧到纸底没有水岸，空纸还不是“空水”的有意表达。",
+          "existingDiscontinuity": "平台外侧到纸底没有水岸，空纸还不是“空水”的有意表达。",
+          "action": "由 gap6 的空亭疏岸层引一段淡水纹到平台脚，物件只放邻 gap。",
+          "plannedAssetIds": [
+            "c4-empty-pavilion"
+          ],
+          "newTypes": [
+            "A",
+            "D",
+            "E"
+          ],
+          "objects": [
+            "无人空亭",
+            "低石岸",
+            "疏芦或枝影",
+            "淡水纹"
+          ],
+          "narrative": "无人水面回应先前宫廷游宴。",
+          "depth": "中远景低位。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P2",
+          "id": "c4-stop-06-r2"
+        }
+      ]
+    },
+    {
+      "id": "c4-stop-07",
+      "chapter": 4,
+      "kind": "stop",
+      "index": 7,
+      "storyboardName": "盛世与乱世",
+      "progress": 0.7496303700552025,
+      "screenshot": "reports/reconstruction/after/chapter-4-stop-07.jpg",
+      "sha256": "032ab3b2cdd64c272f20f188a9baaf45cda0eda21a596d2cf9edbedcf6db651d",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-4-stop-07.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "盛衰对照主体密，暗烟形成右侧视觉块；两侧纸底是必需冷静空间。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.52,
+            0.01,
+            0.46,
+            0.15
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "山火/烟块上方保留安静纸天空，禁止再扩张灾难。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "山火/烟块上方保留安静纸天空，禁止再扩张灾难。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-stop-07-r1"
+        },
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.01,
+            0.66,
+            0.13,
+            0.32
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "盛衰对照的左下空口供情绪缓冲；新增残枝应在 gap7，不压此原主体。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "盛衰对照的左下空口供情绪缓冲；新增残枝应在 gap7，不压此原主体。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-stop-07-r2"
+        }
+      ]
+    },
+    {
+      "id": "c4-stop-08",
+      "chapter": 4,
+      "kind": "stop",
+      "index": 8,
+      "storyboardName": "晚唐追忆",
+      "progress": 0.8742277056245228,
+      "screenshot": "reports/reconstruction/after/chapter-4-stop-08.jpg",
+      "sha256": "4144507316c9c1a2ffea92ff3332f0aac42f6563bcdb2ade4d15c925dbd326e0",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-4-stop-08.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "书案、故国山水和水路尚完整；左下孤立花簇像补丁，需要接到低岸或撤离游离状态。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.02,
+            0.02,
+            0.37,
+            0.29
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "故国追忆的左上大纸天空可保留，视线仍被右侧远城引导。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "故国追忆的左上大纸天空可保留，视线仍被右侧远城引导。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-stop-08-r1"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.0,
+            0.77,
+            0.18,
+            0.21
+          ],
+          "classCodes": [
+            3,
+            4,
+            5
+          ],
+          "classes": [
+            "层次不足型空白",
+            "气氛不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "左下出现独立漂浮小牡丹球，无根无岸，与沉思书案没有空间关系。",
+          "existingDiscontinuity": "左下出现独立漂浮小牡丹球，无根无岸，与沉思书案没有空间关系。",
+          "action": "以低岸/稀疏残枝承接并弱化大花球；不能只另放更多花簇。",
+          "plannedAssetIds": [
+            "c4-fallen-branch",
+            "c4-empty-pavilion"
+          ],
+          "newTypes": [
+            "A",
+            "C",
+            "D",
+            "E"
+          ],
+          "objects": [
+            "低位残花枝",
+            "少量落瓣",
+            "石岸断续草叶",
+            "无人空亭",
+            "低石岸",
+            "疏芦或枝影",
+            "淡水纹"
+          ],
+          "narrative": "盛景有迹、花落有凭，不靠花球填空。",
+          "depth": "前景低位；书案人物仍是主角。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c4-stop-08-r2"
+        }
+      ]
+    },
+    {
+      "id": "c4-stop-09",
+      "chapter": 4,
+      "kind": "stop",
+      "index": 9,
+      "storyboardName": "千古兴衰",
+      "progress": 0.9999998634094919,
+      "screenshot": "reports/reconstruction/after/chapter-4-stop-09.jpg",
+      "sha256": "3873f6c8f44e202958b47a67f79c8b83ddba7ca8bb763179e8174b8dabbe8863",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-4-stop-09.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "终景把盛世与荒景并置，仍较密；上中题签与宫灯/moon 接近，右上尾声纸底应明确保留，左下漂浮小簇不合理。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.46,
+            0.03,
+            0.49,
+            0.28
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "“千古兴衰”及正文右侧与卷尾上方纸底，保留余韵；当前月/宫楼接近文字，禁止补图再压。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "“千古兴衰”及正文右侧与卷尾上方纸底，保留余韵；当前月/宫楼接近文字，禁止补图再压。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "题签矩形约 x .46–.63 / y .08–.26，需要独立阅读空气；不要新增长正文图。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-stop-09-r1"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.0,
+            0.78,
+            0.19,
+            0.2
+          ],
+          "classCodes": [
+            3,
+            4,
+            5
+          ],
+          "classes": [
+            "层次不足型空白",
+            "气氛不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "左下孤立牡丹小簇仍像贴纸，终景缺少回响诗卷/空台的低位落点。",
+          "existingDiscontinuity": "左下孤立牡丹小簇仍像贴纸，终景缺少回响诗卷/空台的低位落点。",
+          "action": "使用邻 gap8 的无人低诗案/残花岸作为收束边角；可撤去游离花簇而保留原源。",
+          "plannedAssetIds": [
+            "c4-poetry-table",
+            "c4-fallen-branch"
+          ],
+          "newTypes": [
+            "A",
+            "B",
+            "C",
+            "F"
+          ],
+          "objects": [
+            "低诗案",
+            "无可辨长正文的展开诗卷",
+            "砚",
+            "花器",
+            "低位残花枝",
+            "少量落瓣",
+            "石岸断续草叶"
+          ],
+          "narrative": "诗意代代流传，用无人器物承接而非再添贵妃/战乱。",
+          "depth": "低近景，右上与上中保持空。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c4-stop-09-r2"
+        }
+      ]
+    },
+    {
+      "id": "c4-gap-01",
+      "chapter": 4,
+      "kind": "gap",
+      "index": 1,
+      "storyboardName": "人花合一 → 花王配美人",
+      "progress": 0.06229866487379548,
+      "screenshot": "reports/reconstruction/after/chapter-4-gap-01.jpg",
+      "sha256": "8cd7bfe22eb1f3e40b1b01f3d0f37514b4fcb290208e3d1e690af0baf8c64ce8",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-4-gap-01.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "两端贵妃/屏风群像间大半画心为空，只剩单条金线，无苑岸或空间过渡。 需要有叙事的实体承接；单金线与泛用雾不能认定已解决。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.27,
+            0.02,
+            0.43,
+            0.23
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "前段天空气口。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "前段天空气口。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-gap-01-r1"
+        },
+        {
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.24,
+            0.3,
+            0.57,
+            0.43
+          ],
+          "classCodes": [
+            1,
+            2,
+            3
+          ],
+          "classes": [
+            "叙事缺失型空白",
+            "转场断裂型空白",
+            "层次不足型空白"
+          ],
+          "observation": "两端贵妃/屏风群像间大半画心为空，只剩单条金线，无苑岸或空间过渡。",
+          "existingDiscontinuity": "两端贵妃/屏风群像间大半画心为空，只剩单条金线，无苑岸或空间过渡。",
+          "action": "曲岸连接左右，短栏与浅水构成低位斜线；中段一盏宫灯作小节点。",
+          "plannedAssetIds": [
+            "c4-garden-bank",
+            "c4-palace-rail"
+          ],
+          "newTypes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "objects": [
+            "连续曲岸",
+            "浅水纹",
+            "低矮宫苑花圃",
+            "远处小型亭影",
+            "宫苑短栏",
+            "完整石阶转角",
+            "一侧帷幔角"
+          ],
+          "narrative": "宫廷繁华由人花肖像走入苑囿。",
+          "depth": "中景水岸/平台为骨架，后景极淡；全部新增为世界层，不是固定屏幕贴纸。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P0",
+          "id": "c4-gap-01-r2"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.27,
+            0.76,
+            0.45,
+            0.22
+          ],
+          "classCodes": [
+            2,
+            3,
+            5
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "下缘没有共同接地层；仅细金线无法形成岸或平台。",
+          "existingDiscontinuity": "下缘没有共同接地层；仅细金线无法形成岸或平台。",
+          "action": "完整支座的宫灯/小香炉置一侧，另一侧留水面纸。",
+          "plannedAssetIds": [
+            "c4-palace-lamp"
+          ],
+          "newTypes": [
+            "B",
+            "C",
+            "F"
+          ],
+          "objects": [
+            "宫灯一盏",
+            "小香炉",
+            "一角织物"
+          ],
+          "narrative": "宫廷繁华由人花肖像走入苑囿。",
+          "depth": "近景低位小量遮挡，两侧必须自然淡出；不超画心下边。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c4-gap-01-r3"
+        }
+      ]
+    },
+    {
+      "id": "c4-gap-02",
+      "chapter": 4,
+      "kind": "gap",
+      "index": 2,
+      "storyboardName": "花王配美人 → 沉香亭赏花题诗",
+      "progress": 0.18694179468504998,
+      "screenshot": "reports/reconstruction/after/chapter-4-gap-02.jpg",
+      "sha256": "4b3bae9125eaf2e1af076d6791c5ada499dd6885ba096b06bbeb2fd1ffa3cb07",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-4-gap-02.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "全卷最空的中点之一：左小亭栏角与右桥景孤立，中央和下部几乎全纸。 需要有叙事的实体承接；单金线与泛用雾不能认定已解决。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.27,
+            0.02,
+            0.43,
+            0.23
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "前段天空气口。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "前段天空气口。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-gap-02-r1"
+        },
+        {
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.2,
+            0.29,
+            0.54,
+            0.47
+          ],
+          "classCodes": [
+            1,
+            2,
+            3
+          ],
+          "classes": [
+            "叙事缺失型空白",
+            "转场断裂型空白",
+            "层次不足型空白"
+          ],
+          "observation": "全卷最空的中点之一：左小亭栏角与右桥景孤立，中央和下部几乎全纸。",
+          "existingDiscontinuity": "全卷最空的中点之一：左小亭栏角与右桥景孤立，中央和下部几乎全纸。",
+          "action": "真正连续的曲岸/浅水/一侧小桥接引，桥亭不重复贴整图。",
+          "plannedAssetIds": [
+            "c4-garden-bank"
+          ],
+          "newTypes": [
+            "A",
+            "D",
+            "E"
+          ],
+          "objects": [
+            "连续曲岸",
+            "浅水纹",
+            "低矮宫苑花圃",
+            "远处小型亭影"
+          ],
+          "narrative": "人物观花空间与沉香亭地理语境连成一体。",
+          "depth": "中景水岸/平台为骨架，后景极淡；全部新增为世界层，不是固定屏幕贴纸。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P0",
+          "id": "c4-gap-02-r2"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.27,
+            0.78,
+            0.4,
+            0.2
+          ],
+          "classCodes": [
+            2,
+            3,
+            5
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "下缘没有共同接地层；仅细金线无法形成岸或平台。",
+          "existingDiscontinuity": "下缘没有共同接地层；仅细金线无法形成岸或平台。",
+          "action": "一段石阶短栏在下侧落地，水面仍占显著空白。",
+          "plannedAssetIds": [
+            "c4-palace-rail"
+          ],
+          "newTypes": [
+            "B",
+            "C",
+            "D"
+          ],
+          "objects": [
+            "宫苑短栏",
+            "完整石阶转角",
+            "一侧帷幔角"
+          ],
+          "narrative": "人物观花空间与沉香亭地理语境连成一体。",
+          "depth": "近景低位小量遮挡，两侧必须自然淡出；不超画心下边。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c4-gap-02-r3"
+        }
+      ]
+    },
+    {
+      "id": "c4-gap-03",
+      "chapter": 4,
+      "kind": "gap",
+      "index": 3,
+      "storyboardName": "沉香亭赏花题诗 → 牡丹风尚鼎盛",
+      "progress": 0.311540446827824,
+      "screenshot": "reports/reconstruction/after/chapter-4-gap-03.jpg",
+      "sha256": "c212b34ae50c5a6940647d7acd57f0b725e74db5b7879857514180a0a5a95f74",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-4-gap-03.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "左李白书案与右牡丹屏风之间大空洞，只有一条细线，题诗与陈设无文化承接。 需要有叙事的实体承接；单金线与泛用雾不能认定已解决。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.27,
+            0.02,
+            0.43,
+            0.23
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "前段天空气口。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "前段天空气口。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-gap-03-r1"
+        },
+        {
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.18,
+            0.31,
+            0.62,
+            0.43
+          ],
+          "classCodes": [
+            1,
+            2,
+            3
+          ],
+          "classes": [
+            "叙事缺失型空白",
+            "转场断裂型空白",
+            "层次不足型空白"
+          ],
+          "observation": "左李白书案与右牡丹屏风之间大空洞，只有一条细线，题诗与陈设无文化承接。",
+          "existingDiscontinuity": "左李白书案与右牡丹屏风之间大空洞，只有一条细线，题诗与陈设无文化承接。",
+          "action": "低岸/庭台连接，独立无人诗案偏下偏左，香器/卷轴承接《清平调》余意。",
+          "plannedAssetIds": [
+            "c4-garden-bank",
+            "c4-poetry-table"
+          ],
+          "newTypes": [
+            "A",
+            "B",
+            "D",
+            "E",
+            "F"
+          ],
+          "objects": [
+            "连续曲岸",
+            "浅水纹",
+            "低矮宫苑花圃",
+            "远处小型亭影",
+            "低诗案",
+            "无可辨长正文的展开诗卷",
+            "砚",
+            "花器"
+          ],
+          "narrative": "从诗词所咏的人花，到生活陈设中的华贵牡丹。",
+          "depth": "中景水岸/平台为骨架，后景极淡；全部新增为世界层，不是固定屏幕贴纸。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P0",
+          "id": "c4-gap-03-r2"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.29,
+            0.76,
+            0.43,
+            0.22
+          ],
+          "classCodes": [
+            2,
+            3,
+            5
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "下缘没有共同接地层；仅细金线无法形成岸或平台。",
+          "existingDiscontinuity": "下缘没有共同接地层；仅细金线无法形成岸或平台。",
+          "action": "石阶转角连接诗案脚，绝不加第二个李白。",
+          "plannedAssetIds": [
+            "c4-palace-rail"
+          ],
+          "newTypes": [
+            "B",
+            "C",
+            "D"
+          ],
+          "objects": [
+            "宫苑短栏",
+            "完整石阶转角",
+            "一侧帷幔角"
+          ],
+          "narrative": "从诗词所咏的人花，到生活陈设中的华贵牡丹。",
+          "depth": "近景低位小量遮挡，两侧必须自然淡出；不超画心下边。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c4-gap-03-r3"
+        }
+      ]
+    },
+    {
+      "id": "c4-gap-04",
+      "chapter": 4,
+      "kind": "gap",
+      "index": 4,
+      "storyboardName": "牡丹风尚鼎盛 → 繁华落幕",
+      "progress": 0.4371137847155737,
+      "screenshot": "reports/reconstruction/after/chapter-4-gap-04.jpg",
+      "sha256": "05681f7645f9487d7ad043988ad1a903db2237a94b4c6a25fa7be5dcf6426773",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-4-gap-04.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "左盛景与右暗色人物/牡丹转折之间没有地面或气氛递变，大片纸像漏铺。 需要有叙事的实体承接；单金线与泛用雾不能认定已解决。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.27,
+            0.02,
+            0.43,
+            0.23
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "前段天空气口。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "前段天空气口。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-gap-04-r1"
+        },
+        {
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.24,
+            0.28,
+            0.5,
+            0.47
+          ],
+          "classCodes": [
+            1,
+            2,
+            3
+          ],
+          "classes": [
+            "叙事缺失型空白",
+            "转场断裂型空白",
+            "层次不足型空白"
+          ],
+          "observation": "左盛景与右暗色人物/牡丹转折之间没有地面或气氛递变，大片纸像漏铺。",
+          "existingDiscontinuity": "左盛景与右暗色人物/牡丹转折之间没有地面或气氛递变，大片纸像漏铺。",
+          "action": "左侧苑岸渐疏，低灯/香炉作为盛景离场的最后器物，水色向右降饱和。",
+          "plannedAssetIds": [
+            "c4-garden-bank",
+            "c4-palace-lamp"
+          ],
+          "newTypes": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F"
+          ],
+          "objects": [
+            "连续曲岸",
+            "浅水纹",
+            "低矮宫苑花圃",
+            "远处小型亭影",
+            "宫灯一盏",
+            "小香炉",
+            "一角织物"
+          ],
+          "narrative": "繁华走向沉静，需有递变，不直接新增灾难。",
+          "depth": "中景水岸/平台为骨架，后景极淡；全部新增为世界层，不是固定屏幕贴纸。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P0",
+          "id": "c4-gap-04-r2"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.3,
+            0.77,
+            0.42,
+            0.21
+          ],
+          "classCodes": [
+            2,
+            3,
+            5
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "下缘没有共同接地层；仅细金线无法形成岸或平台。",
+          "existingDiscontinuity": "下缘没有共同接地层；仅细金线无法形成岸或平台。",
+          "action": "下方几片落花和低枝带出衰变，枝根要有石岸。",
+          "plannedAssetIds": [
+            "c4-fallen-branch"
+          ],
+          "newTypes": [
+            "A",
+            "C"
+          ],
+          "objects": [
+            "低位残花枝",
+            "少量落瓣",
+            "石岸断续草叶"
+          ],
+          "narrative": "繁华走向沉静，需有递变，不直接新增灾难。",
+          "depth": "近景低位小量遮挡，两侧必须自然淡出；不超画心下边。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c4-gap-04-r3"
+        }
+      ]
+    },
+    {
+      "id": "c4-gap-05",
+      "chapter": 4,
+      "kind": "gap",
+      "index": 5,
+      "storyboardName": "繁华落幕 → 游宴渐冷",
+      "progress": 0.5627683041664124,
+      "screenshot": "reports/reconstruction/after/chapter-4-gap-05.jpg",
+      "sha256": "cb89e67285ca2eea708e32fb647c5bc99747e4feaa763c8a8813ff87f590e938",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-4-gap-05.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "兵马退场与仙境群像/湖景再入场之间空纸无路、水或可寄余情的物件。 需要有叙事的实体承接；单金线与泛用雾不能认定已解决。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.34,
+            0.02,
+            0.43,
+            0.27
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "后段疏淡天空/情绪停顿；空亭诗卷安排在下方，不能把尾声填成盛景。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "后段疏淡天空/情绪停顿；空亭诗卷安排在下方，不能把尾声填成盛景。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-gap-05-r1"
+        },
+        {
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.46,
+            0.27,
+            0.29,
+            0.48
+          ],
+          "classCodes": [
+            1,
+            2,
+            4
+          ],
+          "classes": [
+            "叙事缺失型空白",
+            "转场断裂型空白",
+            "气氛不足型空白"
+          ],
+          "observation": "兵马退场与仙境群像/湖景再入场之间空纸无路、水或可寄余情的物件。",
+          "existingDiscontinuity": "兵马退场与仙境群像/湖景再入场之间空纸无路、水或可寄余情的物件。",
+          "action": "无人空亭与低水岸偏下连接，两端情绪之间保留上中空天。",
+          "plannedAssetIds": [
+            "c4-empty-pavilion"
+          ],
+          "newTypes": [
+            "A",
+            "D",
+            "E"
+          ],
+          "objects": [
+            "无人空亭",
+            "低石岸",
+            "疏芦或枝影",
+            "淡水纹"
+          ],
+          "narrative": "由离散回到余韵，画面安静而非内容消失。",
+          "depth": "中景水岸/平台为骨架，后景极淡；全部新增为世界层，不是固定屏幕贴纸。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P0",
+          "id": "c4-gap-05-r2"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.43,
+            0.77,
+            0.34,
+            0.21
+          ],
+          "classCodes": [
+            2,
+            3,
+            5
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "下缘没有共同接地层；仅细金线无法形成岸或平台。",
+          "existingDiscontinuity": "下缘没有共同接地层；仅细金线无法形成岸或平台。",
+          "action": "淡色矮案/收卷在一侧，不能铺回金红宫廷宴席。",
+          "plannedAssetIds": [
+            "c4-poetry-table"
+          ],
+          "newTypes": [
+            "B",
+            "F"
+          ],
+          "objects": [
+            "低诗案",
+            "无可辨长正文的展开诗卷",
+            "砚",
+            "花器"
+          ],
+          "narrative": "由离散回到余韵，画面安静而非内容消失。",
+          "depth": "近景低位小量遮挡，两侧必须自然淡出；不超画心下边。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c4-gap-05-r3"
+        }
+      ]
+    },
+    {
+      "id": "c4-gap-06",
+      "chapter": 4,
+      "kind": "gap",
+      "index": 6,
+      "storyboardName": "游宴渐冷 → 盛世与乱世",
+      "progress": 0.6873670214950095,
+      "screenshot": "reports/reconstruction/after/chapter-4-gap-06.jpg",
+      "sha256": "206c518b3a2c6d5a66f1bc13d0ca6fc48eb1f9f39b705ac0817c5c21c05e5797",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-4-gap-06.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "左右都是湖苑/记忆景，中段却没有水面，单金线不能承担游观路线。 需要有叙事的实体承接；单金线与泛用雾不能认定已解决。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.34,
+            0.02,
+            0.43,
+            0.27
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "后段疏淡天空/情绪停顿；空亭诗卷安排在下方，不能把尾声填成盛景。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "后段疏淡天空/情绪停顿；空亭诗卷安排在下方，不能把尾声填成盛景。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-gap-06-r1"
+        },
+        {
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.29,
+            0.32,
+            0.41,
+            0.43
+          ],
+          "classCodes": [
+            1,
+            2,
+            4
+          ],
+          "classes": [
+            "叙事缺失型空白",
+            "转场断裂型空白",
+            "气氛不足型空白"
+          ],
+          "observation": "左右都是湖苑/记忆景，中段却没有水面，单金线不能承担游观路线。",
+          "existingDiscontinuity": "左右都是湖苑/记忆景，中段却没有水面，单金线不能承担游观路线。",
+          "action": "延续湖面和疏岸；一座小空亭给视线停顿，亭影低、不在天中央。",
+          "plannedAssetIds": [
+            "c4-empty-pavilion",
+            "c4-garden-bank"
+          ],
+          "newTypes": [
+            "A",
+            "D",
+            "E"
+          ],
+          "objects": [
+            "无人空亭",
+            "低石岸",
+            "疏芦或枝影",
+            "淡水纹",
+            "连续曲岸",
+            "浅水纹",
+            "低矮宫苑花圃",
+            "远处小型亭影"
+          ],
+          "narrative": "繁华渐息仍有空间与记忆可游。",
+          "depth": "中景水岸/平台为骨架，后景极淡；全部新增为世界层，不是固定屏幕贴纸。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P0",
+          "id": "c4-gap-06-r2"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.32,
+            0.78,
+            0.38,
+            0.2
+          ],
+          "classCodes": [
+            2,
+            3,
+            5
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "下缘没有共同接地层；仅细金线无法形成岸或平台。",
+          "existingDiscontinuity": "下缘没有共同接地层；仅细金线无法形成岸或平台。",
+          "action": "一角低残枝和三五落瓣，不能再次补巨型牡丹。",
+          "plannedAssetIds": [
+            "c4-fallen-branch"
+          ],
+          "newTypes": [
+            "A",
+            "C"
+          ],
+          "objects": [
+            "低位残花枝",
+            "少量落瓣",
+            "石岸断续草叶"
+          ],
+          "narrative": "繁华渐息仍有空间与记忆可游。",
+          "depth": "近景低位小量遮挡，两侧必须自然淡出；不超画心下边。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c4-gap-06-r3"
+        }
+      ]
+    },
+    {
+      "id": "c4-gap-07",
+      "chapter": 4,
+      "kind": "gap",
+      "index": 7,
+      "storyboardName": "盛世与乱世 → 晚唐追忆",
+      "progress": 0.8119290378398627,
+      "screenshot": "reports/reconstruction/after/chapter-4-gap-07.jpg",
+      "sha256": "f75b1b07330d709fda9598311cadddca8645e36d1a39def3ca2bd5103fa8907b",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-4-gap-07.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "战烟和大牡丹退到左端，右沉思书案未入足，中部无叙事锚点；下方一小花球漂浮。 需要有叙事的实体承接；单金线与泛用雾不能认定已解决。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.34,
+            0.02,
+            0.43,
+            0.27
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "后段疏淡天空/情绪停顿；空亭诗卷安排在下方，不能把尾声填成盛景。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "后段疏淡天空/情绪停顿；空亭诗卷安排在下方，不能把尾声填成盛景。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-gap-07-r1"
+        },
+        {
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.49,
+            0.31,
+            0.38,
+            0.44
+          ],
+          "classCodes": [
+            1,
+            2,
+            4
+          ],
+          "classes": [
+            "叙事缺失型空白",
+            "转场断裂型空白",
+            "气氛不足型空白"
+          ],
+          "observation": "战烟和大牡丹退到左端，右沉思书案未入足，中部无叙事锚点；下方一小花球漂浮。",
+          "existingDiscontinuity": "战烟和大牡丹退到左端，右沉思书案未入足，中部无叙事锚点；下方一小花球漂浮。",
+          "action": "稀疏水岸与无人低诗案承接，保留上方大空天；不再添加战烟火光。",
+          "plannedAssetIds": [
+            "c4-empty-pavilion",
+            "c4-poetry-table"
+          ],
+          "newTypes": [
+            "A",
+            "B",
+            "D",
+            "E",
+            "F"
+          ],
+          "objects": [
+            "无人空亭",
+            "低石岸",
+            "疏芦或枝影",
+            "淡水纹",
+            "低诗案",
+            "无可辨长正文的展开诗卷",
+            "砚",
+            "花器"
+          ],
+          "narrative": "从盛衰强对照走向故国追忆。",
+          "depth": "中景水岸/平台为骨架，后景极淡；全部新增为世界层，不是固定屏幕贴纸。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P0",
+          "id": "c4-gap-07-r2"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.48,
+            0.78,
+            0.38,
+            0.2
+          ],
+          "classCodes": [
+            2,
+            3,
+            5
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "下缘没有共同接地层；孤立小花簇与纸底断开。",
+          "existingDiscontinuity": "下缘没有共同接地层；孤立小花簇与纸底断开。",
+          "action": "用与石岸相接的残枝取代“漂浮花球”的组织方式。",
+          "plannedAssetIds": [
+            "c4-fallen-branch"
+          ],
+          "newTypes": [
+            "A",
+            "C"
+          ],
+          "objects": [
+            "低位残花枝",
+            "少量落瓣",
+            "石岸断续草叶"
+          ],
+          "narrative": "从盛衰强对照走向故国追忆。",
+          "depth": "近景低位小量遮挡，两侧必须自然淡出；不超画心下边。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c4-gap-07-r3"
+        }
+      ]
+    },
+    {
+      "id": "c4-gap-08",
+      "chapter": 4,
+      "kind": "gap",
+      "index": 8,
+      "storyboardName": "晚唐追忆 → 千古兴衰",
+      "progress": 0.9371137845170073,
+      "screenshot": "reports/reconstruction/after/chapter-4-gap-08.jpg",
+      "sha256": "bbf3f8ce51f5d18e258cab5a7a12e36f13f08780a0a9f0073babab1c1b9e38f6",
+      "size": [
+        1388,
+        476
+      ],
+      "frozenBaseline": "reports/blank-design/before/chapter-4-gap-08.jpg",
+      "frozenBaselineHashMatches": true,
+      "reviewedWithViewImage": true,
+      "visualConclusion": "左故国城水与右盛衰回忆之间中央空心，孤立牡丹小簇像临时补丁。 需要有叙事的实体承接；单金线与泛用雾不能认定已解决。",
+      "regions": [
+        {
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.34,
+            0.02,
+            0.43,
+            0.27
+          ],
+          "classCodes": [
+            6
+          ],
+          "classes": [
+            "可保留留白"
+          ],
+          "observation": "后段疏淡天空/情绪停顿；空亭诗卷安排在下方，不能把尾声填成盛景。",
+          "existingDiscontinuity": "此处空白有明确构图/阅读作用，主要缺口在相邻区域。",
+          "action": "保留纸底与气口，不补实体，不加新的文字。",
+          "plannedAssetIds": [],
+          "newTypes": [],
+          "objects": [],
+          "narrative": "后段疏淡天空/情绪停顿；空亭诗卷安排在下方，不能把尾声填成盛景。",
+          "depth": "画心纸底/远景间隔，不能新增前景挡住。",
+          "uiAndCalligraphy": "属于题字、情绪或边缘安全区；新增内容不得侵入。",
+          "existingAssetReuse": "不需要复用或新增素材。",
+          "priority": "保留",
+          "id": "c4-gap-08-r1"
+        },
+        {
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.46,
+            0.3,
+            0.29,
+            0.44
+          ],
+          "classCodes": [
+            1,
+            2,
+            4
+          ],
+          "classes": [
+            "叙事缺失型空白",
+            "转场断裂型空白",
+            "气氛不足型空白"
+          ],
+          "observation": "左故国城水与右盛衰回忆之间中央空心，孤立牡丹小簇像临时补丁。",
+          "existingDiscontinuity": "左故国城水与右盛衰回忆之间中央空心，孤立牡丹小簇像临时补丁。",
+          "action": "空亭疏岸远低、无人诗卷近低，以两层小锚点收束；保留上中约半幅情绪空白。",
+          "plannedAssetIds": [
+            "c4-empty-pavilion",
+            "c4-poetry-table"
+          ],
+          "newTypes": [
+            "A",
+            "B",
+            "D",
+            "E",
+            "F"
+          ],
+          "objects": [
+            "无人空亭",
+            "低石岸",
+            "疏芦或枝影",
+            "淡水纹",
+            "低诗案",
+            "无可辨长正文的展开诗卷",
+            "砚",
+            "花器"
+          ],
+          "narrative": "繁华余韵寄于诗卷、空亭和落花，终章仍有物可忆。",
+          "depth": "中景水岸/平台为骨架，后景极淡；全部新增为世界层，不是固定屏幕贴纸。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P0",
+          "id": "c4-gap-08-r2"
+        },
+        {
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.49,
+            0.78,
+            0.31,
+            0.2
+          ],
+          "classCodes": [
+            2,
+            3,
+            5
+          ],
+          "classes": [
+            "转场断裂型空白",
+            "层次不足型空白",
+            "视觉节奏失衡型空白"
+          ],
+          "observation": "下缘没有共同接地层；孤立小花簇与纸底断开。",
+          "existingDiscontinuity": "下缘没有共同接地层；孤立小花簇与纸底断开。",
+          "action": "残花/岸石连接诗案与水路，结尾渐淡，不做新的人物/宫城高潮。",
+          "plannedAssetIds": [
+            "c4-fallen-branch"
+          ],
+          "newTypes": [
+            "A",
+            "C"
+          ],
+          "objects": [
+            "低位残花枝",
+            "少量落瓣",
+            "石岸断续草叶"
+          ],
+          "narrative": "繁华余韵寄于诗卷、空亭和落花，终章仍有物可忆。",
+          "depth": "近景低位小量遮挡，两侧必须自然淡出；不超画心下边。",
+          "uiAndCalligraphy": "位于画心；避免遮原HTML题签。下方网页分镜/进度栏在画心之外，不得以扩出画心方式侵占。",
+          "existingAssetReuse": "详见 plannedAssetIds 对应资产目录；优先完整复用干净独立资产，禁止从有人物复合图硬裁半景。",
+          "priority": "P1",
+          "id": "c4-gap-08-r3"
+        }
+      ]
+    }
+  ]
+}

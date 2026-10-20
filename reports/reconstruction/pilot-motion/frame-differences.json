@@ -1,0 +1,242 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "scene": "opening",
+      "name": "传说与傲骨",
+      "comparisons": {
+        "active": {
+          "size": [
+            1388,
+            476
+          ],
+          "changedPixelsAbove5RGB": 421,
+          "changedRatio": 0.0006372145399946722,
+          "differenceBounds": [
+            236,
+            1,
+            1366,
+            422
+          ],
+          "meanRGBDelta": [
+            0.02141706826822948,
+            0.014018719879882789,
+            0.01479821035042259
+          ]
+        },
+        "off": {
+          "size": [
+            1388,
+            476
+          ],
+          "changedPixelsAbove5RGB": 0,
+          "changedRatio": 0.0,
+          "differenceBounds": null,
+          "meanRGBDelta": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "reduced": {
+          "size": [
+            1388,
+            476
+          ],
+          "changedPixelsAbove5RGB": 0,
+          "changedRatio": 0.0,
+          "differenceBounds": null,
+          "meanRGBDelta": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "fixedSubjectRegions": [
+        {
+          "label": "painted-column-interior",
+          "bounds": [
+            150,
+            80,
+            250,
+            180
+          ],
+          "changedPixelsAbove5RGB": 0,
+          "exactDifferenceBounds": null
+        },
+        {
+          "label": "foreground-stone-balustrade",
+          "bounds": [
+            500,
+            330,
+            650,
+            390
+          ],
+          "changedPixelsAbove5RGB": 0,
+          "exactDifferenceBounds": null
+        }
+      ],
+      "detailCrops": [
+        {
+          "file": "reports/reconstruction/pilot-motion/opening-motion-detail-1.jpg",
+          "sourceCrop": [
+            849,
+            177,
+            989,
+            277
+          ],
+          "component": {
+            "pixels": 109,
+            "bounds": [
+              910,
+              221,
+              928,
+              234
+            ]
+          }
+        },
+        {
+          "file": "reports/reconstruction/pilot-motion/opening-motion-detail-2.jpg",
+          "sourceCrop": [
+            364,
+            48,
+            504,
+            148
+          ],
+          "component": {
+            "pixels": 75,
+            "bounds": [
+              429,
+              93,
+              440,
+              104
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scene": "palace",
+      "name": "盛世华容",
+      "comparisons": {
+        "active": {
+          "size": [
+            1388,
+            476
+          ],
+          "changedPixelsAbove5RGB": 431,
+          "changedRatio": 0.0006523502772867072,
+          "differenceBounds": [
+            238,
+            0,
+            1366,
+            393
+          ],
+          "meanRGBDelta": [
+            0.019861114474608286,
+            0.029009154093914222,
+            0.02884720170488945
+          ]
+        },
+        "off": {
+          "size": [
+            1388,
+            476
+          ],
+          "changedPixelsAbove5RGB": 0,
+          "changedRatio": 0.0,
+          "differenceBounds": null,
+          "meanRGBDelta": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "reduced": {
+          "size": [
+            1388,
+            476
+          ],
+          "changedPixelsAbove5RGB": 0,
+          "changedRatio": 0.0,
+          "differenceBounds": null,
+          "meanRGBDelta": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "fixedSubjectRegions": [
+        {
+          "label": "palace-roof-and-beams",
+          "bounds": [
+            700,
+            100,
+            820,
+            180
+          ],
+          "changedPixelsAbove5RGB": 0,
+          "exactDifferenceBounds": [
+            91,
+            0,
+            117,
+            13
+          ]
+        },
+        {
+          "label": "palace-stone-stair",
+          "bounds": [
+            650,
+            250,
+            760,
+            300
+          ],
+          "changedPixelsAbove5RGB": 0,
+          "exactDifferenceBounds": null
+        }
+      ],
+      "detailCrops": [
+        {
+          "file": "reports/reconstruction/pilot-motion/palace-motion-detail-1.jpg",
+          "sourceCrop": [
+            851,
+            177,
+            991,
+            277
+          ],
+          "component": {
+            "pixels": 90,
+            "bounds": [
+              915,
+              220,
+              928,
+              234
+            ]
+          }
+        },
+        {
+          "file": "reports/reconstruction/pilot-motion/palace-motion-detail-2.jpg",
+          "sourceCrop": [
+            348,
+            70,
+            488,
+            170
+          ],
+          "component": {
+            "pixels": 72,
+            "bounds": [
+              414,
+              114,
+              423,
+              126
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "method": "PIL pixel difference of actual Playwright viewport screenshots. Above-5 RGB threshold describes the extent of visible local change; pause/reduced compare exactly.",
+  "limitations": "Pixel deltas and crops do not alone certify every asset seam or all fixed subjects. They accompany stable progress telemetry, explicit movement bindings and direct screenshot review."
+}

@@ -1,0 +1,707 @@
+{
+  "chapter": 1,
+  "status": "four-assets-ready-for-layout",
+  "createdAt": "2026-10-20T00:56:19.415Z",
+  "scope": "Four new independent first-scroll assets only; no original source, runtime layout, renderer or Blender changes.",
+  "entries": [
+    {
+      "id": "bd1-stone-forecourt",
+      "prompt": "Use case: historical-scene. Asset type: one independent transparent 2.5D painting layer for a traditional Chinese peony narrative handscroll, not a complete scene. Create a low, wide, asymmetric imperial forecourt ground fragment: warm ivory stone paving with two or three very low, complete shallow steps concentrated asymmetrically toward one end, a gently bending garden path edge and only a tiny low flowerbed curb with a few restrained leaves. No palace, pavilion, building, wall, human, statue, giant peony blossom, large tree or upright railing. Show a readable shallow walkable stone surface in a hand-painted oblique side/elevated long-scroll perspective, NOT an isometric 3D block, platform model, floating diorama or photograph. Traditional meticulous gongbi ink outlines with subtle blue-green mineral washes, warm ivory/ochre stone, an extremely restrained cinnabar touch and almost no gold. Fine historic hand-painted illustration, organic ink and mineral pigment texture only within the painted subject. Canvas aspect ratio 3:1, low horizontal composition. Both ends and all stair feet must be fully painted and naturally taper into a few low soil/stone/grass edges; never crop an architectural end at the image border. Include clear transparent breathing room around the entire ground fragment. Genuine transparent RGBA background, fully transparent outside the artwork; no paper-colored rectangle, no background mountains/sky, no frame, no cast rectangular drop-shadow, no text, labels, watermark or signatures.",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "generatedSource": "C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-78cb-7723-adc4-7527b3051250\\exec-62c53ddf-8623-4148-9e72-245bdc0a2c2f.png",
+      "raw": "artwork/blank-design/raw/bd1-stone-forecourt.png",
+      "status": "accepted-independent-asset-ready-for-layout",
+      "intendedUse": "第一卷皇家宫前与宫苑段的低位石地、浅阶承接，保留女帝与宫城主体。",
+      "rawSha256": "ce19b3997a1927faec5995e0c11f4ad21486d11f4d6e61339a93d3537a9ae2b2",
+      "production": {
+        "path": "artwork/blank-design/chapter-1/bd1-stone-forecourt.png",
+        "width": 2694,
+        "height": 818,
+        "aspect": 3.293398533007335,
+        "bytes": 918624,
+        "sha256": "041d30581c7e1bc374cd0e6058aea8b866754e12a198b0f5ecc05c0a8bf6ea72",
+        "contentRgbaSha256": "779395f24e85b0502990b503ca680dfb3902a95b5294a26467619ae0e616a2a9",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          261,
+          79,
+          2433,
+          738
+        ],
+        "visibleAlphaBounds": [
+          261,
+          258,
+          2433,
+          559
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 261,
+          "top": 79,
+          "right": 261,
+          "bottom": 80
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.688196,
+          "top": 9.657702,
+          "right": 9.688196,
+          "bottom": 9.779951
+        },
+        "transparentPixelPercent": 83.474142,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-1/bd1-stone-forecourt.webp",
+        "url": "assets/blank-design/chapter-1/bd1-stone-forecourt.webp",
+        "width": 2048,
+        "height": 622,
+        "aspect": 3.292604501607717,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.7602078693392724,
+        "scaleY": 0.7603911980440098,
+        "bytes": 148210,
+        "sha256": "7eed66d9549eb6241761c736937b95d107c0738b0846273e4a0f793fa9e1ae2f",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          60,
+          1850,
+          561
+        ],
+        "visibleAlphaBounds": [
+          199,
+          196,
+          1849,
+          425
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 60,
+          "right": 198,
+          "bottom": 61
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.646302,
+          "right": 9.667969,
+          "bottom": 9.807074
+        },
+        "transparentPixelPercent": 83.473799,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "contentAspect": 3.2959028831562973,
+      "packing": {
+        "command": "python scripts/prepare-reconstruction-assets.py --input artwork/blank-design/raw/bd1-stone-forecourt.png --collection blank-design --trim-transparent --chapter 1 --gutter .12 --id bd1-stone-forecourt",
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            0,
+            65,
+            2172,
+            724
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            2172,
+            659
+          ]
+        },
+        "requestedGutterPerSide": 0.12,
+        "paddingScaleX": 1.2403314917127073,
+        "paddingScaleY": 1.2412746585735963,
+        "actualGutterContentPercent": {
+          "left": 12.01657458563536,
+          "right": 12.01657458563536,
+          "top": 11.987860394537178,
+          "bottom": 12.139605462822459
+        },
+        "rawUnchanged": true,
+        "productionContentPreserved": true,
+        "webAlphaPreserved": true
+      },
+      "qa": {
+        "rawInspectedWithViewImage": true,
+        "actualPaperCompositeInspectedWithViewImage": true,
+        "rawAlpha": {
+          "id": "bd1-stone-forecourt",
+          "rawSize": [
+            2172,
+            724
+          ],
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "bounds": {
+            "0": [
+              0,
+              65,
+              2172,
+              724
+            ],
+            "2": [
+              0,
+              243,
+              2172,
+              546
+            ],
+            "8": [
+              0,
+              244,
+              2172,
+              545
+            ],
+            "128": [
+              11,
+              246,
+              2170,
+              543
+            ]
+          },
+          "edgePixelsAbove8": {
+            "left": 1,
+            "right": 5
+          },
+          "rawSha256": "ce19b3997a1927faec5995e0c11f4ad21486d11f4d6e61339a93d3537a9ae2b2"
+        },
+        "ultraLowAlphaPixelCount": 25146,
+        "rawPaperPreview": "reports/blank-design/chapter-1-asset-qa/bd1-stone-forecourt-paper.jpg",
+        "deliveryPaperPreview": "reports/blank-design/chapter-1-asset-qa/bd1-stone-forecourt-web-paper.jpg",
+        "visualDecision": "accepted",
+        "visualNotes": "象牙石铺地连续，右侧浅阶完整、不对称；无宫殿人物或高栏，整体非常低。两端实体完整，仅最外少数半透明土色像素贴raw边；production透明gutter使其与图框分离，纸底无硬矩形。",
+        "transparentViewerFringes": "Raw black/transparency viewer shows red/yellow/green specks at ultra-low alpha; real warm-paper composites show no corresponding hard colored fringe. Nonzero RGBA pixels were retained rather than erased."
+      }
+    },
+    {
+      "id": "bd1-temple-path",
+      "prompt": "Use case: historical-scene. Asset type: one independent transparent 2.5D ground painting layer for a traditional Chinese peony narrative handscroll, not a full scene. Traditional meticulous gongbi ink outlines and restrained blue-green mineral pigment washes, delicate historic hand-painted illustration. Shallow oblique side/elevated long-scroll perspective; NOT photographic, 3D, isometric, a floating diorama block or a rectangular textured carpet. Wide 3:1 canvas, low horizontal composition. Keep the complete painted ground fragment comfortably inside the canvas with transparent space on all four sides, especially complete left and right ends; every leaf, stone, stem and path end intact. Organic soil/stone/grass edges naturally taper, never a rectangular crop. Genuine transparent RGBA background; everything outside painted subjects fully transparent. No sky, paper background rectangle, frame, text, labels, signatures or watermarks. Subject: a gentle low hillside footpath approaching an unseen mountain temple, a softly bending narrow earthy path with small pale stone patches, a few low nursery planting ridges, sparse intact peony seedlings with no large flowers, and several small weathered rocks. Ground rises subtly and asymmetrically on one side; a few low grasses and low mossy rock edges integrate the ends. Evoke peony propagation from mountain wilderness to temple nursery. Palette: quiet celadon green, light ink gray, warm dilute earth ochre, small pale stone accents, no rich gold. No temple building, pagoda, palace, gate, pavilion, people, large trees, oversized blossoms or distant mountain backdrop. Provide useful connected ground surface rather than separate floating object clusters.",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "generatedSource": "C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-78cb-7723-adc4-7527b3051250\\exec-2753551a-19f5-45e4-8278-f5b1c791ac21.png",
+      "raw": "artwork/blank-design/raw/bd1-temple-path.png",
+      "status": "accepted-independent-asset-ready-for-layout",
+      "intendedUse": "山野至寺院引种、苗圃培植的低坡和曲径，连接自然环境与栽培叙事。",
+      "rawSha256": "51071c99c639106f96e60438cec2d2edffe1f47a9ed0c860b688684160aceb80",
+      "production": {
+        "path": "artwork/blank-design/chapter-1/bd1-temple-path.png",
+        "width": 2680,
+        "height": 887,
+        "aspect": 3.0214205186020293,
+        "bytes": 1801160,
+        "sha256": "be649ffb624edd38d6efbe243a3edf61b6657cce1d209229af4ff5d5a3a7b9da",
+        "contentRgbaSha256": "c9289704c8eb9b794d96ae1142a888624c39ae60e4699095bf5c75ede0856eee",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          259,
+          86,
+          2420,
+          801
+        ],
+        "visibleAlphaBounds": [
+          273,
+          206,
+          2417,
+          722
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 259,
+          "top": 86,
+          "right": 260,
+          "bottom": 86
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.664179,
+          "top": 9.695603,
+          "right": 9.701493,
+          "bottom": 9.695603
+        },
+        "transparentPixelPercent": 71.238999,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-1/bd1-temple-path.webp",
+        "url": "assets/blank-design/chapter-1/bd1-temple-path.webp",
+        "width": 2048,
+        "height": 678,
+        "aspect": 3.0206489675516224,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.764179104477612,
+        "scaleY": 0.7643742953776775,
+        "bytes": 297964,
+        "sha256": "ff0795b0d0e9544868d8bd12467cd824bfd5081f08125d087579eca7c9fda839",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          66,
+          1849,
+          612
+        ],
+        "visibleAlphaBounds": [
+          208,
+          158,
+          1847,
+          552
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 66,
+          "right": 199,
+          "bottom": 66
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.734513,
+          "right": 9.716797,
+          "bottom": 9.734513
+        },
+        "transparentPixelPercent": 71.255718,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "contentAspect": 3.0223776223776224,
+      "packing": {
+        "command": "python scripts/prepare-reconstruction-assets.py --input artwork/blank-design/raw/bd1-temple-path.png --collection blank-design --trim-transparent --chapter 1 --gutter .12 --id bd1-temple-path",
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            0,
+            9,
+            2161,
+            724
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            2161,
+            715
+          ]
+        },
+        "requestedGutterPerSide": 0.12,
+        "paddingScaleX": 1.2401665895418787,
+        "paddingScaleY": 1.2405594405594405,
+        "actualGutterContentPercent": {
+          "left": 11.985192040721888,
+          "right": 12.031466913465987,
+          "top": 12.027972027972028,
+          "bottom": 12.027972027972028
+        },
+        "rawUnchanged": true,
+        "productionContentPreserved": true,
+        "webAlphaPreserved": true
+      },
+      "qa": {
+        "rawInspectedWithViewImage": true,
+        "actualPaperCompositeInspectedWithViewImage": true,
+        "rawAlpha": {
+          "id": "bd1-temple-path",
+          "rawSize": [
+            2172,
+            724
+          ],
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "bounds": {
+            "0": [
+              0,
+              9,
+              2161,
+              724
+            ],
+            "2": [
+              13,
+              129,
+              2160,
+              648
+            ],
+            "8": [
+              14,
+              129,
+              2158,
+              645
+            ],
+            "128": [
+              16,
+              131,
+              2156,
+              644
+            ]
+          },
+          "edgePixelsAbove8": {
+            "left": 0,
+            "right": 0
+          },
+          "rawSha256": "51071c99c639106f96e60438cec2d2edffe1f47a9ed0c860b688684160aceb80"
+        },
+        "ultraLowAlphaPixelCount": 53035,
+        "rawPaperPreview": "reports/blank-design/chapter-1-asset-qa/bd1-temple-path-paper.jpg",
+        "deliveryPaperPreview": "reports/blank-design/chapter-1-asset-qa/bd1-temple-path-web-paper.jpg",
+        "visualDecision": "accepted",
+        "visualNotes": "低坡、苗圃土埂、细小苗株与曲径连续接地；端部小石和草叶完整，无整寺院或人物。",
+        "transparentViewerFringes": "Raw black/transparency viewer shows red/yellow/green specks at ultra-low alpha; real warm-paper composites show no corresponding hard colored fringe. Nonzero RGBA pixels were retained rather than erased."
+      }
+    },
+    {
+      "id": "bd1-court-garden",
+      "prompt": "Use case: historical-scene. Asset type: one independent transparent 2.5D ground painting layer for a traditional Chinese peony narrative handscroll, not a full scene. Traditional meticulous gongbi ink outlines and restrained blue-green mineral pigment washes, delicate historic hand-painted illustration. Shallow oblique side/elevated long-scroll perspective; NOT photographic, 3D, isometric, a floating diorama block or a rectangular textured carpet. Wide 3:1 canvas, low horizontal composition. Keep the complete painted ground fragment comfortably inside the canvas with transparent space on all four sides, especially complete left and right ends; every leaf, stone, stem and path end intact. Organic soil/stone/grass edges naturally taper, never a rectangular crop. Genuine transparent RGBA background; everything outside painted subjects fully transparent. No sky, paper background rectangle, frame, text, labels, signatures or watermarks. Subject: a low imperial horticultural garden ground fragment in Luoyang's Xiyuan, several shallow curving nursery beds with dark soil ridges and an elegant bending light-earth garden path linking them. Include only three or four small, fully complete peony plants rooted in these beds, their complete foliage and modest pale-pink, ivory or muted cinnabar flowers proportional to garden plant size, never giant blossoms. Low garden curbs can be very subtle worn pale stone. The asymmetric low ground surface remains visually primary and continuously connected. Palette: celadon and dark mineral greens, earth ochre, warm stone, restrained cinnabar; almost no gold. No palace, pavilion, building, railing, wall, person, large tree, giant peony cutout, mirror symmetry or ornamental poster arrangement.",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "generatedSource": "C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-78cb-7723-adc4-7527b3051250\\exec-fcc2d1f8-7464-43c6-a83c-ebdf08d923ea.png",
+      "raw": "artwork/blank-design/raw/bd1-court-garden.png",
+      "status": "accepted-independent-asset-ready-for-layout",
+      "intendedUse": "洛阳西苑及宫苑引种赏花段的低位花圃、土埂和园路，不增加巨大独立花球。",
+      "rawSha256": "16f1fb45dd8a53ae278bde5143d79943c3162bd8a95083fb517060367897510d",
+      "production": {
+        "path": "artwork/blank-design/chapter-1/bd1-court-garden.png",
+        "width": 2691,
+        "height": 888,
+        "aspect": 3.0304054054054053,
+        "bytes": 1646359,
+        "sha256": "8eeadf0e8b614579e4b92c84f3cfe332ca1fc6cea740c28e442f2bfdfd79477b",
+        "contentRgbaSha256": "916d76a91c57ec380e71c7fbeed87c6752065484b6f3151b6ab0a73cc721acd3",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          260,
+          86,
+          2430,
+          802
+        ],
+        "visibleAlphaBounds": [
+          302,
+          166,
+          2379,
+          733
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 260,
+          "top": 86,
+          "right": 261,
+          "bottom": 86
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.661836,
+          "top": 9.684685,
+          "right": 9.698997,
+          "bottom": 9.684685
+        },
+        "transparentPixelPercent": 72.324247,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-1/bd1-court-garden.webp",
+        "url": "assets/blank-design/chapter-1/bd1-court-garden.webp",
+        "width": 2048,
+        "height": 676,
+        "aspect": 3.029585798816568,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.761055369751022,
+        "scaleY": 0.7612612612612613,
+        "bytes": 273174,
+        "sha256": "03717d99ea38fbf0c9d917fc4e793a8ba0a27c190a2aeed45db4c71d1dda9000",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          65,
+          1845,
+          611
+        ],
+        "visibleAlphaBounds": [
+          230,
+          126,
+          1811,
+          558
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 65,
+          "right": 203,
+          "bottom": 65
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.615385,
+          "right": 9.912109,
+          "bottom": 9.615385
+        },
+        "transparentPixelPercent": 72.336195,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "contentAspect": 3.03072625698324,
+      "packing": {
+        "command": "python scripts/prepare-reconstruction-assets.py --input artwork/blank-design/raw/bd1-court-garden.png --collection blank-design --trim-transparent --chapter 1 --gutter .12 --id bd1-court-garden",
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            0,
+            9,
+            2170,
+            725
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            2170,
+            716
+          ]
+        },
+        "requestedGutterPerSide": 0.12,
+        "paddingScaleX": 1.2400921658986175,
+        "paddingScaleY": 1.2402234636871508,
+        "actualGutterContentPercent": {
+          "left": 11.981566820276496,
+          "right": 12.027649769585254,
+          "top": 12.011173184357542,
+          "bottom": 12.011173184357542
+        },
+        "rawUnchanged": true,
+        "productionContentPreserved": true,
+        "webAlphaPreserved": true
+      },
+      "qa": {
+        "rawInspectedWithViewImage": true,
+        "actualPaperCompositeInspectedWithViewImage": true,
+        "rawAlpha": {
+          "id": "bd1-court-garden",
+          "rawSize": [
+            2170,
+            725
+          ],
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "bounds": {
+            "0": [
+              0,
+              9,
+              2170,
+              725
+            ],
+            "2": [
+              41,
+              85,
+              2121,
+              659
+            ],
+            "8": [
+              42,
+              89,
+              2119,
+              656
+            ],
+            "128": [
+              44,
+              91,
+              2118,
+              655
+            ]
+          },
+          "edgePixelsAbove8": {
+            "left": 0,
+            "right": 0
+          },
+          "rawSha256": "16f1fb45dd8a53ae278bde5143d79943c3162bd8a95083fb517060367897510d"
+        },
+        "ultraLowAlphaPixelCount": 51566,
+        "rawPaperPreview": "reports/blank-design/chapter-1-asset-qa/bd1-court-garden-paper.jpg",
+        "deliveryPaperPreview": "reports/blank-design/chapter-1-asset-qa/bd1-court-garden-web-paper.jpg",
+        "visualDecision": "accepted",
+        "visualNotes": "三组完整低牡丹植株位于花圃土床，花朵比例小于整段园路，浅石圈和弯路连接；无建筑人物或巨花。",
+        "transparentViewerFringes": "Raw black/transparency viewer shows red/yellow/green specks at ultra-low alpha; real warm-paper composites show no corresponding hard colored fringe. Nonzero RGBA pixels were retained rather than erased."
+      }
+    },
+    {
+      "id": "bd1-winter-ground",
+      "prompt": "Use case: historical-scene. Asset type: one independent transparent 2.5D ground painting layer for a traditional Chinese peony narrative handscroll, not a full scene. Traditional meticulous gongbi ink outlines and restrained blue-green mineral pigment washes, delicate historic hand-painted illustration. Shallow oblique side/elevated long-scroll perspective; NOT photographic, 3D, isometric, a floating diorama block or a rectangular textured carpet. Wide 3:1 canvas, low horizontal composition. Keep the complete painted ground fragment comfortably inside the canvas with transparent space on all four sides, especially complete left and right ends; every leaf, stone, stem and path end intact. Organic soil/stone/grass edges naturally taper, never a rectangular crop. Genuine transparent RGBA background; everything outside painted subjects fully transparent. No sky, paper background rectangle, frame, text, labels, signatures or watermarks. Subject: an asymmetric low winter garden ground fragment, a quiet winding path with a thin irregular dusting of snow, two or three very shallow complete stone steps, sparse low snow-covered earth or shore edges, a handful of delicate bamboo sprigs kept low. Pale snow sits only on physical ground and stone surfaces, surrounded by genuine transparency. Connect a winter imperial decree episode without adding any narrative figures. Palette: cool pale gray, blue-green ink, ivory-white snow, minimal subdued earth brown, no festive red, no gold. Keep stone, bamboo and both path ends complete; wispy grasses or light snow-edge pigment naturally taper. No person, palace, temple, building, lantern, giant blossom, large tree or tall bamboo grove. Do not draw a solid white rectangular background or a heavy thick snowbank.",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "generatedSource": "C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-78cb-7723-adc4-7527b3051250\\exec-8a43afae-2864-46b5-827a-8e593676eeb6.png",
+      "raw": "artwork/blank-design/raw/bd1-winter-ground.png",
+      "status": "accepted-independent-asset-ready-for-layout",
+      "intendedUse": "腊日诏景及相邻冷色段的薄雪园路、浅阶和疏竹地面承接。",
+      "rawSha256": "d159b86fa1b066e5acfff6042fcfe455f37bc75b2ddeb3eb640d0a48f703328b",
+      "production": {
+        "path": "artwork/blank-design/chapter-1/bd1-winter-ground.png",
+        "width": 2686,
+        "height": 870,
+        "aspect": 3.0873563218390805,
+        "bytes": 1276120,
+        "sha256": "73bc4863aa7ddc43d22b38cf3e9667ec5e0d3909e1e59e227f6c82cbbb598de3",
+        "contentRgbaSha256": "6fd152149beae162a97f810f2bca99b985468532f680d4c5281f50dc2c6396ca",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          260,
+          84,
+          2426,
+          785
+        ],
+        "visibleAlphaBounds": [
+          261,
+          200,
+          2421,
+          655
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 260,
+          "top": 84,
+          "right": 260,
+          "bottom": 85
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.679821,
+          "top": 9.655172,
+          "right": 9.679821,
+          "bottom": 9.770115
+        },
+        "transparentPixelPercent": 79.222105,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-1/bd1-winter-ground.webp",
+        "url": "assets/blank-design/chapter-1/bd1-winter-ground.webp",
+        "width": 2048,
+        "height": 663,
+        "aspect": 3.0889894419306185,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.7624720774385704,
+        "scaleY": 0.7620689655172413,
+        "bytes": 246712,
+        "sha256": "e0c47b2e4f2d920a92791f5e9b0f76226651ce3eb850d0bf5a45ad9f9b88be84",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          64,
+          1850,
+          598
+        ],
+        "visibleAlphaBounds": [
+          199,
+          153,
+          1846,
+          499
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 64,
+          "right": 198,
+          "bottom": 65
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.653092,
+          "right": 9.667969,
+          "bottom": 9.803922
+        },
+        "transparentPixelPercent": 79.27618,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "contentAspect": 3.0898716119828817,
+      "packing": {
+        "command": "python scripts/prepare-reconstruction-assets.py --input artwork/blank-design/raw/bd1-winter-ground.png --collection blank-design --trim-transparent --chapter 1 --gutter .12 --id bd1-winter-ground",
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            6,
+            23,
+            2172,
+            724
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            2166,
+            701
+          ]
+        },
+        "requestedGutterPerSide": 0.12,
+        "paddingScaleX": 1.240073868882733,
+        "paddingScaleY": 1.2410841654778888,
+        "actualGutterContentPercent": {
+          "left": 12.003693444136658,
+          "right": 12.003693444136658,
+          "top": 11.982881597717546,
+          "bottom": 12.125534950071327
+        },
+        "rawUnchanged": true,
+        "productionContentPreserved": true,
+        "webAlphaPreserved": true
+      },
+      "qa": {
+        "rawInspectedWithViewImage": true,
+        "actualPaperCompositeInspectedWithViewImage": true,
+        "rawAlpha": {
+          "id": "bd1-winter-ground",
+          "rawSize": [
+            2172,
+            724
+          ],
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "bounds": {
+            "0": [
+              6,
+              23,
+              2172,
+              724
+            ],
+            "2": [
+              6,
+              137,
+              2171,
+              595
+            ],
+            "8": [
+              7,
+              139,
+              2167,
+              594
+            ],
+            "128": [
+              15,
+              145,
+              2162,
+              593
+            ]
+          },
+          "edgePixelsAbove8": {
+            "left": 0,
+            "right": 0
+          },
+          "rawSha256": "d159b86fa1b066e5acfff6042fcfe455f37bc75b2ddeb3eb640d0a48f703328b"
+        },
+        "ultraLowAlphaPixelCount": 47872,
+        "rawPaperPreview": "reports/blank-design/chapter-1-asset-qa/bd1-winter-ground-paper.jpg",
+        "deliveryPaperPreview": "reports/blank-design/chapter-1-asset-qa/bd1-winter-ground-web-paper.jpg",
+        "visualDecision": "accepted",
+        "visualNotes": "低石阶、薄雪、疏竹和雪岸自然接地，冷灰青少色；透明区域不被白色雪背景占满，无人物建筑。",
+        "transparentViewerFringes": "Raw black/transparency viewer shows red/yellow/green specks at ultra-low alpha; real warm-paper composites show no corresponding hard colored fringe. Nonzero RGBA pixels were retained rather than erased."
+      }
+    }
+  ],
+  "finishedAt": "2026-10-20T01:01:27.996973+00:00",
+  "generatorMode": "built-in image_gen, one distinct transparent call per asset; no CLI fallback",
+  "selectedAssets": 4,
+  "productionWebBytes": 966060,
+  "runtimeIntegration": "Not performed by this asset task. Manifest, layout, original source images, renderer and Blender untouched.",
+  "qaContact": "reports/blank-design/chapter-1-asset-qa/delivery-contact.jpg",
+  "layoutNote": "Production visibleAlphaBounds are provided at alpha>8. The imperial stone forecourt is intentionally a very low band; its visible painted height is substantially smaller than the transparent canvas height. Place by visible ground edge rather than full image centre."
+}

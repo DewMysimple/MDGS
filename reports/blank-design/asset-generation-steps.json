@@ -1,0 +1,146 @@
+{
+  "id": "bd4-abandoned-steps",
+  "chapter": 4,
+  "prompt": "Use case: historical-scene. Asset type: ONE independent transparent RGBA low ground connection layer for the fourth chapter of a traditional Chinese 2.5D handscroll, the passage from a flourishing Tang palace gathering to its deserted afterglow. Subject: a shallow curved, slightly diagonal STONE STAIR LANDING, three very low broad uneven ivory stone steps, a short broken-length but structurally complete stone balustrade at the LEFT end only, a narrow garden walk turning off at the RIGHT, a few tiny fading pink peony petals on the stone and small low tufts of gray-green ground plants. No table, lantern, people, building, pavilion, great palace, mountains, banners, flames or tall reeds/branches. Do not depict physical ruins or violent destruction; simply a quiet palace stair after people have left. Composition: a wide horizontal approximately 3:1 low irregular silhouette, one connected complete ground asset with all ends and the whole bottom footprint visible; oblique elevated handscroll perspective with the steps slightly diagonal rather than a centered symmetrical rectangle. Restrained traditional gongbi ink contours, warm ivory mineral washes, muted blue-green and warm gray, extremely small aged-gold touches, delicate hand-painted silk texture on objects. Keep the center pale, low and open. Natural finished stone and soft dry-brush earth/water termination, no hard rectangular backdrop. Every stair end, balustrade tip and plant remains inside generous real transparent alpha margins on all four sides. No photographic or 3D rendering, no cast studio shadow halo, no flat poster background, no paper rectangle, no writing/calligraphy/seal/watermark/frame. The background must be genuinely transparent; no checkerboard baked in.",
+  "method": "built-in image_gen.imagegen",
+  "transparentBackground": true,
+  "raw": "artwork/blank-design/raw/bd4-abandoned-steps.png",
+  "status": "technically-packed-and-used-in-pilot-v4",
+  "purpose": "Replace the repeated large terrace in gap4 with asymmetrical low palace steps, without the duplicated poetry table.",
+  "packing": {
+    "id": "bd4-abandoned-steps",
+    "chapter": 4,
+    "shared": false,
+    "operation": "center unchanged RGBA content on transparent canvas; delivery resize/WebP compression only",
+    "raw": {
+      "path": "artwork/blank-design/raw/bd4-abandoned-steps.png",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGBA",
+      "bytes": 1678071,
+      "sha256": "94b561e7898cdb9eebd98586226c2736f34b1144906d967a7c602351f564d3f2",
+      "unchanged": true
+    },
+    "transparentOnlyTrim": {
+      "enabled": true,
+      "box": [
+        0,
+        17,
+        2172,
+        724
+      ],
+      "nonzeroAlphaPixelsRemoved": 0,
+      "contentSize": [
+        2172,
+        707
+      ]
+    },
+    "contentAspect": 3.072135785007072,
+    "sourceAspectPolicy": "Original Blender layer aspect is supplied separately by the reconstruction manifest; not inferred here",
+    "requestedGutterPerSide": 0.12,
+    "paddingPx": {
+      "left": 261,
+      "top": 85,
+      "right": 261,
+      "bottom": 85
+    },
+    "actualGutterContentPercent": {
+      "left": 12.01657458563536,
+      "right": 12.01657458563536,
+      "top": 12.022630834512023,
+      "bottom": 12.022630834512023
+    },
+    "paddingScaleX": 1.2403314917127073,
+    "paddingScaleY": 1.2404526166902405,
+    "production": {
+      "path": "artwork/blank-design/chapter-4/bd4-abandoned-steps.png",
+      "width": 2694,
+      "height": 877,
+      "aspect": 3.0718358038768527,
+      "bytes": 1569356,
+      "sha256": "86ec47eccae43e1e5f1dda6657db70966aaef05b4aa7ff1ede381140869a6c7b",
+      "contentRgbaSha256": "05268181a90bf103c33821de096f7fab4b355706d08376badc2b20364b956d58",
+      "contentPixelsPreserved": true,
+      "alphaBounds": [
+        261,
+        85,
+        2433,
+        792
+      ],
+      "visibleAlphaBounds": [
+        264,
+        156,
+        2432,
+        741
+      ],
+      "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+      "safeOuterMarginPx": {
+        "left": 261,
+        "top": 85,
+        "right": 261,
+        "bottom": 85
+      },
+      "safeOuterMarginPercent": {
+        "left": 9.688196,
+        "top": 9.692132,
+        "right": 9.688196,
+        "bottom": 9.692132
+      },
+      "transparentPixelPercent": 72.859829,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    "web": {
+      "path": "public/assets/blank-design/chapter-4/bd4-abandoned-steps.webp",
+      "url": "assets/blank-design/chapter-4/bd4-abandoned-steps.webp",
+      "width": 2048,
+      "height": 667,
+      "aspect": 3.070464767616192,
+      "quality": 90,
+      "maxEdge": 2048,
+      "scaleX": 0.7602078693392724,
+      "scaleY": 0.7605473204104903,
+      "bytes": 244328,
+      "sha256": "de5cc2d561486c63391802ef2203be91aa3d576bdc981db6339aa939ae9e2e9d",
+      "alphaPreservedAgainstDeliveryImage": true,
+      "alphaBounds": [
+        198,
+        71,
+        1850,
+        590
+      ],
+      "visibleAlphaBounds": [
+        201,
+        118,
+        1849,
+        564
+      ],
+      "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+      "safeOuterMarginPx": {
+        "left": 198,
+        "top": 71,
+        "right": 198,
+        "bottom": 77
+      },
+      "safeOuterMarginPercent": {
+        "left": 9.667969,
+        "top": 10.644678,
+        "right": 9.667969,
+        "bottom": 11.544228
+      },
+      "transparentPixelPercent": 72.876452,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    "scope": "technical asset packing; no creative repaint, RGB cleanup, edge removal, or original PNG edit",
+    "preparedAtUtc": "2026-10-20T00:26:40.851162+00:00"
+  },
+  "alphaCanvasEdgeMax": [
+    5,
+    7,
+    0,
+    1
+  ],
+  "quality": "Complete balustrade, low steps, natural soil tips; raw has no alpha>=8 canvas boundary; real paper scene gap4 visually checked and independently passed in pilot-v4 static scene review",
+  "sceneReview": "reports/blank-design/pilot-v4/visual-review.json"
+}

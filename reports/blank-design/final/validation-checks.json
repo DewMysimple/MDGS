@@ -1,0 +1,84 @@
+{
+  "status": "passed",
+  "canonicalSha256": "dec52de0566ca29fcae9a767cec8f7970bd3dc98a226ac8a6ea54ebf654d8fa8",
+  "assembledAt": "2026-10-20T02:24:02.571247+00:00",
+  "distManifestSha256": "dec52de0566ca29fcae9a767cec8f7970bd3dc98a226ac8a6ea54ebf654d8fa8",
+  "commands": [
+    {
+      "command": "npm run build",
+      "exitCode": 0
+    },
+    {
+      "command": "npm test",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run validate:assets",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run test:startup",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run test:subpath",
+      "exitCode": 0
+    },
+    {
+      "command": "node scripts/test-stable-layer-sorting.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "python scripts/test-blender-reconstruction-preflight.py",
+      "exitCode": 0
+    },
+    {
+      "command": "node scripts/validate-blank-placement.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node scripts/validate-blank-pixels.mjs --expected-hash=<final> --batch=final",
+      "exitCode": 0
+    },
+    {
+      "command": "node scripts/validate-blank-runtime.mjs --expected-hash=<final>",
+      "exitCode": 0
+    },
+    {
+      "command": "python scripts/report-blank-design.py",
+      "exitCode": 0
+    }
+  ],
+  "basis": "Root and delegated actual command results; no product or canonical change afterward. Hashes below captured at evidence assembly, not represented as build-start fingerprints. Failed attempts retained separately.",
+  "productHashes": {
+    "src/App.tsx": "e3dc0e8978f8aa4de12180e6c0600048ba8892bee952b842767faa0af6814cf8",
+    "src/main.tsx": "a920ec27028d3f1997c93d79da61fa77c0ff613085a6fb2a8ea2dea92cab28a9",
+    "src/styles.css": "12dca1ec963325fd6f4323ae60f4eec063b72d49b889776062452c28f20ff44a",
+    "src/types.ts": "9f13fef73dc954dff6372b36be531cc5dc2af96afbe90ff4055be5be1d3a2890",
+    "src/components/AudioController.tsx": "1dc9cb1be6d83e5d7e39cb545eddaf6023217cdc13b7740fe84475a595f623c9",
+    "src/components/CulturePanel.tsx": "d9732f88e7d210a3a8e1bd730fe3415fd3bb0d3063f5e0f78dffc76b6c83ff06",
+    "src/components/ScrollOrnaments.tsx": "cf748040d16fd7277945478efcde2874c5415bd70f141a7fd03268239241f47c",
+    "src/components/ScrollViewport.tsx": "2c6a33ab677ad3219ee0e54f2703bb9b3a86f7431bbcf3c5d94a8015dc2d0a53",
+    "src/data/annotations.ts": "62253ce357a79cf3ce74e6cb6a427f8448ef091d703628c967a3757e0de46b6c",
+    "src/data/chapters.ts": "ca815c3ee1febd230c9128e81e18651c41780291ac89ae43ae47536be0a4d993",
+    "src/data/motionProfiles.ts": "dec193ddbde08de10f9544817b81f9cdde50877e64e9cd127b93bcbee9ac7982",
+    "src/data/sceneOptions.ts": "35103a4479a7381d95a0541261cff158949842ed7f4e6b3c746de9bba36f3f9b",
+    "src/hooks/useScrollController.ts": "d47306c03c07d40f37a35f787afe33b3327e9b1b48eb3d630c06cf762096ada6",
+    "src/scene/ArtDirectionLayer.ts": "2edbc662c5a47b5387feeea8e1b9358b149f9320c4426bfa3c260c1c8a3c60a4",
+    "src/scene/CalligraphyLayer.css": "82d58b1711d505fbc283f83f5d275dac2e723f166e0bc3d9af73b1980a786588",
+    "src/scene/CalligraphyLayer.ts": "3dc2e97a33194d1147c9feaaf29e97d19f8a21d9dc2e1f49896e53923604084e",
+    "src/scene/MotionDirector.ts": "3a73fcd7ed9b6ac94608e8143931e9f92898f5b3e5f9ae5b5c951345cc20ad05",
+    "src/scene/prepareScene.ts": "22e1eeab4c3bf0624d5c3012405ee06c12cce09cb2c9601724fec74f99860935",
+    "src/scene/SceneRenderer.ts": "38fc20a31074cc5eb9d737a2111123a568c06f46842b674f0de04d18c6a50378",
+    "src/scene/StableLayerSorting.ts": "3fd92ed5f4b88853500081c572936366d8aec9169bc7792909b5ade1722afccf",
+    "src/styles/exhibition-theme.css": "cd7793ecdf9137594babbeec319bcac7409f4e347073bfa6d6602552cc0504f5",
+    "src/styles/handscroll.css": "eec6c6af12fe4d72f2ed542c0d4cc6b4cbf8d1eeeedcb7a66cc2e514be361cd1",
+    "src/styles/reading-panel.css": "93165db9f3ce8a35f3d574be75c9062576740376ed5dd2bdd043687b9e6f8772"
+  },
+  "materialLimitations": [
+    "Windows/Chromium/Blender5.0 verified; other browsers and physical devices not tested",
+    "360px: secondary bd2-stop07-edge lies outside untouched camera frustum; explicitly proven and reported",
+    "Blender source paper/font shading differs from web; no pixel-identical claim",
+    "No commit/push/deployment; original sources not overwritten"
+  ]
+}

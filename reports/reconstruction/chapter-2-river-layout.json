@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "chapter": 2,
+  "id": "c2-t002",
+  "status": "computed-awaiting-placed-scene-review",
+  "scope": "Only the main river carrier local geometry may change; all source object world matrices stay fixed.",
+  "replacement": {
+    "meshNames": [
+      "右下河流与岸景"
+    ],
+    "geometryPolicy": "explicit-corners",
+    "geometryCorners": [
+      [
+        -0.8366608392601433,
+        -0.49959313021449825,
+        -0.2264663151579714
+      ],
+      [
+        0.7780996420973256,
+        -0.49959313021449825,
+        -0.2264663151579714
+      ],
+      [
+        0.7780996420973256,
+        1.6534208449287946,
+        -0.2264663151579714
+      ],
+      [
+        -0.8366608392601433,
+        1.6534208449287946,
+        -0.2264663151579714
+      ]
+    ]
+  },
+  "hiddenMeshNames": [
+    "右下河流与岸景.001",
+    "右下河流与岸景.002"
+  ],
+  "edgeRepairs": [],
+  "sourceWorldUnion": {
+    "min": [
+      7.3273134,
+      -0.9570185,
+      0.3403289
+    ],
+    "max": [
+      9.1750927,
+      1.4636065,
+      0.752673
+    ],
+    "width": 1.8477793,
+    "height": 2.4206250000000002
+  },
+  "sourceMeshes": [
+    {
+      "name": "右下河流与岸景",
+      "matrix": [
+        1.1443055,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.1443055,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.1443055,
+        0.0,
+        8.284709,
+        -0.4068717,
+        0.752673,
+        1.0
+      ],
+      "bounds": {
+        "min": [
+          7.3273134,
+          -0.9570185,
+          0.752673
+        ],
+        "max": [
+          8.8513308,
+          0.187287,
+          0.752673
+        ]
+      }
+    },
+    {
+      "name": "右下河流与岸景.001",
+      "matrix": [
+        1.0375568,
+        -0.0477285,
+        -0.0211133,
+        0.0,
+        0.0476927,
+        1.0377707,
+        -0.0022424,
+        0.0,
+        0.021194,
+        0.0012703,
+        1.0386516,
+        0.0,
+        8.6082449,
+        0.0817262,
+        0.4863087,
+        1.0
+      ],
+      "bounds": {
+        "min": [
+          7.4207006,
+          -0.4090402,
+          0.4760022
+        ],
+        "max": [
+          9.0805483,
+          0.702891,
+          0.5110505
+        ]
+      }
+    },
+    {
+      "name": "右下河流与岸景.002",
+      "matrix": [
+        1.2420567,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.2420567,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.2420567,
+        0.0,
+        8.8850536,
+        0.5947366,
+        0.3403289,
+        1.0
+      ],
+      "bounds": {
+        "min": [
+          7.5208864,
+          0.2215498,
+          0.3403289
+        ],
+        "max": [
+          9.1750927,
+          1.4636065,
+          0.3403289
+        ]
+      }
+    }
+  ],
+  "raw": "artwork/reconstruction/raw/c2-t002-edge-repair-v2.png",
+  "rawWidth": 1086,
+  "rawHeight": 1448,
+  "rawSha256": "d47066a55f1a4c86d7bdcd023cc502f6a78b7982c02efbd6891f9d8a0b691854",
+  "fittedPaintingAspect": 0.75,
+  "aspectFitPolicy": "cover-world-union-without-stretch",
+  "paintingWorldWidth": 1.8477793,
+  "paintingWorldHeight": 2.463705733333333,
+  "paintingWorldCenter": [
+    8.25120305,
+    0.253294,
+    0.49352635
+  ],
+  "paintingWorldCorners": [
+    [
+      7.327313400000001,
+      -0.9785588666666666,
+      0.49352635
+    ],
+    [
+      9.1750927,
+      -0.9785588666666666,
+      0.49352635
+    ],
+    [
+      9.1750927,
+      1.4851468666666667,
+      0.49352635
+    ],
+    [
+      7.327313400000001,
+      1.4851468666666667,
+      0.49352635
+    ]
+  ],
+  "cornerUvOrder": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "paddingPolicy": "Only expand the four raw-content corners around their center by paddingScaleX/Y; no contentAspect/sourceAspect factor.",
+  "worldToLocalRoundTripMaxError": 1.1102230246251565e-16,
+  "visualIntent": "One pavilion and one quiet viewing group; connected teal water, rocks and peony petals replace three repeated copies."
+}

@@ -1,0 +1,3405 @@
+{
+  "schemaVersion": 1,
+  "status": "audit-and-proposal-only-no-product-edit",
+  "generatedAt": "2026-10-20T03:09:11.327855+00:00",
+  "scope": "第三卷技术专项审查；只读产品、源素材和Blender，只写本审查JSON/MD。未运行Blender加载/保存。",
+  "baselineSha256": {
+    "public/assets/reconstruction/manifest.json": "dec52de0566ca29fcae9a767cec8f7970bd3dc98a226ac8a6ea54ebf654d8fa8",
+    "public/assets/chapter-3/scene.json": "bd5d3e404a0834c4d3183f4eb66cc05e8b5346eae7f305906b6a351a138f6fb9",
+    "source/牡丹/场景blender搭建/三/画卷三_中国长卷_复合运镜_v07.blend": "4902ef5d7a70f4e7f54a8f8b307943f22437a1ed64a12aa6bc798742daf5421d",
+    "artwork/blender-blank-design/chapter-3_reconstructed.blend": "7efa9b055c3d352fd0a9b46464311a408c3f58a1780c99ecc11d9d0b9f7f39fd"
+  },
+  "sourceCounts": {
+    "meshes": 393,
+    "images": 72,
+    "sourceTextObjects": 6,
+    "hiddenMeshNames": 287,
+    "replacements": 7,
+    "geometryRepairs": 2,
+    "edgeRepairs": 0,
+    "addedLayers": 46,
+    "newBlankDesignAddedLayers": 12,
+    "textLayers": 4
+  },
+  "directlyViewed": [
+    "attachment-image-1",
+    "attachment-image-2",
+    "attachment-image-3",
+    "attachment-image-4",
+    "attachment-image-5",
+    "public/assets/chapter-3/textures/e03e5d2e5d7c3372.webp",
+    "public/assets/chapter-3/textures/4d097defdb313a71.webp",
+    "public/assets/chapter-3/textures/f37e3725a4c7d197.webp",
+    "public/assets/chapter-3/textures/3518a8dbd9573481.webp",
+    "public/assets/reconstruction/chapter-3/c3-t056.webp",
+    "public/assets/reconstruction/chapter-3/c3-t054.webp",
+    "source/牡丹/素材/场景图层素材/牡丹场景素材元素/三/3-3/07-left-room-background.png",
+    "reports/blank-design/expanded-v3/chapter-3-stop-02.jpg",
+    "reports/blank-design/expanded-v3/chapter-3-stop-07.jpg"
+  ],
+  "objectIssues": [
+    {
+      "issueId": "wedding-stage",
+      "attachment": 2,
+      "readingStop": 2,
+      "name": "SC02_06_上方人物背景",
+      "sourceMaterial": "3-2_06_上方人物背景",
+      "sourceTexture": "public/assets/chapter-3/textures/e03e5d2e5d7c3372.webp",
+      "originalPng": "source/牡丹/素材/场景图层素材/牡丹场景素材元素/三/3-2/06_上方人物背景.png",
+      "sourceImageDatablockName": "3-2_06_上方人物背景.png",
+      "sourceMatrixColumnMajor": [
+        1.1253788,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.1253788,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.1253788,
+        0.0,
+        -7.8507848,
+        60.111824,
+        17.0799637,
+        1.0
+      ],
+      "sourceTranslation": [
+        -7.8507848,
+        60.111824,
+        17.0799637
+      ],
+      "sourceWorldBounds": {
+        "min": [
+          -7.8507848,
+          39.8925171,
+          11.6875324
+        ],
+        "max": [
+          -7.8507848,
+          80.331131,
+          22.4723949
+        ]
+      },
+      "sourceLocalPositions": [
+        0.0,
+        0.0,
+        4.7916589,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        8.9833336,
+        0.0,
+        0.0,
+        17.9666672,
+        0.0,
+        0.0,
+        17.9666672,
+        4.7916589,
+        0.0,
+        -17.9666672,
+        0.0,
+        0.0,
+        -17.9666672,
+        4.7916589,
+        0.0,
+        -17.9666672,
+        -4.7916589,
+        0.0,
+        0.0,
+        -4.7916589,
+        0.0,
+        0.0,
+        -3.5937443,
+        0.0,
+        0.0,
+        -2.3958294,
+        0.0,
+        8.9833336,
+        -2.3958294,
+        0.0,
+        10.308239,
+        -2.3958294,
+        0.0,
+        10.6872282,
+        -2.3958294,
+        0.0,
+        17.9666672,
+        -2.3958294,
+        0.0,
+        13.4750004,
+        -2.3958294,
+        0.0,
+        11.229167,
+        -2.3958294,
+        0.0,
+        4.4916668,
+        -2.3958294,
+        0.0,
+        8.2844992,
+        -3.5937443,
+        0.0,
+        8.9833336,
+        -3.5937443,
+        0.0,
+        8.9833336,
+        -3.2942655,
+        0.0,
+        8.9833336,
+        -2.9947867,
+        0.0,
+        8.9833336,
+        -2.6953082,
+        0.0,
+        13.4750004,
+        -2.9947867,
+        0.0,
+        13.4750004,
+        -3.5937443,
+        0.0,
+        17.9666672,
+        -3.5937443,
+        0.0,
+        14.247201,
+        -2.6897113,
+        0.0,
+        13.4750004,
+        -2.6905332,
+        0.0,
+        4.4916668,
+        -4.7916589,
+        0.0,
+        8.2730093,
+        -4.7916589,
+        0.0,
+        10.2849255,
+        -2.6939244
+      ],
+      "sourceUvs": [
+        0.5,
+        1.0,
+        0.5,
+        0.5,
+        0.75,
+        0.5,
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        0.0,
+        0.5,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.5,
+        0.125,
+        0.5,
+        0.25,
+        0.75,
+        0.25,
+        0.7868712,
+        0.25,
+        0.7974182,
+        0.25,
+        1.0,
+        0.25,
+        0.875,
+        0.25,
+        0.8125,
+        0.25,
+        0.625,
+        0.25,
+        0.7305519,
+        0.125,
+        0.75,
+        0.125,
+        0.75,
+        0.15625,
+        0.75,
+        0.1875,
+        0.75,
+        0.21875,
+        0.875,
+        0.1875,
+        0.875,
+        0.125,
+        1.0,
+        0.125,
+        0.8964899,
+        0.219334,
+        0.875,
+        0.2192483,
+        0.625,
+        0.0,
+        0.7302322,
+        0.0,
+        0.7862224,
+        0.2188944
+      ],
+      "sourceGeometry": {
+        "vertices": 31,
+        "triangles": 36,
+        "uvBounds": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ]
+      },
+      "activeReplacement": null,
+      "activeTexture": "public/assets/chapter-3/textures/e03e5d2e5d7c3372.webp",
+      "originalImage": {
+        "path": "source/牡丹/素材/场景图层素材/牡丹场景素材元素/三/3-2/06_上方人物背景.png",
+        "sha256": "6e2bfa07b51c7791608dc0b7bbe42b0eb9632b762ed3972e62d3389c6c18f03e",
+        "alpha": {
+          "size": [
+            2170,
+            615
+          ],
+          "alphaBounds": [
+            0,
+            24,
+            2170,
+            591
+          ],
+          "safeMarginPx": [
+            0,
+            24,
+            0,
+            24
+          ],
+          "longestNearVerticalOpaqueSilhouetteRun": {
+            "left": {
+              "rows": 354,
+              "column": 0,
+              "startRow": 103,
+              "ratioOfCanvasHeight": 0.57561
+            },
+            "right": {
+              "rows": 261,
+              "column": 2169,
+              "startRow": 181,
+              "ratioOfCanvasHeight": 0.42439
+            }
+          },
+          "method": "alpha>8 bounds; alpha>=128 silhouette; consecutive row envelope with at most 1px change; triage only, direct viewing remains authoritative"
+        }
+      },
+      "webImage": {
+        "path": "public/assets/chapter-3/textures/e03e5d2e5d7c3372.webp",
+        "sha256": "9f9815529cba450dc73b5dcb4c53b662dacdd2aa094cdd911dfd8e64e913f5f4",
+        "alpha": {
+          "size": [
+            2048,
+            546
+          ],
+          "alphaBounds": [
+            8,
+            8,
+            2040,
+            538
+          ],
+          "safeMarginPx": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "longestNearVerticalOpaqueSilhouetteRun": {
+            "left": {
+              "rows": 344,
+              "column": 24,
+              "startRow": 74,
+              "ratioOfCanvasHeight": 0.630037
+            },
+            "right": {
+              "rows": 242,
+              "column": 2022,
+              "startRow": 156,
+              "ratioOfCanvasHeight": 0.443223
+            }
+          },
+          "method": "alpha>8 bounds; alpha>=128 silhouette; consecutive row envelope with at most 1px change; triage only, direct viewing remains authoritative"
+        }
+      },
+      "activeImage": {
+        "path": "public/assets/chapter-3/textures/e03e5d2e5d7c3372.webp",
+        "sha256": "9f9815529cba450dc73b5dcb4c53b662dacdd2aa094cdd911dfd8e64e913f5f4",
+        "alpha": {
+          "size": [
+            2048,
+            546
+          ],
+          "alphaBounds": [
+            8,
+            8,
+            2040,
+            538
+          ],
+          "safeMarginPx": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "longestNearVerticalOpaqueSilhouetteRun": {
+            "left": {
+              "rows": 344,
+              "column": 24,
+              "startRow": 74,
+              "ratioOfCanvasHeight": 0.630037
+            },
+            "right": {
+              "rows": 242,
+              "column": 2022,
+              "startRow": 156,
+              "ratioOfCanvasHeight": 0.443223
+            }
+          },
+          "method": "alpha>8 bounds; alpha>=128 silhouette; consecutive row envelope with at most 1px change; triage only, direct viewing remains authoritative"
+        }
+      },
+      "existingGeometryRepair": {
+        "id": "c3-m-f449c3cfe037-full-uv",
+        "meshNames": [
+          "SC02_06_上方人物背景"
+        ],
+        "role": "后景连续层",
+        "narrative": "原图右侧柱脚和阶台完整；旧网格局部L形缺口在gap02实景暴露，恢复该单实例完整UV，不动世界变换。",
+        "geometryPolicy": "full-uv-affine",
+        "treatment": "修复",
+        "sourceMeshId": "c3-m-f449c3cfe037"
+      },
+      "currentEdgeRepair": null,
+      "hidden": false,
+      "problem": "左右幕台硬边及顶部拥挤",
+      "cause": "source pixel crop + composition; prior local UV hole repaired, not these source edges",
+      "recommendedAction": "保留人物与真实柱体，先将舞台群重排至中下部，再对两侧岩石/栏杆/远景像素做有结构的外扩和自然收束；不整幅统一渐隐。",
+      "currentScreenshot": "reports/blank-design/expanded-v3/chapter-3-stop-02.jpg"
+    },
+    {
+      "issueId": "wedding-screen",
+      "attachment": 3,
+      "readingStop": 3,
+      "name": "SC03_07-left-room-background",
+      "sourceMaterial": "3-3_07-left-room-background",
+      "sourceTexture": "public/assets/chapter-3/textures/4d097defdb313a71.webp",
+      "originalPng": "source/牡丹/素材/场景图层素材/牡丹场景素材元素/三/3-3/07-left-room-background.png",
+      "sourceImageDatablockName": "3-3_07-left-room-background.png",
+      "sourceMatrixColumnMajor": [
+        1.7678136,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.7678136,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.7678136,
+        0.0,
+        -6.0,
+        108.6204529,
+        9.8834667,
+        1.0
+      ],
+      "sourceTranslation": [
+        -6.0,
+        108.6204529,
+        9.8834667
+      ],
+      "sourceWorldBounds": {
+        "min": [
+          -6.0,
+          99.0959091,
+          -4.3755035
+        ],
+        "max": [
+          -6.0,
+          118.1449966,
+          24.142437
+        ]
+      },
+      "sourceLocalPositions": [
+        0.0,
+        -5.3877549,
+        -8.0658789,
+        0.0,
+        5.3877549,
+        -8.0658789,
+        0.0,
+        5.3877549,
+        8.0658789,
+        0.0,
+        -5.3877549,
+        8.0658789
+      ],
+      "sourceUvs": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      "sourceGeometry": {
+        "vertices": 4,
+        "triangles": 2,
+        "uvBounds": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ]
+      },
+      "activeReplacement": null,
+      "activeTexture": "public/assets/chapter-3/textures/4d097defdb313a71.webp",
+      "originalImage": {
+        "path": "source/牡丹/素材/场景图层素材/牡丹场景素材元素/三/3-3/07-left-room-background.png",
+        "sha256": "db998c873534a4ff178e7164f5582cd90b3e324881ae592fe43cd1f7ef9a8fe9",
+        "alpha": {
+          "size": [
+            1022,
+            1532
+          ],
+          "alphaBounds": [
+            0,
+            0,
+            1010,
+            1520
+          ],
+          "safeMarginPx": [
+            0,
+            0,
+            12,
+            12
+          ],
+          "longestNearVerticalOpaqueSilhouetteRun": {
+            "left": {
+              "rows": 1226,
+              "column": 0,
+              "startRow": 161,
+              "ratioOfCanvasHeight": 0.800261
+            },
+            "right": {
+              "rows": 29,
+              "column": 961,
+              "startRow": 1135,
+              "ratioOfCanvasHeight": 0.01893
+            }
+          },
+          "method": "alpha>8 bounds; alpha>=128 silhouette; consecutive row envelope with at most 1px change; triage only, direct viewing remains authoritative"
+        }
+      },
+      "webImage": {
+        "path": "public/assets/chapter-3/textures/4d097defdb313a71.webp",
+        "sha256": "28f5dce70debfc5348a942b392c20d623c92cb9c32b46cd256d00e295dbd1bb8",
+        "alpha": {
+          "size": [
+            1026,
+            1536
+          ],
+          "alphaBounds": [
+            9,
+            9,
+            1018,
+            1528
+          ],
+          "safeMarginPx": [
+            9,
+            9,
+            8,
+            8
+          ],
+          "longestNearVerticalOpaqueSilhouetteRun": {
+            "left": {
+              "rows": 1226,
+              "column": 21,
+              "startRow": 174,
+              "ratioOfCanvasHeight": 0.798177
+            },
+            "right": {
+              "rows": 29,
+              "column": 969,
+              "startRow": 1143,
+              "ratioOfCanvasHeight": 0.01888
+            }
+          },
+          "method": "alpha>8 bounds; alpha>=128 silhouette; consecutive row envelope with at most 1px change; triage only, direct viewing remains authoritative"
+        }
+      },
+      "activeImage": {
+        "path": "public/assets/chapter-3/textures/4d097defdb313a71.webp",
+        "sha256": "28f5dce70debfc5348a942b392c20d623c92cb9c32b46cd256d00e295dbd1bb8",
+        "alpha": {
+          "size": [
+            1026,
+            1536
+          ],
+          "alphaBounds": [
+            9,
+            9,
+            1018,
+            1528
+          ],
+          "safeMarginPx": [
+            9,
+            9,
+            8,
+            8
+          ],
+          "longestNearVerticalOpaqueSilhouetteRun": {
+            "left": {
+              "rows": 1226,
+              "column": 21,
+              "startRow": 174,
+              "ratioOfCanvasHeight": 0.798177
+            },
+            "right": {
+              "rows": 29,
+              "column": 969,
+              "startRow": 1143,
+              "ratioOfCanvasHeight": 0.01888
+            }
+          },
+          "method": "alpha>8 bounds; alpha>=128 silhouette; consecutive row envelope with at most 1px change; triage only, direct viewing remains authoritative"
+        }
+      },
+      "existingGeometryRepair": null,
+      "currentEdgeRepair": null,
+      "hidden": false,
+      "problem": "左屏风竖直切线",
+      "cause": "full UV source silhouette truncation",
+      "recommendedAction": "屏风外缘/花纹与帷幔应有完整轮廓；原PNG左边在画布边界截止，需定向外扩或退役该块高大侧景，不再恢复UV。",
+      "currentScreenshot": "reports/blank-design/expanded-v3/chapter-3-stop-03.jpg"
+    },
+    {
+      "issueId": "procession-right",
+      "attachment": 3,
+      "readingStop": 3,
+      "name": "SC03_04-procession",
+      "sourceMaterial": "3-3_04-procession",
+      "sourceTexture": "public/assets/chapter-3/textures/f37e3725a4c7d197.webp",
+      "originalPng": "source/牡丹/素材/场景图层素材/牡丹场景素材元素/三/3-3/04-procession.png",
+      "sourceImageDatablockName": "3-3_04-procession.png",
+      "sourceMatrixColumnMajor": [
+        1.4891897,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.4891897,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.4891897,
+        0.0,
+        -4.0,
+        127.7451477,
+        8.7094774,
+        1.0
+      ],
+      "sourceTranslation": [
+        -4.0,
+        127.7451477,
+        8.7094774
+      ],
+      "sourceWorldBounds": {
+        "min": [
+          -4.0,
+          117.4363098,
+          2.4111619
+        ],
+        "max": [
+          -4.0,
+          138.0539856,
+          15.0077934
+        ]
+      },
+      "sourceLocalPositions": [
+        0.0,
+        -6.9224491,
+        -4.2293572,
+        0.0,
+        6.9224491,
+        -4.2293572,
+        0.0,
+        6.9224491,
+        4.2293572,
+        0.0,
+        -6.9224491,
+        4.2293572
+      ],
+      "sourceUvs": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      "sourceGeometry": {
+        "vertices": 4,
+        "triangles": 2,
+        "uvBounds": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ]
+      },
+      "activeReplacement": null,
+      "activeTexture": "public/assets/chapter-3/textures/f37e3725a4c7d197.webp",
+      "originalImage": {
+        "path": "source/牡丹/素材/场景图层素材/牡丹场景素材元素/三/3-3/04-procession.png",
+        "sha256": "fe4de2d5a8601c10d1e3cb5d59887614c3008fa32987e3ea753204f199b2162b",
+        "alpha": {
+          "size": [
+            1492,
+            923
+          ],
+          "alphaBounds": [
+            12,
+            12,
+            1492,
+            910
+          ],
+          "safeMarginPx": [
+            12,
+            12,
+            0,
+            13
+          ],
+          "longestNearVerticalOpaqueSilhouetteRun": {
+            "left": {
+              "rows": 16,
+              "column": 969,
+              "startRow": 132,
+              "ratioOfCanvasHeight": 0.017335
+            },
+            "right": {
+              "rows": 169,
+              "column": 1491,
+              "startRow": 129,
+              "ratioOfCanvasHeight": 0.183099
+            }
+          },
+          "method": "alpha>8 bounds; alpha>=128 silhouette; consecutive row envelope with at most 1px change; triage only, direct viewing remains authoritative"
+        }
+      },
+      "webImage": {
+        "path": "public/assets/chapter-3/textures/f37e3725a4c7d197.webp",
+        "sha256": "3255d6dbfa4f2a37d791fb8dd5a8795b12005d5687759ab81874631e90f961d1",
+        "alpha": {
+          "size": [
+            1496,
+            914
+          ],
+          "alphaBounds": [
+            8,
+            8,
+            1487,
+            906
+          ],
+          "safeMarginPx": [
+            8,
+            8,
+            9,
+            8
+          ],
+          "longestNearVerticalOpaqueSilhouetteRun": {
+            "left": {
+              "rows": 16,
+              "column": 965,
+              "startRow": 128,
+              "ratioOfCanvasHeight": 0.017505
+            },
+            "right": {
+              "rows": 172,
+              "column": 1470,
+              "startRow": 130,
+              "ratioOfCanvasHeight": 0.188184
+            }
+          },
+          "method": "alpha>8 bounds; alpha>=128 silhouette; consecutive row envelope with at most 1px change; triage only, direct viewing remains authoritative"
+        }
+      },
+      "activeImage": {
+        "path": "public/assets/chapter-3/textures/f37e3725a4c7d197.webp",
+        "sha256": "3255d6dbfa4f2a37d791fb8dd5a8795b12005d5687759ab81874631e90f961d1",
+        "alpha": {
+          "size": [
+            1496,
+            914
+          ],
+          "alphaBounds": [
+            8,
+            8,
+            1487,
+            906
+          ],
+          "safeMarginPx": [
+            8,
+            8,
+            9,
+            8
+          ],
+          "longestNearVerticalOpaqueSilhouetteRun": {
+            "left": {
+              "rows": 16,
+              "column": 965,
+              "startRow": 128,
+              "ratioOfCanvasHeight": 0.017505
+            },
+            "right": {
+              "rows": 172,
+              "column": 1470,
+              "startRow": 130,
+              "ratioOfCanvasHeight": 0.188184
+            }
+          },
+          "method": "alpha>8 bounds; alpha>=128 silhouette; consecutive row envelope with at most 1px change; triage only, direct viewing remains authoritative"
+        }
+      },
+      "existingGeometryRepair": null,
+      "currentEdgeRepair": null,
+      "hidden": false,
+      "problem": "右迎亲宫门/队伍竖直切线",
+      "cause": "full UV source silhouette truncation",
+      "recommendedAction": "修右侧宫门、树冠、灯彩/栏杆端点并将迎亲队伍适度内收；人物仍完整，薄背景可退为轻景。",
+      "currentScreenshot": "reports/blank-design/expanded-v3/chapter-3-stop-03.jpg"
+    },
+    {
+      "issueId": "snow-lane",
+      "attachment": 4,
+      "readingStop": 5,
+      "name": "SC05_08_左下街景_重做",
+      "sourceMaterial": "3-5_08_左下街景_重做",
+      "sourceTexture": "public/assets/chapter-3/textures/3518a8dbd9573481.webp",
+      "originalPng": "source/牡丹/素材/场景图层素材/牡丹场景素材元素/三/3-5/08_左下街景_重做.png",
+      "sourceImageDatablockName": "3-5_08_左下街景_重做.png",
+      "sourceMatrixColumnMajor": [
+        1.3525014,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.3525014,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.3525014,
+        0.0,
+        -7.0,
+        229.1918335,
+        6.0897183,
+        1.0
+      ],
+      "sourceTranslation": [
+        -7.0,
+        229.1918335,
+        6.0897183
+      ],
+      "sourceWorldBounds": {
+        "min": [
+          -7.0,
+          220.5132751,
+          -3.4261088
+        ],
+        "max": [
+          -7.0,
+          237.8703918,
+          15.605545
+        ]
+      },
+      "sourceLocalPositions": [
+        0.0,
+        -6.4166665,
+        -7.0357242,
+        0.0,
+        6.4166665,
+        -7.0357242,
+        0.0,
+        6.4166665,
+        7.0357242,
+        0.0,
+        -6.4166665,
+        7.0357242
+      ],
+      "sourceUvs": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      "sourceGeometry": {
+        "vertices": 4,
+        "triangles": 2,
+        "uvBounds": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ]
+      },
+      "activeReplacement": null,
+      "activeTexture": "public/assets/chapter-3/textures/3518a8dbd9573481.webp",
+      "originalImage": {
+        "path": "source/牡丹/素材/场景图层素材/牡丹场景素材元素/三/3-5/08_左下街景_重做.png",
+        "sha256": "a7434351a3d9fb5304e38101ab5790192f8e38393ba9016736fed38e3ff87cbe",
+        "alpha": {
+          "size": [
+            1194,
+            1317
+          ],
+          "alphaBounds": [
+            0,
+            13,
+            1176,
+            1304
+          ],
+          "safeMarginPx": [
+            0,
+            13,
+            18,
+            13
+          ],
+          "longestNearVerticalOpaqueSilhouetteRun": {
+            "left": {
+              "rows": 950,
+              "column": 0,
+              "startRow": 131,
+              "ratioOfCanvasHeight": 0.721336
+            },
+            "right": {
+              "rows": 135,
+              "column": 1162,
+              "startRow": 752,
+              "ratioOfCanvasHeight": 0.102506
+            }
+          },
+          "method": "alpha>8 bounds; alpha>=128 silhouette; consecutive row envelope with at most 1px change; triage only, direct viewing remains authoritative"
+        }
+      },
+      "webImage": {
+        "path": "public/assets/chapter-3/textures/3518a8dbd9573481.webp",
+        "sha256": "ba0d718ca2765dee8a57d00ada3b04baae6837511ee7198d83be590670671e95",
+        "alpha": {
+          "size": [
+            1192,
+            1307
+          ],
+          "alphaBounds": [
+            9,
+            8,
+            1184,
+            1299
+          ],
+          "safeMarginPx": [
+            9,
+            8,
+            8,
+            8
+          ],
+          "longestNearVerticalOpaqueSilhouetteRun": {
+            "left": {
+              "rows": 948,
+              "column": 24,
+              "startRow": 130,
+              "ratioOfCanvasHeight": 0.725325
+            },
+            "right": {
+              "rows": 135,
+              "column": 1170,
+              "startRow": 747,
+              "ratioOfCanvasHeight": 0.10329
+            }
+          },
+          "method": "alpha>8 bounds; alpha>=128 silhouette; consecutive row envelope with at most 1px change; triage only, direct viewing remains authoritative"
+        }
+      },
+      "activeImage": {
+        "path": "public/assets/chapter-3/textures/3518a8dbd9573481.webp",
+        "sha256": "ba0d718ca2765dee8a57d00ada3b04baae6837511ee7198d83be590670671e95",
+        "alpha": {
+          "size": [
+            1192,
+            1307
+          ],
+          "alphaBounds": [
+            9,
+            8,
+            1184,
+            1299
+          ],
+          "safeMarginPx": [
+            9,
+            8,
+            8,
+            8
+          ],
+          "longestNearVerticalOpaqueSilhouetteRun": {
+            "left": {
+              "rows": 948,
+              "column": 24,
+              "startRow": 130,
+              "ratioOfCanvasHeight": 0.725325
+            },
+            "right": {
+              "rows": 135,
+              "column": 1170,
+              "startRow": 747,
+              "ratioOfCanvasHeight": 0.10329
+            }
+          },
+          "method": "alpha>8 bounds; alpha>=128 silhouette; consecutive row envelope with at most 1px change; triage only, direct viewing remains authoritative"
+        }
+      },
+      "existingGeometryRepair": null,
+      "currentEdgeRepair": null,
+      "hidden": false,
+      "problem": "雪巷左侧长竖切",
+      "cause": "full UV source silhouette truncation",
+      "recommendedAction": "沿左缘雪树/檐口/石栏补安全外延，原屋面/树冠不保留笔直切面；景组下移并让上部雪山更轻。",
+      "currentScreenshot": "reports/blank-design/expanded-v3/chapter-3-stop-05.jpg"
+    },
+    {
+      "issueId": "mirror-table",
+      "attachment": 5,
+      "readingStop": 7,
+      "name": "SC07_01_左侧镜台陈设",
+      "sourceMaterial": "3-7_01_左侧镜台陈设",
+      "sourceTexture": "public/assets/chapter-3/textures/13949918854e0319.webp",
+      "originalPng": "source/牡丹/素材/场景图层素材/牡丹场景素材元素/三/3-7/01_左侧镜台陈设.png",
+      "sourceImageDatablockName": "3-7_01_左侧镜台陈设.png",
+      "sourceMatrixColumnMajor": [
+        1.1461754,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.1461754,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.1461754,
+        0.0,
+        6.0,
+        352.7734375,
+        9.148695,
+        1.0
+      ],
+      "sourceTranslation": [
+        6.0,
+        352.7734375,
+        9.148695
+      ],
+      "sourceWorldBounds": {
+        "min": [
+          6.0,
+          344.2946777,
+          1.9791002
+        ],
+        "max": [
+          6.0,
+          361.2521973,
+          16.3182907
+        ]
+      },
+      "sourceLocalPositions": [
+        0.0,
+        -7.3974466,
+        -6.2552338,
+        0.0,
+        7.3974466,
+        -6.2552338,
+        0.0,
+        7.3974466,
+        6.2552338,
+        0.0,
+        -7.3974466,
+        6.2552338
+      ],
+      "sourceUvs": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      "sourceGeometry": {
+        "vertices": 4,
+        "triangles": 2,
+        "uvBounds": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ]
+      },
+      "activeReplacement": {
+        "id": "c3-t056",
+        "sourceTextureId": "c3-t-13949918854e0319",
+        "sourceTexture": "textures/13949918854e0319.webp",
+        "sourceName": "3-7_01_左侧镜台陈设.png",
+        "asset": "assets/reconstruction/chapter-3/c3-t056.webp",
+        "productionPng": "artwork/reconstruction/chapter-3/c3-t056.png",
+        "contentAspect": 1.1830008673026886,
+        "sourceAspect": 1.1826012058570199,
+        "paddingScale": 1.2402428447528187,
+        "paddingScaleX": 1.2404692082111437,
+        "paddingScaleY": 1.2402428447528187,
+        "uvInsetRect": [
+          0.09692671394799054,
+          0.0972027972027972,
+          0.9030732860520094,
+          0.9034965034965035
+        ],
+        "geometryPolicy": "full-uv-affine",
+        "role": "主体叙事层",
+        "narrative": "牡丹进入铜镜、首饰、家具纹样",
+        "treatment": "修复",
+        "sourceMeshNames": [
+          "SC07_01_左侧镜台陈设"
+        ]
+      },
+      "activeTexture": "public/assets/reconstruction/chapter-3/c3-t056.webp",
+      "originalImage": {
+        "path": "source/牡丹/素材/场景图层素材/牡丹场景素材元素/三/3-7/01_左侧镜台陈设.png",
+        "sha256": "0a12de6132eb23cfe62f524c45f152bb4b1e9bd6ca1832887c7e4b6b7e43398f",
+        "alpha": {
+          "size": [
+            1374,
+            1145
+          ],
+          "alphaBounds": [
+            7,
+            0,
+            1364,
+            1145
+          ],
+          "safeMarginPx": [
+            7,
+            0,
+            10,
+            0
+          ],
+          "longestNearVerticalOpaqueSilhouetteRun": {
+            "left": {
+              "rows": 122,
+              "column": 42,
+              "startRow": 800,
+              "ratioOfCanvasHeight": 0.10655
+            },
+            "right": {
+              "rows": 231,
+              "column": 1324,
+              "startRow": 914,
+              "ratioOfCanvasHeight": 0.201747
+            }
+          },
+          "method": "alpha>8 bounds; alpha>=128 silhouette; consecutive row envelope with at most 1px change; triage only, direct viewing remains authoritative"
+        }
+      },
+      "webImage": {
+        "path": "public/assets/chapter-3/textures/13949918854e0319.webp",
+        "sha256": "68f0785149651afce3c9c734f0fb010411d80da1412f95dd494a7fd786f6c919",
+        "alpha": {
+          "size": [
+            1373,
+            1161
+          ],
+          "alphaBounds": [
+            8,
+            8,
+            1365,
+            1152
+          ],
+          "safeMarginPx": [
+            8,
+            8,
+            8,
+            9
+          ],
+          "longestNearVerticalOpaqueSilhouetteRun": {
+            "left": {
+              "rows": 122,
+              "column": 43,
+              "startRow": 808,
+              "ratioOfCanvasHeight": 0.105082
+            },
+            "right": {
+              "rows": 215,
+              "column": 1325,
+              "startRow": 922,
+              "ratioOfCanvasHeight": 0.185185
+            }
+          },
+          "method": "alpha>8 bounds; alpha>=128 silhouette; consecutive row envelope with at most 1px change; triage only, direct viewing remains authoritative"
+        }
+      },
+      "activeImage": {
+        "path": "public/assets/reconstruction/chapter-3/c3-t056.webp",
+        "sha256": "c2c57c437c13e9d451f7bf7bd332b76408150d4cdece2e8c1dc899b949f3f9d1",
+        "alpha": {
+          "size": [
+            1692,
+            1430
+          ],
+          "alphaBounds": [
+            306,
+            144,
+            1388,
+            1282
+          ],
+          "safeMarginPx": [
+            306,
+            144,
+            304,
+            148
+          ],
+          "longestNearVerticalOpaqueSilhouetteRun": {
+            "left": {
+              "rows": 220,
+              "column": 335,
+              "startRow": 859,
+              "ratioOfCanvasHeight": 0.153846
+            },
+            "right": {
+              "rows": 239,
+              "column": 1350,
+              "startRow": 821,
+              "ratioOfCanvasHeight": 0.167133
+            }
+          },
+          "method": "alpha>8 bounds; alpha>=128 silhouette; consecutive row envelope with at most 1px change; triage only, direct viewing remains authoritative"
+        }
+      },
+      "existingGeometryRepair": null,
+      "currentEdgeRepair": null,
+      "hidden": false,
+      "problem": "镜台垂布/桌腿硬截与景组遮挡",
+      "cause": "current replacement has complete legs and cloth; current runtime composition still needs re-review",
+      "recommendedAction": "不要重绘已完整镜面与器物；先审c3-t056当前图卡完整UV及地台遮挡；保持垂布自然尖端与桌脚，不以雾遮桌腿。",
+      "currentScreenshot": "reports/blank-design/expanded-v3/chapter-3-stop-07.jpg"
+    },
+    {
+      "issueId": "floating-court",
+      "attachment": 5,
+      "readingStop": 7,
+      "name": "SC07_02_上方宫苑场景",
+      "sourceMaterial": "3-7_02_上方宫苑场景",
+      "sourceTexture": "public/assets/chapter-3/textures/7e6b36fea7f43225.webp",
+      "originalPng": "source/牡丹/素材/场景图层素材/牡丹场景素材元素/三/3-7/02_上方宫苑场景.png",
+      "sourceImageDatablockName": "3-7_02_上方宫苑场景.png",
+      "sourceMatrixColumnMajor": [
+        1.5161333,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.5161333,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.5161333,
+        0.0,
+        -4.0,
+        365.7245178,
+        18.4540253,
+        1.0
+      ],
+      "sourceTranslation": [
+        -4.0,
+        365.7245178,
+        18.4540253
+      ],
+      "sourceWorldBounds": {
+        "min": [
+          -4.0,
+          354.4057617,
+          12.5995035
+        ],
+        "max": [
+          -4.0,
+          377.0432739,
+          24.308548
+        ]
+      },
+      "sourceLocalPositions": [
+        0.0,
+        -7.4655318,
+        -3.8614821,
+        0.0,
+        7.4655318,
+        -3.8614821,
+        0.0,
+        7.4655318,
+        3.8614821,
+        0.0,
+        -7.4655318,
+        3.8614821
+      ],
+      "sourceUvs": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      "sourceGeometry": {
+        "vertices": 4,
+        "triangles": 2,
+        "uvBounds": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ]
+      },
+      "activeReplacement": {
+        "id": "c3-t054",
+        "sourceTextureId": "c3-t-7e6b36fea7f43225",
+        "sourceTexture": "textures/7e6b36fea7f43225.webp",
+        "sourceName": "3-7_02_上方宫苑场景.png",
+        "asset": "assets/reconstruction/chapter-3/c3-t054.webp",
+        "productionPng": "artwork/reconstruction/chapter-3/c3-t054.png",
+        "contentAspect": 1.9356270810210876,
+        "sourceAspect": 1.9333333333333333,
+        "paddingScale": 1.2408435072142063,
+        "paddingScaleX": 1.2402522935779816,
+        "paddingScaleY": 1.2408435072142063,
+        "uvInsetRect": [
+          0.09662505779010633,
+          0.09749552772808587,
+          0.9029126213592233,
+          0.9033989266547406
+        ],
+        "geometryPolicy": "full-uv-affine",
+        "role": "主体叙事层",
+        "narrative": "宫廷牡丹墙饰/礼制装饰是本卷家国祈愿旁叙",
+        "treatment": "修复",
+        "sourceMeshNames": [
+          "SC07_02_上方宫苑场景"
+        ]
+      },
+      "activeTexture": "public/assets/reconstruction/chapter-3/c3-t054.webp",
+      "originalImage": {
+        "path": "source/牡丹/素材/场景图层素材/牡丹场景素材元素/三/3-7/02_上方宫苑场景.png",
+        "sha256": "d4846e493828b898750cfce2d128599a4cdcdc61d5c51e606371584994149ecb",
+        "alpha": {
+          "size": [
+            1671,
+            941
+          ],
+          "alphaBounds": [
+            5,
+            0,
+            1671,
+            854
+          ],
+          "safeMarginPx": [
+            5,
+            0,
+            0,
+            87
+          ],
+          "longestNearVerticalOpaqueSilhouetteRun": {
+            "left": {
+              "rows": 71,
+              "column": 9,
+              "startRow": 770,
+              "ratioOfCanvasHeight": 0.075452
+            },
+            "right": {
+              "rows": 123,
+              "column": 1563,
+              "startRow": 299,
+              "ratioOfCanvasHeight": 0.130712
+            }
+          },
+          "method": "alpha>8 bounds; alpha>=128 silhouette; consecutive row envelope with at most 1px change; triage only, direct viewing remains authoritative"
+        }
+      },
+      "webImage": {
+        "path": "public/assets/chapter-3/textures/7e6b36fea7f43225.webp",
+        "sha256": "a0f433efb6c44ba097be344b5e6e2e7791b0beccec371634863f9400365e91fd",
+        "alpha": {
+          "size": [
+            1682,
+            870
+          ],
+          "alphaBounds": [
+            8,
+            9,
+            1674,
+            862
+          ],
+          "safeMarginPx": [
+            8,
+            9,
+            8,
+            8
+          ],
+          "longestNearVerticalOpaqueSilhouetteRun": {
+            "left": {
+              "rows": 71,
+              "column": 12,
+              "startRow": 778,
+              "ratioOfCanvasHeight": 0.081609
+            },
+            "right": {
+              "rows": 123,
+              "column": 1566,
+              "startRow": 307,
+              "ratioOfCanvasHeight": 0.141379
+            }
+          },
+          "method": "alpha>8 bounds; alpha>=128 silhouette; consecutive row envelope with at most 1px change; triage only, direct viewing remains authoritative"
+        }
+      },
+      "activeImage": {
+        "path": "public/assets/reconstruction/chapter-3/c3-t054.webp",
+        "sha256": "4dde6054f91eb0aad80c44ea243ffde166028b0010e497fae62a716d922565c1",
+        "alpha": {
+          "size": [
+            2048,
+            1059
+          ],
+          "alphaBounds": [
+            287,
+            129,
+            1789,
+            941
+          ],
+          "safeMarginPx": [
+            287,
+            129,
+            259,
+            118
+          ],
+          "longestNearVerticalOpaqueSilhouetteRun": {
+            "left": {
+              "rows": 72,
+              "column": 299,
+              "startRow": 814,
+              "ratioOfCanvasHeight": 0.067989
+            },
+            "right": {
+              "rows": 66,
+              "column": 1654,
+              "startRow": 508,
+              "ratioOfCanvasHeight": 0.062323
+            }
+          },
+          "method": "alpha>8 bounds; alpha>=128 silhouette; consecutive row envelope with at most 1px change; triage only, direct viewing remains authoritative"
+        }
+      },
+      "existingGeometryRepair": null,
+      "currentEdgeRepair": null,
+      "hidden": false,
+      "problem": "上部宫苑舞台悬浮、屋面顶到画框",
+      "cause": "composition + standalone raised stone plinth silhouette",
+      "recommendedAction": "优先删减/退役上部旁叙宫苑图卡或改为小幅器纹说明；如保留则以明确派生几何下移缩小并接地，顶部留纸，不再加山云填满。",
+      "currentScreenshot": "reports/blank-design/expanded-v3/chapter-3-stop-07.jpg"
+    }
+  ],
+  "addedLayerInventory": [
+    {
+      "id": "r3-mist-01",
+      "name": "R3_Mist_Bridge_01",
+      "asset": "assets/reconstruction/shared/ink-mist-bridge.webp",
+      "productionPng": "artwork/reconstruction/shared/ink-mist-bridge.png",
+      "matrix": [
+        0,
+        19.432044352628616,
+        0,
+        0,
+        0,
+        0,
+        2.7326312370883987,
+        0,
+        1,
+        0,
+        0,
+        0,
+        12.11650653178122,
+        29.126536214028512,
+        6.129161295118957,
+        1
+      ],
+      "opacity": 0.18,
+      "motionName": "slowCloud",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-ridge-01",
+      "name": "R3_Distant_Ridge_01",
+      "asset": "assets/reconstruction/shared/distant-ridge-bridge.webp",
+      "productionPng": "artwork/reconstruction/shared/distant-ridge-bridge.png",
+      "matrix": [
+        0,
+        37.96839291087825,
+        0,
+        0,
+        0,
+        0,
+        5.469532210484748,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -10.90844100495935,
+        29.126536214028512,
+        17.170699387479267,
+        1
+      ],
+      "opacity": 0.14,
+      "motionName": null,
+      "blankDesign": null
+    },
+    {
+      "id": "r3-mist-02",
+      "name": "R3_Mist_Bridge_02",
+      "asset": "assets/reconstruction/shared/ink-mist-bridge.webp",
+      "productionPng": "artwork/reconstruction/shared/ink-mist-bridge.png",
+      "matrix": [
+        0,
+        21.43364318768407,
+        0,
+        0,
+        0,
+        0,
+        3.0141060732680724,
+        0,
+        1,
+        0,
+        0,
+        0,
+        7.618986532792881,
+        89.04268595751643,
+        5.690054519551014,
+        1
+      ],
+      "opacity": 0.18,
+      "motionName": "slowCloud",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-ridge-02",
+      "name": "R3_Distant_Ridge_02",
+      "asset": "assets/reconstruction/shared/distant-ridge-bridge.webp",
+      "productionPng": "artwork/reconstruction/shared/distant-ridge-bridge.png",
+      "matrix": [
+        0,
+        41.87932938468582,
+        0,
+        0,
+        0,
+        0,
+        6.032921687275625,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -17.777647036072167,
+        89.04268595751643,
+        17.868926871849816,
+        1
+      ],
+      "opacity": 0.14,
+      "motionName": null,
+      "blankDesign": null
+    },
+    {
+      "id": "r3-mist-03",
+      "name": "R3_Mist_Bridge_03",
+      "asset": "assets/reconstruction/shared/ink-mist-bridge.webp",
+      "productionPng": "artwork/reconstruction/shared/ink-mist-bridge.png",
+      "matrix": [
+        0,
+        18.786128924019476,
+        0,
+        0,
+        0,
+        0,
+        2.6417993799402386,
+        0,
+        1,
+        0,
+        0,
+        0,
+        13.599811935687718,
+        149.0832944194867,
+        6.272141794979754,
+        1
+      ],
+      "opacity": 0.18,
+      "motionName": "slowCloud",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-ridge-03",
+      "name": "R3_Distant_Ridge_03",
+      "asset": "assets/reconstruction/shared/distant-ridge-bridge.webp",
+      "productionPng": "artwork/reconstruction/shared/distant-ridge-bridge.png",
+      "matrix": [
+        0,
+        36.70633471794741,
+        0,
+        0,
+        0,
+        0,
+        5.287726571411632,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -8.659793129256506,
+        149.0832944194867,
+        16.94666241455078,
+        1
+      ],
+      "opacity": 0.14,
+      "motionName": null,
+      "blankDesign": null
+    },
+    {
+      "id": "r3-mist-04",
+      "name": "R3_Mist_Bridge_04",
+      "asset": "assets/reconstruction/shared/ink-mist-bridge.webp",
+      "productionPng": "artwork/reconstruction/shared/ink-mist-bridge.png",
+      "matrix": [
+        0,
+        19.791102735205236,
+        0,
+        0,
+        0,
+        0,
+        2.7831238221382364,
+        0,
+        1,
+        0,
+        0,
+        0,
+        11.31866222975048,
+        209.21471298657374,
+        6.050672635752692,
+        1
+      ],
+      "opacity": 0.18,
+      "motionName": "slowCloud",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-ridge-04",
+      "name": "R3_Distant_Ridge_04",
+      "asset": "assets/reconstruction/shared/distant-ridge-bridge.webp",
+      "productionPng": "artwork/reconstruction/shared/distant-ridge-bridge.png",
+      "matrix": [
+        0,
+        38.66995932870959,
+        0,
+        0,
+        0,
+        0,
+        5.570596275248562,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -12.131732072725526,
+        209.21471298657374,
+        17.29623232958,
+        1
+      ],
+      "opacity": 0.14,
+      "motionName": null,
+      "blankDesign": null
+    },
+    {
+      "id": "r3-mist-05",
+      "name": "R3_Mist_Bridge_05",
+      "asset": "assets/reconstruction/shared/ink-mist-bridge.webp",
+      "productionPng": "artwork/reconstruction/shared/ink-mist-bridge.png",
+      "matrix": [
+        0,
+        18.785299835717435,
+        0,
+        0,
+        0,
+        0,
+        2.6416827893977644,
+        0,
+        1,
+        0,
+        0,
+        0,
+        13.599344134145682,
+        269.1656739088877,
+        6.272206597891541,
+        1
+      ],
+      "opacity": 0.18,
+      "motionName": "slowCloud",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-ridge-05",
+      "name": "R3_Distant_Ridge_05",
+      "asset": "assets/reconstruction/shared/distant-ridge-bridge.webp",
+      "productionPng": "artwork/reconstruction/shared/distant-ridge-bridge.png",
+      "matrix": [
+        0,
+        36.70471475713226,
+        0,
+        0,
+        0,
+        0,
+        5.287493208153961,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -8.659278547560248,
+        269.1656739088877,
+        16.946256118801884,
+        1
+      ],
+      "opacity": 0.14,
+      "motionName": null,
+      "blankDesign": null
+    },
+    {
+      "id": "r3-mist-06",
+      "name": "R3_Mist_Bridge_06",
+      "asset": "assets/reconstruction/shared/ink-mist-bridge.webp",
+      "productionPng": "artwork/reconstruction/shared/ink-mist-bridge.png",
+      "matrix": [
+        0,
+        18.965149148915742,
+        0,
+        0,
+        0,
+        0,
+        2.6669740990662762,
+        0,
+        1,
+        0,
+        0,
+        0,
+        13.186140257465226,
+        329.09010426941865,
+        6.232192675356577,
+        1
+      ],
+      "opacity": 0.18,
+      "motionName": "slowCloud",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-ridge-06",
+      "name": "R3_Distant_Ridge_06",
+      "asset": "assets/reconstruction/shared/distant-ridge-bridge.webp",
+      "productionPng": "artwork/reconstruction/shared/distant-ridge-bridge.png",
+      "matrix": [
+        0,
+        37.05612345424864,
+        0,
+        0,
+        0,
+        0,
+        5.338115345162342,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -9.285585118211756,
+        329.09010426941865,
+        17.008434894396252,
+        1
+      ],
+      "opacity": 0.14,
+      "motionName": null,
+      "blankDesign": null
+    },
+    {
+      "id": "r3-mist-07",
+      "name": "R3_Mist_Bridge_07",
+      "asset": "assets/reconstruction/shared/ink-mist-bridge.webp",
+      "productionPng": "artwork/reconstruction/shared/ink-mist-bridge.png",
+      "matrix": [
+        0,
+        19.847186410900854,
+        0,
+        0,
+        0,
+        0,
+        2.7910105890329326,
+        0,
+        1,
+        0,
+        0,
+        0,
+        11.198498863653818,
+        388.94143516185335,
+        6.0381073590315015,
+        1
+      ],
+      "opacity": 0.18,
+      "motionName": "slowCloud",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-ridge-07",
+      "name": "R3_Distant_Ridge_07",
+      "asset": "assets/reconstruction/shared/distant-ridge-bridge.webp",
+      "productionPng": "artwork/reconstruction/shared/distant-ridge-bridge.png",
+      "matrix": [
+        0,
+        38.77954157317424,
+        0,
+        0,
+        0,
+        0,
+        5.586382132111229,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -12.318348750019204,
+        388.94143516185335,
+        17.315534520342695,
+        1
+      ],
+      "opacity": 0.14,
+      "motionName": null,
+      "blankDesign": null
+    },
+    {
+      "id": "r3-mist-08",
+      "name": "R3_Mist_Bridge_08",
+      "asset": "assets/reconstruction/shared/ink-mist-bridge.webp",
+      "productionPng": "artwork/reconstruction/shared/ink-mist-bridge.png",
+      "matrix": [
+        0,
+        21.179185808911825,
+        0,
+        0,
+        0,
+        0,
+        2.9783230043782254,
+        0,
+        1,
+        0,
+        0,
+        0,
+        8.183961496250141,
+        448.9583822279111,
+        5.745931441132031,
+        1
+      ],
+      "opacity": 0.18,
+      "motionName": "slowCloud",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-ridge-08",
+      "name": "R3_Distant_Ridge_08",
+      "asset": "assets/reconstruction/shared/distant-ridge-bridge.webp",
+      "productionPng": "artwork/reconstruction/shared/distant-ridge-bridge.png",
+      "matrix": [
+        0,
+        41.38214352194412,
+        0,
+        0,
+        0,
+        0,
+        5.961299638450792,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -16.911166595875166,
+        448.9583822279111,
+        17.780217830697794,
+        1
+      ],
+      "opacity": 0.14,
+      "motionName": null,
+      "blankDesign": null
+    },
+    {
+      "id": "r3-petal-01_1",
+      "name": "R3_Petal_01_1",
+      "asset": "assets/chapter-1/textures/c11727871864eb21.webp",
+      "productionPng": "public/assets/chapter-1/textures/c11727871864eb21.webp",
+      "matrix": [
+        0,
+        0.38455790260256023,
+        0,
+        0,
+        0,
+        0,
+        0.43145520779799446,
+        0,
+        1,
+        0,
+        0,
+        0,
+        14.377052504000005,
+        -8.674748205297677,
+        13.505573563358706,
+        1
+      ],
+      "opacity": 0.39,
+      "motionName": "fallingPetal",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-petal-01_2",
+      "name": "R3_Petal_01_2",
+      "asset": "assets/chapter-1/textures/c11727871864eb21.webp",
+      "productionPng": "public/assets/chapter-1/textures/c11727871864eb21.webp",
+      "matrix": [
+        0,
+        0.5923975578587178,
+        0,
+        0,
+        0,
+        0,
+        0.5258360345038057,
+        0,
+        1,
+        0,
+        0,
+        0,
+        14.377052503999998,
+        6.186486729966569,
+        11.752786781679351,
+        1
+      ],
+      "opacity": 0.39,
+      "motionName": "fallingPetal",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-petal-02_1",
+      "name": "R3_Petal_02_1",
+      "asset": "assets/chapter-1/textures/c11727871864eb21.webp",
+      "productionPng": "public/assets/chapter-1/textures/c11727871864eb21.webp",
+      "matrix": [
+        0,
+        0.4711525608331386,
+        0,
+        0,
+        0,
+        0,
+        0.41821407085188705,
+        0,
+        1,
+        0,
+        0,
+        0,
+        12.439612836999999,
+        51.56065048485534,
+        13.54798892567158,
+        1
+      ],
+      "opacity": 0.39,
+      "motionName": "fallingPetal",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-petal-02_2",
+      "name": "R3_Petal_02_2",
+      "asset": "assets/chapter-1/textures/c11727871864eb21.webp",
+      "productionPng": "public/assets/chapter-1/textures/c11727871864eb21.webp",
+      "matrix": [
+        0,
+        0.7104886771858766,
+        0,
+        0,
+        0,
+        0,
+        0.5096983988507374,
+        0,
+        1,
+        0,
+        0,
+        0,
+        12.439612836999999,
+        65.96580181419812,
+        11.848994262835793,
+        1
+      ],
+      "opacity": 0.39,
+      "motionName": "fallingPetal",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-petal-03_1",
+      "name": "R3_Petal_03_1",
+      "asset": "assets/chapter-1/textures/c11727871864eb21.webp",
+      "productionPng": "public/assets/chapter-1/textures/c11727871864eb21.webp",
+      "matrix": [
+        0,
+        0.5833057557952144,
+        0,
+        0,
+        0,
+        0,
+        0.4184584769835233,
+        0,
+        1,
+        0,
+        0,
+        0,
+        13.420000000000002,
+        111.55503898695959,
+        13.549974725491126,
+        1
+      ],
+      "opacity": 0.39,
+      "motionName": "fallingPetal",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-petal-03_2",
+      "name": "R3_Petal_03_2",
+      "asset": "assets/chapter-1/textures/c11727871864eb21.webp",
+      "productionPng": "public/assets/chapter-1/textures/c11727871864eb21.webp",
+      "matrix": [
+        0,
+        0.4545618917776179,
+        0,
+        0,
+        0,
+        0,
+        0.509996268823669,
+        0,
+        1,
+        0,
+        0,
+        0,
+        13.420000000000002,
+        125.96860874972539,
+        11.849987162745562,
+        1
+      ],
+      "opacity": 0.39,
+      "motionName": "fallingPetal",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-petal-04_1",
+      "name": "R3_Petal_04_1",
+      "asset": "assets/chapter-1/textures/c11727871864eb21.webp",
+      "productionPng": "public/assets/chapter-1/textures/c11727871864eb21.webp",
+      "matrix": [
+        0,
+        0.37985111032853414,
+        0,
+        0,
+        0,
+        0,
+        0.4261744164661603,
+        0,
+        1,
+        0,
+        0,
+        0,
+        12.800819694000005,
+        171.41785912949047,
+        13.462667133787555,
+        1
+      ],
+      "opacity": 0.39,
+      "motionName": "fallingPetal",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-petal-04_2",
+      "name": "R3_Petal_04_2",
+      "asset": "assets/chapter-1/textures/c11727871864eb21.webp",
+      "productionPng": "public/assets/chapter-1/textures/c11727871864eb21.webp",
+      "matrix": [
+        0,
+        0.5851469143805547,
+        0,
+        0,
+        0,
+        0,
+        0.5194000700681328,
+        0,
+        1,
+        0,
+        0,
+        0,
+        12.800819694000012,
+        186.09720014110266,
+        11.731333566893774,
+        1
+      ],
+      "opacity": 0.39,
+      "motionName": "fallingPetal",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-petal-05_1",
+      "name": "R3_Petal_05_1",
+      "asset": "assets/chapter-1/textures/c11727871864eb21.webp",
+      "productionPng": "public/assets/chapter-1/textures/c11727871864eb21.webp",
+      "matrix": [
+        0,
+        0.4263347995210557,
+        0,
+        0,
+        0,
+        0,
+        0.3784320130580157,
+        0,
+        1,
+        0,
+        0,
+        0,
+        14.632000073,
+        232.2678794678575,
+        13.224759706096378,
+        1
+      ],
+      "opacity": 0.39,
+      "motionName": "fallingPetal",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-petal-05_2",
+      "name": "R3_Petal_05_2",
+      "asset": "assets/chapter-1/textures/c11727871864eb21.webp",
+      "productionPng": "public/assets/chapter-1/textures/c11727871864eb21.webp",
+      "matrix": [
+        0,
+        0.6429043858201519,
+        0,
+        0,
+        0,
+        0,
+        0.4612140159144566,
+        0,
+        1,
+        0,
+        0,
+        0,
+        14.632000073,
+        245.3027599176336,
+        11.687379653048184,
+        1
+      ],
+      "opacity": 0.39,
+      "motionName": "fallingPetal",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-petal-06_1",
+      "name": "R3_Petal_06_1",
+      "asset": "assets/chapter-1/textures/c11727871864eb21.webp",
+      "productionPng": "public/assets/chapter-1/textures/c11727871864eb21.webp",
+      "matrix": [
+        0,
+        0.532583516160848,
+        0,
+        0,
+        0,
+        0,
+        0.38207078333278216,
+        0,
+        1,
+        0,
+        0,
+        0,
+        14.340000000000003,
+        292.20067251852834,
+        13.254324714578853,
+        1
+      ],
+      "opacity": 0.39,
+      "motionName": "fallingPetal",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-petal-06_2",
+      "name": "R3_Petal_06_2",
+      "asset": "assets/chapter-1/textures/c11727871864eb21.webp",
+      "productionPng": "public/assets/chapter-1/textures/c11727871864eb21.webp",
+      "matrix": [
+        0,
+        0.4150347707534772,
+        0,
+        0,
+        0,
+        0,
+        0.46564876718682824,
+        0,
+        1,
+        0,
+        0,
+        0,
+        14.340000000000003,
+        305.3608883888797,
+        11.702162157289427,
+        1
+      ],
+      "opacity": 0.39,
+      "motionName": "fallingPetal",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-petal-07_1",
+      "name": "R3_Petal_07_1",
+      "asset": "assets/chapter-1/textures/c11727871864eb21.webp",
+      "productionPng": "public/assets/chapter-1/textures/c11727871864eb21.webp",
+      "matrix": [
+        0,
+        0.36486573253052956,
+        0,
+        0,
+        0,
+        0,
+        0.4093615535708381,
+        0,
+        1,
+        0,
+        0,
+        0,
+        12.149999999999991,
+        351.71873816985175,
+        13.326062622763061,
+        1
+      ],
+      "opacity": 0.39,
+      "motionName": "fallingPetal",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-petal-07_2",
+      "name": "R3_Petal_07_2",
+      "asset": "assets/chapter-1/textures/c11727871864eb21.webp",
+      "productionPng": "public/assets/chapter-1/textures/c11727871864eb21.webp",
+      "matrix": [
+        0,
+        0.562062481188441,
+        0,
+        0,
+        0,
+        0,
+        0.4989093934144589,
+        0,
+        1,
+        0,
+        0,
+        0,
+        12.149999999999999,
+        365.81896945951394,
+        11.66303131138153,
+        1
+      ],
+      "opacity": 0.39,
+      "motionName": "fallingPetal",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-petal-08_1",
+      "name": "R3_Petal_08_1",
+      "asset": "assets/chapter-1/textures/c11727871864eb21.webp",
+      "productionPng": "public/assets/chapter-1/textures/c11727871864eb21.webp",
+      "matrix": [
+        0,
+        0.5226700679769434,
+        0,
+        0,
+        0,
+        0,
+        0.4639430940469497,
+        0,
+        1,
+        0,
+        0,
+        0,
+        8.770000000000003,
+        410.7483996724987,
+        13.769537639131464,
+        1
+      ],
+      "opacity": 0.39,
+      "motionName": "fallingPetal",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-petal-08_2",
+      "name": "R3_Petal_08_2",
+      "asset": "assets/chapter-1/textures/c11727871864eb21.webp",
+      "productionPng": "public/assets/chapter-1/textures/c11727871864eb21.webp",
+      "matrix": [
+        0,
+        0.7881760518183979,
+        0,
+        0,
+        0,
+        0,
+        0.56543064586972,
+        0,
+        1,
+        0,
+        0,
+        0,
+        8.769999999999996,
+        426.7286618007825,
+        11.884768819565739,
+        1
+      ],
+      "opacity": 0.39,
+      "motionName": "fallingPetal",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-petal-09_1",
+      "name": "R3_Petal_09_1",
+      "asset": "assets/chapter-1/textures/c11727871864eb21.webp",
+      "productionPng": "public/assets/chapter-1/textures/c11727871864eb21.webp",
+      "matrix": [
+        0,
+        0.6518518817371287,
+        0,
+        0,
+        0,
+        0,
+        0.46763287168098344,
+        0,
+        1,
+        0,
+        0,
+        0,
+        16.473906744000004,
+        470.6874727256714,
+        14.19951668240799,
+        1
+      ],
+      "opacity": 0.39,
+      "motionName": "fallingPetal",
+      "blankDesign": null
+    },
+    {
+      "id": "r3-petal-09_2",
+      "name": "R3_Petal_09_2",
+      "asset": "assets/chapter-1/textures/c11727871864eb21.webp",
+      "productionPng": "public/assets/chapter-1/textures/c11727871864eb21.webp",
+      "matrix": [
+        0,
+        0.5079789142784595,
+        0,
+        0,
+        0,
+        0,
+        0.5699275623611986,
+        0,
+        1,
+        0,
+        0,
+        0,
+        16.473906744000004,
+        486.7948271946831,
+        12.299758141203993,
+        1
+      ],
+      "opacity": 0.39,
+      "motionName": "fallingPetal",
+      "blankDesign": null
+    },
+    {
+      "id": "bd3-gap01-ground",
+      "name": "BD3_01_workshop-court",
+      "asset": "assets/blank-design/chapter-3/bd3-workshop-court.webp",
+      "productionPng": "artwork/blank-design/chapter-3/bd3-workshop-court.png",
+      "matrix": [
+        0,
+        73.1755306640377,
+        0,
+        0,
+        0,
+        0,
+        24.06589464303541,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -15.041058021643757,
+        29.126536214028512,
+        2.1024792113854662,
+        1
+      ],
+      "opacity": 0.94,
+      "motionName": null,
+      "blankDesign": {
+        "assetId": "bd3-workshop-court",
+        "regions": [
+          "c3-gap-01-r2",
+          "c3-gap-01-r3",
+          "c3-stop-01-r2",
+          "c3-stop-02-r2"
+        ],
+        "categories": [
+          "A",
+          "D"
+        ],
+        "progress": 0.06170822215550957,
+        "gap": 1
+      }
+    },
+    {
+      "id": "bd3-gap02-ground",
+      "name": "BD3_02_domestic-floor",
+      "asset": "assets/blank-design/chapter-3/bd3-domestic-floor.webp",
+      "productionPng": "artwork/blank-design/chapter-3/bd3-domestic-floor.png",
+      "matrix": [
+        0,
+        73.1952923571296,
+        0,
+        0,
+        0,
+        0,
+        24.099563593457297,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -15.040258933441422,
+        89.04268595751643,
+        0.9944484919296084,
+        1
+      ],
+      "opacity": 0.94,
+      "motionName": null,
+      "blankDesign": {
+        "assetId": "bd3-domestic-floor",
+        "regions": [
+          "c3-gap-02-r2",
+          "c3-gap-02-r3",
+          "c3-stop-02-r2",
+          "c3-stop-03-r2"
+        ],
+        "categories": [
+          "A",
+          "D"
+        ],
+        "progress": 0.18527723828993936,
+        "gap": 2
+      }
+    },
+    {
+      "id": "bd3-gap03-ground",
+      "name": "BD3_03_domestic-floor",
+      "asset": "assets/blank-design/chapter-3/bd3-domestic-floor.webp",
+      "productionPng": "artwork/blank-design/chapter-3/bd3-domestic-floor.png",
+      "matrix": [
+        0,
+        73.20076568203132,
+        0,
+        0,
+        0,
+        0,
+        24.10136568669702,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -15.040037612862442,
+        149.0832944194867,
+        2.1006738651098633,
+        1
+      ],
+      "opacity": 0.94,
+      "motionName": null,
+      "blankDesign": {
+        "assetId": "bd3-domestic-floor",
+        "regions": [
+          "c3-gap-03-r2",
+          "c3-gap-03-r3",
+          "c3-stop-03-r2",
+          "c3-stop-04-r2"
+        ],
+        "categories": [
+          "A",
+          "D"
+        ],
+        "progress": 0.30891527606479746,
+        "gap": 3
+      }
+    },
+    {
+      "id": "bd3-gap04-ground",
+      "name": "BD3_04_lantern-lane",
+      "asset": "assets/blank-design/chapter-3/bd3-lantern-lane.webp",
+      "productionPng": "artwork/blank-design/chapter-3/bd3-lantern-lane.png",
+      "matrix": [
+        0,
+        73.18033574655635,
+        0,
+        0,
+        0,
+        0,
+        24.130467586318023,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -15.040556802049892,
+        209.21471298657374,
+        2.1014798734772437,
+        1
+      ],
+      "opacity": 0.94,
+      "motionName": null,
+      "blankDesign": {
+        "assetId": "bd3-lantern-lane",
+        "regions": [
+          "c3-gap-04-r2",
+          "c3-gap-04-r3",
+          "c3-stop-04-r2",
+          "c3-stop-05-r2"
+        ],
+        "categories": [
+          "A",
+          "D"
+        ],
+        "progress": 0.43273851796258755,
+        "gap": 4
+      }
+    },
+    {
+      "id": "bd3-gap05-ground",
+      "name": "BD3_05_domestic-floor",
+      "asset": "assets/blank-design/chapter-3/bd3-domestic-floor.webp",
+      "productionPng": "artwork/blank-design/chapter-3/bd3-domestic-floor.png",
+      "matrix": [
+        0,
+        72.12582551499577,
+        0,
+        0,
+        0,
+        0,
+        23.74744143719422,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -13.999180167682098,
+        269.1656739088877,
+        2.2224299315532736,
+        1
+      ],
+      "opacity": 0.94,
+      "motionName": null,
+      "blankDesign": {
+        "assetId": "bd3-domestic-floor",
+        "regions": [
+          "c3-gap-05-r2",
+          "c3-gap-05-r3",
+          "c3-stop-05-r2",
+          "c3-stop-06-r2"
+        ],
+        "categories": [
+          "A",
+          "D"
+        ],
+        "progress": 0.5569328988363655,
+        "gap": 5
+      }
+    },
+    {
+      "id": "bd3-gap06-ground",
+      "name": "BD3_06_domestic-floor",
+      "asset": "assets/blank-design/chapter-3/bd3-domestic-floor.webp",
+      "productionPng": "artwork/blank-design/chapter-3/bd3-domestic-floor.png",
+      "matrix": [
+        0,
+        72.11643059743842,
+        0,
+        0,
+        0,
+        0,
+        23.744348158844794,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -13.99735667183154,
+        329.09010426941865,
+        2.2229988474619997,
+        1
+      ],
+      "opacity": 0.94,
+      "motionName": null,
+      "blankDesign": {
+        "assetId": "bd3-domestic-floor",
+        "regions": [
+          "c3-gap-06-r2",
+          "c3-gap-06-r3",
+          "c3-stop-06-r2",
+          "c3-stop-07-r2"
+        ],
+        "categories": [
+          "A",
+          "D"
+        ],
+        "progress": 0.6811709334158138,
+        "gap": 6
+      }
+    },
+    {
+      "id": "bd3-gap07-ground",
+      "name": "BD3_07_workshop-court",
+      "asset": "assets/blank-design/chapter-3/bd3-workshop-court.webp",
+      "productionPng": "artwork/blank-design/chapter-3/bd3-workshop-court.png",
+      "matrix": [
+        0,
+        73.19427114827,
+        0,
+        0,
+        0,
+        0,
+        24.072057994568386,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -15.040300227269249,
+        388.94143516185335,
+        2.100518273790515,
+        1
+      ],
+      "opacity": 0.84,
+      "motionName": null,
+      "blankDesign": {
+        "assetId": "bd3-workshop-court",
+        "regions": [
+          "c3-gap-07-r2",
+          "c3-gap-07-r3",
+          "c3-stop-07-r2",
+          "c3-stop-08-r2"
+        ],
+        "categories": [
+          "A",
+          "D"
+        ],
+        "progress": 0.8052932435579894,
+        "gap": 7
+      }
+    },
+    {
+      "id": "bd3-gap08-ground",
+      "name": "BD3_08_lantern-lane",
+      "asset": "assets/blank-design/chapter-3/bd3-lantern-lane.webp",
+      "productionPng": "artwork/blank-design/chapter-3/bd3-lantern-lane.png",
+      "matrix": [
+        0,
+        65.8606335236213,
+        0,
+        0,
+        0,
+        0,
+        21.71687060797476,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -15.040631780749969,
+        448.9583822279111,
+        2.101947629854136,
+        1
+      ],
+      "opacity": 0.84,
+      "motionName": null,
+      "blankDesign": {
+        "assetId": "bd3-lantern-lane",
+        "regions": [
+          "c3-gap-08-r2",
+          "c3-gap-08-r3",
+          "c3-stop-08-r2",
+          "c3-stop-09-r2"
+        ],
+        "categories": [
+          "A",
+          "D"
+        ],
+        "progress": 0.9288563525873003,
+        "gap": 8
+      }
+    },
+    {
+      "id": "bd3-gap02-objects",
+      "name": "BD3_02_brocade-rail",
+      "asset": "assets/blank-design/chapter-3/bd3-brocade-rail.webp",
+      "productionPng": "artwork/blank-design/chapter-3/bd3-brocade-rail.png",
+      "matrix": [
+        0,
+        37.748784208674316,
+        0,
+        0,
+        0,
+        0,
+        25.609485013363447,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -14.898191362246607,
+        88.06110828707789,
+        5.430358302437261,
+        1
+      ],
+      "opacity": 1,
+      "motionName": null,
+      "blankDesign": {
+        "assetId": "bd3-brocade-rail",
+        "regions": [
+          "c3-gap-02-r2",
+          "c3-gap-02-r3",
+          "c3-stop-02-r2",
+          "c3-stop-03-r2"
+        ],
+        "categories": [
+          "B",
+          "C",
+          "F"
+        ],
+        "progress": 0.18527723828993936,
+        "gap": 2
+      }
+    },
+    {
+      "id": "bd3-gap03-objects",
+      "name": "BD3_03_wares-step",
+      "asset": "assets/blank-design/chapter-3/bd3-wares-step.webp",
+      "productionPng": "artwork/blank-design/chapter-3/bd3-wares-step.png",
+      "matrix": [
+        0,
+        24.35733818358663,
+        0,
+        0,
+        0,
+        0,
+        16.289857333167106,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -14.897959418279832,
+        151.5374220941843,
+        2.117272424031915,
+        1
+      ],
+      "opacity": 1,
+      "motionName": null,
+      "blankDesign": {
+        "assetId": "bd3-wares-step",
+        "regions": [
+          "c3-gap-03-r2",
+          "c3-gap-03-r3",
+          "c3-stop-03-r2",
+          "c3-stop-04-r2"
+        ],
+        "categories": [
+          "B",
+          "C",
+          "F"
+        ],
+        "progress": 0.30891527606479746,
+        "gap": 3
+      }
+    },
+    {
+      "id": "bd3-gap05-objects",
+      "name": "BD3_05_brocade-rail",
+      "asset": "assets/blank-design/chapter-3/bd3-brocade-rail.webp",
+      "productionPng": "artwork/blank-design/chapter-3/bd3-brocade-rail.png",
+      "matrix": [
+        0,
+        29.99776721442595,
+        0,
+        0,
+        0,
+        0,
+        20.35104933884666,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -13.85918836600527,
+        267.7148203599592,
+        3.3269249052991814,
+        1
+      ],
+      "opacity": 1,
+      "motionName": null,
+      "blankDesign": {
+        "assetId": "bd3-brocade-rail",
+        "regions": [
+          "c3-gap-05-r2",
+          "c3-gap-05-r3",
+          "c3-stop-05-r2",
+          "c3-stop-06-r2"
+        ],
+        "categories": [
+          "B",
+          "C",
+          "F"
+        ],
+        "progress": 0.5569328988363655,
+        "gap": 5
+      }
+    },
+    {
+      "id": "bd3-gap06-objects",
+      "name": "BD3_06_wares-step",
+      "asset": "assets/blank-design/chapter-3/bd3-wares-step.webp",
+      "productionPng": "artwork/blank-design/chapter-3/bd3-wares-step.png",
+      "matrix": [
+        0,
+        26.99609500426191,
+        0,
+        0,
+        0,
+        0,
+        18.05462209612005,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -13.857383105113229,
+        331.0243236889079,
+        2.783350740908711,
+        1
+      ],
+      "opacity": 1,
+      "motionName": null,
+      "blankDesign": {
+        "assetId": "bd3-wares-step",
+        "regions": [
+          "c3-gap-06-r2",
+          "c3-gap-06-r3",
+          "c3-stop-06-r2",
+          "c3-stop-07-r2"
+        ],
+        "categories": [
+          "B",
+          "C",
+          "F"
+        ],
+        "progress": 0.6811709334158138,
+        "gap": 6
+      }
+    }
+  ],
+  "textSystem": {
+    "currentLayers": [
+      {
+        "id": "c3-t026-readable-caption",
+        "name": "凤穿牡丹",
+        "title": "凤穿牡丹",
+        "lines": [
+          "花入嫁衣，寄托良缘。",
+          "凤凰穿花，锦绣承愿。"
+        ],
+        "matrix": [
+          0,
+          9.120396999999992,
+          0,
+          0,
+          0,
+          0,
+          3.5626550781249966,
+          0,
+          1,
+          0,
+          0,
+          0,
+          3,
+          128.71184159999999,
+          14.562449,
+          1
+        ],
+        "domWidth": 640,
+        "domHeight": 250,
+        "color": "#73533d",
+        "narrative": "凤穿牡丹寓意准确对应良缘与富贵；内容应保留",
+        "range": [
+          0.18527723828993936,
+          0.30891527606479746
+        ],
+        "translation": [
+          3,
+          128.71184159999999,
+          14.562449
+        ],
+        "existingBlenderRecord": {
+          "id": "c3-t026-readable-caption",
+          "anchor": "CH03_TEXT_c3-t026-readable-caption_凤穿牡丹",
+          "editableObjects": [
+            {
+              "name": "CH03_TEXT_c3-t026-readable-caption_凤穿牡丹_title",
+              "part": "title",
+              "body": "凤穿牡丹",
+              "font": "KaiTi Regular"
+            },
+            {
+              "name": "CH03_TEXT_c3-t026-readable-caption_凤穿牡丹_body",
+              "part": "body",
+              "body": "花入嫁衣，寄托良缘。\n凤凰穿花，锦绣承愿。",
+              "font": "KaiTi Regular"
+            }
+          ],
+          "matrix": [
+            -4e-07,
+            9.1203966,
+            0.0,
+            0.0,
+            2e-07,
+            0.0,
+            3.562655,
+            0.0,
+            1.0,
+            0.0,
+            -0.0,
+            0.0,
+            3.0,
+            128.7118378,
+            14.5624495,
+            1.0
+          ],
+          "range": [
+            0.18527723828993936,
+            0.30891527606479746
+          ]
+        }
+      },
+      {
+        "id": "c3-t033-readable-caption",
+        "name": "花结良缘",
+        "title": "花结良缘",
+        "lines": [
+          "凤凰寄祥瑞，牡丹寓富贵。",
+          "同心相映，祈愿家业兴旺。"
+        ],
+        "matrix": [
+          0,
+          8.415549350000012,
+          0,
+          0,
+          0,
+          0,
+          3.287323964843755,
+          0,
+          1,
+          0,
+          0,
+          0,
+          4,
+          191.51937865,
+          14.45235585,
+          1
+        ],
+        "domWidth": 640,
+        "domHeight": 250,
+        "color": "#73533d",
+        "narrative": "凤凰与牡丹寓意、婚姻和美及家业兴旺符合主线",
+        "range": [
+          0.30891527606479746,
+          0.43273851796258755
+        ],
+        "translation": [
+          4,
+          191.51937865,
+          14.45235585
+        ],
+        "existingBlenderRecord": {
+          "id": "c3-t033-readable-caption",
+          "anchor": "CH03_TEXT_c3-t033-readable-caption_花结良缘",
+          "editableObjects": [
+            {
+              "name": "CH03_TEXT_c3-t033-readable-caption_花结良缘_title",
+              "part": "title",
+              "body": "花结良缘",
+              "font": "KaiTi Regular"
+            },
+            {
+              "name": "CH03_TEXT_c3-t033-readable-caption_花结良缘_body",
+              "part": "body",
+              "body": "凤凰寄祥瑞，牡丹寓富贵。\n同心相映，祈愿家业兴旺。",
+              "font": "KaiTi Regular"
+            }
+          ],
+          "matrix": [
+            -4e-07,
+            8.4155493,
+            0.0,
+            0.0,
+            1e-07,
+            0.0,
+            3.287324,
+            0.0,
+            1.0,
+            0.0,
+            -0.0,
+            0.0,
+            4.0,
+            191.5193787,
+            14.4523554,
+            1.0
+          ],
+          "range": [
+            0.30891527606479746,
+            0.43273851796258755
+          ]
+        }
+      },
+      {
+        "id": "c3-t051-readable-caption",
+        "name": "岁岁圆满",
+        "title": "岁岁圆满",
+        "lines": [
+          "花盘与香囊，寄意人丁兴旺。",
+          "牡丹满开，愿家运昌隆。"
+        ],
+        "matrix": [
+          0,
+          10.067202112000023,
+          0,
+          0,
+          0,
+          0,
+          3.932500825000009,
+          0,
+          1,
+          0,
+          0,
+          0,
+          4,
+          307.3333435,
+          15.94000005,
+          1
+        ],
+        "domWidth": 640,
+        "domHeight": 250,
+        "color": "#73533d",
+        "narrative": "人丁兴旺、家运昌隆、岁岁圆满与本卷主线一致",
+        "range": [
+          0.5569328988363655,
+          0.6811709334158138
+        ],
+        "translation": [
+          4,
+          307.3333435,
+          15.94000005
+        ],
+        "existingBlenderRecord": {
+          "id": "c3-t051-readable-caption",
+          "anchor": "CH03_TEXT_c3-t051-readable-caption_岁岁圆满",
+          "editableObjects": [
+            {
+              "name": "CH03_TEXT_c3-t051-readable-caption_岁岁圆满_title",
+              "part": "title",
+              "body": "岁岁圆满",
+              "font": "KaiTi Regular"
+            },
+            {
+              "name": "CH03_TEXT_c3-t051-readable-caption_岁岁圆满_body",
+              "part": "body",
+              "body": "花盘与香囊，寄意人丁兴旺。\n牡丹满开，愿家运昌隆。",
+              "font": "KaiTi Regular"
+            }
+          ],
+          "matrix": [
+            -4e-07,
+            10.0672026,
+            0.0,
+            0.0,
+            2e-07,
+            0.0,
+            3.9325008,
+            0.0,
+            1.0,
+            0.0,
+            -0.0,
+            0.0,
+            4.0,
+            307.3333435,
+            15.9399996,
+            1.0
+          ],
+          "range": [
+            0.5569328988363655,
+            0.6811709334158138
+          ]
+        }
+      },
+      {
+        "id": "c3-t052-readable-seal",
+        "name": "吉庆，中性数字展陈印记",
+        "title": "吉庆",
+        "lines": [],
+        "matrix": [
+          0,
+          0.38049319999998943,
+          0,
+          0,
+          0,
+          0,
+          0.5073242666666525,
+          0,
+          1,
+          0,
+          0,
+          0,
+          4.0999999,
+          313.462677,
+          14.938750249999998,
+          1
+        ],
+        "domWidth": 72,
+        "domHeight": 96,
+        "color": "#9b402f",
+        "narrative": "中性当代展陈印记，不作为历史真印或考据证据。",
+        "range": [
+          0.5569328988363655,
+          0.6811709334158138
+        ],
+        "variant": "seal",
+        "translation": [
+          4.0999999,
+          313.462677,
+          14.938750249999998
+        ],
+        "existingBlenderRecord": {
+          "id": "c3-t052-readable-seal",
+          "anchor": "CH03_TEXT_c3-t052-readable-seal_吉庆，中性数字展陈印记",
+          "editableObjects": [
+            {
+              "name": "CH03_TEXT_c3-t052-readable-seal_吉庆，中性数字展陈印记_seal",
+              "part": "seal",
+              "body": "吉\n庆",
+              "font": "KaiTi Regular"
+            }
+          ],
+          "matrix": [
+            -0.0,
+            0.3804932,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5073243,
+            0.0,
+            1.0,
+            0.0,
+            -0.0,
+            0.0,
+            4.0999999,
+            313.462677,
+            14.9387503,
+            1.0
+          ],
+          "range": [
+            0.5569328988363655,
+            0.6811709334158138
+          ]
+        }
+      }
+    ],
+    "sourceTextObjects": [
+      {
+        "name": "SC01_DOCX原文",
+        "body": "在全民游园斗花的风尚盛行之前，牡丹已经从普通园\n林花木演变为深入人心的吉祥符号。不同于后期热闹\n的赏花竞技，此时牡丹大量出现在民俗生活与器物纹\n样之中。",
+        "matrix": [
+          -0.0,
+          1.1845902,
+          0.0,
+          0.0,
+          0.0,
+          -0.0,
+          1.1845902,
+          0.0,
+          1.1845902,
+          0.0,
+          -0.0,
+          0.0,
+          4.8691807,
+          -6.4326525,
+          15.1146746,
+          1.0
+        ],
+        "size": 0.4399999976158142
+      },
+      {
+        "name": "SC02_DOCX原文",
+        "body": "饱满端正的花型，被赋予富足、美满、\n安泰的寓意。上至宫廷壁画陈设，下到\n民间嫁衣年画，牡丹意象广泛传播，串\n联起家国祈愿与百姓烟火。",
+        "matrix": [
+          -0.0,
+          1.1253788,
+          0.0,
+          0.0,
+          0.0,
+          -0.0,
+          1.1253788,
+          0.0,
+          1.1253788,
+          0.0,
+          -0.0,
+          0.0,
+          5.0910716,
+          69.6017838,
+          10.5295143,
+          1.0
+        ],
+        "size": 0.4300000071525574
+      },
+      {
+        "name": "SC05_DOCX原文",
+        "body": "除婚嫁之外，牡丹也是岁时年节的重要意象。\n岁末迎新、春日祈福，百姓会把牡丹绘制在年\n画、窗棂、灯彩之上。",
+        "matrix": [
+          -0.0,
+          1.3840091,
+          0.0,
+          0.0,
+          0.0,
+          -0.0,
+          1.3840091,
+          0.0,
+          1.3840091,
+          0.0,
+          -0.0,
+          0.0,
+          4.5,
+          233.0256653,
+          14.9652719,
+          1.0
+        ],
+        "size": 0.4399999976158142
+      },
+      {
+        "name": "SC07_DOCX原文",
+        "body": "铜镜、瓷器、首饰、家具雕花等日常器物上，随处\n可见简约的牡丹纹样。除富贵之外，时人认为牡丹\n象征居家安稳、福运绵长。同时牡丹承载家国层面\n的寓意，宫廷壁画、殿宇、礼器多用牡丹纹样，借\n繁花隐喻山河安定、民生富庶，成为太平盛世的象\n征。安稳的世道，让世人偏爱繁盛端正的审美，牡\n丹蓬勃盛放的形态恰好呼应时代风貌。",
+        "matrix": [
+          -0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.0,
+          1.0,
+          0.0,
+          1.0,
+          0.0,
+          -0.0,
+          0.0,
+          4.5,
+          366.9560547,
+          9.9971333,
+          1.0
+        ],
+        "size": 0.4399999976158142
+      },
+      {
+        "name": "SC08_DOCX原文",
+        "body": "牡丹还生成独特的人格意象，不再只供观赏。世人\n见牡丹盛开饱满不争，凋零从容内敛，将其定义为“\n端庄有德、富贵不骄”的品格。士人把这一意象用\n于书画厅堂，以此勉励自我修身自持。当时社会并\n不追逐珍稀花种，也没有斗花竞技，人们将牡丹的\n寓意融入节庆、礼仪、器物与人文审美，形成全民\n认同的吉祥文化体系。",
+        "matrix": [
+          -0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.0,
+          1.0,
+          0.0,
+          1.0,
+          0.0,
+          -0.0,
+          0.0,
+          4.5,
+          412.1383972,
+          13.7215452,
+          1.0
+        ],
+        "size": 0.4300000071525574
+      },
+      {
+        "name": "SC09_DOCX原文",
+        "body": "经过沉静的积淀，牡丹跳出小众花木的定\n位，构建完整民俗体系。它既承载普通人\n家庭美满、生活富足的朴素愿望，也寄托\n国泰民安的家国期许。双重寓意交融，沉\n淀雍容端正祥和的文化气质，为日后成为\n国色祥瑞打下深厚的民俗根基。",
+        "matrix": [
+          -0.0,
+          1.3508096,
+          0.0,
+          0.0,
+          0.0,
+          -0.0,
+          1.3508096,
+          0.0,
+          1.3508096,
+          0.0,
+          -0.0,
+          0.0,
+          4.852272,
+          490.9838562,
+          15.3701925,
+          1.0
+        ],
+        "size": 0.47999998927116394
+      }
+    ],
+    "webPath": "src/scene/CalligraphyLayer.ts",
+    "webStylePath": "src/scene/CalligraphyLayer.css",
+    "webSourceFontMeshPolicy": "SceneRenderer.load: skips every isText mesh. Six original SCxx_DOCX原文 bodies are absent from scene rendering; long cultural prose is shown by drawer elsewhere.",
+    "webCurrentCaptionLayout": "caption uses horizontal title and horizontal lines; only seal uses vertical-rl. Opening annotation independently uses vertical columns.",
+    "webFontStacks": {
+      "body": "--serif: Noto Serif SC, Source Han Serif SC, Songti SC, SimSun, serif",
+      "title": "--calligraphy: STXingkai, KaiTi, STKaiti, SimSun, serif"
+    },
+    "webResponsivePlacement": "Scene anchor projected by shared camera; anchor offscreen -> hidden. Visible captions may scale up for body>=12px/title>=16px and shift inside viewport 2.5% margin. Fade near viewport edge.",
+    "webRange": "range enforces progress interval in CalligraphyLayer.render.",
+    "blenderPath": "scripts/reconstruct-blender.py:add_text_layers",
+    "blenderCurrentCaptionLayout": "Editable horizontal title and multiline body FONT children of shared matrix anchor; seal vertical via newline per character.",
+    "blenderRange": "progress_range custom property only; no per-frame visibility driver/keyframe. Preview renderer currently does not apply progress_range.",
+    "blenderSourceTextPolicy": "Original six FONT objects remain as authored in saved derived copy. Current total FONT count 13 = 6 source + 7 added; viewport/Blender visual comparison must state or resolve that difference.",
+    "blenderFontEvidence": [
+      {
+        "name": "KaiTi Regular",
+        "reusedOriginal": true,
+        "source": "C:\\Windows\\Fonts\\simkai.ttf",
+        "packedSha256": "a6acf69a7a6e8a4cba014266036eca8629560038cc50783f46917748fabefbe5"
+      }
+    ],
+    "requiredImplementationForNewVerticalLayout": [
+      "Explicit layout/column spacing/font ratio fields on manifest ArtTextLayer",
+      "Vertical columns in CalligraphyLayer.css+createArtTextElement; pass through default old captions unchanged",
+      "Matching editable per-column FONT objects or per-glyph objects in add_text_layers; shared anchors/matrices and intended physical sizes",
+      "Document/implement progress range and original prose visibility consistently for rendered comparison",
+      "Verify actual legibility/clearance at wide/narrow/short viewports; automatic scaling must not cover images or erase top air"
+    ]
+  },
+  "modificationPaths": {
+    "currentCanonical": "public/assets/reconstruction/manifest.json",
+    "currentDeterministicBuilder": "scripts/build-blank-design.mjs",
+    "currentBuilderInputs": [
+      "reports/blank-design/before/manifest.json",
+      "reports/blank-design/layout-plan.json",
+      "reports/blank-design/prepared-assets.json"
+    ],
+    "newPassRequirement": "创建第三卷专项冻结基线/plan与独立builder或在现builder完成blank-design后再应用显式第三卷pass；勿只手改canonical，下次build-blank-design会丢修改。保持其他三卷深度相等。",
+    "geometryRepositionOptions": [
+      "Manifest replacements geometryPolicy explicit-corners can intentionally revise source local carrier geometry while source world matrix stays unchanged; geometryCorners must be local coordinates, reviewed and allowlisted.",
+      "Alternatively hide original named object and add independent new XY image plane with derived matrix; original source object/matrix is retained.",
+      "No general source matrix override exists in ArtDirectionLayer currently. A new override mechanism needs both web and Blender implementations+explicit invariant exception."
+    ],
+    "edgeOption": "edgeRepairs supports left/right/top/bottom UV fades and uvRect equally in web GLSL and Blender node alpha; restricted to reviewed low-risk background edges. It cannot invent missing figure/architecture or remove interior frozen straight cuts far from UV bounds.",
+    "sourceProtected": [
+      "source/牡丹/场景blender搭建",
+      "source/牡丹/素材",
+      "public/assets/chapter-3/scene.json",
+      "public/assets/chapter-3/textures",
+      "artwork/blender-reconstructed",
+      "artwork/blender-blank-design"
+    ],
+    "suggestedNewDelivery": "artwork/blender-chapter-3-refinement and reports/chapter-3-refinement/blender; do not reuse previous .blend path or evidence dir."
+  },
+  "blenderSupport": {
+    "sourceConfig": "reports/reconstruction/source-paths.local.json",
+    "reconstructArgs": [
+      "--source-config <relative.json>",
+      "--manifest <frozen-pass-manifest.json>",
+      "--chapter 3",
+      "--output-dir artwork/blender-chapter-3-refinement",
+      "--report-dir reports/chapter-3-refinement/blender",
+      "--inventory reports/reconstruction/layers-inventory.json",
+      "--materials-root source/牡丹/素材",
+      "--check-only or --dry-run before real save"
+    ],
+    "reopenArgs": [
+      "--report reports/chapter-3-refinement/blender/blender-reconstruction-chapter-3.json",
+      "--source-config reports/reconstruction/source-paths.local.json"
+    ],
+    "renderArgs": [
+      "--blend <derived.blend>",
+      "--manifest <same-frozen-manifest.json>",
+      "--chapter 3",
+      "--reconstruction-report <same-reconstruction-report.json>",
+      "--output-dir <new-preview-dir>",
+      "--gaps 1 2 3 4 5 6 7 8",
+      "--width <actual viewport width>",
+      "--height <actual viewport height>"
+    ],
+    "renderStopLimitation": "--stops only accepts stop anchors represented by blankDesign addedLayers with anchorFrame; current C3 has gaps only. Extend explicit source-frame selector or create reviewed stop anchor mapping for SC02/03/05/07 exact stop previews.",
+    "guards": [
+      "No output inside original source folders/symlink-resolved paths",
+      "Cross-delivery evidence refuses different manifest/output; existing unknown output rejected",
+      "Snapshots original object matrices/parents/collections/animations/markers/cameras/render settings before applying",
+      "Original geometry hashes retained outside explicitly declared replacements/geometry repairs",
+      "All 4 source .blend hashes before/after load/apply/save/reopen; atomic temporary save and independent open",
+      "Packed image SHA and packed Chinese font checks",
+      "Renderer changes materials/camera/output in memory only and never saves; input .blend+manifest hashes checked on exit"
+    ]
+  },
+  "auditFindings": [
+    "用户截图对应问题不因旧测试通过而自动关闭；原safeMargin统计只查最外边，8px透明padding足以让明显内部长直切通过，应按实际alpha silhouette与现场像素目视重新验收。",
+    "SC02幕台、SC03屏风/迎亲、SC05雪巷的纹理未在当前7处replacement中修复；2处geometryRepairs不包含这些像素边界。",
+    "SC07 c3-t056当前图像已具完整桌脚和垂布；c3-t054当前宫苑完整但悬台构图不合理，需要先减/重排而不是补更多背景。",
+    "当前第二/第七景 accepted-v3 实景仍明显顶部过重；已查看这些真实画心截图，旧审查passed不作为本轮审美完成证据。"
+  ],
+  "notExecuted": [
+    "No product source, canonical manifest, source images, scene.json, or .blend modified.",
+    "No Blender process launched; all Blender support claims are based on current script code and retained previous delivery evidence.",
+    "No fresh browser capture performed by this technical-audit subtask; root owns full-scroll visual audit/runtime pass."
+  ]
+}

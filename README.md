@@ -1,16 +1,23 @@
 # 国色芳华 · 牡丹文化数字长卷
 
-React + TypeScript + Vite + Three.js 的桌面端本地数字手卷展陈，按用户最新要求不开发移动端，建议窗口宽度至少 1024px，按最新概念图采用传统手卷装裱：青金织锦、象牙白卷轴和深木端头，主要验收尺寸为 1440×900 与 1680×945。四卷均使用提供的 Blender 工程中实际图像平面、网格、中文文字几何、世界变换、相机与时间轴标记；不使用网络占位图、视频或单幅长图。
+React + TypeScript + Vite + Three.js 的桌面端本地数字手卷展陈。传统手卷装裱采用青金织锦、象牙白卷轴和深木端头，画卷随当前窗口的宽高调整，窄窗自动重排导航与控制，极短窗口可纵向滚动。四卷均使用提供的 Blender 工程中实际图像平面、网格、中文文字几何、世界变换、相机与时间轴标记；不使用网络占位图、视频或单幅长图。
+
+当前版本为第三卷《锦绣花意》专项整改：九组主景重排、三处截口透明补绘、15组独立竖排题文；四卷合计197世界层/19文字层。短窗口按文字需要撑开画心，可纵向滚动。审查、方案、网页截图、前后对照和可编辑Blender副本见 [第三卷交付索引](reports/chapter-3-refinement/README.md)。当前清单用 `scripts/build-chapter-3-refinement.mjs` 重建。此前四卷22项资产/45新层的补白交付保留在 [历史索引](reports/blank-design/README.md)；旧builder会恢复历史清单。
 
 ## 运行
 
 ```powershell
-cd C:\Users\16033\Desktop\MDGS
-npm install
+npm ci
 npm run dev
 ```
 
-打开 http://localhost:5173/ 。开发服务器固定 5173 端口。正式构建用 `npm run build`，本地检查构建用 `npm run preview`。
+在工程目录运行以上命令，打开终端实际显示的 Local 地址。开发和预览默认由系统选择空闲端口，可与其他开发服务器同时运行；每次启动的端口可能不同。需要指定端口时可传 `-- --port <端口>`，占用时会尝试其他可用端口。
+
+仓库中的派生 `.blend`、生产PNG和验收截图/录像由 Git LFS 管理。需要获取这些交付物时，在安装 Git LFS 后运行 `git lfs install`、`git lfs pull`；网页运行所需的WebP与清单仍是普通Git文件。原始 `source/` 素材和本机路径配置不上传。
+
+Windows 可直接双击根目录的 `runStart.cmd`：它以自身位置定位工程，检查 Node/npm 与依赖，并自动打开当前实例的实际地址。无需修改磁盘路径、端口或浏览器窗口尺寸。关闭启动窗口或按 Ctrl+C 可停止该实例。
+
+正式构建用 `npm run build`，本地检查构建用 `npm run preview`。构建使用相对资源地址，可放在站点根目录或子目录；通过 HTTP 服务访问，子目录入口需保留结尾 `/`。
 
 ## 游观
 
@@ -21,6 +28,7 @@ npm run dev
 - 聚焦画卷后使用左右方向键、Home / End；外层画卷可用空格启停。进度条也支持原生键盘操作。
 - 底部「画外拾遗」打开文化说明；首卷含完整《展卷序》。Escape 关闭，焦点返回入口。
 - 「听音」由用户点击启用本地合成五声音阶环境声，无外部音频文件；再次点击关闭。支持全屏与系统减少动效偏好。
+- 「画中轻动」控制局部花枝、灯彩、云气与花瓣，独立于自动展卷并记住用户选择；系统减少动效或页面转入后台时暂停。第四卷从第五景起逐渐减速、减少花瓣与云气。
 - 卷末显示题跋、一次落印和再观/下一卷入口。
 
 ## 资产接入
@@ -32,11 +40,19 @@ npm run dev
 | 三 | 锦绣花意 | 393 | 72 | 9 | +Y |
 | 四 | 国色倾城 | 128 | 52 | 9 | −Y |
 
-四卷没有缺失源贴图或被跳过对象。纹理最大边长 2048px，WebP 保留透明通道。公开资源总计约 142.59 MiB（四卷按需加载，不一次载入全部）。源 `.blend` 文件只读打开，不保存、不覆盖；中间原图字节放在被忽略的 `.asset-cache/`。
+原资产导出完整且没有缺失源贴图；网页跳过12个独立 FONT 网格，并按重构清单退役重复辅助片及低清题签。纹理最大边长2048px，WebP保留透明通道。原纹理约142.59 MiB，上一轮34项选定新图约14.75 MiB，当前补白另22项约5.69 MiB，均按章节和视野加载。源 `.blend` 文件只读；整理结果另存于 `artwork/blender-reconstructed/`。
 
 场景保留 Blender 世界坐标，矩阵为列主序、四元数为 xyzw。前中远景使用实际深度，平移自然产生视差；鼠标有极小的横向视差偏移，不允许自由旋转。以原始阅读节点构图作为卷首，以空间距离替代电影停留时间，避免滚轮在静止帧上失效。第一卷末尾抬升与第二卷末尾大幅收卷拉远在网页路线外，源路径仍完整保存。
 
-透明云气、淡墨接地影的原径向透明关系已恢复为小型 RGBA 纹理。纸面保留原材质配色；浏览器采用无光照绘画表面，未完整复刻 Blender 的灯光、噪声着色或全部程序材质。文字几何仍导出在原资产中，网页将独立 FONT 说明层收至文化抽屉；第二、三卷在已检查的留白区增加真实 HTML 竖排题字，由独立 CSS3D 层沿同一相机投影。图像本身的原有题文保留，部分含原作的横排字。
+透明云气、淡墨接地影的原径向透明关系已恢复为小型 RGBA 纹理。纸面保留原材质配色；浏览器采用无光照绘画表面，未完整复刻 Blender 的灯光、噪声着色或全部程序材质。四卷共19组真实HTML题文/中性装饰印，其中第三卷15组竖题；沿同一相机投影，按窗口与文字需求保障可读，文化长文仍在抽屉。指定低清题文已清除或退役，其余原画题文保留。
+
+## 上一轮基础图层重构
+
+四卷263张源纹理完成审校：216保留、35修复、12重生成。实际选用12项重生成、20项像素补绘和2项共享云气/远山，共34项生产图；补入152个独立世界图层及8个HTML文字层。图层裁决与逐实例实施结果分别记录，修复还包括完整UV、自然墨边和退役重复辅助片。
+
+完整交付、图层表、四份Blender副本、修改文件清单、前后截图和动效录像见 [重构交付索引](reports/reconstruction/README.md)。原四份源工程保留不变，网页通过 `public/assets/reconstruction/manifest.json` 叠加可追溯修订，原相机路径与阅读节点保持。
+
+历史维护入口：`scripts/build-reconstruction.mjs` 与 `scripts/build-blank-design.mjs` 生成前两轮清单（当前改用 `scripts/build-chapter-3-refinement.mjs`）；`scripts/prepare-reconstruction-assets.py` 负责透明安全边和WebP；`scripts/reconstruct-blender.py` 生成派生副本；`scripts/report-reconstruction-status.mjs` 对照实际运行逻辑输出逐实例实施表。正常启动网页无需Blender或Python。
 
 ## 目录与可配置项
 
@@ -56,6 +72,8 @@ src/
   hooks/useScrollController.ts 平滑移动、自动展卷、独立进度
   scene/
     SceneRenderer.ts          Three.js真实网格、视差、按需纹理/释放
+    ArtDirectionLayer.ts      可追溯图像替换、完整UV、自然边缘和连接层
+    MotionDirector.ts         局部UV基、独立时钟、动作配额与第四卷盛衰
     prepareScene.ts           原相机轨迹到连续游观进度的映射
     CalligraphyLayer.ts/.css   随世界位置移动的 HTML 竖排题字
   data/
@@ -66,6 +84,8 @@ src/
 public/assets/chapter-1..4/
   scene.json                  资产清单、变换、深度、完整相机/分镜/动画
   textures/*.webp             原始平面提取与优化图像
+public/assets/reconstruction/ 修订清单与34项选定透明生产图
+artwork/                      原始生成图、生产PNG和四卷派生Blender
 scripts/                      Blender导出、优化与验证
 reports/                      资产审查、测试报告、参考渲染与网页截图
 ```
@@ -75,12 +95,12 @@ reports/                      资产审查、测试报告、参考渲染与网�
 ## 重新导出
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\run-export.ps1
-# 另生成960×540原场景参考图：
-powershell -ExecutionPolicy Bypass -File .\scripts\run-export.ps1 -RenderReferences
+powershell -ExecutionPolicy Bypass -File .\scripts\run-export.ps1 -SourceRoot '<四卷源工程的上级目录>' -MaterialsRoot '<素材目录>'
+# 另按源场景尺寸生成参考图（可用 -ReferenceWidth / -ReferenceHeight 调整）：
+powershell -ExecutionPolicy Bypass -File .\scripts\run-export.ps1 -SourceRoot '<四卷源工程的上级目录>' -MaterialsRoot '<素材目录>' -RenderReferences
 ```
 
-默认调用 `F:\Blender\blender.exe`，四个工程路径定义于 `scripts/export_blender.py` / `audit_blender.py`。详见 `reports/assets-readme.md`。脚本依次读取、导出、索引化、WebP优化、恢复程序透明材质、统计并验证；全过程不保存原 Blender 文件。
+Blender、Python、Node 从 `PATH` 查找，也可传 `-Blender` / `-Python` / `-Node` 指定。源工程与素材位置统一由 `scripts/asset_config.py` 解析，可使用命令行参数、`MDGS_*` 环境变量或根目录的 `asset-pipeline.local.json`；配置示例见 `scripts/asset-pipeline.example.json`。本机配置被 Git 忽略，配置中的相对路径按配置文件所在目录解析。详见 `reports/assets-readme.md`。脚本依次读取、导出、索引化、WebP优化、恢复程序透明材质、统计并验证；全过程不保存原 Blender 文件。浏览网页无需这些外部源工程与工具。
 
 ## 检查与实际限制
 
@@ -93,6 +113,10 @@ npm run build           # TypeScript和生产构建
 浏览器采用当前画卷的扩大可视范围加载纹理，最多4个并行加载；离开视野的纹理通过约160 MiB目标LRU释放（可见资源不强行卸载），切章节释放全部旧场景GPU资源，DPR上限1.65。实际峰值显存与帧率取决于设备，结构检查不等于所有设备性能保证。
 
 网页截图见 `reports/screenshots/`；Blender参考图见 `reports/assets-reference-chapter-*.png`。本次 UI 重构与验证见 `reports/handscroll-ui-review.md`；此前场景功能记录见 `reports/browser-validation.md`。正式上线部署不在本次本地开发任务范围内。
+
+最新启动冲突、路径可移植和窗口自适应整改见 [验收记录](reports/portability-review.md)，包括并发启动、端口占用回退、9种窗口尺寸及子目录资源加载验证。重新验证启动行为前先 `npm run build`，再运行 `npm run test:startup`。
+
+最终重构版本已复测生产子目录的全部四卷和核心交互。浏览器测试环境提供Playwright/Chromium后运行 `npm run test:subpath`；可用 `MDGS_PLAYWRIGHT_MODULE` / `MDGS_TEST_BROWSER` 指定工具，不作为正常运行依赖。
 
 ## 工程记忆
 

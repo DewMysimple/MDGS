@@ -1,0 +1,854 @@
+{
+  "schemaVersion": 1,
+  "status": "captured-awaiting-visual-review",
+  "canonicalSha256": "291b67c3179503baa6f3dc9f87811fa2a08cdec193ea5a950ce205f83f2698cd",
+  "manifestFrozenByHttpResponse": true,
+  "sources": [
+    {
+      "path": "src/scene/CalligraphyLayer.ts",
+      "sha256": "6eda4e35548a865792308a58043ae565bfef7735f059bc9d53b8018785bd0d41"
+    },
+    {
+      "path": "src/scene/CalligraphyLayer.css",
+      "sha256": "707b020f2ebeaf1826e49d9dea1ce684a8511a91a5cdce649cccbef11101c250"
+    },
+    {
+      "path": "src/scene/ArtDirectionLayer.ts",
+      "sha256": "d51dfea871ed4363d453ce8ebaa82d920987ca1d06a0925127f3deda14d37a72"
+    },
+    {
+      "path": "src/scene/SceneRenderer.ts",
+      "sha256": "9f6b207f591540761b4ec7417e11ccce44e2097d0ea02b8cc962de044c0ba951"
+    }
+  ],
+  "textGroups": 15,
+  "viewports": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "samples": [
+        {
+          "id": "chapter-3-opening",
+          "title": "锦绣花意",
+          "anchorProgress": 0,
+          "actualInputProgress": 0,
+          "screenshot": "1920x1080/chapter-3-opening.png",
+          "screenshotSha256": "b06f9e26128210aff83190dfd0954e39623fd6865890a725a12b4d3cd4aafdf8",
+          "underlay": "1920x1080/chapter-3-opening-underlay.png",
+          "underlaySha256": "020c653c80c14de973672380a3bf0a3b4f22ef79ab323734495d95e10740cf21",
+          "dom": {
+            "painting": {
+              "width": 1848.96875,
+              "height": 618
+            },
+            "active": [
+              {
+                "id": "chapter-3-opening-calligraphy",
+                "opacity": 1
+              }
+            ],
+            "visible": true,
+            "opacity": 1,
+            "dataset": {
+              "annotationId": "chapter-3-opening-calligraphy",
+              "chapter": "3",
+              "readingStop": "1"
+            },
+            "bounds": {
+              "left": 144.22784423828125,
+              "right": 316.1487731933594,
+              "top": 39.5469970703125,
+              "bottom": 446.20611572265625,
+              "width": 171.92092895507812,
+              "height": 406.65911865234375
+            },
+            "title": {
+              "text": "锦绣花意",
+              "rect": {
+                "left": 249.4984130859375,
+                "right": 304.2465515136719,
+                "top": 56.739105224609375,
+                "bottom": 273.62396240234375,
+                "width": 54.748138427734375,
+                "height": 216.88485717773438
+              },
+              "glyphs": [
+                {
+                  "char": "锦",
+                  "left": 253.33151245117188,
+                  "right": 300.94036865234375,
+                  "top": 56.739105224609375,
+                  "bottom": 110.9603271484375,
+                  "width": 47.608856201171875,
+                  "height": 54.221221923828125
+                },
+                {
+                  "char": "绣",
+                  "left": 253.33151245117188,
+                  "right": 300.94036865234375,
+                  "top": 110.9603271484375,
+                  "bottom": 165.1815185546875,
+                  "width": 47.608856201171875,
+                  "height": 54.22119140625
+                },
+                {
+                  "char": "花",
+                  "left": 253.33151245117188,
+                  "right": 300.94036865234375,
+                  "top": 165.1815185546875,
+                  "bottom": 219.40274047851562,
+                  "width": 47.608856201171875,
+                  "height": 54.221221923828125
+                },
+                {
+                  "char": "意",
+                  "left": 253.33151245117188,
+                  "right": 300.94036865234375,
+                  "top": 219.40274047851562,
+                  "bottom": 273.62396240234375,
+                  "width": 47.608856201171875,
+                  "height": 54.221221923828125
+                }
+              ],
+              "font": {
+                "family": "KaiTi, STKaiti, \"Kaiti SC\", SimSun, serif",
+                "designSize": "72px",
+                "writingMode": "vertical-rl",
+                "color": "rgb(48, 40, 32)",
+                "strokeWidth": "0px"
+              }
+            },
+            "body": [
+              {
+                "text": "花开圆满",
+                "rect": {
+                  "left": 189.58438110351562,
+                  "right": 208.49154663085938,
+                  "top": 64.67388916015625,
+                  "bottom": 151.95684814453125,
+                  "width": 18.90716552734375,
+                  "height": 87.282958984375
+                },
+                "glyphs": [
+                  {
+                    "char": "花",
+                    "left": 190.6382293701172,
+                    "right": 207.830322265625,
+                    "top": 64.67388916015625,
+                    "bottom": 86.49462890625,
+                    "width": 17.192092895507812,
+                    "height": 21.82073974609375
+                  },
+                  {
+                    "char": "开",
+                    "left": 190.6382293701172,
+                    "right": 207.830322265625,
+                    "top": 86.49462890625,
+                    "bottom": 108.31536865234375,
+                    "width": 17.192092895507812,
+                    "height": 21.82073974609375
+                  },
+                  {
+                    "char": "圆",
+                    "left": 190.6382293701172,
+                    "right": 207.830322265625,
+                    "top": 108.31536865234375,
+                    "bottom": 130.1361083984375,
+                    "width": 17.192092895507812,
+                    "height": 21.82073974609375
+                  },
+                  {
+                    "char": "满",
+                    "left": 190.6382293701172,
+                    "right": 207.830322265625,
+                    "top": 130.1361083984375,
+                    "bottom": 151.95684814453125,
+                    "width": 17.192092895507812,
+                    "height": 21.82073974609375
+                  }
+                ],
+                "font": {
+                  "family": "KaiTi, STKaiti, \"Kaiti SC\", SimSun, serif",
+                  "designSize": "26px",
+                  "writingMode": "vertical-rl",
+                  "color": "rgb(124, 107, 82)",
+                  "strokeWidth": "0px"
+                }
+              },
+              {
+                "text": "意寄人间",
+                "rect": {
+                  "left": 160.75869750976562,
+                  "right": 179.66586303710938,
+                  "top": 64.67388916015625,
+                  "bottom": 151.95684814453125,
+                  "width": 18.90716552734375,
+                  "height": 87.282958984375
+                },
+                "glyphs": [
+                  {
+                    "char": "意",
+                    "left": 161.8125457763672,
+                    "right": 179.004638671875,
+                    "top": 64.67388916015625,
+                    "bottom": 86.49462890625,
+                    "width": 17.192092895507812,
+                    "height": 21.82073974609375
+                  },
+                  {
+                    "char": "寄",
+                    "left": 161.8125457763672,
+                    "right": 179.004638671875,
+                    "top": 86.49462890625,
+                    "bottom": 108.31536865234375,
+                    "width": 17.192092895507812,
+                    "height": 21.82073974609375
+                  },
+                  {
+                    "char": "人",
+                    "left": 161.8125457763672,
+                    "right": 179.004638671875,
+                    "top": 108.31536865234375,
+                    "bottom": 130.1361083984375,
+                    "width": 17.192092895507812,
+                    "height": 21.82073974609375
+                  },
+                  {
+                    "char": "间",
+                    "left": 161.8125457763672,
+                    "right": 179.004638671875,
+                    "top": 130.1361083984375,
+                    "bottom": 151.95684814453125,
+                    "width": 17.192092895507812,
+                    "height": 21.82073974609375
+                  }
+                ],
+                "font": {
+                  "family": "KaiTi, STKaiti, \"Kaiti SC\", SimSun, serif",
+                  "designSize": "26px",
+                  "writingMode": "vertical-rl",
+                  "color": "rgb(124, 107, 82)",
+                  "strokeWidth": "0px"
+                }
+              }
+            ],
+            "seal": {
+              "text": "牡丹",
+              "rect": {
+                "left": 253.27490234375,
+                "right": 284.4661560058594,
+                "top": 308.8240966796875,
+                "bottom": 351.49493408203125,
+                "width": 31.191253662109375,
+                "height": 42.67083740234375
+              },
+              "font": {
+                "family": "SimSun, serif",
+                "designSize": "23px",
+                "writingMode": "vertical-rl",
+                "color": "rgb(163, 75, 58)",
+                "strokeWidth": "0px"
+              }
+            },
+            "canvas": {
+              "engine": "three.js r180",
+              "chapter": "3",
+              "progress": "0.000000",
+              "motionEnabled": "false",
+              "motionRequested": "true",
+              "reducedMotion": "true",
+              "motionTime": "0.000000",
+              "motionBindings": "34",
+              "activeMotionLayers": "0",
+              "activePetals": "0",
+              "activeBridges": "0",
+              "activeMotionNames": "[]",
+              "motionClockSpeed": "1.000000",
+              "petalDensity": "1.000000",
+              "cloudDensity": "1.000000",
+              "narrativePhase": "calm",
+              "effectiveMotionBudget": "6",
+              "artReplacements": "10",
+              "artGeometryRepairs": "1",
+              "artEdgeRepairs": "0",
+              "artAddedLayers": "46",
+              "artTextLayers": "15",
+              "compactReadingReserve": "0",
+              "renderCount": "6",
+              "rafTicks": "13",
+              "rafRunning": "false",
+              "contextLost": "false",
+              "contextRestores": "0",
+              "textureCount": "20",
+              "textureBytes": "163012090",
+              "textureFailed": "0",
+              "loadingTextures": "0",
+              "visibleTextures": "20",
+              "queuedTextures": "0",
+              "drawCalls": "27",
+              "geometries": "14"
+            },
+            "horizontalOverflow": false
+          }
+        }
+      ]
+    },
+    {
+      "width": 960,
+      "height": 700,
+      "samples": [
+        {
+          "id": "chapter-3-opening",
+          "title": "锦绣花意",
+          "anchorProgress": 0,
+          "actualInputProgress": 0,
+          "screenshot": "960x700/chapter-3-opening.png",
+          "screenshotSha256": "79c9b7af1c5d71cfa83eb783fb7a18764e8342892d8e4fada8f1f4417f064461",
+          "underlay": "960x700/chapter-3-opening-underlay.png",
+          "underlaySha256": "4505fba1eef9e7a82152b9dadf1d9fb5a7246decf9a18649a1f99fb8b42b09df",
+          "dom": {
+            "painting": {
+              "width": 924,
+              "height": 365.40625
+            },
+            "active": [
+              {
+                "id": "chapter-3-opening-calligraphy",
+                "opacity": 1
+              }
+            ],
+            "visible": true,
+            "opacity": 1,
+            "dataset": {
+              "annotationId": "chapter-3-opening-calligraphy",
+              "chapter": "3",
+              "readingStop": "1"
+            },
+            "bounds": {
+              "left": 9.134943008422852,
+              "right": 110.78709602355957,
+              "top": 23.382919311523438,
+              "bottom": 263.8293762207031,
+              "width": 101.65215301513672,
+              "height": 240.4464569091797
+            },
+            "title": {
+              "text": "锦绣花意",
+              "rect": {
+                "left": 71.3785629272461,
+                "right": 103.74964141845703,
+                "top": 33.54814147949219,
+                "bottom": 161.7862548828125,
+                "width": 32.37107849121094,
+                "height": 128.2381134033203
+              },
+              "glyphs": [
+                {
+                  "char": "锦",
+                  "left": 73.64496612548828,
+                  "right": 101.79479217529297,
+                  "top": 33.54814147949219,
+                  "bottom": 65.607666015625,
+                  "width": 28.149826049804688,
+                  "height": 32.05952453613281
+                },
+                {
+                  "char": "绣",
+                  "left": 73.64496612548828,
+                  "right": 101.79479217529297,
+                  "top": 65.607666015625,
+                  "bottom": 97.66719055175781,
+                  "width": 28.149826049804688,
+                  "height": 32.05952453613281
+                },
+                {
+                  "char": "花",
+                  "left": 73.64496612548828,
+                  "right": 101.79479217529297,
+                  "top": 97.66719055175781,
+                  "bottom": 129.72671508789062,
+                  "width": 28.149826049804688,
+                  "height": 32.05952453613281
+                },
+                {
+                  "char": "意",
+                  "left": 73.64496612548828,
+                  "right": 101.79479217529297,
+                  "top": 129.72671508789062,
+                  "bottom": 161.7862548828125,
+                  "width": 28.149826049804688,
+                  "height": 32.059539794921875
+                }
+              ],
+              "font": {
+                "family": "KaiTi, STKaiti, \"Kaiti SC\", SimSun, serif",
+                "designSize": "72px",
+                "writingMode": "vertical-rl",
+                "color": "rgb(48, 40, 32)",
+                "strokeWidth": "0px"
+              }
+            },
+            "body": [
+              {
+                "text": "花开圆满",
+                "rect": {
+                  "left": 35.95302963256836,
+                  "right": 47.13232421875,
+                  "top": 38.239776611328125,
+                  "bottom": 89.84779357910156,
+                  "width": 11.17929458618164,
+                  "height": 51.60801696777344
+                },
+                "glyphs": [
+                  {
+                    "char": "花",
+                    "left": 36.57613754272461,
+                    "right": 46.74134826660156,
+                    "top": 38.239776611328125,
+                    "bottom": 51.14178466796875,
+                    "width": 10.165210723876953,
+                    "height": 12.902008056640625
+                  },
+                  {
+                    "char": "开",
+                    "left": 36.57613754272461,
+                    "right": 46.74134826660156,
+                    "top": 51.14178466796875,
+                    "bottom": 64.04379272460938,
+                    "width": 10.165210723876953,
+                    "height": 12.902008056640625
+                  },
+                  {
+                    "char": "圆",
+                    "left": 36.57613754272461,
+                    "right": 46.74134826660156,
+                    "top": 64.04379272460938,
+                    "bottom": 76.94578552246094,
+                    "width": 10.165210723876953,
+                    "height": 12.901992797851562
+                  },
+                  {
+                    "char": "满",
+                    "left": 36.57613754272461,
+                    "right": 46.74134826660156,
+                    "top": 76.94578552246094,
+                    "bottom": 89.84779357910156,
+                    "width": 10.165210723876953,
+                    "height": 12.902008056640625
+                  }
+                ],
+                "font": {
+                  "family": "KaiTi, STKaiti, \"Kaiti SC\", SimSun, serif",
+                  "designSize": "26px",
+                  "writingMode": "vertical-rl",
+                  "color": "rgb(124, 107, 82)",
+                  "strokeWidth": "0px"
+                }
+              },
+              {
+                "text": "意寄人间",
+                "rect": {
+                  "left": 18.90918731689453,
+                  "right": 30.088481903076172,
+                  "top": 38.239776611328125,
+                  "bottom": 89.84779357910156,
+                  "width": 11.17929458618164,
+                  "height": 51.60801696777344
+                },
+                "glyphs": [
+                  {
+                    "char": "意",
+                    "left": 19.53229522705078,
+                    "right": 29.697509765625,
+                    "top": 38.239776611328125,
+                    "bottom": 51.14178466796875,
+                    "width": 10.165214538574219,
+                    "height": 12.902008056640625
+                  },
+                  {
+                    "char": "寄",
+                    "left": 19.53229522705078,
+                    "right": 29.697509765625,
+                    "top": 51.14178466796875,
+                    "bottom": 64.04379272460938,
+                    "width": 10.165214538574219,
+                    "height": 12.902008056640625
+                  },
+                  {
+                    "char": "人",
+                    "left": 19.53229522705078,
+                    "right": 29.697509765625,
+                    "top": 64.04379272460938,
+                    "bottom": 76.94578552246094,
+                    "width": 10.165214538574219,
+                    "height": 12.901992797851562
+                  },
+                  {
+                    "char": "间",
+                    "left": 19.53229522705078,
+                    "right": 29.697509765625,
+                    "top": 76.94578552246094,
+                    "bottom": 89.84779357910156,
+                    "width": 10.165214538574219,
+                    "height": 12.902008056640625
+                  }
+                ],
+                "font": {
+                  "family": "KaiTi, STKaiti, \"Kaiti SC\", SimSun, serif",
+                  "designSize": "26px",
+                  "writingMode": "vertical-rl",
+                  "color": "rgb(124, 107, 82)",
+                  "strokeWidth": "0px"
+                }
+              }
+            ],
+            "seal": {
+              "text": "牡丹",
+              "rect": {
+                "left": 73.61148071289062,
+                "right": 92.05402374267578,
+                "top": 182.59912109375,
+                "bottom": 207.8292236328125,
+                "width": 18.442543029785156,
+                "height": 25.2301025390625
+              },
+              "font": {
+                "family": "SimSun, serif",
+                "designSize": "23px",
+                "writingMode": "vertical-rl",
+                "color": "rgb(163, 75, 58)",
+                "strokeWidth": "0px"
+              }
+            },
+            "canvas": {
+              "engine": "three.js r180",
+              "chapter": "3",
+              "progress": "0.000000",
+              "motionEnabled": "false",
+              "motionRequested": "true",
+              "reducedMotion": "true",
+              "motionTime": "0.000000",
+              "motionBindings": "34",
+              "activeMotionLayers": "0",
+              "activePetals": "0",
+              "activeBridges": "0",
+              "activeMotionNames": "[]",
+              "motionClockSpeed": "1.000000",
+              "petalDensity": "1.000000",
+              "cloudDensity": "1.000000",
+              "narrativePhase": "calm",
+              "effectiveMotionBudget": "6",
+              "artReplacements": "10",
+              "artGeometryRepairs": "1",
+              "artEdgeRepairs": "0",
+              "artAddedLayers": "46",
+              "artTextLayers": "15",
+              "compactReadingReserve": "0",
+              "renderCount": "8",
+              "rafTicks": "28",
+              "rafRunning": "false",
+              "contextLost": "false",
+              "contextRestores": "0",
+              "textureCount": "20",
+              "textureBytes": "163012090",
+              "textureFailed": "0",
+              "loadingTextures": "0",
+              "visibleTextures": "18",
+              "queuedTextures": "0",
+              "drawCalls": "25",
+              "geometries": "14"
+            },
+            "horizontalOverflow": false
+          }
+        }
+      ]
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "samples": [
+        {
+          "id": "chapter-3-opening",
+          "title": "锦绣花意",
+          "anchorProgress": 0,
+          "actualInputProgress": 0,
+          "screenshot": "360x800/chapter-3-opening.png",
+          "screenshotSha256": "48d7909b0d7d70932b2644067d29272aab5ed5e94bc01261c04b5a2c497b83f7",
+          "underlay": "360x800/chapter-3-opening-underlay.png",
+          "underlaySha256": "8985c9e1b0225f5b71891145189ee0cab37e7684faa3a644509cec7478bbd99a",
+          "dom": {
+            "painting": {
+              "width": 324,
+              "height": 380
+            },
+            "active": [
+              {
+                "id": "chapter-3-compact-opening",
+                "opacity": 1
+              }
+            ],
+            "visible": true,
+            "opacity": 1,
+            "dataset": {
+              "artTextId": "chapter-3-compact-opening",
+              "chapter": "3",
+              "narrative": "沿用经真实首景验证的左侧安全题字区，替换旧 Canvas 文字。",
+              "domBodySize": "34",
+              "domTitleSize": "50",
+              "compactOpening": "true",
+              "progress": "0.000000",
+              "screenBodySize": "14.435598918493477",
+              "screenTitleSize": "21.228821938960994",
+              "layoutOverflow": "false",
+              "repositioned": "true",
+              "compactReserve": "0.38873065015479874"
+            },
+            "bounds": {
+              "left": 111.86688232421875,
+              "right": 212.13983154296875,
+              "top": 28.00506591796875,
+              "bottom": 119.7135009765625,
+              "width": 100.27294921875,
+              "height": 91.70843505859375
+            },
+            "title": {
+              "text": "锦绣花意",
+              "rect": {
+                "left": 188.36355590820312,
+                "right": 212.13983154296875,
+                "top": 28.00506591796875,
+                "bottom": 119.7135009765625,
+                "width": 23.776275634765625,
+                "height": 91.70843505859375
+              },
+              "glyphs": [
+                {
+                  "char": "锦",
+                  "left": 189.6372833251953,
+                  "right": 210.86610412597656,
+                  "top": 28.00506591796875,
+                  "bottom": 50.93218994140625,
+                  "width": 21.22882080078125,
+                  "height": 22.9271240234375
+                },
+                {
+                  "char": "绣",
+                  "left": 189.6372833251953,
+                  "right": 210.86610412597656,
+                  "top": 50.93218994140625,
+                  "bottom": 73.85929870605469,
+                  "width": 21.22882080078125,
+                  "height": 22.927108764648438
+                },
+                {
+                  "char": "花",
+                  "left": 189.6372833251953,
+                  "right": 210.86610412597656,
+                  "top": 73.85929870605469,
+                  "bottom": 96.78640747070312,
+                  "width": 21.22882080078125,
+                  "height": 22.927108764648438
+                },
+                {
+                  "char": "意",
+                  "left": 189.6372833251953,
+                  "right": 210.86610412597656,
+                  "top": 96.78640747070312,
+                  "bottom": 119.7135009765625,
+                  "width": 21.22882080078125,
+                  "height": 22.927093505859375
+                }
+              ],
+              "font": {
+                "family": "KaiTi, STKaiti, \"Kaiti SC\", SimSun, serif",
+                "designSize": "50px",
+                "writingMode": "vertical-rl",
+                "color": "rgb(48, 40, 32)",
+                "strokeWidth": "0px"
+              }
+            },
+            "body": [
+              {
+                "text": "花开圆满",
+                "rect": {
+                  "left": 161.6616973876953,
+                  "right": 178.9830780029297,
+                  "top": 28.00506591796875,
+                  "bottom": 88.05606079101562,
+                  "width": 17.321380615234375,
+                  "height": 60.050994873046875
+                },
+                "glyphs": [
+                  {
+                    "char": "花",
+                    "left": 163.2737579345703,
+                    "right": 177.7093505859375,
+                    "top": 28.00506591796875,
+                    "bottom": 43.024444580078125,
+                    "width": 14.435592651367188,
+                    "height": 15.019378662109375
+                  },
+                  {
+                    "char": "开",
+                    "left": 163.2737579345703,
+                    "right": 177.7093505859375,
+                    "top": 43.01780700683594,
+                    "bottom": 58.037200927734375,
+                    "width": 14.435592651367188,
+                    "height": 15.019393920898438
+                  },
+                  {
+                    "char": "圆",
+                    "left": 163.2737579345703,
+                    "right": 177.7093505859375,
+                    "top": 58.03056335449219,
+                    "bottom": 73.04994201660156,
+                    "width": 14.435592651367188,
+                    "height": 15.019378662109375
+                  },
+                  {
+                    "char": "满",
+                    "left": 163.2737579345703,
+                    "right": 177.7093505859375,
+                    "top": 73.04330444335938,
+                    "bottom": 88.06269836425781,
+                    "width": 14.435592651367188,
+                    "height": 15.019393920898438
+                  }
+                ],
+                "font": {
+                  "family": "KaiTi, STKaiti, \"Kaiti SC\", SimSun, serif",
+                  "designSize": "34px",
+                  "writingMode": "vertical-rl",
+                  "color": "rgb(124, 107, 82)",
+                  "strokeWidth": "0px"
+                }
+              },
+              {
+                "text": "意寄人间",
+                "rect": {
+                  "left": 134.9598388671875,
+                  "right": 152.28121948242188,
+                  "top": 28.00506591796875,
+                  "bottom": 88.05606079101562,
+                  "width": 17.321380615234375,
+                  "height": 60.050994873046875
+                },
+                "glyphs": [
+                  {
+                    "char": "意",
+                    "left": 136.5718994140625,
+                    "right": 151.0074920654297,
+                    "top": 28.00506591796875,
+                    "bottom": 43.024444580078125,
+                    "width": 14.435592651367188,
+                    "height": 15.019378662109375
+                  },
+                  {
+                    "char": "寄",
+                    "left": 136.5718994140625,
+                    "right": 151.0074920654297,
+                    "top": 43.01780700683594,
+                    "bottom": 58.037200927734375,
+                    "width": 14.435592651367188,
+                    "height": 15.019393920898438
+                  },
+                  {
+                    "char": "人",
+                    "left": 136.5718994140625,
+                    "right": 151.0074920654297,
+                    "top": 58.03056335449219,
+                    "bottom": 73.04994201660156,
+                    "width": 14.435592651367188,
+                    "height": 15.019378662109375
+                  },
+                  {
+                    "char": "间",
+                    "left": 136.5718994140625,
+                    "right": 151.0074920654297,
+                    "top": 73.04330444335938,
+                    "bottom": 88.06269836425781,
+                    "width": 14.435592651367188,
+                    "height": 15.019393920898438
+                  }
+                ],
+                "font": {
+                  "family": "KaiTi, STKaiti, \"Kaiti SC\", SimSun, serif",
+                  "designSize": "34px",
+                  "writingMode": "vertical-rl",
+                  "color": "rgb(124, 107, 82)",
+                  "strokeWidth": "0px"
+                }
+              }
+            ],
+            "seal": {
+              "text": "牡丹",
+              "rect": {
+                "left": 111.63214111328125,
+                "right": 125.81410217285156,
+                "top": 92.57563781738281,
+                "bottom": 119.83111572265625,
+                "width": 14.181961059570312,
+                "height": 27.255477905273438
+              },
+              "font": {
+                "family": "\"Noto Serif SC\", \"Source Han Serif SC\", \"Songti SC\", SimSun, serif",
+                "designSize": "24.48px",
+                "writingMode": "vertical-rl",
+                "color": "rgb(155, 64, 47)",
+                "strokeWidth": "0px"
+              }
+            },
+            "canvas": {
+              "engine": "three.js r180",
+              "chapter": "3",
+              "progress": "0.000000",
+              "motionEnabled": "false",
+              "motionRequested": "true",
+              "reducedMotion": "true",
+              "motionTime": "0.000000",
+              "motionBindings": "34",
+              "activeMotionLayers": "0",
+              "activePetals": "0",
+              "activeBridges": "0",
+              "activeMotionNames": "[]",
+              "motionClockSpeed": "1.000000",
+              "petalDensity": "1.000000",
+              "cloudDensity": "1.000000",
+              "narrativePhase": "calm",
+              "effectiveMotionBudget": "6",
+              "artReplacements": "10",
+              "artGeometryRepairs": "1",
+              "artEdgeRepairs": "0",
+              "artAddedLayers": "46",
+              "artTextLayers": "15",
+              "compactReadingReserve": "0.38873065015479874",
+              "renderCount": "10",
+              "rafTicks": "47",
+              "rafRunning": "false",
+              "contextLost": "false",
+              "contextRestores": "0",
+              "textureCount": "20",
+              "textureBytes": "163012090",
+              "textureFailed": "0",
+              "loadingTextures": "0",
+              "visibleTextures": "12",
+              "queuedTextures": "0",
+              "drawCalls": "23",
+              "geometries": "14"
+            },
+            "horizontalOverflow": false
+          }
+        }
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedResources": [],
+  "note": "Real product canvas and lettering. Pixel captures require visual review; this report does not pass aesthetics.",
+  "productionCanonicalAtEnd": "291b67c3179503baa6f3dc9f87811fa2a08cdec193ea5a950ce205f83f2698cd",
+  "productionCanonicalChangedDuringFrozenCapture": false,
+  "sourceFilesUnchanged": true,
+  "ownedServerClosed": true
+}

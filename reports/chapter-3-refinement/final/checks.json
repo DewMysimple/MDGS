@@ -1,0 +1,108 @@
+{
+  "status": "passed-recorded-commands-and-artifacts",
+  "recordedAt": "2026-10-20T05:19:51.636637+00:00",
+  "canonicalSha256": "4433928f6e6160acbd275ba6430d65fa3128df736a7eb59ef7607e61312d10cb",
+  "commands": [
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "scope": "4条连续游观路径、原scene几何",
+      "result": "All four continuous viewing paths passed. Original geometry is unchanged."
+    },
+    {
+      "command": "npm run validate:assets",
+      "exitCode": 0,
+      "scope": "四卷263源纹理/网格/相机/UV等结构",
+      "result": "0 errors, 0 warnings in all chapters"
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "scope": "TypeScript与Vite生产构建",
+      "result": "1598 modules; production manifest matches current canonical"
+    },
+    {
+      "command": "npm run test:subpath",
+      "exitCode": 0,
+      "scope": "真实生产子目录，4卷197追加层/19文字/9交互组、0错误资源",
+      "report": "reports/validation-portable-subpath.json"
+    },
+    {
+      "command": "node scripts/validate-third-refinement.mjs --expected-hash=4433928f6e6160acbd275ba6430d65fa3128df736a7eb59ef7607e61312d10cb",
+      "exitCode": 0,
+      "scope": "五窗口170正反状态、318退休层不复活、相机pose、真实wheel/drag/GPU恢复、短窗控件可达、跨章内容高度清理恢复",
+      "report": "reports/chapter-3-refinement/final/runtime/validation.json"
+    }
+  ],
+  "sourceFingerprintsAtAssembly": [
+    {
+      "path": "src/scene/CalligraphyLayer.ts",
+      "sha256": "8ce0d9d17d28330f3ff2f04b32bf2a5482848ff5b4a42ee2a5bc477ba302cabf"
+    },
+    {
+      "path": "src/scene/CalligraphyLayer.css",
+      "sha256": "707b020f2ebeaf1826e49d9dea1ce684a8511a91a5cdce649cccbef11101c250"
+    },
+    {
+      "path": "src/scene/ArtDirectionLayer.ts",
+      "sha256": "d51dfea871ed4363d453ce8ebaa82d920987ca1d06a0925127f3deda14d37a72"
+    },
+    {
+      "path": "src/scene/SceneRenderer.ts",
+      "sha256": "d77e1669131d74b30478b8f5e84576c2f8ad18300ecf4cdf89aac8a3c1ed9b60"
+    },
+    {
+      "path": "src/styles/handscroll.css",
+      "sha256": "d73911deba855f1ab39085c172dabd4ea11dc0b09838eefe9e921b0be5067f21"
+    }
+  ],
+  "productionManifestSha256": "4433928f6e6160acbd275ba6430d65fa3128df736a7eb59ef7607e61312d10cb",
+  "note": "记录本轮实际命令的退出结果及当前证据；源码指纹为汇总时核实，不冒称为所有命令启动前指纹。最终内容高度源码后build/subpath重跑通过；170运行和48+8截图记录相同五文件hash。npm test/assets在本次第三卷整改中已通过，后续仅响应TS/CSS调整。",
+  "historicalChecksNotRerun": [
+    "端口/启动器的五实例冲突测试沿用上轮真实结果，本轮未改runStart/Vite端口逻辑",
+    "旧四卷审190区域不作为本轮第三卷专项验收，当前另有33逐景证据"
+  ],
+  "runtimeStates": 170,
+  "runtimeInteractions": [
+    {
+      "kind": "native-wheel-both-directions",
+      "before": 0.45,
+      "forward": 0.488,
+      "reverse": 0.45
+    },
+    {
+      "kind": "native-drag",
+      "before": 0.45,
+      "after": 0.52
+    },
+    {
+      "kind": "real-webgl-context-restoration",
+      "before": {
+        "reserve": "0.3997743755036261",
+        "progress": "0.743000"
+      },
+      "after": {
+        "reserve": "0.3997743755036261",
+        "progress": "0.743000"
+      }
+    },
+    {
+      "kind": "short-window-document-scroll-and-autoplay-controls",
+      "accessible": true
+    },
+    {
+      "kind": "content-height-cleanup-and-chapter-return",
+      "before": "365px",
+      "otherChapter": "",
+      "restored": "365px"
+    }
+  ],
+  "diagnosticCorrection": {
+    "failedReport": "reports/chapter-3-refinement/runtime-diagnostic-timing/validation.json",
+    "reason": "compactReadingReserve画布诊断节流100ms，在resize后首个seek曾返回旧值；最终测试读取实际renderer投影reserve，产品源码未为测试改动。"
+  },
+  "productionBundle": {
+    "css": "dist/assets/index-93ZrV3d8.css",
+    "js": "dist/assets/index-BVkzSkl3.js"
+  }
+}

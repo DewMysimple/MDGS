@@ -1,0 +1,1421 @@
+{
+  "schemaVersion": 1,
+  "status": "four-scroll-final-accepted",
+  "enabledChapters": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "auditSources": [
+    "reports/blank-design/audit-chapters-1-2.json",
+    "reports/blank-design/audit-chapters-3-4.json"
+  ],
+  "sampleChapter": 4,
+  "sampleGate": {
+    "requires": [
+      "all9stops",
+      "all8midpoints",
+      "quarterpoints",
+      "wide-and-narrow-web",
+      "derived-blender-save-and-independent-reopen",
+      "visual-review-and-show-user"
+    ],
+    "status": "passed",
+    "evidence": "reports/blank-design/pilot-v4/gate.json"
+  },
+  "productionRule": "Only selected narrative gaps; keep named preserve regions. Static world layers use existing renderer lifecycle, no extra UI. Natural content aspect with transparent gutters.",
+  "chapters": {
+    "1": {
+      "reviewed": true,
+      "assetPlan": [
+        "c1-stone-forecourt",
+        "c1-temple-path",
+        "c1-court-garden",
+        "c1-winter-ground"
+      ],
+      "layers": [
+        {
+          "id": "bd1-gap01-ground",
+          "assetId": "bd1-temple-path",
+          "name": "BD1_01_temple-path",
+          "role": "中景承接层",
+          "narrative": "苗圃土埂和细曲径承接山野、寺院与皇家引种，保留山间上部气口；不复制寺院或人物。",
+          "width": 1.08,
+          "x": -0.1,
+          "y": -0.35,
+          "depth": 1.25,
+          "opacity": 0.95,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c1-gap-01-r01",
+            "c1-gap-01-r02"
+          ],
+          "gap": 1
+        },
+        {
+          "id": "bd1-gap02-ground",
+          "assetId": "bd1-temple-path",
+          "name": "BD1_02_temple-path",
+          "role": "中景承接层",
+          "narrative": "苗圃土埂和细曲径承接山野、寺院与皇家引种，保留山间上部气口；不复制寺院或人物。",
+          "width": 1.1,
+          "x": 0.05,
+          "y": -0.21,
+          "depth": 1.25,
+          "opacity": 0.95,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c1-gap-02-r01",
+            "c1-stop-03-r01"
+          ],
+          "gap": 2
+        },
+        {
+          "id": "bd1-gap03-ground",
+          "assetId": "bd1-temple-path",
+          "name": "BD1_03_temple-path",
+          "role": "中景承接层",
+          "narrative": "苗圃土埂和细曲径承接山野、寺院与皇家引种，保留山间上部气口；不复制寺院或人物。",
+          "width": 0.98,
+          "x": 0.1,
+          "y": -0.26,
+          "depth": 1.25,
+          "opacity": 0.95,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c1-gap-03-r01",
+            "c1-stop-03-r01",
+            "c1-stop-04-r01"
+          ],
+          "gap": 3
+        },
+        {
+          "id": "bd1-gap04-ground",
+          "assetId": "bd1-court-garden",
+          "name": "BD1_04_court-garden",
+          "role": "中景承接层",
+          "narrative": "低花圃与园路把西苑初栽、僧人引种和皇家赏花连接为同一苑囿地面，原大花与人物保持主位。",
+          "width": 1.1,
+          "x": -0.1,
+          "y": -0.4,
+          "depth": 1.25,
+          "opacity": 0.95,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c1-gap-04-r01",
+            "c1-stop-04-r01",
+            "c1-stop-05-r01"
+          ],
+          "gap": 4
+        },
+        {
+          "id": "bd1-gap05-ground",
+          "assetId": "bd1-court-garden",
+          "name": "BD1_05_court-garden",
+          "role": "中景承接层",
+          "narrative": "低花圃与园路把西苑初栽、僧人引种和皇家赏花连接为同一苑囿地面，原大花与人物保持主位。",
+          "width": 1.2,
+          "x": 0.06,
+          "y": -0.38,
+          "depth": 1.25,
+          "opacity": 0.95,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c1-gap-05-r01",
+            "c1-stop-05-r01",
+            "c1-stop-06-r02",
+            "c1-stop-06-r03",
+            "c1-stop-06-r04"
+          ],
+          "gap": 5
+        },
+        {
+          "id": "bd1-gap06-ground",
+          "assetId": "bd1-stone-forecourt",
+          "name": "BD1_06_stone-forecourt",
+          "role": "中景承接层",
+          "narrative": "浅色宫前地坪与不对称短阶承托宫殿、仪仗和史册讲述的脚底，填补无接地的裸纸，不添大殿。",
+          "width": 1.52,
+          "x": 0.12,
+          "y": -0.43,
+          "depth": 1.25,
+          "opacity": 0.95,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c1-gap-06-r01",
+            "c1-gap-06-r02",
+            "c1-stop-06-r02",
+            "c1-stop-06-r03",
+            "c1-stop-06-r04",
+            "c1-stop-07-r01",
+            "c1-stop-07-r02"
+          ],
+          "gap": 6
+        },
+        {
+          "id": "bd1-gap07-ground",
+          "assetId": "bd1-court-garden",
+          "name": "BD1_07_court-garden",
+          "role": "中景承接层",
+          "narrative": "低花圃与园路把西苑初栽、僧人引种和皇家赏花连接为同一苑囿地面，原大花与人物保持主位。",
+          "width": 1.1,
+          "x": 0.02,
+          "y": -0.4,
+          "depth": 1.25,
+          "opacity": 0.95,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c1-gap-07-r01",
+            "c1-gap-07-r02",
+            "c1-stop-07-r01",
+            "c1-stop-07-r02",
+            "c1-stop-08-r01",
+            "c1-stop-08-r02"
+          ],
+          "gap": 7
+        },
+        {
+          "id": "bd1-gap08-ground",
+          "assetId": "bd1-court-garden",
+          "name": "BD1_08_court-garden",
+          "role": "中景承接层",
+          "narrative": "低花圃与园路把西苑初栽、僧人引种和皇家赏花连接为同一苑囿地面，原大花与人物保持主位。",
+          "width": 1.4,
+          "x": 0.22,
+          "y": -0.17,
+          "depth": 1.25,
+          "opacity": 0.95,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c1-gap-08-r01",
+            "c1-stop-08-r01",
+            "c1-stop-08-r02",
+            "c1-stop-09-r01"
+          ],
+          "gap": 8
+        },
+        {
+          "id": "bd1-gap09-ground",
+          "assetId": "bd1-winter-ground",
+          "name": "BD1_09_winter-ground",
+          "role": "中景承接层",
+          "narrative": "薄雪石径与低雪岸承接腊日与文学叙事的冷色地面，保留寒景空寂。",
+          "width": 1.3,
+          "x": -0.1,
+          "y": -0.21,
+          "depth": 1.25,
+          "opacity": 0.95,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c1-gap-09-r01",
+            "c1-stop-09-r01"
+          ],
+          "gap": 9
+        },
+        {
+          "id": "bd1-gap10-ground",
+          "assetId": "bd1-winter-ground",
+          "name": "BD1_10_winter-ground",
+          "role": "中景承接层",
+          "narrative": "薄雪石径与低雪岸承接腊日与文学叙事的冷色地面，保留寒景空寂。",
+          "width": 0.96,
+          "x": -0.15,
+          "y": -0.28,
+          "depth": 1.25,
+          "opacity": 0.95,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c1-gap-10-r01",
+            "c1-stop-11-r01"
+          ],
+          "gap": 10
+        },
+        {
+          "id": "bd1-gap11-ground",
+          "assetId": "bd1-temple-path",
+          "name": "BD1_11_study-slope",
+          "role": "中景承接层",
+          "narrative": "低坡土径从原山石接至史官桌足，再下接女帝裙摆前的低地；不用高抬的孤立石板承托，不改动史官、女帝与象征剪影。",
+          "width": 1.15,
+          "x": -0.12,
+          "y": -0.22,
+          "depth": 1.25,
+          "opacity": 0.84,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c1-gap-11-r01",
+            "c1-gap-11-r02",
+            "c1-stop-11-r01",
+            "c1-stop-12-r01",
+            "c1-stop-12-r02"
+          ],
+          "gap": 11
+        },
+        {
+          "id": "bd1-gap12-ground",
+          "assetId": "bd1-temple-path",
+          "name": "BD1_12_court-slope",
+          "role": "中景承接层",
+          "narrative": "以自然低坡和细曲径把亭台基脚、赏花群像与前景牡丹连接为同一园地；悬挂图卷仍是文化意象，保留卷边和上方气口。",
+          "width": 1.45,
+          "x": -0.15,
+          "y": -0.17,
+          "depth": 1.25,
+          "opacity": 0.84,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c1-gap-12-r01",
+            "c1-gap-12-r02",
+            "c1-stop-12-r01",
+            "c1-stop-12-r02",
+            "c1-stop-13-r01"
+          ],
+          "gap": 12
+        },
+        {
+          "id": "bd1-gap13-ground",
+          "assetId": "bd1-court-garden",
+          "name": "BD1_13_court-garden",
+          "role": "中景承接层",
+          "narrative": "低花圃与园路把西苑初栽、僧人引种和皇家赏花连接为同一苑囿地面，原大花与人物保持主位。",
+          "width": 0.98,
+          "x": 0.01,
+          "y": -0.37,
+          "depth": 1.25,
+          "opacity": 0.84,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c1-gap-13-r01",
+            "c1-stop-13-r01",
+            "c1-stop-14-r01"
+          ],
+          "gap": 13
+        },
+        {
+          "id": "bd1-gap14-ground",
+          "assetId": "bd1-stone-forecourt",
+          "name": "BD1_14_low-stone-edge",
+          "role": "中景承接层",
+          "narrative": "卷尾只以底缘浅石地轻接花枝，不再重复三圃园路；上部云气、象征浮花、花神肖像和悬卷之间保留呼吸。",
+          "width": 0.68,
+          "x": -0.05,
+          "y": -0.47,
+          "depth": 1.25,
+          "opacity": 0.84,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c1-gap-14-r01",
+            "c1-stop-14-r01"
+          ],
+          "gap": 14
+        }
+      ],
+      "productionStage": "expansion-assets-in-production",
+      "frontOfBackdrop": "长卷_统一留白天幕",
+      "paperBackgroundMeshNames": [
+        "长卷_连续绢本地形",
+        "长卷_统一留白天幕"
+      ]
+    },
+    "2": {
+      "reviewed": true,
+      "assetPlan": [
+        "c2-river-shore",
+        "c2-spring-path",
+        "c2-study-court"
+      ],
+      "layers": [
+        {
+          "id": "bd2-gap01-bank",
+          "assetId": "bd2-river-shore",
+          "name": "BD2_01_私园水岸",
+          "role": "中景承接层",
+          "narrative": "温润水岸与低石径承接宫苑到士族私园的春游空间，不复制亭桥与人群。",
+          "width": 1.15,
+          "x": 0,
+          "y": -0.35,
+          "depth": 1.25,
+          "opacity": 1,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c2-gap-01-r01",
+            "c2-stop-01-r01",
+            "c2-stop-02-r01"
+          ],
+          "gap": 1
+        },
+        {
+          "id": "bd2-gap03-path",
+          "assetId": "bd2-spring-path",
+          "name": "BD2_03_春野花径",
+          "role": "中景承接层",
+          "narrative": "混植花木与轻园路接入普通踏青静赏，补宫廷与私园之间的低位断层。",
+          "width": 1.05,
+          "x": 0.2,
+          "y": -0.42,
+          "depth": 1.25,
+          "opacity": 1,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c2-gap-03-r01",
+            "c2-stop-03-r01"
+          ],
+          "gap": 3
+        },
+        {
+          "id": "bd2-gap05-court",
+          "assetId": "bd2-study-court",
+          "name": "BD2_05_书斋外庭",
+          "role": "中景承接层",
+          "narrative": "文人书斋与园花之间以小庭石地和坐席茶具承接；不增加礼制宫台或竞花人群。",
+          "width": 0.9,
+          "x": 0.32,
+          "y": -0.22,
+          "depth": 1.25,
+          "opacity": 1,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c2-gap-05-r01",
+            "c2-gap-05-r02",
+            "c2-stop-05-r01",
+            "c2-stop-06-r01",
+            "c2-stop-06-r02"
+          ],
+          "gap": 5
+        },
+        {
+          "id": "bd2-gap06-path",
+          "assetId": "bd2-spring-path",
+          "name": "BD2_06_家园花径",
+          "role": "中景承接层",
+          "narrative": "春日小径把清谈静赏接到卷尾民间园居，保留原题签阅读区。",
+          "width": 0.78,
+          "x": 0.13,
+          "y": -0.39,
+          "depth": 1.25,
+          "opacity": 0.9,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c2-gap-06-r01",
+            "c2-gap-06-r02",
+            "c2-stop-06-r01",
+            "c2-stop-06-r02",
+            "c2-stop-07-r02"
+          ],
+          "gap": 6
+        },
+        {
+          "id": "bd2-stop01-edge",
+          "assetId": "bd2-river-shore",
+          "name": "BD2_01_右侧岸线延续",
+          "role": "中景承接层",
+          "narrative": "原卷首题字与花组保持，右下岸线延伸出真实水畔边界而非纸底缺口。",
+          "width": 0.45,
+          "x": 0.62,
+          "y": -0.34,
+          "depth": 1.25,
+          "opacity": 1,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c2-stop-01-r01"
+          ],
+          "stop": 1
+        },
+        {
+          "id": "bd2-stop06-edge",
+          "assetId": "bd2-study-court",
+          "name": "BD2_06_庭院边角",
+          "role": "中景承接层",
+          "narrative": "仅以低石地和植栽收住书斋右侧，不挡原屋檐人物与竹林。",
+          "width": 0.34,
+          "x": 0.67,
+          "y": -0.2,
+          "depth": 1.25,
+          "opacity": 0.92,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c2-stop-06-r01",
+            "c2-stop-06-r02"
+          ],
+          "stop": 6
+        },
+        {
+          "id": "bd2-stop07-edge",
+          "assetId": "bd2-spring-path",
+          "name": "BD2_07_卷尾家园低径",
+          "role": "中景承接层",
+          "narrative": "轻淡花径与普通植栽收住民间园居的低边，卷尾仍保留上方纸天空。",
+          "width": 0.42,
+          "x": 0.64,
+          "y": -0.37,
+          "depth": 1.25,
+          "opacity": 0.85,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c2-stop-07-r02"
+          ],
+          "stop": 7
+        }
+      ],
+      "productionStage": "expansion-assets-and-paper-fix-in-production",
+      "retireSourceMeshNames": [
+        "宣纸 连续长卷 19.8米"
+      ],
+      "worldPaper": {
+        "color": "#f5ecdc",
+        "strength": 1,
+        "narrative": "弯曲纸地末端形成硬矩形并裁挡图像；派生显示退役原纸地，网页使用既有CSS纸底，Blender使用专属World统一纸色。原source与原World datablock保留。"
+      }
+    },
+    "3": {
+      "reviewed": true,
+      "assetPlan": [
+        "c3-workshop-court",
+        "c3-brocade-rail",
+        "c3-lantern-lane",
+        "c3-wares-step",
+        "c3-domestic-floor"
+      ],
+      "layers": [
+        {
+          "id": "bd3-gap01-ground",
+          "assetId": "bd3-workshop-court",
+          "name": "BD3_01_workshop-court",
+          "role": "中景承接层",
+          "narrative": "民俗器用与婚嫁岁时发生于可游观的庭院/巷路：低位地台和院墙承接原绣作、礼俗、家居与人文画组，题字和上部纸天空保留。",
+          "width": 1.2,
+          "x": 0,
+          "y": -0.3,
+          "depth": 1.25,
+          "opacity": 0.94,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c3-gap-01-r2",
+            "c3-gap-01-r3",
+            "c3-stop-01-r2",
+            "c3-stop-02-r2"
+          ],
+          "gap": 1
+        },
+        {
+          "id": "bd3-gap02-ground",
+          "assetId": "bd3-domestic-floor",
+          "name": "BD3_02_domestic-floor",
+          "role": "中景承接层",
+          "narrative": "低矮民居花砖石板院坪承接锦架、礼俗器用与家居画组，短台阶和低栏引导横向游观；不重复屋顶，不添人物，保留题字和上部纸天空。",
+          "width": 1.2,
+          "x": 0,
+          "y": -0.34,
+          "depth": 1.25,
+          "opacity": 0.94,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c3-gap-02-r2",
+            "c3-gap-02-r3",
+            "c3-stop-02-r2",
+            "c3-stop-03-r2"
+          ],
+          "gap": 2
+        },
+        {
+          "id": "bd3-gap03-ground",
+          "assetId": "bd3-domestic-floor",
+          "name": "BD3_03_domestic-floor",
+          "role": "中景承接层",
+          "narrative": "低矮民居花砖石板院坪承接锦架、礼俗器用与家居画组，短台阶和低栏引导横向游观；不重复屋顶，不添人物，保留题字和上部纸天空。",
+          "width": 1.2,
+          "x": 0,
+          "y": -0.3,
+          "depth": 1.25,
+          "opacity": 0.94,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c3-gap-03-r2",
+            "c3-gap-03-r3",
+            "c3-stop-03-r2",
+            "c3-stop-04-r2"
+          ],
+          "gap": 3
+        },
+        {
+          "id": "bd3-gap04-ground",
+          "assetId": "bd3-lantern-lane",
+          "name": "BD3_04_lantern-lane",
+          "role": "中景承接层",
+          "narrative": "民俗器用与婚嫁岁时发生于可游观的庭院/巷路：低位地台和院墙承接原绣作、礼俗、家居与人文画组，题字和上部纸天空保留。",
+          "width": 1.2,
+          "x": 0,
+          "y": -0.3,
+          "depth": 1.25,
+          "opacity": 0.94,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c3-gap-04-r2",
+            "c3-gap-04-r3",
+            "c3-stop-04-r2",
+            "c3-stop-05-r2"
+          ],
+          "gap": 4
+        },
+        {
+          "id": "bd3-gap05-ground",
+          "assetId": "bd3-domestic-floor",
+          "name": "BD3_05_domestic-floor",
+          "role": "中景承接层",
+          "narrative": "低矮民居花砖石板院坪承接锦架、礼俗器用与家居画组，短台阶和低栏引导横向游观；不重复屋顶，不添人物，保留题字和上部纸天空。",
+          "width": 1.2,
+          "x": 0,
+          "y": -0.3,
+          "depth": 1.25,
+          "opacity": 0.94,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c3-gap-05-r2",
+            "c3-gap-05-r3",
+            "c3-stop-05-r2",
+            "c3-stop-06-r2"
+          ],
+          "gap": 5
+        },
+        {
+          "id": "bd3-gap06-ground",
+          "assetId": "bd3-domestic-floor",
+          "name": "BD3_06_domestic-floor",
+          "role": "中景承接层",
+          "narrative": "低矮民居花砖石板院坪承接锦架、礼俗器用与家居画组，短台阶和低栏引导横向游观；不重复屋顶，不添人物，保留题字和上部纸天空。",
+          "width": 1.2,
+          "x": 0,
+          "y": -0.3,
+          "depth": 1.25,
+          "opacity": 0.94,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c3-gap-06-r2",
+            "c3-gap-06-r3",
+            "c3-stop-06-r2",
+            "c3-stop-07-r2"
+          ],
+          "gap": 6
+        },
+        {
+          "id": "bd3-gap07-ground",
+          "assetId": "bd3-workshop-court",
+          "name": "BD3_07_workshop-court",
+          "role": "中景承接层",
+          "narrative": "民俗器用与婚嫁岁时发生于可游观的庭院/巷路：低位地台和院墙承接原绣作、礼俗、家居与人文画组，题字和上部纸天空保留。",
+          "width": 1.2,
+          "x": 0,
+          "y": -0.3,
+          "depth": 1.25,
+          "opacity": 0.84,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c3-gap-07-r2",
+            "c3-gap-07-r3",
+            "c3-stop-07-r2",
+            "c3-stop-08-r2"
+          ],
+          "gap": 7
+        },
+        {
+          "id": "bd3-gap08-ground",
+          "assetId": "bd3-lantern-lane",
+          "name": "BD3_08_lantern-lane",
+          "role": "中景承接层",
+          "narrative": "民俗器用与婚嫁岁时发生于可游观的庭院/巷路：低位地台和院墙承接原绣作、礼俗、家居与人文画组，题字和上部纸天空保留。",
+          "width": 1.08,
+          "x": 0,
+          "y": -0.3,
+          "depth": 1.25,
+          "opacity": 0.84,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c3-gap-08-r2",
+            "c3-gap-08-r3",
+            "c3-stop-08-r2",
+            "c3-stop-09-r2"
+          ],
+          "gap": 8
+        },
+        {
+          "id": "bd3-gap02-objects",
+          "assetId": "bd3-brocade-rail",
+          "name": "BD3_02_brocade-rail",
+          "role": "前景遮挡层",
+          "narrative": "独立锦架与器用陈设使牡丹纹样落在衣锦、礼俗和日常物件上；不再以巨花或完整人群复合图填空。",
+          "width": 0.62,
+          "x": -0.02,
+          "y": -0.18,
+          "depth": 0.95,
+          "opacity": 1,
+          "categories": [
+            "B",
+            "C",
+            "F"
+          ],
+          "regions": [
+            "c3-gap-02-r2",
+            "c3-gap-02-r3",
+            "c3-stop-02-r2",
+            "c3-stop-03-r2"
+          ],
+          "gap": 2,
+          "supportLayerId": "bd3-gap02-ground"
+        },
+        {
+          "id": "bd3-gap03-objects",
+          "assetId": "bd3-wares-step",
+          "name": "BD3_03_wares-step",
+          "role": "前景遮挡层",
+          "narrative": "独立锦架与器用陈设使牡丹纹样落在衣锦、礼俗和日常物件上；不再以巨花或完整人群复合图填空。",
+          "width": 0.4,
+          "x": 0.05,
+          "y": -0.3,
+          "depth": 0.95,
+          "opacity": 1,
+          "categories": [
+            "B",
+            "C",
+            "F"
+          ],
+          "regions": [
+            "c3-gap-03-r2",
+            "c3-gap-03-r3",
+            "c3-stop-03-r2",
+            "c3-stop-04-r2"
+          ],
+          "gap": 3,
+          "supportLayerId": "bd3-gap03-ground"
+        },
+        {
+          "id": "bd3-gap05-objects",
+          "assetId": "bd3-brocade-rail",
+          "name": "BD3_05_brocade-rail",
+          "role": "前景遮挡层",
+          "narrative": "独立锦架与器用陈设使牡丹纹样落在衣锦、礼俗和日常物件上；不再以巨花或完整人群复合图填空。",
+          "width": 0.5,
+          "x": -0.03,
+          "y": -0.26,
+          "depth": 0.95,
+          "opacity": 1,
+          "categories": [
+            "B",
+            "C",
+            "F"
+          ],
+          "regions": [
+            "c3-gap-05-r2",
+            "c3-gap-05-r3",
+            "c3-stop-05-r2",
+            "c3-stop-06-r2"
+          ],
+          "gap": 5,
+          "supportLayerId": "bd3-gap05-ground"
+        },
+        {
+          "id": "bd3-gap06-objects",
+          "assetId": "bd3-wares-step",
+          "name": "BD3_06_wares-step",
+          "role": "前景遮挡层",
+          "narrative": "独立锦架与器用陈设使牡丹纹样落在衣锦、礼俗和日常物件上；不再以巨花或完整人群复合图填空。",
+          "width": 0.45,
+          "x": 0.04,
+          "y": -0.28,
+          "depth": 0.95,
+          "opacity": 1,
+          "categories": [
+            "B",
+            "C",
+            "F"
+          ],
+          "regions": [
+            "c3-gap-06-r2",
+            "c3-gap-06-r3",
+            "c3-stop-06-r2",
+            "c3-stop-07-r2"
+          ],
+          "gap": 6,
+          "supportLayerId": "bd3-gap06-ground"
+        }
+      ],
+      "productionStage": "expansion-assets-in-production",
+      "frontOfBackdrop": "一整幅无缝宣纸",
+      "paperBackgroundMeshNames": [
+        "一整幅无缝宣纸"
+      ],
+      "retireSourceMeshNames": [
+        "贯穿全卷的山势_1",
+        "贯穿全卷的山势_2",
+        "贯穿全卷的山势_3",
+        "通幅山脊细线_1",
+        "通幅山脊细线_2",
+        "通幅山脊细线_3",
+        "连续水脉",
+        "TR01_疏林1_干",
+        "TR01_疏林1_枝0",
+        "TR01_树冠0_0",
+        "TR01_疏林1_枝1",
+        "TR01_树冠0_1",
+        "TR01_疏林1_枝2",
+        "TR01_树冠0_2",
+        "TR01_疏林1_枝3",
+        "TR01_树冠0_3",
+        "TR01_疏林1_枝4",
+        "TR01_树冠0_4",
+        "TR01_疏林2_干",
+        "TR01_疏林2_枝0",
+        "TR01_树冠1_0",
+        "TR01_疏林2_枝1",
+        "TR01_树冠1_1",
+        "TR01_疏林2_枝2",
+        "TR01_树冠1_2",
+        "TR01_疏林2_枝3",
+        "TR01_树冠1_3",
+        "TR01_疏林2_枝4",
+        "TR01_树冠1_4",
+        "TR01_水波0",
+        "TR01_水波1",
+        "TR01_水波2",
+        "TR01_水波3",
+        "TR01_水波4",
+        "TR01_水波5",
+        "TR01_水波6",
+        "TR02_疏林1_干",
+        "TR02_疏林1_枝0",
+        "TR02_树冠0_0",
+        "TR02_疏林1_枝1",
+        "TR02_树冠0_1",
+        "TR02_疏林1_枝2",
+        "TR02_树冠0_2",
+        "TR02_疏林1_枝3",
+        "TR02_树冠0_3",
+        "TR02_疏林1_枝4",
+        "TR02_树冠0_4",
+        "TR02_疏林2_干",
+        "TR02_疏林2_枝0",
+        "TR02_树冠1_0",
+        "TR02_疏林2_枝1",
+        "TR02_树冠1_1",
+        "TR02_疏林2_枝2",
+        "TR02_树冠1_2",
+        "TR02_疏林2_枝3",
+        "TR02_树冠1_3",
+        "TR02_疏林2_枝4",
+        "TR02_树冠1_4",
+        "TR02_疏林3_干",
+        "TR02_疏林3_枝0",
+        "TR02_树冠2_0",
+        "TR02_疏林3_枝1",
+        "TR02_树冠2_1",
+        "TR02_疏林3_枝2",
+        "TR02_树冠2_2",
+        "TR02_疏林3_枝3",
+        "TR02_树冠2_3",
+        "TR02_疏林3_枝4",
+        "TR02_树冠2_4",
+        "TR02_水波0",
+        "TR02_水波1",
+        "TR02_水波2",
+        "TR02_水波3",
+        "TR02_水波4",
+        "TR02_水波5",
+        "TR02_水波6",
+        "TR03_疏林1_干",
+        "TR03_疏林1_枝0",
+        "TR03_树冠0_0",
+        "TR03_疏林1_枝1",
+        "TR03_树冠0_1",
+        "TR03_疏林1_枝2",
+        "TR03_树冠0_2",
+        "TR03_疏林1_枝3",
+        "TR03_树冠0_3",
+        "TR03_疏林1_枝4",
+        "TR03_树冠0_4",
+        "TR03_疏林2_干",
+        "TR03_疏林2_枝0",
+        "TR03_树冠1_0",
+        "TR03_疏林2_枝1",
+        "TR03_树冠1_1",
+        "TR03_疏林2_枝2",
+        "TR03_树冠1_2",
+        "TR03_疏林2_枝3",
+        "TR03_树冠1_3",
+        "TR03_疏林2_枝4",
+        "TR03_树冠1_4",
+        "TR03_水波0",
+        "TR03_水波1",
+        "TR03_水波2",
+        "TR03_水波3",
+        "TR03_水波4",
+        "TR03_水波5",
+        "TR03_水波6",
+        "TR04_疏林1_干",
+        "TR04_疏林1_枝0",
+        "TR04_树冠0_0",
+        "TR04_疏林1_枝1",
+        "TR04_树冠0_1",
+        "TR04_疏林1_枝2",
+        "TR04_树冠0_2",
+        "TR04_疏林1_枝3",
+        "TR04_树冠0_3",
+        "TR04_疏林1_枝4",
+        "TR04_树冠0_4",
+        "TR04_疏林2_干",
+        "TR04_疏林2_枝0",
+        "TR04_树冠1_0",
+        "TR04_疏林2_枝1",
+        "TR04_树冠1_1",
+        "TR04_疏林2_枝2",
+        "TR04_树冠1_2",
+        "TR04_疏林2_枝3",
+        "TR04_树冠1_3",
+        "TR04_疏林2_枝4",
+        "TR04_树冠1_4",
+        "TR04_疏林3_干",
+        "TR04_疏林3_枝0",
+        "TR04_树冠2_0",
+        "TR04_疏林3_枝1",
+        "TR04_树冠2_1",
+        "TR04_疏林3_枝2",
+        "TR04_树冠2_2",
+        "TR04_疏林3_枝3",
+        "TR04_树冠2_3",
+        "TR04_疏林3_枝4",
+        "TR04_树冠2_4",
+        "TR04_水波0",
+        "TR04_水波1",
+        "TR04_水波2",
+        "TR04_水波3",
+        "TR04_水波4",
+        "TR04_水波5",
+        "TR04_水波6",
+        "TR05_疏林1_干",
+        "TR05_疏林1_枝0",
+        "TR05_树冠0_0",
+        "TR05_疏林1_枝1",
+        "TR05_树冠0_1",
+        "TR05_疏林1_枝2",
+        "TR05_树冠0_2",
+        "TR05_疏林1_枝3",
+        "TR05_树冠0_3",
+        "TR05_疏林1_枝4",
+        "TR05_树冠0_4",
+        "TR05_疏林2_干",
+        "TR05_疏林2_枝0",
+        "TR05_树冠1_0",
+        "TR05_疏林2_枝1",
+        "TR05_树冠1_1",
+        "TR05_疏林2_枝2",
+        "TR05_树冠1_2",
+        "TR05_疏林2_枝3",
+        "TR05_树冠1_3",
+        "TR05_疏林2_枝4",
+        "TR05_树冠1_4",
+        "TR05_水波0",
+        "TR05_水波1",
+        "TR05_水波2",
+        "TR05_水波3",
+        "TR05_水波4",
+        "TR05_水波5",
+        "TR05_水波6",
+        "TR06_疏林1_干",
+        "TR06_疏林1_枝0",
+        "TR06_树冠0_0",
+        "TR06_疏林1_枝1",
+        "TR06_树冠0_1",
+        "TR06_疏林1_枝2",
+        "TR06_树冠0_2",
+        "TR06_疏林1_枝3",
+        "TR06_树冠0_3",
+        "TR06_疏林1_枝4",
+        "TR06_树冠0_4",
+        "TR06_疏林2_干",
+        "TR06_疏林2_枝0",
+        "TR06_树冠1_0",
+        "TR06_疏林2_枝1",
+        "TR06_树冠1_1",
+        "TR06_疏林2_枝2",
+        "TR06_树冠1_2",
+        "TR06_疏林2_枝3",
+        "TR06_树冠1_3",
+        "TR06_疏林2_枝4",
+        "TR06_树冠1_4",
+        "TR06_疏林3_干",
+        "TR06_疏林3_枝0",
+        "TR06_树冠2_0",
+        "TR06_疏林3_枝1",
+        "TR06_树冠2_1",
+        "TR06_疏林3_枝2",
+        "TR06_树冠2_2",
+        "TR06_疏林3_枝3",
+        "TR06_树冠2_3",
+        "TR06_疏林3_枝4",
+        "TR06_树冠2_4",
+        "TR06_水波0",
+        "TR06_水波1",
+        "TR06_水波2",
+        "TR06_水波3",
+        "TR06_水波4",
+        "TR06_水波5",
+        "TR06_水波6",
+        "TR07_疏林1_干",
+        "TR07_疏林1_枝0",
+        "TR07_树冠0_0",
+        "TR07_疏林1_枝1",
+        "TR07_树冠0_1",
+        "TR07_疏林1_枝2",
+        "TR07_树冠0_2",
+        "TR07_疏林1_枝3",
+        "TR07_树冠0_3",
+        "TR07_疏林1_枝4",
+        "TR07_树冠0_4",
+        "TR07_疏林2_干",
+        "TR07_疏林2_枝0",
+        "TR07_树冠1_0",
+        "TR07_疏林2_枝1",
+        "TR07_树冠1_1",
+        "TR07_疏林2_枝2",
+        "TR07_树冠1_2",
+        "TR07_疏林2_枝3",
+        "TR07_树冠1_3",
+        "TR07_疏林2_枝4",
+        "TR07_树冠1_4",
+        "TR07_水波0",
+        "TR07_水波1",
+        "TR07_水波2",
+        "TR07_水波3",
+        "TR07_水波4",
+        "TR07_水波5",
+        "TR07_水波6",
+        "TR08_疏林1_干",
+        "TR08_疏林1_枝0",
+        "TR08_树冠0_0",
+        "TR08_疏林1_枝1",
+        "TR08_树冠0_1",
+        "TR08_疏林1_枝2",
+        "TR08_树冠0_2",
+        "TR08_疏林1_枝3",
+        "TR08_树冠0_3",
+        "TR08_疏林1_枝4",
+        "TR08_树冠0_4",
+        "TR08_疏林2_干",
+        "TR08_疏林2_枝0",
+        "TR08_树冠1_0",
+        "TR08_疏林2_枝1",
+        "TR08_树冠1_1",
+        "TR08_疏林2_枝2",
+        "TR08_树冠1_2",
+        "TR08_疏林2_枝3",
+        "TR08_树冠1_3",
+        "TR08_疏林2_枝4",
+        "TR08_树冠1_4",
+        "TR08_疏林3_干",
+        "TR08_疏林3_枝0",
+        "TR08_树冠2_0",
+        "TR08_疏林3_枝1",
+        "TR08_树冠2_1",
+        "TR08_疏林3_枝2",
+        "TR08_树冠2_2",
+        "TR08_疏林3_枝3",
+        "TR08_树冠2_3",
+        "TR08_疏林3_枝4",
+        "TR08_树冠2_4",
+        "TR08_水波0",
+        "TR08_水波1",
+        "TR08_水波2",
+        "TR08_水波3",
+        "TR08_水波4",
+        "TR08_水波5",
+        "TR08_水波6"
+      ],
+      "retirementReason": "三段跨全卷平涂山形及其粗略山脊是空洞处反复出现的占位构图；用主题明确的院墙/织物/器用与淡墨承接替代其功能。原source与对象矩阵保留，水脉/金线/疏林不一并退役。",
+      "sourceRetirementReason": "Real on/off browser evidence: opaque continuous water ribbon clips new brocade/vessels; 276 repeated untextured TR tree/crown/wave placeholders float across narrative objects. Replaced by chapter-specific complete ground and object layers; retain original source geometry and gold/cloud guidance. Evidence reports/blank-design/third-occlusion/diagnostic.json."
+    },
+    "4": {
+      "reviewed": true,
+      "productionStage": "pilot-before-expansion",
+      "retirePriorAddedIds": [],
+      "layers": [
+        {
+          "id": "bd4-gap01-bank",
+          "assetId": "bd4-court-bank",
+          "gap": 1,
+          "name": "BD4_01_苑岸短栏",
+          "role": "中景承接层",
+          "narrative": "朱栏与石阶围合浅水花岸，使人花相映进入可以行走的宫苑；不添第二位贵妃。",
+          "width": 1.35,
+          "x": 0,
+          "y": -0.26,
+          "depth": 1.25,
+          "opacity": 1,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c4-gap-01-r2",
+            "c4-gap-01-r3",
+            "c4-stop-01-r2",
+            "c4-stop-02-r2"
+          ]
+        },
+        {
+          "id": "bd4-gap02-water",
+          "assetId": "bd4-garden-water",
+          "gap": 2,
+          "name": "BD4_02_花池曲岸",
+          "role": "中景承接层",
+          "narrative": "浅水与曲岸把贵妃静坐和沉香亭前花园连接起来，保留水面及上方气口。",
+          "width": 1.4,
+          "x": 0,
+          "y": -0.22,
+          "depth": 1.35,
+          "opacity": 0.94,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c4-gap-02-r2",
+            "c4-gap-02-r3",
+            "c4-stop-02-r2",
+            "c4-stop-03-r2"
+          ]
+        },
+        {
+          "id": "bd4-gap03-terrace",
+          "assetId": "bd4-low-terrace",
+          "gap": 3,
+          "name": "BD4_03_宫苑低阶台",
+          "role": "中景承接层",
+          "narrative": "低阶与短栏承接题诗亭与宴游陈设的地面，不以整殿或大人物争夺主位。",
+          "width": 1.32,
+          "x": 0,
+          "y": -0.3,
+          "depth": 1.25,
+          "opacity": 1,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c4-gap-03-r2",
+            "c4-gap-03-r3",
+            "c4-stop-03-r2"
+          ]
+        },
+        {
+          "id": "bd4-gap03-poetry",
+          "assetId": "bd4-poetry-incense",
+          "gap": 3,
+          "name": "BD4_03_诗案香炉",
+          "role": "前景遮挡层",
+          "narrative": "独立诗案、空白绢卷、笔砚与香炉提示沉香亭题诗，文字由原题字承担。",
+          "width": 0.22,
+          "x": -0.12,
+          "y": -0.3,
+          "depth": 0.86,
+          "opacity": 1,
+          "categories": [
+            "B",
+            "C"
+          ],
+          "regions": [
+            "c4-gap-03-r2",
+            "c4-gap-03-r3",
+            "c4-stop-03-r2"
+          ],
+          "supportLayerId": "bd4-gap03-terrace"
+        },
+        {
+          "id": "bd4-gap04-terrace",
+          "assetId": "bd4-abandoned-steps",
+          "gap": 4,
+          "name": "BD4_04_宴后低阶",
+          "role": "中景承接层",
+          "narrative": "不对称低阶与散落花瓣承接宴散后的宫苑；不重复上一段诗案与整块大台面。",
+          "width": 1.3,
+          "x": 0.04,
+          "y": -0.3,
+          "depth": 1.3,
+          "opacity": 0.9,
+          "categories": [
+            "A",
+            "D"
+          ],
+          "regions": [
+            "c4-gap-04-r2",
+            "c4-gap-04-r3",
+            "c4-stop-05-r2"
+          ]
+        },
+        {
+          "id": "bd4-gap05-pavilion",
+          "assetId": "bd4-empty-pavilion",
+          "gap": 5,
+          "name": "BD4_05_空亭疏岸",
+          "role": "中景承接层",
+          "narrative": "兵马远去后以无人水榭和浅水岸延续旧宫苑，留下空位而非新增盛宴。",
+          "width": 1.03,
+          "x": 0,
+          "y": -0.16,
+          "depth": 1.4,
+          "opacity": 0.92,
+          "categories": [
+            "A",
+            "D",
+            "E"
+          ],
+          "regions": [
+            "c4-gap-05-r2",
+            "c4-gap-05-r3",
+            "c4-stop-05-r2",
+            "c4-stop-06-r2"
+          ]
+        },
+        {
+          "id": "bd4-gap06-shore",
+          "assetId": "bd4-reed-shore",
+          "gap": 6,
+          "name": "BD4_06_疏岸残花",
+          "role": "中景承接层",
+          "narrative": "疏苇浅石和渐淡水岸连接回望与故国山水，残花替代孤立盛花贴片。",
+          "width": 1.48,
+          "x": 0,
+          "y": -0.26,
+          "depth": 1.28,
+          "opacity": 0.82,
+          "categories": [
+            "A",
+            "D",
+            "E"
+          ],
+          "regions": [
+            "c4-gap-06-r2",
+            "c4-gap-06-r3",
+            "c4-stop-06-r2"
+          ]
+        },
+        {
+          "id": "bd4-gap06-lamp",
+          "assetId": "bd4-lone-lamp",
+          "gap": 6,
+          "name": "BD4_06_孤灯",
+          "role": "前景遮挡层",
+          "narrative": "一盏低位孤灯接住繁华后的静默，微暖不抢主体。",
+          "width": 0.11,
+          "x": 0.16,
+          "y": -0.36,
+          "depth": 0.9,
+          "opacity": 0.85,
+          "categories": [
+            "B",
+            "C"
+          ],
+          "regions": [
+            "c4-gap-06-r2",
+            "c4-gap-06-r3",
+            "c4-stop-06-r2"
+          ],
+          "supportLayerId": "bd4-gap06-shore"
+        },
+        {
+          "id": "bd4-gap07-shore",
+          "assetId": "bd4-quiet-water",
+          "gap": 7,
+          "name": "BD4_07_低汀浅水",
+          "role": "中景承接层",
+          "narrative": "低石汀与浅水替代重复高苇岸，给余韵诗案提供实际承托，保留上半情绪留白。",
+          "width": 1.32,
+          "x": 0.03,
+          "y": -0.29,
+          "depth": 1.38,
+          "opacity": 0.78,
+          "categories": [
+            "A",
+            "D",
+            "E"
+          ],
+          "regions": [
+            "c4-gap-07-r2",
+            "c4-gap-07-r3",
+            "c4-stop-08-r2"
+          ]
+        },
+        {
+          "id": "bd4-gap07-relic",
+          "assetId": "bd4-scroll-relic",
+          "gap": 7,
+          "name": "BD4_07_空案诗卷",
+          "role": "前景遮挡层",
+          "narrative": "无人的低案与诗卷点明文字和记忆延续，不把衰段恢复成热闹宫苑。",
+          "width": 0.22,
+          "x": 0.14,
+          "y": -0.35,
+          "depth": 0.9,
+          "opacity": 0.92,
+          "categories": [
+            "B",
+            "C",
+            "F"
+          ],
+          "regions": [
+            "c4-gap-07-r2",
+            "c4-gap-07-r3",
+            "c4-stop-08-r2"
+          ],
+          "supportLayerId": "bd4-gap07-shore"
+        },
+        {
+          "id": "bd4-gap08-shore",
+          "assetId": "bd4-quiet-water",
+          "gap": 8,
+          "name": "BD4_08_卷尾淡水口",
+          "role": "后景连续层",
+          "narrative": "低淡水口以不同幅度和位置收束，与前段高苇岸区别；上中部仍作故国追忆的情绪留白。",
+          "width": 1.52,
+          "x": -0.1,
+          "y": -0.33,
+          "depth": 1.5,
+          "opacity": 0.42,
+          "categories": [
+            "A",
+            "E"
+          ],
+          "regions": [
+            "c4-gap-08-r2",
+            "c4-gap-08-r3",
+            "c4-stop-08-r2",
+            "c4-stop-09-r2"
+          ]
+        },
+        {
+          "id": "bd4-gap08-lamp",
+          "assetId": "bd4-lone-lamp",
+          "gap": 8,
+          "name": "BD4_08_余韵孤灯",
+          "role": "前景遮挡层",
+          "narrative": "孤灯与少量落花作为卷尾余韵物件，保留宽阔收束留白。",
+          "width": 0.1,
+          "x": -0.03,
+          "y": -0.39,
+          "depth": 0.91,
+          "opacity": 0.75,
+          "categories": [
+            "B",
+            "C",
+            "F"
+          ],
+          "regions": [
+            "c4-gap-08-r2",
+            "c4-gap-08-r3",
+            "c4-stop-08-r2",
+            "c4-stop-09-r2"
+          ],
+          "supportLayerId": "bd4-gap08-shore"
+        }
+      ],
+      "frontOfBackdrop": "连续绢本背景 · 756米",
+      "paperBackgroundMeshNames": [
+        "连续绢本背景 · 756米",
+        "长卷承托地面"
+      ],
+      "paperPolicyEvidence": "reports/blank-design/pilot/e754-depth-diagnostic.json",
+      "retireSourceMeshNames": [
+        "过渡7 · 远侧花丛",
+        "过渡8 · 远侧花丛"
+      ],
+      "retirementReason": "源辅助小花球在后段无地面承托，真实宽图/quarter均悬浮；由本轮疏岸和余韵物件承接，原source文件不变。"
+    }
+  },
+  "finalClassificationEvidence": "reports/blank-design/final/acceptance-sources.json",
+  "finalRegionDefinitionBoundary": "layers[].regions保留原审查规划关联；最终主分类和局部混合处理以final/region-implementation.json为准，不能把相邻地景认作天空已填。"
+}

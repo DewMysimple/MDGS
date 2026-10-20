@@ -1,0 +1,2657 @@
+{
+  "schemaVersion": 1,
+  "status": "read-only-diagnosis-complete-no-fix-applied",
+  "verifiedAtUtc": "2026-10-20T00:38:27.562347+00:00",
+  "scope": "真实源scene、现有renderer/art/background代码，以及Chromium实际draw隔离。未改源/manifest/renderer/Blender/图像；原始诊断截图与运行证据以字节相同副本归档到项目内，临时路径仅作provenance。",
+  "canonicalSha256AtReport": "c7b593102bd8f43fd7438413b34782b64d00788f4e6d87dd3f69682ba6b81a54",
+  "chapters": [
+    {
+      "chapter": 1,
+      "sourceScene": "public/assets/chapter-1/scene.json",
+      "sourceSceneSha256": "2d4d2a59ab6388c8f8ae17f182c1690acb0c144e141491882c1ff96ba5081eef",
+      "travel": {
+        "axis": "X",
+        "sign": 1,
+        "range": [
+          -9.4260054,
+          453.7124023
+        ]
+      },
+      "sourceCameraPositionRanges": [
+        [
+          -9.4260054,
+          453.7124023
+        ],
+        [
+          -48.3590698,
+          -17.6560421
+        ],
+        [
+          7.451653,
+          14.3500004
+        ]
+      ],
+      "paperObjects": [
+        {
+          "name": "长卷_连续绢本地形",
+          "kind": "curved-horizontal-ground",
+          "sourceType": "MESH",
+          "bounds": {
+            "min": [
+              -33.5652542,
+              -35.8218079,
+              -3.0127251
+            ],
+            "max": [
+              483.28479,
+              80.9067535,
+              2.912101
+            ]
+          },
+          "worldSpans": [
+            516.8500442,
+            116.72856139999999,
+            5.9248261
+          ],
+          "narrowAxis": "Z",
+          "vertices": 4097,
+          "sourceMaterial": {
+            "id": 0,
+            "name": "绢本_纤维与浅墨",
+            "texture": null,
+            "colorLinear": [
+              0.76,
+              0.716,
+              0.606
+            ],
+            "depthWrite": true,
+            "transparent": false,
+            "proceduralApproximation": true
+          },
+          "runtime": {
+            "name": "长卷_连续绢本地形",
+            "depthWrite": false,
+            "depthTest": true,
+            "transparent": false,
+            "visible": true,
+            "color": [
+              0.76,
+              0.716,
+              0.606
+            ],
+            "artPaperBackground": true
+          },
+          "uvBounds": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "长卷_统一留白天幕",
+          "kind": "vertical-planar-backdrop",
+          "sourceType": "MESH",
+          "bounds": {
+            "min": [
+              -256.0,
+              110.0,
+              -150.0
+            ],
+            "max": [
+              704.0,
+              110.0,
+              180.0
+            ]
+          },
+          "worldSpans": [
+            960.0,
+            0.0,
+            330.0
+          ],
+          "narrowAxis": "Y",
+          "vertices": 4,
+          "sourceMaterial": {
+            "id": 0,
+            "name": "绢本_纤维与浅墨",
+            "texture": null,
+            "colorLinear": [
+              0.76,
+              0.716,
+              0.606
+            ],
+            "depthWrite": true,
+            "transparent": false,
+            "proceduralApproximation": true
+          },
+          "runtime": {
+            "name": "长卷_统一留白天幕",
+            "depthWrite": false,
+            "depthTest": true,
+            "transparent": false,
+            "visible": true,
+            "color": [
+              0.76,
+              0.716,
+              0.606
+            ],
+            "artPaperBackground": true
+          },
+          "uvBounds": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "currentBackgroundMeshNames": [
+        "长卷_连续绢本地形",
+        "长卷_统一留白天幕"
+      ],
+      "configurationAdvice": {
+        "frontOfBackdrop": "长卷_统一留白天幕",
+        "paperBackgroundMeshNames": [
+          "长卷_连续绢本地形",
+          "长卷_统一留白天幕"
+        ],
+        "physicalRule": "All padded corners Y < 110, toward the authored camera; do not use travel-X as the paper normal.",
+        "status": "两纸对象已在current backgroundMeshNames中，实际depthWrite=false；本轮应沿用，不用重复追加。"
+      },
+      "excludedUntexturedObjects": [],
+      "excludedCount": 0,
+      "priorRevisionPayloadUnchanged": true
+    },
+    {
+      "chapter": 2,
+      "sourceScene": "public/assets/chapter-2/scene.json",
+      "sourceSceneSha256": "b7e7591c95f1b40ef66b60941213c4a5976975591c6765e584ddc5484553f153",
+      "travel": {
+        "axis": "X",
+        "sign": 1,
+        "range": [
+          -0.25,
+          16.0
+        ]
+      },
+      "sourceCameraPositionRanges": [
+        [
+          -0.25,
+          16.0
+        ],
+        [
+          -10.1097336,
+          -0.6781378
+        ],
+        [
+          2.7249196,
+          23.9748764
+        ]
+      ],
+      "paperObjects": [
+        {
+          "name": "宣纸 连续长卷 19.8米",
+          "kind": "curved-horizontal-ground",
+          "sourceType": "MESH",
+          "bounds": {
+            "min": [
+              -1.6008658,
+              -1.0548054,
+              -0.8862
+            ],
+            "max": [
+              13.8365116,
+              1.2052749,
+              0.0510523
+            ]
+          },
+          "worldSpans": [
+            15.437377399999999,
+            2.2600803000000003,
+            0.9372523
+          ],
+          "narrowAxis": "Z",
+          "vertices": 8613,
+          "sourceMaterial": {
+            "id": 7,
+            "name": "宣纸 温润纤维",
+            "texture": null,
+            "colorLinear": [
+              0.86739817265,
+              0.7914988697,
+              0.6414693594
+            ],
+            "depthWrite": true,
+            "transparent": false,
+            "proceduralApproximation": true
+          },
+          "runtime": {
+            "name": "宣纸 连续长卷 19.8米",
+            "depthWrite": true,
+            "depthTest": true,
+            "transparent": false,
+            "visible": true,
+            "color": [
+              0.86739817265,
+              0.7914988697,
+              0.6414693594
+            ],
+            "artPaperBackground": false
+          },
+          "uvBounds": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "currentBackgroundMeshNames": [],
+      "configurationAdvice": {
+        "frontOfBackdrop": null,
+        "paperBackgroundMeshNames": [
+          "宣纸 连续长卷 19.8米"
+        ],
+        "physicalRule": "没有独立垂直纸幕。唯一纸对象是弯曲横向地形；若保留并以它做保守几何guard，所有卡角需Z > .0510523且还需真实相邻视图复核。",
+        "status": "这只是唯一真实纸对象的明确名单，不是当前可直接保存的配置：仅加入backgroundMeshNames只关闭Web depthWrite，不能消除纸色硬角；Blender现策略会隐藏唯一地纸并因无可见纸幕拒绝保存。先明确下列纸面展示策略。"
+      },
+      "excludedUntexturedObjects": [
+        {
+          "name": "长卷淡金边 -1",
+          "sourceType": "CURVE",
+          "material": "卷边淡金",
+          "reason": "卷边金线，不是纸地或纸幕。"
+        },
+        {
+          "name": "长卷淡金边 1",
+          "sourceType": "CURVE",
+          "material": "卷边淡金",
+          "reason": "卷边金线，不是纸地或纸幕。"
+        }
+      ],
+      "excludedCount": 2,
+      "priorRevisionPayloadUnchanged": true
+    },
+    {
+      "chapter": 3,
+      "sourceScene": "public/assets/chapter-3/scene.json",
+      "sourceSceneSha256": "bd5d3e404a0834c4d3183f4eb66cc05e8b5346eae7f305906b6a351a138f6fb9",
+      "travel": {
+        "axis": "Y",
+        "sign": 1,
+        "range": [
+          -5.0,
+          485.0
+        ]
+      },
+      "sourceCameraPositionRanges": [
+        [
+          45.0,
+          62.0
+        ],
+        [
+          -5.0,
+          485.0
+        ],
+        [
+          10.0,
+          11.3500004
+        ]
+      ],
+      "paperObjects": [
+        {
+          "name": "一整幅无缝宣纸",
+          "kind": "vertical-planar-backdrop",
+          "sourceType": "MESH",
+          "bounds": {
+            "min": [
+              -18.0,
+              -100.0,
+              -60.0
+            ],
+            "max": [
+              -18.0,
+              600.0,
+              80.0
+            ]
+          },
+          "worldSpans": [
+            0.0,
+            700.0,
+            140.0
+          ],
+          "narrowAxis": "X",
+          "vertices": 4,
+          "sourceMaterial": {
+            "id": 8,
+            "name": "通幅宣纸｜轻微纤维",
+            "texture": null,
+            "colorLinear": [
+              0.88828724625,
+              0.80369886755,
+              0.6634412408
+            ],
+            "depthWrite": true,
+            "transparent": false,
+            "proceduralApproximation": true
+          },
+          "runtime": {
+            "name": "一整幅无缝宣纸",
+            "depthWrite": true,
+            "depthTest": true,
+            "transparent": false,
+            "visible": true,
+            "color": [
+              0.88828724625,
+              0.80369886755,
+              0.6634412408
+            ],
+            "artPaperBackground": false
+          },
+          "uvBounds": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "currentBackgroundMeshNames": [],
+      "configurationAdvice": {
+        "frontOfBackdrop": "一整幅无缝宣纸",
+        "paperBackgroundMeshNames": [
+          "一整幅无缝宣纸"
+        ],
+        "physicalRule": "All padded corners X > -18, toward authored cameras X=45..62. Travel axis is Y, not the normal.",
+        "status": "当前backgroundMeshNames为空，实际depthWrite=true。本轮需要显式加该纸幕并给新增卡physical guard，不能把山势/金线/水脉加入纸底。"
+      },
+      "excludedUntexturedObjects": [
+        {
+          "name": "贯穿全卷的山势_1",
+          "sourceType": "MESH",
+          "material": "淡墨远山_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "贯穿全卷的山势_2",
+          "sourceType": "MESH",
+          "material": "淡墨远山_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "贯穿全卷的山势_3",
+          "sourceType": "MESH",
+          "material": "淡墨远山_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "连续水脉",
+          "sourceType": "MESH",
+          "material": "连续水脉色",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "水岸留金",
+          "sourceType": "MESH",
+          "material": "水岸留金色",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "通幅山脊细线_1",
+          "sourceType": "CURVE",
+          "material": "山脊淡墨细笔",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "通幅山脊细线_2",
+          "sourceType": "CURVE",
+          "material": "山脊淡墨细笔",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "通幅山脊细线_3",
+          "sourceType": "CURVE",
+          "material": "山脊淡墨细笔",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡01_淡云水线1",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡01_淡云水线2",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡01_淡云水线3",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_疏林1_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_疏林1_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_树冠0_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_疏林1_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_树冠0_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_疏林1_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_树冠0_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_疏林1_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_树冠0_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_疏林1_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_树冠0_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_疏林2_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_疏林2_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_树冠1_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_疏林2_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_树冠1_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_疏林2_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_树冠1_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_疏林2_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_树冠1_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_疏林2_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_树冠1_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_1",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_水波0",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_水波1",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_水波2",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_水波3",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_水波4",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_水波5",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR01_水波6",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡02_淡云水线1",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡02_淡云水线2",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡02_淡云水线3",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_疏林1_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_疏林1_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_树冠0_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_疏林1_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_树冠0_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_疏林1_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_树冠0_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_疏林1_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_树冠0_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_疏林1_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_树冠0_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_疏林2_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_疏林2_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_树冠1_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_疏林2_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_树冠1_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_疏林2_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_树冠1_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_疏林2_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_树冠1_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_疏林2_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_树冠1_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_疏林3_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_疏林3_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_树冠2_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_疏林3_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_树冠2_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_疏林3_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_树冠2_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_疏林3_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_树冠2_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_疏林3_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_树冠2_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_2",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_水波0",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_水波1",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_水波2",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_水波3",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_水波4",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_水波5",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR02_水波6",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡03_淡云水线1",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡03_淡云水线2",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡03_淡云水线3",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_疏林1_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_疏林1_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_树冠0_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_疏林1_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_树冠0_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_疏林1_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_树冠0_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_疏林1_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_树冠0_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_疏林1_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_树冠0_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_疏林2_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_疏林2_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_树冠1_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_疏林2_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_树冠1_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_疏林2_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_树冠1_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_疏林2_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_树冠1_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_疏林2_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_树冠1_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_3",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_水波0",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_水波1",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_水波2",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_水波3",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_水波4",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_水波5",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR03_水波6",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡04_淡云水线1",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡04_淡云水线2",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡04_淡云水线3",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_疏林1_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_疏林1_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_树冠0_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_疏林1_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_树冠0_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_疏林1_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_树冠0_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_疏林1_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_树冠0_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_疏林1_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_树冠0_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_疏林2_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_疏林2_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_树冠1_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_疏林2_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_树冠1_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_疏林2_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_树冠1_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_疏林2_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_树冠1_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_疏林2_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_树冠1_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_疏林3_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_疏林3_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_树冠2_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_疏林3_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_树冠2_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_疏林3_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_树冠2_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_疏林3_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_树冠2_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_疏林3_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_树冠2_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_4",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_水波0",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_水波1",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_水波2",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_水波3",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_水波4",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_水波5",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR04_水波6",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡05_淡云水线1",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡05_淡云水线2",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡05_淡云水线3",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_疏林1_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_疏林1_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_树冠0_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_疏林1_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_树冠0_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_疏林1_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_树冠0_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_疏林1_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_树冠0_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_疏林1_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_树冠0_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_疏林2_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_疏林2_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_树冠1_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_疏林2_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_树冠1_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_疏林2_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_树冠1_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_疏林2_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_树冠1_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_疏林2_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_树冠1_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_5",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_水波0",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_水波1",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_水波2",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_水波3",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_水波4",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_水波5",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR05_水波6",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡06_淡云水线1",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡06_淡云水线2",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡06_淡云水线3",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_疏林1_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_疏林1_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_树冠0_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_疏林1_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_树冠0_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_疏林1_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_树冠0_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_疏林1_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_树冠0_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_疏林1_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_树冠0_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_疏林2_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_疏林2_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_树冠1_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_疏林2_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_树冠1_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_疏林2_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_树冠1_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_疏林2_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_树冠1_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_疏林2_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_树冠1_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_疏林3_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_疏林3_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_树冠2_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_疏林3_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_树冠2_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_疏林3_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_树冠2_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_疏林3_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_树冠2_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_疏林3_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_树冠2_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_6",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_水波0",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_水波1",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_水波2",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_水波3",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_水波4",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_水波5",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR06_水波6",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡07_淡云水线1",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡07_淡云水线2",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡07_淡云水线3",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_疏林1_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_疏林1_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_树冠0_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_疏林1_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_树冠0_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_疏林1_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_树冠0_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_疏林1_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_树冠0_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_疏林1_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_树冠0_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_疏林2_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_疏林2_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_树冠1_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_疏林2_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_树冠1_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_疏林2_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_树冠1_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_疏林2_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_树冠1_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_疏林2_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_树冠1_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_7",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_水波0",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_水波1",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_水波2",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_水波3",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_水波4",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_水波5",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR07_水波6",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡08_淡云水线1",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡08_淡云水线2",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "过渡08_淡云水线3",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_疏林1_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_疏林1_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_树冠0_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_疏林1_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_树冠0_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_疏林1_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_树冠0_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_疏林1_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_树冠0_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_疏林1_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_树冠0_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_疏林2_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_疏林2_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_树冠1_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_疏林2_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_树冠1_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_疏林2_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_树冠1_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_疏林2_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_树冠1_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_疏林2_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_树冠1_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_疏林3_干",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_疏林3_枝0",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_树冠2_0",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_疏林3_枝1",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_树冠2_1",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_疏林3_枝2",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_树冠2_2",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_疏林3_枝3",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_树冠2_3",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_疏林3_枝4",
+          "sourceType": "CURVE",
+          "material": "水岸疏林淡墨_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_树冠2_4",
+          "sourceType": "MESH",
+          "material": "水岸树冠淡染_8",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_水波0",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_水波1",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_水波2",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_水波3",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_水波4",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_水波5",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        },
+        {
+          "name": "TR08_水波6",
+          "sourceType": "CURVE",
+          "material": "云线浅金",
+          "reason": "无纹理仍是山水/水脉/金线/疏林等画面内容，不能当作纸底处理。"
+        }
+      ],
+      "excludedCount": 308,
+      "priorRevisionPayloadUnchanged": true
+    }
+  ],
+  "c2Rectangle": {
+    "chapter": 2,
+    "stop": 7,
+    "stopName": "静待盛唐",
+    "requestedProgress": 0.9764219847936453,
+    "actualProgress": 0.976,
+    "responsibleMesh": "宣纸 连续长卷 19.8米",
+    "responsibleMaterial": "宣纸 温润纤维",
+    "texture": null,
+    "rootCause": "源弯曲宣纸地形在X=13.8365116结束；卷尾实际相机X=15.4043已经越过该端部，投影端边落在画心左约15.7%。不带纹理的实体纸色与CSS纸底不同，形成直角浅色矩形；depthWrite=true还裁挡某些原花树。不是PNG透明边或UV裁切。",
+    "canvasCss": [
+      1386.75,
+      475.03125
+    ],
+    "screenshotPixels": [
+      1388,
+      476
+    ],
+    "cameraPosition": [
+      15.404300473079125,
+      -1.4131410483447373,
+      3.464930057101683
+    ],
+    "projectedRightEdge": {
+      "worldX": 13.836511768735885,
+      "vertexCount": 33,
+      "screenXRangeCss": [
+        215.95550346242675,
+        218.29005698029127
+      ],
+      "screenYRangeCss": [
+        11.119044974060955,
+        570.0214925269344
+      ],
+      "canvasNormalizedXRange": [
+        0.15572778327919723,
+        0.1574112543575203
+      ],
+      "note": "截图外框向上取整到1388×476，CSS画心1386.75×475.03125，端边约216–218 CSS px，对应截图可见竖边约218–219px。"
+    },
+    "paperColorCurrentLinear": [
+      0.86739817265,
+      0.7914988697,
+      0.6414693594
+    ],
+    "currentCssPaper": "rgb(245, 236, 220)",
+    "diagnosticRoiPixels": [
+      35,
+      365,
+      200,
+      465
+    ],
+    "variants": [
+      {
+        "mode": "baseline",
+        "screenshotSha256": "1c4b217e5b42f0bb6c8023eb27a1a89e2d618fb235c4413993edff8aa89f8aaa",
+        "subjectImagesPreserved": true,
+        "description": "原始实际画面；矩形可见。",
+        "sampleRgb": {
+          "(80, 430)": [
+            239,
+            230,
+            210
+          ],
+          "(190, 430)": [
+            239,
+            230,
+            210
+          ],
+          "(235, 430)": [
+            245,
+            236,
+            220
+          ],
+          "(150, 380)": [
+            239,
+            230,
+            210
+          ]
+        },
+        "roiPixels": 16500,
+        "roiDifferentPixelsAgainstHiddenPaper": 16500,
+        "roiMaxRgbDifferenceAgainstHiddenPaper": 10,
+        "screenshot": "reports/blank-design/background-diagnostic/c2-stop7-baseline.png",
+        "provenance": {
+          "sourceTemporaryScreenshot": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\mdgs-blank-background-audit-P0lrfU\\c2-stop7-baseline.png",
+          "copyOperation": "byte-for-byte; no image edit, repaint, crop or resize",
+          "sha256Preserved": true
+        }
+      },
+      {
+        "mode": "without-paper",
+        "screenshotSha256": "d8e3c4cd6e9831e4a17091e8dcf2f29c5ea6ccb9293d010ee2ed6fa5f0cc6403",
+        "subjectImagesPreserved": true,
+        "description": "只隐藏纸mesh；矩形消失，原左侧部分花树额外露出。",
+        "sampleRgb": {
+          "(80, 430)": [
+            245,
+            236,
+            220
+          ],
+          "(190, 430)": [
+            245,
+            236,
+            220
+          ],
+          "(235, 430)": [
+            245,
+            236,
+            220
+          ],
+          "(150, 380)": [
+            245,
+            236,
+            220
+          ]
+        },
+        "roiPixels": 16500,
+        "roiDifferentPixelsAgainstHiddenPaper": 0,
+        "roiMaxRgbDifferenceAgainstHiddenPaper": 0,
+        "screenshot": "reports/blank-design/background-diagnostic/c2-stop7-without-paper.png",
+        "provenance": {
+          "sourceTemporaryScreenshot": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\mdgs-blank-background-audit-P0lrfU\\c2-stop7-without-paper.png",
+          "copyOperation": "byte-for-byte; no image edit, repaint, crop or resize",
+          "sha256Preserved": true
+        }
+      },
+      {
+        "mode": "only-paper",
+        "screenshotSha256": "7879bd632800ecdc81fb5da3847dcc4698f27525a9531ab1729170e8699b859c",
+        "subjectImagesPreserved": false,
+        "description": "仅画纸mesh，所有图像层隐藏；同样矩形仍可见，证明与纹理/UV无关。",
+        "sampleRgb": {
+          "(80, 430)": [
+            239,
+            230,
+            210
+          ],
+          "(190, 430)": [
+            239,
+            230,
+            210
+          ],
+          "(235, 430)": [
+            245,
+            236,
+            220
+          ],
+          "(150, 380)": [
+            239,
+            230,
+            210
+          ]
+        },
+        "roiPixels": 16500,
+        "roiDifferentPixelsAgainstHiddenPaper": 16500,
+        "roiMaxRgbDifferenceAgainstHiddenPaper": 52,
+        "screenshot": "reports/blank-design/background-diagnostic/c2-stop7-only-paper.png",
+        "provenance": {
+          "sourceTemporaryScreenshot": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\mdgs-blank-background-audit-P0lrfU\\c2-stop7-only-paper.png",
+          "copyOperation": "byte-for-byte; no image edit, repaint, crop or resize",
+          "sha256Preserved": true
+        }
+      },
+      {
+        "mode": "without-gold",
+        "screenshotSha256": "077f2be764bc0a5f918f7ed178436fa5df21da34dd81ef56b13e3090bf147ea1",
+        "subjectImagesPreserved": true,
+        "description": "只隐藏两条卷边金线；目标ROI与baseline相同，排除金线。",
+        "sampleRgb": {
+          "(80, 430)": [
+            239,
+            230,
+            210
+          ],
+          "(190, 430)": [
+            239,
+            230,
+            210
+          ],
+          "(235, 430)": [
+            245,
+            236,
+            220
+          ],
+          "(150, 380)": [
+            239,
+            230,
+            210
+          ]
+        },
+        "roiPixels": 16500,
+        "roiDifferentPixelsAgainstHiddenPaper": 16500,
+        "roiMaxRgbDifferenceAgainstHiddenPaper": 10,
+        "screenshot": "reports/blank-design/background-diagnostic/c2-stop7-without-gold.png",
+        "provenance": {
+          "sourceTemporaryScreenshot": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\mdgs-blank-background-audit-P0lrfU\\c2-stop7-without-gold.png",
+          "copyOperation": "byte-for-byte; no image edit, repaint, crop or resize",
+          "sha256Preserved": true
+        }
+      },
+      {
+        "mode": "depth-write-false",
+        "screenshotSha256": "cec096906d9bcacde7afcbf1f26d26b2bf8d03176b6b06459be8591ad77a545a",
+        "subjectImagesPreserved": true,
+        "description": "只关闭纸mesh depthWrite；裁挡解除，矩形纸色仍在。",
+        "sampleRgb": {
+          "(80, 430)": [
+            239,
+            230,
+            210
+          ],
+          "(190, 430)": [
+            239,
+            230,
+            210
+          ],
+          "(235, 430)": [
+            245,
+            236,
+            220
+          ],
+          "(150, 380)": [
+            239,
+            230,
+            210
+          ]
+        },
+        "roiPixels": 16500,
+        "roiDifferentPixelsAgainstHiddenPaper": 16500,
+        "roiMaxRgbDifferenceAgainstHiddenPaper": 10,
+        "screenshot": "reports/blank-design/background-diagnostic/c2-stop7-depth-write-false.png",
+        "provenance": {
+          "sourceTemporaryScreenshot": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\mdgs-blank-background-audit-P0lrfU\\c2-stop7-depth-write-false.png",
+          "copyOperation": "byte-for-byte; no image edit, repaint, crop or resize",
+          "sha256Preserved": true
+        }
+      },
+      {
+        "mode": "depth-write-false-color-harmonized",
+        "screenshotSha256": "462ddbfbf25fd95aa51a8667b13c4cd2fea5bcd7a15b2fa43c06aec0e1891e83",
+        "subjectImagesPreserved": true,
+        "description": "临时关闭纸depthWrite，并从真实 .painting computedStyle读取背景色赋给该派生材质；矩形与裁挡均消失。",
+        "sampleRgb": {
+          "(80, 430)": [
+            245,
+            236,
+            220
+          ],
+          "(190, 430)": [
+            245,
+            236,
+            220
+          ],
+          "(235, 430)": [
+            245,
+            236,
+            220
+          ],
+          "(150, 380)": [
+            245,
+            236,
+            220
+          ]
+        },
+        "roiPixels": 16500,
+        "roiDifferentPixelsAgainstHiddenPaper": 4,
+        "roiMaxRgbDifferenceAgainstHiddenPaper": 1,
+        "screenshot": "reports/blank-design/background-diagnostic/c2-stop7-depth-write-false-color-harmonized.png",
+        "provenance": {
+          "sourceTemporaryScreenshot": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\mdgs-blank-background-audit-P0lrfU\\c2-stop7-depth-write-false-color-harmonized.png",
+          "copyOperation": "byte-for-byte; no image edit, repaint, crop or resize",
+          "sha256Preserved": true
+        }
+      }
+    ],
+    "runtimeBeforeVariants": {
+      "chapter": 2,
+      "progress": 0.976,
+      "visibleObjects": 45,
+      "dataset": {
+        "engine": "three.js r180",
+        "chapter": "2",
+        "progress": "0.976000",
+        "motionEnabled": "false",
+        "motionRequested": "true",
+        "reducedMotion": "true",
+        "motionTime": "0.000000",
+        "motionBindings": "21",
+        "activeMotionLayers": "0",
+        "activePetals": "0",
+        "activeBridges": "0",
+        "activeMotionNames": "[]",
+        "motionClockSpeed": "1.000000",
+        "petalDensity": "1.000000",
+        "cloudDensity": "1.000000",
+        "narrativePhase": "calm",
+        "effectiveMotionBudget": "6",
+        "artReplacements": "13",
+        "artGeometryRepairs": "0",
+        "artEdgeRepairs": "0",
+        "artAddedLayers": "26",
+        "artTextLayers": "1",
+        "renderCount": "13",
+        "rafTicks": "43",
+        "rafRunning": "false",
+        "contextLost": "false",
+        "contextRestores": "0",
+        "textureCount": "18",
+        "textureBytes": "165946738",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "visibleTextures": "17",
+        "queuedTextures": "0",
+        "drawCalls": "33",
+        "geometries": "32"
+      }
+    },
+    "pageErrors": [],
+    "hypotheses": {
+      "imageAlphaOrUv": "rejected: only-paper draw reproduces the rectangle with all textured layers hidden",
+      "goldenEdge": "rejected: hiding both gold edges leaves target ROI identical to baseline",
+      "paperGeometryAndColor": "proven: hiding one named paper mesh removes it, and the physical end edge projects onto the observed boundary",
+      "depthMask": "proven secondary issue: disabling depthWrite reveals formerly clipped flower/tree content but leaves the paper-color rectangle"
+    },
+    "verifiedRemediationOptions": [
+      {
+        "option": "A",
+        "change": "在本轮派生显示明确退役这一弯曲纸地，保持其源对象/源.blend不变；Web使用现有CSS纸色。",
+        "browserEvidence": "without-paper",
+        "requiredFollowup": "Blender不能直接套用当前唯一纸地backgroundMeshNames分支：要明确仍可见的背景策略/派生纸幕，或单独说明并验证原World背景。不要把两条卷边金线当剩余纸幕。"
+      },
+      {
+        "option": "B",
+        "change": "保留纸几何，在派生材质策略中同时关闭depthWrite并使纸色与真实画心纸底一致。颜色应由本轮统一纸色/主题读取，不能在诊断脚本或资产里画大块补丁。",
+        "browserEvidence": "depth-write-false-color-harmonized",
+        "requiredFollowup": "当前backgroundMeshNames只有关闭depthWrite，无纸色设置能力；需显式派生材质策略并验证四角/全程、宽窄视口及Blender对应呈现，不能宣称本报告已实现。"
+      }
+    ],
+    "insufficientFixes": [
+      "只加入paperBackgroundMeshNames关闭depthWrite，矩形色块仍在。",
+      "只补花/云掩盖硬角，未解决真实几何纸底与裁挡。",
+      "重绘PNG、改现有人物UV或把金线当纸底，诊断证据不支持。"
+    ]
+  },
+  "codeEvidence": [
+    {
+      "path": "src/scene/SceneRenderer.ts",
+      "sha256": "38fc20a31074cc5eb9d737a2111123a568c06f46842b674f0de04d18c6a50378",
+      "relevance": "不带纹理材质默认用definition.depthWrite；贴图材质depthWrite=false。"
+    },
+    {
+      "path": "src/scene/ArtDirectionLayer.ts",
+      "sha256": "2edbc662c5a47b5387feeea8e1b9358b149f9320c4426bfa3c260c1c8a3c60a4",
+      "relevance": "backgroundMeshNames明确要求无URL纯色对象，并只设depthWrite=false，不改变material.color。"
+    },
+    {
+      "path": "scripts/build-blank-design.mjs",
+      "sha256": "e4bdaf8b82a4a5387bcb73d381527dc8913b1b7d1ce5cbcf9f002a5fd03db500",
+      "relevance": "frontOfBackdrop使用名字选纸并保证新增卡角在纸前；该参数不能仅按无纹理一概选背景。"
+    },
+    {
+      "path": "scripts/reconstruct-blender.py",
+      "sha256": "df6239d68a703b6b6002e3177ecbea9cf5a7c224028a11eabbaaa5a1e480ecda",
+      "relevance": "apply_paper_background_policy以最窄世界轴为Z判断横地形并隐藏；若声明的纸对象全部隐藏则拒绝保存。"
+    }
+  ],
+  "limitations": [
+    "所有隔离/材质改变都只发生在本次诊断浏览器内存，浏览器已关闭；没有应用整改。",
+    "第一二三卷真实纸底信息可用于后续布局；本轮未提前生产其素材，也未保存Blender。",
+    "第一次材质实验截图曾与纹理刷新竞态，已丢弃并用目标进度正确、零队列、可见贴图>10、45个可见对象且空闲后的截图替代。报告所有最终variant hash指向复核后的文件。"
+  ],
+  "diagnosticArchive": {
+    "directory": "reports/blank-design/background-diagnostic",
+    "files": [
+      {
+        "path": "reports/blank-design/background-diagnostic/c2-stop7-baseline.png",
+        "sha256": "1c4b217e5b42f0bb6c8023eb27a1a89e2d618fb235c4413993edff8aa89f8aaa",
+        "sourceTemporaryPath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\mdgs-blank-background-audit-P0lrfU\\c2-stop7-baseline.png",
+        "bytes": 992469,
+        "byteForByteCopy": true
+      },
+      {
+        "path": "reports/blank-design/background-diagnostic/c2-stop7-without-paper.png",
+        "sha256": "d8e3c4cd6e9831e4a17091e8dcf2f29c5ea6ccb9293d010ee2ed6fa5f0cc6403",
+        "sourceTemporaryPath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\mdgs-blank-background-audit-P0lrfU\\c2-stop7-without-paper.png",
+        "bytes": 992404,
+        "byteForByteCopy": true
+      },
+      {
+        "path": "reports/blank-design/background-diagnostic/c2-stop7-only-paper.png",
+        "sha256": "7879bd632800ecdc81fb5da3847dcc4698f27525a9531ab1729170e8699b859c",
+        "sourceTemporaryPath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\mdgs-blank-background-audit-P0lrfU\\c2-stop7-only-paper.png",
+        "bytes": 20892,
+        "byteForByteCopy": true
+      },
+      {
+        "path": "reports/blank-design/background-diagnostic/c2-stop7-without-gold.png",
+        "sha256": "077f2be764bc0a5f918f7ed178436fa5df21da34dd81ef56b13e3090bf147ea1",
+        "sourceTemporaryPath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\mdgs-blank-background-audit-P0lrfU\\c2-stop7-without-gold.png",
+        "bytes": 992468,
+        "byteForByteCopy": true
+      },
+      {
+        "path": "reports/blank-design/background-diagnostic/c2-stop7-depth-write-false.png",
+        "sha256": "cec096906d9bcacde7afcbf1f26d26b2bf8d03176b6b06459be8591ad77a545a",
+        "sourceTemporaryPath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\mdgs-blank-background-audit-P0lrfU\\c2-stop7-depth-write-false.png",
+        "bytes": 992469,
+        "byteForByteCopy": true
+      },
+      {
+        "path": "reports/blank-design/background-diagnostic/c2-stop7-depth-write-false-color-harmonized.png",
+        "sha256": "462ddbfbf25fd95aa51a8667b13c4cd2fea5bcd7a15b2fa43c06aec0e1891e83",
+        "sourceTemporaryPath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\mdgs-blank-background-audit-P0lrfU\\c2-stop7-depth-write-false-color-harmonized.png",
+        "bytes": 992386,
+        "byteForByteCopy": true
+      },
+      {
+        "path": "reports/blank-design/background-diagnostic/diagnostics.json",
+        "sha256": "b38f4556494dd738d18d0b92571c595c9d07ee4bb4ecbf2f1d3445234b0c5ad5",
+        "sourceTemporaryPath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\mdgs-blank-background-audit-P0lrfU\\diagnostics.json",
+        "bytes": 57242,
+        "byteForByteCopy": true
+      },
+      {
+        "path": "reports/blank-design/background-diagnostic/followup.json",
+        "sha256": "b54f00b5f7f2c8137e33d4bb249ed87c1e9c3426a296e47c54cdc571817583f1",
+        "sourceTemporaryPath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\mdgs-blank-background-audit-P0lrfU\\followup.json",
+        "bytes": 11184,
+        "byteForByteCopy": true
+      }
+    ],
+    "allHashesPreserved": true,
+    "rawJsonNote": "diagnostics.json and followup.json are byte-for-byte archives of the original runtime evidence. Their embedded temporary paths are historical capture provenance; delivery paths are listed in this report."
+  }
+}

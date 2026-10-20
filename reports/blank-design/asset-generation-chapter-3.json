@@ -1,0 +1,810 @@
+{
+  "schemaVersion": 1,
+  "status": "five-assets-generated-reviewed-packed",
+  "createdAt": "2026-10-20T00:54:13.666337+00:00",
+  "method": "built-in image_gen; one independent call per asset; transparent_background=true",
+  "skill": "C:/Users/Administrator/.codex/skills/.system/imagegen/SKILL.md",
+  "productionManifestModified": false,
+  "layoutModified": false,
+  "blendModified": false,
+  "entries": [
+    {
+      "id": "bd3-workshop-court",
+      "prompt": "Use case: historical-scene. Asset type: one independent genuinely transparent RGBA painted layer for a Chinese peony folk-life 2.5D handscroll, chapter 3 textile, auspicious craft, seasonal home life and everyday wares. Traditional Chinese gongbi delicate ink outlines, warm muted vermilion, restrained blue-green pigment, tiny aged pale gold accents; richly hand-painted but soft silk-compatible natural color. Not photoreal, not a 3D render. Isolated subject with natural irregular complete outer contour, full feet/bases/branch tips fully inside generous transparent safety margins on all sides. No sky, no opaque paper or rectangular backdrop, no modern item, no people, no large temple/palace, no giant peony flower cluster, no written characters, calligraphy, text, label, watermark or seals. All surrounding background is real alpha transparency. Primary request: a COMPLETE low horizontal craft-workshop courtyard fragment: modest warm grey flower-pattern floor tiles with an irregular tapering front edge, a short low aged wooden railing and a modest short open wooden corridor frame, only one or two small low lattice-window details and a few restrained low garden plants. The flooring and railing form a continuous usable space for separate embroidery and ceramic-craft figures to be added later, but do NOT draw any figures, work tables or wares here. Wide approximately 3:1 composition, low silhouette; no tall gateway, no monumental hall, no full room, no solid enclosing wall rectangle. Slight elevated three-quarter Chinese handscroll perspective, natural asymmetry, complete ends of low railing, all post feet and tile edge intact. Restrained lived-in refinement, no excessive gold.",
+      "intendedUse": "承接第三卷绣作/绘瓷到婚嫁器用，以花砖地台和短廊低栏连接原作坊主体。",
+      "status": "generated-visually-reviewed-packed-not-integrated",
+      "method": "one built-in image_gen call, transparent_background=true",
+      "builtInCallCount": 1,
+      "generatedSource": "C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-93c0-7502-8bd4-8d24c7617923\\exec-8d7ac2be-da96-40ea-82c4-7eb83e5c383f.png",
+      "copiedWithoutEditing": true,
+      "raw": {
+        "path": "artwork/blank-design/raw/bd3-workshop-court.png",
+        "width": 2172,
+        "height": 724,
+        "mode": "RGBA",
+        "bytes": 1992547,
+        "sha256": "6a7d76186b60d5db3debd5638e5945425205ed8d4f8070eda6fb2ddb55223f83",
+        "unchanged": true,
+        "generatedSourceHashMatches": true
+      },
+      "production": {
+        "path": "artwork/blank-design/chapter-3/bd3-workshop-court.png",
+        "width": 2694,
+        "height": 886,
+        "aspect": 3.040632054176072,
+        "bytes": 1872555,
+        "sha256": "832229a274a3ae3b205bc4c4f3e53190ac179949e54282623e917f6a8fc02185",
+        "contentRgbaSha256": "68c98eedb2a4abb77604461cc8a23bb7c70d3c3e387eaf5cb3828d6ec0b2e70a",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          261,
+          86,
+          2433,
+          800
+        ],
+        "visibleAlphaBounds": [
+          271,
+          90,
+          2422,
+          735
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 261,
+          "top": 86,
+          "right": 261,
+          "bottom": 86
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.688196,
+          "top": 9.706546,
+          "right": 9.688196,
+          "bottom": 9.706546
+        },
+        "transparentPixelPercent": 68.286771,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-3/bd3-workshop-court.webp",
+        "url": "assets/blank-design/chapter-3/bd3-workshop-court.webp",
+        "width": 2048,
+        "height": 674,
+        "aspect": 3.0385756676557865,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.7602078693392724,
+        "scaleY": 0.7607223476297968,
+        "bytes": 308220,
+        "sha256": "68304f025277d423db42e4e45dec641662361d9ddbe41b958cb332722be37734",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          65,
+          1850,
+          609
+        ],
+        "visibleAlphaBounds": [
+          206,
+          69,
+          1841,
+          559
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 65,
+          "right": 198,
+          "bottom": 65
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.643917,
+          "right": 9.667969,
+          "bottom": 9.643917
+        },
+        "transparentPixelPercent": 68.339525,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "packing": {
+        "command": "python scripts/prepare-reconstruction-assets.py --collection blank-design --trim-transparent --chapter 3 --gutter .12 --id bd3-workshop-court --input artwork/blank-design/raw/bd3-workshop-court.png",
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            0,
+            10,
+            2172,
+            724
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            2172,
+            714
+          ]
+        },
+        "contentAspect": 3.042016806722689,
+        "paddingScaleX": 1.2403314917127073,
+        "paddingScaleY": 1.2408963585434174,
+        "rawUnchanged": true,
+        "productionContentPreserved": true,
+        "webAlphaPreserved": true,
+        "creativePixelEditing": false
+      },
+      "qa": {
+        "status": "passed-independent-asset-review",
+        "reviewedWithViewImage": true,
+        "rawAndPaperCompositeViewed": true,
+        "observation": "花砖地台与连续低木栏完整，右端短廊/窗棂、左端低花木构成可行走的作坊院落；没有人物、完整大殿或文字。两端、台脚和地坪外缘完整，纸底自然无彩边。整合时短廊高度仍需避开原人物/题签，不能用一图重复铺满。",
+        "paperComposite": "reports/blank-design/bd3-workshop-court-paper-qa.png",
+        "paperCompositeSha256": "3a77c61e093f7390cf6d613c121545c51e42fd57456d33d049449d8c751c48d8",
+        "paperCompositeMethod": "Native Chromium alpha composition on #f2e8d6, QA screenshot only; no source image editing",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleAlphaBoundsThreshold8": [
+          10,
+          14,
+          2161,
+          659
+        ],
+        "boundaryPixelsAlphaGreaterThan8": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "boundaryPixelsAlphaAtLeast16": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "highSaturationAnomaliesAlphaGreaterThan8": 0,
+        "highSaturationAnomalyMaxAlpha": 1,
+        "scopeLimit": "Independent assets only. No browser/Blender integration, grounding over all progress, UI clearance or performance acceptance claimed."
+      }
+    },
+    {
+      "id": "bd3-brocade-rail",
+      "prompt": "Use case: historical-scene. Asset type: one independent genuinely transparent RGBA painted layer for a Chinese peony folk-life 2.5D handscroll, chapter 3 textile, auspicious craft, seasonal home life and everyday wares. Traditional Chinese gongbi delicate ink outlines, warm muted vermilion, restrained blue-green pigment, tiny aged pale gold accents; richly hand-painted but soft silk-compatible natural color. Not photoreal, not a 3D render. Isolated subject with natural irregular complete outer contour, full feet/bases/branch tips fully inside generous transparent safety margins on all sides. No sky, no opaque paper or rectangular backdrop, no modern item, no people, no large temple/palace, no giant peony flower cluster, no written characters, calligraphy, text, label, watermark or seals. All surrounding background is real alpha transparency. Primary request: one COMPLETE low wooden brocade/embroidery display rack, a modest independent embroidery frame with intact complete legs and feet, carrying TWO differently folded and draped pieces of peony-and-phoenix patterned woven brocade. Phoenix passing among peony is a small painted textile ornament, NOT a separate giant phoenix or flower image. One cloth is muted vermilion and ivory with pale gold detail, the other subdued blue-green and warm cream; only a few small tassels. The fabric folds and both lower cloth edges are complete and natural, never cut off. A small embroidery hoop may lean against the low rack, but keep it restrained. Natural object proportions, slight elevated three-quarter handscroll view, low horizontal still-life silhouette with generous transparency around every end. No large floor or wall, no human, no needles enlarged as weapons, no text on the textile.",
+      "intendedUse": "低近景独立锦架/绣绷，以凤穿牡丹纹织物承接婚嫁礼俗，不复制原巨型凤凰花组。",
+      "status": "generated-visually-reviewed-packed-not-integrated",
+      "method": "one built-in image_gen call, transparent_background=true",
+      "builtInCallCount": 1,
+      "generatedSource": "C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-93c0-7502-8bd4-8d24c7617923\\exec-aaadc168-a32d-4acf-96bf-65bfe230b317.png",
+      "copiedWithoutEditing": true,
+      "raw": {
+        "path": "artwork/blank-design/raw/bd3-brocade-rail.png",
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGBA",
+        "bytes": 2787391,
+        "sha256": "91c29d9d822b1a50750394fc874ad3208d2ec7666a57f0b7c5785eed12899eb5",
+        "unchanged": true,
+        "generatedSourceHashMatches": true
+      },
+      "production": {
+        "path": "artwork/blank-design/chapter-3/bd3-brocade-rail.png",
+        "width": 1872,
+        "height": 1270,
+        "aspect": 1.4740157480314962,
+        "bytes": 2697924,
+        "sha256": "a4d598ac81bd9c1429a67ac814ff02af44eb1fe29aaed04e7ffa8e9fb44aa084",
+        "contentRgbaSha256": "151c43527af66bd02483e069d343fd0e7ce88af19372f4e0d3646b67150f34cb",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          181,
+          123,
+          1690,
+          1147
+        ],
+        "visibleAlphaBounds": [
+          183,
+          151,
+          1688,
+          1095
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 181,
+          "top": 123,
+          "right": 182,
+          "bottom": 123
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.668803,
+          "top": 9.685039,
+          "right": 9.722222,
+          "bottom": 9.685039
+        },
+        "transparentPixelPercent": 63.989838,
+        "alphaMin": 0,
+        "alphaMax": 254
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-3/bd3-brocade-rail.webp",
+        "url": "assets/blank-design/chapter-3/bd3-brocade-rail.webp",
+        "width": 1872,
+        "height": 1270,
+        "aspect": 1.4740157480314962,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "bytes": 460340,
+        "sha256": "c845a9f6692ab70f26197da5e6188f46da92a74292177a4c6bcd41723518794d",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          181,
+          123,
+          1690,
+          1147
+        ],
+        "visibleAlphaBounds": [
+          183,
+          151,
+          1688,
+          1095
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 181,
+          "top": 123,
+          "right": 182,
+          "bottom": 123
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.668803,
+          "top": 9.685039,
+          "right": 9.722222,
+          "bottom": 9.685039
+        },
+        "transparentPixelPercent": 63.989838,
+        "alphaMin": 0,
+        "alphaMax": 254
+      },
+      "packing": {
+        "command": "python scripts/prepare-reconstruction-assets.py --collection blank-design --trim-transparent --chapter 3 --gutter .12 --id bd3-brocade-rail --input artwork/blank-design/raw/bd3-brocade-rail.png",
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            14,
+            0,
+            1523,
+            1024
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            1509,
+            1024
+          ]
+        },
+        "contentAspect": 1.4736328125,
+        "paddingScaleX": 1.2405566600397615,
+        "paddingScaleY": 1.240234375,
+        "rawUnchanged": true,
+        "productionContentPreserved": true,
+        "webAlphaPreserved": true,
+        "creativePixelEditing": false
+      },
+      "qa": {
+        "status": "passed-independent-asset-review",
+        "reviewedWithViewImage": true,
+        "rawAndPaperCompositeViewed": true,
+        "observation": "独立完整木锦架与一只绣绷，两片暖朱/青绿凤穿牡丹纹布的褶皱、布下缘、流苏和架足完整；凤鸟是织物纹饰而非巨型独立鸟。无字、无背景块，纸底自然。需放在实际可见地台上，不能重现C4初版的物体悬浮。",
+        "paperComposite": "reports/blank-design/bd3-brocade-rail-paper-qa.png",
+        "paperCompositeSha256": "3696ca7e8e97bdde54db65147a7556fdeaa94da773ddad2035311e92e867bdfd",
+        "paperCompositeMethod": "Native Chromium alpha composition on #f2e8d6, QA screenshot only; no source image editing",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "visibleAlphaBoundsThreshold8": [
+          16,
+          28,
+          1521,
+          972
+        ],
+        "boundaryPixelsAlphaGreaterThan8": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "boundaryPixelsAlphaAtLeast16": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "highSaturationAnomaliesAlphaGreaterThan8": 0,
+        "highSaturationAnomalyMaxAlpha": 0,
+        "scopeLimit": "Independent assets only. No browser/Blender integration, grounding over all progress, UI clearance or performance acceptance claimed."
+      }
+    },
+    {
+      "id": "bd3-lantern-lane",
+      "prompt": "Use case: historical-scene. Asset type: one independent genuinely transparent RGBA painted layer for a Chinese peony folk-life 2.5D handscroll, chapter 3 textile, auspicious craft, seasonal home life and everyday wares. Traditional Chinese gongbi delicate ink outlines, warm muted vermilion, restrained blue-green pigment, tiny aged pale gold accents; richly hand-painted but soft silk-compatible natural color. Not photoreal, not a 3D render. Isolated subject with natural irregular complete outer contour, full feet/bases/branch tips fully inside generous transparent safety margins on all sides. No sky, no opaque paper or rectangular backdrop, no modern item, no people, no large temple/palace, no giant peony flower cluster, no written characters, calligraphy, text, label, watermark or seals. All surrounding background is real alpha transparency. Primary request: one COMPLETE low horizontal domestic lane/courtyard entrance fragment: a short modest grey plaster-and-stone residential courtyard wall with a small low wooden lattice detail, an irregular gentle lane path of stone paving and only two or three shallow stone steps, TWO restrained small red festival lanterns on modest short supports at different heights, a few thin sparse natural twigs. The lanterns are small warm accents, no theatrical glow. A low stone lane is the structural connection, not just floating decorative lanterns. Panoramic approximately 3:1, low silhouette, slight elevated Chinese handscroll perspective. No high gatehouse, no monumental roof, no new street full of people, no banner or writing, no snow blanket, no giant flowers. Every wall end, lamp finial/base, branch tip and paving end fits completely inside real transparent margins; outer path edge tapers naturally.",
+      "intendedUse": "中景岁时民居短巷与灯彩，连接迎亲家门、祈福年节和代际居家手作。",
+      "status": "generated-visually-reviewed-packed-not-integrated",
+      "method": "one built-in image_gen call, transparent_background=true",
+      "builtInCallCount": 1,
+      "generatedSource": "C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-93c0-7502-8bd4-8d24c7617923\\exec-5902f05b-48d6-44da-954f-40dd21790e61.png",
+      "copiedWithoutEditing": true,
+      "raw": {
+        "path": "artwork/blank-design/raw/bd3-lantern-lane.png",
+        "width": 2172,
+        "height": 724,
+        "mode": "RGBA",
+        "bytes": 2119895,
+        "sha256": "1a952c2c38dbaf3a331e60a1d652f9f07cb0244decaccc674af581b0c5e171b3",
+        "unchanged": true,
+        "generatedSourceHashMatches": true
+      },
+      "production": {
+        "path": "artwork/blank-design/chapter-3/bd3-lantern-lane.png",
+        "width": 2690,
+        "height": 887,
+        "aspect": 3.032694475760992,
+        "bytes": 1945219,
+        "sha256": "859c1e60dacb8ab958dfacd5dda54f3d1556c6e6add5e2ceb715701598832fc1",
+        "contentRgbaSha256": "0279f2fb354c52cbacd12606743c4f53158a258156dbe4bef4e87e5283942bcf",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          260,
+          86,
+          2429,
+          801
+        ],
+        "visibleAlphaBounds": [
+          276,
+          144,
+          2406,
+          745
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 260,
+          "top": 86,
+          "right": 261,
+          "bottom": 86
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.665428,
+          "top": 9.695603,
+          "right": 9.702602,
+          "bottom": 9.695603
+        },
+        "transparentPixelPercent": 68.032254,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-3/bd3-lantern-lane.webp",
+        "url": "assets/blank-design/chapter-3/bd3-lantern-lane.webp",
+        "width": 2048,
+        "height": 675,
+        "aspect": 3.034074074074074,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.7613382899628253,
+        "scaleY": 0.7609921082299888,
+        "bytes": 364264,
+        "sha256": "1324e9d619a3b38f65f7814da93086b01b2e7f937fc23c63c157c6b3315c792c",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          65,
+          1849,
+          610
+        ],
+        "visibleAlphaBounds": [
+          210,
+          109,
+          1832,
+          566
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 65,
+          "right": 199,
+          "bottom": 65
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.62963,
+          "right": 9.716797,
+          "bottom": 9.62963
+        },
+        "transparentPixelPercent": 68.025318,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "packing": {
+        "command": "python scripts/prepare-reconstruction-assets.py --collection blank-design --trim-transparent --chapter 3 --gutter .12 --id bd3-lantern-lane --input artwork/blank-design/raw/bd3-lantern-lane.png",
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            0,
+            9,
+            2169,
+            724
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            2169,
+            715
+          ]
+        },
+        "contentAspect": 3.0335664335664334,
+        "paddingScaleX": 1.24020285846012,
+        "paddingScaleY": 1.2405594405594405,
+        "rawUnchanged": true,
+        "productionContentPreserved": true,
+        "webAlphaPreserved": true,
+        "creativePixelEditing": false
+      },
+      "qa": {
+        "status": "passed-independent-asset-review",
+        "reviewedWithViewImage": true,
+        "rawAndPaperCompositeViewed": true,
+        "observation": "短民居院墙、低巷路石阶、两盏小灯与疏枝构成完整独立地景；没有高门楼/整街新人群。两端枝与墙基完整，灯没有过强光晕，纸底边缘自然。",
+        "paperComposite": "reports/blank-design/bd3-lantern-lane-paper-qa.png",
+        "paperCompositeSha256": "3f42caeb9a5953f4a7b4c01a84a6275caaad51bff0fbab03b2f2a94384f873af",
+        "paperCompositeMethod": "Native Chromium alpha composition on #f2e8d6, QA screenshot only; no source image editing",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleAlphaBoundsThreshold8": [
+          16,
+          67,
+          2146,
+          668
+        ],
+        "boundaryPixelsAlphaGreaterThan8": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "boundaryPixelsAlphaAtLeast16": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "highSaturationAnomaliesAlphaGreaterThan8": 0,
+        "highSaturationAnomalyMaxAlpha": 2,
+        "scopeLimit": "Independent assets only. No browser/Blender integration, grounding over all progress, UI clearance or performance acceptance claimed."
+      }
+    },
+    {
+      "id": "bd3-wares-step",
+      "prompt": "Use case: historical-scene. Asset type: one independent genuinely transparent RGBA painted layer for a Chinese peony folk-life 2.5D handscroll, chapter 3 textile, auspicious craft, seasonal home life and everyday wares. Traditional Chinese gongbi delicate ink outlines, warm muted vermilion, restrained blue-green pigment, tiny aged pale gold accents; richly hand-painted but soft silk-compatible natural color. Not photoreal, not a 3D render. Isolated subject with natural irregular complete outer contour, full feet/bases/branch tips fully inside generous transparent safety margins on all sides. No sky, no opaque paper or rectangular backdrop, no modern item, no people, no large temple/palace, no giant peony flower cluster, no written characters, calligraphy, text, label, watermark or seals. All surrounding background is real alpha transparency. Primary request: one COMPLETE low household wares display stand, a modest old wood and pale stone low platform/table with intact feet, carrying one refined small ceramic flower vessel with a simple painted peony motif, one small closed black-and-muted-red lacquer box, a short stack of folded woven brocade and two understated pottery vessels. Keep items separated enough to read their complete silhouettes, all vessel feet, table legs and full lower edge visible. No large mirror, no dressing table, no additional giant flowers or sprawling flower bouquet; the peony appears as restrained ceramic/textile ornament. Natural object still-life proportions, slightly elevated three-quarter Chinese handscroll perspective. Warm vermilion/blue-green/ivory with very subtle old gold, beautiful daily utensils without royal excess. A tiny local contact mark only, no full ground plane or background, no text on any vessel/box.",
+      "intendedUse": "近景日用器物台，说明牡丹意象进入花器、漆盒、锦布和陶器，区别原大镜台。",
+      "status": "generated-visually-reviewed-packed-not-integrated",
+      "method": "one built-in image_gen call, transparent_background=true",
+      "builtInCallCount": 1,
+      "generatedSource": "C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-93c0-7502-8bd4-8d24c7617923\\exec-600f9286-d34b-4a91-8e48-bba7cd7ca292.png",
+      "copiedWithoutEditing": true,
+      "raw": {
+        "path": "artwork/blank-design/raw/bd3-wares-step.png",
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGBA",
+        "bytes": 2444729,
+        "sha256": "938aa0ed3f6f5639f611d7293a985de468f1b0c6395befb286e8ff32eaa662e8",
+        "unchanged": true,
+        "generatedSourceHashMatches": true
+      },
+      "production": {
+        "path": "artwork/blank-design/chapter-3/bd3-wares-step.png",
+        "width": 1887,
+        "height": 1262,
+        "aspect": 1.4952456418383517,
+        "bytes": 2342354,
+        "sha256": "bb26284c2e5eea56c2e33895afe3ddb3a0e91859e58d8a73937af7c26636bc78",
+        "contentRgbaSha256": "efe83b3c3c97fb53874f234737f8c3f17004c0de4a49fd0c236a448ce10ddef6",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          183,
+          122,
+          1704,
+          1139
+        ],
+        "visibleAlphaBounds": [
+          231,
+          165,
+          1700,
+          1097
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 183,
+          "top": 122,
+          "right": 183,
+          "bottom": 123
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.697933,
+          "top": 9.667195,
+          "right": 9.697933,
+          "bottom": 9.746434
+        },
+        "transparentPixelPercent": 71.150175,
+        "alphaMin": 0,
+        "alphaMax": 254
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-3/bd3-wares-step.webp",
+        "url": "assets/blank-design/chapter-3/bd3-wares-step.webp",
+        "width": 1887,
+        "height": 1262,
+        "aspect": 1.4952456418383517,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "bytes": 385638,
+        "sha256": "f96cc020e1f73de48542a06161901cc431f37998886c8bab820bd2a280de1c24",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          183,
+          122,
+          1704,
+          1139
+        ],
+        "visibleAlphaBounds": [
+          231,
+          165,
+          1700,
+          1097
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 183,
+          "top": 122,
+          "right": 183,
+          "bottom": 123
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.697933,
+          "top": 9.667195,
+          "right": 9.697933,
+          "bottom": 9.746434
+        },
+        "transparentPixelPercent": 71.150175,
+        "alphaMin": 0,
+        "alphaMax": 254
+      },
+      "packing": {
+        "command": "python scripts/prepare-reconstruction-assets.py --collection blank-design --trim-transparent --chapter 3 --gutter .12 --id bd3-wares-step --input artwork/blank-design/raw/bd3-wares-step.png",
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            0,
+            7,
+            1521,
+            1024
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            1521,
+            1017
+          ]
+        },
+        "contentAspect": 1.4955752212389382,
+        "paddingScaleX": 1.2406311637080867,
+        "paddingScaleY": 1.240904621435595,
+        "rawUnchanged": true,
+        "productionContentPreserved": true,
+        "webAlphaPreserved": true,
+        "creativePixelEditing": false
+      },
+      "qa": {
+        "status": "passed-independent-asset-review",
+        "reviewedWithViewImage": true,
+        "rawAndPaperCompositeViewed": true,
+        "observation": "低器物台上花器、小漆盒、折叠锦布和陶器分离可读，台脚/器足完整；花器有一枝小牡丹，未出现巨花团或镜台。牡丹纹饰无文字，纸底无真实阴影矩形；整合时需验证台脚接地。",
+        "paperComposite": "reports/blank-design/bd3-wares-step-paper-qa.png",
+        "paperCompositeSha256": "9fd11c5c7e8f613b70515f01685598b4cb0fe994443cd652ef0eda65f552ff81",
+        "paperCompositeMethod": "Native Chromium alpha composition on #f2e8d6, QA screenshot only; no source image editing",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "visibleAlphaBoundsThreshold8": [
+          48,
+          50,
+          1517,
+          982
+        ],
+        "boundaryPixelsAlphaGreaterThan8": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "boundaryPixelsAlphaAtLeast16": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "highSaturationAnomaliesAlphaGreaterThan8": 0,
+        "highSaturationAnomalyMaxAlpha": 0,
+        "scopeLimit": "Independent assets only. No browser/Blender integration, grounding over all progress, UI clearance or performance acceptance claimed."
+      }
+    },
+    {
+      "id": "bd3-domestic-floor",
+      "prompt": "Use case: historical-scene. Asset type: ONE independently placeable genuinely transparent RGBA LOW ground-support layer for a traditional Chinese household craft handscroll. Primary request: a COMPLETE small domestic courtyard GROUND FRAGMENT only: worn warm-grey square stone paving interspersed with a few understated flower-pattern tiles, one or two very shallow stone steps, and at most a tiny SHORT piece of VERY LOW wooden rail or dwarf stone edging along one end. The flat paving is the main subject; its upper surface must be visibly usable to stand separate embroidery racks and low household wares tables. DO NOT draw any racks or wares. This is NOT an architectural scene: absolutely NO roof, NO corridor, NO gate, NO door frame, NO tall column, NO post or pillar, NO high wall, NO high tree, NO branch canopy, NO people, NO flower cluster, NO furniture, NO decorative vase, NO lamp. The railing if included stays ankle-height, a minor low edging, and cannot become a long repeating fence. Composition: wide approximately 3:1, very LOW silhouette, slight elevated three-quarter Chinese handscroll perspective. Natural asymmetrical irregular full outer contour; paving edges taper and break into a few tiny ground stones instead of a hard rectangular cut. All ends, every shallow step and the complete front paving edge entirely within generous genuine transparent safety margins. Traditional Chinese gongbi delicate hand-painted fine ink contours, warm grey stone, tiny muted vermilion and blue-green tile accents, almost no gold. Quiet refined domestic life, not royal monumental architecture, not a photo, not a 3D render. Genuine alpha transparency around the entire ground fragment; no opaque paper, no sky, no background landscape, no giant drop shadow, no text, Chinese characters, seals, labels, watermark or border.",
+      "intendedUse": "替代C3 gap2/3/5/6重复有顶院廊，以无顶低花砖/石板地坪承锦架与器物台，保留上方空气并避免屋顶循环。",
+      "status": "generated-visually-reviewed-packed-not-integrated",
+      "method": "one built-in image_gen call, transparent_background=true",
+      "builtInCallCount": 1,
+      "generatedSource": "C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-93c0-7502-8bd4-8d24c7617923\\exec-a7309e7c-34dd-492a-8f7c-c2fa62226771.png",
+      "copiedWithoutEditing": true,
+      "raw": {
+        "path": "artwork/blank-design/raw/bd3-domestic-floor.png",
+        "width": 2172,
+        "height": 724,
+        "mode": "RGBA",
+        "bytes": 1557433,
+        "sha256": "a2e9794d199d05532ce31ca112c8655dbfa3dbf7a2a6ac778be5e0af9a07ace8",
+        "unchanged": true,
+        "generatedSourceHashMatches": true
+      },
+      "production": {
+        "path": "artwork/blank-design/chapter-3/bd3-domestic-floor.png",
+        "width": 2694,
+        "height": 887,
+        "aspect": 3.037204058624577,
+        "bytes": 1433392,
+        "sha256": "af8dff2b4dd489f1b61d8e93d0ed6f31aef823ba0251c7e2cf1a02b96508f525",
+        "contentRgbaSha256": "878443351f2ae4ce898ea2a820ed3414e8866c7f0c7b3dbfcf0972fc9680f137",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          261,
+          86,
+          2433,
+          801
+        ],
+        "visibleAlphaBounds": [
+          268,
+          288,
+          2429,
+          654
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 261,
+          "top": 86,
+          "right": 261,
+          "bottom": 86
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.688196,
+          "top": 9.695603,
+          "right": 9.688196,
+          "bottom": 9.695603
+        },
+        "transparentPixelPercent": 76.488903,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-3/bd3-domestic-floor.webp",
+        "url": "assets/blank-design/chapter-3/bd3-domestic-floor.webp",
+        "width": 2048,
+        "height": 674,
+        "aspect": 3.0385756676557865,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.7602078693392724,
+        "scaleY": 0.7598647125140925,
+        "bytes": 213608,
+        "sha256": "ab56a270eaed30b281c0ad4ec0dfcff53896cf781a9f187df4e302f30aee6f00",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          65,
+          1850,
+          609
+        ],
+        "visibleAlphaBounds": [
+          204,
+          220,
+          1846,
+          497
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 65,
+          "right": 198,
+          "bottom": 65
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.643917,
+          "right": 9.667969,
+          "bottom": 9.643917
+        },
+        "transparentPixelPercent": 76.507369,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "packing": {
+        "command": "python scripts/prepare-reconstruction-assets.py --collection blank-design --trim-transparent --chapter 3 --gutter .12 --id bd3-domestic-floor --input artwork/blank-design/raw/bd3-domestic-floor.png",
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            0,
+            9,
+            2172,
+            724
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            2172,
+            715
+          ]
+        },
+        "contentAspect": 3.0377622377622377,
+        "paddingScaleX": 1.2403314917127073,
+        "paddingScaleY": 1.2405594405594405,
+        "rawUnchanged": true,
+        "productionContentPreserved": true,
+        "webAlphaPreserved": true,
+        "creativePixelEditing": false
+      },
+      "qa": {
+        "status": "passed-independent-asset-review",
+        "reviewedWithViewImage": true,
+        "rawAndPaperCompositeViewed": true,
+        "observation": "完整低位石板/花砖地坪，浅短台阶与一端极短矮栏。没有屋顶/高柱/门楼/高树/人/巨花/新器物，浅纸底自然端部，没有硬矩形或彩边。可见主体bbox[7,211,2168,577]，画布四边只有alpha<=2痕迹，没有真实主体触边。四个gap仍需实际错位/尺度变化并核对锦架/器物足面接触，独立资产QA不代表整合已通过。",
+        "paperComposite": "reports/blank-design/bd3-domestic-floor-paper-qa.png",
+        "paperCompositeSha256": "deec5661adca75a98de0d9b1364dba011847f8cb3ab6ea6f400fa0fe5c4ce6c9",
+        "paperCompositeMethod": "Native Chromium alpha composite on #f2e8d6, QA screenshot only; source untouched",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleAlphaBoundsThreshold8": [
+          7,
+          211,
+          2168,
+          577
+        ],
+        "boundaryPixelsAlphaGreaterThan8": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "boundaryPixelsAlphaAtLeast16": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "highSaturationAnomaliesAlphaGreaterThan8": 0,
+        "highSaturationAnomalyMaxAlpha": 2,
+        "scopeLimit": "Only independent generated asset accepted; no scene/canonical/Blender change by this agent."
+      }
+    }
+  ],
+  "completedAt": "2026-10-20T01:26:28.757594+00:00",
+  "separateBuiltInCalls": 5,
+  "iterations": 5,
+  "webTotalBytes": 1732070,
+  "rawOriginalPreservationVerified": true,
+  "pythonUse": "Read-only image/alpha/hash evidence and official transparent trim/gutter/WebP packing only; no creative repaint or RGB/edge cleanup.",
+  "integrationState": "not integrated by this agent; no layout/manifest/Blender changes; existing repeated mountain placeholders not modified",
+  "priorFourAssetsUnchanged": true
+}

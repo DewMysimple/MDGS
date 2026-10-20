@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "chapter": 1,
+  "status": "verified",
+  "output": "artwork/blender-blank-design/chapter-1_reconstructed.blend",
+  "outputSha256": "b4bdb5eb99048d19b5f11d1734130b0ac08bace23750d1f23ec2af7003767651",
+  "originalFilesUnchanged": true,
+  "reconstructionReport": "reports/blank-design/blender/blender-reconstruction-chapter-1.json",
+  "reconstructionReportSha256": "0486b88e8824f064a59f6b1d53d15771b43e0b2b7b91944928587a73ca23370b",
+  "manifest": "reports/blank-design/expanded-v6/chapter-1-manifest.json",
+  "manifestSha256": "0cd789308ee8a07d96d2ec3241312f242fdfe73716ca5a2f5062b68149147e5a",
+  "sourceHashesVerified": {
+    "chapter-1": "aa0a74c9693a208b382cac12ea66c5c31bf80dc50f65ee539b9739abd71e7d3d",
+    "chapter-2": "d7b4430ca25d3562ee06d81946feb911760ae572bf01633f732c81c495cca0e4",
+    "chapter-3": "4902ef5d7a70f4e7f54a8f8b307943f22437a1ed64a12aa6bc798742daf5421d",
+    "chapter-4": "dcf4a6e96bf8606348563a985dc2bc935817ed5be08ae96066176670f0d84026"
+  },
+  "inputResourcesVerified": 158,
+  "backgroundPresentation": {
+    "mode": "retain-paper-backdrop-hide-only-horizontal-ground",
+    "objects": [
+      {
+        "name": "长卷_连续绢本地形",
+        "sourceHiddenRender": false,
+        "derivedHiddenRender": true,
+        "worldAxisSpans": [
+          516.8500442,
+          116.72856139999999,
+          5.9248261
+        ],
+        "mode": "hide-ground-render-to-prevent-card-intersection",
+        "sourceMaterial": "绢本_纤维与浅墨",
+        "sourceColorLinear": [
+          0.76,
+          0.716,
+          0.606
+        ]
+      },
+      {
+        "name": "长卷_统一留白天幕",
+        "sourceHiddenRender": false,
+        "derivedHiddenRender": false,
+        "worldAxisSpans": [
+          960.0,
+          0.0,
+          330.0
+        ],
+        "mode": "retain-distant-paper-backdrop",
+        "sourceMaterial": "绢本_纤维与浅墨",
+        "sourceColorLinear": [
+          0.76,
+          0.716,
+          0.606
+        ]
+      }
+    ],
+    "hiddenGroundPaperNames": [
+      "长卷_连续绢本地形"
+    ],
+    "worldModified": false,
+    "sourceMatricesModified": false
+  },
+  "verification": {
+    "originalObjectWorldMatrices": "unchanged",
+    "originalCameraSamples": "unchanged",
+    "originalAnimatedObjectSamples": "unchanged",
+    "originalMarkers": "unchanged",
+    "originalHierarchyAndCollections": "unchanged",
+    "explicitRenderHideExceptions": [
+      "14_批注06_右侧题字_原字",
+      "07_2-山水人群.001",
+      "14_背景01_女帝身后背景_补全.001",
+      "14_背景02_右上与右下书页后背景_组合.001",
+      "长卷_连续绢本地形"
+    ],
+    "paperBackgroundPolicy": "retain-paper-backdrop-hide-only-horizontal-ground",
+    "paperWorld": "legacy-or-unmodified",
+    "worldModified": false,
+    "derivedGeometryAndMetadata": "reopened-and-matched",
+    "packedImagesVerified": 109,
+    "packedFontsVerified": 1,
+    "editableTextObjectCount": 2,
+    "completeReplacementUvCarriersVerified": [
+      "02_右侧宫阙巡游",
+      "05_06_亭",
+      "07_1-宫殿建筑",
+      "13_11_女帝身后宫殿建筑",
+      "08_01_上方山水城景",
+      "10_03_前景百官群像_补全",
+      "11_05_学者书案"
+    ],
+    "preservedGeometryRegionUvMappingsVerified": [],
+    "originalMeshGeometryOutsideDeclaredTargets": "unchanged",
+    "explicitGeometryChangeTargets": [
+      "02_右侧宫阙巡游",
+      "05_06_亭",
+      "07_1-宫殿建筑",
+      "08_01_上方山水城景",
+      "10_03_前景百官群像_补全",
+      "11_05_学者书案",
+      "13_11_女帝身后宫殿建筑"
+    ],
+    "roleCollectionCounts": {
+      "主体叙事层": 9,
+      "前景遮挡层": 54,
+      "中景承接层": 98,
+      "后景连续层": 43,
+      "留白层": 2,
+      "连接过渡层": 51,
+      "动效层": 50,
+      "装饰层": 3
+    }
+  }
+}

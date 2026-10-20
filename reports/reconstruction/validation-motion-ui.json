@@ -1,0 +1,37 @@
+{
+  "status": "pass",
+  "url": "http://127.0.0.1:5174/",
+  "checks": [
+    "motion preference survives reload; scroll playback and keyboard remain independent",
+    "live system reduced-motion state, animation-free reveal, and first-volume profile gating",
+    "hidden page stops all app RAF scheduling and resumes without a clock jump",
+    {
+      "dimensions": "1440x900",
+      "layout": "pass"
+    },
+    {
+      "dimensions": "1100x700",
+      "layout": "pass"
+    },
+    {
+      "dimensions": "901x600",
+      "layout": "pass"
+    },
+    {
+      "dimensions": "620x360",
+      "layout": "pass"
+    },
+    {
+      "dimensions": "375x667",
+      "layout": "pass"
+    },
+    {
+      "dimensions": "320x568",
+      "layout": "pass"
+    },
+    "manifest recovery preserves the saved viewing progress and one renderer",
+    "persistent manifest failure is limited to two explicit recovery attempts",
+    "unavailable localStorage does not interrupt loading"
+  ],
+  "pageErrors": []
+}

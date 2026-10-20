@@ -1,0 +1,1290 @@
+{
+  "schemaVersion": 1,
+  "status": "needs-revision-not-approved",
+  "canonicalSha256": "0098423961e344ed5dbb29008a6b444f4bda1ce85381bce8da51bbdfeffb89f6",
+  "generatedAt": "2026-10-20T00:24:48.625270+00:00",
+  "scope": {
+    "individuallyReviewedFullSize": 33,
+    "stops": 9,
+    "gaps": 8,
+    "quarterpoints": 16,
+    "sourceViewport": [
+      1440,
+      900
+    ],
+    "paintingCrop": [
+      1388,
+      476
+    ],
+    "reducedMotion": true,
+    "browserErrorsInCapture": [],
+    "noProductionFilesChangedByReviewer": true
+  },
+  "summary": {
+    "counts": {
+      "pass": 17,
+      "issue": 16
+    },
+    "improvement": "实体承接层确已显示，前段苑岸/浅水/平台与gap5空亭明确修复原空洞。上方留白及原主体/题签层级保留。",
+    "remaining": "后段新灯/低案仍悬浮，原小花簇仍游离，三次同疏岸与前段双平台重复需做节奏变化。",
+    "approval": "本版不能作为完整样板通过并扩展其他三卷。需修正上述P1接地与P2节奏后，用新canonical/目录重拍受影响段。",
+    "noNeedToFill": "已经获得完整承托的上中留白应继续保留；不要因为本版未通过而加满天空或新人物。"
+  },
+  "coordinateSystem": {
+    "format": "[x,y,width,height], all 0..1; rectangles are observed visual regions, not placement commands",
+    "origin": "top-left of inner painting paper, excluding approximately 22px scroll rollers at left and right",
+    "paperPixelRect": [
+      22,
+      0,
+      1344,
+      476
+    ],
+    "pixelMapping": "imageX=22+normalizedX*1344; imageY=normalizedY*476",
+    "precision": "visual approximate +-0.025 in normalized coordinates; validate projected geometry against the actual current view before integration",
+    "regionOverlap": "Where lower support overlaps central gap, the support is a separately planned depth role, not additional area to fill twice."
+  },
+  "issues": {
+    "repeat-terrace": {
+      "severity": "P2",
+      "requirement": "连卷节奏均衡、不能用重复拼贴替代设计",
+      "finding": "gap3与gap4完整石台+低诗案同形同规模重复，stop4两侧及quarter7/8强化循环感。",
+      "action": "保留gap3平台；gap4改为较低/较窄的另一种承托组织（曲岸/短台），至少去掉重复诗案。不是要求新加更多物体。"
+    },
+    "floating-lamp": {
+      "severity": "P1",
+      "requirement": "物体完整接地、不能悬浮拼贴",
+      "finding": "新灯虽完整，但gap6等帧脚下有纸隙；并非接上岸面就因靠近而自动有接地。",
+      "action": "在灯所在真实世界层面调整到可见岸/石面，复查gap6及quarter11/12和stop7；约下移0.035–0.05画心高为屏幕初步目标，不是每帧屏幕固定平移。"
+    },
+    "floating-scroll-table": {
+      "severity": "P1",
+      "requirement": "诗卷器物成为尾声叙事锚点",
+      "finding": "gap7/quarter14完整案腿仍与可见岸面分离。",
+      "action": "世界位置下移或改变岸/案相对布局，使足与石面接触；不裁案腿、不用阴影遮盖缺口。"
+    },
+    "floating-flower-cluster": {
+      "severity": "P1",
+      "requirement": "尾声以残花余韵收束、避免游离贴图",
+      "finding": "原游离小牡丹簇仍在gap7/8、stop8/9、quarter14/16，近邻新案/新灯后更显悬浮。",
+      "action": "优先在派生方案中退役该游离实例（不删除源文件/原资产），或必须明确附着岸石；不再生成另一个更大花团来掩盖。"
+    },
+    "repeat-reed-shore": {
+      "severity": "P2",
+      "requirement": "后段密淡有节奏、传统留白不变边框",
+      "finding": "同一疏岸图三段同形同高连续出现，石块、伸出的弯枝、右侧芦穗可反复识别，多个stop两侧像套边框。",
+      "action": "三段至少一段换不同低承托组织（可利用既有短岸/空水/空亭岸），另两段调整尺度和距离，使强弱递减；不靠镜像或透明度略改就宣称结构不同。"
+    }
+  },
+  "views": [
+    {
+      "id": "c4-stop-01",
+      "chapter": 4,
+      "kind": "stop",
+      "index": 1,
+      "name": "人花合一",
+      "progress": 0,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-stop-01.jpg",
+      "sha256": "e1d67c7ccef4a4b0104f42533a0e85c1c7bdc3f8a2643a825ca9f9226d97c5b0",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "pass",
+      "conclusion": "新苑岸尾端在右下进入，原人花主体、群像和题签保持；上部及左侧纸底仍有气口。",
+      "fixOrPreserveRectNormalized": [
+        0.01,
+        0.02,
+        0.17,
+        0.66
+      ],
+      "specificAction": "保留左侧和题签留白；无需继续增加花或人物。",
+      "issueIds": [],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": "reports/blank-design/before/chapter-4-stop-01.jpg",
+        "beforeSha256": "fe658d98a160253dc8757bbee85d3863958686baf83f1a1958ffde2307007871",
+        "v1": "reports/blank-design/pilot/chapter-4-stop-01.jpg",
+        "v1Sha256": "c0d5e613e086d1511239e1b6419eae9bc1a25259fd1d3f3d086b7d007c664aad",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      }
+    },
+    {
+      "id": "c4-stop-02",
+      "chapter": 4,
+      "kind": "stop",
+      "index": 2,
+      "name": "花王配美人",
+      "progress": 0.12459732974759095,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-stop-02.jpg",
+      "sha256": "8a2e69c50f31985614adcae62e6345c5f1ad24ab8db93416053382a499db6507",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "pass",
+      "conclusion": "新增水面从右下接到原栏杆/湖景，左下石岸也有来路，肖像/屏风未被盖，空间比初版连贯。",
+      "fixOrPreserveRectNormalized": [
+        0.71,
+        0.02,
+        0.27,
+        0.33
+      ],
+      "specificAction": "保留右上天空；不要把水色扩大到人物或题字。",
+      "issueIds": [],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": "reports/blank-design/before/chapter-4-stop-02.jpg",
+        "beforeSha256": "67c26aa14e7018534bc0b939b966ccf4b631ad6ae107052f7e59af795ff379be",
+        "v1": "reports/blank-design/pilot/chapter-4-stop-02.jpg",
+        "v1Sha256": "67c26aa14e7018534bc0b939b966ccf4b631ad6ae107052f7e59af795ff379be",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      }
+    },
+    {
+      "id": "c4-stop-03",
+      "chapter": 4,
+      "kind": "stop",
+      "index": 3,
+      "name": "沉香亭赏花题诗",
+      "progress": 0.24928625962250903,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-stop-03.jpg",
+      "sha256": "27dcd38c9c51d430c71831c06d1c463fc105efadc87079d8e4b7877169ca819f",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "pass",
+      "conclusion": "李白书案右侧已见完整石台转角和台阶，左下水面衔接，原诗卷/人物未遮，上方不拥挤。",
+      "fixOrPreserveRectNormalized": [
+        0.03,
+        0.02,
+        0.13,
+        0.46
+      ],
+      "specificAction": "保留上左纸天空与原诗卷，平台接地方式可保留。",
+      "issueIds": [],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": "reports/blank-design/before/chapter-4-stop-03.jpg",
+        "beforeSha256": "475bda4a93c162348ac40678d83de80b506bfc97168212697ccf5a6566defa28",
+        "v1": "reports/blank-design/pilot/chapter-4-stop-03.jpg",
+        "v1Sha256": "c9f076193d5e5f833f1761c3bd36bb3cdb6c2eaf61db3ffe8041eb55c2559841",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      }
+    },
+    {
+      "id": "c4-stop-04",
+      "chapter": 4,
+      "kind": "stop",
+      "index": 4,
+      "name": "牡丹风尚鼎盛",
+      "progress": 0.373794634033139,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-stop-04.jpg",
+      "sha256": "16639dfcf044d0de639df2c0d777ebed29def028cbf2a77f7959581268299b4d",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "issue",
+      "conclusion": "原盛景保持；左右边同时露出与前一间隔同造型的大石台，随后gap4又重复整座台，开始形成机械地板循环。",
+      "fixOrPreserveRectNormalized": [
+        0.01,
+        0.68,
+        0.97,
+        0.3
+      ],
+      "specificAction": "gap4改为较低/较窄的不同承托组织或换苑岸；不要再复制同大平台+同诗案组合。",
+      "issueIds": [
+        "repeat-terrace"
+      ],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": "reports/blank-design/before/chapter-4-stop-04.jpg",
+        "beforeSha256": "3f5af85e1f8723b96f44ae36ca50331a64deb53779f02c92ed8b16adf7ab5d12",
+        "v1": "reports/blank-design/pilot/chapter-4-stop-04.jpg",
+        "v1Sha256": "1701c501851c64bda2887d4dd432b5470f77a2f048873e5e12fb8311f0a862da",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      }
+    },
+    {
+      "id": "c4-stop-05",
+      "chapter": 4,
+      "kind": "stop",
+      "index": 5,
+      "name": "繁华落幕",
+      "progress": 0.5004329353980085,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-stop-05.jpg",
+      "sha256": "96cca623037b4d3e9193e7d56b9edd671aa1c2f691842cd7f1bc50caa959348b",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "pass",
+      "conclusion": "兵马和转折人物保持，左下石台/右下低岸构成过渡，没有新增灾难，上方安静区域足够。",
+      "fixOrPreserveRectNormalized": [
+        0.01,
+        0.02,
+        0.14,
+        0.56
+      ],
+      "specificAction": "保持情绪空口，后续尾声图层继续降强。",
+      "issueIds": [],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": "reports/blank-design/before/chapter-4-stop-05.jpg",
+        "beforeSha256": "f7164b53d2e47b52c595698d31f927ab89cc673a74799be69b680ce3a0206d9c",
+        "v1": "reports/blank-design/pilot/chapter-4-stop-05.jpg",
+        "v1Sha256": "f7164b53d2e47b52c595698d31f927ab89cc673a74799be69b680ce3a0206d9c",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      }
+    },
+    {
+      "id": "c4-stop-06",
+      "chapter": 4,
+      "kind": "stop",
+      "index": 6,
+      "name": "游宴渐冷",
+      "progress": 0.6251036729348165,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-stop-06.jpg",
+      "sha256": "7381c66377fc8770b64fb176f3e3ad2d193fbb9b14f26e953c36586d0641810a",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "pass",
+      "conclusion": "空亭在左侧退出、原平台女子在中、疏岸在右进入，空间有承托；上方繁华记忆与天空未被破坏。",
+      "fixOrPreserveRectNormalized": [
+        0.64,
+        0.02,
+        0.34,
+        0.32
+      ],
+      "specificAction": "保留此上方纸底；相邻疏岸重复需要在全段统一处理，本stop没有新增主角遮挡。",
+      "issueIds": [],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": "reports/blank-design/before/chapter-4-stop-06.jpg",
+        "beforeSha256": "6550b1a2c0b663851326fec7eda628345e4a247e1f33f01d5c690843171cfa76",
+        "v1": "reports/blank-design/pilot/chapter-4-stop-06.jpg",
+        "v1Sha256": "f879da96c3281a6da33603c7c3c041c21158c6a814b8fe6e787e3d034f7d160b",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      }
+    },
+    {
+      "id": "c4-stop-07",
+      "chapter": 4,
+      "kind": "stop",
+      "index": 7,
+      "name": "盛世与乱世",
+      "progress": 0.7496303700552025,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-stop-07.jpg",
+      "sha256": "f1239573e2b7421f27e3a51de15aa821a5086aaf2bc5d1cbf8a27dc454bf20bd",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "issue",
+      "conclusion": "灯在左下仍离真正石岸地面有纸隙；左右出现相同疏枝/芦苇形态像重复边框，原盛衰人物未受遮挡。",
+      "fixOrPreserveRectNormalized": [
+        0.0,
+        0.72,
+        0.07,
+        0.25
+      ],
+      "specificAction": "灯脚降至可见岸石平面；减少或换掉相邻重复疏岸一段，保持原盛衰画组主导。",
+      "issueIds": [
+        "floating-lamp",
+        "repeat-reed-shore"
+      ],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": "reports/blank-design/before/chapter-4-stop-07.jpg",
+        "beforeSha256": "032ab3b2cdd64c272f20f188a9baaf45cda0eda21a596d2cf9edbedcf6db651d",
+        "v1": "reports/blank-design/pilot/chapter-4-stop-07.jpg",
+        "v1Sha256": "9f733a1889e51d7981adf506e68fe4996f8ea04067e43c7fb6da241fc4c90c6b",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      }
+    },
+    {
+      "id": "c4-stop-08",
+      "chapter": 4,
+      "kind": "stop",
+      "index": 8,
+      "name": "晚唐追忆",
+      "progress": 0.8742277056245228,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-stop-08.jpg",
+      "sha256": "565be33f77c7b0691f7f92f0b63767d3e642e72371a26a2fcc6d3e6d57846654",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "issue",
+      "conclusion": "原故国书案/城景保持，右边重复大疏枝进入，左下原小花球仍像纸上贴花，尚未成为残花余韵。",
+      "fixOrPreserveRectNormalized": [
+        0.0,
+        0.77,
+        0.17,
+        0.21
+      ],
+      "specificAction": "优先隐藏游离小花簇实例；若保留必须有岸石/枝根承托；另一侧疏岸减少同形复现。",
+      "issueIds": [
+        "floating-flower-cluster",
+        "repeat-reed-shore"
+      ],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": "reports/blank-design/before/chapter-4-stop-08.jpg",
+        "beforeSha256": "4144507316c9c1a2ffea92ff3332f0aac42f6563bcdb2ade4d15c925dbd326e0",
+        "v1": "reports/blank-design/pilot/chapter-4-stop-08.jpg",
+        "v1Sha256": "e6d160557c1a9704bbf919383d380644aeca55c4a2d308be97c5b11519b08bb4",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      }
+    },
+    {
+      "id": "c4-stop-09",
+      "chapter": 4,
+      "kind": "stop",
+      "index": 9,
+      "name": "千古兴衰",
+      "progress": 0.9999998634094919,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-stop-09.jpg",
+      "sha256": "e5227007facea8f51832b133349470ed638a73d0bf213d0336d4521ab0bf1df6",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "issue",
+      "conclusion": "题签和盛衰终景未被新图挡住，但左下小花球与同形疏岸仍是拼贴边角，结尾节奏未完全收住。",
+      "fixOrPreserveRectNormalized": [
+        0.0,
+        0.64,
+        0.23,
+        0.34
+      ],
+      "specificAction": "去掉游离小花簇，并让最后一段岸变得更短、更淡或换成空水，避免与前两段同形同高。",
+      "issueIds": [
+        "floating-flower-cluster",
+        "repeat-reed-shore"
+      ],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": "reports/blank-design/before/chapter-4-stop-09.jpg",
+        "beforeSha256": "3873f6c8f44e202958b47a67f79c8b83ddba7ca8bb763179e8174b8dabbe8863",
+        "v1": "reports/blank-design/pilot/chapter-4-stop-09.jpg",
+        "v1Sha256": "f0951dd824fe830c8607420a107fba784991b5d74c1d56cf4e5cc2de83f1b12d",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      }
+    },
+    {
+      "id": "c4-gap-01",
+      "chapter": 4,
+      "kind": "gap",
+      "index": 1,
+      "name": "人花合一 → 花王配美人",
+      "progress": 0.06229866487379548,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-gap-01.jpg",
+      "sha256": "a7622eb2823cf78faed20e6052fb4a7f987a2fcc0fd8439b18936073e279d31b",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "pass",
+      "conclusion": "完整弯曲苑岸/石阶确实连接两端，前景有落点，原人物和右屏风完整，上中纸天空保留，坏空洞已转为苑囿空间。",
+      "fixOrPreserveRectNormalized": [
+        0.29,
+        0.02,
+        0.42,
+        0.53
+      ],
+      "specificAction": "保留上中天空；这片已不需另填大物件。",
+      "issueIds": [],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": "reports/blank-design/before/chapter-4-gap-01.jpg",
+        "beforeSha256": "8cd7bfe22eb1f3e40b1b01f3d0f37514b4fcb290208e3d1e690af0baf8c64ce8",
+        "v1": "reports/blank-design/pilot/chapter-4-gap-01.jpg",
+        "v1Sha256": "8cd7bfe22eb1f3e40b1b01f3d0f37514b4fcb290208e3d1e690af0baf8c64ce8",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      }
+    },
+    {
+      "id": "c4-gap-02",
+      "chapter": 4,
+      "kind": "gap",
+      "index": 2,
+      "name": "花王配美人 → 沉香亭赏花题诗",
+      "progress": 0.18694179468504998,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-gap-02.jpg",
+      "sha256": "80a7e9a081a36d0f091b5b70e26611ff241696ecf8b54b59c7dda6a9b2605454",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "pass",
+      "conclusion": "曲岸、花石与浅水形成清楚连贯水景，左右桥景/栏角不再孤立；中央远处留出的纸是水面远尽与天空。",
+      "fixOrPreserveRectNormalized": [
+        0.28,
+        0.02,
+        0.42,
+        0.56
+      ],
+      "specificAction": "保留上中留白及水面不规则散边。",
+      "issueIds": [],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": "reports/blank-design/before/chapter-4-gap-02.jpg",
+        "beforeSha256": "4b3bae9125eaf2e1af076d6791c5ada499dd6885ba096b06bbeb2fd1ffa3cb07",
+        "v1": "reports/blank-design/pilot/chapter-4-gap-02.jpg",
+        "v1Sha256": "4b3bae9125eaf2e1af076d6791c5ada499dd6885ba096b06bbeb2fd1ffa3cb07",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      }
+    },
+    {
+      "id": "c4-gap-03",
+      "chapter": 4,
+      "kind": "gap",
+      "index": 3,
+      "name": "沉香亭赏花题诗 → 牡丹风尚鼎盛",
+      "progress": 0.311540446827824,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-gap-03.jpg",
+      "sha256": "b36ff46054263f695d6c1f183011c6bef463920ef01dd1c8ad09d548e1ed9148",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "pass",
+      "conclusion": "石台低栏与斜路完整显示，小诗案香炉现在有平台承托，左右题诗/陈设获得空间联系，上方仍大留白。",
+      "fixOrPreserveRectNormalized": [
+        0.23,
+        0.02,
+        0.52,
+        0.53
+      ],
+      "specificAction": "此处石台可保留；不要在下一个gap又等比例复制同组合。",
+      "issueIds": [],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": "reports/blank-design/before/chapter-4-gap-03.jpg",
+        "beforeSha256": "c212b34ae50c5a6940647d7acd57f0b725e74db5b7879857514180a0a5a95f74",
+        "v1": "reports/blank-design/pilot/chapter-4-gap-03.jpg",
+        "v1Sha256": "e96775aebef970f9f6b62cdf3c422fc62e9a1fa213ffd1eb6e43351d54173b7c",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      }
+    },
+    {
+      "id": "c4-gap-04",
+      "chapter": 4,
+      "kind": "gap",
+      "index": 4,
+      "name": "牡丹风尚鼎盛 → 繁华落幕",
+      "progress": 0.4371137847155737,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-gap-04.jpg",
+      "sha256": "692ea04b91f68a235952951c1ee528ebd36e4ab83a73a9479e525e9a8facfd78",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "issue",
+      "conclusion": "承接已显示，小案也接地；但与gap3几乎相同的大石台和同式小案再次出现，像模板轮换，盛衰转折缺密淡变化。",
+      "fixOrPreserveRectNormalized": [
+        0.17,
+        0.64,
+        0.72,
+        0.34
+      ],
+      "specificAction": "此段改较小低台/曲岸或不同方向的短岸，去掉重复小案，逐步降强而非第二座完整舞台。",
+      "issueIds": [
+        "repeat-terrace"
+      ],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": "reports/blank-design/before/chapter-4-gap-04.jpg",
+        "beforeSha256": "05681f7645f9487d7ad043988ad1a903db2237a94b4c6a25fa7be5dcf6426773",
+        "v1": "reports/blank-design/pilot/chapter-4-gap-04.jpg",
+        "v1Sha256": "eb9c04ff025694c9c3bb7e3b840bb473b8d95f2c725b8465f6118ec2c5574b01",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      }
+    },
+    {
+      "id": "c4-gap-05",
+      "chapter": 4,
+      "kind": "gap",
+      "index": 5,
+      "name": "繁华落幕 → 游宴渐冷",
+      "progress": 0.5627683041664124,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-gap-05.jpg",
+      "sha256": "aa61b789ecb011ecfc6cb3a25823f8d8095b34da6d1ddecac2eedc68bb43baa7",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "pass",
+      "conclusion": "无人空亭/低岸有完整结构，连接兵马离场和回忆湖景，旧朱青灰压低了繁华强度；上方天空有明确静默。",
+      "fixOrPreserveRectNormalized": [
+        0.47,
+        0.02,
+        0.24,
+        0.33
+      ],
+      "specificAction": "保留上部安静纸底和空亭无人状态；不再补人或宫城。",
+      "issueIds": [],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": "reports/blank-design/before/chapter-4-gap-05.jpg",
+        "beforeSha256": "cb89e67285ca2eea708e32fb647c5bc99747e4feaa763c8a8813ff87f590e938",
+        "v1": "reports/blank-design/pilot/chapter-4-gap-05.jpg",
+        "v1Sha256": "6beb1980320b8039ddce27d67c05576189c45b8ba6fc8b504e4a25c6e61495eb",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      }
+    },
+    {
+      "id": "c4-gap-06",
+      "chapter": 4,
+      "kind": "gap",
+      "index": 6,
+      "name": "游宴渐冷 → 盛世与乱世",
+      "progress": 0.6873670214950095,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-gap-06.jpg",
+      "sha256": "4420de5fc49c12afa284de604f8dfb84b608910541670486f10dd88c6079a68b",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "issue",
+      "conclusion": "疏岸已解决空洞但偏高；灯脚下仍有约20px纸隙，没有真正落在岸上；疏枝/芦苇开始三段同图重复。",
+      "fixOrPreserveRectNormalized": [
+        0.57,
+        0.71,
+        0.07,
+        0.23
+      ],
+      "specificAction": "灯整体向下约画心高0.04（先按此试，再以脚与岸接触像素复核）；疏岸至少一段变尺度/位置或换更低的岸，保留上空。",
+      "issueIds": [
+        "floating-lamp",
+        "repeat-reed-shore"
+      ],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": "reports/blank-design/before/chapter-4-gap-06.jpg",
+        "beforeSha256": "206c518b3a2c6d5a66f1bc13d0ca6fc48eb1f9f39b705ac0817c5c21c05e5797",
+        "v1": "reports/blank-design/pilot/chapter-4-gap-06.jpg",
+        "v1Sha256": "dad5f6554c38cdf1fb71cfbdb5a245ad6553bfdae3e5c64cf74d29f7deb93682",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      }
+    },
+    {
+      "id": "c4-gap-07",
+      "chapter": 4,
+      "kind": "gap",
+      "index": 7,
+      "name": "盛世与乱世 → 晚唐追忆",
+      "progress": 0.8119290378398627,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-gap-07.jpg",
+      "sha256": "4ceb6f4505b277812c20c6d33de1d3a21025595c2449f194f49138627d7d985b",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "issue",
+      "conclusion": "低案诗卷有叙事意义，但前腿与岸面之间仍有纸隙；右侧小花簇依然漂浮，岸形与上一段同构。",
+      "fixOrPreserveRectNormalized": [
+        0.47,
+        0.71,
+        0.26,
+        0.27
+      ],
+      "specificAction": "低案下移约0.03–0.05画心高，使完整足落在可见石岸；优先退役右侧游离小花簇；新岸不可继续同形横铺。",
+      "issueIds": [
+        "floating-scroll-table",
+        "floating-flower-cluster",
+        "repeat-reed-shore"
+      ],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": "reports/blank-design/before/chapter-4-gap-07.jpg",
+        "beforeSha256": "f75b1b07330d709fda9598311cadddca8645e36d1a39def3ca2bd5103fa8907b",
+        "v1": "reports/blank-design/pilot/chapter-4-gap-07.jpg",
+        "v1Sha256": "a1396fd3e7d6a086c4b6d8ff9cbd44104f05d75c50ecbe09025a30b2bbc341bf",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      }
+    },
+    {
+      "id": "c4-gap-08",
+      "chapter": 4,
+      "kind": "gap",
+      "index": 8,
+      "name": "晚唐追忆 → 千古兴衰",
+      "progress": 0.9371137845170073,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-gap-08.jpg",
+      "sha256": "c28f156e142d62b5abbd9593a93f7698209696a35053396492d45afcd429d53e",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "issue",
+      "conclusion": "上半尾声留白合理，但孤灯/小花球与岸未形成自然关系，第三次同形疏岸削弱收束。",
+      "fixOrPreserveRectNormalized": [
+        0.46,
+        0.71,
+        0.28,
+        0.27
+      ],
+      "specificAction": "隐藏游离花球；灯与最后一段低岸/石面接触；末段可更短更淡或改空水，形成由实到虚。",
+      "issueIds": [
+        "floating-lamp",
+        "floating-flower-cluster",
+        "repeat-reed-shore"
+      ],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": "reports/blank-design/before/chapter-4-gap-08.jpg",
+        "beforeSha256": "bbf3f8ce51f5d18e258cab5a7a12e36f13f08780a0a9f0073babab1c1b9e38f6",
+        "v1": "reports/blank-design/pilot/chapter-4-gap-08.jpg",
+        "v1Sha256": "99df53566ba56823a902d0f13390e6ded36ee77b3b5e85273bd2d8561543940a",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      }
+    },
+    {
+      "id": "c4-quarter-01",
+      "chapter": 4,
+      "kind": "quarter",
+      "index": 1,
+      "name": "人花合一 → 花王配美人",
+      "progress": 0.03114933243689774,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-quarter-01.jpg",
+      "sha256": "64b293d435f7f884041994f012eba99a87fa289fdaaf6aaa80619c336a0c968d",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "pass",
+      "conclusion": "人物退场、曲岸进入的中途连贯，岸线低置不盖人物；左题签随原相机离画心边是既有世界锚点表现。",
+      "fixOrPreserveRectNormalized": [
+        0.54,
+        0.02,
+        0.42,
+        0.55
+      ],
+      "specificAction": "保持这片天空，新增层无需追随题签屏幕固定。",
+      "issueIds": [],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": null,
+        "beforeSha256": null,
+        "v1": "reports/blank-design/pilot/chapter-4-quarter-01.jpg",
+        "v1Sha256": "3ef2d6721c8628b14ed916d6a587f4856d81224500a971c4362f8ac6445cc76b",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      },
+      "gapIndex": 1,
+      "fraction": 0.25
+    },
+    {
+      "id": "c4-quarter-02",
+      "chapter": 4,
+      "kind": "quarter",
+      "index": 2,
+      "name": "人花合一 → 花王配美人",
+      "progress": 0.09344799731069321,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-quarter-02.jpg",
+      "sha256": "494a1694e94b8d371a44dd07b767509f2214b0c5f39557fd76101bbd7698b52b",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "pass",
+      "conclusion": "苑岸从左侧来并在贵妃屏风底部收口，人物与花簇仍主导，气口开阔。",
+      "fixOrPreserveRectNormalized": [
+        0.02,
+        0.02,
+        0.43,
+        0.54
+      ],
+      "specificAction": "保留左上纸天空。",
+      "issueIds": [],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": null,
+        "beforeSha256": null,
+        "v1": "reports/blank-design/pilot/chapter-4-quarter-02.jpg",
+        "v1Sha256": "73238e218af2aff94854fe65179122a86e92ec0e0b5480143db42804fefe70b0",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      },
+      "gapIndex": 1,
+      "fraction": 0.75
+    },
+    {
+      "id": "c4-quarter-03",
+      "chapter": 4,
+      "kind": "quarter",
+      "index": 3,
+      "name": "花王配美人 → 沉香亭赏花题诗",
+      "progress": 0.15576956221632046,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-quarter-03.jpg",
+      "sha256": "cc05549a8c88e0dc577ef82e5166dbb734618ff3a0fd831e28ac898b79e2aef1",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "pass",
+      "conclusion": "原栏角与浅水花石已经相接，没有新增硬边或人物遮挡，水路继续引向右。",
+      "fixOrPreserveRectNormalized": [
+        0.43,
+        0.02,
+        0.53,
+        0.54
+      ],
+      "specificAction": "保留水景上空，不再放新高物。",
+      "issueIds": [],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": null,
+        "beforeSha256": null,
+        "v1": "reports/blank-design/pilot/chapter-4-quarter-03.jpg",
+        "v1Sha256": "54b50f6c6e01cc641c24d83eaef29709410bc2a68fe84e41e832d4fb2690cf34",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      },
+      "gapIndex": 2,
+      "fraction": 0.25
+    },
+    {
+      "id": "c4-quarter-04",
+      "chapter": 4,
+      "kind": "quarter",
+      "index": 4,
+      "name": "花王配美人 → 沉香亭赏花题诗",
+      "progress": 0.2181140271537795,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-quarter-04.jpg",
+      "sha256": "cf2f4ed6446fbac7ee2b540423ca60c74e3a0fcd699fd453bc30117bb5d91256",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "pass",
+      "conclusion": "浅水岸线接到桥景和沉香亭人物组，边缘自然，有前中后关系，上方仍简净。",
+      "fixOrPreserveRectNormalized": [
+        0.03,
+        0.02,
+        0.41,
+        0.55
+      ],
+      "specificAction": "保留左上气口和水面。",
+      "issueIds": [],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": null,
+        "beforeSha256": null,
+        "v1": "reports/blank-design/pilot/chapter-4-quarter-04.jpg",
+        "v1Sha256": "c43a1828babd0fd3f526c8eb66885ae040a74bee177850cddabbbe3c10468bb6",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      },
+      "gapIndex": 2,
+      "fraction": 0.75
+    },
+    {
+      "id": "c4-quarter-05",
+      "chapter": 4,
+      "kind": "quarter",
+      "index": 5,
+      "name": "沉香亭赏花题诗 → 牡丹风尚鼎盛",
+      "progress": 0.28041335322516653,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-quarter-05.jpg",
+      "sha256": "b9279da9c48ec5a571cf9801bef1da55475c8015ffc9a361dba42cc80cb36c2e",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "pass",
+      "conclusion": "李白题诗组向左退出，石台/诗案在右下合理进入，完整脚与台面关系可读。",
+      "fixOrPreserveRectNormalized": [
+        0.49,
+        0.02,
+        0.45,
+        0.52
+      ],
+      "specificAction": "保持平台承托关系与原纸卷层级。",
+      "issueIds": [],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": null,
+        "beforeSha256": null,
+        "v1": "reports/blank-design/pilot/chapter-4-quarter-05.jpg",
+        "v1Sha256": "bf0e0329d20d01ed69be17986aa1af28382c21e2a0361c364d4c935e5e60f81e",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      },
+      "gapIndex": 3,
+      "fraction": 0.25
+    },
+    {
+      "id": "c4-quarter-06",
+      "chapter": 4,
+      "kind": "quarter",
+      "index": 6,
+      "name": "沉香亭赏花题诗 → 牡丹风尚鼎盛",
+      "progress": 0.34266754043048153,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-quarter-06.jpg",
+      "sha256": "753d01bf0ec69c89df29485f488814458af2a575c18a3183707ae23a33a9c3b3",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "pass",
+      "conclusion": "石台向左退出并在右侧盛景陈设下衔接，原人物、屏风及大花不被覆盖。",
+      "fixOrPreserveRectNormalized": [
+        0.03,
+        0.02,
+        0.44,
+        0.52
+      ],
+      "specificAction": "此为gap3的同一平台可保留；下一段应有不同节奏。",
+      "issueIds": [],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": null,
+        "beforeSha256": null,
+        "v1": "reports/blank-design/pilot/chapter-4-quarter-06.jpg",
+        "v1Sha256": "d6cda9f3fd88d223e554cf321d96b58e474c9efcf04439fcad44266e17b1457e",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      },
+      "gapIndex": 3,
+      "fraction": 0.75
+    },
+    {
+      "id": "c4-quarter-07",
+      "chapter": 4,
+      "kind": "quarter",
+      "index": 7,
+      "name": "牡丹风尚鼎盛 → 繁华落幕",
+      "progress": 0.4054542093743564,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-quarter-07.jpg",
+      "sha256": "5f9d23b51344f1aebc1f4b3b295b85f2d7ac59143400fc73a69d5edbd05e4447",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "issue",
+      "conclusion": "盛景退场后右下又进入同样石台/小案，空间不空但重复模板明显。",
+      "fixOrPreserveRectNormalized": [
+        0.48,
+        0.65,
+        0.5,
+        0.33
+      ],
+      "specificAction": "按gap4改成低岸/更小台，删掉这一段重复诗案；让繁华逐步稀疏。",
+      "issueIds": [
+        "repeat-terrace"
+      ],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": null,
+        "beforeSha256": null,
+        "v1": "reports/blank-design/pilot/chapter-4-quarter-07.jpg",
+        "v1Sha256": "f08bfbaba924b5bf695f23c7d497b73f5bd56f83d35e86aa76aca1859fab81e1",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      },
+      "gapIndex": 4,
+      "fraction": 0.25
+    },
+    {
+      "id": "c4-quarter-08",
+      "chapter": 4,
+      "kind": "quarter",
+      "index": 8,
+      "name": "牡丹风尚鼎盛 → 繁华落幕",
+      "progress": 0.4687733600567911,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-quarter-08.jpg",
+      "sha256": "8861f6f0f8ef2c18303817b550415b4d95a2923faad50c051f55a6b1b1b46032",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "issue",
+      "conclusion": "同样石台小案向左退场，马嵬人物在右，视觉上仍像再看一次gap3台面；未见新的遮人问题。",
+      "fixOrPreserveRectNormalized": [
+        0.01,
+        0.65,
+        0.51,
+        0.33
+      ],
+      "specificAction": "延续gap4新承托方案，避免用第二个同台同案制造空间。",
+      "issueIds": [
+        "repeat-terrace"
+      ],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": null,
+        "beforeSha256": null,
+        "v1": "reports/blank-design/pilot/chapter-4-quarter-08.jpg",
+        "v1Sha256": "c01b3f00990d2c0d7fc124ce7545303450fda9af8ad9cac33923c1f4b456ab57",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      },
+      "gapIndex": 4,
+      "fraction": 0.75
+    },
+    {
+      "id": "c4-quarter-09",
+      "chapter": 4,
+      "kind": "quarter",
+      "index": 9,
+      "name": "繁华落幕 → 游宴渐冷",
+      "progress": 0.5316006197822105,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-quarter-09.jpg",
+      "sha256": "9fa87e5dc456cbcec446afa9c15f190597153b5697c34203df626232125a1ba5",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "pass",
+      "conclusion": "兵马离场与空亭进入之间低岸连续，空亭比例压低于主角，后段没有再次堆宫城。",
+      "fixOrPreserveRectNormalized": [
+        0.72,
+        0.02,
+        0.25,
+        0.31
+      ],
+      "specificAction": "保持空亭和上部纸底。",
+      "issueIds": [],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": null,
+        "beforeSha256": null,
+        "v1": "reports/blank-design/pilot/chapter-4-quarter-09.jpg",
+        "v1Sha256": "8ce1fb2e623fba73efcb96ba641c7f261e3573cdf569738db1436d3daeeefa51",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      },
+      "gapIndex": 5,
+      "fraction": 0.25
+    },
+    {
+      "id": "c4-quarter-10",
+      "chapter": 4,
+      "kind": "quarter",
+      "index": 10,
+      "name": "繁华落幕 → 游宴渐冷",
+      "progress": 0.5939359885506145,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-quarter-10.jpg",
+      "sha256": "b40b947716ec18ff77499a8bfaa0a0c5cb8c231f62cec9eaa8bd900d37ae34d0",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "pass",
+      "conclusion": "空亭在左、原女子平台在右，低岸/浅水使两组有场所关系；留白仍有呼吸。",
+      "fixOrPreserveRectNormalized": [
+        0.25,
+        0.02,
+        0.26,
+        0.3
+      ],
+      "specificAction": "保持中上气口，不需要为了覆盖每寸而添景。",
+      "issueIds": [],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": null,
+        "beforeSha256": null,
+        "v1": "reports/blank-design/pilot/chapter-4-quarter-10.jpg",
+        "v1Sha256": "d6b9427a09a71ae257670ff0e64f4f662d291c16c470b265bcbbc25c03978487",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      },
+      "gapIndex": 5,
+      "fraction": 0.75
+    },
+    {
+      "id": "c4-quarter-11",
+      "chapter": 4,
+      "kind": "quarter",
+      "index": 11,
+      "name": "游宴渐冷 → 盛世与乱世",
+      "progress": 0.656235347214913,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-quarter-11.jpg",
+      "sha256": "dd16e4d748357b9aae5bbb1208d4c45e611736438a78d0ccc59b32216dc79f5b",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "issue",
+      "conclusion": "原女子平台退场与疏岸进入较自然，但右下灯脚仍悬在岸草上方；大疏枝把这段画面抬得较高。",
+      "fixOrPreserveRectNormalized": [
+        0.84,
+        0.71,
+        0.07,
+        0.24
+      ],
+      "specificAction": "灯下移约0.035–0.05画心高并接触石岸；疏枝层按全段节奏降低/错开。",
+      "issueIds": [
+        "floating-lamp",
+        "repeat-reed-shore"
+      ],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": null,
+        "beforeSha256": null,
+        "v1": "reports/blank-design/pilot/chapter-4-quarter-11.jpg",
+        "v1Sha256": "ba8a74c1021e7cfb69de7fbc28ccbce9a984b59eb2c77f80f541ffff696a74d9",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      },
+      "gapIndex": 6,
+      "fraction": 0.25
+    },
+    {
+      "id": "c4-quarter-12",
+      "chapter": 4,
+      "kind": "quarter",
+      "index": 12,
+      "name": "游宴渐冷 → 盛世与乱世",
+      "progress": 0.718498695775106,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-quarter-12.jpg",
+      "sha256": "f7250c448413b494c7d3c0265eb5b924e0051cec057b40dd65e7ff40e78f5e57",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "issue",
+      "conclusion": "灯和疏岸向左退出时，灯脚与岸面仍有明显纸隙；重复枝形到此已可识别，尾声像一条贴在底部的装饰边框。",
+      "fixOrPreserveRectNormalized": [
+        0.3,
+        0.71,
+        0.07,
+        0.24
+      ],
+      "specificAction": "修灯与地面接触，同时减少后一段相同岸形的重复。",
+      "issueIds": [
+        "floating-lamp",
+        "repeat-reed-shore"
+      ],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": null,
+        "beforeSha256": null,
+        "v1": "reports/blank-design/pilot/chapter-4-quarter-12.jpg",
+        "v1Sha256": "4123c4752fab93279266bc3ddeb0965b7dfb695f14d2d816c48890bf2612b373",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      },
+      "gapIndex": 6,
+      "fraction": 0.75
+    },
+    {
+      "id": "c4-quarter-13",
+      "chapter": 4,
+      "kind": "quarter",
+      "index": 13,
+      "name": "盛世与乱世 → 晚唐追忆",
+      "progress": 0.7807797039475326,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-quarter-13.jpg",
+      "sha256": "796df4eb41790afbbe91040f3229521253bccd36c00fea5513e2013eeb4ac20d",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "issue",
+      "conclusion": "原盛衰人物与大花仍完整，但下部同一灰青石/细枝岸形再次铺入，重复的前景边框感比叙事接力更强。",
+      "fixOrPreserveRectNormalized": [
+        0.4,
+        0.61,
+        0.32,
+        0.37
+      ],
+      "specificAction": "第二段岸降低、缩短或换为更疏低岸；不改原人物/主花，只调新增承托层节奏。",
+      "issueIds": [
+        "repeat-reed-shore"
+      ],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": null,
+        "beforeSha256": null,
+        "v1": "reports/blank-design/pilot/chapter-4-quarter-13.jpg",
+        "v1Sha256": "ce86ba67ea8a330219e84d745bd3044d1ce430cdff38eae597966bfb37c006ac",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      },
+      "gapIndex": 7,
+      "fraction": 0.25
+    },
+    {
+      "id": "c4-quarter-14",
+      "chapter": 4,
+      "kind": "quarter",
+      "index": 14,
+      "name": "盛世与乱世 → 晚唐追忆",
+      "progress": 0.8430783717321927,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-quarter-14.jpg",
+      "sha256": "0cd2e7d41ae6d3067727e5f1bced82d09d83f5e09052b772713d6f8a3f5171cc",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "issue",
+      "conclusion": "空卷低案位于左中下，脚下有约20px纸隙；旁边小牡丹团也脱离岸，构成两个悬物。",
+      "fixOrPreserveRectNormalized": [
+        0.18,
+        0.71,
+        0.25,
+        0.27
+      ],
+      "specificAction": "先让案腿确实落岸（下移约0.04–0.05），去掉独立小花团；保持右人物为主角。",
+      "issueIds": [
+        "floating-scroll-table",
+        "floating-flower-cluster",
+        "repeat-reed-shore"
+      ],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": null,
+        "beforeSha256": null,
+        "v1": "reports/blank-design/pilot/chapter-4-quarter-14.jpg",
+        "v1Sha256": "a13e070104f26ca86b2a994d2abbe85309c482e82360015927018d633b167db8",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      },
+      "gapIndex": 7,
+      "fraction": 0.75
+    },
+    {
+      "id": "c4-quarter-15",
+      "chapter": 4,
+      "kind": "quarter",
+      "index": 15,
+      "name": "晚唐追忆 → 千古兴衰",
+      "progress": 0.9056707450707651,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-quarter-15.jpg",
+      "sha256": "39516e72a9d32e29acccb3fae4296c7570e8f294bdd26a4741fa3d30298f5291",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "issue",
+      "conclusion": "故国书案到盛景回忆之间已有地层，但同形灰青石和疏枝第三次进入，缺少尾声由实到虚的变化。",
+      "fixOrPreserveRectNormalized": [
+        0.52,
+        0.5,
+        0.22,
+        0.48
+      ],
+      "specificAction": "末段岸做更短、更低、更淡或改空水；不要再用完整大枝重复充当连接。",
+      "issueIds": [
+        "repeat-reed-shore"
+      ],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": null,
+        "beforeSha256": null,
+        "v1": "reports/blank-design/pilot/chapter-4-quarter-15.jpg",
+        "v1Sha256": "36f041893c74f2ebe237042a0760f6d98d98c8557fe72a186462b708a284aa1a",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      },
+      "gapIndex": 8,
+      "fraction": 0.25
+    },
+    {
+      "id": "c4-quarter-16",
+      "chapter": 4,
+      "kind": "quarter",
+      "index": 16,
+      "name": "晚唐追忆 → 千古兴衰",
+      "progress": 0.9685568239632496,
+      "screenshot": "reports/blank-design/pilot-v2/chapter-4-quarter-16.jpg",
+      "sha256": "0daf582eeabff138cf5f384feb19e8e6d065b2f407b700f7de40d80c7843cc10",
+      "size": [
+        1388,
+        476
+      ],
+      "reviewedWithViewImage": true,
+      "status": "issue",
+      "conclusion": "题签与终景未被新层遮，但左下孤灯旁的花团明显悬在纸上；同形岸到第三段仍等高等强，未收束。",
+      "fixOrPreserveRectNormalized": [
+        0.28,
+        0.72,
+        0.15,
+        0.25
+      ],
+      "specificAction": "优先隐藏游离小花团；灯脚落石岸，第三段岸减量/淡出；右上题签及上中留白保持。",
+      "issueIds": [
+        "floating-flower-cluster",
+        "repeat-reed-shore"
+      ],
+      "upperNegativeSpace": "preserved",
+      "newSubjectOrCalligraphyOcclusionSeen": false,
+      "comparison": {
+        "before": null,
+        "beforeSha256": null,
+        "v1": "reports/blank-design/pilot/chapter-4-quarter-16.jpg",
+        "v1Sha256": "5795e654bff0a2a013192bf50ea8a10415f901ffbf513a5d70a2cb366c7cfed5",
+        "scope": "Before和v1相同17个stop/gap已目视；quarter的before截图不存在，v1quarter本代理按上一轮停止指令未审，不作其逐像素视觉对照声明。"
+      },
+      "gapIndex": 8,
+      "fraction": 0.75
+    }
+  ],
+  "verificationLimits": [
+    "静帧裁切不证明动态稳定、连续拖拽无穿帮、窄屏题签/控制布局或GPU恢复。",
+    "此报告不证明Blender派生副本整合、保存或独立重开。",
+    "判断依实际截图，未以artAddedLayers等数量作为美术通过标准。"
+  ],
+  "nextReview": [
+    "修灯/案的世界接地关系；隐藏或附着原游离小牡丹簇实例",
+    "改变至少一段尾声同形疏岸，gap4不再重复gap3完整平台+小案",
+    "新canonical下重拍受影响所有stop/gap/quarter并独立复核；不覆盖本轮失败证据",
+    "保持上方留白、人物和题签"
+  ]
+}

@@ -1,0 +1,1128 @@
+{
+  "schemaVersion": 1,
+  "status": "issues-found-position-revision-required",
+  "chapter": 2,
+  "reviewedAtUtc": "2026-10-20T01:24:15.912688+00:00",
+  "scope": "C2 expanded-v2全部7stop、6gap、12quarter共25张1440×900 viewport下的真实画心截图，逐张全尺寸view_image目视；对照原审查区域和13张同进度before。不证明窄屏/连续runtime或Blender World出图。",
+  "parentCanonicalSha256": "d0da5b557efacc09db17c51f4faeea8681c301d7584a5b1b60d508219a719c2c",
+  "chapterSnapshot": "reports/blank-design/expanded-v2/chapter-2-manifest.json",
+  "chapterSnapshotSha256": "f5fb76c2e3b9b8187841a9b9229829c306c2bba51e02268f6aad144963d4fec5",
+  "summary": {
+    "views": 25,
+    "stops": 7,
+    "gaps": 6,
+    "quarters": 12,
+    "passViews": 17,
+    "issueViews": 8,
+    "actionableIssues": 2,
+    "hardPaperRectangle": "resolved in actual stop7 and late views; no paper-color step edge remains",
+    "newlyExposedOriginalCuts": "none conspicuous in these 25 static views after paper retirement",
+    "newLayers": 7,
+    "theme": "warm private garden shore / mixed flower path / modest study court; no new court figures or buildings",
+    "preserveAreas": "opening title/poem/seal, upper sky/water breath and ending negative space remain",
+    "remaining": "Main study court and stop6 court corner are too low; fix placement and recapture affected views before pass."
+  },
+  "paperWorldStrategy": {
+    "web": "source curved paper is explicitly hidden, existing #f5ecdc CSS paper is visibly coherent; no remaining Web hard rectangle",
+    "manifest": {
+      "color": "#f5ecdc",
+      "strength": 1,
+      "narrative": "弯曲纸地末端形成硬矩形并裁挡图像；派生显示退役原纸地，网页使用既有CSS纸底，Blender使用专属World统一纸色。原source与原World datablock保留。"
+    },
+    "blender": "not verified by this image review; dedicated World must be checked in actual saved/reopened Blender and preview"
+  },
+  "issues": [
+    {
+      "id": "C2-P1-COURT-TOO-LOW",
+      "priority": 1,
+      "layerId": "bd2-gap05-court",
+      "views": [
+        "stop-05",
+        "stop-06",
+        "gap-05",
+        "gap-06",
+        "quarter-09",
+        "quarter-10",
+        "quarter-12"
+      ],
+      "originalRegions": [
+        "c2-gap-05-r01",
+        "c2-gap-05-r02",
+        "c2-stop-05-r01",
+        "c2-stop-06-r01",
+        "c2-gap-06-r02"
+      ],
+      "problem": "原书房石坪与新增庭院之间仍隔40–70px纸缝；庭院到stop06下落出视口，未形成共同地面。",
+      "requiredFix": "保持现有资产和比例，把layout中该层y从-.37向上试至-.22，使石地上缘与原书房平台实搭；勿新增花遮缝。必须在下一版实际截图复验，不以参数变更自称修复。"
+    },
+    {
+      "id": "C2-P1-STOP6-EDGE-TOO-LOW",
+      "priority": 1,
+      "layerId": "bd2-stop06-edge",
+      "views": [
+        "stop-06",
+        "quarter-11"
+      ],
+      "originalRegions": [
+        "c2-stop-06-r02"
+      ],
+      "problem": "右侧庭角只在下沿见植栽，未接住树根与远庭之间的原纸底楔口。",
+      "requiredFix": "保持width=.34、x=.67、自然比例，y从-.30向上试至-.20；检验stop06与quarter11是否接地，并避开原花树主体/题签。"
+    }
+  ],
+  "views": [
+    {
+      "kind": "stop",
+      "index": 1,
+      "name": "御苑春信",
+      "progress": 0,
+      "image": "reports/blank-design/expanded-v2/chapter-2-stop-01.jpg",
+      "sha256": "b6223a4076e27e8ab373c2adb17ae4f5ebd041090a7c4176b4cb5682d10beb42",
+      "decision": "pass",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "卷首题字、诗文与印章周围留白保留；右下浅岸实际填入原岸线断口。低石/粉花温雅，未加人群或皇家建筑。",
+      "issueIds": [],
+      "issueRegions": [],
+      "beforeImage": "reports/blank-design/before/chapter-2-stop-01.jpg",
+      "beforeSha256": "ae19529d339379533f55bf918c6cedb50df11adfd2d45ff9e64763c960e55331",
+      "beforeComparison": "同进度原stop/gap对照；before与先期已逐张目视的reconstruction/after同名图SHA完全相同，关键stop6/7与gap5/6本次重新目视。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.000000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "stop",
+      "index": 2,
+      "name": "花出宫墙",
+      "progress": 0.16241276275705124,
+      "image": "reports/blank-design/expanded-v2/chapter-2-stop-02.jpg",
+      "sha256": "975e41559ad8dff60195eda7a3cbde356ff86cc5efba4a0839d47f0045489aaf",
+      "decision": "pass",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "水岸低径在湖面与前景牡丹间形成落脚处，原桥市与赏花人物保持主次。上方天际仍安静，没有把空白全填成花墙。",
+      "issueIds": [],
+      "issueRegions": [],
+      "beforeImage": "reports/blank-design/before/chapter-2-stop-02.jpg",
+      "beforeSha256": "acbccadbf2acacfb98d24934ddb424871eb98e2bf4d73ff2250be0cf630c96f8",
+      "beforeComparison": "同进度原stop/gap对照；before与先期已逐张目视的reconstruction/after同名图SHA完全相同，关键stop6/7与gap5/6本次重新目视。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.162000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "stop",
+      "index": 3,
+      "name": "深宫独赏",
+      "progress": 0.3238831847778297,
+      "image": "reports/blank-design/expanded-v2/chapter-2-stop-03.jpg",
+      "sha256": "e403f1ebaed7eef2eb361c2b80765a0516b976fc30f8c207fe62235ed7abe4a4",
+      "decision": "pass",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "原宫墙/公众叙事完整，右下混植花径接入原纸底缺口。原人物脚端仍为视口裁切，无新PNG直角露底。",
+      "issueIds": [],
+      "issueRegions": [],
+      "beforeImage": "reports/blank-design/before/chapter-2-stop-03.jpg",
+      "beforeSha256": "6108ba5fd7828acc34622effd68f4ab90896e9f59832e6685013b69981ccc34d",
+      "beforeComparison": "同进度原stop/gap对照；before与先期已逐张目视的reconstruction/after同名图SHA完全相同，关键stop6/7与gap5/6本次重新目视。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.324000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "stop",
+      "index": 4,
+      "name": "私园初盛",
+      "progress": 0.48743216584904925,
+      "image": "reports/blank-design/expanded-v2/chapter-2-stop-04.jpg",
+      "sha256": "736aa8661c40ffed42e932692cfdbef7df336e1741d83ad1aa4c3ab1f576957a",
+      "decision": "pass",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "原私园与碧水已密集，新增没有挤占主景；左上浅空与右上头顶气口保留，水面和花池轮廓连续。",
+      "issueIds": [],
+      "issueRegions": [],
+      "beforeImage": "reports/blank-design/before/chapter-2-stop-04.jpg",
+      "beforeSha256": "e612671d27f4f6e9be844dcfb1aea0fd355d149a43c809a20fe771f597ea4b19",
+      "beforeComparison": "同进度原stop/gap对照；before与先期已逐张目视的reconstruction/after同名图SHA完全相同，关键stop6/7与gap5/6本次重新目视。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.487000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "stop",
+      "index": 5,
+      "name": "宫苑雅宴",
+      "progress": 0.6495794264206822,
+      "image": "reports/blank-design/expanded-v2/chapter-2-stop-05.jpg",
+      "sha256": "45976ac80ae10fa8dbf06b29e0ecba46136770bf796825069f5d8aaffe4ec9bf",
+      "decision": "issue",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "右下已有外庭石地与坐席茶具，但外庭上缘与原书房底坪之间仍隔纸色带，需上移同一庭院层连接，不能判为完全接地。",
+      "issueIds": [
+        "C2-P1-COURT-TOO-LOW"
+      ],
+      "issueRegions": [
+        {
+          "issueId": "C2-P1-COURT-TOO-LOW",
+          "normalizedRect": [
+            0.85,
+            0.6,
+            0.12,
+            0.17
+          ]
+        }
+      ],
+      "beforeImage": "reports/blank-design/before/chapter-2-stop-05.jpg",
+      "beforeSha256": "44c00e46bdbd0e30bb99cef8f27b8414e18c1dc055efadf94e2a72fdc0882771",
+      "beforeComparison": "同进度原stop/gap对照；before与先期已逐张目视的reconstruction/after同名图SHA完全相同，关键stop6/7与gap5/6本次重新目视。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.650000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "stop",
+      "index": 6,
+      "name": "春野静赏",
+      "progress": 0.7942611684413351,
+      "image": "reports/blank-design/expanded-v2/chapter-2-stop-06.jpg",
+      "sha256": "f89ddb3dc83babd809508efefc765435224bc148cde3ab24a67fd9c7b9d1f789",
+      "decision": "issue",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "硬色纸地已退役；书房题签未被新物遮。主外庭下落出视口，只在底边见竹栏尖；书房左侧下口仍无承接，右侧庭角也偏低，需两项位置复验。",
+      "issueIds": [
+        "C2-P1-COURT-TOO-LOW",
+        "C2-P1-STOP6-EDGE-TOO-LOW"
+      ],
+      "issueRegions": [
+        {
+          "issueId": "C2-P1-COURT-TOO-LOW",
+          "normalizedRect": [
+            0.29,
+            0.72,
+            0.3,
+            0.27
+          ]
+        },
+        {
+          "issueId": "C2-P1-STOP6-EDGE-TOO-LOW",
+          "normalizedRect": [
+            0.87,
+            0.59,
+            0.09,
+            0.2
+          ]
+        }
+      ],
+      "beforeImage": "reports/blank-design/before/chapter-2-stop-06.jpg",
+      "beforeSha256": "995db7c4a5b9c394f7ebec6b24230e57f212dab571f6255dd50c98e6b0957362",
+      "beforeComparison": "同进度原stop/gap对照；before与先期已逐张目视的reconstruction/after同名图SHA完全相同，关键stop6/7与gap5/6本次重新目视。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.794000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "stop",
+      "index": 7,
+      "name": "静待盛唐",
+      "progress": 0.9764219847936453,
+      "image": "reports/blank-design/expanded-v2/chapter-2-stop-07.jpg",
+      "sha256": "11cad655cd24c9f0f5ee965362fd40a1c85dce909c015e3e49c847e85ce7e72a",
+      "decision": "pass",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "原左下约x=.16处的纸色硬矩形真正消失，原左侧花树不再被纸地深度裁挡。两侧低花径给人群收边，上方与右侧卷尾大留白保留。",
+      "issueIds": [],
+      "issueRegions": [],
+      "beforeImage": "reports/blank-design/before/chapter-2-stop-07.jpg",
+      "beforeSha256": "12b1eeb580cb1f8d21c5194b2f98e2d3328d6f7d71cb01b6aa60bb424a5e86bc",
+      "beforeComparison": "同进度原stop/gap对照；before与先期已逐张目视的reconstruction/after同名图SHA完全相同，关键stop6/7与gap5/6本次重新目视。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.976000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "gap",
+      "index": 1,
+      "name": "御苑春信 → 花出宫墙",
+      "progress": 0.08120638137852562,
+      "image": "reports/blank-design/expanded-v2/chapter-2-gap-01.jpg",
+      "sha256": "d964f318d6f983ea330360fecce70b4493d74f06ba21d1f503fa2054e78f39f8",
+      "decision": "pass",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "浅水岸与低石径接通花市至公共水面，原c2-gap-01-r01从裸底变为可读水岸。右侧花石遮挡自然，未出现透明矩形底。",
+      "issueIds": [],
+      "issueRegions": [],
+      "beforeImage": "reports/blank-design/before/chapter-2-gap-01.jpg",
+      "beforeSha256": "010a9fbd4abb1c630f16abfac15832b36c70b1537daa30da28ee4c8af4ab7ff8",
+      "beforeComparison": "同进度原stop/gap对照；before与先期已逐张目视的reconstruction/after同名图SHA完全相同，关键stop6/7与gap5/6本次重新目视。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.081000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "gap",
+      "index": 2,
+      "name": "花出宫墙 → 深宫独赏",
+      "progress": 0.24314797376744046,
+      "image": "reports/blank-design/expanded-v2/chapter-2-gap-02.jpg",
+      "sha256": "87d2118aca194f1810b4b3bc3b6ee0432c07850cf35374b33d965491d3520a2f",
+      "decision": "pass",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "主体本已饱满，只在左下见岸线余部，原宫檐/人物/大牡丹保持清晰；右上天际留白保留。",
+      "issueIds": [],
+      "issueRegions": [],
+      "beforeImage": "reports/blank-design/before/chapter-2-gap-02.jpg",
+      "beforeSha256": "23992439e4643449aef99d1e98ac43d09d1c68f51c079f956aa77066ab366daa",
+      "beforeComparison": "同进度原stop/gap对照；before与先期已逐张目视的reconstruction/after同名图SHA完全相同，关键stop6/7与gap5/6本次重新目视。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.243000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "gap",
+      "index": 3,
+      "name": "深宫独赏 → 私园初盛",
+      "progress": 0.40565767531343944,
+      "image": "reports/blank-design/expanded-v2/chapter-2-gap-03.jpg",
+      "sha256": "6d92f20f1b453a743eb881f4aa1e028b6f8e25035ca0759e0836ff6a56e77dff",
+      "decision": "pass",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "右下混植花径延伸到私园花石下口，原宫墙外公众至园门的底部断层改善。原门楼和屋檐未新增抢戏对象。",
+      "issueIds": [],
+      "issueRegions": [],
+      "beforeImage": "reports/blank-design/before/chapter-2-gap-03.jpg",
+      "beforeSha256": "8974840c9ad763c93e5569f227b4c9bd647e87c709df1182f9794644e73c9fc6",
+      "beforeComparison": "同进度原stop/gap对照；before与先期已逐张目视的reconstruction/after同名图SHA完全相同，关键stop6/7与gap5/6本次重新目视。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.406000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "gap",
+      "index": 4,
+      "name": "私园初盛 → 宫苑雅宴",
+      "progress": 0.5685057961348657,
+      "image": "reports/blank-design/expanded-v2/chapter-2-gap-04.jpg",
+      "sha256": "0c5b8d8cf2eca476c3818e451ea15c025707f41af8a303b2e38641c839e14ea9",
+      "decision": "pass",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "原碧水与两组人物形成连续主景，新花径只是左下低边的少量植栽，不把水面气口堵住。",
+      "issueIds": [],
+      "issueRegions": [],
+      "beforeImage": "reports/blank-design/before/chapter-2-gap-04.jpg",
+      "beforeSha256": "4a293f28ca0a8973f671c66cf0367b0c07cdc4c24f6fb911347bca71b8f66993",
+      "beforeComparison": "同进度原stop/gap对照；before与先期已逐张目视的reconstruction/after同名图SHA完全相同，关键stop6/7与gap5/6本次重新目视。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.569000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "gap",
+      "index": 5,
+      "name": "宫苑雅宴 → 春野静赏",
+      "progress": 0.7219202974310086,
+      "image": "reports/blank-design/expanded-v2/chapter-2-gap-05.jpg",
+      "sha256": "199a6c0889f7946683f65c6eeaca45ad01263006eaef7052585f7c5983f08fef",
+      "decision": "issue",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "最大原空洞虽加入小庭院和坐席，但书房底坪与新石地仍隔约40–70px纸色横缝，像两块独立浮片；必须上移bd2-gap05-court并实景复核。",
+      "issueIds": [
+        "C2-P1-COURT-TOO-LOW"
+      ],
+      "issueRegions": [
+        {
+          "issueId": "C2-P1-COURT-TOO-LOW",
+          "normalizedRect": [
+            0.64,
+            0.72,
+            0.22,
+            0.14
+          ]
+        }
+      ],
+      "beforeImage": "reports/blank-design/before/chapter-2-gap-05.jpg",
+      "beforeSha256": "20ec47971d8a3b48639d8cc7264fd3f9cc0894b323771a4f1cb13955d705ee63",
+      "beforeComparison": "同进度原stop/gap对照；before与先期已逐张目视的reconstruction/after同名图SHA完全相同，关键stop6/7与gap5/6本次重新目视。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.722000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "gap",
+      "index": 6,
+      "name": "春野静赏 → 静待盛唐",
+      "progress": 0.8853415766174901,
+      "image": "reports/blank-design/expanded-v2/chapter-2-gap-06.jpg",
+      "sha256": "3b194a3c9861107ec038664655b1d0fad01adb8cfdec0ad0d68e2a217cec9536",
+      "decision": "issue",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "原书斋向宴会的低位花径已可见，但左下外庭仅露竹栏角且与书房下口隔纸，需随gap05庭院上移一起复核。",
+      "issueIds": [
+        "C2-P1-COURT-TOO-LOW"
+      ],
+      "issueRegions": [
+        {
+          "issueId": "C2-P1-COURT-TOO-LOW",
+          "normalizedRect": [
+            0.025,
+            0.9,
+            0.35,
+            0.08
+          ]
+        }
+      ],
+      "beforeImage": "reports/blank-design/before/chapter-2-gap-06.jpg",
+      "beforeSha256": "3460bd368c8cd08cf1a4519648d8fc67a74fafa3185683a8e2ae48766377eefc",
+      "beforeComparison": "同进度原stop/gap对照；before与先期已逐张目视的reconstruction/after同名图SHA完全相同，关键stop6/7与gap5/6本次重新目视。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.885000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 1,
+      "name": "御苑春信 → 花出宫墙",
+      "progress": 0.04060319068926281,
+      "image": "reports/blank-design/expanded-v2/chapter-2-quarter-01.jpg",
+      "sha256": "6b439e70bb947a385cf9da9bf706a3c1615f9e0390e2db1e0db51944c653d039",
+      "decision": "pass",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "卷首题字移向左缘时仍清楚，岸线向右下延续，河岸/花市不再突然终止；上方开阔留白保留。",
+      "issueIds": [],
+      "issueRegions": [],
+      "beforeImage": null,
+      "beforeSha256": null,
+      "beforeComparison": "本轮额外1/4、3/4位置用于检查跨景接地；before未交付相同quarter截图。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.041000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 2,
+      "name": "御苑春信 → 花出宫墙",
+      "progress": 0.12180957206778843,
+      "image": "reports/blank-design/expanded-v2/chapter-2-quarter-02.jpg",
+      "sha256": "03d2f42e1d81717a0a8115df27c5d8175fb350b1a2096cde44a3bd3341b6a697",
+      "decision": "pass",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "低石岸将花市与桥下湖面连接为前后两岸，颜色轻于原主牡丹；未出现新增大人物或桥亭复制。",
+      "issueIds": [],
+      "issueRegions": [],
+      "beforeImage": null,
+      "beforeSha256": null,
+      "beforeComparison": "本轮额外1/4、3/4位置用于检查跨景接地；before未交付相同quarter截图。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.122000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 3,
+      "name": "花出宫墙 → 深宫独赏",
+      "progress": 0.20278036826224585,
+      "image": "reports/blank-design/expanded-v2/chapter-2-quarter-03.jpg",
+      "sha256": "84d8ad702cefc6543839ad1b2e48d20ca815a1b834e5217b7fc62d333ff002aa",
+      "decision": "pass",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "原花市/宫苑群像仍为主景，低岸在左下接到原花石；没有纸地露角或因退役纸底产生的硬切原图边。",
+      "issueIds": [],
+      "issueRegions": [],
+      "beforeImage": null,
+      "beforeSha256": null,
+      "beforeComparison": "本轮额外1/4、3/4位置用于检查跨景接地；before未交付相同quarter截图。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.203000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 4,
+      "name": "花出宫墙 → 深宫独赏",
+      "progress": 0.28351557927263504,
+      "image": "reports/blank-design/expanded-v2/chapter-2-quarter-04.jpg",
+      "sha256": "371502b48d08d45316cb0bc080763c5f927ee265d5faa0070ea3291d42cf1684",
+      "decision": "pass",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "人物、宫墙与花石的层次清楚，新增未压脸/衣摆；上半部保留天际气口。",
+      "issueIds": [],
+      "issueRegions": [],
+      "beforeImage": null,
+      "beforeSha256": null,
+      "beforeComparison": "本轮额外1/4、3/4位置用于检查跨景接地；before未交付相同quarter截图。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.284000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 5,
+      "name": "深宫独赏 → 私园初盛",
+      "progress": 0.3647704300456346,
+      "image": "reports/blank-design/expanded-v2/chapter-2-quarter-05.jpg",
+      "sha256": "97294bd5217f82b8d938eef2dcea1c0c1560ac743a9296afa0d6354224eb6794",
+      "decision": "pass",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "私园花石下口和新花径自然交叠，原纸底缺口缩为可呼吸的路心；没有整片石地遮挡公众群像。",
+      "issueIds": [],
+      "issueRegions": [],
+      "beforeImage": null,
+      "beforeSha256": null,
+      "beforeComparison": "本轮额外1/4、3/4位置用于检查跨景接地；before未交付相同quarter截图。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.365000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 6,
+      "name": "深宫独赏 → 私园初盛",
+      "progress": 0.44654492058124434,
+      "image": "reports/blank-design/expanded-v2/chapter-2-quarter-06.jpg",
+      "sha256": "b0cec57b3104c44579a145887d31ea0a266680f6f8c7e2708d14053782d30fd8",
+      "decision": "pass",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "新春花径在私园屋檐/花石下方承接，低对比且没有铺成高墙，原水道与园门可辨。",
+      "issueIds": [],
+      "issueRegions": [],
+      "beforeImage": null,
+      "beforeSha256": null,
+      "beforeComparison": "本轮额外1/4、3/4位置用于检查跨景接地；before未交付相同quarter截图。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.447000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 7,
+      "name": "私园初盛 → 宫苑雅宴",
+      "progress": 0.5279689809919574,
+      "image": "reports/blank-design/expanded-v2/chapter-2-quarter-07.jpg",
+      "sha256": "8cfc6f8bbe44178a0570550e10c4cd24cd3e654dc0462827522f4304e71e0dee",
+      "decision": "pass",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "碧水与私园为本景结构，新卡未抢走游观中心；右上人物轮廓周围的留白保留。",
+      "issueIds": [],
+      "issueRegions": [],
+      "beforeImage": null,
+      "beforeSha256": null,
+      "beforeComparison": "本轮额外1/4、3/4位置用于检查跨景接地；before未交付相同quarter截图。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.528000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 8,
+      "name": "私园初盛 → 宫苑雅宴",
+      "progress": 0.609042611277774,
+      "image": "reports/blank-design/expanded-v2/chapter-2-quarter-08.jpg",
+      "sha256": "5c5b80db82fe45fbdd581f65c4370fc5a7ef29de0aaf960407a90f6325a00a77",
+      "decision": "pass",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "雅宴人物与牡丹保持丰润但不新增密集群像，新路径只是左下底角收边；上方远山天际仍有呼吸。",
+      "issueIds": [],
+      "issueRegions": [],
+      "beforeImage": null,
+      "beforeSha256": null,
+      "beforeComparison": "本轮额外1/4、3/4位置用于检查跨景接地；before未交付相同quarter截图。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.609000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 9,
+      "name": "宫苑雅宴 → 春野静赏",
+      "progress": 0.6857498619258454,
+      "image": "reports/blank-design/expanded-v2/chapter-2-quarter-09.jpg",
+      "sha256": "0686fa42aba8d0b0110e4267c33de17300c53f72b782306dd27d55821215d7fc",
+      "decision": "issue",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "右侧书房悬于上方，坐席院地偏下，两者之间仍是宽纸缝；应以同一庭院层上移连接，不加第二间书房。",
+      "issueIds": [
+        "C2-P1-COURT-TOO-LOW"
+      ],
+      "issueRegions": [
+        {
+          "issueId": "C2-P1-COURT-TOO-LOW",
+          "normalizedRect": [
+            0.79,
+            0.66,
+            0.17,
+            0.19
+          ]
+        }
+      ],
+      "beforeImage": null,
+      "beforeSha256": null,
+      "beforeComparison": "本轮额外1/4、3/4位置用于检查跨景接地；before未交付相同quarter截图。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.686000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 10,
+      "name": "宫苑雅宴 → 春野静赏",
+      "progress": 0.7580907329361719,
+      "image": "reports/blank-design/expanded-v2/chapter-2-quarter-10.jpg",
+      "sha256": "4917733b701183544ccef3193320481ad235c95ce437db9a03756325964c39d3",
+      "decision": "issue",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "原书房与左侧雅宴两块主体间，底部新庭院未搭上原书房石坪，竹栏/石地只贴下沿；需上移既有层后复验。",
+      "issueIds": [
+        "C2-P1-COURT-TOO-LOW"
+      ],
+      "issueRegions": [
+        {
+          "issueId": "C2-P1-COURT-TOO-LOW",
+          "normalizedRect": [
+            0.54,
+            0.81,
+            0.21,
+            0.15
+          ]
+        }
+      ],
+      "beforeImage": null,
+      "beforeSha256": null,
+      "beforeComparison": "本轮额外1/4、3/4位置用于检查跨景接地；before未交付相同quarter截图。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.758000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 11,
+      "name": "春野静赏 → 静待盛唐",
+      "progress": 0.8398013725294127,
+      "image": "reports/blank-design/expanded-v2/chapter-2-quarter-11.jpg",
+      "sha256": "02017b18b9af00049cbc8e5fda332775ac4dc0f38dc5c4f0a751bcb7bf92fdbe",
+      "decision": "issue",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "右侧大花树与卷尾宴亭之间仍有无地面的竖向楔口，新增stop06庭角只在下边见细节，需适度上移接住树根/后院，保留上方气口。",
+      "issueIds": [
+        "C2-P1-STOP6-EDGE-TOO-LOW"
+      ],
+      "issueRegions": [
+        {
+          "issueId": "C2-P1-STOP6-EDGE-TOO-LOW",
+          "normalizedRect": [
+            0.8,
+            0.66,
+            0.09,
+            0.25
+          ]
+        }
+      ],
+      "beforeImage": null,
+      "beforeSha256": null,
+      "beforeComparison": "本轮额外1/4、3/4位置用于检查跨景接地；before未交付相同quarter截图。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.840000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 12,
+      "name": "春野静赏 → 静待盛唐",
+      "progress": 0.9308817807055677,
+      "image": "reports/blank-design/expanded-v2/chapter-2-quarter-12.jpg",
+      "sha256": "e7a1644869a466fe228fb3c2042199669b56abca0165ebad461888c38846fad3",
+      "decision": "issue",
+      "reviewMethod": "view_image逐张全尺寸目视；非仅contact sheet或覆盖率判断",
+      "observation": "书房左移出画时，新外庭在左下但与原书房地坪隔纸；低花径与右侧宴亭总体可读，需随主庭院位置修正复核左下承托。",
+      "issueIds": [
+        "C2-P1-COURT-TOO-LOW"
+      ],
+      "issueRegions": [
+        {
+          "issueId": "C2-P1-COURT-TOO-LOW",
+          "normalizedRect": [
+            0.025,
+            0.79,
+            0.22,
+            0.16
+          ]
+        }
+      ],
+      "beforeImage": null,
+      "beforeSha256": null,
+      "beforeComparison": "本轮额外1/4、3/4位置用于检查跨景接地；before未交付相同quarter截图。",
+      "renderer": {
+        "chapter": "2",
+        "progress": "0.931000",
+        "artAddedLayers": "33",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "queuedTextures": "0"
+      }
+    }
+  ],
+  "originalRegionClosures": [
+    {
+      "regionId": "c2-stop-01-r01",
+      "originalDecision": "supplement",
+      "decision": "resolved-in-static-views",
+      "evidenceViews": [
+        "stop-01"
+      ],
+      "note": "原相应裸底有低位水岸/花径承接，未见新硬边。"
+    },
+    {
+      "regionId": "c2-stop-01-r02",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "stop-01"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-stop-01-r03",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "stop-01"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-stop-02-r01",
+      "originalDecision": "supplement",
+      "decision": "resolved-in-static-views",
+      "evidenceViews": [
+        "stop-02"
+      ],
+      "note": "原相应裸底有低位水岸/花径承接，未见新硬边。"
+    },
+    {
+      "regionId": "c2-stop-02-r02",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "stop-02"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-stop-02-r03",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "stop-02"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-stop-03-r01",
+      "originalDecision": "supplement",
+      "decision": "resolved-in-static-views",
+      "evidenceViews": [
+        "stop-03"
+      ],
+      "note": "原相应裸底有低位水岸/花径承接，未见新硬边。"
+    },
+    {
+      "regionId": "c2-stop-03-r02",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "stop-03"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-stop-04-r01",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "stop-04"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-stop-04-r02",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "stop-04"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-stop-05-r01",
+      "originalDecision": "supplement",
+      "decision": "partial-needs-position-fix",
+      "evidenceViews": [
+        "stop-05"
+      ],
+      "note": "见两条P1；新增已出现但接地未闭环。"
+    },
+    {
+      "regionId": "c2-stop-05-r02",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "stop-05"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-stop-06-r01",
+      "originalDecision": "supplement",
+      "decision": "partial-needs-position-fix",
+      "evidenceViews": [
+        "stop-06"
+      ],
+      "note": "见两条P1；新增已出现但接地未闭环。"
+    },
+    {
+      "regionId": "c2-stop-06-r02",
+      "originalDecision": "supplement",
+      "decision": "partial-needs-position-fix",
+      "evidenceViews": [
+        "stop-06"
+      ],
+      "note": "见两条P1；新增已出现但接地未闭环。"
+    },
+    {
+      "regionId": "c2-stop-06-r03",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "stop-06"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-stop-06-r04",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "stop-06"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-stop-07-r01",
+      "originalDecision": "repair_existing",
+      "decision": "resolved-in-static-views",
+      "evidenceViews": [
+        "stop-07"
+      ],
+      "note": "硬矩形由显式退役纸地消除。"
+    },
+    {
+      "regionId": "c2-stop-07-r02",
+      "originalDecision": "supplement",
+      "decision": "resolved-in-static-views",
+      "evidenceViews": [
+        "stop-07"
+      ],
+      "note": "原相应裸底有低位水岸/花径承接，未见新硬边。"
+    },
+    {
+      "regionId": "c2-stop-07-r03",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "stop-07"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-stop-07-r04",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "stop-07"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-gap-01-r01",
+      "originalDecision": "supplement",
+      "decision": "resolved-in-static-views",
+      "evidenceViews": [
+        "gap-01"
+      ],
+      "note": "原相应裸底有低位水岸/花径承接，未见新硬边。"
+    },
+    {
+      "regionId": "c2-gap-01-r02",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "gap-01"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-gap-02-r01",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "gap-02"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-gap-02-r02",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "gap-02"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-gap-03-r01",
+      "originalDecision": "supplement",
+      "decision": "resolved-in-static-views",
+      "evidenceViews": [
+        "gap-03"
+      ],
+      "note": "原相应裸底有低位水岸/花径承接，未见新硬边。"
+    },
+    {
+      "regionId": "c2-gap-03-r02",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "gap-03"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-gap-04-r01",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "gap-04"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-gap-04-r02",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "gap-04"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-gap-05-r01",
+      "originalDecision": "supplement",
+      "decision": "partial-needs-position-fix",
+      "evidenceViews": [
+        "gap-05"
+      ],
+      "note": "见两条P1；新增已出现但接地未闭环。"
+    },
+    {
+      "regionId": "c2-gap-05-r02",
+      "originalDecision": "supplement",
+      "decision": "partial-needs-position-fix",
+      "evidenceViews": [
+        "gap-05"
+      ],
+      "note": "见两条P1；新增已出现但接地未闭环。"
+    },
+    {
+      "regionId": "c2-gap-05-r03",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "gap-05"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    },
+    {
+      "regionId": "c2-gap-06-r01",
+      "originalDecision": "supplement",
+      "decision": "partial-needs-position-fix",
+      "evidenceViews": [
+        "gap-06"
+      ],
+      "note": "见两条P1；新增已出现但接地未闭环。"
+    },
+    {
+      "regionId": "c2-gap-06-r02",
+      "originalDecision": "supplement",
+      "decision": "partial-needs-position-fix",
+      "evidenceViews": [
+        "gap-06"
+      ],
+      "note": "见两条P1；新增已出现但接地未闭环。"
+    },
+    {
+      "regionId": "c2-gap-06-r03",
+      "originalDecision": "retain",
+      "decision": "preserved",
+      "evidenceViews": [
+        "gap-06"
+      ],
+      "note": "原明确保留的题字/天际/轮廓/卷尾气口仍保留。"
+    }
+  ],
+  "proposedNextVersionChanges": [
+    {
+      "layerId": "bd2-gap05-court",
+      "field": "y",
+      "before": -0.37,
+      "after": -0.22
+    },
+    {
+      "layerId": "bd2-stop06-edge",
+      "field": "y",
+      "before": -0.3,
+      "after": -0.2
+    }
+  ],
+  "limitations": [
+    "这里只是当前d0da5b55候选的实景审查；不是下一版参数的视觉验收。",
+    "画心截图不含全UI；题签是否被新增图遮挡可以目视，响应式/交互/实际World背景需独立验证。",
+    "未见新硬切只覆盖25个静态点；连续轨迹还需根线程runtime验证。"
+  ],
+  "layoutChangesAfterReview": {
+    "status": "parameters-adjusted-not-built-or-captured",
+    "changes": [
+      {
+        "layerId": "bd2-gap05-court",
+        "field": "y",
+        "before": -0.37,
+        "after": -0.22
+      },
+      {
+        "layerId": "bd2-stop06-edge",
+        "field": "y",
+        "before": -0.3,
+        "after": -0.2
+      }
+    ],
+    "canonicalStillAt": "d0da5b557efacc09db17c51f4faeea8681c301d7584a5b1b60d508219a719c2c",
+    "otherChapterPayloadsPreserved": true,
+    "finalReviewExpectedAt": "reports/blank-design/expanded-v3/visual-review-chapter-2.json"
+  }
+}

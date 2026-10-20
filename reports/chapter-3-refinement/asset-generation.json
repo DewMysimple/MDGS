@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "status": "three-directed-edits-generated-and-reviewed",
+  "date": "2026-10-20",
+  "skill": "C:/Users/Administrator/.codex/skills/.system/imagegen/SKILL.md",
+  "toolMode": "built-in only; no CLI/API runner",
+  "scope": "Source files read-only. Each edit references its original WebP. Generated PNGs copied verbatim from tool output. No Python painting, fading, or pixel modification. Production padding/conversion and runtime integration delegated to root.",
+  "iterations": 1,
+  "entries": [
+    {
+      "id": "marriage-stage",
+      "status": "generated-and-visually-reviewed",
+      "input": "public/assets/chapter-3/textures/e03e5d2e5d7c3372.webp",
+      "output": "artwork/chapter-3-refinement/raw/marriage-stage.png",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in-edit",
+      "transparentBackground": true,
+      "prompt": "Use case: precise-object-edit. Asset type: transparent painted 2.5D layer for a Chinese handscroll. Image 1 is the EDIT TARGET, not a loose style reference. Repair ONLY the abrupt left and right outer ends of this ultrawide palace-room stage. Preserve the existing central peony-and-crane folding wall, all columns, hanging tassels, drapery, railings, incense furniture, stone floor, perspective, scale, detailed gongbi brushwork, muted jade green / cinnabar red / antique gold palette. No people are in this target: do not add any. Extend the canvas a small amount sideways and finish BOTH ends as believable complete silhouettes: complete the terminal railing/column and turn the stone edge into a short irregular stone/plant ending with finely drawn natural contours. No vertical rectangular truncation at either outer edge. Keep the whole current stage visible, all structural tips intact, with a small transparent safety margin around the entire cutout. The composition remains very wide and low; do not build new roofs or tall objects above the current design. Do not add text, seals, extra furniture, new scene subjects, clouds, mist, big soft fades, opaque paper background, checkerboard painting, border, or watermark. Actual RGBA transparent background, retaining crisp artwork and naturally detailed edge contours.",
+      "toolResultPath": "C:/Users/Administrator/.codex/generated_images/01a15743-c43f-7ca2-86a9-6a9d2030025a/exec-bd87aa16-12e0-41aa-b99c-aef96a733b66.png",
+      "size": [
+        2172,
+        724
+      ],
+      "visualReview": "Both former vertical terminations repaired as full natural stone/tree/railing ends. Central peony-and-crane palace stage retained. No people/text added. No broad fog or opaque backdrop. RGBA transparency verified; alpha>=16 content bbox [8,79,2168,619].",
+      "outputSha256": "1b2c2835508519767fe5f4053e3444703887e4a7d22f87802ded1c1d58b786b6",
+      "inputSha256": "9f9815529cba450dc73b5dcb4c53b662dacdd2aa094cdd911dfd8e64e913f5f4",
+      "rgbaVerified": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBBox": [
+        0,
+        47,
+        2172,
+        724
+      ],
+      "alpha16BBox": [
+        8,
+        79,
+        2168,
+        619
+      ],
+      "copiedVerbatimFromTool": true,
+      "fullSizeViewVerified": true
+    },
+    {
+      "id": "procession",
+      "status": "generated-and-visually-reviewed",
+      "input": "public/assets/chapter-3/textures/f37e3725a4c7d197.webp",
+      "output": "artwork/chapter-3-refinement/raw/procession.png",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in-edit",
+      "transparentBackground": true,
+      "prompt": "Use case: precise-object-edit. Asset type: transparent painted 2.5D layer for a Chinese handscroll. Image 1 is the EDIT TARGET. Repair ONLY its abrupt RIGHT outer boundary. Keep the existing wedding procession, every existing person's identity, pose, clothing and placement, red ceremonial banners, ornate bronze incense burner in the right foreground, palace roofs, stone balustrade, red-leaf trees, perspective and gongbi detail unchanged. Keep the current antique muted jade/cinnabar/gold painting style. Extend the canvas slightly to the right and complete the currently cut-off right-hand incense burner, the balustrade end, and the terminal roof/tree/stone contours so they come to believable full ends. The repaired right contour must be irregular painted detail surrounded by actual transparent pixels, never one vertical rectangular edge. Keep the complete composition and all people/objects visible with a small transparent safety margin all around; do not crop away any existing person or banner, do not rearrange the scene. No new people, new banners, new tall structures, text, seals, giant flowers, fog, generic haze, blur veil, opaque paper background, checkerboard painting, border or watermark. Preserve existing fine atmospheric paint where already present, but solve the cut through real object completion, not opacity fading. Actual RGBA transparent background.",
+      "toolResultPath": "C:/Users/Administrator/.codex/generated_images/01a15743-c43f-7ca2-86a9-6a9d2030025a/exec-34b33296-a9f9-4e88-b1fb-eec954f62501.png",
+      "size": [
+        1689,
+        931
+      ],
+      "visualReview": "Former tall straight right cut replaced by full incense burner, railing termination and detailed irregular trees/roofs/stones. Existing procession and palette retained; no new subject/text or fog. Content alpha>=16 bbox [11,8,1688,929]. No pixel-identical preservation claim is made for a generative edit.",
+      "outputSha256": "6de04e55a5c27d3528dd4bc9a2d5390c59b813d1d7ca044d76664c05a1fbb2d4",
+      "inputSha256": "3255d6dbfa4f2a37d791fb8dd5a8795b12005d5687759ab81874631e90f961d1",
+      "rgbaVerified": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBBox": [
+        0,
+        0,
+        1689,
+        931
+      ],
+      "alpha16BBox": [
+        11,
+        8,
+        1688,
+        929
+      ],
+      "copiedVerbatimFromTool": true,
+      "fullSizeViewVerified": true
+    },
+    {
+      "id": "snow-street",
+      "status": "generated-and-visually-reviewed",
+      "input": "public/assets/chapter-3/textures/3518a8dbd9573481.webp",
+      "output": "artwork/chapter-3-refinement/raw/snow-street.png",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in-edit",
+      "transparentBackground": true,
+      "prompt": "Use case: precise-object-edit. Asset type: transparent painted 2.5D layer for a Chinese handscroll. Image 1 is the EDIT TARGET. Repair ONLY the abrupt LEFT outer cut of this snowy Chinese lantern street. Preserve the current complete street scene: existing people and their clothing/positions, warmly glowing red lanterns, every tiled roof and wooden shop facade, snow-covered steps and balustrades, white flowering trees, distant hilltop pagoda, perspective, antique gongbi painting detail and muted jade/cinnabar/gold colors. Extend the canvas slightly left and finish the cut-off left-hand flowering branches, small roof eaves, snow-covered stone railing and stair/rock edge as believable complete natural contours. The left silhouette must meander around individually drawn twigs, roof tips, snow and stones; no long vertical wall of opacity and no straight rectangular crop. Complete all currently visible subjects, do not cut anyone or remove original objects, and leave a narrow clear transparent margin around the whole artwork. Keep the scene at its current height; do not add more architecture at the top. Do not add people, flowers beyond the existing small boundary continuation, text, seals, extra banners, blue fog, mist veil, broad edge blur, opaque paper, painted checkerboard, border or watermark. Actual RGBA transparent background, with crisp detailed linework at the repaired edge rather than generic fading.",
+      "toolResultPath": "C:/Users/Administrator/.codex/generated_images/01a15743-c43f-7ca2-86a9-6a9d2030025a/exec-d2cb7024-a308-4944-9550-81cde0b47f61.png",
+      "size": [
+        1198,
+        1313
+      ],
+      "visualReview": "Left vertical cut now ends through individually drawn flowering branches, snow-covered roof/stone/stair contours. Warm lantern street and existing people retained; no additional tall architecture or opaque backdrop. Content alpha>=16 bbox [11,9,1190,1302]. No pixel-identical preservation claim is made for a generative edit.",
+      "outputSha256": "d51fbf9a1155e319ac32fd2728b959bed58e8558103eed98083a9c536c97c752",
+      "inputSha256": "ba0d718ca2765dee8a57d00ada3b04baae6837511ee7198d83be590670671e95",
+      "rgbaVerified": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBBox": [
+        0,
+        0,
+        1198,
+        1313
+      ],
+      "alpha16BBox": [
+        11,
+        9,
+        1190,
+        1302
+      ],
+      "copiedVerbatimFromTool": true,
+      "fullSizeViewVerified": true
+    }
+  ]
+}

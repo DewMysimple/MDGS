@@ -1,0 +1,829 @@
+{
+  "schemaVersion": 1,
+  "status": "verified-visible-new-layers",
+  "chapter": 4,
+  "blend": "artwork/blender-blank-design/chapter-4_reconstructed.blend",
+  "manifest": "reports/blank-design/pilot-v4/manifest.json",
+  "reconstructionReport": "reports/blank-design/blender/blender-reconstruction-chapter-4.json",
+  "sourceSceneJson": "public/assets/chapter-4/scene.json",
+  "inputHashesBefore": {
+    "blend": "55c9894d97285f784c2bd5742217d30d9993aca665ad1c90385ec532425b880b",
+    "manifest": "c7b593102bd8f43fd7438413b34782b64d00788f4e6d87dd3f69682ba6b81a54"
+  },
+  "startedAt": "2026-10-20T00:48:34.828011+00:00",
+  "settings": {
+    "width": 1388,
+    "height": 476,
+    "engine": "CYCLES",
+    "device": "CPU",
+    "samples": 8,
+    "transparentMaxBounces": 128,
+    "threads": 6
+  },
+  "anchorSource": "Frozen manifest addedLayers[].anchorFrame and blankDesign.gap; stable object names verified against saved reconstruction report.",
+  "frames": [
+    {
+      "gap": 2,
+      "anchorFrame": 1035.6525168390983,
+      "progress": 0.18694179468504998,
+      "newLayers": [
+        {
+          "id": "bd4-gap02-water",
+          "name": "CH04_NEW_bd4-gap02-water_BD4_02_花池曲岸",
+          "asset": "assets/blank-design/chapter-4/bd4-garden-water.webp",
+          "opacity": 0.94
+        }
+      ],
+      "image": "reports/blank-design/blender/preview/chapter-4-gap-02.png",
+      "sha256": "aac91dfd7b28bd38ccc2fd288b92feffa80b04b2df0f7cec1467603ce022f14c",
+      "renderSeconds": 2.922,
+      "camera": {
+        "evaluatedOriginalFrame": 1035.6525168390983,
+        "position": [
+          -49.99720764160156,
+          -125.90434265136719,
+          10.79908561706543
+        ],
+        "quaternionWxyz": [
+          0.4979742765426636,
+          0.4921547472476959,
+          -0.5019028782844543,
+          -0.5078375935554504
+        ],
+        "fovYDegrees": 25.6527518,
+        "projectionY": 4.392156600952148,
+        "sourcePoseCopiedWithoutConstraints": true
+      },
+      "visualReview": {
+        "status": "passed-visible-new-layers",
+        "reviewedWithViewImage": true,
+        "reviewedAtFullSize": [
+          1388,
+          476
+        ],
+        "observation": "新增浅水、左右曲岸/花石均实际显示，连接原栏角与石桥花园。水面边缘自然，透明图没有变成实色矩形；上方纸底仍可见。原Blender FONT在画面右上可见，属于保留原可编辑文字，与网页隐藏原FONT后显示HTML题签的策略不同。",
+        "newLayersVisible": true,
+        "paperOcclusionMissingNewLayerSeen": false,
+        "alphaLostOrOpaqueRectangleSeen": false,
+        "newObjectGroundingAcceptableAtPreview": true,
+        "postProcessingApplied": false
+      }
+    },
+    {
+      "gap": 5,
+      "anchorFrame": 2811.6455821968384,
+      "progress": 0.5627683041664124,
+      "newLayers": [
+        {
+          "id": "bd4-gap05-pavilion",
+          "name": "CH04_NEW_bd4-gap05-pavilion_BD4_05_空亭疏岸",
+          "asset": "assets/blank-design/chapter-4/bd4-empty-pavilion.webp",
+          "opacity": 0.92
+        }
+      ],
+      "image": "reports/blank-design/blender/preview/chapter-4-gap-05.png",
+      "sha256": "9532e0ff84fcefff133c0c487ed72a0c69cf2fb667ece425319e8f1f1c5e35d2",
+      "renderSeconds": 2.781,
+      "camera": {
+        "evaluatedOriginalFrame": 2811.6455821968384,
+        "position": [
+          -49.99761199951172,
+          -377.89654541015625,
+          10.79911994934082
+        ],
+        "quaternionWxyz": [
+          0.497974157333374,
+          0.49215465784072876,
+          -0.5019029378890991,
+          -0.5078375935554504
+        ],
+        "fovYDegrees": 25.6527518,
+        "projectionY": 4.392156600952148,
+        "sourcePoseCopiedWithoutConstraints": true
+      },
+      "visualReview": {
+        "status": "passed-visible-new-layers",
+        "reviewedWithViewImage": true,
+        "reviewedAtFullSize": [
+          1388,
+          476
+        ],
+        "observation": "完整无人空亭、石基、连续短岸与局部水纹真实可见，未被纸幕吞没；淡色alpha/opacity保持，左右原兵马与回忆湖苑仍在，不新增盛宴。",
+        "newLayersVisible": true,
+        "paperOcclusionMissingNewLayerSeen": false,
+        "alphaLostOrOpaqueRectangleSeen": false,
+        "newObjectGroundingAcceptableAtPreview": true,
+        "postProcessingApplied": false
+      }
+    },
+    {
+      "gap": 7,
+      "anchorFrame": 3843.743058439426,
+      "progress": 0.8119290378398627,
+      "newLayers": [
+        {
+          "id": "bd4-gap07-shore",
+          "name": "CH04_NEW_bd4-gap07-shore_BD4_07_低汀浅水",
+          "asset": "assets/blank-design/chapter-4/bd4-quiet-water.webp",
+          "opacity": 0.78
+        },
+        {
+          "id": "bd4-gap07-relic",
+          "name": "CH04_NEW_bd4-gap07-relic_BD4_07_空案诗卷",
+          "asset": "assets/blank-design/chapter-4/bd4-scroll-relic.webp",
+          "opacity": 0.92
+        }
+      ],
+      "image": "reports/blank-design/blender/preview/chapter-4-gap-07.png",
+      "sha256": "fc74fe4d34cd6113fb8d05425d3acb535ff49c6f46ff68eadc384323dc5adf67",
+      "renderSeconds": 2.64,
+      "camera": {
+        "evaluatedOriginalFrame": 3843.743058439426,
+        "position": [
+          -49.99726104736328,
+          -545.9820556640625,
+          10.799102783203125
+        ],
+        "quaternionWxyz": [
+          0.4979746639728546,
+          0.49215465784072876,
+          -0.5019024014472961,
+          -0.5078376531600952
+        ],
+        "fovYDegrees": 25.6527518,
+        "projectionY": 4.392156600952148,
+        "sourcePoseCopiedWithoutConstraints": true
+      },
+      "visualReview": {
+        "status": "passed-visible-new-layers",
+        "reviewedWithViewImage": true,
+        "reviewedAtFullSize": [
+          1388,
+          476
+        ],
+        "observation": "新低浅水、石汀和独立空卷诗案均显示，案足落在可见石面；原两游离小花团未回现，原牡丹与盛衰画组保持，透纸和自然外缘成立。",
+        "newLayersVisible": true,
+        "paperOcclusionMissingNewLayerSeen": false,
+        "alphaLostOrOpaqueRectangleSeen": false,
+        "newObjectGroundingAcceptableAtPreview": true,
+        "postProcessingApplied": false
+      }
+    }
+  ],
+  "blendSaved": false,
+  "comparisonBoundary": "Actual read-only Blender renders, not pixel-identical Web screenshots. Original camera evaluated pose is preserved; original Principled leaves are unlit in memory, procedural materials and depth handling may differ.",
+  "blenderVersion": "5.0.0",
+  "sourceCamera": "CAM · 长卷主摄像机 · 朝+X",
+  "temporaryUnlitConversion": {
+    "convertedPrincipledLeaves": [
+      {
+        "materialOrGroup": "05_字幕替换意境山水",
+        "originalNode": "原理化 BSDF",
+        "colorSource": "original-link",
+        "alphaSource": "original-link",
+        "outgoingShaderDestinationsPreserved": 1
+      },
+      {
+        "materialOrGroup": "07_head_screen",
+        "originalNode": "原理化 BSDF",
+        "colorSource": "original-link",
+        "alphaSource": "original-link",
+        "outgoingShaderDestinationsPreserved": 1
+      },
+      {
+        "materialOrGroup": "07_红青飘带组合",
+        "originalNode": "原理化 BSDF",
+        "colorSource": "original-link",
+        "alphaSource": "original-link",
+        "outgoingShaderDestinationsPreserved": 1
+      },
+      {
+        "materialOrGroup": "08_head_peony_spray",
+        "originalNode": "原理化 BSDF",
+        "colorSource": "original-link",
+        "alphaSource": "original-link",
+        "outgoingShaderDestinationsPreserved": 1
+      },
+      {
+        "materialOrGroup": "08_右侧远景花园",
+        "originalNode": "原理化 BSDF",
+        "colorSource": "original-link",
+        "alphaSource": "original-link",
+        "outgoingShaderDestinationsPreserved": 1
+      },
+      {
+        "materialOrGroup": "09_右侧近景花栏",
+        "originalNode": "原理化 BSDF",
+        "colorSource": "original-link",
+        "alphaSource": "original-link",
+        "outgoingShaderDestinationsPreserved": 1
+      },
+      {
+        "materialOrGroup": "RECON_c4-t008_微信图片_20261018221025_441_1685",
+        "originalNode": "原理化 BSDF",
+        "colorSource": "original-link",
+        "alphaSource": "original-link",
+        "outgoingShaderDestinationsPreserved": 1
+      },
+      {
+        "materialOrGroup": "RECON_EDGE_c4-t005-primary-region-edge_05_字幕替换意境山水",
+        "originalNode": "原理化 BSDF",
+        "colorSource": "original-link",
+        "alphaSource": "original-link",
+        "outgoingShaderDestinationsPreserved": 1
+      },
+      {
+        "materialOrGroup": "RECON_EDGE_c4-t007-微信图片_20261018213717_423_1685-region-edge_RECON_c4-t007_微信图片_20261018213717_423_1685",
+        "originalNode": "原理化 BSDF",
+        "colorSource": "original-link",
+        "alphaSource": "original-link",
+        "outgoingShaderDestinationsPreserved": 1
+      },
+      {
+        "materialOrGroup": "微信图片_20261018213717_423_1685",
+        "originalNode": "原理化 BSDF",
+        "colorSource": "original-link",
+        "alphaSource": "original-link",
+        "outgoingShaderDestinationsPreserved": 1
+      },
+      {
+        "materialOrGroup": "微信图片_20261018221025_441_1685",
+        "originalNode": "原理化 BSDF",
+        "colorSource": "original-link",
+        "alphaSource": "original-link",
+        "outgoingShaderDestinationsPreserved": 1
+      }
+    ],
+    "originalLinkChecks": [
+      {
+        "materialOrGroup": "05_字幕替换意境山水",
+        "retainedOriginalLinks": 2,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "07_head_screen",
+        "retainedOriginalLinks": 2,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "07_红青飘带组合",
+        "retainedOriginalLinks": 2,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "08_head_peony_spray",
+        "retainedOriginalLinks": 2,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "08_右侧远景花园",
+        "retainedOriginalLinks": 2,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "09_右侧近景花栏",
+        "retainedOriginalLinks": 2,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_bd4-gap01-bank_BD4_01_苑岸短栏",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_bd4-gap02-water_BD4_02_花池曲岸",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_bd4-gap03-poetry_BD4_03_诗案香炉",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_bd4-gap03-terrace_BD4_03_宫苑低阶台",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_bd4-gap04-terrace_BD4_04_宴后低阶",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_bd4-gap05-pavilion_BD4_05_空亭疏岸",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_bd4-gap06-lamp_BD4_06_孤灯",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_bd4-gap06-shore_BD4_06_疏岸残花",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_bd4-gap07-relic_BD4_07_空案诗卷",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_bd4-gap07-shore_BD4_07_低汀浅水",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_bd4-gap08-lamp_BD4_08_余韵孤灯",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_bd4-gap08-shore_BD4_08_卷尾淡水口",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-mist-01_R4_Mist_Bridge_01",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-mist-02_R4_Mist_Bridge_02",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-mist-03_R4_Mist_Bridge_03",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-mist-04_R4_Mist_Bridge_04",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-mist-05_R4_Mist_Bridge_05",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-mist-06_R4_Mist_Bridge_06",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-mist-07_R4_Mist_Bridge_07",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-mist-08_R4_Mist_Bridge_08",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-petal-01_1_R4_Petal_01_1",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-petal-01_2_R4_Petal_01_2",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-petal-02_1_R4_Petal_02_1",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-petal-02_2_R4_Petal_02_2",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-petal-03_1_R4_Petal_03_1",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-petal-03_2_R4_Petal_03_2",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-petal-04_1_R4_Petal_04_1",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-petal-04_2_R4_Petal_04_2",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-petal-05_1_R4_Petal_05_1",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-petal-05_2_R4_Petal_05_2",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-petal-06_1_R4_Petal_06_1",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-petal-06_2_R4_Petal_06_2",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-petal-07_1_R4_Petal_07_1",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-petal-07_2_R4_Petal_07_2",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-petal-08_1_R4_Petal_08_1",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-petal-08_2_R4_Petal_08_2",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-petal-09_1_R4_Petal_09_1",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-petal-09_2_R4_Petal_09_2",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-ridge-01_R4_Distant_Ridge_01",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-ridge-02_R4_Distant_Ridge_02",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-ridge-03_R4_Distant_Ridge_03",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-ridge-04_R4_Distant_Ridge_04",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-ridge-05_R4_Distant_Ridge_05",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-ridge-06_R4_Distant_Ridge_06",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-ridge-07_R4_Distant_Ridge_07",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_NEW_r4-ridge-08_R4_Distant_Ridge_08",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_TEXT_c4-t011-readable-caption_人花合一_墨色",
+        "retainedOriginalLinks": 1,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "CH04_TEXT_c4-t048-readable-caption_千古兴衰_墨色",
+        "retainedOriginalLinks": 1,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "RECON_c4-t008_微信图片_20261018221025_441_1685",
+        "retainedOriginalLinks": 2,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "RECON_c4-t020_4-3 · 02 · 沉香亭",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "RECON_c4-t027_4-5 · 01 · 兵马山峦红日",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "RECON_c4-t029_4-6 · 06 · 桌案花木",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "RECON_EDGE_c4-t005-primary-region-edge_05_字幕替换意境山水",
+        "retainedOriginalLinks": 10,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "RECON_EDGE_c4-t007-微信图片_20261018213717_423_1685-region-edge_RECON_c4-t007_微信图片_20261018213717_423_1685",
+        "retainedOriginalLinks": 20,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "云气 · 绢白透明边",
+        "retainedOriginalLinks": 11,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-1 · 01_text_palace",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-1 · 02_lady",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-1 · 03_market",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-1 · 04_upper_right_scene",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-2 · 01_仕女完整立绘",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-2 · 07_左下牡丹花丛",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-3 · 01_左侧园林石桥花木",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-3 · 02_中央老者",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-3 · 03_中央女子",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-3 · 04_右侧人物书案组",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-3 · 05_底部牡丹花枝",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-3 · 06_右上沉香亭",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-4 · 01_main_noblewoman",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-4 · 02_left_peony",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-4 · 04_upper_palace_panorama",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-4 · 05_lower_peony_lacquer",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-4 · 06_lower_right_censer_scene",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-5 · 01_前景人物花簇",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-5 · 03_左上暗处双女性",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-5 · 04_右侧兵马山峦红日",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-6 · 01_上方仙境群像",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-6 · 03_完整仕女",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-6 · 04_下方桌案花木",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-6 · 05_远景建筑与湖面",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-6 · 06_湖边栅栏",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-7 · 01_左侧人物与飘带",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-7 · 02_前景牡丹花簇",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-7 · 03_右侧人物与飘带衣袍",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-7 · 04_左上人物后景",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-7 · 05_右侧人物后景",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-8 · 01-牡丹花簇",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-8 · 02-人物与书案",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-8 · 03-山水城景",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-9 · 01_左上宫灯市集",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-9 · 02_左侧仕女",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-9 · 03_上方题字纸片",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-9 · 05_左下牡丹与飘带",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-9 · 06_右侧仕女与飘带",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-9 · 07_右下牡丹花枝",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "原画 · 4-9 · 08_右侧中部残败景象",
+        "retainedOriginalLinks": 6,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "墨 · 赭黑",
+        "retainedOriginalLinks": 1,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "微信图片_20261018213717_423_1685",
+        "retainedOriginalLinks": 2,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "微信图片_20261018221025_441_1685",
+        "retainedOriginalLinks": 2,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "绢本 · 连续纸纹底色",
+        "retainedOriginalLinks": 4,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "远山淡墨 · 冷青",
+        "retainedOriginalLinks": 11,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "远山淡墨 · 暖青",
+        "retainedOriginalLinks": 11,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "金 · 淡金线",
+        "retainedOriginalLinks": 1,
+        "missingOriginalNonPrincipledLinks": 0
+      },
+      {
+        "materialOrGroup": "题字留白 · 绢本",
+        "retainedOriginalLinks": 11,
+        "missingOriginalNonPrincipledLinks": 0
+      }
+    ],
+    "alreadyEmissionChainsRewritten": false,
+    "outerAlphaEdgeAndOpacityChainsPreserved": true
+  },
+  "temporaryCameraOnly": true,
+  "sourceCameraSensorUnchangedInMemory": true,
+  "inputHashesAfter": {
+    "blend": "55c9894d97285f784c2bd5742217d30d9993aca665ad1c90385ec532425b880b",
+    "manifest": "c7b593102bd8f43fd7438413b34782b64d00788f4e6d87dd3f69682ba6b81a54"
+  },
+  "inputsUnchanged": true,
+  "finishedAt": "2026-10-20T00:48:44.073402+00:00",
+  "visualReviewedAt": "2026-10-20T00:51:44.681322+00:00",
+  "visualReviewSummary": {
+    "framesReviewedIndividually": 3,
+    "pass": 3,
+    "issues": 0,
+    "scope": "实际从已保存派生.blend渲染的三个选定gap，证明这些新增层确能在Blender纸幕前显示并保留透明边；不替代33网页静帧或所有Blender路径/交互验收。",
+    "directRenderOutputsUnretouched": true,
+    "differencesFromBrowser": [
+      "Blender原程序纸纹实际保留，比网页纸底有更多纹理。",
+      "Blender原可编辑FONT可出现，网页采用HTML题签并跳过原FONT。",
+      "源主相机按真实evaluated pose，网页使用原导出相机采样间插值；两者及渲染器alpha/depth处理不能据此称像素完全相同。"
+    ]
+  },
+  "reproductionCommand": "blender --background --factory-startup --disable-autoexec --python scripts/render-blank-blender.py -- --blend artwork/blender-blank-design/chapter-4_reconstructed.blend --manifest reports/blank-design/pilot-v4/manifest.json --reconstruction-report reports/blank-design/blender/blender-reconstruction-chapter-4.json --chapter 4 --gaps 2 5 7 --output-dir reports/blank-design/blender/preview --width 1388 --height 476 --samples 8 --transparent-bounces 128 --threads 6"
+}

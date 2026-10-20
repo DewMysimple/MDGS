@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "status": "short-wide-window-fails",
+  "canonicalSha256": "4433928f6e6160acbd275ba6430d65fa3128df736a7eb59ef7607e61312d10cb",
+  "reviewedIndividually": 8,
+  "views": [
+    {
+      "viewport": [
+        360,
+        640
+      ],
+      "id": "chapter-3-opening",
+      "status": "clear-at-anchor",
+      "reviewedWithViewImage": true,
+      "observation": "本帧文字完整，未见主体覆盖；360短窗已正确进入独立上纸题签。",
+      "screenshot": "360x640/chapter-3-opening.png",
+      "sha256": "6cbdea581183df680231c94d991ad1ba96e0e6db577edc384c728962e891ee6d",
+      "layoutOverflow": "false",
+      "compactReserve": "0.5586555749892412"
+    },
+    {
+      "viewport": [
+        360,
+        640
+      ],
+      "id": "c3-type-gap-02",
+      "status": "clear-at-anchor",
+      "reviewedWithViewImage": true,
+      "observation": "本帧文字完整，未见主体覆盖；360短窗已正确进入独立上纸题签。",
+      "screenshot": "360x640/c3-type-gap-02.png",
+      "sha256": "70ebba3b69fc5ea41103f1346620d9b7101c1a891aab74d18896c4b9944895c6",
+      "layoutOverflow": "false",
+      "compactReserve": "0.5586555749892412"
+    },
+    {
+      "viewport": [
+        360,
+        640
+      ],
+      "id": "c3-type-stop-03",
+      "status": "clear-at-anchor",
+      "reviewedWithViewImage": true,
+      "observation": "本帧文字完整，未见主体覆盖；360短窗已正确进入独立上纸题签。",
+      "screenshot": "360x640/c3-type-stop-03.png",
+      "sha256": "e3ec231481fcaaf79f40176a0476699794b1e219cbbd9d7c7066d5229f3ce1ab",
+      "layoutOverflow": "false",
+      "compactReserve": "0.5586555749892412"
+    },
+    {
+      "viewport": [
+        360,
+        640
+      ],
+      "id": "c3-type-stop-06",
+      "status": "clear-at-anchor",
+      "reviewedWithViewImage": true,
+      "observation": "本帧文字完整，未见主体覆盖；360短窗已正确进入独立上纸题签。",
+      "screenshot": "360x640/c3-type-stop-06.png",
+      "sha256": "b6be626346904036348284591fe1fa782b2b1d7c62aa98f29a92c3b6fa1be3c0",
+      "layoutOverflow": "false",
+      "compactReserve": "0.5586555749892412"
+    },
+    {
+      "viewport": [
+        620,
+        360
+      ],
+      "id": "chapter-3-opening",
+      "status": "clear-at-anchor",
+      "reviewedWithViewImage": true,
+      "observation": "本帧文字完整，未见主体覆盖；360短窗已正确进入独立上纸题签。",
+      "screenshot": "620x360/chapter-3-opening.png",
+      "sha256": "24bf7c8b9df643656cd8e57d6086ffe55b0fa15085031ca91cdde30ac6661155",
+      "layoutOverflow": null,
+      "compactReserve": null
+    },
+    {
+      "viewport": [
+        620,
+        360
+      ],
+      "id": "c3-type-gap-02",
+      "status": "must-adjust",
+      "reviewedWithViewImage": true,
+      "observation": "短画心未进入compact，文字大于安全高度且压到锦架/器物等原景。",
+      "screenshot": "620x360/c3-type-gap-02.png",
+      "sha256": "1e7ad7e370ea2b4811675681b770a6301eecfaccc1a8bc895ac98479040bbd54",
+      "layoutOverflow": "true",
+      "compactReserve": "0"
+    },
+    {
+      "viewport": [
+        620,
+        360
+      ],
+      "id": "c3-type-stop-03",
+      "status": "must-adjust",
+      "reviewedWithViewImage": true,
+      "observation": "短画心未进入compact，文字大于安全高度且压到锦架/器物等原景。",
+      "screenshot": "620x360/c3-type-stop-03.png",
+      "sha256": "dbdfce6f15714c49b51347b30665015ae1e77e341a3921fd91bdd9634f32b914",
+      "layoutOverflow": "true",
+      "compactReserve": "0"
+    },
+    {
+      "viewport": [
+        620,
+        360
+      ],
+      "id": "c3-type-stop-06",
+      "status": "must-adjust",
+      "reviewedWithViewImage": true,
+      "observation": "短画心未进入compact，文字大于安全高度且压到锦架/器物等原景。",
+      "screenshot": "620x360/c3-type-stop-06.png",
+      "sha256": "4e2e3baa772e0064f120900519bf5709d3fa420021f0ee51d9350fae36884d67",
+      "layoutOverflow": "true",
+      "compactReserve": "0"
+    }
+  ],
+  "next": "加入最小字带高度相对画心的内容阈值，或由响应式画心增加可滚动高度，然后重新拍短窗。"
+}

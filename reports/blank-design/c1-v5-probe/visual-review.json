@@ -1,0 +1,56 @@
+{
+  "status": "needs-revision",
+  "canonicalSha256": "c1c0e2b7a82e623b2e269a976b5387d5f6d5d1dbb5eb7b3a6cd7c373a4497706",
+  "scope": "partialProbe only; all six requested views directly opened full-size",
+  "reviewed": 6,
+  "views": [
+    {
+      "image": "chapter-1-stop-03.jpg",
+      "sha256": "c558a1830b86e4a46322ba1f21953ff1cf4abde9f39eaf2c679041aa16b213a0",
+      "status": "pass",
+      "observation": "仪仗下浅缝进一步收窄，与寺院低坡形成接地关系；人物和河谷完整。"
+    },
+    {
+      "image": "chapter-1-quarter-04.jpg",
+      "sha256": "f647ef386bd389d051243a4c5ede086dc0a2cc9a276f7ac509df1f067f5dd195",
+      "status": "pass",
+      "observation": "新坡后缘接到仪仗下，剩余轻亮带可读路心。"
+    },
+    {
+      "image": "chapter-1-gap-08.jpg",
+      "sha256": "9e4f2f09d481d56c5c1050b199571bdb8f156769038b6daaf2fe3132dfe068cb",
+      "status": "pass",
+      "observation": "白花已离开亭底主要横切范围，园路继续承接亭阶。"
+    },
+    {
+      "image": "chapter-1-stop-09.jpg",
+      "sha256": "17dac71f7b2dce85a8d65a40214236448e9c485a19eb4d1799f6f193aaefa2a2",
+      "status": "issue",
+      "observation": "上雪岸与下雪岸之间重新露出纸缝，形成分离的窄雪片。"
+    },
+    {
+      "image": "chapter-1-quarter-17.jpg",
+      "sha256": "7dffa2b4268f1e7af71c663ee65fd5ac7a1022a22da59e2fd68ab4cad84a0b20",
+      "status": "issue",
+      "observation": "抬高的雪路成为悬在暖园上方的一条薄片，不能以墙脚接触判为通过。"
+    },
+    {
+      "image": "chapter-1-gap-09.jpg",
+      "sha256": "0ea9da243c26e7dae3b7426927a3b9b5d32333b1b6377f70da4cf2a5ad01b297",
+      "status": "issue",
+      "observation": "新雪边过薄并抬在园圃前，季节转场出现台阶状浮条。"
+    }
+  ],
+  "recommendation": {
+    "layer": "bd1-gap09-ground",
+    "width": [
+      0.9,
+      1.3
+    ],
+    "y": [
+      -0.14,
+      -0.21
+    ],
+    "purpose": "Keep the rear snowbank at the wall while enlarging its natural depth down toward existing g10 snow ground; no image stretch/crop/mirror."
+  }
+}

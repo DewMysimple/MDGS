@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "status": "verified-causal-attribution-and-visual-decision",
+  "frozenCanonicalSha256": "ad3a1b708435dbb610942023832f1ac9350e4835367d26d890bea0c48683a5df",
+  "authoritativeRuns": [
+    {
+      "path": "verified-focus/diagnostic.json",
+      "sha256": "11cffc8ddb6ab40184ba1a8882705b7d7bd0e0034ed755b870a0e3c094f0df8c"
+    },
+    {
+      "path": "verified-all-gaps/diagnostic.json",
+      "sha256": "53b4902f0eb0b1939613a986fa910e69d38edebe518728c878ef30962472c525"
+    },
+    {
+      "path": "landscape/diagnostic.json",
+      "sha256": "08a14ce389c82dca37a20558096e1b14dc4a8783816ced08fe33ba40a0c273e6"
+    }
+  ],
+  "actualResponseHashAsserted": true,
+  "diagnosticScope": "Temporary browser visibility only; all production/source files read-only. Final product acceptance is separate in ../final/visual-review.json.",
+  "lineDecision": {
+    "retire": [
+      "水岸留金",
+      "过渡01_淡云水线1",
+      "过渡01_淡云水线2",
+      "过渡01_淡云水线3",
+      "过渡02_淡云水线1",
+      "过渡02_淡云水线2",
+      "过渡02_淡云水线3",
+      "过渡03_淡云水线1",
+      "过渡03_淡云水线2",
+      "过渡03_淡云水线3",
+      "过渡04_淡云水线1",
+      "过渡04_淡云水线2",
+      "过渡04_淡云水线3",
+      "过渡05_淡云水线1",
+      "过渡05_淡云水线2",
+      "过渡05_淡云水线3",
+      "过渡06_淡云水线1",
+      "过渡06_淡云水线2",
+      "过渡06_淡云水线3",
+      "过渡07_淡云水线1",
+      "过渡07_淡云水线2",
+      "过渡07_淡云水线3",
+      "过渡08_淡云水线1",
+      "过渡08_淡云水线2",
+      "过渡08_淡云水线3"
+    ],
+    "basis": "Source gold line crosses through silk/figures/ceramics; three local lines per gap appear as parallel threads through the brocade. Actual single-object visibility tests give nonzero framebuffer differences for all 24 at their own gap. Final 33 static views confirm clean graphics after derived retirement.",
+    "retainPreviousHidden": [
+      "通幅山脊细线_1",
+      "通幅山脊细线_2",
+      "通幅山脊细线_3"
+    ],
+    "ridgeFinding": "All three already have mesh.visible=false in the frozen baseline; zero pixels throughout eight gaps. They are not the visible thread defect and do not count as a new retirement."
+  },
+  "allEightGapAttribution": [
+    {
+      "id": "gap01",
+      "goldPixelsRemoved": 1623,
+      "transitionPixelsRemoved": 2443,
+      "drawnTransitionObjects": [
+        "过渡01_淡云水线1",
+        "过渡01_淡云水线2",
+        "过渡01_淡云水线3"
+      ],
+      "ridgePixelsRemoved": 0
+    },
+    {
+      "id": "gap02",
+      "goldPixelsRemoved": 1923,
+      "transitionPixelsRemoved": 2746,
+      "drawnTransitionObjects": [
+        "过渡02_淡云水线1",
+        "过渡02_淡云水线2",
+        "过渡02_淡云水线3"
+      ],
+      "ridgePixelsRemoved": 0
+    },
+    {
+      "id": "gap03",
+      "goldPixelsRemoved": 2503,
+      "transitionPixelsRemoved": 2761,
+      "drawnTransitionObjects": [
+        "过渡03_淡云水线1",
+        "过渡03_淡云水线2",
+        "过渡03_淡云水线3"
+      ],
+      "ridgePixelsRemoved": 0
+    },
+    {
+      "id": "gap04",
+      "goldPixelsRemoved": 2137,
+      "transitionPixelsRemoved": 2759,
+      "drawnTransitionObjects": [
+        "过渡04_淡云水线1",
+        "过渡04_淡云水线2",
+        "过渡04_淡云水线3"
+      ],
+      "ridgePixelsRemoved": 0
+    },
+    {
+      "id": "gap05",
+      "goldPixelsRemoved": 1742,
+      "transitionPixelsRemoved": 2745,
+      "drawnTransitionObjects": [
+        "过渡05_淡云水线1",
+        "过渡05_淡云水线2",
+        "过渡05_淡云水线3"
+      ],
+      "ridgePixelsRemoved": 0
+    },
+    {
+      "id": "gap06",
+      "goldPixelsRemoved": 2420,
+      "transitionPixelsRemoved": 2756,
+      "drawnTransitionObjects": [
+        "过渡06_淡云水线1",
+        "过渡06_淡云水线2",
+        "过渡06_淡云水线3"
+      ],
+      "ridgePixelsRemoved": 0
+    },
+    {
+      "id": "gap07",
+      "goldPixelsRemoved": 2883,
+      "transitionPixelsRemoved": 2768,
+      "drawnTransitionObjects": [
+        "过渡07_淡云水线1",
+        "过渡07_淡云水线2",
+        "过渡07_淡云水线3"
+      ],
+      "ridgePixelsRemoved": 0
+    },
+    {
+      "id": "gap08",
+      "goldPixelsRemoved": 1366,
+      "transitionPixelsRemoved": 2473,
+      "drawnTransitionObjects": [
+        "过渡08_淡云水线1",
+        "过渡08_淡云水线2",
+        "过渡08_淡云水线3"
+      ],
+      "ridgePixelsRemoved": 0
+    }
+  ],
+  "floatingFlower": {
+    "name": "SC06_通道右下花枝",
+    "id": "c3-m-6458aa576c50",
+    "texture": "public/assets/chapter-3/textures/3873a127c345f851.webp",
+    "changedPixelsAtStop07": 38979,
+    "pixelBoundsAtStop07": [
+      96,
+      74,
+      388,
+      292
+    ],
+    "recommendation": "Retire this derived duplicate to restore the upper paper breathing area. Preserve original source object and texture."
+  },
+  "landscapeDuplicate": {
+    "name": "SC09_05_右侧山水城景.001",
+    "id": "c3-m-3e77817f3cad",
+    "texture": "public/assets/chapter-3/textures/3cd6680826ea7dbc.webp",
+    "samples": [
+      {
+        "id": "stop08",
+        "changedPixels": 65064,
+        "pixelBounds": [
+          796,
+          291,
+          1812,
+          617
+        ]
+      },
+      {
+        "id": "gap08",
+        "changedPixels": 64886,
+        "pixelBounds": [
+          56,
+          304,
+          911,
+          617
+        ]
+      },
+      {
+        "id": "stop09",
+        "changedPixels": 28792,
+        "pixelBounds": [
+          0,
+          381,
+          136,
+          617
+        ]
+      }
+    ],
+    "recommendation": "Retire the duplicate carrier with the interior horizontal hard top; retain the genuine SC09 city."
+  },
+  "revisionHistory": [
+    {
+      "run": "diagnostic.json",
+      "status": "superseded-by-verified-focus",
+      "reason": "Initial causal screenshots valid, but first harness lacked assertion of served manifest response hash. Verified-focus reproduces the same causal changes while asserting the response body SHA."
+    },
+    {
+      "run": "all-gaps/diagnostic.json",
+      "status": "invalid-freeze-evidence",
+      "reason": "Generic assets route used continue, bypassing the frozen manifest route; after root retired lines the run loaded the live manifest, so all zero deltas cannot be attributed to the stated old snapshot. Retained for failure history. Fixed with route.fallback plus actual-response-body SHA assertion; authoritative all-gap run is verified-all-gaps/diagnostic.json."
+    }
+  ]
+}

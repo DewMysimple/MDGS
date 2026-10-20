@@ -1,0 +1,4087 @@
+{
+  "generatedAt": "2026-10-19T18:51:50.982401+00:00",
+  "baseline": "9f632a085f8bbde754751e3916e17b8bc2a9b3d5",
+  "scope": "Local worktree changes relative to HEAD, including the earlier portability fix. No commit or push was performed. source/ contains user inputs and is excluded; no source file is removed.",
+  "summary": {
+    "modified": 28,
+    "added": 638,
+    "deleted": 0
+  },
+  "excludedUserInputFileCount": 471,
+  "files": [
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": ".gitignore",
+      "bytes": 118
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "README.md",
+      "bytes": 9964
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "package.json",
+      "bytes": 803
+    },
+    {
+      "status": "modified",
+      "category": "evidence-and-documentation",
+      "path": "reports/assets-readme.md",
+      "bytes": 7481
+    },
+    {
+      "status": "modified",
+      "category": "evidence-and-documentation",
+      "path": "reports/validation-assets.json",
+      "bytes": 57708
+    },
+    {
+      "status": "modified",
+      "category": "evidence-and-documentation",
+      "path": "reports/validation-assets.md",
+      "bytes": 2225
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "scripts/audit_blender.py",
+      "bytes": 2110
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "scripts/export_blender.py",
+      "bytes": 10581
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "scripts/inspect_materials.py",
+      "bytes": 976
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "scripts/inspect_procedural.py",
+      "bytes": 1484
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "scripts/render_reference.py",
+      "bytes": 4429
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "scripts/run-export.ps1",
+      "bytes": 5238
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "src/App.tsx",
+      "bytes": 13232
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "src/components/ScrollOrnaments.tsx",
+      "bytes": 2081
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "src/components/ScrollViewport.tsx",
+      "bytes": 8440
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "src/hooks/useScrollController.ts",
+      "bytes": 3748
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "src/scene/CalligraphyLayer.css",
+      "bytes": 2969
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "src/scene/CalligraphyLayer.ts",
+      "bytes": 12740
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "src/scene/SceneRenderer.ts",
+      "bytes": 23630
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "src/styles/exhibition-theme.css",
+      "bytes": 994
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "src/styles/handscroll.css",
+      "bytes": 17935
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "src/styles/reading-panel.css",
+      "bytes": 5156
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "tsconfig.json",
+      "bytes": 401
+    },
+    {
+      "status": "modified",
+      "category": "code-and-configuration",
+      "path": "vite.config.ts",
+      "bytes": 1259
+    },
+    {
+      "status": "modified",
+      "category": "engineering-memory",
+      "path": "wiki_memory/当前状态/当前状态.md",
+      "bytes": 6603
+    },
+    {
+      "status": "modified",
+      "category": "engineering-memory",
+      "path": "wiki_memory/日志/MOC_工作日志.md",
+      "bytes": 1038
+    },
+    {
+      "status": "modified",
+      "category": "engineering-memory",
+      "path": "wiki_memory/知识/场景资产与导出.md",
+      "bytes": 5812
+    },
+    {
+      "status": "modified",
+      "category": "engineering-memory",
+      "path": "wiki_memory/知识/手卷界面与交互.md",
+      "bytes": 6246
+    },
+    {
+      "status": "added",
+      "category": "derived-blender",
+      "path": "artwork/blender-reconstructed/chapter-1_reconstructed.blend",
+      "bytes": 252226020
+    },
+    {
+      "status": "added",
+      "category": "derived-blender",
+      "path": "artwork/blender-reconstructed/chapter-2_reconstructed.blend",
+      "bytes": 121975489
+    },
+    {
+      "status": "added",
+      "category": "derived-blender",
+      "path": "artwork/blender-reconstructed/chapter-3_reconstructed.blend",
+      "bytes": 167053219
+    },
+    {
+      "status": "added",
+      "category": "derived-blender",
+      "path": "artwork/blender-reconstructed/chapter-4_reconstructed.blend",
+      "bytes": 122956443
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-1/c1-t021.png",
+      "bytes": 2387908
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-1/c1-t038.png",
+      "bytes": 1880116
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-1/c1-t047.png",
+      "bytes": 2215195
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-1/c1-t052.png",
+      "bytes": 1735909
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-1/c1-t059.png",
+      "bytes": 2462806
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-1/c1-t067.png",
+      "bytes": 2104724
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-1/c1-t085.png",
+      "bytes": 2648468
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-2/c2-t002.png",
+      "bytes": 3225451
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-2/c2-t004.png",
+      "bytes": 2516551
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-2/c2-t005.png",
+      "bytes": 2583131
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-2/c2-t006.png",
+      "bytes": 2662060
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-2/c2-t010.png",
+      "bytes": 2203083
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-2/c2-t011.png",
+      "bytes": 2775773
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-2/c2-t012.png",
+      "bytes": 2779464
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-2/c2-t018.png",
+      "bytes": 2509279
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-2/c2-t019.png",
+      "bytes": 3199565
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-2/c2-t020.png",
+      "bytes": 2713053
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-2/c2-t028.png",
+      "bytes": 2308427
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-2/c2-t029.png",
+      "bytes": 3546914
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-2/c2-t034.png",
+      "bytes": 1744926
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-3/c3-t001.png",
+      "bytes": 2723529
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-3/c3-t004.png",
+      "bytes": 2350578
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-3/c3-t027.png",
+      "bytes": 2310617
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-3/c3-t028.png",
+      "bytes": 2250021
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-3/c3-t041.png",
+      "bytes": 2957882
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-3/c3-t054.png",
+      "bytes": 2156402
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-3/c3-t056.png",
+      "bytes": 2151098
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-4/c4-t007.png",
+      "bytes": 2231510
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-4/c4-t008.png",
+      "bytes": 2849167
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-4/c4-t020.png",
+      "bytes": 2780168
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-4/c4-t027.png",
+      "bytes": 1584904
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/chapter-4/c4-t029.png",
+      "bytes": 2603038
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c1-t021-palace-procession-v2.png",
+      "bytes": 2503639
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c1-t038-pavilion-v2.png",
+      "bytes": 2009812
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c1-t047-imperial-terrace-v2.png",
+      "bytes": 2343107
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c1-t052-landscape-repair.png",
+      "bytes": 1801386
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c1-t059-repair.png",
+      "bytes": 2608899
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c1-t067-repair.png",
+      "bytes": 2173781
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c1-t085-palace-gate-clean.png",
+      "bytes": 2728635
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c1-t085-palace-gate-v2.png",
+      "bytes": 2790800
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c2-t002-edge-repair-v2.png",
+      "bytes": 3423581
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c2-t002-edge-repair.png",
+      "bytes": 2861939
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c2-t004-rebuilt-v2.png",
+      "bytes": 2646224
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c2-t004-rebuilt.png",
+      "bytes": 3416744
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c2-t005-edge-repair.png",
+      "bytes": 2672207
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c2-t006-edge-repair.png",
+      "bytes": 2766969
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c2-t010-edge-repair.png",
+      "bytes": 2321380
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c2-t011-edge-repair.png",
+      "bytes": 2970989
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c2-t012-edge-repair.png",
+      "bytes": 2866683
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c2-t018-edge-repair.png",
+      "bytes": 2632347
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c2-t019-rebuilt.png",
+      "bytes": 3245856
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c2-t020-rebuilt.png",
+      "bytes": 2778471
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c2-t028-edge-repair.png",
+      "bytes": 2432695
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c2-t029-rebuilt-v2.png",
+      "bytes": 3576783
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c2-t029-rebuilt.png",
+      "bytes": 3578984
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c2-t034-edge-repair.png",
+      "bytes": 1804235
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c3-t001-rebuilt.png",
+      "bytes": 2817016
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c3-t004-rebuilt.png",
+      "bytes": 2413613
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c3-t027-edge-repair.png",
+      "bytes": 2405297
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c3-t028-edge-repair.png",
+      "bytes": 2368933
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c3-t041-rebuilt.png",
+      "bytes": 3007021
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c3-t054-edge-repair-v2.png",
+      "bytes": 2231047
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c3-t054-edge-repair.png",
+      "bytes": 2846939
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c3-t056-edge-repair.png",
+      "bytes": 2229159
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c4-t007-edge-repair.png",
+      "bytes": 2347702
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c4-t008-edge-repair.png",
+      "bytes": 2957349
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c4-t020-rebuilt.png",
+      "bytes": 2847655
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c4-t027-edge-repair.png",
+      "bytes": 1668785
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/c4-t029-edge-repair.png",
+      "bytes": 2714799
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/distant-ridge-bridge.png",
+      "bytes": 791157
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/raw/ink-mist-bridge.png",
+      "bytes": 736544
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/shared/distant-ridge-bridge.png",
+      "bytes": 628252
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "artwork/reconstruction/shared/ink-mist-bridge.png",
+      "bytes": 562345
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-1/c1-t021.webp",
+      "bytes": 528412
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-1/c1-t038.webp",
+      "bytes": 435776
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-1/c1-t047.webp",
+      "bytes": 493914
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-1/c1-t052.webp",
+      "bytes": 305290
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-1/c1-t059.webp",
+      "bytes": 422922
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-1/c1-t067.webp",
+      "bytes": 369468
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-1/c1-t085.webp",
+      "bytes": 461320
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-2/c2-t002.webp",
+      "bytes": 812408
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-2/c2-t004.webp",
+      "bytes": 495720
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-2/c2-t005.webp",
+      "bytes": 402500
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-2/c2-t006.webp",
+      "bytes": 542264
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-2/c2-t010.webp",
+      "bytes": 460668
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-2/c2-t011.webp",
+      "bytes": 639112
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-2/c2-t012.webp",
+      "bytes": 573848
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-2/c2-t018.webp",
+      "bytes": 482094
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-2/c2-t019.webp",
+      "bytes": 625028
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-2/c2-t020.webp",
+      "bytes": 428978
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-2/c2-t028.webp",
+      "bytes": 357774
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-2/c2-t029.webp",
+      "bytes": 787758
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-2/c2-t034.webp",
+      "bytes": 365142
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-3/c3-t001.webp",
+      "bytes": 549734
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-3/c3-t004.webp",
+      "bytes": 336612
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-3/c3-t027.webp",
+      "bytes": 357080
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-3/c3-t028.webp",
+      "bytes": 423522
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-3/c3-t041.webp",
+      "bytes": 477944
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-3/c3-t054.webp",
+      "bytes": 425322
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-3/c3-t056.webp",
+      "bytes": 444858
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-4/c4-t007.webp",
+      "bytes": 277346
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-4/c4-t008.webp",
+      "bytes": 464148
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-4/c4-t020.webp",
+      "bytes": 525286
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-4/c4-t027.webp",
+      "bytes": 316100
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/chapter-4/c4-t029.webp",
+      "bytes": 593192
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/manifest.json",
+      "bytes": 200379
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/shared/distant-ridge-bridge.webp",
+      "bytes": 139794
+    },
+    {
+      "status": "added",
+      "category": "artwork-and-runtime-assets",
+      "path": "public/assets/reconstruction/shared/ink-mist-bridge.webp",
+      "bytes": 146984
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/portability-review.md",
+      "bytes": 3884
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/README.md",
+      "bytes": 9658
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-1-end.png",
+      "bytes": 797407
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-1-probe-off-a.png",
+      "bytes": 1198853
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-1-probe-off-b.png",
+      "bytes": 1198853
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-1-probe-on-a.png",
+      "bytes": 1198858
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-1-probe-on-b.png",
+      "bytes": 1198837
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-1-probe-reduced-a.png",
+      "bytes": 1198855
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-1-probe-reduced-b.png",
+      "bytes": 1198855
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-1-source-motion-detail-1.jpg",
+      "bytes": 42702
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-1-source-motion-detail-2.jpg",
+      "bytes": 62147
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-1-start.png",
+      "bytes": 1198867
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-2-end.png",
+      "bytes": 991965
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-2-probe-off-a.png",
+      "bytes": 1237042
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-2-probe-off-b.png",
+      "bytes": 1237042
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-2-probe-on-a.png",
+      "bytes": 1237332
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-2-probe-on-b.png",
+      "bytes": 1237344
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-2-probe-reduced-a.png",
+      "bytes": 1237041
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-2-probe-reduced-b.png",
+      "bytes": 1237041
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-2-source-motion-detail-1.jpg",
+      "bytes": 54198
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-2-source-motion-detail-2.jpg",
+      "bytes": 66118
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-2-start.png",
+      "bytes": 931547
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-3-end.png",
+      "bytes": 892987
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-3-independent-lamp-detail.jpg",
+      "bytes": 57882
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-3-probe-off-a.png",
+      "bytes": 770007
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-3-probe-off-b.png",
+      "bytes": 770007
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-3-probe-on-a.png",
+      "bytes": 770354
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-3-probe-on-b.png",
+      "bytes": 770207
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-3-probe-reduced-a.png",
+      "bytes": 770007
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-3-probe-reduced-b.png",
+      "bytes": 770007
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-3-source-motion-detail-1.jpg",
+      "bytes": 67676
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-3-source-motion-detail-2.jpg",
+      "bytes": 25662
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-3-start.png",
+      "bytes": 997565
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-4-end.png",
+      "bytes": 760783
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-4-probe-off-a.png",
+      "bytes": 866672
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-4-probe-off-b.png",
+      "bytes": 866672
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-4-probe-on-a.png",
+      "bytes": 867120
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-4-probe-on-b.png",
+      "bytes": 866675
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-4-probe-reduced-a.png",
+      "bytes": 866665
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-4-probe-reduced-b.png",
+      "bytes": 866665
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-4-source-motion-detail-1.jpg",
+      "bytes": 452906
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-4-source-motion-detail-2.jpg",
+      "bytes": 187110
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/chapter-4-start.png",
+      "bytes": 892017
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/corners-chapter-2-stop-4.png",
+      "bytes": 1258693
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/corners-chapter-2-stop-5.png",
+      "bytes": 1220541
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/corners-chapter-4-gap-5.png",
+      "bytes": 741316
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/corners-chapter-4-stop-8.png",
+      "bytes": 694969
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/corners-fourth-after-context.png",
+      "bytes": 694969
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/corners-fourth-before-context.png",
+      "bytes": 694969
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/final-fourth-afterglow-a.png",
+      "bytes": 694948
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/final-fourth-afterglow-b.png",
+      "bytes": 694945
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/final-fourth-flourishing-a.png",
+      "bytes": 866834
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/final-fourth-flourishing-b.png",
+      "bytes": 867194
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/final-fourth-motion.json",
+      "bytes": 6232
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/final-fourth-motion.webm",
+      "bytes": 1376400
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/fourth-afterglow-a.png",
+      "bytes": 868099
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/fourth-afterglow-b.png",
+      "bytes": 868094
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/fourth-afterglow-detail-1.jpg",
+      "bytes": 66770
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/fourth-flourishing-a.png",
+      "bytes": 866739
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/fourth-flourishing-b.png",
+      "bytes": 867214
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/fourth-flourishing-detail-1.jpg",
+      "bytes": 666539
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/fourth-flourishing-detail-2.jpg",
+      "bytes": 221498
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/fourth-sheng-shuai.json",
+      "bytes": 5658
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/fourth-sheng-shuai.webm",
+      "bytes": 1641649
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/frame-differences.json",
+      "bytes": 13329
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/implementation.md",
+      "bytes": 10102
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/motion-corners-pixels.json",
+      "bytes": 1046
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/motion-local-planes.json",
+      "bytes": 69158
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/refresh-1440x900-chapter-2-stop-1.png",
+      "bytes": 931562
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/refresh-1440x900-chapter-2-stop-6.png",
+      "bytes": 1236875
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/refresh-1440x900-chapter-2-stop-7.png",
+      "bytes": 991954
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/refresh-1440x900-chapter-4-stop-9.png",
+      "bytes": 761881
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/refresh-360x800-chapter-1-stop-1.png",
+      "bytes": 225994
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/refresh-360x800-chapter-1-stop-15.png",
+      "bytes": 118474
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/refresh-360x800-chapter-2-stop-1.png",
+      "bytes": 175137
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/refresh-360x800-chapter-2-stop-7.png",
+      "bytes": 209333
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/refresh-360x800-chapter-3-stop-1.png",
+      "bytes": 229373
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/refresh-360x800-chapter-3-stop-9.png",
+      "bytes": 239043
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/refresh-360x800-chapter-4-stop-1.png",
+      "bytes": 228540
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/refresh-360x800-chapter-4-stop-9.png",
+      "bytes": 137001
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/validation-all-motion-browser.json",
+      "bytes": 91242
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/validation-motion-corners.json",
+      "bytes": 534695
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/validation-motion-refresh.json",
+      "bytes": 50256
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after-motion/validation-motion-unit.json",
+      "bytes": 17085
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/capture.json",
+      "bytes": 294
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-gap-01.jpg",
+      "bytes": 233420
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-gap-02.jpg",
+      "bytes": 241690
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-gap-03.jpg",
+      "bytes": 250247
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-gap-04.jpg",
+      "bytes": 233580
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-gap-05.jpg",
+      "bytes": 244696
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-gap-06.jpg",
+      "bytes": 246290
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-gap-07.jpg",
+      "bytes": 251249
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-gap-08.jpg",
+      "bytes": 204249
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-gap-09.jpg",
+      "bytes": 282555
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-gap-10.jpg",
+      "bytes": 233168
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-gap-11.jpg",
+      "bytes": 233189
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-gap-12.jpg",
+      "bytes": 199209
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-gap-13.jpg",
+      "bytes": 244006
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-gap-14.jpg",
+      "bytes": 170572
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-overview.jpg",
+      "bytes": 713546
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-stop-01.jpg",
+      "bytes": 254294
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-stop-02.jpg",
+      "bytes": 280405
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-stop-03.jpg",
+      "bytes": 270063
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-stop-04.jpg",
+      "bytes": 262096
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-stop-05.jpg",
+      "bytes": 258554
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-stop-06.jpg",
+      "bytes": 276925
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-stop-07.jpg",
+      "bytes": 263261
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-stop-08.jpg",
+      "bytes": 259815
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-stop-09.jpg",
+      "bytes": 241988
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-stop-10.jpg",
+      "bytes": 300152
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-stop-11.jpg",
+      "bytes": 241775
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-stop-12.jpg",
+      "bytes": 244345
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-stop-13.jpg",
+      "bytes": 255828
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-stop-14.jpg",
+      "bytes": 198465
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-stop-15.jpg",
+      "bytes": 162595
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-1-transitions-overview.jpg",
+      "bytes": 618658
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-2-gap-01.jpg",
+      "bytes": 218454
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-2-gap-02.jpg",
+      "bytes": 242852
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-2-gap-03.jpg",
+      "bytes": 245284
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-2-gap-04.jpg",
+      "bytes": 277360
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-2-gap-05.jpg",
+      "bytes": 231401
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-2-gap-06.jpg",
+      "bytes": 279433
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-2-manifest.json",
+      "bytes": 45111
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-2-overview.jpg",
+      "bytes": 316034
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-2-stop-01.jpg",
+      "bytes": 207116
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-2-stop-02.jpg",
+      "bytes": 221263
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-2-stop-03.jpg",
+      "bytes": 238692
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-2-stop-04.jpg",
+      "bytes": 276612
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-2-stop-05.jpg",
+      "bytes": 265189
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-2-stop-06.jpg",
+      "bytes": 271410
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-2-stop-07.jpg",
+      "bytes": 218490
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-2-transitions-overview.jpg",
+      "bytes": 275071
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-gap-01.jpg",
+      "bytes": 199891
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-gap-02.jpg",
+      "bytes": 192489
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-gap-03.jpg",
+      "bytes": 149051
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-gap-04.jpg",
+      "bytes": 138806
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-gap-05.jpg",
+      "bytes": 188251
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-gap-06.jpg",
+      "bytes": 128282
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-gap-07.jpg",
+      "bytes": 147487
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-gap-08.jpg",
+      "bytes": 208671
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-manifest.json",
+      "bytes": 44390
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-overview.jpg",
+      "bytes": 344345
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-stop-01.jpg",
+      "bytes": 217819
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-stop-02.jpg",
+      "bytes": 206622
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-stop-03.jpg",
+      "bytes": 194427
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-stop-04.jpg",
+      "bytes": 176622
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-stop-05.jpg",
+      "bytes": 194039
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-stop-06.jpg",
+      "bytes": 176784
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-stop-07.jpg",
+      "bytes": 180794
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-stop-08.jpg",
+      "bytes": 185997
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-stop-09.jpg",
+      "bytes": 191922
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-3-transitions-overview.jpg",
+      "bytes": 272861
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-gap-01.jpg",
+      "bytes": 112989
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-gap-02.jpg",
+      "bytes": 70874
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-gap-03.jpg",
+      "bytes": 92968
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-gap-04.jpg",
+      "bytes": 119382
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-gap-05.jpg",
+      "bytes": 147068
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-gap-06.jpg",
+      "bytes": 108971
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-gap-07.jpg",
+      "bytes": 109934
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-gap-08.jpg",
+      "bytes": 145254
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-manifest.json",
+      "bytes": 43231
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-overview.jpg",
+      "bytes": 312301
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-stop-01.jpg",
+      "bytes": 192017
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-stop-02.jpg",
+      "bytes": 203042
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-stop-03.jpg",
+      "bytes": 190303
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-stop-04.jpg",
+      "bytes": 219262
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-stop-05.jpg",
+      "bytes": 194671
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-stop-06.jpg",
+      "bytes": 161689
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-stop-07.jpg",
+      "bytes": 178188
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-stop-08.jpg",
+      "bytes": 151805
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-stop-09.jpg",
+      "bytes": 168236
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/chapter-4-transitions-overview.jpg",
+      "bytes": 183961
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/frames.json",
+      "bytes": 49363
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/after/transitions.json",
+      "bytes": 45124
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/asset-delivery.md",
+      "bytes": 25699
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/audit-existing-pilot-geometry.py",
+      "bytes": 2005
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/audit-report.md",
+      "bytes": 6340
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-1-overview.jpg",
+      "bytes": 1266642
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-1-stop-01.jpg",
+      "bytes": 220880
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-1-stop-02.jpg",
+      "bytes": 242185
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-1-stop-03.jpg",
+      "bytes": 234949
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-1-stop-04.jpg",
+      "bytes": 226441
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-1-stop-05.jpg",
+      "bytes": 213194
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-1-stop-06.jpg",
+      "bytes": 242181
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-1-stop-07.jpg",
+      "bytes": 232555
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-1-stop-08.jpg",
+      "bytes": 228415
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-1-stop-09.jpg",
+      "bytes": 212446
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-1-stop-10.jpg",
+      "bytes": 256790
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-1-stop-11.jpg",
+      "bytes": 208730
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-1-stop-12.jpg",
+      "bytes": 210870
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-1-stop-13.jpg",
+      "bytes": 217492
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-1-stop-14.jpg",
+      "bytes": 183447
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-1-stop-15.jpg",
+      "bytes": 141588
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-2-overview.jpg",
+      "bytes": 550819
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-2-stop-01.jpg",
+      "bytes": 169955
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-2-stop-02.jpg",
+      "bytes": 189950
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-2-stop-03.jpg",
+      "bytes": 198380
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-2-stop-04.jpg",
+      "bytes": 241849
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-2-stop-05.jpg",
+      "bytes": 218796
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-2-stop-06.jpg",
+      "bytes": 213378
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-2-stop-07.jpg",
+      "bytes": 182609
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-3-overview.jpg",
+      "bytes": 617611
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-3-stop-01.jpg",
+      "bytes": 187631
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-3-stop-02.jpg",
+      "bytes": 178084
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-3-stop-03.jpg",
+      "bytes": 170126
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-3-stop-04.jpg",
+      "bytes": 166299
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-3-stop-05.jpg",
+      "bytes": 169281
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-3-stop-06.jpg",
+      "bytes": 168638
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-3-stop-07.jpg",
+      "bytes": 172325
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-3-stop-08.jpg",
+      "bytes": 161145
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-3-stop-09.jpg",
+      "bytes": 166754
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-4-overview.jpg",
+      "bytes": 603786
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-4-stop-01.jpg",
+      "bytes": 180173
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-4-stop-02.jpg",
+      "bytes": 154588
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-4-stop-03.jpg",
+      "bytes": 165992
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-4-stop-04.jpg",
+      "bytes": 189869
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-4-stop-05.jpg",
+      "bytes": 163600
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-4-stop-06.jpg",
+      "bytes": 165719
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-4-stop-07.jpg",
+      "bytes": 154351
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-4-stop-08.jpg",
+      "bytes": 162073
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/chapter-4-stop-09.jpg",
+      "bytes": 144136
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/before/frames.json",
+      "bytes": 5882
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/blender-delivery-index.json",
+      "bytes": 13212
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/blender-delivery.md",
+      "bytes": 10302
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/blender-dry-run-chapter-2.json",
+      "bytes": 357181
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/blender-dry-run-chapter-3.json",
+      "bytes": 833808
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/blender-dry-run-chapter-4.json",
+      "bytes": 603701
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/blender-original-geometry-chapter-1.json",
+      "bytes": 142495
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/blender-pipeline-dryrun.json",
+      "bytes": 563
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/blender-planned-replacement-fit-preflight.json",
+      "bytes": 10097
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/blender-reconstruction-chapter-1.json",
+      "bytes": 1025577
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/blender-reconstruction-chapter-2.json",
+      "bytes": 357245
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/blender-reconstruction-chapter-3.json",
+      "bytes": 833872
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/blender-reconstruction-chapter-4.json",
+      "bytes": 603505
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/blender-remaining-source-preflight.json",
+      "bytes": 11141
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/blender-reopen-validation-chapter-1.json",
+      "bytes": 1609
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/blender-reopen-validation-chapter-2.json",
+      "bytes": 2360
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/blender-reopen-validation-chapter-3.json",
+      "bytes": 2049
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/blender-reopen-validation-chapter-4.json",
+      "bytes": 1832
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/blender-source-review.md",
+      "bytes": 15726
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/c1-t085-palace-gate-clean-warm-proof.jpg",
+      "bytes": 462642
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/c1-t085-palace-gate-v2-warm-proof.jpg",
+      "bytes": 453169
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/c3-t027-repair-warm-proof.jpg",
+      "bytes": 296329
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/c3-t028-repair-warm-proof.jpg",
+      "bytes": 382269
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/c3-t054-repair-warm-proof.jpg",
+      "bytes": 328602
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/c3-t056-repair-warm-proof.jpg",
+      "bytes": 428138
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/c4-t007-repair-warm-proof.jpg",
+      "bytes": 216545
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/c4-t008-repair-warm-proof.jpg",
+      "bytes": 368829
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/c4-t027-repair-warm-proof.jpg",
+      "bytes": 220098
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/c4-t029-repair-warm-proof.jpg",
+      "bytes": 422334
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/caption-contrast/chapter-2-stop-06-caption-detail.png",
+      "bytes": 89821
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/caption-contrast/chapter-2-stop-06-crisp-paper-edge.png",
+      "bytes": 1237654
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/caption-contrast/validation.json",
+      "bytes": 1165
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-1-layers.csv",
+      "bytes": 455367
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-1-textures-01.jpg",
+      "bytes": 744641
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-1-textures-02.jpg",
+      "bytes": 749544
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-1-textures-03.jpg",
+      "bytes": 779785
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-1-textures-04.jpg",
+      "bytes": 685797
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-1-textures-05.jpg",
+      "bytes": 216311
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-2-geometry-review/boundary-visibility.json",
+      "bytes": 6495
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-2-geometry-review/c2-m-53abbb827900.png",
+      "bytes": 125204
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-2-geometry-review/c2-m-70867a4d5090.png",
+      "bytes": 227629
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-2-geometry-review/c2-m-72ab86afc950.png",
+      "bytes": 224454
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-2-geometry-review/c2-m-d0a30952d7a3.png",
+      "bytes": 224911
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-2-geometry-review/candidates-01.jpg",
+      "bytes": 178436
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-2-geometry-review/machine-evidence.json",
+      "bytes": 54605
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-2-layers.csv",
+      "bytes": 84224
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-2-new-assets-alpha.json",
+      "bytes": 1109
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-2-new-assets-proof.jpg",
+      "bytes": 327114
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-2-river-layout.json",
+      "bytes": 4248
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-2-river-v2-prompt.json",
+      "bytes": 2165
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-2-textures-01.jpg",
+      "bytes": 805474
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-2-textures-02.jpg",
+      "bytes": 332237
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-final-details/chapter-3-gap-02-detail.png",
+      "bytes": 113178
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-final-details/chapter-3-gap-04-detail.png",
+      "bytes": 129922
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-final-details/chapter-3-gap-06-mirror-table-cut-detail.png",
+      "bytes": 82151
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-final-details/chapter-3-stop-02-detail.png",
+      "bytes": 174103
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-final-details/chapter-3-stop-04-detail.png",
+      "bytes": 117332
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-final-details/chapter-3-stop-06-detail.png",
+      "bytes": 22103
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-final-details/chapter-3-stop-08-detail.png",
+      "bytes": 181961
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-final-details/corrected-chapter-3-gap-02-detail.png",
+      "bytes": 117769
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-final-details/corrected-chapter-3-gap-06-detail.png",
+      "bytes": 52639
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-final-details/corrected-chapter-3-stop-04-detail.png",
+      "bytes": 115612
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-geometry-review/boundary-visibility.json",
+      "bytes": 30261
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-geometry-review/c3-m-3c3a40323c54.png",
+      "bytes": 120443
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-geometry-review/c3-m-3e77817f3cad.png",
+      "bytes": 193147
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-geometry-review/c3-m-885c8a7d1b99.png",
+      "bytes": 440635
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-geometry-review/c3-m-de3408ad8a8f.png",
+      "bytes": 239342
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-geometry-review/c3-m-f449c3cfe037.png",
+      "bytes": 130208
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-geometry-review/candidates-01.jpg",
+      "bytes": 199186
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-geometry-review/machine-evidence.json",
+      "bytes": 164039
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-geometry-review/stop02-right-maidens-detail.png",
+      "bytes": 363035
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-geometry-review/stop08-landscape-join-detail.png",
+      "bytes": 291663
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-layers.csv",
+      "bytes": 654919
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-textures-01.jpg",
+      "bytes": 786640
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-textures-02.jpg",
+      "bytes": 784705
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-3-textures-03.jpg",
+      "bytes": 729537
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-4-final-visual-findings.json",
+      "bytes": 7326
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-4-geometry-review/boundary-visibility.json",
+      "bytes": 5523
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-4-geometry-review/c4-m-24921ef89c6d.png",
+      "bytes": 214756
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-4-geometry-review/c4-m-2f9aca472f9d.png",
+      "bytes": 114640
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-4-geometry-review/c4-m-3aff9fce2dc5.png",
+      "bytes": 113113
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-4-geometry-review/c4-m-ac5e3da114da.png",
+      "bytes": 146215
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-4-geometry-review/c4-m-c1b60755aafc.png",
+      "bytes": 87179
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-4-geometry-review/c4-m-cdb9e53821aa.png",
+      "bytes": 247378
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-4-geometry-review/c4-m-d2034a788321.png",
+      "bytes": 208464
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-4-geometry-review/c4-m-dd645ee64df8.png",
+      "bytes": 84826
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-4-geometry-review/candidates-01.jpg",
+      "bytes": 268485
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-4-geometry-review/machine-evidence.json",
+      "bytes": 155753
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-4-independent-visual-review.md",
+      "bytes": 3045
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-4-layers.csv",
+      "bytes": 245830
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-4-textures-01.jpg",
+      "bytes": 778308
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-4-textures-02.jpg",
+      "bytes": 777036
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapter-4-textures-03.jpg",
+      "bytes": 90127
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapters-3-4-new-assets-alpha.json",
+      "bytes": 1069
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/chapters-3-4-new-assets-proof.jpg",
+      "bytes": 266170
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/compute-river-layout.py",
+      "bytes": 3491
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/delivery-files.csv",
+      "bytes": null
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/delivery-files.json",
+      "bytes": null
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/distant-ridge-bridge-warm-proof.jpg",
+      "bytes": 78437
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/execution-plan.md",
+      "bytes": 5756
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/extended-layer-plan.json",
+      "bytes": 56416
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/extended-text-preview/chapter-2-stop-06-1440.png",
+      "bytes": 11121
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/extended-text-preview/chapter-2-stop-06-375.png",
+      "bytes": 8623
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/extended-text-preview/chapter-3-stop-03-1440.png",
+      "bytes": 12335
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/extended-text-preview/chapter-3-stop-03-375.png",
+      "bytes": 1120
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/extended-text-preview/chapter-3-stop-04-1440.png",
+      "bytes": 13621
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/extended-text-preview/chapter-3-stop-04-375.png",
+      "bytes": 1120
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/extended-text-preview/chapter-3-stop-06-1440.png",
+      "bytes": 18084
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/extended-text-preview/chapter-3-stop-06-375.png",
+      "bytes": 1120
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/extended-text-preview/chapter-4-stop-01-1440.png",
+      "bytes": 21764
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/extended-text-preview/chapter-4-stop-01-375.png",
+      "bytes": 11632
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/extended-text-preview/chapter-4-stop-09-1440.png",
+      "bytes": 20012
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/extended-text-preview/chapter-4-stop-09-375.png",
+      "bytes": 10378
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/extra-repair-prompts-chapter-2.json",
+      "bytes": 22136
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/four-scroll-comparison.jpg",
+      "bytes": 659741
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/four-scroll-final.jpg",
+      "bytes": 320617
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/geometry-review-chapter-3-evidence.json",
+      "bytes": 226611
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/geometry-review-chapters-2-4.json",
+      "bytes": 186061
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/geometry-review-chapters-2-4.md",
+      "bytes": 1849
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/image-prompts-additions.json",
+      "bytes": 3208
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/image-prompts-chapters-2-4.json",
+      "bytes": 17405
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/image-prompts-pilot-repair.json",
+      "bytes": 1526
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/image-prompts.json",
+      "bytes": 6379
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/image-resolution-validation.json",
+      "bytes": 11957
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/ink-mist-bridge-warm-proof.jpg",
+      "bytes": 58561
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/layer-implementation.csv",
+      "bytes": 303903
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/layer-implementation.json",
+      "bytes": 1321394
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/layers-inventory.json",
+      "bytes": 4724714
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/motion-candidates-chapters-2-4.json",
+      "bytes": 152093
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/motion-local-planes.json",
+      "bytes": 17604
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/paper-depth-evidence-chapters-2-4.json",
+      "bytes": 19146
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/petal-atlas.json",
+      "bytes": 1202
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/c1-t003-edge-uv.jpg",
+      "bytes": 276899
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/c1-t020-edge-uv.jpg",
+      "bytes": 316372
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/c1-t021-uv-coverage.jpg",
+      "bytes": 243007
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/c1-t036-gardener-uv.jpg",
+      "bytes": 292776
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/c1-t038-uv-coverage.jpg",
+      "bytes": 185411
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/c1-t047-uv-coverage.jpg",
+      "bytes": 213005
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/c1-t050-edge-uv.jpg",
+      "bytes": 426857
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/c1-t055-edge-uv.jpg",
+      "bytes": 381200
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/c1-t059-edge-uv.jpg",
+      "bytes": 267952
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/c1-t065-edge-uv.jpg",
+      "bytes": 418008
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/c1-t067-edge-uv.jpg",
+      "bytes": 340331
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/c1-t074-edge-uv.jpg",
+      "bytes": 239267
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/c1-t075-edge-uv.jpg",
+      "bytes": 318348
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/c1-t085-uv-coverage.jpg",
+      "bytes": 325726
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/city-background-uv-coverage.jpg",
+      "bytes": 226455
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/edge-repairs-originals-overview.jpg",
+      "bytes": 421348
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/edge-repairs-uv-coverage.json",
+      "bytes": 24076
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/gardener-diagnosis.json",
+      "bytes": 887
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/mountains-07-uv-coverage.jpg",
+      "bytes": 327390
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/mountains-08-uv-coverage.jpg",
+      "bytes": 327390
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/no-paper-depth-stop05.png",
+      "bytes": 1213965
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/untextured-depth.json",
+      "bytes": 351
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-diagnostics/uv-coverage.json",
+      "bytes": 3460
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-extra-repair-prompts.json",
+      "bytes": 4326
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-generated-warm-check-0.jpg",
+      "bytes": 430001
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-generated-warm-check-1.jpg",
+      "bytes": 525092
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-generated-warm-check-2.jpg",
+      "bytes": 390760
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-independent-visual-review.md",
+      "bytes": 6027
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion-early.png",
+      "bytes": 1199011
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion-late.png",
+      "bytes": 1198823
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/first-scroll-motion.webm",
+      "bytes": 2915127
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/frame-differences.json",
+      "bytes": 5660
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/opening-motion-detail-1.jpg",
+      "bytes": 89381
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/opening-motion-detail-2.jpg",
+      "bytes": 88292
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/opening-off-a.png",
+      "bytes": 1198854
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/opening-off-b.png",
+      "bytes": 1198854
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/opening-on-a.png",
+      "bytes": 1199011
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/opening-on-b.png",
+      "bytes": 1198830
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/opening-reduced-a.png",
+      "bytes": 1198854
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/opening-reduced-b.png",
+      "bytes": 1198854
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/opening-resumed.png",
+      "bytes": 1198848
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/palace-motion-detail-1.jpg",
+      "bytes": 87752
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/palace-motion-detail-2.jpg",
+      "bytes": 72204
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/palace-off-a.png",
+      "bytes": 1241448
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/palace-off-b.png",
+      "bytes": 1241448
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/palace-on-a.png",
+      "bytes": 1241787
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/palace-on-b.png",
+      "bytes": 1241489
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/palace-reduced-a.png",
+      "bytes": 1241448
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/palace-reduced-b.png",
+      "bytes": 1241448
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/palace-resumed.png",
+      "bytes": 1241556
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-motion/validation.json",
+      "bytes": 19632
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot-review.md",
+      "bytes": 3953
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/capture.json",
+      "bytes": 266
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-comparison.jpg",
+      "bytes": 399806
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-gap-01.jpg",
+      "bytes": 233442
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-gap-02.jpg",
+      "bytes": 241699
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-gap-03.jpg",
+      "bytes": 250247
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-gap-04.jpg",
+      "bytes": 233566
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-gap-05.jpg",
+      "bytes": 244696
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-gap-06.jpg",
+      "bytes": 246244
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-gap-07.jpg",
+      "bytes": 251249
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-gap-08.jpg",
+      "bytes": 204249
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-gap-09.jpg",
+      "bytes": 282493
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-gap-10.jpg",
+      "bytes": 233168
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-gap-11.jpg",
+      "bytes": 233189
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-gap-12.jpg",
+      "bytes": 199226
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-gap-13.jpg",
+      "bytes": 244006
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-gap-14.jpg",
+      "bytes": 170566
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-overview.jpg",
+      "bytes": 665192
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-stop-01.jpg",
+      "bytes": 254294
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-stop-02.jpg",
+      "bytes": 280405
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-stop-03.jpg",
+      "bytes": 270048
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-stop-04.jpg",
+      "bytes": 262150
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-stop-05.jpg",
+      "bytes": 258554
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-stop-06.jpg",
+      "bytes": 276925
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-stop-07.jpg",
+      "bytes": 263261
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-stop-08.jpg",
+      "bytes": 259815
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-stop-09.jpg",
+      "bytes": 241988
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-stop-10.jpg",
+      "bytes": 300152
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-stop-11.jpg",
+      "bytes": 241797
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-stop-12.jpg",
+      "bytes": 244345
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-stop-13.jpg",
+      "bytes": 255828
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-stop-14.jpg",
+      "bytes": 198465
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-stop-15.jpg",
+      "bytes": 162595
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/chapter-1-transitions-overview.jpg",
+      "bytes": 577162
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/frames.json",
+      "bytes": 15419
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/manifest.json",
+      "bytes": 72168
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pilot/transitions.json",
+      "bytes": 14662
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pixel-repair-generation-chapters-3-4.json",
+      "bytes": 14166
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pixel-repair-prompts-chapters-3-4.json",
+      "bytes": 13941
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pixel-repairs-3-4-contact.jpg",
+      "bytes": 540590
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pixel-repairs-chapter-2.json",
+      "bytes": 32879
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/pixel-repairs-chapters-3-4.json",
+      "bytes": 32936
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/prepared-assets.json",
+      "bytes": 124553
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/retained-uv-review/README.md",
+      "bytes": 1724
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/retained-uv-review/c1-m-01bb772addfb.png",
+      "bytes": 94358
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/retained-uv-review/c1-m-467de828cc88.png",
+      "bytes": 196463
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/retained-uv-review/c1-m-a0497f59dc09.png",
+      "bytes": 94358
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/retained-uv-review/c1-m-b21aed32e481.png",
+      "bytes": 261784
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/retained-uv-review/c1-m-e2ed2bb203ff.png",
+      "bytes": 148281
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/retained-uv-review/candidates-01.jpg",
+      "bytes": 174547
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/retained-uv-review/geometry-repair-list.json",
+      "bytes": 6394
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/retained-uv-review/machine-evidence.json",
+      "bytes": 283533
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/risk-detail-3-4-1.jpg",
+      "bytes": 522605
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/risk-detail-3-4-2.jpg",
+      "bytes": 417571
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/risk-detail-3-4-3.jpg",
+      "bytes": 505916
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/risk-detail-3-4-4.jpg",
+      "bytes": 166326
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/runtime-bindings.json",
+      "bytes": 227253
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/source-audit.json",
+      "bytes": 1744440
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/source-audit.py",
+      "bytes": 14330
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/source-paths.local.json",
+      "bytes": 387
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/text-preview/chapter-1-stop-14-1440x900.png",
+      "bytes": 1052251
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/text-preview/chapter-1-stop-14-375x667.png",
+      "bytes": 164591
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/text-preview/chapter-1-stop-15-1440x900.png",
+      "bytes": 800567
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/text-preview/chapter-1-stop-15-375x667.png",
+      "bytes": 72464
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/validation-art-text.json",
+      "bytes": 48690
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/validation-extended-art-text.json",
+      "bytes": 26773
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/validation-motion-budget.json",
+      "bytes": 4481
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/validation-motion-ui.json",
+      "bytes": 985
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/validation-motion-unit.json",
+      "bytes": 3011
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/validation-recovery-ui.json",
+      "bytes": 362
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/visual-acceptance-chapter-3.json",
+      "bytes": 17195
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/visual-acceptance-chapter-4.json",
+      "bytes": 4169
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/visual-review-chapter-1.json",
+      "bytes": 127948
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/visual-review-chapter-2.json",
+      "bytes": 57532
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/visual-review-chapter-3-final-delta.json",
+      "bytes": 2117
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/visual-review-chapters-3-4.json",
+      "bytes": 272728
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/visual-review-structural.json",
+      "bytes": 345561
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/visual-review.json",
+      "bytes": 785010
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/web-motion-audit.md",
+      "bytes": 16513
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/web-motion-implementation.md",
+      "bytes": 6005
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/reconstruction/write-blender-delivery.py",
+      "bytes": 10405
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/screenshots/portable-subpath-1280x720.png",
+      "bytes": 1258503
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/screenshots/responsive-1440x900-start.png",
+      "bytes": 1867071
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/screenshots/responsive-320x568-drawer.png",
+      "bytes": 95657
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/screenshots/responsive-375x667-start.png",
+      "bytes": 380931
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/screenshots/responsive-620x360-card-actions.png",
+      "bytes": 440741
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/validation-portable-subpath.json",
+      "bytes": 1385
+    },
+    {
+      "status": "added",
+      "category": "evidence-and-documentation",
+      "path": "reports/validation-responsive-ui.json",
+      "bytes": 18247
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "runStart.cmd",
+      "bytes": 1183
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/asset-pipeline.example.json",
+      "bytes": 498
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/asset_config.py",
+      "bytes": 9749
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/audit-layers.py",
+      "bytes": 25290
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/build-motion-candidates.mjs",
+      "bytes": 15789
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/build-pilot-reconstruction.mjs",
+      "bytes": 9544
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/build-reconstruction.mjs",
+      "bytes": 10036
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/capture-final-fourth-motion.mjs",
+      "bytes": 5079
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/capture-reconstruction.mjs",
+      "bytes": 5234
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/measure-all-motion.py",
+      "bytes": 6846
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/measure-motion-corners.py",
+      "bytes": 1986
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/measure-pilot-motion.py",
+      "bytes": 5434
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/prepare-extended-layer-plan.mjs",
+      "bytes": 15309
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/prepare-reconstruction-assets.py",
+      "bytes": 10259
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/reconstruct-blender.py",
+      "bytes": 66032
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/report-delivery-files.py",
+      "bytes": 3538
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/report-reconstruction-status.mjs",
+      "bytes": 13856
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/test-asset-image-resolution.py",
+      "bytes": 9617
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/test-blender-reconstruction-preflight.py",
+      "bytes": 9068
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/validate-all-motion.mjs",
+      "bytes": 14646
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/validate-motion-budget.mjs",
+      "bytes": 4538
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/validate-motion-corners.mjs",
+      "bytes": 9469
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/validate-motion-refresh.mjs",
+      "bytes": 7339
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/validate-motion.mjs",
+      "bytes": 29445
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/validate-pilot-motion.mjs",
+      "bytes": 7153
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/validate-reconstructed-blender.py",
+      "bytes": 3172
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/validate-startup.mjs",
+      "bytes": 3470
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "scripts/validate-subpath.mjs",
+      "bytes": 8051
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "src/data/motionProfiles.ts",
+      "bytes": 10902
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "src/scene/ArtDirectionLayer.ts",
+      "bytes": 16374
+    },
+    {
+      "status": "added",
+      "category": "code-and-configuration",
+      "path": "src/scene/MotionDirector.ts",
+      "bytes": 14088
+    },
+    {
+      "status": "added",
+      "category": "engineering-memory",
+      "path": "wiki_memory/日志/2026-10-19-修复启动冲突与窗口自适应.md",
+      "bytes": 2840
+    },
+    {
+      "status": "added",
+      "category": "engineering-memory",
+      "path": "wiki_memory/日志/2026-10-20-四卷图层重构与完整交付.md",
+      "bytes": 6055
+    },
+    {
+      "status": "added",
+      "category": "engineering-memory",
+      "path": "wiki_memory/日志/2026-10-20-四卷网页轻动与盛衰实证.md",
+      "bytes": 3844
+    }
+  ],
+  "retiredRuntimeInstances": [
+    {
+      "chapter": 1,
+      "mesh": "14_批注06_右侧题字_原字",
+      "status": "runtime-hidden-original-retained"
+    },
+    {
+      "chapter": 1,
+      "mesh": "07_2-山水人群.001",
+      "status": "runtime-hidden-original-retained"
+    },
+    {
+      "chapter": 1,
+      "mesh": "14_背景01_女帝身后背景_补全.001",
+      "status": "runtime-hidden-original-retained"
+    },
+    {
+      "chapter": 1,
+      "mesh": "14_背景02_右上与右下书页后背景_组合.001",
+      "status": "runtime-hidden-original-retained"
+    },
+    {
+      "chapter": 2,
+      "mesh": "2-6 题字 02_中央题字",
+      "status": "runtime-hidden-original-retained"
+    },
+    {
+      "chapter": 2,
+      "mesh": "右下河流与岸景.001",
+      "status": "runtime-hidden-original-retained"
+    },
+    {
+      "chapter": 2,
+      "mesh": "右下河流与岸景.002",
+      "status": "runtime-hidden-original-retained"
+    },
+    {
+      "chapter": 3,
+      "mesh": "SC03_03-text-panel",
+      "status": "runtime-hidden-original-retained"
+    },
+    {
+      "chapter": 3,
+      "mesh": "SC04_05_右侧文字面板",
+      "status": "runtime-hidden-original-retained"
+    },
+    {
+      "chapter": 3,
+      "mesh": "SC06_25_题词文字",
+      "status": "runtime-hidden-original-retained"
+    },
+    {
+      "chapter": 3,
+      "mesh": "SC06_26_朱红印章",
+      "status": "runtime-hidden-original-retained"
+    },
+    {
+      "chapter": 4,
+      "mesh": "4-8 · 01 · 故国山水城景.001",
+      "status": "runtime-hidden-original-retained"
+    },
+    {
+      "chapter": 4,
+      "mesh": "05_字幕替换意境山水.001",
+      "status": "runtime-hidden-original-retained"
+    },
+    {
+      "chapter": 4,
+      "mesh": "4-1 · 01 · 题字与远宫",
+      "status": "runtime-hidden-original-retained"
+    },
+    {
+      "chapter": 4,
+      "mesh": "4-9 · 04 · 千古题字",
+      "status": "runtime-hidden-original-retained"
+    }
+  ],
+  "sourceFonts": "12 original FONT instances remain exported but are skipped by the web renderer; readable content is provided through HTML and the culture drawer."
+}

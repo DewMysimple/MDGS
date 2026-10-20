@@ -1,0 +1,124 @@
+{
+  "status": "pass",
+  "startedAt": "2026-10-20T01:56:58.415Z",
+  "completedAt": "2026-10-20T01:56:58.728Z",
+  "viteVersion": "6.4.4",
+  "launchedFrom": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp",
+  "checks": [
+    {
+      "kind": "dev",
+      "url": "http://127.0.0.1:7451/",
+      "port": 7451,
+      "root": "E:/数字媒体竞赛/gitProject/MDGS",
+      "pageStatus": 200,
+      "assetStatus": 200
+    },
+    {
+      "kind": "dev",
+      "url": "http://127.0.0.1:7454/",
+      "port": 7454,
+      "root": "E:/数字媒体竞赛/gitProject/MDGS",
+      "pageStatus": 200,
+      "assetStatus": 200
+    },
+    {
+      "kind": "dev",
+      "url": "http://127.0.0.1:7452/",
+      "port": 7452,
+      "root": "E:/数字媒体竞赛/gitProject/MDGS",
+      "pageStatus": 200,
+      "assetStatus": 200
+    },
+    {
+      "kind": "preview",
+      "url": "http://127.0.0.1:7460/",
+      "port": 7460,
+      "root": "E:/数字媒体竞赛/gitProject/MDGS",
+      "pageStatus": 200,
+      "assetStatus": 200
+    },
+    {
+      "kind": "preview",
+      "url": "http://127.0.0.1:7463/",
+      "port": 7463,
+      "root": "E:/数字媒体竞赛/gitProject/MDGS",
+      "pageStatus": 200,
+      "assetStatus": 200
+    }
+  ],
+  "cleanup": [
+    {
+      "kind": "preview",
+      "port": 7463,
+      "listening": false,
+      "address": null,
+      "status": "closed"
+    },
+    {
+      "kind": "preview",
+      "port": 7460,
+      "listening": false,
+      "address": null,
+      "status": "closed"
+    },
+    {
+      "kind": "dev",
+      "port": 7452,
+      "listening": false,
+      "address": null,
+      "status": "closed"
+    },
+    {
+      "kind": "dev",
+      "port": 7454,
+      "listening": false,
+      "address": null,
+      "status": "closed"
+    },
+    {
+      "kind": "dev",
+      "port": 7451,
+      "listening": false,
+      "address": null,
+      "status": "closed"
+    }
+  ],
+  "cwdRestored": true,
+  "scope": "Five real dev/preview HTTP servers; dependency scanning and speculative transforms are disabled only for this browserless startup test.",
+  "command": "npm run test:startup",
+  "processExitCode": 0,
+  "commandLog": "reports/blank-design/final/startup-command.log",
+  "sourceReport": "reports/validation-startup.json",
+  "sourceReportSha256": "4cd8a05d0dde1c3ea9430b22968a7f158de0fa254360d57249eef03158816ef8",
+  "validatorSha256": "ed3e5b7870ff1a12d1382c0cda54adda52f1312092eb3d864d96c5e6c8284c64",
+  "portAssertions": {
+    "concurrentDevDistinct": true,
+    "occupiedDevFallback": {
+      "requestedPort": 7451,
+      "selectedPort": 7452,
+      "passed": true
+    },
+    "concurrentPreviewDistinct": true,
+    "printedUrlsUseBoundPort": true,
+    "unrelatedWorkingDirectory": true,
+    "projectRootAndTitleVerified": true,
+    "developmentClientVerified": true,
+    "publicSvgVerified": true
+  },
+  "diagnosis": {
+    "reproducedBeforeFixExitCode": 13,
+    "preservedFailureLog": "reports/blank-design/final/startup-before-fix.log",
+    "localViteVersion": "6.4.4",
+    "localSource": "node_modules/vite/dist/node/chunks/dep-3O3b9SCF.js",
+    "sourceObservations": [
+      "createDepsOptimizer.close lines47289-47295 cancels discovery while awaiting scanProcessing; fast browserless checks may close with import scans still in flight.",
+      "scanImports lines14163-14215 cancels rebuild and disposes the esbuild context; concurrent startup tests do not need this discovery work.",
+      "isDepOptimizationDisabled lines14725-14726 disables optimizer when noDiscovery is true and include is empty.",
+      "React config adds include entries, so test-only post config hook clears them after React. Development environment asserts depsOptimizer is absent.",
+      "preTransformRequest lines37981-37984 performs unsolicited module warmup unless preTransformRequests is false."
+    ],
+    "fixScope": "Only scripts/validate-startup.mjs and validation evidence. Product Vite config, source assets, canonical manifest, and other running servers are untouched.",
+    "failurePropagation": "Assertions and close failures are collected and thrown as AggregateError after attempting every owned server cleanup. No process.exit or error suppression.",
+    "passOrdering": "All five owned server close promises and stopped-listener assertions complete before writing the pass report and logging pass."
+  }
+}

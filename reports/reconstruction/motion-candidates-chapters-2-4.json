@@ -1,0 +1,4042 @@
+{
+  "schemaVersion": 1,
+  "stage": "read-only-candidates-after-first-scroll-audit",
+  "runtimeEnabled": false,
+  "constraints": [
+    "Only a future candidate list. motionProfiles and activeChapters were not edited; chapters 2–4 remain static until the first-scroll pilot is shown and verified.",
+    "Image bases come from local positions/UV, not world matrices. YZ and oblique UV bases need explicit engine support before activation; the current XY/XZ-only runtime cannot be reused blindly.",
+    "Baked characters, palace groups, phoenix patterns, ceramic vessels, mirrors, desks and jewellery remain static.",
+    "Tube CURVE UV is not a painted image plane. Cloud/water curves below are opacity-only candidates, never a moving carpet or a displaced ground."
+  ],
+  "chapters": [
+    {
+      "chapterId": 2,
+      "sceneSha256": "b7e7591c95f1b40ef66b60941213c4a5976975591c6765e584ddc5484553f153",
+      "travel": {
+        "axis": "X",
+        "sign": 1,
+        "range": [
+          -0.25,
+          16
+        ]
+      },
+      "readingStops": [
+        {
+          "name": "御苑春信",
+          "frame": 145,
+          "progress": 0
+        },
+        {
+          "name": "花出宫墙",
+          "frame": 721,
+          "progress": 0.16241276275705124
+        },
+        {
+          "name": "深宫独赏",
+          "frame": 1297,
+          "progress": 0.3238831847778297
+        },
+        {
+          "name": "私园初盛",
+          "frame": 1873,
+          "progress": 0.48743216584904925
+        },
+        {
+          "name": "宫苑雅宴",
+          "frame": 2617,
+          "progress": 0.6495794264206822
+        },
+        {
+          "name": "春野静赏",
+          "frame": 3409,
+          "progress": 0.7942611684413351
+        },
+        {
+          "name": "静待盛唐",
+          "frame": 4825,
+          "progress": 0.9764219847936453
+        }
+      ],
+      "candidates": [
+        {
+          "meshName": "2-6 前景 牡丹花枝",
+          "meshId": "c2-m-2cf7780eaa7a",
+          "textureId": "c2-t-9ce43389834b999b",
+          "texturePath": "public/assets/chapter-2/textures/9ce43389834b999b.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "reviewer": "Codex visual review",
+            "status": "reviewed",
+            "observations": "单枝牡丹花头、叶片、枝茎完整，透明轮廓有自然细节，是适合抽离的独立花枝。",
+            "action": "保留；枝根需固定位置和微弱接地/遮挡。",
+            "evidence": [
+              "reports/reconstruction/chapter-2-textures-02.jpg",
+              "reports/reconstruction/before/chapter-2-overview.jpg"
+            ],
+            "scope": "contact sheet and seven storyboard baseline screenshots",
+            "limitation": "此项为现有资产审校与处理裁决；修复/重生成后仍需看原图与分镜验收。"
+          },
+          "sourceType": "MESH",
+          "role": "flowerBranch",
+          "action": "sway",
+          "narrative": "春日静赏与花入民间的温润春风；仅独立花枝，人物与石台不动",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 3933,
+            "uvCount": 3933,
+            "spansXYZ": [
+              0.3217500001192093,
+              0.3123030960559845,
+              0.13872910290956497
+            ],
+            "plane": "UV-basis",
+            "basis": {
+              "originAtUvZero": [
+                -0.18331970000000705,
+                -0.1683965353213382,
+                -0.07512591583656429
+              ],
+              "alongU": [
+                0.33000000000001023,
+                -0.0001994745102015462,
+                0.00044802925097507857
+              ],
+              "alongV": [
+                2.7312548602556953e-15,
+                0.32348203236132006,
+                0.14374075240532336
+              ],
+              "normal": [
+                -0.0014861454796386531,
+                -0.40606951070800784,
+                0.9138409838943384
+              ],
+              "maxNormalResidual": 0.001969287374127941,
+              "maxInPlaneResidual": 0.000003270353875688174
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              0
+            ],
+            "angleDegrees": 0.25,
+            "periodSeconds": [
+              20,
+              30
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "支持明确UV基向量（含斜置局部平面），绕归一化u×v法线旋转；支点用UV映射，不能用XY/XZ枚举近似"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "春野静赏 → 静待盛唐",
+                "progress": 0.8853415766174901,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "静待盛唐",
+                "progress": 0.9764219847936453,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "春野静赏",
+                "progress": 0.7942611684413351,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "春野静赏 → 静待盛唐",
+                "progress": 0.8853415766174901,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "静待盛唐",
+                "progress": 0.9764219847936453,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        }
+      ],
+      "newIndependentLayersNeeded": [
+        "暂无独立云/柳/纸页/帷幔；按审校后的共享薄雾/单瓣与必要独立枝层补足，不摆动整幅雅集/园林图"
+      ]
+    },
+    {
+      "chapterId": 3,
+      "sceneSha256": "bd5d3e404a0834c4d3183f4eb66cc05e8b5346eae7f305906b6a351a138f6fb9",
+      "travel": {
+        "axis": "Y",
+        "sign": 1,
+        "range": [
+          -5,
+          485
+        ]
+      },
+      "readingStops": [
+        {
+          "name": "第一景",
+          "frame": 162,
+          "progress": 0
+        },
+        {
+          "name": "第二景",
+          "frame": 834,
+          "progress": 0.12341644431101914
+        },
+        {
+          "name": "第三景",
+          "frame": 1516,
+          "progress": 0.24713803226885958
+        },
+        {
+          "name": "第四景",
+          "frame": 2212,
+          "progress": 0.37069251986073537
+        },
+        {
+          "name": "第五景",
+          "frame": 2898,
+          "progress": 0.4947845160644397
+        },
+        {
+          "name": "第六景",
+          "frame": 3590,
+          "progress": 0.6190812816082915
+        },
+        {
+          "name": "第七景",
+          "frame": 4421,
+          "progress": 0.7432605852233363
+        },
+        {
+          "name": "第八景",
+          "frame": 5405,
+          "progress": 0.8673259018926424
+        },
+        {
+          "name": "第九景",
+          "frame": 6339,
+          "progress": 0.9903868032819582
+        }
+      ],
+      "candidates": [
+        {
+          "meshName": "04_中部织锦飘带",
+          "meshId": "c3-m-a32217e72ce0",
+          "textureId": "c3-t-8818501ede5169de",
+          "texturePath": "public/assets/chapter-3/textures/8818501ede5169de.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-3-textures-01.jpg"
+            ],
+            "contactSheetCell": 5,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": false,
+            "observation": "双面红青织锦盘转完整，两端收尖，无截尾；细长轮廓外保留透明区",
+            "safeMarginPx": [
+              20,
+              8,
+              20,
+              19
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "ribbon",
+          "action": "sway",
+          "narrative": "锦绣纹样的独立连接带，完整端部保留",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              2.339024305343628,
+              1,
+              0
+            ],
+            "plane": "XY",
+            "basis": {
+              "originAtUvZero": [
+                -1.1695122,
+                -0.5,
+                0
+              ],
+              "alongU": [
+                2.3390244,
+                0,
+                0
+              ],
+              "alongV": [
+                0,
+                1,
+                0
+              ],
+              "normal": [
+                0,
+                0,
+                1
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.12,
+              0.5
+            ],
+            "angleDegrees": 0.12,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": true,
+          "engineWorkBeforeActivation": [],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第七景",
+                "progress": 0.7432605852233363,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第六景 → 第七景",
+                "progress": 0.6811709334158138,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "第七景",
+                "progress": 0.7432605852233363,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第七景 → 第八景",
+                "progress": 0.8052932435579894,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "04_中部织锦飘带.001",
+          "meshId": "c3-m-ea7f27bcdadd",
+          "textureId": "c3-t-8818501ede5169de",
+          "texturePath": "public/assets/chapter-3/textures/8818501ede5169de.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-3-textures-01.jpg"
+            ],
+            "contactSheetCell": 5,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": false,
+            "observation": "双面红青织锦盘转完整，两端收尖，无截尾；细长轮廓外保留透明区",
+            "safeMarginPx": [
+              20,
+              8,
+              20,
+              19
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "ribbon",
+          "action": "sway",
+          "narrative": "同一独立锦带的复用实例，错相而非同步摇摆",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              2.339024305343628,
+              1,
+              0
+            ],
+            "plane": "XY",
+            "basis": {
+              "originAtUvZero": [
+                -1.1695122,
+                -0.5,
+                0
+              ],
+              "alongU": [
+                2.3390244,
+                0,
+                0
+              ],
+              "alongV": [
+                0,
+                1,
+                0
+              ],
+              "normal": [
+                0,
+                0,
+                1
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.12,
+              0.5
+            ],
+            "angleDegrees": 0.12,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": true,
+          "engineWorkBeforeActivation": [],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第六景 → 第七景",
+                "progress": 0.6811709334158138,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第七景",
+                "progress": 0.7432605852233363,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第六景 → 第七景",
+                "progress": 0.6811709334158138,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "第七景",
+                "progress": 0.7432605852233363,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第七景 → 第八景",
+                "progress": 0.8052932435579894,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "SC05_01_两盏花灯",
+          "meshId": "c3-m-3c3a40323c54",
+          "textureId": "c3-t-49efdde0a4453d39",
+          "texturePath": "public/assets/chapter-3/textures/49efdde0a4453d39.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-3-textures-02.jpg"
+            ],
+            "contactSheetCell": 12,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": false,
+            "observation": "两盏牡丹花灯的顶挂线、灯罩与流苏均完整，长窄透明边内无齐切",
+            "safeMarginPx": [
+              8,
+              8,
+              8,
+              8
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "lampPair",
+          "action": "sway",
+          "narrative": "年节祈福的牡丹灯彩",
+          "conditional": "灯彩与建筑/人物已分离，但同图含两盏灯；优先按两灯UV区拆成两个上端支点，再各自微摆；不整片大幅转动",
+          "localGeometry": {
+            "vertexCount": 14,
+            "uvCount": 14,
+            "spansXYZ": [
+              0,
+              1.6799999475479126,
+              5.436279296875
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                -0.9155982803021648,
+                -3.0297409714128407
+              ],
+              "alongU": [
+                0,
+                3.3599999489206334,
+                3.4554110140340344e-7
+              ],
+              "alongV": [
+                0,
+                -3.3438445708124697e-8,
+                5.436279170935079
+              ],
+              "normal": [
+                0.9999999999999999,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 3.6199058327639116e-7
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              1
+            ],
+            "angleDegrees": 0.12,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第五景",
+                "progress": 0.4947845160644397,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第四景 → 第五景",
+                "progress": 0.43273851796258755,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "第五景",
+                "progress": 0.4947845160644397,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第五景 → 第六景",
+                "progress": 0.5569328988363655,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "SC05_通道左上花灯",
+          "meshId": "c3-m-7817d107879e",
+          "textureId": "c3-t-49efdde0a4453d39",
+          "texturePath": "public/assets/chapter-3/textures/49efdde0a4453d39.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-3-textures-02.jpg"
+            ],
+            "contactSheetCell": 12,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": false,
+            "observation": "两盏牡丹花灯的顶挂线、灯罩与流苏均完整，长窄透明边内无齐切",
+            "safeMarginPx": [
+              8,
+              8,
+              8,
+              8
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "lampPair",
+          "action": "sway",
+          "narrative": "节庆转场的独立灯彩",
+          "conditional": "同图两灯，应复用UV分片并保留完整流苏；不新增纹理重复下载",
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              0,
+              1.1200000047683716,
+              1.8120930194854736
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                -0.56,
+                -0.9060465
+              ],
+              "alongU": [
+                0,
+                1.12,
+                0
+              ],
+              "alongV": [
+                0,
+                0,
+                1.812093
+              ],
+              "normal": [
+                1,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              1
+            ],
+            "angleDegrees": 0.12,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "No hit in these sampled views; investigate backup/off-route instances before binding rather than assuming runtime visibility"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "SC06_16_红色灯笼",
+          "meshId": "c3-m-986618e490da",
+          "textureId": "c3-t-1217d0b1e19eea1c",
+          "texturePath": "public/assets/chapter-3/textures/1217d0b1e19eea1c.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-3-textures-02.jpg"
+            ],
+            "contactSheetCell": 24,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": false,
+            "observation": "单灯笼顶钩、灯罩、长流苏完整，四周透明；两个场景实例共纹理",
+            "safeMarginPx": [
+              8,
+              8,
+              8,
+              8
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "singleLamp",
+          "action": "sway",
+          "narrative": "完整单灯，灯罩/顶钩/流苏独立于人物与器物，是首选轻摆对象",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              0,
+              1.0640000104904175,
+              3.241438388824463
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                -0.532,
+                -1.6207192
+              ],
+              "alongU": [
+                0,
+                1.064,
+                0
+              ],
+              "alongV": [
+                0,
+                0,
+                3.2414384
+              ],
+              "normal": [
+                1,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              1
+            ],
+            "angleDegrees": 0.25,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第六景",
+                "progress": 0.6190812816082915,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第五景 → 第六景",
+                "progress": 0.5569328988363655,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "第六景",
+                "progress": 0.6190812816082915,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "SC06_通道左上花灯",
+          "meshId": "c3-m-76c92bd221b2",
+          "textureId": "c3-t-1217d0b1e19eea1c",
+          "texturePath": "public/assets/chapter-3/textures/1217d0b1e19eea1c.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-3-textures-02.jpg"
+            ],
+            "contactSheetCell": 24,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": false,
+            "observation": "单灯笼顶钩、灯罩、长流苏完整，四周透明；两个场景实例共纹理",
+            "safeMarginPx": [
+              8,
+              8,
+              8,
+              8
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "singleLamp",
+          "action": "sway",
+          "narrative": "复用同一完整单灯的通道实例，不带动室内陈设",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              0,
+              1.1200000047683716,
+              3.4120404720306396
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                -0.56,
+                -1.7060202
+              ],
+              "alongU": [
+                0,
+                1.12,
+                0
+              ],
+              "alongV": [
+                0,
+                0,
+                3.4120404
+              ],
+              "normal": [
+                1,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              1
+            ],
+            "angleDegrees": 0.22,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "No hit in these sampled views; investigate backup/off-route instances before binding rather than assuming runtime visibility"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "SC05_通道右下花枝",
+          "meshId": "c3-m-67d556d4d466",
+          "textureId": "c3-t-f24338909a9d9ac7",
+          "texturePath": "public/assets/chapter-3/textures/f24338909a9d9ac7.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-3-textures-02.jpg"
+            ],
+            "contactSheetCell": 16,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": false,
+            "observation": "牡丹花团、最外叶片与底叶完整，清晰透明外轮廓",
+            "safeMarginPx": [
+              8,
+              8,
+              8,
+              8
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "flowerBranch",
+          "action": "sway",
+          "narrative": "祈福灯彩段的独立牡丹遮挡，枝根挂点和安全边待实景检查",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              0,
+              1.850000023841858,
+              1.5306627750396729
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                -0.925,
+                -0.7653314
+              ],
+              "alongU": [
+                0,
+                1.85,
+                0
+              ],
+              "alongV": [
+                0,
+                0,
+                1.5306628
+              ],
+              "normal": [
+                1,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              0
+            ],
+            "angleDegrees": 0.12,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "No hit in these sampled views; investigate backup/off-route instances before binding rather than assuming runtime visibility"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "SC06_通道右下花枝",
+          "meshId": "c3-m-6458aa576c50",
+          "textureId": "c3-t-3873a127c345f851",
+          "texturePath": "public/assets/chapter-3/textures/3873a127c345f851.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-3-textures-03.jpg"
+            ],
+            "contactSheetCell": 5,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": false,
+            "observation": "浅粉牡丹与外围花苞叶片完整，透明轮廓清楚，无方形纸底",
+            "safeMarginPx": [
+              8,
+              8,
+              8,
+              8
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "flowerBranch",
+          "action": "sway",
+          "narrative": "生活器用段的独立牡丹前景；花瓶、铜镜、首饰仍静止",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              0,
+              1.850000023841858,
+              1.5396602153778076
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                -0.925,
+                -0.7698301
+              ],
+              "alongU": [
+                0,
+                1.85,
+                0
+              ],
+              "alongV": [
+                0,
+                0,
+                1.5396602
+              ],
+              "normal": [
+                1,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              0
+            ],
+            "angleDegrees": 0.12,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第六景 → 第七景",
+                "progress": 0.6811709334158138,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第七景",
+                "progress": 0.7432605852233363,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第六景 → 第七景",
+                "progress": 0.6811709334158138,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "第七景",
+                "progress": 0.7432605852233363,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "SC09_07_飘带_左侧横向",
+          "meshId": "c3-m-763ae418101e",
+          "textureId": "c3-t-6f9ae9110c306c23",
+          "texturePath": "public/assets/chapter-3/textures/6f9ae9110c306c23.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-3-textures-03.jpg"
+            ],
+            "contactSheetCell": 20,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": false,
+            "observation": "横向浅绢带两端收尖，内部半透明，外边自然，没有裁断",
+            "safeMarginPx": [
+              8,
+              8,
+              8,
+              8
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "ribbon",
+          "action": "sway",
+          "narrative": "卷尾独立浅绢连接带，保持疏朗吉祥意象；每景最多少数可见带微动",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              0,
+              15.094339370727539,
+              5.335921287536621
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                -7.5471697,
+                -2.6679606
+              ],
+              "alongU": [
+                0,
+                15.0943394,
+                0
+              ],
+              "alongV": [
+                0,
+                0,
+                5.3359212
+              ],
+              "normal": [
+                1,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              0.8
+            ],
+            "angleDegrees": 0.12,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第八景 → 第九景",
+                "progress": 0.9288563525873003,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第九景",
+                "progress": 0.9903868032819582,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第八景 → 第九景",
+                "progress": 0.9288563525873003,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "第九景",
+                "progress": 0.9903868032819582,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "SC09_08_飘带_上左卷曲",
+          "meshId": "c3-m-becbb22f4fba",
+          "textureId": "c3-t-015512b5db7f2ffe",
+          "texturePath": "public/assets/chapter-3/textures/015512b5db7f2ffe.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-3-textures-03.jpg"
+            ],
+            "contactSheetCell": 21,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": false,
+            "observation": "竖向卷曲浅绢上下收尾完整，透明层不带底色块",
+            "safeMarginPx": [
+              8,
+              8,
+              8,
+              8
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "ribbon",
+          "action": "sway",
+          "narrative": "卷尾独立浅绢连接带，保持疏朗吉祥意象；每景最多少数可见带微动",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              0,
+              4.618867874145508,
+              8.93600082397461
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                -2.3094339,
+                -4.4680004
+              ],
+              "alongU": [
+                0,
+                4.6188678,
+                0
+              ],
+              "alongV": [
+                0,
+                0,
+                8.9360008
+              ],
+              "normal": [
+                1,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              0.8
+            ],
+            "angleDegrees": 0.12,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第九景",
+                "progress": 0.9903868032819582,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第八景 → 第九景",
+                "progress": 0.9288563525873003,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "第九景",
+                "progress": 0.9903868032819582,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "SC09_09_飘带_上右卷曲",
+          "meshId": "c3-m-431dee5b814c",
+          "textureId": "c3-t-459734fa198e0bc0",
+          "texturePath": "public/assets/chapter-3/textures/459734fa198e0bc0.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-3-textures-03.jpg"
+            ],
+            "contactSheetCell": 22,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": false,
+            "observation": "第二条竖绢带曲线完整，尖端未被画幅切掉",
+            "safeMarginPx": [
+              8,
+              8,
+              8,
+              8
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "ribbon",
+          "action": "sway",
+          "narrative": "卷尾独立浅绢连接带，保持疏朗吉祥意象；每景最多少数可见带微动",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              0,
+              4.573585033416748,
+              7.041214942932129
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                -2.2867925,
+                -3.5206075
+              ],
+              "alongU": [
+                0,
+                4.573585,
+                0
+              ],
+              "alongV": [
+                0,
+                0,
+                7.041215
+              ],
+              "normal": [
+                1,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              0.8
+            ],
+            "angleDegrees": 0.12,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第九景",
+                "progress": 0.9903868032819582,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第八景 → 第九景",
+                "progress": 0.9288563525873003,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "第九景",
+                "progress": 0.9903868032819582,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "SC09_10_飘带_左下延展",
+          "meshId": "c3-m-371464c6141d",
+          "textureId": "c3-t-02ee08a6834ac48e",
+          "texturePath": "public/assets/chapter-3/textures/02ee08a6834ac48e.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-3-textures-03.jpg"
+            ],
+            "contactSheetCell": 23,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": false,
+            "observation": "左下斜向浅带曲线与尾端完整，薄透边自然",
+            "safeMarginPx": [
+              8,
+              8,
+              8,
+              8
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "ribbon",
+          "action": "sway",
+          "narrative": "卷尾独立浅绢连接带，保持疏朗吉祥意象；每景最多少数可见带微动",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              0,
+              13.476226806640625,
+              7.588946342468262
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                -6.7381134,
+                -3.7944732
+              ],
+              "alongU": [
+                0,
+                13.4762268,
+                0
+              ],
+              "alongV": [
+                0,
+                0,
+                7.5889464
+              ],
+              "normal": [
+                1,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              0.8
+            ],
+            "angleDegrees": 0.12,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第九景",
+                "progress": 0.9903868032819582,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第八景 → 第九景",
+                "progress": 0.9288563525873003,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "第九景",
+                "progress": 0.9903868032819582,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "SC09_11_飘带_右下延展",
+          "meshId": "c3-m-65b551453722",
+          "textureId": "c3-t-42d56ee6b5ac2234",
+          "texturePath": "public/assets/chapter-3/textures/42d56ee6b5ac2234.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-3-textures-03.jpg"
+            ],
+            "contactSheetCell": 24,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": false,
+            "observation": "右下浅带双曲线完整，透明收尾、无硬矩形边",
+            "safeMarginPx": [
+              8,
+              8,
+              8,
+              8
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "ribbon",
+          "action": "sway",
+          "narrative": "卷尾独立浅绢连接带，保持疏朗吉祥意象；每景最多少数可见带微动",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              0,
+              13.60905647277832,
+              7.7155609130859375
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                -6.8045282,
+                -3.8577805
+              ],
+              "alongU": [
+                0,
+                13.6090564,
+                0
+              ],
+              "alongV": [
+                0,
+                0,
+                7.715561
+              ],
+              "normal": [
+                0.9999999999999999,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              0.8
+            ],
+            "angleDegrees": 0.12,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第九景",
+                "progress": 0.9903868032819582,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第八景 → 第九景",
+                "progress": 0.9288563525873003,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "第九景",
+                "progress": 0.9903868032819582,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "过渡01_淡云水线1",
+          "meshId": "c3-m-04adedd1a28a",
+          "textureId": null,
+          "texturePath": null,
+          "visualTreatment": "structuralGeometryPreserved",
+          "visualEvidence": "原几何/材质审查；此项为曲线结构，非独立图片视觉审校",
+          "sourceType": "CURVE",
+          "role": "cloudLine",
+          "action": "opacityPulse",
+          "narrative": "既有淡云水脉连接，保留原曲线几何，仅低频浅透明度呼吸",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 729,
+            "uvCount": 729,
+            "spansXYZ": [
+              0.027999999932944775,
+              26.002700805664062,
+              0.7875417768955231
+            ],
+            "plane": "CURVE_3D",
+            "basis": null,
+            "basisMethod": "positions span and CURVE source type; UV wraps tube circumference, not the image vertical",
+            "dominantExtentPlane": "YZ"
+          },
+          "suggestedLimits": {
+            "opacityAmplitude": 0.025,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "新增opacityPulse动作，仅改变已选细线透明度；材质需transparent:true/depthWrite:false；保持几何矩阵静止"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第一景",
+                "progress": 0,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第一景 → 第二景",
+                "progress": 0.06170822215550957,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第二景",
+                "progress": 0.12341644431101914,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第一景",
+                "progress": 0,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第一景 → 第二景",
+                "progress": 0.06170822215550957,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "第二景",
+                "progress": 0.12341644431101914,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "过渡02_淡云水线1",
+          "meshId": "c3-m-c3538a3b361e",
+          "textureId": null,
+          "texturePath": null,
+          "visualTreatment": "structuralGeometryPreserved",
+          "visualEvidence": "原几何/材质审查；此项为曲线结构，非独立图片视觉审校",
+          "sourceType": "CURVE",
+          "role": "cloudLine",
+          "action": "opacityPulse",
+          "narrative": "既有淡云水脉连接，保留原曲线几何，仅低频浅透明度呼吸",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 729,
+            "uvCount": 729,
+            "spansXYZ": [
+              0.027999999932944775,
+              26.002700805664062,
+              0.7875417768955231
+            ],
+            "plane": "CURVE_3D",
+            "basis": null,
+            "basisMethod": "positions span and CURVE source type; UV wraps tube circumference, not the image vertical",
+            "dominantExtentPlane": "YZ"
+          },
+          "suggestedLimits": {
+            "opacityAmplitude": 0.025,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "新增opacityPulse动作，仅改变已选细线透明度；材质需transparent:true/depthWrite:false；保持几何矩阵静止"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第二景",
+                "progress": 0.12341644431101914,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第二景 → 第三景",
+                "progress": 0.18527723828993936,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第三景",
+                "progress": 0.24713803226885958,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第二景",
+                "progress": 0.12341644431101914,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第二景 → 第三景",
+                "progress": 0.18527723828993936,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "第三景",
+                "progress": 0.24713803226885958,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "过渡03_淡云水线1",
+          "meshId": "c3-m-b76d453955f1",
+          "textureId": null,
+          "texturePath": null,
+          "visualTreatment": "structuralGeometryPreserved",
+          "visualEvidence": "原几何/材质审查；此项为曲线结构，非独立图片视觉审校",
+          "sourceType": "CURVE",
+          "role": "cloudLine",
+          "action": "opacityPulse",
+          "narrative": "既有淡云水脉连接，保留原曲线几何，仅低频浅透明度呼吸",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 729,
+            "uvCount": 729,
+            "spansXYZ": [
+              0.027999999932944775,
+              26.002700805664062,
+              0.7875417768955231
+            ],
+            "plane": "CURVE_3D",
+            "basis": null,
+            "basisMethod": "positions span and CURVE source type; UV wraps tube circumference, not the image vertical",
+            "dominantExtentPlane": "YZ"
+          },
+          "suggestedLimits": {
+            "opacityAmplitude": 0.025,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "新增opacityPulse动作，仅改变已选细线透明度；材质需transparent:true/depthWrite:false；保持几何矩阵静止"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第三景",
+                "progress": 0.24713803226885958,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第三景 → 第四景",
+                "progress": 0.30891527606479746,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第四景",
+                "progress": 0.37069251986073537,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第三景",
+                "progress": 0.24713803226885958,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第三景 → 第四景",
+                "progress": 0.30891527606479746,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "第四景",
+                "progress": 0.37069251986073537,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "过渡04_淡云水线1",
+          "meshId": "c3-m-403498887a9f",
+          "textureId": null,
+          "texturePath": null,
+          "visualTreatment": "structuralGeometryPreserved",
+          "visualEvidence": "原几何/材质审查；此项为曲线结构，非独立图片视觉审校",
+          "sourceType": "CURVE",
+          "role": "cloudLine",
+          "action": "opacityPulse",
+          "narrative": "既有淡云水脉连接，保留原曲线几何，仅低频浅透明度呼吸",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 729,
+            "uvCount": 729,
+            "spansXYZ": [
+              0.027999999932944775,
+              26.002700805664062,
+              0.7875417768955231
+            ],
+            "plane": "CURVE_3D",
+            "basis": null,
+            "basisMethod": "positions span and CURVE source type; UV wraps tube circumference, not the image vertical",
+            "dominantExtentPlane": "YZ"
+          },
+          "suggestedLimits": {
+            "opacityAmplitude": 0.025,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "新增opacityPulse动作，仅改变已选细线透明度；材质需transparent:true/depthWrite:false；保持几何矩阵静止"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第四景",
+                "progress": 0.37069251986073537,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第四景 → 第五景",
+                "progress": 0.43273851796258755,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第五景",
+                "progress": 0.4947845160644397,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第四景",
+                "progress": 0.37069251986073537,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第四景 → 第五景",
+                "progress": 0.43273851796258755,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "第五景",
+                "progress": 0.4947845160644397,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "过渡05_淡云水线1",
+          "meshId": "c3-m-f56a8c119354",
+          "textureId": null,
+          "texturePath": null,
+          "visualTreatment": "structuralGeometryPreserved",
+          "visualEvidence": "原几何/材质审查；此项为曲线结构，非独立图片视觉审校",
+          "sourceType": "CURVE",
+          "role": "cloudLine",
+          "action": "opacityPulse",
+          "narrative": "既有淡云水脉连接，保留原曲线几何，仅低频浅透明度呼吸",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 729,
+            "uvCount": 729,
+            "spansXYZ": [
+              0.027999999932944775,
+              26.00269889831543,
+              0.7875417768955231
+            ],
+            "plane": "CURVE_3D",
+            "basis": null,
+            "basisMethod": "positions span and CURVE source type; UV wraps tube circumference, not the image vertical",
+            "dominantExtentPlane": "YZ"
+          },
+          "suggestedLimits": {
+            "opacityAmplitude": 0.025,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "新增opacityPulse动作，仅改变已选细线透明度；材质需transparent:true/depthWrite:false；保持几何矩阵静止"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第五景",
+                "progress": 0.4947845160644397,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第五景 → 第六景",
+                "progress": 0.5569328988363655,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第六景",
+                "progress": 0.6190812816082915,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第五景",
+                "progress": 0.4947845160644397,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第五景 → 第六景",
+                "progress": 0.5569328988363655,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "第六景",
+                "progress": 0.6190812816082915,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "过渡06_淡云水线1",
+          "meshId": "c3-m-2eb0d91c9707",
+          "textureId": null,
+          "texturePath": null,
+          "visualTreatment": "structuralGeometryPreserved",
+          "visualEvidence": "原几何/材质审查；此项为曲线结构，非独立图片视觉审校",
+          "sourceType": "CURVE",
+          "role": "cloudLine",
+          "action": "opacityPulse",
+          "narrative": "既有淡云水脉连接，保留原曲线几何，仅低频浅透明度呼吸",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 729,
+            "uvCount": 729,
+            "spansXYZ": [
+              0.027999999932944775,
+              26.00269889831543,
+              0.7875417768955231
+            ],
+            "plane": "CURVE_3D",
+            "basis": null,
+            "basisMethod": "positions span and CURVE source type; UV wraps tube circumference, not the image vertical",
+            "dominantExtentPlane": "YZ"
+          },
+          "suggestedLimits": {
+            "opacityAmplitude": 0.025,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "新增opacityPulse动作，仅改变已选细线透明度；材质需transparent:true/depthWrite:false；保持几何矩阵静止"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第六景",
+                "progress": 0.6190812816082915,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第六景 → 第七景",
+                "progress": 0.6811709334158138,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第七景",
+                "progress": 0.7432605852233363,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第六景",
+                "progress": 0.6190812816082915,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第六景 → 第七景",
+                "progress": 0.6811709334158138,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "第七景",
+                "progress": 0.7432605852233363,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "过渡07_淡云水线1",
+          "meshId": "c3-m-f998168f7e0f",
+          "textureId": null,
+          "texturePath": null,
+          "visualTreatment": "structuralGeometryPreserved",
+          "visualEvidence": "原几何/材质审查；此项为曲线结构，非独立图片视觉审校",
+          "sourceType": "CURVE",
+          "role": "cloudLine",
+          "action": "opacityPulse",
+          "narrative": "既有淡云水脉连接，保留原曲线几何，仅低频浅透明度呼吸",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 729,
+            "uvCount": 729,
+            "spansXYZ": [
+              0.027999999932944775,
+              26.00269889831543,
+              0.7875417768955231
+            ],
+            "plane": "CURVE_3D",
+            "basis": null,
+            "basisMethod": "positions span and CURVE source type; UV wraps tube circumference, not the image vertical",
+            "dominantExtentPlane": "YZ"
+          },
+          "suggestedLimits": {
+            "opacityAmplitude": 0.025,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "新增opacityPulse动作，仅改变已选细线透明度；材质需transparent:true/depthWrite:false；保持几何矩阵静止"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第七景",
+                "progress": 0.7432605852233363,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第七景 → 第八景",
+                "progress": 0.8052932435579894,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第八景",
+                "progress": 0.8673259018926424,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第七景",
+                "progress": 0.7432605852233363,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第七景 → 第八景",
+                "progress": 0.8052932435579894,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "第八景",
+                "progress": 0.8673259018926424,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "过渡08_淡云水线1",
+          "meshId": "c3-m-0745c17e3214",
+          "textureId": null,
+          "texturePath": null,
+          "visualTreatment": "structuralGeometryPreserved",
+          "visualEvidence": "原几何/材质审查；此项为曲线结构，非独立图片视觉审校",
+          "sourceType": "CURVE",
+          "role": "cloudLine",
+          "action": "opacityPulse",
+          "narrative": "既有淡云水脉连接，保留原曲线几何，仅低频浅透明度呼吸",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 729,
+            "uvCount": 729,
+            "spansXYZ": [
+              0.027999999932944775,
+              26.00269889831543,
+              0.7875417768955231
+            ],
+            "plane": "CURVE_3D",
+            "basis": null,
+            "basisMethod": "positions span and CURVE source type; UV wraps tube circumference, not the image vertical",
+            "dominantExtentPlane": "YZ"
+          },
+          "suggestedLimits": {
+            "opacityAmplitude": 0.025,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "新增opacityPulse动作，仅改变已选细线透明度；材质需transparent:true/depthWrite:false；保持几何矩阵静止"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第八景",
+                "progress": 0.8673259018926424,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第八景 → 第九景",
+                "progress": 0.9288563525873003,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第九景",
+                "progress": 0.9903868032819582,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第八景",
+                "progress": 0.8673259018926424,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第八景 → 第九景",
+                "progress": 0.9288563525873003,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "第九景",
+                "progress": 0.9903868032819582,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "TR01_水波0",
+          "meshId": "c3-m-a1a125ea0dc4",
+          "textureId": null,
+          "texturePath": null,
+          "visualTreatment": "structuralGeometryPreserved",
+          "visualEvidence": "原几何/材质审查；此项为曲线结构，非独立图片视觉审校",
+          "sourceType": "CURVE",
+          "role": "waterLine",
+          "action": "opacityPulse",
+          "narrative": "既有水波细线，每个连接段只选一根参与呼吸，不整片水面/树木位移",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 27,
+            "uvCount": 27,
+            "spansXYZ": [
+              0.024000000208616257,
+              1.8010647892951965,
+              0.06398809887468815
+            ],
+            "plane": "CURVE_3D",
+            "basis": null,
+            "basisMethod": "positions span and CURVE source type; UV wraps tube circumference, not the image vertical",
+            "dominantExtentPlane": "YZ"
+          },
+          "suggestedLimits": {
+            "opacityAmplitude": 0.025,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "新增opacityPulse动作，仅改变已选细线透明度；材质需transparent:true/depthWrite:false；保持几何矩阵静止"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第一景",
+                "progress": 0,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第一景 → 第二景",
+                "progress": 0.06170822215550957,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第一景",
+                "progress": 0,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第一景 → 第二景",
+                "progress": 0.06170822215550957,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "TR02_水波0",
+          "meshId": "c3-m-da9e8465877f",
+          "textureId": null,
+          "texturePath": null,
+          "visualTreatment": "structuralGeometryPreserved",
+          "visualEvidence": "原几何/材质审查；此项为曲线结构，非独立图片视觉审校",
+          "sourceType": "CURVE",
+          "role": "waterLine",
+          "action": "opacityPulse",
+          "narrative": "既有水波细线，每个连接段只选一根参与呼吸，不整片水面/树木位移",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 27,
+            "uvCount": 27,
+            "spansXYZ": [
+              0.024000000208616257,
+              1.8010685443878174,
+              0.06398829817771912
+            ],
+            "plane": "CURVE_3D",
+            "basis": null,
+            "basisMethod": "positions span and CURVE source type; UV wraps tube circumference, not the image vertical",
+            "dominantExtentPlane": "YZ"
+          },
+          "suggestedLimits": {
+            "opacityAmplitude": 0.025,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "新增opacityPulse动作，仅改变已选细线透明度；材质需transparent:true/depthWrite:false；保持几何矩阵静止"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第二景 → 第三景",
+                "progress": 0.18527723828993936,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第二景",
+                "progress": 0.12341644431101914,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第二景 → 第三景",
+                "progress": 0.18527723828993936,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "TR03_水波0",
+          "meshId": "c3-m-8e7de15450f3",
+          "textureId": null,
+          "texturePath": null,
+          "visualTreatment": "structuralGeometryPreserved",
+          "visualEvidence": "原几何/材质审查；此项为曲线结构，非独立图片视觉审校",
+          "sourceType": "CURVE",
+          "role": "waterLine",
+          "action": "opacityPulse",
+          "narrative": "既有水波细线，每个连接段只选一根参与呼吸，不整片水面/树木位移",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 27,
+            "uvCount": 27,
+            "spansXYZ": [
+              0.024000000208616257,
+              1.8010687232017517,
+              0.06398809887468815
+            ],
+            "plane": "CURVE_3D",
+            "basis": null,
+            "basisMethod": "positions span and CURVE source type; UV wraps tube circumference, not the image vertical",
+            "dominantExtentPlane": "YZ"
+          },
+          "suggestedLimits": {
+            "opacityAmplitude": 0.025,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "新增opacityPulse动作，仅改变已选细线透明度；材质需transparent:true/depthWrite:false；保持几何矩阵静止"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第三景 → 第四景",
+                "progress": 0.30891527606479746,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第三景",
+                "progress": 0.24713803226885958,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第三景 → 第四景",
+                "progress": 0.30891527606479746,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "TR04_水波0",
+          "meshId": "c3-m-caa33f8909e7",
+          "textureId": null,
+          "texturePath": null,
+          "visualTreatment": "structuralGeometryPreserved",
+          "visualEvidence": "原几何/材质审查；此项为曲线结构，非独立图片视觉审校",
+          "sourceType": "CURVE",
+          "role": "waterLine",
+          "action": "opacityPulse",
+          "narrative": "既有水波细线，每个连接段只选一根参与呼吸，不整片水面/树木位移",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 27,
+            "uvCount": 27,
+            "spansXYZ": [
+              0.024000000208616257,
+              1.8010687232017517,
+              0.06398819945752621
+            ],
+            "plane": "CURVE_3D",
+            "basis": null,
+            "basisMethod": "positions span and CURVE source type; UV wraps tube circumference, not the image vertical",
+            "dominantExtentPlane": "YZ"
+          },
+          "suggestedLimits": {
+            "opacityAmplitude": 0.025,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "新增opacityPulse动作，仅改变已选细线透明度；材质需transparent:true/depthWrite:false；保持几何矩阵静止"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第四景 → 第五景",
+                "progress": 0.43273851796258755,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第四景",
+                "progress": 0.37069251986073537,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第四景 → 第五景",
+                "progress": 0.43273851796258755,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "TR05_水波0",
+          "meshId": "c3-m-1585c54be608",
+          "textureId": null,
+          "texturePath": null,
+          "visualTreatment": "structuralGeometryPreserved",
+          "visualEvidence": "原几何/材质审查；此项为曲线结构，非独立图片视觉审校",
+          "sourceType": "CURVE",
+          "role": "waterLine",
+          "action": "opacityPulse",
+          "narrative": "既有水波细线，每个连接段只选一根参与呼吸，不整片水面/树木位移",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 27,
+            "uvCount": 27,
+            "spansXYZ": [
+              0.024000000208616257,
+              1.8010534048080444,
+              0.06398819945752621
+            ],
+            "plane": "CURVE_3D",
+            "basis": null,
+            "basisMethod": "positions span and CURVE source type; UV wraps tube circumference, not the image vertical",
+            "dominantExtentPlane": "YZ"
+          },
+          "suggestedLimits": {
+            "opacityAmplitude": 0.025,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "新增opacityPulse动作，仅改变已选细线透明度；材质需transparent:true/depthWrite:false；保持几何矩阵静止"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第五景 → 第六景",
+                "progress": 0.5569328988363655,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第五景",
+                "progress": 0.4947845160644397,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第五景 → 第六景",
+                "progress": 0.5569328988363655,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "TR06_水波0",
+          "meshId": "c3-m-2134a17e2096",
+          "textureId": null,
+          "texturePath": null,
+          "visualTreatment": "structuralGeometryPreserved",
+          "visualEvidence": "原几何/材质审查；此项为曲线结构，非独立图片视觉审校",
+          "sourceType": "CURVE",
+          "role": "waterLine",
+          "action": "opacityPulse",
+          "narrative": "既有水波细线，每个连接段只选一根参与呼吸，不整片水面/树木位移",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 27,
+            "uvCount": 27,
+            "spansXYZ": [
+              0.024000000208616257,
+              1.8010534048080444,
+              0.06398809887468815
+            ],
+            "plane": "CURVE_3D",
+            "basis": null,
+            "basisMethod": "positions span and CURVE source type; UV wraps tube circumference, not the image vertical",
+            "dominantExtentPlane": "YZ"
+          },
+          "suggestedLimits": {
+            "opacityAmplitude": 0.025,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "新增opacityPulse动作，仅改变已选细线透明度；材质需transparent:true/depthWrite:false；保持几何矩阵静止"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第六景 → 第七景",
+                "progress": 0.6811709334158138,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第六景",
+                "progress": 0.6190812816082915,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第六景 → 第七景",
+                "progress": 0.6811709334158138,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "TR07_水波0",
+          "meshId": "c3-m-a62ed178acc8",
+          "textureId": null,
+          "texturePath": null,
+          "visualTreatment": "structuralGeometryPreserved",
+          "visualEvidence": "原几何/材质审查；此项为曲线结构，非独立图片视觉审校",
+          "sourceType": "CURVE",
+          "role": "waterLine",
+          "action": "opacityPulse",
+          "narrative": "既有水波细线，每个连接段只选一根参与呼吸，不整片水面/树木位移",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 27,
+            "uvCount": 27,
+            "spansXYZ": [
+              0.024000000208616257,
+              1.8010534048080444,
+              0.06398809887468815
+            ],
+            "plane": "CURVE_3D",
+            "basis": null,
+            "basisMethod": "positions span and CURVE source type; UV wraps tube circumference, not the image vertical",
+            "dominantExtentPlane": "YZ"
+          },
+          "suggestedLimits": {
+            "opacityAmplitude": 0.025,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "新增opacityPulse动作，仅改变已选细线透明度；材质需transparent:true/depthWrite:false；保持几何矩阵静止"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第七景 → 第八景",
+                "progress": 0.8052932435579894,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第七景",
+                "progress": 0.7432605852233363,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第七景 → 第八景",
+                "progress": 0.8052932435579894,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "TR08_水波0",
+          "meshId": "c3-m-684bfe1ba028",
+          "textureId": null,
+          "texturePath": null,
+          "visualTreatment": "structuralGeometryPreserved",
+          "visualEvidence": "原几何/材质审查；此项为曲线结构，非独立图片视觉审校",
+          "sourceType": "CURVE",
+          "role": "waterLine",
+          "action": "opacityPulse",
+          "narrative": "既有水波细线，每个连接段只选一根参与呼吸，不整片水面/树木位移",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 27,
+            "uvCount": 27,
+            "spansXYZ": [
+              0.024000000208616257,
+              1.8010534048080444,
+              0.06398809887468815
+            ],
+            "plane": "CURVE_3D",
+            "basis": null,
+            "basisMethod": "positions span and CURVE source type; UV wraps tube circumference, not the image vertical",
+            "dominantExtentPlane": "YZ"
+          },
+          "suggestedLimits": {
+            "opacityAmplitude": 0.025,
+            "periodSeconds": [
+              20,
+              34
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "新增opacityPulse动作，仅改变已选细线透明度；材质需transparent:true/depthWrite:false；保持几何矩阵静止"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "第八景 → 第九景",
+                "progress": 0.9288563525873003,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "第八景",
+                "progress": 0.8673259018926424,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "第八景 → 第九景",
+                "progress": 0.9288563525873003,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        }
+      ],
+      "newIndependentLayersNeeded": [
+        "可复用少量独立薄雾/单瓣；花灯以单灯或UV分片为先，器物陈设保持静止"
+      ]
+    },
+    {
+      "chapterId": 4,
+      "sceneSha256": "d364ee821dcb8e741c657a14b9ef03e379561c3f19435ea16a65b40d0d1a265c",
+      "travel": {
+        "axis": "Y",
+        "sign": -1,
+        "range": [
+          1.8,
+          -674.7000122
+        ]
+      },
+      "readingStops": [
+        {
+          "name": "人花合一",
+          "frame": 97,
+          "progress": 0
+        },
+        {
+          "name": "花王配美人",
+          "frame": 625,
+          "progress": 0.12459732974759095
+        },
+        {
+          "name": "沉香亭赏花题诗",
+          "frame": 1201,
+          "progress": 0.24928625962250903
+        },
+        {
+          "name": "牡丹风尚鼎盛",
+          "frame": 1945,
+          "progress": 0.373794634033139
+        },
+        {
+          "name": "繁华落幕",
+          "frame": 2521,
+          "progress": 0.5004329353980085
+        },
+        {
+          "name": "游宴渐冷",
+          "frame": 2977,
+          "progress": 0.6251036729348165
+        },
+        {
+          "name": "盛世与乱世",
+          "frame": 3457,
+          "progress": 0.7496303700552025
+        },
+        {
+          "name": "晚唐追忆",
+          "frame": 4009,
+          "progress": 0.8742277056245228
+        },
+        {
+          "name": "千古兴衰",
+          "frame": 4465,
+          "progress": 0.9999998634094919
+        }
+      ],
+      "candidates": [
+        {
+          "meshName": "07_红青飘带组合",
+          "meshId": "c4-m-339f59411c30",
+          "textureId": "c4-t-0e0d4c4ca177c277",
+          "texturePath": "public/assets/chapter-4/textures/0e0d4c4ca177c277.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-4-textures-01.jpg"
+            ],
+            "contactSheetCell": 6,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": false,
+            "observation": "红青两根长飘带上下端收束完整，透明边自然，无硬裁端口",
+            "safeMarginPx": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "ribbon",
+          "action": "sway",
+          "narrative": "独立红青锦带，前半盛美、后半逐渐变缓",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              1.7964205741882324,
+              1,
+              0
+            ],
+            "plane": "XY",
+            "basis": {
+              "originAtUvZero": [
+                -0.8982103,
+                -0.5,
+                0
+              ],
+              "alongU": [
+                1.7964206,
+                0,
+                0
+              ],
+              "alongV": [
+                0,
+                1,
+                0
+              ],
+              "normal": [
+                0,
+                0,
+                0.9999999999999999
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.15,
+              0.5
+            ],
+            "angleDegrees": 0.15,
+            "periodSeconds": [
+              26,
+              40
+            ]
+          },
+          "runtimeReadyAfterPilot": true,
+          "engineWorkBeforeActivation": [],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "繁华落幕 → 游宴渐冷",
+                "progress": 0.5627683041664124,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "游宴渐冷",
+                "progress": 0.6251036729348165,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "繁华落幕 → 游宴渐冷",
+                "progress": 0.5627683041664124,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "游宴渐冷",
+                "progress": 0.6251036729348165,
+                "kind": "reading-stop",
+                "aspect": 3
+              },
+              {
+                "name": "游宴渐冷 → 盛世与乱世",
+                "progress": 0.6873670214950095,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "4-3 · 06 · 近景花枝",
+          "meshId": "c4-m-226bebd52816",
+          "textureId": "c4-t-8d8a3c10a919636e",
+          "texturePath": "public/assets/chapter-4/textures/8d8a3c10a919636e.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-4-textures-01.jpg"
+            ],
+            "contactSheetCell": 15,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": false,
+            "observation": "横向红粉牡丹枝叶完整，两侧花苞收尖，外轮廓透明",
+            "safeMarginPx": [
+              13,
+              16,
+              11,
+              5
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "flowerBranch",
+          "action": "sway",
+          "narrative": "沉香亭赏花题诗的牡丹花枝，建筑/人物稳定",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 598,
+            "uvCount": 598,
+            "spansXYZ": [
+              0.24597451090812683,
+              19.040008544921875,
+              7.1761133670806885
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                -0.02190781318081175,
+                9.52000007918359,
+                -3.588056852928769
+              ],
+              "alongU": [
+                0.026319841566211994,
+                -19.04000024405835,
+                -3.584066434909393e-9
+              ],
+              "alongV": [
+                0.04786373084922117,
+                -9.67897455620393e-8,
+                7.17611355571042
+              ],
+              "normal": [
+                -0.9999768017988824,
+                -0.0013823125357024018,
+                0.006669713347120343
+              ],
+              "maxNormalResidual": 0.13997648675108273,
+              "maxInPlaneResidual": 0.0009523810426187455
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              0
+            ],
+            "angleDegrees": 0.18,
+            "periodSeconds": [
+              26,
+              40
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "沉香亭赏花题诗",
+                "progress": 0.24928625962250903,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "花王配美人 → 沉香亭赏花题诗",
+                "progress": 0.18694179468504998,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "沉香亭赏花题诗",
+                "progress": 0.24928625962250903,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "4-9 · 08 · 残花枝",
+          "meshId": "c4-m-c2e758e5be6e",
+          "textureId": "c4-t-15a5bc4fe987db37",
+          "texturePath": "public/assets/chapter-4/textures/15a5bc4fe987db37.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-4-textures-02.jpg"
+            ],
+            "contactSheetCell": 19,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": false,
+            "observation": "枯枝、残瓣与暗叶完整，长枝端头自然，透明外轮廓疏落",
+            "safeMarginPx": [
+              22,
+              25,
+              2,
+              19
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "witheredBranch",
+          "action": "sway",
+          "narrative": "卷尾残花，极缓微摆或静止；严禁继续生成丰盛花瓣",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 695,
+            "uvCount": 695,
+            "spansXYZ": [
+              0.24699020385742188,
+              13.72955322265625,
+              7.731586933135986
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0.02653858527812703,
+                6.864241071747727,
+                -3.8657930178601143
+              ],
+              "alongU": [
+                -0.058980465358401936,
+                -13.729527198800717,
+                -4.179083407165828e-8
+              ],
+              "alongV": [
+                0.05980049772104562,
+                -1.751932510536989e-7,
+                7.731587090473756
+              ],
+              "normal": [
+                -0.9999608632017721,
+                0.004295716514823623,
+                0.007734266894217804
+              ],
+              "maxNormalResidual": 0.14481840524737574,
+              "maxInPlaneResidual": 0.0012732225160914765
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              0
+            ],
+            "angleDegrees": 0.06,
+            "periodSeconds": [
+              26,
+              40
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "千古兴衰",
+                "progress": 0.9999998634094919,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "千古兴衰",
+                "progress": 0.9999998634094919,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "过渡1 · 云气1",
+          "meshId": "c4-m-7ae26c851a29",
+          "textureId": "c4-t-procedural-4cf146242ebf",
+          "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-4-textures-03.jpg",
+              "reports/reconstruction/risk-detail-3-4-4.jpg"
+            ],
+            "contactSheetCell": 1,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": true,
+            "observation": "四周透明、中心仅极浅绢白雾团；暖底放大仍是低对比气口，没有硬矩形色块；24实例共用",
+            "safeMarginPx": [
+              12,
+              12,
+              12,
+              12
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "cloud",
+          "action": "drift",
+          "narrative": "完整独立绢白云气连接层；第5景起随盛衰包络连续降速降密度",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              0,
+              33,
+              9
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                16.5,
+                -4.5
+              ],
+              "alongU": [
+                0,
+                -33,
+                0
+              ],
+              "alongV": [
+                0,
+                0,
+                9
+              ],
+              "normal": [
+                -1,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              0.5
+            ],
+            "widthDriftRatio": 0.003,
+            "opacityAmplitude": 0.02,
+            "periodSeconds": [
+              26,
+              40
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "人花合一 → 花王配美人",
+                "progress": 0.06229866487379548,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "花王配美人",
+                "progress": 0.12459732974759095,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "人花合一 → 花王配美人",
+                "progress": 0.06229866487379548,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "花王配美人",
+                "progress": 0.12459732974759095,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "过渡2 · 云气1",
+          "meshId": "c4-m-4f5e9d3f0552",
+          "textureId": "c4-t-procedural-4cf146242ebf",
+          "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-4-textures-03.jpg",
+              "reports/reconstruction/risk-detail-3-4-4.jpg"
+            ],
+            "contactSheetCell": 1,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": true,
+            "observation": "四周透明、中心仅极浅绢白雾团；暖底放大仍是低对比气口，没有硬矩形色块；24实例共用",
+            "safeMarginPx": [
+              12,
+              12,
+              12,
+              12
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "cloud",
+          "action": "drift",
+          "narrative": "完整独立绢白云气连接层；第5景起随盛衰包络连续降速降密度",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              0,
+              33,
+              9
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                16.5,
+                -4.5
+              ],
+              "alongU": [
+                0,
+                -33,
+                0
+              ],
+              "alongV": [
+                0,
+                0,
+                9
+              ],
+              "normal": [
+                -1,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              0.5
+            ],
+            "widthDriftRatio": 0.003,
+            "opacityAmplitude": 0.02,
+            "periodSeconds": [
+              26,
+              40
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "花王配美人 → 沉香亭赏花题诗",
+                "progress": 0.18694179468504998,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "沉香亭赏花题诗",
+                "progress": 0.24928625962250903,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "花王配美人 → 沉香亭赏花题诗",
+                "progress": 0.18694179468504998,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "沉香亭赏花题诗",
+                "progress": 0.24928625962250903,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "过渡3 · 云气1",
+          "meshId": "c4-m-3c633f2cf083",
+          "textureId": "c4-t-procedural-4cf146242ebf",
+          "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-4-textures-03.jpg",
+              "reports/reconstruction/risk-detail-3-4-4.jpg"
+            ],
+            "contactSheetCell": 1,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": true,
+            "observation": "四周透明、中心仅极浅绢白雾团；暖底放大仍是低对比气口，没有硬矩形色块；24实例共用",
+            "safeMarginPx": [
+              12,
+              12,
+              12,
+              12
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "cloud",
+          "action": "drift",
+          "narrative": "完整独立绢白云气连接层；第5景起随盛衰包络连续降速降密度",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              0,
+              33,
+              9
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                16.5,
+                -4.5
+              ],
+              "alongU": [
+                0,
+                -33,
+                0
+              ],
+              "alongV": [
+                0,
+                0,
+                9
+              ],
+              "normal": [
+                -1,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              0.5
+            ],
+            "widthDriftRatio": 0.003,
+            "opacityAmplitude": 0.02,
+            "periodSeconds": [
+              26,
+              40
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "沉香亭赏花题诗 → 牡丹风尚鼎盛",
+                "progress": 0.311540446827824,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "牡丹风尚鼎盛",
+                "progress": 0.373794634033139,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "沉香亭赏花题诗 → 牡丹风尚鼎盛",
+                "progress": 0.311540446827824,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "牡丹风尚鼎盛",
+                "progress": 0.373794634033139,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "过渡4 · 云气1",
+          "meshId": "c4-m-e7f65ca401f4",
+          "textureId": "c4-t-procedural-4cf146242ebf",
+          "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-4-textures-03.jpg",
+              "reports/reconstruction/risk-detail-3-4-4.jpg"
+            ],
+            "contactSheetCell": 1,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": true,
+            "observation": "四周透明、中心仅极浅绢白雾团；暖底放大仍是低对比气口，没有硬矩形色块；24实例共用",
+            "safeMarginPx": [
+              12,
+              12,
+              12,
+              12
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "cloud",
+          "action": "drift",
+          "narrative": "完整独立绢白云气连接层；第5景起随盛衰包络连续降速降密度",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              0,
+              33,
+              9
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                16.5,
+                -4.5
+              ],
+              "alongU": [
+                0,
+                -33,
+                0
+              ],
+              "alongV": [
+                0,
+                0,
+                9
+              ],
+              "normal": [
+                -1,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              0.5
+            ],
+            "widthDriftRatio": 0.003,
+            "opacityAmplitude": 0.02,
+            "periodSeconds": [
+              26,
+              40
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "牡丹风尚鼎盛 → 繁华落幕",
+                "progress": 0.4371137847155737,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "繁华落幕",
+                "progress": 0.5004329353980085,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "牡丹风尚鼎盛 → 繁华落幕",
+                "progress": 0.4371137847155737,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "繁华落幕",
+                "progress": 0.5004329353980085,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "过渡5 · 云气1",
+          "meshId": "c4-m-0343710aaf09",
+          "textureId": "c4-t-procedural-4cf146242ebf",
+          "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-4-textures-03.jpg",
+              "reports/reconstruction/risk-detail-3-4-4.jpg"
+            ],
+            "contactSheetCell": 1,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": true,
+            "observation": "四周透明、中心仅极浅绢白雾团；暖底放大仍是低对比气口，没有硬矩形色块；24实例共用",
+            "safeMarginPx": [
+              12,
+              12,
+              12,
+              12
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "cloud",
+          "action": "drift",
+          "narrative": "完整独立绢白云气连接层；第5景起随盛衰包络连续降速降密度",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              0,
+              33,
+              9
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                16.5,
+                -4.5
+              ],
+              "alongU": [
+                0,
+                -33,
+                0
+              ],
+              "alongV": [
+                0,
+                0,
+                9
+              ],
+              "normal": [
+                -1,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              0.5
+            ],
+            "widthDriftRatio": 0.003,
+            "opacityAmplitude": 0.02,
+            "periodSeconds": [
+              26,
+              40
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "繁华落幕 → 游宴渐冷",
+                "progress": 0.5627683041664124,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "游宴渐冷",
+                "progress": 0.6251036729348165,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "繁华落幕 → 游宴渐冷",
+                "progress": 0.5627683041664124,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "游宴渐冷",
+                "progress": 0.6251036729348165,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "过渡6 · 云气1",
+          "meshId": "c4-m-2592eb6b5e3a",
+          "textureId": "c4-t-procedural-4cf146242ebf",
+          "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-4-textures-03.jpg",
+              "reports/reconstruction/risk-detail-3-4-4.jpg"
+            ],
+            "contactSheetCell": 1,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": true,
+            "observation": "四周透明、中心仅极浅绢白雾团；暖底放大仍是低对比气口，没有硬矩形色块；24实例共用",
+            "safeMarginPx": [
+              12,
+              12,
+              12,
+              12
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "cloud",
+          "action": "drift",
+          "narrative": "完整独立绢白云气连接层；第5景起随盛衰包络连续降速降密度",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              0,
+              33,
+              9
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                16.5,
+                -4.5
+              ],
+              "alongU": [
+                0,
+                -33,
+                0
+              ],
+              "alongV": [
+                0,
+                0,
+                9
+              ],
+              "normal": [
+                -1,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              0.5
+            ],
+            "widthDriftRatio": 0.003,
+            "opacityAmplitude": 0.02,
+            "periodSeconds": [
+              26,
+              40
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "游宴渐冷 → 盛世与乱世",
+                "progress": 0.6873670214950095,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "盛世与乱世",
+                "progress": 0.7496303700552025,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "游宴渐冷 → 盛世与乱世",
+                "progress": 0.6873670214950095,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "盛世与乱世",
+                "progress": 0.7496303700552025,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "过渡7 · 云气1",
+          "meshId": "c4-m-15ab5734526a",
+          "textureId": "c4-t-procedural-4cf146242ebf",
+          "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-4-textures-03.jpg",
+              "reports/reconstruction/risk-detail-3-4-4.jpg"
+            ],
+            "contactSheetCell": 1,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": true,
+            "observation": "四周透明、中心仅极浅绢白雾团；暖底放大仍是低对比气口，没有硬矩形色块；24实例共用",
+            "safeMarginPx": [
+              12,
+              12,
+              12,
+              12
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "cloud",
+          "action": "drift",
+          "narrative": "完整独立绢白云气连接层；第5景起随盛衰包络连续降速降密度",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              0,
+              33,
+              9
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                16.5,
+                -4.5
+              ],
+              "alongU": [
+                0,
+                -33,
+                0
+              ],
+              "alongV": [
+                0,
+                0,
+                9
+              ],
+              "normal": [
+                -1,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              0.5
+            ],
+            "widthDriftRatio": 0.003,
+            "opacityAmplitude": 0.02,
+            "periodSeconds": [
+              26,
+              40
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "盛世与乱世 → 晚唐追忆",
+                "progress": 0.8119290378398627,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "晚唐追忆",
+                "progress": 0.8742277056245228,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "盛世与乱世 → 晚唐追忆",
+                "progress": 0.8119290378398627,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "晚唐追忆",
+                "progress": 0.8742277056245228,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        },
+        {
+          "meshName": "过渡8 · 云气1",
+          "meshId": "c4-m-ff24f2c44ce3",
+          "textureId": "c4-t-procedural-4cf146242ebf",
+          "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+          "visualTreatment": "保留",
+          "visualEvidence": {
+            "method": "view_image on contact sheet; selected high-risk originals and warm-paper composites checked",
+            "evidenceFiles": [
+              "reports/reconstruction/chapter-4-textures-03.jpg",
+              "reports/reconstruction/risk-detail-3-4-4.jpg"
+            ],
+            "contactSheetCell": 1,
+            "originalViewedDirectly": false,
+            "warmPaperDetailViewed": true,
+            "observation": "四周透明、中心仅极浅绢白雾团；暖底放大仍是低对比气口，没有硬矩形色块；24实例共用",
+            "safeMarginPx": [
+              12,
+              12,
+              12,
+              12
+            ],
+            "scope": "texture visual inspection; inherited by linked instances, not a separate rendered-frustum visual review of every mesh"
+          },
+          "sourceType": "MESH",
+          "role": "cloud",
+          "action": "drift",
+          "narrative": "完整独立绢白云气连接层；第5景起随盛衰包络连续降速降密度",
+          "conditional": null,
+          "localGeometry": {
+            "vertexCount": 4,
+            "uvCount": 4,
+            "spansXYZ": [
+              0,
+              33,
+              9
+            ],
+            "plane": "YZ",
+            "basis": {
+              "originAtUvZero": [
+                0,
+                16.5,
+                -4.5
+              ],
+              "alongU": [
+                0,
+                -33,
+                0
+              ],
+              "alongV": [
+                0,
+                0,
+                9
+              ],
+              "normal": [
+                -1,
+                0,
+                0
+              ],
+              "maxNormalResidual": 0,
+              "maxInPlaneResidual": 0
+            },
+            "basisMethod": "least-squares local position = origin + U*alongU + V*alongV, checked against all actual geometry vertices"
+          },
+          "suggestedLimits": {
+            "pivotUV": [
+              0.5,
+              0.5
+            ],
+            "widthDriftRatio": 0.003,
+            "opacityAmplitude": 0.02,
+            "periodSeconds": [
+              26,
+              40
+            ]
+          },
+          "runtimeReadyAfterPilot": false,
+          "engineWorkBeforeActivation": [
+            "显式支持本地YZ：水平Y、竖直Z、法线X；沿有符号UV方向计算支点与增量，不能把Z旋转或X漂移复制过来"
+          ],
+          "projectedReferences": {
+            "visibleAt": [
+              {
+                "name": "晚唐追忆 → 千古兴衰",
+                "progress": 0.9371137845170073,
+                "kind": "transition-midpoint",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "千古兴衰",
+                "progress": 0.9999998634094919,
+                "kind": "reading-stop",
+                "aspect": 1.7777777777777777
+              },
+              {
+                "name": "晚唐追忆 → 千古兴衰",
+                "progress": 0.9371137845170073,
+                "kind": "transition-midpoint",
+                "aspect": 3
+              },
+              {
+                "name": "千古兴衰",
+                "progress": 0.9999998634094919,
+                "kind": "reading-stop",
+                "aspect": 3
+              }
+            ],
+            "method": "CPU frustum sphere test at real normalized camera stops/midpoints for 16:9 and 3:1 painting aspects; ignores occlusion, alpha and streaming",
+            "bindingCaution": "Not a claim that texture pixels are unoccluded in every listed view"
+          },
+          "reviewLimits": "几何与候选动作已定位；实际纹理载入、遮挡与图层叠加仍要网页实测。No profiles or runtime activation changed."
+        }
+      ],
+      "newIndependentLayersNeeded": [
+        "已有独立绢白云气；可复用单瓣图集，后半按真实节点逐步减少，不新增爆发粒子"
+      ],
+      "shengShuaiEnvelope": {
+        "startStopIndex": 4,
+        "startName": "繁华落幕",
+        "startProgress": 0.5004329353980085,
+        "beforeStart": {
+          "clockSpeed": 1,
+          "petalDensity": 1,
+          "cloudDensity": 1
+        },
+        "interpolation": "monotone smoothstep between actual normalized reading-stop coordinates; preserve each layer phase by integrating dt*clockSpeed instead of multiplying accumulated time by a changing speed",
+        "points": [
+          {
+            "progress": 0.5004329353980085,
+            "stop": "繁华落幕",
+            "clockSpeed": 1,
+            "petalDensity": 1,
+            "cloudDensity": 1
+          },
+          {
+            "progress": 0.6251036729348165,
+            "stop": "游宴渐冷",
+            "clockSpeed": 0.7,
+            "petalDensity": 0.62,
+            "cloudDensity": 0.72
+          },
+          {
+            "progress": 0.7496303700552025,
+            "stop": "盛世与乱世",
+            "clockSpeed": 0.52,
+            "petalDensity": 0.38,
+            "cloudDensity": 0.52
+          },
+          {
+            "progress": 0.8742277056245228,
+            "stop": "晚唐追忆",
+            "clockSpeed": 0.4,
+            "petalDensity": 0.18,
+            "cloudDensity": 0.34
+          },
+          {
+            "progress": 1,
+            "stop": "千古兴衰",
+            "clockSpeed": 0.32,
+            "petalDensity": 0.08,
+            "cloudDensity": 0.22
+          }
+        ],
+        "constraints": [
+          "第5景之前维持盛美，之后才连续减速；避免硬切/灰屏",
+          "只给单瓣/云气施密度与速度包络，主体与原相机不改",
+          "降低密度时以透明包络平滑收束，并保留确定性粒子种子；不在分镜边界突然重生整组粒子",
+          "卷尾水纹与留白为主，残花枝允许静止"
+        ],
+        "terminalNormalization": "第9阅读节点已接近1（浮点重映射误差）；合并到progress=1，避免最后1e-7区间形成额外速度/密度变化。"
+      }
+    }
+  ]
+}

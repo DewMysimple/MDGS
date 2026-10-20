@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "chapter": 2,
+  "status": "verified",
+  "output": "artwork/blender-blank-design/chapter-2_reconstructed.blend",
+  "outputSha256": "2426c3c02cbf7bc904fbdfd51078017b0b20b173e10ff320c1d5cf56a5803944",
+  "originalFilesUnchanged": true,
+  "reconstructionReport": "reports/blank-design/blender/blender-reconstruction-chapter-2.json",
+  "reconstructionReportSha256": "debc8b80852ea1b46a62f2ba1b49820ed3c4b6882d106e02d1042d3b3b9d69a5",
+  "manifest": "reports/blank-design/expanded-v3/chapter-2-manifest.json",
+  "manifestSha256": "f9f70da7da642c0ce8f57d57ba8115d975cba30511d737bcf216fa2cd329ad4f",
+  "sourceHashesVerified": {
+    "chapter-1": "aa0a74c9693a208b382cac12ea66c5c31bf80dc50f65ee539b9739abd71e7d3d",
+    "chapter-2": "d7b4430ca25d3562ee06d81946feb911760ae572bf01633f732c81c495cca0e4",
+    "chapter-3": "4902ef5d7a70f4e7f54a8f8b307943f22437a1ed64a12aa6bc798742daf5421d",
+    "chapter-4": "dcf4a6e96bf8606348563a985dc2bc935817ed5be08ae96066176670f0d84026"
+  },
+  "inputResourcesVerified": 92,
+  "backgroundPresentation": {
+    "mode": "dedicated-paper-world-with-explicit-source-paper-retirement",
+    "objects": [],
+    "hiddenGroundPaperNames": [],
+    "worldModified": true,
+    "sourceMatricesModified": false,
+    "worldPaper": {
+      "requested": {
+        "color": "#f5ecdc",
+        "strength": 1,
+        "narrative": "弯曲纸地末端形成硬矩形并裁挡图像；派生显示退役原纸地，网页使用既有CSS纸底，Blender使用专属World统一纸色。原source与原World datablock保留。",
+        "colorLinear": [
+          0.9130986517934192,
+          0.83879901174074,
+          0.7156935005064807
+        ]
+      },
+      "sourceWorld": {
+        "name": "宣纸环境",
+        "useNodes": true,
+        "color": [
+          0.05,
+          0.05,
+          0.05
+        ],
+        "nodes": [
+          {
+            "name": "Background",
+            "type": "BACKGROUND",
+            "inputs": [
+              [
+                "Color",
+                [
+                  0.83,
+                  0.785,
+                  0.69,
+                  1.0
+                ]
+              ],
+              [
+                "Strength",
+                1.0
+              ],
+              [
+                "Weight",
+                0.0
+              ]
+            ],
+            "parameters": {}
+          },
+          {
+            "name": "World Output",
+            "type": "OUTPUT_WORLD",
+            "inputs": [],
+            "parameters": {
+              "is_active_output": true,
+              "target": "ALL"
+            }
+          }
+        ],
+        "links": [
+          [
+            "Background",
+            "Background",
+            "World Output",
+            "Surface"
+          ]
+        ]
+      },
+      "derivedWorld": {
+        "name": "RECON_CH02_PAPER_WORLD",
+        "useNodes": true,
+        "color": [
+          0.9130986,
+          0.838799,
+          0.7156935
+        ],
+        "nodes": [
+          {
+            "name": "Background",
+            "type": "BACKGROUND",
+            "inputs": [
+              [
+                "Color",
+                [
+                  0.9130986,
+                  0.838799,
+                  0.7156935,
+                  1.0
+                ]
+              ],
+              [
+                "Strength",
+                1.0
+              ],
+              [
+                "Weight",
+                0.0
+              ]
+            ],
+            "parameters": {}
+          },
+          {
+            "name": "World Output",
+            "type": "OUTPUT_WORLD",
+            "inputs": [],
+            "parameters": {
+              "is_active_output": true,
+              "target": "ALL"
+            }
+          }
+        ],
+        "links": [
+          [
+            "Background",
+            "Background",
+            "World Output",
+            "Surface"
+          ]
+        ]
+      },
+      "sourceWorldFakeUserBefore": false,
+      "sourceWorldRetainedWithFakeUser": true,
+      "sourceFilmTransparent": false,
+      "derivedFilmTransparent": false,
+      "policy": "Dedicated visible paper-color World; original World shader retained; only the derived scene changes."
+    }
+  },
+  "verification": {
+    "originalObjectWorldMatrices": "unchanged",
+    "originalCameraSamples": "unchanged",
+    "originalAnimatedObjectSamples": "unchanged",
+    "originalMarkers": "unchanged",
+    "originalHierarchyAndCollections": "unchanged",
+    "explicitRenderHideExceptions": [
+      "2-6 题字 02_中央题字",
+      "右下河流与岸景.001",
+      "右下河流与岸景.002",
+      "宣纸 连续长卷 19.8米"
+    ],
+    "paperBackgroundPolicy": "dedicated-paper-world-with-explicit-source-paper-retirement",
+    "paperWorld": "dedicated-visible-world-and-retained-source-shader-matched",
+    "worldModified": true,
+    "derivedGeometryAndMetadata": "reopened-and-matched",
+    "packedImagesVerified": 39,
+    "packedFontsVerified": 1,
+    "editableTextObjectCount": 2,
+    "completeReplacementUvCarriersVerified": [
+      "右下河流与岸景",
+      "01_左侧案桌与人物",
+      "03_中间远景",
+      "06_左上人物背景组合",
+      "2-1 中景 03_右侧花市街景",
+      "2-1 中景 05_左上宫殿与朝臣",
+      "2-1 前景 01_左侧牡丹与山石",
+      "2-3 中景 左侧人物后方建筑",
+      "2-3 主体 人物群",
+      "2-3 主体 右侧人群",
+      "2-5 前景 04_前景牡丹花石",
+      "2-6 中景 04_右侧街景",
+      "2-7 前景 03_下方牡丹水岸"
+    ],
+    "preservedGeometryRegionUvMappingsVerified": [],
+    "originalMeshGeometryOutsideDeclaredTargets": "unchanged",
+    "explicitGeometryChangeTargets": [
+      "01_左侧案桌与人物",
+      "03_中间远景",
+      "06_左上人物背景组合",
+      "2-1 中景 03_右侧花市街景",
+      "2-1 中景 05_左上宫殿与朝臣",
+      "2-1 前景 01_左侧牡丹与山石",
+      "2-3 中景 左侧人物后方建筑",
+      "2-3 主体 人物群",
+      "2-3 主体 右侧人群",
+      "2-5 前景 04_前景牡丹花石",
+      "2-6 中景 04_右侧街景",
+      "2-7 前景 03_下方牡丹水岸",
+      "右下河流与岸景"
+    ],
+    "roleCollectionCounts": {
+      "主体叙事层": 12,
+      "前景遮挡层": 7,
+      "中景承接层": 17,
+      "后景连续层": 13,
+      "留白层": 1,
+      "连接过渡层": 8,
+      "动效层": 20,
+      "装饰层": 6
+    }
+  }
+}

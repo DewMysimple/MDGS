@@ -1,0 +1,1911 @@
+{
+  "status": "verified-current-delivery",
+  "verifiedAt": "2026-10-20T05:27:32.187559+00:00",
+  "canonicalSha256": "4433928f6e6160acbd275ba6430d65fa3128df736a7eb59ef7607e61312d10cb",
+  "baselineSha256": "dec52de0566ca29fcae9a767cec8f7970bd3dc98a226ac8a6ea54ebf654d8fa8",
+  "counts": {
+    "auditedAndAcceptedWideViews": 33,
+    "typographyViews": 48,
+    "shortWindowViews": 8,
+    "forwardReverseRuntimeStates": 170,
+    "targetedTransparentRepairs": 3,
+    "verticalGroups": 15,
+    "newlyHiddenSourceMeshes": 31,
+    "mainCompositionGroups": 9,
+    "seamAdjustments": 1,
+    "uniqueLayoutMeshes": 68,
+    "blenderActualPreviews": 8,
+    "blenderNewEditableFonts": 46
+  },
+  "otherChapterPayloadsUnchanged": [
+    1,
+    2,
+    4
+  ],
+  "originalSourcesVerified": [
+    {
+      "path": "source/牡丹/场景blender搭建/一/牡丹与女帝_叙事复合运镜.blend",
+      "sha256": "aa0a74c9693a208b382cac12ea66c5c31bf80dc50f65ee539b9739abd71e7d3d"
+    },
+    {
+      "path": "source/牡丹/场景blender搭建/三/画卷三_中国长卷_复合运镜_v07.blend",
+      "sha256": "4902ef5d7a70f4e7f54a8f8b307943f22437a1ed64a12aa6bc798742daf5421d"
+    },
+    {
+      "path": "source/牡丹/场景blender搭建/二/画卷二_长卷叙事.blend",
+      "sha256": "d7b4430ca25d3562ee06d81946feb911760ae572bf01633f732c81c495cca0e4"
+    },
+    {
+      "path": "source/牡丹/场景blender搭建/四/Fourth_Scroll.blend",
+      "sha256": "dcf4a6e96bf8606348563a985dc2bc935817ed5be08ae96066176670f0d84026"
+    }
+  ],
+  "assets": [
+    {
+      "id": "marriage-stage",
+      "chapter": 3,
+      "shared": false,
+      "operation": "center unchanged RGBA content on transparent canvas; delivery resize/WebP compression only",
+      "raw": {
+        "path": "artwork/chapter-3-refinement/raw/marriage-stage.png",
+        "width": 2172,
+        "height": 724,
+        "mode": "RGBA",
+        "bytes": 2330886,
+        "sha256": "1b2c2835508519767fe5f4053e3444703887e4a7d22f87802ded1c1d58b786b6",
+        "unchanged": true
+      },
+      "transparentOnlyTrim": {
+        "enabled": true,
+        "box": [
+          0,
+          47,
+          2172,
+          724
+        ],
+        "nonzeroAlphaPixelsRemoved": 0,
+        "contentSize": [
+          2172,
+          677
+        ]
+      },
+      "contentAspect": 3.208271787296898,
+      "sourceAspectPolicy": "Original Blender layer aspect is supplied separately by the reconstruction manifest; not inferred here",
+      "requestedGutterPerSide": 0.12,
+      "paddingPx": {
+        "left": 261,
+        "top": 81,
+        "right": 261,
+        "bottom": 82
+      },
+      "actualGutterContentPercent": {
+        "left": 12.01657458563536,
+        "right": 12.01657458563536,
+        "top": 11.964549483013293,
+        "bottom": 12.112259970457902
+      },
+      "paddingScaleX": 1.2403314917127073,
+      "paddingScaleY": 1.240768094534712,
+      "production": {
+        "path": "artwork/chapter-3-refinement/chapter-3/marriage-stage.png",
+        "width": 2694,
+        "height": 840,
+        "aspect": 3.2071428571428573,
+        "bytes": 2257311,
+        "sha256": "8727aeec0debcc35b1c600e10f5c596b8130c8f7d0cb8199263d2787f7af968a",
+        "contentRgbaSha256": "e86877a30323ff8f2c6978cc98a1e69d7483f4401332cd9dc8afce77c62af81b",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          261,
+          81,
+          2433,
+          758
+        ],
+        "visibleAlphaBounds": [
+          269,
+          113,
+          2429,
+          653
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 261,
+          "top": 81,
+          "right": 261,
+          "bottom": 82
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.688196,
+          "top": 9.642857,
+          "right": 9.688196,
+          "bottom": 9.761905
+        },
+        "transparentPixelPercent": 56.49627,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/chapter-3-refinement/chapter-3/marriage-stage.webp",
+        "url": "assets/chapter-3-refinement/chapter-3/marriage-stage.webp",
+        "width": 2048,
+        "height": 639,
+        "aspect": 3.2050078247261347,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.7602078693392724,
+        "scaleY": 0.7607142857142857,
+        "bytes": 289274,
+        "sha256": "fb9b6cdb6189bf3d9634f4cd7ad7686eb327b6b64e1f4e2a321521cdcb6e90a3",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          63,
+          1850,
+          577
+        ],
+        "visibleAlphaBounds": [
+          204,
+          86,
+          1847,
+          497
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 63,
+          "right": 198,
+          "bottom": 62
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.859155,
+          "right": 9.667969,
+          "bottom": 9.70266
+        },
+        "transparentPixelPercent": 56.515918,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "scope": "technical asset packing; no creative repaint, RGB cleanup, edge removal, or original PNG edit",
+      "preparedAtUtc": "2026-10-20T03:27:08.189859+00:00"
+    },
+    {
+      "id": "procession",
+      "chapter": 3,
+      "shared": false,
+      "operation": "center unchanged RGBA content on transparent canvas; delivery resize/WebP compression only",
+      "raw": {
+        "path": "artwork/chapter-3-refinement/raw/procession.png",
+        "width": 1689,
+        "height": 931,
+        "mode": "RGBA",
+        "bytes": 2812322,
+        "sha256": "6de04e55a5c27d3528dd4bc9a2d5390c59b813d1d7ca044d76664c05a1fbb2d4",
+        "unchanged": true
+      },
+      "transparentOnlyTrim": {
+        "enabled": true,
+        "box": [
+          0,
+          0,
+          1689,
+          931
+        ],
+        "nonzeroAlphaPixelsRemoved": 0,
+        "contentSize": [
+          1689,
+          931
+        ]
+      },
+      "contentAspect": 1.8141783029001075,
+      "sourceAspectPolicy": "Original Blender layer aspect is supplied separately by the reconstruction manifest; not inferred here",
+      "requestedGutterPerSide": 0.12,
+      "paddingPx": {
+        "left": 203,
+        "top": 112,
+        "right": 203,
+        "bottom": 112
+      },
+      "actualGutterContentPercent": {
+        "left": 12.01894612196566,
+        "right": 12.01894612196566,
+        "top": 12.030075187969924,
+        "bottom": 12.030075187969924
+      },
+      "paddingScaleX": 1.2403789224393131,
+      "paddingScaleY": 1.2406015037593985,
+      "production": {
+        "path": "artwork/chapter-3-refinement/chapter-3/procession.png",
+        "width": 2095,
+        "height": 1155,
+        "aspect": 1.8138528138528138,
+        "bytes": 2687240,
+        "sha256": "fd770cf95831a5eddf3eef9148c025b55d1e462895e46a20f381bd10c80ff4ba",
+        "contentRgbaSha256": "4046ae9aa91137dd98b976f6804bdcb8a612e2bf919ced4e26128fcc0c38f36e",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          203,
+          112,
+          1892,
+          1043
+        ],
+        "visibleAlphaBounds": [
+          214,
+          120,
+          1892,
+          1043
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 203,
+          "top": 112,
+          "right": 203,
+          "bottom": 112
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.689737,
+          "top": 9.69697,
+          "right": 9.689737,
+          "bottom": 9.69697
+        },
+        "transparentPixelPercent": 55.521516,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/chapter-3-refinement/chapter-3/procession.webp",
+        "url": "assets/chapter-3-refinement/chapter-3/procession.webp",
+        "width": 2048,
+        "height": 1129,
+        "aspect": 1.8139946855624447,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.9775656324582339,
+        "scaleY": 0.9774891774891775,
+        "bytes": 531940,
+        "sha256": "7dbadc4c7a5bab74cf16ebce62c18a1a8bf242388c1c30c03c8b4f648d881cc8",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          109,
+          1850,
+          1020
+        ],
+        "visibleAlphaBounds": [
+          209,
+          117,
+          1849,
+          1019
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 109,
+          "right": 198,
+          "bottom": 109
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.654562,
+          "right": 9.667969,
+          "bottom": 9.654562
+        },
+        "transparentPixelPercent": 55.513426,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "scope": "technical asset packing; no creative repaint, RGB cleanup, edge removal, or original PNG edit",
+      "preparedAtUtc": "2026-10-20T03:33:08.840107+00:00"
+    },
+    {
+      "id": "snow-street",
+      "chapter": 3,
+      "shared": false,
+      "operation": "center unchanged RGBA content on transparent canvas; delivery resize/WebP compression only",
+      "raw": {
+        "path": "artwork/chapter-3-refinement/raw/snow-street.png",
+        "width": 1198,
+        "height": 1313,
+        "mode": "RGBA",
+        "bytes": 3041550,
+        "sha256": "d51fbf9a1155e319ac32fd2728b959bed58e8558103eed98083a9c536c97c752",
+        "unchanged": true
+      },
+      "transparentOnlyTrim": {
+        "enabled": true,
+        "box": [
+          0,
+          0,
+          1198,
+          1313
+        ],
+        "nonzeroAlphaPixelsRemoved": 0,
+        "contentSize": [
+          1198,
+          1313
+        ]
+      },
+      "contentAspect": 0.9124143183549124,
+      "sourceAspectPolicy": "Original Blender layer aspect is supplied separately by the reconstruction manifest; not inferred here",
+      "requestedGutterPerSide": 0.12,
+      "paddingPx": {
+        "left": 144,
+        "top": 158,
+        "right": 144,
+        "bottom": 158
+      },
+      "actualGutterContentPercent": {
+        "left": 12.020033388981636,
+        "right": 12.020033388981636,
+        "top": 12.033511043412034,
+        "bottom": 12.033511043412034
+      },
+      "paddingScaleX": 1.2404006677796326,
+      "paddingScaleY": 1.2406702208682407,
+      "production": {
+        "path": "artwork/chapter-3-refinement/chapter-3/snow-street.png",
+        "width": 1486,
+        "height": 1629,
+        "aspect": 0.9122160834868017,
+        "bytes": 2924515,
+        "sha256": "200c6c61860cc12793cfa3184be7e3228c270de33f9dd0f9089da7072eacc631",
+        "contentRgbaSha256": "9fae41549b73a43d72778002d54e3b6380750b4b1810b41393f7f5199671b4d8",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          144,
+          158,
+          1342,
+          1471
+        ],
+        "visibleAlphaBounds": [
+          154,
+          167,
+          1335,
+          1461
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 144,
+          "top": 158,
+          "right": 144,
+          "bottom": 158
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.690444,
+          "top": 9.699202,
+          "right": 9.690444,
+          "bottom": 9.699202
+        },
+        "transparentPixelPercent": 48.302388,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/chapter-3-refinement/chapter-3/snow-street.webp",
+        "url": "assets/chapter-3-refinement/chapter-3/snow-street.webp",
+        "width": 1486,
+        "height": 1629,
+        "aspect": 0.9122160834868017,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "bytes": 516932,
+        "sha256": "f089373ded55d7095e01d9fe921054f59543ab5330a22527c05818355c34ba99",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          144,
+          158,
+          1342,
+          1471
+        ],
+        "visibleAlphaBounds": [
+          154,
+          167,
+          1335,
+          1461
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 144,
+          "top": 158,
+          "right": 144,
+          "bottom": 158
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.690444,
+          "top": 9.699202,
+          "right": 9.690444,
+          "bottom": 9.699202
+        },
+        "transparentPixelPercent": 48.302388,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "scope": "technical asset packing; no creative repaint, RGB cleanup, edge removal, or original PNG edit",
+      "preparedAtUtc": "2026-10-20T03:38:18.413517+00:00"
+    }
+  ],
+  "compositionGroups": [
+    {
+      "stop": 1,
+      "scale": 0.82,
+      "pivotY": -0.46,
+      "narrative": "第1景以原下沿为支点内收，保持人物/器物相互比例和接地，顶部让出气口；源相机/对象矩阵/动画不变。",
+      "extraMeshNames": [
+        "微信图片_20261016180912_185_1685"
+      ]
+    },
+    {
+      "stop": 2,
+      "scale": 0.82,
+      "pivotY": -0.46,
+      "narrative": "第2景以原下沿为支点内收，保持人物/器物相互比例和接地，顶部让出气口；源相机/对象矩阵/动画不变。",
+      "extraMeshNames": [
+        "微信图片_20261016180044_182_1685",
+        "微信图片_20261016180044_183_1685",
+        "08_左下人物建筑背景"
+      ]
+    },
+    {
+      "stop": 3,
+      "scale": 0.82,
+      "pivotY": -0.46,
+      "narrative": "第3景以原下沿为支点内收，保持人物/器物相互比例和接地，顶部让出气口；源相机/对象矩阵/动画不变。",
+      "extraMeshNames": []
+    },
+    {
+      "stop": 4,
+      "scale": 0.82,
+      "pivotY": -0.46,
+      "narrative": "第4景以原下沿为支点内收，保持人物/器物相互比例和接地，顶部让出气口；源相机/对象矩阵/动画不变。",
+      "extraMeshNames": []
+    },
+    {
+      "stop": 5,
+      "scale": 0.74,
+      "pivotY": -0.46,
+      "narrative": "第5景以原下沿为支点内收，保持人物/器物相互比例和接地，顶部让出气口；源相机/对象矩阵/动画不变。",
+      "extraMeshNames": [
+        "09_红圈桌子与桌面陈设_组合"
+      ]
+    },
+    {
+      "stop": 6,
+      "scale": 0.82,
+      "pivotY": -0.46,
+      "narrative": "第6景以原下沿为支点内收，保持人物/器物相互比例和接地，顶部让出气口；源相机/对象矩阵/动画不变。",
+      "extraMeshNames": []
+    },
+    {
+      "stop": 7,
+      "scale": 0.82,
+      "pivotY": -0.46,
+      "narrative": "第7景以原下沿为支点内收，保持人物/器物相互比例和接地，顶部让出气口；源相机/对象矩阵/动画不变。",
+      "extraMeshNames": [
+        "04_中部织锦飘带",
+        "04_中部织锦飘带.001"
+      ]
+    },
+    {
+      "stop": 8,
+      "scale": 0.82,
+      "pivotY": -0.46,
+      "narrative": "第8景以原下沿为支点内收，保持人物/器物相互比例和接地，顶部让出气口；源相机/对象矩阵/动画不变。",
+      "extraMeshNames": [
+        "微信图片_20261018204717_340_1685",
+        "微信图片_20261018204724_341_1685"
+      ]
+    },
+    {
+      "stop": 9,
+      "scale": 0.78,
+      "pivotY": -0.46,
+      "narrative": "第9景以原下沿为支点内收，保持人物/器物相互比例和接地，顶部让出气口；源相机/对象矩阵/动画不变。",
+      "extraMeshNames": []
+    }
+  ],
+  "detailAdjustments": [
+    {
+      "id": "c3-layout-mirror-workshop-seam",
+      "stop": 7,
+      "meshNames": [
+        "SC07_03_右下作坊场景"
+      ],
+      "x": -0.012,
+      "y": 0.008,
+      "narrative": "工坊地面向镜台右足内收并略上接，闭合低位纸缝；镜面、垂布、原桌腿均保完整。"
+    }
+  ],
+  "addedLayerAdjustments": [
+    {
+      "id": "bd3-gap02-objects",
+      "scale": 0.94,
+      "pivot": [
+        0,
+        -0.405
+      ],
+      "narrative": "锦架以原画脚部为支点内收6%，顶部再留一字呼吸，落脚位置保留，不为文字将架足抬空。"
+    }
+  ],
+  "retiredSourceMeshes": [
+    "SC03_07-left-room-background",
+    "SC06_07_右下花丛.001",
+    "SC06_通道右下花枝",
+    "SC07_02_上方宫苑场景",
+    "SC08_02_右上婚礼陈设",
+    "SC09_05_右侧山水城景.001",
+    "水岸留金",
+    "过渡01_淡云水线1",
+    "过渡01_淡云水线2",
+    "过渡01_淡云水线3",
+    "过渡02_淡云水线1",
+    "过渡02_淡云水线2",
+    "过渡02_淡云水线3",
+    "过渡03_淡云水线1",
+    "过渡03_淡云水线2",
+    "过渡03_淡云水线3",
+    "过渡04_淡云水线1",
+    "过渡04_淡云水线2",
+    "过渡04_淡云水线3",
+    "过渡05_淡云水线1",
+    "过渡05_淡云水线2",
+    "过渡05_淡云水线3",
+    "过渡06_淡云水线1",
+    "过渡06_淡云水线2",
+    "过渡06_淡云水线3",
+    "过渡07_淡云水线1",
+    "过渡07_淡云水线2",
+    "过渡07_淡云水线3",
+    "过渡08_淡云水线1",
+    "过渡08_淡云水线2",
+    "过渡08_淡云水线3"
+  ],
+  "verticalTextGroups": [
+    {
+      "id": "c3-type-stop-03",
+      "kind": "stop",
+      "index": 3,
+      "title": "凤穿牡丹",
+      "lines": [
+        "凤影穿繁卉",
+        "衣纹寄好合"
+      ],
+      "x": 0.865,
+      "y": 0.41500000000000004,
+      "height": 0.36,
+      "range": [
+        0.21620763527939946,
+        0.27802665416682854
+      ],
+      "narrative": "原创展陈短题：凤穿牡丹；对应第三卷器用、婚俗与吉祥文化，原文长说明仍保留于阅读面板。"
+    },
+    {
+      "id": "c3-type-stop-04",
+      "kind": "stop",
+      "index": 4,
+      "title": "同心成礼",
+      "lines": [
+        "并肩行新礼",
+        "同心向岁长"
+      ],
+      "x": 0.8350000000000001,
+      "y": 0.385,
+      "height": 0.36,
+      "range": [
+        0.33980389796276644,
+        0.40171551891166146
+      ],
+      "narrative": "原创展陈短题：同心成礼；对应第三卷器用、婚俗与吉祥文化，原文长说明仍保留于阅读面板。"
+    },
+    {
+      "id": "c3-type-stop-05",
+      "kind": "stop",
+      "index": 5,
+      "title": "灯彩迎新",
+      "lines": [
+        "窗上添新色",
+        "灯间寄岁安"
+      ],
+      "x": 0.1225,
+      "y": 0.43500000000000005,
+      "height": 0.36,
+      "range": [
+        0.46376151701351365,
+        0.5258587074504026
+      ],
+      "narrative": "原创展陈短题：灯彩迎新；对应第三卷器用、婚俗与吉祥文化，原文长说明仍保留于阅读面板。"
+    },
+    {
+      "id": "c3-type-stop-06",
+      "kind": "stop",
+      "index": 6,
+      "title": "针线传情",
+      "lines": [
+        "一针收花色",
+        "满庭寄团圆"
+      ],
+      "x": 0.1125,
+      "y": 0.44999999999999996,
+      "height": 0.36,
+      "range": [
+        0.5880070902223284,
+        0.6501261075120526
+      ],
+      "narrative": "原创展陈短题：针线传情；对应第三卷器用、婚俗与吉祥文化，原文长说明仍保留于阅读面板。"
+    },
+    {
+      "id": "c3-type-stop-07",
+      "kind": "stop",
+      "index": 7,
+      "title": "吉意入器",
+      "lines": [
+        "镜里收春色",
+        "案头存好意"
+      ],
+      "x": 0.885,
+      "y": 0.475,
+      "height": 0.36,
+      "range": [
+        0.712215759319575,
+        0.7742769143906628
+      ],
+      "narrative": "原创展陈短题：吉意入器；对应第三卷器用、婚俗与吉祥文化，原文长说明仍保留于阅读面板。",
+      "seal": "安居"
+    },
+    {
+      "id": "c3-type-stop-08",
+      "kind": "stop",
+      "index": 8,
+      "title": "端庄自持",
+      "lines": [
+        "繁华知有度",
+        "静处见从容"
+      ],
+      "x": 0.0975,
+      "y": 0.395,
+      "height": 0.36,
+      "range": [
+        0.8363095727253158,
+        0.8980911272399713
+      ],
+      "narrative": "原创展陈短题：端庄自持；对应第三卷器用、婚俗与吉祥文化，原文长说明仍保留于阅读面板。"
+    },
+    {
+      "id": "c3-type-stop-09",
+      "kind": "stop",
+      "index": 9,
+      "title": "安泰人间",
+      "lines": [
+        "愿家常得暖",
+        "愿世久安宁"
+      ],
+      "x": 0.915,
+      "y": 0.395,
+      "height": 0.36,
+      "range": [
+        0.9596215779346292,
+        1
+      ],
+      "narrative": "原创展陈短题：安泰人间；对应第三卷器用、婚俗与吉祥文化，原文长说明仍保留于阅读面板。"
+    },
+    {
+      "id": "c3-type-gap-01",
+      "kind": "gap",
+      "index": 1,
+      "title": "一花百用",
+      "lines": [
+        "从枝头到衣上",
+        "把春意留在寻常"
+      ],
+      "x": 0.54,
+      "y": 0.45499999999999996,
+      "height": 0.36,
+      "range": [
+        0.030854111077754785,
+        0.09256233323326435
+      ],
+      "narrative": "原创展陈短题：一花百用；对应第三卷器用、婚俗与吉祥文化，原文长说明仍保留于阅读面板。"
+    },
+    {
+      "id": "c3-type-gap-02",
+      "kind": "gap",
+      "index": 2,
+      "title": "经纬生芳",
+      "lines": [
+        "丝线勾花影",
+        "绣出一襟春"
+      ],
+      "x": 0.54,
+      "y": 0.3,
+      "height": 0.33,
+      "range": [
+        0.15434684130047926,
+        0.21620763527939946
+      ],
+      "narrative": "原创展陈短题：经纬生芳；对应第三卷器用、婚俗与吉祥文化，原文长说明仍保留于阅读面板。"
+    },
+    {
+      "id": "c3-type-gap-03",
+      "kind": "gap",
+      "index": 3,
+      "title": "案头清供",
+      "lines": [
+        "瓶案容佳色",
+        "杯盘寄吉心"
+      ],
+      "x": 0.51,
+      "y": 0.425,
+      "height": 0.36,
+      "range": [
+        0.27802665416682854,
+        0.33980389796276644
+      ],
+      "narrative": "原创展陈短题：案头清供；对应第三卷器用、婚俗与吉祥文化，原文长说明仍保留于阅读面板。"
+    },
+    {
+      "id": "c3-type-gap-04",
+      "kind": "gap",
+      "index": 4,
+      "title": "门庭有喜",
+      "lines": [
+        "灯下迎新岁",
+        "门前续旧情"
+      ],
+      "x": 0.54,
+      "y": 0.43,
+      "height": 0.36,
+      "range": [
+        0.40171551891166146,
+        0.46376151701351365
+      ],
+      "narrative": "原创展陈短题：门庭有喜；对应第三卷器用、婚俗与吉祥文化，原文长说明仍保留于阅读面板。"
+    },
+    {
+      "id": "c3-type-gap-05",
+      "kind": "gap",
+      "index": 5,
+      "title": "尺素寄愿",
+      "lines": [
+        "一寸藏巧思",
+        "一针连亲意"
+      ],
+      "x": 0.515,
+      "y": 0.39999999999999997,
+      "height": 0.36,
+      "range": [
+        0.5258587074504026,
+        0.5880070902223284
+      ],
+      "narrative": "原创展陈短题：尺素寄愿；对应第三卷器用、婚俗与吉祥文化，原文长说明仍保留于阅读面板。"
+    },
+    {
+      "id": "c3-type-gap-06",
+      "kind": "gap",
+      "index": 6,
+      "title": "日用见美",
+      "lines": [
+        "器有花枝意",
+        "家存安稳心"
+      ],
+      "x": 0.52,
+      "y": 0.425,
+      "height": 0.36,
+      "range": [
+        0.6501261075120526,
+        0.712215759319575
+      ],
+      "narrative": "原创展陈短题：日用见美；对应第三卷器用、婚俗与吉祥文化，原文长说明仍保留于阅读面板。"
+    },
+    {
+      "id": "c3-type-gap-07",
+      "kind": "gap",
+      "index": 7,
+      "title": "雅意随身",
+      "lines": [
+        "镜照眉间春",
+        "纹留掌上香"
+      ],
+      "x": 0.51,
+      "y": 0.43,
+      "height": 0.36,
+      "range": [
+        0.7742769143906628,
+        0.8363095727253158
+      ],
+      "narrative": "原创展陈短题：雅意随身；对应第三卷器用、婚俗与吉祥文化，原文长说明仍保留于阅读面板。"
+    },
+    {
+      "id": "c3-type-gap-08",
+      "kind": "gap",
+      "index": 8,
+      "title": "满城和乐",
+      "lines": [
+        "愿此寻常日",
+        "岁久亦相亲"
+      ],
+      "x": 0.53,
+      "y": 0.43999999999999995,
+      "height": 0.36,
+      "range": [
+        0.8980911272399713,
+        0.9596215779346292
+      ],
+      "narrative": "原创展陈短题：满城和乐；对应第三卷器用、婚俗与吉祥文化，原文长说明仍保留于阅读面板。"
+    }
+  ],
+  "wideViews": [
+    {
+      "kind": "stop",
+      "index": 1,
+      "id": "stop-01",
+      "note": "左章题及印保留；绣作/帷幔整体内收，屋檐上方留纸，人物与桌案关系清楚。",
+      "reviewMethod": "inherited-exact-SHA256-from-v4-original-size-review",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0,
+      "screenshot": "views/chapter-3-stop-01.jpg",
+      "screenshotSha256": "5683d7057866c9fe8336d10ec032b986001c7646e05562d3a58656a6546f67fc",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-stop-01.jpg",
+        "priorSha256": "5683d7057866c9fe8336d10ec032b986001c7646e05562d3a58656a6546f67fc",
+        "sameFileSha256": true
+      }
+    },
+    {
+      "kind": "stop",
+      "index": 2,
+      "id": "stop-02",
+      "note": "完整宫室与仕女组合上沿离框；新补树石/栏杆端自然。锦架收束后与纹样形成主从，下部礼俗街市保留。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.12341644431101914,
+      "screenshot": "views/chapter-3-stop-02.jpg",
+      "screenshotSha256": "f0ab58e3db00b4b3fb0246a2529fcf3514613b117dd63e6a0b2553cf715add01",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-stop-02.jpg",
+        "priorSha256": "88c67da40da9df826833c987887d3ca953df23ef9a1addb356d76384490dcd3f",
+        "sameFileSha256": false
+      }
+    },
+    {
+      "kind": "stop",
+      "index": 3,
+      "id": "stop-03",
+      "note": "左残屏风退役，凤凰翼尖完整；迎亲右端已补完整外轮廓。锦架缩小后仍接地，右侧凤穿牡丹竖题独立可读。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.24713803226885958,
+      "screenshot": "views/chapter-3-stop-03.jpg",
+      "screenshotSha256": "c86c3ce97c98665b747693efb4459b99157d1d5e7c9ac29994977a6ade4e27a7",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-stop-03.jpg",
+        "priorSha256": "d9ebf8c60996b67b324d7fcd56fc353c5da5908e884d2c70978359cdec1ef1ac",
+        "sameFileSha256": false
+      }
+    },
+    {
+      "kind": "stop",
+      "index": 4,
+      "id": "stop-04",
+      "note": "婚仪厅内收下移，凤凰/礼队中下聚合；右同心成礼竖题清楚。",
+      "reviewMethod": "inherited-exact-SHA256-from-v4-original-size-review",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.37069251986073537,
+      "screenshot": "views/chapter-3-stop-04.jpg",
+      "screenshotSha256": "be332732561fc1741ca5ad007ea809a682047153ec69177613707122514202a6",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-stop-04.jpg",
+        "priorSha256": "be332732561fc1741ca5ad007ea809a682047153ec69177613707122514202a6",
+        "sameFileSha256": true
+      }
+    },
+    {
+      "kind": "stop",
+      "index": 5,
+      "id": "stop-05",
+      "note": "雪巷左侧完整树枝/雪瓦收边，主门屋内收保屋脊；左竖题与雪街分开。",
+      "reviewMethod": "inherited-exact-SHA256-from-v4-original-size-review",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.4947845160644397,
+      "screenshot": "views/chapter-3-stop-05.jpg",
+      "screenshotSha256": "7ec7b47d80cc2da5a5e343035626e90f4564e8df9db9f21c9b9a143d08534654",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-stop-05.jpg",
+        "priorSha256": "7ec7b47d80cc2da5a5e343035626e90f4564e8df9db9f21c9b9a143d08534654",
+        "sameFileSha256": true
+      }
+    },
+    {
+      "kind": "stop",
+      "index": 6,
+      "id": "stop-06",
+      "note": "绣作/长幼叙事保留，亭屋不触顶；针线传情题文置侧，锦架与器物不再被细线横割。",
+      "reviewMethod": "inherited-exact-SHA256-from-v4-original-size-review",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.6190812816082915,
+      "screenshot": "views/chapter-3-stop-06.jpg",
+      "screenshotSha256": "3de22d4222ab838e8108dc6e0169bd4fa03a4a35ea02934654de52ec3c5d7655",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-stop-06.jpg",
+        "priorSha256": "3de22d4222ab838e8108dc6e0169bd4fa03a4a35ea02934654de52ec3c5d7655",
+        "sameFileSha256": true
+      }
+    },
+    {
+      "kind": "stop",
+      "index": 7,
+      "id": "stop-07",
+      "note": "游离花与上宫苑退役；镜台右足已接在作坊地台左端，垂布/桌腿未被遮盖。吉意入器文字与中下陈设分离，顶部通透。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.7432605852233363,
+      "screenshot": "views/chapter-3-stop-07.jpg",
+      "screenshotSha256": "e8d8c82acffa1fa7b0d92b62da011563d67fb184e8e4db875c1e6e7535f726d4",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-stop-07.jpg",
+        "priorSha256": "c062ce33847b7c2dd3dd444fc8a671ee111baa926bb9040b4bdb9bdd3a5b2ecd",
+        "sameFileSha256": false
+      }
+    },
+    {
+      "kind": "stop",
+      "index": 8,
+      "id": "stop-08",
+      "note": "重复山水退役后原长水平硬顶边消失，低院墙灯/台阶自然接续；书案、团扇、屏风和器物轮廓完整。端庄自持竖题在左侧纸面可读。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.8673259018926424,
+      "screenshot": "views/chapter-3-stop-08.jpg",
+      "screenshotSha256": "628e40bf8bef69586984623ad84b8e8201ff94880343f30a5f668758ec1b1e16",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-stop-08.jpg",
+        "priorSha256": "f9c30ecfb98cb73536feb1873cc2bd71a839262270347dc10814e72de59c18b6",
+        "sameFileSha256": false
+      }
+    },
+    {
+      "kind": "stop",
+      "index": 9,
+      "id": "stop-09",
+      "note": "左侧重复山水硬边消失，右SC09主城景保留；母女/灯架顶部完整。安泰人间结题无多余小印，与主题图组相隔。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.9903868032819582,
+      "screenshot": "views/chapter-3-stop-09.jpg",
+      "screenshotSha256": "45ae77bf0382977fa7c058f97a296375be5161c97001177068c57472d0b52d2e",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-stop-09.jpg",
+        "priorSha256": "106205de0b526bd5b38bee8d48f7e6c9ab7a9d79c449159bdd6122244479c082",
+        "sameFileSha256": false
+      }
+    },
+    {
+      "kind": "gap",
+      "index": 1,
+      "id": "gap-01",
+      "note": "院坪串接绣作与礼俗，中段一花百用题文使空白有阅读锚点；顶部保持空。",
+      "reviewMethod": "inherited-exact-SHA256-from-v4-original-size-review",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.06170822215550957,
+      "screenshot": "views/chapter-3-gap-01.jpg",
+      "screenshotSha256": "ff933fb2a048f0e6deb971953e2237ea5d5c111b4923e9c7bab492d2bb28c160",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-gap-01.jpg",
+        "priorSha256": "ff933fb2a048f0e6deb971953e2237ea5d5c111b4923e9c7bab492d2bb28c160",
+        "sameFileSha256": true
+      }
+    },
+    {
+      "kind": "gap",
+      "index": 2,
+      "id": "gap-02",
+      "note": "锦架以脚底为支点收小后仍落在石坪，细线已消失；经纬生芳题组与锦面保持可见间隔，顶部大纸天保留。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.18527723828993936,
+      "screenshot": "views/chapter-3-gap-02.jpg",
+      "screenshotSha256": "be3742954899ba1714c44d51cc3cd1c88ec8a290a481da4ec9797a4e5d00751c",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-gap-02.jpg",
+        "priorSha256": "08be1c12c17af9c15e5ea28e12d56581664d74cc8787bf960bc60866aadb2c2e",
+        "sameFileSha256": false
+      }
+    },
+    {
+      "kind": "gap",
+      "index": 3,
+      "id": "gap-03",
+      "note": "迎亲与器物地台自然过渡，案头清供短竖题居中；上部不加新主体。",
+      "reviewMethod": "inherited-exact-SHA256-from-v4-original-size-review",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.30891527606479746,
+      "screenshot": "views/chapter-3-gap-03.jpg",
+      "screenshotSha256": "f6056216ce0662e6cbf0cd3235ea94916d9e81363fbc5f9e6cc0ee56417fdcfa",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-gap-03.jpg",
+        "priorSha256": "f6056216ce0662e6cbf0cd3235ea94916d9e81363fbc5f9e6cc0ee56417fdcfa",
+        "sameFileSha256": true
+      }
+    },
+    {
+      "kind": "gap",
+      "index": 4,
+      "id": "gap-04",
+      "note": "雪巷左边不再直切；门庭有喜短题居中，巷路/台阶低位承接。",
+      "reviewMethod": "inherited-exact-SHA256-from-v4-original-size-review",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.43273851796258755,
+      "screenshot": "views/chapter-3-gap-04.jpg",
+      "screenshotSha256": "ab9022a69954885494fb2992d37ba3a3f8d78444379fd421e3b5bc707a97e17e",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-gap-04.jpg",
+        "priorSha256": "ab9022a69954885494fb2992d37ba3a3f8d78444379fd421e3b5bc707a97e17e",
+        "sameFileSha256": true
+      }
+    },
+    {
+      "kind": "gap",
+      "index": 5,
+      "id": "gap-05",
+      "note": "两端门屋内收，中锦架落地；尺素寄愿题文在锦架上方侧边，仍留顶部纸天。",
+      "reviewMethod": "inherited-exact-SHA256-from-v4-original-size-review",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.5569328988363655,
+      "screenshot": "views/chapter-3-gap-05.jpg",
+      "screenshotSha256": "3d6a30f807bdf07c7282c662b871d9b4d529646ab1cae3a535172fdb7eac70b1",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-gap-05.jpg",
+        "priorSha256": "3d6a30f807bdf07c7282c662b871d9b4d529646ab1cae3a535172fdb7eac70b1",
+        "sameFileSha256": true
+      }
+    },
+    {
+      "kind": "gap",
+      "index": 6,
+      "id": "gap-06",
+      "note": "游花退役，器物地台低位完整；日用见美竖题悬于设计纸面，镜台进场有顶空。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.6811709334158138,
+      "screenshot": "views/chapter-3-gap-06.jpg",
+      "screenshotSha256": "f948bc5f8ff35f6ecbf0af507938d805690d52d9330aefc5531f93d2bce9335f",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-gap-06.jpg",
+        "priorSha256": "ce237ef388c4851a1de196d468f8d0f893270e7dba205d0ee1a4ada43eccf306",
+        "sameFileSha256": false
+      }
+    },
+    {
+      "kind": "gap",
+      "index": 7,
+      "id": "gap-07",
+      "note": "工坊小幅左移后仍落在低地坪；雅意随身竖题与画组分离，上方纸天未被宫苑或山水重复占满。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.8052932435579894,
+      "screenshot": "views/chapter-3-gap-07.jpg",
+      "screenshotSha256": "5bcf766f59760ac203e6bab71356899c6949d22cbcf12a6ccddeede76c05b101",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-gap-07.jpg",
+        "priorSha256": "a3fb25f429bba80a2fd219b161a6ed73d7cd2467587fb9bbce9c7be31a23a8cb",
+        "sameFileSha256": false
+      }
+    },
+    {
+      "kind": "gap",
+      "index": 8,
+      "id": "gap-08",
+      "note": "器物下重复山水的长水平截口完全消失，院墙灯/台阶延续两端叙事；满城和乐竖题可读并留顶部气口。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.9288563525873003,
+      "screenshot": "views/chapter-3-gap-08.jpg",
+      "screenshotSha256": "f858f66a6b1989cc3f3dfbdb20adad0ece1502b51823274cf852dae9874b76a4",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-gap-08.jpg",
+        "priorSha256": "f7f4eb87ae989ba28b98257459f077e0fc49ef5a9f26ada110017aa12a096036",
+        "sameFileSha256": false
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 1,
+      "id": "quarter-01",
+      "note": "左章标题沿横向游观自然退出，与仕女髻及花枝留有可见间隔；右宫室刚入。主屋顶上方留纸，视口左右裁出正常。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.030854111077754785,
+      "screenshot": "views/chapter-3-quarter-01.jpg",
+      "screenshotSha256": "02171c9e80f2e6807581b8fc52cff4bcaa7e2e5192184de88f30b674097c31cf",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-quarter-01.jpg",
+        "priorSha256": "18114433fa193d520f25f3318613a412d5f63ef1406ee8aa51525db876cd78e8",
+        "sameFileSha256": false
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 2,
+      "id": "quarter-02",
+      "note": "宫室整体完整内收，左出图与右入图之间保持纸面；缩小锦架尚在右缘进场，不造成新的画内断边。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.09256233323326435,
+      "screenshot": "views/chapter-3-quarter-02.jpg",
+      "screenshotSha256": "4999961f2c3f30fab57a8a8ab240e5e6953040028a9731268d1999cfc9d736d0",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-quarter-02.jpg",
+        "priorSha256": "5f165429f2238ff7a2cb75b255019b8354163a811467bc00dcac89837d446346",
+        "sameFileSha256": false
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 3,
+      "id": "quarter-03",
+      "note": "宫室自然退出，缩小锦架成为主要低位陈设；织物、圆扇及脚底完整，白线不再横割。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.15434684130047926,
+      "screenshot": "views/chapter-3-quarter-03.jpg",
+      "screenshotSha256": "165f4d6af003b085dcb93083fe477c2eb92b3cd3f8a133511d81b429f7ff1fe2",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-quarter-03.jpg",
+        "priorSha256": "cfd741a756dea149cedec93ad79db8dee3c5fccf82317b1ba1a175da8c902389",
+        "sameFileSha256": false
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 4,
+      "id": "quarter-04",
+      "note": "凤凰/新娘进入，翼尖离上框；缩小锦架仍自然接地，人物和锦面之间有纸面分隔。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.21620763527939946,
+      "screenshot": "views/chapter-3-quarter-04.jpg",
+      "screenshotSha256": "696acc866d34fc9ddcc002e2e86d771e5508ba8cb0944f36dafe9caa10f63783",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-quarter-04.jpg",
+        "priorSha256": "b3c1de8da579370c49d7751eb7a86a87f7a1bc2c839f603fd8ef06ed26ec212d",
+        "sameFileSha256": false
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 5,
+      "id": "quarter-05",
+      "note": "迎亲右端自然树石收边，凤凰人物左出属于视口取景；低器用台衔接下一景，无新硬边。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.27802665416682854,
+      "screenshot": "views/chapter-3-quarter-05.jpg",
+      "screenshotSha256": "61b7b6dd0b42a497a2e3689fb9a005727b5d6c05e237c134becd83a2ccf7aac0",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-quarter-05.jpg",
+        "priorSha256": "fbbecf9c1f9b75ecbc323a88a37f128bf3be3384438a543db6a2584f0574aa83",
+        "sameFileSha256": false
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 6,
+      "id": "quarter-06",
+      "note": "婚仪由右进入，顶部留纸，凤凰和礼队连成主叙事，前后景可辨。",
+      "reviewMethod": "inherited-exact-SHA256-from-v4-original-size-review",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.33980389796276644,
+      "screenshot": "views/chapter-3-quarter-06.jpg",
+      "screenshotSha256": "ab3ed5b12ded8a1ce8b1a1c62282bc38c826c6aa0a2c3edbee31c695089f10f8",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-quarter-06.jpg",
+        "priorSha256": "ab3ed5b12ded8a1ce8b1a1c62282bc38c826c6aa0a2c3edbee31c695089f10f8",
+        "sameFileSha256": true
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 7,
+      "id": "quarter-07",
+      "note": "婚仪左出、雪巷将入，中央巷路及上方纸面连贯；没有高位新填充。",
+      "reviewMethod": "inherited-exact-SHA256-from-v4-original-size-review",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.40171551891166146,
+      "screenshot": "views/chapter-3-quarter-07.jpg",
+      "screenshotSha256": "0369b38f8c9bfad2d39a28046a528558d130ab573ba2737047a887b314c9cf23",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-quarter-07.jpg",
+        "priorSha256": "0369b38f8c9bfad2d39a28046a528558d130ab573ba2737047a887b314c9cf23",
+        "sameFileSha256": true
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 8,
+      "id": "quarter-08",
+      "note": "雪巷与门屋逐渐进入，原雪街左边得到轮廓修复；人物完整源衣摆随低地面展开。",
+      "reviewMethod": "inherited-exact-SHA256-from-v4-original-size-review",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.4637615170135136,
+      "screenshot": "views/chapter-3-quarter-08.jpg",
+      "screenshotSha256": "41d15da53bdcf78ba40a3e0fe05dd0c647f8e1b7fd95af8ffe5d2f78e1aace69",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-quarter-08.jpg",
+        "priorSha256": "41d15da53bdcf78ba40a3e0fe05dd0c647f8e1b7fd95af8ffe5d2f78e1aace69",
+        "sameFileSha256": true
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 9,
+      "id": "quarter-09",
+      "note": "门屋左出、锦架右入，主体离上框；织物清楚，正常视口出边不误判为素材截断。",
+      "reviewMethod": "inherited-exact-SHA256-from-v4-original-size-review",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.5258587074504026,
+      "screenshot": "views/chapter-3-quarter-09.jpg",
+      "screenshotSha256": "ff2dc0d5867bdf80e3098fb10c3dbee45c0ae323eab7377e499b772c4f9e59df",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-quarter-09.jpg",
+        "priorSha256": "ff2dc0d5867bdf80e3098fb10c3dbee45c0ae323eab7377e499b772c4f9e59df",
+        "sameFileSha256": true
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 10,
+      "id": "quarter-10",
+      "note": "绣作长幼群进入，亭屋和人物保持相对关系；锦架与低石坪过渡清楚。",
+      "reviewMethod": "inherited-exact-SHA256-from-v4-original-size-review",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.5880070902223286,
+      "screenshot": "views/chapter-3-quarter-10.jpg",
+      "screenshotSha256": "eb2a9227d6a35eb70d251400ddb57863dd1d46773b30083bc6ce872d900f06c6",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-quarter-10.jpg",
+        "priorSha256": "eb2a9227d6a35eb70d251400ddb57863dd1d46773b30083bc6ce872d900f06c6",
+        "sameFileSha256": true
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 11,
+      "id": "quarter-11",
+      "note": "长幼群逐步左出，器用地台右入；上半保持较大气口。",
+      "reviewMethod": "inherited-exact-SHA256-from-v4-original-size-review",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.6501261075120527,
+      "screenshot": "views/chapter-3-quarter-11.jpg",
+      "screenshotSha256": "234448a2b733af7815cb55b4d8bd62ab9a5f3e7454e17b82c0dba478baaf0d6a",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-quarter-11.jpg",
+        "priorSha256": "234448a2b733af7815cb55b4d8bd62ab9a5f3e7454e17b82c0dba478baaf0d6a",
+        "sameFileSha256": true
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 12,
+      "id": "quarter-12",
+      "note": "镜台与工坊进入，作坊地台左移后接住镜台右足；桌腿与垂布保全，底部不规则纸边为整体图卡外轮廓而非脚底悬空。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.712215759319575,
+      "screenshot": "views/chapter-3-quarter-12.jpg",
+      "screenshotSha256": "372c2de3a38a1bba6774d72c2bab0a63f88775bf93c5bbfe537777b10ac4830c",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-quarter-12.jpg",
+        "priorSha256": "07865b4d515879ebd53d7227e2ce66cffbb10675e73a8a45ab6d08fe04d017eb",
+        "sameFileSha256": false
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 13,
+      "id": "quarter-13",
+      "note": "工坊与镜台低地坪相接后自然左出，桌腿完整；上方安静纸面与右院门形成疏密。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.7742769143906628,
+      "screenshot": "views/chapter-3-quarter-13.jpg",
+      "screenshotSha256": "1e47f92a29e30d309446100857ab73eadef97d9ff6a63fb265ed308a187ac147",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-quarter-13.jpg",
+        "priorSha256": "23b6264ca42311bb2ce3a8f01660d6e2b1361151119009ba8224efb549b62134",
+        "sameFileSha256": false
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 14,
+      "id": "quarter-14",
+      "note": "文人/团扇逐步进入，重复山水已退役，书案与屏风背后纸面清楚；上方无仕女堆积。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.8363095727253158,
+      "screenshot": "views/chapter-3-quarter-14.jpg",
+      "screenshotSha256": "ff8958a7fab2a1082b949cfc53eddb30b4d9e90ee0e129537e0eb4769fc00123",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-quarter-14.jpg",
+        "priorSha256": "ffd6ec7819e84a4a9ed69ef263ecb9aed2244a829de095fdd18c22b5d08409ca",
+        "sameFileSha256": false
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 15,
+      "id": "quarter-15",
+      "note": "原山水硬顶边消失，器物/屏风下保留低院墙与台阶，卷纹自然收束；人物和器物端部完整。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.8980911272399713,
+      "screenshot": "views/chapter-3-quarter-15.jpg",
+      "screenshotSha256": "e5c4658941c09e1432fd08f456ce5a8b3c52b8a9be7907df0ca2a845f44efd77",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-quarter-15.jpg",
+        "priorSha256": "d65f7280953a6cadc6dfc4ca2451b6959662a7355d7f9ceb8491da7287d19611",
+        "sameFileSha256": false
+      }
+    },
+    {
+      "kind": "quarter",
+      "index": 16,
+      "id": "quarter-16",
+      "note": "左侧重复山水退出后不再有硬横截；右卷末母女/街市/灯架完整进入，真正主城远景与纸面层次清楚。",
+      "reviewMethod": "fresh-final-individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.9596215779346292,
+      "screenshot": "views/chapter-3-quarter-16.jpg",
+      "screenshotSha256": "d0142008e13925c33645ed51e8ebf12f4fc36648ff62e847a1be637b74be2a7e",
+      "inheritanceEvidence": {
+        "priorReview": "../v4/visual-review.json",
+        "priorImage": "../v4/chapter-3-quarter-16.jpg",
+        "priorSha256": "ab61f7665b2f04aabfe2c0044d182ee5aa581cb7b012d85e5c51ad168e84306d",
+        "sameFileSha256": false
+      }
+    }
+  ],
+  "blender": {
+    "schemaVersion": 1,
+    "status": "saved-independently-reopened-and-eight-frame-visually-verified",
+    "verifiedAt": "2026-10-20T04:32:47.688158+00:00",
+    "canonicalSha256": "4433928f6e6160acbd275ba6430d65fa3128df736a7eb59ef7607e61312d10cb",
+    "frozenManifest": "reports/chapter-3-refinement/final/manifest.json",
+    "frozenByteIdenticalToCurrentCanonical": true,
+    "output": "artwork/blender-chapter-3-refinement/chapter-3_reconstructed.blend",
+    "outputSha256": "9a54f1f4c2bb5443089be29d6628ac3d19ca83165ce33e57e425e38e4287b2f2",
+    "outputBytes": 185298066,
+    "originalSourcesBefore": {
+      "chapter-1": "aa0a74c9693a208b382cac12ea66c5c31bf80dc50f65ee539b9739abd71e7d3d",
+      "chapter-2": "d7b4430ca25d3562ee06d81946feb911760ae572bf01633f732c81c495cca0e4",
+      "chapter-3": "4902ef5d7a70f4e7f54a8f8b307943f22437a1ed64a12aa6bc798742daf5421d",
+      "chapter-4": "dcf4a6e96bf8606348563a985dc2bc935817ed5be08ae96066176670f0d84026"
+    },
+    "originalSourcesAfter": {
+      "chapter-1": "aa0a74c9693a208b382cac12ea66c5c31bf80dc50f65ee539b9739abd71e7d3d",
+      "chapter-2": "d7b4430ca25d3562ee06d81946feb911760ae572bf01633f732c81c495cca0e4",
+      "chapter-3": "4902ef5d7a70f4e7f54a8f8b307943f22437a1ed64a12aa6bc798742daf5421d",
+      "chapter-4": "dcf4a6e96bf8606348563a985dc2bc935817ed5be08ae96066176670f0d84026"
+    },
+    "originalSourcesUnchanged": true,
+    "previousDeliveriesBefore": {
+      "artwork/blender-reconstructed/chapter-1_reconstructed.blend": "40a9a4317a94b091b88b6f53b23de85ee89649a8cf1a980e9dca84f7f3143c8d",
+      "artwork/blender-reconstructed/chapter-2_reconstructed.blend": "4e916bb35aac9f618f1caceb77cd166be71b099f458967949013d3155dda1651",
+      "artwork/blender-reconstructed/chapter-3_reconstructed.blend": "f9cdca20b8458edf8cc5fcab9c88e337e6444e2a095b82a93658094c943da221",
+      "artwork/blender-reconstructed/chapter-4_reconstructed.blend": "a75acb715206ae58e4aa20215a2d6d066e2b3f91317d64a6fddf052cae35af19",
+      "artwork/blender-blank-design/chapter-1_reconstructed.blend": "b4bdb5eb99048d19b5f11d1734130b0ac08bace23750d1f23ec2af7003767651",
+      "artwork/blender-blank-design/chapter-2_reconstructed.blend": "2426c3c02cbf7bc904fbdfd51078017b0b20b173e10ff320c1d5cf56a5803944",
+      "artwork/blender-blank-design/chapter-3_reconstructed.blend": "7efa9b055c3d352fd0a9b46464311a408c3f58a1780c99ecc11d9d0b9f7f39fd",
+      "artwork/blender-blank-design/chapter-4_reconstructed.blend": "55c9894d97285f784c2bd5742217d30d9993aca665ad1c90385ec532425b880b"
+    },
+    "previousDeliveriesAfter": {
+      "artwork/blender-reconstructed/chapter-1_reconstructed.blend": "40a9a4317a94b091b88b6f53b23de85ee89649a8cf1a980e9dca84f7f3143c8d",
+      "artwork/blender-reconstructed/chapter-2_reconstructed.blend": "4e916bb35aac9f618f1caceb77cd166be71b099f458967949013d3155dda1651",
+      "artwork/blender-reconstructed/chapter-3_reconstructed.blend": "f9cdca20b8458edf8cc5fcab9c88e337e6444e2a095b82a93658094c943da221",
+      "artwork/blender-reconstructed/chapter-4_reconstructed.blend": "a75acb715206ae58e4aa20215a2d6d066e2b3f91317d64a6fddf052cae35af19",
+      "artwork/blender-blank-design/chapter-1_reconstructed.blend": "b4bdb5eb99048d19b5f11d1734130b0ac08bace23750d1f23ec2af7003767651",
+      "artwork/blender-blank-design/chapter-2_reconstructed.blend": "2426c3c02cbf7bc904fbdfd51078017b0b20b173e10ff320c1d5cf56a5803944",
+      "artwork/blender-blank-design/chapter-3_reconstructed.blend": "7efa9b055c3d352fd0a9b46464311a408c3f58a1780c99ecc11d9d0b9f7f39fd",
+      "artwork/blender-blank-design/chapter-4_reconstructed.blend": "55c9894d97285f784c2bd5742217d30d9993aca665ad1c90385ec532425b880b"
+    },
+    "all8PreviousDeliveriesUnchanged": true,
+    "savedReport": "reports/chapter-3-refinement/blender/final/blender-reconstruction-chapter-3.json",
+    "savedReportSha256": "1e31c956c0ddea82155f2858b17b00a90923d7fb3e678ecb5a7f5296d1c15696",
+    "independentReopenReport": "reports/chapter-3-refinement/blender/final/blender-reopen-validation-chapter-3.json",
+    "independentReopenReportSha256": "d7e47b565663629523792b4759b5786b893df1a8aa9dc40582b6a278118a1bcd",
+    "savedAndIndependentReopenExitCodes": [
+      0,
+      0
+    ],
+    "renderExitCode": 0,
+    "packedImages": 72,
+    "packedFonts": 1,
+    "editableTextGroups": 15,
+    "addedEditableFontObjects": 46,
+    "totalFontObjectsIncludingHiddenOriginals": 52,
+    "hiddenOriginalFontNames": [
+      "SC01_DOCX原文",
+      "SC02_DOCX原文",
+      "SC05_DOCX原文",
+      "SC07_DOCX原文",
+      "SC08_DOCX原文",
+      "SC09_DOCX原文"
+    ],
+    "hiddenSourceMeshCount": 318,
+    "layoutGroups": 10,
+    "layoutTargetApplications": 69,
+    "uniqueLayoutTargets": 68,
+    "actualDepsgraphTextProbesPerVerification": 104,
+    "largestMeasuredAlphaError": 0.00018095970153764185,
+    "actualPreviewFrames": 8,
+    "previewReport": "reports/chapter-3-refinement/blender/final/preview/preview-report.json",
+    "previewReportSha256": "3738478a3e84fbb687a20d2fa520a76f2c32d38b860c67d7cef5ea0eae5bf5d1",
+    "visualReview": "reports/chapter-3-refinement/blender/final/preview/visual-review.json",
+    "visualReviewSha256": "3b60c5cbc4b1389409595d7a53e99c73cac2cb12c12bbb5c3b70fb3c2d9909ac",
+    "previewInputsUnchanged": true,
+    "limits": [
+      "Actual read-only Cycles renders from saved derived copy, not browser screenshots.",
+      "Original paper texture and source shading may differ fromWeb; no pixel-identical claim.",
+      "Blender editable typography retains reviewed wide world anchors; Web compact paper-caption strip is viewport-adaptive presentation, without source camera edits.",
+      "Natural viewport cropping of entering/leaving adjacent scenes and bottom silhouettes is distinguished from an internal bitmap cut."
+    ],
+    "warnings": "Source5.2 file version warning retained while saving inBlender5.0. Source invariants and hashes passed; allocator22KB notice on save process accompanied normalexit0."
+  },
+  "comparisons": [
+    {
+      "path": "reports/chapter-3-refinement/final/comparison-top-and-edges.jpg",
+      "sha256": "14924b8e279051744c05d7a48b6e26a8c235352788da5f41f37884faf3e95d58",
+      "views": [
+        {
+          "kind": "stop",
+          "index": 2,
+          "progress": 0.12341644431101914,
+          "inputs": [
+            {
+              "path": "reports/chapter-3-refinement/before/chapter-3-stop-02.jpg",
+              "sha256": "59f2befb432f4baacb308320e41d66d995c22b8dd5730d44102f2611bcf3647c"
+            },
+            {
+              "path": "reports/chapter-3-refinement/final/views/chapter-3-stop-02.jpg",
+              "sha256": "f0ab58e3db00b4b3fb0246a2529fcf3514613b117dd63e6a0b2553cf715add01"
+            }
+          ]
+        },
+        {
+          "kind": "stop",
+          "index": 3,
+          "progress": 0.24713803226885958,
+          "inputs": [
+            {
+              "path": "reports/chapter-3-refinement/before/chapter-3-stop-03.jpg",
+              "sha256": "3c7deda36c434fceb973056c2231efd829826c01b2e9853ecae747728d9d7786"
+            },
+            {
+              "path": "reports/chapter-3-refinement/final/views/chapter-3-stop-03.jpg",
+              "sha256": "c86c3ce97c98665b747693efb4459b99157d1d5e7c9ac29994977a6ade4e27a7"
+            }
+          ]
+        },
+        {
+          "kind": "stop",
+          "index": 5,
+          "progress": 0.4947845160644397,
+          "inputs": [
+            {
+              "path": "reports/chapter-3-refinement/before/chapter-3-stop-05.jpg",
+              "sha256": "d0ed5ef0dc692a0bcf6ac77624dcf4d98c8f41fd2cb09c72578554c878208382"
+            },
+            {
+              "path": "reports/chapter-3-refinement/final/views/chapter-3-stop-05.jpg",
+              "sha256": "7ec7b47d80cc2da5a5e343035626e90f4564e8df9db9f21c9b9a143d08534654"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "reports/chapter-3-refinement/final/comparison-typography-and-composition.jpg",
+      "sha256": "8016b12d44e6e76e92b786efd5e15414b247079898ad1017754766d1d341e3a5",
+      "views": [
+        {
+          "kind": "gap",
+          "index": 2,
+          "progress": 0.18527723828993936,
+          "inputs": [
+            {
+              "path": "reports/chapter-3-refinement/before/chapter-3-gap-02.jpg",
+              "sha256": "d056d43fa7a3448b14dc46e332be951d55f3ab94bf754ad1ecf15bb001d53db1"
+            },
+            {
+              "path": "reports/chapter-3-refinement/final/views/chapter-3-gap-02.jpg",
+              "sha256": "be3742954899ba1714c44d51cc3cd1c88ec8a290a481da4ec9797a4e5d00751c"
+            }
+          ]
+        },
+        {
+          "kind": "stop",
+          "index": 7,
+          "progress": 0.7432605852233363,
+          "inputs": [
+            {
+              "path": "reports/chapter-3-refinement/before/chapter-3-stop-07.jpg",
+              "sha256": "7ec5cbf212410b4cf8d3b00d51c226cc10f99a2f3e991fff73d2af579ea0502e"
+            },
+            {
+              "path": "reports/chapter-3-refinement/final/views/chapter-3-stop-07.jpg",
+              "sha256": "e8d8c82acffa1fa7b0d92b62da011563d67fb184e8e4db875c1e6e7535f726d4"
+            }
+          ]
+        },
+        {
+          "kind": "stop",
+          "index": 8,
+          "progress": 0.8673259018926424,
+          "inputs": [
+            {
+              "path": "reports/chapter-3-refinement/before/chapter-3-stop-08.jpg",
+              "sha256": "a9db14f7313112a1dab972d6657dad1061a1d236797fe161eebe3f7fd1cfb2cb"
+            },
+            {
+              "path": "reports/chapter-3-refinement/final/views/chapter-3-stop-08.jpg",
+              "sha256": "628e40bf8bef69586984623ad84b8e8201ff94880343f30a5f668758ec1b1e16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "reports/chapter-3-refinement/final/comparison-transitions.jpg",
+      "sha256": "990a21133d2af1cff99b006badce5437e2331c4977c14be48667b7dc85fb89b8",
+      "views": [
+        {
+          "kind": "gap",
+          "index": 1,
+          "progress": 0.06170822215550957,
+          "inputs": [
+            {
+              "path": "reports/chapter-3-refinement/before/chapter-3-gap-01.jpg",
+              "sha256": "b50141bd844ba59bb15b385130a1b0f861b6339a1a0d987529d16d1de3965cf4"
+            },
+            {
+              "path": "reports/chapter-3-refinement/final/views/chapter-3-gap-01.jpg",
+              "sha256": "ff933fb2a048f0e6deb971953e2237ea5d5c111b4923e9c7bab492d2bb28c160"
+            }
+          ]
+        },
+        {
+          "kind": "gap",
+          "index": 6,
+          "progress": 0.6811709334158138,
+          "inputs": [
+            {
+              "path": "reports/chapter-3-refinement/before/chapter-3-gap-06.jpg",
+              "sha256": "ab79834f8b922b1109e52ffecf3cd2c1ed51c83beebd7952b220d6c557d196dc"
+            },
+            {
+              "path": "reports/chapter-3-refinement/final/views/chapter-3-gap-06.jpg",
+              "sha256": "f948bc5f8ff35f6ecbf0af507938d805690d52d9330aefc5531f93d2bce9335f"
+            }
+          ]
+        },
+        {
+          "kind": "stop",
+          "index": 9,
+          "progress": 0.9903868032819582,
+          "inputs": [
+            {
+              "path": "reports/chapter-3-refinement/before/chapter-3-stop-09.jpg",
+              "sha256": "75325c8bc82c722b111f088c5c364d4056cfcf2cfc8e673175cb5034b82b4b2b"
+            },
+            {
+              "path": "reports/chapter-3-refinement/final/views/chapter-3-stop-09.jpg",
+              "sha256": "45ae77bf0382977fa7c058f97a296375be5161c97001177068c57472d0b52d2e"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scopeLimits": [
+    "Windows/Chromium/Blender5.0 local verification; no deployed-site or physical-device claim.",
+    "Wide Blender world anchors match the scene plan; Web compact reading layout responds to the actual window.",
+    "Short windows expand the content-driven painting height and scroll vertically; source camera poses and story nodes remain unchanged.",
+    "Normal viewport entry/exit and original source paper/font shading are distinguished from internal bitmap damage."
+  ]
+}

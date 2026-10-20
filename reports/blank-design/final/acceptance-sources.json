@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "status": "ready-for-final-evidence",
+  "canonicalSha256": "dec52de0566ca29fcae9a767cec8f7970bd3dc98a226ac8a6ea54ebf654d8fa8",
+  "chapters": {
+    "1": {
+      "manifest": "reports/blank-design/expanded-v6/chapter-1-manifest.json",
+      "review": "reports/blank-design/expanded-v6/visual-review-chapter-1.json",
+      "blenderPreview": "reports/blank-design/blender/preview-chapter-1/preview-report.json"
+    },
+    "2": {
+      "manifest": "reports/blank-design/expanded-v3/chapter-2-manifest.json",
+      "review": "reports/blank-design/expanded-v3/visual-review-chapter-2.json",
+      "blenderPreview": "reports/blank-design/blender/preview-chapter-2/preview-report.json"
+    },
+    "3": {
+      "manifest": "reports/blank-design/expanded-v3/chapter-3-manifest.json",
+      "review": "reports/blank-design/expanded-v3/visual-review-chapter-3.json",
+      "blenderPreview": "reports/blank-design/blender/preview-chapter-3/preview-report.json"
+    },
+    "4": {
+      "manifest": "reports/blank-design/pilot-v4/manifest.json",
+      "review": "reports/blank-design/pilot-v4/visual-review.json",
+      "blenderPreview": "reports/blank-design/blender/preview/preview-report.json"
+    }
+  },
+  "regionOverrides": {
+    "c1-gap-01-r01": {
+      "finalClassification": "留白保留",
+      "reason": "终审确认下部r02已由土径接地，上部山寺间纸天空形成退出/入场气口，应保留；相邻低坡只作框景，不能声称上部被填。",
+      "evidence": "reports/blank-design/expanded-v6/visual-review-chapter-1.json",
+      "evidenceLocation": "preservedRegions[0] and c1-gap-01 view"
+    }
+  },
+  "finalClassificationCounts": {
+    "留白保留": 93,
+    "叙事补充": 95,
+    "已有层修复": 2
+  },
+  "classificationBoundary": "190个原审查区域的最终主分类；另6处局部混合处理独立记录，不称整区填满或整区完全未动。",
+  "partialTreatments": {
+    "c4-gap-01-r2": [
+      {
+        "classification": "留白保留",
+        "rectNormalized": [
+          0.28,
+          0.3,
+          0.44,
+          0.23
+        ],
+        "reason": "该叙事补充区域的上缘仍留纸天空/退势，实体只承接更低处；这是局部保留，非整区改判。",
+        "evidence": "reports/blank-design/pilot-v4/visual-review.json",
+        "viewId": "c4-gap-01",
+        "coordinateBoundary": "观察框与原区域的相交近似框；原画心纸内归一化，不作像素级面积统计。"
+      }
+    ],
+    "c4-gap-02-r2": [
+      {
+        "classification": "留白保留",
+        "rectNormalized": [
+          0.27,
+          0.29,
+          0.44,
+          0.25
+        ],
+        "reason": "该叙事补充区域的上缘仍留纸天空/退势，实体只承接更低处；这是局部保留，非整区改判。",
+        "evidence": "reports/blank-design/pilot-v4/visual-review.json",
+        "viewId": "c4-gap-02",
+        "coordinateBoundary": "观察框与原区域的相交近似框；原画心纸内归一化，不作像素级面积统计。"
+      }
+    ],
+    "c4-gap-03-r2": [
+      {
+        "classification": "留白保留",
+        "rectNormalized": [
+          0.23,
+          0.31,
+          0.52,
+          0.21
+        ],
+        "reason": "该叙事补充区域的上缘仍留纸天空/退势，实体只承接更低处；这是局部保留，非整区改判。",
+        "evidence": "reports/blank-design/pilot-v4/visual-review.json",
+        "viewId": "c4-gap-03",
+        "coordinateBoundary": "观察框与原区域的相交近似框；原画心纸内归一化，不作像素级面积统计。"
+      }
+    ],
+    "c4-gap-04-r2": [
+      {
+        "classification": "留白保留",
+        "rectNormalized": [
+          0.3,
+          0.28,
+          0.42,
+          0.22
+        ],
+        "reason": "该叙事补充区域的上缘仍留纸天空/退势，实体只承接更低处；这是局部保留，非整区改判。",
+        "evidence": "reports/blank-design/pilot-v4/visual-review.json",
+        "viewId": "c4-gap-04",
+        "coordinateBoundary": "观察框与原区域的相交近似框；原画心纸内归一化，不作像素级面积统计。"
+      }
+    ],
+    "c4-gap-05-r2": [
+      {
+        "classification": "留白保留",
+        "rectNormalized": [
+          0.48,
+          0.27,
+          0.22,
+          0.04
+        ],
+        "reason": "该叙事补充区域的上缘仍留纸天空/退势，实体只承接更低处；这是局部保留，非整区改判。第五处仅近似窄边，不强作精确面积统计。",
+        "evidence": "reports/blank-design/pilot-v4/visual-review.json",
+        "viewId": "c4-gap-05",
+        "coordinateBoundary": "观察框与原区域的相交近似框；原画心纸内归一化，不作像素级面积统计。"
+      }
+    ],
+    "c4-stop-07-r2": [
+      {
+        "classification": "叙事补充",
+        "rectNormalized": [
+          0.05,
+          0.79,
+          0.08,
+          0.19
+        ],
+        "reason": "原保留左下区的局部加入孤灯落石岸承托，周围留白继续保留；不称整区完全未动。",
+        "newLayerIds": [
+          "bd4-gap06-lamp",
+          "bd4-gap06-shore"
+        ],
+        "evidence": "reports/blank-design/pilot-v4/visual-review.json",
+        "viewId": "c4-stop-07",
+        "coordinateBoundary": "实际目视承托观察框；原画心纸内归一化。"
+      }
+    ]
+  }
+}

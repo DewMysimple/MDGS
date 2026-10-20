@@ -1,0 +1,88 @@
+{
+  "status": "pass",
+  "startedAt": "2026-10-20T01:56:58.415Z",
+  "completedAt": "2026-10-20T01:56:58.728Z",
+  "viteVersion": "6.4.4",
+  "launchedFrom": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp",
+  "checks": [
+    {
+      "kind": "dev",
+      "url": "http://127.0.0.1:7451/",
+      "port": 7451,
+      "root": "E:/数字媒体竞赛/gitProject/MDGS",
+      "pageStatus": 200,
+      "assetStatus": 200
+    },
+    {
+      "kind": "dev",
+      "url": "http://127.0.0.1:7454/",
+      "port": 7454,
+      "root": "E:/数字媒体竞赛/gitProject/MDGS",
+      "pageStatus": 200,
+      "assetStatus": 200
+    },
+    {
+      "kind": "dev",
+      "url": "http://127.0.0.1:7452/",
+      "port": 7452,
+      "root": "E:/数字媒体竞赛/gitProject/MDGS",
+      "pageStatus": 200,
+      "assetStatus": 200
+    },
+    {
+      "kind": "preview",
+      "url": "http://127.0.0.1:7460/",
+      "port": 7460,
+      "root": "E:/数字媒体竞赛/gitProject/MDGS",
+      "pageStatus": 200,
+      "assetStatus": 200
+    },
+    {
+      "kind": "preview",
+      "url": "http://127.0.0.1:7463/",
+      "port": 7463,
+      "root": "E:/数字媒体竞赛/gitProject/MDGS",
+      "pageStatus": 200,
+      "assetStatus": 200
+    }
+  ],
+  "cleanup": [
+    {
+      "kind": "preview",
+      "port": 7463,
+      "listening": false,
+      "address": null,
+      "status": "closed"
+    },
+    {
+      "kind": "preview",
+      "port": 7460,
+      "listening": false,
+      "address": null,
+      "status": "closed"
+    },
+    {
+      "kind": "dev",
+      "port": 7452,
+      "listening": false,
+      "address": null,
+      "status": "closed"
+    },
+    {
+      "kind": "dev",
+      "port": 7454,
+      "listening": false,
+      "address": null,
+      "status": "closed"
+    },
+    {
+      "kind": "dev",
+      "port": 7451,
+      "listening": false,
+      "address": null,
+      "status": "closed"
+    }
+  ],
+  "cwdRestored": true,
+  "scope": "Five real dev/preview HTTP servers; dependency scanning and speculative transforms are disabled only for this browserless startup test."
+}

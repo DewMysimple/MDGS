@@ -1,6 +1,6 @@
 # Blender 网页资产校验
 
-检查时间：2026-10-19 22:49:43（Asia/Shanghai）。结果：**pass**。
+检查时间：2026-10-20 12:28:13（Asia/Shanghai）。结果：**pass**。
 
 执行命令：`node scripts/validate-assets.mjs`。有结构错误或缺失资源时进程退出码为 1。
 

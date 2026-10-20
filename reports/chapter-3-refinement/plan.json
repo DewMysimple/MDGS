@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "chapter": 3,
+  "status": "reviewed-before-implementation",
+  "createdAt": "2026-10-20T11:13:53.173843",
+  "auditSources": [
+    "audit-visual.json",
+    "technical-audit.json",
+    "typography-proposal.json"
+  ],
+  "baseline": "before/manifest.json",
+  "principles": [
+    "先缩退顶置场景、保中下部主景与上方气口，再放文字",
+    "仅修真截口，不把自然视口进出当素材缺损",
+    "文字每语义窗口最多一组，竖题两短列、少量中性朱印",
+    "原文件/相机/世界矩阵/动画/其他三卷子树不改；局部载体几何和显隐为明确派生例外"
+  ],
+  "composition": [
+    {
+      "scope": "SC01..SC09九个主景组",
+      "action": "以各景下沿为支点等比内收约16%，保持层间比例/相对接地；首轮实景再逐景调节",
+      "mechanism": "显式局部几何仿射layoutAdjustments，源世界矩阵与动画保留"
+    },
+    {
+      "mesh": "SC03_07-left-room-background",
+      "action": "退役高大截边屏风与帷幔背景，保留独立绣女、新娘、凤凰、绣架"
+    },
+    {
+      "mesh": "SC07_02_上方宫苑场景",
+      "action": "退役上部孤立宫苑，不再以云花遮掩悬台，改留纸与器用短题"
+    },
+    {
+      "mesh": "SC08_02_右上婚礼陈设",
+      "action": "退役重复上方婚礼旁叙，保圆屏、书案、游园、首饰罐盒"
+    },
+    {
+      "scope": "gap02/05锦架，gap03/06器物",
+      "action": "检查上沿与落脚，需要时内收下移，连同支持地坪保持接触"
+    },
+    {
+      "scope": "镜台右足至工坊左缘",
+      "action": "先检现图完整垂布与低地坪接续；修小白缝，不重画完整镜台"
+    }
+  ],
+  "edgeRepairs": [
+    {
+      "mesh": "SC02_06_上方人物背景",
+      "action": "透明图定向补全左右端，保持人物/屏风/柱体；完成自然岩树/栏杆端点，边界不留整段竖切"
+    },
+    {
+      "mesh": "SC03_04-procession",
+      "action": "透明图补全右端建筑、栏杆、树冠，保原迎亲人物，内收轻背景"
+    },
+    {
+      "mesh": "SC05_08_左下街景_重做",
+      "action": "透明图补全左端雪树/屋檐/石栏，自然不规则收边；保原街巷人物与灯彩"
+    }
+  ],
+  "typography": {
+    "layout": "vertical",
+    "opening": "沿用卷首题字",
+    "reflowExistingStops": [
+      3,
+      4,
+      6
+    ],
+    "newStopGroups": [
+      7,
+      8,
+      9
+    ],
+    "newGapGroups": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "skipStop2": "上组整改优先，本帧不增正文",
+    "copySource": "typography-proposal.json，原创展陈短句",
+    "placement": "中侧留白，基本不占顶部0..0.18；按重排后的真实画面定点",
+    "narrow": "仅当前语义组护边，字号与两列自适应，不吸附远景题字；实际宽窄截图查人物遮盖",
+    "blender": "独立可编辑FONT逐字竖列，字库打包，范围显隐按真实源frame映射；原长文FONT派生隐藏与网页一致"
+  },
+  "verification": [
+    "每次manifest与同批截图哈希一致，记录失败候选",
+    "9停驻+8中点+16四分点逐张实景审查",
+    "宽屏/中窗/窄窗文字可读与顶部/主要人物无遮挡",
+    "正反游观、拖拽/分镜/自动展卷/轻动/文化抽屉/切卷/resize",
+    "Blender独立新目录保存+独立进程重开，源hash/矩阵/相机/动画/非目标几何不变",
+    "真实Blender停驻2/3/5/7及衔接中点预览",
+    "build、原路径/资产校验、其他三卷子树不变",
+    "本轮审查/方案/实施/对比/关键截图汇总"
+  ],
+  "finalImplementationPlan": "layout-plan.json",
+  "iterationEvidence": [
+    "v1",
+    "v2-probe",
+    "v3-narrow-probe",
+    "v4",
+    "line-diagnostic",
+    "seam-probe"
+  ]
+}

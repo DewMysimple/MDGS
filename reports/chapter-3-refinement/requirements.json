@@ -1,0 +1,83 @@
+{
+  "scope": "第三卷：留白、竖排文化文字、顶部疏密、图片硬截与衔接专项",
+  "baseline": {
+    "path": "reports/chapter-3-refinement/before/manifest.json",
+    "sha256": "dec52de0566ca29fcae9a767cec8f7970bd3dc98a226ac8a6ea54ebf654d8fa8"
+  },
+  "sourceBlends": [
+    {
+      "path": "source/牡丹/场景blender搭建/一/牡丹与女帝_叙事复合运镜.blend",
+      "sha256": "aa0a74c9693a208b382cac12ea66c5c31bf80dc50f65ee539b9739abd71e7d3d"
+    },
+    {
+      "path": "source/牡丹/场景blender搭建/三/画卷三_中国长卷_复合运镜_v07.blend",
+      "sha256": "4902ef5d7a70f4e7f54a8f8b307943f22437a1ed64a12aa6bc798742daf5421d"
+    },
+    {
+      "path": "source/牡丹/场景blender搭建/二/画卷二_长卷叙事.blend",
+      "sha256": "d7b4430ca25d3562ee06d81946feb911760ae572bf01633f732c81c495cca0e4"
+    },
+    {
+      "path": "source/牡丹/场景blender搭建/四/Fourth_Scroll.blend",
+      "sha256": "dcf4a6e96bf8606348563a985dc2bc935817ed5be08ae96066176670f0d84026"
+    }
+  ],
+  "status": "completed-and-verified",
+  "requiredDeliverables": [
+    "逐景专项审查报告，覆盖留白/截断/生硬/衔接/构图/顶部",
+    "先构图后文字/图像的整改方案与逐项实施对应",
+    "独立保存且重新打开验证的第三卷Blender副本",
+    "第三卷网页真实结果与修改前后对照",
+    "关键画面截图：文字留白/顶部留白/衔接/构图"
+  ],
+  "invariants": [
+    "原四卷源文件不覆盖",
+    "其他三卷manifest子树不变",
+    "运行路径/端口/窗口继续自适应",
+    "先审查和规划再改产品",
+    "文字独立可编辑，竖排优先，顶部保持呼吸；避免无依据历史引文"
+  ],
+  "completedAt": "2026-10-20T05:20:56.342304+00:00",
+  "currentCanonicalSha256": "4433928f6e6160acbd275ba6430d65fa3128df736a7eb59ef7607e61312d10cb",
+  "deliveryEvidence": [
+    {
+      "requirement": "逐景专项审查报告，覆盖留白/截断/生硬/衔接/构图/顶部",
+      "paths": [
+        "audit-visual.md",
+        "technical-audit.md"
+      ]
+    },
+    {
+      "requirement": "先构图后文字/图像的整改方案与逐项实施对应",
+      "paths": [
+        "plan.md",
+        "layout-plan.json",
+        "final/implementation.json"
+      ]
+    },
+    {
+      "requirement": "独立保存且重新打开验证的第三卷Blender副本",
+      "paths": [
+        "../../artwork/blender-chapter-3-refinement/chapter-3_reconstructed.blend",
+        "blender/final/delivery-summary.json"
+      ]
+    },
+    {
+      "requirement": "第三卷网页真实结果与修改前后对照",
+      "paths": [
+        "final/visual-review.md",
+        "final/comparison-evidence.json"
+      ]
+    },
+    {
+      "requirement": "关键画面截图：文字留白/顶部留白/衔接/构图",
+      "paths": [
+        "final/views/",
+        "text-layout-accepted/visual-review.md",
+        "text-short-window-v3/visual-review.md",
+        "blender/final/preview/visual-review.md"
+      ]
+    }
+  ],
+  "verification": "final/implementation.json"
+}

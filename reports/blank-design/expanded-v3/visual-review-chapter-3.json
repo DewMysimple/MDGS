@@ -1,0 +1,1627 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-static-scene-review",
+  "chapter": 3,
+  "canonicalSha256": "fda82bac4df9f0628c4875bc7e8dab8d799e5f7290037f448b35f8623e44cb0c",
+  "chapterSnapshot": "reports/blank-design/expanded-v3/chapter-3-manifest.json",
+  "chapterSnapshotSha256": "4287a0160c07e90881320fdc6568c8bc382540e22378936627adfcd98313daee",
+  "chapterPayloadMatchesCurrentCanonicalAtReview": true,
+  "captureMetadataBoundary": "Shared capture.json now reflects a later chapter1 capture. Chapter3 frozen snapshot retains original parent canonical fda82bac; this report uses that snapshot and each actual image hash.",
+  "generatedAt": "2026-10-20T01:43:28.022122+00:00",
+  "scope": {
+    "individuallyReviewedFullSize": 33,
+    "stops": 9,
+    "gaps": 8,
+    "quarterpoints": 16,
+    "paintingCrop": [
+      1388,
+      476
+    ],
+    "viewport": [
+      1440,
+      900
+    ],
+    "reducedMotion": true,
+    "productionFilesChangedByReviewer": false
+  },
+  "summary": {
+    "pass": 33,
+    "issue": 0,
+    "unreviewed": 0,
+    "decision": "C3本轮宽屏静帧美术通过，可按固定chapter snapshot进行Blender交付。",
+    "grounding": "g2/g5锦架与g3/g6器物台可见足面在低地坪，四分点未见新的纸隙悬浮，无需微调。",
+    "densityAndRhythm": "八段都有低位真实承接；有顶院落只g1/7，无顶地坪g2/3/5/6，巷路g4/8，解除了六次同顶循环。",
+    "negativeSpace": "花砖只在低部，不盖主角；题首/题字空气、中央上方和卷尾仍显著见纸。"
+  },
+  "priorIssueClosures": [
+    {
+      "id": "opaque-water-ribbon",
+      "status": "closed-in-reviewed-frames",
+      "evidence": "33图实色横带不再出现，锦布/花器/灯墙完整。"
+    },
+    {
+      "id": "flat-canopy-placeholders",
+      "status": "closed-in-reviewed-frames",
+      "evidence": "TR图标不再压新物，真实原绘树木保留。"
+    },
+    {
+      "id": "repeated-roofed-courtyard",
+      "status": "closed-in-reviewed-frames",
+      "evidence": "四段换无顶民居地坪，院廊仅两处，巷路两处。"
+    }
+  ],
+  "views": [
+    {
+      "id": "c3-stop-01",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 1,
+      "name": "第一景",
+      "progress": 0,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-stop-01.jpg",
+      "sha256": "7d223a58d63c3aff55f81b20386aed12b463395c08f09e14816d54c44af13155",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "题首人物/作坊保持，左下灰绿带已去，右下低院栏接场所，留白干净。",
+      "observedRegionNormalized": [
+        0.01,
+        0.7,
+        0.18,
+        0.13
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-stop-01.jpg",
+      "beforeSha256": "1dceba5590985d428ac3e182069b0b70f2a560e07a3f8bf54f0e5605d02f3b7d",
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-stop-01.jpg",
+      "priorVersionSha256": "45eec14ffb3941578b5ad35caedefbaef9f0905070daa446d22d4d77c13c6bc2",
+      "originalAuditRegions": [
+        {
+          "id": "c3-stop-01-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.03,
+            0.04,
+            0.15,
+            0.54
+          ],
+          "currentStatus": "保留留白已保持。"
+        },
+        {
+          "id": "c3-stop-01-r2",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.01,
+            0.62,
+            0.19,
+            0.36
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-02",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 2,
+      "name": "第二景",
+      "progress": 0.12341644431101914,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-stop-02.jpg",
+      "sha256": "316e1f4f7a3060bc3311d91c339f608b619d40113be4bac679e838b775b39a39",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "婚俗组保持，右侧凤纹锦布完整无条带/TR遮切，底部有地坪。",
+      "observedRegionNormalized": [
+        0.78,
+        0.54,
+        0.21,
+        0.27
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-stop-02.jpg",
+      "beforeSha256": "a48defded39235b651150af883c3855cc30cae16a24f69fd5757908b330e2f43",
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-stop-02.jpg",
+      "priorVersionSha256": "62740314113b49753df4256bd18c596a968a9dd1ff856f0853a12171215211ee",
+      "originalAuditRegions": [
+        {
+          "id": "c3-stop-02-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.02,
+            0.02,
+            0.13,
+            0.32
+          ],
+          "currentStatus": "保留留白已保持。"
+        },
+        {
+          "id": "c3-stop-02-r2",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.87,
+            0.55,
+            0.13,
+            0.43
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-03",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 3,
+      "name": "第三景",
+      "progress": 0.24713803226885958,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-stop-03.jpg",
+      "sha256": "ed81f94b9240e24a25cb44972cced388040cd9aebbae22438b9a14aa70d359c7",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "嫁衣/凤凰/题字仍主导，两侧锦布与花器完整，新低地坪不添高景。",
+      "observedRegionNormalized": [
+        0.0,
+        0.56,
+        1,
+        0.24
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-stop-03.jpg",
+      "beforeSha256": "72bc45e81d251a5f096f2b987cdaa51a57f241ec82bfe90800c6d2aa4976a9bc",
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-stop-03.jpg",
+      "priorVersionSha256": "34cf7d359ad29a3f10a0dc76bc3a7c2153f6fa34ec50e2a5b02f6f49747b0daf",
+      "originalAuditRegions": [
+        {
+          "id": "c3-stop-03-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.59,
+            0.14,
+            0.18,
+            0.19
+          ],
+          "currentStatus": "保留留白已保持。"
+        },
+        {
+          "id": "c3-stop-03-r2",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.02,
+            0.58,
+            0.12,
+            0.4
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-04",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 4,
+      "name": "第四景",
+      "progress": 0.37069251986073537,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-stop-04.jpg",
+      "sha256": "97959724e7b245932636a8ec8f87b0b52a0349006958970c70204e7d9308efc6",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "婚礼/迎亲与题签保持，左器物/右巷灯完整，没有重复高屋顶。",
+      "observedRegionNormalized": [
+        0.0,
+        0.64,
+        1,
+        0.18
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-stop-04.jpg",
+      "beforeSha256": "770c8c14acbc00d9d55c22a3a1278a5bdc69fc217ca7f94a8e3f0d7d51022532",
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-stop-04.jpg",
+      "priorVersionSha256": "b3b285dd6285e9cded55ec5ef6f5e59c3078010ef21c835b1599177065a3a638",
+      "originalAuditRegions": [
+        {
+          "id": "c3-stop-04-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.64,
+            0.12,
+            0.22,
+            0.24
+          ],
+          "currentStatus": "保留留白已保持。"
+        },
+        {
+          "id": "c3-stop-04-r2",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.03,
+            0.65,
+            0.16,
+            0.33
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-05",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 5,
+      "name": "第五景",
+      "progress": 0.4947845160644397,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-stop-05.jpg",
+      "sha256": "7d4eea6eba84b68c0d385a1bfabba1dfdfcc1108f5fcbdca74e6663cdc77fa5c",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "年画雪街原主体保持，左右巷路/锦架衔接，天空未过满。",
+      "observedRegionNormalized": [
+        0.0,
+        0.61,
+        1,
+        0.2
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-stop-05.jpg",
+      "beforeSha256": "4bedd119a71e3c79ec6d449a0e33f802cb8e15b0bc634db65ed7ae9d044c48e0",
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-stop-05.jpg",
+      "priorVersionSha256": "502fe6c32e4ce1992a046d899c355008e36ae12406be3bfb1570be9a80f43c14",
+      "originalAuditRegions": [
+        {
+          "id": "c3-stop-05-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.02,
+            0.01,
+            0.35,
+            0.17
+          ],
+          "currentStatus": "保留留白已保持。"
+        },
+        {
+          "id": "c3-stop-05-r2",
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.02,
+            0.34,
+            0.16,
+            0.62
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-06",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 6,
+      "name": "第六景",
+      "progress": 0.6190812816082915,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-stop-06.jpg",
+      "sha256": "a833f1b3d42663e70731e34df4196e107a7ca46ca35f201239ad3280ab7b61ce",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "家庭手作与岁岁圆满保留，锦架和花器脚面在低地坪，轮廓不再被切。",
+      "observedRegionNormalized": [
+        0.0,
+        0.58,
+        1,
+        0.24
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-stop-06.jpg",
+      "beforeSha256": "e72f2b69d029cb70c5ef8356d437f592e23dbe5cb251c687565e6fe4663687de",
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-stop-06.jpg",
+      "priorVersionSha256": "efb8b8aff6cd3f5538fed26678debb62867179abe4af9d9a9826277acaf01f91",
+      "originalAuditRegions": [
+        {
+          "id": "c3-stop-06-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.54,
+            0.03,
+            0.34,
+            0.26
+          ],
+          "currentStatus": "保留留白已保持。"
+        },
+        {
+          "id": "c3-stop-06-r2",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.02,
+            0.65,
+            0.15,
+            0.33
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-07",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 7,
+      "name": "第七景",
+      "progress": 0.7432605852233363,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-stop-07.jpg",
+      "sha256": "f69475aa91852d9991de4baffff61756327b936a5613ca2e4061cea6a5ecfd21",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "镜台/作坊未遮，左器物足落低地坪，右院栏来自少数保留院落，低位丰富而上空有气口。",
+      "observedRegionNormalized": [
+        0.0,
+        0.58,
+        0.27,
+        0.28
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-stop-07.jpg",
+      "beforeSha256": "a618503c70bde07e876a0fed7e1185983adeb7fc0c64c30177f61ed151953742",
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-stop-07.jpg",
+      "priorVersionSha256": "962132b741bfa07e461eba075991e4674730ead237632aeb20883b8dd55e4640",
+      "originalAuditRegions": [
+        {
+          "id": "c3-stop-07-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.01,
+            0.03,
+            0.15,
+            0.35
+          ],
+          "currentStatus": "保留留白已保持。"
+        },
+        {
+          "id": "c3-stop-07-r2",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.55,
+            0.34,
+            0.23,
+            0.18
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-08",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 8,
+      "name": "第八景",
+      "progress": 0.8673259018926424,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-stop-08.jpg",
+      "sha256": "24340087e552f072990c1a95a43478a83e2a8938ccca860e9e707e1640efb863",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "书画/器物主景保持，院栏承托低处，空中没有图标占位。",
+      "observedRegionNormalized": [
+        0.0,
+        0.58,
+        0.2,
+        0.25
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-stop-08.jpg",
+      "beforeSha256": "cd01e01393906b60e934399768b4b643fb5a4c84868f6e0f6dfde1edc2295220",
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-stop-08.jpg",
+      "priorVersionSha256": "0c4043c34667948b16fbc76a7dd40a41ecdff797407e39f6471ad7dd2606a01a",
+      "originalAuditRegions": [
+        {
+          "id": "c3-stop-08-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.02,
+            0.01,
+            0.4,
+            0.28
+          ],
+          "currentStatus": "保留留白已保持。"
+        },
+        {
+          "id": "c3-stop-08-r2",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.02,
+            0.71,
+            0.17,
+            0.27
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-09",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 9,
+      "name": "第九景",
+      "progress": 0.9903868032819582,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-stop-09.jpg",
+      "sha256": "19e0323eef966c48cf7faf640affbe14518b30a225275e4cc4b6a37732e943e0",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "书画/民生终景保留，左灯彩短巷完整，左上纸天空适合作卷尾呼吸。",
+      "observedRegionNormalized": [
+        0.0,
+        0.51,
+        0.2,
+        0.25
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-stop-09.jpg",
+      "beforeSha256": "20604d8c00c1e5b20e7f52ab3b2aefaac50d22240bba1794487273ba0f34b23a",
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-stop-09.jpg",
+      "priorVersionSha256": "9faf96f7d20b84e05c098554e290707ba35b248025cf86c394a803ebb0f62608",
+      "originalAuditRegions": [
+        {
+          "id": "c3-stop-09-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.02,
+            0.02,
+            0.14,
+            0.36
+          ],
+          "currentStatus": "保留留白已保持。"
+        },
+        {
+          "id": "c3-stop-09-r2",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.01,
+            0.64,
+            0.14,
+            0.34
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-01",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 1,
+      "name": "第一景 → 第二景",
+      "progress": 0.06170822215550957,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-gap-01.jpg",
+      "sha256": "6c593c6d02a4e250b52face869ec4b82a8dfbf4e53b95b3b37c7920ba90049c3",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "完整院落木栏/花砖连接作坊到婚俗，屋顶只作少数锚点，中央上方留白可保留。",
+      "observedRegionNormalized": [
+        0.44,
+        0.51,
+        0.2,
+        0.25
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-gap-01.jpg",
+      "beforeSha256": "b99502bd06441550d11dffdbebc1e90ae873eb8ad68a7b708d778410ce671ffd",
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-gap-01.jpg",
+      "priorVersionSha256": "a43cc1aff62e2fb61ef68c31483614be22e83a6d01a2b9d5aa5b17d8de62cfa9",
+      "originalAuditRegions": [
+        {
+          "id": "c3-gap-01-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.45,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "currentStatus": "保留留白已保持。"
+        },
+        {
+          "id": "c3-gap-01-r2",
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.45,
+            0.3,
+            0.21,
+            0.54
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        },
+        {
+          "id": "c3-gap-01-r3",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.42,
+            0.78,
+            0.27,
+            0.2
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-02",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 2,
+      "name": "第二景 → 第三景",
+      "progress": 0.18527723828993936,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-gap-02.jpg",
+      "sha256": "7f3102d9abb8ffcba38edbc0786088ee0fcbcf5cf0c5c15c44c2f16689405709",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "无顶地坪承完整锦架/绣绷，布尾与纹样不再割断，架足接地，服务婚嫁凤纹叙事。",
+      "observedRegionNormalized": [
+        0.33,
+        0.52,
+        0.34,
+        0.25
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-gap-02.jpg",
+      "beforeSha256": "07d3ecbfb75a778b02aa5634ca2345684b0cfdb2b3a6cad84866d860e17cd316",
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-gap-02.jpg",
+      "priorVersionSha256": "6d7b3f9b07991e70233f5d8db59460e45078de106fe6169d3e762ed1d13cd1c4",
+      "originalAuditRegions": [
+        {
+          "id": "c3-gap-02-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.36,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "currentStatus": "保留留白已保持。"
+        },
+        {
+          "id": "c3-gap-02-r2",
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.36,
+            0.27,
+            0.29,
+            0.49
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        },
+        {
+          "id": "c3-gap-02-r3",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.34,
+            0.76,
+            0.32,
+            0.22
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-03",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 3,
+      "name": "第三景 → 第四景",
+      "progress": 0.30891527606479746,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-gap-03.jpg",
+      "sha256": "102a96d50c9bd5918c06295ca044e15abb7b659580c61015a1279861909fbf3e",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "低民居花砖地坪连接迎亲/婚礼，器物台足接地，瓶盒/锦布/陶器完整，无重复屋顶。",
+      "observedRegionNormalized": [
+        0.3,
+        0.57,
+        0.54,
+        0.23
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-gap-03.jpg",
+      "beforeSha256": "a5db6bbe95b7bc72e712aae78aed2131306fb022744491e083c78b7caa7ba52b",
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-gap-03.jpg",
+      "priorVersionSha256": "5836504cde24d743323e32c713a37c9d5bb35a65029d502bb21f75befe1f9d99",
+      "originalAuditRegions": [
+        {
+          "id": "c3-gap-03-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.32,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "currentStatus": "保留留白已保持。"
+        },
+        {
+          "id": "c3-gap-03-r2",
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.32,
+            0.32,
+            0.33,
+            0.43
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        },
+        {
+          "id": "c3-gap-03-r3",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.28,
+            0.76,
+            0.5,
+            0.22
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-04",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 4,
+      "name": "第四景 → 第五景",
+      "progress": 0.43273851796258755,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-gap-04.jpg",
+      "sha256": "312a680448d0ab83761966c9e4068f12afe74539b0e06b6d8dd58bfc0dfeffeb",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "民居短巷/小灯/石阶承迎亲到岁时，灯墙完整，上方气口保留。",
+      "observedRegionNormalized": [
+        0.3,
+        0.53,
+        0.36,
+        0.22
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-gap-04.jpg",
+      "beforeSha256": "4ad6706bc1c6824a66eb34f23621fd89ea02309c02fb5bc746d28680eab8cacd",
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-gap-04.jpg",
+      "priorVersionSha256": "491aaf7b51848da1a72728339efdb383eef60683d4e1a114c770029b9959c7e9",
+      "originalAuditRegions": [
+        {
+          "id": "c3-gap-04-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.34,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "currentStatus": "保留留白已保持。"
+        },
+        {
+          "id": "c3-gap-04-r2",
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.34,
+            0.29,
+            0.31,
+            0.45
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        },
+        {
+          "id": "c3-gap-04-r3",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.29,
+            0.74,
+            0.4,
+            0.24
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-05",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 5,
+      "name": "第五景 → 第六景",
+      "progress": 0.5569328988363655,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-gap-05.jpg",
+      "sha256": "c583e49d4903176465e3ec512f339b748c0623bab3298c65e4039eeaba36502c",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "锦架在无顶低地坪上接年节到代际手作，足面在地，纹样完整。",
+      "observedRegionNormalized": [
+        0.39,
+        0.52,
+        0.27,
+        0.25
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-gap-05.jpg",
+      "beforeSha256": "d949f3e7db82ba045f06eb22b060a02ae4623f2eec1d2a48f903e3b156b16d47",
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-gap-05.jpg",
+      "priorVersionSha256": "2b38af4773204e2a927cda3abb0e612f47d00b52a19876747f20ecaf16f12726",
+      "originalAuditRegions": [
+        {
+          "id": "c3-gap-05-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.4,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "currentStatus": "保留留白已保持。"
+        },
+        {
+          "id": "c3-gap-05-r2",
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.4,
+            0.25,
+            0.24,
+            0.47
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        },
+        {
+          "id": "c3-gap-05-r3",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.4,
+            0.74,
+            0.25,
+            0.24
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-06",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 6,
+      "name": "第六景 → 第七景",
+      "progress": 0.6811709334158138,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-gap-06.jpg",
+      "sha256": "d77643f72e685dc1abcfe5005e222eda9e9bcb9fea4c24824d5637de611f802b",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "器物台立在低花砖地坪，家庭传承到日用纹样有物可寄，花器完整，上空留白平衡。",
+      "observedRegionNormalized": [
+        0.32,
+        0.55,
+        0.49,
+        0.23
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-gap-06.jpg",
+      "beforeSha256": "1e8d556b859201c4af729922d9eb57396e606d0eeced035fb12708ecaa753dd8",
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-gap-06.jpg",
+      "priorVersionSha256": "1c4b88d02774874172ccdc7904b295b309ea961a211f955ba8cbe29ff58287eb",
+      "originalAuditRegions": [
+        {
+          "id": "c3-gap-06-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.35,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "currentStatus": "保留留白已保持。"
+        },
+        {
+          "id": "c3-gap-06-r2",
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.35,
+            0.28,
+            0.43,
+            0.48
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        },
+        {
+          "id": "c3-gap-06-r3",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.35,
+            0.76,
+            0.44,
+            0.22
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-07",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 7,
+      "name": "第七景 → 第八景",
+      "progress": 0.8052932435579894,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-gap-07.jpg",
+      "sha256": "6e83b19afae8467072a0a5021edbad506328fb001ccd4e1ee799e65587e53bc8",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "第二个保留院落低栏承作坊到文人书案，安静空间不再六次同顶循环。",
+      "observedRegionNormalized": [
+        0.29,
+        0.56,
+        0.33,
+        0.2
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-gap-07.jpg",
+      "beforeSha256": "80dd6430e9269d5c460e5f449f25244760f2d53fcd03061477733fcc347e9749",
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-gap-07.jpg",
+      "priorVersionSha256": "17f8e5f24efd1f785307f45604b7a76ad77fc59fffc1e27f671dd27c92fa97ef",
+      "originalAuditRegions": [
+        {
+          "id": "c3-gap-07-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.3,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "currentStatus": "保留留白已保持。"
+        },
+        {
+          "id": "c3-gap-07-r2",
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.3,
+            0.25,
+            0.31,
+            0.46
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        },
+        {
+          "id": "c3-gap-07-r3",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.28,
+            0.74,
+            0.37,
+            0.24
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-08",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 8,
+      "name": "第八景 → 第九景",
+      "progress": 0.9288563525873003,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-gap-08.jpg",
+      "sha256": "248a95253bce82464f6c7f851d0d17f20610fe9304801fb10ee8282aaa29dbe7",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "巷路和灯连接器用/游园到家国民生终景，低阶连续，空纸不再只有占位图标。",
+      "observedRegionNormalized": [
+        0.43,
+        0.51,
+        0.24,
+        0.22
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-gap-08.jpg",
+      "beforeSha256": "6249dcbc331456a07aa92876c84fed6645ee1b0b7ab45b58e70014b313364af4",
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-gap-08.jpg",
+      "priorVersionSha256": "e32a5aa4dbeec3909fb703d20b14abe70b4450d08c045ef4bfc4493efdbe1a31",
+      "originalAuditRegions": [
+        {
+          "id": "c3-gap-08-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.45,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "currentStatus": "保留留白已保持。"
+        },
+        {
+          "id": "c3-gap-08-r2",
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.45,
+            0.28,
+            0.22,
+            0.42
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        },
+        {
+          "id": "c3-gap-08-r3",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.45,
+            0.72,
+            0.22,
+            0.26
+          ],
+          "currentStatus": "实体承接/叙事物件已显示并通过本帧验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-quarter-01",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 1,
+      "name": "第一景 → 第二景",
+      "progress": 0.030854111077754785,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-01.jpg",
+      "sha256": "68e0aa123ea4d5f8d92d26373cc1c6541e32960447849fc6416e7e79104ea11a",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "作坊退场与院落进入，花砖接地，原人物保持，条带/TR消失。",
+      "observedRegionNormalized": [
+        0.67,
+        0.52,
+        0.22,
+        0.22
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-01.jpg",
+      "priorVersionSha256": "30fbc947ce2475e055cd40551d4fa637154059540da7502ac8e0ae2d3279b15b",
+      "originalAuditRegions": [],
+      "gapIndex": 1,
+      "fraction": 0.25
+    },
+    {
+      "id": "c3-quarter-02",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 2,
+      "name": "第一景 → 第二景",
+      "progress": 0.09256233323326435,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-02.jpg",
+      "sha256": "179792d4a3486295e7ae01d9a179e2c3a16600d19cf71d05eeb6f5a428911942",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "院落接婚俗街市，栏与地坪连读，中央气口干净。",
+      "observedRegionNormalized": [
+        0.18,
+        0.51,
+        0.26,
+        0.22
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-02.jpg",
+      "priorVersionSha256": "87a39a85521ce9c548ad76aa30c7ac00ed19ba3f0043dfb1f823d39a83b7b2dd",
+      "originalAuditRegions": [],
+      "gapIndex": 1,
+      "fraction": 0.75
+    },
+    {
+      "id": "c3-quarter-03",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 3,
+      "name": "第二景 → 第三景",
+      "progress": 0.15434684130047926,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-03.jpg",
+      "sha256": "a676ab4e25b225d9820d876d0dd7511e1eb671c16f76f84f86a336694a0a7e12",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "锦架入场足面在地，布与纹样完整，不再被条带割裂。",
+      "observedRegionNormalized": [
+        0.56,
+        0.53,
+        0.3,
+        0.24
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-03.jpg",
+      "priorVersionSha256": "a3e587951fd39209b662834c17f9993e916be08c0b32bda26b178d461c0a2716",
+      "originalAuditRegions": [],
+      "gapIndex": 2,
+      "fraction": 0.25
+    },
+    {
+      "id": "c3-quarter-04",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 4,
+      "name": "第二景 → 第三景",
+      "progress": 0.21620763527939946,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-04.jpg",
+      "sha256": "adc7c3465453d3226e6339b2335001e294400dc92da86f922da77c1856eeec94",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "锦架退场到嫁衣，绣绷/布尾轮廓保持，原人物题字未新增遮挡。",
+      "observedRegionNormalized": [
+        0.12,
+        0.53,
+        0.3,
+        0.24
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-04.jpg",
+      "priorVersionSha256": "d879a20492aed383efbde467346b23b4385b5a41c08f4e5205b7b5c81f4a56b4",
+      "originalAuditRegions": [],
+      "gapIndex": 2,
+      "fraction": 0.75
+    },
+    {
+      "id": "c3-quarter-05",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 5,
+      "name": "第三景 → 第四景",
+      "progress": 0.27802665416682854,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-05.jpg",
+      "sha256": "9aaf608794b28d9341cb2b11990ce0b802e053fb49717671e5cbd537f58b0638",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "器物台入场足落低地坪，花器/陶器完整，未见新增悬浮。",
+      "observedRegionNormalized": [
+        0.6,
+        0.57,
+        0.39,
+        0.23
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-05.jpg",
+      "priorVersionSha256": "4bffb2775898a1e0948bd5376e6df2410d17f8d49e60331d7721f70eb6c1b27f",
+      "originalAuditRegions": [],
+      "gapIndex": 3,
+      "fraction": 0.25
+    },
+    {
+      "id": "c3-quarter-06",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 6,
+      "name": "第三景 → 第四景",
+      "progress": 0.33980389796276644,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-06.jpg",
+      "sha256": "ecf51152d6e69d83b89540d20b4bc021ff033324b94e50afd3649236bb575bc8",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "器物台退场到婚礼，足面承托持续，无顶地坪替代重复屋顶，题字保持。",
+      "observedRegionNormalized": [
+        0.2,
+        0.56,
+        0.36,
+        0.23
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-06.jpg",
+      "priorVersionSha256": "8ca7f2d589192a8f15fc2ba8b7da62273a5cd5755af14fbcc8d8fe09b9c93df0",
+      "originalAuditRegions": [],
+      "gapIndex": 3,
+      "fraction": 0.75
+    },
+    {
+      "id": "c3-quarter-07",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 7,
+      "name": "第四景 → 第五景",
+      "progress": 0.40171551891166146,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-07.jpg",
+      "sha256": "69b5185851f8256b2fac8b2e04ec53a3e7969d57f182a7915bb9d74a2fc98eed",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "巷路/灯彩承迎亲到岁时，灯支座/墙/路径完整无占位图形。",
+      "observedRegionNormalized": [
+        0.54,
+        0.53,
+        0.35,
+        0.21
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-07.jpg",
+      "priorVersionSha256": "f02cce47a528a4335c6df11ce5cc7fe6c6066ac75908168290da9f8ec657e084",
+      "originalAuditRegions": [],
+      "gapIndex": 4,
+      "fraction": 0.25
+    },
+    {
+      "id": "c3-quarter-08",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 8,
+      "name": "第四景 → 第五景",
+      "progress": 0.4637615170135136,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-08.jpg",
+      "sha256": "4db6ebcffaff78e553b722455e1ba68b4329c36e8557722931406d4601de205b",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "巷路退场到雪街，低阶和墙不再被截断，原画人物保持。",
+      "observedRegionNormalized": [
+        0.11,
+        0.52,
+        0.31,
+        0.21
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-08.jpg",
+      "priorVersionSha256": "ee06c80acbb5fab7cb6edef0a3314954a33b673cd8e91ae8dc01919030b48e5d",
+      "originalAuditRegions": [],
+      "gapIndex": 4,
+      "fraction": 0.75
+    },
+    {
+      "id": "c3-quarter-09",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 9,
+      "name": "第五景 → 第六景",
+      "progress": 0.5258587074504026,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-09.jpg",
+      "sha256": "d2e4d518791eb50baf5e7c1804cb8807f961edb5275871c77be92f0a89da338c",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "年画主景退场到锦架，足稳落低地坪，取消重复灰瓦后纹样可读。",
+      "observedRegionNormalized": [
+        0.62,
+        0.53,
+        0.29,
+        0.22
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-09.jpg",
+      "priorVersionSha256": "690fa97d4011fc55563288b524b1a14168a01731ab8b2cfae1fe7d4a6a5daee7",
+      "originalAuditRegions": [],
+      "gapIndex": 5,
+      "fraction": 0.25
+    },
+    {
+      "id": "c3-quarter-10",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 10,
+      "name": "第五景 → 第六景",
+      "progress": 0.5880070902223286,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-10.jpg",
+      "sha256": "516cb7b7b72c32f07b1051fd07750fc46f55fceb0253b07b4cba0e96949e0617",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "锦架转家庭绣作，足面/布尾完整，上方空气和题签保留。",
+      "observedRegionNormalized": [
+        0.17,
+        0.52,
+        0.26,
+        0.23
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-10.jpg",
+      "priorVersionSha256": "2784eb77af4646a192131a2516040f398ebd0bacab33097ca3b49db64806fc1c",
+      "originalAuditRegions": [],
+      "gapIndex": 5,
+      "fraction": 0.75
+    },
+    {
+      "id": "c3-quarter-11",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 11,
+      "name": "第六景 → 第七景",
+      "progress": 0.6501261075120527,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-11.jpg",
+      "sha256": "9384c4a45b7f801f95491056b72aca1c8de58d346d40832e95e4abba41d320a8",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "器物台进入，瓶与锦布轮廓完整，脚有地坪，未盖原家庭组。",
+      "observedRegionNormalized": [
+        0.59,
+        0.58,
+        0.39,
+        0.23
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-11.jpg",
+      "priorVersionSha256": "69d07f3dac968683a0a7f443f1f6ea5f5493fd4c21c675be0bc7fbc42df7d0fe",
+      "originalAuditRegions": [],
+      "gapIndex": 6,
+      "fraction": 0.25
+    },
+    {
+      "id": "c3-quarter-12",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 12,
+      "name": "第六景 → 第七景",
+      "progress": 0.712215759319575,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-12.jpg",
+      "sha256": "4b73c86c9793b9ef8e73701f3c6d29c97e9066dc3bfc16d5d6ec8341578cecc1",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "器物台退场到大镜台，地坪承托连续，无条带/TR或重复屋顶。",
+      "observedRegionNormalized": [
+        0.2,
+        0.56,
+        0.36,
+        0.22
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-12.jpg",
+      "priorVersionSha256": "f1be275b2578cf32e0b169e82124e2a5eacae3188604c6e2e57f3ef50a6ed4da",
+      "originalAuditRegions": [],
+      "gapIndex": 6,
+      "fraction": 0.75
+    },
+    {
+      "id": "c3-quarter-13",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 13,
+      "name": "第七景 → 第八景",
+      "progress": 0.7742769143906628,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-13.jpg",
+      "sha256": "b4c5ffa18fdb4cc83edb7803e0fdaf93312120009144812b250e6d3d9735b8ba",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "作坊退场到第二院落，木栏/花砖连续，上方留白不填满。",
+      "observedRegionNormalized": [
+        0.54,
+        0.56,
+        0.29,
+        0.2
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-13.jpg",
+      "priorVersionSha256": "4236c09223b01d4f63af7e66827f5bf5ae62a0e59b47f587691eadc33b0c025b",
+      "originalAuditRegions": [],
+      "gapIndex": 7,
+      "fraction": 0.25
+    },
+    {
+      "id": "c3-quarter-14",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 14,
+      "name": "第七景 → 第八景",
+      "progress": 0.8363095727253158,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-14.jpg",
+      "sha256": "efa96f3db300ebe4ee508fe06386a8839256106913b314afe1779b08470167b3",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "院落连接文人山水，低栏不遮书案，左上留白清楚。",
+      "observedRegionNormalized": [
+        0.06,
+        0.56,
+        0.35,
+        0.19
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-14.jpg",
+      "priorVersionSha256": "fafb23912f3c455c361829f99be12fdca57bff672210a7d66c17dccf7c3bf40d",
+      "originalAuditRegions": [],
+      "gapIndex": 7,
+      "fraction": 0.75
+    },
+    {
+      "id": "c3-quarter-15",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 15,
+      "name": "第八景 → 第九景",
+      "progress": 0.8980911272399713,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-15.jpg",
+      "sha256": "12d676289348dda4ac7871041b7bab72e23a0adba154aebc87284d51e1ff44fa",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "巷路进入终景，灯墙/地面完整，器物书画原组保持。",
+      "observedRegionNormalized": [
+        0.67,
+        0.52,
+        0.26,
+        0.2
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-15.jpg",
+      "priorVersionSha256": "6ed0f17d527ca94c6306edefe96250f4f7581766f0c25bf7a00f3b69b7e37469",
+      "originalAuditRegions": [],
+      "gapIndex": 8,
+      "fraction": 0.25
+    },
+    {
+      "id": "c3-quarter-16",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 16,
+      "name": "第八景 → 第九景",
+      "progress": 0.9596215779346292,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-16.jpg",
+      "sha256": "cdb16481ce02ba1610e2d350ce97411f79988d96777e8b18b205d95a4305fb0f",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "pass",
+      "conclusion": "终景书画/市集保持，巷路低阶有承接，无灰带截灯墙，主题仍是民俗吉祥与安宁。",
+      "observedRegionNormalized": [
+        0.2,
+        0.54,
+        0.23,
+        0.2
+      ],
+      "newObjectFootFloatingSeen": false,
+      "newCaptionOrMainSubjectOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "mustFix": [],
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "priorVersionScreenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-16.jpg",
+      "priorVersionSha256": "1e0cf33fa48f83bca6a3b692bb753cf6e61952723dffd804651b827b73eb1f26",
+      "originalAuditRegions": [],
+      "gapIndex": 8,
+      "fraction": 0.75
+    }
+  ],
+  "approvalBoundary": [
+    "只批准该snapshot的33宽屏静帧密度/承托/风格/原主体/题字/留白，不替代全动态或移动UI。",
+    "Blender保存、独立重开和真实预览尚须另行证据，不由本报告预先通过。",
+    "保留expanded-v2失败图和报告，后续布局/资产变化不得移用本次通过。"
+  ]
+}

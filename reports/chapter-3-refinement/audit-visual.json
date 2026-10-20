@@ -1,0 +1,1127 @@
+{
+  "schemaVersion": 1,
+  "status": "pre-edit-audit-complete",
+  "scope": "第三卷锦绣花意专项；先审后改，只记录当前问题与建议，未修改产品/manifest/原Blender",
+  "reviewer": "third_visual_audit",
+  "reviewDate": "2026-10-20",
+  "baseline": {
+    "canonical": "public/assets/reconstruction/manifest.json",
+    "canonicalSha256": "dec52de0566ca29fcae9a767cec8f7970bd3dc98a226ac8a6ea54ebf654d8fa8",
+    "acceptedChapterSnapshot": "reports/blank-design/expanded-v3/chapter-3-manifest.json",
+    "chapterSubtreeEqualToCanonicalAtAudit": true,
+    "imagesRoot": "reports/blank-design/expanded-v3",
+    "count": 33,
+    "stops": 9,
+    "gaps": 8,
+    "quarters": 16
+  },
+  "method": [
+    "逐张以view_image detail original查看5附件和33张接受截图；截图原图1388×476，未用拼图代替逐张查看。",
+    "又独立查看宫室/左帷幔/迎亲/雪巷4张原WebP，区分图源内边和视口外裁；对象以scene.json及chapter-3-layers.csv逐项关联。",
+    "A/B/C为视觉区域用途，不是强制全填；建议范围不是新相机/新像素硬编码。"
+  ],
+  "priority": [
+    "P1：宫室左右端、迎亲右端、雪巷左端是真正内画硬切，须补自然终端；SC03左残屏风可派生退役。",
+    "P1：停驻2/3/4/5/7/8/9上方图组贴框或高浮，先删减/下移/内收再布文字。",
+    "P2：镜台右脚到作坊低地面窄白沟需接合；保留器物与人像完整轮廓。",
+    "P2：将中段纸面转为稀疏竖排文化题签，配小落款/朱印；不要在上沿排满字。",
+    "P3：横过锦架的淡亮曲线在若干图中像无意义细丝，需检验退役/淡化后的差异，避免曲线切割织物。"
+  ],
+  "blankTaxonomy": {
+    "A": {
+      "name": "可保留留白",
+      "examples": [
+        "卷首标题外围",
+        "所有分镜最上纸天",
+        "凤凰羽翼与主体外围",
+        "分镜间呼吸",
+        "淡远景与器物轮廓之间"
+      ],
+      "action": "保留纸面，不堆花云或题签；上边气口为全卷约束。"
+    },
+    "B": {
+      "name": "图像补充/修复型",
+      "examples": [
+        "宫室左右终端",
+        "迎亲右端栏杆/树石",
+        "雪巷左端檐/树/石阶",
+        "镜台与作坊脚底低接点"
+      ],
+      "action": "只修原边和低位接合，不为大块白纸新增主体。"
+    },
+    "C": {
+      "name": "文字排版型",
+      "examples": [
+        "gap01绣作与礼俗之间",
+        "gap03器物地台上侧",
+        "gap04岁时中央",
+        "gap06器用中空",
+        "gap07工艺传播中空",
+        "gap08卷末中央"
+      ],
+      "action": "短竖标题+1至2细短列说明+小印；中部/侧方为主，不占满顶带。"
+    }
+  },
+  "compositionPrinciples": [
+    "上疏下密，主要人物/器物在中下；不能通过把人物缩得不可读来机械留白。",
+    "先退役重复上部小场景，再将必须保留的组合内收/下移；相对关系整体保留，人物手部/器物不得错位。",
+    "不是所有正常视口裁切都要补绘；横向游观中人物从左右边进出属于连续观看，但停驻主角头/手/关键器物须完整。",
+    "修边以补出树石、柱脚、栏杆自然终点为准；模糊整条直边会制造新的雾幕矩形。",
+    "竖题避免与羽翼/衣裙/脸/手/高对比花团叠压；小字需要在窄窗验证可读并可自适应。"
+  ],
+  "referenceMapping": [
+    {
+      "image": 1,
+      "file": "image-1.png",
+      "correspondsTo": "stop01",
+      "finding": "绿框圈出已有成功章标题+小列文字+印；用作气质参照，不建议重做大框。"
+    },
+    {
+      "image": 2,
+      "file": "image-2.png",
+      "correspondsTo": "stop02，p≈0.1234",
+      "objects": [
+        {
+          "id": "c3-m-f449c3cfe037",
+          "name": "SC02_06_上方人物背景",
+          "texture": "e03e5d2e5d7c3372.webp",
+          "finding": "蓝框左右属于画内宫室端部；源图左右结构到边，实际竖直淡边仍像贴片；顶部截出兼有尺度/摆位问题。"
+        },
+        {
+          "id": "c3-m-18a3a5da13bd",
+          "name": "SC02_02_上方宫廷仕女群",
+          "texture": "4b2adf3adb641113.webp",
+          "finding": "与宫室一起整体排位，不单独移动人物造成站位错乱。"
+        },
+        {
+          "id": "c3-m-de3408ad8a8f",
+          "name": "SC02_03_右上仕女群",
+          "texture": "9a9479d09ece120b.webp",
+          "finding": "上一轮UV补全不等于本轮构图和素材端部已经合格。"
+        }
+      ]
+    },
+    {
+      "image": 3,
+      "file": "image-3.png",
+      "correspondsTo": "stop03，p≈0.2471",
+      "objects": [
+        {
+          "id": "c3-m-614c185a9b11",
+          "name": "SC03_07-left-room-background",
+          "texture": "4d097defdb313a71.webp",
+          "finding": "左边在图源x≈8竖直止住，帷幔右半源图还有横条alpha挖空；建议派生退役，保留原件。"
+        },
+        {
+          "id": "c3-m-8aada9250c84",
+          "name": "SC03_04-procession",
+          "texture": "f37e3725a4c7d197.webp",
+          "finding": "右端屋顶、栏杆在源图边缘竖直截断；需真实安全延展。"
+        },
+        {
+          "id": "bd3-gap02-objects",
+          "name": "BD3_02_brocade-rail",
+          "finding": "左下蓝框织物本身上下完整，边框内与残屏风叠合显得突兀；先去屏风再验，不盲目裁锦架。"
+        }
+      ]
+    },
+    {
+      "image": 4,
+      "file": "image-4.png",
+      "correspondsTo": "stop05，p≈0.4948",
+      "objects": [
+        {
+          "id": "c3-m-0941dbe80902",
+          "name": "SC05_08_左下街景_重做",
+          "texture": "3518a8dbd9573481.webp",
+          "finding": "雪巷左源边近整高竖切，不是雪巷自然轮廓；应延展树/屋檐/雪阶终端。"
+        },
+        {
+          "id": "c3-m-eba57053a5ad",
+          "name": "SC05_07_完整背景房屋_补全",
+          "texture": "533f477dfa306cab.webp",
+          "finding": "右屋上沿出画属于尺度/取景，需要布局整改；无需把房屋上面再补一栋。"
+        }
+      ]
+    },
+    {
+      "image": 5,
+      "file": "image-5.png",
+      "correspondsTo": "stop07，p≈0.7433",
+      "objects": [
+        {
+          "id": "c3-m-67916943b3e5",
+          "name": "SC07_02_上方宫苑场景",
+          "replacement": "c3-t054",
+          "finding": "上蓝框宫苑浮在高处且贴顶，叙事重复，建议派生退役以让文字和气口成立。"
+        },
+        {
+          "id": "c3-m-dadbc82d128c",
+          "name": "SC07_01_左侧镜台陈设",
+          "replacement": "c3-t056",
+          "finding": "镜台花枝顶部触框；下蓝框右腿/垂布完整但脚底与作坊地面有狭白沟，需低位衔接。"
+        },
+        {
+          "id": "c3-m-75c6ca400ed2",
+          "name": "SC07_03_右下作坊场景",
+          "texture": "f9e38d50177588e0.webp",
+          "finding": "作坊本身构图清楚，应保留在中下并承接镜台，不加第三高场景。"
+        }
+      ]
+    }
+  ],
+  "textPlanCandidates": [
+    {
+      "area": "gap01",
+      "title": "花意入锦",
+      "lines": [
+        "花入经纬，意寄人间。",
+        "一针一线，织就日常清欢。"
+      ],
+      "purpose": "将绣作到礼俗之间的中段空白转为文化入口。"
+    },
+    {
+      "area": "gap02",
+      "title": "婚嫁吉纹",
+      "lines": [
+        "牡丹入嫁衣，寄意富贵。",
+        "凤穿繁花，祝愿良缘。"
+      ],
+      "purpose": "锦架/纹样命名，避开顶部与新娘。"
+    },
+    {
+      "area": "stop03/04",
+      "title": "凤穿牡丹 / 花结良缘",
+      "lines": [
+        "沿用现有已审短文，重排为竖列，删冗长词而不堆重复题。"
+      ],
+      "purpose": "整理已有横文，避免新增主题与原文叠压。"
+    },
+    {
+      "area": "gap04",
+      "title": "岁岁安宁",
+      "lines": [
+        "窗花照岁序，灯彩映团圆。"
+      ],
+      "purpose": "以短句连接岁时民俗，保存上部呼吸。"
+    },
+    {
+      "area": "gap06/stop07",
+      "title": "吉庆入器",
+      "lines": [
+        "花随器用，意寄日常。",
+        "案上芳华，寄愿安康。"
+      ],
+      "purpose": "解释器物陈设；为镜台与瓷器补可读意义。"
+    },
+    {
+      "area": "gap07",
+      "title": "百工成美",
+      "lines": [
+        "花入案头，纹随匠心。",
+        "一器一物，皆存雅意。"
+      ],
+      "purpose": "承接工艺到生活美学，取代孤立上宫苑。"
+    },
+    {
+      "area": "gap08/stop09",
+      "title": "锦绣人间",
+      "lines": [
+        "花意成俗，锦绣相传。"
+      ],
+      "purpose": "卷末小题+款印，避免再补大画组。"
+    }
+  ],
+  "copyStatus": "以上为本轮展陈原创短文候选，不伪称古诗、史料原文或历史印章；最终文案与实际布局由主任务确定。",
+  "views": [
+    {
+      "kind": "stop",
+      "index": 1,
+      "focus": "卷首锦绣花意",
+      "issues": [
+        "右侧帷幔亭屋檐挤至上框，山苑与屋顶形成连续顶部重带；左题签与印是已设计留白。"
+      ],
+      "actions": [
+        "保留左侧原题签/印；右帷幔建筑整体适度内收下移，维持人物与桌案关系；不向左题签区加图。"
+      ],
+      "blankClasses": [
+        "A：左侧题签外围与上左纸天",
+        "B：无独立补图需求",
+        "C：仅保留既有章标题"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-stop-01.jpg",
+      "screenshotSha256": "7d223a58d63c3aff55f81b20386aed12b463395c08f09e14816d54c44af13155",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "stop",
+      "index": 2,
+      "focus": "锦纹与礼俗",
+      "issues": [
+        "顶部宫室长条横铺并被上框裁切；两内侧边缘在纸面突然竖停。",
+        "巨大牡丹金纹带横扫中部，使上下两排人物/街景互相争夺重心。"
+      ],
+      "actions": [
+        "将宫室/仕女作为一个派生组合缩小并下移，补完整左右自然终端；中部纹样适度收束，让下部街市成为主叙事。",
+        "腾出一侧中上纸面配置短竖题“婚嫁吉纹”，不把文字顶至上边。"
+      ],
+      "blankClasses": [
+        "A：释放后的整段顶部",
+        "B：仅宫室原图端部补绘",
+        "C：中上侧方婚嫁短题"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.12341644431101914,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-stop-02.jpg",
+      "screenshotSha256": "316e1f4f7a3060bc3311d91c339f608b619d40113be4bac679e838b775b39a39",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "stop",
+      "index": 3,
+      "focus": "凤穿牡丹",
+      "issues": [
+        "左屏风/帷幔内边直立止住，不是左视口裁出。",
+        "右侧迎亲画组在画框内竖直停止，栏杆和屋宇切断。",
+        "凤凰翼尖/帷幔贴顶；横排旧题文与凤凰靠得过近，四分点更易相叠。"
+      ],
+      "actions": [
+        "优先退役左侧残屏风/帷幔以让新娘身后留纸，不以大云覆盖。",
+        "修迎亲右端为完整树石/栏杆终点；凤凰及新娘图组内收下移，现有题文改短竖排并置。"
+      ],
+      "blankClasses": [
+        "A：凤凰上方及左帷幔退役后的气口",
+        "B：迎亲右端安全延展",
+        "C：右侧凤穿牡丹题文"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.24713803226885958,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-stop-03.jpg",
+      "screenshotSha256": "ed81f94b9240e24a25cb44972cced388040cd9aebbae22438b9a14aa70d359c7",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "stop",
+      "index": 4,
+      "focus": "花结良缘",
+      "issues": [
+        "上方婚礼厅悬于纸上且顶端贴边；中央凤凰与花团为第二个大型重心，下方礼队第三层并排。",
+        "已有横排“花结良缘”偏小、缺少与婚仪的明确排版关系。"
+      ],
+      "actions": [
+        "婚仪厅与凤凰分出主从，婚仪组合下移内收；保留右上空域，不加第二种花团。",
+        "原短文改优先竖排，置于右中空域并与主体留间隔。"
+      ],
+      "blankClasses": [
+        "A：右上纸天",
+        "B：仅现有礼队脚部必要连接",
+        "C：花结良缘竖题与说明"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.37069251986073537,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-stop-04.jpg",
+      "screenshotSha256": "97959724e7b245932636a8ec8f87b0b52a0349006958970c70204e7d9308efc6",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "stop",
+      "index": 5,
+      "focus": "岁时灯彩",
+      "issues": [
+        "右大屋屋脊触顶，是尺度过大造成的上框取景问题。",
+        "左雪巷在画框内部有近乎整高的竖直切边；与左低地坪缺乏自然过渡。"
+      ],
+      "actions": [
+        "右屋/人物组合适度下移内收，人物手与门窗保持原相对关系。",
+        "修雪巷左端树枝、屋檐与石阶自然回收；左中纸面可放“岁岁安宁”题签，避开雪巷轮廓。"
+      ],
+      "blankClasses": [
+        "A：左上纸天",
+        "B：雪巷左端补绘与地坪接点",
+        "C：左中岁时短题"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.4947845160644397,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-stop-05.jpg",
+      "screenshotSha256": "7d4eea6eba84b68c0d385a1bfabba1dfdfcc1108f5fcbdca74e6663cdc77fa5c",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "stop",
+      "index": 6,
+      "focus": "岁岁圆满",
+      "issues": [
+        "左亭屋脊触顶，中下人物/器物层密度高；目前总体叙事较连贯。",
+        "已有岁岁圆满横题+孤立吉庆印可形成更完整竖排，但不能再插主体。"
+      ],
+      "actions": [
+        "亭屋与人物整体保持关系并稍降/内收；下部团花控制尺度，保留人物手部与绣品。",
+        "将既有标题/短文/印组合成有层级竖排，周围保留纸天。"
+      ],
+      "blankClasses": [
+        "A：右上纸天与人物上方",
+        "B：不新增器物",
+        "C：已有岁岁圆满题文重排"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.6190812816082915,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-stop-06.jpg",
+      "screenshotSha256": "a833f1b3d42663e70731e34df4196e107a7ca46ca35f201239ad3280ab7b61ce",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "stop",
+      "index": 7,
+      "focus": "吉庆入器与百工成美",
+      "issues": [
+        "左大花枝触顶；上方宫苑小场景在上框横铺且与下层作坊脱节。",
+        "镜台右腿到作坊左侧有窄白沟，纹样飘带只横向遮住上缘，无法解决地面断裂。"
+      ],
+      "actions": [
+        "上方宫苑场景优先派生退役；镜台花枝与桌案整体内收下移，控制左重右轻。",
+        "保留作坊及其人物，不再叠宫苑；接好镜台至工坊低地坪，主空域配“吉庆入器/百工成美”竖题。"
+      ],
+      "blankClasses": [
+        "A：宫苑退役后的整段顶部及右上气口",
+        "B：桌案/作坊脚底小接地",
+        "C：中右器物与工艺题文"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.7432605852233363,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-stop-07.jpg",
+      "screenshotSha256": "f69475aa91852d9991de4baffff61756327b936a5613ca2e4061cea6a5ecfd21",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "stop",
+      "index": 8,
+      "focus": "花意成俗",
+      "issues": [
+        "右上仕女+团扇+花枝贴顶，中央屏风/器物/人群连续堆叠；左书案在下部，重心不平衡。",
+        "左上大块纸天已可呼吸，若全填会更拥挤。"
+      ],
+      "actions": [
+        "右上仕女组合内收下移或删减一组非必要重复人物，团扇完整保留。",
+        "左中加短竖题“花意成俗”，上方保持白；书案与屏风之间不加大场景。"
+      ],
+      "blankClasses": [
+        "A：左上纸天与右侧收束后的上边",
+        "B：无新场景需求",
+        "C：左中花意成俗题文"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.8673259018926424,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-stop-08.jpg",
+      "screenshotSha256": "24340087e552f072990c1a95a43478a83e2a8938ccca860e9e707e1640efb863",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "stop",
+      "index": 9,
+      "focus": "锦绣人间收束",
+      "issues": [
+        "上部母女/街市人物与灯架在上框截出，中央巨牡丹与下人物组成拥挤竖堆。",
+        "右城市远景有较好的淡出；不应再以主体塞右侧空域。"
+      ],
+      "actions": [
+        "上部两组人物/灯架整体下移内收并建立主从；中央巨牡丹适度减小，保留下部书画与人群。",
+        "在左/右中侧安静区作结题“锦绣人间”，不碰上边，配小印即可。"
+      ],
+      "blankClasses": [
+        "A：右上远景纸天与收卷外围",
+        "B：保持现有石阶/巷路",
+        "C：卷末短题与小款"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.9903868032819582,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-stop-09.jpg",
+      "screenshotSha256": "19e0323eef966c48cf7faf640affbe14518b30a225275e4cc4b6a37732e943e0",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "gap",
+      "index": 1,
+      "focus": "绣作→礼俗",
+      "issues": [
+        "两场景之间中上为空，下部院坪已连续；右宫室悬在高处并触顶。"
+      ],
+      "actions": [
+        "保留顶部纸天；先下调右宫室并修边，在中部窄竖组配置“花意入锦”。",
+        "不新增屋顶或花团；左亭与右婚嫁画组之间的石坪保持低位。"
+      ],
+      "blankClasses": [
+        "A：最上方纸天",
+        "B：无需再补院坪",
+        "C：中央中部花意入锦"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.06170822215550957,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-gap-01.jpg",
+      "screenshotSha256": "6c593c6d02a4e250b52face869ec4b82a8dfbf4e53b95b3b37c7920ba90049c3",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "gap",
+      "index": 2,
+      "focus": "礼俗→凤穿牡丹",
+      "issues": [
+        "锦架已接地，地坪有效；上左宫室与右帷幔均贴上边，画面两头过高。",
+        "细亮曲线横穿锦架，削弱织物真实陈设感。"
+      ],
+      "actions": [
+        "修左宫室尾端并缩小/下移；退役右残帷幔，织物完整保留。",
+        "中上纸面只配短竖纹样标签；审查横过锦面的曲线是否必要，局部退役或调淡。"
+      ],
+      "blankClasses": [
+        "A：两图组之间顶部",
+        "B：仅宫室端部",
+        "C：中部婚嫁吉纹"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.18527723828993936,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-gap-02.jpg",
+      "screenshotSha256": "7f3102d9abb8ffcba38edbc0786088ee0fcbcf5cf0c5c15c44c2f16689405709",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "gap",
+      "index": 3,
+      "focus": "婚嫁→良缘",
+      "issues": [
+        "中下器物地台接地良好，主问题是两端高位婚仪/迎亲拼贴与中央大空域缺少阅读锚点。"
+      ],
+      "actions": [
+        "先修迎亲右端、压低右上婚仪；中央安排少量竖排，器物上方保持清楚轮廓。"
+      ],
+      "blankClasses": [
+        "A：上部呼吸带",
+        "B：仅原迎亲边缘延展",
+        "C：器物地台上方偏左竖题"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.30891527606479746,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-gap-03.jpg",
+      "screenshotSha256": "102a96d50c9bd5918c06295ca044e15abb7b659580c61015a1279861909fbf3e",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "gap",
+      "index": 4,
+      "focus": "良缘→岁时",
+      "issues": [
+        "中央上半纸面巨大且无文字；两边建筑在相反端贴顶，右雪巷内边直切。",
+        "已有低巷路/石阶可承接，不需要再加建筑。"
+      ],
+      "actions": [
+        "修雪巷左边并调整两端主体高度；中央中部设“吉庆入户”或“岁岁安宁”竖排短文。"
+      ],
+      "blankClasses": [
+        "A：最上方大纸天",
+        "B：雪巷左端与石路局部",
+        "C：中央偏上但避开顶部的岁时题"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.43273851796258755,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-gap-04.jpg",
+      "screenshotSha256": "312a680448d0ab83761966c9e4068f12afe74539b0e06b6d8dd58bfc0dfeffeb",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "gap",
+      "index": 5,
+      "focus": "岁时→圆满",
+      "issues": [
+        "左大屋和右亭形成两端高墙，中间锦架低位较好；上空适合保留。",
+        "曲线多次横穿锦面，周围题文还未形成主次。"
+      ],
+      "actions": [
+        "先内收两端屋顶，保留锦架与地坪；中部小竖签可作纹样命名，不增加高图组。"
+      ],
+      "blankClasses": [
+        "A：锦架上方和最顶部",
+        "B：无新图需求",
+        "C：锦架附近小型织物题签"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.5569328988363655,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-gap-05.jpg",
+      "screenshotSha256": "c583e49d4903176465e3ec512f339b748c0623bab3298c65e4039eeaba36502c",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "gap",
+      "index": 6,
+      "focus": "圆满→器用",
+      "issues": [
+        "中央上部大纸天，可转文字；右镜台花枝从上框进场，造成抬重心。",
+        "器物地台与镜台脚接近但仍有边缘独立贴片感。"
+      ],
+      "actions": [
+        "镜台/花枝组合下移内收，保留上方空；中央采用“吉庆入器”短竖排。",
+        "必要时仅延展脚边低地坪，不加第二套器物。"
+      ],
+      "blankClasses": [
+        "A：中央最上方",
+        "B：镜台脚底小连接",
+        "C：中央器物主题题文"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.6811709334158138,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-gap-06.jpg",
+      "screenshotSha256": "d77643f72e685dc1abcfe5005e222eda9e9bcb9fea4c24824d5637de611f802b",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "gap",
+      "index": 7,
+      "focus": "作坊→文人",
+      "issues": [
+        "左上宫苑浮台与下工坊无关系，中央大空域缺少陈设/文化解释。",
+        "地面院坪与栏杆已经贯通，右山景自然收边。"
+      ],
+      "actions": [
+        "退役上宫苑浮台，保留下工坊；中央中部设置“百工成美/花入案头”竖题，保持顶部干净。"
+      ],
+      "blankClasses": [
+        "A：整段顶部和右淡山周围",
+        "B：保持院坪无新主体",
+        "C：中央工艺与审美传播短文"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.8052932435579894,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-gap-07.jpg",
+      "screenshotSha256": "6e83b19afae8467072a0a5021edbad506328fb001ccd4e1ee799e65587e53bc8",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "gap",
+      "index": 8,
+      "focus": "成俗→人间",
+      "issues": [
+        "两端人物/灯架上方偏重，中央巷路上空大但无题文。"
+      ],
+      "actions": [
+        "两端图组回到中下区域；中央短竖题“锦绣人间”，用小印完成收束。",
+        "保留路面横向方向及两端间隔，不添加重复花丛。"
+      ],
+      "blankClasses": [
+        "A：顶部全段纸天",
+        "B：低石阶已有承接",
+        "C：中央收卷题文"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.9288563525873003,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-gap-08.jpg",
+      "screenshotSha256": "248a95253bce82464f6c7f851d0d17f20610fe9304801fb10ee8282aaa29dbe7",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "quarter",
+      "index": 1,
+      "focus": "绣作出场",
+      "issues": [
+        "左绣作自然移出视口；右宫室上方横切开始显露。"
+      ],
+      "actions": [
+        "不修左视口边；右宫室按整体内收处理并保留中上白。"
+      ],
+      "blankClasses": [
+        "A：最上方纸天与分镜间气口",
+        "B：仅对应停驻/中点的局部边缘或脚底",
+        "C：随相邻题文组合贯穿，禁止每四分点额外加一块文字"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.030854111077754785,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-01.jpg",
+      "screenshotSha256": "68e0aa123ea4d5f8d92d26373cc1c6541e32960447849fc6416e7e79104ea11a",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "quarter",
+      "index": 2,
+      "focus": "礼俗入场",
+      "issues": [
+        "右宫室大横条贴顶，左亭与右宫室之间有清楚排版纸面。"
+      ],
+      "actions": [
+        "修右宫室端并留出上缘；中部竖题在两场景间衔接。"
+      ],
+      "blankClasses": [
+        "A：最上方纸天与分镜间气口",
+        "B：仅对应停驻/中点的局部边缘或脚底",
+        "C：随相邻题文组合贯穿，禁止每四分点额外加一块文字"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.09256233323326435,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-02.jpg",
+      "screenshotSha256": "179792d4a3486295e7ae01d9a179e2c3a16600d19cf71d05eeb6f5a428911942",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "quarter",
+      "index": 3,
+      "focus": "锦纹出场",
+      "issues": [
+        "上左宫室触顶，右高屏风入场，中锦架可读；上下图组较多。"
+      ],
+      "actions": [
+        "压低宫室，退役后续残屏风；控制金纹带规模。"
+      ],
+      "blankClasses": [
+        "A：最上方纸天与分镜间气口",
+        "B：仅对应停驻/中点的局部边缘或脚底",
+        "C：随相邻题文组合贯穿，禁止每四分点额外加一块文字"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.15434684130047926,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-03.jpg",
+      "screenshotSha256": "a676ab4e25b225d9820d876d0dd7511e1eb671c16f76f84f86a336694a0a7e12",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "quarter",
+      "index": 4,
+      "focus": "凤穿牡丹入场",
+      "issues": [
+        "左宫室右端自然淡化但纹样横带与锦架叠；右凤凰贴顶，旧横文覆盖凤凰。"
+      ],
+      "actions": [
+        "凤凰/新娘组合内收，文字改侧方竖排并避开羽翼。"
+      ],
+      "blankClasses": [
+        "A：最上方纸天与分镜间气口",
+        "B：仅对应停驻/中点的局部边缘或脚底",
+        "C：随相邻题文组合贯穿，禁止每四分点额外加一块文字"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.21620763527939946,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-04.jpg",
+      "screenshotSha256": "adc7c3465453d3226e6339b2335001e294400dc92da86f922da77c1856eeec94",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "quarter",
+      "index": 5,
+      "focus": "迎亲展开",
+      "issues": [
+        "左凤凰到画框边属运动出场；迎亲右端在内部突然竖止；右婚仪高悬。"
+      ],
+      "actions": [
+        "修迎亲右端；现题文避免压羽；中央保持可读纸面。"
+      ],
+      "blankClasses": [
+        "A：最上方纸天与分镜间气口",
+        "B：仅对应停驻/中点的局部边缘或脚底",
+        "C：随相邻题文组合贯穿，禁止每四分点额外加一块文字"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.27802665416682854,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-05.jpg",
+      "screenshotSha256": "9aaf608794b28d9341cb2b11990ce0b802e053fb49717671e5cbd537f58b0638",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "quarter",
+      "index": 6,
+      "focus": "婚仪入场",
+      "issues": [
+        "婚仪整个舞台悬于上半，顶无缓冲；凤凰及旧题文相叠。"
+      ],
+      "actions": [
+        "舞台下移内收，图文分置，文字无需扩大成横段。"
+      ],
+      "blankClasses": [
+        "A：最上方纸天与分镜间气口",
+        "B：仅对应停驻/中点的局部边缘或脚底",
+        "C：随相邻题文组合贯穿，禁止每四分点额外加一块文字"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.33980389796276644,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-06.jpg",
+      "screenshotSha256": "ecf51152d6e69d83b89540d20b4bc021ff033324b94e50afd3649236bb575bc8",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "quarter",
+      "index": 7,
+      "focus": "婚仪出场",
+      "issues": [
+        "左婚仪偏高；右雪巷从侧面入场但左端内部直截将显露。"
+      ],
+      "actions": [
+        "下移婚仪，修雪巷左端；中央纸天保留。"
+      ],
+      "blankClasses": [
+        "A：最上方纸天与分镜间气口",
+        "B：仅对应停驻/中点的局部边缘或脚底",
+        "C：随相邻题文组合贯穿，禁止每四分点额外加一块文字"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.40171551891166146,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-07.jpg",
+      "screenshotSha256": "69b5185851f8256b2fac8b2e04ec53a3e7969d57f182a7915bb9d74a2fc98eed",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "quarter",
+      "index": 8,
+      "focus": "岁时入场",
+      "issues": [
+        "雪巷左端内部直切清晰；右门屋上沿触顶，空域偏左。"
+      ],
+      "actions": [
+        "雪巷自然延展、门屋内收；左中配置短竖题。"
+      ],
+      "blankClasses": [
+        "A：最上方纸天与分镜间气口",
+        "B：仅对应停驻/中点的局部边缘或脚底",
+        "C：随相邻题文组合贯穿，禁止每四分点额外加一块文字"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.4637615170135136,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-08.jpg",
+      "screenshotSha256": "4db6ebcffaff78e553b722455e1ba68b4329c36e8557722931406d4601de205b",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "quarter",
+      "index": 9,
+      "focus": "岁时出场",
+      "issues": [
+        "主门屋占据顶带，左雪巷自然出视口；锦架完整。"
+      ],
+      "actions": [
+        "门屋整体下移/内收，不补左视口边；织物不被曲线切割。"
+      ],
+      "blankClasses": [
+        "A：最上方纸天与分镜间气口",
+        "B：仅对应停驻/中点的局部边缘或脚底",
+        "C：随相邻题文组合贯穿，禁止每四分点额外加一块文字"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.5258587074504026,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-09.jpg",
+      "screenshotSha256": "d2e4d518791eb50baf5e7c1804cb8807f961edb5275871c77be92f0a89da338c",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "quarter",
+      "index": 10,
+      "focus": "圆满入场",
+      "issues": [
+        "右亭接近上边，但右图文仍有清楚纸天；中地坪完整。"
+      ],
+      "actions": [
+        "轻调亭屋高度并整合已有题文印记；不新增人群。"
+      ],
+      "blankClasses": [
+        "A：最上方纸天与分镜间气口",
+        "B：仅对应停驻/中点的局部边缘或脚底",
+        "C：随相邻题文组合贯穿，禁止每四分点额外加一块文字"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.5880070902223286,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-10.jpg",
+      "screenshotSha256": "516cb7b7b72c32f07b1051fd07750fc46f55fceb0253b07b4cba0e96949e0617",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "quarter",
+      "index": 11,
+      "focus": "圆满出场",
+      "issues": [
+        "左亭与人物自然移出；右器物地台下实上空，节奏良好。"
+      ],
+      "actions": [
+        "保留这个安静段；竖题应短，不将整个空域占满。"
+      ],
+      "blankClasses": [
+        "A：最上方纸天与分镜间气口",
+        "B：仅对应停驻/中点的局部边缘或脚底",
+        "C：随相邻题文组合贯穿，禁止每四分点额外加一块文字"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.6501261075120527,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-11.jpg",
+      "screenshotSha256": "9384c4a45b7f801f95491056b72aca1c8de58d346d40832e95e4abba41d320a8",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "quarter",
+      "index": 12,
+      "focus": "器物入场",
+      "issues": [
+        "右镜台与花枝升至顶部；上宫苑开始形成另一独立高层；脚底白沟。"
+      ],
+      "actions": [
+        "退役上宫苑，整体降低镜台并接脚底，空处留竖题。"
+      ],
+      "blankClasses": [
+        "A：最上方纸天与分镜间气口",
+        "B：仅对应停驻/中点的局部边缘或脚底",
+        "C：随相邻题文组合贯穿，禁止每四分点额外加一块文字"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.712215759319575,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-12.jpg",
+      "screenshotSha256": "4b73c86c9793b9ef8e73701f3c6d29c97e9066dc3bfc16d5d6ec8341578cecc1",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "quarter",
+      "index": 13,
+      "focus": "器物出场",
+      "issues": [
+        "镜台左侧自然移出；上宫苑仍高浮，工坊与院坪间白缝可见。"
+      ],
+      "actions": [
+        "删除浮台；少量低地接合；中央工艺短文。"
+      ],
+      "blankClasses": [
+        "A：最上方纸天与分镜间气口",
+        "B：仅对应停驻/中点的局部边缘或脚底",
+        "C：随相邻题文组合贯穿，禁止每四分点额外加一块文字"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.7742769143906628,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-13.jpg",
+      "screenshotSha256": "b4c5ffa18fdb4cc83edb7803e0fdaf93312120009144812b250e6d3d9735b8ba",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "quarter",
+      "index": 14,
+      "focus": "文人入场",
+      "issues": [
+        "左工坊/宫苑出场，上宫苑孤立端仍可见；右团扇与仕女高耸。"
+      ],
+      "actions": [
+        "退役上宫苑；右仕女组合下移，保留左中纸天供短题。"
+      ],
+      "blankClasses": [
+        "A：最上方纸天与分镜间气口",
+        "B：仅对应停驻/中点的局部边缘或脚底",
+        "C：随相邻题文组合贯穿，禁止每四分点额外加一块文字"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.8363095727253158,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-14.jpg",
+      "screenshotSha256": "efa96f3db300ebe4ee508fe06386a8839256106913b314afe1779b08470167b3",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "quarter",
+      "index": 15,
+      "focus": "成俗出场",
+      "issues": [
+        "中部屏风/器物/团扇密集但可分层；右留白可承接，主上组贴边倾向明显。"
+      ],
+      "actions": [
+        "控制上部仕女人数和高度；右中以短题替补图。"
+      ],
+      "blankClasses": [
+        "A：最上方纸天与分镜间气口",
+        "B：仅对应停驻/中点的局部边缘或脚底",
+        "C：随相邻题文组合贯穿，禁止每四分点额外加一块文字"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.8980911272399713,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-15.jpg",
+      "screenshotSha256": "12d676289348dda4ac7871041b7bab72e23a0adba154aebc87284d51e1ff44fa",
+      "imageSize": [
+        1388,
+        476
+      ]
+    },
+    {
+      "kind": "quarter",
+      "index": 16,
+      "focus": "人间入场",
+      "issues": [
+        "右母女/街市/灯架顶端裁出，下大花把画面竖向填满。"
+      ],
+      "actions": [
+        "上人物下移内收；巨花缩减，保留下部书画与街市主次。"
+      ],
+      "blankClasses": [
+        "A：最上方纸天与分镜间气口",
+        "B：仅对应停驻/中点的局部边缘或脚底",
+        "C：随相邻题文组合贯穿，禁止每四分点额外加一块文字"
+      ],
+      "normalCrop": "两侧随横向游观进出及下框近景裁出属于视口取景；只将画框内独立直边列为素材修复。",
+      "viewedIndividually": true,
+      "viewDetail": "original",
+      "progress": 0.9596215779346292,
+      "screenshot": "reports/blank-design/expanded-v3/chapter-3-quarter-16.jpg",
+      "screenshotSha256": "cdb16481ce02ba1610e2d350ce97411f79988d96777e8b18b205d95a4305fb0f",
+      "imageSize": [
+        1388,
+        476
+      ]
+    }
+  ],
+  "limits": [
+    "本报告是整改前审查，提出的下移/内收/退役/补绘/文字均未作为完成事实。",
+    "33张为当前接受截图的宽幅图像，不能直接证明本轮未来窄窗/连续运动/Blender验收。",
+    "矩阵/源相机/原Blender保持要求依旧；所有建议只能在派生链实现，不能覆盖原件。"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "mode": "built-in image_gen",
+  "stage": "first-scroll pilot; only audited incomplete layers",
+  "invariants": [
+    "Keep original high-quality source images and Blender files unchanged.",
+    "Every replacement is a complete freestanding painted subject with genuinely transparent background and at least 8 percent safe canvas margin.",
+    "Match the supplied gongbi blue-green mineral-pigment painting, muted vermilion, aged gold and restrained ink outlines.",
+    "No text, logos, modern objects, photorealism, 3D-render shading, rectangle backgrounds or cropped architecture/feet.",
+    "Use brushlike translucent ground transitions rather than a rectangular pasted lower boundary."
+  ],
+  "assets": [
+    {
+      "id": "c1-t021-palace-procession-v2",
+      "sourceTextureId": "c1-t-55e1cf75f95d2218",
+      "input": "public/assets/chapter-1/textures/55e1cf75f95d2218.webp",
+      "narrative": "第一卷：武周神都礼仪、皇家苑囿与牡丹华贵秩序",
+      "prompt": "Use case: precise-object-edit. Edit the supplied isolated Chinese palace procession layer into a COMPLETE reusable 2.5D painting layer. Preserve its blue-green glazed roof language, vermilion timber, delicate aged-gold ornament, white stone balustrades, courtly figures and diagonal procession rising from lower left toward upper right. Reconstruct the missing right-hand end of the palace, the complete roof silhouette, the terrace and all stairs. The nearest courtiers must be complete full-length figures with robes and feet present, naturally grouped on a complete grounding terrace; no bodies cut by the image border. Pull back enough to fit the ENTIRE palace/procession island comfortably in a wide landscape canvas, with at least 8-10 percent fully transparent padding on EVERY side. Keep the supplied fine gongbi linework and Qinglü mineral-pigment hand-painted style, muted cinnabar and old gold; natural ink-wash transition around the ground, irregular gentle pigment fade, clean transparent contour without red/yellow cutout fringe. Actual transparent background, no scenery painted as a rectangular backdrop. No text, watermarks, modern objects, extra hero characters, photorealistic lighting or game effects. This is an architectural layer for the narrative of Luoyang imperial garden culture, not a new full scene."
+    },
+    {
+      "id": "c1-t038-pavilion-v2",
+      "sourceTextureId": "c1-t-929d69786051e311",
+      "input": "public/assets/chapter-1/textures/929d69786051e311.webp",
+      "narrative": "第一卷：西苑初栽、山野寺院牡丹进入皇家园林",
+      "prompt": "Use case: precise-object-edit. Repair the supplied cropped red-and-blue-green Chinese pavilion layer by rebuilding a COMPLETE freestanding garden pavilion in the SAME perspective, gongbi hand painting, blue-green tiled upturned eaves, muted red pillars, fine old-gold brackets and pale gauze blinds. Keep its visual identity and quiet imperial-garden character. Extend the missing upper and right roof, all beams, full supporting pillars, column bases and a modest complete stone floor platform; every architectural element must terminate naturally. No people. Fit the full pavilion and all of its roof corners and column bases in the canvas, not merely the current visible corner. A naturally painted irregular ink-wash footing should blend into transparency. Leave at least 8-10 percent completely transparent empty margin on ALL four sides, including top and bottom; no roof/curtain/footing touches or is clipped by the canvas. Preserve delicate colored linework and natural translucent brush edges; remove the original harsh cutout fringe. Genuine transparent background, no white paper rectangle, no scene background, no text, no logos, no modern or 3D-rendered look."
+    },
+    {
+      "id": "c1-t047-imperial-terrace-v2",
+      "sourceTextureId": "c1-t-322c5e53fce45f90",
+      "input": "public/assets/chapter-1/textures/322c5e53fce45f90.webp",
+      "narrative": "第一卷：王朝气象与洛阳牡丹初盛",
+      "prompt": "Use case: precise-object-edit. Complete the supplied imperial hall-and-stair-terrace painting as a standalone transparent 2.5D layer. Keep the original architectural perspective, red hanging banners with fine gold motifs, vermilion and blue-green palace, pale carved stone stairs and stately quiet ceremonial mood. Rebuild the clipped right end, complete stair landings and all missing railing/roof extensions. The palace, flags and full terrace must form one physically legible COMPLETE architectural island. Preserve refined gongbi linework, mineral blue-green and muted cinnabar, aged gold, warm ink-wash shading; no bright synthetic outlines. Widen the framing so every roof, banner tip, stone base and edge of the stairs has at least 8 percent truly transparent padding. Ground meets transparency through a light irregular hand-painted ink wash, never a rectangular chopped base. No extra main characters, no unreadable writing, no text or watermark, no paper rectangle, no photorealism or game-style effects."
+    },
+    {
+      "id": "c1-t085-palace-gate-v2",
+      "sourceTextureId": "c1-t-8e651d243a4238e5",
+      "input": "public/assets/chapter-1/textures/8e651d243a4238e5.webp",
+      "narrative": "第一卷：史实与传说对照的宫廷背景，支撑女帝文化意象",
+      "prompt": "Use case: precise-object-edit. Expand the supplied cropped imperial palace corner into a COMPLETE coherent ceremonial garden gate/pavilion layer while preserving the original elaborate blue-green-and-old-gold bracket decoration, muted red pillars, oblique viewpoint and fine gongbi painting style. Reconstruct all missing roof corners, the full gateway span, full columns down to complete stone column bases, and a small whole irregular stone landing. It must read as one complete freestanding architectural subject, not a close-up fragment. No people or text. Fit all architecture inside the image with at least 8-10 percent completely transparent margin on every side; no eave, beam, column or base touches a canvas edge. Keep the palette and hand-painted texture faithful to the input. A little delicate ink-wash ground can feather into alpha; keep actual transparent background, clean natural brush edges without neon fringe, no flat paper/backdrop rectangle, no photographic or glossy 3D appearance."
+    }
+  ]
+}

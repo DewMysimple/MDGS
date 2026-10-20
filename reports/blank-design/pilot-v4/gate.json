@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "passed-full-pilot-gate",
+  "chapter": 4,
+  "canonicalSha256": "c7b593102bd8f43fd7438413b34782b64d00788f4e6d87dd3f69682ba6b81a54",
+  "decisionBy": "Agent within the user-authorized four-scroll task; not represented as a separate user approval",
+  "checks": {
+    "allFourScrollAudit": "190 regions / 76 baseline views",
+    "newAssets": "10 independent RGBA assets / 12 static world cards / 2 old auxiliary flower clusters retired",
+    "staticReview": "33/33 pass",
+    "runtime": "62 responsive captures, six continuous forward/back wheel routes, controls, captions and afterglow limits pass",
+    "framebufferVisibility": "All 12 new cards have real pixel contributions",
+    "blender": "Saved, independently reopened, 59 packed images and 1 font; original four source hashes unchanged",
+    "blenderActualRenders": "3 actual CPU renders inspected by agent and root; curve bank, empty pavilion, stone/poetry table visible",
+    "userPresentation": "Before/after 5-gap screenshot comparison shown in commentary before expansion"
+  },
+  "evidence": [
+    "audit-chapters-1-2.json",
+    "audit-chapters-3-4.json",
+    "pilot-v4/visual-review.json",
+    "pilot-v4/validation-runtime.json",
+    "pilot-v4/c7b59310-depth-diagnostic.json",
+    "blender/blender-reopen-validation-chapter-4.json",
+    "blender/preview/preview-report.json",
+    "pilot-v4/comparison.jpg"
+  ],
+  "remainingFullObjective": "Chapters 1/2/3 new blank design, their derived Blender files, all-scroll unified acceptance and final region/delivery index remain in progress."
+}

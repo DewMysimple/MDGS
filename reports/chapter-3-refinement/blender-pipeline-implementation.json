@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "status": "implemented-and-final-project-saved-independently-reopened-eight-frame-visually-verified",
+  "generatedAt": "2026-10-20T04:34:13.713936+00:00",
+  "filesSha256": {
+    "scripts/reconstruct-blender.py": "6d5a280ee35415a09bf8d7e6dcd72761a9708eb4194a6a26bfafa6de37428e3d",
+    "scripts/render-blank-blender.py": "cb943a176c692cbf423235713f7dea1a71fead0d061d842d49601ff70704ffe0",
+    "scripts/test-blender-reconstruction-preflight.py": "6abfd9894b7b19888b37b2c8bc8d3b6c0c52419d9ac288a122a2c6863de7ccc8",
+    "scripts/test-blender-layout-typography.py": "0f297b2d0396d8798ce59de58440867d833ffdc9aa67938f76000e4b118f7142"
+  },
+  "schema": {
+    "layoutAdjustments": "[{id,meshNames,worldMatrix(16 column-major world delta),role,narrative}]",
+    "hiddenBlenderTextNames": "unique original FONT names; render and viewport hidden",
+    "textLayers": "layout:vertical; titleSize/bodySize optional DOM font units; bodyColor; seal1..4 editable chars; range prepared Web progress; fade smoothstep progress width, 64-sample piecewise-linear Blender approximation with theoretical error<=0.0001831064453125"
+  },
+  "verification": [
+    {
+      "command": "python scripts/test-blender-reconstruction-preflight.py",
+      "result": "34 tests passed",
+      "log": "reports/chapter-3-refinement/blender-preflight-tests.log"
+    },
+    {
+      "command": "Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python scripts/test-blender-layout-typography.py",
+      "result": "Factory fixture: source matrix/original mesh datablock protected; explicit-corners then world-delta verified; editable CJK vertical title/two columns/seal/border; 133 opacity points+265 curve point/midpoint checks and7 real depsgraph visibility probes; alpha max error0.000180391944; temporary .blend save/reopen passed.",
+      "log": "reports/chapter-3-refinement/blender-pipeline-fixture.log"
+    },
+    {
+      "command": "prepareScene.ts via Vite SSR compared to Python reading_route on actual source chapter 3",
+      "result": "321 camera samples; exact frame/progress match; maximum difference 0.0",
+      "reference": "reports/chapter-3-refinement/blender-route-web-reference.json"
+    },
+    {
+      "command": "reconstruct-blender.load_revision on current 15-text-layer chapter3 manifest",
+      "result": "Current resources/schema pass before any real project Blender save"
+    }
+  ],
+  "behavior": {
+    "layoutGeometry": "localDelta=M.inverse*W*M baked into copied vertex data; per-step positions/topology/UV hash; source matrices unchanged; final geometry exception checked after reopening",
+    "explicitCorners": "Pre-layout paddedCorners retained; layoutAdjustedPaddedCorners and final position SHA used after geometry deformation",
+    "visibility": "prepareScene spatial-distance route inverted to original source frames. Both hide_render/hide_viewport constant keys plus smoothstep alpha sampled at 64 subdivisions per fade and every route breakpoint; all saved FCurve samples+midpoints and 7 actual depsgraph probes per group verified. Endpoint ranges beginning at0/ending at1 remain readable.",
+    "viewportCache": "Temporarily evaluate hidden new/retired FONT while taking invariant snapshots; restore flags without saving source. This prevents identity matrix caches after reopen from masquerading as source transform mutations.",
+    "renderStops": "--stops directly uses source.stops[N-1].frame, computes actual prepared Web progress; no fake addedLayer needed. Existing --gaps remains frozen manifest anchorFrame.",
+    "legacy": "Optional fields absent: previous horizontal captions and existing chapters keep their old code path. No src/canonical/builder files changed by this subtask.",
+    "responsiveBoundary": "Blender keeps reviewed wide world anchors. Web compact captions are an adaptive screen presentation; source camera pose remains unchanged."
+  },
+  "knownPrecision": "Blender merges boolean keys less than roughly .01 frame apart; outer hide sentinels are .05 frame beyond inclusive range, while alpha is already zero beyond the exact range. At integer preview frames and rendered range knots the intended visibility is asserted.",
+  "notClaimed": [
+    "Fixture tests are implementation checks; final actual project delivery evidence is separately linked.",
+    "Actual Blender renders may differ fromWeb paper/shading; no pixel-identical or narrow-Web-layout identity claim."
+  ],
+  "actualDryRunSummary": "reports/chapter-3-refinement/blender/actual-v2/summary.json",
+  "finalDeliverySummary": "reports/chapter-3-refinement/blender/final/delivery-summary.json"
+}

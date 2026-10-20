@@ -1,0 +1,1718 @@
+{
+  "schemaVersion": 1,
+  "status": "needs-revision-not-approved",
+  "chapter": 3,
+  "canonicalSha256": "d0da5b557efacc09db17c51f4faeea8681c301d7584a5b1b60d508219a719c2c",
+  "generatedAt": "2026-10-20T01:21:10.922771+00:00",
+  "scope": {
+    "fullSizeIndividuallyReviewed": 33,
+    "stops": 9,
+    "gaps": 8,
+    "quarterpoints": 16,
+    "viewport": [
+      1440,
+      900
+    ],
+    "paintingCrop": [
+      1388,
+      476
+    ],
+    "productionFilesModifiedByReviewer": false
+  },
+  "summary": {
+    "pass": 0,
+    "issue": 33,
+    "unreviewed": 0,
+    "substantiveImprovement": "8gap实际有地坪/院栏/巷路承接，锦架与器物台有民俗叙事，已超出原单调空山占位。",
+    "rejectionReason": "原不透明浅灰绿水脉横带和扁平TR树冠在新景前割断完整物体；6段同屋顶院廊机械重复。",
+    "otherFindings": "未另见独立的新台脚悬浮、新题签遮挡或把天空填满的问题。低地坪不应全部删掉，须保留真实承托并减少有顶建筑重复。",
+    "notFinalAcceptance": "资产生成/包装完成不等于场景通过，须修占位层和空间节奏后重审。"
+  },
+  "coordinateSystem": {
+    "format": "[x,y,width,height], all 0..1; rectangles are observed visual regions, not placement commands",
+    "origin": "top-left of inner painting paper, excluding approximately 22px scroll rollers at left and right",
+    "paperPixelRect": [
+      22,
+      0,
+      1344,
+      476
+    ],
+    "pixelMapping": "imageX=22+normalizedX*1344; imageY=normalizedY*476",
+    "precision": "visual approximate +-0.025 in normalized coordinates; validate projected geometry against the actual current view before integration",
+    "regionOverlap": "Where lower support overlaps central gap, the support is a separately planned depth role, not additional area to fill twice."
+  },
+  "issues": {
+    "opaque-water-ribbon": {
+      "priority": "P1",
+      "evidence": "多帧约y.67–.78实色条截断锦布、花瓶、灯、墙；不是合格水面/气口。",
+      "action": "派生退役明确连续水脉占位实例或真正重做透明淡墨，不通过把新完整主体挪到条带前方掩盖图层错误。"
+    },
+    "flat-canopy-placeholders": {
+      "priority": "P1",
+      "evidence": "新锦布/花枝前出现三四瓣灰色树冠图标，风格和遮挡均不合理。",
+      "action": "定位TR疏林/树冠系列，只退役明确占位辅助；保留实际手绘树木。"
+    },
+    "repeated-roofed-courtyard": {
+      "priority": "P2",
+      "evidence": "gap1/2/3/5/6/7同一灰瓦短廊、木栏花砖反复出现，原主stop两边像建筑边框。",
+      "action": "完整带顶院廊只留少数锚点；中间四gap换低无屋顶民居花砖/石板地坪，仍承锦架与器物。"
+    }
+  },
+  "plannedFixBoundary": "主代理已表示将做on/off定位并派生退役原水脉/TR，占位识别及实际退役结果由后续真实运行证据证明；本审查不宣称已实施。",
+  "views": [
+    {
+      "id": "c3-stop-01",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 1,
+      "name": "第一景",
+      "progress": 0,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-stop-01.jpg",
+      "sha256": "45eec14ffb3941578b5ad35caedefbaef9f0905070daa446d22d4d77c13c6bc2",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "原卷首人物与题字保持，右下新增院栏承托可见；左下浅灰绿带仍像扁平占位水线，需随全卷处理。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders"
+      ],
+      "fixRectNormalized": [
+        0.01,
+        0.7,
+        0.18,
+        0.13
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-stop-01.jpg",
+      "beforeSha256": "1dceba5590985d428ac3e182069b0b70f2a560e07a3f8bf54f0e5605d02f3b7d",
+      "originalAuditRegions": [
+        {
+          "id": "c3-stop-01-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.03,
+            0.04,
+            0.15,
+            0.54
+          ],
+          "currentStatus": "保留留白大体保持，但邻接横带/图标须清理。"
+        },
+        {
+          "id": "c3-stop-01-r2",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.01,
+            0.62,
+            0.19,
+            0.36
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-02",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 2,
+      "name": "第二景",
+      "progress": 0.12341644431101914,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-stop-02.jpg",
+      "sha256": "62740314113b49753df4256bd18c596a968a9dd1ff856f0853a12171215211ee",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "左下院栏接地、右侧锦架进入；灰绿横条直接切断锦布中部，疏林云状图标压在纹样上。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders",
+        "repeated-roofed-courtyard"
+      ],
+      "fixRectNormalized": [
+        0.78,
+        0.54,
+        0.21,
+        0.27
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-stop-02.jpg",
+      "beforeSha256": "a48defded39235b651150af883c3855cc30cae16a24f69fd5757908b330e2f43",
+      "originalAuditRegions": [
+        {
+          "id": "c3-stop-02-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.02,
+            0.02,
+            0.13,
+            0.32
+          ],
+          "currentStatus": "保留留白大体保持，但邻接横带/图标须清理。"
+        },
+        {
+          "id": "c3-stop-02-r2",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.87,
+            0.55,
+            0.13,
+            0.43
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-03",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 3,
+      "name": "第三景",
+      "progress": 0.24713803226885958,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-stop-03.jpg",
+      "sha256": "34cf7d359ad29a3f10a0dc76bc3a7c2153f6fa34ec50e2a5b02f6f49747b0daf",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "嫁衣与凤凰仍是主角；左锦布、右器物均有新地台，但横条截断二者，云状树冠压花器花枝。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders",
+        "repeated-roofed-courtyard"
+      ],
+      "fixRectNormalized": [
+        0.0,
+        0.56,
+        1,
+        0.24
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-stop-03.jpg",
+      "beforeSha256": "72bc45e81d251a5f096f2b987cdaa51a57f241ec82bfe90800c6d2aa4976a9bc",
+      "originalAuditRegions": [
+        {
+          "id": "c3-stop-03-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.59,
+            0.14,
+            0.18,
+            0.19
+          ],
+          "currentStatus": "保留留白大体保持，但邻接横带/图标须清理。"
+        },
+        {
+          "id": "c3-stop-03-r2",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.02,
+            0.58,
+            0.12,
+            0.4
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-04",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 4,
+      "name": "第四景",
+      "progress": 0.37069251986073537,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-stop-04.jpg",
+      "sha256": "b3b285dd6285e9cded55ec5ef6f5e59c3078010ef21c835b1599177065a3a638",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "原婚礼/凤凰/迎亲组与题签保留；左器物台及右巷灯都被横带割断，层次明显不成立。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders"
+      ],
+      "fixRectNormalized": [
+        0.0,
+        0.64,
+        1,
+        0.18
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-stop-04.jpg",
+      "beforeSha256": "770c8c14acbc00d9d55c22a3a1278a5bdc69fc217ca7f94a8e3f0d7d51022532",
+      "originalAuditRegions": [
+        {
+          "id": "c3-stop-04-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.64,
+            0.12,
+            0.22,
+            0.24
+          ],
+          "currentStatus": "保留留白大体保持，但邻接横带/图标须清理。"
+        },
+        {
+          "id": "c3-stop-04-r2",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.03,
+            0.65,
+            0.16,
+            0.33
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-05",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 5,
+      "name": "第五景",
+      "progress": 0.4947845160644397,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-stop-05.jpg",
+      "sha256": "502fe6c32e4ce1992a046d899c355008e36ae12406be3bfb1570be9a80f43c14",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "年画/雪街主体未被新地景盖住；两边巷路与锦架承托本可成立，但横条切边缘景物。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders"
+      ],
+      "fixRectNormalized": [
+        0.0,
+        0.61,
+        1,
+        0.2
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-stop-05.jpg",
+      "beforeSha256": "4bedd119a71e3c79ec6d449a0e33f802cb8e15b0bc634db65ed7ae9d044c48e0",
+      "originalAuditRegions": [
+        {
+          "id": "c3-stop-05-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.02,
+            0.01,
+            0.35,
+            0.17
+          ],
+          "currentStatus": "保留留白大体保持，但邻接横带/图标须清理。"
+        },
+        {
+          "id": "c3-stop-05-r2",
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.02,
+            0.34,
+            0.16,
+            0.62
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-06",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 6,
+      "name": "第六景",
+      "progress": 0.6190812816082915,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-stop-06.jpg",
+      "sha256": "efb8b8aff6cd3f5538fed26678debb62867179abe4af9d9a9826277acaf01f91",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "家庭手作与题字保持，左右新增锦架/器物台有落点；横条穿锦布、花器，灰树冠压主体新物。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders",
+        "repeated-roofed-courtyard"
+      ],
+      "fixRectNormalized": [
+        0.0,
+        0.58,
+        1,
+        0.24
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-stop-06.jpg",
+      "beforeSha256": "e72f2b69d029cb70c5ef8356d437f592e23dbe5cb251c687565e6fe4663687de",
+      "originalAuditRegions": [
+        {
+          "id": "c3-stop-06-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.54,
+            0.03,
+            0.34,
+            0.26
+          ],
+          "currentStatus": "保留留白大体保持，但邻接横带/图标须清理。"
+        },
+        {
+          "id": "c3-stop-06-r2",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.02,
+            0.65,
+            0.15,
+            0.33
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-07",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 7,
+      "name": "第七景",
+      "progress": 0.7432605852233363,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-stop-07.jpg",
+      "sha256": "962132b741bfa07e461eba075991e4674730ead237632aeb20883b8dd55e4640",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "原镜台和作坊完整，新院栏连接下部；左器物台/花瓶被灰条切，重复屋顶在镜台后露出，需减屋顶复现。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders",
+        "repeated-roofed-courtyard"
+      ],
+      "fixRectNormalized": [
+        0.0,
+        0.58,
+        0.27,
+        0.28
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-stop-07.jpg",
+      "beforeSha256": "a618503c70bde07e876a0fed7e1185983adeb7fc0c64c30177f61ed151953742",
+      "originalAuditRegions": [
+        {
+          "id": "c3-stop-07-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.01,
+            0.03,
+            0.15,
+            0.35
+          ],
+          "currentStatus": "保留留白大体保持，但邻接横带/图标须清理。"
+        },
+        {
+          "id": "c3-stop-07-r2",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.55,
+            0.34,
+            0.23,
+            0.18
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-08",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 8,
+      "name": "第八景",
+      "progress": 0.8673259018926424,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-stop-08.jpg",
+      "sha256": "0c4043c34667948b16fbc76a7dd40a41ecdff797407e39f6471ad7dd2606a01a",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "书案与器物拼贴主景保持，新院栏低位接地，但左侧灰条/树冠仍是占位图形，后段又一同款院廊。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders"
+      ],
+      "fixRectNormalized": [
+        0.0,
+        0.58,
+        0.2,
+        0.25
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-stop-08.jpg",
+      "beforeSha256": "cd01e01393906b60e934399768b4b643fb5a4c84868f6e0f6dfde1edc2295220",
+      "originalAuditRegions": [
+        {
+          "id": "c3-stop-08-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.02,
+            0.01,
+            0.4,
+            0.28
+          ],
+          "currentStatus": "保留留白大体保持，但邻接横带/图标须清理。"
+        },
+        {
+          "id": "c3-stop-08-r2",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.02,
+            0.71,
+            0.17,
+            0.27
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-stop-09",
+      "chapter": 3,
+      "kind": "stop",
+      "index": 9,
+      "name": "第九景",
+      "progress": 0.9903868032819582,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-stop-09.jpg",
+      "sha256": "9faf96f7d20b84e05c098554e290707ba35b248025cf86c394a803ebb0f62608",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "终景民生/书画与大花保持；左侧巷灯被横条截断，灰色树冠图标不能作为卷尾空间。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders"
+      ],
+      "fixRectNormalized": [
+        0.0,
+        0.51,
+        0.2,
+        0.25
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-stop-09.jpg",
+      "beforeSha256": "20604d8c00c1e5b20e7f52ab3b2aefaac50d22240bba1794487273ba0f34b23a",
+      "originalAuditRegions": [
+        {
+          "id": "c3-stop-09-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.02,
+            0.02,
+            0.14,
+            0.36
+          ],
+          "currentStatus": "保留留白大体保持，但邻接横带/图标须清理。"
+        },
+        {
+          "id": "c3-stop-09-r2",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.01,
+            0.64,
+            0.14,
+            0.34
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-01",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 1,
+      "name": "第一景 → 第二景",
+      "progress": 0.06170822215550957,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-gap-01.jpg",
+      "sha256": "a43cc1aff62e2fb61ef68c31483614be22e83a6d01a2b9d5aa5b17d8de62cfa9",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "新增院落花砖与低栏确实连接作坊到婚俗，但中段灰绿条/树冠仍像未设计占位。此院廊可作为少数完整建筑锚点保留。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders"
+      ],
+      "fixRectNormalized": [
+        0.44,
+        0.51,
+        0.2,
+        0.25
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-gap-01.jpg",
+      "beforeSha256": "b99502bd06441550d11dffdbebc1e90ae873eb8ad68a7b708d778410ce671ffd",
+      "originalAuditRegions": [
+        {
+          "id": "c3-gap-01-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.45,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "currentStatus": "保留留白大体保持，但邻接横带/图标须清理。"
+        },
+        {
+          "id": "c3-gap-01-r2",
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.45,
+            0.3,
+            0.21,
+            0.54
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        },
+        {
+          "id": "c3-gap-01-r3",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.42,
+            0.78,
+            0.27,
+            0.2
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-02",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 2,
+      "name": "第二景 → 第三景",
+      "progress": 0.18527723828993936,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-gap-02.jpg",
+      "sha256": "6d7b3f9b07991e70233f5d8db59460e45078de106fe6169d3e762ed1d13cd1c4",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "锦架双布与架足落在地台，实际有叙事补充；横条横切主锦布，树冠盖纹样；底部又同院廊，重复应减。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders",
+        "repeated-roofed-courtyard"
+      ],
+      "fixRectNormalized": [
+        0.33,
+        0.52,
+        0.34,
+        0.25
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-gap-02.jpg",
+      "beforeSha256": "07d3ecbfb75a778b02aa5634ca2345684b0cfdb2b3a6cad84866d860e17cd316",
+      "originalAuditRegions": [
+        {
+          "id": "c3-gap-02-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.36,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "currentStatus": "保留留白大体保持，但邻接横带/图标须清理。"
+        },
+        {
+          "id": "c3-gap-02-r2",
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.36,
+            0.27,
+            0.29,
+            0.49
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        },
+        {
+          "id": "c3-gap-02-r3",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.34,
+            0.76,
+            0.32,
+            0.22
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-03",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 3,
+      "name": "第三景 → 第四景",
+      "progress": 0.30891527606479746,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-gap-03.jpg",
+      "sha256": "5836504cde24d743323e32c713a37c9d5bb35a65029d502bb21f75befe1f9d99",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "器物台脚落地、低院栏承接有效，但横带截瓶/罐，树冠压花枝；屋顶与前两段同形再现。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders",
+        "repeated-roofed-courtyard"
+      ],
+      "fixRectNormalized": [
+        0.3,
+        0.57,
+        0.54,
+        0.23
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-gap-03.jpg",
+      "beforeSha256": "a5db6bbe95b7bc72e712aae78aed2131306fb022744491e083c78b7caa7ba52b",
+      "originalAuditRegions": [
+        {
+          "id": "c3-gap-03-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.32,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "currentStatus": "保留留白大体保持，但邻接横带/图标须清理。"
+        },
+        {
+          "id": "c3-gap-03-r2",
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.32,
+            0.32,
+            0.33,
+            0.43
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        },
+        {
+          "id": "c3-gap-03-r3",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.28,
+            0.76,
+            0.5,
+            0.22
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-04",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 4,
+      "name": "第四景 → 第五景",
+      "progress": 0.43273851796258755,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-gap-04.jpg",
+      "sha256": "491aaf7b51848da1a72728339efdb383eef60683d4e1a114c770029b9959c7e9",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "新民居巷路/灯彩与迎亲、年节相合，底部承接成立；中部横带切灯及墙，灰树冠削弱手绘风格。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders"
+      ],
+      "fixRectNormalized": [
+        0.3,
+        0.53,
+        0.36,
+        0.22
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-gap-04.jpg",
+      "beforeSha256": "4ad6706bc1c6824a66eb34f23621fd89ea02309c02fb5bc746d28680eab8cacd",
+      "originalAuditRegions": [
+        {
+          "id": "c3-gap-04-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.34,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "currentStatus": "保留留白大体保持，但邻接横带/图标须清理。"
+        },
+        {
+          "id": "c3-gap-04-r2",
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.34,
+            0.29,
+            0.31,
+            0.45
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        },
+        {
+          "id": "c3-gap-04-r3",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.29,
+            0.74,
+            0.4,
+            0.24
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-05",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 5,
+      "name": "第五景 → 第六景",
+      "progress": 0.5569328988363655,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-gap-05.jpg",
+      "sha256": "2b38af4773204e2a927cda3abb0e612f47d00b52a19876747f20ecaf16f12726",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "锦架连接岁时到代际手作，架足已接地；锦布主体被条带切断，两端又出现同院廊灰瓦角，不能通过。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders",
+        "repeated-roofed-courtyard"
+      ],
+      "fixRectNormalized": [
+        0.39,
+        0.52,
+        0.27,
+        0.25
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-gap-05.jpg",
+      "beforeSha256": "d949f3e7db82ba045f06eb22b060a02ae4623f2eec1d2a48f903e3b156b16d47",
+      "originalAuditRegions": [
+        {
+          "id": "c3-gap-05-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.4,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "currentStatus": "保留留白大体保持，但邻接横带/图标须清理。"
+        },
+        {
+          "id": "c3-gap-05-r2",
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.4,
+            0.25,
+            0.24,
+            0.47
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        },
+        {
+          "id": "c3-gap-05-r3",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.4,
+            0.74,
+            0.25,
+            0.24
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-06",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 6,
+      "name": "第六景 → 第七景",
+      "progress": 0.6811709334158138,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-gap-06.jpg",
+      "sha256": "1c4b88d02774874172ccdc7904b295b309ea961a211f955ba8cbe29ff58287eb",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "器物台承家传日用，台足有承托；横带把花器切为上下两半，树冠还盖花枝；同屋顶再次在右后复现。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders",
+        "repeated-roofed-courtyard"
+      ],
+      "fixRectNormalized": [
+        0.32,
+        0.55,
+        0.49,
+        0.23
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-gap-06.jpg",
+      "beforeSha256": "1e8d556b859201c4af729922d9eb57396e606d0eeced035fb12708ecaa753dd8",
+      "originalAuditRegions": [
+        {
+          "id": "c3-gap-06-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.35,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "currentStatus": "保留留白大体保持，但邻接横带/图标须清理。"
+        },
+        {
+          "id": "c3-gap-06-r2",
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.35,
+            0.28,
+            0.43,
+            0.48
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        },
+        {
+          "id": "c3-gap-06-r3",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.35,
+            0.76,
+            0.44,
+            0.22
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-07",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 7,
+      "name": "第七景 → 第八景",
+      "progress": 0.8052932435579894,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-gap-07.jpg",
+      "sha256": "17f8e5f24efd1f785307f45604b7a76ad77fc59fffc1e27f671dd27c92fa97ef",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "作坊到文人书案之间低院栏/花砖接得上，但中段仍横条与树冠占位，右同屋顶复现太频繁；此段可保留完整院廊作第二锚点。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders"
+      ],
+      "fixRectNormalized": [
+        0.29,
+        0.56,
+        0.33,
+        0.2
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-gap-07.jpg",
+      "beforeSha256": "80dd6430e9269d5c460e5f449f25244760f2d53fcd03061477733fcc347e9749",
+      "originalAuditRegions": [
+        {
+          "id": "c3-gap-07-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.3,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "currentStatus": "保留留白大体保持，但邻接横带/图标须清理。"
+        },
+        {
+          "id": "c3-gap-07-r2",
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.3,
+            0.25,
+            0.31,
+            0.46
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        },
+        {
+          "id": "c3-gap-07-r3",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.28,
+            0.74,
+            0.37,
+            0.24
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-gap-08",
+      "chapter": 3,
+      "kind": "gap",
+      "index": 8,
+      "name": "第八景 → 第九景",
+      "progress": 0.9288563525873003,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-gap-08.jpg",
+      "sha256": "e32a5aa4dbeec3909fb703d20b14abe70b4450d08c045ef4bfc4493efdbe1a31",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "巷路、院墙、灯彩承接器用到民生终景，比原空山完整；但横条仍切灯与墙，灰树冠停在空纸中央。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders"
+      ],
+      "fixRectNormalized": [
+        0.43,
+        0.51,
+        0.24,
+        0.22
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": "reports/blank-design/before/chapter-3-gap-08.jpg",
+      "beforeSha256": "6249dcbc331456a07aa92876c84fed6645ee1b0b7ab45b58e70014b313364af4",
+      "originalAuditRegions": [
+        {
+          "id": "c3-gap-08-r1",
+          "decision": "保留留白",
+          "rectNormalized": [
+            0.45,
+            0.02,
+            0.42,
+            0.2
+          ],
+          "currentStatus": "保留留白大体保持，但邻接横带/图标须清理。"
+        },
+        {
+          "id": "c3-gap-08-r2",
+          "decision": "叙事补充",
+          "rectNormalized": [
+            0.45,
+            0.28,
+            0.22,
+            0.42
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        },
+        {
+          "id": "c3-gap-08-r3",
+          "decision": "衔接补充",
+          "rectNormalized": [
+            0.45,
+            0.72,
+            0.22,
+            0.26
+          ],
+          "currentStatus": "已有实体承接或物件，但被占位条带遮断且有重复屋顶，尚未完成验收。"
+        }
+      ]
+    },
+    {
+      "id": "c3-quarter-01",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 1,
+      "name": "第一景 → 第二景",
+      "progress": 0.030854111077754785,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-01.jpg",
+      "sha256": "30fbc947ce2475e055cd40551d4fa637154059540da7502ac8e0ae2d3279b15b",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "作坊退场与院落进入，中下部花砖接地、人物保持；右方横条和单个树冠图标仍显占位。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders"
+      ],
+      "fixRectNormalized": [
+        0.67,
+        0.52,
+        0.22,
+        0.22
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "originalAuditRegions": [],
+      "gapIndex": 1,
+      "fraction": 0.25
+    },
+    {
+      "id": "c3-quarter-02",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 2,
+      "name": "第一景 → 第二景",
+      "progress": 0.09256233323326435,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-02.jpg",
+      "sha256": "87a39a85521ce9c548ad76aa30c7ac00ed19ba3f0043dfb1f823d39a83b7b2dd",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "院落连到婚俗街市，低栏和地坪实见；中间扁平灰条与图标仍破坏纸面气韵。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders"
+      ],
+      "fixRectNormalized": [
+        0.18,
+        0.51,
+        0.26,
+        0.22
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "originalAuditRegions": [],
+      "gapIndex": 1,
+      "fraction": 0.75
+    },
+    {
+      "id": "c3-quarter-03",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 3,
+      "name": "第二景 → 第三景",
+      "progress": 0.15434684130047926,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-03.jpg",
+      "sha256": "a3e587951fd39209b662834c17f9993e916be08c0b32bda26b178d461c0a2716",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "锦架入场时足有地台承托，但横条正切暖朱布，疏林图标压住凤纹，必须修。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders",
+        "repeated-roofed-courtyard"
+      ],
+      "fixRectNormalized": [
+        0.56,
+        0.53,
+        0.3,
+        0.24
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "originalAuditRegions": [],
+      "gapIndex": 2,
+      "fraction": 0.25
+    },
+    {
+      "id": "c3-quarter-04",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 4,
+      "name": "第二景 → 第三景",
+      "progress": 0.21620763527939946,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-04.jpg",
+      "sha256": "d879a20492aed383efbde467346b23b4385b5a41c08f4e5205b7b5c81f4a56b4",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "锦架退场到嫁衣，衣摆与脚完整；横条仍穿过绣绷与锦布，图标压纹样。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders",
+        "repeated-roofed-courtyard"
+      ],
+      "fixRectNormalized": [
+        0.12,
+        0.53,
+        0.3,
+        0.24
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "originalAuditRegions": [],
+      "gapIndex": 2,
+      "fraction": 0.75
+    },
+    {
+      "id": "c3-quarter-05",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 5,
+      "name": "第三景 → 第四景",
+      "progress": 0.27802665416682854,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-05.jpg",
+      "sha256": "4bffb2775898a1e0948bd5376e6df2410d17f8d49e60331d7721f70eb6c1b27f",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "新器物台进入，台脚在花砖上；花瓶和高陶器均被横条切，树冠压花枝。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders",
+        "repeated-roofed-courtyard"
+      ],
+      "fixRectNormalized": [
+        0.6,
+        0.57,
+        0.39,
+        0.23
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "originalAuditRegions": [],
+      "gapIndex": 3,
+      "fraction": 0.25
+    },
+    {
+      "id": "c3-quarter-06",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 6,
+      "name": "第三景 → 第四景",
+      "progress": 0.33980389796276644,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-06.jpg",
+      "sha256": "8ca7f2d589192a8f15fc2ba8b7da62273a5cd5755af14fbcc8d8fe09b9c93df0",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "器物台向左退出时仍被横条遮切，原题签未被新层盖；同款屋顶又位于婚礼平台下面。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders",
+        "repeated-roofed-courtyard"
+      ],
+      "fixRectNormalized": [
+        0.2,
+        0.56,
+        0.36,
+        0.23
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "originalAuditRegions": [],
+      "gapIndex": 3,
+      "fraction": 0.75
+    },
+    {
+      "id": "c3-quarter-07",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 7,
+      "name": "第四景 → 第五景",
+      "progress": 0.40171551891166146,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-07.jpg",
+      "sha256": "f02cce47a528a4335c6df11ce5cc7fe6c6066ac75908168290da9f8ec657e084",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "巷路接迎亲到岁时，地面结构可读；横条割断小灯支座和院墙，图标列于其上。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders"
+      ],
+      "fixRectNormalized": [
+        0.54,
+        0.53,
+        0.35,
+        0.21
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "originalAuditRegions": [],
+      "gapIndex": 4,
+      "fraction": 0.25
+    },
+    {
+      "id": "c3-quarter-08",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 8,
+      "name": "第四景 → 第五景",
+      "progress": 0.4637615170135136,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-08.jpg",
+      "sha256": "ee06c80acbb5fab7cb6edef0a3314954a33b673cd8e91ae8dc01919030b48e5d",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "巷路退出到雪街，原人物保持；横条仍遮巷灯及墙，没有自然的中景关系。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders"
+      ],
+      "fixRectNormalized": [
+        0.11,
+        0.52,
+        0.31,
+        0.21
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "originalAuditRegions": [],
+      "gapIndex": 4,
+      "fraction": 0.75
+    },
+    {
+      "id": "c3-quarter-09",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 9,
+      "name": "第五景 → 第六景",
+      "progress": 0.5258587074504026,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-09.jpg",
+      "sha256": "690fa97d4011fc55563288b524b1a14168a01731ab8b2cfae1fe7d4a6a5daee7",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "年画人物退场到锦架，架足和花砖接地；横条穿锦布，右侧又一同款屋顶造成复用痕迹。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders",
+        "repeated-roofed-courtyard"
+      ],
+      "fixRectNormalized": [
+        0.62,
+        0.53,
+        0.29,
+        0.22
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "originalAuditRegions": [],
+      "gapIndex": 5,
+      "fraction": 0.25
+    },
+    {
+      "id": "c3-quarter-10",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 10,
+      "name": "第五景 → 第六景",
+      "progress": 0.5880070902223286,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-10.jpg",
+      "sha256": "2784eb77af4646a192131a2516040f398ebd0bacab33097ca3b49db64806fc1c",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "锦架到家庭手作，物体相对尺度可以接受；横条/树冠仍割裂完整纹样，同屋顶在背景复现。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders",
+        "repeated-roofed-courtyard"
+      ],
+      "fixRectNormalized": [
+        0.17,
+        0.52,
+        0.26,
+        0.23
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "originalAuditRegions": [],
+      "gapIndex": 5,
+      "fraction": 0.75
+    },
+    {
+      "id": "c3-quarter-11",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 11,
+      "name": "第六景 → 第七景",
+      "progress": 0.6501261075120527,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-11.jpg",
+      "sha256": "69d07f3dac968683a0a7f443f1f6ea5f5493fd4c21c675be0bc7fbc42df7d0fe",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "器物台入场有台脚与地台，但条带遮瓶身，图标遮花枝，新增文化器物信息被截断。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders",
+        "repeated-roofed-courtyard"
+      ],
+      "fixRectNormalized": [
+        0.59,
+        0.58,
+        0.39,
+        0.23
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "originalAuditRegions": [],
+      "gapIndex": 6,
+      "fraction": 0.25
+    },
+    {
+      "id": "c3-quarter-12",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 12,
+      "name": "第六景 → 第七景",
+      "progress": 0.712215759319575,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-12.jpg",
+      "sha256": "f1be275b2578cf32e0b169e82124e2a5eacae3188604c6e2e57f3ef50a6ed4da",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "器物台退出到原大镜台，足面没有新悬浮；中部条带仍遮花器和陶器，屋顶再次重复。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders",
+        "repeated-roofed-courtyard"
+      ],
+      "fixRectNormalized": [
+        0.2,
+        0.56,
+        0.36,
+        0.22
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "originalAuditRegions": [],
+      "gapIndex": 6,
+      "fraction": 0.75
+    },
+    {
+      "id": "c3-quarter-13",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 13,
+      "name": "第七景 → 第八景",
+      "progress": 0.7742769143906628,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-13.jpg",
+      "sha256": "4236c09223b01d4f63af7e66827f5bf5ae62a0e59b47f587691eadc33b0c025b",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "作坊退场与院落进入能连读，花砖并未遮主角；但空中灰树冠、横带和重复院廊仍需改。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders"
+      ],
+      "fixRectNormalized": [
+        0.54,
+        0.56,
+        0.29,
+        0.2
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "originalAuditRegions": [],
+      "gapIndex": 7,
+      "fraction": 0.25
+    },
+    {
+      "id": "c3-quarter-14",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 14,
+      "name": "第七景 → 第八景",
+      "progress": 0.8363095727253158,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-14.jpg",
+      "sha256": "fafb23912f3c455c361829f99be12fdca57bff672210a7d66c17dccf7c3bf40d",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "院落连书案山水，台脚/路径可读，左上纸天空保留；灰条/云状图标仍像占位。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders"
+      ],
+      "fixRectNormalized": [
+        0.06,
+        0.56,
+        0.35,
+        0.19
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "originalAuditRegions": [],
+      "gapIndex": 7,
+      "fraction": 0.75
+    },
+    {
+      "id": "c3-quarter-15",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 15,
+      "name": "第八景 → 第九景",
+      "progress": 0.8980911272399713,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-15.jpg",
+      "sha256": "6ed0f17d527ca94c6306edefe96250f4f7581766f0c25bf7a00f3b69b7e37469",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "巷路进入终景，原书案和器物不被新景盖住；横条割巷灯，灰图标浮在纸面。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders"
+      ],
+      "fixRectNormalized": [
+        0.67,
+        0.52,
+        0.26,
+        0.2
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "originalAuditRegions": [],
+      "gapIndex": 8,
+      "fraction": 0.25
+    },
+    {
+      "id": "c3-quarter-16",
+      "chapter": 3,
+      "kind": "quarter",
+      "index": 16,
+      "name": "第八景 → 第九景",
+      "progress": 0.9596215779346292,
+      "screenshot": "reports/blank-design/expanded-v2/chapter-3-quarter-16.jpg",
+      "sha256": "1e0cf33fa48f83bca6a3b692bb753cf6e61952723dffd804651b827b73eb1f26",
+      "reviewedWithViewImage": true,
+      "reviewedAtFullSize": [
+        1388,
+        476
+      ],
+      "status": "issue",
+      "conclusion": "终景书画/市集保持，巷路低阶有承接；中央灰带截灯/短墙，灰图标仍可见，不可通过。",
+      "issueIds": [
+        "opaque-water-ribbon",
+        "flat-canopy-placeholders"
+      ],
+      "fixRectNormalized": [
+        0.2,
+        0.54,
+        0.23,
+        0.2
+      ],
+      "specificAction": "退役/修正不透明连续水脉与TR疏林图标，保留真正水岸留金/淡云/金线；gap2/3/5/6换无屋顶低地坪承托，完整短廊只保留gap1/7，巷路gap4/8。修正后用新canonical重新看完整物体与前后景。",
+      "newPropBaseContact": "可见的锦架/器物台脚与低地坪已接触；中部被原占位层遮切，仍须移除占位后重验完整轮廓。",
+      "newCaptionOcclusionSeen": false,
+      "upperNegativeSpacePreserved": true,
+      "beforeScreenshot": null,
+      "beforeSha256": null,
+      "originalAuditRegions": [],
+      "gapIndex": 8,
+      "fraction": 0.75
+    }
+  ],
+  "nextReview": "暂不重审；等新布局与占位清理新canonical及独立截图目录。",
+  "limitations": [
+    "这33图是宽屏减少动态静帧，不能证明全交互/响应式/动态稳定。",
+    "本报告不证明C3 Blender保存/独立重开；尚未进入该门槛。"
+  ]
+}

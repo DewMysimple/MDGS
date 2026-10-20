@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { CSSProperties, KeyboardEvent } from 'react';
-import { ArrowRight, BookOpen, ChevronLeft, ChevronRight, Maximize, Minimize, Mouse, MoveHorizontal, Pause, Play, RotateCcw } from 'lucide-react';
+import { ArrowRight, BookOpen, ChevronLeft, ChevronRight, Maximize, Minimize, Mouse, MoveHorizontal, Pause, Play, RotateCcw, Wind } from 'lucide-react';
 import ScrollViewport from './components/ScrollViewport';
+import type { ViewportMotionState } from './components/ScrollViewport';
 import CulturePanel from './components/CulturePanel';
 import AudioController from './components/AudioController';
 import { BrocadeBorder, ExhibitionAtmosphere, ScrollRoller } from './components/ScrollOrnaments';
@@ -12,12 +13,20 @@ import './styles.css';
 
 const ordinal = ['一', '二', '三', '四'];
 const clamp = (value: number) => Math.min(1, Math.max(0, value));
+const motionPreferenceKey = 'guose-fanghua:painting-motion';
+
+function readMotionPreference() {
+  try { return localStorage.getItem(motionPreferenceKey) !== 'off'; }
+  catch { return true; }
+}
 
 export default function App() {
   const [chapterId, setChapterId] = useState<number>(chapters[0].id);
   const [cultureOpen, setCultureOpen] = useState(false);
   const [fullscreen, setFullscreen] = useState(Boolean(document.fullscreenElement));
   const [notice, setNotice] = useState('');
+  const [motionEnabled, setMotionEnabled] = useState(readMotionPreference);
+  const [motionState, setMotionState] = useState<ViewportMotionState>({ enabled: false, reducedMotion: matchMedia('(prefers-reduced-motion: reduce)').matches, supported: false });
   const [manifests, setManifests] = useState<Record<number, Pick<SceneManifest, 'id' | 'stops'>>>({});
   const { progress, target, seek, nudge, playing, togglePlaying, stop } = useScrollController(chapterId);
   const chapterIndex = chapters.findIndex(item => item.id === chapterId);
@@ -29,6 +38,7 @@ export default function App() {
   const finished = progress >= 0.995;
   const stageRef = useRef<HTMLDivElement>(null);
   const closeCulture = useCallback(() => setCultureOpen(false), []);
+  const receiveMotionState = useCallback((state: ViewportMotionState) => setMotionState(state), []);
   const receiveManifest = useCallback((data: SceneManifest) => {
     setManifests(previous => ({ ...previous, [chapterId]: { id: data.id, stops: data.stops } }));
   }, [chapterId]);
@@ -69,6 +79,11 @@ export default function App() {
     document.addEventListener('fullscreenchange', update);
     return () => document.removeEventListener('fullscreenchange', update);
   }, []);
+
+  useEffect(() => {
+    try { localStorage.setItem(motionPreferenceKey, motionEnabled ? 'on' : 'off'); }
+    catch { /* Viewing and the current preference still work when storage is unavailable. */ }
+  }, [motionEnabled]);
 
   function stageKeydown(event: KeyboardEvent<HTMLDivElement>) {
     if ((event.target as HTMLElement).closest('button, a, input, select, textarea')) return;
@@ -136,6 +151,8 @@ export default function App() {
               <ScrollViewport
                 chapterId={chapterId}
                 progress={progress}
+                motionEnabled={motionEnabled}
+                onMotionState={receiveMotionState}
                 onNudge={nudge}
                 onSeek={seek}
                 onManualInput={stop}
@@ -186,7 +203,19 @@ export default function App() {
               <button className={`play-button${playing ? ' is-playing' : ''}`} type="button" onClick={togglePlaying} aria-pressed={playing}>{playing ? <Pause size={13} strokeWidth={1.5} fill="currentColor" /> : <Play size={13} strokeWidth={1.5} fill="currentColor" />}<span>{playing ? '暂停展卷' : '自动展卷'}</span></button>
               <button className="step-button" type="button" onClick={nextScene} disabled={finished} aria-label="下一分镜" title="下一分镜"><span>下一景</span><ChevronRight size={18} strokeWidth={1.35} /></button>
             </div>
-            <div className="secondary-controls"><AudioController /><span className="secondary-divider" /><button type="button" className="utility-button" onClick={() => { stop(); setCultureOpen(true); }} aria-label="打开文化解读"><BookOpen size={16} strokeWidth={1.4} /><span>画外拾遗</span></button></div>
+            <div className="secondary-controls">
+              <button type="button" className={`utility-button motion-button${motionState.enabled ? ' is-active' : ''}`}
+                onClick={() => setMotionEnabled(value => !value)}
+                aria-label="画中轻动" aria-pressed={motionState.enabled}
+                disabled={motionState.reducedMotion || !motionState.supported}
+                aria-describedby="painting-motion-state"
+                title={motionState.reducedMotion ? '遵循系统减少动态效果设置' : !motionState.supported ? '本卷保持静态' : '切换花枝与云气轻动，不影响自动展卷'}>
+                <Wind size={16} strokeWidth={1.4} /><span>画中轻动</span>
+                <small id="painting-motion-state" role="status">{motionState.reducedMotion ? '随系统静止' : !motionState.supported ? '本卷静态' : motionState.enabled ? '已开' : '已关'}</small>
+              </button>
+              <span className="secondary-divider" /><AudioController /><span className="secondary-divider" />
+              <button type="button" className="utility-button" onClick={() => { stop(); setCultureOpen(true); }} aria-label="打开文化解读"><BookOpen size={16} strokeWidth={1.4} /><span>画外拾遗</span></button>
+            </div>
           </div>
         </section>
       </main>

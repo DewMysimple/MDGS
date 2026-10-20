@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "status": "preflight-ready-layout-not-frozen",
+  "verifiedAtUtc": "2026-10-20T00:11:27.965807+00:00",
+  "scope": "Path/resource checks only; no Blender scene loaded and no .blend saved during this readiness check. The before manifest proves the pipeline/destinations, not completion of the new pilot layout.",
+  "checks": {
+    "existingPreflightTests": 17,
+    "afterSafetyRegressionTests": 23,
+    "syntax": "py_compile passed",
+    "noFixedMachineDrivePaths": true,
+    "newOutputAndReportDirectories": "accepted",
+    "oldDeliveryCollision": "rejected before bpy import/save",
+    "oldChapter4BlendAndEvidenceUnchanged": true,
+    "newBlendFilesSaved": 0
+  },
+  "positivePreflight": {
+    "arguments": [
+      "scripts/reconstruct-blender.py",
+      "--source-config",
+      "reports/reconstruction/source-paths.local.json",
+      "--manifest",
+      "reports/blank-design/before/manifest.json",
+      "--chapter",
+      "4",
+      "--check-only",
+      "--output-dir",
+      "artwork/blender-blank-design",
+      "--report-dir",
+      "reports/blank-design/blender"
+    ],
+    "exitCode": 0,
+    "stdout": "RECONSTRUCTION_PREFLIGHT_OK chapter-4 resources 78 output E:\\数字媒体竞赛\\gitProject\\MDGS\\artwork\\blender-blank-design\\chapter-4_reconstructed.blend report E:\\数字媒体竞赛\\gitProject\\MDGS\\reports\\blank-design\\blender\\blender-reconstruction-chapter-4.json"
+  },
+  "negativePreflight": {
+    "arguments": [
+      "scripts/reconstruct-blender.py",
+      "--source-config",
+      "reports/reconstruction/source-paths.local.json",
+      "--manifest",
+      "reports/blank-design/before/manifest.json",
+      "--chapter",
+      "4",
+      "--check-only",
+      "--output-dir",
+      "artwork/blender-reconstructed",
+      "--report-dir",
+      "reports/reconstruction"
+    ],
+    "exitCode": 1,
+    "expectedFailure": "Existing reconstruction evidence belongs to another delivery",
+    "stderr": "Traceback (most recent call last):\n  File \"E:\\数字媒体竞赛\\gitProject\\MDGS\\scripts\\reconstruct-blender.py\", line 1208, in <module>\n    main()\n    ~~~~^^\n  File \"E:\\数字媒体竞赛\\gitProject\\MDGS\\scripts\\reconstruct-blender.py\", line 1125, in main\n    delivery = validate_delivery_paths(\n        resolve_path(options.output_dir) / f'chapter-{options.chapter}_reconstructed.blend',\n        options.report_dir, options.chapter, sources, manifest_path,\n        [source_config, inventory_path, *[resolve_path(resource['path']) for resource in resources]])\n  File \"E:\\数字媒体竞赛\\gitProject\\MDGS\\scripts\\reconstruct-blender.py\", line 102, in validate_delivery_paths\n    raise ValueError('Existing reconstruction evidence belongs to another delivery; '\n                     'choose a separate --report-dir and --output-dir: ' + str(report))\nValueError: Existing reconstruction evidence belongs to another delivery; choose a separate --report-dir and --output-dir: E:\\数字媒体竞赛\\gitProject\\MDGS\\reports\\reconstruction\\blender-reconstruction-chapter-4.json"
+  },
+  "oldDeliverySha256Before": {
+    "artwork/blender-reconstructed/chapter-4_reconstructed.blend": "a75acb715206ae58e4aa20215a2d6d066e2b3f91317d64a6fddf052cae35af19",
+    "reports/reconstruction/blender-reconstruction-chapter-4.json": "a4c54a6dce79963dff9069a1ce47e2d921e093efad58f0dd90734cf3883ece09"
+  },
+  "oldDeliverySha256After": {
+    "artwork/blender-reconstructed/chapter-4_reconstructed.blend": "a75acb715206ae58e4aa20215a2d6d066e2b3f91317d64a6fddf052cae35af19",
+    "reports/reconstruction/blender-reconstruction-chapter-4.json": "a4c54a6dce79963dff9069a1ce47e2d921e093efad58f0dd90734cf3883ece09"
+  },
+  "scriptSha256": {
+    "scripts/reconstruct-blender.py": "df6239d68a703b6b6002e3177ecbea9cf5a7c224028a11eabbaaa5a1e480ecda",
+    "scripts/validate-reconstructed-blender.py": "e0811f50dc4d36a15d2db9969d17563541380d607947024d4ee4d562e3efa504",
+    "scripts/test-blender-reconstruction-preflight.py": "29bb3d2a4d16c79235924a0efa2ba76a6151674493934dbe18afd968807313dc"
+  },
+  "requiredNext": [
+    "Freeze the actual accepted pilot manifest including all new layers in reports/blank-design/pilot/manifest.json.",
+    "Run check-only against that frozen snapshot using the new output/report directories.",
+    "Optionally dry-run in Blender memory and inspect evidence before saving.",
+    "Save the new copy, then launch a separate Blender process to run validate-reconstructed-blender.py using the resulting report."
+  ],
+  "newLayerEvidence": {
+    "matrix": "Column-major web matrix converted to Blender Matrix; exact rounded matrix captured in addedLayers and derivedObjects.",
+    "geometry": "Complete unit quad and requested uvRect; geometry fingerprint independently compared after reopen.",
+    "shader": "Production RGBA PNG packed with byte hash, unlit emission/transparent mix, opacity multiplier; complete material graph fingerprint compared after reopen.",
+    "provenance": "Stable ID, narrative, role, production path, web asset path, opacity, uvRect, optional web renderOrder/depthTest/depthWrite descriptive properties are retained in derivedObjects.",
+    "webSortLimitation": "Three.js draw order is recorded as descriptive metadata, not implemented as a Blender render-order override; visual Blender output must be reviewed separately.",
+    "independentReopen": "Checks hashes of source files resolved from the provided config, frozen snapshot hash, every PNG/WebP input hash, saved blend hash, object metadata/matrices/geometry/material graphs/collections, packed images/fonts and original scene invariants."
+  }
+}

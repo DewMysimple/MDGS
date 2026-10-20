@@ -2,37 +2,62 @@ import { useEffect, useRef, useState } from 'react';
 import { SceneRenderer } from '../scene/SceneRenderer';
 import type { SceneManifest } from '../types';
 
+export interface ViewportMotionState { enabled: boolean; reducedMotion: boolean; supported: boolean }
+
 export interface ScrollViewportProps {
   chapterId: number; progress: number; onNudge: (delta: number) => void;
   onSeek: (progress: number) => void; onManualInput: () => void;
   onManifest?: (manifest: SceneManifest) => void;
+  motionEnabled: boolean; onMotionState?: (state: ViewportMotionState) => void;
 }
 
-export default function ScrollViewport({ chapterId, progress, onNudge, onSeek, onManualInput, onManifest }: ScrollViewportProps) {
+export default function ScrollViewport({ chapterId, progress, motionEnabled, onMotionState, onNudge, onSeek, onManualInput, onManifest }: ScrollViewportProps) {
   const host = useRef<HTMLDivElement>(null);
   const engine = useRef<SceneRenderer | null>(null);
-  const actions = useRef({ onNudge, onSeek, onManualInput, onManifest });
-  actions.current = { onNudge, onSeek, onManualInput, onManifest };
+  const actions = useRef({ onNudge, onSeek, onManualInput, onManifest, onMotionState });
+  actions.current = { onNudge, onSeek, onManualInput, onManifest, onMotionState };
   const [status, setStatus] = useState<string | null>('正在展卷');
   const [error, setError] = useState(false);
+  const [ready, setReady] = useState(false);
+  const [reloadKey, setReloadKey] = useState(0);
+  const [retryCount, setRetryCount] = useState(0);
+  const retryFocus = useRef(false);
+  const motionRef = useRef(motionEnabled);
+  motionRef.current = motionEnabled;
   const drag = useRef<{ id: number; x: number; time: number; velocity: number } | null>(null);
   const inertia = useRef(0);
   const progressRef = useRef(progress);
   progressRef.current = progress;
 
+  useEffect(() => { setRetryCount(0); retryFocus.current = false; }, [chapterId]);
+
   useEffect(() => {
     const element = host.current!;
     let renderer: SceneRenderer;
     let alive = true;
-    setStatus('正在展卷'); setError(false);
+    let unsubscribeMotion: (() => void) | undefined;
+    setStatus('正在展卷'); setError(false); setReady(false);
     try {
-      renderer = new SceneRenderer(element, message => { if (alive) setStatus(message); });
+      renderer = new SceneRenderer(element, message => {
+        if (!alive) return;
+        setStatus(message);
+        const recovery = engine.current?.getRecoveryState();
+        const failed = !!message && (message.startsWith('部分') || message.startsWith('画面暂时中断') || !!recovery && recovery.kind !== 'none');
+        setError(failed && !message?.startsWith('正在恢复'));
+        if (!message || message.startsWith('部分')) setReady(true);
+      });
       engine.current = renderer;
+      renderer.setMotionEnabled(motionRef.current);
+      unsubscribeMotion = renderer.subscribeMotionState(state => { if (alive) actions.current.onMotionState?.(state); });
       renderer.setProgress(progressRef.current);
       renderer.load(chapterId).then(manifest => { if (alive) actions.current.onManifest?.(manifest); }).catch(reason => {
-        if (alive && reason.name !== 'AbortError') { setError(true); setStatus(reason.message || '画卷加载失败，请刷新重试'); }
+        if (alive && reason.name !== 'AbortError') { setError(true); setStatus(reason.message || '画卷加载失败，请重试'); }
       });
-    } catch { setError(true); setStatus('当前浏览器无法开启 WebGL，请使用支持 WebGL 的浏览器。'); return; }
+    } catch {
+      setError(true); setStatus('当前浏览器无法开启画卷，请重试或使用支持 WebGL 的浏览器。');
+      actions.current.onMotionState?.({ enabled: false, reducedMotion: matchMedia('(prefers-reduced-motion: reduce)').matches, supported: false });
+      return () => { alive = false; unsubscribeMotion?.(); engine.current?.dispose(); engine.current = null; };
+    }
     const observer = new ResizeObserver(entries => {
       const { width, height } = entries[0].contentRect;
       if (width && height) renderer.resize(width, height);
@@ -49,23 +74,40 @@ export default function ScrollViewport({ chapterId, progress, onNudge, onSeek, o
     element.addEventListener('wheel', wheel, { passive: false });
     return () => {
       alive = false; observer.disconnect();
+      unsubscribeMotion?.();
       element.removeEventListener('wheel', wheel);
       cancelAnimationFrame(inertia.current);
       renderer.dispose(); engine.current = null;
     };
-  }, [chapterId]);
+  }, [chapterId, reloadKey]);
 
   useEffect(() => { engine.current?.setProgress(progress); }, [progress]);
+  useEffect(() => { engine.current?.setMotionEnabled(motionEnabled); }, [motionEnabled]);
+  useEffect(() => {
+    if (!retryFocus.current || status && !error) return;
+    (error ? host.current?.querySelector<HTMLButtonElement>('.scene-retry') ?? host.current : host.current)?.focus({ preventScroll: true });
+    retryFocus.current = false;
+  }, [status, error]);
+
+  function retry() {
+    if (retryCount >= 2) return;
+    retryFocus.current = true;
+    actions.current.onManualInput();
+    setRetryCount(count => count + 1);
+    setError(false); setStatus('正在恢复画卷');
+    if (!engine.current?.retryFailedAssets()) setReloadKey(key => key + 1);
+  }
 
   return <div
     ref={host}
-    className={`scene-viewport${drag.current ? ' is-dragging' : ''}`}
+    className={`scene-viewport${drag.current ? ' is-dragging' : ''}${ready ? ' is-ready' : ''}`}
     style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden', touchAction: 'pan-y', cursor: 'grab', outlineOffset: -6 }}
     tabIndex={0}
     role="region"
     aria-label={`第${chapterId}卷画卷，使用滚轮、左右拖拽或方向键游观`}
     aria-busy={!!status && !error}
     onPointerDown={event => {
+      if ((event.target as HTMLElement).closest('button, a, input')) return;
       if (event.button !== 0) return;
       cancelAnimationFrame(inertia.current);
       actions.current.onManualInput();
@@ -103,6 +145,7 @@ export default function ScrollViewport({ chapterId, progress, onNudge, onSeek, o
     onPointerCancel={event => { drag.current = null; event.currentTarget.style.cursor = 'grab'; }}
     onPointerLeave={() => engine.current?.setPointer(0, 0)}
     onKeyDown={event => {
+      if ((event.target as HTMLElement).closest('button, a, input')) return;
       if (!['ArrowRight', 'ArrowLeft', 'Home', 'End', 'PageDown', 'PageUp'].includes(event.key)) return;
       event.preventDefault(); actions.current.onManualInput();
       if (event.key === 'Home') actions.current.onSeek(0);
@@ -110,6 +153,10 @@ export default function ScrollViewport({ chapterId, progress, onNudge, onSeek, o
       else actions.current.onNudge(['ArrowLeft', 'PageUp'].includes(event.key) ? -0.025 : 0.025);
     }}
   >
-    {status && <div className={`scene-loading${error ? ' has-error' : ''}`} role="status" style={{ position: 'absolute', inset: status.startsWith('部分') ? 'auto 12px 12px auto' : 0, zIndex: 2, display: 'grid', placeContent: 'center', textAlign: 'center', padding: status.startsWith('部分') ? '10px 14px' : 0, background: error ? '#f8f5ed' : 'rgba(248,245,237,.92)', color: '#796f62', pointerEvents: 'none', fontSize: 13, letterSpacing: '0.22em' }}>{!status.startsWith('部分') && <span className="loading-seal" style={{ color: '#a64d3f', fontSize: 23, marginBottom: 18 }}>牡 丹</span>}{status}</div>}
+    {status && <div className={`scene-loading${error ? ' has-error' : ''}${status.startsWith('部分') ? ' is-partial' : ''}`} role="status">
+      {!status.startsWith('部分') && <span className="loading-seal" aria-hidden="true">牡 丹</span>}
+      <span>{status}</span>
+      {error && (retryCount < 2 ? <button type="button" className="scene-retry" onClick={retry}>恢复画卷{retryCount ? '（最后一次）' : ''}</button> : <span className="scene-retry-limit">暂未恢复，可切换章节后再试。</span>)}
+    </div>}
   </div>;
 }

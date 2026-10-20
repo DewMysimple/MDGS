@@ -1,0 +1,84 @@
+{
+  "passed": true,
+  "firstScrollOnly": true,
+  "explicitlyBoundLayers": 71,
+  "checks": [
+    "exact mesh bindings exist",
+    "geometry/UV validate every declared local plane",
+    "independent time without seek",
+    "no matrix accumulation",
+    "source animation base preserved",
+    "pause restores source opacity/matrices and hides optional petals",
+    "visible bindings bounded",
+    "new petal and mist quotas are reserved",
+    "petals descend in local XY",
+    "petal loops have invisible endpoints",
+    "large delta clamped",
+    "dispose clears bindings",
+    "later scrolls remain disabled",
+    "cropped UV recovers the complete image plane without source mutation",
+    "bounded normal relief is accepted and audited",
+    "incorrect and degenerate UV mappings are rejected",
+    "large normal folds are rejected",
+    "every current canonical replacement reconstructs"
+  ],
+  "fullUvReconstruction": [
+    {
+      "replacement": "c1-t021",
+      "mesh": "02_右侧宫阙巡游",
+      "maxInPlaneResidual": 0.0006336158018700947,
+      "maxNormalResidual": 0.0839905549318726,
+      "span": 13.000264728105503,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "replacement": "c1-t038",
+      "mesh": "05_06_亭",
+      "maxInPlaneResidual": 0.0017554429697826954,
+      "maxNormalResidual": 0.1130703748219469,
+      "span": 9.0009343786195,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "replacement": "c1-t047",
+      "mesh": "07_1-宫殿建筑",
+      "maxInPlaneResidual": 0.0004180587138625124,
+      "maxNormalResidual": 0.08711238176604093,
+      "span": 22.000170452776445,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "replacement": "c1-t085",
+      "mesh": "13_11_女帝身后宫殿建筑",
+      "maxInPlaneResidual": 0.0003637865784472149,
+      "maxNormalResidual": 0.08636436854271409,
+      "span": 10.000086476888647,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "replacement": "c1-t052",
+      "mesh": "08_01_上方山水城景",
+      "maxInPlaneResidual": 0.00029933112138542516,
+      "maxNormalResidual": 0.08912758319557433,
+      "span": 25.00007176997918,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "replacement": "c1-t059",
+      "mesh": "10_03_前景百官群像_补全",
+      "maxInPlaneResidual": 0.0008316668656537912,
+      "maxNormalResidual": 0.10226419287426657,
+      "span": 8.500220911991287,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "replacement": "c1-t067",
+      "mesh": "11_05_学者书案",
+      "maxInPlaneResidual": 0.0010516390739830383,
+      "maxNormalResidual": 0.08844349113326112,
+      "span": 7.500428393182959,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    }
+  ],
+  "scope": "CPU matrix/configuration checks; browser RAF, reduced-motion, GPU context, texture retry and visual quality require browser validation"
+}

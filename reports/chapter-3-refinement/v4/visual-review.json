@@ -1,0 +1,685 @@
+{
+  "schemaVersion": 1,
+  "status": "rejected-revision-two-confirmed-issues",
+  "parentCanonicalSha256": "637eb936ce6cd774fec7bda9744be3051336a8df78c2a54184b089a922faf448",
+  "scope": "1920×1080宽窗接受截图9停驻+8中点+16四分点；不代替窄窗/连续运动/Blender验证。",
+  "all33IndividuallyViewed": true,
+  "allOriginalSize": true,
+  "approvedAsFinal": false,
+  "issues": [
+    {
+      "id": "v4-join-01",
+      "severity": "P2",
+      "source": "SC07_03_右下作坊场景 与 SC07_01_左侧镜台陈设",
+      "views": [
+        "stop-07",
+        "quarter-12",
+        "quarter-13"
+      ],
+      "finding": "镜台右足与作坊地台之间有窄纸沟，弱化脚底支撑与承接。",
+      "action": "保留源矩阵；仅派生载体将作坊适度左移/微上移对齐低脚底，并重新目视验证。"
+    },
+    {
+      "id": "v4-edge-02",
+      "severity": "P1",
+      "source": "SC09_05_右侧山水城景.001",
+      "views": [
+        "stop-08",
+        "gap-08",
+        "quarter-15",
+        "quarter-16",
+        "stop-09"
+      ],
+      "finding": "重复山水画卡在画内出现长水平硬顶边，不是视口取景或有轴卷幅。",
+      "action": "独立visibility证据确认该重复实例造成；建议派生退役，保留真正SC09主城景。",
+      "pixelEvidence": "reports/chapter-3-refinement/line-diagnostic/landscape/diagnostic.json"
+    }
+  ],
+  "views": [
+    {
+      "kind": "stop",
+      "index": 1,
+      "id": "stop-01",
+      "note": "左章题及印保留；绣作/帷幔整体内收，屋檐上方留纸，人物与桌案关系清楚。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0,
+      "screenshot": "chapter-3-stop-01.jpg",
+      "screenshotSha256": "5683d7057866c9fe8336d10ec032b986001c7646e05562d3a58656a6546f67fc"
+    },
+    {
+      "kind": "stop",
+      "index": 2,
+      "id": "stop-02",
+      "note": "婚嫁宫室两端自然收边，上沿完整不触框；纹样仍作中央主母题，下部街市完整；无新增顶排主体。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.12341644431101914,
+      "screenshot": "chapter-3-stop-02.jpg",
+      "screenshotSha256": "88c67da40da9df826833c987887d3ca953df23ef9a1addb356d76384490dcd3f"
+    },
+    {
+      "kind": "stop",
+      "index": 3,
+      "id": "stop-03",
+      "note": "残屏风退役；凤凰翼尖完整、迎亲右端自然收边；右竖题与主图相隔。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.24713803226885958,
+      "screenshot": "chapter-3-stop-03.jpg",
+      "screenshotSha256": "d9ebf8c60996b67b324d7fcd56fc353c5da5908e884d2c70978359cdec1ef1ac"
+    },
+    {
+      "kind": "stop",
+      "index": 4,
+      "id": "stop-04",
+      "note": "婚仪厅内收下移，凤凰/礼队中下聚合；右同心成礼竖题清楚。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.37069251986073537,
+      "screenshot": "chapter-3-stop-04.jpg",
+      "screenshotSha256": "be332732561fc1741ca5ad007ea809a682047153ec69177613707122514202a6"
+    },
+    {
+      "kind": "stop",
+      "index": 5,
+      "id": "stop-05",
+      "note": "雪巷左侧完整树枝/雪瓦收边，主门屋内收保屋脊；左竖题与雪街分开。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.4947845160644397,
+      "screenshot": "chapter-3-stop-05.jpg",
+      "screenshotSha256": "7ec7b47d80cc2da5a5e343035626e90f4564e8df9db9f21c9b9a143d08534654"
+    },
+    {
+      "kind": "stop",
+      "index": 6,
+      "id": "stop-06",
+      "note": "绣作/长幼叙事保留，亭屋不触顶；针线传情题文置侧，锦架与器物不再被细线横割。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.6190812816082915,
+      "screenshot": "chapter-3-stop-06.jpg",
+      "screenshotSha256": "3de22d4222ab838e8108dc6e0169bd4fa03a4a35ea02934654de52ec3c5d7655"
+    },
+    {
+      "kind": "stop",
+      "index": 7,
+      "id": "stop-07",
+      "note": "上方宫苑和游花退役后气口成立；镜台与工坊仍有右桌足窄纸沟，需要局部地接改善。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "requires-fix",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [
+        "v4-join-01"
+      ],
+      "status": "requires-fix",
+      "progress": 0.7432605852233363,
+      "screenshot": "chapter-3-stop-07.jpg",
+      "screenshotSha256": "c062ce33847b7c2dd3dd444fc8a671ee111baa926bb9040b4bdb9bdd3a5b2ecd"
+    },
+    {
+      "kind": "stop",
+      "index": 8,
+      "id": "stop-08",
+      "note": "上部重复仕女退役，团扇和器物完整；右下重复山水的画内水平硬顶边仍可见。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "requires-fix",
+        "topBreathing": "passed",
+        "join": "requires-fix",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [
+        "v4-edge-02"
+      ],
+      "status": "requires-fix",
+      "progress": 0.8673259018926424,
+      "screenshot": "chapter-3-stop-08.jpg",
+      "screenshotSha256": "f9c30ecfb98cb73536feb1873cc2bd71a839262270347dc10814e72de59c18b6"
+    },
+    {
+      "kind": "stop",
+      "index": 9,
+      "id": "stop-09",
+      "note": "母女/街市顶部完整，右安泰人间题文可读；左端重复山水仍有水平硬顶边。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "requires-fix",
+        "topBreathing": "passed",
+        "join": "requires-fix",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [
+        "v4-edge-02"
+      ],
+      "status": "requires-fix",
+      "progress": 0.9903868032819582,
+      "screenshot": "chapter-3-stop-09.jpg",
+      "screenshotSha256": "106205de0b526bd5b38bee8d48f7e6c9ab7a9d79c449159bdd6122244479c082"
+    },
+    {
+      "kind": "gap",
+      "index": 1,
+      "id": "gap-01",
+      "note": "院坪串接绣作与礼俗，中段一花百用题文使空白有阅读锚点；顶部保持空。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.06170822215550957,
+      "screenshot": "chapter-3-gap-01.jpg",
+      "screenshotSha256": "ff933fb2a048f0e6deb971953e2237ea5d5c111b4923e9c7bab492d2bb28c160"
+    },
+    {
+      "kind": "gap",
+      "index": 2,
+      "id": "gap-02",
+      "note": "锦架两织物完整落地，白线消失，侧方绣作图/新娘以纸隔开；经纬生芳题文无叠图。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.18527723828993936,
+      "screenshot": "chapter-3-gap-02.jpg",
+      "screenshotSha256": "08be1c12c17af9c15e5ea28e12d56581664d74cc8787bf960bc60866aadb2c2e"
+    },
+    {
+      "kind": "gap",
+      "index": 3,
+      "id": "gap-03",
+      "note": "迎亲与器物地台自然过渡，案头清供短竖题居中；上部不加新主体。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.30891527606479746,
+      "screenshot": "chapter-3-gap-03.jpg",
+      "screenshotSha256": "f6056216ce0662e6cbf0cd3235ea94916d9e81363fbc5f9e6cc0ee56417fdcfa"
+    },
+    {
+      "kind": "gap",
+      "index": 4,
+      "id": "gap-04",
+      "note": "雪巷左边不再直切；门庭有喜短题居中，巷路/台阶低位承接。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.43273851796258755,
+      "screenshot": "chapter-3-gap-04.jpg",
+      "screenshotSha256": "ab9022a69954885494fb2992d37ba3a3f8d78444379fd421e3b5bc707a97e17e"
+    },
+    {
+      "kind": "gap",
+      "index": 5,
+      "id": "gap-05",
+      "note": "两端门屋内收，中锦架落地；尺素寄愿题文在锦架上方侧边，仍留顶部纸天。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.5569328988363655,
+      "screenshot": "chapter-3-gap-05.jpg",
+      "screenshotSha256": "3d6a30f807bdf07c7282c662b871d9b4d529646ab1cae3a535172fdb7eac70b1"
+    },
+    {
+      "kind": "gap",
+      "index": 6,
+      "id": "gap-06",
+      "note": "游花移除，日用见美题文清楚；地台和两端陈设形成低位连续。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.6811709334158138,
+      "screenshot": "chapter-3-gap-06.jpg",
+      "screenshotSha256": "ce237ef388c4851a1de196d468f8d0f893270e7dba205d0ee1a4ada43eccf306"
+    },
+    {
+      "kind": "gap",
+      "index": 7,
+      "id": "gap-07",
+      "note": "原上宫苑退役，工坊至文人之间由低院坪相接；雅意随身竖文与顶部留白分工清楚。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.8052932435579894,
+      "screenshot": "chapter-3-gap-07.jpg",
+      "screenshotSha256": "a3fb25f429bba80a2fd219b161a6ed73d7cd2467587fb9bbce9c7be31a23a8cb"
+    },
+    {
+      "kind": "gap",
+      "index": 8,
+      "id": "gap-08",
+      "note": "满城和乐竖文成立；左器物下重复山水有长水平硬顶边，需退役或真修。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "requires-fix",
+        "topBreathing": "passed",
+        "join": "requires-fix",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [
+        "v4-edge-02"
+      ],
+      "status": "requires-fix",
+      "progress": 0.9288563525873003,
+      "screenshot": "chapter-3-gap-08.jpg",
+      "screenshotSha256": "f7f4eb87ae989ba28b98257459f077e0fc49ef5a9f26ada110017aa12a096036"
+    },
+    {
+      "kind": "quarter",
+      "index": 1,
+      "id": "quarter-01",
+      "note": "原绣作顺势左出，右宫室刚入；屋檐留顶空，横向视口裁出正常。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.030854111077754785,
+      "screenshot": "chapter-3-quarter-01.jpg",
+      "screenshotSha256": "18114433fa193d520f25f3318613a412d5f63ef1406ee8aa51525db876cd78e8"
+    },
+    {
+      "kind": "quarter",
+      "index": 2,
+      "id": "quarter-02",
+      "note": "礼俗上层完整内收，左出图与右入图之间留纸，地坪贯通；未产生新的画内断边。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.09256233323326435,
+      "screenshot": "chapter-3-quarter-02.jpg",
+      "screenshotSha256": "5f165429f2238ff7a2cb75b255019b8354163a811467bc00dcac89837d446346"
+    },
+    {
+      "kind": "quarter",
+      "index": 3,
+      "id": "quarter-03",
+      "note": "完整宫室逐渐退出，锦架成为主陈设；纹样/织物轮廓清晰，细线消失。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.15434684130047926,
+      "screenshot": "chapter-3-quarter-03.jpg",
+      "screenshotSha256": "cfd741a756dea149cedec93ad79db8dee3c5fccf82317b1ba1a175da8c902389"
+    },
+    {
+      "kind": "quarter",
+      "index": 4,
+      "id": "quarter-04",
+      "note": "凤凰新娘进入，翼尖离上框；锦架与人物间有纸面分隔，残屏风不再竖切。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.21620763527939946,
+      "screenshot": "chapter-3-quarter-04.jpg",
+      "screenshotSha256": "b3c1de8da579370c49d7751eb7a86a87f7a1bc2c839f603fd8ef06ed26ec212d"
+    },
+    {
+      "kind": "quarter",
+      "index": 5,
+      "id": "quarter-05",
+      "note": "迎亲端部完整，人物/凤凰横向左出属于正常游观；器物地台低位过渡。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.27802665416682854,
+      "screenshot": "chapter-3-quarter-05.jpg",
+      "screenshotSha256": "fbbecf9c1f9b75ecbc323a88a37f128bf3be3384438a543db6a2584f0574aa83"
+    },
+    {
+      "kind": "quarter",
+      "index": 6,
+      "id": "quarter-06",
+      "note": "婚仪由右进入，顶部留纸，凤凰和礼队连成主叙事，前后景可辨。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.33980389796276644,
+      "screenshot": "chapter-3-quarter-06.jpg",
+      "screenshotSha256": "ab3ed5b12ded8a1ce8b1a1c62282bc38c826c6aa0a2c3edbee31c695089f10f8"
+    },
+    {
+      "kind": "quarter",
+      "index": 7,
+      "id": "quarter-07",
+      "note": "婚仪左出、雪巷将入，中央巷路及上方纸面连贯；没有高位新填充。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.40171551891166146,
+      "screenshot": "chapter-3-quarter-07.jpg",
+      "screenshotSha256": "0369b38f8c9bfad2d39a28046a528558d130ab573ba2737047a887b314c9cf23"
+    },
+    {
+      "kind": "quarter",
+      "index": 8,
+      "id": "quarter-08",
+      "note": "雪巷与门屋逐渐进入，原雪街左边得到轮廓修复；人物完整源衣摆随低地面展开。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.4637615170135136,
+      "screenshot": "chapter-3-quarter-08.jpg",
+      "screenshotSha256": "41d15da53bdcf78ba40a3e0fe05dd0c647f8e1b7fd95af8ffe5d2f78e1aace69"
+    },
+    {
+      "kind": "quarter",
+      "index": 9,
+      "id": "quarter-09",
+      "note": "门屋左出、锦架右入，主体离上框；织物清楚，正常视口出边不误判为素材截断。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.5258587074504026,
+      "screenshot": "chapter-3-quarter-09.jpg",
+      "screenshotSha256": "ff2dc0d5867bdf80e3098fb10c3dbee45c0ae323eab7377e499b772c4f9e59df"
+    },
+    {
+      "kind": "quarter",
+      "index": 10,
+      "id": "quarter-10",
+      "note": "绣作长幼群进入，亭屋和人物保持相对关系；锦架与低石坪过渡清楚。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.5880070902223286,
+      "screenshot": "chapter-3-quarter-10.jpg",
+      "screenshotSha256": "eb2a9227d6a35eb70d251400ddb57863dd1d46773b30083bc6ce872d900f06c6"
+    },
+    {
+      "kind": "quarter",
+      "index": 11,
+      "id": "quarter-11",
+      "note": "长幼群逐步左出，器用地台右入；上半保持较大气口。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.6501261075120527,
+      "screenshot": "chapter-3-quarter-11.jpg",
+      "screenshotSha256": "234448a2b733af7815cb55b4d8bd62ab9a5f3e7454e17b82c0dba478baaf0d6a"
+    },
+    {
+      "kind": "quarter",
+      "index": 12,
+      "id": "quarter-12",
+      "note": "镜台与工坊右入；镜台右足到工坊地台之间的纸沟可见，为同一待修接缝。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "requires-fix",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [
+        "v4-join-01"
+      ],
+      "status": "requires-fix",
+      "progress": 0.712215759319575,
+      "screenshot": "chapter-3-quarter-12.jpg",
+      "screenshotSha256": "07865b4d515879ebd53d7227e2ce66cffbb10675e73a8a45ab6d08fe04d017eb"
+    },
+    {
+      "kind": "quarter",
+      "index": 13,
+      "id": "quarter-13",
+      "note": "工坊逐渐左出，镜台右足接工坊的薄纸沟仍存在；顶空良好。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "requires-fix",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [
+        "v4-join-01"
+      ],
+      "status": "requires-fix",
+      "progress": 0.7742769143906628,
+      "screenshot": "chapter-3-quarter-13.jpg",
+      "screenshotSha256": "23b6264ca42311bb2ce3a8f01660d6e2b1361151119009ba8224efb549b62134"
+    },
+    {
+      "kind": "quarter",
+      "index": 14,
+      "id": "quarter-14",
+      "note": "文人/团扇进入，上方无重复仕女贴顶；左右视口自然出入。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "passed",
+        "topBreathing": "passed",
+        "join": "passed",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [],
+      "status": "passed",
+      "progress": 0.8363095727253158,
+      "screenshot": "chapter-3-quarter-14.jpg",
+      "screenshotSha256": "ffd6ec7819e84a4a9ed69ef263ecb9aed2244a829de095fdd18c22b5d08409ca"
+    },
+    {
+      "kind": "quarter",
+      "index": 15,
+      "id": "quarter-15",
+      "note": "文人和器物画组展开，重复山水上缘出现清楚画内水平直截，需修。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "requires-fix",
+        "topBreathing": "passed",
+        "join": "requires-fix",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [
+        "v4-edge-02"
+      ],
+      "status": "requires-fix",
+      "progress": 0.8980911272399713,
+      "screenshot": "chapter-3-quarter-15.jpg",
+      "screenshotSha256": "d65f7280953a6cadc6dfc4ca2451b6959662a7355d7f9ceb8491da7287d19611"
+    },
+    {
+      "kind": "quarter",
+      "index": 16,
+      "id": "quarter-16",
+      "note": "卷末场景从右入，母女和灯架顶部完整；左出重复山水的硬顶边仍明显。",
+      "reviewMethod": "individually-viewed-original-size",
+      "checks": {
+        "cutEdges": "requires-fix",
+        "topBreathing": "passed",
+        "join": "requires-fix",
+        "balance": "passed",
+        "typography": "passed-or-not-active-at-this-frame"
+      },
+      "openIssues": [
+        "v4-edge-02"
+      ],
+      "status": "requires-fix",
+      "progress": 0.9596215779346292,
+      "screenshot": "chapter-3-quarter-16.jpg",
+      "screenshotSha256": "ab61f7665b2f04aabfe2c0044d182ee5aa581cb7b012d85e5c51ad168e84306d"
+    }
+  ],
+  "captureSha256": "ad2b2d3ce9518338afb57c9fe703403426a3efba4356f0463a76ba3d6880554c",
+  "chapterSnapshotSha256": "fab72a71222cdaa96a56465f68970b75ed8b638471fa7a94eda037b16481f837"
+}

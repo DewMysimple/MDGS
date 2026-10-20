@@ -1,0 +1,6337 @@
+{
+  "chapter": 3,
+  "scope": "All original textured non-FONT chapter 3 meshes; broad untextured depth-writing environment; original manifest only. No reconstruction applied.",
+  "method": "UV triangles rasterized over original RGBA to 512px; omitted alpha is relative source mass, not proof of defect; internal axis lines sampled full resolution. Source-sharing groups need semantic/scene review. Camera looks toward -X; broad ground maximum X compared to all textured minimum X.",
+  "auditedTexturedMeshCount": 78,
+  "uniqueTextureCount": 72,
+  "candidateMeshCount": 5,
+  "rows": [
+    {
+      "name": "SC09_05_右侧山水城景.001",
+      "id": "c3-m-3e77817f3cad",
+      "textureId": "c3-t-3cd6680826ea7dbc",
+      "label": "C3-T062",
+      "sourceName": "3-9_05_右侧山水城景.png",
+      "texturePath": "public/assets/chapter-3/textures/3cd6680826ea7dbc.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          396.1853638,
+          440.1282043
+        ],
+        "nearestStop": {
+          "name": "SC08_阅读",
+          "frame": 5405,
+          "progress": 0.809952,
+          "index": 8,
+          "cameraAxisPosition": 418.996277
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "SC08_阅读",
+            "frame": 5405,
+            "progress": 0.809952,
+            "index": 8,
+            "cameraAxisPosition": 418.996277
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_09"
+      ],
+      "bounds": {
+        "min": [
+          -7.0278983,
+          396.1853638,
+          -4.8675241
+        ],
+        "max": [
+          -7.0278983,
+          440.1282043,
+          14.2099714
+        ]
+      },
+      "material": 86,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.08026218408865177,
+      "hardAxisBoundaryCandidates": [
+        {
+          "axis": "v",
+          "coordinate": 0.75,
+          "interval": [
+            0.5,
+            1.0
+          ],
+          "uvLength": 0.5,
+          "meanAlpha": 236.76271186440678,
+          "occupiedRatio": 0.9412429378531073,
+          "opaqueRatio": 0.9389830508474576
+        }
+      ],
+      "positionValues": 36,
+      "pendingVisualReview": true,
+      "diagnosticImage": "reports/reconstruction/chapter-3-geometry-review/c3-m-3e77817f3cad.png"
+    },
+    {
+      "name": "微信图片_20261016180912_185_1685",
+      "id": "c3-m-885c8a7d1b99",
+      "textureId": "c3-t-a41913e64fbb778c",
+      "label": "C3-T001",
+      "sourceName": "微信图片_20261016180912_185_1685.png",
+      "texturePath": "public/assets/chapter-3/textures/a41913e64fbb778c.webp",
+      "role": "中景承接层",
+      "treatment": "重生成",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          7.037221,
+          26.1164474
+        ],
+        "nearestStop": {
+          "name": "SC01_阅读",
+          "frame": 162,
+          "progress": 0.0241307,
+          "index": 1,
+          "cameraAxisPosition": -1.004433
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "SC01_阅读",
+            "frame": 162,
+            "progress": 0.0241307,
+            "index": 1,
+            "cameraAxisPosition": -1.004433
+          }
+        ]
+      },
+      "sourceCollections": [
+        "Scene Collection"
+      ],
+      "bounds": {
+        "min": [
+          -2.5531325,
+          7.037221,
+          -1.7120819
+        ],
+        "max": [
+          -2.5531306,
+          26.1164474,
+          21.3247452
+        ]
+      },
+      "material": 0,
+      "uvRange": [
+        0.0841758,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0695156061605861,
+      "hardAxisBoundaryCandidates": [
+        {
+          "axis": "u",
+          "coordinate": 0.09069,
+          "interval": [
+            0.5,
+            1.0
+          ],
+          "uvLength": 0.5,
+          "meanAlpha": 145.01972685887708,
+          "occupiedRatio": 0.6312594840667678,
+          "opaqueRatio": 0.5356600910470409
+        }
+      ],
+      "positionValues": 78,
+      "pendingVisualReview": true,
+      "diagnosticImage": "reports/reconstruction/chapter-3-geometry-review/c3-m-885c8a7d1b99.png"
+    },
+    {
+      "name": "SC02_03_右上仕女群",
+      "id": "c3-m-de3408ad8a8f",
+      "textureId": "c3-t-9a9479d09ece120b",
+      "label": "C3-T017",
+      "sourceName": "3-2_03_右上仕女群.png",
+      "texturePath": "public/assets/chapter-3/textures/9a9479d09ece120b.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          68.2145462,
+          73.6163712
+        ],
+        "nearestStop": {
+          "name": "SC02_阅读",
+          "frame": 834,
+          "progress": 0.1248501,
+          "index": 2,
+          "cameraAxisPosition": 58.995567
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "SC02_阅读",
+            "frame": 834,
+            "progress": 0.1248501,
+            "index": 2,
+            "cameraAxisPosition": 58.995567
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_02"
+      ],
+      "bounds": {
+        "min": [
+          0.0268669,
+          68.2145462,
+          13.612709
+        ],
+        "max": [
+          0.0268669,
+          73.6163712,
+          19.4440289
+        ]
+      },
+      "material": 41,
+      "uvRange": [
+        0.0,
+        0.25,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.3619543261308175,
+      "hardAxisBoundaryCandidates": [
+        {
+          "axis": "v",
+          "coordinate": 0.3125,
+          "interval": [
+            0.25,
+            0.5
+          ],
+          "uvLength": 0.25,
+          "meanAlpha": 252.5487804878049,
+          "occupiedRatio": 1.0,
+          "opaqueRatio": 1.0
+        }
+      ],
+      "positionValues": 102,
+      "pendingVisualReview": true,
+      "diagnosticImage": "reports/reconstruction/chapter-3-geometry-review/c3-m-de3408ad8a8f.png"
+    },
+    {
+      "name": "SC02_06_上方人物背景",
+      "id": "c3-m-f449c3cfe037",
+      "textureId": "c3-t-e03e5d2e5d7c3372",
+      "label": "C3-T015",
+      "sourceName": "3-2_06_上方人物背景.png",
+      "texturePath": "public/assets/chapter-3/textures/e03e5d2e5d7c3372.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          39.8925171,
+          80.331131
+        ],
+        "nearestStop": {
+          "name": "SC02_阅读",
+          "frame": 834,
+          "progress": 0.1248501,
+          "index": 2,
+          "cameraAxisPosition": 58.995567
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "SC02_阅读",
+            "frame": 834,
+            "progress": 0.1248501,
+            "index": 2,
+            "cameraAxisPosition": 58.995567
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_02"
+      ],
+      "bounds": {
+        "min": [
+          -7.8507848,
+          39.8925171,
+          11.6875324
+        ],
+        "max": [
+          -7.8507848,
+          80.331131,
+          22.4723949
+        ]
+      },
+      "material": 39,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.030563202611400147,
+      "hardAxisBoundaryCandidates": [
+        {
+          "axis": "u",
+          "coordinate": 0.875,
+          "interval": [
+            0.125,
+            0.25
+          ],
+          "uvLength": 0.125,
+          "meanAlpha": 252.63768115942028,
+          "occupiedRatio": 1.0,
+          "opaqueRatio": 1.0
+        }
+      ],
+      "positionValues": 93,
+      "pendingVisualReview": true,
+      "diagnosticImage": "reports/reconstruction/chapter-3-geometry-review/c3-m-f449c3cfe037.png"
+    },
+    {
+      "name": "SC05_01_两盏花灯",
+      "id": "c3-m-3c3a40323c54",
+      "textureId": "c3-t-49efdde0a4453d39",
+      "label": "C3-T036",
+      "sourceName": "3-5_01_两盏花灯.png",
+      "texturePath": "public/assets/chapter-3/textures/49efdde0a4453d39.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          238.2709198,
+          239.9509277
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          5,
+          5
+        ],
+        "associatedStops": [
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_05"
+      ],
+      "bounds": {
+        "min": [
+          6.0,
+          238.2709198,
+          8.400568
+        ],
+        "max": [
+          6.0,
+          239.9509277,
+          13.8368473
+        ]
+      },
+      "material": 60,
+      "uvRange": [
+        0.0,
+        0.0,
+        0.5,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.6195016967537423,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 42,
+      "pendingVisualReview": true,
+      "diagnosticImage": "reports/reconstruction/chapter-3-geometry-review/c3-m-3c3a40323c54.png"
+    },
+    {
+      "name": "微信图片_20261016180044_182_1685",
+      "id": "c3-m-52d463742f74",
+      "textureId": "c3-t-91feb9903181a4d6",
+      "label": "C3-T002",
+      "sourceName": "微信图片_20261016180044_182_1685.png",
+      "texturePath": "public/assets/chapter-3/textures/91feb9903181a4d6.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          43.4167061,
+          76.512558
+        ],
+        "nearestStop": {
+          "name": "SC02_阅读",
+          "frame": 834,
+          "progress": 0.1248501,
+          "index": 2,
+          "cameraAxisPosition": 58.995567
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "SC02_阅读",
+            "frame": 834,
+            "progress": 0.1248501,
+            "index": 2,
+            "cameraAxisPosition": 58.995567
+          }
+        ]
+      },
+      "sourceCollections": [
+        "Scene Collection"
+      ],
+      "bounds": {
+        "min": [
+          8.8859949,
+          43.4167061,
+          5.4311748
+        ],
+        "max": [
+          8.8859968,
+          76.512558,
+          14.8108063
+        ]
+      },
+      "material": 1,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "微信图片_20261016180044_183_1685",
+      "id": "c3-m-a76bc3194cfd",
+      "textureId": "c3-t-c529c3ba0a061e67",
+      "label": "C3-T003",
+      "sourceName": "微信图片_20261016180044_183_1685.png",
+      "texturePath": "public/assets/chapter-3/textures/c529c3ba0a061e67.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          44.7891769,
+          54.1537704
+        ],
+        "nearestStop": {
+          "name": "SC02_阅读",
+          "frame": 834,
+          "progress": 0.1248501,
+          "index": 2,
+          "cameraAxisPosition": 58.995567
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "SC02_阅读",
+            "frame": 834,
+            "progress": 0.1248501,
+            "index": 2,
+            "cameraAxisPosition": 58.995567
+          }
+        ]
+      },
+      "sourceCollections": [
+        "Scene Collection"
+      ],
+      "bounds": {
+        "min": [
+          8.8139362,
+          44.7891769,
+          7.890728
+        ],
+        "max": [
+          8.8139362,
+          54.1537704,
+          12.804924
+        ]
+      },
+      "material": 2,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "09_红圈桌子与桌面陈设_组合",
+      "id": "c3-m-30d3b9140574",
+      "textureId": "c3-t-1e031046fe9c495c",
+      "label": "C3-T004",
+      "sourceName": "09_红圈桌子与桌面陈设_组合.png",
+      "texturePath": "public/assets/chapter-3/textures/1e031046fe9c495c.webp",
+      "role": "中景承接层",
+      "treatment": "重生成",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          236.8660889,
+          248.0084229
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          5,
+          5
+        ],
+        "associatedStops": [
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          }
+        ]
+      },
+      "sourceCollections": [
+        "Scene Collection"
+      ],
+      "bounds": {
+        "min": [
+          7.7066374,
+          236.8660889,
+          2.3871496
+        ],
+        "max": [
+          7.7066383,
+          248.0084229,
+          7.375638
+        ]
+      },
+      "material": 3,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "04_中部织锦飘带",
+      "id": "c3-m-a32217e72ce0",
+      "textureId": "c3-t-8818501ede5169de",
+      "label": "C3-T005",
+      "sourceName": "04_中部织锦飘带.png",
+      "texturePath": "public/assets/chapter-3/textures/8818501ede5169de.webp",
+      "role": "动效层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          351.1625671,
+          368.6756897
+        ],
+        "nearestStop": {
+          "name": "SC07_阅读",
+          "frame": 4421,
+          "progress": 0.66247,
+          "index": 7,
+          "cameraAxisPosition": 358.996277
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "SC07_阅读",
+            "frame": 4421,
+            "progress": 0.66247,
+            "index": 7,
+            "cameraAxisPosition": 358.996277
+          }
+        ]
+      },
+      "sourceCollections": [
+        "Scene Collection"
+      ],
+      "bounds": {
+        "min": [
+          2.4853182,
+          351.1625671,
+          5.8627162
+        ],
+        "max": [
+          2.4853191,
+          368.6756897,
+          14.7635307
+        ]
+      },
+      "material": 4,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "04_中部织锦飘带.001",
+      "id": "c3-m-ea7f27bcdadd",
+      "textureId": "c3-t-8818501ede5169de",
+      "label": "C3-T005",
+      "sourceName": "04_中部织锦飘带.png",
+      "texturePath": "public/assets/chapter-3/textures/8818501ede5169de.webp",
+      "role": "动效层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          344.9176941,
+          362.7110291
+        ],
+        "nearestStop": {
+          "name": "SC07_阅读",
+          "frame": 4421,
+          "progress": 0.66247,
+          "index": 7,
+          "cameraAxisPosition": 358.996277
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "SC07_阅读",
+            "frame": 4421,
+            "progress": 0.66247,
+            "index": 7,
+            "cameraAxisPosition": 358.996277
+          }
+        ]
+      },
+      "sourceCollections": [
+        "Scene Collection"
+      ],
+      "bounds": {
+        "min": [
+          2.4853182,
+          344.9176941,
+          4.4294071
+        ],
+        "max": [
+          2.4853191,
+          362.7110291,
+          22.8644581
+        ]
+      },
+      "material": 4,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "08_左下人物建筑背景",
+      "id": "c3-m-775c7d1723cc",
+      "textureId": "c3-t-9f82d44b781d0eca",
+      "label": "C3-T006",
+      "sourceName": "08_左下人物建筑背景.png",
+      "texturePath": "public/assets/chapter-3/textures/9f82d44b781d0eca.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          39.6312447,
+          60.5792351
+        ],
+        "nearestStop": {
+          "name": "SC02_阅读",
+          "frame": 834,
+          "progress": 0.1248501,
+          "index": 2,
+          "cameraAxisPosition": 58.995567
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "SC02_阅读",
+            "frame": 834,
+            "progress": 0.1248501,
+            "index": 2,
+            "cameraAxisPosition": 58.995567
+          }
+        ]
+      },
+      "sourceCollections": [
+        "Scene Collection"
+      ],
+      "bounds": {
+        "min": [
+          -6.7169614,
+          39.6312447,
+          -2.3851547
+        ],
+        "max": [
+          -6.7169604,
+          60.5792351,
+          9.4502687
+        ]
+      },
+      "material": 5,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "微信图片_20261018204717_340_1685",
+      "id": "c3-m-33734db5e421",
+      "textureId": "c3-t-5c1633ce7e71649c",
+      "label": "C3-T007",
+      "sourceName": "微信图片_20261018204717_340_1685.png",
+      "texturePath": "public/assets/chapter-3/textures/5c1633ce7e71649c.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          417.5195923,
+          437.7738037
+        ],
+        "nearestStop": {
+          "name": "SC08_阅读",
+          "frame": 5405,
+          "progress": 0.809952,
+          "index": 8,
+          "cameraAxisPosition": 418.996277
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "SC08_阅读",
+            "frame": 5405,
+            "progress": 0.809952,
+            "index": 8,
+            "cameraAxisPosition": 418.996277
+          }
+        ]
+      },
+      "sourceCollections": [
+        "Scene Collection"
+      ],
+      "bounds": {
+        "min": [
+          -6.0751963,
+          417.5195923,
+          2.5064406
+        ],
+        "max": [
+          -6.0751953,
+          437.7738037,
+          13.9826756
+        ]
+      },
+      "material": 6,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "微信图片_20261018204724_341_1685",
+      "id": "c3-m-e644a99a6fb4",
+      "textureId": "c3-t-c9fa7b56cf27db3e",
+      "label": "C3-T008",
+      "sourceName": "微信图片_20261018204724_341_1685.png",
+      "texturePath": "public/assets/chapter-3/textures/c9fa7b56cf27db3e.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          423.0817871,
+          431.6955566
+        ],
+        "nearestStop": {
+          "name": "SC08_阅读",
+          "frame": 5405,
+          "progress": 0.809952,
+          "index": 8,
+          "cameraAxisPosition": 418.996277
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "SC08_阅读",
+            "frame": 5405,
+            "progress": 0.809952,
+            "index": 8,
+            "cameraAxisPosition": 418.996277
+          }
+        ]
+      },
+      "sourceCollections": [
+        "Scene Collection"
+      ],
+      "bounds": {
+        "min": [
+          -5.4083672,
+          423.0817871,
+          3.4538019
+        ],
+        "max": [
+          -5.4083662,
+          431.6955566,
+          9.1963034
+        ]
+      },
+      "material": 7,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC01_03_中央园林楼阁",
+      "id": "c3-m-acfee472a01f",
+      "textureId": "c3-t-1d4ff980b443534a",
+      "label": "C3-T009",
+      "sourceName": "3-1_03_中央园林楼阁.png",
+      "texturePath": "public/assets/chapter-3/textures/1d4ff980b443534a.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -20.1689186,
+          11.9692373
+        ],
+        "nearestStop": {
+          "name": "SC01_阅读",
+          "frame": 162,
+          "progress": 0.0241307,
+          "index": 1,
+          "cameraAxisPosition": -1.004433
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "SC01_阅读",
+            "frame": 162,
+            "progress": 0.0241307,
+            "index": 1,
+            "cameraAxisPosition": -1.004433
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_01"
+      ],
+      "bounds": {
+        "min": [
+          -5.2920275,
+          -20.1689186,
+          5.0231996
+        ],
+        "max": [
+          -5.2920275,
+          11.9692373,
+          20.3724766
+        ]
+      },
+      "material": 32,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC01_02_中央双仕女",
+      "id": "c3-m-8e725c25bffc",
+      "textureId": "c3-t-59fcf93cccb75495",
+      "label": "C3-T010",
+      "sourceName": "3-1_02_中央双仕女.png",
+      "texturePath": "public/assets/chapter-3/textures/59fcf93cccb75495.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -3.3704967,
+          7.1645212
+        ],
+        "nearestStop": {
+          "name": "SC01_阅读",
+          "frame": 162,
+          "progress": 0.0241307,
+          "index": 1,
+          "cameraAxisPosition": -1.004433
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "SC01_阅读",
+            "frame": 162,
+            "progress": 0.0241307,
+            "index": 1,
+            "cameraAxisPosition": -1.004433
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_01"
+      ],
+      "bounds": {
+        "min": [
+          -1.0537705,
+          -3.3704967,
+          1.6612558
+        ],
+        "max": [
+          -1.0537705,
+          7.1645212,
+          13.5624342
+        ]
+      },
+      "material": 33,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC01_04_绣娘与绣品",
+      "id": "c3-m-40c177a26812",
+      "textureId": "c3-t-9ddb633ccf7e3e5f",
+      "label": "C3-T011",
+      "sourceName": "3-1_04_绣娘与绣品.png",
+      "texturePath": "public/assets/chapter-3/textures/9ddb633ccf7e3e5f.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          4.4632015,
+          14.1807613
+        ],
+        "nearestStop": {
+          "name": "SC01_阅读",
+          "frame": 162,
+          "progress": 0.0241307,
+          "index": 1,
+          "cameraAxisPosition": -1.004433
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "SC01_阅读",
+            "frame": 162,
+            "progress": 0.0241307,
+            "index": 1,
+            "cameraAxisPosition": -1.004433
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_01"
+      ],
+      "bounds": {
+        "min": [
+          1.5713048,
+          4.4632015,
+          2.1770573
+        ],
+        "max": [
+          1.5713048,
+          14.1807613,
+          12.5672503
+        ]
+      },
+      "material": 34,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC01_05_绘瓷工匠与牡丹瓷瓶",
+      "id": "c3-m-b03de35da4e9",
+      "textureId": "c3-t-ed7fc3beba98461a",
+      "label": "C3-T012",
+      "sourceName": "3-1_05_绘瓷工匠与牡丹瓷瓶.png",
+      "texturePath": "public/assets/chapter-3/textures/ed7fc3beba98461a.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          12.201499,
+          18.2103615
+        ],
+        "nearestStop": {
+          "name": "SC01_阅读",
+          "frame": 162,
+          "progress": 0.0241307,
+          "index": 1,
+          "cameraAxisPosition": -1.004433
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "SC01_阅读",
+            "frame": 162,
+            "progress": 0.0241307,
+            "index": 1,
+            "cameraAxisPosition": -1.004433
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_01"
+      ],
+      "bounds": {
+        "min": [
+          2.23088,
+          12.201499,
+          2.5808182
+        ],
+        "max": [
+          2.23088,
+          18.2103615,
+          11.3348484
+        ]
+      },
+      "material": 35,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC01_01_左侧仕女与牡丹",
+      "id": "c3-m-ea669eef844d",
+      "textureId": "c3-t-81bf959bb3545a50",
+      "label": "C3-T013",
+      "sourceName": "3-1_01_左侧仕女与牡丹.png",
+      "texturePath": "public/assets/chapter-3/textures/81bf959bb3545a50.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -16.1568565,
+          4.799222
+        ],
+        "nearestStop": {
+          "name": "SC01_阅读",
+          "frame": 162,
+          "progress": 0.0241307,
+          "index": 1,
+          "cameraAxisPosition": -1.004433
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "SC01_阅读",
+            "frame": 162,
+            "progress": 0.0241307,
+            "index": 1,
+            "cameraAxisPosition": -1.004433
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_01"
+      ],
+      "bounds": {
+        "min": [
+          6.6460657,
+          -16.1568565,
+          -0.4140544
+        ],
+        "max": [
+          6.6460657,
+          4.799222,
+          13.5339413
+        ]
+      },
+      "material": 36,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC01_06_织物与器物陈列",
+      "id": "c3-m-0af824c3640d",
+      "textureId": "c3-t-e652089b754c9941",
+      "label": "C3-T014",
+      "sourceName": "3-1_06_织物与器物陈列.png",
+      "texturePath": "public/assets/chapter-3/textures/e652089b754c9941.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -1.7308822,
+          14.1204586
+        ],
+        "nearestStop": {
+          "name": "SC01_阅读",
+          "frame": 162,
+          "progress": 0.0241307,
+          "index": 1,
+          "cameraAxisPosition": -1.004433
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "SC01_阅读",
+            "frame": 162,
+            "progress": 0.0241307,
+            "index": 1,
+            "cameraAxisPosition": -1.004433
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_01"
+      ],
+      "bounds": {
+        "min": [
+          10.805357,
+          -1.7308822,
+          -0.4367642
+        ],
+        "max": [
+          10.805357,
+          14.1204586,
+          7.2823243
+        ]
+      },
+      "material": 37,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC02_02_上方宫廷仕女群",
+      "id": "c3-m-18a3a5da13bd",
+      "textureId": "c3-t-4b2adf3adb641113",
+      "label": "C3-T016",
+      "sourceName": "3-2_02_上方宫廷仕女群.png",
+      "texturePath": "public/assets/chapter-3/textures/4b2adf3adb641113.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          45.4818954,
+          57.485939
+        ],
+        "nearestStop": {
+          "name": "SC02_阅读",
+          "frame": 834,
+          "progress": 0.1248501,
+          "index": 2,
+          "cameraAxisPosition": 58.995567
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "SC02_阅读",
+            "frame": 834,
+            "progress": 0.1248501,
+            "index": 2,
+            "cameraAxisPosition": 58.995567
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_02"
+      ],
+      "bounds": {
+        "min": [
+          -2.2238908,
+          45.4818954,
+          11.8500786
+        ],
+        "max": [
+          -2.2238908,
+          57.485939,
+          19.7355461
+        ]
+      },
+      "material": 40,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC02_05_右下街景",
+      "id": "c3-m-8f6a7d64c937",
+      "textureId": "c3-t-83ceb6f4d22b9ce1",
+      "label": "C3-T018",
+      "sourceName": "3-2_05_右下街景.png",
+      "texturePath": "public/assets/chapter-3/textures/83ceb6f4d22b9ce1.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          51.0151596,
+          79.4011154
+        ],
+        "nearestStop": {
+          "name": "SC02_阅读",
+          "frame": 834,
+          "progress": 0.1248501,
+          "index": 2,
+          "cameraAxisPosition": 58.995567
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "SC02_阅读",
+            "frame": 834,
+            "progress": 0.1248501,
+            "index": 2,
+            "cameraAxisPosition": 58.995567
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_02"
+      ],
+      "bounds": {
+        "min": [
+          -4.4746485,
+          51.0151596,
+          -0.7744389
+        ],
+        "max": [
+          -4.4746485,
+          79.4011154,
+          9.8544149
+        ]
+      },
+      "material": 42,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC02_04_左下婚礼市集人物",
+      "id": "c3-m-807ca6a19106",
+      "textureId": "c3-t-97a53003209fdb60",
+      "label": "C3-T019",
+      "sourceName": "3-2_04_左下婚礼市集人物.png",
+      "texturePath": "public/assets/chapter-3/textures/97a53003209fdb60.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          44.6400185,
+          50.9694786
+        ],
+        "nearestStop": {
+          "name": "SC02_阅读",
+          "frame": 834,
+          "progress": 0.1248501,
+          "index": 2,
+          "cameraAxisPosition": 58.995567
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "SC02_阅读",
+            "frame": 834,
+            "progress": 0.1248501,
+            "index": 2,
+            "cameraAxisPosition": 58.995567
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_02"
+      ],
+      "bounds": {
+        "min": [
+          1.1522458,
+          44.6400185,
+          0.341531
+        ],
+        "max": [
+          1.1522458,
+          50.9694786,
+          7.8771257
+        ]
+      },
+      "material": 43,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC03_07-left-room-background",
+      "id": "c3-m-614c185a9b11",
+      "textureId": "c3-t-4d097defdb313a71",
+      "label": "C3-T020",
+      "sourceName": "3-3_07-left-room-background.png",
+      "texturePath": "public/assets/chapter-3/textures/4d097defdb313a71.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          99.0959091,
+          118.1449966
+        ],
+        "nearestStop": {
+          "name": "SC03_阅读",
+          "frame": 1516,
+          "progress": 0.2270683,
+          "index": 3,
+          "cameraAxisPosition": 118.994301
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "SC03_阅读",
+            "frame": 1516,
+            "progress": 0.2270683,
+            "index": 3,
+            "cameraAxisPosition": 118.994301
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_03"
+      ],
+      "bounds": {
+        "min": [
+          -6.0,
+          99.0959091,
+          -4.3755035
+        ],
+        "max": [
+          -6.0,
+          118.1449966,
+          24.142437
+        ]
+      },
+      "material": 44,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC03_04-procession",
+      "id": "c3-m-8aada9250c84",
+      "textureId": "c3-t-f37e3725a4c7d197",
+      "label": "C3-T021",
+      "sourceName": "3-3_04-procession.png",
+      "texturePath": "public/assets/chapter-3/textures/f37e3725a4c7d197.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          117.4363098,
+          138.0539856
+        ],
+        "nearestStop": {
+          "name": "SC03_阅读",
+          "frame": 1516,
+          "progress": 0.2270683,
+          "index": 3,
+          "cameraAxisPosition": 118.994301
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "SC03_阅读",
+            "frame": 1516,
+            "progress": 0.2270683,
+            "index": 3,
+            "cameraAxisPosition": 118.994301
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_03"
+      ],
+      "bounds": {
+        "min": [
+          -4.0,
+          117.4363098,
+          2.4111619
+        ],
+        "max": [
+          -4.0,
+          138.0539856,
+          15.0077934
+        ]
+      },
+      "material": 45,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC03_06-left-maidens",
+      "id": "c3-m-7c7a5fb92987",
+      "textureId": "c3-t-39b8219e0845a808",
+      "label": "C3-T022",
+      "sourceName": "3-3_06-left-maidens.png",
+      "texturePath": "public/assets/chapter-3/textures/39b8219e0845a808.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          98.0123291,
+          114.444046
+        ],
+        "nearestStop": {
+          "name": "SC03_阅读",
+          "frame": 1516,
+          "progress": 0.2270683,
+          "index": 3,
+          "cameraAxisPosition": 118.994301
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "SC03_阅读",
+            "frame": 1516,
+            "progress": 0.2270683,
+            "index": 3,
+            "cameraAxisPosition": 118.994301
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_03"
+      ],
+      "bounds": {
+        "min": [
+          -1.0,
+          98.0123291,
+          0.6587605
+        ],
+        "max": [
+          -1.0,
+          114.444046,
+          13.60355
+        ]
+      },
+      "material": 46,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC03_02-phoenix",
+      "id": "c3-m-2585bba3614c",
+      "textureId": "c3-t-4ccdb1fda6d78ab5",
+      "label": "C3-T023",
+      "sourceName": "3-3_02-phoenix.png",
+      "texturePath": "public/assets/chapter-3/textures/4ccdb1fda6d78ab5.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          107.2228928,
+          125.556633
+        ],
+        "nearestStop": {
+          "name": "SC03_阅读",
+          "frame": 1516,
+          "progress": 0.2270683,
+          "index": 3,
+          "cameraAxisPosition": 118.994301
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "SC03_阅读",
+            "frame": 1516,
+            "progress": 0.2270683,
+            "index": 3,
+            "cameraAxisPosition": 118.994301
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_03"
+      ],
+      "bounds": {
+        "min": [
+          1.0,
+          107.2228928,
+          5.0717802
+        ],
+        "max": [
+          1.0,
+          125.556633,
+          21.0826912
+        ]
+      },
+      "material": 47,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC03_01-bride-and-train",
+      "id": "c3-m-994026bbb7ee",
+      "textureId": "c3-t-24f22f5460a7d151",
+      "label": "C3-T024",
+      "sourceName": "3-3_01-bride-and-train.png",
+      "texturePath": "public/assets/chapter-3/textures/24f22f5460a7d151.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          104.5389175,
+          132.084198
+        ],
+        "nearestStop": {
+          "name": "SC03_阅读",
+          "frame": 1516,
+          "progress": 0.2270683,
+          "index": 3,
+          "cameraAxisPosition": 118.994301
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "SC03_阅读",
+            "frame": 1516,
+            "progress": 0.2270683,
+            "index": 3,
+            "cameraAxisPosition": 118.994301
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_03"
+      ],
+      "bounds": {
+        "min": [
+          5.0,
+          104.5389175,
+          -1.7632875
+        ],
+        "max": [
+          5.0,
+          132.084198,
+          16.5942116
+        ]
+      },
+      "material": 48,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC03_05-peony-cluster",
+      "id": "c3-m-f8fbf4ffe201",
+      "textureId": "c3-t-18c9303e96188728",
+      "label": "C3-T025",
+      "sourceName": "3-3_05-peony-cluster.png",
+      "texturePath": "public/assets/chapter-3/textures/18c9303e96188728.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          121.8830795,
+          135.1420288
+        ],
+        "nearestStop": {
+          "name": "SC03_阅读",
+          "frame": 1516,
+          "progress": 0.2270683,
+          "index": 3,
+          "cameraAxisPosition": 118.994301
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "SC03_阅读",
+            "frame": 1516,
+            "progress": 0.2270683,
+            "index": 3,
+            "cameraAxisPosition": 118.994301
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_03"
+      ],
+      "bounds": {
+        "min": [
+          8.0,
+          121.8830795,
+          1.4630625
+        ],
+        "max": [
+          8.0,
+          135.1420288,
+          8.5608845
+        ]
+      },
+      "material": 49,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC03_03-text-panel",
+      "id": "c3-m-f0ab62135c5f",
+      "textureId": "c3-t-94fe9d9ea08a13a1",
+      "label": "C3-T026",
+      "sourceName": "3-3_03-text-panel.png",
+      "texturePath": "public/assets/chapter-3/textures/94fe9d9ea08a13a1.webp",
+      "role": "中景承接层",
+      "treatment": "修复",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          123.7551041,
+          133.6685791
+        ],
+        "nearestStop": {
+          "name": "SC03_阅读",
+          "frame": 1516,
+          "progress": 0.2270683,
+          "index": 3,
+          "cameraAxisPosition": 118.994301
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "SC03_阅读",
+            "frame": 1516,
+            "progress": 0.2270683,
+            "index": 3,
+            "cameraAxisPosition": 118.994301
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_03"
+      ],
+      "bounds": {
+        "min": [
+          3.0,
+          123.7551041,
+          11.6138277
+        ],
+        "max": [
+          3.0,
+          133.6685791,
+          17.5110703
+        ]
+      },
+      "material": 50,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC04_06_左上背景",
+      "id": "c3-m-63e6c81a223b",
+      "textureId": "c3-t-c4f79bf42704a722",
+      "label": "C3-T027",
+      "sourceName": "3-4_06_左上背景.png",
+      "texturePath": "public/assets/chapter-3/textures/c4f79bf42704a722.webp",
+      "role": "后景连续层",
+      "treatment": "修复",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          156.8448639,
+          184.8694305
+        ],
+        "nearestStop": {
+          "name": "SC04_阅读",
+          "frame": 2212,
+          "progress": 0.3313849,
+          "index": 4,
+          "cameraAxisPosition": 178.994293
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "SC04_阅读",
+            "frame": 2212,
+            "progress": 0.3313849,
+            "index": 4,
+            "cameraAxisPosition": 178.994293
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_04"
+      ],
+      "bounds": {
+        "min": [
+          -7.0,
+          156.8448639,
+          8.5296822
+        ],
+        "max": [
+          -7.0,
+          184.8694305,
+          22.5788898
+        ]
+      },
+      "material": 51,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC04_07_右下背景",
+      "id": "c3-m-92e643c6deb6",
+      "textureId": "c3-t-1230ebfeb1a44fa5",
+      "label": "C3-T028",
+      "sourceName": "3-4_07_右下背景.png",
+      "texturePath": "public/assets/chapter-3/textures/1230ebfeb1a44fa5.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          177.2858582,
+          198.8951416
+        ],
+        "nearestStop": {
+          "name": "SC04_阅读",
+          "frame": 2212,
+          "progress": 0.3313849,
+          "index": 4,
+          "cameraAxisPosition": 178.994293
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "SC04_阅读",
+            "frame": 2212,
+            "progress": 0.3313849,
+            "index": 4,
+            "cameraAxisPosition": 178.994293
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_04"
+      ],
+      "bounds": {
+        "min": [
+          -6.1518078,
+          177.2858582,
+          -2.0940032
+        ],
+        "max": [
+          -6.1518078,
+          198.8951416,
+          12.085247
+        ]
+      },
+      "material": 52,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC04_01_上方婚礼室内",
+      "id": "c3-m-9a05fa21d83a",
+      "textureId": "c3-t-fb2e333036e9514a",
+      "label": "C3-T029",
+      "sourceName": "3-4_01_上方婚礼室内.png",
+      "texturePath": "public/assets/chapter-3/textures/fb2e333036e9514a.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          164.6762085,
+          178.7170105
+        ],
+        "nearestStop": {
+          "name": "SC04_阅读",
+          "frame": 2212,
+          "progress": 0.3313849,
+          "index": 4,
+          "cameraAxisPosition": 178.994293
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "SC04_阅读",
+            "frame": 2212,
+            "progress": 0.3313849,
+            "index": 4,
+            "cameraAxisPosition": 178.994293
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_04"
+      ],
+      "bounds": {
+        "min": [
+          -1.0,
+          164.6762085,
+          9.5905361
+        ],
+        "max": [
+          -1.0,
+          178.7170105,
+          17.3510609
+        ]
+      },
+      "material": 53,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC04_04_右下迎亲队伍",
+      "id": "c3-m-60ad76643b0b",
+      "textureId": "c3-t-9a1a9454ee937cb3",
+      "label": "C3-T030",
+      "sourceName": "3-4_04_右下迎亲队伍.png",
+      "texturePath": "public/assets/chapter-3/textures/9a1a9454ee937cb3.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          176.1400757,
+          195.3129883
+        ],
+        "nearestStop": {
+          "name": "SC04_阅读",
+          "frame": 2212,
+          "progress": 0.3313849,
+          "index": 4,
+          "cameraAxisPosition": 178.994293
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "SC04_阅读",
+            "frame": 2212,
+            "progress": 0.3313849,
+            "index": 4,
+            "cameraAxisPosition": 178.994293
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_04"
+      ],
+      "bounds": {
+        "min": [
+          0.1518078,
+          176.1400757,
+          -1.8527555
+        ],
+        "max": [
+          0.1518078,
+          195.3129883,
+          7.8590927
+        ]
+      },
+      "material": 54,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC04_03_左下婚礼陈设",
+      "id": "c3-m-a311b3d57399",
+      "textureId": "c3-t-958197b0523ab723",
+      "label": "C3-T031",
+      "sourceName": "3-4_03_左下婚礼陈设.png",
+      "texturePath": "public/assets/chapter-3/textures/958197b0523ab723.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          165.3925171,
+          177.6696777
+        ],
+        "nearestStop": {
+          "name": "SC04_阅读",
+          "frame": 2212,
+          "progress": 0.3313849,
+          "index": 4,
+          "cameraAxisPosition": 178.994293
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "SC04_阅读",
+            "frame": 2212,
+            "progress": 0.3313849,
+            "index": 4,
+            "cameraAxisPosition": 178.994293
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_04"
+      ],
+      "bounds": {
+        "min": [
+          8.1233101,
+          165.3925171,
+          0.9444876
+        ],
+        "max": [
+          8.1233101,
+          177.6696777,
+          7.618948
+        ]
+      },
+      "material": 55,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC04_02_中央凤凰牡丹",
+      "id": "c3-m-63a57a416de2",
+      "textureId": "c3-t-4b28c0629de94d6e",
+      "label": "C3-T032",
+      "sourceName": "3-4_02_中央凤凰牡丹.png",
+      "texturePath": "public/assets/chapter-3/textures/4b28c0629de94d6e.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          164.5588989,
+          185.6184998
+        ],
+        "nearestStop": {
+          "name": "SC04_阅读",
+          "frame": 2212,
+          "progress": 0.3313849,
+          "index": 4,
+          "cameraAxisPosition": 178.994293
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "SC04_阅读",
+            "frame": 2212,
+            "progress": 0.3313849,
+            "index": 4,
+            "cameraAxisPosition": 178.994293
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_04"
+      ],
+      "bounds": {
+        "min": [
+          8.5342178,
+          164.5588989,
+          2.5782394
+        ],
+        "max": [
+          8.5342178,
+          185.6184998,
+          14.6050186
+        ]
+      },
+      "material": 56,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC04_05_右侧文字面板",
+      "id": "c3-m-f23cccb83614",
+      "textureId": "c3-t-53454d322a279b44",
+      "label": "C3-T033",
+      "sourceName": "3-4_05_右侧文字面板.png",
+      "texturePath": "public/assets/chapter-3/textures/53454d322a279b44.webp",
+      "role": "中景承接层",
+      "treatment": "修复",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          186.6266174,
+          196.4121399
+        ],
+        "nearestStop": {
+          "name": "SC04_阅读",
+          "frame": 2212,
+          "progress": 0.3313849,
+          "index": 4,
+          "cameraAxisPosition": 178.994293
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "SC04_阅读",
+            "frame": 2212,
+            "progress": 0.3313849,
+            "index": 4,
+            "cameraAxisPosition": 178.994293
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_04"
+      ],
+      "bounds": {
+        "min": [
+          4.0,
+          186.6266174,
+          10.3240919
+        ],
+        "max": [
+          4.0,
+          196.4121399,
+          18.5806198
+        ]
+      },
+      "material": 57,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC05_07_完整背景房屋_补全",
+      "id": "c3-m-eba57053a5ad",
+      "textureId": "c3-t-533f477dfa306cab",
+      "label": "C3-T034",
+      "sourceName": "3-5_07_完整背景房屋_补全.png",
+      "texturePath": "public/assets/chapter-3/textures/533f477dfa306cab.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          234.7896271,
+          262.8798218
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          5,
+          5
+        ],
+        "associatedStops": [
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_05"
+      ],
+      "bounds": {
+        "min": [
+          -5.0,
+          234.7896271,
+          -0.7091322
+        ],
+        "max": [
+          -5.0,
+          262.8798218,
+          23.7558517
+        ]
+      },
+      "material": 58,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC05_08_左下街景_重做",
+      "id": "c3-m-0941dbe80902",
+      "textureId": "c3-t-3518a8dbd9573481",
+      "label": "C3-T035",
+      "sourceName": "3-5_08_左下街景_重做.png",
+      "texturePath": "public/assets/chapter-3/textures/3518a8dbd9573481.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          220.5132751,
+          237.8703918
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          5,
+          5
+        ],
+        "associatedStops": [
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_05"
+      ],
+      "bounds": {
+        "min": [
+          -7.0,
+          220.5132751,
+          -3.4261088
+        ],
+        "max": [
+          -7.0,
+          237.8703918,
+          15.605545
+        ]
+      },
+      "material": 59,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC05_02_左侧人物_补全",
+      "id": "c3-m-305f1aa8ab22",
+      "textureId": "c3-t-814ab5088c363731",
+      "label": "C3-T037",
+      "sourceName": "3-5_02_左侧人物_补全.png",
+      "texturePath": "public/assets/chapter-3/textures/814ab5088c363731.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          235.5148468,
+          238.9828949
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          5,
+          5
+        ],
+        "associatedStops": [
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_05"
+      ],
+      "bounds": {
+        "min": [
+          -0.0,
+          235.5148468,
+          1.4835882
+        ],
+        "max": [
+          -0.0,
+          238.9828949,
+          9.8587389
+        ]
+      },
+      "material": 61,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC05_03_中央人物与飘带_补全",
+      "id": "c3-m-ceaef6438edb",
+      "textureId": "c3-t-5ecb5e691910ec53",
+      "label": "C3-T038",
+      "sourceName": "3-5_03_中央人物与飘带_补全.png",
+      "texturePath": "public/assets/chapter-3/textures/5ecb5e691910ec53.webp",
+      "role": "动效层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          236.6257629,
+          245.6564941
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          5,
+          5
+        ],
+        "associatedStops": [
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_05"
+      ],
+      "bounds": {
+        "min": [
+          3.0,
+          236.6257629,
+          -2.5837417
+        ],
+        "max": [
+          3.0,
+          245.6564941,
+          10.1268139
+        ]
+      },
+      "material": 62,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC05_04_右侧人物_补全",
+      "id": "c3-m-ecd9001b3c2d",
+      "textureId": "c3-t-57148a9a6a64ebf3",
+      "label": "C3-T039",
+      "sourceName": "3-5_04_右侧人物_补全.png",
+      "texturePath": "public/assets/chapter-3/textures/57148a9a6a64ebf3.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          242.7461243,
+          254.8572083
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          5,
+          5
+        ],
+        "associatedStops": [
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_05"
+      ],
+      "bounds": {
+        "min": [
+          3.4000001,
+          242.7461243,
+          -8.905756
+        ],
+        "max": [
+          3.4000001,
+          254.8572083,
+          12.567112
+        ]
+      },
+      "material": 63,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC05_06_右下牡丹花丛_补全",
+      "id": "c3-m-b454595c2737",
+      "textureId": "c3-t-f24338909a9d9ac7",
+      "label": "C3-T040",
+      "sourceName": "3-5_06_右下牡丹花丛_补全.png",
+      "texturePath": "public/assets/chapter-3/textures/f24338909a9d9ac7.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          245.4964752,
+          253.1630096
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          5,
+          5
+        ],
+        "associatedStops": [
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_05"
+      ],
+      "bounds": {
+        "min": [
+          9.0,
+          245.4964752,
+          -0.1288965
+        ],
+        "max": [
+          9.0,
+          253.1630096,
+          6.2142935
+        ]
+      },
+      "material": 64,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC05_通道左上花灯",
+      "id": "c3-m-7817d107879e",
+      "textureId": "c3-t-49efdde0a4453d39",
+      "label": "C3-T036",
+      "sourceName": "3-5_01_两盏花灯.png",
+      "texturePath": "public/assets/chapter-3/textures/49efdde0a4453d39.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          233.5400085,
+          234.6600037
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          5,
+          5
+        ],
+        "associatedStops": [
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_05"
+      ],
+      "bounds": {
+        "min": [
+          48.0,
+          233.5400085,
+          11.3939533
+        ],
+        "max": [
+          48.0,
+          234.6600037,
+          13.2060471
+        ]
+      },
+      "material": 60,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC05_通道右下花枝",
+      "id": "c3-m-67d556d4d466",
+      "textureId": "c3-t-f24338909a9d9ac7",
+      "label": "C3-T040",
+      "sourceName": "3-5_06_右下牡丹花丛_补全.png",
+      "texturePath": "public/assets/chapter-3/textures/f24338909a9d9ac7.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          237.0749969,
+          238.9250031
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          5,
+          5
+        ],
+        "associatedStops": [
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_05"
+      ],
+      "bounds": {
+        "min": [
+          48.0,
+          237.0749969,
+          7.9846687
+        ],
+        "max": [
+          48.0,
+          238.9250031,
+          9.5153313
+        ]
+      },
+      "material": 64,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC06_02_左上建筑",
+      "id": "c3-m-0e0631f7c6ad",
+      "textureId": "c3-t-dd50c9a80d828d98",
+      "label": "C3-T041",
+      "sourceName": "3-6_02_左上建筑.png",
+      "texturePath": "public/assets/chapter-3/textures/dd50c9a80d828d98.webp",
+      "role": "主体叙事层",
+      "treatment": "重生成",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          274.9133911,
+          303.7543335
+        ],
+        "nearestStop": {
+          "name": "SC06_阅读",
+          "frame": 3590,
+          "progress": 0.5379197,
+          "index": 6,
+          "cameraAxisPosition": 298.993042
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_06"
+      ],
+      "bounds": {
+        "min": [
+          -5.0,
+          274.9133911,
+          2.1019411
+        ],
+        "max": [
+          -5.0,
+          303.7543335,
+          20.4621544
+        ]
+      },
+      "material": 65,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC06_05_中上山水建筑风景",
+      "id": "c3-m-85ce709417c9",
+      "textureId": "c3-t-304327b502f2355a",
+      "label": "C3-T042",
+      "sourceName": "3-6_05_中上山水建筑风景.png",
+      "texturePath": "public/assets/chapter-3/textures/304327b502f2355a.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          291.5666809,
+          319.4333191
+        ],
+        "nearestStop": {
+          "name": "SC06_阅读",
+          "frame": 3590,
+          "progress": 0.5379197,
+          "index": 6,
+          "cameraAxisPosition": 298.993042
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_06"
+      ],
+      "bounds": {
+        "min": [
+          -7.0,
+          291.5666809,
+          5.2681322
+        ],
+        "max": [
+          -7.0,
+          319.4333191,
+          15.969367
+        ]
+      },
+      "material": 66,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC06_04_中间人物组合",
+      "id": "c3-m-8bb7439f4449",
+      "textureId": "c3-t-6aef3fac4801ccf0",
+      "label": "C3-T043",
+      "sourceName": "3-6_04_中间人物组合.png",
+      "texturePath": "public/assets/chapter-3/textures/6aef3fac4801ccf0.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          296.1375122,
+          308.1095581
+        ],
+        "nearestStop": {
+          "name": "SC06_阅读",
+          "frame": 3590,
+          "progress": 0.5379197,
+          "index": 6,
+          "cameraAxisPosition": 298.993042
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_06"
+      ],
+      "bounds": {
+        "min": [
+          0.0,
+          296.1375122,
+          2.0379195
+        ],
+        "max": [
+          0.0,
+          308.1095581,
+          10.3174992
+        ]
+      },
+      "material": 67,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC06_06_右侧人物桌屏组合",
+      "id": "c3-m-155c9780fcc2",
+      "textureId": "c3-t-583b6af1a9a2de95",
+      "label": "C3-T044",
+      "sourceName": "3-6_06_右侧人物桌屏组合.png",
+      "texturePath": "public/assets/chapter-3/textures/583b6af1a9a2de95.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          302.944458,
+          318.3621826
+        ],
+        "nearestStop": {
+          "name": "SC06_阅读",
+          "frame": 3590,
+          "progress": 0.5379197,
+          "index": 6,
+          "cameraAxisPosition": 298.993042
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_06"
+      ],
+      "bounds": {
+        "min": [
+          -0.505376,
+          302.944458,
+          1.7567258
+        ],
+        "max": [
+          -0.505376,
+          318.3621826,
+          11.5457745
+        ]
+      },
+      "material": 68,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC06_01_左下人物桌案组合",
+      "id": "c3-m-cede50df84ac",
+      "textureId": "c3-t-f15a946476cb1339",
+      "label": "C3-T045",
+      "sourceName": "3-6_01_左下人物桌案组合.png",
+      "texturePath": "public/assets/chapter-3/textures/f15a946476cb1339.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          284.4411316,
+          297.6411438
+        ],
+        "nearestStop": {
+          "name": "SC06_阅读",
+          "frame": 3590,
+          "progress": 0.5379197,
+          "index": 6,
+          "cameraAxisPosition": 298.993042
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_06"
+      ],
+      "bounds": {
+        "min": [
+          3.0,
+          284.4411316,
+          0.8553987
+        ],
+        "max": [
+          3.0,
+          297.6411438,
+          13.3355827
+        ]
+      },
+      "material": 69,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC06_03_中下花卉花瓶",
+      "id": "c3-m-7998380bf05e",
+      "textureId": "c3-t-19923bfd82433769",
+      "label": "C3-T046",
+      "sourceName": "3-6_03_中下花卉花瓶.png",
+      "texturePath": "public/assets/chapter-3/textures/19923bfd82433769.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          293.9078064,
+          302.7077942
+        ],
+        "nearestStop": {
+          "name": "SC06_阅读",
+          "frame": 3590,
+          "progress": 0.5379197,
+          "index": 6,
+          "cameraAxisPosition": 298.993042
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_06"
+      ],
+      "bounds": {
+        "min": [
+          8.0,
+          293.9078064,
+          0.640044
+        ],
+        "max": [
+          8.0,
+          302.7077942,
+          5.7509375
+        ]
+      },
+      "material": 70,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC06_07_右下花丛",
+      "id": "c3-m-feb56f066635",
+      "textureId": "c3-t-3f777fca4edbbc31",
+      "label": "C3-T047",
+      "sourceName": "3-6_07_右下花丛.png",
+      "texturePath": "public/assets/chapter-3/textures/3f777fca4edbbc31.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          303.3229675,
+          313.5577698
+        ],
+        "nearestStop": {
+          "name": "SC06_阅读",
+          "frame": 3590,
+          "progress": 0.5379197,
+          "index": 6,
+          "cameraAxisPosition": 298.993042
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_06"
+      ],
+      "bounds": {
+        "min": [
+          6.0,
+          303.3229675,
+          1.200784
+        ],
+        "max": [
+          6.0,
+          313.5577698,
+          5.9703941
+        ]
+      },
+      "material": 71,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC06_16_红色灯笼",
+      "id": "c3-m-986618e490da",
+      "textureId": "c3-t-1217d0b1e19eea1c",
+      "label": "C3-T048",
+      "sourceName": "3-6_单件细分备份_16_红色灯笼.png",
+      "texturePath": "public/assets/chapter-3/textures/1217d0b1e19eea1c.webp",
+      "role": "动效层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          293.867981,
+          294.9320068
+        ],
+        "nearestStop": {
+          "name": "SC06_阅读",
+          "frame": 3590,
+          "progress": 0.5379197,
+          "index": 6,
+          "cameraAxisPosition": 298.993042
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_06"
+      ],
+      "bounds": {
+        "min": [
+          6.0,
+          293.867981,
+          13.7342806
+        ],
+        "max": [
+          6.0,
+          294.9320068,
+          16.9757195
+        ]
+      },
+      "material": 72,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC06_19_中景飞燕",
+      "id": "c3-m-e6b41e9d2cfc",
+      "textureId": "c3-t-8c1af851b8e924b2",
+      "label": "C3-T049",
+      "sourceName": "3-6_单件细分备份_19_中景飞燕.png",
+      "texturePath": "public/assets/chapter-3/textures/8c1af851b8e924b2.webp",
+      "role": "动效层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          298.7733154,
+          300.6133423
+        ],
+        "nearestStop": {
+          "name": "SC06_阅读",
+          "frame": 3590,
+          "progress": 0.5379197,
+          "index": 6,
+          "cameraAxisPosition": 298.993042
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_06"
+      ],
+      "bounds": {
+        "min": [
+          2.0,
+          298.7733154,
+          14.5396996
+        ],
+        "max": [
+          2.0,
+          300.6133423,
+          15.8103008
+        ]
+      },
+      "material": 73,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC06_20_右侧飞燕",
+      "id": "c3-m-89526869fdf3",
+      "textureId": "c3-t-006a07da853a67ff",
+      "label": "C3-T050",
+      "sourceName": "3-6_单件细分备份_20_右侧飞燕.png",
+      "texturePath": "public/assets/chapter-3/textures/006a07da853a67ff.webp",
+      "role": "动效层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          312.8799744,
+          314.7200012
+        ],
+        "nearestStop": {
+          "name": "SC06_阅读",
+          "frame": 3590,
+          "progress": 0.5379197,
+          "index": 6,
+          "cameraAxisPosition": 298.993042
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_06"
+      ],
+      "bounds": {
+        "min": [
+          2.0,
+          312.8799744,
+          11.6408806
+        ],
+        "max": [
+          2.0,
+          314.7200012,
+          13.1891193
+        ]
+      },
+      "material": 74,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC06_25_题词文字",
+      "id": "c3-m-65e759fc17b9",
+      "textureId": "c3-t-ebdc2f7634867a75",
+      "label": "C3-T051",
+      "sourceName": "3-6_单件细分备份_25_题词文字.png",
+      "texturePath": "public/assets/chapter-3/textures/ebdc2f7634867a75.webp",
+      "role": "中景承接层",
+      "treatment": "修复",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          301.6133423,
+          313.0533447
+        ],
+        "nearestStop": {
+          "name": "SC06_阅读",
+          "frame": 3590,
+          "progress": 0.5379197,
+          "index": 6,
+          "cameraAxisPosition": 298.993042
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_06"
+      ],
+      "bounds": {
+        "min": [
+          4.0,
+          301.6133423,
+          13.9765673
+        ],
+        "max": [
+          4.0,
+          313.0533447,
+          17.9034328
+        ]
+      },
+      "material": 75,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC06_26_朱红印章",
+      "id": "c3-m-c713afff064e",
+      "textureId": "c3-t-7a42f54cb9924ea7",
+      "label": "C3-T052",
+      "sourceName": "3-6_单件细分备份_26_朱红印章.png",
+      "texturePath": "public/assets/chapter-3/textures/7a42f54cb9924ea7.webp",
+      "role": "中景承接层",
+      "treatment": "修复",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          313.2724304,
+          313.6529236
+        ],
+        "nearestStop": {
+          "name": "SC06_阅读",
+          "frame": 3590,
+          "progress": 0.5379197,
+          "index": 6,
+          "cameraAxisPosition": 298.993042
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_06"
+      ],
+      "bounds": {
+        "min": [
+          4.0999999,
+          313.2724304,
+          14.688199
+        ],
+        "max": [
+          4.0999999,
+          313.6529236,
+          15.1893015
+        ]
+      },
+      "material": 76,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC06_通道左上花灯",
+      "id": "c3-m-76c92bd221b2",
+      "textureId": "c3-t-1217d0b1e19eea1c",
+      "label": "C3-T048",
+      "sourceName": "3-6_单件细分备份_16_红色灯笼.png",
+      "texturePath": "public/assets/chapter-3/textures/1217d0b1e19eea1c.webp",
+      "role": "动效层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          293.5400085,
+          294.6600037
+        ],
+        "nearestStop": {
+          "name": "SC06_阅读",
+          "frame": 3590,
+          "progress": 0.5379197,
+          "index": 6,
+          "cameraAxisPosition": 298.993042
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_06"
+      ],
+      "bounds": {
+        "min": [
+          48.0,
+          293.5400085,
+          9.89398
+        ],
+        "max": [
+          48.0,
+          294.6600037,
+          13.3060207
+        ]
+      },
+      "material": 72,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC06_通道右下花枝",
+      "id": "c3-m-6458aa576c50",
+      "textureId": "c3-t-3873a127c345f851",
+      "label": "C3-T053",
+      "sourceName": "3-6_单件细分备份_18_右下牡丹花束.png",
+      "texturePath": "public/assets/chapter-3/textures/3873a127c345f851.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          342.628479,
+          354.0909424
+        ],
+        "nearestStop": {
+          "name": "SC07_阅读",
+          "frame": 4421,
+          "progress": 0.66247,
+          "index": 7,
+          "cameraAxisPosition": 358.996277
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "SC07_阅读",
+            "frame": 4421,
+            "progress": 0.66247,
+            "index": 7,
+            "cameraAxisPosition": 358.996277
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_06"
+      ],
+      "bounds": {
+        "min": [
+          -0.2071886,
+          342.628479,
+          11.5269365
+        ],
+        "max": [
+          -0.2071886,
+          354.0909424,
+          22.1392632
+        ]
+      },
+      "material": 77,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC06_07_右下花丛.001",
+      "id": "c3-m-c223a7759bd9",
+      "textureId": "c3-t-3f777fca4edbbc31",
+      "label": "C3-T047",
+      "sourceName": "3-6_07_右下花丛.png",
+      "texturePath": "public/assets/chapter-3/textures/3f777fca4edbbc31.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          351.6365967,
+          361.3880005
+        ],
+        "nearestStop": {
+          "name": "SC07_阅读",
+          "frame": 4421,
+          "progress": 0.66247,
+          "index": 7,
+          "cameraAxisPosition": 358.996277
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "SC07_阅读",
+            "frame": 4421,
+            "progress": 0.66247,
+            "index": 7,
+            "cameraAxisPosition": 358.996277
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_06"
+      ],
+      "bounds": {
+        "min": [
+          -3.4456806,
+          351.6365967,
+          15.7982883
+        ],
+        "max": [
+          -3.4456806,
+          361.3880005,
+          21.5052776
+        ]
+      },
+      "material": 71,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC07_02_上方宫苑场景",
+      "id": "c3-m-67916943b3e5",
+      "textureId": "c3-t-7e6b36fea7f43225",
+      "label": "C3-T054",
+      "sourceName": "3-7_02_上方宫苑场景.png",
+      "texturePath": "public/assets/chapter-3/textures/7e6b36fea7f43225.webp",
+      "role": "主体叙事层",
+      "treatment": "修复",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          354.4057617,
+          377.0432739
+        ],
+        "nearestStop": {
+          "name": "SC07_阅读",
+          "frame": 4421,
+          "progress": 0.66247,
+          "index": 7,
+          "cameraAxisPosition": 358.996277
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "SC07_阅读",
+            "frame": 4421,
+            "progress": 0.66247,
+            "index": 7,
+            "cameraAxisPosition": 358.996277
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_07"
+      ],
+      "bounds": {
+        "min": [
+          -4.0,
+          354.4057617,
+          12.5995035
+        ],
+        "max": [
+          -4.0,
+          377.0432739,
+          24.308548
+        ]
+      },
+      "material": 78,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC07_03_右下作坊场景",
+      "id": "c3-m-75c6ca400ed2",
+      "textureId": "c3-t-f9e38d50177588e0",
+      "label": "C3-T055",
+      "sourceName": "3-7_03_右下作坊场景.png",
+      "texturePath": "public/assets/chapter-3/textures/f9e38d50177588e0.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          358.1653137,
+          376.6549988
+        ],
+        "nearestStop": {
+          "name": "SC07_阅读",
+          "frame": 4421,
+          "progress": 0.66247,
+          "index": 7,
+          "cameraAxisPosition": 358.996277
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "SC07_阅读",
+            "frame": 4421,
+            "progress": 0.66247,
+            "index": 7,
+            "cameraAxisPosition": 358.996277
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_07"
+      ],
+      "bounds": {
+        "min": [
+          0.0,
+          358.1653137,
+          0.2244487
+        ],
+        "max": [
+          0.0,
+          376.6549988,
+          10.6353703
+        ]
+      },
+      "material": 79,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC07_01_左侧镜台陈设",
+      "id": "c3-m-dadbc82d128c",
+      "textureId": "c3-t-13949918854e0319",
+      "label": "C3-T056",
+      "sourceName": "3-7_01_左侧镜台陈设.png",
+      "texturePath": "public/assets/chapter-3/textures/13949918854e0319.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          344.2946777,
+          361.2521973
+        ],
+        "nearestStop": {
+          "name": "SC07_阅读",
+          "frame": 4421,
+          "progress": 0.66247,
+          "index": 7,
+          "cameraAxisPosition": 358.996277
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "SC07_阅读",
+            "frame": 4421,
+            "progress": 0.66247,
+            "index": 7,
+            "cameraAxisPosition": 358.996277
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_07"
+      ],
+      "bounds": {
+        "min": [
+          6.0,
+          344.2946777,
+          1.9791002
+        ],
+        "max": [
+          6.0,
+          361.2521973,
+          16.3182907
+        ]
+      },
+      "material": 80,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC08_01_牡丹圆屏",
+      "id": "c3-m-50dab75f7c24",
+      "textureId": "c3-t-8cb33b18b7dc6463",
+      "label": "C3-T057",
+      "sourceName": "3-8_01_牡丹圆屏.png",
+      "texturePath": "public/assets/chapter-3/textures/8cb33b18b7dc6463.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          415.9434509,
+          427.032196
+        ],
+        "nearestStop": {
+          "name": "SC08_阅读",
+          "frame": 5405,
+          "progress": 0.809952,
+          "index": 8,
+          "cameraAxisPosition": 418.996277
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "SC08_阅读",
+            "frame": 5405,
+            "progress": 0.809952,
+            "index": 8,
+            "cameraAxisPosition": 418.996277
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_08"
+      ],
+      "bounds": {
+        "min": [
+          -3.5011499,
+          415.9434509,
+          8.9034224
+        ],
+        "max": [
+          -3.5011499,
+          427.032196,
+          20.4109993
+        ]
+      },
+      "material": 81,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC08_02_右上婚礼陈设",
+      "id": "c3-m-b5a177b2ee2a",
+      "textureId": "c3-t-a2803f8781b149d0",
+      "label": "C3-T058",
+      "sourceName": "3-8_02_右上婚礼陈设.png",
+      "texturePath": "public/assets/chapter-3/textures/a2803f8781b149d0.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          423.5429382,
+          439.506134
+        ],
+        "nearestStop": {
+          "name": "SC08_阅读",
+          "frame": 5405,
+          "progress": 0.809952,
+          "index": 8,
+          "cameraAxisPosition": 418.996277
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "SC08_阅读",
+            "frame": 5405,
+            "progress": 0.809952,
+            "index": 8,
+            "cameraAxisPosition": 418.996277
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_08"
+      ],
+      "bounds": {
+        "min": [
+          -8.086895,
+          423.5429382,
+          10.3510885
+        ],
+        "max": [
+          -8.086895,
+          439.506134,
+          20.1556702
+        ]
+      },
+      "material": 82,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC08_05_右下游园人群",
+      "id": "c3-m-0681a78630aa",
+      "textureId": "c3-t-fc218e68490ff2b8",
+      "label": "C3-T059",
+      "sourceName": "3-8_05_右下游园人群.png",
+      "texturePath": "public/assets/chapter-3/textures/fc218e68490ff2b8.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          416.1371765,
+          445.9468079
+        ],
+        "nearestStop": {
+          "name": "SC08_阅读",
+          "frame": 5405,
+          "progress": 0.809952,
+          "index": 8,
+          "cameraAxisPosition": 418.996277
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "SC08_阅读",
+            "frame": 5405,
+            "progress": 0.809952,
+            "index": 8,
+            "cameraAxisPosition": 418.996277
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_08"
+      ],
+      "bounds": {
+        "min": [
+          -5.0,
+          416.1371765,
+          -1.5363326
+        ],
+        "max": [
+          -5.0,
+          445.9468079,
+          11.7969933
+        ]
+      },
+      "material": 83,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC08_06_首饰与罐盒组合",
+      "id": "c3-m-d603da2ffea6",
+      "textureId": "c3-t-ab80087c2d829f8b",
+      "label": "C3-T060",
+      "sourceName": "3-8_06_首饰与罐盒组合.png",
+      "texturePath": "public/assets/chapter-3/textures/ab80087c2d829f8b.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          432.4970703,
+          443.2475586
+        ],
+        "nearestStop": {
+          "name": "SC08_阅读",
+          "frame": 5405,
+          "progress": 0.809952,
+          "index": 8,
+          "cameraAxisPosition": 418.996277
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "SC08_阅读",
+            "frame": 5405,
+            "progress": 0.809952,
+            "index": 8,
+            "cameraAxisPosition": 418.996277
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_08"
+      ],
+      "bounds": {
+        "min": [
+          -3.7660995,
+          432.4970703,
+          7.2430162
+        ],
+        "max": [
+          -3.7660995,
+          443.2475586,
+          13.7292509
+        ]
+      },
+      "material": 84,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC08_03_书案人物",
+      "id": "c3-m-8ecc061b7c20",
+      "textureId": "c3-t-fb9271c21ca2ebf7",
+      "label": "C3-T061",
+      "sourceName": "3-8_03_书案人物.png",
+      "texturePath": "public/assets/chapter-3/textures/fb9271c21ca2ebf7.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          404.6830139,
+          419.5465393
+        ],
+        "nearestStop": {
+          "name": "SC08_阅读",
+          "frame": 5405,
+          "progress": 0.809952,
+          "index": 8,
+          "cameraAxisPosition": 418.996277
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "SC08_阅读",
+            "frame": 5405,
+            "progress": 0.809952,
+            "index": 8,
+            "cameraAxisPosition": 418.996277
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_08"
+      ],
+      "bounds": {
+        "min": [
+          5.0,
+          404.6830139,
+          0.8860989
+        ],
+        "max": [
+          5.0,
+          419.5465393,
+          11.576623
+        ]
+      },
+      "material": 85,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC09_05_右侧山水城景",
+      "id": "c3-m-3420590e9251",
+      "textureId": "c3-t-3cd6680826ea7dbc",
+      "label": "C3-T062",
+      "sourceName": "3-9_05_右侧山水城景.png",
+      "texturePath": "public/assets/chapter-3/textures/3cd6680826ea7dbc.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          469.0879822,
+          506.5293884
+        ],
+        "nearestStop": {
+          "name": "SC09_阅读",
+          "frame": 6339,
+          "progress": 0.94994,
+          "index": 9,
+          "cameraAxisPosition": 479.000946
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_09"
+      ],
+      "bounds": {
+        "min": [
+          -7.0278983,
+          469.0879822,
+          -0.7047596
+        ],
+        "max": [
+          -7.0278983,
+          506.5293884,
+          15.5501976
+        ]
+      },
+      "material": 86,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC09_01_上方左侧花市",
+      "id": "c3-m-884683da4593",
+      "textureId": "c3-t-a6c07f40736213d1",
+      "label": "C3-T063",
+      "sourceName": "3-9_01_上方左侧花市.png",
+      "texturePath": "public/assets/chapter-3/textures/a6c07f40736213d1.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          458.351532,
+          475.7081604
+        ],
+        "nearestStop": {
+          "name": "SC09_阅读",
+          "frame": 6339,
+          "progress": 0.94994,
+          "index": 9,
+          "cameraAxisPosition": 479.000946
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_09"
+      ],
+      "bounds": {
+        "min": [
+          -0.2392296,
+          458.351532,
+          11.2619629
+        ],
+        "max": [
+          -0.2392296,
+          475.7081604,
+          24.2886238
+        ]
+      },
+      "material": 87,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC09_02_上方人物花木",
+      "id": "c3-m-077d479c4216",
+      "textureId": "c3-t-7b42f72344b00179",
+      "label": "C3-T064",
+      "sourceName": "3-9_02_上方人物花木.png",
+      "texturePath": "public/assets/chapter-3/textures/7b42f72344b00179.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          472.2573242,
+          486.7014771
+        ],
+        "nearestStop": {
+          "name": "SC09_阅读",
+          "frame": 6339,
+          "progress": 0.94994,
+          "index": 9,
+          "cameraAxisPosition": 479.000946
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_09"
+      ],
+      "bounds": {
+        "min": [
+          0.100204,
+          472.2573242,
+          12.2531776
+        ],
+        "max": [
+          0.100204,
+          486.7014771,
+          21.8421516
+        ]
+      },
+      "material": 88,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC09_04_左下书画场景",
+      "id": "c3-m-4b419d6e527a",
+      "textureId": "c3-t-3ae5c390bc94e86d",
+      "label": "C3-T065",
+      "sourceName": "3-9_04_左下书画场景.png",
+      "texturePath": "public/assets/chapter-3/textures/3ae5c390bc94e86d.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          458.3154297,
+          482.0109863
+        ],
+        "nearestStop": {
+          "name": "SC09_阅读",
+          "frame": 6339,
+          "progress": 0.94994,
+          "index": 9,
+          "cameraAxisPosition": 479.000946
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_09"
+      ],
+      "bounds": {
+        "min": [
+          2.0236599,
+          458.3154297,
+          -1.2826571
+        ],
+        "max": [
+          2.0236599,
+          482.0109863,
+          14.4473763
+        ]
+      },
+      "material": 89,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC09_06_下方游行市集",
+      "id": "c3-m-107780e71632",
+      "textureId": "c3-t-30829768cdc8536f",
+      "label": "C3-T066",
+      "sourceName": "3-9_06_下方游行市集.png",
+      "texturePath": "public/assets/chapter-3/textures/30829768cdc8536f.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          474.8143311,
+          492.449585
+        ],
+        "nearestStop": {
+          "name": "SC09_阅读",
+          "frame": 6339,
+          "progress": 0.94994,
+          "index": 9,
+          "cameraAxisPosition": 479.000946
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_09"
+      ],
+      "bounds": {
+        "min": [
+          2.5943928,
+          474.8143311,
+          -3.7753594
+        ],
+        "max": [
+          2.5943928,
+          492.449585,
+          7.781991
+        ]
+      },
+      "material": 90,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC09_03_中心牡丹",
+      "id": "c3-m-b2581c6e31d0",
+      "textureId": "c3-t-d46a557d655983c1",
+      "label": "C3-T067",
+      "sourceName": "3-9_03_中心牡丹.png",
+      "texturePath": "public/assets/chapter-3/textures/d46a557d655983c1.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          472.3435669,
+          485.8560181
+        ],
+        "nearestStop": {
+          "name": "SC09_阅读",
+          "frame": 6339,
+          "progress": 0.94994,
+          "index": 9,
+          "cameraAxisPosition": 479.000946
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_09"
+      ],
+      "bounds": {
+        "min": [
+          7.6808844,
+          472.3435669,
+          4.6743073
+        ],
+        "max": [
+          7.6808844,
+          485.8560181,
+          13.891098
+        ]
+      },
+      "material": 91,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC09_07_飘带_左侧横向",
+      "id": "c3-m-763ae418101e",
+      "textureId": "c3-t-6f9ae9110c306c23",
+      "label": "C3-T068",
+      "sourceName": "3-9_07_飘带_左侧横向.png",
+      "texturePath": "public/assets/chapter-3/textures/6f9ae9110c306c23.webp",
+      "role": "动效层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          460.6100159,
+          479.1271057
+        ],
+        "nearestStop": {
+          "name": "SC09_阅读",
+          "frame": 6339,
+          "progress": 0.94994,
+          "index": 9,
+          "cameraAxisPosition": 479.000946
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_09"
+      ],
+      "bounds": {
+        "min": [
+          3.0,
+          460.6100159,
+          7.5888796
+        ],
+        "max": [
+          3.0,
+          479.1271057,
+          14.1347494
+        ]
+      },
+      "material": 92,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC09_08_飘带_上左卷曲",
+      "id": "c3-m-becbb22f4fba",
+      "textureId": "c3-t-015512b5db7f2ffe",
+      "label": "C3-T069",
+      "sourceName": "3-9_08_飘带_上左卷曲.png",
+      "texturePath": "public/assets/chapter-3/textures/015512b5db7f2ffe.webp",
+      "role": "动效层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          470.4596863,
+          480.01474
+        ],
+        "nearestStop": {
+          "name": "SC09_阅读",
+          "frame": 6339,
+          "progress": 0.94994,
+          "index": 9,
+          "cameraAxisPosition": 479.000946
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_09"
+      ],
+      "bounds": {
+        "min": [
+          2.0236599,
+          470.4596863,
+          9.6873293
+        ],
+        "max": [
+          2.0236599,
+          480.01474,
+          21.0584946
+        ]
+      },
+      "material": 93,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC09_09_飘带_上右卷曲",
+      "id": "c3-m-431dee5b814c",
+      "textureId": "c3-t-459734fa198e0bc0",
+      "label": "C3-T070",
+      "sourceName": "3-9_09_飘带_上右卷曲.png",
+      "texturePath": "public/assets/chapter-3/textures/459734fa198e0bc0.webp",
+      "role": "动效层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          481.3591003,
+          487.9413147
+        ],
+        "nearestStop": {
+          "name": "SC09_阅读",
+          "frame": 6339,
+          "progress": 0.94994,
+          "index": 9,
+          "cameraAxisPosition": 479.000946
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_09"
+      ],
+      "bounds": {
+        "min": [
+          2.5,
+          481.3591003,
+          9.1727858
+        ],
+        "max": [
+          2.5,
+          487.9413147,
+          19.3063736
+        ]
+      },
+      "material": 94,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC09_10_飘带_左下延展",
+      "id": "c3-m-371464c6141d",
+      "textureId": "c3-t-02ee08a6834ac48e",
+      "label": "C3-T071",
+      "sourceName": "3-9_10_飘带_左下延展.png",
+      "texturePath": "public/assets/chapter-3/textures/02ee08a6834ac48e.webp",
+      "role": "动效层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          468.8613892,
+          485.2033691
+        ],
+        "nearestStop": {
+          "name": "SC09_阅读",
+          "frame": 6339,
+          "progress": 0.94994,
+          "index": 9,
+          "cameraAxisPosition": 479.000946
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_09"
+      ],
+      "bounds": {
+        "min": [
+          3.6076829,
+          468.8613892,
+          -0.8378166
+        ],
+        "max": [
+          3.6076829,
+          485.2033691,
+          9.891983
+        ]
+      },
+      "material": 95,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "SC09_11_飘带_右下延展",
+      "id": "c3-m-65b551453722",
+      "textureId": "c3-t-42d56ee6b5ac2234",
+      "label": "C3-T072",
+      "sourceName": "3-9_11_飘带_右下延展.png",
+      "texturePath": "public/assets/chapter-3/textures/42d56ee6b5ac2234.webp",
+      "role": "动效层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          472.9559021,
+          499.3228455
+        ],
+        "nearestStop": {
+          "name": "SC09_阅读",
+          "frame": 6339,
+          "progress": 0.94994,
+          "index": 9,
+          "cameraAxisPosition": 479.000946
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "sourceCollections": [
+        "SC_09"
+      ],
+      "bounds": {
+        "min": [
+          4.2865496,
+          472.9559021,
+          0.3253603
+        ],
+        "max": [
+          4.2865496,
+          499.3228455,
+          14.567028
+        ]
+      },
+      "material": 96,
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    }
+  ],
+  "sourceSharingGroups": [
+    {
+      "texturePath": "public/assets/chapter-3/textures/8818501ede5169de.webp",
+      "label": "C3-T005",
+      "members": [
+        "04_中部织锦飘带",
+        "04_中部织锦飘带.001"
+      ],
+      "individualOmittedAlpha": {
+        "04_中部织锦飘带": 0.0,
+        "04_中部织锦飘带.001": 0.0
+      },
+      "unionOmittedAlpha": 0.0,
+      "pairs": [
+        {
+          "a": "04_中部织锦飘带",
+          "b": "04_中部织锦飘带.001",
+          "sharedSourceAlphaRatio": 1.0
+        }
+      ]
+    },
+    {
+      "texturePath": "public/assets/chapter-3/textures/49efdde0a4453d39.webp",
+      "label": "C3-T036",
+      "members": [
+        "SC05_01_两盏花灯",
+        "SC05_通道左上花灯"
+      ],
+      "individualOmittedAlpha": {
+        "SC05_01_两盏花灯": 0.6195016967537423,
+        "SC05_通道左上花灯": 0.0
+      },
+      "unionOmittedAlpha": 0.0,
+      "pairs": [
+        {
+          "a": "SC05_01_两盏花灯",
+          "b": "SC05_通道左上花灯",
+          "sharedSourceAlphaRatio": 0.38049830324625766
+        }
+      ]
+    },
+    {
+      "texturePath": "public/assets/chapter-3/textures/f24338909a9d9ac7.webp",
+      "label": "C3-T040",
+      "members": [
+        "SC05_06_右下牡丹花丛_补全",
+        "SC05_通道右下花枝"
+      ],
+      "individualOmittedAlpha": {
+        "SC05_06_右下牡丹花丛_补全": 0.0,
+        "SC05_通道右下花枝": 0.0
+      },
+      "unionOmittedAlpha": 0.0,
+      "pairs": [
+        {
+          "a": "SC05_06_右下牡丹花丛_补全",
+          "b": "SC05_通道右下花枝",
+          "sharedSourceAlphaRatio": 1.0
+        }
+      ]
+    },
+    {
+      "texturePath": "public/assets/chapter-3/textures/3f777fca4edbbc31.webp",
+      "label": "C3-T047",
+      "members": [
+        "SC06_07_右下花丛",
+        "SC06_07_右下花丛.001"
+      ],
+      "individualOmittedAlpha": {
+        "SC06_07_右下花丛": 0.0,
+        "SC06_07_右下花丛.001": 0.0
+      },
+      "unionOmittedAlpha": 0.0,
+      "pairs": [
+        {
+          "a": "SC06_07_右下花丛",
+          "b": "SC06_07_右下花丛.001",
+          "sharedSourceAlphaRatio": 1.0
+        }
+      ]
+    },
+    {
+      "texturePath": "public/assets/chapter-3/textures/1217d0b1e19eea1c.webp",
+      "label": "C3-T048",
+      "members": [
+        "SC06_16_红色灯笼",
+        "SC06_通道左上花灯"
+      ],
+      "individualOmittedAlpha": {
+        "SC06_16_红色灯笼": 0.0,
+        "SC06_通道左上花灯": 0.0
+      },
+      "unionOmittedAlpha": 0.0,
+      "pairs": [
+        {
+          "a": "SC06_16_红色灯笼",
+          "b": "SC06_通道左上花灯",
+          "sharedSourceAlphaRatio": 1.0
+        }
+      ]
+    },
+    {
+      "texturePath": "public/assets/chapter-3/textures/3cd6680826ea7dbc.webp",
+      "label": "C3-T062",
+      "members": [
+        "SC09_05_右侧山水城景",
+        "SC09_05_右侧山水城景.001"
+      ],
+      "individualOmittedAlpha": {
+        "SC09_05_右侧山水城景": 0.0,
+        "SC09_05_右侧山水城景.001": 0.08026218408865177
+      },
+      "unionOmittedAlpha": 0.0,
+      "pairs": [
+        {
+          "a": "SC09_05_右侧山水城景",
+          "b": "SC09_05_右侧山水城景.001",
+          "sharedSourceAlphaRatio": 0.9197378159113482
+        }
+      ]
+    }
+  ],
+  "largeUntexturedDepthWriters": [
+    {
+      "name": "一整幅无缝宣纸",
+      "id": "c3-m-43cb9d0e8712",
+      "materialIndex": 8,
+      "material": {
+        "id": 8,
+        "name": "通幅宣纸｜轻微纤维",
+        "texture": null,
+        "color": [
+          0.88828724625,
+          0.80369886755,
+          0.6634412408
+        ],
+        "opacity": 1.0,
+        "transparent": false,
+        "alphaTest": 0,
+        "side": "double",
+        "depthWrite": true,
+        "sourceAlphaLinked": false,
+        "proceduralApproximation": true
+      },
+      "bounds": {
+        "min": [
+          -18.0,
+          -100.0,
+          -60.0
+        ],
+        "max": [
+          -18.0,
+          600.0,
+          80.0
+        ]
+      },
+      "size": [
+        0.0,
+        700.0,
+        140.0
+      ],
+      "sourceCollections": [
+        "长卷连续环境｜共用纸色·山水·水岸"
+      ],
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -100.0,
+          600.0
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          1,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC01_阅读",
+            "frame": 162,
+            "progress": 0.0241307,
+            "index": 1,
+            "cameraAxisPosition": -1.004433
+          },
+          {
+            "name": "SC02_阅读",
+            "frame": 834,
+            "progress": 0.1248501,
+            "index": 2,
+            "cameraAxisPosition": 58.995567
+          },
+          {
+            "name": "SC03_阅读",
+            "frame": 1516,
+            "progress": 0.2270683,
+            "index": 3,
+            "cameraAxisPosition": 118.994301
+          },
+          {
+            "name": "SC04_阅读",
+            "frame": 2212,
+            "progress": 0.3313849,
+            "index": 4,
+            "cameraAxisPosition": 178.994293
+          },
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          },
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          },
+          {
+            "name": "SC07_阅读",
+            "frame": 4421,
+            "progress": 0.66247,
+            "index": 7,
+            "cameraAxisPosition": 358.996277
+          },
+          {
+            "name": "SC08_阅读",
+            "frame": 5405,
+            "progress": 0.809952,
+            "index": 8,
+            "cameraAxisPosition": 418.996277
+          },
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "texturedMeshesPotentiallyBehindByX": [],
+      "pendingVisualReview": true
+    },
+    {
+      "name": "贯穿全卷的山势_1",
+      "id": "c3-m-fdc2ce49114c",
+      "materialIndex": 9,
+      "material": {
+        "id": 9,
+        "name": "淡墨远山_1",
+        "texture": null,
+        "color": [
+          0.6797827,
+          0.6515419,
+          0.5399323
+        ],
+        "opacity": 1.0,
+        "transparent": false,
+        "alphaTest": 0,
+        "side": "double",
+        "depthWrite": true,
+        "sourceAlphaLinked": false,
+        "proceduralApproximation": false
+      },
+      "bounds": {
+        "min": [
+          -15.0,
+          -80.0,
+          -24.9999981
+        ],
+        "max": [
+          -15.0,
+          550.0,
+          14.7000904
+        ]
+      },
+      "size": [
+        0.0,
+        630.0,
+        39.7000885
+      ],
+      "sourceCollections": [
+        "长卷连续环境｜共用纸色·山水·水岸"
+      ],
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -80.0,
+          550.0
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          1,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC01_阅读",
+            "frame": 162,
+            "progress": 0.0241307,
+            "index": 1,
+            "cameraAxisPosition": -1.004433
+          },
+          {
+            "name": "SC02_阅读",
+            "frame": 834,
+            "progress": 0.1248501,
+            "index": 2,
+            "cameraAxisPosition": 58.995567
+          },
+          {
+            "name": "SC03_阅读",
+            "frame": 1516,
+            "progress": 0.2270683,
+            "index": 3,
+            "cameraAxisPosition": 118.994301
+          },
+          {
+            "name": "SC04_阅读",
+            "frame": 2212,
+            "progress": 0.3313849,
+            "index": 4,
+            "cameraAxisPosition": 178.994293
+          },
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          },
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          },
+          {
+            "name": "SC07_阅读",
+            "frame": 4421,
+            "progress": 0.66247,
+            "index": 7,
+            "cameraAxisPosition": 358.996277
+          },
+          {
+            "name": "SC08_阅读",
+            "frame": 5405,
+            "progress": 0.809952,
+            "index": 8,
+            "cameraAxisPosition": 418.996277
+          },
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "texturedMeshesPotentiallyBehindByX": [],
+      "pendingVisualReview": true
+    },
+    {
+      "name": "贯穿全卷的山势_2",
+      "id": "c3-m-8109d008048f",
+      "materialIndex": 10,
+      "material": {
+        "id": 10,
+        "name": "淡墨远山_2",
+        "texture": null,
+        "color": [
+          0.7389405,
+          0.7017548,
+          0.5753176
+        ],
+        "opacity": 1.0,
+        "transparent": false,
+        "alphaTest": 0,
+        "side": "double",
+        "depthWrite": true,
+        "sourceAlphaLinked": false,
+        "proceduralApproximation": false
+      },
+      "bounds": {
+        "min": [
+          -13.0,
+          -80.0,
+          -25.0
+        ],
+        "max": [
+          -13.0,
+          550.0,
+          10.3734388
+        ]
+      },
+      "size": [
+        0.0,
+        630.0,
+        35.3734388
+      ],
+      "sourceCollections": [
+        "长卷连续环境｜共用纸色·山水·水岸"
+      ],
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -80.0,
+          550.0
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          1,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC01_阅读",
+            "frame": 162,
+            "progress": 0.0241307,
+            "index": 1,
+            "cameraAxisPosition": -1.004433
+          },
+          {
+            "name": "SC02_阅读",
+            "frame": 834,
+            "progress": 0.1248501,
+            "index": 2,
+            "cameraAxisPosition": 58.995567
+          },
+          {
+            "name": "SC03_阅读",
+            "frame": 1516,
+            "progress": 0.2270683,
+            "index": 3,
+            "cameraAxisPosition": 118.994301
+          },
+          {
+            "name": "SC04_阅读",
+            "frame": 2212,
+            "progress": 0.3313849,
+            "index": 4,
+            "cameraAxisPosition": 178.994293
+          },
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          },
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          },
+          {
+            "name": "SC07_阅读",
+            "frame": 4421,
+            "progress": 0.66247,
+            "index": 7,
+            "cameraAxisPosition": 358.996277
+          },
+          {
+            "name": "SC08_阅读",
+            "frame": 5405,
+            "progress": 0.809952,
+            "index": 8,
+            "cameraAxisPosition": 418.996277
+          },
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "texturedMeshesPotentiallyBehindByX": [],
+      "pendingVisualReview": true
+    },
+    {
+      "name": "贯穿全卷的山势_3",
+      "id": "c3-m-4f75f87d934e",
+      "materialIndex": 11,
+      "material": {
+        "id": 11,
+        "name": "淡墨远山_3",
+        "texture": null,
+        "color": [
+          0.8054239,
+          0.7463219,
+          0.6071078
+        ],
+        "opacity": 1.0,
+        "transparent": false,
+        "alphaTest": 0,
+        "side": "double",
+        "depthWrite": true,
+        "sourceAlphaLinked": false,
+        "proceduralApproximation": false
+      },
+      "bounds": {
+        "min": [
+          -11.0,
+          -80.0,
+          -25.0
+        ],
+        "max": [
+          -11.0,
+          550.0,
+          6.1728287
+        ]
+      },
+      "size": [
+        0.0,
+        630.0,
+        31.1728287
+      ],
+      "sourceCollections": [
+        "长卷连续环境｜共用纸色·山水·水岸"
+      ],
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -80.0,
+          550.0
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          1,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC01_阅读",
+            "frame": 162,
+            "progress": 0.0241307,
+            "index": 1,
+            "cameraAxisPosition": -1.004433
+          },
+          {
+            "name": "SC02_阅读",
+            "frame": 834,
+            "progress": 0.1248501,
+            "index": 2,
+            "cameraAxisPosition": 58.995567
+          },
+          {
+            "name": "SC03_阅读",
+            "frame": 1516,
+            "progress": 0.2270683,
+            "index": 3,
+            "cameraAxisPosition": 118.994301
+          },
+          {
+            "name": "SC04_阅读",
+            "frame": 2212,
+            "progress": 0.3313849,
+            "index": 4,
+            "cameraAxisPosition": 178.994293
+          },
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          },
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          },
+          {
+            "name": "SC07_阅读",
+            "frame": 4421,
+            "progress": 0.66247,
+            "index": 7,
+            "cameraAxisPosition": 358.996277
+          },
+          {
+            "name": "SC08_阅读",
+            "frame": 5405,
+            "progress": 0.809952,
+            "index": 8,
+            "cameraAxisPosition": 418.996277
+          },
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "texturedMeshesPotentiallyBehindByX": [],
+      "pendingVisualReview": true
+    },
+    {
+      "name": "连续水脉",
+      "id": "c3-m-4eebc734d009",
+      "materialIndex": 12,
+      "material": {
+        "id": 12,
+        "name": "连续水脉色",
+        "texture": null,
+        "color": [
+          0.7484488,
+          0.730965,
+          0.6061424
+        ],
+        "opacity": 1.0,
+        "transparent": false,
+        "alphaTest": 0,
+        "side": "double",
+        "depthWrite": true,
+        "sourceAlphaLinked": false,
+        "proceduralApproximation": false
+      },
+      "bounds": {
+        "min": [
+          -10.0,
+          -80.0,
+          3.1918571
+        ],
+        "max": [
+          -10.0,
+          550.0,
+          6.4091921
+        ]
+      },
+      "size": [
+        0.0,
+        630.0,
+        3.2173350000000003
+      ],
+      "sourceCollections": [
+        "长卷连续环境｜共用纸色·山水·水岸"
+      ],
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -80.0,
+          550.0
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          1,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC01_阅读",
+            "frame": 162,
+            "progress": 0.0241307,
+            "index": 1,
+            "cameraAxisPosition": -1.004433
+          },
+          {
+            "name": "SC02_阅读",
+            "frame": 834,
+            "progress": 0.1248501,
+            "index": 2,
+            "cameraAxisPosition": 58.995567
+          },
+          {
+            "name": "SC03_阅读",
+            "frame": 1516,
+            "progress": 0.2270683,
+            "index": 3,
+            "cameraAxisPosition": 118.994301
+          },
+          {
+            "name": "SC04_阅读",
+            "frame": 2212,
+            "progress": 0.3313849,
+            "index": 4,
+            "cameraAxisPosition": 178.994293
+          },
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          },
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          },
+          {
+            "name": "SC07_阅读",
+            "frame": 4421,
+            "progress": 0.66247,
+            "index": 7,
+            "cameraAxisPosition": 358.996277
+          },
+          {
+            "name": "SC08_阅读",
+            "frame": 5405,
+            "progress": 0.809952,
+            "index": 8,
+            "cameraAxisPosition": 418.996277
+          },
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "texturedMeshesPotentiallyBehindByX": [],
+      "pendingVisualReview": true
+    },
+    {
+      "name": "水岸留金",
+      "id": "c3-m-dc09fbacc3c2",
+      "materialIndex": 13,
+      "material": {
+        "id": 13,
+        "name": "水岸留金色",
+        "texture": null,
+        "color": [
+          0.7643119,
+          0.6645892,
+          0.5065717
+        ],
+        "opacity": 1.0,
+        "transparent": false,
+        "alphaTest": 0,
+        "side": "double",
+        "depthWrite": true,
+        "sourceAlphaLinked": false,
+        "proceduralApproximation": false
+      },
+      "bounds": {
+        "min": [
+          -9.8000002,
+          -80.0,
+          4.668272
+        ],
+        "max": [
+          -9.8000002,
+          550.0,
+          6.4520292
+        ]
+      },
+      "size": [
+        0.0,
+        630.0,
+        1.7837572000000002
+      ],
+      "sourceCollections": [
+        "长卷连续环境｜共用纸色·山水·水岸"
+      ],
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -80.0,
+          550.0
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          1,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC01_阅读",
+            "frame": 162,
+            "progress": 0.0241307,
+            "index": 1,
+            "cameraAxisPosition": -1.004433
+          },
+          {
+            "name": "SC02_阅读",
+            "frame": 834,
+            "progress": 0.1248501,
+            "index": 2,
+            "cameraAxisPosition": 58.995567
+          },
+          {
+            "name": "SC03_阅读",
+            "frame": 1516,
+            "progress": 0.2270683,
+            "index": 3,
+            "cameraAxisPosition": 118.994301
+          },
+          {
+            "name": "SC04_阅读",
+            "frame": 2212,
+            "progress": 0.3313849,
+            "index": 4,
+            "cameraAxisPosition": 178.994293
+          },
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          },
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          },
+          {
+            "name": "SC07_阅读",
+            "frame": 4421,
+            "progress": 0.66247,
+            "index": 7,
+            "cameraAxisPosition": 358.996277
+          },
+          {
+            "name": "SC08_阅读",
+            "frame": 5405,
+            "progress": 0.809952,
+            "index": 8,
+            "cameraAxisPosition": 418.996277
+          },
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "texturedMeshesPotentiallyBehindByX": [],
+      "pendingVisualReview": true
+    },
+    {
+      "name": "通幅山脊细线_1",
+      "id": "c3-m-c2c6ab901abd",
+      "materialIndex": 14,
+      "material": {
+        "id": 14,
+        "name": "山脊淡墨细笔",
+        "texture": null,
+        "color": [
+          0.7630076,
+          0.7132027,
+          0.5902583
+        ],
+        "opacity": 1.0,
+        "transparent": false,
+        "alphaTest": 0,
+        "side": "double",
+        "depthWrite": true,
+        "sourceAlphaLinked": false,
+        "proceduralApproximation": false
+      },
+      "bounds": {
+        "min": [
+          -14.9750004,
+          -80.0006409,
+          5.6527643
+        ],
+        "max": [
+          -14.9449997,
+          550.0067139,
+          14.6900826
+        ]
+      },
+      "size": [
+        0.030000700000000435,
+        630.0073548,
+        9.037318299999999
+      ],
+      "sourceCollections": [
+        "长卷连续环境｜共用纸色·山水·水岸"
+      ],
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -80.0006409,
+          550.0067139
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          1,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC01_阅读",
+            "frame": 162,
+            "progress": 0.0241307,
+            "index": 1,
+            "cameraAxisPosition": -1.004433
+          },
+          {
+            "name": "SC02_阅读",
+            "frame": 834,
+            "progress": 0.1248501,
+            "index": 2,
+            "cameraAxisPosition": 58.995567
+          },
+          {
+            "name": "SC03_阅读",
+            "frame": 1516,
+            "progress": 0.2270683,
+            "index": 3,
+            "cameraAxisPosition": 118.994301
+          },
+          {
+            "name": "SC04_阅读",
+            "frame": 2212,
+            "progress": 0.3313849,
+            "index": 4,
+            "cameraAxisPosition": 178.994293
+          },
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          },
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          },
+          {
+            "name": "SC07_阅读",
+            "frame": 4421,
+            "progress": 0.66247,
+            "index": 7,
+            "cameraAxisPosition": 358.996277
+          },
+          {
+            "name": "SC08_阅读",
+            "frame": 5405,
+            "progress": 0.809952,
+            "index": 8,
+            "cameraAxisPosition": 418.996277
+          },
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "texturedMeshesPotentiallyBehindByX": [],
+      "pendingVisualReview": true
+    },
+    {
+      "name": "通幅山脊细线_2",
+      "id": "c3-m-93460f466a61",
+      "materialIndex": 14,
+      "material": {
+        "id": 14,
+        "name": "山脊淡墨细笔",
+        "texture": null,
+        "color": [
+          0.7630076,
+          0.7132027,
+          0.5902583
+        ],
+        "opacity": 1.0,
+        "transparent": false,
+        "alphaTest": 0,
+        "side": "double",
+        "depthWrite": true,
+        "sourceAlphaLinked": false,
+        "proceduralApproximation": false
+      },
+      "bounds": {
+        "min": [
+          -12.9750004,
+          -80.0036926,
+          3.2876959
+        ],
+        "max": [
+          -12.9449997,
+          550.0019531,
+          10.3634243
+        ]
+      },
+      "size": [
+        0.030000700000000435,
+        630.0056457000001,
+        7.0757284
+      ],
+      "sourceCollections": [
+        "长卷连续环境｜共用纸色·山水·水岸"
+      ],
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -80.0036926,
+          550.0019531
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          1,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC01_阅读",
+            "frame": 162,
+            "progress": 0.0241307,
+            "index": 1,
+            "cameraAxisPosition": -1.004433
+          },
+          {
+            "name": "SC02_阅读",
+            "frame": 834,
+            "progress": 0.1248501,
+            "index": 2,
+            "cameraAxisPosition": 58.995567
+          },
+          {
+            "name": "SC03_阅读",
+            "frame": 1516,
+            "progress": 0.2270683,
+            "index": 3,
+            "cameraAxisPosition": 118.994301
+          },
+          {
+            "name": "SC04_阅读",
+            "frame": 2212,
+            "progress": 0.3313849,
+            "index": 4,
+            "cameraAxisPosition": 178.994293
+          },
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          },
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          },
+          {
+            "name": "SC07_阅读",
+            "frame": 4421,
+            "progress": 0.66247,
+            "index": 7,
+            "cameraAxisPosition": 358.996277
+          },
+          {
+            "name": "SC08_阅读",
+            "frame": 5405,
+            "progress": 0.809952,
+            "index": 8,
+            "cameraAxisPosition": 418.996277
+          },
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "texturedMeshesPotentiallyBehindByX": [],
+      "pendingVisualReview": true
+    },
+    {
+      "name": "通幅山脊细线_3",
+      "id": "c3-m-ca873078ba66",
+      "materialIndex": 14,
+      "material": {
+        "id": 14,
+        "name": "山脊淡墨细笔",
+        "texture": null,
+        "color": [
+          0.7630076,
+          0.7132027,
+          0.5902583
+        ],
+        "opacity": 1.0,
+        "transparent": false,
+        "alphaTest": 0,
+        "side": "double",
+        "depthWrite": true,
+        "sourceAlphaLinked": false,
+        "proceduralApproximation": false
+      },
+      "bounds": {
+        "min": [
+          -10.9750004,
+          -80.0018005,
+          0.9942566
+        ],
+        "max": [
+          -10.9449997,
+          550.0028687,
+          6.1628199
+        ]
+      },
+      "size": [
+        0.030000700000000435,
+        630.0046692000001,
+        5.1685633
+      ],
+      "sourceCollections": [
+        "长卷连续环境｜共用纸色·山水·水岸"
+      ],
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -80.0018005,
+          550.0028687
+        ],
+        "nearestStop": {
+          "name": "SC05_阅读",
+          "frame": 2898,
+          "progress": 0.4342026,
+          "index": 5,
+          "cameraAxisPosition": 238.99556
+        },
+        "stopRange": [
+          1,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "SC01_阅读",
+            "frame": 162,
+            "progress": 0.0241307,
+            "index": 1,
+            "cameraAxisPosition": -1.004433
+          },
+          {
+            "name": "SC02_阅读",
+            "frame": 834,
+            "progress": 0.1248501,
+            "index": 2,
+            "cameraAxisPosition": 58.995567
+          },
+          {
+            "name": "SC03_阅读",
+            "frame": 1516,
+            "progress": 0.2270683,
+            "index": 3,
+            "cameraAxisPosition": 118.994301
+          },
+          {
+            "name": "SC04_阅读",
+            "frame": 2212,
+            "progress": 0.3313849,
+            "index": 4,
+            "cameraAxisPosition": 178.994293
+          },
+          {
+            "name": "SC05_阅读",
+            "frame": 2898,
+            "progress": 0.4342026,
+            "index": 5,
+            "cameraAxisPosition": 238.99556
+          },
+          {
+            "name": "SC06_阅读",
+            "frame": 3590,
+            "progress": 0.5379197,
+            "index": 6,
+            "cameraAxisPosition": 298.993042
+          },
+          {
+            "name": "SC07_阅读",
+            "frame": 4421,
+            "progress": 0.66247,
+            "index": 7,
+            "cameraAxisPosition": 358.996277
+          },
+          {
+            "name": "SC08_阅读",
+            "frame": 5405,
+            "progress": 0.809952,
+            "index": 8,
+            "cameraAxisPosition": 418.996277
+          },
+          {
+            "name": "SC09_阅读",
+            "frame": 6339,
+            "progress": 0.94994,
+            "index": 9,
+            "cameraAxisPosition": 479.000946
+          }
+        ]
+      },
+      "texturedMeshesPotentiallyBehindByX": [],
+      "pendingVisualReview": true
+    }
+  ],
+  "visualReviewStatus": "pending",
+  "assetMutations": 0
+}

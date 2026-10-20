@@ -1,0 +1,2444 @@
+{
+  "schemaVersion": 1,
+  "chapter": 3,
+  "status": "passed",
+  "passed": true,
+  "canonicalSha256": "4433928f6e6160acbd275ba6430d65fa3128df736a7eb59ef7607e61312d10cb",
+  "capture": "capture.json",
+  "sourceHashes": [
+    {
+      "path": "src/scene/CalligraphyLayer.ts",
+      "sha256": "8ce0d9d17d28330f3ff2f04b32bf2a5482848ff5b4a42ee2a5bc477ba302cabf"
+    },
+    {
+      "path": "src/scene/CalligraphyLayer.css",
+      "sha256": "707b020f2ebeaf1826e49d9dea1ce684a8511a91a5cdce649cccbef11101c250"
+    },
+    {
+      "path": "src/scene/ArtDirectionLayer.ts",
+      "sha256": "d51dfea871ed4363d453ce8ebaa82d920987ca1d06a0925127f3deda14d37a72"
+    },
+    {
+      "path": "src/scene/SceneRenderer.ts",
+      "sha256": "d77e1669131d74b30478b8f5e84576c2f8ad18300ecf4cdf89aac8a3c1ed9b60"
+    },
+    {
+      "path": "src/styles/handscroll.css",
+      "sha256": "d73911deba855f1ab39085c172dabd4ea11dc0b09838eefe9e921b0be5067f21"
+    }
+  ],
+  "sourcesUnchangedAtCaptureAndReview": true,
+  "reviewedIndividually": 48,
+  "passCount": 48,
+  "issueCount": 0,
+  "visualReviewEvidence": {
+    "currentFileViewed": 1,
+    "byteIdenticalPriorIndividualReview": 47,
+    "allCurrentNormalAndUnderlayHashesVerified": true
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedResources": [],
+  "approvalBoundary": [
+    "只批准所列实际anchor的文字内容、字界、顺序、字号、顶部留白与无遮挡；动态边界/全33分镜/Blender另由对应验收证明。",
+    "新增15组与compact开题正文至少14px、标题至少18px；原宽/中开题保原版字号层级，不冒称全部旧字均新规则。",
+    "窄短窗画心由内容最小字带高度自动增长至约365px，允许页面纵滚；纸题带约40%，下部主景约219px高，未压为旧63px缩略条。",
+    "Blender维持宽世界anchor可编辑FONT；网页响应式排版不等同于另建Blender窄版。"
+  ],
+  "views": [
+    {
+      "id": "chapter-3-opening",
+      "title": "锦绣花意",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "宽/中保留原侧题并护边；compact仅显示上纸题首，锦绣花意、两短句和牡丹印完整，未压人物。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true
+      },
+      "bandBounds": {
+        "left": 144.22784423828125,
+        "right": 316.1487731933594,
+        "top": 39.5469970703125,
+        "bottom": 446.20611572265625,
+        "width": 171.92092895507812,
+        "height": 406.65911865234375
+      },
+      "screenBodySize": null,
+      "screenTitleSize": null,
+      "compactReserve": "0",
+      "screenshot": "1920x1080/chapter-3-opening.png",
+      "sha256": "b06f9e26128210aff83190dfd0954e39623fd6865890a725a12b4d3cd4aafdf8",
+      "underlay": "1920x1080/chapter-3-opening-underlay.png",
+      "underlaySha256": "020c653c80c14de973672380a3bf0a3b4f22ef79ab323734495d95e10740cf21"
+    },
+    {
+      "id": "c3-type-gap-01",
+      "title": "一花百用",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "中央纸空形成读段，七字列完整，低栏和主体在字下方。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 937.4353637695312,
+        "right": 1049.765380859375,
+        "top": 204.71923828125,
+        "bottom": 357.669189453125,
+        "width": 112.33001708984375,
+        "height": 152.949951171875
+      },
+      "screenBodySize": "21.009980469348317",
+      "screenTitleSize": "30.89703010198282",
+      "compactReserve": "0",
+      "screenshot": "1920x1080/c3-type-gap-01.png",
+      "sha256": "c71da17582d324432dab0fb4dc2c53f677ed68ba2944805b69359183e339a815",
+      "underlay": "1920x1080/c3-type-gap-01-underlay.png",
+      "underlaySha256": "7662b251760943e5c5ed46cfc56517d60197b14b7d52346ad5c3b41fbb731a2d"
+    },
+    {
+      "id": "c3-type-gap-02",
+      "title": "经纬生芳",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "题字在锦架上方纸空，锦架脚点内收后未触文字；中窗芳字已离红布。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 951.94189453125,
+        "right": 1054.9229736328125,
+        "top": 148.320068359375,
+        "bottom": 270.6864929199219,
+        "width": 102.9810791015625,
+        "height": 122.36642456054688
+      },
+      "screenBodySize": "19.261392836188374",
+      "screenTitleSize": "28.325577700277023",
+      "compactReserve": "0",
+      "screenshot": "1920x1080/c3-type-gap-02.png",
+      "sha256": "d99a31d13e77df2322992a45b7b35fc32c6e6e503b7d6b7791cda50381d9ea33",
+      "underlay": "1920x1080/c3-type-gap-02-underlay.png",
+      "underlaySha256": "96a829033b1ee6c33274b790f84380fede8444aaab9c46119ad59d50ca2df4bd"
+    },
+    {
+      "id": "c3-type-stop-03",
+      "title": "凤穿牡丹",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "宽/中题签在凤凰右侧纸空；compact题带与凤头、翅及人物分开。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 1547.14794921875,
+        "right": 1659.4432373046875,
+        "top": 189.7606201171875,
+        "bottom": 323.1944580078125,
+        "width": 112.2952880859375,
+        "height": 133.433837890625
+      },
+      "screenBodySize": "21.00347974239006",
+      "screenTitleSize": "30.887470209397144",
+      "compactReserve": "0",
+      "screenshot": "1920x1080/c3-type-stop-03.png",
+      "sha256": "a39a8236150c94727ce79b822eaedf4522d1cff71f6cff73ec89407a8905b53a",
+      "underlay": "1920x1080/c3-type-stop-03-underlay.png",
+      "underlaySha256": "682f970be48f6c6e2bb245dc7b287df9e1c95fcf4d04b9a2186d95fcd5156c27"
+    },
+    {
+      "id": "c3-type-gap-03",
+      "title": "案头清供",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "器物上方短题完整，不压花器瓶口。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 885.3912963867188,
+        "right": 997.73193359375,
+        "top": 195.90621948242188,
+        "bottom": 329.39404296875,
+        "width": 112.34063720703125,
+        "height": 133.48782348632812
+      },
+      "screenBodySize": "21.011980133689917",
+      "screenTitleSize": "30.899970784838114",
+      "compactReserve": "0",
+      "screenshot": "1920x1080/c3-type-gap-03.png",
+      "sha256": "9e1e1e708b91c1c8df693762cc2d0a7f49511e92411ea4d98ea498045bb0bc1d",
+      "underlay": "1920x1080/c3-type-gap-03-underlay.png",
+      "underlaySha256": "e10cdd3ad5b2149bb2a3d57e456457a06a5e0fd9bbcc044d295aa7c3c8b02867"
+    },
+    {
+      "id": "c3-type-stop-04",
+      "title": "同心成礼",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "婚礼和凤纹之外留小题；compact正文不再接触凤冠与飘尾。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 1484.05908203125,
+        "right": 1596.392578125,
+        "top": 171.19879150390625,
+        "bottom": 304.6781005859375,
+        "width": 112.33349609375,
+        "height": 133.47930908203125
+      },
+      "screenBodySize": "21.010641829643504",
+      "screenTitleSize": "30.89800269065221",
+      "compactReserve": "0",
+      "screenshot": "1920x1080/c3-type-stop-04.png",
+      "sha256": "49b54c4cd02469db7189921b027c2789cfd0ad5f36d3592b83a6e6199e991978",
+      "underlay": "1920x1080/c3-type-stop-04-underlay.png",
+      "underlaySha256": "44cff34d4093c71273101967967f2c336b1e538732bb7f20359d4c4ae77eb525"
+    },
+    {
+      "id": "c3-type-gap-04",
+      "title": "门庭有喜",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "题字在墙门与路径上方纸空，不侵上缘气口。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 937.9588623046875,
+        "right": 1050.2939453125,
+        "top": 199.00558471679688,
+        "bottom": 332.48681640625,
+        "width": 112.3350830078125,
+        "height": 133.48123168945312
+      },
+      "screenBodySize": "21.010940521104683",
+      "screenTitleSize": "30.898441942801004",
+      "compactReserve": "0",
+      "screenshot": "1920x1080/c3-type-gap-04.png",
+      "sha256": "c1e3c5550de54535d842672c320ee9afc79d520c74551bf02268924bb8fe1e0c",
+      "underlay": "1920x1080/c3-type-gap-04-underlay.png",
+      "underlaySha256": "bb630109e9ff1f67152a61307719be7b486760c9bc0d2fcccca5b2a7445efb0c"
+    },
+    {
+      "id": "c3-type-stop-05",
+      "title": "灯彩迎新",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "文字与雪巷、屋檐保持间距；compact题带不压山形。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 164.73411560058594,
+        "right": 277.0711669921875,
+        "top": 202.089599609375,
+        "bottom": 335.5731201171875,
+        "width": 112.33705139160156,
+        "height": 133.4835205078125
+      },
+      "screenBodySize": "21.011303217468434",
+      "screenTitleSize": "30.89897531980652",
+      "compactReserve": "0",
+      "screenshot": "1920x1080/c3-type-stop-05.png",
+      "sha256": "04572ecf87eb7f53ec9d450ab559fdff38f2f1193ec4c07e90390811259df13a",
+      "underlay": "1920x1080/c3-type-stop-05-underlay.png",
+      "underlaySha256": "d1f59b85db02e806696afdcfa76705869a83fdf97479617393a377f56858a054"
+    },
+    {
+      "id": "c3-type-gap-05",
+      "title": "尺素寄愿",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "题签与两列首字均有真实顶端间距，没有顶裁。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 894.965576171875,
+        "right": 1007.3060302734375,
+        "top": 180.45663452148438,
+        "bottom": 313.9442138671875,
+        "width": 112.3404541015625,
+        "height": 133.48757934570312
+      },
+      "screenBodySize": "21.01193971035125",
+      "screenTitleSize": "30.89991133875184",
+      "compactReserve": "0",
+      "screenshot": "1920x1080/c3-type-gap-05.png",
+      "sha256": "c5d899959e46c5fa7a3b04e232354f25f9c272be6fd284f1db52a1e318e4baf1",
+      "underlay": "1920x1080/c3-type-gap-05-underlay.png",
+      "underlaySha256": "189467a88e01805c338cd76bbc445f46b70ea7c30f9169f918ef4eb8669dd9b1"
+    },
+    {
+      "id": "c3-type-stop-06",
+      "title": "针线传情",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "侧题/独立纸题带不再压屋檐与人物，正文完整。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 151.30299377441406,
+        "right": 263.6422424316406,
+        "top": 211.3570556640625,
+        "bottom": 344.84326171875,
+        "width": 112.33924865722656,
+        "height": 133.4862060546875
+      },
+      "screenBodySize": "21.011715279230106",
+      "screenTitleSize": "30.899581292985452",
+      "compactReserve": "0",
+      "screenshot": "1920x1080/c3-type-stop-06.png",
+      "sha256": "a3bdec116ba1b3bbb7da8d02141fc12e52f33e7884bed6b41db2fa2b6d68a9e9",
+      "underlay": "1920x1080/c3-type-stop-06-underlay.png",
+      "underlaySha256": "7e576f5f123d476d3da928f7faae8d7c92b863d8fe2b5fd31c5656c16728107e"
+    },
+    {
+      "id": "c3-type-gap-06",
+      "title": "日用见美",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "文字在器物上方留白，不遮瓶花。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 908.3442993164062,
+        "right": 1020.6904296875,
+        "top": 195.89593505859375,
+        "bottom": 329.3902587890625,
+        "width": 112.34613037109375,
+        "height": 133.49432373046875
+      },
+      "screenBodySize": "21.012997919037037",
+      "screenTitleSize": "30.901467527995642",
+      "compactReserve": "0",
+      "screenshot": "1920x1080/c3-type-gap-06.png",
+      "sha256": "5e8d7c785366ddffd28226daab96614755475d28c470cd83032ffc021f231abd",
+      "underlay": "1920x1080/c3-type-gap-06-underlay.png",
+      "underlaySha256": "1d25a0b484b250a4a99e883b889de49634ea8d1a5bdd72b3427d8d1f45b23f3c"
+    },
+    {
+      "id": "c3-type-stop-07",
+      "title": "吉意入器",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "器用小题和安居印在纸空，未遮镜台与工坊。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 1569.58447265625,
+        "right": 1715.490234375,
+        "top": 226.83331298828125,
+        "bottom": 360.2769775390625,
+        "width": 145.90576171875,
+        "height": 133.44366455078125
+      },
+      "screenBodySize": "21.005029099494173",
+      "screenTitleSize": "30.889748675726725",
+      "compactReserve": "0",
+      "screenshot": "1920x1080/c3-type-stop-07.png",
+      "sha256": "1338912049d2351f10dc597bcc85a481f3242b149a728f1fe292abd74e9574ae",
+      "underlay": "1920x1080/c3-type-stop-07-underlay.png",
+      "underlaySha256": "5edb3fddf599b256bf4fa3b6f31508eaac8b42072b1cce4ff1c8d6abd1fffdef"
+    },
+    {
+      "id": "c3-type-gap-07",
+      "title": "雅意随身",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "中段细列连接器用与书案，不叠屋檐。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 891.9160766601562,
+        "right": 1004.2593994140625,
+        "top": 198.98907470703125,
+        "bottom": 332.48004150390625,
+        "width": 112.34332275390625,
+        "height": 133.490966796875
+      },
+      "screenBodySize": "21.012475308038923",
+      "screenTitleSize": "30.90069898241018",
+      "compactReserve": "0",
+      "screenshot": "1920x1080/c3-type-gap-07.png",
+      "sha256": "647404ca3e18952318f10d83b5b22a387b8a9d7f262538dbc0f9d8f4f27c96ce",
+      "underlay": "1920x1080/c3-type-gap-07-underlay.png",
+      "underlaySha256": "c7f766da4b6d30c55e2085d67b44e95bf60cdbb7a84eefd160c8dc7806483d22"
+    },
+    {
+      "id": "c3-type-stop-08",
+      "title": "端庄自持",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "侧题与屋檐分开，compact上纸带不压圆屏和人物。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 129.49563598632812,
+        "right": 241.82040405273438,
+        "top": 177.38479614257812,
+        "bottom": 310.853759765625,
+        "width": 112.32476806640625,
+        "height": 133.46896362304688
+      },
+      "screenBodySize": "21.009005846134045",
+      "screenTitleSize": "30.895596832550066",
+      "compactReserve": "0",
+      "screenshot": "1920x1080/c3-type-stop-08.png",
+      "sha256": "f9d495e44c891b72f33d6c62931b1439bc6378526759ed25df27fe6f24cc8217",
+      "underlay": "1920x1080/c3-type-stop-08-underlay.png",
+      "underlaySha256": "5ea513e0c8507e2bd9b8b996ecf3d2df478418604636221efa6299937ff40b31"
+    },
+    {
+      "id": "c3-type-gap-08",
+      "title": "满城和乐",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "中央题签完整，左右生活场景之间有文字停顿。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 921.4539794921875,
+        "right": 1033.7921142578125,
+        "top": 205.17953491210938,
+        "bottom": 338.664306640625,
+        "width": 112.338134765625,
+        "height": 133.48477172851562
+      },
+      "screenBodySize": "21.011502094609053",
+      "screenTitleSize": "30.89926778618978",
+      "compactReserve": "0",
+      "screenshot": "1920x1080/c3-type-gap-08.png",
+      "sha256": "6fb711507d8b676db85a976422b25df257ca445ba15233bbf45b004cc758bdb6",
+      "underlay": "1920x1080/c3-type-gap-08-underlay.png",
+      "underlaySha256": "f74cd89216172e1fde34acc07f1db9107928d063b36025bbeef219b9ad6b91cc"
+    },
+    {
+      "id": "c3-type-stop-09",
+      "title": "安泰人间",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "painting": {
+        "width": 1848.96875,
+        "height": 618
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "和印已去，正文位于山峰之外；compact文字不压人物与花束。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 1607.1058349609375,
+        "right": 1719.47314453125,
+        "top": 177.26007080078125,
+        "bottom": 310.779541015625,
+        "width": 112.3673095703125,
+        "height": 133.51947021484375
+      },
+      "screenBodySize": "21.01695908554869",
+      "screenTitleSize": "30.907292772865723",
+      "compactReserve": "0",
+      "screenshot": "1920x1080/c3-type-stop-09.png",
+      "sha256": "9a07fa5a66c1fccd6a4d3574ffa90022b376b9d838a25da3492628c00233c098",
+      "underlay": "1920x1080/c3-type-stop-09-underlay.png",
+      "underlaySha256": "b59269131175aad4b3e811379c5481d51accdaf50e7dd98fe35999e1975bc76b"
+    },
+    {
+      "id": "chapter-3-opening",
+      "title": "锦绣花意",
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "宽/中保留原侧题并护边；compact仅显示上纸题首，锦绣花意、两短句和牡丹印完整，未压人物。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true
+      },
+      "bandBounds": {
+        "left": 9.134943008422852,
+        "right": 110.78709602355957,
+        "top": 23.382919311523438,
+        "bottom": 263.8293762207031,
+        "width": 101.65215301513672,
+        "height": 240.4464569091797
+      },
+      "screenBodySize": null,
+      "screenTitleSize": null,
+      "compactReserve": "0",
+      "screenshot": "960x700/chapter-3-opening.png",
+      "sha256": "79c9b7af1c5d71cfa83eb783fb7a18764e8342892d8e4fada8f1f4417f064461",
+      "underlay": "960x700/chapter-3-opening-underlay.png",
+      "underlaySha256": "8e6cce4676b7346e4be3871a84b05835f8176054c114e96c08879cde3154a2b8"
+    },
+    {
+      "id": "c3-type-gap-01",
+      "title": "一花百用",
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "中央纸空形成读段，七字列完整，低栏和主体在字下方。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 465.4408264160156,
+        "right": 540.2919921875,
+        "top": 115.30282592773438,
+        "bottom": 217.2210693359375,
+        "width": 74.85116577148438,
+        "height": 101.91824340820312
+      },
+      "screenBodySize": "14.000000000000002",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0",
+      "screenshot": "960x700/c3-type-gap-01.png",
+      "sha256": "4c958e6be5bcaf378191e4998548c478d67755fda8c6ff1756e77b69f88f86df",
+      "underlay": "960x700/c3-type-gap-01-underlay.png",
+      "underlaySha256": "edf166f7278e1dc3818af2810ed3709aecd955ccaeb45368ea29883baf65c289"
+    },
+    {
+      "id": "c3-type-gap-02",
+      "title": "经纬生芳",
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "题字在锦架上方纸空，锦架脚点内收后未触文字；中窗芳字已离红布。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 471.2542724609375,
+        "right": 546.1054077148438,
+        "top": 87.69744873046875,
+        "bottom": 176.638671875,
+        "width": 74.85113525390625,
+        "height": 88.94122314453125
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.588235294117645",
+      "compactReserve": "0",
+      "screenshot": "960x700/c3-type-gap-02.png",
+      "sha256": "ec72bc93b5f13b6217c75a8856ea880ee067cd3dabf9d063207b6570a2a450a5",
+      "underlay": "960x700/c3-type-gap-02-underlay.png",
+      "underlaySha256": "558132da8a52bd862a17b308477dc0d80b7f9cb233d37e8b43599ad529470078"
+    },
+    {
+      "id": "c3-type-stop-03",
+      "title": "凤穿牡丹",
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "宽/中题签在凤凰右侧纸空；compact题带与凤头、翅及人物分开。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 784.4240112304688,
+        "right": 859.275146484375,
+        "top": 107.17739868164062,
+        "bottom": 196.11865234375,
+        "width": 74.85113525390625,
+        "height": 88.94125366210938
+      },
+      "screenBodySize": "13.999999999999998",
+      "screenTitleSize": "20.588235294117645",
+      "compactReserve": "0",
+      "screenshot": "960x700/c3-type-stop-03.png",
+      "sha256": "7f074028648956d4336546a6e3d9416081b5b5fc408694d8bb22b53f9828f9d6",
+      "underlay": "960x700/c3-type-stop-03-underlay.png",
+      "underlaySha256": "cd886b084ff1a4b080ccd9af158589f1159f313746b999db4d5883e5cedf48da"
+    },
+    {
+      "id": "c3-type-gap-03",
+      "title": "案头清供",
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "器物上方短题完整，不压花器瓶口。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 434.6717224121094,
+        "right": 509.5228271484375,
+        "top": 110.82708740234375,
+        "bottom": 199.768310546875,
+        "width": 74.85110473632812,
+        "height": 88.94122314453125
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0",
+      "screenshot": "960x700/c3-type-gap-03.png",
+      "sha256": "534db6394ab6a0652a3a6a0344223747942b45f950b1dafe52515e93e1b93dc1",
+      "underlay": "960x700/c3-type-gap-03-underlay.png",
+      "underlaySha256": "75877a48037ff41f0beefe673af2fea0cd7a94bd8661085443639b92fc9f167f"
+    },
+    {
+      "id": "c3-type-stop-04",
+      "title": "同心成礼",
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "婚礼和凤纹之外留小题；compact正文不再接触凤冠与飘尾。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 784.4240112304688,
+        "right": 859.275146484375,
+        "top": 96.21577453613281,
+        "bottom": 185.156982421875,
+        "width": 74.85113525390625,
+        "height": 88.94120788574219
+      },
+      "screenBodySize": "13.999999999999998",
+      "screenTitleSize": "20.588235294117645",
+      "compactReserve": "0",
+      "screenshot": "960x700/c3-type-stop-04.png",
+      "sha256": "5e7510c23d40de3977d08a71c55ba058048cfc35b23d805d6a793aa9726167dd",
+      "underlay": "960x700/c3-type-stop-04-underlay.png",
+      "underlaySha256": "21d36bf5e6ce5ed87c230758997bfe1bc0d19ee965e2f0c428ee08c7624526a5"
+    },
+    {
+      "id": "c3-type-gap-04",
+      "title": "门庭有喜",
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "题字在墙门与路径上方纸空，不侵上缘气口。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 465.75189208984375,
+        "right": 540.60302734375,
+        "top": 112.65771484375,
+        "bottom": 201.59893798828125,
+        "width": 74.85113525390625,
+        "height": 88.94122314453125
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.588235294117645",
+      "compactReserve": "0",
+      "screenshot": "960x700/c3-type-gap-04.png",
+      "sha256": "88f04a61cc67c79e1a172a029ae04be0e3a56f87725b7a8bcf9594712de611ec",
+      "underlay": "960x700/c3-type-gap-04-underlay.png",
+      "underlaySha256": "f03ce6e9d4bc9063f538e3167b9db604cfae1f5d563700cb20d23149873b2efc"
+    },
+    {
+      "id": "c3-type-stop-05",
+      "title": "灯彩迎新",
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "文字与雪巷、屋檐保持间距；compact题带不压山形。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 64.72483825683594,
+        "right": 139.5759735107422,
+        "top": 114.48187255859375,
+        "bottom": 203.423095703125,
+        "width": 74.85113525390625,
+        "height": 88.94122314453125
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.588235294117645",
+      "compactReserve": "0",
+      "screenshot": "960x700/c3-type-stop-05.png",
+      "sha256": "7ddde7dc3204ddd59b7bdfe16e7af5cc059b1fb30529ad656da2da82e206a8d6",
+      "underlay": "960x700/c3-type-stop-05-underlay.png",
+      "underlaySha256": "2d9634d33a5ed2ba7e62e1ec4fc0196a6e5d77d777af39cd49e98ca84c4dfad0"
+    },
+    {
+      "id": "c3-type-gap-05",
+      "title": "尺素寄愿",
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "题签与两列首字均有真实顶端间距，没有顶裁。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 440.33270263671875,
+        "right": 515.183837890625,
+        "top": 101.69210815429688,
+        "bottom": 190.63333129882812,
+        "width": 74.85113525390625,
+        "height": 88.94122314453125
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.588235294117645",
+      "compactReserve": "0",
+      "screenshot": "960x700/c3-type-gap-05.png",
+      "sha256": "779655e7c213974042c894c9de8a7e3673c97d650c908761ec38d9f0314ec801",
+      "underlay": "960x700/c3-type-gap-05-underlay.png",
+      "underlaySha256": "858962f5b98c739ba023b565692e2e0d153f76488ab28ec9a9f201cf32c8f47b"
+    },
+    {
+      "id": "c3-type-stop-06",
+      "title": "针线传情",
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "侧题/独立纸题带不再压屋檐与人物，正文完整。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 64.72483825683594,
+        "right": 139.5759735107422,
+        "top": 119.9622802734375,
+        "bottom": 208.90350341796875,
+        "width": 74.85113525390625,
+        "height": 88.94122314453125
+      },
+      "screenBodySize": "13.999999999999998",
+      "screenTitleSize": "20.588235294117645",
+      "compactReserve": "0",
+      "screenshot": "960x700/c3-type-stop-06.png",
+      "sha256": "d87e0c70ca513c242715250e71242dd1013c3352bbe62e988a0870ae279b105f",
+      "underlay": "960x700/c3-type-stop-06-underlay.png",
+      "underlaySha256": "f875341e82a76fa8ce6d476656d91103320445f908b79a7bc5af4132e7d962f4"
+    },
+    {
+      "id": "c3-type-gap-06",
+      "title": "日用见美",
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "文字在器物上方留白，不遮瓶花。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 448.2448425292969,
+        "right": 523.095947265625,
+        "top": 110.82293701171875,
+        "bottom": 199.76416015625,
+        "width": 74.85110473632812,
+        "height": 88.94122314453125
+      },
+      "screenBodySize": "14.000000000000002",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0",
+      "screenshot": "960x700/c3-type-gap-06.png",
+      "sha256": "b81acee88c6f57e9e196784a78d49f90632a6b76105a149e4694471c53b1c5c9",
+      "underlay": "960x700/c3-type-gap-06-underlay.png",
+      "underlaySha256": "9b2423b892bf2a30467b3997724cd02e7268503704bcb143464ca56abd86354e"
+    },
+    {
+      "id": "c3-type-stop-07",
+      "title": "吉意入器",
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "器用小题和安居印在纸空，未遮镜台与工坊。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 762.1115112304688,
+        "right": 859.3588256835938,
+        "top": 129.10040283203125,
+        "bottom": 218.0416259765625,
+        "width": 97.247314453125,
+        "height": 88.94122314453125
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.588235294117645",
+      "compactReserve": "0",
+      "screenshot": "960x700/c3-type-stop-07.png",
+      "sha256": "e9b83da8404cff1639b5024c1059044b67dad36d8a39dcab0ca591e7633c3b69",
+      "underlay": "960x700/c3-type-stop-07-underlay.png",
+      "underlaySha256": "ed5b995156cdb99e8145582f15d0121bbcc7c2ba817c12547505fbda477dd1c4"
+    },
+    {
+      "id": "c3-type-gap-07",
+      "title": "雅意随身",
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "中段细列连接器用与书案，不叠屋檐。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 438.53045654296875,
+        "right": 513.381591796875,
+        "top": 112.65081787109375,
+        "bottom": 201.592041015625,
+        "width": 74.85113525390625,
+        "height": 88.94122314453125
+      },
+      "screenBodySize": "13.999999999999998",
+      "screenTitleSize": "20.588235294117645",
+      "compactReserve": "0",
+      "screenshot": "960x700/c3-type-gap-07.png",
+      "sha256": "2e9ae2a8b9d67cad97e97e2a8fdef131268df7762c85c61ee23f2f58391f5fb8",
+      "underlay": "960x700/c3-type-gap-07-underlay.png",
+      "underlaySha256": "cda50cc306d50f122a926c574034dd26e6f27927cbfc6623454a9a826c112db5"
+    },
+    {
+      "id": "c3-type-stop-08",
+      "title": "端庄自持",
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "侧题与屋檐分开，compact上纸带不压圆屏和人物。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 64.72483825683594,
+        "right": 139.5759735107422,
+        "top": 99.87030029296875,
+        "bottom": 188.8115234375,
+        "width": 74.85113525390625,
+        "height": 88.94122314453125
+      },
+      "screenBodySize": "14.000000000000002",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0",
+      "screenshot": "960x700/c3-type-stop-08.png",
+      "sha256": "0bbf3e5978b2bb75829626a982283688cbe2ceb5a47bcd7c880aaaf46c1115e1",
+      "underlay": "960x700/c3-type-stop-08-underlay.png",
+      "underlaySha256": "0836a63ade24540f71b7abd97944d17e7469c318b47fb3b1b32ca85bd3b894fd"
+    },
+    {
+      "id": "c3-type-gap-08",
+      "title": "满城和乐",
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "current-file-view_image",
+        "priorCapture": null
+      },
+      "observation": "中央题签完整，左右生活场景之间有文字停顿。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 455.993896484375,
+        "right": 530.8450317382812,
+        "top": 116.30926513671875,
+        "bottom": 205.25048828125,
+        "width": 74.85113525390625,
+        "height": 88.94122314453125
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.588235294117645",
+      "compactReserve": "0",
+      "screenshot": "960x700/c3-type-gap-08.png",
+      "sha256": "31e2a43e1bf5417a3c0097eaffb9241fe3abceb1aad9e9736c4d28156f44878a",
+      "underlay": "960x700/c3-type-gap-08-underlay.png",
+      "underlaySha256": "50d1c8e3a2ab81326317bd0c6bb356d51404c5ec3fe539bd173cbe9515bcbf73"
+    },
+    {
+      "id": "c3-type-stop-09",
+      "title": "安泰人间",
+      "viewport": [
+        960,
+        700
+      ],
+      "painting": {
+        "width": 924,
+        "height": 365.40625
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "和印已去，正文位于山峰之外；compact文字不压人物与花束。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 784.4240112304688,
+        "right": 859.275146484375,
+        "top": 99.81150817871094,
+        "bottom": 188.75274658203125,
+        "width": 74.85113525390625,
+        "height": 88.94123840332031
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.588235294117645",
+      "compactReserve": "0",
+      "screenshot": "960x700/c3-type-stop-09.png",
+      "sha256": "65038bf74fc9f81d7e52795d0b5b0a5cd588be4e3115880b00bb7aaa6d40b881",
+      "underlay": "960x700/c3-type-stop-09-underlay.png",
+      "underlaySha256": "78d82b330faf5382f718b1f8f0f83a47e6c591ea2979489560e06464569ace96"
+    },
+    {
+      "id": "chapter-3-opening",
+      "title": "锦绣花意",
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "宽/中保留原侧题并护边；compact仅显示上纸题首，锦绣花意、两短句和牡丹印完整，未压人物。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 111.86688232421875,
+        "right": 212.13983154296875,
+        "top": 28.00506591796875,
+        "bottom": 119.7135009765625,
+        "width": 100.27294921875,
+        "height": 91.70843505859375
+      },
+      "screenBodySize": "14.435598918493477",
+      "screenTitleSize": "21.228821938960994",
+      "compactReserve": "0.38873065015479874",
+      "screenshot": "360x800/chapter-3-opening.png",
+      "sha256": "48d7909b0d7d70932b2644067d29272aab5ed5e94bc01261c04b5a2c497b83f7",
+      "underlay": "360x800/chapter-3-opening-underlay.png",
+      "underlaySha256": "8985c9e1b0225f5b71891145189ee0cab37e7684faa3a644509cec7478bbd99a"
+    },
+    {
+      "id": "c3-type-gap-01",
+      "title": "一花百用",
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "中央纸空形成读段，七字列完整，低栏和主体在字下方。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 124.57450866699219,
+        "right": 199.42556762695312,
+        "top": 22.897018432617188,
+        "bottom": 124.81515502929688,
+        "width": 74.85105895996094,
+        "height": 101.91813659667969
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.588235294117645",
+      "compactReserve": "0.38873065015479874",
+      "screenshot": "360x800/c3-type-gap-01.png",
+      "sha256": "d8862c39e1efb1743fb49e0c3a1677d4cbd4e8202c5d5117261f997cb1a29636",
+      "underlay": "360x800/c3-type-gap-01-underlay.png",
+      "underlaySha256": "11d7bebd0e356514e770cfb58117cfbb3dd4ad2587e45a9946fc85303540026b"
+    },
+    {
+      "id": "c3-type-gap-02",
+      "title": "经纬生芳",
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "题字在锦架上方纸空，锦架脚点内收后未触文字；中窗芳字已离红布。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 124.57450866699219,
+        "right": 199.42556762695312,
+        "top": 29.38873291015625,
+        "bottom": 118.32986450195312,
+        "width": 74.85105895996094,
+        "height": 88.94113159179688
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.588235294117645",
+      "compactReserve": "0.38873065015479874",
+      "screenshot": "360x800/c3-type-gap-02.png",
+      "sha256": "cb062a3ce3a387f767db8c55b2fce1aef5e422dd77ab4ae0d9c16846e198f8b7",
+      "underlay": "360x800/c3-type-gap-02-underlay.png",
+      "underlaySha256": "f4a2e180fc6e2d0d870de4ccf03446ad8a03a0970eb7c05e36fbe7b0ed4e96e0"
+    },
+    {
+      "id": "c3-type-stop-03",
+      "title": "凤穿牡丹",
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "宽/中题签在凤凰右侧纸空；compact题带与凤头、翅及人物分开。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 124.57450866699219,
+        "right": 199.42556762695312,
+        "top": 29.38873291015625,
+        "bottom": 118.32986450195312,
+        "width": 74.85105895996094,
+        "height": 88.94113159179688
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0.38873065015479874",
+      "screenshot": "360x800/c3-type-stop-03.png",
+      "sha256": "44b60e101615f6deee4b4192418cdcf2f7d550b0f61ada2225636832f3d20748",
+      "underlay": "360x800/c3-type-stop-03-underlay.png",
+      "underlaySha256": "04d2d0a406b35ff604f33597bf69f1f4285f22e619f8d27c8c3a038a9e5b05e1"
+    },
+    {
+      "id": "c3-type-gap-03",
+      "title": "案头清供",
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "器物上方短题完整，不压花器瓶口。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 124.57450866699219,
+        "right": 199.42556762695312,
+        "top": 29.38873291015625,
+        "bottom": 118.32986450195312,
+        "width": 74.85105895996094,
+        "height": 88.94113159179688
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0.38873065015479874",
+      "screenshot": "360x800/c3-type-gap-03.png",
+      "sha256": "9f979560142c587b36884fa922ac7500bfee91c8529a228e93be8a99869114af",
+      "underlay": "360x800/c3-type-gap-03-underlay.png",
+      "underlaySha256": "48f5d0735f2ca3734ba2e536d1afd7b2a6df35c1d9c7d40ea23fe5b482a6e9c8"
+    },
+    {
+      "id": "c3-type-stop-04",
+      "title": "同心成礼",
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "婚礼和凤纹之外留小题；compact正文不再接触凤冠与飘尾。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 124.57450866699219,
+        "right": 199.42556762695312,
+        "top": 29.38873291015625,
+        "bottom": 118.32986450195312,
+        "width": 74.85105895996094,
+        "height": 88.94113159179688
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0.38873065015479874",
+      "screenshot": "360x800/c3-type-stop-04.png",
+      "sha256": "0e1815e02ef167706b949483fc80c7d084283c6de4787fe933705a1bb1e1b35d",
+      "underlay": "360x800/c3-type-stop-04-underlay.png",
+      "underlaySha256": "f7b200b93f880eb14a9965921f7a79369b6753cfc6e264775b782d2419aeba43"
+    },
+    {
+      "id": "c3-type-gap-04",
+      "title": "门庭有喜",
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "题字在墙门与路径上方纸空，不侵上缘气口。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 124.57450866699219,
+        "right": 199.42556762695312,
+        "top": 29.38873291015625,
+        "bottom": 118.32986450195312,
+        "width": 74.85105895996094,
+        "height": 88.94113159179688
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0.38873065015479874",
+      "screenshot": "360x800/c3-type-gap-04.png",
+      "sha256": "da9bfc1d088f9b623abd59660abd64f282fc58f9bb0d89fbe06be2ca2732b3ee",
+      "underlay": "360x800/c3-type-gap-04-underlay.png",
+      "underlaySha256": "d27f5e61b40d1cf69dc3a3ad7384294d9fd4fd7a2cf10054106b1016e33f4d5f"
+    },
+    {
+      "id": "c3-type-stop-05",
+      "title": "灯彩迎新",
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "文字与雪巷、屋檐保持间距；compact题带不压山形。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 124.57450866699219,
+        "right": 199.42556762695312,
+        "top": 29.38873291015625,
+        "bottom": 118.32986450195312,
+        "width": 74.85105895996094,
+        "height": 88.94113159179688
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0.38873065015479874",
+      "screenshot": "360x800/c3-type-stop-05.png",
+      "sha256": "110beb85e58f84eabcbdadc6e9a090bf2641d2455ab4f578b77fc639104fef24",
+      "underlay": "360x800/c3-type-stop-05-underlay.png",
+      "underlaySha256": "0fad171a82ab3d001cff11fdc9540768abd63a037efb248e7394cc2f750e4301"
+    },
+    {
+      "id": "c3-type-gap-05",
+      "title": "尺素寄愿",
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "题签与两列首字均有真实顶端间距，没有顶裁。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 124.57450866699219,
+        "right": 199.42556762695312,
+        "top": 29.38873291015625,
+        "bottom": 118.32986450195312,
+        "width": 74.85105895996094,
+        "height": 88.94113159179688
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0.38873065015479874",
+      "screenshot": "360x800/c3-type-gap-05.png",
+      "sha256": "a9f2ab1176d948b34da87b5842c63cc5d89a81924a850818e62cbf969f352ceb",
+      "underlay": "360x800/c3-type-gap-05-underlay.png",
+      "underlaySha256": "39fffe7ce6c0f3520bf76adb8b6ff4a438a3e263ddde4e8ac7a6335f245caa66"
+    },
+    {
+      "id": "c3-type-stop-06",
+      "title": "针线传情",
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "侧题/独立纸题带不再压屋檐与人物，正文完整。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 124.57450866699219,
+        "right": 199.42556762695312,
+        "top": 29.38873291015625,
+        "bottom": 118.32986450195312,
+        "width": 74.85105895996094,
+        "height": 88.94113159179688
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.588235294117645",
+      "compactReserve": "0.38873065015479874",
+      "screenshot": "360x800/c3-type-stop-06.png",
+      "sha256": "a05ed0fa5cc8dbbb9042a4c8142c3a4bfe78cffb9ec44dc7c5c424ee7293a3d0",
+      "underlay": "360x800/c3-type-stop-06-underlay.png",
+      "underlaySha256": "ec37abdc13ec7e4f4d95e52d2c21571ae71f7fa9548c5bc653d3566b16648443"
+    },
+    {
+      "id": "c3-type-gap-06",
+      "title": "日用见美",
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "文字在器物上方留白，不遮瓶花。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 124.57450866699219,
+        "right": 199.42556762695312,
+        "top": 29.38873291015625,
+        "bottom": 118.32986450195312,
+        "width": 74.85105895996094,
+        "height": 88.94113159179688
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.588235294117645",
+      "compactReserve": "0.38873065015479874",
+      "screenshot": "360x800/c3-type-gap-06.png",
+      "sha256": "c51b6a45cbe1f64ef793c5add2da8403710dff47e9351ac9c9b06955b136811d",
+      "underlay": "360x800/c3-type-gap-06-underlay.png",
+      "underlaySha256": "48c8672308ee9a934e713b10910fd33184671233dbd47cc9d5e23a3c9b20e345"
+    },
+    {
+      "id": "c3-type-stop-07",
+      "title": "吉意入器",
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "器用小题和安居印在纸空，未遮镜台与工坊。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 113.37966918945312,
+        "right": 210.6268310546875,
+        "top": 29.38873291015625,
+        "bottom": 118.32986450195312,
+        "width": 97.24716186523438,
+        "height": 88.94113159179688
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0.38873065015479874",
+      "screenshot": "360x800/c3-type-stop-07.png",
+      "sha256": "cafeb9c7b83fb3b292424a7d73c13eb093235903d60cdb50a4b856473decda6b",
+      "underlay": "360x800/c3-type-stop-07-underlay.png",
+      "underlaySha256": "4e416b3257a319db18865334d7a98924b1ebf44c558478f6ff630963021a2d40"
+    },
+    {
+      "id": "c3-type-gap-07",
+      "title": "雅意随身",
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "中段细列连接器用与书案，不叠屋檐。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 124.57450866699219,
+        "right": 199.42556762695312,
+        "top": 29.38873291015625,
+        "bottom": 118.32986450195312,
+        "width": 74.85105895996094,
+        "height": 88.94113159179688
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0.38873065015479874",
+      "screenshot": "360x800/c3-type-gap-07.png",
+      "sha256": "3dde001890f9f39935447b2dc3b7ec0107ce2b7b5a6b06bb56206252a5bbf8e1",
+      "underlay": "360x800/c3-type-gap-07-underlay.png",
+      "underlaySha256": "7239fdab18d60d71886269ba3a882d15c3b1a1701e925d32454657dd077fa590"
+    },
+    {
+      "id": "c3-type-stop-08",
+      "title": "端庄自持",
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "侧题与屋檐分开，compact上纸带不压圆屏和人物。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 124.57450866699219,
+        "right": 199.42556762695312,
+        "top": 29.38873291015625,
+        "bottom": 118.32986450195312,
+        "width": 74.85105895996094,
+        "height": 88.94113159179688
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0.38873065015479874",
+      "screenshot": "360x800/c3-type-stop-08.png",
+      "sha256": "997bb928dc01b587e7b8d371484b4b3c83d32f5c5bcb47d76f818052f77df334",
+      "underlay": "360x800/c3-type-stop-08-underlay.png",
+      "underlaySha256": "a54ce5a330939a1db4da515a093d265280530e505fcfb392d81e6ce608939a97"
+    },
+    {
+      "id": "c3-type-gap-08",
+      "title": "满城和乐",
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "中央题签完整，左右生活场景之间有文字停顿。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 124.57450866699219,
+        "right": 199.42556762695312,
+        "top": 29.38873291015625,
+        "bottom": 118.32986450195312,
+        "width": 74.85105895996094,
+        "height": 88.94113159179688
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0.38873065015479874",
+      "screenshot": "360x800/c3-type-gap-08.png",
+      "sha256": "615085d03d3b8efd9cd3b7438dc2330667009cdd8d97c3b694202ce4f2c3a0d6",
+      "underlay": "360x800/c3-type-gap-08-underlay.png",
+      "underlaySha256": "3ec62937be02d140362e3d08bf38b128b670d27ed71abb8a9a141671e0f7a0ff"
+    },
+    {
+      "id": "c3-type-stop-09",
+      "title": "安泰人间",
+      "viewport": [
+        360,
+        800
+      ],
+      "painting": {
+        "width": 324,
+        "height": 380
+      },
+      "passed": true,
+      "status": "passed",
+      "reviewedIndividually": true,
+      "reviewedWithViewImage": true,
+      "reviewEvidence": {
+        "method": "exact-sha-inheritance-of-individual-full-size-review",
+        "priorCapture": "../text-layout-final/capture-prepaint-dom.json"
+      },
+      "observation": "和印已去，正文位于山峰之外；compact文字不压人物与花束。",
+      "mainSubjectOcclusionSeen": false,
+      "topClippingSeen": false,
+      "checks": {
+        "contentMatchesAuthoring": true,
+        "twoCompleteBodyColumns": true,
+        "rightToLeftColumns": true,
+        "onlyOneOpaqueGroup": true,
+        "noDocumentOverflow": true,
+        "noInkBlockOverflow": true,
+        "allGlyphsInsidePainting": true,
+        "bodyAtLeast14": true,
+        "titleAtLeast18": true,
+        "noWhiteStroke": true
+      },
+      "bandBounds": {
+        "left": 124.57450866699219,
+        "right": 199.42556762695312,
+        "top": 29.38873291015625,
+        "bottom": 118.32986450195312,
+        "width": 74.85105895996094,
+        "height": 88.94113159179688
+      },
+      "screenBodySize": "14",
+      "screenTitleSize": "20.58823529411765",
+      "compactReserve": "0.38873065015479874",
+      "screenshot": "360x800/c3-type-stop-09.png",
+      "sha256": "eb1c6bf6d8bf705543b81c92d20b96430e3827e01dc274e7c71b1fb047d880a3",
+      "underlay": "360x800/c3-type-stop-09-underlay.png",
+      "underlaySha256": "fed859acb28b7b0de12f2f57c244a74957d46dc8c5d749e57a19339f818f8c9b"
+    }
+  ]
+}

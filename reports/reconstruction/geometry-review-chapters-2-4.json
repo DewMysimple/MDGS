@@ -1,0 +1,5489 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-20",
+  "scope": "Supplement to the completed asset review: original chapters2–4 UV trims, semantic source extraction, baked text and opaque paper depth only. No source assets/canonical/rendering implementation modified by this review.",
+  "sourceAssetsModified": false,
+  "authoredReadingStops": 25,
+  "method": [
+    "UV triangle coverage over original alpha rasterized to512px. Alpha omission is a candidate measure, not an aesthetic verdict.",
+    "Original high-risk WebPs, candidate sheets and baseline actual rendered stops inspected.",
+    "201-point source-alpha ray transmission at long internal UV cuts, with actual triangle masks and foreground original textured layers. Affine approximation residual limits recorded.",
+    "24x24 source-alpha sampling and triangle ray test against paper; chapter4 low-ground full-figure risks additionally checked at every original camera sample.",
+    "Same-source fragments in different scenes are not unioned as if simultaneously visible."
+  ],
+  "summary": {
+    "texturedInstancesScanned": 227,
+    "machineCandidatesReviewed": 17,
+    "provenBroadPaperOccluders": 0,
+    "automaticBulkFullUvRecommended": false
+  },
+  "chapters": {
+    "2": {
+      "auditedTexturedMeshCount": 39,
+      "machineCandidateCount": 4,
+      "reviewedCandidateCount": 4,
+      "originalScene": "public/assets/chapter-2/scene.json",
+      "originalSceneSha256": "b7e7591c95f1b40ef66b60941213c4a5976975591c6765e584ddc5484553f153",
+      "candidates": [
+        {
+          "name": "右下河流与岸景.001",
+          "id": "c2-m-70867a4d5090",
+          "textureId": "c2-t-2f3943fa7f92ec09",
+          "label": "C2-T002",
+          "sourceName": "右下河流与岸景.png",
+          "texturePath": "public/assets/chapter-2/textures/2f3943fa7f92ec09.webp",
+          "role": "中景承接层",
+          "treatment": "修复",
+          "storyboard": {
+            "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+            "axis": "X",
+            "axisBounds": [
+              7.4207006,
+              9.0805483
+            ],
+            "nearestStop": {
+              "name": "2-4 阅读",
+              "frame": 1873,
+              "progress": 0.3070866,
+              "index": 4,
+              "cameraAxisPosition": 7.612155
+            },
+            "stopRange": [
+              4,
+              4
+            ],
+            "associatedStops": [
+              {
+                "name": "2-4 阅读",
+                "frame": 1873,
+                "progress": 0.3070866,
+                "index": 4,
+                "cameraAxisPosition": 7.612155
+              }
+            ]
+          },
+          "uvRange": [
+            0.0,
+            0.0,
+            0.875,
+            1.0
+          ],
+          "omittedVisibleAlphaRatio": 0.18916781645812736,
+          "hardAxisBoundaryCandidates": [
+            {
+              "axis": "u",
+              "coordinate": 0.875,
+              "interval": [
+                0.0,
+                1.0
+              ],
+              "uvLength": 1.0,
+              "meanAlpha": 208.2635494155154,
+              "occupiedRatio": 0.8607863974495218,
+              "opaqueRatio": 0.7736450584484591
+            }
+          ],
+          "positionValues": 72,
+          "pendingVisualReview": false,
+          "diagnosticImage": "reports/reconstruction/chapter-2-geometry-review/c2-m-70867a4d5090.png",
+          "priority": "P1",
+          "recommendedAction": "pixel-repair-and-instance-layout-review",
+          "bakedTextRisk": false,
+          "visualReview": {
+            "reviewedOriginal": true,
+            "evidence": [
+              "reports/reconstruction/before/chapter-2-overview.jpg",
+              "reports/reconstruction/chapter-2-geometry-review/candidates-01.jpg",
+              "public/assets/chapter-2/textures/2f3943fa7f92ec09.webp"
+            ],
+            "observation": "辅助河片并非独立完整景，u=.875切线第4景173个有色点全部暴露，第5景仍90.75%暴露；原图右/底也触画布。不能只fullUV，更不能把三副本都放成完整河景。扩绘同一原图后，先选一个主实例；另两片按构图局部承接或退役，须看第4至5景连续预览。"
+          },
+          "boundaryVisibility": [
+            {
+              "name": "右下河流与岸景.001",
+              "meshId": "c2-m-70867a4d5090",
+              "axis": "u",
+              "coordinate": 0.875,
+              "interval": [
+                0.0,
+                1.0
+              ],
+              "worldEndpoints": [
+                [
+                  9.032855578782282,
+                  -0.4090402159346843,
+                  0.4782446031753662
+                ],
+                [
+                  9.080548280253204,
+                  0.6287304839976525,
+                  0.47600220314543457
+                ]
+              ],
+              "fitResidualWorld": 4.851007773254423e-08,
+              "samples": [
+                {
+                  "stop": 4,
+                  "frame": 1873,
+                  "sourceProgress": 0.3070866,
+                  "inFrameLineRatio": 1.0,
+                  "lineTransmissionMean": 1.0,
+                  "occupiedLineSampleCount": 173,
+                  "exposedOccupiedLineSampleCount": 173,
+                  "exposedOccupiedLineRatio": 1.0,
+                  "foregroundBlockers": []
+                },
+                {
+                  "stop": 5,
+                  "frame": 2617,
+                  "sourceProgress": 0.4291339,
+                  "inFrameLineRatio": 0.9303482587064676,
+                  "lineTransmissionMean": 0.8944322113872286,
+                  "occupiedLineSampleCount": 173,
+                  "exposedOccupiedLineSampleCount": 157,
+                  "exposedOccupiedLineRatio": 0.9075144508670521,
+                  "foregroundBlockers": [
+                    {
+                      "name": "2-5 前景 04_前景牡丹花石",
+                      "lineOccupiedRatio": 0.12299465240641712,
+                      "meanAlpha": 0.10556778861277132
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "右下河流与岸景",
+          "id": "c2-m-d0a30952d7a3",
+          "textureId": "c2-t-2f3943fa7f92ec09",
+          "label": "C2-T002",
+          "sourceName": "右下河流与岸景.png",
+          "texturePath": "public/assets/chapter-2/textures/2f3943fa7f92ec09.webp",
+          "role": "中景承接层",
+          "treatment": "修复",
+          "storyboard": {
+            "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+            "axis": "X",
+            "axisBounds": [
+              7.3273134,
+              8.8513308
+            ],
+            "nearestStop": {
+              "name": "2-4 阅读",
+              "frame": 1873,
+              "progress": 0.3070866,
+              "index": 4,
+              "cameraAxisPosition": 7.612155
+            },
+            "stopRange": [
+              4,
+              4
+            ],
+            "associatedStops": [
+              {
+                "name": "2-4 阅读",
+                "frame": 1873,
+                "progress": 0.3070866,
+                "index": 4,
+                "cameraAxisPosition": 7.612155
+              }
+            ]
+          },
+          "uvRange": [
+            0.0,
+            0.0,
+            0.75,
+            1.0
+          ],
+          "omittedVisibleAlphaRatio": 0.3233987070256828,
+          "hardAxisBoundaryCandidates": [
+            {
+              "axis": "u",
+              "coordinate": 0.75,
+              "interval": [
+                0.0,
+                1.0
+              ],
+              "uvLength": 1.0,
+              "meanAlpha": 144.7757704569607,
+              "occupiedRatio": 0.5759829968119022,
+              "opaqueRatio": 0.5738575982996812
+            }
+          ],
+          "positionValues": 39,
+          "pendingVisualReview": false,
+          "diagnosticImage": "reports/reconstruction/chapter-2-geometry-review/c2-m-d0a30952d7a3.png",
+          "priority": "P1",
+          "recommendedAction": "pixel-repair-and-instance-layout-review",
+          "bakedTextRisk": false,
+          "visualReview": {
+            "reviewedOriginal": true,
+            "evidence": [
+              "reports/reconstruction/before/chapter-2-overview.jpg",
+              "reports/reconstruction/chapter-2-geometry-review/candidates-01.jpg",
+              "public/assets/chapter-2/textures/2f3943fa7f92ec09.webp"
+            ],
+            "observation": "河景主实例u=.75切断水面与右岸，第4/5景被测有色切线点100%暴露；原图内有完整亭台游人但右岸/底水自身也未收口。需要像素扩绘并恢复单个主实例，避免三份整图重复同一群人物。"
+          },
+          "boundaryVisibility": [
+            {
+              "name": "右下河流与岸景",
+              "meshId": "c2-m-d0a30952d7a3",
+              "axis": "u",
+              "coordinate": 0.75,
+              "interval": [
+                0.0,
+                1.0
+              ],
+              "worldEndpoints": [
+                [
+                  8.8513310926574,
+                  -0.9570185397906007,
+                  0.7526730000000001
+                ],
+                [
+                  8.851331092657402,
+                  0.18728696020939983,
+                  0.7526730000000006
+                ]
+              ],
+              "fitResidualWorld": 6.217248937900877e-15,
+              "samples": [
+                {
+                  "stop": 4,
+                  "frame": 1873,
+                  "sourceProgress": 0.3070866,
+                  "inFrameLineRatio": 0.8059701492537313,
+                  "lineTransmissionMean": 1.0,
+                  "occupiedLineSampleCount": 77,
+                  "exposedOccupiedLineSampleCount": 77,
+                  "exposedOccupiedLineRatio": 1.0,
+                  "foregroundBlockers": []
+                },
+                {
+                  "stop": 5,
+                  "frame": 2617,
+                  "sourceProgress": 0.4291339,
+                  "inFrameLineRatio": 1.0,
+                  "lineTransmissionMean": 1.0,
+                  "occupiedLineSampleCount": 116,
+                  "exposedOccupiedLineSampleCount": 116,
+                  "exposedOccupiedLineRatio": 1.0,
+                  "foregroundBlockers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "03_中间远景",
+          "id": "c2-m-53abbb827900",
+          "textureId": "c2-t-44b0f2b167932cc6",
+          "label": "C2-T005",
+          "sourceName": "03_中间远景.png.001",
+          "texturePath": "public/assets/chapter-2/textures/44b0f2b167932cc6.webp",
+          "role": "后景连续层",
+          "treatment": "修复",
+          "storyboard": {
+            "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+            "axis": "X",
+            "axisBounds": [
+              12.2670622,
+              14.021884
+            ],
+            "nearestStop": {
+              "name": "2-6 阅读",
+              "frame": 3409,
+              "progress": 0.5590551,
+              "index": 6,
+              "cameraAxisPosition": 12.515765
+            },
+            "stopRange": [
+              6,
+              6
+            ],
+            "associatedStops": [
+              {
+                "name": "2-6 阅读",
+                "frame": 3409,
+                "progress": 0.5590551,
+                "index": 6,
+                "cameraAxisPosition": 12.515765
+              }
+            ]
+          },
+          "uvRange": [
+            0.0,
+            0.0,
+            0.5625,
+            1.0
+          ],
+          "omittedVisibleAlphaRatio": 0.45883276886591795,
+          "hardAxisBoundaryCandidates": [
+            {
+              "axis": "u",
+              "coordinate": 0.5,
+              "interval": [
+                0.0,
+                0.5
+              ],
+              "uvLength": 0.5,
+              "meanAlpha": 163.68965517241378,
+              "occupiedRatio": 0.6482758620689655,
+              "opaqueRatio": 0.6413793103448275
+            },
+            {
+              "axis": "u",
+              "coordinate": 0.5625,
+              "interval": [
+                0.5,
+                0.75
+              ],
+              "uvLength": 0.25,
+              "meanAlpha": 255.0,
+              "occupiedRatio": 1.0,
+              "opaqueRatio": 1.0
+            }
+          ],
+          "positionValues": 42,
+          "pendingVisualReview": false,
+          "diagnosticImage": "reports/reconstruction/chapter-2-geometry-review/c2-m-53abbb827900.png",
+          "priority": "P1",
+          "recommendedAction": "replace-clean-background-before-full-uv",
+          "bakedTextRisk": true,
+          "visualReview": {
+            "reviewedOriginal": true,
+            "evidence": [
+              "reports/reconstruction/before/chapter-2-overview.jpg",
+              "reports/reconstruction/chapter-2-geometry-review/candidates-01.jpg",
+              "public/assets/chapter-2/textures/44b0f2b167932cc6.webp"
+            ],
+            "observation": "原图上方清楚烘焙两行正文，下方城郊也是截图截断；当前网格遮住部分字，直接fullUV会重新暴露。原切线在第6/7景被前景挡住，仍应按既有裁决去字补远景后才替换几何。"
+          },
+          "boundaryVisibility": [
+            {
+              "name": "03_中间远景",
+              "meshId": "c2-m-53abbb827900",
+              "axis": "u",
+              "coordinate": 0.5,
+              "interval": [
+                0.0,
+                0.5
+              ],
+              "worldEndpoints": [
+                [
+                  13.82690335901085,
+                  0.15057334913347983,
+                  -0.08116988319283001
+                ],
+                [
+                  13.826903359010844,
+                  0.7856827491334804,
+                  0.19149646680717014
+                ]
+              ],
+              "fitResidualWorld": 1.9539925233402755e-14,
+              "samples": [
+                {
+                  "stop": 6,
+                  "frame": 3409,
+                  "sourceProgress": 0.5590551,
+                  "inFrameLineRatio": 1.0,
+                  "lineTransmissionMean": 0.010925763340161905,
+                  "occupiedLineSampleCount": 130,
+                  "exposedOccupiedLineSampleCount": 0,
+                  "exposedOccupiedLineRatio": 0.0,
+                  "foregroundBlockers": [
+                    {
+                      "name": "2-6 中景 04_右侧街景",
+                      "lineOccupiedRatio": 1.0,
+                      "meanAlpha": 0.9890742366598381
+                    }
+                  ]
+                },
+                {
+                  "stop": 7,
+                  "frame": 4825,
+                  "sourceProgress": 0.7913386,
+                  "inFrameLineRatio": 1.0,
+                  "lineTransmissionMean": 0.01106233538191392,
+                  "occupiedLineSampleCount": 130,
+                  "exposedOccupiedLineSampleCount": 0,
+                  "exposedOccupiedLineRatio": 0.0,
+                  "foregroundBlockers": [
+                    {
+                      "name": "2-6 中景 04_右侧街景",
+                      "lineOccupiedRatio": 1.0,
+                      "meanAlpha": 0.988937664618086
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "03_中间远景",
+              "meshId": "c2-m-53abbb827900",
+              "axis": "u",
+              "coordinate": 0.5625,
+              "interval": [
+                0.5,
+                0.75
+              ],
+              "worldEndpoints": [
+                [
+                  14.021883481157445,
+                  0.7856827491334804,
+                  0.19149646680717014
+                ],
+                [
+                  14.021883481157442,
+                  1.1032374491334807,
+                  0.3278296418071702
+                ]
+              ],
+              "fitResidualWorld": 1.9539925233402755e-14,
+              "samples": [
+                {
+                  "stop": 6,
+                  "frame": 3409,
+                  "sourceProgress": 0.5590551,
+                  "inFrameLineRatio": 0.8507462686567164,
+                  "lineTransmissionMean": 0.01158124068340783,
+                  "occupiedLineSampleCount": 171,
+                  "exposedOccupiedLineSampleCount": 0,
+                  "exposedOccupiedLineRatio": 0.0,
+                  "foregroundBlockers": [
+                    {
+                      "name": "2-6 中景 04_右侧街景",
+                      "lineOccupiedRatio": 1.0,
+                      "meanAlpha": 0.9884187593165924
+                    }
+                  ]
+                },
+                {
+                  "stop": 7,
+                  "frame": 4825,
+                  "sourceProgress": 0.7913386,
+                  "inFrameLineRatio": 0.22388059701492538,
+                  "lineTransmissionMean": 0.011851851851851811,
+                  "occupiedLineSampleCount": 45,
+                  "exposedOccupiedLineSampleCount": 0,
+                  "exposedOccupiedLineRatio": 0.0,
+                  "foregroundBlockers": [
+                    {
+                      "name": "2-6 中景 04_右侧街景",
+                      "lineOccupiedRatio": 1.0,
+                      "meanAlpha": 0.9881481481481479
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "右下河流与岸景.002",
+          "id": "c2-m-72ab86afc950",
+          "textureId": "c2-t-2f3943fa7f92ec09",
+          "label": "C2-T002",
+          "sourceName": "右下河流与岸景.png",
+          "texturePath": "public/assets/chapter-2/textures/2f3943fa7f92ec09.webp",
+          "role": "中景承接层",
+          "treatment": "修复",
+          "storyboard": {
+            "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+            "axis": "X",
+            "axisBounds": [
+              7.5208864,
+              9.1750927
+            ],
+            "nearestStop": {
+              "name": "2-4 阅读",
+              "frame": 1873,
+              "progress": 0.3070866,
+              "index": 4,
+              "cameraAxisPosition": 7.612155
+            },
+            "stopRange": [
+              4,
+              4
+            ],
+            "associatedStops": [
+              {
+                "name": "2-4 阅读",
+                "frame": 1873,
+                "progress": 0.3070866,
+                "index": 4,
+                "cameraAxisPosition": 7.612155
+              }
+            ]
+          },
+          "uvRange": [
+            0.0,
+            0.0,
+            0.75,
+            1.0
+          ],
+          "omittedVisibleAlphaRatio": 0.34401932970872806,
+          "hardAxisBoundaryCandidates": [],
+          "positionValues": 258,
+          "pendingVisualReview": false,
+          "diagnosticImage": "reports/reconstruction/chapter-2-geometry-review/c2-m-72ab86afc950.png",
+          "priority": "P1",
+          "recommendedAction": "pixel-repair-and-instance-layout-review",
+          "bakedTextRisk": false,
+          "visualReview": {
+            "reviewedOriginal": true,
+            "evidence": [
+              "reports/reconstruction/before/chapter-2-overview.jpg",
+              "reports/reconstruction/chapter-2-geometry-review/candidates-01.jpg",
+              "public/assets/chapter-2/textures/2f3943fa7f92ec09.webp"
+            ],
+            "observation": "第二辅助河片沿斜轮廓摘取部分源图，丢34.4%有色alpha；与另两副本上下叠出竖直水墙。宜在主河景恢复后重审用途，不能单按.002后缀直接隐藏，也不能与主片同步fullUV。"
+          },
+          "boundaryVisibility": []
+        }
+      ],
+      "paperDepth": {
+        "paperObjects": [
+          {
+            "id": "c2-m-ce9ca1e39dfd",
+            "name": "宣纸 连续长卷 19.8米",
+            "materialIndex": 7,
+            "material": {
+              "id": 7,
+              "name": "宣纸 温润纤维",
+              "texture": null,
+              "color": [
+                0.86739817265,
+                0.7914988697,
+                0.6414693594
+              ],
+              "opacity": 1.0,
+              "transparent": false,
+              "alphaTest": 0,
+              "side": "double",
+              "depthWrite": true,
+              "sourceAlphaLinked": false,
+              "proceduralApproximation": true
+            },
+            "bounds": {
+              "min": [
+                -1.6008658,
+                -1.0548054,
+                -0.8862
+              ],
+              "max": [
+                13.8365116,
+                1.2052749,
+                0.0510523
+              ]
+            },
+            "triangleCount": 16640
+          }
+        ],
+        "readingStops": [
+          {
+            "paperName": "宣纸 连续长卷 19.8米",
+            "stop": 1,
+            "name": "2-1 阅读",
+            "sourceProgress": 0.023622,
+            "camera": {
+              "position": [
+                -0.1839804,
+                -1.4621886,
+                3.4558752
+              ],
+              "quaternion": [
+                0.2016771,
+                -0.0155955,
+                -0.0032117,
+                0.9793226
+              ],
+              "fov": 23.8224307,
+              "frame": 145.0,
+              "progress": 0.023622
+            },
+            "visibleImageSamples": 1694,
+            "risks": []
+          },
+          {
+            "paperName": "宣纸 连续长卷 19.8米",
+            "stop": 2,
+            "name": "2-2 阅读",
+            "sourceProgress": 0.1181102,
+            "camera": {
+              "position": [
+                2.4160197,
+                -1.1821886,
+                3.4858751
+              ],
+              "quaternion": [
+                0.2016771,
+                -0.0155955,
+                -0.0032117,
+                0.9793226
+              ],
+              "fov": 23.8224307,
+              "frame": 721.0,
+              "progress": 0.1181102
+            },
+            "visibleImageSamples": 2354,
+            "risks": []
+          },
+          {
+            "paperName": "宣纸 连续长卷 19.8米",
+            "stop": 3,
+            "name": "2-3 阅读",
+            "sourceProgress": 0.2125984,
+            "camera": {
+              "position": [
+                4.9966617,
+                -1.689997,
+                3.4534128
+              ],
+              "quaternion": [
+                0.2017018,
+                -0.0182033,
+                -0.0037494,
+                0.9792706
+              ],
+              "fov": 23.8224307,
+              "frame": 1297.0,
+              "progress": 0.2125984
+            },
+            "visibleImageSamples": 2503,
+            "risks": []
+          },
+          {
+            "paperName": "宣纸 连续长卷 19.8米",
+            "stop": 4,
+            "name": "2-4 阅读",
+            "sourceProgress": 0.3070866,
+            "camera": {
+              "position": [
+                7.6121554,
+                -1.2729121,
+                3.4682603
+              ],
+              "quaternion": [
+                0.2016228,
+                -0.0159089,
+                -0.0032753,
+                0.9793286
+              ],
+              "fov": 23.8224307,
+              "frame": 1873.0,
+              "progress": 0.3070866
+            },
+            "visibleImageSamples": 1556,
+            "risks": []
+          },
+          {
+            "paperName": "宣纸 连续长卷 19.8米",
+            "stop": 5,
+            "name": "2-5 阅读",
+            "sourceProgress": 0.4291339,
+            "camera": {
+              "position": [
+                10.2067881,
+                -1.5529059,
+                3.4833364
+              ],
+              "quaternion": [
+                0.2016136,
+                -0.0166333,
+                -0.0034243,
+                0.9793179
+              ],
+              "fov": 23.8224307,
+              "frame": 2617.0,
+              "progress": 0.4291339
+            },
+            "visibleImageSamples": 2390,
+            "risks": []
+          },
+          {
+            "paperName": "宣纸 连续长卷 19.8米",
+            "stop": 6,
+            "name": "2-6 阅读",
+            "sourceProgress": 0.5590551,
+            "camera": {
+              "position": [
+                12.5157652,
+                -0.9485207,
+                3.1434257
+              ],
+              "quaternion": [
+                0.2008886,
+                -0.0178556,
+                -0.0036623,
+                0.9794445
+              ],
+              "fov": 23.8224307,
+              "frame": 3409.0,
+              "progress": 0.5590551
+            },
+            "visibleImageSamples": 1660,
+            "risks": []
+          },
+          {
+            "paperName": "宣纸 连续长卷 19.8米",
+            "stop": 7,
+            "name": "2-7 阅读",
+            "sourceProgress": 0.7913386,
+            "camera": {
+              "position": [
+                15.4109125,
+                -1.4131451,
+                3.4590275
+              ],
+              "quaternion": [
+                0.2016054,
+                -0.0160095,
+                -0.0032957,
+                0.9793304
+              ],
+              "fov": 23.8224307,
+              "frame": 4825.0,
+              "progress": 0.7913386
+            },
+            "visibleImageSamples": 2066,
+            "risks": []
+          }
+        ],
+        "allCameraGroundRisks": [],
+        "recommendedBackgroundMeshNames": [],
+        "conclusion": "No opaque-paper intersections in 24x24 source-alpha lattice at all authored reading stops. For chapter4, every exported camera was additionally checked against the ground for the two full figures extending below z=-7; none of those below-ground samples entered the screen. Bounds overlap alone does not establish visible occlusion.",
+        "evidenceFile": "reports/reconstruction/paper-depth-evidence-chapters-2-4.json"
+      },
+      "beforeScreenshots": [
+        "reports/reconstruction/before/chapter-2-stop-04.jpg",
+        "reports/reconstruction/before/chapter-2-stop-05.jpg",
+        "reports/reconstruction/before/chapter-2-stop-06.jpg",
+        "reports/reconstruction/before/chapter-2-stop-07.jpg"
+      ]
+    },
+    "4": {
+      "auditedTexturedMeshCount": 110,
+      "machineCandidateCount": 8,
+      "reviewedCandidateCount": 8,
+      "originalScene": "public/assets/chapter-4/scene.json",
+      "originalSceneSha256": "d364ee821dcb8e741c657a14b9ef03e379561c3f19435ea16a65b40d0d1a265c",
+      "candidates": [
+        {
+          "name": "微信图片_20261018221025_441_1685",
+          "id": "c4-m-24921ef89c6d",
+          "textureId": "c4-t-da85453c2a6f08d2",
+          "label": "C4-T008",
+          "sourceName": "微信图片_20261018221025_441_1685.png",
+          "texturePath": "public/assets/chapter-4/textures/da85453c2a6f08d2.webp",
+          "role": "中景承接层",
+          "treatment": "修复",
+          "storyboard": {
+            "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+            "axis": "Y",
+            "axisBounds": [
+              -79.7567978,
+              -63.3642235
+            ],
+            "nearestStop": {
+              "name": "4-2 花王配美人 · 阅读停留",
+              "frame": 625,
+              "progress": 0.1287394,
+              "index": 2,
+              "cameraAxisPosition": -84.0
+            },
+            "stopRange": [
+              2,
+              2
+            ],
+            "associatedStops": [
+              {
+                "name": "4-2 花王配美人 · 阅读停留",
+                "frame": 625,
+                "progress": 0.1287394,
+                "index": 2,
+                "cameraAxisPosition": -84.0
+              }
+            ]
+          },
+          "uvRange": [
+            0.0,
+            0.0,
+            0.5,
+            1.0
+          ],
+          "omittedVisibleAlphaRatio": 0.4715650634959864,
+          "hardAxisBoundaryCandidates": [
+            {
+              "axis": "u",
+              "coordinate": 0.5,
+              "interval": [
+                0.0,
+                1.0
+              ],
+              "uvLength": 1.0,
+              "meanAlpha": 224.2220930232558,
+              "occupiedRatio": 0.8883720930232558,
+              "opaqueRatio": 0.8848837209302326
+            }
+          ],
+          "positionValues": 24,
+          "pendingVisualReview": false,
+          "diagnosticImage": "reports/reconstruction/chapter-4-geometry-review/c4-m-24921ef89c6d.png",
+          "priority": "P1",
+          "recommendedAction": "pixel-repair-before-geometry-completion",
+          "bakedTextRisk": false,
+          "visualReview": {
+            "reviewedOriginal": true,
+            "evidence": [
+              "reports/reconstruction/before/chapter-4-overview.jpg",
+              "reports/reconstruction/chapter-4-geometry-review/candidates-01.jpg",
+              "public/assets/chapter-4/textures/da85453c2a6f08d2.webp"
+            ],
+            "observation": "只保留源屏风左半和两仕女，u=.5切过高alpha屏架；第2景149个有色点中16.78%仍暴露，多数被贵妃覆盖。人物摘取本身合理，屏架端点需补接；建议与T008补屏檐/栏板资产一起处理，不先把右半巨大屏风一律放回。"
+          },
+          "boundaryVisibility": [
+            {
+              "name": "微信图片_20261018221025_441_1685",
+              "meshId": "c4-m-24921ef89c6d",
+              "axis": "u",
+              "coordinate": 0.5,
+              "interval": [
+                0.0,
+                1.0
+              ],
+              "worldEndpoints": [
+                [
+                  0.8319880708647804,
+                  -79.7567962667313,
+                  7.0038481000000115
+                ],
+                [
+                  0.831987370864781,
+                  -79.75679626673139,
+                  22.419497500000013
+                ]
+              ],
+              "fitResidualWorld": 1.4210854715202004e-13,
+              "samples": [
+                {
+                  "stop": 2,
+                  "frame": 625,
+                  "sourceProgress": 0.1287394,
+                  "inFrameLineRatio": 0.7960199004975125,
+                  "lineTransmissionMean": 0.1483578431372549,
+                  "occupiedLineSampleCount": 149,
+                  "exposedOccupiedLineSampleCount": 25,
+                  "exposedOccupiedLineRatio": 0.16778523489932887,
+                  "foregroundBlockers": [
+                    {
+                      "name": "4-2 · 04 · 贵妃主体",
+                      "lineOccupiedRatio": 0.88125,
+                      "meanAlpha": 0.851642156862745
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "05_字幕替换意境山水.001",
+          "id": "c4-m-dd645ee64df8",
+          "textureId": "c4-t-8bea2691a5d6714c",
+          "label": "C4-T005",
+          "sourceName": "05_字幕替换意境山水.png",
+          "texturePath": "public/assets/chapter-4/textures/8bea2691a5d6714c.webp",
+          "role": "后景连续层",
+          "treatment": "保留",
+          "storyboard": {
+            "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+            "axis": "Y",
+            "axisBounds": [
+              -424.2525635,
+              -380.7481079
+            ],
+            "nearestStop": {
+              "name": "4-6 游宴渐冷 · 阅读停留",
+              "frame": 2977,
+              "progress": 0.613988,
+              "index": 6,
+              "cameraAxisPosition": -420.0
+            },
+            "stopRange": [
+              6,
+              6
+            ],
+            "associatedStops": [
+              {
+                "name": "4-6 游宴渐冷 · 阅读停留",
+                "frame": 2977,
+                "progress": 0.613988,
+                "index": 6,
+                "cameraAxisPosition": -420.0
+              }
+            ]
+          },
+          "uvRange": [
+            0.5,
+            0.0,
+            0.9144496,
+            1.0
+          ],
+          "omittedVisibleAlphaRatio": 0.5032549491709374,
+          "hardAxisBoundaryCandidates": [
+            {
+              "axis": "u",
+              "coordinate": 0.5,
+              "interval": [
+                0.0,
+                1.0
+              ],
+              "uvLength": 1.0,
+              "meanAlpha": 178.0523138832998,
+              "occupiedRatio": 0.710261569416499,
+              "opaqueRatio": 0.6981891348088531
+            }
+          ],
+          "positionValues": 36,
+          "pendingVisualReview": false,
+          "diagnosticImage": "reports/reconstruction/chapter-4-geometry-review/c4-m-dd645ee64df8.png",
+          "priority": "P1",
+          "recommendedAction": "full-uv-affine-single-instance",
+          "bakedTextRisk": false,
+          "visualReview": {
+            "reviewedOriginal": true,
+            "evidence": [
+              "reports/reconstruction/before/chapter-4-overview.jpg",
+              "reports/reconstruction/chapter-4-geometry-review/candidates-01.jpg",
+              "public/assets/chapter-4/textures/8bea2691a5d6714c.webp"
+            ],
+            "observation": "第6景上方意境山水左口u=.5贯穿原图内部，141个有色点全部暴露；完整源图是自然云边山水，无烘焙文字。只对本实例fullUV，保留第5景主实例原布局，并验第5/6景间重复山水与前景遮挡。"
+          },
+          "boundaryVisibility": [
+            {
+              "name": "05_字幕替换意境山水.001",
+              "meshId": "c4-m-dd645ee64df8",
+              "axis": "u",
+              "coordinate": 0.5,
+              "interval": [
+                0.0,
+                1.0
+              ],
+              "worldEndpoints": [
+                [
+                  20.58412985,
+                  -380.74810777552165,
+                  0.5791082500000012
+                ],
+                [
+                  20.584128749999987,
+                  -380.74810833891763,
+                  26.048161550000007
+                ]
+              ],
+              "fitResidualWorld": 1.8826199834620638e-06,
+              "samples": [
+                {
+                  "stop": 6,
+                  "frame": 2977,
+                  "sourceProgress": 0.613988,
+                  "inFrameLineRatio": 0.9104477611940298,
+                  "lineTransmissionMean": 0.8154840685733832,
+                  "occupiedLineSampleCount": 141,
+                  "exposedOccupiedLineSampleCount": 141,
+                  "exposedOccupiedLineRatio": 1.0,
+                  "foregroundBlockers": [
+                    {
+                      "name": "过渡5 · 云气3",
+                      "lineOccupiedRatio": 0.4808743169398907,
+                      "meanAlpha": 0.1029893924783028
+                    },
+                    {
+                      "name": "过渡5 · 云气1",
+                      "lineOccupiedRatio": 0.3551912568306011,
+                      "meanAlpha": 0.0839387120968606
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "4-8 · 01 · 故国山水城景.001",
+          "id": "c4-m-cdb9e53821aa",
+          "textureId": "c4-t-7bd5ef5c50333253",
+          "label": "C4-T041",
+          "sourceName": "03-山水城景.png",
+          "texturePath": "public/assets/chapter-4/textures/7bd5ef5c50333253.webp",
+          "role": "后景连续层",
+          "treatment": "保留",
+          "storyboard": {
+            "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+            "axis": "Y",
+            "axisBounds": [
+              -606.0264893,
+              -554.3926392
+            ],
+            "nearestStop": {
+              "name": "4-8 晚唐追忆 · 阅读停留",
+              "frame": 4009,
+              "progress": 0.8269032,
+              "index": 8,
+              "cameraAxisPosition": -588.0
+            },
+            "stopRange": [
+              8,
+              8
+            ],
+            "associatedStops": [
+              {
+                "name": "4-8 晚唐追忆 · 阅读停留",
+                "frame": 4009,
+                "progress": 0.8269032,
+                "index": 8,
+                "cameraAxisPosition": -588.0
+              }
+            ]
+          },
+          "uvRange": [
+            0.0,
+            0.0,
+            1.0,
+            0.9615384
+          ],
+          "omittedVisibleAlphaRatio": 0.25636526804931287,
+          "hardAxisBoundaryCandidates": [
+            {
+              "axis": "v",
+              "coordinate": 0.53846,
+              "interval": [
+                0.55,
+                0.975
+              ],
+              "uvLength": 0.42499999999999993,
+              "meanAlpha": 247.50375939849624,
+              "occupiedRatio": 0.9849624060150376,
+              "opaqueRatio": 0.9819548872180451
+            }
+          ],
+          "positionValues": 2085,
+          "pendingVisualReview": false,
+          "diagnosticImage": "reports/reconstruction/chapter-4-geometry-review/c4-m-cdb9e53821aa.png",
+          "priority": "P2",
+          "recommendedAction": "keep-current-crop-review-transitions",
+          "bakedTextRisk": false,
+          "visualReview": {
+            "reviewedOriginal": true,
+            "evidence": [
+              "reports/reconstruction/before/chapter-4-overview.jpg",
+              "reports/reconstruction/chapter-4-geometry-review/candidates-01.jpg",
+              "public/assets/chapter-4/textures/7bd5ef5c50333253.webp"
+            ],
+            "observation": "此.001是同景放大辅助山景；v=.53846高alpha横切在第8景197个有色点全部被前层山景/主体覆盖。主实例完整，不能因漏25.64%源alpha就再复制一幅整图。先保留，过渡或后续动效露缝时局部处理。"
+          },
+          "boundaryVisibility": [
+            {
+              "name": "4-8 · 01 · 故国山水城景.001",
+              "meshId": "c4-m-cdb9e53821aa",
+              "axis": "v",
+              "coordinate": 0.53846,
+              "interval": [
+                0.55,
+                0.975
+              ],
+              "worldEndpoints": [
+                [
+                  12.284964597832422,
+                  -582.7912351167818,
+                  11.812153228787658
+                ],
+                [
+                  12.270716984311937,
+                  -604.7356046078529,
+                  11.812153102332218
+                ]
+              ],
+              "fitResidualWorld": 0.2529522121298591,
+              "samples": [
+                {
+                  "stop": 8,
+                  "frame": 4009,
+                  "sourceProgress": 0.8269032,
+                  "inFrameLineRatio": 1.0,
+                  "lineTransmissionMean": 0.01212461908143279,
+                  "occupiedLineSampleCount": 197,
+                  "exposedOccupiedLineSampleCount": 0,
+                  "exposedOccupiedLineRatio": 0.0,
+                  "foregroundBlockers": [
+                    {
+                      "name": "4-8 · 01 · 故国山水城景",
+                      "lineOccupiedRatio": 1.0,
+                      "meanAlpha": 0.987825577992391
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "4-9 · 04 · 千古题字",
+          "id": "c4-m-2f9aca472f9d",
+          "textureId": "c4-t-606eb4317956c693",
+          "label": "C4-T048",
+          "sourceName": "03_上方题字纸片.png",
+          "texturePath": "public/assets/chapter-4/textures/606eb4317956c693.webp",
+          "role": "后景连续层",
+          "treatment": "修复",
+          "storyboard": {
+            "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+            "axis": "Y",
+            "axisBounds": [
+              -686.8589478,
+              -667.4304199
+            ],
+            "nearestStop": {
+              "name": "4-9 千古兴衰 · 阅读停留",
+              "frame": 4465,
+              "progress": 0.9209821,
+              "index": 9,
+              "cameraAxisPosition": -672.0
+            },
+            "stopRange": [
+              9,
+              9
+            ],
+            "associatedStops": [
+              {
+                "name": "4-9 千古兴衰 · 阅读停留",
+                "frame": 4465,
+                "progress": 0.9209821,
+                "index": 9,
+                "cameraAxisPosition": -672.0
+              }
+            ]
+          },
+          "uvRange": [
+            0.0,
+            0.15,
+            0.525,
+            1.0
+          ],
+          "omittedVisibleAlphaRatio": 0.9191017930211097,
+          "hardAxisBoundaryCandidates": [
+            {
+              "axis": "u",
+              "coordinate": 0.2,
+              "interval": [
+                0.15,
+                0.65
+              ],
+              "uvLength": 0.5,
+              "meanAlpha": 200.19819819819818,
+              "occupiedRatio": 0.7972972972972973,
+              "opaqueRatio": 0.7905405405405406
+            }
+          ],
+          "positionValues": 390,
+          "pendingVisualReview": false,
+          "diagnosticImage": "reports/reconstruction/chapter-4-geometry-review/c4-m-2f9aca472f9d.png",
+          "priority": "P1",
+          "recommendedAction": "retire-raster-use-html",
+          "bakedTextRisk": true,
+          "visualReview": {
+            "reviewedOriginal": true,
+            "evidence": [
+              "reports/reconstruction/before/chapter-4-overview.jpg",
+              "reports/reconstruction/chapter-4-geometry-review/candidates-01.jpg",
+              "public/assets/chapter-4/textures/606eb4317956c693.webp"
+            ],
+            "observation": "原图是带长文的金色纸片；当前几何刻意只留约8%源alpha并遮掉大部分正文，u=.2金边切线第9景160个有色点全部暴露。fullUV会带回整段烘焙字。退休此raster，短HTML题签承担主题，长文原解读抽屉保留。"
+          },
+          "boundaryVisibility": [
+            {
+              "name": "4-9 · 04 · 千古题字",
+              "meshId": "c4-m-2f9aca472f9d",
+              "axis": "u",
+              "coordinate": 0.2,
+              "interval": [
+                0.15,
+                0.65
+              ],
+              "worldEndpoints": [
+                [
+                  8.065967823633812,
+                  -671.3160912692057,
+                  14.309355034912766
+                ],
+                [
+                  8.04265026046868,
+                  -671.3161094417956,
+                  19.166498002852453
+                ]
+              ],
+              "fitResidualWorld": 0.04560269360279179,
+              "samples": [
+                {
+                  "stop": 9,
+                  "frame": 4465,
+                  "sourceProgress": 0.9209821,
+                  "inFrameLineRatio": 1.0,
+                  "lineTransmissionMean": 1.0,
+                  "occupiedLineSampleCount": 160,
+                  "exposedOccupiedLineSampleCount": 160,
+                  "exposedOccupiedLineRatio": 1.0,
+                  "foregroundBlockers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "05_字幕替换意境山水",
+          "id": "c4-m-c1b60755aafc",
+          "textureId": "c4-t-8bea2691a5d6714c",
+          "label": "C4-T005",
+          "sourceName": "05_字幕替换意境山水.png",
+          "texturePath": "public/assets/chapter-4/textures/8bea2691a5d6714c.webp",
+          "role": "后景连续层",
+          "treatment": "保留",
+          "storyboard": {
+            "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+            "axis": "Y",
+            "axisBounds": [
+              -379.7459106,
+              -306.3190002
+            ],
+            "nearestStop": {
+              "name": "4-5 繁华落幕 · 阅读停留",
+              "frame": 2521,
+              "progress": 0.5199092,
+              "index": 5,
+              "cameraAxisPosition": -336.0
+            },
+            "stopRange": [
+              5,
+              5
+            ],
+            "associatedStops": [
+              {
+                "name": "4-5 繁华落幕 · 阅读停留",
+                "frame": 2521,
+                "progress": 0.5199092,
+                "index": 5,
+                "cameraAxisPosition": -336.0
+              }
+            ]
+          },
+          "uvRange": [
+            0.0,
+            0.0,
+            0.7516756,
+            1.0
+          ],
+          "omittedVisibleAlphaRatio": 0.19938334761449913,
+          "hardAxisBoundaryCandidates": [
+            {
+              "axis": "u",
+              "coordinate": 0.75,
+              "interval": [
+                0.5,
+                1.0
+              ],
+              "uvLength": 0.5,
+              "meanAlpha": 171.10441767068272,
+              "occupiedRatio": 0.678714859437751,
+              "opaqueRatio": 0.6746987951807228
+            }
+          ],
+          "positionValues": 42,
+          "pendingVisualReview": false,
+          "diagnosticImage": "reports/reconstruction/chapter-4-geometry-review/c4-m-c1b60755aafc.png",
+          "priority": "P2",
+          "recommendedAction": "keep-instance-do-not-copy-full-uv",
+          "bakedTextRisk": false,
+          "visualReview": {
+            "reviewedOriginal": true,
+            "evidence": [
+              "reports/reconstruction/before/chapter-4-overview.jpg",
+              "reports/reconstruction/chapter-4-geometry-review/candidates-01.jpg",
+              "public/assets/chapter-4/textures/8bea2691a5d6714c.webp"
+            ],
+            "observation": "第5景山水主实例只漏右侧约19.94%有色alpha；其u=.75竖切在当前稳定阅读节点不入画。与第6景.001处于不同深度和位置，不以纹理同源为由双双fullUV；只修第6景确证暴露口，转场再复核主片。"
+          },
+          "boundaryVisibility": [
+            {
+              "name": "05_字幕替换意境山水",
+              "meshId": "c4-m-c1b60755aafc",
+              "axis": "u",
+              "coordinate": 0.75,
+              "interval": [
+                0.5,
+                1.0
+              ],
+              "worldEndpoints": [
+                [
+                  13.265116569639419,
+                  -378.7346108391078,
+                  14.50855958274472
+                ],
+                [
+                  13.26511581963941,
+                  -379.58602383782835,
+                  30.656236019630526
+                ]
+              ],
+              "fitResidualWorld": 1.5493698128921096e-06,
+              "samples": []
+            }
+          ]
+        },
+        {
+          "name": "过渡2 · 近景花枝与飘带.001",
+          "id": "c4-m-ac5e3da114da",
+          "textureId": "c4-t-8d8a3c10a919636e",
+          "label": "C4-T015",
+          "sourceName": "05_底部牡丹花枝.png",
+          "texturePath": "public/assets/chapter-4/textures/8d8a3c10a919636e.webp",
+          "role": "连接过渡层",
+          "treatment": "保留",
+          "storyboard": {
+            "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+            "axis": "Y",
+            "axisBounds": [
+              -95.3592224,
+              -81.23069
+            ],
+            "nearestStop": {
+              "name": "4-2 花王配美人 · 阅读停留",
+              "frame": 625,
+              "progress": 0.1287394,
+              "index": 2,
+              "cameraAxisPosition": -84.0
+            },
+            "stopRange": [
+              2,
+              2
+            ],
+            "associatedStops": [
+              {
+                "name": "4-2 花王配美人 · 阅读停留",
+                "frame": 625,
+                "progress": 0.1287394,
+                "index": 2,
+                "cameraAxisPosition": -84.0
+              }
+            ]
+          },
+          "uvRange": [
+            0.0,
+            0.0,
+            0.6,
+            1.0
+          ],
+          "omittedVisibleAlphaRatio": 0.3568960995287125,
+          "hardAxisBoundaryCandidates": [
+            {
+              "axis": "u",
+              "coordinate": 0.55,
+              "interval": [
+                0.375,
+                0.5625
+              ],
+              "uvLength": 0.1875,
+              "meanAlpha": 252.95862068965516,
+              "occupiedRatio": 1.0,
+              "opaqueRatio": 1.0
+            }
+          ],
+          "positionValues": 1113,
+          "pendingVisualReview": false,
+          "diagnosticImage": "reports/reconstruction/chapter-4-geometry-review/c4-m-ac5e3da114da.png",
+          "priority": "P2",
+          "recommendedAction": "keep-foreground-extraction",
+          "bakedTextRisk": false,
+          "visualReview": {
+            "reviewedOriginal": true,
+            "evidence": [
+              "reports/reconstruction/before/chapter-4-overview.jpg",
+              "reports/reconstruction/chapter-4-geometry-review/candidates-01.jpg",
+              "public/assets/chapter-4/textures/8d8a3c10a919636e.webp"
+            ],
+            "observation": "过渡花枝从宽幅牡丹图摘取左段，原图没有文字。此实例为弯曲/变形前景，不满足本次平面可见性拟合（未给虚假的遮挡百分比）；第2景底部主要被画幅/花团遮住。保留摘取，若转场露出中花切线再局部重排，不复制第3景整片到此处。"
+          },
+          "boundaryVisibility": []
+        },
+        {
+          "name": "微信图片_20261018213717_423_1685",
+          "id": "c4-m-3aff9fce2dc5",
+          "textureId": "c4-t-680be9abfbc602b8",
+          "label": "C4-T007",
+          "sourceName": "微信图片_20261018213717_423_1685.png",
+          "texturePath": "public/assets/chapter-4/textures/680be9abfbc602b8.webp",
+          "role": "中景承接层",
+          "treatment": "修复",
+          "storyboard": {
+            "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+            "axis": "Y",
+            "axisBounds": [
+              -441.1891479,
+              -413.2883301
+            ],
+            "nearestStop": {
+              "name": "4-6 游宴渐冷 · 阅读停留",
+              "frame": 2977,
+              "progress": 0.613988,
+              "index": 6,
+              "cameraAxisPosition": -420.0
+            },
+            "stopRange": [
+              6,
+              6
+            ],
+            "associatedStops": [
+              {
+                "name": "4-6 游宴渐冷 · 阅读停留",
+                "frame": 2977,
+                "progress": 0.613988,
+                "index": 6,
+                "cameraAxisPosition": -420.0
+              }
+            ]
+          },
+          "uvRange": [
+            0.0,
+            0.0,
+            1.0,
+            0.4364039
+          ],
+          "omittedVisibleAlphaRatio": 0.5527823965031182,
+          "hardAxisBoundaryCandidates": [],
+          "positionValues": 18,
+          "pendingVisualReview": false,
+          "diagnosticImage": "reports/reconstruction/chapter-4-geometry-review/c4-m-3aff9fce2dc5.png",
+          "priority": "P2",
+          "recommendedAction": "keep-floor-extraction-repair-outer-edge",
+          "bakedTextRisk": false,
+          "visualReview": {
+            "reviewedOriginal": true,
+            "evidence": [
+              "reports/reconstruction/before/chapter-4-overview.jpg",
+              "reports/reconstruction/chapter-4-geometry-review/candidates-01.jpg",
+              "public/assets/chapter-4/textures/680be9abfbc602b8.webp"
+            ],
+            "observation": "只选原图下部地砖，剔除大段高栏，是场景功能摘取；没有内部长高alpha水平直切证据。完整还原会在第6景再加一道遮人物的栏杆。保留UV摘取；原图地坪左右/底端真实触边另走像素接地修复。"
+          },
+          "boundaryVisibility": []
+        },
+        {
+          "name": "08_右侧远景花园",
+          "id": "c4-m-d2034a788321",
+          "textureId": "c4-t-e4597e6264631f1e",
+          "label": "C4-T001",
+          "sourceName": "08_右侧远景花园.png",
+          "texturePath": "public/assets/chapter-4/textures/e4597e6264631f1e.webp",
+          "role": "后景连续层",
+          "treatment": "保留",
+          "storyboard": {
+            "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+            "axis": "Y",
+            "axisBounds": [
+              -105.5437927,
+              -87.0991211
+            ],
+            "nearestStop": {
+              "name": "4-2 花王配美人 · 阅读停留",
+              "frame": 625,
+              "progress": 0.1287394,
+              "index": 2,
+              "cameraAxisPosition": -84.0
+            },
+            "stopRange": [
+              2,
+              2
+            ],
+            "associatedStops": [
+              {
+                "name": "4-2 花王配美人 · 阅读停留",
+                "frame": 625,
+                "progress": 0.1287394,
+                "index": 2,
+                "cameraAxisPosition": -84.0
+              }
+            ]
+          },
+          "uvRange": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "omittedVisibleAlphaRatio": 0.16487075669155568,
+          "hardAxisBoundaryCandidates": [],
+          "positionValues": 48,
+          "pendingVisualReview": false,
+          "diagnosticImage": "reports/reconstruction/chapter-4-geometry-review/c4-m-d2034a788321.png",
+          "priority": "P3",
+          "recommendedAction": "keep-semantic-mask",
+          "bakedTextRisk": false,
+          "visualReview": {
+            "reviewedOriginal": true,
+            "evidence": [
+              "reports/reconstruction/before/chapter-4-overview.jpg",
+              "reports/reconstruction/chapter-4-geometry-review/candidates-01.jpg",
+              "public/assets/chapter-4/textures/e4597e6264631f1e.webp"
+            ],
+            "observation": "源图为淡墨远园，无烘焙文字；虽UV总范围是0..1，多边形删去约16.49%源alpha，但没有长高alpha轴向硬口；第2景上左半由主仕女/屏架覆盖。属于构图遮罩，暂无证据要求整幅恢复。"
+          },
+          "boundaryVisibility": []
+        }
+      ],
+      "paperDepth": {
+        "paperObjects": [
+          {
+            "id": "c4-m-a3227a1c7f7d",
+            "name": "连续绢本背景 · 756米",
+            "materialIndex": 5,
+            "material": {
+              "id": 5,
+              "name": "绢本 · 连续纸纹底色",
+              "texture": null,
+              "color": [
+                0.7785144746,
+                0.69036978485,
+                0.5324553996
+              ],
+              "opacity": 1.0,
+              "transparent": false,
+              "alphaTest": 0,
+              "side": "double",
+              "depthWrite": true,
+              "sourceAlphaLinked": false,
+              "proceduralApproximation": true
+            },
+            "bounds": {
+              "min": [
+                22.3999996,
+                -714.0,
+                -9.0
+              ],
+              "max": [
+                23.5999641,
+                42.0,
+                33.0
+              ]
+            },
+            "triangleCount": 300
+          },
+          {
+            "id": "c4-m-d15ec14c38ae",
+            "name": "长卷承托地面",
+            "materialIndex": 5,
+            "material": {
+              "id": 5,
+              "name": "绢本 · 连续纸纹底色",
+              "texture": null,
+              "color": [
+                0.7785144746,
+                0.69036978485,
+                0.5324553996
+              ],
+              "opacity": 1.0,
+              "transparent": false,
+              "alphaTest": 0,
+              "side": "double",
+              "depthWrite": true,
+              "sourceAlphaLinked": false,
+              "proceduralApproximation": true
+            },
+            "bounds": {
+              "min": [
+                -22.0,
+                -717.0,
+                -7.0
+              ],
+              "max": [
+                25.0,
+                45.0,
+                -7.0
+              ]
+            },
+            "triangleCount": 2
+          }
+        ],
+        "readingStops": [
+          {
+            "paperName": "连续绢本背景 · 756米",
+            "stop": 1,
+            "name": "4-1 人花合一 · 阅读停留",
+            "sourceProgress": 0.0198061,
+            "camera": {
+              "position": [
+                -42.0,
+                0.0,
+                9.5625
+              ],
+              "quaternion": [
+                0.5,
+                -0.5,
+                -0.5,
+                0.5
+              ],
+              "fov": 25.6527518,
+              "frame": 97.0,
+              "progress": 0.0198061
+            },
+            "visibleImageSamples": 2021,
+            "risks": []
+          },
+          {
+            "paperName": "连续绢本背景 · 756米",
+            "stop": 2,
+            "name": "4-2 花王配美人 · 阅读停留",
+            "sourceProgress": 0.1287394,
+            "camera": {
+              "position": [
+                -42.0,
+                -84.0,
+                9.5625
+              ],
+              "quaternion": [
+                0.5,
+                -0.5,
+                -0.5,
+                0.5
+              ],
+              "fov": 25.6527518,
+              "frame": 625.0,
+              "progress": 0.1287394
+            },
+            "visibleImageSamples": 1606,
+            "risks": []
+          },
+          {
+            "paperName": "连续绢本背景 · 756米",
+            "stop": 3,
+            "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+            "sourceProgress": 0.2475758,
+            "camera": {
+              "position": [
+                -42.0,
+                -168.0,
+                9.5625
+              ],
+              "quaternion": [
+                0.5,
+                -0.5,
+                -0.5,
+                0.5
+              ],
+              "fov": 25.6527518,
+              "frame": 1201.0,
+              "progress": 0.2475758
+            },
+            "visibleImageSamples": 1855,
+            "risks": []
+          },
+          {
+            "paperName": "连续绢本背景 · 756米",
+            "stop": 4,
+            "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+            "sourceProgress": 0.4010728,
+            "camera": {
+              "position": [
+                -42.0,
+                -252.0,
+                9.5625
+              ],
+              "quaternion": [
+                0.5,
+                -0.5,
+                -0.5,
+                0.5
+              ],
+              "fov": 25.6527518,
+              "frame": 1945.0,
+              "progress": 0.4010728
+            },
+            "visibleImageSamples": 2463,
+            "risks": []
+          },
+          {
+            "paperName": "连续绢本背景 · 756米",
+            "stop": 5,
+            "name": "4-5 繁华落幕 · 阅读停留",
+            "sourceProgress": 0.5199092,
+            "camera": {
+              "position": [
+                -42.0,
+                -336.0,
+                9.5625
+              ],
+              "quaternion": [
+                0.5,
+                -0.5,
+                -0.5,
+                0.5
+              ],
+              "fov": 25.6527518,
+              "frame": 2521.0,
+              "progress": 0.5199092
+            },
+            "visibleImageSamples": 1199,
+            "risks": []
+          },
+          {
+            "paperName": "连续绢本背景 · 756米",
+            "stop": 6,
+            "name": "4-6 游宴渐冷 · 阅读停留",
+            "sourceProgress": 0.613988,
+            "camera": {
+              "position": [
+                -42.0,
+                -420.0,
+                9.5625
+              ],
+              "quaternion": [
+                0.5,
+                -0.5,
+                -0.5,
+                0.5
+              ],
+              "fov": 25.6527518,
+              "frame": 2977.0,
+              "progress": 0.613988
+            },
+            "visibleImageSamples": 2257,
+            "risks": []
+          },
+          {
+            "paperName": "连续绢本背景 · 756米",
+            "stop": 7,
+            "name": "4-7 盛世与乱世 · 阅读停留",
+            "sourceProgress": 0.7130184,
+            "camera": {
+              "position": [
+                -42.0,
+                -504.0,
+                9.5625
+              ],
+              "quaternion": [
+                0.5,
+                -0.5,
+                -0.5,
+                0.5
+              ],
+              "fov": 25.6527518,
+              "frame": 3457.0,
+              "progress": 0.7130184
+            },
+            "visibleImageSamples": 1941,
+            "risks": []
+          },
+          {
+            "paperName": "连续绢本背景 · 756米",
+            "stop": 8,
+            "name": "4-8 晚唐追忆 · 阅读停留",
+            "sourceProgress": 0.8269032,
+            "camera": {
+              "position": [
+                -42.0,
+                -588.0,
+                9.5625
+              ],
+              "quaternion": [
+                0.5,
+                -0.5,
+                -0.5,
+                0.5
+              ],
+              "fov": 25.6527518,
+              "frame": 4009.0,
+              "progress": 0.8269032
+            },
+            "visibleImageSamples": 1865,
+            "risks": []
+          },
+          {
+            "paperName": "连续绢本背景 · 756米",
+            "stop": 9,
+            "name": "4-9 千古兴衰 · 阅读停留",
+            "sourceProgress": 0.9209821,
+            "camera": {
+              "position": [
+                -42.0,
+                -672.0,
+                9.5625
+              ],
+              "quaternion": [
+                0.5,
+                -0.5,
+                -0.5,
+                0.5
+              ],
+              "fov": 25.6527518,
+              "frame": 4465.0,
+              "progress": 0.9209821
+            },
+            "visibleImageSamples": 1908,
+            "risks": []
+          },
+          {
+            "paperName": "长卷承托地面",
+            "stop": 1,
+            "name": "4-1 人花合一 · 阅读停留",
+            "sourceProgress": 0.0198061,
+            "camera": {
+              "position": [
+                -42.0,
+                0.0,
+                9.5625
+              ],
+              "quaternion": [
+                0.5,
+                -0.5,
+                -0.5,
+                0.5
+              ],
+              "fov": 25.6527518,
+              "frame": 97.0,
+              "progress": 0.0198061
+            },
+            "visibleImageSamples": 2021,
+            "risks": []
+          },
+          {
+            "paperName": "长卷承托地面",
+            "stop": 2,
+            "name": "4-2 花王配美人 · 阅读停留",
+            "sourceProgress": 0.1287394,
+            "camera": {
+              "position": [
+                -42.0,
+                -84.0,
+                9.5625
+              ],
+              "quaternion": [
+                0.5,
+                -0.5,
+                -0.5,
+                0.5
+              ],
+              "fov": 25.6527518,
+              "frame": 625.0,
+              "progress": 0.1287394
+            },
+            "visibleImageSamples": 1606,
+            "risks": []
+          },
+          {
+            "paperName": "长卷承托地面",
+            "stop": 3,
+            "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+            "sourceProgress": 0.2475758,
+            "camera": {
+              "position": [
+                -42.0,
+                -168.0,
+                9.5625
+              ],
+              "quaternion": [
+                0.5,
+                -0.5,
+                -0.5,
+                0.5
+              ],
+              "fov": 25.6527518,
+              "frame": 1201.0,
+              "progress": 0.2475758
+            },
+            "visibleImageSamples": 1855,
+            "risks": []
+          },
+          {
+            "paperName": "长卷承托地面",
+            "stop": 4,
+            "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+            "sourceProgress": 0.4010728,
+            "camera": {
+              "position": [
+                -42.0,
+                -252.0,
+                9.5625
+              ],
+              "quaternion": [
+                0.5,
+                -0.5,
+                -0.5,
+                0.5
+              ],
+              "fov": 25.6527518,
+              "frame": 1945.0,
+              "progress": 0.4010728
+            },
+            "visibleImageSamples": 2463,
+            "risks": []
+          },
+          {
+            "paperName": "长卷承托地面",
+            "stop": 5,
+            "name": "4-5 繁华落幕 · 阅读停留",
+            "sourceProgress": 0.5199092,
+            "camera": {
+              "position": [
+                -42.0,
+                -336.0,
+                9.5625
+              ],
+              "quaternion": [
+                0.5,
+                -0.5,
+                -0.5,
+                0.5
+              ],
+              "fov": 25.6527518,
+              "frame": 2521.0,
+              "progress": 0.5199092
+            },
+            "visibleImageSamples": 1199,
+            "risks": []
+          },
+          {
+            "paperName": "长卷承托地面",
+            "stop": 6,
+            "name": "4-6 游宴渐冷 · 阅读停留",
+            "sourceProgress": 0.613988,
+            "camera": {
+              "position": [
+                -42.0,
+                -420.0,
+                9.5625
+              ],
+              "quaternion": [
+                0.5,
+                -0.5,
+                -0.5,
+                0.5
+              ],
+              "fov": 25.6527518,
+              "frame": 2977.0,
+              "progress": 0.613988
+            },
+            "visibleImageSamples": 2257,
+            "risks": []
+          },
+          {
+            "paperName": "长卷承托地面",
+            "stop": 7,
+            "name": "4-7 盛世与乱世 · 阅读停留",
+            "sourceProgress": 0.7130184,
+            "camera": {
+              "position": [
+                -42.0,
+                -504.0,
+                9.5625
+              ],
+              "quaternion": [
+                0.5,
+                -0.5,
+                -0.5,
+                0.5
+              ],
+              "fov": 25.6527518,
+              "frame": 3457.0,
+              "progress": 0.7130184
+            },
+            "visibleImageSamples": 1941,
+            "risks": []
+          },
+          {
+            "paperName": "长卷承托地面",
+            "stop": 8,
+            "name": "4-8 晚唐追忆 · 阅读停留",
+            "sourceProgress": 0.8269032,
+            "camera": {
+              "position": [
+                -42.0,
+                -588.0,
+                9.5625
+              ],
+              "quaternion": [
+                0.5,
+                -0.5,
+                -0.5,
+                0.5
+              ],
+              "fov": 25.6527518,
+              "frame": 4009.0,
+              "progress": 0.8269032
+            },
+            "visibleImageSamples": 1865,
+            "risks": []
+          },
+          {
+            "paperName": "长卷承托地面",
+            "stop": 9,
+            "name": "4-9 千古兴衰 · 阅读停留",
+            "sourceProgress": 0.9209821,
+            "camera": {
+              "position": [
+                -42.0,
+                -672.0,
+                9.5625
+              ],
+              "quaternion": [
+                0.5,
+                -0.5,
+                -0.5,
+                0.5
+              ],
+              "fov": 25.6527518,
+              "frame": 4465.0,
+              "progress": 0.9209821
+            },
+            "visibleImageSamples": 1908,
+            "risks": []
+          }
+        ],
+        "allCameraGroundRisks": [],
+        "recommendedBackgroundMeshNames": [],
+        "conclusion": "No opaque-paper intersections in 24x24 source-alpha lattice at all authored reading stops. For chapter4, every exported camera was additionally checked against the ground for the two full figures extending below z=-7; none of those below-ground samples entered the screen. Bounds overlap alone does not establish visible occlusion.",
+        "evidenceFile": "reports/reconstruction/paper-depth-evidence-chapters-2-4.json"
+      },
+      "beforeScreenshots": [
+        "reports/reconstruction/before/chapter-4-stop-01.jpg",
+        "reports/reconstruction/before/chapter-4-stop-02.jpg",
+        "reports/reconstruction/before/chapter-4-stop-05.jpg",
+        "reports/reconstruction/before/chapter-4-stop-06.jpg",
+        "reports/reconstruction/before/chapter-4-stop-08.jpg",
+        "reports/reconstruction/before/chapter-4-stop-09.jpg"
+      ]
+    },
+    "3": {
+      "auditedTexturedMeshCount": 78,
+      "uniqueTextureCount": 72,
+      "machineCandidateCount": 5,
+      "reviewedCandidateCount": 5,
+      "candidates": [
+        {
+          "name": "SC09_05_右侧山水城景.001",
+          "id": "c3-m-3e77817f3cad",
+          "textureId": "c3-t-3cd6680826ea7dbc",
+          "label": "C3-T062",
+          "sourceName": "3-9_05_右侧山水城景.png",
+          "texturePath": "public/assets/chapter-3/textures/3cd6680826ea7dbc.webp",
+          "role": "后景连续层",
+          "treatment": "保留",
+          "storyboard": {
+            "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+            "axis": "Y",
+            "axisBounds": [
+              396.1853638,
+              440.1282043
+            ],
+            "nearestStop": {
+              "name": "SC08_阅读",
+              "frame": 5405,
+              "progress": 0.809952,
+              "index": 8,
+              "cameraAxisPosition": 418.996277
+            },
+            "stopRange": [
+              8,
+              8
+            ],
+            "associatedStops": [
+              {
+                "name": "SC08_阅读",
+                "frame": 5405,
+                "progress": 0.809952,
+                "index": 8,
+                "cameraAxisPosition": 418.996277
+              }
+            ]
+          },
+          "sourceCollections": [
+            "SC_09"
+          ],
+          "bounds": {
+            "min": [
+              -7.0278983,
+              396.1853638,
+              -4.8675241
+            ],
+            "max": [
+              -7.0278983,
+              440.1282043,
+              14.2099714
+            ]
+          },
+          "material": 86,
+          "uvRange": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "omittedVisibleAlphaRatio": 0.08026218408865177,
+          "hardAxisBoundaryCandidates": [
+            {
+              "axis": "v",
+              "coordinate": 0.75,
+              "interval": [
+                0.5,
+                1.0
+              ],
+              "uvLength": 0.5,
+              "meanAlpha": 236.76271186440678,
+              "occupiedRatio": 0.9412429378531073,
+              "opaqueRatio": 0.9389830508474576
+            }
+          ],
+          "positionValues": 36,
+          "pendingVisualReview": false,
+          "diagnosticImage": "reports/reconstruction/chapter-3-geometry-review/c3-m-3e77817f3cad.png",
+          "visualReview": {
+            "classification": "auxiliary-landscape-local-crop-risk",
+            "risk": "medium",
+            "reviewedStop": 8,
+            "originalBakedText": {
+              "present": true,
+              "observation": "城景旗幡含金色书写/字形，属于原纹理；不能当作可剥离的HTML题词或泛化去字对象。"
+            },
+            "visualObservation": "原图山峰轮廓自然；.001删掉右上峰体，形成v=0.75、u=0.5..1.0的长内部横切。第八景中这条线大部分藏在圆屏、人物/首饰组合后，接缝左端仍有少量暴露候选；第九景主实例显示完整城景，不能把同源主实例与第八景辅助实例合并判断。",
+            "sourceRoleEvidence": "源Collection是SC_09，但辅助片世界Y=396.185..440.128，对应SC08阅读相机Y=418.996；主片Y=469.088..506.529，对应第九景。",
+            "recommendation": "保留第九景主实例的完整原图；只对第八景.001检查/修复局部暴露接缝和跨景过渡，维持其辅助风景占位。禁止给两个实例一律fullUV复制，这会把已删的右上山峰重新叠到圆屏/陈设后。",
+            "reviewLimit": "CPU射线采样第八阅读节点189个原图有色样本中约2.65%仍有>10%透射；不是全路径GPU可见性结论。",
+            "evidenceFiles": [
+              "public/assets/chapter-3/textures/3cd6680826ea7dbc.webp",
+              "reports/reconstruction/before/chapter-3-stop-08.jpg",
+              "reports/reconstruction/before/chapter-3-stop-09.jpg",
+              "reports/reconstruction/chapter-3-geometry-review/stop08-landscape-join-detail.png"
+            ]
+          },
+          "diagnosticReviewStatus": "visually-reviewed-candidate-not-implementation-acceptance",
+          "cutBoundaryVisibilityEvidence": {
+            "name": "SC09_05_右侧山水城景.001",
+            "axis": "v",
+            "coordinate": 0.75,
+            "interval": [
+              0.5,
+              1.0
+            ],
+            "worldEndpoints": [
+              [
+                -7.027898300000004,
+                418.1567802891966,
+                9.440597432903814
+              ],
+              [
+                -7.0278982999999995,
+                440.1281950841397,
+                9.44059738015743
+              ]
+            ],
+            "fitResidualWorld": 6.038580977474339e-07,
+            "samples": [
+              {
+                "stop": 8,
+                "frame": 5405,
+                "sourceProgress": 0.809952,
+                "camera": {
+                  "position": [
+                    46.0,
+                    418.9962769,
+                    10.0
+                  ],
+                  "fov": 22.0365727
+                },
+                "inFrameLineRatio": 1.0,
+                "lineTransmissionMean": 0.02559061669736666,
+                "lineVisibleAbove10PercentRatio": 0.024875621890547265,
+                "occupiedLineSampleCount": 189,
+                "exposedOccupiedLineRatio": 0.026455026455026454,
+                "exposedOccupiedSourceUV": [
+                  [
+                    0.5,
+                    0.75
+                  ],
+                  [
+                    0.5025,
+                    0.75
+                  ],
+                  [
+                    0.505,
+                    0.75
+                  ],
+                  [
+                    0.5075,
+                    0.75
+                  ],
+                  [
+                    0.51,
+                    0.75
+                  ]
+                ],
+                "foregroundBlockers": [
+                  {
+                    "name": "微信图片_20261018204717_340_1685",
+                    "lineOccupiedRatio": 0.835820895522388,
+                    "meanAlpha": 0.828406984684421
+                  },
+                  {
+                    "name": "SC08_06_首饰与罐盒组合",
+                    "lineOccupiedRatio": 0.3034825870646766,
+                    "meanAlpha": 0.3005365330211687
+                  },
+                  {
+                    "name": "SC08_01_牡丹圆屏",
+                    "lineOccupiedRatio": 0.13930348258706468,
+                    "meanAlpha": 0.1351868110428251
+                  },
+                  {
+                    "name": "SC08_05_右下游园人群",
+                    "lineOccupiedRatio": 0.0945273631840796,
+                    "meanAlpha": 0.09368842064188859
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "微信图片_20261016180912_185_1685",
+          "id": "c3-m-885c8a7d1b99",
+          "textureId": "c3-t-a41913e64fbb778c",
+          "label": "C3-T001",
+          "sourceName": "微信图片_20261016180912_185_1685.png",
+          "texturePath": "public/assets/chapter-3/textures/a41913e64fbb778c.webp",
+          "role": "中景承接层",
+          "treatment": "重生成",
+          "storyboard": {
+            "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+            "axis": "Y",
+            "axisBounds": [
+              7.037221,
+              26.1164474
+            ],
+            "nearestStop": {
+              "name": "SC01_阅读",
+              "frame": 162,
+              "progress": 0.0241307,
+              "index": 1,
+              "cameraAxisPosition": -1.004433
+            },
+            "stopRange": [
+              1,
+              1
+            ],
+            "associatedStops": [
+              {
+                "name": "SC01_阅读",
+                "frame": 162,
+                "progress": 0.0241307,
+                "index": 1,
+                "cameraAxisPosition": -1.004433
+              }
+            ]
+          },
+          "sourceCollections": [
+            "Scene Collection"
+          ],
+          "bounds": {
+            "min": [
+              -2.5531325,
+              7.037221,
+              -1.7120819
+            ],
+            "max": [
+              -2.5531306,
+              26.1164474,
+              21.3247452
+            ]
+          },
+          "material": 0,
+          "uvRange": [
+            0.0841758,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "omittedVisibleAlphaRatio": 0.0695156061605861,
+          "hardAxisBoundaryCandidates": [
+            {
+              "axis": "u",
+              "coordinate": 0.09069,
+              "interval": [
+                0.5,
+                1.0
+              ],
+              "uvLength": 0.5,
+              "meanAlpha": 145.01972685887708,
+              "occupiedRatio": 0.6312594840667678,
+              "opaqueRatio": 0.5356600910470409
+            }
+          ],
+          "positionValues": 78,
+          "pendingVisualReview": false,
+          "diagnosticImage": "reports/reconstruction/chapter-3-geometry-review/c3-m-885c8a7d1b99.png",
+          "visualReview": {
+            "classification": "primary-architecture-geometry-trim-plus-existing-source-regeneration",
+            "risk": "high",
+            "reviewedStop": 1,
+            "originalBakedText": {
+              "present": false,
+              "observation": "本次直接查看该柱廊、帘幕、牡丹挂幅原图，未见独立题字；牡丹/装饰金纹不算可删除文字。第一景左上“锦绣花意”并不位于这张纹理中。"
+            },
+            "visualObservation": "原纹理自身上方建筑及帘幕贴边，且左侧柱廊仍被UV内部竖线额外剪去约6.95%可见alpha。第1景这条竖边位于右侧场景的起始柱廊、留白交界，原图有色边线样本约96.1%在CPU采样下未被前景遮蔽。",
+            "recommendation": "保留既有“重生成”纹理审查决定；将内部几何竖切纳入同一替换/构图方案，不能只换图后继续沿用会切柱子的UV，也不能独立恢复整图而不复核背景人物与画幅边界。",
+            "reviewLimit": "这同时有原图接触外边和几何内部切边两个原因；纹理已有处理决定，不在本报告改动。",
+            "evidenceFiles": [
+              "public/assets/chapter-3/textures/a41913e64fbb778c.webp",
+              "reports/reconstruction/before/chapter-3-stop-01.jpg"
+            ]
+          },
+          "diagnosticReviewStatus": "visually-reviewed-candidate-not-implementation-acceptance",
+          "cutBoundaryVisibilityEvidence": {
+            "name": "微信图片_20261016180912_185_1685",
+            "axis": "u",
+            "coordinate": 0.09069,
+            "interval": [
+              0.5,
+              1.0
+            ],
+            "worldEndpoints": [
+              [
+                -2.5531312298494906,
+                7.172930365987428,
+                9.80633160000001
+              ],
+              [
+                -2.553130729849485,
+                7.172930221488505,
+                21.32474515000002
+              ]
+            ],
+            "fitResidualWorld": 1.8509760408846887e-06,
+            "samples": [
+              {
+                "stop": 1,
+                "frame": 162,
+                "sourceProgress": 0.0241307,
+                "camera": {
+                  "position": [
+                    49.0,
+                    -1.0044334,
+                    10.0
+                  ],
+                  "fov": 22.0365727
+                },
+                "inFrameLineRatio": 0.8855721393034826,
+                "lineTransmissionMean": 0.9741132408019386,
+                "lineVisibleAbove10PercentRatio": 0.9775280898876404,
+                "occupiedLineSampleCount": 103,
+                "exposedOccupiedLineRatio": 0.9611650485436893,
+                "exposedOccupiedSourceUV": [
+                  [
+                    0.09069,
+                    0.5075
+                  ],
+                  [
+                    0.09069,
+                    0.5125
+                  ],
+                  [
+                    0.09069,
+                    0.515
+                  ],
+                  [
+                    0.09069,
+                    0.5175
+                  ],
+                  [
+                    0.09069,
+                    0.52
+                  ],
+                  [
+                    0.09069,
+                    0.5225
+                  ],
+                  [
+                    0.09069,
+                    0.525
+                  ],
+                  [
+                    0.09069,
+                    0.5275
+                  ],
+                  [
+                    0.09069,
+                    0.53
+                  ],
+                  [
+                    0.09069,
+                    0.5325
+                  ],
+                  [
+                    0.09069,
+                    0.535
+                  ],
+                  [
+                    0.09069,
+                    0.5375
+                  ],
+                  [
+                    0.09069,
+                    0.54
+                  ],
+                  [
+                    0.09069,
+                    0.5425
+                  ],
+                  [
+                    0.09069,
+                    0.545
+                  ],
+                  [
+                    0.09069,
+                    0.5475
+                  ],
+                  [
+                    0.09069,
+                    0.55
+                  ],
+                  [
+                    0.09069,
+                    0.5525
+                  ],
+                  [
+                    0.09069,
+                    0.555
+                  ],
+                  [
+                    0.09069,
+                    0.5575
+                  ],
+                  [
+                    0.09069,
+                    0.56
+                  ],
+                  [
+                    0.09069,
+                    0.5625
+                  ],
+                  [
+                    0.09069,
+                    0.565
+                  ],
+                  [
+                    0.09069,
+                    0.5675
+                  ],
+                  [
+                    0.09069,
+                    0.5700000000000001
+                  ],
+                  [
+                    0.09069,
+                    0.5725
+                  ],
+                  [
+                    0.09069,
+                    0.575
+                  ],
+                  [
+                    0.09069,
+                    0.5775
+                  ],
+                  [
+                    0.09069,
+                    0.58
+                  ],
+                  [
+                    0.09069,
+                    0.5825
+                  ],
+                  [
+                    0.09069,
+                    0.585
+                  ],
+                  [
+                    0.09069,
+                    0.5875
+                  ],
+                  [
+                    0.09069,
+                    0.59
+                  ],
+                  [
+                    0.09069,
+                    0.5925
+                  ],
+                  [
+                    0.09069,
+                    0.595
+                  ],
+                  [
+                    0.09069,
+                    0.5975
+                  ],
+                  [
+                    0.09069,
+                    0.6
+                  ],
+                  [
+                    0.09069,
+                    0.6025
+                  ],
+                  [
+                    0.09069,
+                    0.605
+                  ],
+                  [
+                    0.09069,
+                    0.6075
+                  ],
+                  [
+                    0.09069,
+                    0.61
+                  ],
+                  [
+                    0.09069,
+                    0.6125
+                  ],
+                  [
+                    0.09069,
+                    0.615
+                  ],
+                  [
+                    0.09069,
+                    0.6175
+                  ],
+                  [
+                    0.09069,
+                    0.62
+                  ],
+                  [
+                    0.09069,
+                    0.6225
+                  ],
+                  [
+                    0.09069,
+                    0.625
+                  ],
+                  [
+                    0.09069,
+                    0.6275
+                  ],
+                  [
+                    0.09069,
+                    0.63
+                  ],
+                  [
+                    0.09069,
+                    0.6325000000000001
+                  ],
+                  [
+                    0.09069,
+                    0.635
+                  ],
+                  [
+                    0.09069,
+                    0.6375
+                  ],
+                  [
+                    0.09069,
+                    0.64
+                  ],
+                  [
+                    0.09069,
+                    0.6425000000000001
+                  ],
+                  [
+                    0.09069,
+                    0.645
+                  ],
+                  [
+                    0.09069,
+                    0.6475
+                  ],
+                  [
+                    0.09069,
+                    0.65
+                  ],
+                  [
+                    0.09069,
+                    0.6525
+                  ],
+                  [
+                    0.09069,
+                    0.655
+                  ],
+                  [
+                    0.09069,
+                    0.6575
+                  ],
+                  [
+                    0.09069,
+                    0.66
+                  ],
+                  [
+                    0.09069,
+                    0.6625
+                  ],
+                  [
+                    0.09069,
+                    0.665
+                  ],
+                  [
+                    0.09069,
+                    0.6675
+                  ],
+                  [
+                    0.09069,
+                    0.67
+                  ],
+                  [
+                    0.09069,
+                    0.6725
+                  ],
+                  [
+                    0.09069,
+                    0.675
+                  ],
+                  [
+                    0.09069,
+                    0.6775
+                  ],
+                  [
+                    0.09069,
+                    0.6799999999999999
+                  ],
+                  [
+                    0.09069,
+                    0.6825
+                  ],
+                  [
+                    0.09069,
+                    0.685
+                  ],
+                  [
+                    0.09069,
+                    0.6875
+                  ],
+                  [
+                    0.09069,
+                    0.69
+                  ],
+                  [
+                    0.09069,
+                    0.6925
+                  ],
+                  [
+                    0.09069,
+                    0.6950000000000001
+                  ],
+                  [
+                    0.09069,
+                    0.6975
+                  ],
+                  [
+                    0.09069,
+                    0.7
+                  ],
+                  [
+                    0.09069,
+                    0.7175
+                  ],
+                  [
+                    0.09069,
+                    0.72
+                  ],
+                  [
+                    0.09069,
+                    0.7225
+                  ],
+                  [
+                    0.09069,
+                    0.725
+                  ],
+                  [
+                    0.09069,
+                    0.7275
+                  ],
+                  [
+                    0.09069,
+                    0.7475
+                  ],
+                  [
+                    0.09069,
+                    0.75
+                  ],
+                  [
+                    0.09069,
+                    0.7525
+                  ],
+                  [
+                    0.09069,
+                    0.755
+                  ],
+                  [
+                    0.09069,
+                    0.7575000000000001
+                  ],
+                  [
+                    0.09069,
+                    0.76
+                  ],
+                  [
+                    0.09069,
+                    0.7625
+                  ],
+                  [
+                    0.09069,
+                    0.765
+                  ],
+                  [
+                    0.09069,
+                    0.775
+                  ],
+                  [
+                    0.09069,
+                    0.7775000000000001
+                  ],
+                  [
+                    0.09069,
+                    0.78
+                  ],
+                  [
+                    0.09069,
+                    0.7825
+                  ],
+                  [
+                    0.09069,
+                    0.785
+                  ],
+                  [
+                    0.09069,
+                    0.7875000000000001
+                  ],
+                  [
+                    0.09069,
+                    0.7975
+                  ],
+                  [
+                    0.09069,
+                    0.8
+                  ],
+                  [
+                    0.09069,
+                    0.8025
+                  ]
+                ],
+                "foregroundBlockers": [
+                  {
+                    "name": "SC01_02_中央双仕女",
+                    "lineOccupiedRatio": 0.028089887640449437,
+                    "meanAlpha": 0.025886759198061243
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "SC02_03_右上仕女群",
+          "id": "c3-m-de3408ad8a8f",
+          "textureId": "c3-t-9a9479d09ece120b",
+          "label": "C3-T017",
+          "sourceName": "3-2_03_右上仕女群.png",
+          "texturePath": "public/assets/chapter-3/textures/9a9479d09ece120b.webp",
+          "role": "主体叙事层",
+          "treatment": "保留",
+          "storyboard": {
+            "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+            "axis": "Y",
+            "axisBounds": [
+              68.2145462,
+              73.6163712
+            ],
+            "nearestStop": {
+              "name": "SC02_阅读",
+              "frame": 834,
+              "progress": 0.1248501,
+              "index": 2,
+              "cameraAxisPosition": 58.995567
+            },
+            "stopRange": [
+              2,
+              2
+            ],
+            "associatedStops": [
+              {
+                "name": "SC02_阅读",
+                "frame": 834,
+                "progress": 0.1248501,
+                "index": 2,
+                "cameraAxisPosition": 58.995567
+              }
+            ]
+          },
+          "sourceCollections": [
+            "SC_02"
+          ],
+          "bounds": {
+            "min": [
+              0.0268669,
+              68.2145462,
+              13.612709
+            ],
+            "max": [
+              0.0268669,
+              73.6163712,
+              19.4440289
+            ]
+          },
+          "material": 41,
+          "uvRange": [
+            0.0,
+            0.25,
+            1.0,
+            1.0
+          ],
+          "omittedVisibleAlphaRatio": 0.3619543261308175,
+          "hardAxisBoundaryCandidates": [
+            {
+              "axis": "v",
+              "coordinate": 0.3125,
+              "interval": [
+                0.25,
+                0.5
+              ],
+              "uvLength": 0.25,
+              "meanAlpha": 252.5487804878049,
+              "occupiedRatio": 1.0,
+              "opaqueRatio": 1.0
+            }
+          ],
+          "positionValues": 102,
+          "pendingVisualReview": false,
+          "diagnosticImage": "reports/reconstruction/chapter-3-geometry-review/c3-m-de3408ad8a8f.png",
+          "visualReview": {
+            "classification": "primary-human-silhouette-internal-hard-trim",
+            "risk": "high",
+            "reviewedStop": 2,
+            "originalBakedText": {
+              "present": false,
+              "observation": "三位仕女完整原图中未见烘焙题字；服饰纹样保留。"
+            },
+            "visualObservation": "原图三位仕女下摆完整自然，当前几何只保留v>=0.25的部分且在v=0.3125/u=0.25..0.5形成不透明横线，累计漏掉36.20%原图alpha。第2景放大图中下摆与红栏杆交界呈直切，容易被红栏杆和飘带的构图掩饰；该切边201个有色采样全部仍有>10%透射，不能宣称已被前景完全遮住。",
+            "recommendation": "将该保留纹理对应的主人物实例列为优先几何修复候选：以完整下摆轮廓为目标核对原位人物/栏杆关系，局部补UV或明确调整有意遮挡；不要重生成已经完整的身体，不对所有同类片统一套整图。",
+            "reviewLimit": "当前只确认主实例存在内部硬切及原图完整；最终补几何后的构图、前后景顺序、过渡及动效暴露必须另验收。",
+            "evidenceFiles": [
+              "public/assets/chapter-3/textures/9a9479d09ece120b.webp",
+              "reports/reconstruction/before/chapter-3-stop-02.jpg",
+              "reports/reconstruction/chapter-3-geometry-review/stop02-right-maidens-detail.png"
+            ]
+          },
+          "diagnosticReviewStatus": "visually-reviewed-candidate-not-implementation-acceptance",
+          "cutBoundaryVisibilityEvidence": {
+            "name": "SC02_03_右上仕女群",
+            "axis": "v",
+            "coordinate": 0.3125,
+            "interval": [
+              0.25,
+              0.5
+            ],
+            "worldEndpoints": [
+              [
+                0.026866900000000003,
+                69.56500410392641,
+                14.09865219620782
+              ],
+              [
+                0.026866900000000003,
+                70.91545871111899,
+                14.09865222263567
+              ]
+            ],
+            "fitResidualWorld": 3.047496619501544e-07,
+            "samples": [
+              {
+                "stop": 2,
+                "frame": 834,
+                "sourceProgress": 0.1248501,
+                "camera": {
+                  "position": [
+                    46.0,
+                    58.9955673,
+                    10.1499996
+                  ],
+                  "fov": 22.0365727
+                },
+                "inFrameLineRatio": 1.0,
+                "lineTransmissionMean": 0.9936981757877281,
+                "lineVisibleAbove10PercentRatio": 1.0,
+                "occupiedLineSampleCount": 201,
+                "exposedOccupiedLineRatio": 1.0,
+                "exposedOccupiedSourceUV": [
+                  [
+                    0.25,
+                    0.3125
+                  ],
+                  [
+                    0.25125,
+                    0.3125
+                  ],
+                  [
+                    0.2525,
+                    0.3125
+                  ],
+                  [
+                    0.25375,
+                    0.3125
+                  ],
+                  [
+                    0.255,
+                    0.3125
+                  ],
+                  [
+                    0.25625,
+                    0.3125
+                  ],
+                  [
+                    0.2575,
+                    0.3125
+                  ],
+                  [
+                    0.25875,
+                    0.3125
+                  ],
+                  [
+                    0.26,
+                    0.3125
+                  ],
+                  [
+                    0.26125,
+                    0.3125
+                  ],
+                  [
+                    0.2625,
+                    0.3125
+                  ],
+                  [
+                    0.26375,
+                    0.3125
+                  ],
+                  [
+                    0.265,
+                    0.3125
+                  ],
+                  [
+                    0.26625,
+                    0.3125
+                  ],
+                  [
+                    0.2675,
+                    0.3125
+                  ],
+                  [
+                    0.26875,
+                    0.3125
+                  ],
+                  [
+                    0.27,
+                    0.3125
+                  ],
+                  [
+                    0.27125,
+                    0.3125
+                  ],
+                  [
+                    0.2725,
+                    0.3125
+                  ],
+                  [
+                    0.27375,
+                    0.3125
+                  ],
+                  [
+                    0.275,
+                    0.3125
+                  ],
+                  [
+                    0.27625,
+                    0.3125
+                  ],
+                  [
+                    0.2775,
+                    0.3125
+                  ],
+                  [
+                    0.27875,
+                    0.3125
+                  ],
+                  [
+                    0.28,
+                    0.3125
+                  ],
+                  [
+                    0.28125,
+                    0.3125
+                  ],
+                  [
+                    0.2825,
+                    0.3125
+                  ],
+                  [
+                    0.28375,
+                    0.3125
+                  ],
+                  [
+                    0.28500000000000003,
+                    0.3125
+                  ],
+                  [
+                    0.28625,
+                    0.3125
+                  ],
+                  [
+                    0.2875,
+                    0.3125
+                  ],
+                  [
+                    0.28875,
+                    0.3125
+                  ],
+                  [
+                    0.29,
+                    0.3125
+                  ],
+                  [
+                    0.29125,
+                    0.3125
+                  ],
+                  [
+                    0.2925,
+                    0.3125
+                  ],
+                  [
+                    0.29375,
+                    0.3125
+                  ],
+                  [
+                    0.295,
+                    0.3125
+                  ],
+                  [
+                    0.29625,
+                    0.3125
+                  ],
+                  [
+                    0.2975,
+                    0.3125
+                  ],
+                  [
+                    0.29875,
+                    0.3125
+                  ],
+                  [
+                    0.3,
+                    0.3125
+                  ],
+                  [
+                    0.30125,
+                    0.3125
+                  ],
+                  [
+                    0.3025,
+                    0.3125
+                  ],
+                  [
+                    0.30375,
+                    0.3125
+                  ],
+                  [
+                    0.305,
+                    0.3125
+                  ],
+                  [
+                    0.30625,
+                    0.3125
+                  ],
+                  [
+                    0.3075,
+                    0.3125
+                  ],
+                  [
+                    0.30875,
+                    0.3125
+                  ],
+                  [
+                    0.31,
+                    0.3125
+                  ],
+                  [
+                    0.31125,
+                    0.3125
+                  ],
+                  [
+                    0.3125,
+                    0.3125
+                  ],
+                  [
+                    0.31375,
+                    0.3125
+                  ],
+                  [
+                    0.315,
+                    0.3125
+                  ],
+                  [
+                    0.31625000000000003,
+                    0.3125
+                  ],
+                  [
+                    0.3175,
+                    0.3125
+                  ],
+                  [
+                    0.31875,
+                    0.3125
+                  ],
+                  [
+                    0.32,
+                    0.3125
+                  ],
+                  [
+                    0.32125000000000004,
+                    0.3125
+                  ],
+                  [
+                    0.3225,
+                    0.3125
+                  ],
+                  [
+                    0.32375,
+                    0.3125
+                  ],
+                  [
+                    0.325,
+                    0.3125
+                  ],
+                  [
+                    0.32625,
+                    0.3125
+                  ],
+                  [
+                    0.3275,
+                    0.3125
+                  ],
+                  [
+                    0.32875,
+                    0.3125
+                  ],
+                  [
+                    0.33,
+                    0.3125
+                  ],
+                  [
+                    0.33125,
+                    0.3125
+                  ],
+                  [
+                    0.3325,
+                    0.3125
+                  ],
+                  [
+                    0.33375,
+                    0.3125
+                  ],
+                  [
+                    0.335,
+                    0.3125
+                  ],
+                  [
+                    0.33625,
+                    0.3125
+                  ],
+                  [
+                    0.3375,
+                    0.3125
+                  ],
+                  [
+                    0.33875,
+                    0.3125
+                  ],
+                  [
+                    0.33999999999999997,
+                    0.3125
+                  ],
+                  [
+                    0.34125,
+                    0.3125
+                  ],
+                  [
+                    0.3425,
+                    0.3125
+                  ],
+                  [
+                    0.34375,
+                    0.3125
+                  ],
+                  [
+                    0.345,
+                    0.3125
+                  ],
+                  [
+                    0.34625,
+                    0.3125
+                  ],
+                  [
+                    0.34750000000000003,
+                    0.3125
+                  ],
+                  [
+                    0.34875,
+                    0.3125
+                  ],
+                  [
+                    0.35,
+                    0.3125
+                  ],
+                  [
+                    0.35125,
+                    0.3125
+                  ],
+                  [
+                    0.35250000000000004,
+                    0.3125
+                  ],
+                  [
+                    0.35375,
+                    0.3125
+                  ],
+                  [
+                    0.355,
+                    0.3125
+                  ],
+                  [
+                    0.35625,
+                    0.3125
+                  ],
+                  [
+                    0.3575,
+                    0.3125
+                  ],
+                  [
+                    0.35875,
+                    0.3125
+                  ],
+                  [
+                    0.36,
+                    0.3125
+                  ],
+                  [
+                    0.36125,
+                    0.3125
+                  ],
+                  [
+                    0.3625,
+                    0.3125
+                  ],
+                  [
+                    0.36375,
+                    0.3125
+                  ],
+                  [
+                    0.365,
+                    0.3125
+                  ],
+                  [
+                    0.36625,
+                    0.3125
+                  ],
+                  [
+                    0.3675,
+                    0.3125
+                  ],
+                  [
+                    0.36875,
+                    0.3125
+                  ],
+                  [
+                    0.37,
+                    0.3125
+                  ],
+                  [
+                    0.37124999999999997,
+                    0.3125
+                  ],
+                  [
+                    0.3725,
+                    0.3125
+                  ],
+                  [
+                    0.37375,
+                    0.3125
+                  ],
+                  [
+                    0.375,
+                    0.3125
+                  ],
+                  [
+                    0.37625,
+                    0.3125
+                  ],
+                  [
+                    0.3775,
+                    0.3125
+                  ],
+                  [
+                    0.37875000000000003,
+                    0.3125
+                  ],
+                  [
+                    0.38,
+                    0.3125
+                  ],
+                  [
+                    0.38125,
+                    0.3125
+                  ],
+                  [
+                    0.3825,
+                    0.3125
+                  ],
+                  [
+                    0.38375000000000004,
+                    0.3125
+                  ],
+                  [
+                    0.385,
+                    0.3125
+                  ],
+                  [
+                    0.38625,
+                    0.3125
+                  ],
+                  [
+                    0.3875,
+                    0.3125
+                  ],
+                  [
+                    0.38875000000000004,
+                    0.3125
+                  ],
+                  [
+                    0.39,
+                    0.3125
+                  ],
+                  [
+                    0.39125,
+                    0.3125
+                  ],
+                  [
+                    0.3925,
+                    0.3125
+                  ],
+                  [
+                    0.39375000000000004,
+                    0.3125
+                  ],
+                  [
+                    0.395,
+                    0.3125
+                  ],
+                  [
+                    0.39625,
+                    0.3125
+                  ],
+                  [
+                    0.39749999999999996,
+                    0.3125
+                  ],
+                  [
+                    0.39875,
+                    0.3125
+                  ],
+                  [
+                    0.4,
+                    0.3125
+                  ],
+                  [
+                    0.40125,
+                    0.3125
+                  ],
+                  [
+                    0.40249999999999997,
+                    0.3125
+                  ],
+                  [
+                    0.40375,
+                    0.3125
+                  ],
+                  [
+                    0.405,
+                    0.3125
+                  ],
+                  [
+                    0.40625,
+                    0.3125
+                  ],
+                  [
+                    0.4075,
+                    0.3125
+                  ],
+                  [
+                    0.40875,
+                    0.3125
+                  ],
+                  [
+                    0.41000000000000003,
+                    0.3125
+                  ],
+                  [
+                    0.41125,
+                    0.3125
+                  ],
+                  [
+                    0.4125,
+                    0.3125
+                  ],
+                  [
+                    0.41375,
+                    0.3125
+                  ],
+                  [
+                    0.41500000000000004,
+                    0.3125
+                  ],
+                  [
+                    0.41625,
+                    0.3125
+                  ],
+                  [
+                    0.4175,
+                    0.3125
+                  ],
+                  [
+                    0.41875,
+                    0.3125
+                  ],
+                  [
+                    0.42000000000000004,
+                    0.3125
+                  ],
+                  [
+                    0.42125,
+                    0.3125
+                  ],
+                  [
+                    0.4225,
+                    0.3125
+                  ],
+                  [
+                    0.42375,
+                    0.3125
+                  ],
+                  [
+                    0.42500000000000004,
+                    0.3125
+                  ],
+                  [
+                    0.42625,
+                    0.3125
+                  ],
+                  [
+                    0.4275,
+                    0.3125
+                  ],
+                  [
+                    0.42874999999999996,
+                    0.3125
+                  ],
+                  [
+                    0.43,
+                    0.3125
+                  ],
+                  [
+                    0.43125,
+                    0.3125
+                  ],
+                  [
+                    0.4325,
+                    0.3125
+                  ],
+                  [
+                    0.43374999999999997,
+                    0.3125
+                  ],
+                  [
+                    0.435,
+                    0.3125
+                  ],
+                  [
+                    0.43625,
+                    0.3125
+                  ],
+                  [
+                    0.4375,
+                    0.3125
+                  ],
+                  [
+                    0.43875,
+                    0.3125
+                  ],
+                  [
+                    0.44,
+                    0.3125
+                  ],
+                  [
+                    0.44125000000000003,
+                    0.3125
+                  ],
+                  [
+                    0.4425,
+                    0.3125
+                  ],
+                  [
+                    0.44375,
+                    0.3125
+                  ],
+                  [
+                    0.445,
+                    0.3125
+                  ],
+                  [
+                    0.44625000000000004,
+                    0.3125
+                  ],
+                  [
+                    0.4475,
+                    0.3125
+                  ],
+                  [
+                    0.44875,
+                    0.3125
+                  ],
+                  [
+                    0.45,
+                    0.3125
+                  ],
+                  [
+                    0.45125000000000004,
+                    0.3125
+                  ],
+                  [
+                    0.4525,
+                    0.3125
+                  ],
+                  [
+                    0.45375,
+                    0.3125
+                  ],
+                  [
+                    0.455,
+                    0.3125
+                  ],
+                  [
+                    0.45625000000000004,
+                    0.3125
+                  ],
+                  [
+                    0.4575,
+                    0.3125
+                  ],
+                  [
+                    0.45875,
+                    0.3125
+                  ],
+                  [
+                    0.45999999999999996,
+                    0.3125
+                  ],
+                  [
+                    0.46125,
+                    0.3125
+                  ],
+                  [
+                    0.4625,
+                    0.3125
+                  ],
+                  [
+                    0.46375,
+                    0.3125
+                  ],
+                  [
+                    0.46499999999999997,
+                    0.3125
+                  ],
+                  [
+                    0.46625,
+                    0.3125
+                  ],
+                  [
+                    0.4675,
+                    0.3125
+                  ],
+                  [
+                    0.46875,
+                    0.3125
+                  ],
+                  [
+                    0.47,
+                    0.3125
+                  ],
+                  [
+                    0.47125,
+                    0.3125
+                  ],
+                  [
+                    0.47250000000000003,
+                    0.3125
+                  ],
+                  [
+                    0.47375,
+                    0.3125
+                  ],
+                  [
+                    0.475,
+                    0.3125
+                  ],
+                  [
+                    0.47625,
+                    0.3125
+                  ],
+                  [
+                    0.47750000000000004,
+                    0.3125
+                  ],
+                  [
+                    0.47875,
+                    0.3125
+                  ],
+                  [
+                    0.48,
+                    0.3125
+                  ],
+                  [
+                    0.48125,
+                    0.3125
+                  ],
+                  [
+                    0.48250000000000004,
+                    0.3125
+                  ],
+                  [
+                    0.48375,
+                    0.3125
+                  ],
+                  [
+                    0.485,
+                    0.3125
+                  ],
+                  [
+                    0.48625,
+                    0.3125
+                  ],
+                  [
+                    0.48750000000000004,
+                    0.3125
+                  ],
+                  [
+                    0.48875,
+                    0.3125
+                  ],
+                  [
+                    0.49,
+                    0.3125
+                  ],
+                  [
+                    0.49124999999999996,
+                    0.3125
+                  ],
+                  [
+                    0.4925,
+                    0.3125
+                  ],
+                  [
+                    0.49375,
+                    0.3125
+                  ],
+                  [
+                    0.495,
+                    0.3125
+                  ],
+                  [
+                    0.49624999999999997,
+                    0.3125
+                  ],
+                  [
+                    0.4975,
+                    0.3125
+                  ],
+                  [
+                    0.49875,
+                    0.3125
+                  ],
+                  [
+                    0.5,
+                    0.3125
+                  ]
+                ],
+                "foregroundBlockers": [
+                  {
+                    "name": "微信图片_20261016180044_182_1685",
+                    "lineOccupiedRatio": 0.01990049751243781,
+                    "meanAlpha": 0.0063018242122719744
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "SC02_06_上方人物背景",
+          "id": "c3-m-f449c3cfe037",
+          "textureId": "c3-t-e03e5d2e5d7c3372",
+          "label": "C3-T015",
+          "sourceName": "3-2_06_上方人物背景.png",
+          "texturePath": "public/assets/chapter-3/textures/e03e5d2e5d7c3372.webp",
+          "role": "后景连续层",
+          "treatment": "保留",
+          "storyboard": {
+            "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+            "axis": "Y",
+            "axisBounds": [
+              39.8925171,
+              80.331131
+            ],
+            "nearestStop": {
+              "name": "SC02_阅读",
+              "frame": 834,
+              "progress": 0.1248501,
+              "index": 2,
+              "cameraAxisPosition": 58.995567
+            },
+            "stopRange": [
+              2,
+              2
+            ],
+            "associatedStops": [
+              {
+                "name": "SC02_阅读",
+                "frame": 834,
+                "progress": 0.1248501,
+                "index": 2,
+                "cameraAxisPosition": 58.995567
+              }
+            ]
+          },
+          "sourceCollections": [
+            "SC_02"
+          ],
+          "bounds": {
+            "min": [
+              -7.8507848,
+              39.8925171,
+              11.6875324
+            ],
+            "max": [
+              -7.8507848,
+              80.331131,
+              22.4723949
+            ]
+          },
+          "material": 39,
+          "uvRange": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "omittedVisibleAlphaRatio": 0.030563202611400147,
+          "hardAxisBoundaryCandidates": [
+            {
+              "axis": "u",
+              "coordinate": 0.875,
+              "interval": [
+                0.125,
+                0.25
+              ],
+              "uvLength": 0.125,
+              "meanAlpha": 252.63768115942028,
+              "occupiedRatio": 1.0,
+              "opaqueRatio": 1.0
+            }
+          ],
+          "positionValues": 93,
+          "pendingVisualReview": false,
+          "diagnosticImage": "reports/reconstruction/chapter-3-geometry-review/c3-m-f449c3cfe037.png",
+          "visualReview": {
+            "classification": "occluded-background-column-foot-trim",
+            "risk": "medium",
+            "reviewedStop": 2,
+            "originalBakedText": {
+              "present": false,
+              "observation": "牡丹/双鹤屏风和柱廊原图无可读独立题字；装饰金纹不是文字层。"
+            },
+            "visualObservation": "UV在u=0.875、v=0.125..0.25的柱脚/栏杆底部留下长内部竖切，漏alpha约3.06%。第2景此处被前方飘带/牡丹组合遮住；该节点CPU采样201个有色点全部低于10%透射。",
+            "recommendation": "保留背景实例现有角色，只记录这一局部切边。当前阅读节点不需要粗暴整图补面；后续若移动飘带或修改镜头/画幅，重新检查柱脚和阶沿是否露出切口。",
+            "reviewLimit": "遮蔽证据限第2阅读节点和约2.916:1画幅；不证明过渡帧与动效后始终遮住。",
+            "evidenceFiles": [
+              "public/assets/chapter-3/textures/e03e5d2e5d7c3372.webp",
+              "reports/reconstruction/before/chapter-3-stop-02.jpg"
+            ]
+          },
+          "diagnosticReviewStatus": "visually-reviewed-candidate-not-implementation-acceptance",
+          "cutBoundaryVisibilityEvidence": {
+            "name": "SC02_06_上方人物背景",
+            "axis": "u",
+            "coordinate": 0.875,
+            "interval": [
+              0.125,
+              0.25
+            ],
+            "worldEndpoints": [
+              [
+                -7.8507848,
+                75.27630360348456,
+                13.035640166107656
+              ],
+              [
+                -7.8507848,
+                75.2763036258423,
+                14.383748007471757
+              ]
+            ],
+            "fitResidualWorld": 3.3942046115953417e-06,
+            "samples": [
+              {
+                "stop": 2,
+                "frame": 834,
+                "sourceProgress": 0.1248501,
+                "camera": {
+                  "position": [
+                    46.0,
+                    58.9955673,
+                    10.1499996
+                  ],
+                  "fov": 22.0365727
+                },
+                "inFrameLineRatio": 1.0,
+                "lineTransmissionMean": 0.0077065652131499095,
+                "lineVisibleAbove10PercentRatio": 0.0,
+                "occupiedLineSampleCount": 201,
+                "exposedOccupiedLineRatio": 0.0,
+                "exposedOccupiedSourceUV": [],
+                "foregroundBlockers": [
+                  {
+                    "name": "微信图片_20261016180044_182_1685",
+                    "lineOccupiedRatio": 1.0,
+                    "meanAlpha": 0.99229343478685
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "SC05_01_两盏花灯",
+          "id": "c3-m-3c3a40323c54",
+          "textureId": "c3-t-49efdde0a4453d39",
+          "label": "C3-T036",
+          "sourceName": "3-5_01_两盏花灯.png",
+          "texturePath": "public/assets/chapter-3/textures/49efdde0a4453d39.webp",
+          "role": "中景承接层",
+          "treatment": "保留",
+          "storyboard": {
+            "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+            "axis": "Y",
+            "axisBounds": [
+              238.2709198,
+              239.9509277
+            ],
+            "nearestStop": {
+              "name": "SC05_阅读",
+              "frame": 2898,
+              "progress": 0.4342026,
+              "index": 5,
+              "cameraAxisPosition": 238.99556
+            },
+            "stopRange": [
+              5,
+              5
+            ],
+            "associatedStops": [
+              {
+                "name": "SC05_阅读",
+                "frame": 2898,
+                "progress": 0.4342026,
+                "index": 5,
+                "cameraAxisPosition": 238.99556
+              }
+            ]
+          },
+          "sourceCollections": [
+            "SC_05"
+          ],
+          "bounds": {
+            "min": [
+              6.0,
+              238.2709198,
+              8.400568
+            ],
+            "max": [
+              6.0,
+              239.9509277,
+              13.8368473
+            ]
+          },
+          "material": 60,
+          "uvRange": [
+            0.0,
+            0.0,
+            0.5,
+            1.0
+          ],
+          "omittedVisibleAlphaRatio": 0.6195016967537423,
+          "hardAxisBoundaryCandidates": [],
+          "positionValues": 42,
+          "pendingVisualReview": false,
+          "diagnosticImage": "reports/reconstruction/chapter-3-geometry-review/c3-m-3c3a40323c54.png",
+          "visualReview": {
+            "classification": "legitimate-source-object-extraction",
+            "risk": "low",
+            "reviewedStop": 5,
+            "originalBakedText": {
+              "present": true,
+              "observation": "两灯的红色挂牌已有黑色/红色竖排书写，包含“春”字形；属于原图烘焙文字。不可因对象名或去字逻辑删除。"
+            },
+            "visualObservation": "原图含左小灯与右大灯；当前SC05_01只取左小灯，右侧大灯被整体剔除。漏61.95%原图alpha的数字来自对象选择，不是左小灯被腰斩；本算法未发现长不透明横竖内部切边。第5景左小灯挂在屋檐下，轮廓合理。",
+            "recommendation": "保留按物体提取的小灯UV，不恢复右侧大灯，不仅凭漏图比例判坏。若未来需要两灯入画，按新构图新增/选择独立实例。",
+            "reviewLimit": "同图SC05_通道左上花灯使用全图，但x=48，第5阅读相机x=45时它处于镜头后方；其alpha并不能在同一节点“补全”小灯。通道辅助片需过渡另验，不能由同源union代替。",
+            "evidenceFiles": [
+              "public/assets/chapter-3/textures/49efdde0a4453d39.webp",
+              "reports/reconstruction/before/chapter-3-stop-05.jpg"
+            ]
+          },
+          "diagnosticReviewStatus": "visually-reviewed-candidate-not-implementation-acceptance"
+        }
+      ],
+      "sourceSharingGroups": [
+        {
+          "texturePath": "public/assets/chapter-3/textures/8818501ede5169de.webp",
+          "label": "C3-T005",
+          "members": [
+            "04_中部织锦飘带",
+            "04_中部织锦飘带.001"
+          ],
+          "individualOmittedAlpha": {
+            "04_中部织锦飘带": 0.0,
+            "04_中部织锦飘带.001": 0.0
+          },
+          "unionOmittedAlpha": 0.0,
+          "pairs": [
+            {
+              "a": "04_中部织锦飘带",
+              "b": "04_中部织锦飘带.001",
+              "sharedSourceAlphaRatio": 1.0
+            }
+          ],
+          "semanticClassification": "full-source-repeat-two-ribbon-transforms",
+          "visualObservation": "04_中部织锦飘带与.001均覆盖同一完整图；第七景不同变换组成连接，不属于两片拼同一图。保留重复实例，后续若要给飘带动效，应逐实例绑定，不因.001直接剔除。",
+          "sourceBakedLetteringObserved": false,
+          "sameSourceUnionIsNotScreenCompleteness": true,
+          "sourceOriginalViewedDirectly": true,
+          "allInstancesAndTransitionsAccepted": false
+        },
+        {
+          "texturePath": "public/assets/chapter-3/textures/49efdde0a4453d39.webp",
+          "label": "C3-T036",
+          "members": [
+            "SC05_01_两盏花灯",
+            "SC05_通道左上花灯"
+          ],
+          "individualOmittedAlpha": {
+            "SC05_01_两盏花灯": 0.6195016967537423,
+            "SC05_通道左上花灯": 0.0
+          },
+          "unionOmittedAlpha": 0.0,
+          "pairs": [
+            {
+              "a": "SC05_01_两盏花灯",
+              "b": "SC05_通道左上花灯",
+              "sharedSourceAlphaRatio": 0.38049830324625766
+            }
+          ],
+          "semanticClassification": "selected-left-lantern-plus-near-camera-channel-instance",
+          "visualObservation": "主灯仅取左小灯；通道片使用两灯全图且x=48，阅读节点在镜头后。按对象提取处理，不能用同源alpha union证明同一视角完整。",
+          "sourceBakedLetteringObserved": true,
+          "sameSourceUnionIsNotScreenCompleteness": true,
+          "sourceOriginalViewedDirectly": true,
+          "allInstancesAndTransitionsAccepted": false
+        },
+        {
+          "texturePath": "public/assets/chapter-3/textures/f24338909a9d9ac7.webp",
+          "label": "C3-T040",
+          "members": [
+            "SC05_06_右下牡丹花丛_补全",
+            "SC05_通道右下花枝"
+          ],
+          "individualOmittedAlpha": {
+            "SC05_06_右下牡丹花丛_补全": 0.0,
+            "SC05_通道右下花枝": 0.0
+          },
+          "unionOmittedAlpha": 0.0,
+          "pairs": [
+            {
+              "a": "SC05_06_右下牡丹花丛_补全",
+              "b": "SC05_通道右下花枝",
+              "sharedSourceAlphaRatio": 1.0
+            }
+          ],
+          "semanticClassification": "full-source-repeat-main-and-channel-peony",
+          "visualObservation": "主花丛与x=48通道花枝均全覆盖原图；是相隔深度的复用，不是遗漏补片。保留角色和原坐标，动效前另验通道曝光。",
+          "sourceBakedLetteringObserved": false,
+          "sameSourceUnionIsNotScreenCompleteness": true,
+          "sourceOriginalViewedDirectly": true,
+          "allInstancesAndTransitionsAccepted": false
+        },
+        {
+          "texturePath": "public/assets/chapter-3/textures/3f777fca4edbbc31.webp",
+          "label": "C3-T047",
+          "members": [
+            "SC06_07_右下花丛",
+            "SC06_07_右下花丛.001"
+          ],
+          "individualOmittedAlpha": {
+            "SC06_07_右下花丛": 0.0,
+            "SC06_07_右下花丛.001": 0.0
+          },
+          "unionOmittedAlpha": 0.0,
+          "pairs": [
+            {
+              "a": "SC06_07_右下花丛",
+              "b": "SC06_07_右下花丛.001",
+              "sharedSourceAlphaRatio": 1.0
+            }
+          ],
+          "semanticClassification": "full-source-repeat-cross-stop",
+          "visualObservation": "SC06_07_右下花丛在第六景；.001在第七景，虽二者源Collection同为SC_06。UV均完整，不能按名字推断.001应裁补或只属于第六景。",
+          "sourceBakedLetteringObserved": false,
+          "sameSourceUnionIsNotScreenCompleteness": true,
+          "sourceOriginalViewedDirectly": true,
+          "allInstancesAndTransitionsAccepted": false
+        },
+        {
+          "texturePath": "public/assets/chapter-3/textures/1217d0b1e19eea1c.webp",
+          "label": "C3-T048",
+          "members": [
+            "SC06_16_红色灯笼",
+            "SC06_通道左上花灯"
+          ],
+          "individualOmittedAlpha": {
+            "SC06_16_红色灯笼": 0.0,
+            "SC06_通道左上花灯": 0.0
+          },
+          "unionOmittedAlpha": 0.0,
+          "pairs": [
+            {
+              "a": "SC06_16_红色灯笼",
+              "b": "SC06_通道左上花灯",
+              "sharedSourceAlphaRatio": 1.0
+            }
+          ],
+          "semanticClassification": "full-source-repeat-main-and-channel-lantern",
+          "visualObservation": "红灯主实例与x=48通道灯均全覆盖原图；第六阅读节点相机x=45使通道片位于镜头后，需过渡单验。",
+          "sourceBakedLetteringObserved": false,
+          "sameSourceUnionIsNotScreenCompleteness": true,
+          "sourceOriginalViewedDirectly": true,
+          "allInstancesAndTransitionsAccepted": false
+        },
+        {
+          "texturePath": "public/assets/chapter-3/textures/3cd6680826ea7dbc.webp",
+          "label": "C3-T062",
+          "members": [
+            "SC09_05_右侧山水城景",
+            "SC09_05_右侧山水城景.001"
+          ],
+          "individualOmittedAlpha": {
+            "SC09_05_右侧山水城景": 0.0,
+            "SC09_05_右侧山水城景.001": 0.08026218408865177
+          },
+          "unionOmittedAlpha": 0.0,
+          "pairs": [
+            {
+              "a": "SC09_05_右侧山水城景",
+              "b": "SC09_05_右侧山水城景.001",
+              "sharedSourceAlphaRatio": 0.9197378159113482
+            }
+          ],
+          "semanticClassification": "full-primary-stop09-plus-locally-trimmed-aux-stop08",
+          "visualObservation": "第九景主城景完整，第八景辅助.001局部裁山；必须分别处理，不能将每片统一恢复fullUV。",
+          "sourceBakedLetteringObserved": true,
+          "sameSourceUnionIsNotScreenCompleteness": true,
+          "sourceOriginalViewedDirectly": true,
+          "allInstancesAndTransitionsAccepted": false
+        }
+      ],
+      "paperDepth": {
+        "objects": [
+          {
+            "name": "一整幅无缝宣纸",
+            "id": "c3-m-43cb9d0e8712",
+            "materialIndex": 8,
+            "material": {
+              "id": 8,
+              "name": "通幅宣纸｜轻微纤维",
+              "texture": null,
+              "color": [
+                0.88828724625,
+                0.80369886755,
+                0.6634412408
+              ],
+              "opacity": 1.0,
+              "transparent": false,
+              "alphaTest": 0,
+              "side": "double",
+              "depthWrite": true,
+              "sourceAlphaLinked": false,
+              "proceduralApproximation": true
+            },
+            "bounds": {
+              "min": [
+                -18.0,
+                -100.0,
+                -60.0
+              ],
+              "max": [
+                -18.0,
+                600.0,
+                80.0
+              ]
+            },
+            "size": [
+              0.0,
+              700.0,
+              140.0
+            ],
+            "sourceCollections": [
+              "长卷连续环境｜共用纸色·山水·水岸"
+            ],
+            "storyboard": {
+              "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+              "axis": "Y",
+              "axisBounds": [
+                -100.0,
+                600.0
+              ],
+              "nearestStop": {
+                "name": "SC05_阅读",
+                "frame": 2898,
+                "progress": 0.4342026,
+                "index": 5,
+                "cameraAxisPosition": 238.99556
+              },
+              "stopRange": [
+                1,
+                9
+              ],
+              "associatedStops": [
+                {
+                  "name": "SC01_阅读",
+                  "frame": 162,
+                  "progress": 0.0241307,
+                  "index": 1,
+                  "cameraAxisPosition": -1.004433
+                },
+                {
+                  "name": "SC02_阅读",
+                  "frame": 834,
+                  "progress": 0.1248501,
+                  "index": 2,
+                  "cameraAxisPosition": 58.995567
+                },
+                {
+                  "name": "SC03_阅读",
+                  "frame": 1516,
+                  "progress": 0.2270683,
+                  "index": 3,
+                  "cameraAxisPosition": 118.994301
+                },
+                {
+                  "name": "SC04_阅读",
+                  "frame": 2212,
+                  "progress": 0.3313849,
+                  "index": 4,
+                  "cameraAxisPosition": 178.994293
+                },
+                {
+                  "name": "SC05_阅读",
+                  "frame": 2898,
+                  "progress": 0.4342026,
+                  "index": 5,
+                  "cameraAxisPosition": 238.99556
+                },
+                {
+                  "name": "SC06_阅读",
+                  "frame": 3590,
+                  "progress": 0.5379197,
+                  "index": 6,
+                  "cameraAxisPosition": 298.993042
+                },
+                {
+                  "name": "SC07_阅读",
+                  "frame": 4421,
+                  "progress": 0.66247,
+                  "index": 7,
+                  "cameraAxisPosition": 358.996277
+                },
+                {
+                  "name": "SC08_阅读",
+                  "frame": 5405,
+                  "progress": 0.809952,
+                  "index": 8,
+                  "cameraAxisPosition": 418.996277
+                },
+                {
+                  "name": "SC09_阅读",
+                  "frame": 6339,
+                  "progress": 0.94994,
+                  "index": 9,
+                  "cameraAxisPosition": 479.000946
+                }
+              ]
+            },
+            "texturedMeshesPotentiallyBehindByX": [],
+            "pendingVisualReview": false,
+            "riskAssessment": {
+              "classification": "behind-all-textured-content-no-current-paper-occlusion-evidence",
+              "nearestTexturedMinimumX": -8.086895,
+              "minimumDepthGapToAnyTexturedMesh": 9.913105,
+              "cameraDirection": "Every exported camera quaternion is [0.5,0.5,0.5,0.5]; looks toward world -X; camera X in 45..62.",
+              "observedStops": [
+                1,
+                2,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "observation": "全部纹理平面都位于该通幅环境对象前方；本次所看原节点未见此纸/山/水基底越过人物或台阶。背景的硬色带/山形仍可能需要美术修复，但与本项depthWrite压住纹理的问题不同。",
+              "recommendation": "保留depthWrite设置和世界坐标；本次没有支持直接修改该材质depth设置的证据。后续若改变深度或新增层再复核。"
+            }
+          },
+          {
+            "name": "贯穿全卷的山势_1",
+            "id": "c3-m-fdc2ce49114c",
+            "materialIndex": 9,
+            "material": {
+              "id": 9,
+              "name": "淡墨远山_1",
+              "texture": null,
+              "color": [
+                0.6797827,
+                0.6515419,
+                0.5399323
+              ],
+              "opacity": 1.0,
+              "transparent": false,
+              "alphaTest": 0,
+              "side": "double",
+              "depthWrite": true,
+              "sourceAlphaLinked": false,
+              "proceduralApproximation": false
+            },
+            "bounds": {
+              "min": [
+                -15.0,
+                -80.0,
+                -24.9999981
+              ],
+              "max": [
+                -15.0,
+                550.0,
+                14.7000904
+              ]
+            },
+            "size": [
+              0.0,
+              630.0,
+              39.7000885
+            ],
+            "sourceCollections": [
+              "长卷连续环境｜共用纸色·山水·水岸"
+            ],
+            "storyboard": {
+              "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+              "axis": "Y",
+              "axisBounds": [
+                -80.0,
+                550.0
+              ],
+              "nearestStop": {
+                "name": "SC05_阅读",
+                "frame": 2898,
+                "progress": 0.4342026,
+                "index": 5,
+                "cameraAxisPosition": 238.99556
+              },
+              "stopRange": [
+                1,
+                9
+              ],
+              "associatedStops": [
+                {
+                  "name": "SC01_阅读",
+                  "frame": 162,
+                  "progress": 0.0241307,
+                  "index": 1,
+                  "cameraAxisPosition": -1.004433
+                },
+                {
+                  "name": "SC02_阅读",
+                  "frame": 834,
+                  "progress": 0.1248501,
+                  "index": 2,
+                  "cameraAxisPosition": 58.995567
+                },
+                {
+                  "name": "SC03_阅读",
+                  "frame": 1516,
+                  "progress": 0.2270683,
+                  "index": 3,
+                  "cameraAxisPosition": 118.994301
+                },
+                {
+                  "name": "SC04_阅读",
+                  "frame": 2212,
+                  "progress": 0.3313849,
+                  "index": 4,
+                  "cameraAxisPosition": 178.994293
+                },
+                {
+                  "name": "SC05_阅读",
+                  "frame": 2898,
+                  "progress": 0.4342026,
+                  "index": 5,
+                  "cameraAxisPosition": 238.99556
+                },
+                {
+                  "name": "SC06_阅读",
+                  "frame": 3590,
+                  "progress": 0.5379197,
+                  "index": 6,
+                  "cameraAxisPosition": 298.993042
+                },
+                {
+                  "name": "SC07_阅读",
+                  "frame": 4421,
+                  "progress": 0.66247,
+                  "index": 7,
+                  "cameraAxisPosition": 358.996277
+                },
+                {
+                  "name": "SC08_阅读",
+                  "frame": 5405,
+                  "progress": 0.809952,
+                  "index": 8,
+                  "cameraAxisPosition": 418.996277
+                },
+                {
+                  "name": "SC09_阅读",
+                  "frame": 6339,
+                  "progress": 0.94994,
+                  "index": 9,
+                  "cameraAxisPosition": 479.000946
+                }
+              ]
+            },
+            "texturedMeshesPotentiallyBehindByX": [],
+            "pendingVisualReview": false,
+            "riskAssessment": {
+              "classification": "behind-all-textured-content-no-current-paper-occlusion-evidence",
+              "nearestTexturedMinimumX": -8.086895,
+              "minimumDepthGapToAnyTexturedMesh": 6.913105,
+              "cameraDirection": "Every exported camera quaternion is [0.5,0.5,0.5,0.5]; looks toward world -X; camera X in 45..62.",
+              "observedStops": [
+                1,
+                2,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "observation": "全部纹理平面都位于该通幅环境对象前方；本次所看原节点未见此纸/山/水基底越过人物或台阶。背景的硬色带/山形仍可能需要美术修复，但与本项depthWrite压住纹理的问题不同。",
+              "recommendation": "保留depthWrite设置和世界坐标；本次没有支持直接修改该材质depth设置的证据。后续若改变深度或新增层再复核。"
+            }
+          },
+          {
+            "name": "贯穿全卷的山势_2",
+            "id": "c3-m-8109d008048f",
+            "materialIndex": 10,
+            "material": {
+              "id": 10,
+              "name": "淡墨远山_2",
+              "texture": null,
+              "color": [
+                0.7389405,
+                0.7017548,
+                0.5753176
+              ],
+              "opacity": 1.0,
+              "transparent": false,
+              "alphaTest": 0,
+              "side": "double",
+              "depthWrite": true,
+              "sourceAlphaLinked": false,
+              "proceduralApproximation": false
+            },
+            "bounds": {
+              "min": [
+                -13.0,
+                -80.0,
+                -25.0
+              ],
+              "max": [
+                -13.0,
+                550.0,
+                10.3734388
+              ]
+            },
+            "size": [
+              0.0,
+              630.0,
+              35.3734388
+            ],
+            "sourceCollections": [
+              "长卷连续环境｜共用纸色·山水·水岸"
+            ],
+            "storyboard": {
+              "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+              "axis": "Y",
+              "axisBounds": [
+                -80.0,
+                550.0
+              ],
+              "nearestStop": {
+                "name": "SC05_阅读",
+                "frame": 2898,
+                "progress": 0.4342026,
+                "index": 5,
+                "cameraAxisPosition": 238.99556
+              },
+              "stopRange": [
+                1,
+                9
+              ],
+              "associatedStops": [
+                {
+                  "name": "SC01_阅读",
+                  "frame": 162,
+                  "progress": 0.0241307,
+                  "index": 1,
+                  "cameraAxisPosition": -1.004433
+                },
+                {
+                  "name": "SC02_阅读",
+                  "frame": 834,
+                  "progress": 0.1248501,
+                  "index": 2,
+                  "cameraAxisPosition": 58.995567
+                },
+                {
+                  "name": "SC03_阅读",
+                  "frame": 1516,
+                  "progress": 0.2270683,
+                  "index": 3,
+                  "cameraAxisPosition": 118.994301
+                },
+                {
+                  "name": "SC04_阅读",
+                  "frame": 2212,
+                  "progress": 0.3313849,
+                  "index": 4,
+                  "cameraAxisPosition": 178.994293
+                },
+                {
+                  "name": "SC05_阅读",
+                  "frame": 2898,
+                  "progress": 0.4342026,
+                  "index": 5,
+                  "cameraAxisPosition": 238.99556
+                },
+                {
+                  "name": "SC06_阅读",
+                  "frame": 3590,
+                  "progress": 0.5379197,
+                  "index": 6,
+                  "cameraAxisPosition": 298.993042
+                },
+                {
+                  "name": "SC07_阅读",
+                  "frame": 4421,
+                  "progress": 0.66247,
+                  "index": 7,
+                  "cameraAxisPosition": 358.996277
+                },
+                {
+                  "name": "SC08_阅读",
+                  "frame": 5405,
+                  "progress": 0.809952,
+                  "index": 8,
+                  "cameraAxisPosition": 418.996277
+                },
+                {
+                  "name": "SC09_阅读",
+                  "frame": 6339,
+                  "progress": 0.94994,
+                  "index": 9,
+                  "cameraAxisPosition": 479.000946
+                }
+              ]
+            },
+            "texturedMeshesPotentiallyBehindByX": [],
+            "pendingVisualReview": false,
+            "riskAssessment": {
+              "classification": "behind-all-textured-content-no-current-paper-occlusion-evidence",
+              "nearestTexturedMinimumX": -8.086895,
+              "minimumDepthGapToAnyTexturedMesh": 4.913105,
+              "cameraDirection": "Every exported camera quaternion is [0.5,0.5,0.5,0.5]; looks toward world -X; camera X in 45..62.",
+              "observedStops": [
+                1,
+                2,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "observation": "全部纹理平面都位于该通幅环境对象前方；本次所看原节点未见此纸/山/水基底越过人物或台阶。背景的硬色带/山形仍可能需要美术修复，但与本项depthWrite压住纹理的问题不同。",
+              "recommendation": "保留depthWrite设置和世界坐标；本次没有支持直接修改该材质depth设置的证据。后续若改变深度或新增层再复核。"
+            }
+          },
+          {
+            "name": "贯穿全卷的山势_3",
+            "id": "c3-m-4f75f87d934e",
+            "materialIndex": 11,
+            "material": {
+              "id": 11,
+              "name": "淡墨远山_3",
+              "texture": null,
+              "color": [
+                0.8054239,
+                0.7463219,
+                0.6071078
+              ],
+              "opacity": 1.0,
+              "transparent": false,
+              "alphaTest": 0,
+              "side": "double",
+              "depthWrite": true,
+              "sourceAlphaLinked": false,
+              "proceduralApproximation": false
+            },
+            "bounds": {
+              "min": [
+                -11.0,
+                -80.0,
+                -25.0
+              ],
+              "max": [
+                -11.0,
+                550.0,
+                6.1728287
+              ]
+            },
+            "size": [
+              0.0,
+              630.0,
+              31.1728287
+            ],
+            "sourceCollections": [
+              "长卷连续环境｜共用纸色·山水·水岸"
+            ],
+            "storyboard": {
+              "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+              "axis": "Y",
+              "axisBounds": [
+                -80.0,
+                550.0
+              ],
+              "nearestStop": {
+                "name": "SC05_阅读",
+                "frame": 2898,
+                "progress": 0.4342026,
+                "index": 5,
+                "cameraAxisPosition": 238.99556
+              },
+              "stopRange": [
+                1,
+                9
+              ],
+              "associatedStops": [
+                {
+                  "name": "SC01_阅读",
+                  "frame": 162,
+                  "progress": 0.0241307,
+                  "index": 1,
+                  "cameraAxisPosition": -1.004433
+                },
+                {
+                  "name": "SC02_阅读",
+                  "frame": 834,
+                  "progress": 0.1248501,
+                  "index": 2,
+                  "cameraAxisPosition": 58.995567
+                },
+                {
+                  "name": "SC03_阅读",
+                  "frame": 1516,
+                  "progress": 0.2270683,
+                  "index": 3,
+                  "cameraAxisPosition": 118.994301
+                },
+                {
+                  "name": "SC04_阅读",
+                  "frame": 2212,
+                  "progress": 0.3313849,
+                  "index": 4,
+                  "cameraAxisPosition": 178.994293
+                },
+                {
+                  "name": "SC05_阅读",
+                  "frame": 2898,
+                  "progress": 0.4342026,
+                  "index": 5,
+                  "cameraAxisPosition": 238.99556
+                },
+                {
+                  "name": "SC06_阅读",
+                  "frame": 3590,
+                  "progress": 0.5379197,
+                  "index": 6,
+                  "cameraAxisPosition": 298.993042
+                },
+                {
+                  "name": "SC07_阅读",
+                  "frame": 4421,
+                  "progress": 0.66247,
+                  "index": 7,
+                  "cameraAxisPosition": 358.996277
+                },
+                {
+                  "name": "SC08_阅读",
+                  "frame": 5405,
+                  "progress": 0.809952,
+                  "index": 8,
+                  "cameraAxisPosition": 418.996277
+                },
+                {
+                  "name": "SC09_阅读",
+                  "frame": 6339,
+                  "progress": 0.94994,
+                  "index": 9,
+                  "cameraAxisPosition": 479.000946
+                }
+              ]
+            },
+            "texturedMeshesPotentiallyBehindByX": [],
+            "pendingVisualReview": false,
+            "riskAssessment": {
+              "classification": "behind-all-textured-content-no-current-paper-occlusion-evidence",
+              "nearestTexturedMinimumX": -8.086895,
+              "minimumDepthGapToAnyTexturedMesh": 2.913105,
+              "cameraDirection": "Every exported camera quaternion is [0.5,0.5,0.5,0.5]; looks toward world -X; camera X in 45..62.",
+              "observedStops": [
+                1,
+                2,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "observation": "全部纹理平面都位于该通幅环境对象前方；本次所看原节点未见此纸/山/水基底越过人物或台阶。背景的硬色带/山形仍可能需要美术修复，但与本项depthWrite压住纹理的问题不同。",
+              "recommendation": "保留depthWrite设置和世界坐标；本次没有支持直接修改该材质depth设置的证据。后续若改变深度或新增层再复核。"
+            }
+          },
+          {
+            "name": "连续水脉",
+            "id": "c3-m-4eebc734d009",
+            "materialIndex": 12,
+            "material": {
+              "id": 12,
+              "name": "连续水脉色",
+              "texture": null,
+              "color": [
+                0.7484488,
+                0.730965,
+                0.6061424
+              ],
+              "opacity": 1.0,
+              "transparent": false,
+              "alphaTest": 0,
+              "side": "double",
+              "depthWrite": true,
+              "sourceAlphaLinked": false,
+              "proceduralApproximation": false
+            },
+            "bounds": {
+              "min": [
+                -10.0,
+                -80.0,
+                3.1918571
+              ],
+              "max": [
+                -10.0,
+                550.0,
+                6.4091921
+              ]
+            },
+            "size": [
+              0.0,
+              630.0,
+              3.2173350000000003
+            ],
+            "sourceCollections": [
+              "长卷连续环境｜共用纸色·山水·水岸"
+            ],
+            "storyboard": {
+              "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+              "axis": "Y",
+              "axisBounds": [
+                -80.0,
+                550.0
+              ],
+              "nearestStop": {
+                "name": "SC05_阅读",
+                "frame": 2898,
+                "progress": 0.4342026,
+                "index": 5,
+                "cameraAxisPosition": 238.99556
+              },
+              "stopRange": [
+                1,
+                9
+              ],
+              "associatedStops": [
+                {
+                  "name": "SC01_阅读",
+                  "frame": 162,
+                  "progress": 0.0241307,
+                  "index": 1,
+                  "cameraAxisPosition": -1.004433
+                },
+                {
+                  "name": "SC02_阅读",
+                  "frame": 834,
+                  "progress": 0.1248501,
+                  "index": 2,
+                  "cameraAxisPosition": 58.995567
+                },
+                {
+                  "name": "SC03_阅读",
+                  "frame": 1516,
+                  "progress": 0.2270683,
+                  "index": 3,
+                  "cameraAxisPosition": 118.994301
+                },
+                {
+                  "name": "SC04_阅读",
+                  "frame": 2212,
+                  "progress": 0.3313849,
+                  "index": 4,
+                  "cameraAxisPosition": 178.994293
+                },
+                {
+                  "name": "SC05_阅读",
+                  "frame": 2898,
+                  "progress": 0.4342026,
+                  "index": 5,
+                  "cameraAxisPosition": 238.99556
+                },
+                {
+                  "name": "SC06_阅读",
+                  "frame": 3590,
+                  "progress": 0.5379197,
+                  "index": 6,
+                  "cameraAxisPosition": 298.993042
+                },
+                {
+                  "name": "SC07_阅读",
+                  "frame": 4421,
+                  "progress": 0.66247,
+                  "index": 7,
+                  "cameraAxisPosition": 358.996277
+                },
+                {
+                  "name": "SC08_阅读",
+                  "frame": 5405,
+                  "progress": 0.809952,
+                  "index": 8,
+                  "cameraAxisPosition": 418.996277
+                },
+                {
+                  "name": "SC09_阅读",
+                  "frame": 6339,
+                  "progress": 0.94994,
+                  "index": 9,
+                  "cameraAxisPosition": 479.000946
+                }
+              ]
+            },
+            "texturedMeshesPotentiallyBehindByX": [],
+            "pendingVisualReview": false,
+            "riskAssessment": {
+              "classification": "behind-all-textured-content-no-current-paper-occlusion-evidence",
+              "nearestTexturedMinimumX": -8.086895,
+              "minimumDepthGapToAnyTexturedMesh": 1.9131049999999998,
+              "cameraDirection": "Every exported camera quaternion is [0.5,0.5,0.5,0.5]; looks toward world -X; camera X in 45..62.",
+              "observedStops": [
+                1,
+                2,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "observation": "全部纹理平面都位于该通幅环境对象前方；本次所看原节点未见此纸/山/水基底越过人物或台阶。背景的硬色带/山形仍可能需要美术修复，但与本项depthWrite压住纹理的问题不同。",
+              "recommendation": "保留depthWrite设置和世界坐标；本次没有支持直接修改该材质depth设置的证据。后续若改变深度或新增层再复核。"
+            }
+          },
+          {
+            "name": "水岸留金",
+            "id": "c3-m-dc09fbacc3c2",
+            "materialIndex": 13,
+            "material": {
+              "id": 13,
+              "name": "水岸留金色",
+              "texture": null,
+              "color": [
+                0.7643119,
+                0.6645892,
+                0.5065717
+              ],
+              "opacity": 1.0,
+              "transparent": false,
+              "alphaTest": 0,
+              "side": "double",
+              "depthWrite": true,
+              "sourceAlphaLinked": false,
+              "proceduralApproximation": false
+            },
+            "bounds": {
+              "min": [
+                -9.8000002,
+                -80.0,
+                4.668272
+              ],
+              "max": [
+                -9.8000002,
+                550.0,
+                6.4520292
+              ]
+            },
+            "size": [
+              0.0,
+              630.0,
+              1.7837572000000002
+            ],
+            "sourceCollections": [
+              "长卷连续环境｜共用纸色·山水·水岸"
+            ],
+            "storyboard": {
+              "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+              "axis": "Y",
+              "axisBounds": [
+                -80.0,
+                550.0
+              ],
+              "nearestStop": {
+                "name": "SC05_阅读",
+                "frame": 2898,
+                "progress": 0.4342026,
+                "index": 5,
+                "cameraAxisPosition": 238.99556
+              },
+              "stopRange": [
+                1,
+                9
+              ],
+              "associatedStops": [
+                {
+                  "name": "SC01_阅读",
+                  "frame": 162,
+                  "progress": 0.0241307,
+                  "index": 1,
+                  "cameraAxisPosition": -1.004433
+                },
+                {
+                  "name": "SC02_阅读",
+                  "frame": 834,
+                  "progress": 0.1248501,
+                  "index": 2,
+                  "cameraAxisPosition": 58.995567
+                },
+                {
+                  "name": "SC03_阅读",
+                  "frame": 1516,
+                  "progress": 0.2270683,
+                  "index": 3,
+                  "cameraAxisPosition": 118.994301
+                },
+                {
+                  "name": "SC04_阅读",
+                  "frame": 2212,
+                  "progress": 0.3313849,
+                  "index": 4,
+                  "cameraAxisPosition": 178.994293
+                },
+                {
+                  "name": "SC05_阅读",
+                  "frame": 2898,
+                  "progress": 0.4342026,
+                  "index": 5,
+                  "cameraAxisPosition": 238.99556
+                },
+                {
+                  "name": "SC06_阅读",
+                  "frame": 3590,
+                  "progress": 0.5379197,
+                  "index": 6,
+                  "cameraAxisPosition": 298.993042
+                },
+                {
+                  "name": "SC07_阅读",
+                  "frame": 4421,
+                  "progress": 0.66247,
+                  "index": 7,
+                  "cameraAxisPosition": 358.996277
+                },
+                {
+                  "name": "SC08_阅读",
+                  "frame": 5405,
+                  "progress": 0.809952,
+                  "index": 8,
+                  "cameraAxisPosition": 418.996277
+                },
+                {
+                  "name": "SC09_阅读",
+                  "frame": 6339,
+                  "progress": 0.94994,
+                  "index": 9,
+                  "cameraAxisPosition": 479.000946
+                }
+              ]
+            },
+            "texturedMeshesPotentiallyBehindByX": [],
+            "pendingVisualReview": false,
+            "riskAssessment": {
+              "classification": "behind-all-textured-content-no-current-paper-occlusion-evidence",
+              "nearestTexturedMinimumX": -8.086895,
+              "minimumDepthGapToAnyTexturedMesh": 1.7131051999999993,
+              "cameraDirection": "Every exported camera quaternion is [0.5,0.5,0.5,0.5]; looks toward world -X; camera X in 45..62.",
+              "observedStops": [
+                1,
+                2,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "observation": "全部纹理平面都位于该通幅环境对象前方；本次所看原节点未见此纸/山/水基底越过人物或台阶。背景的硬色带/山形仍可能需要美术修复，但与本项depthWrite压住纹理的问题不同。",
+              "recommendation": "保留depthWrite设置和世界坐标；本次没有支持直接修改该材质depth设置的证据。后续若改变深度或新增层再复核。"
+            }
+          },
+          {
+            "name": "通幅山脊细线_1",
+            "id": "c3-m-c2c6ab901abd",
+            "materialIndex": 14,
+            "material": {
+              "id": 14,
+              "name": "山脊淡墨细笔",
+              "texture": null,
+              "color": [
+                0.7630076,
+                0.7132027,
+                0.5902583
+              ],
+              "opacity": 1.0,
+              "transparent": false,
+              "alphaTest": 0,
+              "side": "double",
+              "depthWrite": true,
+              "sourceAlphaLinked": false,
+              "proceduralApproximation": false
+            },
+            "bounds": {
+              "min": [
+                -14.9750004,
+                -80.0006409,
+                5.6527643
+              ],
+              "max": [
+                -14.9449997,
+                550.0067139,
+                14.6900826
+              ]
+            },
+            "size": [
+              0.030000700000000435,
+              630.0073548,
+              9.037318299999999
+            ],
+            "sourceCollections": [
+              "长卷连续环境｜共用纸色·山水·水岸"
+            ],
+            "storyboard": {
+              "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+              "axis": "Y",
+              "axisBounds": [
+                -80.0006409,
+                550.0067139
+              ],
+              "nearestStop": {
+                "name": "SC05_阅读",
+                "frame": 2898,
+                "progress": 0.4342026,
+                "index": 5,
+                "cameraAxisPosition": 238.99556
+              },
+              "stopRange": [
+                1,
+                9
+              ],
+              "associatedStops": [
+                {
+                  "name": "SC01_阅读",
+                  "frame": 162,
+                  "progress": 0.0241307,
+                  "index": 1,
+                  "cameraAxisPosition": -1.004433
+                },
+                {
+                  "name": "SC02_阅读",
+                  "frame": 834,
+                  "progress": 0.1248501,
+                  "index": 2,
+                  "cameraAxisPosition": 58.995567
+                },
+                {
+                  "name": "SC03_阅读",
+                  "frame": 1516,
+                  "progress": 0.2270683,
+                  "index": 3,
+                  "cameraAxisPosition": 118.994301
+                },
+                {
+                  "name": "SC04_阅读",
+                  "frame": 2212,
+                  "progress": 0.3313849,
+                  "index": 4,
+                  "cameraAxisPosition": 178.994293
+                },
+                {
+                  "name": "SC05_阅读",
+                  "frame": 2898,
+                  "progress": 0.4342026,
+                  "index": 5,
+                  "cameraAxisPosition": 238.99556
+                },
+                {
+                  "name": "SC06_阅读",
+                  "frame": 3590,
+                  "progress": 0.5379197,
+                  "index": 6,
+                  "cameraAxisPosition": 298.993042
+                },
+                {
+                  "name": "SC07_阅读",
+                  "frame": 4421,
+                  "progress": 0.66247,
+                  "index": 7,
+                  "cameraAxisPosition": 358.996277
+                },
+                {
+                  "name": "SC08_阅读",
+                  "frame": 5405,
+                  "progress": 0.809952,
+                  "index": 8,
+                  "cameraAxisPosition": 418.996277
+                },
+                {
+                  "name": "SC09_阅读",
+                  "frame": 6339,
+                  "progress": 0.94994,
+                  "index": 9,
+                  "cameraAxisPosition": 479.000946
+                }
+              ]
+            },
+            "texturedMeshesPotentiallyBehindByX": [],
+            "pendingVisualReview": false,
+            "riskAssessment": {
+              "classification": "behind-all-textured-content-no-current-paper-occlusion-evidence",
+              "nearestTexturedMinimumX": -8.086895,
+              "minimumDepthGapToAnyTexturedMesh": 6.8581047,
+              "cameraDirection": "Every exported camera quaternion is [0.5,0.5,0.5,0.5]; looks toward world -X; camera X in 45..62.",
+              "observedStops": [
+                1,
+                2,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "observation": "全部纹理平面都位于该通幅环境对象前方；本次所看原节点未见此纸/山/水基底越过人物或台阶。背景的硬色带/山形仍可能需要美术修复，但与本项depthWrite压住纹理的问题不同。",
+              "recommendation": "保留depthWrite设置和世界坐标；本次没有支持直接修改该材质depth设置的证据。后续若改变深度或新增层再复核。"
+            }
+          },
+          {
+            "name": "通幅山脊细线_2",
+            "id": "c3-m-93460f466a61",
+            "materialIndex": 14,
+            "material": {
+              "id": 14,
+              "name": "山脊淡墨细笔",
+              "texture": null,
+              "color": [
+                0.7630076,
+                0.7132027,
+                0.5902583
+              ],
+              "opacity": 1.0,
+              "transparent": false,
+              "alphaTest": 0,
+              "side": "double",
+              "depthWrite": true,
+              "sourceAlphaLinked": false,
+              "proceduralApproximation": false
+            },
+            "bounds": {
+              "min": [
+                -12.9750004,
+                -80.0036926,
+                3.2876959
+              ],
+              "max": [
+                -12.9449997,
+                550.0019531,
+                10.3634243
+              ]
+            },
+            "size": [
+              0.030000700000000435,
+              630.0056457000001,
+              7.0757284
+            ],
+            "sourceCollections": [
+              "长卷连续环境｜共用纸色·山水·水岸"
+            ],
+            "storyboard": {
+              "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+              "axis": "Y",
+              "axisBounds": [
+                -80.0036926,
+                550.0019531
+              ],
+              "nearestStop": {
+                "name": "SC05_阅读",
+                "frame": 2898,
+                "progress": 0.4342026,
+                "index": 5,
+                "cameraAxisPosition": 238.99556
+              },
+              "stopRange": [
+                1,
+                9
+              ],
+              "associatedStops": [
+                {
+                  "name": "SC01_阅读",
+                  "frame": 162,
+                  "progress": 0.0241307,
+                  "index": 1,
+                  "cameraAxisPosition": -1.004433
+                },
+                {
+                  "name": "SC02_阅读",
+                  "frame": 834,
+                  "progress": 0.1248501,
+                  "index": 2,
+                  "cameraAxisPosition": 58.995567
+                },
+                {
+                  "name": "SC03_阅读",
+                  "frame": 1516,
+                  "progress": 0.2270683,
+                  "index": 3,
+                  "cameraAxisPosition": 118.994301
+                },
+                {
+                  "name": "SC04_阅读",
+                  "frame": 2212,
+                  "progress": 0.3313849,
+                  "index": 4,
+                  "cameraAxisPosition": 178.994293
+                },
+                {
+                  "name": "SC05_阅读",
+                  "frame": 2898,
+                  "progress": 0.4342026,
+                  "index": 5,
+                  "cameraAxisPosition": 238.99556
+                },
+                {
+                  "name": "SC06_阅读",
+                  "frame": 3590,
+                  "progress": 0.5379197,
+                  "index": 6,
+                  "cameraAxisPosition": 298.993042
+                },
+                {
+                  "name": "SC07_阅读",
+                  "frame": 4421,
+                  "progress": 0.66247,
+                  "index": 7,
+                  "cameraAxisPosition": 358.996277
+                },
+                {
+                  "name": "SC08_阅读",
+                  "frame": 5405,
+                  "progress": 0.809952,
+                  "index": 8,
+                  "cameraAxisPosition": 418.996277
+                },
+                {
+                  "name": "SC09_阅读",
+                  "frame": 6339,
+                  "progress": 0.94994,
+                  "index": 9,
+                  "cameraAxisPosition": 479.000946
+                }
+              ]
+            },
+            "texturedMeshesPotentiallyBehindByX": [],
+            "pendingVisualReview": false,
+            "riskAssessment": {
+              "classification": "behind-all-textured-content-no-current-paper-occlusion-evidence",
+              "nearestTexturedMinimumX": -8.086895,
+              "minimumDepthGapToAnyTexturedMesh": 4.8581047,
+              "cameraDirection": "Every exported camera quaternion is [0.5,0.5,0.5,0.5]; looks toward world -X; camera X in 45..62.",
+              "observedStops": [
+                1,
+                2,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "observation": "全部纹理平面都位于该通幅环境对象前方；本次所看原节点未见此纸/山/水基底越过人物或台阶。背景的硬色带/山形仍可能需要美术修复，但与本项depthWrite压住纹理的问题不同。",
+              "recommendation": "保留depthWrite设置和世界坐标；本次没有支持直接修改该材质depth设置的证据。后续若改变深度或新增层再复核。"
+            }
+          },
+          {
+            "name": "通幅山脊细线_3",
+            "id": "c3-m-ca873078ba66",
+            "materialIndex": 14,
+            "material": {
+              "id": 14,
+              "name": "山脊淡墨细笔",
+              "texture": null,
+              "color": [
+                0.7630076,
+                0.7132027,
+                0.5902583
+              ],
+              "opacity": 1.0,
+              "transparent": false,
+              "alphaTest": 0,
+              "side": "double",
+              "depthWrite": true,
+              "sourceAlphaLinked": false,
+              "proceduralApproximation": false
+            },
+            "bounds": {
+              "min": [
+                -10.9750004,
+                -80.0018005,
+                0.9942566
+              ],
+              "max": [
+                -10.9449997,
+                550.0028687,
+                6.1628199
+              ]
+            },
+            "size": [
+              0.030000700000000435,
+              630.0046692000001,
+              5.1685633
+            ],
+            "sourceCollections": [
+              "长卷连续环境｜共用纸色·山水·水岸"
+            ],
+            "storyboard": {
+              "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+              "axis": "Y",
+              "axisBounds": [
+                -80.0018005,
+                550.0028687
+              ],
+              "nearestStop": {
+                "name": "SC05_阅读",
+                "frame": 2898,
+                "progress": 0.4342026,
+                "index": 5,
+                "cameraAxisPosition": 238.99556
+              },
+              "stopRange": [
+                1,
+                9
+              ],
+              "associatedStops": [
+                {
+                  "name": "SC01_阅读",
+                  "frame": 162,
+                  "progress": 0.0241307,
+                  "index": 1,
+                  "cameraAxisPosition": -1.004433
+                },
+                {
+                  "name": "SC02_阅读",
+                  "frame": 834,
+                  "progress": 0.1248501,
+                  "index": 2,
+                  "cameraAxisPosition": 58.995567
+                },
+                {
+                  "name": "SC03_阅读",
+                  "frame": 1516,
+                  "progress": 0.2270683,
+                  "index": 3,
+                  "cameraAxisPosition": 118.994301
+                },
+                {
+                  "name": "SC04_阅读",
+                  "frame": 2212,
+                  "progress": 0.3313849,
+                  "index": 4,
+                  "cameraAxisPosition": 178.994293
+                },
+                {
+                  "name": "SC05_阅读",
+                  "frame": 2898,
+                  "progress": 0.4342026,
+                  "index": 5,
+                  "cameraAxisPosition": 238.99556
+                },
+                {
+                  "name": "SC06_阅读",
+                  "frame": 3590,
+                  "progress": 0.5379197,
+                  "index": 6,
+                  "cameraAxisPosition": 298.993042
+                },
+                {
+                  "name": "SC07_阅读",
+                  "frame": 4421,
+                  "progress": 0.66247,
+                  "index": 7,
+                  "cameraAxisPosition": 358.996277
+                },
+                {
+                  "name": "SC08_阅读",
+                  "frame": 5405,
+                  "progress": 0.809952,
+                  "index": 8,
+                  "cameraAxisPosition": 418.996277
+                },
+                {
+                  "name": "SC09_阅读",
+                  "frame": 6339,
+                  "progress": 0.94994,
+                  "index": 9,
+                  "cameraAxisPosition": 479.000946
+                }
+              ]
+            },
+            "texturedMeshesPotentiallyBehindByX": [],
+            "pendingVisualReview": false,
+            "riskAssessment": {
+              "classification": "behind-all-textured-content-no-current-paper-occlusion-evidence",
+              "nearestTexturedMinimumX": -8.086895,
+              "minimumDepthGapToAnyTexturedMesh": 2.8581047,
+              "cameraDirection": "Every exported camera quaternion is [0.5,0.5,0.5,0.5]; looks toward world -X; camera X in 45..62.",
+              "observedStops": [
+                1,
+                2,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "observation": "全部纹理平面都位于该通幅环境对象前方；本次所看原节点未见此纸/山/水基底越过人物或台阶。背景的硬色带/山形仍可能需要美术修复，但与本项depthWrite压住纹理的问题不同。",
+              "recommendation": "保留depthWrite设置和世界坐标；本次没有支持直接修改该材质depth设置的证据。后续若改变深度或新增层再复核。"
+            }
+          }
+        ],
+        "conclusion": {
+          "largeUntexturedObjectCount": 9,
+          "allDepthWriteTrue": true,
+          "foregroundLargePaperGroundCandidates": 0,
+          "sceneTexturedMinimumX": -8.086895,
+          "broadEnvironmentMaximumX": -9.8000002,
+          "nearestGap": 1.7131051999999993,
+          "observation": "相机始终朝-X。纸x=-18，远山x=-15/-13/-11，水脉x=-10，水岸x=-9.8，所有纹理最远x=-8.086895，故通幅环境在纹理之后；没有当前纸基底深度剪断人物/阶梯的证据。仅“depthWrite:true”不足以认定遮挡。",
+          "sixTextMeshes": "SC01/02/05/07/08/09_DOCX原文虽depthWrite:true，但isText:true被SceneRenderer跳过，不属于实际纸基底遮挡物。",
+          "notCovered": "未来世界深度变动、替换后新增层、所有相机间隔和所有画幅GPU逐像素遮挡未验。"
+        },
+        "recommendedBackgroundMeshNames": []
+      },
+      "evidenceFile": "reports/reconstruction/geometry-review-chapter-3-evidence.json",
+      "beforeScreenshots": [
+        "reports/reconstruction/before/chapter-3-overview.jpg",
+        "reports/reconstruction/chapter-3-geometry-review/candidates-01.jpg",
+        "reports/reconstruction/before/chapter-3-stop-01.jpg",
+        "reports/reconstruction/before/chapter-3-stop-02.jpg",
+        "reports/reconstruction/before/chapter-3-stop-05.jpg",
+        "reports/reconstruction/before/chapter-3-stop-06.jpg",
+        "reports/reconstruction/before/chapter-3-stop-07.jpg",
+        "reports/reconstruction/before/chapter-3-stop-08.jpg",
+        "reports/reconstruction/before/chapter-3-stop-09.jpg",
+        "public/assets/chapter-3/textures/a41913e64fbb778c.webp",
+        "public/assets/chapter-3/textures/9a9479d09ece120b.webp",
+        "public/assets/chapter-3/textures/e03e5d2e5d7c3372.webp",
+        "public/assets/chapter-3/textures/49efdde0a4453d39.webp",
+        "public/assets/chapter-3/textures/3cd6680826ea7dbc.webp",
+        "public/assets/chapter-3/textures/8818501ede5169de.webp",
+        "public/assets/chapter-3/textures/f24338909a9d9ac7.webp",
+        "public/assets/chapter-3/textures/3f777fca4edbbc31.webp",
+        "public/assets/chapter-3/textures/1217d0b1e19eea1c.webp",
+        "reports/reconstruction/chapter-3-geometry-review/stop02-right-maidens-detail.png",
+        "reports/reconstruction/chapter-3-geometry-review/stop08-landscape-join-detail.png"
+      ]
+    }
+  },
+  "limitations": [
+    "Stable reading nodes and sampled geometry do not prove arbitrary camera intervals or GPU-filtered per-pixel results.",
+    "Planned new assets, geometry and local motion still require fresh browser screenshots at all relevant stops and transitions.",
+    "No blanket hiding of .001/.002 instances; each duplicate has a separate world location and semantic role.",
+    "No global disabling of depthTest or depthWrite."
+  ]
+}

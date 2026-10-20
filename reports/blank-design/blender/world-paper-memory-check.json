@@ -1,0 +1,142 @@
+{
+  "status": "memory-only-verified",
+  "sourceSceneLoaded": false,
+  "savedBlendFiles": 0,
+  "checks": [
+    "absent-worldPaper-preserves-existing-world",
+    "dedicated-new-world-with-source-shader-retained",
+    "sRGB-to-linear-color-and-positive-strength",
+    "film-transparent-false-visible-background",
+    "intensity-tamper-rejected",
+    "film-transparency-tamper-rejected"
+  ],
+  "backgroundPresentation": {
+    "mode": "dedicated-paper-world-with-explicit-source-paper-retirement",
+    "objects": [],
+    "hiddenGroundPaperNames": [],
+    "worldModified": true,
+    "sourceMatricesModified": false,
+    "worldPaper": {
+      "requested": {
+        "color": "#f5ecdc",
+        "strength": 1,
+        "narrative": "退役弯曲纸地后的显式纸色World",
+        "colorLinear": [
+          0.9130986517934192,
+          0.83879901174074,
+          0.7156935005064807
+        ]
+      },
+      "sourceWorld": {
+        "name": "World",
+        "useNodes": true,
+        "color": [
+          0.0508761,
+          0.0508761,
+          0.0508761
+        ],
+        "nodes": [
+          {
+            "name": "Background",
+            "type": "BACKGROUND",
+            "inputs": [
+              [
+                "Color",
+                [
+                  0.0508761,
+                  0.0508761,
+                  0.0508761,
+                  1.0
+                ]
+              ],
+              [
+                "Strength",
+                1.0
+              ],
+              [
+                "Weight",
+                0.0
+              ]
+            ],
+            "parameters": {}
+          },
+          {
+            "name": "World Output",
+            "type": "OUTPUT_WORLD",
+            "inputs": [],
+            "parameters": {
+              "is_active_output": true,
+              "target": "ALL"
+            }
+          }
+        ],
+        "links": [
+          [
+            "Background",
+            "Background",
+            "World Output",
+            "Surface"
+          ]
+        ]
+      },
+      "derivedWorld": {
+        "name": "RECON_CH02_PAPER_WORLD",
+        "useNodes": true,
+        "color": [
+          0.9130986,
+          0.838799,
+          0.7156935
+        ],
+        "nodes": [
+          {
+            "name": "Background",
+            "type": "BACKGROUND",
+            "inputs": [
+              [
+                "Color",
+                [
+                  0.9130986,
+                  0.838799,
+                  0.7156935,
+                  1.0
+                ]
+              ],
+              [
+                "Strength",
+                1.0
+              ],
+              [
+                "Weight",
+                0.0
+              ]
+            ],
+            "parameters": {}
+          },
+          {
+            "name": "World Output",
+            "type": "OUTPUT_WORLD",
+            "inputs": [],
+            "parameters": {
+              "is_active_output": true,
+              "target": "ALL"
+            }
+          }
+        ],
+        "links": [
+          [
+            "Background",
+            "Background",
+            "World Output",
+            "Surface"
+          ]
+        ]
+      },
+      "sourceWorldFakeUserBefore": false,
+      "sourceWorldRetainedWithFakeUser": true,
+      "sourceFilmTransparent": false,
+      "derivedFilmTransparent": false,
+      "policy": "Dedicated visible paper-color World; original World shader retained; only the derived scene changes."
+    }
+  },
+  "scope": "Factory-startup in-memory Blender node checks only; save and independent reopen are deferred until the new chapter layout passes."
+}

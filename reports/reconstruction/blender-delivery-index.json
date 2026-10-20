@@ -1,0 +1,406 @@
+{
+  "schemaVersion": 1,
+  "status": "verified",
+  "sourceHashes": {
+    "chapter-1": "aa0a74c9693a208b382cac12ea66c5c31bf80dc50f65ee539b9739abd71e7d3d",
+    "chapter-2": "d7b4430ca25d3562ee06d81946feb911760ae572bf01633f732c81c495cca0e4",
+    "chapter-3": "4902ef5d7a70f4e7f54a8f8b307943f22437a1ed64a12aa6bc798742daf5421d",
+    "chapter-4": "dcf4a6e96bf8606348563a985dc2bc935817ed5be08ae96066176670f0d84026"
+  },
+  "entries": [
+    {
+      "chapter": 1,
+      "output": "artwork/blender-reconstructed/chapter-1_reconstructed.blend",
+      "bytes": 252226020,
+      "sha256": "40a9a4317a94b091b88b6f53b23de85ee89649a8cf1a980e9dca84f7f3143c8d",
+      "manifest": "reports/reconstruction/pilot/manifest.json",
+      "manifestSha256": "ab931d7dc1eaa0e9d8a6f6c60971db729ed50589d80f51dffc845dc1c48a4bd6",
+      "originalObjects": 276,
+      "derivedObjects": 337,
+      "originalMeshCount": 216,
+      "explicitGeometryChanges": [
+        {
+          "id": "c1-t021",
+          "name": "02_右侧宫阙巡游",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c1-t038",
+          "name": "05_06_亭",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c1-t047",
+          "name": "07_1-宫殿建筑",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c1-t085",
+          "name": "13_11_女帝身后宫殿建筑",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c1-t052",
+          "name": "08_01_上方山水城景",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c1-t059",
+          "name": "10_03_前景百官群像_补全",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c1-t067",
+          "name": "11_05_学者书案",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        }
+      ],
+      "sourceCameraCount": 17,
+      "markerCount": 31,
+      "sourceCollectionCount": 66,
+      "originalFrameRange": [
+        1,
+        14088
+      ],
+      "packedImages": 105,
+      "packedFonts": 1,
+      "editableFontObjectsIncludingOriginals": 2,
+      "hiddenOriginalObjects": [
+        "14_批注06_右侧题字_原字",
+        "07_2-山水人群.001",
+        "14_背景01_女帝身后背景_补全.001",
+        "14_背景02_右上与右下书页后背景_组合.001",
+        "长卷_连续绢本地形"
+      ],
+      "backgroundPresentation": {
+        "mode": "retain-paper-backdrop-hide-only-horizontal-ground",
+        "objects": [
+          {
+            "name": "长卷_连续绢本地形",
+            "sourceHiddenRender": false,
+            "derivedHiddenRender": true,
+            "worldAxisSpans": [
+              516.8500442,
+              116.72856139999999,
+              5.9248261
+            ],
+            "mode": "hide-ground-render-to-prevent-card-intersection",
+            "sourceMaterial": "绢本_纤维与浅墨",
+            "sourceColorLinear": [
+              0.76,
+              0.716,
+              0.606
+            ]
+          },
+          {
+            "name": "长卷_统一留白天幕",
+            "sourceHiddenRender": false,
+            "derivedHiddenRender": false,
+            "worldAxisSpans": [
+              960.0,
+              0.0,
+              330.0
+            ],
+            "mode": "retain-distant-paper-backdrop",
+            "sourceMaterial": "绢本_纤维与浅墨",
+            "sourceColorLinear": [
+              0.76,
+              0.716,
+              0.606
+            ]
+          }
+        ],
+        "hiddenGroundPaperNames": [
+          "长卷_连续绢本地形"
+        ],
+        "worldModified": false,
+        "sourceMatricesModified": false
+      },
+      "verificationReport": "reports/reconstruction/blender-reopen-validation-chapter-1.json",
+      "originalFilesUnchanged": true
+    },
+    {
+      "chapter": 2,
+      "output": "artwork/blender-reconstructed/chapter-2_reconstructed.blend",
+      "bytes": 121975489,
+      "sha256": "4e916bb35aac9f618f1caceb77cd166be71b099f458967949013d3155dda1651",
+      "manifest": "reports/reconstruction/after/chapter-2-manifest.json",
+      "manifestSha256": "c8f4080f88e5a8e7b54d8e57803a54cfd92a0271b1da7b10038b3799910c0920",
+      "originalObjects": 60,
+      "derivedObjects": 89,
+      "originalMeshCount": 40,
+      "explicitGeometryChanges": [
+        {
+          "id": "c2-t002",
+          "name": "右下河流与岸景",
+          "policy": "explicit-corners",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c2-t004",
+          "name": "01_左侧案桌与人物",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c2-t005",
+          "name": "03_中间远景",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c2-t006",
+          "name": "06_左上人物背景组合",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c2-t010",
+          "name": "2-1 中景 03_右侧花市街景",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c2-t011",
+          "name": "2-1 中景 05_左上宫殿与朝臣",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c2-t012",
+          "name": "2-1 前景 01_左侧牡丹与山石",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c2-t018",
+          "name": "2-3 中景 左侧人物后方建筑",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c2-t019",
+          "name": "2-3 主体 人物群",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c2-t020",
+          "name": "2-3 主体 右侧人群",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c2-t028",
+          "name": "2-5 前景 04_前景牡丹花石",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c2-t029",
+          "name": "2-6 中景 04_右侧街景",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c2-t034",
+          "name": "2-7 前景 03_下方牡丹水岸",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        }
+      ],
+      "sourceCameraCount": 9,
+      "markerCount": 23,
+      "sourceCollectionCount": 48,
+      "originalFrameRange": [
+        1,
+        6097
+      ],
+      "packedImages": 36,
+      "packedFonts": 1,
+      "editableFontObjectsIncludingOriginals": 2,
+      "hiddenOriginalObjects": [
+        "2-6 题字 02_中央题字",
+        "右下河流与岸景.001",
+        "右下河流与岸景.002"
+      ],
+      "backgroundPresentation": {
+        "mode": "original-paper-background-unchanged",
+        "objects": [],
+        "hiddenGroundPaperNames": [],
+        "worldModified": false,
+        "sourceMatricesModified": false
+      },
+      "verificationReport": "reports/reconstruction/blender-reopen-validation-chapter-2.json",
+      "originalFilesUnchanged": true
+    },
+    {
+      "chapter": 3,
+      "output": "artwork/blender-reconstructed/chapter-3_reconstructed.blend",
+      "bytes": 167053219,
+      "sha256": "f9cdca20b8458edf8cc5fcab9c88e337e6444e2a095b82a93658094c943da221",
+      "manifest": "reports/reconstruction/after/chapter-3-manifest.json",
+      "manifestSha256": "e0272103e1e5931ac8aa5a6abf537cf9c275999acb7b69b1cee9cf518a352887",
+      "originalObjects": 441,
+      "derivedObjects": 486,
+      "originalMeshCount": 184,
+      "explicitGeometryChanges": [
+        {
+          "id": "c3-t001",
+          "name": "微信图片_20261016180912_185_1685",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c3-t004",
+          "name": "09_红圈桌子与桌面陈设_组合",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c3-t027",
+          "name": "SC04_06_左上背景",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c3-t028",
+          "name": "SC04_07_右下背景",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c3-t041",
+          "name": "SC06_02_左上建筑",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c3-t054",
+          "name": "SC07_02_上方宫苑场景",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c3-t056",
+          "name": "SC07_01_左侧镜台陈设",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c3-m-de3408ad8a8f-full-uv",
+          "name": "SC02_03_右上仕女群",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": false
+        },
+        {
+          "id": "c3-m-f449c3cfe037-full-uv",
+          "name": "SC02_06_上方人物背景",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": false
+        }
+      ],
+      "sourceCameraCount": 1,
+      "markerCount": 35,
+      "sourceCollectionCount": 12,
+      "originalFrameRange": [
+        1,
+        6673
+      ],
+      "packedImages": 71,
+      "packedFonts": 1,
+      "editableFontObjectsIncludingOriginals": 13,
+      "hiddenOriginalObjects": [
+        "SC03_03-text-panel",
+        "SC04_05_右侧文字面板",
+        "SC06_25_题词文字",
+        "SC06_26_朱红印章"
+      ],
+      "backgroundPresentation": {
+        "mode": "original-paper-background-unchanged",
+        "objects": [],
+        "hiddenGroundPaperNames": [],
+        "worldModified": false,
+        "sourceMatricesModified": false
+      },
+      "verificationReport": "reports/reconstruction/blender-reopen-validation-chapter-3.json",
+      "originalFilesUnchanged": true
+    },
+    {
+      "chapter": 4,
+      "output": "artwork/blender-reconstructed/chapter-4_reconstructed.blend",
+      "bytes": 122956443,
+      "sha256": "a75acb715206ae58e4aa20215a2d6d066e2b3f91317d64a6fddf052cae35af19",
+      "manifest": "reports/reconstruction/after/chapter-4-manifest.json",
+      "manifestSha256": "aa659d1777a65431c022c1054509b3ef460621ed0adf8d5ad4627eba3109fcc5",
+      "originalObjects": 163,
+      "derivedObjects": 203,
+      "originalMeshCount": 112,
+      "explicitGeometryChanges": [
+        {
+          "id": "c4-t007",
+          "name": "微信图片_20261018213717_423_1685",
+          "policy": "preserve-region",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c4-t008",
+          "name": "微信图片_20261018221025_441_1685",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c4-t020",
+          "name": "4-3 · 02 · 沉香亭",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c4-t027",
+          "name": "4-5 · 01 · 兵马山峦红日",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        },
+        {
+          "id": "c4-t029",
+          "name": "4-6 · 06 · 桌案花木",
+          "policy": "full-uv-affine",
+          "sourceImageReplaced": true
+        }
+      ],
+      "sourceCameraCount": 10,
+      "markerCount": 35,
+      "sourceCollectionCount": 49,
+      "originalFrameRange": [
+        1,
+        4848
+      ],
+      "packedImages": 49,
+      "packedFonts": 1,
+      "editableFontObjectsIncludingOriginals": 10,
+      "hiddenOriginalObjects": [
+        "4-8 · 01 · 故国山水城景.001",
+        "05_字幕替换意境山水.001",
+        "4-1 · 01 · 题字与远宫",
+        "4-9 · 04 · 千古题字"
+      ],
+      "backgroundPresentation": {
+        "mode": "original-paper-background-unchanged",
+        "objects": [],
+        "hiddenGroundPaperNames": [],
+        "worldModified": false,
+        "sourceMatricesModified": false
+      },
+      "verificationReport": "reports/reconstruction/blender-reopen-validation-chapter-4.json",
+      "originalFilesUnchanged": true
+    }
+  ],
+  "sourceAndDerivedFilesWrittenByThisIndex": false
+}

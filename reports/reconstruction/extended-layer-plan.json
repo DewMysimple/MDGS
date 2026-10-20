@@ -1,0 +1,1649 @@
+{
+  "schemaVersion": 1,
+  "status": "execution-plan-not-canonical",
+  "pixelRepairs": [
+    {
+      "id": "c2-t002",
+      "chapter": 2,
+      "label": "C2-T002",
+      "sourceTextureId": "c2-t-2f3943fa7f92ec09",
+      "sourcePath": "public/assets/chapter-2/textures/2f3943fa7f92ec09.webp",
+      "sourceName": "右下河流与岸景.png",
+      "sourceSize": [
+        1671,
+        941
+      ],
+      "sourceMeshNames": [
+        "右下河流与岸景",
+        "右下河流与岸景.001",
+        "右下河流与岸景.002"
+      ],
+      "repairTarget": "保留亭台、游人、花石和完整水纹，向右补全岸边柳树/亭台收口，向下补水面与石岸，最后自然淡墨散边并留透明余量。几何内部竖切与原图右/底裁切并存；三副本不能同步铺满整图。",
+      "treatment": "修复",
+      "requiresRealPixelCompletion": true,
+      "shaderFadeIsNotCompletion": true,
+      "status": "packed-visual-reviewed-awaiting-scene-integration",
+      "rawOutput": "artwork/reconstruction/raw/c2-t002-edge-repair-v2.png",
+      "assigned": "source_blender_audit",
+      "restrictions": [
+        "原图不覆盖",
+        "保留完整原主体和叙事",
+        "真实透明背景",
+        "不生成文字",
+        "不以擦除/模糊缺失主体冒充补全"
+      ],
+      "productionPng": "artwork/reconstruction/chapter-2/c2-t002.png",
+      "webAsset": "assets/reconstruction/chapter-2/c2-t002.webp",
+      "pixelQAReport": "reports/reconstruction/pixel-repairs-chapter-2.json"
+    },
+    {
+      "id": "c2-t005",
+      "chapter": 2,
+      "label": "C2-T005",
+      "sourceTextureId": "c2-t-44b0f2b167932cc6",
+      "sourcePath": "public/assets/chapter-2/textures/44b0f2b167932cc6.webp",
+      "sourceName": "03_中间远景.png.001",
+      "sourceSize": [
+        832,
+        289
+      ],
+      "sourceMeshNames": [
+        "03_中间远景"
+      ],
+      "repairTarget": "清除原图上方两行烘焙长文，不重写文字；保留远山/城廓主结构，左右及底部扩出连续淡墨远景，使城郊自然散边而非矩形截图。修复图完成前禁止fullUV。",
+      "treatment": "修复",
+      "requiresRealPixelCompletion": true,
+      "shaderFadeIsNotCompletion": true,
+      "status": "packed-visual-reviewed-awaiting-scene-integration",
+      "rawOutput": "artwork/reconstruction/raw/c2-t005-edge-repair.png",
+      "assigned": "source_blender_audit",
+      "restrictions": [
+        "原图不覆盖",
+        "保留完整原主体和叙事",
+        "真实透明背景",
+        "不生成文字",
+        "不以擦除/模糊缺失主体冒充补全"
+      ],
+      "productionPng": "artwork/reconstruction/chapter-2/c2-t005.png",
+      "webAsset": "assets/reconstruction/chapter-2/c2-t005.webp",
+      "pixelQAReport": "reports/reconstruction/pixel-repairs-chapter-2.json"
+    },
+    {
+      "id": "c2-t006",
+      "chapter": 2,
+      "label": "C2-T006",
+      "sourceTextureId": "c2-t-56b2cf79b7fc99d1",
+      "sourcePath": "public/assets/chapter-2/textures/56b2cf79b7fc99d1.webp",
+      "sourceName": "06_左上人物背景组合.png",
+      "sourceSize": [
+        1304,
+        1206
+      ],
+      "sourceMeshNames": [
+        "06_左上人物背景组合"
+      ],
+      "repairTarget": "保留静坐赏花人物、栏杆和花丛；仅补上方被裁屋檐/帷幔及左侧柱头合理端部，延出自然轮廓与接地淡墨，透明底。",
+      "treatment": "修复",
+      "requiresRealPixelCompletion": true,
+      "shaderFadeIsNotCompletion": true,
+      "status": "packed-visual-reviewed-awaiting-scene-integration",
+      "rawOutput": "artwork/reconstruction/raw/c2-t006-edge-repair.png",
+      "assigned": "source_blender_audit",
+      "restrictions": [
+        "原图不覆盖",
+        "保留完整原主体和叙事",
+        "真实透明背景",
+        "不生成文字",
+        "不以擦除/模糊缺失主体冒充补全"
+      ],
+      "productionPng": "artwork/reconstruction/chapter-2/c2-t006.png",
+      "webAsset": "assets/reconstruction/chapter-2/c2-t006.webp",
+      "pixelQAReport": "reports/reconstruction/pixel-repairs-chapter-2.json"
+    },
+    {
+      "id": "c2-t010",
+      "chapter": 2,
+      "label": "C2-T010",
+      "sourceTextureId": "c2-t-9c465f367bc77f4a",
+      "sourcePath": "public/assets/chapter-2/textures/9c465f367bc77f4a.webp",
+      "sourceName": "03_右侧花市街景.png",
+      "sourceSize": [
+        1671,
+        927
+      ],
+      "sourceMeshNames": [
+        "2-1 中景 03_右侧花市街景"
+      ],
+      "repairTarget": "保留安静街市和花木；向右补全被直切街屋及行人、路面，再自然淡墨收边。不要新增斗花比赛或喧闹商贩情节。",
+      "treatment": "修复",
+      "requiresRealPixelCompletion": true,
+      "shaderFadeIsNotCompletion": true,
+      "status": "packed-visual-reviewed-awaiting-scene-integration",
+      "rawOutput": "artwork/reconstruction/raw/c2-t010-edge-repair.png",
+      "assigned": "source_blender_audit",
+      "restrictions": [
+        "原图不覆盖",
+        "保留完整原主体和叙事",
+        "真实透明背景",
+        "不生成文字",
+        "不以擦除/模糊缺失主体冒充补全"
+      ],
+      "productionPng": "artwork/reconstruction/chapter-2/c2-t010.png",
+      "webAsset": "assets/reconstruction/chapter-2/c2-t010.webp",
+      "pixelQAReport": "reports/reconstruction/pixel-repairs-chapter-2.json"
+    },
+    {
+      "id": "c2-t011",
+      "chapter": 2,
+      "label": "C2-T011",
+      "sourceTextureId": "c2-t-8fb8951bf748f3b2",
+      "sourcePath": "public/assets/chapter-2/textures/8fb8951bf748f3b2.webp",
+      "sourceName": "05_左上宫殿与朝臣.png",
+      "sourceSize": [
+        1451,
+        1062
+      ],
+      "sourceMeshNames": [
+        "2-1 中景 05_左上宫殿与朝臣"
+      ],
+      "repairTarget": "保留朝臣、红柱、栏杆与原构图，只向上补齐截断屋脊和檐顶并留透明上缘，下部石阶延成自然接地。",
+      "treatment": "修复",
+      "requiresRealPixelCompletion": true,
+      "shaderFadeIsNotCompletion": true,
+      "status": "packed-visual-reviewed-awaiting-scene-integration",
+      "rawOutput": "artwork/reconstruction/raw/c2-t011-edge-repair.png",
+      "assigned": "source_blender_audit",
+      "restrictions": [
+        "原图不覆盖",
+        "保留完整原主体和叙事",
+        "真实透明背景",
+        "不生成文字",
+        "不以擦除/模糊缺失主体冒充补全"
+      ],
+      "productionPng": "artwork/reconstruction/chapter-2/c2-t011.png",
+      "webAsset": "assets/reconstruction/chapter-2/c2-t011.webp",
+      "pixelQAReport": "reports/reconstruction/pixel-repairs-chapter-2.json"
+    },
+    {
+      "id": "c2-t012",
+      "chapter": 2,
+      "label": "C2-T012",
+      "sourceTextureId": "c2-t-600ea57bf6e4ee39",
+      "sourcePath": "public/assets/chapter-2/textures/600ea57bf6e4ee39.webp",
+      "sourceName": "01_左侧牡丹与山石.png",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "sourceMeshNames": [
+        "2-1 前景 01_左侧牡丹与山石"
+      ],
+      "repairTarget": "保留优质牡丹花头、叶与山石主体；向下补少量石根、叶端和自然接地淡墨，避免在原画布内仅模糊花叶。",
+      "treatment": "修复",
+      "requiresRealPixelCompletion": true,
+      "shaderFadeIsNotCompletion": true,
+      "status": "packed-visual-reviewed-awaiting-scene-integration",
+      "rawOutput": "artwork/reconstruction/raw/c2-t012-edge-repair.png",
+      "assigned": "source_blender_audit",
+      "restrictions": [
+        "原图不覆盖",
+        "保留完整原主体和叙事",
+        "真实透明背景",
+        "不生成文字",
+        "不以擦除/模糊缺失主体冒充补全"
+      ],
+      "productionPng": "artwork/reconstruction/chapter-2/c2-t012.png",
+      "webAsset": "assets/reconstruction/chapter-2/c2-t012.webp",
+      "pixelQAReport": "reports/reconstruction/pixel-repairs-chapter-2.json"
+    },
+    {
+      "id": "c2-t018",
+      "chapter": 2,
+      "label": "C2-T018",
+      "sourceTextureId": "c2-t-b8b2792cb5125503",
+      "sourcePath": "public/assets/chapter-2/textures/b8b2792cb5125503.webp",
+      "sourceName": "左侧人物后方建筑.png",
+      "sourceSize": [
+        1671,
+        941
+      ],
+      "sourceMeshNames": [
+        "2-3 中景 左侧人物后方建筑"
+      ],
+      "repairTarget": "保留宫门纹样、朱柱与格窗，向上/左补完整檐口和门楼合理端部，底部接庭院石地后自然散边，透明背景。",
+      "treatment": "修复",
+      "requiresRealPixelCompletion": true,
+      "shaderFadeIsNotCompletion": true,
+      "status": "packed-visual-reviewed-awaiting-scene-integration",
+      "rawOutput": "artwork/reconstruction/raw/c2-t018-edge-repair.png",
+      "assigned": "source_blender_audit",
+      "restrictions": [
+        "原图不覆盖",
+        "保留完整原主体和叙事",
+        "真实透明背景",
+        "不生成文字",
+        "不以擦除/模糊缺失主体冒充补全"
+      ],
+      "productionPng": "artwork/reconstruction/chapter-2/c2-t018.png",
+      "webAsset": "assets/reconstruction/chapter-2/c2-t018.webp",
+      "pixelQAReport": "reports/reconstruction/pixel-repairs-chapter-2.json"
+    },
+    {
+      "id": "c2-t028",
+      "chapter": 2,
+      "label": "C2-T028",
+      "sourceTextureId": "c2-t-c95bd1365082cf58",
+      "sourcePath": "public/assets/chapter-2/textures/c95bd1365082cf58.webp",
+      "sourceName": "04_前景牡丹花石.png",
+      "sourceSize": [
+        2037,
+        772
+      ],
+      "sourceMeshNames": [
+        "2-5 前景 04_前景牡丹花石"
+      ],
+      "repairTarget": "保留全部完整花头、中心山石；只向下补被齐切的叶片石根，左右补贴边枝叶，形成自然不规则外轮廓与透明余量。",
+      "treatment": "修复",
+      "requiresRealPixelCompletion": true,
+      "shaderFadeIsNotCompletion": true,
+      "status": "packed-visual-reviewed-awaiting-scene-integration",
+      "rawOutput": "artwork/reconstruction/raw/c2-t028-edge-repair.png",
+      "assigned": "source_blender_audit",
+      "restrictions": [
+        "原图不覆盖",
+        "保留完整原主体和叙事",
+        "真实透明背景",
+        "不生成文字",
+        "不以擦除/模糊缺失主体冒充补全"
+      ],
+      "productionPng": "artwork/reconstruction/chapter-2/c2-t028.png",
+      "webAsset": "assets/reconstruction/chapter-2/c2-t028.webp",
+      "pixelQAReport": "reports/reconstruction/pixel-repairs-chapter-2.json"
+    },
+    {
+      "id": "c2-t034",
+      "chapter": 2,
+      "label": "C2-T034",
+      "sourceTextureId": "c2-t-9a209353d7c66eda",
+      "sourcePath": "public/assets/chapter-2/textures/9a209353d7c66eda.webp",
+      "sourceName": "03_下方牡丹水岸.png",
+      "sourceSize": [
+        1606,
+        979
+      ],
+      "sourceMeshNames": [
+        "2-7 前景 03_下方牡丹水岸"
+      ],
+      "repairTarget": "保留核心牡丹与曲折水岸画法，向左补被纵向直切的花石/岸边，水纹渐疏并留真实透明安全边。",
+      "treatment": "修复",
+      "requiresRealPixelCompletion": true,
+      "shaderFadeIsNotCompletion": true,
+      "status": "packed-visual-reviewed-awaiting-scene-integration",
+      "rawOutput": "artwork/reconstruction/raw/c2-t034-edge-repair.png",
+      "assigned": "source_blender_audit",
+      "restrictions": [
+        "原图不覆盖",
+        "保留完整原主体和叙事",
+        "真实透明背景",
+        "不生成文字",
+        "不以擦除/模糊缺失主体冒充补全"
+      ],
+      "productionPng": "artwork/reconstruction/chapter-2/c2-t034.png",
+      "webAsset": "assets/reconstruction/chapter-2/c2-t034.webp",
+      "pixelQAReport": "reports/reconstruction/pixel-repairs-chapter-2.json"
+    },
+    {
+      "id": "c3-t027",
+      "chapter": 3,
+      "label": "C3-T027",
+      "sourceTextureId": "c3-t-c4f79bf42704a722",
+      "sourcePath": "public/assets/chapter-3/textures/c4f79bf42704a722.webp",
+      "sourceName": "3-4_06_左上背景.png",
+      "sourceSize": [
+        1518,
+        761
+      ],
+      "sourceMeshNames": [
+        "SC04_06_左上背景"
+      ],
+      "repairTarget": "保留完整室内屏风、帷幔和装饰细节，只向上补齐长平截线处屏架/绢帘端部，原下缘不改，形成柔和自然轮廓与透明余量。",
+      "treatment": "修复",
+      "requiresRealPixelCompletion": true,
+      "shaderFadeIsNotCompletion": true,
+      "status": "packed-visual-reviewed-awaiting-scene-integration",
+      "rawOutput": "artwork/reconstruction/raw/c3-t027-edge-repair.png",
+      "assigned": "layer_inventory",
+      "restrictions": [
+        "原图不覆盖",
+        "保留完整原主体和叙事",
+        "真实透明背景",
+        "不生成文字",
+        "不以擦除/模糊缺失主体冒充补全"
+      ],
+      "productionPng": "artwork/reconstruction/chapter-3/c3-t027.png",
+      "webAsset": "assets/reconstruction/chapter-3/c3-t027.webp",
+      "pixelQAReport": "reports/reconstruction/pixel-repairs-chapters-3-4.json"
+    },
+    {
+      "id": "c3-t028",
+      "chapter": 3,
+      "label": "C3-T028",
+      "sourceTextureId": "c3-t-1230ebfeb1a44fa5",
+      "sourcePath": "public/assets/chapter-3/textures/1230ebfeb1a44fa5.webp",
+      "sourceName": "3-4_07_右下背景.png",
+      "sourceSize": [
+        1460,
+        958
+      ],
+      "sourceMeshNames": [
+        "SC04_07_右下背景"
+      ],
+      "repairTarget": "保留迎亲街景的全部人物、红灯笼、帷带、远山与塔；仅向右扩出被画布纵切的屋檐完整收头、立柱和台阶/墙体合理端部，向下接少量石地墨气，形成自然完整不规则轮廓并留真实透明余量；不得擦掉人物或把截断屋檐简单模糊。",
+      "treatment": "修复",
+      "requiresRealPixelCompletion": true,
+      "shaderFadeIsNotCompletion": true,
+      "status": "packed-visual-reviewed-awaiting-scene-integration",
+      "rawOutput": "artwork/reconstruction/raw/c3-t028-edge-repair.png",
+      "assigned": "layer_inventory",
+      "restrictions": [
+        "原图不覆盖",
+        "保留完整原主体和叙事",
+        "真实透明背景",
+        "不生成文字",
+        "不以擦除/模糊缺失主体冒充补全"
+      ],
+      "productionPng": "artwork/reconstruction/chapter-3/c3-t028.png",
+      "webAsset": "assets/reconstruction/chapter-3/c3-t028.webp",
+      "pixelQAReport": "reports/reconstruction/pixel-repairs-chapters-3-4.json"
+    },
+    {
+      "id": "c3-t054",
+      "chapter": 3,
+      "label": "C3-T054",
+      "sourceTextureId": "c3-t-7e6b36fea7f43225",
+      "sourcePath": "public/assets/chapter-3/textures/7e6b36fea7f43225.webp",
+      "sourceName": "3-7_02_上方宫苑场景.png",
+      "sourceSize": [
+        1682,
+        870
+      ],
+      "sourceMeshNames": [
+        "SC07_02_上方宫苑场景"
+      ],
+      "repairTarget": "保留宫苑楼群、人物与原有金青色调；只补近景大屋面上方缺失的完整檐顶、下方柱脚与台阶接地，使建筑端部成立，不用透明渐变擦掉建筑。",
+      "treatment": "修复",
+      "requiresRealPixelCompletion": true,
+      "shaderFadeIsNotCompletion": true,
+      "status": "packed-visual-reviewed-awaiting-scene-integration",
+      "rawOutput": "artwork/reconstruction/raw/c3-t054-edge-repair-v2.png",
+      "assigned": "layer_inventory",
+      "restrictions": [
+        "原图不覆盖",
+        "保留完整原主体和叙事",
+        "真实透明背景",
+        "不生成文字",
+        "不以擦除/模糊缺失主体冒充补全"
+      ],
+      "productionPng": "artwork/reconstruction/chapter-3/c3-t054.png",
+      "webAsset": "assets/reconstruction/chapter-3/c3-t054.webp",
+      "pixelQAReport": "reports/reconstruction/pixel-repairs-chapters-3-4.json"
+    },
+    {
+      "id": "c3-t056",
+      "chapter": 3,
+      "label": "C3-T056",
+      "sourceTextureId": "c3-t-13949918854e0319",
+      "sourcePath": "public/assets/chapter-3/textures/13949918854e0319.webp",
+      "sourceName": "3-7_01_左侧镜台陈设.png",
+      "sourceSize": [
+        1373,
+        1161
+      ],
+      "sourceMeshNames": [
+        "SC07_01_左侧镜台陈设"
+      ],
+      "repairTarget": "保留完整圆镜内山水、镜框、花瓶、牡丹、所有桌面器物与原摆放，只向下扩全被原画布齐切的桌裙、桌腿与垂布完整自然下缘；不新增器物或第二张桌，不裁掉花头，真实透明背景与安全余量。",
+      "treatment": "修复",
+      "requiresRealPixelCompletion": true,
+      "shaderFadeIsNotCompletion": true,
+      "status": "packed-visual-reviewed-awaiting-scene-integration",
+      "rawOutput": "artwork/reconstruction/raw/c3-t056-edge-repair.png",
+      "assigned": "layer_inventory",
+      "restrictions": [
+        "原图不覆盖",
+        "保留完整原主体和叙事",
+        "真实透明背景",
+        "不生成文字",
+        "不以擦除/模糊缺失主体冒充补全"
+      ],
+      "productionPng": "artwork/reconstruction/chapter-3/c3-t056.png",
+      "webAsset": "assets/reconstruction/chapter-3/c3-t056.webp",
+      "pixelQAReport": "reports/reconstruction/pixel-repairs-chapters-3-4.json"
+    },
+    {
+      "id": "c4-t007",
+      "chapter": 4,
+      "label": "C4-T007",
+      "sourceTextureId": "c4-t-680be9abfbc602b8",
+      "sourcePath": "public/assets/chapter-4/textures/680be9abfbc602b8.webp",
+      "sourceName": "微信图片_20261018213717_423_1685.png",
+      "sourceSize": [
+        2153,
+        695
+      ],
+      "sourceMeshNames": [
+        "微信图片_20261018213717_423_1685"
+      ],
+      "repairTarget": "保留完整黑金栏柱、石台面与落花，向左右/底端补真实石地端部、少量接地墨气和透明安全边；不切掉栏杆或把花纹模糊。当前mesh仅选地坪，仍保留该功能摘取。",
+      "treatment": "修复",
+      "requiresRealPixelCompletion": true,
+      "shaderFadeIsNotCompletion": true,
+      "status": "packed-visual-reviewed-awaiting-scene-integration",
+      "rawOutput": "artwork/reconstruction/raw/c4-t007-edge-repair.png",
+      "assigned": "layer_inventory",
+      "restrictions": [
+        "原图不覆盖",
+        "保留完整原主体和叙事",
+        "真实透明背景",
+        "不生成文字",
+        "不以擦除/模糊缺失主体冒充补全"
+      ],
+      "productionPng": "artwork/reconstruction/chapter-4/c4-t007.png",
+      "webAsset": "assets/reconstruction/chapter-4/c4-t007.webp",
+      "pixelQAReport": "reports/reconstruction/pixel-repairs-chapters-3-4.json"
+    },
+    {
+      "id": "c4-t008",
+      "chapter": 4,
+      "label": "C4-T008",
+      "sourceTextureId": "c4-t-da85453c2a6f08d2",
+      "sourcePath": "public/assets/chapter-4/textures/da85453c2a6f08d2.webp",
+      "sourceName": "微信图片_20261018221025_441_1685.png",
+      "sourceSize": [
+        1829,
+        860
+      ],
+      "sourceMeshNames": [
+        "微信图片_20261018221025_441_1685"
+      ],
+      "repairTarget": "保留两仕女面容、衣袂、红帘和黑金屏风，只向上补完整屏架端部，向下补栏板基座，左右收成合理建筑/帘带自然轮廓与透明余量；不新增人物，不把人画成全幅新场景。",
+      "treatment": "修复",
+      "requiresRealPixelCompletion": true,
+      "shaderFadeIsNotCompletion": true,
+      "status": "packed-visual-reviewed-awaiting-scene-integration",
+      "rawOutput": "artwork/reconstruction/raw/c4-t008-edge-repair.png",
+      "assigned": "layer_inventory",
+      "restrictions": [
+        "原图不覆盖",
+        "保留完整原主体和叙事",
+        "真实透明背景",
+        "不生成文字",
+        "不以擦除/模糊缺失主体冒充补全"
+      ],
+      "productionPng": "artwork/reconstruction/chapter-4/c4-t008.png",
+      "webAsset": "assets/reconstruction/chapter-4/c4-t008.webp",
+      "pixelQAReport": "reports/reconstruction/pixel-repairs-chapters-3-4.json"
+    },
+    {
+      "id": "c4-t027",
+      "chapter": 4,
+      "label": "C4-T027",
+      "sourceTextureId": "c4-t-849e2bb890c304e8",
+      "sourcePath": "public/assets/chapter-4/textures/849e2bb890c304e8.webp",
+      "sourceName": "04_右侧兵马山峦红日.png",
+      "sourceSize": [
+        1672,
+        940
+      ],
+      "sourceMeshNames": [
+        "4-5 · 01 · 兵马山峦红日"
+      ],
+      "repairTarget": "保留夕日、山峦与行进兵马队列，只向右补齐被原画幅切去的最大骑者与马身完整轮廓，补少量路面/雾气自然收边，不删除骑者来掩盖缺口。",
+      "treatment": "修复",
+      "requiresRealPixelCompletion": true,
+      "shaderFadeIsNotCompletion": true,
+      "status": "packed-visual-reviewed-awaiting-scene-integration",
+      "rawOutput": "artwork/reconstruction/raw/c4-t027-edge-repair.png",
+      "assigned": "layer_inventory",
+      "restrictions": [
+        "原图不覆盖",
+        "保留完整原主体和叙事",
+        "真实透明背景",
+        "不生成文字",
+        "不以擦除/模糊缺失主体冒充补全"
+      ],
+      "productionPng": "artwork/reconstruction/chapter-4/c4-t027.png",
+      "webAsset": "assets/reconstruction/chapter-4/c4-t027.webp",
+      "pixelQAReport": "reports/reconstruction/pixel-repairs-chapters-3-4.json"
+    },
+    {
+      "id": "c4-t029",
+      "chapter": 4,
+      "label": "C4-T029",
+      "sourceTextureId": "c4-t-b1cf939a7fd62b36",
+      "sourcePath": "public/assets/chapter-4/textures/b1cf939a7fd62b36.webp",
+      "sourceName": "04_下方桌案花木.png",
+      "sourceSize": [
+        1670,
+        941
+      ],
+      "sourceMeshNames": [
+        "4-6 · 06 · 桌案花木"
+      ],
+      "repairTarget": "保留黑金屏案、翻倒杯与落花地面，只补左侧被切的花叶/屏边、底部接地石面与自然墨气，形成不规则外轮廓及真实透明安全边。",
+      "treatment": "修复",
+      "requiresRealPixelCompletion": true,
+      "shaderFadeIsNotCompletion": true,
+      "status": "packed-visual-reviewed-awaiting-scene-integration",
+      "rawOutput": "artwork/reconstruction/raw/c4-t029-edge-repair.png",
+      "assigned": "layer_inventory",
+      "restrictions": [
+        "原图不覆盖",
+        "保留完整原主体和叙事",
+        "真实透明背景",
+        "不生成文字",
+        "不以擦除/模糊缺失主体冒充补全"
+      ],
+      "productionPng": "artwork/reconstruction/chapter-4/c4-t029.png",
+      "webAsset": "assets/reconstruction/chapter-4/c4-t029.webp",
+      "pixelQAReport": "reports/reconstruction/pixel-repairs-chapters-3-4.json"
+    }
+  ],
+  "chapters": {
+    "2": {
+      "geometryRepairs": [],
+      "hiddenMeshNames": [
+        "2-6 题字 02_中央题字"
+      ],
+      "backgroundMeshNames": [],
+      "textLayers": [
+        {
+          "id": "c2-t030-readable-caption",
+          "name": "春野静赏",
+          "title": "春野静赏",
+          "lines": [
+            "花由苑囿入私园。",
+            "春游静赏，渐入寻常。"
+          ],
+          "matrix": [
+            0.5729188256249381,
+            -0.008225712069083119,
+            0.019208815714475937,
+            0,
+            1.4827946180569754e-8,
+            0.2058640441393944,
+            0.0881558698062799,
+            0,
+            -0.036448567320079846,
+            -0.39338768635875776,
+            0.9186498953146499,
+            0,
+            13.07681035,
+            0.64029225,
+            0.41325544999999997,
+            1
+          ],
+          "domWidth": 640,
+          "domHeight": 250,
+          "color": "#73533d",
+          "narrative": "图为多行策划正文而非短题签，基线第六景在画面后层显字，与阅读抽屉重复，且会随透视缩放难读。",
+          "range": [
+            0.7219202974310086,
+            0.8853415766174901
+          ]
+        }
+      ],
+      "edgeRepairs": [],
+      "geometryDecisions": [
+        {
+          "id": "c2-m-70867a4d5090",
+          "name": "右下河流与岸景.001",
+          "textureId": "c2-t-2f3943fa7f92ec09",
+          "action": "pixel-repair-and-instance-layout-review",
+          "recommendation": "辅助河片并非独立完整景，u=.875切线第4景173个有色点全部暴露，第5景仍90.75%暴露；原图右/底也触画布。不能只fullUV，更不能把三副本都放成完整河景。扩绘同一原图后，先选一个主实例；另两片按构图局部承接或退役，须看第4至5景连续预览。",
+          "pendingImplementation": true
+        },
+        {
+          "id": "c2-m-d0a30952d7a3",
+          "name": "右下河流与岸景",
+          "textureId": "c2-t-2f3943fa7f92ec09",
+          "action": "pixel-repair-and-instance-layout-review",
+          "recommendation": "河景主实例u=.75切断水面与右岸，第4/5景被测有色切线点100%暴露；原图内有完整亭台游人但右岸/底水自身也未收口。需要像素扩绘并恢复单个主实例，避免三份整图重复同一群人物。",
+          "pendingImplementation": true
+        },
+        {
+          "id": "c2-m-53abbb827900",
+          "name": "03_中间远景",
+          "textureId": "c2-t-44b0f2b167932cc6",
+          "action": "replace-clean-background-before-full-uv",
+          "recommendation": "原图上方清楚烘焙两行正文，下方城郊也是截图截断；当前网格遮住部分字，直接fullUV会重新暴露。原切线在第6/7景被前景挡住，仍应按既有裁决去字补远景后才替换几何。",
+          "pendingImplementation": true
+        },
+        {
+          "id": "c2-m-72ab86afc950",
+          "name": "右下河流与岸景.002",
+          "textureId": "c2-t-2f3943fa7f92ec09",
+          "action": "pixel-repair-and-instance-layout-review",
+          "recommendation": "第二辅助河片沿斜轮廓摘取部分源图，丢34.4%有色alpha；与另两副本上下叠出竖直水墙。宜在主河景恢复后重审用途，不能单按.002后缀直接隐藏，也不能与主片同步fullUV。",
+          "pendingImplementation": true
+        }
+      ]
+    },
+    "3": {
+      "geometryRepairs": [
+        {
+          "id": "c3-m-de3408ad8a8f-full-uv",
+          "meshNames": [
+            "SC02_03_右上仕女群"
+          ],
+          "role": "主体叙事层",
+          "narrative": "原图完整仕女群的内部横切在第二景暴露，局部恢复完整原图，不改人物与世界变换。",
+          "geometryPolicy": "full-uv-affine",
+          "treatment": "修复",
+          "sourceMeshId": "c3-m-de3408ad8a8f"
+        },
+        {
+          "id": "c3-m-f449c3cfe037-full-uv",
+          "meshNames": [
+            "SC02_06_上方人物背景"
+          ],
+          "role": "后景连续层",
+          "narrative": "原图右侧柱脚和阶台完整；旧网格局部L形缺口在gap02实景暴露，恢复该单实例完整UV，不动世界变换。",
+          "geometryPolicy": "full-uv-affine",
+          "treatment": "修复",
+          "sourceMeshId": "c3-m-f449c3cfe037"
+        }
+      ],
+      "hiddenMeshNames": [
+        "SC03_03-text-panel",
+        "SC04_05_右侧文字面板",
+        "SC06_25_题词文字",
+        "SC06_26_朱红印章"
+      ],
+      "backgroundMeshNames": [],
+      "textLayers": [
+        {
+          "id": "c3-t026-readable-caption",
+          "name": "凤穿牡丹",
+          "title": "凤穿牡丹",
+          "lines": [
+            "花入嫁衣，寄托良缘。",
+            "凤凰穿花，锦绣承愿。"
+          ],
+          "matrix": [
+            0,
+            9.120396999999992,
+            0,
+            0,
+            0,
+            0,
+            3.5626550781249966,
+            0,
+            1,
+            0,
+            0,
+            0,
+            3,
+            128.71184159999999,
+            14.562449,
+            1
+          ],
+          "domWidth": 640,
+          "domHeight": 250,
+          "color": "#73533d",
+          "narrative": "凤穿牡丹寓意准确对应良缘与富贵；内容应保留",
+          "range": [
+            0.18527723828993936,
+            0.30891527606479746
+          ]
+        },
+        {
+          "id": "c3-t033-readable-caption",
+          "name": "花结良缘",
+          "title": "花结良缘",
+          "lines": [
+            "凤凰寄祥瑞，牡丹寓富贵。",
+            "同心相映，祈愿家业兴旺。"
+          ],
+          "matrix": [
+            0,
+            8.415549350000012,
+            0,
+            0,
+            0,
+            0,
+            3.287323964843755,
+            0,
+            1,
+            0,
+            0,
+            0,
+            4,
+            191.51937865,
+            14.45235585,
+            1
+          ],
+          "domWidth": 640,
+          "domHeight": 250,
+          "color": "#73533d",
+          "narrative": "凤凰与牡丹寓意、婚姻和美及家业兴旺符合主线",
+          "range": [
+            0.30891527606479746,
+            0.43273851796258755
+          ]
+        },
+        {
+          "id": "c3-t051-readable-caption",
+          "name": "岁岁圆满",
+          "title": "岁岁圆满",
+          "lines": [
+            "花盘与香囊，寄意人丁兴旺。",
+            "牡丹满开，愿家运昌隆。"
+          ],
+          "matrix": [
+            0,
+            10.067202112000023,
+            0,
+            0,
+            0,
+            0,
+            3.932500825000009,
+            0,
+            1,
+            0,
+            0,
+            0,
+            4,
+            307.3333435,
+            15.94000005,
+            1
+          ],
+          "domWidth": 640,
+          "domHeight": 250,
+          "color": "#73533d",
+          "narrative": "人丁兴旺、家运昌隆、岁岁圆满与本卷主线一致",
+          "range": [
+            0.5569328988363655,
+            0.6811709334158138
+          ]
+        },
+        {
+          "id": "c3-t052-readable-seal",
+          "name": "吉庆，中性数字展陈印记",
+          "title": "吉庆",
+          "lines": [],
+          "matrix": [
+            0,
+            0.38049319999998943,
+            0,
+            0,
+            0,
+            0,
+            0.5073242666666525,
+            0,
+            1,
+            0,
+            0,
+            0,
+            4.0999999,
+            313.462677,
+            14.938750249999998,
+            1
+          ],
+          "domWidth": 72,
+          "domHeight": 96,
+          "color": "#9b402f",
+          "narrative": "中性当代展陈印记，不作为历史真印或考据证据。",
+          "range": [
+            0.5569328988363655,
+            0.6811709334158138
+          ],
+          "variant": "seal"
+        }
+      ],
+      "edgeRepairs": [],
+      "geometryDecisions": [
+        {
+          "id": "c3-m-3e77817f3cad",
+          "name": "SC09_05_右侧山水城景.001",
+          "textureId": "c3-t-3cd6680826ea7dbc",
+          "action": "auxiliary-landscape-local-crop-risk",
+          "recommendation": "保留第九景主实例的完整原图；只对第八景.001检查/修复局部暴露接缝和跨景过渡，维持其辅助风景占位。禁止给两个实例一律fullUV复制，这会把已删的右上山峰重新叠到圆屏/陈设后。",
+          "pendingImplementation": true
+        },
+        {
+          "id": "c3-m-885c8a7d1b99",
+          "name": "微信图片_20261016180912_185_1685",
+          "textureId": "c3-t-a41913e64fbb778c",
+          "action": "primary-architecture-geometry-trim-plus-existing-source-regeneration",
+          "recommendation": "保留既有“重生成”纹理审查决定；将内部几何竖切纳入同一替换/构图方案，不能只换图后继续沿用会切柱子的UV，也不能独立恢复整图而不复核背景人物与画幅边界。",
+          "pendingImplementation": true
+        },
+        {
+          "id": "c3-m-de3408ad8a8f",
+          "name": "SC02_03_右上仕女群",
+          "textureId": "c3-t-9a9479d09ece120b",
+          "action": "primary-human-silhouette-internal-hard-trim",
+          "recommendation": "将该保留纹理对应的主人物实例列为优先几何修复候选：以完整下摆轮廓为目标核对原位人物/栏杆关系，局部补UV或明确调整有意遮挡；不要重生成已经完整的身体，不对所有同类片统一套整图。",
+          "pendingImplementation": true
+        },
+        {
+          "id": "c3-m-f449c3cfe037",
+          "name": "SC02_06_上方人物背景",
+          "textureId": "c3-t-e03e5d2e5d7c3372",
+          "action": "full-uv-affine-single-instance",
+          "recommendation": "最终gap02证明柱脚L形缺口暴露，原图完整，恢复本实例整UV。",
+          "pendingImplementation": true,
+          "evidence": "Final full-size stop/transition review, 2026-10-20"
+        },
+        {
+          "id": "c3-m-3c3a40323c54",
+          "name": "SC05_01_两盏花灯",
+          "textureId": "c3-t-49efdde0a4453d39",
+          "action": "legitimate-source-object-extraction",
+          "recommendation": "保留按物体提取的小灯UV，不恢复右侧大灯，不仅凭漏图比例判坏。若未来需要两灯入画，按新构图新增/选择独立实例。",
+          "pendingImplementation": true
+        }
+      ]
+    },
+    "4": {
+      "geometryRepairs": [],
+      "hiddenMeshNames": [
+        "4-8 · 01 · 故国山水城景.001",
+        "05_字幕替换意境山水.001",
+        "4-1 · 01 · 题字与远宫",
+        "4-9 · 04 · 千古题字"
+      ],
+      "backgroundMeshNames": [],
+      "textLayers": [
+        {
+          "id": "c4-t011-readable-caption",
+          "name": "人花合一",
+          "title": "人花合一",
+          "lines": [
+            "牡丹与美人相映。",
+            "花意由此华贵倾城。"
+          ],
+          "matrix": [
+            0,
+            -23.937916303999998,
+            0,
+            0,
+            0,
+            0,
+            9.35074855625,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            13.99301245,
+            9.75526,
+            15.1563673,
+            1
+          ],
+          "domWidth": 640,
+          "domHeight": 250,
+          "color": "#73533d",
+          "narrative": "杨玉环与牡丹的文化意象，内容匹配但烧录文字宜原生展示",
+          "range": [
+            0,
+            0.06229866487379548
+          ]
+        },
+        {
+          "id": "c4-t048-readable-caption",
+          "name": "千古兴衰",
+          "title": "千古兴衰",
+          "lines": [
+            "盛世寄富贵，故国留追忆。",
+            "花开花落，诗意代代流传。"
+          ],
+          "matrix": [
+            0,
+            -16.514248715000054,
+            0,
+            0,
+            0,
+            0,
+            6.450878404296896,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            8.039559350000001,
+            -677.14468385,
+            17.7093549,
+            1
+          ],
+          "domWidth": 640,
+          "domHeight": 250,
+          "color": "#73533d",
+          "narrative": "千百年兴衰与花的文化变迁，准确对应卷尾",
+          "range": [
+            0.9371137845170073,
+            1
+          ]
+        }
+      ],
+      "edgeRepairs": [
+        {
+          "id": "c4-t005-primary-region-edge",
+          "sourceTextureId": "c4-t-8bea2691a5d6714c",
+          "meshNames": [
+            "05_字幕替换意境山水"
+          ],
+          "uvRect": [
+            0,
+            0,
+            0.7516756,
+            1
+          ],
+          "fades": {
+            "left": 0,
+            "right": 0.045,
+            "top": 0,
+            "bottom": 0
+          },
+          "role": "后景连续层",
+          "narrative": "只散去第五景山水主实例右侧局部边口，保留既有摘取和位置，避免整图克隆。"
+        }
+      ],
+      "geometryDecisions": [
+        {
+          "id": "c4-m-24921ef89c6d",
+          "name": "微信图片_20261018221025_441_1685",
+          "textureId": "c4-t-da85453c2a6f08d2",
+          "action": "pixel-repair-before-geometry-completion",
+          "recommendation": "只保留源屏风左半和两仕女，u=.5切过高alpha屏架；第2景149个有色点中16.78%仍暴露，多数被贵妃覆盖。人物摘取本身合理，屏架端点需补接；建议与T008补屏檐/栏板资产一起处理，不先把右半巨大屏风一律放回。",
+          "pendingImplementation": true
+        },
+        {
+          "id": "c4-m-dd645ee64df8",
+          "name": "05_字幕替换意境山水.001",
+          "textureId": "c4-t-8bea2691a5d6714c",
+          "action": "retire-duplicate-landscape-helper",
+          "recommendation": "最终gap05实景证明：仅把原UV域两侧边缘软化仍重复同套宫殿与山峰，edge-only方案已被取代；直接退役该辅助副本，不再fullUV或复制，保留主山水及新增淡山承接留白。",
+          "pendingImplementation": true,
+          "evidence": "Final full-size stop/transition review, 2026-10-20",
+          "supersededActions": [
+            "full-uv-affine-single-instance",
+            "preserve-region-with-left-right-ink-edge"
+          ]
+        },
+        {
+          "id": "c4-m-cdb9e53821aa",
+          "name": "4-8 · 01 · 故国山水城景.001",
+          "textureId": "c4-t-7bd5ef5c50333253",
+          "action": "retire-auxiliary-mask-preserve-primary",
+          "recommendation": "最终stop08/gap07暴露阶梯式山峰mask，退役辅助片，完整主实例和原布局保留。",
+          "pendingImplementation": true,
+          "evidence": "Final full-size stop/transition review, 2026-10-20"
+        },
+        {
+          "id": "c4-m-2f9aca472f9d",
+          "name": "4-9 · 04 · 千古题字",
+          "textureId": "c4-t-606eb4317956c693",
+          "action": "retire-raster-use-html",
+          "recommendation": "原图是带长文的金色纸片；当前几何刻意只留约8%源alpha并遮掉大部分正文，u=.2金边切线第9景160个有色点全部暴露。fullUV会带回整段烘焙字。退休此raster，短HTML题签承担主题，长文原解读抽屉保留。",
+          "pendingImplementation": true
+        },
+        {
+          "id": "c4-m-c1b60755aafc",
+          "name": "05_字幕替换意境山水",
+          "textureId": "c4-t-8bea2691a5d6714c",
+          "action": "preserve-region-with-right-ink-edge",
+          "recommendation": "保原几何与UV域，只在主实例右侧轻散边；不复制完整宫殿。",
+          "pendingImplementation": true,
+          "evidence": "Final full-size stop/transition review, 2026-10-20"
+        },
+        {
+          "id": "c4-m-ac5e3da114da",
+          "name": "过渡2 · 近景花枝与飘带.001",
+          "textureId": "c4-t-8d8a3c10a919636e",
+          "action": "keep-foreground-extraction",
+          "recommendation": "过渡花枝从宽幅牡丹图摘取左段，原图没有文字。此实例为弯曲/变形前景，不满足本次平面可见性拟合（未给虚假的遮挡百分比）；第2景底部主要被画幅/花团遮住。保留摘取，若转场露出中花切线再局部重排，不复制第3景整片到此处。",
+          "pendingImplementation": true
+        },
+        {
+          "id": "c4-m-3aff9fce2dc5",
+          "name": "微信图片_20261018213717_423_1685",
+          "textureId": "c4-t-680be9abfbc602b8",
+          "action": "keep-floor-extraction-repair-outer-edge",
+          "recommendation": "只选原图下部地砖，剔除大段高栏，是场景功能摘取；没有内部长高alpha水平直切证据。完整还原会在第6景再加一道遮人物的栏杆。保留UV摘取；原图地坪左右/底端真实触边另走像素接地修复。",
+          "pendingImplementation": true
+        },
+        {
+          "id": "c4-m-d2034a788321",
+          "name": "08_右侧远景花园",
+          "textureId": "c4-t-e4597e6264631f1e",
+          "action": "keep-semantic-mask",
+          "recommendation": "源图为淡墨远园，无烘焙文字；虽UV总范围是0..1，多边形删去约16.49%源alpha，但没有长高alpha轴向硬口；第2景上左半由主仕女/屏架覆盖。属于构图遮罩，暂无证据要求整幅恢复。",
+          "pendingImplementation": true
+        }
+      ]
+    }
+  },
+  "activeChapterChange": false,
+  "scope": "Reviewed chapters2–4 execution recommendations. No canonical or original scene/image is changed by this script.",
+  "textPlan": [
+    {
+      "sourceTextureId": "c2-t-3628b3c9022b7838",
+      "label": "C2-T030",
+      "sourceName": "02_中央题字.png",
+      "originalRasterRetired": true,
+      "originalMeshNames": [
+        "2-6 题字 02_中央题字"
+      ],
+      "sourceBounds": {
+        "min": [
+          12.7093105,
+          0.482564,
+          0.3414358
+        ],
+        "max": [
+          13.4443102,
+          0.7980205,
+          0.4850751
+        ]
+      },
+      "sourceWorldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        12.9802494,
+        0.651976,
+        0.4193883,
+        1
+      ],
+      "sourceStop": 6,
+      "sourceStopRange": [
+        6,
+        6
+      ],
+      "sourceFrame": 3409,
+      "normalizedReadingRange": [
+        0.7219202974310086,
+        0.8853415766174901
+      ],
+      "matrixMethod": "Original mesh bounds center + authored source camera quaternion; explicit world width/height derived from original bounds, unchanged source coordinates. CalligraphyLayer keeps a screen-readable minimum and edge-safe projection.",
+      "fullTextDestination": "existing chapter interpretation drawer; original narrative not deleted",
+      "bakedTextReintroduced": false,
+      "config": {
+        "id": "c2-t030-readable-caption",
+        "name": "春野静赏",
+        "title": "春野静赏",
+        "lines": [
+          "花由苑囿入私园。",
+          "春游静赏，渐入寻常。"
+        ],
+        "matrix": [
+          0.5729188256249381,
+          -0.008225712069083119,
+          0.019208815714475937,
+          0,
+          1.4827946180569754e-8,
+          0.2058640441393944,
+          0.0881558698062799,
+          0,
+          -0.036448567320079846,
+          -0.39338768635875776,
+          0.9186498953146499,
+          0,
+          13.07681035,
+          0.64029225,
+          0.41325544999999997,
+          1
+        ],
+        "domWidth": 640,
+        "domHeight": 250,
+        "color": "#73533d",
+        "narrative": "图为多行策划正文而非短题签，基线第六景在画面后层显字，与阅读抽屉重复，且会随透视缩放难读。",
+        "range": [
+          0.7219202974310086,
+          0.8853415766174901
+        ]
+      }
+    },
+    {
+      "sourceTextureId": "c3-t-94fe9d9ea08a13a1",
+      "label": "C3-T026",
+      "sourceName": "3-3_03-text-panel.png",
+      "originalRasterRetired": true,
+      "originalMeshNames": [
+        "SC03_03-text-panel"
+      ],
+      "sourceBounds": {
+        "min": [
+          3,
+          123.7551041,
+          11.6138277
+        ],
+        "max": [
+          3,
+          133.6685791,
+          17.5110703
+        ]
+      },
+      "sourceWorldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        3,
+        128.7118378,
+        14.5624495,
+        1
+      ],
+      "sourceStop": 3,
+      "sourceStopRange": [
+        3,
+        3
+      ],
+      "sourceFrame": 1516,
+      "normalizedReadingRange": [
+        0.18527723828993936,
+        0.30891527606479746
+      ],
+      "matrixMethod": "Original mesh bounds center + authored source camera quaternion; explicit world width/height derived from original bounds, unchanged source coordinates. CalligraphyLayer keeps a screen-readable minimum and edge-safe projection.",
+      "fullTextDestination": "existing chapter interpretation drawer; original narrative not deleted",
+      "bakedTextReintroduced": false,
+      "config": {
+        "id": "c3-t026-readable-caption",
+        "name": "凤穿牡丹",
+        "title": "凤穿牡丹",
+        "lines": [
+          "花入嫁衣，寄托良缘。",
+          "凤凰穿花，锦绣承愿。"
+        ],
+        "matrix": [
+          0,
+          9.120396999999992,
+          0,
+          0,
+          0,
+          0,
+          3.5626550781249966,
+          0,
+          1,
+          0,
+          0,
+          0,
+          3,
+          128.71184159999999,
+          14.562449,
+          1
+        ],
+        "domWidth": 640,
+        "domHeight": 250,
+        "color": "#73533d",
+        "narrative": "凤穿牡丹寓意准确对应良缘与富贵；内容应保留",
+        "range": [
+          0.18527723828993936,
+          0.30891527606479746
+        ]
+      }
+    },
+    {
+      "sourceTextureId": "c3-t-53454d322a279b44",
+      "label": "C3-T033",
+      "sourceName": "3-4_05_右侧文字面板.png",
+      "originalRasterRetired": true,
+      "originalMeshNames": [
+        "SC04_05_右侧文字面板"
+      ],
+      "sourceBounds": {
+        "min": [
+          4,
+          186.6266174,
+          10.3240919
+        ],
+        "max": [
+          4,
+          196.4121399,
+          18.5806198
+        ]
+      },
+      "sourceWorldMatrix": [
+        1.1482047,
+        0,
+        0,
+        0,
+        0,
+        1.1482047,
+        0,
+        0,
+        0,
+        0,
+        1.1482047,
+        0,
+        4,
+        191.5193787,
+        14.4523563,
+        1
+      ],
+      "sourceStop": 4,
+      "sourceStopRange": [
+        4,
+        4
+      ],
+      "sourceFrame": 2212,
+      "normalizedReadingRange": [
+        0.30891527606479746,
+        0.43273851796258755
+      ],
+      "matrixMethod": "Original mesh bounds center + authored source camera quaternion; explicit world width/height derived from original bounds, unchanged source coordinates. CalligraphyLayer keeps a screen-readable minimum and edge-safe projection.",
+      "fullTextDestination": "existing chapter interpretation drawer; original narrative not deleted",
+      "bakedTextReintroduced": false,
+      "config": {
+        "id": "c3-t033-readable-caption",
+        "name": "花结良缘",
+        "title": "花结良缘",
+        "lines": [
+          "凤凰寄祥瑞，牡丹寓富贵。",
+          "同心相映，祈愿家业兴旺。"
+        ],
+        "matrix": [
+          0,
+          8.415549350000012,
+          0,
+          0,
+          0,
+          0,
+          3.287323964843755,
+          0,
+          1,
+          0,
+          0,
+          0,
+          4,
+          191.51937865,
+          14.45235585,
+          1
+        ],
+        "domWidth": 640,
+        "domHeight": 250,
+        "color": "#73533d",
+        "narrative": "凤凰与牡丹寓意、婚姻和美及家业兴旺符合主线",
+        "range": [
+          0.30891527606479746,
+          0.43273851796258755
+        ]
+      }
+    },
+    {
+      "sourceTextureId": "c3-t-ebdc2f7634867a75",
+      "label": "C3-T051",
+      "sourceName": "3-6_单件细分备份_25_题词文字.png",
+      "originalRasterRetired": true,
+      "originalMeshNames": [
+        "SC06_25_题词文字"
+      ],
+      "sourceBounds": {
+        "min": [
+          4,
+          301.6133423,
+          13.9765673
+        ],
+        "max": [
+          4,
+          313.0533447,
+          17.9034328
+        ]
+      },
+      "sourceWorldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        4,
+        307.3333435,
+        15.9399996,
+        1
+      ],
+      "sourceStop": 6,
+      "sourceStopRange": [
+        6,
+        6
+      ],
+      "sourceFrame": 3590,
+      "normalizedReadingRange": [
+        0.5569328988363655,
+        0.6811709334158138
+      ],
+      "matrixMethod": "Original mesh bounds center + authored source camera quaternion; explicit world width/height derived from original bounds, unchanged source coordinates. CalligraphyLayer keeps a screen-readable minimum and edge-safe projection.",
+      "fullTextDestination": "existing chapter interpretation drawer; original narrative not deleted",
+      "bakedTextReintroduced": false,
+      "config": {
+        "id": "c3-t051-readable-caption",
+        "name": "岁岁圆满",
+        "title": "岁岁圆满",
+        "lines": [
+          "花盘与香囊，寄意人丁兴旺。",
+          "牡丹满开，愿家运昌隆。"
+        ],
+        "matrix": [
+          0,
+          10.067202112000023,
+          0,
+          0,
+          0,
+          0,
+          3.932500825000009,
+          0,
+          1,
+          0,
+          0,
+          0,
+          4,
+          307.3333435,
+          15.94000005,
+          1
+        ],
+        "domWidth": 640,
+        "domHeight": 250,
+        "color": "#73533d",
+        "narrative": "人丁兴旺、家运昌隆、岁岁圆满与本卷主线一致",
+        "range": [
+          0.5569328988363655,
+          0.6811709334158138
+        ]
+      }
+    },
+    {
+      "sourceTextureId": "c4-t-252f244a00ea58e7",
+      "label": "C4-T011",
+      "sourceName": "01_text_palace.png",
+      "originalRasterRetired": true,
+      "originalMeshNames": [
+        "4-1 · 01 · 题字与远宫"
+      ],
+      "sourceBounds": {
+        "min": [
+          13.9028664,
+          -4.1621332,
+          6.051157
+        ],
+        "max": [
+          14.0831585,
+          23.6726532,
+          24.2615776
+        ]
+      },
+      "sourceWorldMatrix": [
+        1.5679047,
+        0,
+        0,
+        0,
+        0,
+        1.5679047,
+        0,
+        0,
+        0,
+        0,
+        1.5679047,
+        0,
+        13.9856052,
+        9.7552681,
+        15.1564045,
+        1
+      ],
+      "sourceStop": 1,
+      "sourceStopRange": [
+        1,
+        1
+      ],
+      "sourceFrame": 97,
+      "normalizedReadingRange": [
+        0,
+        0.06229866487379548
+      ],
+      "matrixMethod": "Original mesh bounds center + authored source camera quaternion; explicit world width/height derived from original bounds, unchanged source coordinates. CalligraphyLayer keeps a screen-readable minimum and edge-safe projection.",
+      "fullTextDestination": "existing chapter interpretation drawer; original narrative not deleted",
+      "bakedTextReintroduced": false,
+      "config": {
+        "id": "c4-t011-readable-caption",
+        "name": "人花合一",
+        "title": "人花合一",
+        "lines": [
+          "牡丹与美人相映。",
+          "花意由此华贵倾城。"
+        ],
+        "matrix": [
+          0,
+          -23.937916303999998,
+          0,
+          0,
+          0,
+          0,
+          9.35074855625,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          13.99301245,
+          9.75526,
+          15.1563673,
+          1
+        ],
+        "domWidth": 640,
+        "domHeight": 250,
+        "color": "#73533d",
+        "narrative": "杨玉环与牡丹的文化意象，内容匹配但烧录文字宜原生展示",
+        "range": [
+          0,
+          0.06229866487379548
+        ]
+      }
+    },
+    {
+      "sourceTextureId": "c4-t-606eb4317956c693",
+      "label": "C4-T048",
+      "sourceName": "03_上方题字纸片.png",
+      "originalRasterRetired": true,
+      "originalMeshNames": [
+        "4-9 · 04 · 千古题字"
+      ],
+      "sourceBounds": {
+        "min": [
+          8,
+          -686.8589478,
+          12.852212
+        ],
+        "max": [
+          8.0791187,
+          -667.4304199,
+          22.5664978
+        ]
+      },
+      "sourceWorldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        8.0512533,
+        -677.1447754,
+        17.7093563,
+        1
+      ],
+      "sourceStop": 9,
+      "sourceStopRange": [
+        9,
+        9
+      ],
+      "sourceFrame": 4465,
+      "normalizedReadingRange": [
+        0.9371137845170073,
+        1
+      ],
+      "matrixMethod": "Original mesh bounds center + authored source camera quaternion; explicit world width/height derived from original bounds, unchanged source coordinates. CalligraphyLayer keeps a screen-readable minimum and edge-safe projection.",
+      "fullTextDestination": "existing chapter interpretation drawer; original narrative not deleted",
+      "bakedTextReintroduced": false,
+      "config": {
+        "id": "c4-t048-readable-caption",
+        "name": "千古兴衰",
+        "title": "千古兴衰",
+        "lines": [
+          "盛世寄富贵，故国留追忆。",
+          "花开花落，诗意代代流传。"
+        ],
+        "matrix": [
+          0,
+          -16.514248715000054,
+          0,
+          0,
+          0,
+          0,
+          6.450878404296896,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          8.039559350000001,
+          -677.14468385,
+          17.7093549,
+          1
+        ],
+        "domWidth": 640,
+        "domHeight": 250,
+        "color": "#73533d",
+        "narrative": "千百年兴衰与花的文化变迁，准确对应卷尾",
+        "range": [
+          0.9371137845170073,
+          1
+        ]
+      }
+    },
+    {
+      "sourceTextureId": "c3-t-7a42f54cb9924ea7",
+      "label": "C3-T052",
+      "sourceName": "3-6_单件细分备份_26_朱红印章.png",
+      "originalRasterRetired": true,
+      "originalMeshNames": [
+        "SC06_26_朱红印章"
+      ],
+      "sourceBounds": {
+        "min": [
+          4.0999999,
+          313.2724304,
+          14.688199
+        ],
+        "max": [
+          4.0999999,
+          313.6529236,
+          15.1893015
+        ]
+      },
+      "sourceWorldMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        4.0999999,
+        313.462677,
+        14.9387503,
+        1
+      ],
+      "sourceStop": 6,
+      "sourceStopRange": [
+        6,
+        6
+      ],
+      "sourceFrame": 3590,
+      "normalizedReadingRange": [
+        0.5569328988363655,
+        0.6811709334158138
+      ],
+      "matrixMethod": "Original mesh bounds center + authored source camera quaternion; explicit world width/height derived from original bounds, unchanged source coordinates. CalligraphyLayer keeps a screen-readable minimum and edge-safe projection.",
+      "fullTextDestination": "existing chapter interpretation drawer; original narrative not deleted",
+      "bakedTextReintroduced": false,
+      "config": {
+        "id": "c3-t052-readable-seal",
+        "name": "吉庆，中性数字展陈印记",
+        "title": "吉庆",
+        "lines": [],
+        "matrix": [
+          0,
+          0.38049319999998943,
+          0,
+          0,
+          0,
+          0,
+          0.5073242666666525,
+          0,
+          1,
+          0,
+          0,
+          0,
+          4.0999999,
+          313.462677,
+          14.938750249999998,
+          1
+        ],
+        "domWidth": 72,
+        "domHeight": 96,
+        "color": "#9b402f",
+        "narrative": "中性当代展陈印记，不作为历史真印或考据证据。",
+        "range": [
+          0.5569328988363655,
+          0.6811709334158138
+        ],
+        "variant": "seal"
+      }
+    }
+  ],
+  "geometryReport": "reports/reconstruction/geometry-review-chapters-2-4.json",
+  "implementationNotes": [
+    "只应用逐实例geometryRepairs，不整纹理批量fullUV。",
+    "三卷花灯保留单灯摘取；四卷地坪保留去高栏摘取。",
+    "无实证纸底遮挡，backgroundMeshNames均为空。",
+    "C2河景三副本保留原摘取语义，按preserve-region映射并轻散口，避免复制三幅完整游人河景。",
+    "C4-T005辅助副本的fullUV和edge-only均因gap05重复宫殿/山峰而取代：退役.001，仅保主片右墨边与淡山留白承接；C4-T041阶梯mask辅助副本退役，完整主实例保留。",
+    "长正文由原解读抽屉承担，短题签保持世界锚点。",
+    "所有新像素、题签、几何仍需各卷全部节点/过渡宽窄窗实测。"
+  ]
+}

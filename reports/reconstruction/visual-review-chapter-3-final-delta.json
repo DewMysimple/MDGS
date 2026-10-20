@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-20",
+  "basis": "Final original-size stop04/gap04 reveals a long hard raster edge, not seen as damaging in the earlier contact-sheet decision.",
+  "entries": {
+    "c3-t-1230ebfeb1a44fa5": {
+      "label": "C3-T028",
+      "treatment": "修复",
+      "treatmentProvisional": false,
+      "pendingVisualReview": false,
+      "problems": ["右侧婚礼街巷建筑的檐顶、柱与墙沿原PNG画布竖直截断，在stop04/gap04留白前暴露出长直边。"],
+      "visualReview": {
+        "method": "view_image on full-size final screenshots and original WebP",
+        "evidenceFiles": ["reports/reconstruction/after/chapter-3-stop-04.jpg", "reports/reconstruction/after/chapter-3-gap-04.jpg", "reports/reconstruction/chapter-3-final-details/chapter-3-stop-04-detail.png", "public/assets/chapter-3/textures/1230ebfeb1a44fa5.webp"],
+        "observation": "这是原图端部不完整，不能以fullUV或shader散边替代缺失檐、柱、台阶的实际补画。",
+        "action": "保留现有人物、灯笼、帷带与婚嫁叙事，只向右补完整建筑端部和少量接地，真实透明背景，原图保留。"
+      }
+    },
+    "c3-t-13949918854e0319": {
+      "label": "C3-T056",
+      "treatment": "修复",
+      "treatmentProvisional": false,
+      "pendingVisualReview": false,
+      "problems": ["镜台原图底部把桌裙/桌腿与垂布在同一画布底边齐切，最终gap06入画时露出内部横断。"],
+      "visualReview": {
+        "method": "view_image on final original-size gap06 and original WebP",
+        "evidenceFiles": ["reports/reconstruction/after/chapter-3-gap-06.jpg", "reports/reconstruction/chapter-3-final-details/chapter-3-gap-06-mirror-table-cut-detail.png", "public/assets/chapter-3/textures/13949918854e0319.webp"],
+        "observation": "镜面、花瓶与桌面器物完整，应全部保留；缺的是画布以下桌腿和垂布，不是需要模糊掉的多余背景。",
+        "action": "只向下补全桌裙、完整桌腿和垂布自然下缘，透明背景，原PNG保留。"
+      }
+    }
+  }
+}

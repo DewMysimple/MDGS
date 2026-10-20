@@ -8,7 +8,9 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview --host 0.0.0.0",
     "validate:assets": "node scripts/validate-assets.mjs",
-    "test": "node scripts/validate-viewing.mjs"
+    "test": "node scripts/validate-viewing.mjs",
+    "test:startup": "node scripts/validate-startup.mjs",
+    "test:subpath": "node scripts/validate-subpath.mjs"
   },
   "dependencies": {
     "react": "^19.1.0",

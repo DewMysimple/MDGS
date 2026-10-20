@@ -1,0 +1,5374 @@
+{
+  "scope": "chapter-4 all textured web meshes, excludes isText; read-only geometry supplement",
+  "method": "Triangle UV coverage rasterized over original RGBA; red tint shows omitted visible alpha, red lines show long internal axis-aligned geometry boundaries over occupied pixels. Machine evidence only until visual review.",
+  "auditedMeshCount": 110,
+  "candidateMeshCount": 8,
+  "rows": [
+    {
+      "name": "微信图片_20261018221025_441_1685",
+      "id": "c4-m-24921ef89c6d",
+      "textureId": "c4-t-da85453c2a6f08d2",
+      "label": "C4-T008",
+      "sourceName": "微信图片_20261018221025_441_1685.png",
+      "texturePath": "public/assets/chapter-4/textures/da85453c2a6f08d2.webp",
+      "role": "中景承接层",
+      "treatment": "修复",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -79.7567978,
+          -63.3642235
+        ],
+        "nearestStop": {
+          "name": "4-2 花王配美人 · 阅读停留",
+          "frame": 625,
+          "progress": 0.1287394,
+          "index": 2,
+          "cameraAxisPosition": -84.0
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "4-2 花王配美人 · 阅读停留",
+            "frame": 625,
+            "progress": 0.1287394,
+            "index": 2,
+            "cameraAxisPosition": -84.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        0.5,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.4715650634959864,
+      "hardAxisBoundaryCandidates": [
+        {
+          "axis": "u",
+          "coordinate": 0.5,
+          "interval": [
+            0.0,
+            1.0
+          ],
+          "uvLength": 1.0,
+          "meanAlpha": 224.2220930232558,
+          "occupiedRatio": 0.8883720930232558,
+          "opaqueRatio": 0.8848837209302326
+        }
+      ],
+      "positionValues": 24,
+      "pendingVisualReview": true,
+      "diagnosticImage": "reports/reconstruction/chapter-4-geometry-review/c4-m-24921ef89c6d.png"
+    },
+    {
+      "name": "05_字幕替换意境山水.001",
+      "id": "c4-m-dd645ee64df8",
+      "textureId": "c4-t-8bea2691a5d6714c",
+      "label": "C4-T005",
+      "sourceName": "05_字幕替换意境山水.png",
+      "texturePath": "public/assets/chapter-4/textures/8bea2691a5d6714c.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -424.2525635,
+          -380.7481079
+        ],
+        "nearestStop": {
+          "name": "4-6 游宴渐冷 · 阅读停留",
+          "frame": 2977,
+          "progress": 0.613988,
+          "index": 6,
+          "cameraAxisPosition": -420.0
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "4-6 游宴渐冷 · 阅读停留",
+            "frame": 2977,
+            "progress": 0.613988,
+            "index": 6,
+            "cameraAxisPosition": -420.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.5,
+        0.0,
+        0.9144496,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.5032549491709374,
+      "hardAxisBoundaryCandidates": [
+        {
+          "axis": "u",
+          "coordinate": 0.5,
+          "interval": [
+            0.0,
+            1.0
+          ],
+          "uvLength": 1.0,
+          "meanAlpha": 178.0523138832998,
+          "occupiedRatio": 0.710261569416499,
+          "opaqueRatio": 0.6981891348088531
+        }
+      ],
+      "positionValues": 36,
+      "pendingVisualReview": true,
+      "diagnosticImage": "reports/reconstruction/chapter-4-geometry-review/c4-m-dd645ee64df8.png"
+    },
+    {
+      "name": "4-8 · 01 · 故国山水城景.001",
+      "id": "c4-m-cdb9e53821aa",
+      "textureId": "c4-t-7bd5ef5c50333253",
+      "label": "C4-T041",
+      "sourceName": "03-山水城景.png",
+      "texturePath": "public/assets/chapter-4/textures/7bd5ef5c50333253.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -606.0264893,
+          -554.3926392
+        ],
+        "nearestStop": {
+          "name": "4-8 晚唐追忆 · 阅读停留",
+          "frame": 4009,
+          "progress": 0.8269032,
+          "index": 8,
+          "cameraAxisPosition": -588.0
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "4-8 晚唐追忆 · 阅读停留",
+            "frame": 4009,
+            "progress": 0.8269032,
+            "index": 8,
+            "cameraAxisPosition": -588.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        0.9615384
+      ],
+      "omittedVisibleAlphaRatio": 0.25636526804931287,
+      "hardAxisBoundaryCandidates": [
+        {
+          "axis": "v",
+          "coordinate": 0.53846,
+          "interval": [
+            0.55,
+            0.975
+          ],
+          "uvLength": 0.42499999999999993,
+          "meanAlpha": 247.50375939849624,
+          "occupiedRatio": 0.9849624060150376,
+          "opaqueRatio": 0.9819548872180451
+        }
+      ],
+      "positionValues": 2085,
+      "pendingVisualReview": true,
+      "diagnosticImage": "reports/reconstruction/chapter-4-geometry-review/c4-m-cdb9e53821aa.png"
+    },
+    {
+      "name": "4-9 · 04 · 千古题字",
+      "id": "c4-m-2f9aca472f9d",
+      "textureId": "c4-t-606eb4317956c693",
+      "label": "C4-T048",
+      "sourceName": "03_上方题字纸片.png",
+      "texturePath": "public/assets/chapter-4/textures/606eb4317956c693.webp",
+      "role": "后景连续层",
+      "treatment": "修复",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -686.8589478,
+          -667.4304199
+        ],
+        "nearestStop": {
+          "name": "4-9 千古兴衰 · 阅读停留",
+          "frame": 4465,
+          "progress": 0.9209821,
+          "index": 9,
+          "cameraAxisPosition": -672.0
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "4-9 千古兴衰 · 阅读停留",
+            "frame": 4465,
+            "progress": 0.9209821,
+            "index": 9,
+            "cameraAxisPosition": -672.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.15,
+        0.525,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.9191017930211097,
+      "hardAxisBoundaryCandidates": [
+        {
+          "axis": "u",
+          "coordinate": 0.2,
+          "interval": [
+            0.15,
+            0.65
+          ],
+          "uvLength": 0.5,
+          "meanAlpha": 200.19819819819818,
+          "occupiedRatio": 0.7972972972972973,
+          "opaqueRatio": 0.7905405405405406
+        }
+      ],
+      "positionValues": 390,
+      "pendingVisualReview": true,
+      "diagnosticImage": "reports/reconstruction/chapter-4-geometry-review/c4-m-2f9aca472f9d.png"
+    },
+    {
+      "name": "05_字幕替换意境山水",
+      "id": "c4-m-c1b60755aafc",
+      "textureId": "c4-t-8bea2691a5d6714c",
+      "label": "C4-T005",
+      "sourceName": "05_字幕替换意境山水.png",
+      "texturePath": "public/assets/chapter-4/textures/8bea2691a5d6714c.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -379.7459106,
+          -306.3190002
+        ],
+        "nearestStop": {
+          "name": "4-5 繁华落幕 · 阅读停留",
+          "frame": 2521,
+          "progress": 0.5199092,
+          "index": 5,
+          "cameraAxisPosition": -336.0
+        },
+        "stopRange": [
+          5,
+          5
+        ],
+        "associatedStops": [
+          {
+            "name": "4-5 繁华落幕 · 阅读停留",
+            "frame": 2521,
+            "progress": 0.5199092,
+            "index": 5,
+            "cameraAxisPosition": -336.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        0.7516756,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.19938334761449913,
+      "hardAxisBoundaryCandidates": [
+        {
+          "axis": "u",
+          "coordinate": 0.75,
+          "interval": [
+            0.5,
+            1.0
+          ],
+          "uvLength": 0.5,
+          "meanAlpha": 171.10441767068272,
+          "occupiedRatio": 0.678714859437751,
+          "opaqueRatio": 0.6746987951807228
+        }
+      ],
+      "positionValues": 42,
+      "pendingVisualReview": true,
+      "diagnosticImage": "reports/reconstruction/chapter-4-geometry-review/c4-m-c1b60755aafc.png"
+    },
+    {
+      "name": "过渡2 · 近景花枝与飘带.001",
+      "id": "c4-m-ac5e3da114da",
+      "textureId": "c4-t-8d8a3c10a919636e",
+      "label": "C4-T015",
+      "sourceName": "05_底部牡丹花枝.png",
+      "texturePath": "public/assets/chapter-4/textures/8d8a3c10a919636e.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -95.3592224,
+          -81.23069
+        ],
+        "nearestStop": {
+          "name": "4-2 花王配美人 · 阅读停留",
+          "frame": 625,
+          "progress": 0.1287394,
+          "index": 2,
+          "cameraAxisPosition": -84.0
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "4-2 花王配美人 · 阅读停留",
+            "frame": 625,
+            "progress": 0.1287394,
+            "index": 2,
+            "cameraAxisPosition": -84.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        0.6,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.3568960995287125,
+      "hardAxisBoundaryCandidates": [
+        {
+          "axis": "u",
+          "coordinate": 0.55,
+          "interval": [
+            0.375,
+            0.5625
+          ],
+          "uvLength": 0.1875,
+          "meanAlpha": 252.95862068965516,
+          "occupiedRatio": 1.0,
+          "opaqueRatio": 1.0
+        }
+      ],
+      "positionValues": 1113,
+      "pendingVisualReview": true,
+      "diagnosticImage": "reports/reconstruction/chapter-4-geometry-review/c4-m-ac5e3da114da.png"
+    },
+    {
+      "name": "微信图片_20261018213717_423_1685",
+      "id": "c4-m-3aff9fce2dc5",
+      "textureId": "c4-t-680be9abfbc602b8",
+      "label": "C4-T007",
+      "sourceName": "微信图片_20261018213717_423_1685.png",
+      "texturePath": "public/assets/chapter-4/textures/680be9abfbc602b8.webp",
+      "role": "中景承接层",
+      "treatment": "修复",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -441.1891479,
+          -413.2883301
+        ],
+        "nearestStop": {
+          "name": "4-6 游宴渐冷 · 阅读停留",
+          "frame": 2977,
+          "progress": 0.613988,
+          "index": 6,
+          "cameraAxisPosition": -420.0
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "4-6 游宴渐冷 · 阅读停留",
+            "frame": 2977,
+            "progress": 0.613988,
+            "index": 6,
+            "cameraAxisPosition": -420.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        0.4364039
+      ],
+      "omittedVisibleAlphaRatio": 0.5527823965031182,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 18,
+      "pendingVisualReview": true,
+      "diagnosticImage": "reports/reconstruction/chapter-4-geometry-review/c4-m-3aff9fce2dc5.png"
+    },
+    {
+      "name": "08_右侧远景花园",
+      "id": "c4-m-d2034a788321",
+      "textureId": "c4-t-e4597e6264631f1e",
+      "label": "C4-T001",
+      "sourceName": "08_右侧远景花园.png",
+      "texturePath": "public/assets/chapter-4/textures/e4597e6264631f1e.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -105.5437927,
+          -87.0991211
+        ],
+        "nearestStop": {
+          "name": "4-2 花王配美人 · 阅读停留",
+          "frame": 625,
+          "progress": 0.1287394,
+          "index": 2,
+          "cameraAxisPosition": -84.0
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "4-2 花王配美人 · 阅读停留",
+            "frame": 625,
+            "progress": 0.1287394,
+            "index": 2,
+            "cameraAxisPosition": -84.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.16487075669155568,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 48,
+      "pendingVisualReview": true,
+      "diagnosticImage": "reports/reconstruction/chapter-4-geometry-review/c4-m-d2034a788321.png"
+    },
+    {
+      "name": "4-7 · 04 · 乱世人物",
+      "id": "c4-m-12087f67357d",
+      "textureId": "c4-t-462f0bccecdd9fb4",
+      "label": "C4-T036",
+      "sourceName": "03_右侧人物与飘带衣袍.png",
+      "texturePath": "public/assets/chapter-4/textures/462f0bccecdd9fb4.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -520.4581299,
+          -501.1348572
+        ],
+        "nearestStop": {
+          "name": "4-7 盛世与乱世 · 阅读停留",
+          "frame": 3457,
+          "progress": 0.7130184,
+          "index": 7,
+          "cameraAxisPosition": -504.0
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "4-7 盛世与乱世 · 阅读停留",
+            "frame": 3457,
+            "progress": 0.7130184,
+            "index": 7,
+            "cameraAxisPosition": -504.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 3.3524903651191375e-06,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2346,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "09_右侧近景花栏",
+      "id": "c4-m-1981ef459dac",
+      "textureId": "c4-t-06c1bac4ac5d7cee",
+      "label": "C4-T002",
+      "sourceName": "09_右侧近景花栏.png",
+      "texturePath": "public/assets/chapter-4/textures/06c1bac4ac5d7cee.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -104.0335999,
+          -79.2176056
+        ],
+        "nearestStop": {
+          "name": "4-2 花王配美人 · 阅读停留",
+          "frame": 625,
+          "progress": 0.1287394,
+          "index": 2,
+          "cameraAxisPosition": -84.0
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "4-2 花王配美人 · 阅读停留",
+            "frame": 625,
+            "progress": 0.1287394,
+            "index": 2,
+            "cameraAxisPosition": -84.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "08_head_peony_spray",
+      "id": "c4-m-cca413115a97",
+      "textureId": "c4-t-7ad96b4a92e8362f",
+      "label": "C4-T003",
+      "sourceName": "08_head_peony_spray.png",
+      "texturePath": "public/assets/chapter-4/textures/7ad96b4a92e8362f.webp",
+      "role": "主体叙事层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -247.1163635,
+          -236.2662354
+        ],
+        "nearestStop": {
+          "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+          "frame": 1945,
+          "progress": 0.4010728,
+          "index": 4,
+          "cameraAxisPosition": -252.0
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+            "frame": 1945,
+            "progress": 0.4010728,
+            "index": 4,
+            "cameraAxisPosition": -252.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "07_head_screen",
+      "id": "c4-m-b1bcc108b82c",
+      "textureId": "c4-t-fd7ee310ecee7a84",
+      "label": "C4-T004",
+      "sourceName": "07_head_screen.png",
+      "texturePath": "public/assets/chapter-4/textures/fd7ee310ecee7a84.webp",
+      "role": "装饰层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -244.978653,
+          -233.4995575
+        ],
+        "nearestStop": {
+          "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+          "frame": 1945,
+          "progress": 0.4010728,
+          "index": 4,
+          "cameraAxisPosition": -252.0
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+            "frame": 1945,
+            "progress": 0.4010728,
+            "index": 4,
+            "cameraAxisPosition": -252.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "07_红青飘带组合",
+      "id": "c4-m-339f59411c30",
+      "textureId": "c4-t-0e0d4c4ca177c277",
+      "label": "C4-T006",
+      "sourceName": "07_红青飘带组合.png",
+      "texturePath": "public/assets/chapter-4/textures/0e0d4c4ca177c277.webp",
+      "role": "动效层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -420.6426697,
+          -396.3163147
+        ],
+        "nearestStop": {
+          "name": "4-6 游宴渐冷 · 阅读停留",
+          "frame": 2977,
+          "progress": 0.613988,
+          "index": 6,
+          "cameraAxisPosition": -420.0
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "4-6 游宴渐冷 · 阅读停留",
+            "frame": 2977,
+            "progress": 0.613988,
+            "index": 6,
+            "cameraAxisPosition": -420.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-1 · 05 · 借用牡丹近景",
+      "id": "c4-m-fc2ce7751b86",
+      "textureId": "c4-t-dff6d174979f0f7f",
+      "label": "C4-T009",
+      "sourceName": "07_左下牡丹花丛.png",
+      "texturePath": "public/assets/chapter-4/textures/dff6d174979f0f7f.webp",
+      "role": "前景遮挡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -2.9142859,
+          9.2285719
+        ],
+        "nearestStop": {
+          "name": "4-1 人花合一 · 阅读停留",
+          "frame": 97,
+          "progress": 0.0198061,
+          "index": 1,
+          "cameraAxisPosition": 0.0
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "4-1 人花合一 · 阅读停留",
+            "frame": 97,
+            "progress": 0.0198061,
+            "index": 1,
+            "cameraAxisPosition": 0.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2883,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-1 · 06 · 借用右侧花丛",
+      "id": "c4-m-ae9671c5a283",
+      "textureId": "c4-t-dff6d174979f0f7f",
+      "label": "C4-T009",
+      "sourceName": "07_左下牡丹花丛.png",
+      "texturePath": "public/assets/chapter-4/textures/dff6d174979f0f7f.webp",
+      "role": "前景遮挡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -15.4133329,
+          -4.4038095
+        ],
+        "nearestStop": {
+          "name": "4-1 人花合一 · 阅读停留",
+          "frame": 97,
+          "progress": 0.0198061,
+          "index": 1,
+          "cameraAxisPosition": 0.0
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "4-1 人花合一 · 阅读停留",
+            "frame": 97,
+            "progress": 0.0198061,
+            "index": 1,
+            "cameraAxisPosition": 0.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2883,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-1 · 04 · 贵妃主体",
+      "id": "c4-m-9b629b23df29",
+      "textureId": "c4-t-e1cae9c94d5623d6",
+      "label": "C4-T010",
+      "sourceName": "02_lady.png",
+      "texturePath": "public/assets/chapter-4/textures/e1cae9c94d5623d6.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -18.9538841,
+          9.4038019
+        ],
+        "nearestStop": {
+          "name": "4-1 人花合一 · 阅读停留",
+          "frame": 97,
+          "progress": 0.0198061,
+          "index": 1,
+          "cameraAxisPosition": 0.0
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "4-1 人花合一 · 阅读停留",
+            "frame": 97,
+            "progress": 0.0198061,
+            "index": 1,
+            "cameraAxisPosition": 0.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 4629,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-1 · 01 · 题字与远宫",
+      "id": "c4-m-2a73d32ab61c",
+      "textureId": "c4-t-252f244a00ea58e7",
+      "label": "C4-T011",
+      "sourceName": "01_text_palace.png",
+      "texturePath": "public/assets/chapter-4/textures/252f244a00ea58e7.webp",
+      "role": "后景连续层",
+      "treatment": "修复",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -4.1621332,
+          23.6726532
+        ],
+        "nearestStop": {
+          "name": "4-1 人花合一 · 阅读停留",
+          "frame": 97,
+          "progress": 0.0198061,
+          "index": 1,
+          "cameraAxisPosition": 0.0
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "4-1 人花合一 · 阅读停留",
+            "frame": 97,
+            "progress": 0.0198061,
+            "index": 1,
+            "cameraAxisPosition": 0.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2595,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-1 · 02 · 民间花市",
+      "id": "c4-m-8fea26a77202",
+      "textureId": "c4-t-9099937bf9205a53",
+      "label": "C4-T012",
+      "sourceName": "03_market.png",
+      "texturePath": "public/assets/chapter-4/textures/9099937bf9205a53.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -1.8973379,
+          21.6186047
+        ],
+        "nearestStop": {
+          "name": "4-1 人花合一 · 阅读停留",
+          "frame": 97,
+          "progress": 0.0198061,
+          "index": 1,
+          "cameraAxisPosition": 0.0
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "4-1 人花合一 · 阅读停留",
+            "frame": 97,
+            "progress": 0.0198061,
+            "index": 1,
+            "cameraAxisPosition": 0.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 3015,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-1 · 03 · 宫廷后景",
+      "id": "c4-m-6edf15acb5cc",
+      "textureId": "c4-t-cfbdce3f4c8a160d",
+      "label": "C4-T013",
+      "sourceName": "04_upper_right_scene.png",
+      "texturePath": "public/assets/chapter-4/textures/cfbdce3f4c8a160d.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -21.3008423,
+          9.045619
+        ],
+        "nearestStop": {
+          "name": "4-1 人花合一 · 阅读停留",
+          "frame": 97,
+          "progress": 0.0198061,
+          "index": 1,
+          "cameraAxisPosition": 0.0
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "4-1 人花合一 · 阅读停留",
+            "frame": 97,
+            "progress": 0.0198061,
+            "index": 1,
+            "cameraAxisPosition": 0.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2583,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-1 · 后景淡墨0",
+      "id": "c4-m-fdde560f3150",
+      "textureId": "c4-t-procedural-1b073f27d900",
+      "label": "C4-T050",
+      "sourceName": "远山淡墨 · 暖青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-1b073f27d900.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -28.0,
+          6.0
+        ],
+        "nearestStop": {
+          "name": "4-1 人花合一 · 阅读停留",
+          "frame": 97,
+          "progress": 0.0198061,
+          "index": 1,
+          "cameraAxisPosition": 0.0
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "4-1 人花合一 · 阅读停留",
+            "frame": 97,
+            "progress": 0.0198061,
+            "index": 1,
+            "cameraAxisPosition": 0.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-1 · 后景淡墨1",
+      "id": "c4-m-bab7045f13be",
+      "textureId": "c4-t-procedural-1b073f27d900",
+      "label": "C4-T050",
+      "sourceName": "远山淡墨 · 暖青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-1b073f27d900.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -17.0,
+          17.0
+        ],
+        "nearestStop": {
+          "name": "4-1 人花合一 · 阅读停留",
+          "frame": 97,
+          "progress": 0.0198061,
+          "index": 1,
+          "cameraAxisPosition": 0.0
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "4-1 人花合一 · 阅读停留",
+            "frame": 97,
+            "progress": 0.0198061,
+            "index": 1,
+            "cameraAxisPosition": 0.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-1 · 后景淡墨2",
+      "id": "c4-m-e3aa6253009a",
+      "textureId": "c4-t-procedural-1b073f27d900",
+      "label": "C4-T050",
+      "sourceName": "远山淡墨 · 暖青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-1b073f27d900.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -6.0,
+          28.0
+        ],
+        "nearestStop": {
+          "name": "4-1 人花合一 · 阅读停留",
+          "frame": 97,
+          "progress": 0.0198061,
+          "index": 1,
+          "cameraAxisPosition": 0.0
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "4-1 人花合一 · 阅读停留",
+            "frame": 97,
+            "progress": 0.0198061,
+            "index": 1,
+            "cameraAxisPosition": 0.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-2 · 06 · 左前牡丹",
+      "id": "c4-m-4f0ffe955323",
+      "textureId": "c4-t-dff6d174979f0f7f",
+      "label": "C4-T009",
+      "sourceName": "07_左下牡丹花丛.png",
+      "texturePath": "public/assets/chapter-4/textures/dff6d174979f0f7f.webp",
+      "role": "前景遮挡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -84.5119553,
+          -70.8554535
+        ],
+        "nearestStop": {
+          "name": "4-2 花王配美人 · 阅读停留",
+          "frame": 625,
+          "progress": 0.1287394,
+          "index": 2,
+          "cameraAxisPosition": -84.0
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "4-2 花王配美人 · 阅读停留",
+            "frame": 625,
+            "progress": 0.1287394,
+            "index": 2,
+            "cameraAxisPosition": -84.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2883,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-2 · 04 · 贵妃主体",
+      "id": "c4-m-a0056c3b2aa9",
+      "textureId": "c4-t-67f7af134f48d513",
+      "label": "C4-T014",
+      "sourceName": "01_仕女完整立绘.png",
+      "texturePath": "public/assets/chapter-4/textures/67f7af134f48d513.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -89.2912598,
+          -69.3507309
+        ],
+        "nearestStop": {
+          "name": "4-2 花王配美人 · 阅读停留",
+          "frame": 625,
+          "progress": 0.1287394,
+          "index": 2,
+          "cameraAxisPosition": -84.0
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "4-2 花王配美人 · 阅读停留",
+            "frame": 625,
+            "progress": 0.1287394,
+            "index": 2,
+            "cameraAxisPosition": -84.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 6138,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-2 · 后景淡墨0",
+      "id": "c4-m-56785b81fc11",
+      "textureId": "c4-t-procedural-1b073f27d900",
+      "label": "C4-T050",
+      "sourceName": "远山淡墨 · 暖青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-1b073f27d900.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -112.0,
+          -78.0
+        ],
+        "nearestStop": {
+          "name": "4-2 花王配美人 · 阅读停留",
+          "frame": 625,
+          "progress": 0.1287394,
+          "index": 2,
+          "cameraAxisPosition": -84.0
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "4-2 花王配美人 · 阅读停留",
+            "frame": 625,
+            "progress": 0.1287394,
+            "index": 2,
+            "cameraAxisPosition": -84.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-2 · 后景淡墨1",
+      "id": "c4-m-9fb2cd122766",
+      "textureId": "c4-t-procedural-1b073f27d900",
+      "label": "C4-T050",
+      "sourceName": "远山淡墨 · 暖青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-1b073f27d900.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -101.0,
+          -67.0
+        ],
+        "nearestStop": {
+          "name": "4-2 花王配美人 · 阅读停留",
+          "frame": 625,
+          "progress": 0.1287394,
+          "index": 2,
+          "cameraAxisPosition": -84.0
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "4-2 花王配美人 · 阅读停留",
+            "frame": 625,
+            "progress": 0.1287394,
+            "index": 2,
+            "cameraAxisPosition": -84.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-2 · 后景淡墨2",
+      "id": "c4-m-94b3ca933215",
+      "textureId": "c4-t-procedural-1b073f27d900",
+      "label": "C4-T050",
+      "sourceName": "远山淡墨 · 暖青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-1b073f27d900.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -90.0,
+          -56.0
+        ],
+        "nearestStop": {
+          "name": "4-2 花王配美人 · 阅读停留",
+          "frame": 625,
+          "progress": 0.1287394,
+          "index": 2,
+          "cameraAxisPosition": -84.0
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "4-2 花王配美人 · 阅读停留",
+            "frame": 625,
+            "progress": 0.1287394,
+            "index": 2,
+            "cameraAxisPosition": -84.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-3 · 06 · 近景花枝",
+      "id": "c4-m-226bebd52816",
+      "textureId": "c4-t-8d8a3c10a919636e",
+      "label": "C4-T015",
+      "sourceName": "05_底部牡丹花枝.png",
+      "texturePath": "public/assets/chapter-4/textures/8d8a3c10a919636e.webp",
+      "role": "前景遮挡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -175.6193237,
+          -152.5471191
+        ],
+        "nearestStop": {
+          "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+          "frame": 1201,
+          "progress": 0.2475758,
+          "index": 3,
+          "cameraAxisPosition": -168.0
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+            "frame": 1201,
+            "progress": 0.2475758,
+            "index": 3,
+            "cameraAxisPosition": -168.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 1794,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-3 · 03 · 唐玄宗",
+      "id": "c4-m-06b6c6897856",
+      "textureId": "c4-t-3dd11823c39694b7",
+      "label": "C4-T016",
+      "sourceName": "02_中央老者.png",
+      "texturePath": "public/assets/chapter-4/textures/3dd11823c39694b7.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -172.3224792,
+          -160.5943604
+        ],
+        "nearestStop": {
+          "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+          "frame": 1201,
+          "progress": 0.2475758,
+          "index": 3,
+          "cameraAxisPosition": -168.0
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+            "frame": 1201,
+            "progress": 0.2475758,
+            "index": 3,
+            "cameraAxisPosition": -168.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 3270,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-3 · 04 · 李白与书案",
+      "id": "c4-m-7b8b8590682b",
+      "textureId": "c4-t-ca10ad51ea43815a",
+      "label": "C4-T017",
+      "sourceName": "04_右侧人物书案组.png",
+      "texturePath": "public/assets/chapter-4/textures/ca10ad51ea43815a.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -187.867218,
+          -174.2787933
+        ],
+        "nearestStop": {
+          "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+          "frame": 1201,
+          "progress": 0.2475758,
+          "index": 3,
+          "cameraAxisPosition": -168.0
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+            "frame": 1201,
+            "progress": 0.2475758,
+            "index": 3,
+            "cameraAxisPosition": -168.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 4347,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-3 · 05 · 赏花贵妃",
+      "id": "c4-m-c8cf0448c153",
+      "textureId": "c4-t-c560c026f36c6328",
+      "label": "C4-T018",
+      "sourceName": "03_中央女子.png",
+      "texturePath": "public/assets/chapter-4/textures/c560c026f36c6328.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -184.3305206,
+          -160.0520172
+        ],
+        "nearestStop": {
+          "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+          "frame": 1201,
+          "progress": 0.2475758,
+          "index": 3,
+          "cameraAxisPosition": -168.0
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+            "frame": 1201,
+            "progress": 0.2475758,
+            "index": 3,
+            "cameraAxisPosition": -168.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2115,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-3 · 01 · 石桥园林",
+      "id": "c4-m-44abb7097745",
+      "textureId": "c4-t-7a67765592ab5b17",
+      "label": "C4-T019",
+      "sourceName": "01_左侧园林石桥花木.png",
+      "texturePath": "public/assets/chapter-4/textures/7a67765592ab5b17.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -169.7542725,
+          -145.6188965
+        ],
+        "nearestStop": {
+          "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+          "frame": 1201,
+          "progress": 0.2475758,
+          "index": 3,
+          "cameraAxisPosition": -168.0
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+            "frame": 1201,
+            "progress": 0.2475758,
+            "index": 3,
+            "cameraAxisPosition": -168.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2646,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-3 · 02 · 沉香亭",
+      "id": "c4-m-dab4b726d019",
+      "textureId": "c4-t-d67bfbb500fc9644",
+      "label": "C4-T020",
+      "sourceName": "06_右上沉香亭.png",
+      "texturePath": "public/assets/chapter-4/textures/d67bfbb500fc9644.webp",
+      "role": "后景连续层",
+      "treatment": "重生成",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -188.5601044,
+          -165.6140747
+        ],
+        "nearestStop": {
+          "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+          "frame": 1201,
+          "progress": 0.2475758,
+          "index": 3,
+          "cameraAxisPosition": -168.0
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+            "frame": 1201,
+            "progress": 0.2475758,
+            "index": 3,
+            "cameraAxisPosition": -168.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2397,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-3 · 后景淡墨0",
+      "id": "c4-m-ed9fde2a6d85",
+      "textureId": "c4-t-procedural-1b073f27d900",
+      "label": "C4-T050",
+      "sourceName": "远山淡墨 · 暖青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-1b073f27d900.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -196.0,
+          -162.0
+        ],
+        "nearestStop": {
+          "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+          "frame": 1201,
+          "progress": 0.2475758,
+          "index": 3,
+          "cameraAxisPosition": -168.0
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+            "frame": 1201,
+            "progress": 0.2475758,
+            "index": 3,
+            "cameraAxisPosition": -168.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-3 · 后景淡墨1",
+      "id": "c4-m-174b8b0987d4",
+      "textureId": "c4-t-procedural-1b073f27d900",
+      "label": "C4-T050",
+      "sourceName": "远山淡墨 · 暖青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-1b073f27d900.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -185.0,
+          -151.0
+        ],
+        "nearestStop": {
+          "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+          "frame": 1201,
+          "progress": 0.2475758,
+          "index": 3,
+          "cameraAxisPosition": -168.0
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+            "frame": 1201,
+            "progress": 0.2475758,
+            "index": 3,
+            "cameraAxisPosition": -168.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-3 · 后景淡墨2",
+      "id": "c4-m-c67468664c03",
+      "textureId": "c4-t-procedural-1b073f27d900",
+      "label": "C4-T050",
+      "sourceName": "远山淡墨 · 暖青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-1b073f27d900.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -174.0,
+          -140.0
+        ],
+        "nearestStop": {
+          "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+          "frame": 1201,
+          "progress": 0.2475758,
+          "index": 3,
+          "cameraAxisPosition": -168.0
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+            "frame": 1201,
+            "progress": 0.2475758,
+            "index": 3,
+            "cameraAxisPosition": -168.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-4 · 07 · 花簇漆器近景",
+      "id": "c4-m-ca532a19aa96",
+      "textureId": "c4-t-ec3d4f5c066f4f21",
+      "label": "C4-T021",
+      "sourceName": "05_lower_peony_lacquer.png",
+      "texturePath": "public/assets/chapter-4/textures/ec3d4f5c066f4f21.webp",
+      "role": "前景遮挡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -256.5880127,
+          -238.2397919
+        ],
+        "nearestStop": {
+          "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+          "frame": 1945,
+          "progress": 0.4010728,
+          "index": 4,
+          "cameraAxisPosition": -252.0
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+            "frame": 1945,
+            "progress": 0.4010728,
+            "index": 4,
+            "cameraAxisPosition": -252.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 1962,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-4 · 03 · 屏风花簇",
+      "id": "c4-m-627665b53237",
+      "textureId": "c4-t-cb2d07ff065afd19",
+      "label": "C4-T022",
+      "sourceName": "02_left_peony.png",
+      "texturePath": "public/assets/chapter-4/textures/cb2d07ff065afd19.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -245.0785675,
+          -232.6928558
+        ],
+        "nearestStop": {
+          "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+          "frame": 1945,
+          "progress": 0.4010728,
+          "index": 4,
+          "cameraAxisPosition": -252.0
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+            "frame": 1945,
+            "progress": 0.4010728,
+            "index": 4,
+            "cameraAxisPosition": -252.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 3048,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-4 · 05 · 香炉园景",
+      "id": "c4-m-288176180452",
+      "textureId": "c4-t-21686c891a219b8d",
+      "label": "C4-T023",
+      "sourceName": "06_lower_right_censer_scene.png",
+      "texturePath": "public/assets/chapter-4/textures/21686c891a219b8d.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -272.0618591,
+          -250.2206879
+        ],
+        "nearestStop": {
+          "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+          "frame": 1945,
+          "progress": 0.4010728,
+          "index": 4,
+          "cameraAxisPosition": -252.0
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+            "frame": 1945,
+            "progress": 0.4010728,
+            "index": 4,
+            "cameraAxisPosition": -252.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.025,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2757,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-4 · 06 · 贵妃主体",
+      "id": "c4-m-8df5e5dd41e9",
+      "textureId": "c4-t-a7c45ede8f4fcf14",
+      "label": "C4-T024",
+      "sourceName": "01_main_noblewoman.png",
+      "texturePath": "public/assets/chapter-4/textures/a7c45ede8f4fcf14.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -257.2840271,
+          -237.0016327
+        ],
+        "nearestStop": {
+          "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+          "frame": 1945,
+          "progress": 0.4010728,
+          "index": 4,
+          "cameraAxisPosition": -252.0
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+            "frame": 1945,
+            "progress": 0.4010728,
+            "index": 4,
+            "cameraAxisPosition": -252.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2439,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-4 · 01 · 宫殿全景",
+      "id": "c4-m-cf43c89210ac",
+      "textureId": "c4-t-885fd71d82b3a113",
+      "label": "C4-T025",
+      "sourceName": "04_upper_palace_panorama.png",
+      "texturePath": "public/assets/chapter-4/textures/885fd71d82b3a113.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -275.4635925,
+          -239.4003906
+        ],
+        "nearestStop": {
+          "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+          "frame": 1945,
+          "progress": 0.4010728,
+          "index": 4,
+          "cameraAxisPosition": -252.0
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+            "frame": 1945,
+            "progress": 0.4010728,
+            "index": 4,
+            "cameraAxisPosition": -252.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2430,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-4 · 后景淡墨0",
+      "id": "c4-m-339f5ea1498d",
+      "textureId": "c4-t-procedural-1b073f27d900",
+      "label": "C4-T050",
+      "sourceName": "远山淡墨 · 暖青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-1b073f27d900.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -280.0,
+          -246.0
+        ],
+        "nearestStop": {
+          "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+          "frame": 1945,
+          "progress": 0.4010728,
+          "index": 4,
+          "cameraAxisPosition": -252.0
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+            "frame": 1945,
+            "progress": 0.4010728,
+            "index": 4,
+            "cameraAxisPosition": -252.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-4 · 后景淡墨1",
+      "id": "c4-m-f74798039e48",
+      "textureId": "c4-t-procedural-1b073f27d900",
+      "label": "C4-T050",
+      "sourceName": "远山淡墨 · 暖青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-1b073f27d900.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -283.2985535,
+          -220.7014465
+        ],
+        "nearestStop": {
+          "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+          "frame": 1945,
+          "progress": 0.4010728,
+          "index": 4,
+          "cameraAxisPosition": -252.0
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+            "frame": 1945,
+            "progress": 0.4010728,
+            "index": 4,
+            "cameraAxisPosition": -252.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-4 · 后景淡墨2",
+      "id": "c4-m-7e06ea80d97f",
+      "textureId": "c4-t-procedural-1b073f27d900",
+      "label": "C4-T050",
+      "sourceName": "远山淡墨 · 暖青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-1b073f27d900.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -258.0,
+          -224.0
+        ],
+        "nearestStop": {
+          "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+          "frame": 1945,
+          "progress": 0.4010728,
+          "index": 4,
+          "cameraAxisPosition": -252.0
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+            "frame": 1945,
+            "progress": 0.4010728,
+            "index": 4,
+            "cameraAxisPosition": -252.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "绢本题字留白",
+      "id": "c4-m-cd50fe97c3a5",
+      "textureId": "c4-t-procedural-04942aeae252",
+      "label": "C4-T051",
+      "sourceName": "题字留白 · 绢本 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-04942aeae252.webp",
+      "role": "留白层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -268.2200012,
+          -258.2200012
+        ],
+        "nearestStop": {
+          "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+          "frame": 1945,
+          "progress": 0.4010728,
+          "index": 4,
+          "cameraAxisPosition": -252.0
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+            "frame": 1945,
+            "progress": 0.4010728,
+            "index": 4,
+            "cameraAxisPosition": -252.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-5 · 04 · 人物与残花",
+      "id": "c4-m-82a872f4ea4b",
+      "textureId": "c4-t-05b13313e4108166",
+      "label": "C4-T026",
+      "sourceName": "01_前景人物花簇.png",
+      "texturePath": "public/assets/chapter-4/textures/05b13313e4108166.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -352.6231689,
+          -317.7597656
+        ],
+        "nearestStop": {
+          "name": "4-5 繁华落幕 · 阅读停留",
+          "frame": 2521,
+          "progress": 0.5199092,
+          "index": 5,
+          "cameraAxisPosition": -336.0
+        },
+        "stopRange": [
+          5,
+          5
+        ],
+        "associatedStops": [
+          {
+            "name": "4-5 繁华落幕 · 阅读停留",
+            "frame": 2521,
+            "progress": 0.5199092,
+            "index": 5,
+            "cameraAxisPosition": -336.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        0.9545454
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 1968,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-5 · 01 · 兵马山峦红日",
+      "id": "c4-m-ac6b25330195",
+      "textureId": "c4-t-849e2bb890c304e8",
+      "label": "C4-T027",
+      "sourceName": "04_右侧兵马山峦红日.png",
+      "texturePath": "public/assets/chapter-4/textures/849e2bb890c304e8.webp",
+      "role": "后景连续层",
+      "treatment": "修复",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -359.7476807,
+          -318.147644
+        ],
+        "nearestStop": {
+          "name": "4-5 繁华落幕 · 阅读停留",
+          "frame": 2521,
+          "progress": 0.5199092,
+          "index": 5,
+          "cameraAxisPosition": -336.0
+        },
+        "stopRange": [
+          5,
+          5
+        ],
+        "associatedStops": [
+          {
+            "name": "4-5 繁华落幕 · 阅读停留",
+            "frame": 2521,
+            "progress": 0.5199092,
+            "index": 5,
+            "cameraAxisPosition": -336.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 1620,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-5 · 02 · 暗处双女性",
+      "id": "c4-m-26fcb84f22b2",
+      "textureId": "c4-t-b6e92ef0c2f7d276",
+      "label": "C4-T028",
+      "sourceName": "03_左上暗处双女性.png",
+      "texturePath": "public/assets/chapter-4/textures/b6e92ef0c2f7d276.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -331.9950867,
+          -315.078064
+        ],
+        "nearestStop": {
+          "name": "4-5 繁华落幕 · 阅读停留",
+          "frame": 2521,
+          "progress": 0.5199092,
+          "index": 5,
+          "cameraAxisPosition": -336.0
+        },
+        "stopRange": [
+          5,
+          5
+        ],
+        "associatedStops": [
+          {
+            "name": "4-5 繁华落幕 · 阅读停留",
+            "frame": 2521,
+            "progress": 0.5199092,
+            "index": 5,
+            "cameraAxisPosition": -336.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 3438,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-6 · 06 · 桌案花木",
+      "id": "c4-m-9bacb27a4010",
+      "textureId": "c4-t-b1cf939a7fd62b36",
+      "label": "C4-T029",
+      "sourceName": "04_下方桌案花木.png",
+      "texturePath": "public/assets/chapter-4/textures/b1cf939a7fd62b36.webp",
+      "role": "前景遮挡层",
+      "treatment": "修复",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -423.0982666,
+          -407.037323
+        ],
+        "nearestStop": {
+          "name": "4-6 游宴渐冷 · 阅读停留",
+          "frame": 2977,
+          "progress": 0.613988,
+          "index": 6,
+          "cameraAxisPosition": -420.0
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "4-6 游宴渐冷 · 阅读停留",
+            "frame": 2977,
+            "progress": 0.613988,
+            "index": 6,
+            "cameraAxisPosition": -420.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2085,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-6 · 03 · 湖畔栏杆",
+      "id": "c4-m-1c7bddf73c54",
+      "textureId": "c4-t-6a3c7d678c390058",
+      "label": "C4-T030",
+      "sourceName": "06_湖边栅栏.png",
+      "texturePath": "public/assets/chapter-4/textures/6a3c7d678c390058.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -438.9971924,
+          -416.4615173
+        ],
+        "nearestStop": {
+          "name": "4-6 游宴渐冷 · 阅读停留",
+          "frame": 2977,
+          "progress": 0.613988,
+          "index": 6,
+          "cameraAxisPosition": -420.0
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "4-6 游宴渐冷 · 阅读停留",
+            "frame": 2977,
+            "progress": 0.613988,
+            "index": 6,
+            "cameraAxisPosition": -420.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 1653,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-6 · 05 · 独立仕女",
+      "id": "c4-m-255f1ce9315f",
+      "textureId": "c4-t-bc4a5364170447bc",
+      "label": "C4-T031",
+      "sourceName": "03_完整仕女.png",
+      "texturePath": "public/assets/chapter-4/textures/bc4a5364170447bc.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -433.524353,
+          -427.3573303
+        ],
+        "nearestStop": {
+          "name": "4-6 游宴渐冷 · 阅读停留",
+          "frame": 2977,
+          "progress": 0.613988,
+          "index": 6,
+          "cameraAxisPosition": -420.0
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "4-6 游宴渐冷 · 阅读停留",
+            "frame": 2977,
+            "progress": 0.613988,
+            "index": 6,
+            "cameraAxisPosition": -420.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 4776,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-6 · 01 · 湖面远宫",
+      "id": "c4-m-037db7fc9e76",
+      "textureId": "c4-t-9762298a57d73ac0",
+      "label": "C4-T032",
+      "sourceName": "05_远景建筑与湖面.png",
+      "texturePath": "public/assets/chapter-4/textures/9762298a57d73ac0.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -445.8165894,
+          -406.1576843
+        ],
+        "nearestStop": {
+          "name": "4-6 游宴渐冷 · 阅读停留",
+          "frame": 2977,
+          "progress": 0.613988,
+          "index": 6,
+          "cameraAxisPosition": -420.0
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "4-6 游宴渐冷 · 阅读停留",
+            "frame": 2977,
+            "progress": 0.613988,
+            "index": 6,
+            "cameraAxisPosition": -420.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 1950,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-6 · 02 · 昔日繁华群像",
+      "id": "c4-m-07972177912f",
+      "textureId": "c4-t-71154db41aab50b1",
+      "label": "C4-T033",
+      "sourceName": "01_上方仙境群像.png",
+      "texturePath": "public/assets/chapter-4/textures/71154db41aab50b1.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -432.2469788,
+          -398.9499512
+        ],
+        "nearestStop": {
+          "name": "4-6 游宴渐冷 · 阅读停留",
+          "frame": 2977,
+          "progress": 0.613988,
+          "index": 6,
+          "cameraAxisPosition": -420.0
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "4-6 游宴渐冷 · 阅读停留",
+            "frame": 2977,
+            "progress": 0.613988,
+            "index": 6,
+            "cameraAxisPosition": -420.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2325,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-6 · 后景淡墨0",
+      "id": "c4-m-6f18965f16f7",
+      "textureId": "c4-t-procedural-9b9179558644",
+      "label": "C4-T052",
+      "sourceName": "远山淡墨 · 冷青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-9b9179558644.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -448.0,
+          -414.0
+        ],
+        "nearestStop": {
+          "name": "4-6 游宴渐冷 · 阅读停留",
+          "frame": 2977,
+          "progress": 0.613988,
+          "index": 6,
+          "cameraAxisPosition": -420.0
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "4-6 游宴渐冷 · 阅读停留",
+            "frame": 2977,
+            "progress": 0.613988,
+            "index": 6,
+            "cameraAxisPosition": -420.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-6 · 后景淡墨1",
+      "id": "c4-m-d4116f26f988",
+      "textureId": "c4-t-procedural-9b9179558644",
+      "label": "C4-T052",
+      "sourceName": "远山淡墨 · 冷青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-9b9179558644.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -437.0,
+          -403.0
+        ],
+        "nearestStop": {
+          "name": "4-6 游宴渐冷 · 阅读停留",
+          "frame": 2977,
+          "progress": 0.613988,
+          "index": 6,
+          "cameraAxisPosition": -420.0
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "4-6 游宴渐冷 · 阅读停留",
+            "frame": 2977,
+            "progress": 0.613988,
+            "index": 6,
+            "cameraAxisPosition": -420.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-6 · 后景淡墨2",
+      "id": "c4-m-517226294298",
+      "textureId": "c4-t-procedural-9b9179558644",
+      "label": "C4-T052",
+      "sourceName": "远山淡墨 · 冷青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-9b9179558644.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -426.0,
+          -392.0
+        ],
+        "nearestStop": {
+          "name": "4-6 游宴渐冷 · 阅读停留",
+          "frame": 2977,
+          "progress": 0.613988,
+          "index": 6,
+          "cameraAxisPosition": -420.0
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "4-6 游宴渐冷 · 阅读停留",
+            "frame": 2977,
+            "progress": 0.613988,
+            "index": 6,
+            "cameraAxisPosition": -420.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-7 · 05 · 盛放牡丹",
+      "id": "c4-m-1f699c96ccf7",
+      "textureId": "c4-t-e68625aaa294045e",
+      "label": "C4-T034",
+      "sourceName": "02_前景牡丹花簇.png",
+      "texturePath": "public/assets/chapter-4/textures/e68625aaa294045e.webp",
+      "role": "前景遮挡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -508.8093262,
+          -496.6664429
+        ],
+        "nearestStop": {
+          "name": "4-7 盛世与乱世 · 阅读停留",
+          "frame": 3457,
+          "progress": 0.7130184,
+          "index": 7,
+          "cameraAxisPosition": -504.0
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "4-7 盛世与乱世 · 阅读停留",
+            "frame": 3457,
+            "progress": 0.7130184,
+            "index": 7,
+            "cameraAxisPosition": -504.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2343,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-7 · 03 · 盛世人物",
+      "id": "c4-m-a2ac7341cc12",
+      "textureId": "c4-t-1f23b484842f440c",
+      "label": "C4-T035",
+      "sourceName": "01_左侧人物与飘带.png",
+      "texturePath": "public/assets/chapter-4/textures/1f23b484842f440c.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -503.9348145,
+          -486.0242004
+        ],
+        "nearestStop": {
+          "name": "4-7 盛世与乱世 · 阅读停留",
+          "frame": 3457,
+          "progress": 0.7130184,
+          "index": 7,
+          "cameraAxisPosition": -504.0
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "4-7 盛世与乱世 · 阅读停留",
+            "frame": 3457,
+            "progress": 0.7130184,
+            "index": 7,
+            "cameraAxisPosition": -504.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 3294,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-7 · 01 · 盛世宫苑",
+      "id": "c4-m-8af1ce881c46",
+      "textureId": "c4-t-889b1d9a72fb5750",
+      "label": "C4-T037",
+      "sourceName": "04_左上人物后景.png",
+      "texturePath": "public/assets/chapter-4/textures/889b1d9a72fb5750.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -507.4947815,
+          -478.274353
+        ],
+        "nearestStop": {
+          "name": "4-7 盛世与乱世 · 阅读停留",
+          "frame": 3457,
+          "progress": 0.7130184,
+          "index": 7,
+          "cameraAxisPosition": -504.0
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "4-7 盛世与乱世 · 阅读停留",
+            "frame": 3457,
+            "progress": 0.7130184,
+            "index": 7,
+            "cameraAxisPosition": -504.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 3069,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-7 · 02 · 乱世兵燹",
+      "id": "c4-m-9e802ebaea43",
+      "textureId": "c4-t-a7f119e872049298",
+      "label": "C4-T038",
+      "sourceName": "05_右侧人物后景.png",
+      "texturePath": "public/assets/chapter-4/textures/a7f119e872049298.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -533.102356,
+          -499.7984619
+        ],
+        "nearestStop": {
+          "name": "4-7 盛世与乱世 · 阅读停留",
+          "frame": 3457,
+          "progress": 0.7130184,
+          "index": 7,
+          "cameraAxisPosition": -504.0
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "4-7 盛世与乱世 · 阅读停留",
+            "frame": 3457,
+            "progress": 0.7130184,
+            "index": 7,
+            "cameraAxisPosition": -504.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2544,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-7 · 后景淡墨0",
+      "id": "c4-m-efbe5e204531",
+      "textureId": "c4-t-procedural-9b9179558644",
+      "label": "C4-T052",
+      "sourceName": "远山淡墨 · 冷青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-9b9179558644.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -532.0,
+          -498.0
+        ],
+        "nearestStop": {
+          "name": "4-7 盛世与乱世 · 阅读停留",
+          "frame": 3457,
+          "progress": 0.7130184,
+          "index": 7,
+          "cameraAxisPosition": -504.0
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "4-7 盛世与乱世 · 阅读停留",
+            "frame": 3457,
+            "progress": 0.7130184,
+            "index": 7,
+            "cameraAxisPosition": -504.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-7 · 后景淡墨1",
+      "id": "c4-m-8d4c8686a9fd",
+      "textureId": "c4-t-procedural-9b9179558644",
+      "label": "C4-T052",
+      "sourceName": "远山淡墨 · 冷青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-9b9179558644.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -521.0,
+          -487.0
+        ],
+        "nearestStop": {
+          "name": "4-7 盛世与乱世 · 阅读停留",
+          "frame": 3457,
+          "progress": 0.7130184,
+          "index": 7,
+          "cameraAxisPosition": -504.0
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "4-7 盛世与乱世 · 阅读停留",
+            "frame": 3457,
+            "progress": 0.7130184,
+            "index": 7,
+            "cameraAxisPosition": -504.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-7 · 后景淡墨2",
+      "id": "c4-m-4bee7dc135a4",
+      "textureId": "c4-t-procedural-9b9179558644",
+      "label": "C4-T052",
+      "sourceName": "远山淡墨 · 冷青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-9b9179558644.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -510.0,
+          -476.0
+        ],
+        "nearestStop": {
+          "name": "4-7 盛世与乱世 · 阅读停留",
+          "frame": 3457,
+          "progress": 0.7130184,
+          "index": 7,
+          "cameraAxisPosition": -504.0
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "4-7 盛世与乱世 · 阅读停留",
+            "frame": 3457,
+            "progress": 0.7130184,
+            "index": 7,
+            "cameraAxisPosition": -504.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "盛衰之间的题诗留白",
+      "id": "c4-m-27bbbf958c25",
+      "textureId": "c4-t-procedural-04942aeae252",
+      "label": "C4-T051",
+      "sourceName": "题字留白 · 绢本 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-04942aeae252.webp",
+      "role": "留白层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -509.2097168,
+          -502.382019
+        ],
+        "nearestStop": {
+          "name": "4-7 盛世与乱世 · 阅读停留",
+          "frame": 3457,
+          "progress": 0.7130184,
+          "index": 7,
+          "cameraAxisPosition": -504.0
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "4-7 盛世与乱世 · 阅读停留",
+            "frame": 3457,
+            "progress": 0.7130184,
+            "index": 7,
+            "cameraAxisPosition": -504.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-8 · 04 · 近景牡丹",
+      "id": "c4-m-caec661dd727",
+      "textureId": "c4-t-9dd4d859489ec0c5",
+      "label": "C4-T039",
+      "sourceName": "01-牡丹花簇.png",
+      "texturePath": "public/assets/chapter-4/textures/9dd4d859489ec0c5.webp",
+      "role": "前景遮挡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -585.0563354,
+          -576.0588989
+        ],
+        "nearestStop": {
+          "name": "4-8 晚唐追忆 · 阅读停留",
+          "frame": 4009,
+          "progress": 0.8269032,
+          "index": 8,
+          "cameraAxisPosition": -588.0
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "4-8 晚唐追忆 · 阅读停留",
+            "frame": 4009,
+            "progress": 0.8269032,
+            "index": 8,
+            "cameraAxisPosition": -588.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 3546,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-8 · 03 · 文人与书案",
+      "id": "c4-m-6ae53611fa8f",
+      "textureId": "c4-t-4460e78f1171c8d0",
+      "label": "C4-T040",
+      "sourceName": "02-人物与书案.png",
+      "texturePath": "public/assets/chapter-4/textures/4460e78f1171c8d0.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -594.1790771,
+          -572.3439331
+        ],
+        "nearestStop": {
+          "name": "4-8 晚唐追忆 · 阅读停留",
+          "frame": 4009,
+          "progress": 0.8269032,
+          "index": 8,
+          "cameraAxisPosition": -588.0
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "4-8 晚唐追忆 · 阅读停留",
+            "frame": 4009,
+            "progress": 0.8269032,
+            "index": 8,
+            "cameraAxisPosition": -588.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2259,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-8 · 01 · 故国山水城景",
+      "id": "c4-m-ddd55b775f94",
+      "textureId": "c4-t-7bd5ef5c50333253",
+      "label": "C4-T041",
+      "sourceName": "03-山水城景.png",
+      "texturePath": "public/assets/chapter-4/textures/7bd5ef5c50333253.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -614.4298096,
+          -576.3931885
+        ],
+        "nearestStop": {
+          "name": "4-8 晚唐追忆 · 阅读停留",
+          "frame": 4009,
+          "progress": 0.8269032,
+          "index": 8,
+          "cameraAxisPosition": -588.0
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "4-8 晚唐追忆 · 阅读停留",
+            "frame": 4009,
+            "progress": 0.8269032,
+            "index": 8,
+            "cameraAxisPosition": -588.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2643,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-8 · 后景淡墨0",
+      "id": "c4-m-2b3d9f2b29b2",
+      "textureId": "c4-t-procedural-9b9179558644",
+      "label": "C4-T052",
+      "sourceName": "远山淡墨 · 冷青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-9b9179558644.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -616.0,
+          -582.0
+        ],
+        "nearestStop": {
+          "name": "4-8 晚唐追忆 · 阅读停留",
+          "frame": 4009,
+          "progress": 0.8269032,
+          "index": 8,
+          "cameraAxisPosition": -588.0
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "4-8 晚唐追忆 · 阅读停留",
+            "frame": 4009,
+            "progress": 0.8269032,
+            "index": 8,
+            "cameraAxisPosition": -588.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-8 · 后景淡墨2",
+      "id": "c4-m-107ae923c58d",
+      "textureId": "c4-t-procedural-9b9179558644",
+      "label": "C4-T052",
+      "sourceName": "远山淡墨 · 冷青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-9b9179558644.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -594.0,
+          -560.0
+        ],
+        "nearestStop": {
+          "name": "4-8 晚唐追忆 · 阅读停留",
+          "frame": 4009,
+          "progress": 0.8269032,
+          "index": 8,
+          "cameraAxisPosition": -588.0
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "4-8 晚唐追忆 · 阅读停留",
+            "frame": 4009,
+            "progress": 0.8269032,
+            "index": 8,
+            "cameraAxisPosition": -588.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "晚唐题诗留白",
+      "id": "c4-m-8795dd8f961b",
+      "textureId": "c4-t-procedural-04942aeae252",
+      "label": "C4-T051",
+      "sourceName": "题字留白 · 绢本 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-04942aeae252.webp",
+      "role": "留白层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -603.7800293,
+          -583.7800293
+        ],
+        "nearestStop": {
+          "name": "4-8 晚唐追忆 · 阅读停留",
+          "frame": 4009,
+          "progress": 0.8269032,
+          "index": 8,
+          "cameraAxisPosition": -588.0
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "4-8 晚唐追忆 · 阅读停留",
+            "frame": 4009,
+            "progress": 0.8269032,
+            "index": 8,
+            "cameraAxisPosition": -588.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-9 · 07 · 繁华牡丹飘带",
+      "id": "c4-m-3d79282b3927",
+      "textureId": "c4-t-304ad65e52aa7b85",
+      "label": "C4-T042",
+      "sourceName": "05_左下牡丹与飘带.png",
+      "texturePath": "public/assets/chapter-4/textures/304ad65e52aa7b85.webp",
+      "role": "前景遮挡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -674.5996094,
+          -659.6802979
+        ],
+        "nearestStop": {
+          "name": "4-9 千古兴衰 · 阅读停留",
+          "frame": 4465,
+          "progress": 0.9209821,
+          "index": 9,
+          "cameraAxisPosition": -672.0
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "4-9 千古兴衰 · 阅读停留",
+            "frame": 4465,
+            "progress": 0.9209821,
+            "index": 9,
+            "cameraAxisPosition": -672.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2709,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-9 · 08 · 残花枝",
+      "id": "c4-m-c2e758e5be6e",
+      "textureId": "c4-t-15a5bc4fe987db37",
+      "label": "C4-T043",
+      "sourceName": "07_右下牡丹花枝.png",
+      "texturePath": "public/assets/chapter-4/textures/15a5bc4fe987db37.webp",
+      "role": "前景遮挡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -685.6520386,
+          -671.9224854
+        ],
+        "nearestStop": {
+          "name": "4-9 千古兴衰 · 阅读停留",
+          "frame": 4465,
+          "progress": 0.9209821,
+          "index": 9,
+          "cameraAxisPosition": -672.0
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "4-9 千古兴衰 · 阅读停留",
+            "frame": 4465,
+            "progress": 0.9209821,
+            "index": 9,
+            "cameraAxisPosition": -672.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2085,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-9 · 08 · 残花枝.001",
+      "id": "c4-m-3ec068886352",
+      "textureId": "c4-t-15a5bc4fe987db37",
+      "label": "C4-T043",
+      "sourceName": "07_右下牡丹花枝.png",
+      "texturePath": "public/assets/chapter-4/textures/15a5bc4fe987db37.webp",
+      "role": "前景遮挡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -434.3905029,
+          -425.6699219
+        ],
+        "nearestStop": {
+          "name": "4-6 游宴渐冷 · 阅读停留",
+          "frame": 2977,
+          "progress": 0.613988,
+          "index": 6,
+          "cameraAxisPosition": -420.0
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "4-6 游宴渐冷 · 阅读停留",
+            "frame": 2977,
+            "progress": 0.613988,
+            "index": 6,
+            "cameraAxisPosition": -420.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2085,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-9 · 05 · 盛世美人",
+      "id": "c4-m-e655a6c540d6",
+      "textureId": "c4-t-d246111f449a1e17",
+      "label": "C4-T044",
+      "sourceName": "02_左侧仕女.png",
+      "texturePath": "public/assets/chapter-4/textures/d246111f449a1e17.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -669.4013672,
+          -655.7247314
+        ],
+        "nearestStop": {
+          "name": "4-9 千古兴衰 · 阅读停留",
+          "frame": 4465,
+          "progress": 0.9209821,
+          "index": 9,
+          "cameraAxisPosition": -672.0
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "4-9 千古兴衰 · 阅读停留",
+            "frame": 4465,
+            "progress": 0.9209821,
+            "index": 9,
+            "cameraAxisPosition": -672.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2997,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-9 · 06 · 乱世背影",
+      "id": "c4-m-b743d5af98fb",
+      "textureId": "c4-t-b5fbb2045f86d536",
+      "label": "C4-T045",
+      "sourceName": "06_右侧仕女与飘带.png",
+      "texturePath": "public/assets/chapter-4/textures/b5fbb2045f86d536.webp",
+      "role": "中景承接层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -687.0576172,
+          -676.1047974
+        ],
+        "nearestStop": {
+          "name": "4-9 千古兴衰 · 阅读停留",
+          "frame": 4465,
+          "progress": 0.9209821,
+          "index": 9,
+          "cameraAxisPosition": -672.0
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "4-9 千古兴衰 · 阅读停留",
+            "frame": 4465,
+            "progress": 0.9209821,
+            "index": 9,
+            "cameraAxisPosition": -672.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.15,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 1971,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-9 · 01 · 宫灯市集",
+      "id": "c4-m-d6fd06cc110f",
+      "textureId": "c4-t-27b98cbd5a3702a7",
+      "label": "C4-T046",
+      "sourceName": "01_左上宫灯市集.png",
+      "texturePath": "public/assets/chapter-4/textures/27b98cbd5a3702a7.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -676.9417725,
+          -645.697876
+        ],
+        "nearestStop": {
+          "name": "4-9 千古兴衰 · 阅读停留",
+          "frame": 4465,
+          "progress": 0.9209821,
+          "index": 9,
+          "cameraAxisPosition": -672.0
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "4-9 千古兴衰 · 阅读停留",
+            "frame": 4465,
+            "progress": 0.9209821,
+            "index": 9,
+            "cameraAxisPosition": -672.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2331,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-9 · 02 · 残城远景",
+      "id": "c4-m-8d06fa81ebff",
+      "textureId": "c4-t-77a423cccdc1be24",
+      "label": "C4-T047",
+      "sourceName": "08_右侧中部残败景象.png",
+      "texturePath": "public/assets/chapter-4/textures/77a423cccdc1be24.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -701.9365234,
+          -658.949707
+        ],
+        "nearestStop": {
+          "name": "4-9 千古兴衰 · 阅读停留",
+          "frame": 4465,
+          "progress": 0.9209821,
+          "index": 9,
+          "cameraAxisPosition": -672.0
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "4-9 千古兴衰 · 阅读停留",
+            "frame": 4465,
+            "progress": 0.9209821,
+            "index": 9,
+            "cameraAxisPosition": -672.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 1728,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-9 · 后景淡墨0",
+      "id": "c4-m-ed0e00ec089f",
+      "textureId": "c4-t-procedural-9b9179558644",
+      "label": "C4-T052",
+      "sourceName": "远山淡墨 · 冷青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-9b9179558644.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -700.0,
+          -666.0
+        ],
+        "nearestStop": {
+          "name": "4-9 千古兴衰 · 阅读停留",
+          "frame": 4465,
+          "progress": 0.9209821,
+          "index": 9,
+          "cameraAxisPosition": -672.0
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "4-9 千古兴衰 · 阅读停留",
+            "frame": 4465,
+            "progress": 0.9209821,
+            "index": 9,
+            "cameraAxisPosition": -672.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-9 · 后景淡墨1",
+      "id": "c4-m-030c24bb4d3a",
+      "textureId": "c4-t-procedural-9b9179558644",
+      "label": "C4-T052",
+      "sourceName": "远山淡墨 · 冷青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-9b9179558644.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -689.0,
+          -655.0
+        ],
+        "nearestStop": {
+          "name": "4-9 千古兴衰 · 阅读停留",
+          "frame": 4465,
+          "progress": 0.9209821,
+          "index": 9,
+          "cameraAxisPosition": -672.0
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "4-9 千古兴衰 · 阅读停留",
+            "frame": 4465,
+            "progress": 0.9209821,
+            "index": 9,
+            "cameraAxisPosition": -672.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "4-9 · 后景淡墨2",
+      "id": "c4-m-6838da06367d",
+      "textureId": "c4-t-procedural-9b9179558644",
+      "label": "C4-T052",
+      "sourceName": "远山淡墨 · 冷青 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-9b9179558644.webp",
+      "role": "后景连续层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -678.0,
+          -644.0
+        ],
+        "nearestStop": {
+          "name": "4-9 千古兴衰 · 阅读停留",
+          "frame": 4465,
+          "progress": 0.9209821,
+          "index": 9,
+          "cameraAxisPosition": -672.0
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "4-9 千古兴衰 · 阅读停留",
+            "frame": 4465,
+            "progress": 0.9209821,
+            "index": 9,
+            "cameraAxisPosition": -672.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡1 · 云气1",
+      "id": "c4-m-7ae26c851a29",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -71.5,
+          -38.5
+        ],
+        "nearestStop": {
+          "name": "4-2 花王配美人 · 阅读停留",
+          "frame": 625,
+          "progress": 0.1287394,
+          "index": 2,
+          "cameraAxisPosition": -84.0
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "4-2 花王配美人 · 阅读停留",
+            "frame": 625,
+            "progress": 0.1287394,
+            "index": 2,
+            "cameraAxisPosition": -84.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡1 · 云气2",
+      "id": "c4-m-99f7bc0b0202",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -55.0,
+          -13.0
+        ],
+        "nearestStop": {
+          "name": "4-1 人花合一 · 阅读停留",
+          "frame": 97,
+          "progress": 0.0198061,
+          "index": 1,
+          "cameraAxisPosition": 0.0
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "4-1 人花合一 · 阅读停留",
+            "frame": 97,
+            "progress": 0.0198061,
+            "index": 1,
+            "cameraAxisPosition": 0.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡1 · 云气3",
+      "id": "c4-m-44ea0dcc2e4e",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -66.0,
+          -18.0
+        ],
+        "nearestStop": {
+          "name": "4-1 人花合一 · 阅读停留",
+          "frame": 97,
+          "progress": 0.0198061,
+          "index": 1,
+          "cameraAxisPosition": 0.0
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "4-1 人花合一 · 阅读停留",
+            "frame": 97,
+            "progress": 0.0198061,
+            "index": 1,
+            "cameraAxisPosition": 0.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡1 · 近景花枝与飘带",
+      "id": "c4-m-4279f5d453c1",
+      "textureId": "c4-t-304ad65e52aa7b85",
+      "label": "C4-T042",
+      "sourceName": "05_左下牡丹与飘带.png",
+      "texturePath": "public/assets/chapter-4/textures/304ad65e52aa7b85.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -27.7843437,
+          -12.2843437
+        ],
+        "nearestStop": {
+          "name": "4-1 人花合一 · 阅读停留",
+          "frame": 97,
+          "progress": 0.0198061,
+          "index": 1,
+          "cameraAxisPosition": 0.0
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "4-1 人花合一 · 阅读停留",
+            "frame": 97,
+            "progress": 0.0198061,
+            "index": 1,
+            "cameraAxisPosition": 0.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2709,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡1 · 远侧花丛",
+      "id": "c4-m-3ac4cffe4c5f",
+      "textureId": "c4-t-dff6d174979f0f7f",
+      "label": "C4-T009",
+      "sourceName": "07_左下牡丹花丛.png",
+      "texturePath": "public/assets/chapter-4/textures/dff6d174979f0f7f.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -7.6316833,
+          4.4119492
+        ],
+        "nearestStop": {
+          "name": "4-1 人花合一 · 阅读停留",
+          "frame": 97,
+          "progress": 0.0198061,
+          "index": 1,
+          "cameraAxisPosition": 0.0
+        },
+        "stopRange": [
+          1,
+          1
+        ],
+        "associatedStops": [
+          {
+            "name": "4-1 人花合一 · 阅读停留",
+            "frame": 97,
+            "progress": 0.0198061,
+            "index": 1,
+            "cameraAxisPosition": 0.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2883,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡2 · 云气1",
+      "id": "c4-m-4f5e9d3f0552",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -155.5,
+          -122.5
+        ],
+        "nearestStop": {
+          "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+          "frame": 1201,
+          "progress": 0.2475758,
+          "index": 3,
+          "cameraAxisPosition": -168.0
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+            "frame": 1201,
+            "progress": 0.2475758,
+            "index": 3,
+            "cameraAxisPosition": -168.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡2 · 云气2",
+      "id": "c4-m-b2461fd36b03",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -139.0,
+          -97.0
+        ],
+        "nearestStop": {
+          "name": "4-2 花王配美人 · 阅读停留",
+          "frame": 625,
+          "progress": 0.1287394,
+          "index": 2,
+          "cameraAxisPosition": -84.0
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "4-2 花王配美人 · 阅读停留",
+            "frame": 625,
+            "progress": 0.1287394,
+            "index": 2,
+            "cameraAxisPosition": -84.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡2 · 云气3",
+      "id": "c4-m-82f141c43087",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -150.0,
+          -102.0
+        ],
+        "nearestStop": {
+          "name": "4-2 花王配美人 · 阅读停留",
+          "frame": 625,
+          "progress": 0.1287394,
+          "index": 2,
+          "cameraAxisPosition": -84.0
+        },
+        "stopRange": [
+          2,
+          2
+        ],
+        "associatedStops": [
+          {
+            "name": "4-2 花王配美人 · 阅读停留",
+            "frame": 625,
+            "progress": 0.1287394,
+            "index": 2,
+            "cameraAxisPosition": -84.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡3 · 云气1",
+      "id": "c4-m-3c633f2cf083",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -239.5,
+          -206.5
+        ],
+        "nearestStop": {
+          "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+          "frame": 1945,
+          "progress": 0.4010728,
+          "index": 4,
+          "cameraAxisPosition": -252.0
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+            "frame": 1945,
+            "progress": 0.4010728,
+            "index": 4,
+            "cameraAxisPosition": -252.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡3 · 云气2",
+      "id": "c4-m-f9c3c214831f",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -223.0,
+          -181.0
+        ],
+        "nearestStop": {
+          "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+          "frame": 1201,
+          "progress": 0.2475758,
+          "index": 3,
+          "cameraAxisPosition": -168.0
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+            "frame": 1201,
+            "progress": 0.2475758,
+            "index": 3,
+            "cameraAxisPosition": -168.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡3 · 云气3",
+      "id": "c4-m-4191383915f0",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -234.0,
+          -186.0
+        ],
+        "nearestStop": {
+          "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+          "frame": 1201,
+          "progress": 0.2475758,
+          "index": 3,
+          "cameraAxisPosition": -168.0
+        },
+        "stopRange": [
+          3,
+          3
+        ],
+        "associatedStops": [
+          {
+            "name": "4-3 沉香亭赏花题诗 · 阅读停留",
+            "frame": 1201,
+            "progress": 0.2475758,
+            "index": 3,
+            "cameraAxisPosition": -168.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡4 · 云气1",
+      "id": "c4-m-e7f65ca401f4",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -323.5,
+          -290.5
+        ],
+        "nearestStop": {
+          "name": "4-5 繁华落幕 · 阅读停留",
+          "frame": 2521,
+          "progress": 0.5199092,
+          "index": 5,
+          "cameraAxisPosition": -336.0
+        },
+        "stopRange": [
+          5,
+          5
+        ],
+        "associatedStops": [
+          {
+            "name": "4-5 繁华落幕 · 阅读停留",
+            "frame": 2521,
+            "progress": 0.5199092,
+            "index": 5,
+            "cameraAxisPosition": -336.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡4 · 云气2",
+      "id": "c4-m-3a29f6228b84",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -307.0,
+          -265.0
+        ],
+        "nearestStop": {
+          "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+          "frame": 1945,
+          "progress": 0.4010728,
+          "index": 4,
+          "cameraAxisPosition": -252.0
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+            "frame": 1945,
+            "progress": 0.4010728,
+            "index": 4,
+            "cameraAxisPosition": -252.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡4 · 云气3",
+      "id": "c4-m-c55443b7077f",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -318.0,
+          -270.0
+        ],
+        "nearestStop": {
+          "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+          "frame": 1945,
+          "progress": 0.4010728,
+          "index": 4,
+          "cameraAxisPosition": -252.0
+        },
+        "stopRange": [
+          4,
+          4
+        ],
+        "associatedStops": [
+          {
+            "name": "4-4 牡丹风尚鼎盛 · 阅读停留",
+            "frame": 1945,
+            "progress": 0.4010728,
+            "index": 4,
+            "cameraAxisPosition": -252.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡5 · 云气1",
+      "id": "c4-m-0343710aaf09",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -407.5,
+          -374.5
+        ],
+        "nearestStop": {
+          "name": "4-6 游宴渐冷 · 阅读停留",
+          "frame": 2977,
+          "progress": 0.613988,
+          "index": 6,
+          "cameraAxisPosition": -420.0
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "4-6 游宴渐冷 · 阅读停留",
+            "frame": 2977,
+            "progress": 0.613988,
+            "index": 6,
+            "cameraAxisPosition": -420.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡5 · 云气2",
+      "id": "c4-m-e7cc8b49964d",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -391.0,
+          -349.0
+        ],
+        "nearestStop": {
+          "name": "4-5 繁华落幕 · 阅读停留",
+          "frame": 2521,
+          "progress": 0.5199092,
+          "index": 5,
+          "cameraAxisPosition": -336.0
+        },
+        "stopRange": [
+          5,
+          5
+        ],
+        "associatedStops": [
+          {
+            "name": "4-5 繁华落幕 · 阅读停留",
+            "frame": 2521,
+            "progress": 0.5199092,
+            "index": 5,
+            "cameraAxisPosition": -336.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡5 · 云气3",
+      "id": "c4-m-655d546dcb4d",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -402.0,
+          -354.0
+        ],
+        "nearestStop": {
+          "name": "4-5 繁华落幕 · 阅读停留",
+          "frame": 2521,
+          "progress": 0.5199092,
+          "index": 5,
+          "cameraAxisPosition": -336.0
+        },
+        "stopRange": [
+          5,
+          5
+        ],
+        "associatedStops": [
+          {
+            "name": "4-5 繁华落幕 · 阅读停留",
+            "frame": 2521,
+            "progress": 0.5199092,
+            "index": 5,
+            "cameraAxisPosition": -336.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡6 · 云气1",
+      "id": "c4-m-2592eb6b5e3a",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -491.5,
+          -458.5
+        ],
+        "nearestStop": {
+          "name": "4-7 盛世与乱世 · 阅读停留",
+          "frame": 3457,
+          "progress": 0.7130184,
+          "index": 7,
+          "cameraAxisPosition": -504.0
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "4-7 盛世与乱世 · 阅读停留",
+            "frame": 3457,
+            "progress": 0.7130184,
+            "index": 7,
+            "cameraAxisPosition": -504.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡6 · 云气2",
+      "id": "c4-m-d2b8e4282dce",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -475.0,
+          -433.0
+        ],
+        "nearestStop": {
+          "name": "4-6 游宴渐冷 · 阅读停留",
+          "frame": 2977,
+          "progress": 0.613988,
+          "index": 6,
+          "cameraAxisPosition": -420.0
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "4-6 游宴渐冷 · 阅读停留",
+            "frame": 2977,
+            "progress": 0.613988,
+            "index": 6,
+            "cameraAxisPosition": -420.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡6 · 云气3",
+      "id": "c4-m-12e1dffa5d10",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -486.0,
+          -438.0
+        ],
+        "nearestStop": {
+          "name": "4-6 游宴渐冷 · 阅读停留",
+          "frame": 2977,
+          "progress": 0.613988,
+          "index": 6,
+          "cameraAxisPosition": -420.0
+        },
+        "stopRange": [
+          6,
+          6
+        ],
+        "associatedStops": [
+          {
+            "name": "4-6 游宴渐冷 · 阅读停留",
+            "frame": 2977,
+            "progress": 0.613988,
+            "index": 6,
+            "cameraAxisPosition": -420.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡7 · 云气1",
+      "id": "c4-m-15ab5734526a",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -575.5,
+          -542.5
+        ],
+        "nearestStop": {
+          "name": "4-8 晚唐追忆 · 阅读停留",
+          "frame": 4009,
+          "progress": 0.8269032,
+          "index": 8,
+          "cameraAxisPosition": -588.0
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "4-8 晚唐追忆 · 阅读停留",
+            "frame": 4009,
+            "progress": 0.8269032,
+            "index": 8,
+            "cameraAxisPosition": -588.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡7 · 云气3",
+      "id": "c4-m-c8edbcbbc7bc",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -570.0,
+          -522.0
+        ],
+        "nearestStop": {
+          "name": "4-7 盛世与乱世 · 阅读停留",
+          "frame": 3457,
+          "progress": 0.7130184,
+          "index": 7,
+          "cameraAxisPosition": -504.0
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "4-7 盛世与乱世 · 阅读停留",
+            "frame": 3457,
+            "progress": 0.7130184,
+            "index": 7,
+            "cameraAxisPosition": -504.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡7 · 近景花枝与飘带",
+      "id": "c4-m-d734b7f9a24b",
+      "textureId": "c4-t-9dd4d859489ec0c5",
+      "label": "C4-T039",
+      "sourceName": "01-牡丹花簇.png",
+      "texturePath": "public/assets/chapter-4/textures/9dd4d859489ec0c5.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -548.75,
+          -533.25
+        ],
+        "nearestStop": {
+          "name": "4-7 盛世与乱世 · 阅读停留",
+          "frame": 3457,
+          "progress": 0.7130184,
+          "index": 7,
+          "cameraAxisPosition": -504.0
+        },
+        "stopRange": [
+          7,
+          7
+        ],
+        "associatedStops": [
+          {
+            "name": "4-7 盛世与乱世 · 阅读停留",
+            "frame": 3457,
+            "progress": 0.7130184,
+            "index": 7,
+            "cameraAxisPosition": -504.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 3546,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡7 · 远侧花丛",
+      "id": "c4-m-03926f54bf44",
+      "textureId": "c4-t-dff6d174979f0f7f",
+      "label": "C4-T009",
+      "sourceName": "07_左下牡丹花丛.png",
+      "texturePath": "public/assets/chapter-4/textures/dff6d174979f0f7f.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -562.0,
+          -554.0
+        ],
+        "nearestStop": {
+          "name": "4-8 晚唐追忆 · 阅读停留",
+          "frame": 4009,
+          "progress": 0.8269032,
+          "index": 8,
+          "cameraAxisPosition": -588.0
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "4-8 晚唐追忆 · 阅读停留",
+            "frame": 4009,
+            "progress": 0.8269032,
+            "index": 8,
+            "cameraAxisPosition": -588.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2883,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡8 · 云气1",
+      "id": "c4-m-ff24f2c44ce3",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -659.5,
+          -626.5
+        ],
+        "nearestStop": {
+          "name": "4-9 千古兴衰 · 阅读停留",
+          "frame": 4465,
+          "progress": 0.9209821,
+          "index": 9,
+          "cameraAxisPosition": -672.0
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "4-9 千古兴衰 · 阅读停留",
+            "frame": 4465,
+            "progress": 0.9209821,
+            "index": 9,
+            "cameraAxisPosition": -672.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡8 · 云气2",
+      "id": "c4-m-20f1e08eddb1",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -643.0,
+          -601.0
+        ],
+        "nearestStop": {
+          "name": "4-8 晚唐追忆 · 阅读停留",
+          "frame": 4009,
+          "progress": 0.8269032,
+          "index": 8,
+          "cameraAxisPosition": -588.0
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "4-8 晚唐追忆 · 阅读停留",
+            "frame": 4009,
+            "progress": 0.8269032,
+            "index": 8,
+            "cameraAxisPosition": -588.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡8 · 云气3",
+      "id": "c4-m-57dc0b720fb7",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -654.0,
+          -606.0
+        ],
+        "nearestStop": {
+          "name": "4-8 晚唐追忆 · 阅读停留",
+          "frame": 4009,
+          "progress": 0.8269032,
+          "index": 8,
+          "cameraAxisPosition": -588.0
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "4-8 晚唐追忆 · 阅读停留",
+            "frame": 4009,
+            "progress": 0.8269032,
+            "index": 8,
+            "cameraAxisPosition": -588.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡8 · 近景花枝与飘带",
+      "id": "c4-m-f9fe4d802ac5",
+      "textureId": "c4-t-304ad65e52aa7b85",
+      "label": "C4-T042",
+      "sourceName": "05_左下牡丹与飘带.png",
+      "texturePath": "public/assets/chapter-4/textures/304ad65e52aa7b85.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -632.75,
+          -617.25
+        ],
+        "nearestStop": {
+          "name": "4-8 晚唐追忆 · 阅读停留",
+          "frame": 4009,
+          "progress": 0.8269032,
+          "index": 8,
+          "cameraAxisPosition": -588.0
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "4-8 晚唐追忆 · 阅读停留",
+            "frame": 4009,
+            "progress": 0.8269032,
+            "index": 8,
+            "cameraAxisPosition": -588.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2709,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡8 · 远侧花丛",
+      "id": "c4-m-907a351d1ea0",
+      "textureId": "c4-t-dff6d174979f0f7f",
+      "label": "C4-T009",
+      "sourceName": "07_左下牡丹花丛.png",
+      "texturePath": "public/assets/chapter-4/textures/dff6d174979f0f7f.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -646.0,
+          -638.0
+        ],
+        "nearestStop": {
+          "name": "4-9 千古兴衰 · 阅读停留",
+          "frame": 4465,
+          "progress": 0.9209821,
+          "index": 9,
+          "cameraAxisPosition": -672.0
+        },
+        "stopRange": [
+          9,
+          9
+        ],
+        "associatedStops": [
+          {
+            "name": "4-9 千古兴衰 · 阅读停留",
+            "frame": 4465,
+            "progress": 0.9209821,
+            "index": 9,
+            "cameraAxisPosition": -672.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 2883,
+      "pendingVisualReview": true
+    },
+    {
+      "name": "过渡8 · 云气2.001",
+      "id": "c4-m-a223f64acc78",
+      "textureId": "c4-t-procedural-4cf146242ebf",
+      "label": "C4-T049",
+      "sourceName": "云气 · 绢白透明边 (Blender procedural)",
+      "texturePath": "public/assets/chapter-4/textures/procedural-4cf146242ebf.webp",
+      "role": "连接过渡层",
+      "treatment": "保留",
+      "storyboard": {
+        "method": "approximate camera travel-axis overlap; not an exact projected frustum visibility result",
+        "axis": "Y",
+        "axisBounds": [
+          -643.0,
+          -601.0
+        ],
+        "nearestStop": {
+          "name": "4-8 晚唐追忆 · 阅读停留",
+          "frame": 4009,
+          "progress": 0.8269032,
+          "index": 8,
+          "cameraAxisPosition": -588.0
+        },
+        "stopRange": [
+          8,
+          8
+        ],
+        "associatedStops": [
+          {
+            "name": "4-8 晚唐追忆 · 阅读停留",
+            "frame": 4009,
+            "progress": 0.8269032,
+            "index": 8,
+            "cameraAxisPosition": -588.0
+          }
+        ]
+      },
+      "uvRange": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "omittedVisibleAlphaRatio": 0.0,
+      "hardAxisBoundaryCandidates": [],
+      "positionValues": 12,
+      "pendingVisualReview": true
+    }
+  ]
+}

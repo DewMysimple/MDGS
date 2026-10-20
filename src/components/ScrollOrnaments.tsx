@@ -24,10 +24,10 @@ export function BrocadeBorder({ edge }: { edge: 'top' | 'bottom' }) {
 
 export function ExhibitionAtmosphere() {
   return <div className="exhibition-atmosphere" aria-hidden="true">
-    <img className="exhibition-atmosphere__peonies" src="/ui/peony-line.svg" alt="" />
-    <img className="exhibition-atmosphere__cloud exhibition-atmosphere__cloud--left" src="/ui/cloud-line.svg" alt="" />
-    <img className="exhibition-atmosphere__cloud exhibition-atmosphere__cloud--right" src="/ui/cloud-line.svg" alt="" />
-    <img className="exhibition-atmosphere__mountains" src="/ui/distant-mountains.svg" alt="" />
+    <img className="exhibition-atmosphere__peonies" src={`${import.meta.env.BASE_URL}ui/peony-line.svg`} alt="" />
+    <img className="exhibition-atmosphere__cloud exhibition-atmosphere__cloud--left" src={`${import.meta.env.BASE_URL}ui/cloud-line.svg`} alt="" />
+    <img className="exhibition-atmosphere__cloud exhibition-atmosphere__cloud--right" src={`${import.meta.env.BASE_URL}ui/cloud-line.svg`} alt="" />
+    <img className="exhibition-atmosphere__mountains" src={`${import.meta.env.BASE_URL}ui/distant-mountains.svg`} alt="" />
     <div className="exhibition-atmosphere__table">
       <span className="exhibition-atmosphere__table-edge" />
       <span className="exhibition-atmosphere__table-grain" />

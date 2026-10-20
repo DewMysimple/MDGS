@@ -1,0 +1,56 @@
+{
+  "status": "complete-all-required-gates-verified",
+  "canonicalSha256": "dec52de0566ca29fcae9a767cec8f7970bd3dc98a226ac8a6ea54ebf654d8fa8",
+  "newAssets": 22,
+  "newWorldLayers": 45,
+  "acceptedChapters": {
+    "2": {
+      "review": "expanded-v3/visual-review-chapter-2.json",
+      "manifest": "expanded-v3/chapter-2-manifest.json",
+      "blender": "blender/blender-reconstruction-chapter-2.json",
+      "preview": "blender/preview-chapter-2/preview-report.json"
+    },
+    "3": {
+      "review": "expanded-v3/visual-review-chapter-3.json",
+      "manifest": "expanded-v3/chapter-3-manifest.json",
+      "blender": "blender/blender-reconstruction-chapter-3.json",
+      "preview": "blender/preview-chapter-3/preview-report.json"
+    },
+    "4": {
+      "gate": "pilot-v4/gate.json",
+      "manifest": "pilot-v4/manifest.json",
+      "preview": "blender/preview/preview-report.json"
+    }
+  },
+  "chapter1": {
+    "fullCapture": "expanded-v6/57 accepted views passed",
+    "manifest": "expanded-v6/chapter-1-manifest.json",
+    "blender": "blender/blender-reconstruction-chapter-1.json verified + independent reopen",
+    "preview": "blender/preview-chapter-1/preview-report.json five real PNGs root viewed passed",
+    "finalGeometry": "g2y-.21,g8x.22/y-.17,g9w1.30/y-.21; v5 thin floating snow rejected, v6 broad slope passes 4-frame probe"
+  },
+  "agents": {
+    "depth_stability": "C1 57 static +1066 actual sorting frames passed; independent final evidence audit",
+    "blank_audit_12": "C2 complete; final all-chapter runtime passed102 views/12 sweeps/9 controls, server/browser closed",
+    "blank_audit_34": "C3 complete; startup cleanup verified5 servers exit0"
+  },
+  "rootNext": [],
+  "rootChecks": {
+    "build": "passed final dec52",
+    "npmTest": "passed",
+    "assets": "passed",
+    "pixels": "final/validation-pixels.json passed all45 dec52",
+    "subpath": "passed current dist; repeat if UI fix changes code",
+    "startup": "final/validation-startup.json passed5 listeners closed exit0",
+    "runtime": "final/validation-runtime.json passed"
+  },
+  "completedAt": "2026-10-20T02:24:02.571095+00:00",
+  "nextActions": [],
+  "finalClassificationCounts": {
+    "留白保留": 93,
+    "叙事补充": 95,
+    "已有层修复": 2
+  },
+  "partialTreatments": 6,
+  "finalLedger": "final/region-implementation.json"
+}

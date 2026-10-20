@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "scope": "第一卷当前canonical中未替换、未ink修复、未退役且texture处理为保留的实例；只读审查，不改图像或canonical。",
+  "auditedMeshCount": 199,
+  "method": "把原三角网格UV覆盖栅格化到原纹理alpha上，量化缺失不透明像素；对内部UV轴向边统计长直线的alpha。随后实际查看原WebP、诊断图与当前第7/14景截图。机器量化不替代视觉裁决。",
+  "machineEvidence": "reports/reconstruction/retained-uv-review/machine-evidence.json",
+  "contactSheet": "reports/reconstruction/retained-uv-review/candidates-01.jpg",
+  "geometryRepairList": [
+    {
+      "id": "c1-m-e2ed2bb203ff",
+      "name": "07_2-山水人群.001",
+      "textureId": "c1-t-ac26bd2a59d82d41",
+      "label": "C1-T048",
+      "priority": "P1",
+      "sourceImage": "public/assets/chapter-1/textures/ac26bd2a59d82d41.webp",
+      "bakedText": false,
+      "storyboard": 7,
+      "uvRange": [
+        0,
+        0,
+        0.4666667,
+        0.3333333
+      ],
+      "omittedVisibleAlphaRatio": 0.8173023187333454,
+      "cutEvidence": "v=.33333的横线跨U=.03333..46667，原纹理平均alpha246.27，97.7%长度触及可见颜料；右侧U=.46667也有直切。当前palace-on-a左下约x20..260/y330的水平山水接边与此一致。",
+      "visualConclusion": "原图山水、城郭、仪仗轮廓完整且没有正文；硬口来自前置辅助网格只取左下碎片。原同纹理主实例07_2-山水人群仍保留。",
+      "recommendedAction": "退役这个额外的前置裁片，保留主实例；检查退役后左下留白与新墨气桥衔接。需要保留遮挡时应由完整轮廓重新排布，不能只对同纹理所有实例无条件恢复整图。",
+      "mainInstanceToPreserve": "07_2-山水人群",
+      "canonicalEdited": false,
+      "evidence": [
+        "reports/reconstruction/pilot-motion/palace-on-a.png",
+        "reports/reconstruction/retained-uv-review/c1-m-e2ed2bb203ff.png"
+      ]
+    },
+    {
+      "id": "c1-m-b21aed32e481",
+      "name": "14_背景01_女帝身后背景_补全.001",
+      "textureId": "c1-t-95d4278195f80a88",
+      "label": "C1-T094",
+      "priority": "P1",
+      "sourceImage": "public/assets/chapter-1/textures/95d4278195f80a88.webp",
+      "bakedText": false,
+      "storyboard": 14,
+      "uvRange": [
+        0,
+        0,
+        0.7666667,
+        0.4583333
+      ],
+      "omittedVisibleAlphaRatio": 0.6661239336509199,
+      "cutEvidence": "v=.45833的局部水平边跨U=.16667..275，原alpha平均251.92且全段不透明。只残留约三分之一的云山构图，顶边易成为横断口。",
+      "visualConclusion": "原图为完整圆光—青绿山云组合，无栅格文字；大幅同纹理主背景已在女帝身后，辅助小片把完整云气从中切断。",
+      "recommendedAction": "退役辅助.001云山裁片，保留同材质主背景的完整轮廓及圆光；若确需前中景云层，使用已有独立墨气桥承担，避免再复制整个圆光。",
+      "mainInstanceToPreserve": "14_背景01_女帝身后背景_补全",
+      "canonicalEdited": false,
+      "evidence": [
+        "reports/reconstruction/text-preview/chapter-1-stop-14-1440x900.png",
+        "reports/reconstruction/retained-uv-review/c1-m-b21aed32e481.png"
+      ]
+    },
+    {
+      "id": "c1-m-467de828cc88",
+      "name": "14_背景02_右上与右下书页后背景_组合.001",
+      "textureId": "c1-t-e3d93e23178bf23d",
+      "label": "C1-T095",
+      "priority": "P1",
+      "sourceImage": "public/assets/chapter-1/textures/e3d93e23178bf23d.webp",
+      "bakedText": false,
+      "storyboard": 14,
+      "uvRange": [
+        0.3,
+        0,
+        1,
+        0.5833333
+      ],
+      "omittedVisibleAlphaRatio": 0.558802888926711,
+      "cutEvidence": "内部u=.83333直线跨V=.29167..58333全段不透明，平均alpha252.32；另v=.29167与.58333两段长横线原alpha239/222。网格将云纸切出L形直角。",
+      "visualConclusion": "原图是无正文的浅纸云山承接层；底边/侧边的直角来自辅助网格，不是需要保留的古籍纸页实体边。当前第14景右下背景可见不自然平整缺口。",
+      "recommendedAction": "退役近似重复的辅助.001裁片，保留原主云纸层；通过已新增独立云雾/远岭桥承接留白。如主层仍有暴露原图边界，再仅处理该外侧墨边。",
+      "mainInstanceToPreserve": "14_背景02_右上与右下书页后背景_组合",
+      "canonicalEdited": false,
+      "evidence": [
+        "reports/reconstruction/text-preview/chapter-1-stop-14-1440x900.png",
+        "reports/reconstruction/retained-uv-review/c1-m-467de828cc88.png"
+      ]
+    }
+  ],
+  "secondaryFindings": [
+    {
+      "names": [
+        "14_批注02_上方红绸_补全",
+        "14_批注02_上方红绸_补全.001"
+      ],
+      "label": "C1-T093",
+      "sourceImage": "public/assets/chapter-1/textures/051a3b58b0b51fa7.webp",
+      "bakedText": false,
+      "omittedVisibleAlphaRatio": 0.1811979240657377,
+      "priority": "P2",
+      "decision": "原图红绸完整、无正文；两实例下段UV被裁去约18.1%颜料，但没有发现跨高不透明区的长直硬口，不列入本轮背景必修3项。若要恢复整条飘带，应保留各自原动画及挂点，单独查看衣带遮挡。"
+    },
+    {
+      "names": [
+        "11_08_焦黑山体.001"
+      ],
+      "label": "C1-T070",
+      "omittedVisibleAlphaRatio": 0.009755494634316363,
+      "decision": "遗漏低于1%且无高alpha长直裁边，本轮无充分证据要求修复；不能因UV范围未到1就一律恢复。"
+    },
+    {
+      "labels": [
+        "C1-T030",
+        "C1-T031",
+        "C1-T032",
+        "C1-T035",
+        "C1-T036",
+        "C1-T039",
+        "C1-T040",
+        "C1-T045",
+        "C1-T066"
+      ],
+      "decision": "这些UV范围看似裁切，但三角覆盖与原alpha显示主要是透明安全区/贴合轮廓；未发现额外高不透明长直裁口，不纳入本次背景修复清单。"
+    }
+  ],
+  "conclusion": "3个P1辅助裁片是当前未修retained里的明确背景硬口来源；原图均完整且无烘焙正文，不需重新生成图。处理实例几何/退役与连接关系即可。最终须由root在canonical应用后核验第7/14景。",
+  "imagesModified": false,
+  "canonicalModified": false
+}

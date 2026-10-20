@@ -1,25 +1,19 @@
 r"""Export the four source scrolls without modifying any .blend file.
 
-Run: F:\Blender\blender.exe --background --python scripts/export_blender.py
+Run: blender --background --python scripts/export_blender.py -- --source-root <folder>
 Then run optimize_textures.py with Pillow to create browser WebP textures.
 """
-import bpy, os, json, math, re, hashlib, shutil, sys
+import json, math, hashlib, sys
 from pathlib import Path
-from mathutils import Vector
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from asset_config import ROOT, load_pipeline, image_index, resolve_image, ImageResolutionError
 
-ROOT = Path(__file__).resolve().parents[1]
+CONFIG = load_pipeline()
+import bpy
+from mathutils import Vector
 ASSETS = ROOT / 'public' / 'assets'
-SOURCES = [
-    ('chapter-1', r'F:\牡丹\场景blender搭建\一\牡丹与女帝_叙事复合运镜.blend'),
-    ('chapter-2', r'F:\牡丹\场景blender搭建\二\画卷二_长卷叙事.blend'),
-    ('chapter-3', r'F:\牡丹\场景blender搭建\三\画卷三_中国长卷_复合运镜_v07.blend'),
-    ('chapter-4', r'F:\牡丹\场景blender搭建\四\Fourth_Scroll.blend'),
-]
-SEARCH_ROOT = Path(r'F:\牡丹\素材')
-file_index = {}
-for p in SEARCH_ROOT.rglob('*'):
-    if p.is_file() and p.suffix.lower() in ('.png','.jpg','.jpeg','.tif','.tiff','.webp'):
-        file_index.setdefault(p.name.lower(), []).append(p)
+SOURCES = CONFIG.sources
+file_index = image_index(CONFIG.materials_root)
 
 def nums(values):
     return [round(float(x), 7) for x in values]
@@ -31,9 +25,6 @@ def write_json(path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')), encoding='utf8')
 
-def basename(image):
-    return Path(bpy.path.abspath(image.filepath)).name or re.sub(r'\.\d{3}$','',image.name)
-
 def extract_image(image, dest, cid, repairs, missing):
     if not image or image.source not in ('FILE','GENERATED'):
         return None
@@ -42,15 +33,9 @@ def extract_image(image, dest, cid, repairs, missing):
     if image.packed_file:
         raw = bytes(image.packed_file.data)
     else:
-        p = Path(bpy.path.abspath(image.filepath))
-        if not p.is_file():
-            candidates = file_index.get(basename(image).lower(), [])
-            # Match the original numbered scene subfolder when duplicate names exist.
-            scene_match = re.search(r'[1234]-\d+', str(p))
-            scene_folder = scene_match.group(0) if scene_match else ''
-            preferred = [c for c in candidates if scene_folder and scene_folder in str(c)]
-            p = (preferred or candidates or [None])[0]
-            repaired = bool(p)
+        original_path = bpy.path.abspath(image.filepath)
+        p = resolve_image(original_path, image.name, file_index)
+        repaired = bool(p) and not Path(original_path).is_file()
         if p and p.is_file():
             raw = p.read_bytes()
             if repaired:
@@ -139,6 +124,10 @@ def export_chapter(cid, source):
                 geometry.append({'name':obj.name,'type':obj.type,'matrix':matrix(ev.matrix_world),'positions':g['positions'],'uvs':g['uvs'],'material':mid,'bounds':{'min':nums(min(v[i] for v in bounds) for i in range(3)),'max':nums(max(v[i] for v in bounds) for i in range(3))},'animated':bool(obj.animation_data),'isText':obj.type=='FONT'})
             if obj.animation_data and obj.type=='MESH':animated.append(obj)
             ev.to_mesh_clear()
+        except ImageResolutionError:
+            # Ambiguous artwork must stop the pipeline, never become a skipped
+            # layer in an apparently successful partial scene export.
+            raise
         except Exception as e:
             skipped.append({'name':obj.name,'reason':str(e)})
 
@@ -177,6 +166,5 @@ def export_chapter(cid, source):
     print('EXPORTED',json.dumps(summary,ensure_ascii=False),flush=True)
     return summary
 
-only=sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else []
-summaries=[export_chapter(cid,path) for cid,path in SOURCES if not only or cid in only]
+summaries=[export_chapter(cid,path) for cid,path in SOURCES]
 write_json(ROOT/'reports'/'assets-export.json',summaries)

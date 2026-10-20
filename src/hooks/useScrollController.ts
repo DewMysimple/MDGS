@@ -56,6 +56,8 @@ export function useScrollController(chapterId: number) {
     let frame = 0;
     let previous = performance.now();
     const animate = (now: number) => {
+      frame = 0;
+      if (document.hidden) return;
       const dt = Math.min((now - previous) / 1000, 0.05);
       previous = now;
       if (playingRef.current) {
@@ -74,8 +76,17 @@ export function useScrollController(chapterId: number) {
       if (playingRef.current && destination.current >= 1 && position.current > 0.999) stop();
       frame = requestAnimationFrame(animate);
     };
-    frame = requestAnimationFrame(animate);
-    const onVisibility = () => { if (document.hidden) stop(); };
+    if (!document.hidden) frame = requestAnimationFrame(animate);
+    const onVisibility = () => {
+      if (document.hidden) {
+        stop();
+        cancelAnimationFrame(frame);
+        frame = 0;
+      } else if (!frame) {
+        previous = performance.now();
+        frame = requestAnimationFrame(animate);
+      }
+    };
     document.addEventListener('visibilitychange', onVisibility);
     return () => { cancelAnimationFrame(frame); document.removeEventListener('visibilitychange', onVisibility); };
   }, [stop]);

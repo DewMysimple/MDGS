@@ -1,0 +1,569 @@
+{
+  "passed": true,
+  "canonicalSha256": "290e865749ec5a27c48c1c6b7f3dda55bcd809e0d9610ab98d791fd5042ef115",
+  "firstScrollOnly": false,
+  "explicitlyBoundLayers": 71,
+  "checks": [
+    "exact mesh bindings exist",
+    "geometry/UV validate every declared local plane",
+    "independent time without seek",
+    "no matrix accumulation",
+    "source animation base preserved",
+    "pause restores source opacity/matrices and hides optional petals",
+    "visible bindings bounded",
+    "new petal and mist quotas are reserved",
+    "petals descend in local XY",
+    "petal loops have invisible endpoints",
+    "large delta clamped",
+    "dispose clears bindings",
+    "unknown profiles stay disabled",
+    "cropped UV recovers the complete image plane without source mutation",
+    "bounded normal relief is accepted and audited",
+    "incorrect and degenerate UV mappings are rejected",
+    "large normal folds are rejected",
+    "every current canonical replacement reconstructs",
+    "all four real profiles and canonical additions match",
+    "YZ and oblique sways preserve signed UV attachment and normal",
+    "atlas UV domains retain sprite-local movement",
+    "curves only change shallow opacity and restore original material flags",
+    "all scrolls reset and dispose without matrix drift",
+    "fourth-scroll envelope starts at the real fifth stop and is monotone",
+    "speed changes integrate time without phase jumps",
+    "tail has at most one petal and three active layers",
+    "quiet narrative clouds stay sparse when motion is disabled",
+    "explicit-corner dispatch preserves reviewed placement, positive UV, matrices and source buffers",
+    "explicit carriers only expand the gutter and reject malformed/non-finite/degenerate corner data"
+  ],
+  "fullUvReconstruction": [
+    {
+      "chapter": 1,
+      "replacement": "c1-t021",
+      "mesh": "02_右侧宫阙巡游",
+      "maxInPlaneResidual": 0.0006336158018700947,
+      "maxNormalResidual": 0.0839905549318726,
+      "span": 13.000264728105503,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 1,
+      "replacement": "c1-t038",
+      "mesh": "05_06_亭",
+      "maxInPlaneResidual": 0.0017554429697826954,
+      "maxNormalResidual": 0.1130703748219469,
+      "span": 9.0009343786195,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 1,
+      "replacement": "c1-t047",
+      "mesh": "07_1-宫殿建筑",
+      "maxInPlaneResidual": 0.0004180587138625124,
+      "maxNormalResidual": 0.08711238176604093,
+      "span": 22.000170452776445,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 1,
+      "replacement": "c1-t085",
+      "mesh": "13_11_女帝身后宫殿建筑",
+      "maxInPlaneResidual": 0.0003637865784472149,
+      "maxNormalResidual": 0.08636436854271409,
+      "span": 10.000086476888647,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 1,
+      "replacement": "c1-t052",
+      "mesh": "08_01_上方山水城景",
+      "maxInPlaneResidual": 0.00029933112138542516,
+      "maxNormalResidual": 0.08912758319557433,
+      "span": 25.00007176997918,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 1,
+      "replacement": "c1-t059",
+      "mesh": "10_03_前景百官群像_补全",
+      "maxInPlaneResidual": 0.0008316668656537912,
+      "maxNormalResidual": 0.10226419287426657,
+      "span": 8.500220911991287,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 1,
+      "replacement": "c1-t067",
+      "mesh": "11_05_学者书案",
+      "maxInPlaneResidual": 0.0010516390739830383,
+      "maxNormalResidual": 0.08844349113326112,
+      "span": 7.500428393182959,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 2,
+      "replacement": "c2-t002",
+      "mesh": "右下河流与岸景",
+      "policy": "explicit-corners; reviewed local drawing area with gutter only"
+    },
+    {
+      "chapter": 2,
+      "replacement": "c2-t004",
+      "mesh": "01_左侧案桌与人物",
+      "maxInPlaneResidual": 0,
+      "maxNormalResidual": 0,
+      "span": 1.3259872198104858,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 2,
+      "replacement": "c2-t005",
+      "mesh": "03_中间远景",
+      "maxInPlaneResidual": 1.2966413485162856e-8,
+      "maxNormalResidual": 0,
+      "span": 2.878892783783679,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 2,
+      "replacement": "c2-t006",
+      "mesh": "06_左上人物背景组合",
+      "maxInPlaneResidual": 0,
+      "maxNormalResidual": 0,
+      "span": 1.0812604427337646,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 2,
+      "replacement": "c2-t010",
+      "mesh": "2-1 中景 03_右侧花市街景",
+      "maxInPlaneResidual": 0.000006112339104343137,
+      "maxNormalResidual": 0.001521798193896258,
+      "span": 0.9199999889533608,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 2,
+      "replacement": "c2-t011",
+      "mesh": "2-1 中景 05_左上宫殿与朝臣",
+      "maxInPlaneResidual": 0.0000038016074833154426,
+      "maxNormalResidual": 0.002054204616971605,
+      "span": 0.7700004583731788,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 2,
+      "replacement": "c2-t012",
+      "mesh": "2-1 前景 01_左侧牡丹与山石",
+      "maxInPlaneResidual": 0.000003909882180489208,
+      "maxNormalResidual": 0.0019196905592968432,
+      "span": 0.9000001906952161,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 2,
+      "replacement": "c2-t018",
+      "mesh": "2-3 中景 左侧人物后方建筑",
+      "maxInPlaneResidual": 0.0000040876733251170044,
+      "maxNormalResidual": 0.0019337589180775227,
+      "span": 0.9800022107842343,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 2,
+      "replacement": "c2-t019",
+      "mesh": "2-3 主体 人物群",
+      "maxInPlaneResidual": 0.00000317243104940491,
+      "maxNormalResidual": 0.002391108502471691,
+      "span": 0.7000000422623679,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 2,
+      "replacement": "c2-t020",
+      "mesh": "2-3 主体 右侧人群",
+      "maxInPlaneResidual": 0.000006442436553992036,
+      "maxNormalResidual": 0.0019511805268580913,
+      "span": 0.6800014134866936,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 2,
+      "replacement": "c2-t028",
+      "mesh": "2-5 前景 04_前景牡丹花石",
+      "maxInPlaneResidual": 0.000006065927941097896,
+      "maxNormalResidual": 0.001821093757341938,
+      "span": 1.6200000580433889,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 2,
+      "replacement": "c2-t029",
+      "mesh": "2-6 中景 04_右侧街景",
+      "maxInPlaneResidual": 0.0000019332846705266362,
+      "maxNormalResidual": 0.002290992700132926,
+      "span": 1.0650000037644232,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 2,
+      "replacement": "c2-t034",
+      "mesh": "2-7 前景 03_下方牡丹水岸",
+      "maxInPlaneResidual": 0.000005311622773585218,
+      "maxNormalResidual": 0.0015786570823340478,
+      "span": 1.3000001511165855,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 3,
+      "replacement": "c3-t001",
+      "mesh": "微信图片_20261016180912_185_1685",
+      "maxInPlaneResidual": 7.406875629500931e-8,
+      "maxNormalResidual": 0,
+      "span": 1,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 3,
+      "replacement": "c3-t004",
+      "mesh": "09_红圈桌子与桌面陈设_组合",
+      "maxInPlaneResidual": 0,
+      "maxNormalResidual": 0,
+      "span": 2.2336113452911377,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 3,
+      "replacement": "c3-t027",
+      "mesh": "SC04_06_左上背景",
+      "maxInPlaneResidual": 0,
+      "maxNormalResidual": 0,
+      "span": 18.65142822265625,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 3,
+      "replacement": "c3-t028",
+      "mesh": "SC04_07_右下背景",
+      "maxInPlaneResidual": 0,
+      "maxNormalResidual": 0,
+      "span": 19.395917892456055,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 3,
+      "replacement": "c3-t041",
+      "mesh": "SC06_02_左上建筑",
+      "maxInPlaneResidual": 0,
+      "maxNormalResidual": 0,
+      "span": 13.426666259765625,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 3,
+      "replacement": "c3-t054",
+      "mesh": "SC07_02_上方宫苑场景",
+      "maxInPlaneResidual": 0,
+      "maxNormalResidual": 0,
+      "span": 14.931063652038574,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 3,
+      "replacement": "c3-t056",
+      "mesh": "SC07_01_左侧镜台陈设",
+      "maxInPlaneResidual": 0,
+      "maxNormalResidual": 0,
+      "span": 14.794893264770508,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 3,
+      "replacement": "c3-m-de3408ad8a8f-full-uv",
+      "mesh": "SC02_03_右上仕女群",
+      "maxInPlaneResidual": 2.09386709752044e-7,
+      "maxNormalResidual": 0,
+      "span": 6.908868206490505,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 3,
+      "replacement": "c3-m-f449c3cfe037-full-uv",
+      "mesh": "SC02_06_上方人物背景",
+      "maxInPlaneResidual": 0.0000037300197550602664,
+      "maxNormalResidual": 0,
+      "span": 35.93333410873752,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 4,
+      "replacement": "c4-t007",
+      "mesh": "微信图片_20261018213717_423_1685",
+      "policy": "preserve-region; existing UV subdivision retained"
+    },
+    {
+      "chapter": 4,
+      "replacement": "c4-t008",
+      "mesh": "微信图片_20261018221025_441_1685",
+      "maxInPlaneResidual": 0,
+      "maxNormalResidual": 0,
+      "span": 2.1267443895339966,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 4,
+      "replacement": "c4-t020",
+      "mesh": "4-3 · 02 · 沉香亭",
+      "maxInPlaneResidual": 0.0008649755945494886,
+      "maxNormalResidual": 0.1501491980616642,
+      "span": 15.980077145317848,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 4,
+      "replacement": "c4-t027",
+      "mesh": "4-5 · 01 · 兵马山峦红日",
+      "maxInPlaneResidual": 0.000858092566057404,
+      "maxNormalResidual": 0.1856654243527005,
+      "span": 25.3140537147089,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    },
+    {
+      "chapter": 4,
+      "replacement": "c4-t029",
+      "mesh": "4-6 · 06 · 桌案花木",
+      "maxInPlaneResidual": 0.0012774455169880519,
+      "maxNormalResidual": 0.14576203568170754,
+      "span": 16.06112965963522,
+      "policy": "full-uv-affine-with-bounded-normal-relief"
+    }
+  ],
+  "explicitCarrierReconstruction": [
+    {
+      "chapter": 2,
+      "replacement": "c2-t002",
+      "policy": "explicit-corners",
+      "rawCorners": [
+        [
+          -0.8366608392601433,
+          -0.49959313021449825,
+          -0.2264663151579714
+        ],
+        [
+          0.7780996420973256,
+          -0.49959313021449825,
+          -0.2264663151579714
+        ],
+        [
+          0.7780996420973256,
+          1.6534208449287946,
+          -0.2264663151579714
+        ],
+        [
+          -0.8366608392601433,
+          1.6534208449287946,
+          -0.2264663151579714
+        ]
+      ],
+      "paddingOnly": [
+        1.2403314917127073,
+        1.2403314917127073
+      ],
+      "retiredAuxiliaries": [
+        "右下河流与岸景.001",
+        "右下河流与岸景.002"
+      ],
+      "actual": [
+        {
+          "mesh": "右下河流与岸景",
+          "positions": [
+            -1.0306997299194336,
+            -0.7583116888999939,
+            -0.2264663130044937,
+            0.9721385836601257,
+            -0.7583116888999939,
+            -0.2264663130044937,
+            0.9721385836601257,
+            1.9121392965316772,
+            -0.2264663130044937,
+            -1.0306997299194336,
+            1.9121392965316772,
+            -0.2264663130044937
+          ],
+          "uvs": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "indices": [
+            0,
+            1,
+            2,
+            0,
+            2,
+            3
+          ],
+          "matrixPreserved": true,
+          "originalGeometryPreserved": true
+        }
+      ],
+      "checks": [
+        "four finite positive-UV corners",
+        "only production gutter expansion",
+        "no second aspect compensation",
+        "original manifest arrays, matrices and geometry buffers unchanged",
+        "old repeated auxiliaries explicitly hidden",
+        "malformed/non-finite/degenerate/non-parallel corners rejected"
+      ]
+    }
+  ],
+  "scope": "CPU matrix/configuration checks; browser RAF, reduced-motion, GPU context, texture retry and visual quality require browser validation",
+  "chapters": [
+    {
+      "chapter": 1,
+      "bindings": 71,
+      "passed": true
+    },
+    {
+      "chapter": 2,
+      "bindings": 21,
+      "passed": true
+    },
+    {
+      "chapter": 3,
+      "bindings": 51,
+      "passed": true
+    },
+    {
+      "chapter": 4,
+      "bindings": 45,
+      "passed": true
+    }
+  ],
+  "fourthScrollEnvelope": {
+    "startProgress": 0.5004329353980085,
+    "tailProgress": 0.8742277056245228,
+    "samples": [
+      {
+        "progress": 0,
+        "clockSpeed": 1,
+        "petalDensity": 1,
+        "cloudDensity": 1,
+        "legacyMotionSlots": 3,
+        "maxBindings": 6,
+        "phase": "flourishing"
+      },
+      {
+        "progress": 0.1,
+        "clockSpeed": 1,
+        "petalDensity": 1,
+        "cloudDensity": 1,
+        "legacyMotionSlots": 3,
+        "maxBindings": 6,
+        "phase": "flourishing"
+      },
+      {
+        "progress": 0.2,
+        "clockSpeed": 1,
+        "petalDensity": 1,
+        "cloudDensity": 1,
+        "legacyMotionSlots": 3,
+        "maxBindings": 6,
+        "phase": "flourishing"
+      },
+      {
+        "progress": 0.3,
+        "clockSpeed": 1,
+        "petalDensity": 1,
+        "cloudDensity": 1,
+        "legacyMotionSlots": 3,
+        "maxBindings": 6,
+        "phase": "flourishing"
+      },
+      {
+        "progress": 0.4,
+        "clockSpeed": 1,
+        "petalDensity": 1,
+        "cloudDensity": 1,
+        "legacyMotionSlots": 3,
+        "maxBindings": 6,
+        "phase": "flourishing"
+      },
+      {
+        "progress": 0.5,
+        "clockSpeed": 1,
+        "petalDensity": 1,
+        "cloudDensity": 1,
+        "legacyMotionSlots": 3,
+        "maxBindings": 6,
+        "phase": "flourishing"
+      },
+      {
+        "progress": 0.6,
+        "clockSpeed": 0.7315926151061107,
+        "petalDensity": 0.6600173124677403,
+        "cloudDensity": 0.7494864407657034,
+        "legacyMotionSlots": 2.6498851838051585,
+        "maxBindings": 6,
+        "phase": "declining"
+      },
+      {
+        "progress": 0.7,
+        "clockSpeed": 0.5829849181289686,
+        "petalDensity": 0.4639798908386248,
+        "cloudDensity": 0.5899832423655207,
+        "legacyMotionSlots": 1.898471516873325,
+        "maxBindings": 6,
+        "phase": "declining"
+      },
+      {
+        "progress": 0.8,
+        "clockSpeed": 0.4770227076929294,
+        "petalDensity": 0.3083711794882156,
+        "cloudDensity": 0.455534061539394,
+        "legacyMotionSlots": 1.205278521097781,
+        "maxBindings": 6,
+        "phase": "declining"
+      },
+      {
+        "progress": 0.9,
+        "clockSpeed": 0.391299276858402,
+        "petalDensity": 0.16912409607300244,
+        "cloudDensity": 0.32694891528760295,
+        "legacyMotionSlots": 1,
+        "maxBindings": 3,
+        "phase": "afterglow"
+      },
+      {
+        "progress": 1,
+        "clockSpeed": 0.32,
+        "petalDensity": 0.08,
+        "cloudDensity": 0.22,
+        "legacyMotionSlots": 1,
+        "maxBindings": 3,
+        "phase": "afterglow"
+      }
+    ],
+    "final": {
+      "elapsedSeconds": 0.056,
+      "bindings": 45,
+      "activeBindings": 0,
+      "activeGroups": {
+        "petal": 0,
+        "bridge": 0,
+        "legacy": 0
+      },
+      "activeNames": [],
+      "supported": true,
+      "clockSpeed": 0.32,
+      "petalDensity": 0.08,
+      "cloudDensity": 0.22,
+      "legacyMotionSlots": 1,
+      "maxBindings": 3,
+      "phase": "afterglow"
+    }
+  }
+}

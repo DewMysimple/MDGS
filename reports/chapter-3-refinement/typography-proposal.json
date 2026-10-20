@@ -1,0 +1,583 @@
+{
+  "schemaVersion": 1,
+  "chapter": 3,
+  "status": "proposal-read-only-product-analysis",
+  "reviewDate": "2026-10-20",
+  "scope": "9停驻与8中点均实际目视；这是文案与版式建议，未修改产品，未宣称实施或验收。",
+  "copyAttribution": "下列短句为本次数字展陈原创文案，依据用户已给第三卷主题提炼，不冒充古诗、史料引文或历史印章。",
+  "sourceCanonicalSha256": "dec52de0566ca29fcae9a767cec8f7970bd3dc98a226ac8a6ea54ebf654d8fa8",
+  "referenceImages": "reports/blank-design/expanded-v3/chapter-3-{stop,gap}-{NN}.jpg",
+  "referencePaintingSize": [
+    1388,
+    476
+  ],
+  "coordinateConvention": "safeRect是实际画心截图的左上归一化[x,y,w,h]，不是全窗口；建议中心转世界矩阵时使用该画心实际aspect及prepareScene后相机，不直接写屏幕像素坐标。重排后须重新验证位置。",
+  "existingSystem": {
+    "web": "src/scene/CalligraphyLayer.ts：ArtTextLayer.matrix固定世界平面，CSS3D使用同一相机；文字可编辑且不捕获手势。caption目前横排，seal竖排；range目前硬开关。",
+    "blender": "scripts/reconstruct-blender.py:add_text_layers：同matrix创建独立anchor与可编辑FONT标题/正文，字体自动发现并打包。现caption横排，seal把字换行；范围只保存metadata，尚无本轮通用竖排列布局。",
+    "existingThirdScrollTextIds": [
+      "c3-t026-readable-caption",
+      "c3-t033-readable-caption",
+      "c3-t051-readable-caption",
+      "c3-t052-readable-seal"
+    ],
+    "opening": "src/data/annotations.ts已有锦绣花意开题，保留其职责，不再增同名第二份。",
+    "limits": [
+      "CSS3D是后置文字pass，不参与WebGL物体遮挡；应放真正安全空白并实际验收，不能依赖depthWrite遮挡。",
+      "现placeReadableText会在原anchor出画心时提前返回0，窄屏侧题可能整块消失；边缘保护仅处理仍在画内的anchor。",
+      "本建议不改变源相机、源矩阵及原Blender文件。新派生文字和已明确需重排图层另有记录。"
+    ]
+  },
+  "implementationProposal": {
+    "data": "扩展ArtTextLayer.layout='vertical'、fadeIn/fadeOut或fade，保留caption/seal variant；不把正文烘进图片。",
+    "web": "竖排标题+由右至左两短列，text-orientation:upright；普通题签不用厚重边框、卡片背景或大白描外轮廓。长正文留阅读面板。",
+    "blender": "每个标题、每个正文列各建一个独立FONT对象，在各列body中逐字换行，父级使用同一世界anchor；印记文本及细朱框分别独立建FONT/曲线。不把多列拼成水平字符串或合并网格。",
+    "font": "优先复用原场景可用CJK字库并打包；网页沿现有本机可回退楷/宋栈，不新增机器绝对路径。字形跨端可以不同，不宣称逐像素一致。",
+    "density": "每帧至多一组正文，正文2列且每列5至8字；4字题签为主；印记只在少数停驻出现。顶部0至0.22作为基本气口，正文不向上挤。",
+    "color": {
+      "title": "#4b3b2b",
+      "body": "#75624c",
+      "seal": "#9b402f"
+    },
+    "readability": {
+      "minimumBodyCssPixels": 14,
+      "minimumTitleCssPixels": 18,
+      "maximumVisibleBodyColumns": 2,
+      "preferredNormalizedHeight": [
+        0.22,
+        0.32
+      ],
+      "narrowPolicy": "按当前语义range的唯一文字组，在同相机深度上重排并护边；最多两短列，保持顶部空白。不得因anchor略出窄FOV就全部隐藏，也不得让之前/之后远处题字一并吸附到画心。若无安全文字区，应先调整该帧构图。"
+    },
+    "range": "取17个stop/gap语义中心，相邻中心的中点为每组显示边界。两端约0.008进度smoothstep淡入淡出，首景0与终景1边界保持可读。world anchor继续静态，opacity只由progress决定；轻动不摇字。",
+    "recommendedFirstPass": {
+      "openingReuse": 1,
+      "existingCaptionReflow": 3,
+      "newStopGroups": 4,
+      "newGapGroups": 8,
+      "candidateOnlyStops": [
+        2
+      ],
+      "note": "先修图像与构图再落文字。stop2当前密度过高，候选短签暂不启用；新增不是17处全部叠满。"
+    }
+  },
+  "views": [
+    {
+      "id": "c3-stop-01",
+      "kind": "stop",
+      "index": 1,
+      "treatment": "reuse-opening",
+      "title": "锦绣花意",
+      "lines": [
+        "花开圆满",
+        "意寄人间"
+      ],
+      "safeRect": [
+        0.055,
+        0.22,
+        0.115,
+        0.38
+      ],
+      "seal": null,
+      "observed": "已有左题首；右侧屋顶、上端远塔与帷幔贴上边。",
+      "layoutNote": "沿用开题，不加第二组。开题后左上保空，主图下移或缩小，题字与人物至少留一列字间距。",
+      "anchorProgress": 0,
+      "reviewedScreenshot": "reports/blank-design/expanded-v3/chapter-3-stop-01.jpg",
+      "reviewedScreenshotSha256": "7d223a58d63c3aff55f81b20386aed12b463395c08f09e14816d54c44af13155",
+      "suggestedDisplayRange": [
+        0,
+        0.030854111077754785
+      ],
+      "suggestedProgressFade": 0.008
+    },
+    {
+      "id": "c3-stop-02",
+      "kind": "stop",
+      "index": 2,
+      "treatment": "candidate-defer-until-composition-clear",
+      "title": "花意入俗",
+      "lines": [
+        "一朵成纹样",
+        "千家寄好愿"
+      ],
+      "safeRect": [
+        0.075,
+        0.32,
+        0.09,
+        0.3
+      ],
+      "seal": null,
+      "observed": "中央牡丹金带和上下两排场景密集，上组人群与屏风贴顶。",
+      "layoutNote": "优先删减/下移上组；本帧默认不加正文。若重排后左侧形成安全空白，只用四字题签，正文保候选。",
+      "anchorProgress": 0.12341644431101914,
+      "reviewedScreenshot": "reports/blank-design/expanded-v3/chapter-3-stop-02.jpg",
+      "reviewedScreenshotSha256": "316e1f4f7a3060bc3311d91c339f608b619d40113be4bac679e838b775b39a39",
+      "suggestedDisplayRange": [
+        0.09256233323326435,
+        0.15434684130047926
+      ],
+      "suggestedProgressFade": 0.008
+    },
+    {
+      "id": "c3-stop-03",
+      "kind": "stop",
+      "index": 3,
+      "treatment": "reflow-existing",
+      "sourceTextId": "c3-t026-readable-caption",
+      "title": "凤穿牡丹",
+      "lines": [
+        "凤影穿繁卉",
+        "衣纹寄好合"
+      ],
+      "safeRect": [
+        0.82,
+        0.28,
+        0.09,
+        0.27
+      ],
+      "seal": "合",
+      "observed": "现横题在右上，凤凰翅膀和红帷幔贴顶。右侧迎亲屋檐前后层次较紧。",
+      "layoutNote": "保同一题语义，转右侧中段窄竖列；先收凤凰/帷幔高度，避免题签压屋脊，不复制原横题。",
+      "anchorProgress": 0.24713803226885958,
+      "reviewedScreenshot": "reports/blank-design/expanded-v3/chapter-3-stop-03.jpg",
+      "reviewedScreenshotSha256": "ed81f94b9240e24a25cb44972cced388040cd9aebbae22438b9a14aa70d359c7",
+      "suggestedDisplayRange": [
+        0.21620763527939946,
+        0.27802665416682854
+      ],
+      "suggestedProgressFade": 0.008
+    },
+    {
+      "id": "c3-stop-04",
+      "kind": "stop",
+      "index": 4,
+      "treatment": "reflow-existing",
+      "sourceTextId": "c3-t033-readable-caption",
+      "title": "同心成礼",
+      "lines": [
+        "并肩行新礼",
+        "同心向岁长"
+      ],
+      "safeRect": [
+        0.79,
+        0.26,
+        0.09,
+        0.25
+      ],
+      "seal": null,
+      "observed": "婚礼室内画面高置贴顶；旧横caption在右上。中央凤纹与下部迎亲构成斜向。",
+      "layoutNote": "将旧文字替成竖式小题，向中部右侧落；主婚礼组须下移并留出上缘，不用题字去填整片天。",
+      "anchorProgress": 0.37069251986073537,
+      "reviewedScreenshot": "reports/blank-design/expanded-v3/chapter-3-stop-04.jpg",
+      "reviewedScreenshotSha256": "97959724e7b245932636a8ec8f87b0b52a0349006958970c70204e7d9308efc6",
+      "suggestedDisplayRange": [
+        0.33980389796276644,
+        0.40171551891166146
+      ],
+      "suggestedProgressFade": 0.008
+    },
+    {
+      "id": "c3-stop-05",
+      "kind": "stop",
+      "index": 5,
+      "treatment": "new-stop",
+      "title": "灯彩迎新",
+      "lines": [
+        "窗上添新色",
+        "灯间寄岁安"
+      ],
+      "safeRect": [
+        0.075,
+        0.28,
+        0.095,
+        0.31
+      ],
+      "seal": "岁安",
+      "observed": "右侧大屋檐压顶；左侧上半空白较连续，雪街在下中部。",
+      "layoutNote": "题签占左侧中段，避开中下雪街；先让右屋顶退离上框，题上方继续留空。",
+      "anchorProgress": 0.4947845160644397,
+      "reviewedScreenshot": "reports/blank-design/expanded-v3/chapter-3-stop-05.jpg",
+      "reviewedScreenshotSha256": "7d4eea6eba84b68c0d385a1bfabba1dfdfcc1108f5fcbdca74e6663cdc77fa5c",
+      "suggestedDisplayRange": [
+        0.46376151701351365,
+        0.5258587074504026
+      ],
+      "suggestedProgressFade": 0.008
+    },
+    {
+      "id": "c3-stop-06",
+      "kind": "stop",
+      "index": 6,
+      "treatment": "reflow-existing",
+      "sourceTextId": "c3-t051-readable-caption",
+      "title": "针线传情",
+      "lines": [
+        "一针收花色",
+        "满庭寄团圆"
+      ],
+      "safeRect": [
+        0.065,
+        0.29,
+        0.095,
+        0.32
+      ],
+      "seal": null,
+      "retireOrRelocateExistingSealId": "c3-t052-readable-seal",
+      "observed": "现岁岁圆满横题和吉庆印位于上方；左屋顶贴顶，正文左边有完整纸空。",
+      "layoutNote": "改放左中空白，撤原上方横题和孤印；不要另叠新的岁岁圆满。此帧不必再加印，避免每景一章。",
+      "anchorProgress": 0.6190812816082915,
+      "reviewedScreenshot": "reports/blank-design/expanded-v3/chapter-3-stop-06.jpg",
+      "reviewedScreenshotSha256": "a833f1b3d42663e70731e34df4196e107a7ca46ca35f201239ad3280ab7b61ce",
+      "suggestedDisplayRange": [
+        0.5880070902223284,
+        0.6501261075120526
+      ],
+      "suggestedProgressFade": 0.008
+    },
+    {
+      "id": "c3-stop-07",
+      "kind": "stop",
+      "index": 7,
+      "treatment": "new-stop",
+      "title": "吉意入器",
+      "lines": [
+        "镜里收春色",
+        "案头存好意"
+      ],
+      "safeRect": [
+        0.84,
+        0.35,
+        0.09,
+        0.25
+      ],
+      "seal": "安居",
+      "observed": "上方宫苑平台底边硬直，牡丹与宫苑贴顶；镜台、作坊均为实物陈设。右侧中段有空白。",
+      "layoutNote": "先收小下移宫苑、修硬底，再把小题放右中段；不要用大块文字遮平台硬边。",
+      "anchorProgress": 0.7432605852233363,
+      "reviewedScreenshot": "reports/blank-design/expanded-v3/chapter-3-stop-07.jpg",
+      "reviewedScreenshotSha256": "f69475aa91852d9991de4baffff61756327b936a5613ca2e4061cea6a5ecfd21",
+      "suggestedDisplayRange": [
+        0.712215759319575,
+        0.7742769143906628
+      ],
+      "suggestedProgressFade": 0.008
+    },
+    {
+      "id": "c3-stop-08",
+      "kind": "stop",
+      "index": 8,
+      "treatment": "new-stop",
+      "title": "端庄自持",
+      "lines": [
+        "繁华知有度",
+        "静处见从容"
+      ],
+      "safeRect": [
+        0.055,
+        0.27,
+        0.085,
+        0.25
+      ],
+      "seal": "静观",
+      "observed": "右上圆屏/婚嫁人物贴顶；原圆屏内已有端庄有德、富贵不骄。左边有静纸，左中山水高起。",
+      "layoutNote": "外题不用再写端庄有德/富贵不骄；放左侧细列与书案呼应，正文不越过山峰，保留上部空气。",
+      "anchorProgress": 0.8673259018926424,
+      "reviewedScreenshot": "reports/blank-design/expanded-v3/chapter-3-stop-08.jpg",
+      "reviewedScreenshotSha256": "24340087e552f072990c1a95a43478a83e2a8938ccca860e9e707e1640efb863",
+      "suggestedDisplayRange": [
+        0.8363095727253158,
+        0.8980911272399713
+      ],
+      "suggestedProgressFade": 0.008
+    },
+    {
+      "id": "c3-stop-09",
+      "kind": "stop",
+      "index": 9,
+      "treatment": "new-stop",
+      "title": "安泰人间",
+      "lines": [
+        "愿家常得暖",
+        "愿世久安宁"
+      ],
+      "safeRect": [
+        0.835,
+        0.27,
+        0.09,
+        0.25
+      ],
+      "seal": "和",
+      "observed": "左上花市与右上人群大块贴顶；下方书画、花与城景已密，右中上有纸空。",
+      "layoutNote": "先下收上方两组，使卷尾有气口；小题落右中侧，不与底部卷尾阅读UI重叠。",
+      "anchorProgress": 0.9903868032819582,
+      "reviewedScreenshot": "reports/blank-design/expanded-v3/chapter-3-stop-09.jpg",
+      "reviewedScreenshotSha256": "19e0323eef966c48cf7faf640affbe14518b30a225275e4cc4b6a37732e943e0",
+      "suggestedDisplayRange": [
+        0.9596215779346292,
+        1
+      ],
+      "suggestedProgressFade": 0.008
+    },
+    {
+      "id": "c3-gap-01",
+      "kind": "gap",
+      "index": 1,
+      "treatment": "new-gap",
+      "title": "一花百用",
+      "lines": [
+        "从枝头到衣上",
+        "把春意留在寻常"
+      ],
+      "safeRect": [
+        0.49,
+        0.29,
+        0.1,
+        0.33
+      ],
+      "seal": null,
+      "observed": "中央大段无主体；左右屋檐和右上宫廷重图均高置。低栏能承接地点。",
+      "layoutNote": "中央偏左短列形成读段，左右上景先下收；保顶部整带，不加雾团或复制花丛。",
+      "anchorProgress": 0.06170822215550957,
+      "reviewedScreenshot": "reports/blank-design/expanded-v3/chapter-3-gap-01.jpg",
+      "reviewedScreenshotSha256": "6c593c6d02a4e250b52face869ec4b82a8dfbf4e53b95b3b37c7920ba90049c3",
+      "suggestedDisplayRange": [
+        0.030854111077754785,
+        0.09256233323326435
+      ],
+      "suggestedProgressFade": 0.008
+    },
+    {
+      "id": "c3-gap-02",
+      "kind": "gap",
+      "index": 2,
+      "treatment": "new-gap-short-label",
+      "title": "经纬生芳",
+      "lines": [
+        "丝线勾花影",
+        "绣出一襟春"
+      ],
+      "safeRect": [
+        0.43,
+        0.29,
+        0.09,
+        0.23
+      ],
+      "seal": null,
+      "observed": "锦架占正中，下方真实承托；上方左右宫廷和凤凰贴边，留给题字的高度有限。",
+      "layoutNote": "须先缩小/下移锦架或挪正文至不遮锦纹的一侧；否则仅显示四字竖签，正文保持候选。不能把新字挤进顶部细缝。",
+      "anchorProgress": 0.18527723828993936,
+      "reviewedScreenshot": "reports/blank-design/expanded-v3/chapter-3-gap-02.jpg",
+      "reviewedScreenshotSha256": "7f3102d9abb8ffcba38edbc0786088ee0fcbcf5cf0c5c15c44c2f16689405709",
+      "suggestedDisplayRange": [
+        0.15434684130047926,
+        0.21620763527939946
+      ],
+      "suggestedProgressFade": 0.008
+    },
+    {
+      "id": "c3-gap-03",
+      "kind": "gap",
+      "index": 3,
+      "treatment": "new-gap",
+      "title": "案头清供",
+      "lines": [
+        "瓶案容佳色",
+        "杯盘寄吉心"
+      ],
+      "safeRect": [
+        0.46,
+        0.29,
+        0.1,
+        0.27
+      ],
+      "seal": null,
+      "observed": "器物案台上方中央空白宽，右婚礼组靠上，左凤凰出画。",
+      "layoutNote": "用轻竖文与下方案几对话，低桌与花器轮廓保持。中央上带保空，正文不压瓶口。",
+      "anchorProgress": 0.30891527606479746,
+      "reviewedScreenshot": "reports/blank-design/expanded-v3/chapter-3-gap-03.jpg",
+      "reviewedScreenshotSha256": "102a96d50c9bd5918c06295ca044e15abb7b659580c61015a1279861909fbf3e",
+      "suggestedDisplayRange": [
+        0.27802665416682854,
+        0.33980389796276644
+      ],
+      "suggestedProgressFade": 0.008
+    },
+    {
+      "id": "c3-gap-04",
+      "kind": "gap",
+      "index": 4,
+      "treatment": "new-gap",
+      "title": "门庭有喜",
+      "lines": [
+        "灯下迎新岁",
+        "门前续旧情"
+      ],
+      "safeRect": [
+        0.49,
+        0.29,
+        0.1,
+        0.28
+      ],
+      "seal": null,
+      "observed": "中央大空白从迎亲过渡到雪街；下方台阶已连接，右上屋檐逼边。",
+      "layoutNote": "中央窄题承接迎亲/岁时转换，不另补大场景；应先下移雪街/屋檐上缘，再落题。",
+      "anchorProgress": 0.43273851796258755,
+      "reviewedScreenshot": "reports/blank-design/expanded-v3/chapter-3-gap-04.jpg",
+      "reviewedScreenshotSha256": "312a680448d0ab83761966c9e4068f12afe74539b0e06b6d8dd58bfc0dfeffeb",
+      "suggestedDisplayRange": [
+        0.40171551891166146,
+        0.46376151701351365
+      ],
+      "suggestedProgressFade": 0.008
+    },
+    {
+      "id": "c3-gap-05",
+      "kind": "gap",
+      "index": 5,
+      "treatment": "new-gap-short-label",
+      "title": "尺素寄愿",
+      "lines": [
+        "一寸藏巧思",
+        "一针连亲意"
+      ],
+      "safeRect": [
+        0.47,
+        0.29,
+        0.09,
+        0.22
+      ],
+      "seal": null,
+      "observed": "左右两栋屋顶同时压顶，中央锦架上缘偏高，画面最容易被误填得更满。",
+      "layoutNote": "先把两侧高屋顶下收，锦架降低/减小；只用短签或两极短列，优先保空，不用长文盖锦架。",
+      "anchorProgress": 0.5569328988363655,
+      "reviewedScreenshot": "reports/blank-design/expanded-v3/chapter-3-gap-05.jpg",
+      "reviewedScreenshotSha256": "c583e49d4903176465e3ec512f339b748c0623bab3298c65e4039eeaba36502c",
+      "suggestedDisplayRange": [
+        0.5258587074504026,
+        0.5880070902223284
+      ],
+      "suggestedProgressFade": 0.008
+    },
+    {
+      "id": "c3-gap-06",
+      "kind": "gap",
+      "index": 6,
+      "treatment": "new-gap",
+      "title": "日用见美",
+      "lines": [
+        "器有花枝意",
+        "家存安稳心"
+      ],
+      "safeRect": [
+        0.47,
+        0.29,
+        0.1,
+        0.27
+      ],
+      "seal": null,
+      "observed": "中央器物案上方有完整纸空；左旧caption仍位于上方，右镜台上部花丛触顶。",
+      "layoutNote": "旧stop6题按range退场后才出现本组；正文居中偏左，不在瓶花上叠字，右上花束需缩小下移。",
+      "anchorProgress": 0.6811709334158138,
+      "reviewedScreenshot": "reports/blank-design/expanded-v3/chapter-3-gap-06.jpg",
+      "reviewedScreenshotSha256": "d77643f72e685dc1abcfe5005e222eda9e9bcb9fea4c24824d5637de611f802b",
+      "suggestedDisplayRange": [
+        0.6501261075120526,
+        0.712215759319575
+      ],
+      "suggestedProgressFade": 0.008
+    },
+    {
+      "id": "c3-gap-07",
+      "kind": "gap",
+      "index": 7,
+      "treatment": "new-gap",
+      "title": "雅意随身",
+      "lines": [
+        "镜照眉间春",
+        "纹留掌上香"
+      ],
+      "safeRect": [
+        0.46,
+        0.29,
+        0.1,
+        0.28
+      ],
+      "seal": null,
+      "observed": "中央空白宽，低栏连续；左上宫苑下沿硬直，右下山水书案是下一景。",
+      "layoutNote": "修左宫苑底沿后，中段小题承接器物到品格；不把字顶到宫苑上部，不重复圆屏原题。",
+      "anchorProgress": 0.8052932435579894,
+      "reviewedScreenshot": "reports/blank-design/expanded-v3/chapter-3-gap-07.jpg",
+      "reviewedScreenshotSha256": "6e83b19afae8467072a0a5021edbad506328fb001ccd4e1ee799e65587e53bc8",
+      "suggestedDisplayRange": [
+        0.7742769143906628,
+        0.8363095727253158
+      ],
+      "suggestedProgressFade": 0.008
+    },
+    {
+      "id": "c3-gap-08",
+      "kind": "gap",
+      "index": 8,
+      "treatment": "new-gap",
+      "title": "满城和乐",
+      "lines": [
+        "愿此寻常日",
+        "岁久亦相亲"
+      ],
+      "safeRect": [
+        0.48,
+        0.29,
+        0.1,
+        0.3
+      ],
+      "seal": null,
+      "observed": "中央竖向空白明确；两侧物组上端与人物头顶均易触框，左下人群、右下书案高度相近。",
+      "layoutNote": "中央字列作停顿，连接两侧生活场景；先下收左右上组，底部地坪保持，卷尾不再加大花。",
+      "anchorProgress": 0.9288563525873003,
+      "reviewedScreenshot": "reports/blank-design/expanded-v3/chapter-3-gap-08.jpg",
+      "reviewedScreenshotSha256": "248a95253bce82464f6c7f851d0d17f20610fe9304801fb10ee8282aaa29dbe7",
+      "suggestedDisplayRange": [
+        0.8980911272399713,
+        0.9596215779346292
+      ],
+      "suggestedProgressFade": 0.008
+    }
+  ],
+  "acceptancePlan": [
+    "以新before基线重审9停驻、8中点和16四分点，不能复用上一轮通过结论。",
+    "逐帧检查题签和主体/屋檐/瓶口/人物无交叠，顶部气口真实保留；文字不得替代硬边修复。",
+    "1440级宽窗、960级中窗、360级窄窗都检查正文和标题实际屏幕字号、完整字列、非横向溢出。",
+    "跨range边界正反滚动，文字应连续淡入淡出，不闪现、不永久黏屏，不捕获拖动/滚轮。",
+    "Blender新派生副本实际保存再独立重开，核对每条body、anchor矩阵、字体已打包，逐列仍为FONT对象；实际渲染核题字。"
+  ],
+  "sourceFiles": [
+    {
+      "path": "src/scene/CalligraphyLayer.ts",
+      "sha256": "3dc2e97a33194d1147c9feaaf29e97d19f8a21d9dc2e1f49896e53923604084e"
+    },
+    {
+      "path": "src/scene/CalligraphyLayer.css",
+      "sha256": "82d58b1711d505fbc283f83f5d275dac2e723f166e0bc3d9af73b1980a786588"
+    },
+    {
+      "path": "src/scene/ArtDirectionLayer.ts",
+      "sha256": "2edbc662c5a47b5387feeea8e1b9358b149f9320c4426bfa3c260c1c8a3c60a4"
+    },
+    {
+      "path": "src/data/annotations.ts",
+      "sha256": "62253ce357a79cf3ce74e6cb6a427f8448ef091d703628c967a3757e0de46b6c"
+    },
+    {
+      "path": "scripts/reconstruct-blender.py",
+      "sha256": "3edcb53407c2f686fef158dbba3ce6957c564bd99eec447782be79ece33188d9"
+    },
+    {
+      "path": "public/assets/chapter-3/scene.json",
+      "sha256": "bd5d3e404a0834c4d3183f4eb66cc05e8b5346eae7f305906b6a351a138f6fb9"
+    },
+    {
+      "path": "public/assets/reconstruction/manifest.json",
+      "sha256": "dec52de0566ca29fcae9a767cec8f7970bd3dc98a226ac8a6ea54ebf654d8fa8"
+    }
+  ]
+}

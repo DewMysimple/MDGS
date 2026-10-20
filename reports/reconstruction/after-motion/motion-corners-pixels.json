@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "canonicalSha256": "290e865749ec5a27c48c1c6b7f3dda55bcd809e0d9610ab98d791fd5042ef115",
+  "contextRecovery": {
+    "exactlyIdentical": false,
+    "size": [
+      1388,
+      476
+    ],
+    "differenceBounds": [
+      277,
+      376,
+      647,
+      473
+    ],
+    "maxRGBDelta": 1,
+    "changedPixels": 15,
+    "changedRatio": 2.2703605938052456e-05,
+    "changedPixelsAbove1RGB": 0,
+    "changedPixelsAbove5RGB": 0,
+    "images": [
+      "reports/reconstruction/after-motion/corners-fourth-before-context.png",
+      "reports/reconstruction/after-motion/corners-fourth-after-context.png"
+    ]
+  },
+  "method": "PIL comparison of the actual reduced-motion eighth-scene viewport before and after WEBGL_lose_context recovery. Tolerance is at most one 8-bit RGB code unit in fewer than 0.01% of pixels; exact equality is reported separately.",
+  "limitations": "This verifies retained scene rendering after recovery. The four targeted static images still require visual seam/composition review."
+}

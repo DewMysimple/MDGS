@@ -1,0 +1,804 @@
+{
+  "schemaVersion": 1,
+  "status": "five-tail-assets-generated-reviewed-packed",
+  "method": "built-in image_gen, one independent call per asset; transparent_background=true",
+  "skill": "C:/Users/Administrator/.codex/skills/.system/imagegen/SKILL.md",
+  "sourceArtworkModified": false,
+  "productionManifestModified": false,
+  "entries": [
+    {
+      "id": "bd4-empty-pavilion",
+      "prompt": "Use case: historical-scene. Asset type: an independently placeable transparent RGBA painted layer for a Chinese peony 2.5D handscroll, chapter 4 afterglow. Medium: traditional gongbi fine ink outlines and restrained blue-green landscape pigment, warm grey silk-compatible muted tones, tiny traces of aged pale gold, delicate hand-painted detail. No photorealism, no 3D render, no modern objects, no hard rectangular backdrop. The full object and its natural irregular edges must be entirely visible with generous transparent safety margins on every side. Genuine transparent background outside the isolated subject; no white or parchment background, no sky, no paper texture outside painted areas. No text, no Chinese characters, no calligraphy, no labels, no watermark, no seals. Quiet late-scroll recollection; no human figures, no animals, no palace city, no additional large flower clusters. Primary request: one COMPLETE small empty Chinese waterside pavilion with gently upturned tiled roof, four slender aged vermilion-grey wooden posts and complete low stone base, attached to a SHORT low curving stone bank with only a few understated water ripple strokes. The pavilion is visibly unoccupied and has no hanging sign. Wide horizontal composition approaching 3:1: the pavilion is a modest asymmetrical anchor, the low bank extends laterally and naturally tapers on both ends. Restrained faded blue-grey roof and water, old muted vermilion wood; more quiet blue-grey than saturated gold. Slight elevated three-quarter Chinese handscroll view. Keep the roof finial, both eaves, all posts, whole stone foundation and the complete bank visible; ample transparent space around it. Water is sparse broken strokes local to the bank, not an opaque full rectangular lake. Not a full background landscape.",
+      "intendedUse": "中远景无人空亭与短岸，连接C4 gap5–8，保留上部纸天空。",
+      "raw": {
+        "path": "artwork/blank-design/raw/bd4-empty-pavilion.png",
+        "width": 2109,
+        "height": 745,
+        "mode": "RGBA",
+        "bytes": 1354020,
+        "sha256": "147a286e5470192ea1aed93c8fbbe6b8bfa9a98c3163e12f12f4f013be6ec8d9",
+        "unchanged": true,
+        "generatedSourceHashMatches": true
+      },
+      "qa": {
+        "status": "passed-independent-asset-review",
+        "reviewedWithViewImage": true,
+        "paperComposite": "reports/blank-design/bd4-empty-pavilion-paper-qa.png",
+        "paperCompositeSha256": "08a7bc0a4eacdce4d02d90a39d8f55ebc4a14808045065fafc0a0c994a77cb31",
+        "paperCompositeMethod": "Chromium native image alpha composite on #f2e8d6; QA screenshot only, raw not altered",
+        "observation": "完整亭顶、檐角、柱、栏、石基与连续短岸；无人，无宫城/文字。低饱和蓝灰与旧朱木；浅水纹端部自然。原右边界仅1个alpha9极弱水纹像素，无alpha>=16边界占用，无亭体/石岸硬切。纸底目视没有亮彩边。",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleAlphaBoundsThreshold8": [
+          3,
+          38,
+          2109,
+          711
+        ],
+        "boundaryPixelsAlphaGreaterThan8": {
+          "left": 0,
+          "right": 1,
+          "top": 0,
+          "bottom": 0
+        },
+        "boundaryPixelsAlphaAtLeast16": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "highSaturationAnomaliesAlphaGreaterThan8": 0,
+        "highSaturationAnomalyMaxAlpha": 2,
+        "scopeLimit": "Independent-asset QA only. Browser scene/Blender position, continuity, full narrative integration, motion and UI acceptance not claimed."
+      },
+      "status": "generated-visually-reviewed-packed-not-integrated",
+      "builtInCallCount": 1,
+      "transparentBackgroundArgument": true,
+      "generatedSource": "C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-93c0-7502-8bd4-8d24c7617923\\exec-92e7a832-a4a9-4003-b89d-989986260904.png",
+      "copiedWithoutEditing": true,
+      "production": {
+        "path": "artwork/blank-design/chapter-4/bd4-empty-pavilion.png",
+        "width": 2616,
+        "height": 896,
+        "aspect": 2.919642857142857,
+        "bytes": 1231545,
+        "sha256": "4a99e37ba85d30f7788d5854a90254d4dff635832a77d6f39b9b1e332c7883ff",
+        "contentRgbaSha256": "28782e716872afc7fc6e1571e472131581d1ce5961e4a61075cccff06d7b0dd3",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          253,
+          87,
+          2362,
+          809
+        ],
+        "visibleAlphaBounds": [
+          256,
+          102,
+          2362,
+          775
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 253,
+          "top": 87,
+          "right": 254,
+          "bottom": 87
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.671254,
+          "top": 9.709821,
+          "right": 9.70948,
+          "bottom": 9.709821
+        },
+        "transparentPixelPercent": 80.037595,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-4/bd4-empty-pavilion.webp",
+        "url": "assets/blank-design/chapter-4/bd4-empty-pavilion.webp",
+        "width": 2048,
+        "height": 701,
+        "aspect": 2.921540656205421,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.7828746177370031,
+        "scaleY": 0.7823660714285714,
+        "bytes": 241950,
+        "sha256": "f439e23721f4b4cb597f9d58fef9c04a77ce77e6a3dc9bc9b44f9ff853672f88",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          68,
+          1850,
+          633
+        ],
+        "visibleAlphaBounds": [
+          201,
+          79,
+          1849,
+          606
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 68,
+          "right": 198,
+          "bottom": 68
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.700428,
+          "right": 9.667969,
+          "bottom": 9.700428
+        },
+        "transparentPixelPercent": 80.086902,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "packing": {
+        "command": "python scripts/prepare-reconstruction-assets.py --collection blank-design --trim-transparent --chapter 4 --gutter .12 --id bd4-empty-pavilion --input artwork/blank-design/raw/bd4-empty-pavilion.png",
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            0,
+            23,
+            2109,
+            745
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            2109,
+            722
+          ]
+        },
+        "paddingScaleX": 1.240398293029872,
+        "paddingScaleY": 1.2409972299168974,
+        "contentAspect": 2.9210526315789473,
+        "pixelsCreativelyEdited": false,
+        "rawUnchanged": true,
+        "productionContentPreserved": true,
+        "webAlphaPreserved": true
+      }
+    },
+    {
+      "id": "bd4-reed-shore",
+      "prompt": "Use case: historical-scene. Asset type: an independently placeable transparent RGBA painted layer for a Chinese peony 2.5D handscroll, chapter 4 afterglow. Medium: traditional gongbi fine ink outlines and restrained blue-green landscape pigment, warm grey silk-compatible muted tones, tiny traces of aged pale gold, delicate hand-painted detail. No photorealism, no 3D render, no modern objects, no hard rectangular backdrop. The full object and its natural irregular edges must be entirely visible with generous transparent safety margins on every side. Genuine transparent background outside the isolated subject; no white or parchment background, no sky, no paper texture outside painted areas. No text, no Chinese characters, no calligraphy, no labels, no watermark, no seals. Quiet late-scroll recollection; no human figures, no animals, no palace city, no additional large flower clusters. Primary request: a COMPLETE low horizontal shallow-water shore fragment, a gently wandering bank line with irregular stones, sparse reed grasses, thin bare or nearly bare twigs and only two or three faded residual flower petals. No building or furniture. A structural shore with real grounded stones and a readable continuous bank, not just mist or floating grass. Wide composition approaching 3:1, low silhouette, warm grey and soft blue-green ink. Sparse local water ripple strokes adjoining the bank, no solid rectangle and no full landscape. Every reed tip, fine branch and both ends of the low bank must fit fully inside the transparent canvas with generous margins. Delicate hand-painted natural asymmetry, clean irregular isolated outer contour, quiet fading autumnal recollection without heavy snow.",
+      "intendedUse": "中下部疏岸承接C4后段，不用雾代替真实岸线；残枝与石岸接地。",
+      "raw": {
+        "path": "artwork/blank-design/raw/bd4-reed-shore.png",
+        "width": 2170,
+        "height": 725,
+        "mode": "RGBA",
+        "bytes": 1775502,
+        "sha256": "5c1cbdfde2ff05cf50bd2ceb6b02cd881bf111940672e0a35247a7029bdfe821",
+        "unchanged": true,
+        "generatedSourceHashMatches": true
+      },
+      "qa": {
+        "status": "passed-independent-asset-review",
+        "reviewedWithViewImage": true,
+        "paperComposite": "reports/blank-design/bd4-reed-shore-paper-qa.png",
+        "paperCompositeSha256": "3b02f0da7be0c78b663cdaad0d8dced44eab2e6f661fd4c8157501b386aaeb44",
+        "paperCompositeMethod": "Chromium native image alpha composite on #f2e8d6; QA screenshot only, raw not altered",
+        "observation": "连续而不平直的低岸、芦苇、疏枝、浅石与少量落瓣完整；没有满幅湖面或泛用雾替代实体。上方仍可大留白。纸底无彩边，非透明主体所有端部在画内。",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "visibleAlphaBoundsThreshold8": [
+          41,
+          71,
+          2134,
+          668
+        ],
+        "boundaryPixelsAlphaGreaterThan8": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "boundaryPixelsAlphaAtLeast16": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "highSaturationAnomaliesAlphaGreaterThan8": 0,
+        "highSaturationAnomalyMaxAlpha": 2,
+        "scopeLimit": "Independent-asset QA only. Browser scene/Blender position, continuity, full narrative integration, motion and UI acceptance not claimed."
+      },
+      "status": "generated-visually-reviewed-packed-not-integrated",
+      "builtInCallCount": 1,
+      "transparentBackgroundArgument": true,
+      "generatedSource": "C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-93c0-7502-8bd4-8d24c7617923\\exec-6672a889-8470-4822-a6a5-64a0dc2d00d2.png",
+      "copiedWithoutEditing": true,
+      "production": {
+        "path": "artwork/blank-design/chapter-4/bd4-reed-shore.png",
+        "width": 2669,
+        "height": 873,
+        "aspect": 3.0572737686139746,
+        "bytes": 1550812,
+        "sha256": "1e5a96342aa71c2011e044b9c172f875fde73682272bd56d6d9d3f3959f78e68",
+        "contentRgbaSha256": "6faef2f2f8296a625437ef06d39396a43213d5bcd8215f9e54338ad28c51452d",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          258,
+          84,
+          2410,
+          788
+        ],
+        "visibleAlphaBounds": [
+          299,
+          134,
+          2392,
+          731
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 258,
+          "top": 84,
+          "right": 259,
+          "bottom": 85
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.666542,
+          "top": 9.621993,
+          "right": 9.704009,
+          "bottom": 9.736541
+        },
+        "transparentPixelPercent": 71.952806,
+        "alphaMin": 0,
+        "alphaMax": 254
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-4/bd4-reed-shore.webp",
+        "url": "assets/blank-design/chapter-4/bd4-reed-shore.webp",
+        "width": 2048,
+        "height": 670,
+        "aspect": 3.056716417910448,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.7673285874859498,
+        "scaleY": 0.7674684994272624,
+        "bytes": 335406,
+        "sha256": "53525a1eb0575a256ce72f96e3343feb787acc9575ec4393f336a948ffe8d6e2",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          64,
+          1849,
+          605
+        ],
+        "visibleAlphaBounds": [
+          229,
+          103,
+          1835,
+          561
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 64,
+          "right": 199,
+          "bottom": 65
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.552239,
+          "right": 9.716797,
+          "bottom": 9.701493
+        },
+        "transparentPixelPercent": 71.965368,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "packing": {
+        "command": "python scripts/prepare-reconstruction-assets.py --collection blank-design --trim-transparent --chapter 4 --gutter .12 --id bd4-reed-shore --input artwork/blank-design/raw/bd4-reed-shore.png",
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            0,
+            21,
+            2152,
+            725
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            2152,
+            704
+          ]
+        },
+        "paddingScaleX": 1.2402416356877324,
+        "paddingScaleY": 1.2400568181818181,
+        "contentAspect": 3.0568181818181817,
+        "pixelsCreativelyEdited": false,
+        "rawUnchanged": true,
+        "productionContentPreserved": true,
+        "webAlphaPreserved": true
+      }
+    },
+    {
+      "id": "bd4-scroll-relic",
+      "prompt": "Use case: historical-scene. Asset type: an independently placeable transparent RGBA painted layer for a Chinese peony 2.5D handscroll, chapter 4 afterglow. Medium: traditional gongbi fine ink outlines and restrained blue-green landscape pigment, warm grey silk-compatible muted tones, tiny traces of aged pale gold, delicate hand-painted detail. No photorealism, no 3D render, no modern objects, no hard rectangular backdrop. The full object and its natural irregular edges must be entirely visible with generous transparent safety margins on every side. Genuine transparent background outside the isolated subject; no white or parchment background, no sky, no paper texture outside painted areas. No text, no Chinese characters, no calligraphy, no labels, no watermark, no seals. Quiet late-scroll recollection; no human figures, no animals, no palace city, no additional large flower clusters. Primary request: one COMPLETE low aged dark wooden Chinese writing table, a small horizontal low案, carrying one blank half-unrolled cream silk/paper poem scroll with its complete rolled ends and two or three fallen pale rose petals. A second closed small scroll may rest beside it, but keep the arrangement very restrained. The table is unoccupied; no person, no hand, no full room. All four short legs and full feet are visible and intact, balanced natural proportions, slight elevated three-quarter view matching an illustrated Chinese handscroll. The blank scroll contains absolutely no marks, writing or symbols. Warm grey-brown old wood, very faint aged-gold linework, muted ivory blank scroll. Independent quiet narrative prop, not a luxurious crowded still life. Only tiny local contact strokes at feet, no large floor or backdrop. Natural object silhouette and ample real transparency all around.",
+      "intendedUse": "低近景诗卷余物，连接题诗记忆与卷尾兴衰；不造可辨历史书迹。",
+      "raw": {
+        "path": "artwork/blank-design/raw/bd4-scroll-relic.png",
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGBA",
+        "bytes": 1907577,
+        "sha256": "12a7907bdeae3a0233399bcb62679d8e7fee767457cb7f49ea8ac6f4c1d8cc3a",
+        "unchanged": true,
+        "generatedSourceHashMatches": true
+      },
+      "qa": {
+        "status": "passed-independent-asset-review",
+        "reviewedWithViewImage": true,
+        "paperComposite": "reports/blank-design/bd4-scroll-relic-paper-qa.png",
+        "paperCompositeSha256": "7c6612bc5a59431b4957e001fa53b634504fc1c763e7f0d74485baa47c9d13f7",
+        "paperCompositeMethod": "Chromium native image alpha composite on #f2e8d6; QA screenshot only, raw not altered",
+        "observation": "低矮旧木诗案独立，四腿与足完整，半展开卷面为空白，另有合卷与三瓣落花；无人无文字。纸底无真实暗色矩形或大光晕；黑底原图中的软棕色过渡在纸底中无可见背景块。",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "visibleAlphaBoundsThreshold8": [
+          36,
+          193,
+          1520,
+          922
+        ],
+        "boundaryPixelsAlphaGreaterThan8": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "boundaryPixelsAlphaAtLeast16": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "highSaturationAnomaliesAlphaGreaterThan8": 0,
+        "highSaturationAnomalyMaxAlpha": 0,
+        "scopeLimit": "Independent-asset QA only. Browser scene/Blender position, continuity, full narrative integration, motion and UI acceptance not claimed."
+      },
+      "status": "generated-visually-reviewed-packed-not-integrated",
+      "builtInCallCount": 1,
+      "transparentBackgroundArgument": true,
+      "generatedSource": "C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-93c0-7502-8bd4-8d24c7617923\\exec-095551c1-d30e-4e94-bc7c-e7e2bd164f63.png",
+      "copiedWithoutEditing": true,
+      "production": {
+        "path": "artwork/blank-design/chapter-4/bd4-scroll-relic.png",
+        "width": 1905,
+        "height": 1270,
+        "aspect": 1.5,
+        "bytes": 1829797,
+        "sha256": "fec63063e9b9f79ea9a2f32eb11940d87a214e981cd97cbe3cbdee6b11d8779b",
+        "contentRgbaSha256": "bdb365b19d67a956843483fabcb6e39e6cd33b25ba35dd5ab0637b9bdb7ea681",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          184,
+          123,
+          1720,
+          1147
+        ],
+        "visibleAlphaBounds": [
+          220,
+          316,
+          1704,
+          1045
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 184,
+          "top": 123,
+          "right": 185,
+          "bottom": 123
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.658793,
+          "top": 9.685039,
+          "right": 9.711286,
+          "bottom": 9.685039
+        },
+        "transparentPixelPercent": 77.378139,
+        "alphaMin": 0,
+        "alphaMax": 254
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-4/bd4-scroll-relic.webp",
+        "url": "assets/blank-design/chapter-4/bd4-scroll-relic.webp",
+        "width": 1905,
+        "height": 1270,
+        "aspect": 1.5,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "bytes": 233090,
+        "sha256": "30a0cfa88361ec0a14a6bedb27b2e5ea1740a01de22610fb1da44352ec71ca84",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          184,
+          123,
+          1720,
+          1147
+        ],
+        "visibleAlphaBounds": [
+          220,
+          316,
+          1704,
+          1045
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 184,
+          "top": 123,
+          "right": 185,
+          "bottom": 123
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.658793,
+          "top": 9.685039,
+          "right": 9.711286,
+          "bottom": 9.685039
+        },
+        "transparentPixelPercent": 77.378139,
+        "alphaMin": 0,
+        "alphaMax": 254
+      },
+      "packing": {
+        "command": "python scripts/prepare-reconstruction-assets.py --collection blank-design --trim-transparent --chapter 4 --gutter .12 --id bd4-scroll-relic --input artwork/blank-design/raw/bd4-scroll-relic.png",
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            0,
+            0,
+            1536,
+            1024
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            1536,
+            1024
+          ]
+        },
+        "paddingScaleX": 1.240234375,
+        "paddingScaleY": 1.240234375,
+        "contentAspect": 1.5,
+        "pixelsCreativelyEdited": false,
+        "rawUnchanged": true,
+        "productionContentPreserved": true,
+        "webAlphaPreserved": true
+      }
+    },
+    {
+      "id": "bd4-lone-lamp",
+      "prompt": "Use case: historical-scene. Asset type: an independently placeable transparent RGBA painted layer for a Chinese peony 2.5D handscroll, chapter 4 afterglow. Medium: traditional gongbi fine ink outlines and restrained blue-green landscape pigment, warm grey silk-compatible muted tones, tiny traces of aged pale gold, delicate hand-painted detail. No photorealism, no 3D render, no modern objects, no hard rectangular backdrop. The full object and its natural irregular edges must be entirely visible with generous transparent safety margins on every side. Genuine transparent background outside the isolated subject; no white or parchment background, no sky, no paper texture outside painted areas. No text, no Chinese characters, no calligraphy, no labels, no watermark, no seals. Quiet late-scroll recollection; no human figures, no animals, no palace city, no additional large flower clusters. Primary request: one COMPLETE modest antique low Chinese palace lantern, a single squat standing lamp on a small complete wooden/bronze base, with softly warm ivory panels and faded old muted vermilion framing. Only a very gentle contained warm glow inside the lantern, NO bloom halo, NO rays or light pollution outside. Beside the base only a small sparse grey stone, a short thin dry branch and one or two pale residual flowers or fallen petals. Complete isolated small quiet prop in natural proportions, all finial/top and base feet visible, slight elevated three-quarter handscroll perspective. No long pole, no hanging cord continuing out of frame, no human. Keep every branch tip and all lamp edges inside generous transparent margins. Delicate traditional fine ink paint; quiet, modest, low saturation; not a large theatrical lantern or photoreal product render.",
+      "intendedUse": "小型孤灯落花点景，用于C4后段一侧安静停顿，不能每个gap复制。",
+      "raw": {
+        "path": "artwork/blank-design/raw/bd4-lone-lamp.png",
+        "width": 1312,
+        "height": 1199,
+        "mode": "RGBA",
+        "bytes": 1487495,
+        "sha256": "d26a383dc5e5dad230747f3ad9d006b913b6bd35e4fbca18d59624fd04e90991",
+        "unchanged": true,
+        "generatedSourceHashMatches": true
+      },
+      "qa": {
+        "status": "passed-independent-asset-review",
+        "reviewedWithViewImage": true,
+        "paperComposite": "reports/blank-design/bd4-lone-lamp-paper-qa.png",
+        "paperCompositeSha256": "55d4fa415528bc7a26c8d0f23ca50f7b3209246e690e8cbbb9cd7da1648a3ce1",
+        "paperCompositeMethod": "Chromium native image alpha composite on #f2e8d6; QA screenshot only, raw not altered",
+        "observation": "完整低宫灯、支座、足和顶部，微暖牡丹灯面，旁有疏石/干枝/残花；未出现强光外晕或大景。灯体自然比例，上下端安全，纸底无亮边。",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleAlphaBoundsThreshold8": [
+          132,
+          71,
+          1158,
+          1088
+        ],
+        "boundaryPixelsAlphaGreaterThan8": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "boundaryPixelsAlphaAtLeast16": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "highSaturationAnomaliesAlphaGreaterThan8": 0,
+        "highSaturationAnomalyMaxAlpha": 2,
+        "scopeLimit": "Independent-asset QA only. Browser scene/Blender position, continuity, full narrative integration, motion and UI acceptance not claimed."
+      },
+      "status": "generated-visually-reviewed-packed-not-integrated",
+      "builtInCallCount": 1,
+      "transparentBackgroundArgument": true,
+      "generatedSource": "C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-93c0-7502-8bd4-8d24c7617923\\exec-ad60275e-df60-47dc-9b6b-4fa9ccc3742c.png",
+      "copiedWithoutEditing": true,
+      "production": {
+        "path": "artwork/blank-design/chapter-4/bd4-lone-lamp.png",
+        "width": 1600,
+        "height": 1449,
+        "aspect": 1.1042097998619738,
+        "bytes": 1404134,
+        "sha256": "82cea6156f17de92e4843c033854527e40202ea09c634c7e3407bf7f52e86bbc",
+        "contentRgbaSha256": "c07b754f988d1601e6e1ddb7e91f24558c959506fcdb2c5d5e4be1c0eca7e2c1",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          155,
+          140,
+          1445,
+          1308
+        ],
+        "visibleAlphaBounds": [
+          287,
+          180,
+          1313,
+          1197
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 155,
+          "top": 140,
+          "right": 155,
+          "bottom": 141
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.6875,
+          "top": 9.661836,
+          "right": 9.6875,
+          "bottom": 9.730849
+        },
+        "transparentPixelPercent": 75.94604,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-4/bd4-lone-lamp.webp",
+        "url": "assets/blank-design/chapter-4/bd4-lone-lamp.webp",
+        "width": 1600,
+        "height": 1449,
+        "aspect": 1.1042097998619738,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "bytes": 306632,
+        "sha256": "b02facda1bb0e7bdf9c83e807cc93c1a25274031326ab035d750dbbf1d99761e",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          155,
+          140,
+          1445,
+          1308
+        ],
+        "visibleAlphaBounds": [
+          287,
+          180,
+          1313,
+          1197
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 155,
+          "top": 140,
+          "right": 155,
+          "bottom": 141
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.6875,
+          "top": 9.661836,
+          "right": 9.6875,
+          "bottom": 9.730849
+        },
+        "transparentPixelPercent": 75.94604,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "packing": {
+        "command": "python scripts/prepare-reconstruction-assets.py --collection blank-design --trim-transparent --chapter 4 --gutter .12 --id bd4-lone-lamp --input artwork/blank-design/raw/bd4-lone-lamp.png",
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            0,
+            31,
+            1290,
+            1199
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            1290,
+            1168
+          ]
+        },
+        "paddingScaleX": 1.2403100775193798,
+        "paddingScaleY": 1.240582191780822,
+        "contentAspect": 1.1044520547945205,
+        "pixelsCreativelyEdited": false,
+        "rawUnchanged": true,
+        "productionContentPreserved": true,
+        "webAlphaPreserved": true
+      }
+    },
+    {
+      "id": "bd4-quiet-water",
+      "prompt": "Use case: historical-scene. Asset type: one independently placeable transparent RGBA low waterside layer for the quiet closing part of a Chinese peony 2.5D handscroll. Primary request: a wide LOW shallow blue-grey water fragment, soft sparse ink ripples, a naturally wandering LOW stone shore, a few small pale flat rocks, and one very low flat stone shoal/platform slightly to the right of center. This stone shoal has a readable nearly horizontal upper surface on which a separate small writing table can stand; do NOT draw the table. The stone platform stays extremely low, like a naturally flat stone bank, NOT a large elevated terrace or stage, NO balustrades, NO stairs or pillars. Composition: panoramic approximately 3:1, all subject concentrated low with a restrained low silhouette, only water and low stones, every ripple end and both ends of shore completely visible inside ample genuine transparent margins. Traditional Chinese gongbi delicate hand-painted ink contours, very pale muted blue-green and warm grey on silk-compatible pigment; quiet afterglow, understated, not photorealism, not a 3D model render. Only a sparse shallow-water pigment wash locally around stones, outer water edges broken and naturally tapering, not a solid rectangular lake/background. Background genuinely transparent alpha, NO opaque paper/parchment or sky painted outside the subject. Do not draw ANY reeds, grasses, tall vegetation, bare branches, flower clumps, petals, buildings, pavilions, people, birds, furniture, text, calligraphy, watermark, seals or decorative border. Avoid tall elements entirely. Final asset is one complete isolated low water-and-stone fragment with natural irregular full outer contour, NOT an entire landscape painting or backdrop.",
+      "intendedUse": "C4 gap7/8中下部低远景浅水与石汀，替换重复高疏岸，石汀可为独立诗案提供可读接地；上中保留纸天空。",
+      "raw": {
+        "path": "artwork/blank-design/raw/bd4-quiet-water.png",
+        "width": 2172,
+        "height": 724,
+        "mode": "RGBA",
+        "bytes": 894351,
+        "sha256": "4772364d5c9ad174418df78bcf522c9893a3f2dfd7fc4a1fa7b4c2f7356c2e0c",
+        "unchanged": true,
+        "generatedSourceHashMatches": true
+      },
+      "qa": {
+        "status": "passed-independent-asset-review",
+        "reviewedWithViewImage": true,
+        "paperComposite": "reports/blank-design/bd4-quiet-water-paper-qa.png",
+        "paperCompositeSha256": "9399b0320d74f0e2198ce19201b6c47d23b6e968b8238ac8337a586055edf32f",
+        "paperCompositeMethod": "Chromium native image alpha composite on #f2e8d6; QA screenshot only, raw not altered",
+        "observation": "低位浅青灰水与不规则低岸，中央偏右平石汀可承案，无高草、枯枝、花丛、亭、人或字；浅纸底边缘自然，无彩边/硬矩形。原始canvas有上方透明气口，visibleAlphaBounds用于布局时确认实际水石位置；不能仅用整图中心作为案脚承托点。",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleAlphaBoundsThreshold8": [
+          20,
+          374,
+          2157,
+          653
+        ],
+        "boundaryPixelsAlphaGreaterThan8": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "boundaryPixelsAlphaAtLeast16": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+        },
+        "highSaturationAnomaliesAlphaGreaterThan8": 0,
+        "highSaturationAnomalyMaxAlpha": 2,
+        "scopeLimit": "Independent new asset only. No browser/Blender integration or scene acceptance claim."
+      },
+      "status": "generated-visually-reviewed-packed-not-integrated",
+      "transparentBackgroundArgument": true,
+      "builtInCallCount": 1,
+      "generatedSource": "C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-93c0-7502-8bd4-8d24c7617923\\exec-a0956ed8-7979-4c31-b653-86093e47511a.png",
+      "copiedWithoutEditing": true,
+      "production": {
+        "path": "artwork/blank-design/chapter-4/bd4-quiet-water.png",
+        "width": 2659,
+        "height": 852,
+        "aspect": 3.1208920187793425,
+        "bytes": 796691,
+        "sha256": "69fbc0adbee299e862eadcf1575cfdcf623f85493994380c78aef6fa66973316",
+        "contentRgbaSha256": "8248f468db1ecfa3d38b699eb6926b0ba8595aba122bc1b5f808b1085e63ef35",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          257,
+          82,
+          2401,
+          769
+        ],
+        "visibleAlphaBounds": [
+          262,
+          435,
+          2399,
+          714
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 257,
+          "top": 82,
+          "right": 258,
+          "bottom": 83
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.665288,
+          "top": 9.624413,
+          "right": 9.702896,
+          "bottom": 9.741784
+        },
+        "transparentPixelPercent": 84.457428,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-4/bd4-quiet-water.webp",
+        "url": "assets/blank-design/chapter-4/bd4-quiet-water.webp",
+        "width": 2048,
+        "height": 656,
+        "aspect": 3.1219512195121952,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.7702143663031215,
+        "scaleY": 0.7699530516431925,
+        "bytes": 130886,
+        "sha256": "48edd112631ffb29ca5058e2d80d56b24fe97144f49f56cc330b667b09c8760c",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          63,
+          1849,
+          592
+        ],
+        "visibleAlphaBounds": [
+          202,
+          335,
+          1847,
+          549
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 63,
+          "right": 199,
+          "bottom": 64
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.603659,
+          "right": 9.716797,
+          "bottom": 9.756098
+        },
+        "transparentPixelPercent": 84.492455,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "packing": {
+        "command": "python scripts/prepare-reconstruction-assets.py --collection blank-design --trim-transparent --chapter 4 --gutter .12 --id bd4-quiet-water --input artwork/blank-design/raw/bd4-quiet-water.png",
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            15,
+            21,
+            2159,
+            708
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            2144,
+            687
+          ]
+        },
+        "paddingScaleX": 1.240205223880597,
+        "paddingScaleY": 1.240174672489083,
+        "contentAspect": 3.120815138282387,
+        "pixelsCreativelyEdited": false,
+        "rawUnchanged": true,
+        "productionContentPreserved": true,
+        "webAlphaPreserved": true
+      }
+    }
+  ],
+  "createdAt": "2026-10-20T00:04:06.671696+00:00",
+  "completedAt": "2026-10-20T00:28:34.910360+00:00",
+  "separateBuiltInCalls": 5,
+  "iterations": 5,
+  "rawOriginalPreservationVerified": true,
+  "pythonUse": "Only alpha/statistical read-only evidence and official transparent trim/gutter/WebP packing; no creative repaint, RGB cleanup or edge removal. Paper composites are native Chromium screenshots.",
+  "integrationState": "not integrated by this agent; no manifest, code or Blender modifications",
+  "webTotalBytes": 1247964,
+  "priorFourAssetsUnchanged": true
+}

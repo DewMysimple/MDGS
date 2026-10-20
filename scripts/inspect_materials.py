@@ -1,4 +1,11 @@
-exec(open(r'C:\Users\16033\Desktop\MDGS\scripts\audit_blender.py',encoding='utf8').read().split('out=[]')[0])
+"""Inspect source materials without executing the audit script or saving scenes."""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from asset_config import load_pipeline
+CONFIG = load_pipeline()
+import bpy
+SOURCES = CONFIG.sources
 for cid,path in SOURCES:
  bpy.ops.wm.open_mainfile(filepath=path)
  print('CHAPTER',cid,flush=True)

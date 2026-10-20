@@ -1,0 +1,640 @@
+{
+  "schemaVersion": 1,
+  "status": "generated-and-technically-packed-not-integrated",
+  "chapter": 4,
+  "scope": "Fourth-scroll pilot front connection assets only; no manifest or Blender mutation performed by this asset task",
+  "method": "built-in image_gen.imagegen; each of four assets produced by a separate call with transparent_background=true; no CLI fallback or Python painting/editing",
+  "technicalPacking": "python scripts/prepare-reconstruction-assets.py --collection blank-design --trim-transparent --chapter 4 --gutter .12 --id <id> --input artwork/blank-design/raw/<id>.png",
+  "assets": [
+    {
+      "id": "bd4-court-bank",
+      "rawPath": "artwork/blank-design/raw/bd4-court-bank.png",
+      "prompt": "Use case: historical-scene. Asset type: ONE new independent RGBA cutout layer for a traditional Chinese 2.5D handscroll, early flourishing section of chapter 4, Tang palace garden. Subject: a broad, low, gently bending WHITE STONE WATER BANK with two short, open-ended balustrade end pieces, only two shallow stone steps, a few small restrained pink peony plants and tiny grass tufts at the edges. The bank and steps are the main readable design; no palace, pavilion, building, human, statue, boat, sky or distant mountains. Style: exquisite hand-painted gongbi shanshui Chinese silk-scroll illustration, fine varied ink contours, restrained blue-green mineral washes, aged ivory stone, tiny muted cinnabar and warm gold accents, visible subtle dry-brush/silk-pigment texture only on the actual objects; never photorealistic, never 3D. Composition: very wide horizontal approximately 3:1 composition, oblique elevated scroll perspective, low silhouette with a clear complete bottom footprint, irregular curved bank rather than a rectangle. Place the complete connected bank in the central 80% of the canvas with generous genuinely transparent margin on ALL FOUR sides. All left/right ends, steps, small plants and bottom edges must be completely visible and naturally finished. The water-facing space and sky-facing space must be actual alpha transparency, not a painted solid backdrop; only a little pale aqua wash clings to the bank. This is a connection strip to sit behind existing figures and flowers, so keep the center open, low and pale, with natural soft ink-terminated earth/water edges. Do not close the object into a broad solid ground plate. Output a real transparent background PNG with intact alpha; no checkerboard baked into pixels, no white/cream background, no paper rectangle, no labels, writing, watermark, border or collage.",
+      "builtInOutputHint": "Generated images are saved to C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-a9c6-7311-bab5-acf00524fdc2 as C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-a9c6-7311-bab5-acf00524fdc2\\exec-f36aef04-ff56-4494-aac3-902f97d8ee61.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "transparentBackgroundRequested": true,
+      "referenceImages": "none; generated new asset",
+      "rawViewImageInspected": true,
+      "createdAtUtc": "2026-10-20T00:07:42.425020+00:00",
+      "rawSha256": "b6f8c24d5aba861d0ed994622f020dc5f108d959e2700e12db00b2974eb7f876",
+      "rawDimensions": [
+        2172,
+        724
+      ],
+      "rawMode": "RGBA",
+      "rawAlphaMinMax": [
+        0,
+        255
+      ],
+      "rawFullyTransparentPixelPercent": 72.718514,
+      "rawTransparentRgbViewerCaveat": {
+        "yellowPixelCount": 2846,
+        "yellowPixelsAlphaAbove8": 0,
+        "note": "Raw view_image may show unassociated saturated RGB at alpha=1 or 2. Actual browser alpha compositing of delivered WebP was visually checked on paper and dark surfaces; no visible neon rim was found. No RGB/alpha cleanup was applied."
+      },
+      "production": {
+        "path": "artwork/blank-design/chapter-4/bd4-court-bank.png",
+        "width": 2679,
+        "height": 882,
+        "aspect": 3.0374149659863945,
+        "bytes": 1120299,
+        "sha256": "4f5555beb49aaaf85dbd35c3aba6f4c1b93f709a51c97fff2733a7c626d13d18",
+        "contentRgbaSha256": "4874b52a890e5b8305623a8ad2415915716b8e9a918b67706b3d220c01470ecd",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          259,
+          85,
+          2419,
+          796
+        ],
+        "visibleAlphaBounds": [
+          271,
+          180,
+          2413,
+          638
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 259,
+          "top": 85,
+          "right": 260,
+          "bottom": 86
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667786,
+          "top": 9.637188,
+          "right": 9.705114,
+          "bottom": 9.750567
+        },
+        "transparentPixelPercent": 81.843794,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-4/bd4-court-bank.webp",
+        "url": "assets/blank-design/chapter-4/bd4-court-bank.webp",
+        "width": 2048,
+        "height": 674,
+        "aspect": 3.0385756676557865,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.7644643523702874,
+        "scaleY": 0.764172335600907,
+        "bytes": 189758,
+        "sha256": "a863957277b85b6024f79b6cc23d9a980b54815a9e9013a24d752fc2c6261342",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          65,
+          1849,
+          608
+        ],
+        "visibleAlphaBounds": [
+          207,
+          138,
+          1845,
+          488
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 65,
+          "right": 199,
+          "bottom": 66
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.643917,
+          "right": 9.716797,
+          "bottom": 9.792285
+        },
+        "transparentPixelPercent": 81.856657,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "packingEvidence": {
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            0,
+            13,
+            2160,
+            724
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            2160,
+            711
+          ]
+        },
+        "contentAspect": 3.037974683544304,
+        "requestedGutterPerSide": 0.12,
+        "paddingPx": {
+          "left": 259,
+          "top": 85,
+          "right": 260,
+          "bottom": 86
+        },
+        "actualGutterContentPercent": {
+          "left": 11.99074074074074,
+          "right": 12.037037037037036,
+          "top": 11.954992967651195,
+          "bottom": 12.09563994374121
+        },
+        "paddingScaleX": 1.2402777777777778,
+        "paddingScaleY": 1.240506329113924,
+        "scope": "technical asset packing; no creative repaint, RGB cleanup, edge removal, or original PNG edit"
+      },
+      "use": "第四卷前段宫苑/沉香亭之间的白石水岸承接；作为原人物和牡丹后方的低位中景，短栏只在端部。",
+      "types": [
+        "A",
+        "B",
+        "D"
+      ],
+      "finding": "完整曲岸、两级短阶和左右短栏清楚，少量低牡丹；无宫殿、人物、文字；浅石纹与现有青绿工笔一致。",
+      "limitation": "岸面为低轮廓条带，接入时须保持真实透视，不可当成大面积广场铺满。",
+      "visualQa": {
+        "rawReviewedWith": "view_image on copied raw PNG",
+        "deliveryReviewedWith": "Chromium CSS compositing at 1280x1210, paper #e7e1ce and dark #22292c",
+        "compositeScreenshot": "reports/blank-design/front-assets-alpha-preview.png",
+        "browserReport": "reports/blank-design/front-assets-browser-qa.json",
+        "subjectCompleteness": "complete visible object ends/feet; no visibly clipped subject",
+        "transparency": "genuine alpha; all production outer edges receive about 12% content-size transparent gutter",
+        "acceptedAs": "standalone production asset suitable for chapter-4 pilot integration; final scene composition remains unverified"
+      },
+      "integrationStatus": "not-integrated-by-this-task; canonical manifest and Blender integration owned by main agent"
+    },
+    {
+      "id": "bd4-garden-water",
+      "rawPath": "artwork/blank-design/raw/bd4-garden-water.png",
+      "prompt": "Use case: historical-scene. Asset type: ONE independent transparent RGBA connecting layer for a hand-painted Chinese Tang palace garden 2.5D silk handscroll. Subject: a low, wide patch of shallow PALE AQUA LAKE WATER with delicate irregular hand-painted ripple marks; two gently curving separated shore segments and two small mixed peony flowerbeds, with one very restrained willow tip. It must contain readable water surface and small bank masses, not just a thin decorative line. No humans, boats, pavilions, palaces, mountains, sky, whole scenery background, lanterns or text. Style: refined Chinese gongbi and blue-green shanshui on silk, fine warm-gray ink outlines, pale malachite/celadon, mineral ivory rocks, tiny muted dusty-pink peonies and touches of warm gold. Quiet low-saturation colors, visible brushwork only on the subject; no photorealism or 3D. Composition: horizontal roughly 3:1 strip, light oblique elevated handscroll perspective, compact low islands/banks, organically shaped water patch with soft broken edges and completely visible ends. Keep all subject matter inside the middle 75% of the canvas, with genuinely empty alpha margins of at least 10% left and right and ample top/bottom space. All bank, water and willow tips must be complete. No hard rectangular or oval backdrop. Transparent negative space must continue around and between the shore segments. The water must become truly transparent at its irregular outer edge, never terminate as a solid blue rectangle. Do not paint cream/white paper or a checkerboard into the image. Output PNG with REAL transparent background. Use natural muted ink/earth edges, absolutely no neon yellow/red/green fringes, glow or outline. No lettering, seal, border, watermark, decorative frame or collage.",
+      "builtInOutputHint": "Generated images are saved to C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-a9c6-7311-bab5-acf00524fdc2 as C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-a9c6-7311-bab5-acf00524fdc2\\exec-3263355c-fade-499b-954a-bb5b8268a85a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "transparentBackgroundRequested": true,
+      "referenceImages": "none; generated new asset",
+      "rawViewImageInspected": true,
+      "createdAtUtc": "2026-10-20T00:07:42.558791+00:00",
+      "rawSha256": "98b52ce20ac68508bbbb3d607325e1c4c1d7e595da1f7a572ecc3427ca2fa189",
+      "rawDimensions": [
+        2132,
+        738
+      ],
+      "rawMode": "RGBA",
+      "rawAlphaMinMax": [
+        0,
+        255
+      ],
+      "rawFullyTransparentPixelPercent": 67.373282,
+      "rawTransparentRgbViewerCaveat": {
+        "yellowPixelCount": 3001,
+        "yellowPixelsAlphaAbove8": 0,
+        "note": "Raw view_image may show unassociated saturated RGB at alpha=1 or 2. Actual browser alpha compositing of delivered WebP was visually checked on paper and dark surfaces; no visible neon rim was found. No RGB/alpha cleanup was applied."
+      },
+      "production": {
+        "path": "artwork/blank-design/chapter-4/bd4-garden-water.png",
+        "width": 2526,
+        "height": 865,
+        "aspect": 2.9202312138728326,
+        "bytes": 1255008,
+        "sha256": "894ddf59553ce61982a8d483d2d282168bf1b29f5d5d21c189288ae25fae91b7",
+        "contentRgbaSha256": "9afc4d27dd6697362b2333f7b5252a09f70a42b9cce0046748934331202a5873",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          244,
+          84,
+          2281,
+          781
+        ],
+        "visibleAlphaBounds": [
+          249,
+          210,
+          2246,
+          698
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 244,
+          "top": 84,
+          "right": 245,
+          "bottom": 84
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.659541,
+          "top": 9.710983,
+          "right": 9.699129,
+          "bottom": 9.710983
+        },
+        "transparentPixelPercent": 76.50543,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-4/bd4-garden-water.webp",
+        "url": "assets/blank-design/chapter-4/bd4-garden-water.webp",
+        "width": 2048,
+        "height": 701,
+        "aspect": 2.921540656205421,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.8107680126682502,
+        "scaleY": 0.8104046242774566,
+        "bytes": 253084,
+        "sha256": "03da86f6141af16a6e9c7ac84b4a85f096d4993ddc1895a11e46928e2c042e73",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          68,
+          1848,
+          633
+        ],
+        "visibleAlphaBounds": [
+          202,
+          170,
+          1821,
+          566
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 68,
+          "right": 200,
+          "bottom": 68
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.700428,
+          "right": 9.765625,
+          "bottom": 9.700428
+        },
+        "transparentPixelPercent": 76.537285,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "packingEvidence": {
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            49,
+            17,
+            2086,
+            714
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            2037,
+            697
+          ]
+        },
+        "contentAspect": 2.922525107604017,
+        "requestedGutterPerSide": 0.12,
+        "paddingPx": {
+          "left": 244,
+          "top": 84,
+          "right": 245,
+          "bottom": 84
+        },
+        "actualGutterContentPercent": {
+          "left": 11.978399607265587,
+          "right": 12.027491408934708,
+          "top": 12.051649928263988,
+          "bottom": 12.051649928263988
+        },
+        "paddingScaleX": 1.240058910162003,
+        "paddingScaleY": 1.2410329985652797,
+        "scope": "technical asset packing; no creative repaint, RGB cleanup, edge removal, or original PNG edit"
+      },
+      "use": "第四卷前段转场的浅湖面、水纹、两岸小花圃；作为轻淡中景岸线延展，避免前后场景割裂。",
+      "types": [
+        "A",
+        "D",
+        "E"
+      ],
+      "finding": "水面与两岸有可读面积，右侧完整小柳，粉花克制；自然不规则水边真实透明，没有矩形色底。",
+      "limitation": "柳梢高于低岸；接入应避开原人物脸部和题签，水面不得缩成纯细线。",
+      "visualQa": {
+        "rawReviewedWith": "view_image on copied raw PNG",
+        "deliveryReviewedWith": "Chromium CSS compositing at 1280x1210, paper #e7e1ce and dark #22292c",
+        "compositeScreenshot": "reports/blank-design/front-assets-alpha-preview.png",
+        "browserReport": "reports/blank-design/front-assets-browser-qa.json",
+        "subjectCompleteness": "complete visible object ends/feet; no visibly clipped subject",
+        "transparency": "genuine alpha; all production outer edges receive about 12% content-size transparent gutter",
+        "acceptedAs": "standalone production asset suitable for chapter-4 pilot integration; final scene composition remains unverified"
+      },
+      "integrationStatus": "not-integrated-by-this-task; canonical manifest and Blender integration owned by main agent"
+    },
+    {
+      "id": "bd4-low-terrace",
+      "rawPath": "artwork/blank-design/raw/bd4-low-terrace.png",
+      "prompt": "Use case: historical-scene. Asset type: ONE new transparent cutout connection layer for a Chinese Tang imperial garden handscroll, chapter 4 flourishing court. Subject: a broad low palace-garden STONE TERRACE and a softly bending garden path, only two shallow steps, a short open balustrade segment, two small mineral rocks and restrained low planting. No palace, building, roof, pavilion, arch, tall column, lantern, statue, human or animal. Architecture is only the LOW STONE PLATFORM under the existing scene. Refined traditional hand-painted gongbi ink outlines and blue-green shanshui brush language on silk; mineral ivory stone, muted jade/celadon foliage, tiny touches of cinnabar-red and aged warm gold. The design is primarily pale stone and light pigment, never heavy or saturated. Complete object from left end to right end, all bottom feet and step fronts visible; organically irregular footprint with naturally dissolving earth edges and ample actual transparency around all edges. Horizontal approximately 3:1 layout, elevated oblique handscroll perspective. The platform should occupy the central 75% of the width and remain low, with modest garden path behind one side, small planting only at edges. Keep the middle of the terrace pale and open enough for existing figures to stand there. Do not include a broad solid rectangular floor sheet or full scenery background. Actual PNG alpha transparency, no cream paper background, no fake checkerboard, no crop, no text/seal/watermark/frame. Not photorealistic, not a 3D render, not a vector icon. It must function as an independent low silhouette ground layer with discrete complete stone details.",
+      "builtInOutputHint": "Generated images are saved to C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-a9c6-7311-bab5-acf00524fdc2 as C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-a9c6-7311-bab5-acf00524fdc2\\exec-7b9cce8c-fe43-4143-822d-820d34f764e5.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "transparentBackgroundRequested": true,
+      "referenceImages": "none; generated new asset",
+      "rawViewImageInspected": true,
+      "createdAtUtc": "2026-10-20T00:07:42.686798+00:00",
+      "rawSha256": "88939e23fdeb06474e1cc825c4d6d660bc96c956ccdab78b3733218ab2fdc00c",
+      "rawDimensions": [
+        2172,
+        724
+      ],
+      "rawMode": "RGBA",
+      "rawAlphaMinMax": [
+        0,
+        255
+      ],
+      "rawFullyTransparentPixelPercent": 63.672888,
+      "rawTransparentRgbViewerCaveat": {
+        "yellowPixelCount": 5281,
+        "yellowPixelsAlphaAbove8": 0,
+        "note": "Raw view_image may show unassociated saturated RGB at alpha=1 or 2. Actual browser alpha compositing of delivered WebP was visually checked on paper and dark surfaces; no visible neon rim was found. No RGB/alpha cleanup was applied."
+      },
+      "production": {
+        "path": "artwork/blank-design/chapter-4/bd4-low-terrace.png",
+        "width": 2655,
+        "height": 887,
+        "aspect": 2.993235625704622,
+        "bytes": 1486464,
+        "sha256": "a342719c56e87109019010b90b3196f2bff1e5295aaeedd865715ff5d59eda7e",
+        "contentRgbaSha256": "befc16e257e2430cdb1f38dd405c6ecc27ed61436e264937396437ca0dbd82b2",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          257,
+          86,
+          2398,
+          801
+        ],
+        "visibleAlphaBounds": [
+          262,
+          259,
+          2392,
+          666
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 257,
+          "top": 86,
+          "right": 257,
+          "bottom": 86
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.679849,
+          "top": 9.695603,
+          "right": 9.679849,
+          "bottom": 9.695603
+        },
+        "transparentPixelPercent": 75.742775,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-4/bd4-low-terrace.webp",
+        "url": "assets/blank-design/chapter-4/bd4-low-terrace.webp",
+        "width": 2048,
+        "height": 684,
+        "aspect": 2.9941520467836256,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.7713747645951036,
+        "scaleY": 0.7711386696730552,
+        "bytes": 240400,
+        "sha256": "4a4365e19eb880ba50d650d61ac87c212089d04605fc4749647b9615f9d9ffee",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          66,
+          1850,
+          618
+        ],
+        "visibleAlphaBounds": [
+          202,
+          199,
+          1846,
+          513
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 66,
+          "right": 198,
+          "bottom": 66
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.649123,
+          "right": 9.667969,
+          "bottom": 9.649123
+        },
+        "transparentPixelPercent": 75.746628,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "packingEvidence": {
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            15,
+            9,
+            2156,
+            724
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            2141,
+            715
+          ]
+        },
+        "contentAspect": 2.9944055944055945,
+        "requestedGutterPerSide": 0.12,
+        "paddingPx": {
+          "left": 257,
+          "top": 86,
+          "right": 257,
+          "bottom": 86
+        },
+        "actualGutterContentPercent": {
+          "left": 12.00373657169547,
+          "right": 12.00373657169547,
+          "top": 12.027972027972028,
+          "bottom": 12.027972027972028
+        },
+        "paddingScaleX": 1.2400747314339093,
+        "paddingScaleY": 1.2405594405594405,
+        "scope": "technical asset packing; no creative repaint, RGB cleanup, edge removal, or original PNG edit"
+      },
+      "use": "第四卷前段亭台/宴游主体脚下的低石台与园路，补中下部接地；放在原裙摆和前景花石后方。",
+      "types": [
+        "A",
+        "B",
+        "D"
+      ],
+      "finding": "石台、两级矮阶、两端短栏、岩石与低植栽完整，左侧弯路可衔接相邻主体；没有大殿/人物/文字。",
+      "limitation": "中部浅石面是资产本体，不是整张背景；实际叠加应只补已标记坏空白，控制占比。",
+      "visualQa": {
+        "rawReviewedWith": "view_image on copied raw PNG",
+        "deliveryReviewedWith": "Chromium CSS compositing at 1280x1210, paper #e7e1ce and dark #22292c",
+        "compositeScreenshot": "reports/blank-design/front-assets-alpha-preview.png",
+        "browserReport": "reports/blank-design/front-assets-browser-qa.json",
+        "subjectCompleteness": "complete visible object ends/feet; no visibly clipped subject",
+        "transparency": "genuine alpha; all production outer edges receive about 12% content-size transparent gutter",
+        "acceptedAs": "standalone production asset suitable for chapter-4 pilot integration; final scene composition remains unverified"
+      },
+      "integrationStatus": "not-integrated-by-this-task; canonical manifest and Blender integration owned by main agent"
+    },
+    {
+      "id": "bd4-poetry-incense",
+      "rawPath": "artwork/blank-design/raw/bd4-poetry-incense.png",
+      "prompt": "Use case: historical-scene. Asset type: ONE independent transparent small object group for a Tang Chinese 2.5D hand-painted silk-scroll scene, chapter 4 poem and incense. Subject: a single elegant LOW WOODEN POETRY TABLE with all four short legs fully visible. On the table: one partially unrolled plain warm-ivory silk scroll with absolutely EMPTY surfaces (no writing, marks or images), one dark inkstone, one calligraphy brush. Beside the table sits ONE small patinated bronze incense burner with a simple delicate wisp of pale smoke, and only 3 to 5 scattered pink peony petals. No human, hand, chair, extra furniture, bookshelves, backdrop, building, landscape or flowers in a vase. Style: refined traditional Chinese gongbi illustration, fine varied hand-ink contours, silk-pigment and dry-brush character, restrained warm brown lacquer, muted jade bronze patina, aged ivory and tiny warm-gold accents. Match a blue-green/cinnabar/gold historical handscroll palette without 3D lighting. Composition: complete compact horizontal object group, elevated oblique handscroll view, roughly 3:1 canvas, centered in only the middle 65% of the image with generous genuine transparent margins all sides. The table, every leg, scroll ends, burner feet, smoke end and petals must be complete and separated from canvas borders. Clear empty alpha space under and around the legs; only a small naturally soft contact ink shadow, not a floor rectangle. Output real transparent-background PNG, no painted paper background, no checkerboard baked into pixels, no caption, text, seal, watermark or frame. It is an independently placeable object asset rather than a full illustration scene. Not photographic, not a 3D render, not a vector icon.",
+      "builtInOutputHint": "Generated images are saved to C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-a9c6-7311-bab5-acf00524fdc2 as C:\\Users\\Administrator\\.codex\\generated_images\\01a15697-a9c6-7311-bab5-acf00524fdc2\\exec-ffef9557-6030-4e5e-a87c-fc7bf1520613.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "transparentBackgroundRequested": true,
+      "referenceImages": "none; generated new asset",
+      "rawViewImageInspected": true,
+      "createdAtUtc": "2026-10-20T00:07:42.819502+00:00",
+      "rawSha256": "314e639b4181fe96b735cda7e15d11e162ce3ca4b4abf7b1182efc2d86f5d820",
+      "rawDimensions": [
+        2172,
+        724
+      ],
+      "rawMode": "RGBA",
+      "rawAlphaMinMax": [
+        0,
+        255
+      ],
+      "rawFullyTransparentPixelPercent": 63.713969,
+      "rawTransparentRgbViewerCaveat": {
+        "yellowPixelCount": 580,
+        "yellowPixelsAlphaAbove8": 0,
+        "note": "Raw view_image may show unassociated saturated RGB at alpha=1 or 2. Actual browser alpha compositing of delivered WebP was visually checked on paper and dark surfaces; no visible neon rim was found. No RGB/alpha cleanup was applied."
+      },
+      "production": {
+        "path": "artwork/blank-design/chapter-4/bd4-poetry-incense.png",
+        "width": 2686,
+        "height": 873,
+        "aspect": 3.0767468499427264,
+        "bytes": 1238467,
+        "sha256": "189fe56be13cd1aee0f548586d98990196b6edde311ce25d9bed394e3d8ce0a5",
+        "contentRgbaSha256": "a4f5c59cccc317273e546ce21d4fe5fe397499addf050a53b9df15ccc003b380",
+        "contentPixelsPreserved": true,
+        "alphaBounds": [
+          260,
+          84,
+          2426,
+          788
+        ],
+        "visibleAlphaBounds": [
+          499,
+          121,
+          2378,
+          721
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 260,
+          "top": 84,
+          "right": 260,
+          "bottom": 85
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.679821,
+          "top": 9.621993,
+          "right": 9.679821,
+          "bottom": 9.736541
+        },
+        "transparentPixelPercent": 75.66577,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "web": {
+        "path": "public/assets/blank-design/chapter-4/bd4-poetry-incense.webp",
+        "url": "assets/blank-design/chapter-4/bd4-poetry-incense.webp",
+        "width": 2048,
+        "height": 666,
+        "aspect": 3.075075075075075,
+        "quality": 90,
+        "maxEdge": 2048,
+        "scaleX": 0.7624720774385704,
+        "scaleY": 0.7628865979381443,
+        "bytes": 178096,
+        "sha256": "2cb7c012a50f96dc6ca9741937f3491b37f69158990f78dbcf0a20ceb875dd3d",
+        "alphaPreservedAgainstDeliveryImage": true,
+        "alphaBounds": [
+          198,
+          64,
+          1850,
+          601
+        ],
+        "visibleAlphaBounds": [
+          381,
+          93,
+          1813,
+          550
+        ],
+        "alphaBoundsThreshold": "alpha > 0; visibleAlphaBounds uses alpha > 8",
+        "safeOuterMarginPx": {
+          "left": 198,
+          "top": 64,
+          "right": 198,
+          "bottom": 65
+        },
+        "safeOuterMarginPercent": {
+          "left": 9.667969,
+          "top": 9.60961,
+          "right": 9.667969,
+          "bottom": 9.75976
+        },
+        "transparentPixelPercent": 75.68638,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      "packingEvidence": {
+        "transparentOnlyTrim": {
+          "enabled": true,
+          "box": [
+            0,
+            6,
+            2166,
+            710
+          ],
+          "nonzeroAlphaPixelsRemoved": 0,
+          "contentSize": [
+            2166,
+            704
+          ]
+        },
+        "contentAspect": 3.0767045454545454,
+        "requestedGutterPerSide": 0.12,
+        "paddingPx": {
+          "left": 260,
+          "top": 84,
+          "right": 260,
+          "bottom": 85
+        },
+        "actualGutterContentPercent": {
+          "left": 12.003693444136658,
+          "right": 12.003693444136658,
+          "top": 11.931818181818182,
+          "bottom": 12.073863636363637
+        },
+        "paddingScaleX": 1.240073868882733,
+        "paddingScaleY": 1.2400568181818181,
+        "scope": "technical asset packing; no creative repaint, RGB cleanup, edge removal, or original PNG edit"
+      },
+      "use": "沉香亭/清平调段的独立叙事物件：空白绢卷、笔砚与小香炉，靠近原李白叙事而不新增人物或历史文字。",
+      "types": [
+        "B",
+        "F"
+      ],
+      "finding": "低诗案、完整脚端、空白展开卷、笔砚、小青铜香炉和4片可见落花；案下/物间透明，无文字、水印或地面矩形。",
+      "limitation": "香烟为此独立资产中静态笔触，本次未创建或声称网页独立烟气动效。整体应小体量点景，不能抢人物主位。",
+      "visualQa": {
+        "rawReviewedWith": "view_image on copied raw PNG",
+        "deliveryReviewedWith": "Chromium CSS compositing at 1280x1210, paper #e7e1ce and dark #22292c",
+        "compositeScreenshot": "reports/blank-design/front-assets-alpha-preview.png",
+        "browserReport": "reports/blank-design/front-assets-browser-qa.json",
+        "subjectCompleteness": "complete visible object ends/feet; no visibly clipped subject",
+        "transparency": "genuine alpha; all production outer edges receive about 12% content-size transparent gutter",
+        "acceptedAs": "standalone production asset suitable for chapter-4 pilot integration; final scene composition remains unverified"
+      },
+      "integrationStatus": "not-integrated-by-this-task; canonical manifest and Blender integration owned by main agent"
+    }
+  ],
+  "updatedAtUtc": "2026-10-20T00:07:42.821282+00:00",
+  "count": 4,
+  "qaSummary": "All four raw images individually inspected; all four delivery WebP images composited on two browser backgrounds and visually inspected. Technical packing preserved content RGBA, original raw hashes and delivery alpha. Scene/Blender placement not claimed."
+}
