@@ -1,0 +1,14 @@
+{
+  "created": "2026-10-21",
+  "method": "Built-in image_gen refinements; non-destructive sibling versions",
+  "assets": [
+    {
+      "file": "title-compact.png",
+      "prompt": "Use case: background-extraction. Edit target is this existing transparent Chinese title sprite. Create a COMPACT TIGHTLY CROPPED asset with TRUE ALPHA TRANSPARENCY, only the lettering. Output landscape roughly 1100x400 or aspect 2.75:1. Remove ALL excessive transparent padding so main lettering and subtitle/seal fill90% of width and90% of height. Preserve EXACTLY the four original brush characters 国色长卷 and the exact black subtitle 数字牡丹赋 underneath, the small cinnabar seal, the warm cinnabar/burnt gold paint texture and natural calligraphy edges. Retain readable original lettering without redrawing into new characters. All nonlettering background genuinely alpha transparent. No new text, no additional Chinese, no English, no decorative architecture, no paper/backgroundpanel, no black or white rectangle, no checkerboard."
+    },
+    {
+      "file": "foreground-v2.png",
+      "prompt": "Use case: background-extraction. Make a production TRUE RGBA transparent foreground sprite only, full original canvas1672x941. Match the reference's high quality softly defocused peonies and warm ivory old books in original bottom corners. Critical coordinate placement for interactive labels: All pixels in rectangle x200..1490 y620..880 MUST be fully transparent without any objects. All pixels above y710 MUST be fully transparent. Put a close dustyrose peony at very far lowerleft, its visible silhouette restricted x0..190, y735..941; its leaves/branch may extend to x390 ONLY BELOW y890. Put soft dark peony leaves/petals at very far lowerright strictly x1510..1672,y760..941. Put oldbook ONLY along bottom x1050..1672,y895..941. Completely empty middle region between corners. Remove room, desk,scrolls,titles,labels,background and all otherobjects. Never center or enlarge foreground objects; they must hug canvas outsideedges. Genuine transparent alpha, no black,white or checkerboard background. Keep same reference warmgoldlight, finegongbi pinkredpeonies, mineraljade leaves, realistic softness, walnut/ivory materials."
+    }
+  ]
+}

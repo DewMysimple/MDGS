@@ -9,8 +9,8 @@ const { chromium } = createRequire(import.meta.url)(process.env.MDGS_PLAYWRIGHT_
 const root = fileURLToPath(new URL('../', import.meta.url));
 const output = path.join(root, 'reports/study');
 await mkdir(output, { recursive: true });
-const server = await preview({ preview: { host: '127.0.0.1', port: 0 }, logLevel: 'error' });
-const url = server.resolvedUrls.local[0];
+const server = process.env.MDGS_PREVIEW_URL ? null : await preview({ preview: { host: '127.0.0.1', port: 0 }, logLevel: 'error' });
+const url = process.env.MDGS_PREVIEW_URL || server.resolvedUrls.local[0];
 const browser = await chromium.launch({ headless: true, executablePath: process.env.MDGS_TEST_BROWSER });
 const failures = [], errors = [], results = [];
 const phase = page => page.locator('[data-journey-phase]').getAttribute('data-journey-phase');
@@ -33,15 +33,15 @@ try {
   page.on('response', response => { if (response.url().startsWith(url) && response.status() >= 400) unexpectedResponses.push(response.url()); });
   let releaseTextures;
   const held = new Promise(resolve => { releaseTextures = resolve; });
-  await page.route('**/*.webp', async route => { await held; await route.continue().catch(() => {}); });
+  await page.route('**/assets/**/*.webp', async route => { await held; await route.continue().catch(() => {}); });
   await page.goto(url);
-  await page.locator('.study-original').evaluate(image => image.decode());
+  await page.waitForFunction(() => document.querySelectorAll('.study-entry-button').length === 4 && [...document.querySelectorAll('.study-entry-button')].every(button => !button.disabled));
   assert.equal(await phase(page), 'HOME');
-  assert.equal(await page.locator('.study-scroll-hotspot').count(), 4);
+  assert.equal(await page.locator('.study-entry-button').count(), 4);
   assert.equal(await page.locator('canvas').count(), 0, 'Home does not retain a WebGL renderer.');
   await shot(page, 'home-desktop');
   await page.locator('[data-chapter-id="1"]').hover();
-  await page.locator('.study-hover-label').waitFor();
+  await page.locator('.study-scroll-entry.is-hovered').waitFor();
   await shot(page, 'home-hover');
   const started = Date.now();
   await page.locator('[data-chapter-id="1"]').click();
@@ -81,11 +81,9 @@ try {
   await waitPhase(page, 'HOME');
   assert.equal(await page.locator('canvas').count(), 0);
   for (const id of [2,3,4]) {
-    // Actual image-space hit position; SVG and image share the exact same transform.
-    const box = await page.locator('.study-original').boundingBox();
-    const x = [316,655,1035,1370][id - 1];
+    // Native plaque buttons share the chapter mapping of their independent painted scrolls.
     const entryStarted = Date.now();
-    await page.mouse.click(box.x + box.width * x / 1672, box.y + box.height * 575 / 941);
+    await page.locator(`.study-entry-button[data-chapter-id="${id}"]`).click();
     await waitPhase(page, 'SCROLL_LOADING');
     assert((await page.locator('.art-loading__colour').getAttribute('src')).endsWith(`painting-${id}.png`));
     await page.waitForTimeout(450);
@@ -96,7 +94,7 @@ try {
     assert.equal(await page.locator('canvas').count(), 1);
     await page.getByRole('button', { name: '返回书房', exact: true }).click();
     await waitPhase(page, 'HOME');
-    results.push({ test: `original-polygon-to-chapter-${id}`, entryMs, passed: true });
+    results.push({ test: `native-plaque-to-chapter-${id}`, entryMs, passed: true });
   }
   await page.goBack();
   await waitPhase(page, 'SCROLL_VIEWER');
@@ -124,12 +122,13 @@ try {
   const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
   await installObserver(mobile);
   await mobile.goto(url);
-  assert.equal(await mobile.locator('.study-mobile-directory > button').count(), 4);
+  await mobile.waitForFunction(() => document.querySelectorAll('.study-entry-button').length === 4 && [...document.querySelectorAll('.study-entry-button')].every(button => !button.disabled));
+  assert.equal(await mobile.locator('.study-entry-button').count(), 4);
   assert.equal(await mobile.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
   await shot(mobile, 'home-mobile');
   await mobile.getByRole('button', { name: '书房环境动画', exact: true }).tap();
   assert.equal(await mobile.locator('.study-motion-toggle').getAttribute('aria-pressed'), 'false');
-  await mobile.getByRole('button', { name: '展卷：锦绣花意', exact: true }).tap();
+  await mobile.locator('.study-entry-button[data-chapter-id="3"]').tap();
   await waitPhase(mobile, 'SCROLL_LOADING');
   await shot(mobile, 'loading-mobile');
   await waitPhase(mobile, 'SCROLL_VIEWER');
@@ -171,9 +170,9 @@ try {
 } catch (error) { failures.push(error.stack || String(error)); }
 finally {
   await browser.close();
-  await new Promise(resolve => server.httpServer.close(resolve));
+  if (server) await new Promise(resolve => server.httpServer.close(resolve));
 }
-const report = { status: failures.length ? 'fail' : 'pass', testedAt: new Date().toISOString(), scope: 'Windows Edge desktop browser and emulated mobile touch; production Vite build. No physical mobile device or cross-browser claim.', results, errors, failures };
+const report = { status: failures.length ? 'fail' : 'pass', testedAt: new Date().toISOString(), scope: `Windows Edge desktop browser and emulated mobile touch; ${server ? 'production Vite build' : 'explicit local preview URL'}. No physical mobile device or cross-browser claim.`, results, errors, failures };
 await writeFile(path.join(output, 'validation-journey.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify(report, null, 2));
 assert.deepEqual(failures, []);

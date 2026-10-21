@@ -69,8 +69,8 @@
 .art-loading__petals svg { position: absolute; top: -7%; width: calc(11px + var(--i) * 1.7px); height: auto; opacity: 0; animation: art-petal calc(16s + var(--i) * 1.2s) linear calc(var(--i) * -3.4s) infinite; }
 .art-loading__petals svg:nth-child(3n) { filter: blur(.5px); }
 .art-loading--painting-reveal .art-loading__colour { opacity: 1; transition: opacity .7s; }
-.art-loading--entering-viewer { animation: art-world-enter .9s ease-in both,art-aperture-open .9s ease-in both; pointer-events: none; mask-image: radial-gradient(ellipse at 50% 50%, transparent var(--art-aperture),#000 calc(var(--art-aperture) + 13%)); }
-.art-loading--entering-viewer .art-loading__scroll { animation: art-scroll-enter .9s cubic-bezier(.45,0,.4,1) both; }
+.art-loading--entering-viewer { animation: art-world-enter .75s ease-in both,art-aperture-open .75s ease-in both; pointer-events: none; mask-image: radial-gradient(ellipse at 50% 50%, transparent var(--art-aperture),#000 calc(var(--art-aperture) + 13%)); }
+.art-loading--entering-viewer .art-loading__scroll { animation: art-scroll-enter .75s cubic-bezier(.45,0,.4,1) both; }
 .art-loading--entering-viewer .art-loading__caption,.art-loading--entering-viewer .art-loading__overline,.art-loading--entering-viewer .art-loading__invitation { opacity: 0; transition: opacity .35s; }
 .art-loading--returning-home { pointer-events: none; animation: art-return-home 1s ease both; }
 .art-loading--returning-home .art-loading__scroll { animation: art-scroll-return 1s ease both; }

@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-21",
+  "baseline": "05dcd0e",
+  "branch": "main",
+  "architecture": "Six distinct runtime bitmap assets compose nine independent depth planes, with four native material buttons; existing Four Scroll worlds retained.",
+  "minimumLoadingMs": 3003.399999976158,
+  "cachedRefreshMs": 6733.600000023842,
+  "runtimeLayerBytes": 2438908,
+  "originalReferenceSha256": "e516486e651eb6297cccc8cfb93e7ad84175a24ec4ba4c2a06f5b8e6a00b0771",
+  "canonicalUnchanged": true,
+  "reports": {
+    "reports/study-layered/validation-layered-home.json": {
+      "status": "pass",
+      "testedAt": "2026-10-21T04:32:22.241Z",
+      "cases": 13
+    },
+    "reports/study/validation-journey.json": {
+      "status": "pass",
+      "testedAt": "2026-10-21T04:45:47.344Z",
+      "cases": 10
+    },
+    "reports/study/validation-timing.json": {
+      "status": "pass",
+      "testedAt": "2026-10-21T04:41:45.478Z",
+      "cases": 8
+    },
+    "reports/validation-portable-subpath.json": {
+      "status": "pass",
+      "testedAt": "2026-10-21T04:38:09.510Z"
+    }
+  },
+  "scope": "Windows Edge desktop and emulated mobile touch; real WebGL, source code, network interruption, computed transforms and screenshots.",
+  "limitations": [
+    "No physical phone test",
+    "No other browser acceptance",
+    "No sustained FPS measurement",
+    "No hosted deployment",
+    "Visibility timer branch uses a synthetic event"
+  ],
+  "hashes": {
+    "index.html": {
+      "sha256": "a6c285c75ce2bb0e4ce91ce0a896bfddc62fc89bd4a76618e3bbb174030c949d",
+      "bytes": 668
+    },
+    "package.json": {
+      "sha256": "da1b95b33f94e6174ee03b1286cf8567ecbb0973d250df7b713118af7c77ed33",
+      "bytes": 1069
+    },
+    "src/App.tsx": {
+      "sha256": "ffa79e401810528e83333de16308f88ec3d995b9cabc2ead358b5129ed2c5f9e",
+      "bytes": 15400
+    },
+    "src/components/StudyHome.tsx": {
+      "sha256": "1a3972ccd3e5da78d5b4c3e49dbe9e8aec7427f74bc44a89e27b676400930c79",
+      "bytes": 9067
+    },
+    "src/components/StudyAtmosphere.tsx": {
+      "sha256": "7d1fd4f50f6021dbf9b26e28dc30fbc37c88509b1ab771866be805aa6dc69d64",
+      "bytes": 4040
+    },
+    "src/data/studyLayers.ts": {
+      "sha256": "7fd5376fef1b325dbcf11e8c5d2c94bb0cf240602f18fcfff760b91cb2b311e9",
+      "bytes": 994
+    },
+    "src/hooks/useStudyParallax.ts": {
+      "sha256": "55b8500e650ff4c09edaa357fab124131e8c95e3dc064d2285dddbba21ace482",
+      "bytes": 2287
+    },
+    "src/hooks/useStudyJourney.ts": {
+      "sha256": "902091271790577cb16bb0ca94615ee09612de107a064fca3f94da66e52f587a",
+      "bytes": 9432
+    },
+    "src/styles/layered-study.css": {
+      "sha256": "08a38e14ae4aa0a9f643c71370d501a91ee56347805dd0ba5b214c8cdad9f3f6",
+      "bytes": 16831
+    },
+    "src/styles/scroll-loading.css": {
+      "sha256": "e4bc8b0041b7e6480d3bc88956602c740cee389941071aef5eeb1f9e63389d9a",
+      "bytes": 16130
+    },
+    "public/assets/reconstruction/manifest.json": {
+      "sha256": "4433928f6e6160acbd275ba6430d65fa3128df736a7eb59ef7607e61312d10cb",
+      "bytes": 295160
+    },
+    "public/ui/study-layered/reference.png": {
+      "sha256": "e516486e651eb6297cccc8cfb93e7ad84175a24ec4ba4c2a06f5b8e6a00b0771",
+      "bytes": 2413943
+    },
+    "public/ui/study-layered/runtime-manifest.json": {
+      "sha256": "6758a8111f01995e3d679d0a199688f71f7e635d58edb46fae964f014f23c40a",
+      "bytes": 1912
+    }
+  }
+}

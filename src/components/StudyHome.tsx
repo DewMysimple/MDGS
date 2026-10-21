@@ -1,123 +1,90 @@
 import { useEffect, useRef, useState } from 'react';
-import type { CSSProperties, KeyboardEvent } from 'react';
+import type { CSSProperties } from 'react';
 import { chapters } from '../data/chapters';
-import { studyImage, studyScrolls } from '../data/study';
+import { layeredScrolls, studyLayers } from '../data/studyLayers';
+import { useStudyParallax } from '../hooks/useStudyParallax';
 import StudyAtmosphere from './StudyAtmosphere';
-import '../styles/study-home.css';
+import '../styles/layered-study.css';
 
 export interface StudyHomeProps {
-  phase: string;
-  chapterId: number;
-  onSelect: (id: number) => void;
-  motionEnabled: boolean;
-  onToggleMotion: () => void;
+  phase: string; chapterId: number; onSelect: (id: number) => void;
+  motionEnabled: boolean; onToggleMotion: () => void;
 }
+const depth = (value: number) => ({ '--depth': `${value}px` } as CSSProperties);
 
 export default function StudyHome({ phase, chapterId, onSelect, motionEnabled, onToggleMotion }: StudyHomeProps) {
-  const [hover, setHover] = useState<number | null>(null);
-  const [dialog, setDialog] = useState<'directory' | 'about' | 'language' | null>(null);
-  const [imageFailed, setImageFailed] = useState(false);
-  const [imageAttempt, setImageAttempt] = useState(0);
-  const homeRef = useRef<HTMLElement>(null);
-  const previousHome = useRef(phase === 'HOME');
-  const dialogRef = useRef<HTMLDialogElement>(null);
-  const trigger = useRef<Element | null>(null);
   const home = phase === 'HOME';
-  const selected = studyScrolls.find(item => item.id === chapterId) ?? studyScrolls[0];
-  const focused = hover ? chapters.find(item => item.id === hover) : undefined;
+  const environmental = motionEnabled && ['HOME', 'SCROLL_AWAKENING', 'CAMERA_ENTERING', 'RETURNING_HOME'].includes(phase);
+  const { stage, active, onPointerMove, onPointerLeave } = useStudyParallax(environmental);
+  const [hover, setHover] = useState<number | null>(null);
+  const [loaded, setLoaded] = useState(0);
+  const [assetError, setAssetError] = useState(false);
+  const [attempt, setAttempt] = useState(0);
+  const [about, setAbout] = useState(false);
+  const dialog = useRef<HTMLDialogElement>(null);
+  const aboutTrigger = useRef<HTMLButtonElement>(null);
+  const previousHome = useRef(home);
+  const selected = layeredScrolls[chapterId - 1] ?? layeredScrolls[0];
+  const sources = Object.values(studyLayers);
   useEffect(() => {
-    const node = dialogRef.current;
-    if (dialog && node && !node.open) { trigger.current = document.activeElement; node.showModal(); }
-    else if (!dialog && node?.open) node.close();
-  }, [dialog]);
-  useEffect(() => { if (!home) { setDialog(null); setHover(null); } }, [home]);
+    let alive = true;
+    setLoaded(0); setAssetError(false);
+    for (const source of Object.values(studyLayers)) {
+      const image = new Image(); image.src = source;
+      image.decode().then(() => { if (alive) setLoaded(value => value + 1); })
+        .catch(() => { if (alive) setAssetError(true); });
+    }
+    return () => { alive = false; };
+  }, [attempt]);
   useEffect(() => {
-    const returning = home && !previousHome.current;
+    if (!home) { setAbout(false); setHover(null); }
+    if (home && !previousHome.current) {
+      requestAnimationFrame(() => stage.current?.querySelector<HTMLButtonElement>(`.study-entry-button[data-chapter-id="${chapterId}"]`)?.focus({ preventScroll: true }));
+    }
     previousHome.current = home;
-    if (!returning) return;
-    const frame = requestAnimationFrame(() => {
-      homeRef.current?.querySelector<SVGGElement>(`[data-chapter-id="${chapterId}"]`)?.focus({ preventScroll: true });
-    });
-    return () => cancelAnimationFrame(frame);
-  }, [home, chapterId]);
-  function choose(id: number) { if (!home) return; setDialog(null); onSelect(id); }
-  function closeDialog() {
-    setDialog(null);
-    if (trigger.current instanceof HTMLElement || trigger.current instanceof SVGElement) trigger.current.focus({ preventScroll: true });
-  }
-  function activateKey(event: KeyboardEvent<SVGGElement>, action: () => void) {
-    if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); action(); }
-  }
-  const nav = [
-    { name: '书房首页', x: 580, width: 65, action: () => setDialog(null) },
-    { name: '牡丹之美 · 神都花事', x: 667, width: 92, action: () => choose(1) },
-    { name: '长卷寻迹 · 展卷目录', x: 777, width: 102, action: () => setDialog('directory') },
-    { name: '数字展陈 · 锦绣花意', x: 902, width: 104, action: () => choose(3) },
-    { name: '文化传承 · 花入万家', x: 1018, width: 97, action: () => choose(2) },
-    { name: '关于作品', x: 1133, width: 105, action: () => setDialog('about') },
-    { name: '查阅四卷目录', x: 1372, width: 49, action: () => setDialog('directory') },
-    { name: '语言说明', x: 1435, width: 111, action: () => setDialog('language') },
-  ];
-
-  return <section ref={homeRef} className={`study-home${!home ? ' is-travelling' : ''}`} data-phase={phase} data-environment={motionEnabled ? 'on' : 'off'}
-    aria-label="国色长卷·数字牡丹赋，古典书房" aria-busy={!home}>
-    <div className="study-picture-frame">
-      <div className="study-camera" style={{ '--focus-x': `${selected.x / 1672 * 100}%`, '--focus-y': `${selected.y / 941 * 100}%` } as CSSProperties}>
-        <img key={imageAttempt} className="study-original" src={imageAttempt ? `${studyImage}?retry=${imageAttempt}` : studyImage} width="1672" height="941" alt="暖阳照入古典书房，雕花长桌陈列四幅牡丹长卷。顶部为国色长卷与数字牡丹赋题字。" fetchPriority="high" draggable={false} onError={() => setImageFailed(true)} onLoad={() => setImageFailed(false)} />
-        <StudyAtmosphere enabled={motionEnabled && ['HOME', 'SCROLL_AWAKENING', 'CAMERA_ENTERING', 'RETURNING_HOME'].includes(phase)} />
-        <svg className="study-hotspots" viewBox="0 0 1672 941" aria-label="书房画卷与导航">
-          <defs>
-            <linearGradient id="study-edge-gold" x1="0" x2="1"><stop stopColor="#bc8a42" stopOpacity=".12" /><stop offset=".45" stopColor="#f0c989" stopOpacity=".75" /><stop offset="1" stopColor="#bb8f4e" stopOpacity=".2" /></linearGradient>
-            <radialGradient id="study-scroll-light"><stop stopColor="#f4cf99" stopOpacity=".18" /><stop offset="1" stopColor="#f4cf99" stopOpacity="0" /></radialGradient>
-            <linearGradient id="study-hover-petal-color" x2="1" y2="1"><stop stopColor="#f2c7a8" /><stop offset=".7" stopColor="#cd7d6e" /><stop offset="1" stopColor="#984b3c" /></linearGradient>
-          </defs>
-          {nav.map(item => <g key={item.name} className="study-nav-hotspot" role="button" tabIndex={home ? 0 : -1} aria-label={item.name}
-            onClick={() => home && item.action()} onKeyDown={event => activateKey(event, () => home && item.action())}>
-            <title>{item.name}</title><rect x={item.x} y="18" width={item.width} height="48" />
-          </g>)}
-          {studyScrolls.map(item => {
-            const chapter = chapters.find(entry => entry.id === item.id)!;
-            return <g key={item.id} className={`study-scroll-hotspot${hover === item.id ? ' is-hovered' : ''}${!home && chapterId === item.id ? ' is-selected' : ''}`}
-              data-chapter-id={item.id} role="button" tabIndex={home ? 0 : -1} aria-label={`展开第${chapter.numeral}卷：${chapter.title}，${chapter.subtitle}`}
-              onPointerEnter={() => home && setHover(item.id)} onPointerLeave={() => setHover(null)} onFocus={() => setHover(item.id)} onBlur={() => setHover(null)}
-              onClick={() => choose(item.id)} onKeyDown={event => activateKey(event, () => choose(item.id))}>
-              <title>{chapter.title} · 轻触展卷</title>
-              <polygon className="study-scroll-hit" points={item.points} />
-              <ellipse className="study-scroll-warmth" cx={item.x} cy={item.y + 45} rx="145" ry="95" />
-              <polygon className="study-scroll-outline" points={item.points} />
-              <path className="study-scroll-glint" d={`M${item.x - 125} 687 Q${item.x - 119} 665 ${item.x - 118} 686 M${item.x + 118} 680 Q${item.x + 125} 659 ${item.x + 128} 689`} />
-              {[0, 1].map(index => <g key={index} transform={`translate(${item.x + (index ? 78 : -85)} ${index ? 580 : 630}) scale(.45)`} aria-hidden="true" pointerEvents="none"><path className={`study-hover-petal study-hover-petal--${index}`} d="M-17 -5 C-22 -15 -15 -24 -8 -21 C-3 -28 6 -24 7 -20 C19 -24 26 -13 20 -4 C18 7 7 15 -1 19 C-5 10 -15 8 -17 -5Z" fill="url(#study-hover-petal-color)" stroke="#c69870" strokeWidth=".6" /></g>)}
-            </g>;
+  }, [home, chapterId, stage]);
+  useEffect(() => {
+    if (about && !dialog.current?.open) dialog.current?.showModal();
+    if (!about && dialog.current?.open) dialog.current.close();
+  }, [about]);
+  function closeAbout() { setAbout(false); aboutTrigger.current?.focus({ preventScroll: true }); }
+  function choose(id: number) { if (home && loaded === sources.length && !assetError) onSelect(id); }
+  const sceneStyle = { '--focus-x': `${selected.left + selected.width / 2}%`, '--focus-y': '63%' } as CSSProperties;
+  return <section className={`study-home layered-study${active ? ' environment-running' : ' environment-still'}`} data-phase={phase} data-environment={motionEnabled ? 'on' : 'off'} aria-label="国色长卷·数字牡丹赋，分层古典书房" aria-busy={loaded < sources.length || !home}>
+    <div className="study-outer-light" aria-hidden="true" />
+    <div className="study-stage" ref={stage} onPointerMove={onPointerMove} onPointerLeave={onPointerLeave} style={sceneStyle}>
+      <div className="study-camera-rig" key={attempt}>
+        <div className="study-scene-layer study-garden-plane" data-depth="1.5" style={depth(1.5)} aria-hidden="true"><img src={studyLayers.garden} alt="" fetchPriority="high" draggable={false} /><div className="study-garden-mist" /></div>
+        <div className="study-scene-layer study-room-plane" data-depth="4" style={depth(4)} aria-hidden="true"><img src={studyLayers.room} alt="" draggable={false} /></div>
+        <div className="study-lantern-light" aria-hidden="true" />
+        <div className="study-scene-layer study-desk-plane" data-depth="7" style={depth(7)} aria-hidden="true"><img src={studyLayers.desk} alt="" draggable={false} /></div>
+        <h1 className="study-title"><span className="visually-hidden">国色长卷 · 数字牡丹赋</span><span className="study-title-art" aria-hidden="true"><img src={studyLayers.title} alt="" /></span><span className="study-title-poem">一卷国色 · 数见千年 · 牡丹风华</span></h1>
+        <div className="study-scrolls-plane" aria-label="案上四卷">
+          {layeredScrolls.map((item, index) => {
+            const chapter = chapters[index];
+            const [sx, sy, sw, sh] = item.source;
+            const focused = home && hover === item.id;
+            const picked = !home && chapterId === item.id;
+            return <div key={item.id} className={`study-scroll-entry${focused ? ' is-hovered' : ''}${picked ? ' is-selected' : ''}${!home && !picked ? ' is-unselected' : ''}`} style={{ '--entry-left': `${item.left}%`, '--entry-width': `${item.width}%`, '--plaque-x': `${item.plaque}%`, '--entry-color': ['#a14e36','#5e796e','#a07c40','#7e4d32'][index], '--entry-order': index } as CSSProperties} onPointerEnter={() => home && setHover(item.id)} onPointerLeave={() => setHover(null)}>
+              <div className="study-scene-layer study-scroll-object" data-depth="8" data-scroll-id={item.id} style={{ ...depth(8), clipPath: `polygon(${item.clip})` }} onClick={() => choose(item.id)} aria-hidden="true">
+                <div className="study-scroll-art" style={{ clipPath: `polygon(${item.clip})` }}><img src={studyLayers.scrolls} alt="" draggable={false} style={{ left: `${-sx / sw * 100}%`, top: `${-sy / sh * 100}%`, width: `${1672 / sw * 100}%`, height: `${941 / sh * 100}%` }} /></div><span className="study-scroll-gilding" />
+              </div>
+              <button type="button" className="study-entry-button" data-chapter-id={item.id} aria-label={`展开第${chapter.numeral}卷：${chapter.title}，${chapter.subtitle}`} disabled={!home || loaded !== sources.length || assetError} onClick={() => choose(item.id)} onFocus={() => setHover(item.id)} onBlur={() => setHover(null)}>
+                <span className="study-plaque-face"><span className="study-plaque-volume">第{chapter.numeral}卷</span><strong>{chapter.title}</strong><span className="study-plaque-invitation">轻触展卷</span><span className="study-plaque-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7" /></svg></span></span>
+                <svg className="study-plaque-tassel" viewBox="0 0 54 85" aria-hidden="true"><path d="M27 0v17M22 12q5-8 10 0l-1 8-8 1Z" fill="none" stroke="currentColor" strokeWidth="2" /><circle cx="27" cy="24" r="5" fill="currentColor" /><path d="M23 30 12 78q16 6 30-1L31 30Z" fill="currentColor" opacity=".8" />{[16,20,24,28,32,36,40].map((x,i)=><path key={x} d={`M${25+i*.7} 32Q${x-2} 54 ${x} 79`} stroke="#e1b576" strokeWidth=".6" opacity=".6" />)}</svg>
+              </button>
+            </div>;
           })}
-        </svg>
-        <div className="study-focus-shade" aria-hidden="true" />
-        {focused && home && <div className="study-hover-label" role="tooltip" style={{ left: `${studyScrolls[focused.id - 1].x / 1672 * 100}%` }}>
-          <span className="study-label-ordinal">{focused.numeral}</span><strong>{focused.title}</strong><span className="study-label-instruction">轻触展卷</span><i aria-hidden="true">赏</i>
-        </div>}
+        </div>
+        <div className="study-scene-layer study-foreground-plane study-foreground-plane--left" data-depth="13" style={depth(13)} aria-hidden="true"><img src={studyLayers.foreground} alt="" draggable={false} /></div>
+        <div className="study-scene-layer study-foreground-plane study-foreground-plane--right" data-depth="11" style={depth(11)} aria-hidden="true"><img src={studyLayers.foreground} alt="" draggable={false} /></div>
+        <div className="study-environment-plane"><StudyAtmosphere enabled={active} /><div className="study-warm-beam" /></div>
+        <div className="study-selection-shade" aria-hidden="true" />
       </div>
     </div>
-    {imageFailed && <div className="study-image-recovery" role="alert"><strong>书房画境暂未呈现</strong><p>请重新陈设画境，或从下方题签选择长卷。</p><button type="button" onClick={() => { setImageFailed(false); setImageAttempt(value => value + 1); }}>重新载入书房</button></div>}
-    <div className="study-footnote">
-      <p><span aria-hidden="true">◆</span> 移步案前，择一卷而入 <span aria-hidden="true">◆</span></p>
-      <button type="button" className="study-motion-toggle" onClick={onToggleMotion} disabled={!home} aria-pressed={motionEnabled} aria-label="书房环境动画">
-        <span aria-hidden="true">{motionEnabled ? '风' : '静'}</span>{motionEnabled ? '清风徐来' : '静赏书房'}<small>{motionEnabled ? '关闭动态' : '开启动感'}</small>
-      </button>
-    </div>
-    <div className="study-mobile-directory" aria-label="四卷目录">
-      <div className="study-directory-intro"><span>案 上 四 卷</span><p>轻触题签，走入千年牡丹画境</p></div>
-      {chapters.map(chapter => <button key={chapter.id} type="button" disabled={!home} onClick={() => choose(chapter.id)} aria-label={`展卷：${chapter.title}`}>
-        <span className="study-mobile-numeral">{chapter.numeral}</span><span><strong>{chapter.title}</strong><small>{chapter.subtitle}</small></span><i aria-hidden="true">展<br />卷</i><b aria-hidden="true">›</b>
-      </button>)}
-    </div>
-    <dialog className="study-dialog" ref={dialogRef} aria-labelledby="study-dialog-title" onCancel={event => { event.preventDefault(); closeDialog(); }} onClick={event => { if (event.target === event.currentTarget) closeDialog(); }}>
-      <div className="study-dialog-inner">
-        <button type="button" className="study-dialog-close" onClick={closeDialog} aria-label="关闭题签">×</button>
-        <span className="study-dialog-kicker">国 色 长 卷</span>
-        <h2 id="study-dialog-title">{dialog === 'directory' ? '案上四卷' : dialog === 'language' ? '汉字入画，文脉相承' : '一卷国色，数见千年'}</h2>
-        {dialog === 'directory' ? <div className="study-dialog-chapters">{chapters.map(chapter => <button type="button" key={chapter.id} onClick={() => choose(chapter.id)}><span>{chapter.numeral}</span><strong>{chapter.title}</strong><small>{chapter.subtitle}</small><i aria-hidden="true">展卷 ›</i></button>)}</div>
-          : <><p>{dialog === 'language' ? '此作以中文题跋、章节与文化解读呈现牡丹长卷。四卷中的画面与游观均可直接开启。' : '从神都御苑到百姓人家，从锦绣纹样到盛世风华。四幅真实数字长卷，循原有分镜徐徐展开；入卷后可滚轮、拖拽或键盘游观，亦可聆听雅音、阅览画外拾遗。'}</p><button type="button" className="study-dialog-explore" onClick={() => setDialog('directory')}>翻阅四卷目录 <span aria-hidden="true">›</span></button></>}
-        <span className="study-dialog-seal" aria-hidden="true">国色</span>
-      </div>
-    </dialog>
+    <header className="study-small-controls"><span>国色长卷 <i>·</i> 入境</span><button type="button" ref={aboutTrigger} onClick={() => setAbout(true)} disabled={!home}>观卷小记</button><button type="button" className="study-motion-toggle" onClick={onToggleMotion} disabled={!home} aria-label="书房环境动画" aria-pressed={motionEnabled}>环境动效 <b>{motionEnabled ? '开' : '关'}</b></button></header>
+    <p className="study-visit-hint">移步书案 · 轻触题签 · 择卷入画</p>
+    {loaded < sources.length && <div className="study-material-state" role="status">{assetError ? '书房画材暂未齐备' : `正在陈设书房 · ${loaded} / ${sources.length}`}{assetError && <button type="button" onClick={() => setAttempt(value => value + 1)}>重新陈设</button>}</div>}
+    <dialog className="study-note-dialog" ref={dialog} aria-labelledby="study-note-title" onCancel={event => { event.preventDefault(); closeAbout(); }} onClick={event => { if (event.target === event.currentTarget) closeAbout(); }}><button className="study-note-close" type="button" onClick={closeAbout} aria-label="关闭观卷小记">×</button><span>国 色 长 卷</span><h2 id="study-note-title">一卷锦绣，万象渐生</h2><p>循着神都花事、花入万家、锦绣花意、国色倾城四卷，亲启案上画境。轻触绢纸题签进入；入卷后可滚轮、拖拽、键盘游观，也可自动展卷，阅览画外拾遗。</p><p>清风、花影与青烟可随心开启或静赏；每次入卷皆留一段展卷时光。</p><button type="button" onClick={closeAbout}>归于书案</button></dialog>
   </section>;
 }

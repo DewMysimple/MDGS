@@ -1,0 +1,432 @@
+{
+  "status": "pass",
+  "startedAt": "2026-10-21T04:31:11.197Z",
+  "completedAt": "2026-10-21T04:32:22.241Z",
+  "url": "http://127.0.0.1:58021/",
+  "scope": "Windows/Chromium browser; independent visual states, real layer transforms, responsive hit areas and real chapter navigation. No sustained FPS, physical phone or cross-browser claim.",
+  "results": [
+    {
+      "test": "responsive-1440x900",
+      "buttons": [
+        {
+          "id": "1",
+          "tag": "BUTTON",
+          "title": "第壹卷神都花事轻触展卷",
+          "width": 64.796875,
+          "height": 144,
+          "titleSize": 23.04,
+          "label": "展开第壹卷：神都花事，从山野到皇家园林"
+        },
+        {
+          "id": "2",
+          "tag": "BUTTON",
+          "title": "第贰卷花入万家轻触展卷",
+          "width": 64.796875,
+          "height": 144,
+          "titleSize": 23.04,
+          "label": "展开第贰卷：花入万家，从宫廷御花到朝野共赏"
+        },
+        {
+          "id": "3",
+          "tag": "BUTTON",
+          "title": "第叁卷锦绣花意轻触展卷",
+          "width": 64.796875,
+          "height": 144,
+          "titleSize": 23.04,
+          "label": "展开第叁卷：锦绣花意，花入纹样，意寄人间"
+        },
+        {
+          "id": "4",
+          "tag": "BUTTON",
+          "title": "第肆卷国色倾城轻触展卷",
+          "width": 64.796875,
+          "height": 144,
+          "titleSize": 23.04,
+          "label": "展开第肆卷：国色倾城，人花相映，盛世余韵"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "responsive-1920x1080",
+      "buttons": [
+        {
+          "id": "1",
+          "tag": "BUTTON",
+          "title": "第壹卷神都花事轻触展卷",
+          "width": 76,
+          "height": 168,
+          "titleSize": 26,
+          "label": "展开第壹卷：神都花事，从山野到皇家园林"
+        },
+        {
+          "id": "2",
+          "tag": "BUTTON",
+          "title": "第贰卷花入万家轻触展卷",
+          "width": 76,
+          "height": 168,
+          "titleSize": 26,
+          "label": "展开第贰卷：花入万家，从宫廷御花到朝野共赏"
+        },
+        {
+          "id": "3",
+          "tag": "BUTTON",
+          "title": "第叁卷锦绣花意轻触展卷",
+          "width": 76,
+          "height": 168,
+          "titleSize": 26,
+          "label": "展开第叁卷：锦绣花意，花入纹样，意寄人间"
+        },
+        {
+          "id": "4",
+          "tag": "BUTTON",
+          "title": "第肆卷国色倾城轻触展卷",
+          "width": 76,
+          "height": 168,
+          "titleSize": 26,
+          "label": "展开第肆卷：国色倾城，人花相映，盛世余韵"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "painted-edge-hit-does-not-cross-into-adjacent-scroll",
+      "x": 445.171443939209,
+      "y": 472.80316650390625,
+      "actual": "1",
+      "passed": true
+    },
+    {
+      "test": "independent-depth-parallax",
+      "layerCount": 9,
+      "bitmapCount": 5,
+      "deltas": [
+        {
+          "depth": "1.5",
+          "dx": 2.38725,
+          "dy": 0.012629999999999975,
+          "before": "matrix(1, 0, 0, 1, -1.065, -0.27573)",
+          "after": "matrix(1, 0, 0, 1, 1.32225, -0.2631)"
+        },
+        {
+          "depth": "4",
+          "dx": 6.366,
+          "dy": 0.03368000000000004,
+          "before": "matrix(1, 0, 0, 1, -2.84, -0.73528)",
+          "after": "matrix(1, 0, 0, 1, 3.526, -0.7016)"
+        },
+        {
+          "depth": "7",
+          "dx": 11.1405,
+          "dy": 0.05893999999999999,
+          "before": "matrix(1, 0, 0, 1, -4.97, -1.28674)",
+          "after": "matrix(1, 0, 0, 1, 6.1705, -1.2278)"
+        },
+        {
+          "depth": "8",
+          "dx": 12.732,
+          "dy": 0.06736000000000009,
+          "before": "matrix(1, 0, 0, 1, -5.68, -1.47056)",
+          "after": "matrix(1, 0, 0, 1, 7.052, -1.4032)"
+        },
+        {
+          "depth": "8",
+          "dx": 12.732,
+          "dy": 0.06736000000000009,
+          "before": "matrix(1, 0, 0, 1, -5.68, -1.47056)",
+          "after": "matrix(1, 0, 0, 1, 7.052, -1.4032)"
+        },
+        {
+          "depth": "8",
+          "dx": 12.732,
+          "dy": 0.06736000000000009,
+          "before": "matrix(1, 0, 0, 1, -5.68, -1.47056)",
+          "after": "matrix(1, 0, 0, 1, 7.052, -1.4032)"
+        },
+        {
+          "depth": "8",
+          "dx": 12.732,
+          "dy": 0.06736000000000009,
+          "before": "matrix(1, 0, 0, 1, -5.68, -1.47056)",
+          "after": "matrix(1, 0, 0, 1, 7.052, -1.4032)"
+        },
+        {
+          "depth": "13",
+          "dx": 20.689500000000002,
+          "dy": 0.10946000000000033,
+          "before": "matrix(1, 0, 0, 1, -9.23, -2.38966)",
+          "after": "matrix(1, 0, 0, 1, 11.4595, -2.2802)"
+        },
+        {
+          "depth": "11",
+          "dx": 17.5065,
+          "dy": 0.09261999999999992,
+          "before": "matrix(1, 0, 0, 1, -7.81, -2.02202)",
+          "after": "matrix(1, 0, 0, 1, 9.6965, -1.9294)"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "native-hover-focus-press-selection-to-real-chapter-1",
+      "passed": true
+    },
+    {
+      "test": "native-entry-to-real-chapter-2-and-return",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "passed": true
+    },
+    {
+      "test": "native-entry-to-real-chapter-3-and-return",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "passed": true
+    },
+    {
+      "test": "responsive-375x800",
+      "buttons": [
+        {
+          "id": "1",
+          "tag": "BUTTON",
+          "title": "第壹卷神都花事轻触展卷",
+          "width": 161.5,
+          "height": 54,
+          "titleSize": 18,
+          "label": "展开第壹卷：神都花事，从山野到皇家园林"
+        },
+        {
+          "id": "2",
+          "tag": "BUTTON",
+          "title": "第贰卷花入万家轻触展卷",
+          "width": 161.5,
+          "height": 54,
+          "titleSize": 18,
+          "label": "展开第贰卷：花入万家，从宫廷御花到朝野共赏"
+        },
+        {
+          "id": "3",
+          "tag": "BUTTON",
+          "title": "第叁卷锦绣花意轻触展卷",
+          "width": 161.5,
+          "height": 54,
+          "titleSize": 18,
+          "label": "展开第叁卷：锦绣花意，花入纹样，意寄人间"
+        },
+        {
+          "id": "4",
+          "tag": "BUTTON",
+          "title": "第肆卷国色倾城轻触展卷",
+          "width": 161.5,
+          "height": 54,
+          "titleSize": 18,
+          "label": "展开第肆卷：国色倾城，人花相映，盛世余韵"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "native-entry-to-real-chapter-4-and-return",
+      "viewport": {
+        "width": 375,
+        "height": 800
+      },
+      "passed": true
+    },
+    {
+      "test": "responsive-620x360",
+      "buttons": [
+        {
+          "id": "1",
+          "tag": "BUTTON",
+          "title": "第壹卷神都花事轻触展卷",
+          "width": 49,
+          "height": 98,
+          "titleSize": 17,
+          "label": "展开第壹卷：神都花事，从山野到皇家园林"
+        },
+        {
+          "id": "2",
+          "tag": "BUTTON",
+          "title": "第贰卷花入万家轻触展卷",
+          "width": 49,
+          "height": 98,
+          "titleSize": 17,
+          "label": "展开第贰卷：花入万家，从宫廷御花到朝野共赏"
+        },
+        {
+          "id": "3",
+          "tag": "BUTTON",
+          "title": "第叁卷锦绣花意轻触展卷",
+          "width": 49,
+          "height": 98,
+          "titleSize": 17,
+          "label": "展开第叁卷：锦绣花意，花入纹样，意寄人间"
+        },
+        {
+          "id": "4",
+          "tag": "BUTTON",
+          "title": "第肆卷国色倾城轻触展卷",
+          "width": 49,
+          "height": 98,
+          "titleSize": 17,
+          "label": "展开第肆卷：国色倾城，人花相映，盛世余韵"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "whole-scroll-body-selects-matching-chapter",
+      "passed": true
+    },
+    {
+      "test": "environment-off-and-reduced-motion",
+      "offDeltas": [
+        {
+          "depth": "1.5",
+          "dx": 0,
+          "dy": 0,
+          "before": "matrix(1, 0, 0, 1, 0, 0)",
+          "after": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "depth": "4",
+          "dx": 0,
+          "dy": 0,
+          "before": "matrix(1, 0, 0, 1, 0, 0)",
+          "after": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "depth": "7",
+          "dx": 0,
+          "dy": 0,
+          "before": "matrix(1, 0, 0, 1, 0, 0)",
+          "after": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "depth": "8",
+          "dx": 0,
+          "dy": 0,
+          "before": "matrix(1, 0, 0, 1, 0, 0)",
+          "after": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "depth": "8",
+          "dx": 0,
+          "dy": 0,
+          "before": "matrix(1, 0, 0, 1, 0, 0)",
+          "after": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "depth": "8",
+          "dx": 0,
+          "dy": 0,
+          "before": "matrix(1, 0, 0, 1, 0, 0)",
+          "after": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "depth": "8",
+          "dx": 0,
+          "dy": 0,
+          "before": "matrix(1, 0, 0, 1, 0, 0)",
+          "after": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "depth": "13",
+          "dx": 0,
+          "dy": 0,
+          "before": "matrix(1, 0, 0, 1, 0, 0)",
+          "after": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "depth": "11",
+          "dx": 0,
+          "dy": 0,
+          "before": "matrix(1, 0, 0, 1, 0, 0)",
+          "after": "matrix(1, 0, 0, 1, 0, 0)"
+        }
+      ],
+      "loopsWhenOff": [],
+      "reducedDeltas": [
+        {
+          "depth": "1.5",
+          "dx": 0,
+          "dy": 0,
+          "before": "none",
+          "after": "none"
+        },
+        {
+          "depth": "4",
+          "dx": 0,
+          "dy": 0,
+          "before": "none",
+          "after": "none"
+        },
+        {
+          "depth": "7",
+          "dx": 0,
+          "dy": 0,
+          "before": "none",
+          "after": "none"
+        },
+        {
+          "depth": "8",
+          "dx": 0,
+          "dy": 0,
+          "before": "none",
+          "after": "none"
+        },
+        {
+          "depth": "8",
+          "dx": 0,
+          "dy": 0,
+          "before": "none",
+          "after": "none"
+        },
+        {
+          "depth": "8",
+          "dx": 0,
+          "dy": 0,
+          "before": "none",
+          "after": "none"
+        },
+        {
+          "depth": "8",
+          "dx": 0,
+          "dy": 0,
+          "before": "none",
+          "after": "none"
+        },
+        {
+          "depth": "13",
+          "dx": 0,
+          "dy": 0,
+          "before": "none",
+          "after": "none"
+        },
+        {
+          "depth": "11",
+          "dx": 0,
+          "dy": 0,
+          "before": "none",
+          "after": "none"
+        }
+      ],
+      "animatedLocals": [],
+      "passed": true
+    },
+    {
+      "test": "visible-bitmap-material-retry",
+      "intentionalStatus": 503,
+      "recovered": true,
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "badResponses": [],
+  "failures": []
+}
