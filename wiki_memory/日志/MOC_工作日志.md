@@ -15,6 +15,7 @@ sources: []
 | 2026-10-21 | feature | completed | [独立分层书房与真实题签升级](2026-10-21-%E7%8B%AC%E7%AB%8B%E5%88%86%E5%B1%82%E4%B9%A6%E6%88%BF%E4%B8%8E%E7%9C%9F%E5%AE%9E%E9%A2%98%E7%AD%BE%E5%8D%87%E7%BA%A7.md) |
 | 2026-10-21 | feature | completed | [实体纸绢书房与闭卷展开](2026-10-21-%E5%AE%9E%E4%BD%93%E7%BA%B8%E7%BB%A2%E4%B9%A6%E6%88%BF%E4%B8%8E%E9%97%AD%E5%8D%B7%E5%B1%95%E5%BC%80.md) |
 | 2026-10-21 | feature | completed | [古典书房与真实入卷体验](2026-10-21-%E5%8F%A4%E5%85%B8%E4%B9%A6%E6%88%BF%E4%B8%8E%E7%9C%9F%E5%AE%9E%E5%85%A5%E5%8D%B7%E4%BD%93%E9%AA%8C.md) |
+| 2026-10-21 | ui | completed | [参考构图与工笔细节修正](2026-10-21-%E5%8F%82%E8%80%83%E6%9E%84%E5%9B%BE%E4%B8%8E%E5%B7%A5%E7%AC%94%E7%BB%86%E8%8A%82%E4%BF%AE%E6%AD%A3.md) |
 | 2026-10-21 | maintenance | blocked | [书房交付推送权限阻塞](2026-10-21-%E4%B9%A6%E6%88%BF%E4%BA%A4%E4%BB%98%E6%8E%A8%E9%80%81%E6%9D%83%E9%99%90%E9%98%BB%E5%A1%9E.md) |
 | 2026-10-21 | maintenance | completed | [书房交付推送恢复成功](2026-10-21-%E4%B9%A6%E6%88%BF%E4%BA%A4%E4%BB%98%E6%8E%A8%E9%80%81%E6%81%A2%E5%A4%8D%E6%88%90%E5%8A%9F.md) |
 | 2026-10-20 | ui | completed | [第三卷图文留白与截口构图整改](2026-10-20-%E7%AC%AC%E4%B8%89%E5%8D%B7%E5%9B%BE%E6%96%87%E7%95%99%E7%99%BD%E4%B8%8E%E6%88%AA%E5%8F%A3%E6%9E%84%E5%9B%BE%E6%95%B4%E6%94%B9.md) |

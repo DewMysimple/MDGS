@@ -117,10 +117,10 @@ try {
   const rect = await button.boundingBox(); await page.mouse.move(rect.x + rect.width / 2, rect.y + rect.height / 2); await page.waitForTimeout(250);
   const beforePress = await buttonStyle(button); await page.mouse.down(); await page.waitForTimeout(100); assert.notDeepEqual(await buttonStyle(button), beforePress); await shot(page, 'entry-pressed');
   await page.mouse.up();
-  await waitPhase(page, 'SCROLL_AWAKENING'); await shot(page, 'entry-selected');
+  await waitPhase(page, 'SCROLL_AWAKENING');
   await entry(page, 2).dispatchEvent('click'); assert.equal(new URL(page.url()).hash, '#chapter-1');
-  await waitPhase(page, 'ARTISTIC_TRANSITION');
-  await page.waitForFunction(() => Number(document.querySelector('.art-loading')?.dataset.renderCount) > 0);
+  // Observe the real phase history before expensive screenshots can outlast the brief transition.
+  await page.waitForFunction(() => window.volumePhases.some(event => event.phase === 'ARTISTIC_TRANSITION') && Number(document.querySelector('.art-loading')?.dataset.renderCount) > 0);
   const closed = await inspectUnfurl(page); await shot(page, 'scroll-closed');
   assert(closed.open < .2, 'The first real scroll state must be closed rather than half open.');
   await waitPhase(page, 'SCROLL_LOADING');
@@ -157,7 +157,7 @@ try {
   results.push({ test: 'closed-curved-scroll-unfurls-with-live-slow-loading-and-first-frame-gates', closed, half, open, waiting, loadingMs: revealedAt - loadingAt, maximumLoadingFrameGap, sampledFrames: frameGaps.length, homeLifecycle, phases: events, passed: true });
   await page.getByRole('button', { name: '返回书房', exact: true }).click(); await readyHome(page);
   for (const id of [2, 3, 4]) {
-    if (id === 2) { await entry(page, id).focus(); await page.keyboard.press('Enter'); }
+    if (id === 2) { await entry(page, id).focus(); await page.keyboard.press('Enter'); await shot(page, 'entry-selected'); }
     else await entry(page, id).click();
     await waitPhase(page, 'SCROLL_LOADING');
     assert((await page.locator('.art-loading').getAttribute('aria-label')).includes(['神都花事', '花入万家', '锦绣花意', '国色倾城'][id - 1]));
@@ -223,7 +223,7 @@ try {
   results.push({ test: 'unfurl-webgl-loss-stays-blocked-until-explicit-retry', lossSupported, passed: true });
   const materialRecovery = await browser.newPage({ viewport: { width: 1280, height: 800 } }); await observe(materialRecovery, false);
   let failMaterial = true;
-  await materialRecovery.route('**/ui/study-volume/garden.webp', route => failMaterial ? route.fulfill({ status: 503, body: 'intentional garden material interruption' }) : route.continue());
+  await materialRecovery.route('**/ui/study-faithful/garden.webp', route => failMaterial ? route.fulfill({ status: 503, body: 'intentional garden material interruption' }) : route.continue());
   await materialRecovery.goto(url); await materialRecovery.getByRole('button', { name: '重新陈设', exact: true }).waitFor();
   assert(await entry(materialRecovery, 1).isDisabled()); await shot(materialRecovery, 'home-material-error');
   failMaterial = false; await materialRecovery.getByRole('button', { name: '重新陈设', exact: true }).click(); await readyHome(materialRecovery); await shot(materialRecovery, 'home-material-recovered');

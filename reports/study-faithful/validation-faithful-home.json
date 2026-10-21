@@ -1,0 +1,460 @@
+{
+  "status": "pass",
+  "startedAt": "2026-10-21T12:27:59.379Z",
+  "completedAt": "2026-10-21T12:28:54.495Z",
+  "url": "http://127.0.0.1:61859/",
+  "scope": "Windows Edge real WebGL, reference feature proportions, native controls, all four original worlds; emulated mobile touch. Painting quality requires separate manual visual comparison.",
+  "referenceSha256": "5ddde6154a57aa96bec01bdcb2f2e85bf0599ff28b01439988355768d1639f27",
+  "results": [
+    {
+      "test": "reference-composition-and-real-volume",
+      "paperTop": 0.3718136695531401,
+      "paperBottom": 0.6147664609950042,
+      "title": {
+        "x": 439.203125,
+        "y": 27,
+        "width": 561.59375,
+        "height": 210.59375
+      },
+      "entries": [
+        {
+          "id": 1,
+          "title": "神都花事",
+          "isButton": true,
+          "width": 68,
+          "height": 185.640625,
+          "left": 153.9375,
+          "top": 546.171875,
+          "right": 221.9375,
+          "bottom": 731.8125,
+          "centreX": 187.9375,
+          "fontSize": 22,
+          "pointer": true,
+          "expected": "神都花事"
+        },
+        {
+          "id": 2,
+          "title": "花入万家",
+          "isButton": true,
+          "width": 68,
+          "height": 185.640625,
+          "left": 508.59375,
+          "top": 546.203125,
+          "right": 576.59375,
+          "bottom": 731.84375,
+          "centreX": 542.59375,
+          "fontSize": 22,
+          "pointer": true,
+          "expected": "花入万家"
+        },
+        {
+          "id": 3,
+          "title": "锦绣花意",
+          "isButton": true,
+          "width": 68,
+          "height": 185.640625,
+          "left": 863.28125,
+          "top": 546.234375,
+          "right": 931.28125,
+          "bottom": 731.875,
+          "centreX": 897.28125,
+          "fontSize": 22,
+          "pointer": true,
+          "expected": "锦绣花意"
+        },
+        {
+          "id": 4,
+          "title": "国色倾城",
+          "isButton": true,
+          "width": 68,
+          "height": 185.640625,
+          "left": 1217.984375,
+          "top": 546.265625,
+          "right": 1285.984375,
+          "bottom": 731.90625,
+          "centreX": 1251.984375,
+          "fontSize": 22,
+          "pointer": true,
+          "expected": "国色倾城"
+        }
+      ],
+      "materialRequests": [
+        "http://127.0.0.1:61859/ui/study-faithful/garden.webp",
+        "http://127.0.0.1:61859/ui/study-faithful/scroll-paintings.webp",
+        "http://127.0.0.1:61859/ui/study-faithful/ornament-atlas.webp",
+        "http://127.0.0.1:61859/ui/study-faithful/peony-blooms.webp",
+        "http://127.0.0.1:61859/ui/study-faithful/carpet.webp"
+      ],
+      "geometryCount": 413,
+      "passed": true
+    },
+    {
+      "test": "perspective-observation",
+      "before": {
+        "x": -0.21500871657211118,
+        "y": 9.072282093035689,
+        "z": 13.5
+      },
+      "after": {
+        "x": 0.2048307948804262,
+        "y": 9.08270191747867,
+        "z": 13.5
+      },
+      "passed": true
+    },
+    {
+      "test": "entry-1-real-world-return",
+      "title": "神都花事",
+      "visibleLoadingMs": 7267.200000047684,
+      "events": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 8502.5
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 8708.199999928474
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 9164.299999952316
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 10212.199999928474
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 17479.399999976158
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 17732.5
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 18139.899999976158
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "entry-2-real-world-return",
+      "title": "花入万家",
+      "visibleLoadingMs": 4013.399999976158,
+      "events": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 20273.100000023842
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 20476
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 20952.399999976158
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 21930.399999976158
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 25943.799999952316
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 26195.100000023842
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 26597.399999976158
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "entry-3-real-world-return",
+      "title": "锦绣花意",
+      "visibleLoadingMs": 4013.6999999284744,
+      "events": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 27966.399999976158
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 28168.299999952316
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 28626.100000023842
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 29091.100000023842
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 33104.799999952316
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 33356.699999928474
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 33759.199999928474
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "entry-4-real-world-return",
+      "title": "国色倾城",
+      "visibleLoadingMs": 4009.4000000953674,
+      "events": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 35116
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 35317.799999952316
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 35771.10000002384
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 36261.699999928474
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 40271.10000002384
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 40522.5
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 40924.5
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "layout-1920x1080",
+      "entries": [
+        {
+          "id": 1,
+          "title": "神都花事",
+          "isButton": true,
+          "width": 68,
+          "height": 185.640625,
+          "left": 287.5,
+          "top": 656.625,
+          "right": 355.5,
+          "bottom": 842.265625,
+          "centreX": 321.5,
+          "fontSize": 22,
+          "pointer": true,
+          "expected": "神都花事"
+        },
+        {
+          "id": 2,
+          "title": "花入万家",
+          "isButton": true,
+          "width": 68,
+          "height": 185.640625,
+          "left": 712.421875,
+          "top": 657.09375,
+          "right": 780.421875,
+          "bottom": 842.734375,
+          "centreX": 746.421875,
+          "fontSize": 22,
+          "pointer": true,
+          "expected": "花入万家"
+        },
+        {
+          "id": 3,
+          "title": "锦绣花意",
+          "isButton": true,
+          "width": 68,
+          "height": 185.640625,
+          "left": 1137.8125,
+          "top": 657.5625,
+          "right": 1205.8125,
+          "bottom": 843.203125,
+          "centreX": 1171.8125,
+          "fontSize": 22,
+          "pointer": true,
+          "expected": "锦绣花意"
+        },
+        {
+          "id": 4,
+          "title": "国色倾城",
+          "isButton": true,
+          "width": 68,
+          "height": 185.640625,
+          "left": 1564.5625,
+          "top": 652.6875,
+          "right": 1632.5625,
+          "bottom": 838.328125,
+          "centreX": 1598.5625,
+          "fontSize": 22,
+          "pointer": true,
+          "expected": "国色倾城"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "layout-375x800",
+      "entries": [
+        {
+          "id": 1,
+          "title": "神都花事",
+          "isButton": true,
+          "width": 55,
+          "height": 135.6875,
+          "left": 69.078125,
+          "top": 408.609375,
+          "right": 124.078125,
+          "bottom": 544.296875,
+          "centreX": 96.578125,
+          "fontSize": 18,
+          "pointer": true,
+          "expected": "神都花事"
+        },
+        {
+          "id": 2,
+          "title": "花入万家",
+          "isButton": true,
+          "width": 55,
+          "height": 135.6875,
+          "left": 250.96875,
+          "top": 408.859375,
+          "right": 305.96875,
+          "bottom": 544.546875,
+          "centreX": 278.46875,
+          "fontSize": 18,
+          "pointer": true,
+          "expected": "花入万家"
+        },
+        {
+          "id": 3,
+          "title": "锦绣花意",
+          "isButton": true,
+          "width": 55,
+          "height": 135.6875,
+          "left": 51.484375,
+          "top": 559.65625,
+          "right": 106.484375,
+          "bottom": 695.34375,
+          "centreX": 78.984375,
+          "fontSize": 18,
+          "pointer": true,
+          "expected": "锦绣花意"
+        },
+        {
+          "id": 4,
+          "title": "国色倾城",
+          "isButton": true,
+          "width": 55,
+          "height": 135.6875,
+          "left": 267.703125,
+          "top": 557.96875,
+          "right": 322.703125,
+          "bottom": 693.65625,
+          "centreX": 295.203125,
+          "fontSize": 18,
+          "pointer": true,
+          "expected": "国色倾城"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "layout-620x360",
+      "entries": [
+        {
+          "id": 1,
+          "title": "神都花事",
+          "isButton": true,
+          "width": 46,
+          "height": 105,
+          "left": 74.109375,
+          "top": 213.515625,
+          "right": 120.109375,
+          "bottom": 318.515625,
+          "centreX": 97.109375,
+          "fontSize": 16,
+          "pointer": true,
+          "expected": "神都花事"
+        },
+        {
+          "id": 2,
+          "title": "花入万家",
+          "isButton": true,
+          "width": 46,
+          "height": 105,
+          "left": 215.8125,
+          "top": 213.65625,
+          "right": 261.8125,
+          "bottom": 318.65625,
+          "centreX": 238.8125,
+          "fontSize": 16,
+          "pointer": true,
+          "expected": "花入万家"
+        },
+        {
+          "id": 3,
+          "title": "锦绣花意",
+          "isButton": true,
+          "width": 46,
+          "height": 105,
+          "left": 357.65625,
+          "top": 213.796875,
+          "right": 403.65625,
+          "bottom": 318.796875,
+          "centreX": 380.65625,
+          "fontSize": 16,
+          "pointer": true,
+          "expected": "锦绣花意"
+        },
+        {
+          "id": 4,
+          "title": "国色倾城",
+          "isButton": true,
+          "width": 46,
+          "height": 105,
+          "left": 499.921875,
+          "top": 212.140625,
+          "right": 545.921875,
+          "bottom": 317.140625,
+          "centreX": 522.921875,
+          "fontSize": 16,
+          "pointer": true,
+          "expected": "国色倾城"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "environment-toggle-stops-continuous-motion",
+      "passed": true
+    },
+    {
+      "test": "mobile-touch-reduced-complete-entry",
+      "visibleLoadingMs": 4012.6999999284744,
+      "passed": true
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "unexpectedResponses": []
+}

@@ -1,0 +1,173 @@
+{
+  "created": "2026-10-21",
+  "runtimeBytes": 3434912,
+  "layout": {
+    "ornament-atlas.webp": {
+      "rows": 4,
+      "rowHeight": 313.5,
+      "rowSequence": [
+        "desk-apron",
+        "desk-top",
+        "window-panel",
+        "lantern-silk"
+      ],
+      "uvRepeat": [
+        1,
+        0.25
+      ]
+    },
+    "peony-blooms.webp": {
+      "columns": 3,
+      "columnWidth": 512,
+      "columnSequence": [
+        "blush-pink",
+        "cinnabar",
+        "ivory"
+      ],
+      "recommendedUvRepeat": [
+        0.3333333333333333,
+        0.54
+      ],
+      "recommendedUvOffsetY": 0.23,
+      "maxAlpha": 254,
+      "alphaThreshold": 128,
+      "flowerBounds": [
+        {
+          "left": 3,
+          "right": 511,
+          "top": 248,
+          "bottom": 770
+        },
+        {
+          "left": 512,
+          "right": 1023,
+          "top": 244,
+          "bottom": 755
+        },
+        {
+          "left": 1024,
+          "right": 1532,
+          "top": 253,
+          "bottom": 750
+        }
+      ],
+      "actualGeometryUvHeight": 0.58
+    },
+    "carpet.webp": {
+      "type": "full-rug-top-view",
+      "uvRepeat": [
+        1,
+        1
+      ],
+      "ratio": 2.7973333333333334
+    },
+    "garden.webp": {
+      "type": "independent-distant-painting",
+      "ratio": 3,
+      "upperSkyFraction": 0.55
+    },
+    "scroll-paintings.webp": {
+      "columns": 4,
+      "rows": 1,
+      "columnWidth": 543,
+      "columnHeight": 724,
+      "order": [
+        "神都花事",
+        "花入万家",
+        "锦绣花意",
+        "国色倾城"
+      ],
+      "uvInsetTexels": 0.5
+    }
+  },
+  "assets": [
+    {
+      "file": "ornament-atlas.png",
+      "width": 1254,
+      "height": 1254,
+      "alpha": false,
+      "bytes": 3988256,
+      "sha256": "0f369a222add826df3e82453f72882e0c31a79f285eb7ab41bca68bc182ffd22"
+    },
+    {
+      "file": "ornament-atlas.webp",
+      "width": 1254,
+      "height": 1254,
+      "alpha": false,
+      "bytes": 926556,
+      "sha256": "02db3967913a0d75d9c2a8f5eb5d48b6cdf49e453286ce56319a5cbb00871175"
+    },
+    {
+      "file": "peony-blooms.png",
+      "width": 1536,
+      "height": 1024,
+      "alpha": true,
+      "bytes": 2198857,
+      "sha256": "8dc7e621c38f2afd97ead091be549c33824a4aa931ea2a7b27bf9fbedb60e782"
+    },
+    {
+      "file": "peony-blooms.webp",
+      "width": 1536,
+      "height": 1024,
+      "alpha": true,
+      "bytes": 457182,
+      "sha256": "ad3f8c074b7e71438302d3a12933839d657fd849e97b3da9e685366a2889ff94"
+    },
+    {
+      "file": "reference.png",
+      "width": 1672,
+      "height": 941,
+      "alpha": false,
+      "bytes": 3347941,
+      "sha256": "5ddde6154a57aa96bec01bdcb2f2e85bf0599ff28b01439988355768d1639f27"
+    },
+    {
+      "file": "scroll-paintings.png",
+      "width": 2172,
+      "height": 724,
+      "alpha": false,
+      "bytes": 3929298,
+      "sha256": "9cb214a67e2b42b7b695c100a56bc5e98160581b44e6b4094a7e6cabd37f5474"
+    },
+    {
+      "file": "scroll-paintings.webp",
+      "width": 2172,
+      "height": 724,
+      "alpha": false,
+      "bytes": 920002,
+      "sha256": "35b71e8e89650ed1b788850291fe202fa47efe874094eeb70fc8c9f14b9dcd9b"
+    },
+    {
+      "file": "carpet.png",
+      "width": 2098,
+      "height": 750,
+      "alpha": false,
+      "bytes": 3581097,
+      "sha256": "32ded840c921cdb17f7ae15cffc256419d268e1372c69f40aed99543a1d54919"
+    },
+    {
+      "file": "carpet.webp",
+      "width": 2098,
+      "height": 750,
+      "alpha": false,
+      "bytes": 776568,
+      "sha256": "9bdacd2edfd65fd43dc54bf496c7e1412cb94e8978ceb39dbf312d1a964ce72b"
+    },
+    {
+      "file": "garden.png",
+      "width": 2172,
+      "height": 724,
+      "bytes": 2420577,
+      "sha256": "a6ecff2becd5347b70a2801d42c68e174b50e8dc3710ad770e4ad314afb058c2",
+      "alpha": false
+    },
+    {
+      "file": "garden.webp",
+      "width": 2172,
+      "height": 724,
+      "bytes": 354604,
+      "sha256": "f0ae94d567603e52053aac32761faa7f693fee202f4be904acf4053093988e06",
+      "alpha": false
+    }
+  ]
+}

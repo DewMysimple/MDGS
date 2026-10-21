@@ -4,7 +4,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { createServer } from 'vite';
+import { preview } from 'vite';
 
 const project = fileURLToPath(new URL('../', import.meta.url));
 const { chromium } = createRequire(import.meta.url)(process.env.MDGS_PLAYWRIGHT_MODULE || 'playwright');
@@ -19,7 +19,7 @@ let targetUrl;
 let currentMeasurement;
 const report = (status, failure) => ({
   status, testedAt: new Date().toISOString(), environment: 'Windows Edge; actual React/Three.js page, real image decoding and first-frame gates',
-  mode: externalPreview ? 'existing-preview' : 'owned-development-server', targetUrl,
+  mode: externalPreview ? 'existing-preview' : 'owned-production-preview', targetUrl,
   minimumVisibleLoadingMs: 4000, normalCachedTargetMs: [5000, 7000],
   visibilityScope: 'Synthetic document.hidden change event checks visible-time accounting; OS background behavior is not inferred.',
   results, pageErrors: errors, ...(failure ? { failure } : {}),
@@ -64,8 +64,7 @@ async function verify(page, name, { cachedNormal = false, minimumWallLoading = 4
 try {
   if (externalPreview) targetUrl = new URL(externalPreview).href.split('#')[0];
   else {
-    server = await createServer({ root: project, server: { host: '127.0.0.1', watch: null }, logLevel: 'error' });
-    await server.listen();
+    server = await preview({ root: project, preview: { host: '127.0.0.1', port: 0 }, logLevel: 'error' });
     targetUrl = server.resolvedUrls.local[0];
   }
   const url = targetUrl;
@@ -143,5 +142,5 @@ try {
   throw error;
 } finally {
   await browser?.close();
-  await server?.close();
+  if (server) await new Promise(resolve => server.httpServer.close(resolve));
 }

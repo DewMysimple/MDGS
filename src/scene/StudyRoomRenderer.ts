@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import { createPaintedScroll } from './scrollGeometry';
 import { paintedSurface, petalGeometry, softSmokeTexture } from './studyMaterials';
+import { gongbiBloomGeometries, leafPigment } from './GongbiBloom';
 
 type Callbacks = { ready: () => void; error: (message: string) => void; select: (id: number) => void; hover: (id: number | null) => void };
 type PaintedScroll = ReturnType<typeof createPaintedScroll>;
@@ -17,6 +18,7 @@ export class StudyRoomRenderer {
   private table = new THREE.Group();
   private scrolls: PaintedScroll[] = [];
   private flowers: THREE.Group[] = [];
+  private bloomSites: { parent: THREE.Group; position: THREE.Vector3; scale: number; type: number; tilt: number; turn: number }[] = [];
   private lanterns: THREE.Group[] = [];
   private smoke: THREE.Sprite[] = [];
   private petals: THREE.Mesh[] = [];
@@ -52,22 +54,22 @@ export class StudyRoomRenderer {
     this.renderer.setClearColor('#eee7d7');
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    this.renderer.toneMappingExposure = 1.13;
+    this.renderer.toneMappingExposure = 1.03;
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     this.renderer.domElement.className = 'study-volume-canvas';
     this.renderer.domElement.setAttribute('aria-label', '实时三维纸绢书房：书案、窗棂、四幅卷轴与牡丹');
     host.append(this.renderer.domElement);
     this.scene.background = new THREE.Color('#eee8d9');
-    this.scene.fog = new THREE.Fog('#eee8db', 22, 50);
+    this.scene.fog = new THREE.Fog('#eee8db', 45, 100);
     this.scene.add(this.root);
-    this.scene.add(new THREE.HemisphereLight('#fff9e9', '#a1a99b', 2.1));
-    const sun = new THREE.DirectionalLight('#fff6e2', 2.2);
+    this.scene.add(new THREE.HemisphereLight('#fff9e9', '#c3b49e', 1.5));
+    const sun = new THREE.DirectionalLight('#fff6e2', 1.6);
     sun.position.set(-5, 13, -1); sun.castShadow = true;
     Object.assign(sun.shadow.camera, { left: -10, right: 10, top: 10, bottom: -10, near: .5, far: 40 });
     sun.shadow.mapSize.set(1024, 1024); sun.shadow.bias = -.0007; sun.shadow.normalBias = .025;
     sun.shadow.radius = 4; this.scene.add(sun);
-    const front = new THREE.DirectionalLight('#e4eee6', .7); front.position.set(0, 6, 12); this.scene.add(front);
+    const front = new THREE.DirectionalLight('#eee6d9', .7); front.position.set(0, 6, 12); this.scene.add(front);
     this.buildRoom(); this.buildDesk(); this.buildObjects(); this.buildFlowers();
     const dustPositions = new Float32Array(42 * 3);
     for (let i = 0; i < 42; i++) { dustPositions[i*3] = Math.sin(i*19.3)*7; dustPositions[i*3+1] = 2+(i*1.37%6); dustPositions[i*3+2] = Math.cos(i*8.7)*5; }
@@ -105,53 +107,46 @@ export class StudyRoomRenderer {
   }
 
   private buildRoom() {
-    const wood = this.material('#f4ead5', this.texture('wood','#84755e'));
+    const wood = this.material('#b4a18b', this.texture('wood','#625344'));
     const jade = this.material('#eee9d8', this.texture('brocade','#667b76'));
     const gild = this.material('#b1a078'); const stone = this.material('#faf4e8',this.texture('stone','#b9b6a5'));
-    this.box('stone-floor-volume', 32,.16,32,stone,[0,-.13,0]);
+    // The room floor stops at the window wall. Extending it behind the window
+    // would occlude the lower garden and leave a blank strip above the desk.
+    this.box('stone-floor-volume', 32,.16,24,stone,[0,-.13,7]);
     const rug = this.material('#fff1d9',this.texture('rug','#c9b99d'));
-    this.box('woven-carpet',13,.035,6,rug,[0,-.025,5]);
+    this.box('woven-carpet',15,.035,11,rug,[0,.012,2.5]);
     const seams:THREE.BufferGeometry[]=[];
-    for(let x=-12;x<=12;x+=2) for(let z=-9;z<12;z+=2) {
+    for(let x=-12;x<=12;x+=2) for(let z=-5;z<12;z+=2) {
       seams.push(new THREE.BoxGeometry(.012,.004,2).translate(x,.001,z),new THREE.BoxGeometry(2,.004,.012).translate(x+1,.001,z+1));
     }
     const inlays=this.mesh('stone-inlays-volume',mergeGeometries(seams)!,this.material('#a7a28b'),[0,0,0]);inlays.castShadow=false;seams.forEach(g=>g.dispose());
     for (const sign of [-1,1]) {
       this.box('room-side-wall', 1.1,9,.4,jade,[sign*7.6,4.4,-5.5]);
-      this.box('carved-window-pier',.3,9,.5,wood,[sign*4.8,4.4,-5.2]);
-      this.box('carved-window-pier',.35,9,.5,wood,[sign*7,4.4,-5.2]);
-      this.box('lower-window-panel',2,1.85,.25,jade,[sign*5.9,1.2,-5.2]);
-      for(const y of [.35,2.17,8]) this.box('window-rail',2.3,.14,.28,wood,[sign*5.9,y,-5]);
-      for(let i=0;i<7;i++) this.box('window-lattice-volume',.058,5.7,.1,wood,[sign*5.9+(i-3)*.3,5.2,-5.1]);
+      const windowX=sign<0?-6.9:8.3;
+      this.box('carved-window-pier',.3,10,.5,wood,[windowX-1.1,4.9,-5.2]);
+      this.box('carved-window-pier',.35,10,.5,wood,[windowX+1.1,4.9,-5.2]);
+      this.box('lower-window-panel',2,2.35,.25,jade,[windowX,1.4,-5.2]);
+      for(const y of [.35,2.57,9]) this.box('window-rail',2.3,.14,.28,wood,[windowX,y,-5]);
+      for(let i=0;i<7;i++) this.box('window-lattice-volume',.058,6.7,.1,wood,[windowX+(i-3)*.3,5.9,-5.1]);
       for(let i=0;i<12;i++) {
-        const y=2.5+i*.47; this.box('window-cross-lattice',2,.055,.13,wood,[sign*5.9,y,-5]);
-        if(i%2===0) for(let j=0;j<3;j++) this.box('window-square-mullion',.09,.4,.08,gild,[sign*5.9+(j-1)*.6,y+.22,-4.99]);
+        const y=2.9+i*.51; this.box('window-cross-lattice',2,.055,.13,wood,[windowX,y,-5]);
+        if(i%2===0) for(let j=0;j<3;j++) this.box('window-square-mullion',.09,.4,.08,gild,[windowX+(j-1)*.6,y+.22,-4.99]);
       }
-      for(let i=0;i<3;i++) this.box('panel-gold-inlay',1.7,.025,.03,gild,[sign*5.9,.55+i*.6,-5.04]);
+      for(let i=0;i<3;i++) this.box('panel-gold-inlay',1.7,.025,.03,gild,[windowX,.55+i*.6,-5.04]);
       this.box('ceiling-side-post',.38,9,.55,wood,[sign*8.2,4.5,1]);
-      this.box('side-console-top',2.3,.18,1.7,wood,[sign*6.7,2.25,-2.7]);
-      for (const a of [-.85,.85]) for(const b of [-.55,.55]) this.box('console-leg',.14,2.1,.14,wood,[sign*6.7+a,1.1,-2.7+b]);
-      for(let k=0;k<4;k++) this.box('console-carved-apron',2.1,.12,.08,k%2?gild:wood,[sign*6.7,1.7+k*.1,-1.95]);
+      this.box('side-console-top',2.3,.18,1.9,wood,[sign*6.9,3.25,-4.15]);
+      for (const a of [-.85,.85]) for(const b of [-.65,.65]) this.box('console-leg',.14,3.1,.14,wood,[sign*6.9+a,1.6,-4.15+b]);
+      for(let k=0;k<4;k++) this.box('console-carved-apron',2.1,.12,.08,k%2?gild:wood,[sign*6.9,2.7+k*.1,-3.2]);
     }
-    this.box('room-lintel',17,.4,.65,wood,[0,8.9,-5.1]);
-    this.box('window-sill',10,.18,.5,wood,[0,1.7,-5]);
-    // Distant forms have real silhouettes and multiple depths; artwork only paints their surfaces.
-    const hillMat=this.material('#a6bbb0');
-    for(let i=0;i<10;i++) {
-      const shape=new THREE.Shape(); const x=(i<5?-1:1)*(7+(i%5)*1.6), height=1.1+Math.sin(i*9)*.45;
-      shape.moveTo(-2.8,0); shape.bezierCurveTo(-1.9,.3,-2,height,-1.6,height*.83); shape.bezierCurveTo(-1.1,height*.7,-.8,height*1.7,-.4,height*1.7); shape.bezierCurveTo(.1,height*1.5,.4,height*.65,1,height*.7);shape.bezierCurveTo(2,height*.9,2.1,.3,3.3,0); shape.closePath();
-      const hill=this.mesh('mineral-mountain-solid',new THREE.ExtrudeGeometry(shape,{depth:.65,bevelEnabled:true,bevelSegments:2,steps:1,bevelSize:.16,bevelThickness:.15}),hillMat,[x,1.8,-17-i%3*2]); hill.rotation.y=(i%2-.5)*.17;
-    }
-    const horizon=this.mesh('distant-painted-landscape',new THREE.PlaneGeometry(33,17),this.material('#ffffff'),[0,.6,-25]);
+    this.box('room-lintel',20,.35,.65,wood,[0,10,-5.1]);
+    const horizon=this.mesh('distant-painted-landscape',new THREE.PlaneGeometry(33,17),new THREE.MeshBasicMaterial({color:'#ffffff'}),[0,1,-25]);
     horizon.castShadow=false; horizon.receiveShadow=false;
-    this.box('garden-bridge-balustrade',9,.11,.2,stone,[0,1.85,-8.7]);
-    for(let i=0;i<13;i++) this.box('garden-stone-baluster',.1,.5,.12,stone,[-4.2+i*.7,1.55,-8.7]);
   }
 
   private buildDesk() {
     this.root.add(this.table); this.table.name='volumetric-carved-desk';
-    const wood = this.material('#f4ebd8',this.texture('wood','#726754'));
-    const edge=this.material('#b5a07a'); const dark=this.material('#786f5c');
+    const wood = this.material('#c6b49c',this.texture('wood','#665342'));
+    const edge=this.material('#8d6c49'); const dark=this.material('#65513d');
     this.box('desk-solid-top',13.5,.27,5.5,wood,[0,2.72,0],this.table);
     this.box('desk-top-gilded-bead',13.6,.065,5.56,edge,[0,2.83,0],this.table);
     this.box('desk-top-inlay',13.3,.06,5.28,wood,[0,2.88,0],this.table);
@@ -164,22 +159,24 @@ export class StudyRoomRenderer {
       this.box('desk-leg-carved-panel',.24,1.15,.025,edge,[x,1.35,z+.23],this.table);
     }
     for(const x of [-5.8,5.8]) this.box('desk-cross-stretcher',.2,.2,4.2,wood,[x,.65,0],this.table);
-    // Raised metal scrollwork on the apron, casting its own small shadows.
-    for(let i=0;i<17;i++) {
-      const x=-6+i*.75;
-      this.curve('apron-cloud-relief',[[x-.29,2.17,2.7],[x-.2,2.33,2.73],[x+.02,2.39,2.73],[x+.23,2.24,2.72],[x+.1,2.08,2.71],[x-.05,2.14,2.72]],.013,edge,this.table);
+    for(let i=0;i<6;i++) {
+      this.box('desk-carved-peony-panel',2.1,.53,.045,wood,[(i-2.5)*2.17,2.2,2.715],this.table);
+      this.box('desk-carved-panel-divider',.035,.57,.07,edge,[(i-2.5)*2.17-1.065,2.2,2.72],this.table);
     }
     const brocade=this.material('#eee8d6',this.texture('brocade','#87968a'));
     this.box('brocade-table-runner',7.8,.022,5.45,brocade,[0,2.926,0],this.table);
-    this.box('brocade-hanging-fall',7.8,1.95,.028,brocade,[0,1.96,2.79],this.table);
-    for(const x of [-3.87,3.87]) this.box('brocade-woven-selvedge',.035,1.97,.035,edge,[x,1.96,2.82],this.table);
-    this.box('brocade-hem',7.8,.04,.035,edge,[0,.99,2.82],this.table);
     const blank=this.texture('silk','#ecdec3');
     const silkEdge=this.material('#a7b7a0',this.texture('brocade','#b1bca3'));
     for(let i=0;i<4;i++) {
-      const scroll=createPaintedScroll({width:3.9,height:2.7,paperTexture:blank});
+      const scroll=createPaintedScroll({width:6,height:2.7,paperTexture:blank});
       scroll.group.name=`study-scroll-${i+1}`; scroll.group.rotation.set(-Math.PI/2,0,Math.PI/2);
-      for(const side of [-1,1])this.box('scroll-woven-selvedge',3.9,.085,.016,silkEdge,[0,side*1.31,.026],scroll.group);
+      // The exposed silk wound over each solid axis remains cylindrical and
+      // casts its own contact shadow; it is not part of the painted flat sheet.
+      for(const name of ['left-shaft','right-shaft']) {
+        const shaft=scroll.group.getObjectByName(name) as THREE.Group;
+        this.cylinder('home-wound-silk-roll',.175,.175,2.58,this.material('#f3e5ca',blank),[0,0,0],shaft,40);
+      }
+      for(const side of [-1,1])this.box('scroll-woven-selvedge',6,.085,.016,silkEdge,[0,side*1.31,.026],scroll.group);
       scroll.group.traverse(o=>{o.userData.scrollId=i+1;if(o instanceof THREE.Mesh){o.castShadow=true;o.receiveShadow=true;}});
       this.root.add(scroll.group); this.scrolls.push(scroll);
     }
@@ -191,24 +188,25 @@ export class StudyRoomRenderer {
     const bronze=this.material('#a09068'), silk=this.material('#fff0cf',this.texture('silk','#e6d8ba'));
     const jade=this.material('#e4e9d5',this.texture('brocade','#6e8d85'));
     const wood=this.material('#b4a282',this.texture('wood','#81735c'));
-    const lantern=new THREE.Group(); lantern.position.set(-6.8,4.5,-1.3); this.root.add(lantern); this.lanterns.push(lantern);
+    const lantern=new THREE.Group(); lantern.position.set(-6.9,5.4,-1.3); this.root.add(lantern); this.lanterns.push(lantern);
     this.cylinder('silk-lantern-body',.46,.46,1.7,silk,[0,0,0],lantern,8);
     for(const y of [-.91,.91]) { this.cylinder('lantern-cap',.55,.6,.12,bronze,[0,y,0],lantern,8); this.cylinder('lantern-cap-stem',.13,.12,.2,bronze,[0,y*1.18,0],lantern); }
     for(let i=0;i<8;i++) this.cylinder('lantern-bronze-rib',.012,.012,1.9,bronze,[Math.cos(i*Math.PI/4)*.46,0,Math.sin(i*Math.PI/4)*.46],lantern,6);
-    this.cylinder('lantern-stand',.055,.1,3.65,bronze,[-6.8,1.9,-1.3]);
-    this.cylinder('lantern-foot',.45,.55,.11,bronze,[-6.8,.075,-1.3]);
+    this.cylinder('lantern-stand',.055,.1,4.55,bronze,[-6.9,2.35,-1.3]);
+    this.cylinder('lantern-foot',.45,.55,.11,bronze,[-6.9,.075,-1.3]);
     const lampLight=new THREE.PointLight('#f6dfb7',2,4,2); lampLight.position.set(0,0,.4); lantern.add(lampLight);
     // Ceramic bodies are lathed, with rounded rims, painted motifs and visible openings.
-    for(const [x,z] of [[6.4,-2.8],[-6.4,-3.1]]) {
+    for(const [x,z] of [[6.8,-4.1],[-6.5,-4.15]]) {
       const points=[[0,0],[.3,0],[.36,.08],[.58,.45],[.53,.85],[.25,1.1],[.22,1.35],[.28,1.42]].map(p=>new THREE.Vector2(p[0],p[1]));
-      this.mesh('hand-painted-celadon-vase',new THREE.LatheGeometry(points,32),jade,[x,2.35,z]);
-      const rim=this.mesh('ceramic-thick-rim',new THREE.TorusGeometry(.265,.035,8,32),bronze,[x,3.77,z]); rim.rotation.x=Math.PI/2;
+      this.mesh('hand-painted-celadon-vase',new THREE.LatheGeometry(points,32),jade,[x,3.35,z]);
+      const rim=this.mesh('ceramic-thick-rim',new THREE.TorusGeometry(.265,.035,8,32),bronze,[x,4.77,z]); rim.rotation.x=Math.PI/2;
     }
-    const incense=new THREE.Group(); incense.position.set(5.4,3.08,-1.7); this.root.add(incense);
+    const incense=new THREE.Group(); incense.position.set(7.25,3.42,-3.45); this.root.add(incense);
     this.mesh('incense-bowl',new THREE.SphereGeometry(.32,24,16),bronze,[0,.18,0],incense).scale.y=.65;
     this.cylinder('incense-neck',.22,.28,.13,bronze,[0,.38,0],incense);
     this.mesh('incense-lid',new THREE.SphereGeometry(.24,20,12,0,Math.PI*2,0,Math.PI/2),bronze,[0,.45,0],incense);
     this.cylinder('incense-finial',.035,.07,.18,bronze,[0,.72,0],incense);
+    for(const side of [-1,1])this.curve('incense-bronze-ear',[[side*.25,.18,0],[side*.43,.25,0],[side*.4,.45,0],[side*.24,.4,0]],.026,bronze,incense);
     for(let i=0;i<3;i++) this.cylinder('incense-foot',.035,.045,.22,bronze,[Math.cos(i*Math.PI*2/3)*.22,-.03,Math.sin(i*Math.PI*2/3)*.22],incense);
     const smokeMap=softSmokeTexture(); this.textures.add(smokeMap);
     for(let i=0;i<14;i++) {
@@ -216,7 +214,7 @@ export class StudyRoomRenderer {
       this.root.add(sprite); this.smoke.push(sprite);
     }
     for(let i=0;i<7;i++) {
-      const x=-6.7+(i%2)*.16,z=-1+(i%3)*.4,y=2.42+i*.09;
+      const x=-7.1+(i%2)*.16,z=-3.4+(i%3)*.2,y=3.42+i*.09;
       this.box('silk-bound-book',1.25,.09,.7,i%2?jade:silk,[x,y,z]); this.box('book-spine',.045,.095,.71,bronze,[x-.63,y,z]);
     }
     const brushPot=this.cylinder('brush-holder',.25,.24,.65,jade,[-5.9,3.27,-.2]);
@@ -227,49 +225,38 @@ export class StudyRoomRenderer {
   }
 
   private buildFlowers() {
-    const stemMat=this.material('#687c69'); const leafMat=this.material('#718978'); leafMat.side=THREE.DoubleSide;
-    const geometry=petalGeometry(1);
-    const colours=['#dca8a1','#e3b9af','#eed2bf','#cc8a87'];
-    const flowerGeometries: THREE.BufferGeometry[][] = [[],[],[],[]];
-    for(let layer=0;layer<3;layer++) for(let i=0;i<12-layer*2;i++) {
-      const g=geometry.clone(), angle=i/(12-layer*2)*Math.PI*2+layer*.47;
-      const obj=new THREE.Object3D(); obj.position.set(Math.sin(angle)*(.12-layer*.025),Math.cos(angle)*(.12-layer*.025),layer*.08);
-      obj.rotation.set(.2+layer*.28,0,-angle); obj.scale.setScalar(.56-layer*.12); obj.updateMatrix(); g.applyMatrix4(obj.matrix); flowerGeometries[(i+layer)%4].push(g);
-    }
-    const merged=flowerGeometries.map(parts=>mergeGeometries(parts)!);
-    const mats=colours.map(c=>{const m=this.material(c);m.side=THREE.DoubleSide;m.vertexColors=true;return m;});
-    const locations=[[-7,1.5,5.7],[-6.3,1,6.4],[-5.3,.6,6.7],[7,1.2,5.5],[6,.6,6.8],[5.3,.3,6.7],[-6.4,4.4,-3.1],[6.4,4.5,-2.8]];
+    const stemMat=this.material('#5f6651');
+    const pigment=leafPigment();this.textures.add(pigment);
+    const leafMat=this.material('#dce2c7',pigment);leafMat.side=THREE.DoubleSide;
+    const locations=[[-5.6,1.45,5.2],[-4.75,.72,5.7],[-3.95,.15,6.4],[5.7,1.2,5.1],[4.8,.6,5.8],[3.95,.1,6.4],[-6.5,4.7,-4.15],[6.7,4.7,-4.1]];
     for(let k=0;k<locations.length;k++) {
-      const cluster=new THREE.Group(); cluster.position.set(...locations[k] as [number,number,number]); this.root.add(cluster); this.flowers.push(cluster);
-      const scale=k<6?1.1:.65;
-      for(let j=0;j<4;j++) {
-        const x=Math.sin(j*2.4+k)*.9*scale,y=j*.36*scale,z=Math.cos(j*3.4)*.35;
-        this.curve('painted-peony-branch',[[0,-1,0],[x*.5,-.15,z],[x,y+.35,z]],.025*scale,stemMat,cluster);
-        const head=new THREE.Group(); head.position.set(x,y+.3,z); head.rotation.set(-.2+Math.sin(j)*.35,Math.cos(j)*.35,j*.7);head.scale.setScalar(scale);
-        for(let c=0;c<4;c++) head.add(new THREE.Mesh(merged[c],mats[c]));
-        const heart=new THREE.Mesh(new THREE.SphereGeometry(.08,8,6),this.material('#b69d61'));heart.position.z=.28;head.add(heart);cluster.add(head);
-        for(let l=0;l<4;l++) { const leaf=new THREE.Mesh(petalGeometry(.7*scale),leafMat);leaf.position.set(x*.65,y-.3-l*.13,z);leaf.rotation.set(-.4,0,l%2?1.3:-1.2);leaf.scale.x=.48;cluster.add(leaf); }
+      const cluster=new THREE.Group();cluster.position.set(...locations[k] as [number,number,number]);cluster.name=k<6?'foreground-peony-plant':'vase-peony-plant';this.root.add(cluster);this.flowers.push(cluster);
+      const near=k<6, count=near?5:4, scale=near?1:.47;
+      for(let j=0;j<count;j++) {
+        const x=Math.sin(j*2.4+k)*.75*scale, y=(.4+j*.44)*scale, z=Math.cos(j*3.4)*.22;
+        this.curve('painted-peony-branch',[[0,-1.25,0],[x*.6,y*.5,z],[x,y+.2,z]],.023*scale,stemMat,cluster);
+        this.bloomSites.push({parent:cluster,position:new THREE.Vector3(x,y+.25,z),scale:(near?.68:.35)*(1+(j%3)*.16),type:(k+j)%3,tilt:near?-.65:-.28,turn:Math.sin(k+j)*.45});
+        for(let l=0;l<5;l++) {const leaf=new THREE.Mesh(petalGeometry(.85*scale),leafMat);leaf.position.set(x*.6,y-.5-l*.13,z-.04);leaf.rotation.set(-.45,Math.sin(l)*.3,l%2?1.2:-1.2);leaf.scale.x=.52;leaf.castShadow=true;cluster.add(leaf);}
       }
       this.batchBotanicalMeshes(cluster);
     }
-    // Slender flowering branches at the window, independently rooted in ceramic vases.
-    const twig=this.material('#89795c');
-    const windowBlossoms=new THREE.Group();this.root.add(windowBlossoms);
+    const twig=this.material('#77614c');
     for(const sign of [-1,1]) {
-      this.curve('window-blossom-branch',[[sign*6.3,3.7,-3],[sign*6.1,5,-3.2],[sign*4.6,6.8,-3.5],[sign*3.8,7.6,-4]],.025,twig);
-      for(let i=0;i<12;i++) {
-        const f=new THREE.Group(); for(let c=0;c<4;c++) f.add(new THREE.Mesh(merged[c],mats[c]));f.scale.setScalar(.2+(i%3)*.03);f.position.set(sign*(6.1-i*.18),5+i*.22,-3.3);windowBlossoms.add(f);
+      const cluster=new THREE.Group();this.root.add(cluster);
+      this.curve('window-blossom-branch',[[sign*6.4,5.6,-4.2],[sign*5.9,6.8,-4.3],[sign*4,7.3,-4.6],[sign*2.8,7.0,-4.8]],.021,twig,cluster);
+      this.curve('window-blossom-fork',[[sign*5.8,6.6,-4.3],[sign*4.8,7.75,-4.4],[sign*3.9,8.1,-4.4]],.013,twig,cluster);
+      for(let j=0;j<15;j++) {
+        const x=sign*(5.9-j*.21), y=6.85+Math.sin(j*.87)*.36+(j%3)*.13;
+        this.bloomSites.push({parent:cluster,position:new THREE.Vector3(x,y,-4.35),scale:.1+(j%3)*.025,type:j%3,tilt:-.1,turn:j*.8});
       }
     }
-    this.batchBotanicalMeshes(windowBlossoms);
-    geometry.dispose(); flowerGeometries.flat().forEach(g=>g.dispose());
   }
 
   private batchBotanicalMeshes(group:THREE.Group) {
     group.updateWorldMatrix(true,true);const inverse=group.matrixWorld.clone().invert();
     const batches=new Map<THREE.Material,THREE.BufferGeometry[]>(),old:THREE.Mesh[]=[];
     group.traverse(o=>{if(o instanceof THREE.Mesh&&!Array.isArray(o.material)){const list=batches.get(o.material)??[];list.push(o.geometry.clone().applyMatrix4(inverse.clone().multiply(o.matrixWorld)));batches.set(o.material,list);old.push(o);}});
-    old.forEach(o=>o.removeFromParent());
+    old.forEach(o=>{o.removeFromParent();o.geometry.dispose();});
     for(const [material,parts] of batches) {
       const geometry=mergeGeometries(parts)!;const mesh=new THREE.Mesh(geometry,material);mesh.name='sculpted-peony-branch-volume';mesh.castShadow=true;mesh.receiveShadow=true;group.add(mesh);
       // Pigment is carried by the cupped surfaces. Avoid expensive triangle
@@ -281,28 +268,46 @@ export class StudyRoomRenderer {
   private async loadArt() {
     try {
       const loader=new THREE.TextureLoader();
-      const [garden,atlas,brocade]=await Promise.all([loader.loadAsync(`${base}ui/study-volume/garden.webp`),loader.loadAsync(`${base}ui/study-volume/paintings-atlas.webp`),loader.loadAsync(`${base}ui/study-volume/brocade.webp`)]);
-      if(!this.alive) {garden.dispose();atlas.dispose();brocade.dispose();return;}
-      for(const t of [garden,atlas,brocade]) {t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=Math.min(8,this.renderer.capabilities.getMaxAnisotropy());this.textures.add(t);}
+      const [garden,atlas,brocade,ornament,blooms,carpet]=await Promise.all([
+        loader.loadAsync(`${base}ui/study-faithful/garden.webp`),loader.loadAsync(`${base}ui/study-faithful/scroll-paintings.webp`),
+        loader.loadAsync(`${base}ui/study-volume/brocade.webp`),loader.loadAsync(`${base}ui/study-faithful/ornament-atlas.webp`),loader.loadAsync(`${base}ui/study-faithful/peony-blooms.webp`),
+        loader.loadAsync(`${base}ui/study-faithful/carpet.webp`),
+      ]);
+      if(!this.alive) {for(const t of [garden,atlas,brocade,ornament,blooms,carpet])t.dispose();return;}
+      for(const t of [garden,atlas,brocade,ornament,blooms,carpet]) {t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=Math.min(8,this.renderer.capabilities.getMaxAnisotropy());this.textures.add(t);}
+      const carpetMesh=this.scene.getObjectByName('woven-carpet') as THREE.Mesh;
+      const carpetMaterial=carpetMesh.material as THREE.MeshStandardMaterial;
+      carpetMaterial.map=carpet;carpetMaterial.color.set('#ffffff');carpetMaterial.needsUpdate=true;
       const runner=this.scene.getObjectByName('brocade-table-runner') as THREE.Mesh;
       (runner.material as THREE.MeshStandardMaterial).map=brocade;(runner.material as THREE.Material).needsUpdate=true;
-      this.scene.traverse(o=>{if(o instanceof THREE.Mesh&&o.name==='hand-painted-celadon-vase'){(o.material as THREE.MeshStandardMaterial).map=brocade;(o.material as THREE.Material).needsUpdate=true;}});
+      const rows=Array.from({length:4},(_,row)=>{const t=ornament.clone();t.repeat.set(1,.25-2/1254);t.offset.set(0,(3-row)*.25+1/1254);t.needsUpdate=true;this.textures.add(t);return t;});
+      const panels=rows.map(map=>{const m=this.material('#ffffff',map);m.bumpMap=map;m.bumpScale=.016;m.emissiveMap=map;m.emissive.set('#ffffff');m.emissiveIntensity=.13;return m;});
+      this.scene.traverse(o=>{
+        if(!(o instanceof THREE.Mesh))return;
+        if(o.name==='desk-carved-peony-panel'||o.name==='lower-window-panel') {
+          const old=o.material as THREE.Material, surface=panels[o.name==='desk-carved-peony-panel'?0:2];o.material=[old,old,old,old,surface,old];
+        } else if(o.name==='desk-top-inlay') {
+          const old=o.material as THREE.Material;o.material=[old,old,panels[1],old,old,old];
+        } else if(o.name==='silk-lantern-body'||o.name==='home-wound-silk-roll')o.material=panels[3];
+        else if(o.name==='hand-painted-celadon-vase'||o.name==='brush-holder'){(o.material as THREE.MeshStandardMaterial).map=brocade;(o.material as THREE.Material).needsUpdate=true;}
+        else if(o.name.startsWith('incense-')&&o.name!=='incense-foot')o.material=panels[0];
+      });
       const distant=this.scene.getObjectByName('distant-painted-landscape') as THREE.Mesh;
-      (distant.material as THREE.MeshStandardMaterial).map=garden;(distant.material as THREE.Material).needsUpdate=true;
+      (distant.material as THREE.MeshBasicMaterial).map=garden;(distant.material as THREE.Material).needsUpdate=true;
       for(let i=0;i<4;i++) {
-        const map=atlas.clone();map.repeat.set(1,.25);map.offset.set(0,(3-i)*.25);map.needsUpdate=true;
-        // The desk's scroll is rotated into XZ; the painting's horizon follows its front shaft.
+        const map=atlas.clone();map.repeat.set(.25-1/2172,1-1/724);map.offset.set(i*.25+.5/2172,.5/724);map.needsUpdate=true;
         const uv=this.scrolls[i].paperGeometry.attributes.uv;
-        // Cover a portrait sheet with an undistorted detail from its horizontal
-        // chapter painting. The loading scroll exhibits the complete composition.
-        const span=(2.7/3.9)/3, centre=[.64,.5,.47,.5][i];
-        for(let k=0;k<uv.count;k++){const u=uv.getX(k),v=uv.getY(k);uv.setXY(k,centre-span/2+(1-v)*span,u);}uv.needsUpdate=true;
+        for(let k=0;k<uv.count;k++){const u=uv.getX(k),v=uv.getY(k);uv.setXY(k,1-v,u);}uv.needsUpdate=true;
         this.scrolls[i].setPainting(map);this.textures.add(map);this.scrollTextures.push(map);
+      }
+      const corollas=gongbiBloomGeometries(blooms.image as HTMLImageElement);
+      const paint=new THREE.MeshStandardMaterial({map:blooms,color:'#fff9ef',roughness:1,metalness:0,alphaTest:.18,side:THREE.DoubleSide,emissive:'#ffffff',emissiveMap:blooms,emissiveIntensity:.18});this.materials.add(paint);
+      for(const site of this.bloomSites) {
+        const mesh=new THREE.Mesh(corollas[site.type],paint);mesh.name='gongbi-volumetric-peony-corolla';mesh.position.copy(site.position);mesh.scale.setScalar(site.scale);mesh.rotation.set(site.tilt,0,site.turn);mesh.castShadow=true;mesh.receiveShadow=true;site.parent.add(mesh);
       }
       await this.renderer.compileAsync(this.scene,this.camera);
       if(!this.alive)return;
-      this.compiled=true;
-      this.render();this.ready=true;this.host.dataset.sceneState='ready';
+      this.compiled=true;this.render();this.ready=true;this.host.dataset.sceneState='ready';
       const snapshot=this.snapshot();this.host.dataset.geometries=String(snapshot.objects.length);
       this.host.dataset.volumetricObjects=String(snapshot.objects.filter(o=>!['PlaneGeometry','BufferGeometry'].includes(o.geometryType)).length);
       this.callbacks.ready();
@@ -313,11 +318,12 @@ export class StudyRoomRenderer {
     const width=this.host.clientWidth,height=this.host.clientHeight;if(!width||!height)return;
     this.size={width,height}; const mobile=width<720, portrait=width/height<.85;
     this.renderer.setPixelRatio(Math.min(devicePixelRatio,mobile?1.35:1.7));this.renderer.setSize(width,height,false);
-    this.camera.aspect=width/height;this.camera.fov=portrait?43:40;
-    const distance=portrait?17.5:14.7;
-    this.cameraBase.set(0,portrait?14.5:8.8,portrait?13.5:distance);this.lookBase.set(0,portrait?3.3:3.8,-.9);
+    this.camera.aspect=width/height;this.camera.fov=portrait?43:35;
+    this.cameraBase.set(0,portrait?14.5:9,13.5);this.lookBase.set(0,portrait?3.3:2.75,-.8);
     if(width/height>2) {this.cameraBase.y=9.4;this.cameraBase.z=16.5;this.lookBase.y=3.9;}
-    this.table.scale.set(portrait?.57:1,1,portrait?1.4:1);
+    this.table.scale.set(portrait?.57:1,1,portrait?1.4:1.3);this.table.position.z=portrait?0:-.8;
+    const garden=this.scene.getObjectByName('distant-painted-landscape')!;
+    garden.position.y=portrait?-2.05:1;garden.scale.y=portrait?1.215:1;
     this.flowers.slice(0,6).forEach(f=>{f.userData.originalPosition??=f.position.clone();f.position.copy(f.userData.originalPosition);if(portrait){f.position.x*=.48;f.position.z*=.83;f.position.y*=.65;}});
     this.root.children.forEach(o=>{
       if(/^(room-side-wall|carved-window-pier|lower-window-panel|window-rail|window-lattice-volume|window-cross-lattice|window-square-mullion|panel-gold-inlay)$/.test(o.name)) {
@@ -325,8 +331,8 @@ export class StudyRoomRenderer {
       }
     });
     this.scrolls.forEach((s,i)=>{
-      if(portrait){s.group.scale.set(.69,.83,.83);s.group.position.set(i%2===0?-1.65:1.65,3.0,i<2?-2.25:1.45);}
-      else {s.group.scale.setScalar(1);s.group.position.set((i-1.5)*3.18,3.02,0);}
+      if(portrait){s.group.scale.set(.45,.83,.83);s.group.position.set(i%2===0?-1.65:1.65,3.0,i<2?-2.25:1.45);}
+      else {s.group.scale.setScalar(1);s.group.position.set((i-1.5)*3.18,3.02,-.85);}
     });
     this.camera.position.copy(this.cameraBase);this.camera.lookAt(this.lookBase);this.camera.updateProjectionMatrix();
     this.render();this.start();
@@ -388,7 +394,7 @@ export class StudyRoomRenderer {
     this.scrolls.forEach((s,i)=>{s.group.position.y=3.02+(this.hoverId===i+1&&this.phase==='HOME'?.045:0)+(this.selected===i+1&&this.phase!=='HOME'?.08:0);});
     this.flowers.forEach((f,i)=>{f.rotation.z=moving?Math.sin(t*.42+i*1.73)*.014:0;});
     this.lanterns.forEach((l,i)=>{l.rotation.z=moving?Math.sin(t*.56+i)*.012:0;const light=l.children.find(c=>c instanceof THREE.PointLight) as THREE.PointLight;light.intensity=1.6+(moving?Math.sin(t*1.3)*.13:0);});
-    this.smoke.forEach((s,i)=>{const a=(t*.11+i/14)%1;s.visible=moving;s.position.set(5.4+Math.sin(a*5+t*.23)*a*.3,3.9+a*3.4,-1.7+Math.cos(a*3)*.08);s.scale.setScalar(.3+a*.9);(s.material as THREE.SpriteMaterial).opacity=Math.sin(a*Math.PI)*.11;});
+    this.smoke.forEach((s,i)=>{const a=(t*.11+i/14)%1;s.visible=moving;s.position.set(7.25+Math.sin(a*5+t*.23)*a*.3,4.23+a*3.4,-3.45+Math.cos(a*3)*.08);s.scale.setScalar(.3+a*.9);(s.material as THREE.SpriteMaterial).opacity=Math.sin(a*Math.PI)*.11;});
     this.petals.forEach((p,i)=>{p.visible=moving;const a=(t*(.025+(i%3)*.004)+i/15)%1;p.position.set(Math.sin(i*23)*7-a*1.5,9-a*9,Math.cos(i*7)*4+2);p.rotation.set(t*.2+i,t*.3+i,t*.1+i);p.scale.setScalar(.55+(i%4)*.25);});
     this.dust.visible=moving;this.dust.rotation.y=t*.006;
     this.renderer.render(this.scene,this.camera);this.frameCount++;this.layoutLabels();
@@ -397,7 +403,7 @@ export class StudyRoomRenderer {
   private layoutLabels() {
     this.scrolls.forEach((s,i)=>{
       const isPortrait=this.size.width/this.size.height<.85;
-      const p=this.project(new THREE.Vector3(s.group.position.x,s.group.position.y,isPortrait?s.group.position.z+1.12:2.25));
+      const p=this.project(new THREE.Vector3(s.group.position.x,s.group.position.y,isPortrait?s.group.position.z+1.35:2.15));if(!isPortrait)p.y-=8;
       const el=this.host.parentElement?.querySelector<HTMLElement>(`.study-scroll-entry[data-entry-id="${i+1}"]`);
       if(el){el.style.left=`${p.x}px`;el.style.top=`${p.y}px`;}
     });
@@ -405,7 +411,13 @@ export class StudyRoomRenderer {
   snapshot() {
     const objects:{name:string;geometryType:string;vertices:number;worldPosition:{x:number;y:number;z:number};screenPosition:{x:number;y:number}}[]=[];
     this.scene.traverse(o=>{if(o instanceof THREE.Mesh){const p=o.getWorldPosition(new THREE.Vector3());objects.push({name:o.name||'painted-peony-surface',geometryType:o.geometry.type,vertices:o.geometry.attributes.position?.count??0,worldPosition:{x:p.x,y:p.y,z:p.z},screenPosition:this.project(p)});}});
-    return {ready:this.ready,camera:{x:this.camera.position.x,y:this.camera.position.y,z:this.camera.position.z},renderCount:this.frameCount,environmentTime:this.time,environmentActive:this.enabled&&!this.reduced.matches&&!document.hidden,dimensions:this.size,objects,scrolls:this.scrolls.map((s,i)=>({id:i+1,center:this.project(s.group.position),corners:[[-1.2,-1.8],[1.2,-1.8],[1.2,1.8],[-1.2,1.8]].map(([x,z])=>this.project(new THREE.Vector3(s.group.position.x+x*s.group.scale.y,3.05,s.group.position.z+z*s.group.scale.x))),paperVertices:s.paperGeometry.attributes.position.count,rodRadius:s.group.userData.curlRadius,open:s.group.userData.open}))};
+    const scrolls=this.scrolls.map((s,i)=>{
+      s.group.updateWorldMatrix(true,true);const mesh=s.group.getObjectByName('bending-silk-front') as THREE.Mesh;const p=s.paperGeometry.attributes.position;
+      const projectVertex=(index:number)=>this.project(new THREE.Vector3().fromBufferAttribute(p,index).applyMatrix4(mesh.matrixWorld));
+      const points=Array.from({length:p.count},(_,index)=>projectVertex(index));
+      return{id:i+1,center:this.project(s.group.position),corners:[0,160,p.count-1,p.count-161].map(projectVertex),paperBounds:{left:Math.min(...points.map(p=>p.x)),right:Math.max(...points.map(p=>p.x)),top:Math.min(...points.map(p=>p.y)),bottom:Math.max(...points.map(p=>p.y))},paperVertices:p.count,rodRadius:s.group.userData.curlRadius,open:s.group.userData.open};
+    });
+    return {ready:this.ready,camera:{x:this.camera.position.x,y:this.camera.position.y,z:this.camera.position.z},renderCount:this.frameCount,environmentTime:this.time,environmentActive:this.enabled&&!this.reduced.matches&&!document.hidden,dimensions:this.size,objects,scrolls};
   }
   dispose() {
     this.alive=false;cancelAnimationFrame(this.animation);this.resizeObserver.disconnect();
