@@ -10,6 +10,8 @@
     "validate:assets": "node scripts/validate-assets.mjs",
     "test": "node scripts/validate-viewing.mjs",
     "test:startup": "node scripts/validate-startup.mjs",
+    "test:study": "node scripts/validate-study-journey.mjs",
+    "test:study-renderer": "node scripts/validate-study-renderer.mjs",
     "test:subpath": "node scripts/validate-subpath.mjs"
   },
   "dependencies": {

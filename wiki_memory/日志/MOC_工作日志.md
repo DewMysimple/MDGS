@@ -1,7 +1,7 @@
 ---
 type: moc
 status: active
-updated: 2026-10-20
+updated: 2026-10-21
 topic: work-log-index
 sources: []
 ---
@@ -12,6 +12,7 @@ sources: []
 
 | 日期 | 类型 | 任务结果 | 日志 |
 | --- | --- | --- | --- |
+| 2026-10-21 | feature | completed | [古典书房与真实入卷体验](2026-10-21-%E5%8F%A4%E5%85%B8%E4%B9%A6%E6%88%BF%E4%B8%8E%E7%9C%9F%E5%AE%9E%E5%85%A5%E5%8D%B7%E4%BD%93%E9%AA%8C.md) |
 | 2026-10-20 | ui | completed | [第三卷图文留白与截口构图整改](2026-10-20-%E7%AC%AC%E4%B8%89%E5%8D%B7%E5%9B%BE%E6%96%87%E7%95%99%E7%99%BD%E4%B8%8E%E6%88%AA%E5%8F%A3%E6%9E%84%E5%9B%BE%E6%95%B4%E6%94%B9.md) |
 | 2026-10-20 | feature | completed | [四卷网页轻动与盛衰实证](2026-10-20-%E5%9B%9B%E5%8D%B7%E7%BD%91%E9%A1%B5%E8%BD%BB%E5%8A%A8%E4%B8%8E%E7%9B%9B%E8%A1%B0%E5%AE%9E%E8%AF%81.md) |
 | 2026-10-20 | feature | completed | [四卷留白设计与首卷层次稳定](2026-10-20-%E5%9B%9B%E5%8D%B7%E7%95%99%E7%99%BD%E8%AE%BE%E8%AE%A1%E4%B8%8E%E9%A6%96%E5%8D%B7%E5%B1%82%E6%AC%A1%E7%A8%B3%E5%AE%9A.md) |

@@ -1,0 +1,42 @@
+/* Sampled from the supplied study: ivory silk, jade brocade, walnut, bronze. */
+:root {
+  --paper: #e5cc9f;
+  --paper-light: #f6e1b9;
+  --painting-paper: #f5ecdc;
+  --ink: #3a291d;
+  --muted: #8c6b47;
+  --cinnabar: #913b28;
+  --brocade: #576c60;
+  --brocade-gold: #b4945d;
+  --pattern-gold: #d5b77e;
+  --wood: #392315;
+  --study-silk: #edcfa0;
+  --study-jade: #536d62;
+  --study-bronze: #b18a4e;
+  --study-cinnabar: #963e29;
+  --study-walnut: #382315;
+}
+.peony-experience { position: relative; min-height: 100dvh; background: #392b1d; font-family: var(--serif); }
+.journey-study { position: relative; min-height: 100dvh; }
+.journey-viewer { position: absolute; inset: 0; width: 100%; opacity: 0; pointer-events: none; }
+.journey-viewer.is-interactive { position: relative; opacity: 1; pointer-events: auto; }
+.phase-entering-viewer .journey-viewer { opacity: 1; }
+.phase-scroll-loading .journey-study, .phase-painting-reveal .journey-study, .phase-entering-viewer .journey-study { visibility: hidden; }
+.phase-returning-home .journey-viewer { z-index: 35; opacity: 1; animation: return-to-silk .92s ease-in-out both; }
+@keyframes return-to-silk { 0% { opacity:1; filter:sepia(0); transform:scale(1); } 45% { opacity:.4; filter:sepia(.2) blur(2px); transform:scale(.985); } 100% { opacity:0; filter:sepia(.2) blur(3px); transform:scale(.97); } }
+.journey-viewer .site-header { gap: clamp(8px, 1.5vw, 25px); }
+.journey-viewer .brand { flex-shrink: 0; }
+.journey-viewer .brand-wordmark > span { font-family: var(--serif); letter-spacing: 2px; font-size: 10px; }
+.journey-viewer .brand-wordmark { color: #462b19; }
+.journey-viewer .site-header .brand:focus-visible { outline-offset: 8px; }
+.journey-viewer .brand-seal { background: #8e3825; }
+.journey-viewer .scroll-controls { font-family: var(--serif); }
+.journey-viewer .scene-loading { font-family: var(--serif); background: #efdab6ed; color: #4a3420; }
+.journey-viewer .culture-panel { background-color: #f0dfc0; }
+.journey-viewer .exhibition-atmosphere__peonies { opacity: .24; }
+@media(max-width:620px) {
+  .journey-viewer .brand-wordmark > span { font-size: 9px; letter-spacing: 1px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .peony-experience *, .peony-experience *::before, .peony-experience *::after { scroll-behavior:auto; }
+}

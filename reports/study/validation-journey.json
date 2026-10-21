@@ -1,0 +1,90 @@
+{
+  "status": "pass",
+  "testedAt": "2026-10-21T02:36:06.078Z",
+  "scope": "Windows Edge desktop browser and emulated mobile touch; production Vite build. No physical mobile device or cross-browser claim.",
+  "results": [
+    {
+      "test": "full-ceremony-real-textures-lock-and-first-frame",
+      "enteredMs": 7177,
+      "phases": [
+        {
+          "phase": "HOME",
+          "at": 163
+        },
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 2011.1999999284744
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 2508.100000023842
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 3333.1999999284744
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 3988.600000023842
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 7222.600000023842
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 7706
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 8609.100000023842
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "refresh-position-restoration",
+      "saved": 0.073415,
+      "restored": 0.073415,
+      "passed": true
+    },
+    {
+      "test": "original-polygon-to-chapter-2",
+      "entryMs": 4748,
+      "passed": true
+    },
+    {
+      "test": "original-polygon-to-chapter-3",
+      "entryMs": 4970,
+      "passed": true
+    },
+    {
+      "test": "original-polygon-to-chapter-4",
+      "entryMs": 5134,
+      "passed": true
+    },
+    {
+      "test": "history-back-forward-and-cancel-pending-journey",
+      "passed": true
+    },
+    {
+      "test": "cached-complete-ceremony",
+      "elapsedMs": 4944,
+      "passed": true
+    },
+    {
+      "test": "mobile-touch-directory-viewer-culture-return-and-motion-preference",
+      "passed": true
+    },
+    {
+      "test": "deep-link-manifest-error-retry-and-reduced-motion",
+      "passed": true
+    },
+    {
+      "test": "chapter-painting-decode-failure-gate-and-retry",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "failures": []
+}

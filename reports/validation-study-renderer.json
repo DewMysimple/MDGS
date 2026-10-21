@@ -1,0 +1,63 @@
+{
+  "status": "pass",
+  "testedAt": "2026-10-21T02:11:41.285Z",
+  "environment": "Windows Chromium; real WebGL textures and explicit network interruption",
+  "checks": [
+    {
+      "name": "real-textures-and-first-frame",
+      "passed": true,
+      "textures": 24,
+      "events": [
+        "manifest",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "textures",
+        "first-frame",
+        "ready"
+      ]
+    },
+    {
+      "name": "resized-viewport-waits-for-new-required-textures",
+      "passed": true,
+      "newlyRequestedTextures": 4
+    },
+    {
+      "name": "pending-manifest-cancellation",
+      "passed": true
+    },
+    {
+      "name": "failed-required-texture-and-explicit-retry",
+      "passed": true
+    },
+    {
+      "name": "retained-webgl-context-recovery",
+      "passed": true
+    },
+    {
+      "name": "viewport-input-gate-and-inertia-cleanup",
+      "passed": true
+    }
+  ],
+  "pageErrors": []
+}

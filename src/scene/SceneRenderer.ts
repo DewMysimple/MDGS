@@ -13,6 +13,10 @@ const clamp = (v: number) => Math.min(1, Math.max(0, v));
 
 export interface SceneMotionState { enabled: boolean; reducedMotion: boolean; supported: boolean }
 export interface SceneRecoveryState { kind: 'none' | 'textures' | 'context-lost'; canRetry: boolean; failedTextures: number }
+export interface ScenePreparationState {
+  stage: 'manifest' | 'textures' | 'first-frame' | 'ready' | 'error';
+  loaded: number; total: number; message: string;
+}
 
 /** Reconstructs the actual Blender image planes in their untouched world coordinates. */
 export class SceneRenderer {
@@ -30,6 +34,9 @@ export class SceneRenderer {
   private height = 1;
   private dirty = true;
   private ready = false;
+  private firstFrameReady = false;
+  private preparationActive = true;
+  private preparationSignature = '';
   private loaded = false;
   private errorUrls = new Set<string>();
   private pending = new Set<string>();
@@ -72,7 +79,8 @@ export class SceneRenderer {
   private abort = new AbortController();
   private calligraphy: CalligraphyLayer;
 
-  constructor(private host: HTMLElement, private status: (message: string | null) => void) {
+  constructor(private host: HTMLElement, private status: (message: string | null) => void,
+    private preparation?: (state: ScenePreparationState) => void) {
     this.readingLayoutRoot = host.closest<HTMLElement>('.app-shell');
     this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'high-performance' });
     this.renderer.setPixelRatio(Math.min(devicePixelRatio, 1.65));
@@ -94,6 +102,7 @@ export class SceneRenderer {
     this.chapterId = chapterId;
     this.emitMotionState();
     this.status('正在展卷');
+    this.reportPreparation('manifest', 0, 0, '正在铺陈千年风华……');
     const base = `${import.meta.env.BASE_URL}assets/chapter-${chapterId}/`;
     const response = await fetch(`${base}scene.json`, { signal: this.abort.signal });
     if (!response.ok) throw new Error(`第${chapterId}卷资源读取失败（${response.status}）`);
@@ -153,6 +162,7 @@ export class SceneRenderer {
   }
 
   resize(width: number, height: number) {
+    if (this.preparationActive && (width !== this.width || height !== this.height)) this.firstFrameReady = false;
     this.width = width; this.height = height;
     this.updateReadingMinimum();
     this.renderer.setSize(width, height);
@@ -170,8 +180,15 @@ export class SceneRenderer {
     } else this.readingLayoutRoot?.style.removeProperty('--reading-min-paint-height');
   }
 
-  setProgress(progress: number) { if (this.progress !== progress) { this.progress = clamp(progress); this.dirty = true; this.requestFrame(); } }
+  setProgress(progress: number) {
+    if (this.progress === progress) return;
+    if (this.preparationActive) this.firstFrameReady = false;
+    this.progress = clamp(progress); this.dirty = true; this.requestFrame();
+  }
   setPointer(x: number, y: number) { this.pointerTarget.set(x, y); this.requestFrame(); }
+
+  /** Keep the outer ceremony tied to the current viewport until interaction opens. */
+  setPreparationActive(active: boolean) { this.preparationActive = active; }
 
   setMotionEnabled(enabled: boolean) {
     this.motionRequested = enabled;
@@ -249,10 +266,12 @@ export class SceneRenderer {
     if (this.disposed) return;
     event.preventDefault();
     this.contextLost = true;
+    if (this.preparationActive) this.firstFrameReady = false;
     this.contextRetryRequested = false;
     this.previousFrameTime = 0;
     cancelAnimationFrame(this.frame); this.frame = 0;
     this.status('画面暂时中断，请恢复画卷');
+    this.reportPreparation('error', 0, this.currentVisible.size, '画境暂时中断，请重试唤醒。');
     this.emitMotionState();
   };
 
@@ -368,11 +387,26 @@ export class SceneRenderer {
       for (const object of this.objects) if (object.url === url) { object.material.map = null; object.material.needsUpdate = true; object.mesh.visible = false; }
     }
     const waiting = [...this.currentVisible].filter(url => !this.textures.get(url)?.texture && !this.errorUrls.has(url)).length;
+    const failed = [...this.currentVisible].filter(url => this.errorUrls.has(url)).length;
+    const loaded = this.currentVisible.size - waiting - failed;
+    if (!this.firstFrameReady) {
+      if (failed) this.reportPreparation('error', loaded, this.currentVisible.size, '部分画境未能绘就，请重试。');
+      else if (waiting) this.reportPreparation('textures', loaded, this.currentVisible.size, '正在唤醒花影……');
+      else if (this.width > 1 && this.height > 1) this.reportPreparation('first-frame', loaded, this.currentVisible.size, '山河已绘，正在点亮画境……');
+    }
     if (!waiting) {
       this.ready = true;
       this.status(this.errorUrls.size ? '部分画面资源未能加载，可重试补全' : null);
     }
     this.updateDiagnostics();
+  }
+
+  private reportPreparation(stage: ScenePreparationState['stage'], loaded: number, total: number, message: string) {
+    if (this.disposed) return;
+    const signature = `${stage}:${loaded}:${total}:${message}`;
+    if (signature === this.preparationSignature) return;
+    this.preparationSignature = signature;
+    this.preparation?.({ stage, loaded, total, message });
   }
 
   private pumpQueue() {
@@ -436,12 +470,20 @@ export class SceneRenderer {
     const ambientDue = motion && ambientVisible && now - this.lastAmbientFrame >= 1000 / getMotionProfile(this.chapterId).ambientFps - 1;
     if ((this.dirty || ambientDue) && this.manifest && this.loaded) {
       if (this.dirty) { this.updateCamera(); this.textureRefreshPending = true; }
+      // During preparation, determine readiness for the actual responsive camera,
+      // then upload/draw its textures before allowing the outer ceremony to reveal it.
+      if (!this.firstFrameReady) this.updateTextures();
       this.motionDirector?.update(this.camera, motion, this.progress);
       this.renderer.render(this.scene, this.camera);
       this.calligraphy.render(this.camera, this.progress);
       this.dirty = false;
       this.lastAmbientFrame = now;
       this.renderCount++;
+      if (!this.firstFrameReady && this.ready && this.width > 1 && this.height > 1
+        && ![...this.currentVisible].some(url => !this.textures.get(url)?.texture)) {
+        this.firstFrameReady = true;
+        this.reportPreparation('ready', this.currentVisible.size, this.currentVisible.size, '长卷已备，邀君共赏。');
+      }
     }
     if (this.textureRefreshPending && this.manifest && this.loaded && now - this.lastTextureCheck > 100) {
       this.updateTextures();
@@ -474,6 +516,7 @@ export class SceneRenderer {
       artReplacements: String(this.artCounts.replacements), artGeometryRepairs: String(this.artCounts.geometryRepairs), artEdgeRepairs: String(this.artCounts.edgeRepairs), artAddedLayers: String(this.artCounts.addedLayers), artTextLayers: String(this.artCounts.textLayers),
       compactReadingReserve: String(this.compactReserve),
       renderCount: String(this.renderCount), rafTicks: String(this.rafTicks), rafRunning: String(!!this.frame),
+      firstFrameReady: String(this.firstFrameReady),
       contextLost: String(this.contextLost), contextRestores: String(this.contextRestoreCount),
       textureCount: String(textureEntries.filter(entry => !!entry.texture).length),
       textureBytes: String(Math.round(textureEntries.reduce((sum, entry) => sum + entry.bytes, 0))),

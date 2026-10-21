@@ -3,10 +3,22 @@ import { sceneOptions } from '../data/sceneOptions';
 
 const savedProgress = new Map<number, number>();
 const clamp = (n: number) => Math.max(0, Math.min(1, n));
+const progressKey = (id: number) => `guose-fanghua:chapter-${id}:position`;
+function restoreProgress(id: number) {
+  if (savedProgress.has(id)) return savedProgress.get(id)!;
+  try {
+    const value = Number(sessionStorage.getItem(progressKey(id)));
+    return Number.isFinite(value) ? clamp(value) : 0;
+  } catch { return 0; }
+}
+function persistProgress(id: number, value: number) {
+  savedProgress.set(id, value);
+  try { sessionStorage.setItem(progressKey(id), String(value)); } catch { /* Private storage can be disabled. */ }
+}
 
 /** One restrained, shared motion controller for all four independent scrolls. */
 export function useScrollController(chapterId: number) {
-  const [progress, setProgress] = useState(savedProgress.get(chapterId) ?? 0);
+  const [progress, setProgress] = useState(() => restoreProgress(chapterId));
   const [target, setTarget] = useState(progress);
   const [playing, setPlaying] = useState(false);
   const position = useRef(progress);
@@ -43,9 +55,9 @@ export function useScrollController(chapterId: number) {
   }, [seek]);
 
   useEffect(() => {
-    savedProgress.set(chapterRef.current, position.current);
+    persistProgress(chapterRef.current, position.current);
     chapterRef.current = chapterId;
-    const restored = savedProgress.get(chapterId) ?? 0;
+    const restored = restoreProgress(chapterId);
     position.current = destination.current = restored;
     setProgress(restored);
     setTarget(restored);
@@ -55,6 +67,7 @@ export function useScrollController(chapterId: number) {
   useEffect(() => {
     let frame = 0;
     let previous = performance.now();
+    let lastSaved = previous;
     const animate = (now: number) => {
       frame = 0;
       if (document.hidden) return;
@@ -74,11 +87,13 @@ export function useScrollController(chapterId: number) {
         setProgress(position.current);
       }
       if (playingRef.current && destination.current >= 1 && position.current > 0.999) stop();
+      if (now - lastSaved > 1000) { persistProgress(chapterRef.current, position.current); lastSaved = now; }
       frame = requestAnimationFrame(animate);
     };
     if (!document.hidden) frame = requestAnimationFrame(animate);
     const onVisibility = () => {
       if (document.hidden) {
+        persistProgress(chapterRef.current, position.current);
         stop();
         cancelAnimationFrame(frame);
         frame = 0;
@@ -88,7 +103,9 @@ export function useScrollController(chapterId: number) {
       }
     };
     document.addEventListener('visibilitychange', onVisibility);
-    return () => { cancelAnimationFrame(frame); document.removeEventListener('visibilitychange', onVisibility); };
+    const save = () => persistProgress(chapterRef.current, position.current);
+    window.addEventListener('pagehide', save);
+    return () => { save(); cancelAnimationFrame(frame); document.removeEventListener('visibilitychange', onVisibility); window.removeEventListener('pagehide', save); };
   }, [stop]);
 
   return { progress, target, seek, nudge, playing, togglePlaying, stop };

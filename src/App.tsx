@@ -8,6 +8,9 @@ import AudioController from './components/AudioController';
 import { BrocadeBorder, ExhibitionAtmosphere, ScrollRoller } from './components/ScrollOrnaments';
 import { useScrollController } from './hooks/useScrollController';
 import { chapters } from './data/chapters';
+import StudyHome from './components/StudyHome';
+import ScrollLoadingScene from './components/ScrollLoadingScene';
+import { useStudyJourney } from './hooks/useStudyJourney';
 import type { SceneManifest } from './types';
 import './styles.css';
 
@@ -21,7 +24,9 @@ function readMotionPreference() {
 }
 
 export default function App() {
-  const [chapterId, setChapterId] = useState<number>(chapters[0].id);
+  const stopRef = useRef<() => void>(() => {});
+  const journey = useStudyJourney(() => stopRef.current());
+  const { chapterId } = journey;
   const [cultureOpen, setCultureOpen] = useState(false);
   const [fullscreen, setFullscreen] = useState(Boolean(document.fullscreenElement));
   const [notice, setNotice] = useState('');
@@ -29,6 +34,7 @@ export default function App() {
   const [motionState, setMotionState] = useState<ViewportMotionState>({ enabled: false, reducedMotion: matchMedia('(prefers-reduced-motion: reduce)').matches, supported: false });
   const [manifests, setManifests] = useState<Record<number, Pick<SceneManifest, 'id' | 'stops'>>>({});
   const { progress, target, seek, nudge, playing, togglePlaying, stop } = useScrollController(chapterId);
+  stopRef.current = stop;
   const chapterIndex = chapters.findIndex(item => item.id === chapterId);
   const chapter = chapters[chapterIndex];
   const manifest = manifests[chapterId];
@@ -45,9 +51,19 @@ export default function App() {
 
   const changeChapter = useCallback((id: number) => {
     stop();
-    setChapterId(id);
+    if (id !== chapterId || !journey.interactive) journey.select(id);
     setCultureOpen(false);
-  }, [stop]);
+  }, [stop, chapterId, journey.interactive, journey.select]);
+
+  const returnToStudy = useCallback(() => {
+    stop(); setCultureOpen(false); journey.returnHome();
+  }, [stop, journey.returnHome]);
+
+  useEffect(() => {
+    document.title = journey.phase === 'HOME' ? '国色长卷 · 数字牡丹赋' : `${chapter.title} · 国色长卷`;
+    if (journey.interactive) stageRef.current?.focus({ preventScroll: true });
+    else if (journey.phase !== 'HOME') setCultureOpen(false);
+  }, [journey.phase, journey.interactive, chapter.title]);
 
   const goTo = useCallback((value: number) => {
     stop();
@@ -86,6 +102,7 @@ export default function App() {
   }, [motionEnabled]);
 
   function stageKeydown(event: KeyboardEvent<HTMLDivElement>) {
+    if (!journey.interactive) return;
     if ((event.target as HTMLElement).closest('button, a, input, select, textarea')) return;
     if (event.defaultPrevented) return;
     if (event.target !== event.currentTarget && event.key !== ' ') return;
@@ -107,13 +124,17 @@ export default function App() {
   }
 
   return (
-    <div className="app-shell">
+    <div className={`peony-experience phase-${journey.phase.toLowerCase().replaceAll('_', '-')} ${motionEnabled ? '' : 'environment-off'}`} data-journey-phase={journey.phase}>
+    {journey.phase !== 'SCROLL_VIEWER' && <div className="journey-study" inert={journey.phase !== 'HOME'} aria-hidden={journey.phase !== 'HOME'}>
+      <StudyHome phase={journey.phase} chapterId={chapterId} onSelect={journey.select} motionEnabled={motionEnabled} onToggleMotion={() => setMotionEnabled(value => !value)} />
+    </div>}
+    {journey.viewerMounted && <div className={`app-shell journey-viewer${journey.interactive ? ' is-interactive' : ''}`} inert={!journey.interactive} aria-hidden={!journey.interactive}>
       <ExhibitionAtmosphere />
-      <a className="skip-link" href="#scroll-artwork">跳至画卷</a>
+      <a className="skip-link" href="#scroll-artwork" onClick={event => { event.preventDefault(); stageRef.current?.focus(); }}>跳至画卷</a>
       <header className="site-header">
-        <button className="brand" type="button" onClick={() => changeChapter(chapters[0].id)} aria-label="国色芳华，返回第一卷">
+        <button className="brand" type="button" onClick={returnToStudy} aria-label="返回书房">
           <span className="brand-seal" aria-hidden="true">牡<br />丹</span>
-          <span className="brand-wordmark">国色芳华<span>THE PEONY SCROLLS</span></span>
+          <span className="brand-wordmark">国色长卷<span>返回书房 · 数字牡丹赋</span></span>
         </button>
         <nav className="chapter-nav" aria-label="四卷导航">
           {chapters.map((item, index) => (
@@ -149,7 +170,11 @@ export default function App() {
               aria-label={`${chapter.title}画卷，使用滚轮或拖拽游观，也可用方向键移动，空格键自动展卷`}
             >
               <ScrollViewport
+                key={`${chapterId}-${journey.attempt}`}
                 chapterId={chapterId}
+                interactive={journey.interactive}
+                onPreparation={journey.onPreparation}
+                onReady={journey.onReady}
                 progress={progress}
                 motionEnabled={motionEnabled}
                 onMotionState={receiveMotionState}
@@ -222,6 +247,10 @@ export default function App() {
 
       {notice && <div className="status-notice" role="status">{notice}</div>}
       <CulturePanel chapter={chapter} open={cultureOpen} onClose={closeCulture} />
+    </div>}
+    {journey.phase !== 'HOME' && journey.phase !== 'SCROLL_VIEWER' && journey.phase !== 'SCROLL_AWAKENING' && journey.phase !== 'CAMERA_ENTERING' && <ScrollLoadingScene
+      chapter={chapter} phase={journey.phase} preparation={journey.preparation} error={journey.error}
+      onRetry={journey.retry} onReturn={returnToStudy} motionEnabled={motionEnabled} />}
     </div>
   );
 }

@@ -1,0 +1,10 @@
+{
+  "asset": "loading-garden.png",
+  "purpose": "Independent artwork used only for the scroll entrance/loading scene; the supplied homepage image remains the homepage.",
+  "created": "2026-10-21",
+  "method": "Built-in image_gen imagegen tool; new artwork using the user's reference for style and materials.",
+  "reference": "User-supplied 国色长卷：数字牡丹雅境.png",
+  "dimensions": [1672, 941],
+  "prompt": "Use case: historical-scene. Asset type: a NEW high detail wide 16:9 digital artwork for the loading background of an immersive Chinese scroll website. Input image is STYLE AND MATERIAL REFERENCE ONLY, do not edit or replace the homepage. Primary request: create the world inside one of the four scrolls in this reference image, a richly detailed serene imperial Tang palace garden with layered blue-green mineral mountains, pale jade river, tiny golden palace pavilions, layered peony branches and flowers at bottom corners and upper corners, fine brocade/cloud ornaments near edges. The central 65% of this composition is a luminous serene distant landscape, clear enough for a foreground scroll UI to overlay, still with real fine landscape and palace detail. All artwork MUST match this reference's exquisite gongbi heavy-color brush painting, shiqing/shilv mineral blue-green mountain washes, cinnabar and dusty rose peonies with detailed petals, warm ivory silk, restrained antique bronze gold, cinema quality warm sunlight from the upper back-right, realistic depth and atmospheric perspective, noble and warm not flat. No text, no calligraphy, no seals, no watermarks, NO central scroll object, NO modern UI, NO empty beige flat background, NO black ink-only landscape, NO neon glow, NO cartoon or paper-cut look. High-end art museum visual, delicate micro details and tactile fibers. 2048x1152 wide if possible.",
+  "implementation": "Shared palace/peony backdrop and central painting for chapter 1. Chapters 2, 3 and 4 use separate generated paintings documented in paintings.provenance.json. CSS masks reveal ink, colour and gold layers without deforming buildings or characters. Painting reveal time never supplies a fabricated resource percentage."
+}

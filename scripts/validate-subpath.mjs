@@ -10,7 +10,7 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const dist = path.join(root, 'dist');
 const revision = JSON.parse(await readFile(path.join(root, 'public/assets/reconstruction/manifest.json'), 'utf8'));
 const prefix = '/portable/nested/';
-const mime = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.webp': 'image/webp' };
+const mime = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.png': 'image/png' };
 const server = createServer(async (request, response) => {
   try {
     const pathname = decodeURIComponent(new URL(request.url, 'http://local').pathname);
@@ -33,6 +33,9 @@ try {
   page.on('pageerror', error => pageErrors.push(error.message));
   page.on('response', response => { if (new URL(response.url()).origin === new URL(url).origin && response.status() >= 400) failedResources.push(response.url()); });
   await page.goto(url, { waitUntil: 'domcontentloaded' });
+  await page.locator('[data-chapter-id="1"]').click();
+  const waitViewer = () => page.waitForFunction(() => document.querySelector('[data-journey-phase]')?.getAttribute('data-journey-phase') === 'SCROLL_VIEWER', null, { timeout: 60000 });
+  await waitViewer();
   await page.locator('.painting canvas').waitFor();
   await page.locator('.scene-loading').waitFor({ state: 'hidden', timeout: 60000 });
   const ornamentPaths = await page.locator('.exhibition-atmosphere img').evaluateAll(images => images.map(image => ({ src: image.src, loaded: image.complete && image.naturalWidth > 0 })));
@@ -43,6 +46,7 @@ try {
   const ready = async chapter => page.waitForFunction(chapter => document.querySelector('canvas')?.dataset.chapter === String(chapter) && document.querySelector('.scene-viewport.is-ready') && document.querySelector('canvas')?.dataset.loadingTextures === '0', chapter, { timeout: 60000 });
   for (let index = 0; index < 4; index++) {
     await page.locator('.chapter-link').nth(index).click();
+    await waitViewer();
     await page.locator('.scene-viewport').getAttribute('aria-label').then(label => assert(label.startsWith(`第${index + 1}卷`)));
     await page.locator('.scene-loading').waitFor({ state: 'hidden', timeout: 60000 });
     await ready(index + 1);
@@ -62,6 +66,7 @@ try {
   await page.getByRole('dialog').waitFor({ state: 'hidden' });
   assert(await page.getByRole('button', { name: '打开文化解读' }).evaluate(button => button === document.activeElement));
   await page.locator('.chapter-link').first().click();
+  await waitViewer();
   await page.locator('.scene-loading').waitFor({ state: 'hidden', timeout: 60000 });
   await ready(1);
   const progress = () => page.locator('canvas').evaluate(canvas => Number(canvas.dataset.progress));
