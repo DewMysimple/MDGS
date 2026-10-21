@@ -31,3 +31,7 @@
 在根目录双击 `runStart.cmd`，或 `npm ci` 后 `npm run dev`，打开实际打印的 Local 地址。`npm run build` 输出 `dist/`，通过 HTTP 使用。所有新资源跟随 Vite BASE_URL，可从子目录访问。
 
 继续修改优先读 `src/data/study.ts`（图片与原图热区）、`src/hooks/useStudyJourney.ts`（状态与调度）、两套 study/loading 样式与 `ScrollViewport` / `SceneRenderer`（真实准备门控）。严禁为了调整首页而重建旧 Blender 资产管线。
+
+## Git交付状态
+
+功能本地提交为 `7ad5a13`。2026-10-21执行 `git push origin main` 被GitHub返回403：本机凭据账户 `ZGL686` 无目标仓库写权限，远端仍在 `c98e148`。代码、素材及LFS截图均保存在本地提交，未声称同步完成。修复本机Git登录或仓库授权后执行同一push并核对远端即可，无需重新开发。连接器身份为DewMysimple，但不向本机导出凭据，故未更改用户认证或仓库LFS策略。
