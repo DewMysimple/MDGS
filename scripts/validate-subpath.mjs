@@ -43,7 +43,7 @@ try {
   const brocade = await page.locator('.brocade-border__pattern').first().evaluate(element => getComputedStyle(element).backgroundImage);
   assert(brocade.includes(prefix + 'ui/'), 'CSS public asset references must use the nested prefix.');
   const chapters = [];
-  const ready = async chapter => page.waitForFunction(chapter => document.querySelector('canvas')?.dataset.chapter === String(chapter) && document.querySelector('.scene-viewport.is-ready') && document.querySelector('canvas')?.dataset.loadingTextures === '0', chapter, { timeout: 60000 });
+  const ready = async chapter => page.waitForFunction(chapter => document.querySelector('.painting canvas')?.dataset.chapter === String(chapter) && document.querySelector('.scene-viewport.is-ready') && document.querySelector('.painting canvas')?.dataset.loadingTextures === '0', chapter, { timeout: 60000 });
   for (let index = 0; index < 4; index++) {
     await page.locator('.chapter-link').nth(index).click();
     await waitViewer();
@@ -69,8 +69,8 @@ try {
   await waitViewer();
   await page.locator('.scene-loading').waitFor({ state: 'hidden', timeout: 60000 });
   await ready(1);
-  const progress = () => page.locator('canvas').evaluate(canvas => Number(canvas.dataset.progress));
-  const advance = async previous => page.waitForFunction(previous => Number(document.querySelector('canvas')?.dataset.progress) > previous + .002, previous);
+  const progress = () => page.locator('.painting canvas').evaluate(canvas => Number(canvas.dataset.progress));
+  const advance = async previous => page.waitForFunction(previous => Number(document.querySelector('.painting canvas')?.dataset.progress) > previous + .002, previous);
   const box = await page.locator('.scene-viewport').boundingBox();
   let previous = await progress();
   await page.mouse.move(box.x + box.width * .5, box.y + box.height * .5);
@@ -107,7 +107,7 @@ try {
   await page.waitForFunction(() => document.fullscreenElement === null);
   await page.locator('input[type=range]').focus();
   await page.keyboard.press('Home');
-  await page.waitForFunction(() => Number(document.querySelector('canvas')?.dataset.progress) < .001);
+  await page.waitForFunction(() => Number(document.querySelector('.painting canvas')?.dataset.progress) < .001);
   await ready(1);
   await page.screenshot({ path: path.join(root, 'reports/screenshots/portable-subpath-1280x720.png') });
   assert.deepEqual(pageErrors, []);

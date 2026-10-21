@@ -1,4 +1,4 @@
-/** Verify the actual page gives every entry at least 3 seconds of visible art loading. */
+/** Verify the actual page gives every entry at least 4 seconds of visible art loading. */
 import assert from 'node:assert/strict';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
@@ -20,7 +20,7 @@ let currentMeasurement;
 const report = (status, failure) => ({
   status, testedAt: new Date().toISOString(), environment: 'Windows Edge; actual React/Three.js page, real image decoding and first-frame gates',
   mode: externalPreview ? 'existing-preview' : 'owned-development-server', targetUrl,
-  minimumVisibleLoadingMs: 3000, normalCachedTargetMs: [5000, 7000],
+  minimumVisibleLoadingMs: 4000, normalCachedTargetMs: [5000, 7000],
   visibilityScope: 'Synthetic document.hidden change event checks visible-time accounting; OS background behavior is not inferred.',
   results, pageErrors: errors, ...(failure ? { failure } : {}),
 });
@@ -39,7 +39,7 @@ const observe = async page => {
   });
 };
 const reset = page => page.evaluate(() => { window.studyTimingPhases = []; });
-async function verify(page, name, { cachedNormal = false, minimumWallLoading = 3000 } = {}) {
+async function verify(page, name, { cachedNormal = false, minimumWallLoading = 4000 } = {}) {
   currentMeasurement = { name, phases: [] };
   await waitPhase(page, 'SCROLL_VIEWER');
   const events = await page.evaluate(() => window.studyTimingPhases);
@@ -89,18 +89,18 @@ try {
   const reduced = await browser.newPage({ viewport: { width: 1280, height: 800 }, reducedMotion: 'reduce' });
   await observe(reduced);
   await reduced.goto(`${url}#chapter-2`);
-  await verify(reduced, 'reduced-motion-still-three-seconds');
+  await verify(reduced, 'reduced-motion-still-four-seconds');
 
   let failManifest = true;
   await reduced.route('**/chapter-3/scene.json', route => failManifest ? route.fulfill({ status: 503, body: 'timing verification interruption' }) : route.continue());
   await reduced.goto(`${url}#chapter-3`);
   await waitPhase(reduced, 'SCROLL_LOADING');
   await reduced.locator('.art-loading__retry').waitFor();
-  await reduced.waitForTimeout(3100);
+  await reduced.waitForTimeout(4100);
   failManifest = false;
   await reset(reduced);
   await reduced.getByRole('button', { name: '重新展卷', exact: true }).click();
-  await verify(reduced, 'retry-restarts-full-ritual-and-three-seconds');
+  await verify(reduced, 'retry-restarts-full-ritual-and-four-seconds');
 
   // Exercise the visibility branch explicitly: this synthetic event verifies the
   // timer accounting without claiming to simulate an actual OS background tab.
@@ -118,7 +118,7 @@ try {
     delete document.hidden;
     document.dispatchEvent(new Event('visibilitychange'));
   });
-  await verify(reduced, 'hidden-time-excluded-synthetic-visibility-event', { minimumWallLoading: 4500 });
+  await verify(reduced, 'hidden-time-excluded-synthetic-visibility-event', { minimumWallLoading: 5500 });
 
   // A slow real texture is allowed to extend the exhibition beyond its minimum.
   const slow = await browser.newPage({ viewport: { width: 1280, height: 800 }, reducedMotion: 'reduce' });
@@ -128,15 +128,15 @@ try {
   await slow.route('**/assets/**/*.webp', async route => { await heldTextures; await route.continue().catch(() => {}); });
   await slow.goto(`${url}#chapter-1`);
   await waitPhase(slow, 'SCROLL_LOADING');
-  await slow.waitForTimeout(3300);
+  await slow.waitForTimeout(4300);
   assert.equal(await slow.locator('[data-journey-phase]').getAttribute('data-journey-phase'), 'SCROLL_LOADING');
   assert.equal(await slow.locator('.scene-viewport').getAttribute('aria-disabled'), 'true');
   releaseTextures();
-  await verify(slow, 'real-slow-texture-extends-exhibition', { minimumWallLoading: 3300 });
+  await verify(slow, 'real-slow-texture-extends-exhibition', { minimumWallLoading: 4300 });
 
   assert.deepEqual(errors, []);
   await writeFile(reportPath, JSON.stringify(report('pass'), null, 2) + '\n');
-  console.log(`${results.length} full-journey timing cases passed; every successful entry displayed art loading for at least 3000ms.`);
+  console.log(`${results.length} full-journey timing cases passed; every successful entry displayed art loading for at least 4000ms.`);
 } catch (error) {
   const pageSnapshots = await Promise.all((browser?.contexts().flatMap(context => context.pages()) ?? []).map(page => page.evaluate(() => ({ url: location.href, phase: document.querySelector('[data-journey-phase]')?.dataset.journeyPhase, phases: window.studyTimingPhases })).catch(() => ({ url: page.url(), unavailable: true }))));
   await writeFile(reportPath, JSON.stringify(report('fail', { message: error.message, stack: error.stack, currentMeasurement, pageSnapshots }), null, 2) + '\n');

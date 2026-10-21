@@ -13,7 +13,8 @@
     "test:study": "node scripts/validate-study-journey.mjs",
     "test:study-renderer": "node scripts/validate-study-renderer.mjs",
     "test:study-timing": "node scripts/validate-study-timing.mjs",
-    "test:layered-home": "node scripts/validate-layered-home.mjs",
+    "test:layered-home": "npm run test:volume-home",
+    "test:volume-home": "node scripts/validate-volume-home.mjs",
     "test:subpath": "node scripts/validate-subpath.mjs"
   },
   "dependencies": {

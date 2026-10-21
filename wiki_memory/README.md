@@ -30,7 +30,7 @@ python wiki_memory/工具/memory.py check --project . --require-ready
 
 - [[当前状态/当前状态.md|当前状态]] — active
 
-- [[决策/MOC_决策.md|工程决策目录]] — 4 页，按主题或模块检索。
+- [[决策/MOC_决策.md|工程决策目录]] — 5 页，按主题或模块检索。
 - [[知识/MOC_知识.md|稳定知识目录]] — 2 页，按主题或模块检索。
 
 <!-- wiki-memory:auto:end -->

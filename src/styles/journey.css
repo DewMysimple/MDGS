@@ -1,13 +1,13 @@
 /* Sampled from the supplied study: ivory silk, jade brocade, walnut, bronze. */
 :root {
-  --paper: #e5cc9f;
-  --paper-light: #f6e1b9;
+  --paper: #e8dfcc;
+  --paper-light: #f4eddd;
   --painting-paper: #f5ecdc;
-  --ink: #3a291d;
-  --muted: #8c6b47;
-  --cinnabar: #913b28;
-  --brocade: #576c60;
-  --brocade-gold: #b4945d;
+  --ink: #554a39;
+  --muted: #8a7b63;
+  --cinnabar: #975049;
+  --brocade: #86998f;
+  --brocade-gold: #b4a482;
   --pattern-gold: #d5b77e;
   --wood: #392315;
   --study-silk: #edcfa0;
@@ -16,8 +16,9 @@
   --study-cinnabar: #963e29;
   --study-walnut: #382315;
 }
-.peony-experience { position: relative; min-height: 100dvh; background: #392b1d; font-family: var(--serif); }
+.peony-experience { position: relative; min-height: 100dvh; background: #eee8d9; font-family: var(--serif); }
 .journey-study { position: relative; min-height: 100dvh; }
+.phase-scroll-viewer .journey-study { position:absolute; inset:0; visibility:hidden; pointer-events:none; }
 .journey-viewer { position: absolute; inset: 0; width: 100%; opacity: 0; pointer-events: none; }
 .journey-viewer.is-interactive { position: relative; opacity: 1; pointer-events: auto; }
 .phase-entering-viewer .journey-viewer { opacity: 1; }
@@ -31,8 +32,8 @@
 .journey-viewer .site-header .brand:focus-visible { outline-offset: 8px; }
 .journey-viewer .brand-seal { background: #8e3825; }
 .journey-viewer .scroll-controls { font-family: var(--serif); }
-.journey-viewer .scene-loading { font-family: var(--serif); background: #efdab6ed; color: #4a3420; }
-.journey-viewer .culture-panel { background-color: #f0dfc0; }
+.journey-viewer .scene-loading { font-family: var(--serif); background: #eee7d6ed; color: #665b46; }
+.journey-viewer .culture-panel { background-color: #f0e9d9; }
 .journey-viewer .exhibition-atmosphere__peonies { opacity: .24; }
 @media(max-width:620px) {
   .journey-viewer .brand-wordmark > span { font-size: 9px; letter-spacing: 1px; }

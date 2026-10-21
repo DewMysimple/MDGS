@@ -38,10 +38,11 @@ try {
   await page.waitForFunction(() => document.querySelectorAll('.study-entry-button').length === 4 && [...document.querySelectorAll('.study-entry-button')].every(button => !button.disabled));
   assert.equal(await phase(page), 'HOME');
   assert.equal(await page.locator('.study-entry-button').count(), 4);
-  assert.equal(await page.locator('canvas').count(), 0, 'Home does not retain a WebGL renderer.');
+  assert.equal(await page.locator('canvas.study-volume-canvas').count(), 1, 'The home is an actual WebGL room.');
+  assert.equal(await page.locator('.painting canvas').count(), 0, 'Home does not retain a chapter renderer.');
   await shot(page, 'home-desktop');
   await page.locator('[data-chapter-id="1"]').hover();
-  await page.locator('.study-scroll-entry.is-hovered').waitFor();
+  await page.waitForTimeout(350);
   await shot(page, 'home-hover');
   const started = Date.now();
   await page.locator('[data-chapter-id="1"]').click();
@@ -58,8 +59,8 @@ try {
   await waitPhase(page, 'SCROLL_VIEWER');
   const enteredMs = Date.now() - started;
   assert(enteredMs >= 3500, 'The complete ceremony must never be an instant navigation.');
-  assert.equal(await page.locator('canvas').getAttribute('data-chapter'), '1');
-  assert.equal(Number(await page.locator('canvas').getAttribute('data-texture-failed')), 0);
+  assert.equal(await page.locator('.painting canvas').getAttribute('data-chapter'), '1');
+  assert.equal(Number(await page.locator('.painting canvas').getAttribute('data-texture-failed')), 0);
   await page.locator('.skip-link').evaluate(link => link.click());
   assert.equal(await phase(page), 'SCROLL_VIEWER', 'In-page skip link must not change chapter routing.');
   await shot(page, 'viewer-desktop');
@@ -67,38 +68,38 @@ try {
   for (const expected of ['HOME','SCROLL_AWAKENING','CAMERA_ENTERING','ARTISTIC_TRANSITION','SCROLL_LOADING','PAINTING_REVEAL','ENTERING_VIEWER','SCROLL_VIEWER']) assert(seen.some(item => item.phase === expected), expected);
   results.push({ test: 'full-ceremony-real-textures-lock-and-first-frame', enteredMs, phases: seen, passed: true });
   await page.getByRole('button', { name: '下一分镜', exact: true }).click();
-  await page.waitForFunction(() => Number(document.querySelector('canvas')?.dataset.progress) > .02);
+  await page.waitForFunction(() => Number(document.querySelector('.painting canvas')?.dataset.progress) > .02);
   await page.waitForTimeout(1200);
-  const saved = Number(await page.locator('canvas').getAttribute('data-progress'));
+  const saved = Number(await page.locator('.painting canvas').getAttribute('data-progress'));
   await page.reload();
   await waitPhase(page, 'SCROLL_VIEWER');
-  const restored = Number(await page.locator('canvas').getAttribute('data-progress'));
+  const restored = Number(await page.locator('.painting canvas').getAttribute('data-progress'));
   assert(Math.abs(saved - restored) < .02, 'Refresh restores the same chapter and session position.');
   results.push({ test: 'refresh-position-restoration', saved, restored, passed: true });
   await page.getByRole('button', { name: '返回书房', exact: true }).click();
   await waitPhase(page, 'RETURNING_HOME');
   await shot(page, 'returning-home');
   await waitPhase(page, 'HOME');
-  assert.equal(await page.locator('canvas').count(), 0);
+  assert.equal(await page.locator('.painting canvas').count(), 0);
   for (const id of [2,3,4]) {
     // Native plaque buttons share the chapter mapping of their independent painted scrolls.
     const entryStarted = Date.now();
     await page.locator(`.study-entry-button[data-chapter-id="${id}"]`).click();
     await waitPhase(page, 'SCROLL_LOADING');
-    assert((await page.locator('.art-loading__colour').getAttribute('src')).endsWith(`painting-${id}.png`));
+    assert((await page.locator('.art-loading').getAttribute('data-painting-src')).endsWith(`#chapter-${id}`));
     await page.waitForTimeout(450);
     await shot(page, `loading-chapter-${id}`);
     await waitPhase(page, 'SCROLL_VIEWER');
     const entryMs = Date.now() - entryStarted;
-    assert.equal(Number(await page.locator('canvas').getAttribute('data-chapter')), id);
-    assert.equal(await page.locator('canvas').count(), 1);
+    assert.equal(Number(await page.locator('.painting canvas').getAttribute('data-chapter')), id);
+    assert.equal(await page.locator('.painting canvas').count(), 1);
     await page.getByRole('button', { name: '返回书房', exact: true }).click();
     await waitPhase(page, 'HOME');
     results.push({ test: `native-plaque-to-chapter-${id}`, entryMs, passed: true });
   }
   await page.goBack();
   await waitPhase(page, 'SCROLL_VIEWER');
-  assert.equal(Number(await page.locator('canvas').getAttribute('data-chapter')), 4);
+  assert.equal(Number(await page.locator('.painting canvas').getAttribute('data-chapter')), 4);
   await page.goForward();
   await waitPhase(page, 'HOME');
   // Back out during an active preload, then forward again: old asynchronous work stays invalid.
@@ -109,7 +110,7 @@ try {
   assert.equal(await phase(page), 'HOME');
   await page.goForward();
   await waitPhase(page, 'SCROLL_VIEWER');
-  assert.equal(Number(await page.locator('canvas').getAttribute('data-chapter')), 2);
+  assert.equal(Number(await page.locator('.painting canvas').getAttribute('data-chapter')), 2);
   results.push({ test: 'history-back-forward-and-cancel-pending-journey', passed: true });
   await page.getByRole('button', { name: '返回书房', exact: true }).click();
   await waitPhase(page, 'HOME');
@@ -132,7 +133,7 @@ try {
   await waitPhase(mobile, 'SCROLL_LOADING');
   await shot(mobile, 'loading-mobile');
   await waitPhase(mobile, 'SCROLL_VIEWER');
-  assert.equal(Number(await mobile.locator('canvas').getAttribute('data-chapter')), 3);
+  assert.equal(Number(await mobile.locator('.painting canvas').getAttribute('data-chapter')), 3);
   await shot(mobile, 'viewer-mobile');
   await mobile.getByRole('button', { name: '打开文化解读' }).tap();
   await mobile.getByRole('dialog').waitFor();
@@ -153,12 +154,12 @@ try {
   failManifest = false;
   await recovery.getByRole('button', { name: '重新展卷', exact: true }).click();
   await waitPhase(recovery, 'SCROLL_VIEWER');
-  assert.equal(await recovery.locator('canvas').getAttribute('data-chapter'), '4');
+  assert.equal(await recovery.locator('.painting canvas').getAttribute('data-chapter'), '4');
   results.push({ test: 'deep-link-manifest-error-retry-and-reduced-motion', passed: true });
   const artwork = await browser.newPage({ viewport: { width: 1280, height: 720 }, reducedMotion: 'reduce' });
   await installObserver(artwork);
   let failArt = true;
-  await artwork.route('**/painting-2.png', route => failArt ? route.fulfill({ status: 503, body: 'artwork unavailable' }) : route.continue());
+  await artwork.route('**/ui/study-volume/paintings-atlas.webp', route => failArt ? route.fulfill({ status: 503, body: 'artwork unavailable' }) : route.continue());
   await artwork.goto(`${url}#chapter-2`);
   await artwork.locator('.art-loading__retry').waitFor();
   assert.notEqual(await phase(artwork), 'SCROLL_VIEWER', 'A missing ceremonial painting must not reveal an incomplete art scene.');

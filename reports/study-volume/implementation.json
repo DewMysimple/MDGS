@@ -1,0 +1,131 @@
+{
+  "date": "2026-10-21",
+  "baseline": "95460cc",
+  "branch": "main",
+  "architecture": "Actual Three.js room solids, perspective, shadows and raycast occlusion; native material plaques; deforming double-sided rolled silk. Original narrative scenes retained.",
+  "runtimeAssetBytes": 2975206,
+  "geometryCount": 435,
+  "paperVerticesPerScroll": 2415,
+  "minimumVisibleLoadingMs": 4002.2000000476837,
+  "canonicalUnchanged": true,
+  "validation": {
+    "reports/study-volume/validation-volume-home.json": {
+      "status": "pass",
+      "testedAt": "2026-10-21T10:32:46.483Z",
+      "cases": 15
+    },
+    "reports/study/validation-timing.json": {
+      "status": "pass",
+      "testedAt": "2026-10-21T09:44:21.490Z",
+      "cases": 8
+    },
+    "reports/study/validation-journey.json": {
+      "status": "pass",
+      "testedAt": "2026-10-21T10:20:36.910Z",
+      "cases": 10
+    },
+    "reports/validation-portable-subpath.json": {
+      "status": "pass",
+      "testedAt": "2026-10-21T10:36:45.968Z"
+    }
+  },
+  "buildAssets": [
+    "index-aV96DRfX.css",
+    "index-BrrihU2O.js",
+    "three-C-pkVsMS.js"
+  ],
+  "scope": "Windows Edge real WebGL and emulated mobile touch; screenshot sequences, failed network and explicit context loss.",
+  "limitations": [
+    "No physical phone test",
+    "No cross-browser acceptance",
+    "No sustained FPS measurement",
+    "No hosted deployment",
+    "Visibility time accounting uses a synthetic event"
+  ],
+  "hashes": {
+    "index.html": {
+      "bytes": 808,
+      "sha256": "6da284dd89457763b5179546bdda5d225d0f8be7ab7980295d2db9c9820dc453"
+    },
+    "package.json": {
+      "bytes": 1120,
+      "sha256": "8c31c86a7c4fb82946fa9890058e2be1d0251a9ff7e4b1ebc6b7daf22adb0e1b"
+    },
+    "src/App.tsx": {
+      "bytes": 15857,
+      "sha256": "948fe3c97ad9c6dd51d6e3574d2e7f79df2f669c7648d86890223fa78059bd5d"
+    },
+    "src/components/StudyHome.tsx": {
+      "bytes": 6874,
+      "sha256": "b5076bf5ad59c5de9c0bec261172a957dd0d9e2828b986bdb61e02b73cb4e613"
+    },
+    "src/components/ScrollLoadingScene.tsx": {
+      "bytes": 6124,
+      "sha256": "ae8b3bda31bde41e95af837138ec031ed1c6610a9c9cd2609af5f072e8832a06"
+    },
+    "src/data/study.ts": {
+      "bytes": 1043,
+      "sha256": "d4c2ba36a1cad5a4ff571688a4bfb64f53b3f578f1f46d94f034a61a948be51f"
+    },
+    "src/hooks/useStudyJourney.ts": {
+      "bytes": 9918,
+      "sha256": "1c9ac52a03a4866fbc3cf56a84da59ddeb113ef879c7dab3550d84b88bc8312a"
+    },
+    "src/scene/StudyRoomRenderer.ts": {
+      "bytes": 31488,
+      "sha256": "ec1ea3835efb5dcbb5af0b09d4a51eb2646c47b5a7a45ca7ab8b922706a4ec50"
+    },
+    "src/scene/ScrollUnfurlScene.ts": {
+      "bytes": 13640,
+      "sha256": "aa9b43ee1f465206e4d33e50a0ad60b9814e80e3fa2eaf2dc97d917bb6124059"
+    },
+    "src/scene/scrollGeometry.ts": {
+      "bytes": 7315,
+      "sha256": "55b8655ea89f453c9f12e895bdca5cc4f5331b2019cf0766be265d38c8ae0ccb"
+    },
+    "src/scene/studyMaterials.ts": {
+      "bytes": 3533,
+      "sha256": "075d2567aa38b6acaba4621c55f31616703d842021465b74fdb30e144677f585"
+    },
+    "src/styles/volume-study.css": {
+      "bytes": 10446,
+      "sha256": "616f77f931c66a8ce1867d377e8fa8e0affbb0f3110da5a91cec8b30ac0d986f"
+    },
+    "src/styles/scroll-loading.css": {
+      "bytes": 6339,
+      "sha256": "325af22eb332a2fab94a7657fee343736c8fa6f8bef523e6705db8ef4bdc6a76"
+    },
+    "src/styles/journey.css": {
+      "bytes": 2398,
+      "sha256": "3523627b97ccef0d0a4fb356ab3512b569924cc5d45e22ee4bf7ec7b11cec671"
+    },
+    "scripts/validate-volume-home.mjs": {
+      "bytes": 21766,
+      "sha256": "c6b480975b2997b86e2dccdcf0fb9854aa0bc5d4e2481d34006587d17057c6f0"
+    },
+    "scripts/validate-study-timing.mjs": {
+      "bytes": 8609,
+      "sha256": "16b9ab02c59a455d9bb555e60356ef37d50b5f67a538942d2f986935b8bc741c"
+    },
+    "scripts/validate-study-journey.mjs": {
+      "bytes": 11789,
+      "sha256": "ed421d10e9f6141ad1e39d719917de1681ae9aab7806f849cf74e9bdd3afc659"
+    },
+    "scripts/validate-subpath.mjs": {
+      "bytes": 8430,
+      "sha256": "93b0470c545d396748dc1e418bf7411049618a09fa344872072b23e4085812a2"
+    },
+    "public/ui/study-volume/reference.png": {
+      "bytes": 3347941,
+      "sha256": "5ddde6154a57aa96bec01bdcb2f2e85bf0599ff28b01439988355768d1639f27"
+    },
+    "public/ui/study-volume/asset-manifest.json": {
+      "bytes": 2008,
+      "sha256": "5a2b2e89ebd8a2185368a2333a04f48a9a3603cd34f689be7392e3b927dbd698"
+    },
+    "public/assets/reconstruction/manifest.json": {
+      "bytes": 295160,
+      "sha256": "4433928f6e6160acbd275ba6430d65fa3128df736a7eb59ef7607e61312d10cb"
+    }
+  }
+}

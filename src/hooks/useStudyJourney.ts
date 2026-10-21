@@ -9,12 +9,12 @@ export function chapterFromHash(hash = window.location.hash) {
 }
 const initialPreparation: ScenePreparationState = { stage: 'manifest', loaded: 0, total: 0, message: '正在铺陈千年风华……' };
 export const studyJourneyTiming = {
-  SCROLL_AWAKENING: 400,
-  CAMERA_ENTERING: 800,
-  ARTISTIC_TRANSITION: 600,
-  SCROLL_LOADING: 3000,
-  PAINTING_REVEAL: 450,
-  ENTERING_VIEWER: 750,
+  SCROLL_AWAKENING: 200,
+  CAMERA_ENTERING: 450,
+  ARTISTIC_TRANSITION: 250,
+  SCROLL_LOADING: 4000,
+  PAINTING_REVEAL: 250,
+  ENTERING_VIEWER: 400,
   RETURNING_HOME: 950,
 } as const;
 
@@ -29,6 +29,7 @@ export function useStudyJourney(onLeave: () => void) {
   const [error, setError] = useState<string | null>(null);
   const [artReady, setArtReady] = useState(false);
   const [artError, setArtError] = useState<string | null>(null);
+  const [presentationError, setPresentationError] = useState<string | null>(null);
   const phaseRef = useRef(phase);
   const phaseClock = useRef({ phase, attempt: -1, startedAt: 0 });
   const routedUrl = useRef(window.location.href);
@@ -56,7 +57,7 @@ export function useStudyJourney(onLeave: () => void) {
   }, []);
 
   const resetPreparation = useCallback(() => {
-    setReady(false); setError(null); setPreparation(initialPreparation); setMinimumShown(false);
+    setReady(false); setError(null); setPresentationError(null); setPreparation(initialPreparation); setMinimumShown(false);
     setAttempt(value => value + 1);
   }, []);
 
@@ -164,11 +165,11 @@ export function useStudyJourney(onLeave: () => void) {
   }, [phase, attempt]);
 
   useEffect(() => {
-    if (phase === 'SCROLL_LOADING' && minimumShown && ready && artReady && !error && !artError) {
+    if (phase === 'SCROLL_LOADING' && minimumShown && ready && artReady && !error && !artError && !presentationError) {
       phaseRef.current = 'PAINTING_REVEAL';
       setPhase('PAINTING_REVEAL');
     }
-  }, [phase, minimumShown, ready, error, artReady, artError]);
+  }, [phase, minimumShown, ready, error, artReady, artError, presentationError]);
 
   useEffect(() => {
     if (phase === 'HOME' || phase === 'SCROLL_VIEWER' || phase === 'RETURNING_HOME' || ready && artReady) return;
@@ -191,12 +192,18 @@ export function useStudyJourney(onLeave: () => void) {
     }
   }, []);
   const onReady = useCallback(() => { setReady(true); setError(null); }, []);
+  const onPresentationFailure = useCallback((message: string) => {
+    setPresentationError(message);
+    if (['PAINTING_REVEAL', 'ENTERING_VIEWER'].includes(phaseRef.current)) {
+      phaseRef.current = 'SCROLL_LOADING'; setMinimumShown(false); setPhase('SCROLL_LOADING');
+    }
+  }, []);
   const retry = useCallback(() => {
     leaveRef.current(); resetPreparation(); phaseRef.current = 'SCROLL_AWAKENING'; setPhase('SCROLL_AWAKENING');
   }, [resetPreparation]);
 
   const observablePreparation = ready && !artReady
     ? { ...initialPreparation, stage: 'manifest' as const, message: '正在铺设牡丹画境……' } : preparation;
-  return { chapterId, phase, attempt, preparation: observablePreparation, error: error ?? artError, select, returnHome, retry, onPreparation, onReady,
+  return { chapterId, phase, attempt, preparation: observablePreparation, error: presentationError ?? error ?? artError, select, returnHome, retry, onPreparation, onReady, onPresentationFailure,
     viewerMounted: phase !== 'HOME', interactive: phase === 'SCROLL_VIEWER' };
 }

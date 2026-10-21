@@ -1,7 +1,8 @@
 /** All coordinates are measured against the unmodified 1672 × 941 reference. */
 export const studyImage = `${import.meta.env.BASE_URL}ui/study/study-original.png`;
-export const studyGarden = `${import.meta.env.BASE_URL}ui/study/loading-garden.png`;
-export const studyPainting = (id: number) => id === 1 ? studyGarden : `${import.meta.env.BASE_URL}ui/study/painting-${id}.png`;
+export const studyGarden = `${import.meta.env.BASE_URL}ui/study-volume/garden.webp`;
+/** Chapter fragments select an atlas row while sharing one cached HTTP bitmap. */
+export const studyPainting = (id: number) => `${import.meta.env.BASE_URL}ui/study-volume/paintings-atlas.webp#chapter-${id}`;
 
 export const studyScrolls = [
   { id: 1, points: '323,447 544,478 449,683 447,715 301,717 300,786 265,812 230,786 229,716 76,714 76,669 194,624', x: 316, y: 575 },

@@ -27,6 +27,10 @@ export default function App() {
   const stopRef = useRef<() => void>(() => {});
   const journey = useStudyJourney(() => stopRef.current());
   const { chapterId } = journey;
+  // A deep link already names its scroll. Build the study when it is visited,
+  // rather than competing with the requested world during refresh startup.
+  const [studyVisited, setStudyVisited] = useState(() => journey.phase === 'HOME');
+  useEffect(() => { if (journey.phase === 'HOME' || journey.phase === 'RETURNING_HOME') setStudyVisited(true); }, [journey.phase]);
   const [cultureOpen, setCultureOpen] = useState(false);
   const [fullscreen, setFullscreen] = useState(Boolean(document.fullscreenElement));
   const [notice, setNotice] = useState('');
@@ -125,7 +129,7 @@ export default function App() {
 
   return (
     <div className={`peony-experience phase-${journey.phase.toLowerCase().replaceAll('_', '-')} ${motionEnabled ? '' : 'environment-off'}`} data-journey-phase={journey.phase}>
-    {journey.phase !== 'SCROLL_VIEWER' && <div className="journey-study" inert={journey.phase !== 'HOME'} aria-hidden={journey.phase !== 'HOME'}>
+    {studyVisited && <div className="journey-study" inert={journey.phase !== 'HOME'} aria-hidden={journey.phase !== 'HOME'}>
       <StudyHome phase={journey.phase} chapterId={chapterId} onSelect={journey.select} motionEnabled={motionEnabled} onToggleMotion={() => setMotionEnabled(value => !value)} />
     </div>}
     {journey.viewerMounted && <div className={`app-shell journey-viewer${journey.interactive ? ' is-interactive' : ''}`} inert={!journey.interactive} aria-hidden={!journey.interactive}>
@@ -248,9 +252,10 @@ export default function App() {
       {notice && <div className="status-notice" role="status">{notice}</div>}
       <CulturePanel chapter={chapter} open={cultureOpen} onClose={closeCulture} />
     </div>}
-    {journey.phase !== 'HOME' && journey.phase !== 'SCROLL_VIEWER' && journey.phase !== 'SCROLL_AWAKENING' && journey.phase !== 'CAMERA_ENTERING' && <ScrollLoadingScene
+    {journey.phase !== 'HOME' && journey.phase !== 'SCROLL_VIEWER' && (!studyVisited || journey.phase !== 'SCROLL_AWAKENING' && journey.phase !== 'CAMERA_ENTERING') && <ScrollLoadingScene key={`${chapterId}-${journey.attempt}`}
       chapter={chapter} phase={journey.phase} preparation={journey.preparation} error={journey.error}
-      onRetry={journey.retry} onReturn={returnToStudy} motionEnabled={motionEnabled} />}
+      onRetry={journey.retry} onReturn={returnToStudy} motionEnabled={motionEnabled}
+      onFailure={journey.onPresentationFailure} />}
     </div>
   );
 }

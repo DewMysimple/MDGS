@@ -1,0 +1,89 @@
+{
+  "created": "2026-10-21",
+  "reference": {
+    "file": "reference.png",
+    "source": "User supplied ChatGPT 图像 2026年10月21日 15_36_57.png",
+    "sha256": "5ddde6154a57aa96bec01bdcb2f2e85bf0599ff28b01439988355768d1639f27",
+    "width": 1672,
+    "height": 941
+  },
+  "method": "Built-in image_gen; latest reference used only as art-style and palette guide. These are painted diffuse surfaces, not complete homepage scene layers. The room, furniture, paper curl and scroll volumes are built by Three.js.",
+  "encoding": {
+    "operation": "PNG to WebP encoding only, without resizing, cropping, color grading or painted edits",
+    "quality": 94,
+    "smartSubsample": true,
+    "effort": 6
+  },
+  "assets": [
+    {
+      "file": "garden.png",
+      "runtime": "garden.webp",
+      "outputFile": "exec-b9ee34ef-7345-475c-b81a-d615090bb406.png",
+      "width": 1536,
+      "height": 1024,
+      "prompt": "Use case: historical-scene. Asset type: a hand-painted outdoor distant landscape texture ONLY, for mapping onto a distant garden environment in a real Three.js modeled Chinese scholar's room. The attached reference is STYLE/PALETTE ONLY, never copy room or desk composition. Generate a wide 3:2 landscape painting, 1536x1024 preferred, absolutely no text, calligraphy, title, border, scroll rods, table, window, furnishings, wall or UI. Subject: classical Chinese garden and distant palace architecture, gentle blue-grey mineral mountains in three soft atmospheric distances, pale mist, little ochre-red Tang pavilions and fine bridges by a quiet river, painted peony trees at bottom sides. Fine restrained gongbi brush contours, mineral-pigment stipple, delicate warm ivory silk fibres, faded jade-green and grey-blue mountains, pale rose peonies, light parchment-white sky, a little pale ochre and worn matte gold leaf. Light, ancient, exquisite paper-and-silk painting exactly matching latest reference. Soft diffuse daylight, see-through atmospheric depth, asymmetrical natural composition, details across width. There must be NO photographic lighting, NO orange tint, NO dark walnut interior, NO glossy plastic or metallic glow, NO video-game rendering. This is a painting painted on cream silk, to be used as a distant outdoor landscape element; it must not include an entire ready-made website or room image."
+    },
+    {
+      "file": "paintings-atlas.png",
+      "runtime": "paintings-atlas.webp",
+      "outputFile": "exec-c87da057-cea3-4b68-b271-8d1cd77ce225.png",
+      "width": 1086,
+      "height": 1448,
+      "rows": [
+        {
+          "id": 1,
+          "title": "神都花事",
+          "x": 0,
+          "y": 0,
+          "width": 1086,
+          "height": 362
+        },
+        {
+          "id": 2,
+          "title": "花入万家",
+          "x": 0,
+          "y": 362,
+          "width": 1086,
+          "height": 362
+        },
+        {
+          "id": 3,
+          "title": "锦绣花意",
+          "x": 0,
+          "y": 724,
+          "width": 1086,
+          "height": 362
+        },
+        {
+          "id": 4,
+          "title": "国色倾城",
+          "x": 0,
+          "y": 1086,
+          "width": 1086,
+          "height": 362
+        }
+      ],
+      "prompt": "Use case: historical-scene. Asset type: FOUR-CHAPTER hand-painted diffuse colour texture ATLAS for real modeled Three.js Chinese silk scroll surfaces. Input latest reference is STYLE/PALETTE ONLY. Generate canvas 1536 pixels wide x 2048 high. Divide entire canvas precisely into FOUR equal horizontal paintings stacked flush with NO gutter, NO frame and NO margins: rows y0-511,512-1023,1024-1535,1536-2047. Each row is an independent complete 3:1 panoramic classical gongbi artwork, no perspective of physical paper, no rods, no desk or room. All four share pale ivory silk ground, precise delicate hand drawn contours, mineral pigment and fine paper fibres, blue-grey/jade green mountains, restrained dusty cinnabar, soft peony pink, old matte gold leaf specks, light transparent diffuse atmosphere. FIRST TOP ROW: Tang imperial garden with vermilion pavilions, peonies at lower corners, elegant small court ladies admiring blossoms. SECOND ROW: spring garden and classical street flower market with common families and flower sellers, quiet river and bridge, a few trees, blue-green hills. THIRD ROW: Chinese historical traditional lifestyle and decorative peony craft, refined silk brocade textiles, embroidered peony panels, elegant porcelain vases, small screens and carved objects, balanced as an ancient painting rather than photography. FOURTH BOTTOM ROW: splendid Tang palace courtyard and distant capital, peony flower sea, elegant small court ladies and generous spring celebration. Each row has visual focus near center and abundant fine drawing across full width. Match attached reference's light ancient paper-silk gongbi art. Absolutely no text, Chinese characters, numbers, logos, seals, titles or UI. No orange cinematic filter, no dark walnut room, no photorealism, no neon, no gloss, no 3D page mockup, no 3D scroll object. Only the painted artwork texture atlas with exactly four equal fully edge-to-edge horizontal painting rows."
+    },
+    {
+      "file": "brocade.png",
+      "runtime": "brocade.webp",
+      "outputFile": "exec-94f308c2-11e7-4909-b884-c06c4eae910b.png",
+      "width": 1254,
+      "height": 1254,
+      "prompt": "Use case: stylized-concept. Asset type: tileable diffuse colour texture for a real 3D ancient Chinese silk brocade table runner. Input attached reference is material, brushwork and colour guide ONLY. Generate a square 1024x1024 flat orthographic macro fabric pattern, edge-to-edge, absolutely no perspective, folds, shadows, room, table, text or objects. Material: softly worn grey-jade/grey-blue woven silk, exquisitely detailed very thin muted old-gold peony and curling vine embroidery, subtle mineral pigment patina, fine irregular silk fibres, occasional tiny worn gold-leaf flecks. Refined traditional Tang Chinese peony scrollwork ornament, small-scale floral repeat with graceful negative spaces, all four edges able to repeat seamlessly. Palette precisely pale grey-green (#7f9289) and warm ivory/sage, gentle faded bronze-gold thread, a few blush accents, no strong yellow or saturated colours, no dark black. This will be used as a surface texture on actual modeled cloth and carved furnishing. Keep the surface matte and hand-painted rather than photographic satin or glossy plastic. No highlights, no baked lighting, no 3D object, no border frame, no text, no watermark.",
+      "notes": "Single-span UV recommended. A repeated texture was requested, but exact pixel seams have not been independently validated."
+    },
+    {
+      "file": "title.png",
+      "runtime": "title.webp",
+      "outputFile": "exec-847150a8-a35e-4cef-9efb-f4fa19b59dbb.png",
+      "width": 2048,
+      "height": 768,
+      "transparentRequested": true,
+      "alphaVerified": true,
+      "prompt": "Use case: text-localization. Asset type: genuinely transparent RGBA Chinese calligraphy title texture for an actual Three.js interactive art website. Input image is the attached latest pale hand-painted scholar-room reference; preserve its title's flat cinnabar mineral pigment dry-brush style. Generate ONLY TWO CENTERED LINES OF LETTERING, tightly framed in a wide landscape canvas, with TRUE ALPHA TRANSPARENCY everywhere else. Main line large EXACT four Chinese characters: 国色长卷. Spell the four characters correctly in the same expressive strong yet elegant Chinese brush calligraphy as the reference, matte deep cinnabar/dusty vermilion (#a12825) ink, fine paper-fibre brush-edge interruptions and a few tiny pale old-gold pigment flecks inside the strokes. This is absolutely FLAT pigment artwork, NO 3D letter thickness, NO metallic bevel, NO embossed gold, NO gold outlines, NO extrusion, NO bright metallic highlights. Second line below centered, much smaller EXACT five Chinese characters: 数字牡丹赋, in refined black-brown Song/Kai Chinese lettering with restrained character spacing. Main line occupies upper two thirds, subtitle the lower third; generous but compact gap. All strokes complete, no crop of letters. Absolutely no English, no extra slogans, no ornaments, no seals, no logo, no table, no scroll, no paper rectangle, no room, no sky, no shadow or opaque background. True transparent PNG; checkerboard must not be painted. Match reference's ancient light mineral-pigment aesthetic, retain crisp clean lettering and natural worn brush contours.",
+      "notes": "Transparent cinnabar calligraphy plus ink subtitle; no 3D extrusion. Source retains unused RGB in zero-alpha pixels, which does not render in a correct alpha compositor."
+    }
+  ]
+}
