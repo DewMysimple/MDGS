@@ -6,9 +6,12 @@ import { MotionDirector } from './MotionDirector';
 import { getMotionProfile } from '../data/motionProfiles';
 import { applyArtDirection } from './ArtDirectionLayer';
 import { StableLayerSorting } from './StableLayerSorting';
+import { activeSourceEdition, chapterAssetBase } from '../data/sourceEdition';
+import { createNewScrollAtmosphere } from './NewScrollAtmosphere';
+import { findNarrativeSpace, type NarrativeSpace } from './NarrativeSpace';
 
 interface TextureEntry { texture?: THREE.Texture; loading: boolean; lastSeen: number; bytes: number }
-interface SceneObject { mesh: THREE.Mesh; material: THREE.MeshBasicMaterial; url?: string; animation?: { progress: number; matrix: number[] }[] }
+interface SceneObject { mesh: THREE.Mesh; material: THREE.MeshBasicMaterial; url?: string; animation?: { progress: number; matrix: number[] }[]; visibility?: { progress: number; visible: boolean }[] }
 const clamp = (v: number) => Math.min(1, Math.max(0, v));
 
 export interface SceneMotionState { enabled: boolean; reducedMotion: boolean; supported: boolean }
@@ -78,9 +81,12 @@ export class SceneRenderer {
   private pointerTarget = new THREE.Vector2();
   private abort = new AbortController();
   private calligraphy: CalligraphyLayer;
+  private narrativeSpace?: NarrativeSpace;
+  private narrativeBucket = '';
 
   constructor(private host: HTMLElement, private status: (message: string | null) => void,
-    private preparation?: (state: ScenePreparationState) => void) {
+    private preparation?: (state: ScenePreparationState) => void,
+    private onNarrativeSpace?: (placement: NarrativeSpace) => void) {
     this.readingLayoutRoot = host.closest<HTMLElement>('.app-shell');
     this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'high-performance' });
     this.renderer.setPixelRatio(Math.min(devicePixelRatio, 1.65));
@@ -103,7 +109,7 @@ export class SceneRenderer {
     this.emitMotionState();
     this.status('正在展卷');
     this.reportPreparation('manifest', 0, 0, '正在铺陈千年风华……');
-    const base = `${import.meta.env.BASE_URL}assets/chapter-${chapterId}/`;
+    const base = chapterAssetBase(chapterId);
     const response = await fetch(`${base}scene.json`, { signal: this.abort.signal });
     if (!response.ok) throw new Error(`第${chapterId}卷资源读取失败（${response.status}）`);
     const manifest = prepareScene(await response.json(), chapterId);
@@ -135,12 +141,23 @@ export class SceneRenderer {
       mesh.updateMatrixWorld(true);
       mesh.visible = !definition.texture;
       this.scene.add(mesh);
-      this.objects.push({ mesh, material, url: definition.texture ? `${base}${definition.texture}` : undefined, animation: manifest.animations?.[source.name] });
+      this.objects.push({ mesh, material, url: definition.texture ? `${base}${definition.texture}` : undefined, animation: manifest.animations?.[source.name], visibility: manifest.visibility?.[source.name] });
     }
     // Source manifests stay untouched. Replacements and new world-space bridges share
     // this same streaming queue and disposal lifecycle, never a second texture loader.
-    const art = await applyArtDirection(chapterId, manifest, this.objects, this.scene, this.abort.signal);
+    const art = manifest.sourceRevision
+      ? { replacements: 0, geometryRepairs: 0, edgeRepairs: 0, addedLayers: 0, textLayers: [] }
+      : await applyArtDirection(chapterId, manifest, this.objects, this.scene, this.abort.signal);
     if (this.disposed) throw new DOMException('Aborted', 'AbortError');
+    // The revised edition has different object identities and local UV planes.
+    // Only reviewed independent layers use its profile; its small world-space
+    // petals enter the same texture queue and disposal lifecycle as source art.
+    const atmosphere = manifest.sourceRevision === activeSourceEdition
+      ? createNewScrollAtmosphere(manifest, chapterId) : undefined;
+    for (const object of atmosphere?.objects ?? []) {
+      this.scene.add(object.mesh);
+      this.objects.push(object);
+    }
     // The first scroll is an overlapping sheet composition. Camera-yaw sorting
     // flips almost coplanar palace/figure sheets while their source poses stand
     // still. Use a source-derived stable viewing axis for this composition.
@@ -148,11 +165,11 @@ export class SceneRenderer {
       this.layerSorting = new StableLayerSorting(manifest, this.objects.map(object => object.mesh));
       this.renderer.setTransparentSort(this.layerSorting.compare);
     }
-    this.motionDirector = new MotionDirector(chapterId, this.objects, manifest.stops);
-    this.artCounts = { replacements: art.replacements, geometryRepairs: art.geometryRepairs, edgeRepairs: art.edgeRepairs, addedLayers: art.addedLayers, textLayers: art.textLayers.length };
+    this.motionDirector = new MotionDirector(chapterId, this.objects, manifest.stops, atmosphere?.profile);
+    this.artCounts = { replacements: art.replacements, geometryRepairs: art.geometryRepairs, edgeRepairs: art.edgeRepairs, addedLayers: art.addedLayers + (atmosphere?.objects.length ?? 0), textLayers: art.textLayers.length };
     this.loaded = true;
     this.dirty = true;
-    this.calligraphy.load(chapterId, manifest, art.textLayers);
+    if (!manifest.sourceRevision) this.calligraphy.load(chapterId, manifest, art.textLayers);
     this.updateReadingMinimum();
     this.updateCamera();
     this.updateTextures();
@@ -196,7 +213,7 @@ export class SceneRenderer {
   }
 
   getMotionState(): SceneMotionState {
-    const supported = getMotionProfile(this.chapterId).enabled;
+    const supported = (this.motionDirector?.profile ?? getMotionProfile(this.chapterId)).enabled;
     const reducedMotion = this.motionMedia.matches;
     return { enabled: supported && this.loaded && this.motionRequested && !reducedMotion && !this.contextLost && !this.disposed && !document.hidden, reducedMotion, supported };
   }
@@ -250,6 +267,7 @@ export class SceneRenderer {
   private onMotionPreference = () => {
     this.previousFrameTime = 0;
     if (!this.motionRequested || this.motionMedia.matches) { this.pointer.set(0, 0); this.pointerTarget.set(0, 0); }
+    if (!this.getMotionState().enabled) this.motionDirector?.update(this.camera, false, this.progress);
     this.dirty = true;
     this.emitMotionState();
     this.requestFrame();
@@ -257,7 +275,10 @@ export class SceneRenderer {
 
   private onVisibility = () => {
     this.previousFrameTime = 0;
-    if (document.hidden) { cancelAnimationFrame(this.frame); this.frame = 0; }
+    if (document.hidden) {
+      cancelAnimationFrame(this.frame); this.frame = 0;
+      this.motionDirector?.update(this.camera, false, this.progress);
+    }
     else { this.dirty = true; this.requestFrame(); }
     this.emitMotionState();
   };
@@ -269,6 +290,7 @@ export class SceneRenderer {
     if (this.preparationActive) this.firstFrameReady = false;
     this.contextRetryRequested = false;
     this.previousFrameTime = 0;
+    this.motionDirector?.update(this.camera, false, this.progress);
     cancelAnimationFrame(this.frame); this.frame = 0;
     this.status('画面暂时中断，请恢复画卷');
     this.reportPreparation('error', 0, this.currentVisible.size, '画境暂时中断，请重试唤醒。');
@@ -343,6 +365,14 @@ export class SceneRenderer {
     this.camera.updateProjectionMatrix();
     this.camera.updateMatrixWorld(true);
     for (const object of this.objects) {
+      const visibility = object.visibility;
+      let sourceVisible = true;
+      if (visibility?.length) {
+        sourceVisible = visibility[0].visible;
+        for (const key of visibility) { if (key.progress > sourceProgress + 1e-7) break; sourceVisible = key.visible; }
+      }
+      object.mesh.userData.sourceVisible = sourceVisible;
+      object.mesh.visible = sourceVisible && !object.mesh.userData.artHidden && (!object.url || !!this.textures.get(object.url)?.texture);
       if (!object.animation?.length) continue;
       const { a: key1, b: key2, t: mix } = this.bracket(object.animation, sourceProgress);
       this.m1.fromArray(key1.matrix).decompose(this.p1, this.q1, this.s1);
@@ -366,7 +396,7 @@ export class SceneRenderer {
     const now = performance.now();
     this.currentVisible.clear();
     for (const object of this.objects) {
-      if (!object.url) continue;
+      if (!object.url || object.mesh.userData.sourceVisible === false) continue;
       if (this.frustum.intersectsObject(object.mesh)) {
         this.currentVisible.add(object.url);
         const entry = this.textures.get(object.url);
@@ -430,7 +460,7 @@ export class SceneRenderer {
         for (const object of this.objects) if (object.url === url) {
           object.material.map = texture;
           object.material.needsUpdate = true;
-          object.mesh.visible = true;
+          object.mesh.visible = object.mesh.userData.sourceVisible !== false && !object.mesh.userData.artHidden;
         }
         this.dirty = true;
         this.requestFrame();
@@ -467,7 +497,8 @@ export class SceneRenderer {
     const pointerMoving = this.pointer.distanceToSquared(this.pointerTarget) > 0.0001 && this.motionRequested && !this.motionMedia.matches;
     if (pointerMoving) { this.pointer.lerp(this.pointerTarget, 0.06); this.dirty = true; }
     const ambientVisible = (this.motionDirector?.getDiagnostics().activeBindings ?? 0) > 0;
-    const ambientDue = motion && ambientVisible && now - this.lastAmbientFrame >= 1000 / getMotionProfile(this.chapterId).ambientFps - 1;
+    const ambientFps = this.motionDirector?.profile.ambientFps ?? getMotionProfile(this.chapterId).ambientFps;
+    const ambientDue = motion && ambientVisible && now - this.lastAmbientFrame >= 1000 / ambientFps - 1;
     if ((this.dirty || ambientDue) && this.manifest && this.loaded) {
       if (this.dirty) { this.updateCamera(); this.textureRefreshPending = true; }
       // During preparation, determine readiness for the actual responsive camera,
@@ -475,6 +506,14 @@ export class SceneRenderer {
       if (!this.firstFrameReady) this.updateTextures();
       this.motionDirector?.update(this.camera, motion, this.progress);
       this.renderer.render(this.scene, this.camera);
+      if(this.manifest.sourceRevision && this.onNarrativeSpace && this.ready) {
+        const bucket=`${this.width}:${this.height}:${Math.floor(this.progress*24)}`;
+        if(this.narrativeBucket!==bucket) {
+          this.narrativeBucket=bucket;
+          this.narrativeSpace=findNarrativeSpace(this.renderer.getContext(),this.narrativeSpace);
+          this.onNarrativeSpace(this.narrativeSpace);
+        }
+      }
       this.calligraphy.render(this.camera, this.progress);
       this.dirty = false;
       this.lastAmbientFrame = now;
@@ -505,15 +544,21 @@ export class SceneRenderer {
     this.lastDiagnosticsTime = now;
     const canvas = this.renderer.domElement;
     const motion = this.motionDirector?.getDiagnostics();
+    const atmosphere = this.objects.filter(object => object.mesh.userData.editionAtmosphere);
+    const activeNames = new Set(motion?.activeNames ?? []);
     const textureEntries = [...this.textures.values()];
     Object.assign(canvas.dataset, {
       chapter: String(this.chapterId), progress: this.progress.toFixed(6),
       motionEnabled: String(this.getMotionState().enabled), motionRequested: String(this.motionRequested),
+      motionSupported: String(this.getMotionState().supported), motionAmbientFps: String(this.motionDirector?.profile.ambientFps ?? 0),
       reducedMotion: String(this.motionMedia.matches), motionTime: (motion?.elapsedSeconds ?? 0).toFixed(6),
       motionBindings: String(motion?.bindings ?? 0), activeMotionLayers: String(motion?.activeBindings ?? 0),
       activePetals: String(motion?.activeGroups.petal ?? 0), activeBridges: String(motion?.activeGroups.bridge ?? 0), activeMotionNames: JSON.stringify(motion?.activeNames ?? []),
       motionClockSpeed: (motion?.clockSpeed ?? 1).toFixed(6), petalDensity: (motion?.petalDensity ?? 1).toFixed(6), cloudDensity: (motion?.cloudDensity ?? 1).toFixed(6), narrativePhase: motion?.phase ?? 'calm', effectiveMotionBudget: String(motion?.maxBindings ?? 0),
       artReplacements: String(this.artCounts.replacements), artGeometryRepairs: String(this.artCounts.geometryRepairs), artEdgeRepairs: String(this.artCounts.edgeRepairs), artAddedLayers: String(this.artCounts.addedLayers), artTextLayers: String(this.artCounts.textLayers),
+      editionAtmosphereLayers: String(atmosphere.length), editionAtmosphereActive: String(atmosphere.filter(object => activeNames.has(object.mesh.name)).length),
+      editionAtmosphereOpacityMax: Math.max(0, ...atmosphere.map(object => object.material.opacity)).toFixed(6),
+      sourceHiddenVisibleLayers: String(this.objects.filter(object => object.mesh.userData.sourceVisible === false && object.mesh.visible).length),
       compactReadingReserve: String(this.compactReserve),
       renderCount: String(this.renderCount), rafTicks: String(this.rafTicks), rafRunning: String(!!this.frame),
       firstFrameReady: String(this.firstFrameReady),

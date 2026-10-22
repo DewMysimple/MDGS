@@ -124,7 +124,7 @@ try {
   await observe(slow);
   let releaseTextures;
   const heldTextures = new Promise(resolve => { releaseTextures = resolve; });
-  await slow.route('**/assets/**/*.webp', async route => { await heldTextures; await route.continue().catch(() => {}); });
+  await slow.route('**/assets/**/textures/**', async route => { await heldTextures; await route.continue().catch(() => {}); });
   await slow.goto(`${url}#chapter-1`);
   await waitPhase(slow, 'SCROLL_LOADING');
   await slow.waitForTimeout(4300);

@@ -133,7 +133,8 @@ export class ScrollUnfurlScene {
     const image = new Image(); this.image = image; image.decoding = 'async'; image.src = src;
     image.decode().then(() => {
       if (this.disposed) return;
-      const canvas = document.createElement('canvas'); canvas.width = 1536; canvas.height = 640;
+      const canvas = document.createElement('canvas'); canvas.width = 1536;
+      canvas.height = Math.round(canvas.width * 3.55 / 9.5);
       const ctx = canvas.getContext('2d')!;
       ctx.fillStyle = '#eee6d5'; ctx.fillRect(0, 0, canvas.width, canvas.height);
       const volumeMatch = /#chapter-([1-4])$/.exec(src);
@@ -141,14 +142,17 @@ export class ScrollUnfurlScene {
       const rowHeight = atlas ? image.naturalHeight / 4 : image.naturalHeight;
       const rowTop = atlas ? (Number(volumeMatch?.[1] ?? 1) - 1) * rowHeight : 0;
       const sourceWidth = Math.min(image.naturalWidth, rowHeight * 2.57);
-      ctx.globalAlpha = .96; ctx.filter = atlas ? 'saturate(.91) brightness(1.025)' : 'saturate(.55) brightness(1.16) contrast(.86)';
-      ctx.drawImage(image, Math.max(0, (image.naturalWidth - sourceWidth) / 2), rowTop, sourceWidth, rowHeight, 40, 36, canvas.width - 80, canvas.height - 72);
+      ctx.globalAlpha = .98; ctx.filter = atlas ? 'saturate(.91) brightness(1.025)' : 'none';
+      const fit = Math.min((canvas.width - 80) / sourceWidth, (canvas.height - 72) / rowHeight);
+      const paintedWidth = sourceWidth * fit, paintedHeight = rowHeight * fit;
+      ctx.drawImage(image, Math.max(0, (image.naturalWidth - sourceWidth) / 2), rowTop, sourceWidth, rowHeight,
+        (canvas.width - paintedWidth) / 2, (canvas.height - paintedHeight) / 2, paintedWidth, paintedHeight);
       ctx.globalAlpha = 1; ctx.filter = 'none';
       ctx.strokeStyle = '#9cae9c'; ctx.lineWidth = 9; ctx.strokeRect(12, 12, canvas.width - 24, canvas.height - 24);
       ctx.strokeStyle = '#baa272'; ctx.lineWidth = 2; ctx.strokeRect(24, 24, canvas.width - 48, canvas.height - 48);
       for (let i = 0; i < 700; i++) {
         ctx.fillStyle = i % 7 ? '#ae9c6314' : '#c3a76888';
-        ctx.fillRect((i * 71.33) % 1536, (i * 113.19) % 640, i % 4 ? 1 : 2.4, 1.2);
+        ctx.fillRect((i * 71.33) % canvas.width, (i * 113.19) % canvas.height, i % 4 ? 1 : 2.4, 1.2);
       }
       this.painting = new THREE.CanvasTexture(canvas); this.painting.colorSpace = THREE.SRGBColorSpace;
       this.painting.anisotropy = Math.min(4, this.renderer.capabilities.getMaxAnisotropy());

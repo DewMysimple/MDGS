@@ -6,9 +6,11 @@ const clamp = (v: number) => Math.max(0, Math.min(1, v));
 
 /** Turns timed film holds into a continuous route, retaining the source viewpoints. */
 export function prepareScene(source: SceneManifest, chapterId: number): SceneManifest {
-  const settings = sceneOptions[chapterId];
-  const firstStop = source.stops[0]?.progress ?? 0;
-  const endProgress = settings?.readingEndFrame
+  // Earlier editions used very different timelines. Never truncate the revised
+  // Blender works with a frame number belonging to the retired source files.
+  const settings = source.sourceRevision ? undefined : sceneOptions[chapterId];
+  const firstStop = source.sourceRevision ? 0 : source.stops[0]?.progress ?? 0;
+  const endProgress = source.sourceRevision ? 1 : settings?.readingEndFrame
     ? (settings.readingEndFrame - source.frameRange[0]) / (source.frameRange[1] - source.frameRange[0])
     : Math.min(1, (source.stops.at(-1)?.progress ?? 1) + 0.03);
   const interpolate = (progress: number): CameraSample => {
@@ -33,7 +35,12 @@ export function prepareScene(source: SceneManifest, chapterId: number): SceneMan
     distances.push(distances[i - 1] + Math.max(0.00001, delta));
   }
   const total = distances.at(-1) || 1;
-  const cameras = samples.map((sample, i) => ({ ...sample, sourceProgress: sample.progress, progress: distances[i] / total }));
+  // The revised storyboards change their visible artwork while the camera is
+  // holding still. A distance-only clock collapses entire final scenes into a
+  // few millionths of the slider. Preserve their authored timing, including
+  // the deliberately accelerated fourth-scroll transitions and reading holds.
+  const cameras = samples.map((sample, i) => ({ ...sample, sourceProgress: sample.progress,
+    progress: source.sourceRevision ? sample.progress : distances[i] / total }));
   const mapProgress = (sourceProgress: number) => {
     if (sourceProgress <= firstStop) return 0;
     if (sourceProgress >= endProgress) return 1;

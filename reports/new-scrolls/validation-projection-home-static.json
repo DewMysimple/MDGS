@@ -1,0 +1,35 @@
+{
+  "status": "pass",
+  "startedAt": "2026-10-22T05:01:12.854Z",
+  "scope": "Current homepage reference and backing byte hashes only. No browser, shader execution, visual comparison or interaction claim.",
+  "checks": [
+    {
+      "test": "exact-reference-and-backing-current-byte-provenance",
+      "assets": [
+        {
+          "file": "plaque-backing.png",
+          "bytes": 3089195,
+          "sha256": "b4f9d5ce94942b861e6701c83213ace7f90726302ada36c0e47b16c4f61e1971"
+        },
+        {
+          "file": "plaque-backing.webp",
+          "bytes": 641166,
+          "sha256": "8baa5c5c711a4ab11fa31d990a433b70cacb40e1d2f3352e42015a9c7485ed2b"
+        },
+        {
+          "file": "reference.png",
+          "bytes": 3347941,
+          "sha256": "5ddde6154a57aa96bec01bdcb2f2e85bf0599ff28b01439988355768d1639f27"
+        }
+      ],
+      "rootOriginalAvailable": true,
+      "passed": true
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "badResponses": [],
+  "expectedShaderErrors": [],
+  "referenceSha256": "5ddde6154a57aa96bec01bdcb2f2e85bf0599ff28b01439988355768d1639f27",
+  "completedAt": "2026-10-22T05:01:12.946Z"
+}

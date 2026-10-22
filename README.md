@@ -1,10 +1,8 @@
 # 国色长卷 · 数字牡丹赋
 
-React + TypeScript + Vite + Three.js 数字手卷展陈。首页按最新浅淡工笔纸绢参考改为实时三维书房：书案、窗棂、轴杆、曲面卷纸、瓷瓶、香炉、灯笼和牡丹均有实际几何体积、透视、遮挡及柔和阴影。独立原生绢纸题签对应神都花事、花入万家、锦绣花意、国色倾城，支持鼠标、键盘与触屏；手机改变镜头、案深和四卷布局，而非缩小桌面画面。四卷作品仍使用原 Blender 工程资产、相机与叙事顺序。
+React、TypeScript、Vite 与 Three.js 数字手卷。首页以指定的浅淡工笔纸绢参考构图呈现书房与案上四卷，独立 HTML 题签依次进入神都花事、花入万家、锦绣花意、国色倾城。现行版本为 `peony-2026-10-21`，来自本轮“牡丹”目录的四份新版 Blender；旧版补绘和 canonical 保留作历史资料，不参与新世界构建。
 
-当前首页已按用户参考重新校正构图和工笔细节，实际前后截图、素材与验证见 [参考图风格修正](reports/study-faithful/README.md)。书案四卷增加纵深和完整竖幅绘画，配合暗金牡丹雕板、纸卷厚度、独立工笔花冠及疏朗窗景；原参考完整保留，仅指导构图与材质。每次入卷（含刷新、历史与重试）执行完整仪式，加载中的闭卷通过双面纸张网格绕轴解卷，至少可见4秒；减少动态同样保留清晰形变及4秒，后台时间不计入。真实清单、纹理、画材解码与WebGL首帧仍是进入条件，不伪造下载百分比。[实体书房基础](reports/study-volume/README.md)、[平面分层版](reports/study-layered/README.md)和[加载基础](reports/study/README.md)保留实现来由。
-
-当前版本为第三卷《锦绣花意》专项整改：九组主景重排、三处截口透明补绘、15组独立竖排题文；四卷合计197世界层/19文字层。短窗口按文字需要撑开画心，可纵向滚动。审查、方案、网页截图、前后对照和可编辑Blender副本见 [第三卷交付索引](reports/chapter-3-refinement/README.md)。当前清单用 `scripts/build-chapter-3-refinement.mjs` 重建。此前四卷22项资产/45新层的补白交付保留在 [历史索引](reports/blank-design/README.md)；旧builder会恢复历史清单。
+本轮新版世界、首页、真实入卷、手机音频异常、计时和子目录验收已通过，正在收尾 Git 交付。完整目标、证据及截图见 [本轮总验收](reports/new-scrolls/README.md)，不以旧版本报告证明新版通过。
 
 ## 运行
 
@@ -13,113 +11,81 @@ npm ci
 npm run dev
 ```
 
-在工程目录运行以上命令，打开终端实际显示的 Local 地址。开发和预览默认由系统选择空闲端口，可与其他开发服务器同时运行；每次启动的端口可能不同。需要指定端口时可传 `-- --port <端口>`，占用时会尝试其他可用端口。
+打开终端实际显示的 Local 地址。Windows 也可双击 `runStart.cmd`，它按自身目录启动并打开当前实例地址。正式构建使用 `npm run build`，检查构建使用 `npm run preview`。资源支持 HTTP 子目录部署，入口目录应保留结尾 `/`。正常运行不需要 Blender、Python 或外部字体服务。
 
-仓库中的派生 `.blend`、生产PNG和验收截图/录像由 Git LFS 管理。需要获取这些交付物时，在安装 Git LFS 后运行 `git lfs install`、`git lfs pull`；网页运行所需的WebP与清单仍是普通Git文件。原始 `source/` 素材和本机路径配置不上传。
+派生 `.blend`、生产 PNG 和验收截图等大文件由 Git LFS 管理，获取完整交付时先安装 Git LFS，再运行 `git lfs install`、`git lfs pull`。运行用 WebP、JSON 和本地字体随仓库交付。`牡丹/` 原始输入、根目录原始 DOCX/参考图、`source/`、本机配置、缓存和凭据不属于提交范围；运行用参考副本位于 `public/ui/study-projection/`。
 
-Windows 可直接双击根目录的 `runStart.cmd`：它以自身位置定位工程，检查 Node/npm 与依赖，并自动打开当前实例的实际地址。无需修改磁盘路径、端口或浏览器窗口尺寸。关闭启动窗口或按 Ctrl+C 可停止该实例。
+## 首页与入卷
 
-正式构建用 `npm run build`，本地检查构建用 `npm run preview`。构建使用相对资源地址，可放在站点根目录或子目录；通过 HTTP 服务访问，子目录入口需保留结尾 `/`。
+首页并非独立建模、独立贴图的完整书房。当前实现为**同一参考相机投影到连续有深度的 relief 网格，结合实体轴杆、曲面绢纸与纸厚、桌裙及主要器物体积**。这项取舍优先保持参考构图与绘画细节，真实观察相机产生克制视差；较大视角不能像完整独立场景一样自由绕行。参考 SHA256 为 `5ddde6154a57aa96bec01bdcb2f2e85bf0599ff28b01439988355768d1639f27`。
 
-## 游观
+原图四处题签由局部补绘底板修复；入口是具有真实文字、焦点和触屏响应的 HTML 按钮，纸绢、玉饰、流苏与边框颜料取自参考。原图题字只显示一次。环境开关和系统减少动态设置控制花瓣、青烟、浮尘及微观察运动。首页只有素材编译和实际首绘均成功后才开放入口，着色器失败显示同风格重试界面。
 
-- 画卷内滚轮向下推进；按住并左右拖拽。
-- 自动展卷可暂停、继续；滚轮、拖拽、时间轴和分镜操作立即接管。
-- 四卷独立保存本次会话内的进度，返回已浏览章节可继续。
-- 时间轴提供原 Blender 阅读标记；上一景、下一景平滑到达节点。
-- 聚焦画卷后使用左右方向键、Home / End；外层画卷可用空格启停。进度条也支持原生键盘操作。
-- 底部「画外拾遗」打开文化说明；首卷含完整《展卷序》。Escape 关闭，焦点返回入口。
-- 「听音」由用户点击启用本地合成五声音阶环境声，无外部音频文件；再次点击关闭。支持全屏与系统减少动效偏好。
-- 「画中轻动」控制局部花枝、灯彩、云气与花瓣，独立于自动展卷并记住用户选择；系统减少动效或页面转入后台时暂停。第四卷从第五景起逐渐减速、减少花瓣与云气。
-- 卷末显示题跋、一次落印和再观/下一卷入口。
+每次选择执行择卷、聚焦、进入加载画境、闭卷展开、入画。加载采用双面卷纸网格绕轴形变，实体杆分离、卷曲和阴影随之变化；`SCROLL_LOADING` 在前台至少展示4000ms，资源较慢继续等待。最低时间、画境自身准备、目标资源及真实首帧共同决定放行，不伪造百分比。减少动态保留闭合到展开的状态与时间；返回书房停止当前自动展卷，取消任务不能重新触发旧章节。
 
-## 资产接入
+加载卷面分别取自当前四卷真实 WebGL 首帧画心截图，关闭环境轻动并隐藏 HTML 题跋后转换为 WebP，不重绘或重新构图。来源、当前字节 SHA 与对应 Blender 身份见 [cover-provenance.json](reports/new-scrolls/cover-provenance.json)。这些卷面不再使用旧 paintings-atlas，按原比例装裱到纸面；卷纸保留实际暖光材质，颜色会受光照影响，不宣称与截图逐像素同色。实际衔接由本轮加载截图验收。
 
-| 卷 | 网页题名 | 实际网格 | 纹理（含透明程序材质） | 真实阅读节点 | 原游观方向 |
-|---|---|---:|---:|---:|---|
-| 一 | 神都花事 | 216 | 105 | 15 | +X |
-| 二 | 花入万家 | 42 | 34 | 7 | +X |
-| 三 | 锦绣花意 | 393 | 72 | 9 | +Y |
-| 四 | 国色倾城 | 128 | 52 | 9 | −Y |
+## 新版四卷与源边界
 
-原资产导出完整且没有缺失源贴图；网页跳过12个独立 FONT 网格，并按重构清单退役重复辅助片及低清题签。纹理最大边长2048px，WebP保留透明通道。原纹理约142.59 MiB，上一轮34项选定新图约14.75 MiB，当前补白另22项约5.69 MiB，均按章节和视野加载。源 `.blend` 文件只读；整理结果另存于 `artwork/blender-reconstructed/`。
+| 卷名 | 本轮输入 | 网页网格 | 独立纹理 | 交互节点 | 源帧范围 |
+| --- | --- | ---: | ---: | ---: | --- |
+| 神都花事 | 画卷一_最终修订.blend | 149 | 99 | 15 | 1—3024 |
+| 花入万家 | 画卷二_街市建筑完整补全版.blend | 58 | 35 | 7 | 33—2184 |
+| 锦绣花意 | 画卷三_分镜构图版_图层补全.blend | 79 | 66 | 9 | 1—2068 |
+| 国色倾城 | 画卷四_转场运镜加快版.blend | 53 | 44 | 9 | 1—2160 |
 
-场景保留 Blender 世界坐标，矩阵为列主序、四元数为 xyzw。前中远景使用实际深度，平移自然产生视差；鼠标有极小的横向视差偏移，不允许自由旋转。以原始阅读节点构图作为卷首，以空间距离替代电影停留时间，避免滚轮在静止帧上失效。第一卷末尾抬升与第二卷末尾大幅收卷拉远在网页路线外，源路径仍完整保存。
+四卷新版游观方向均为源 `+X`，网页完整保留**原作者时间进度0..1**，相机、物体动画和显隐沿同一时序推进。静止相机不代表画面停止：第三卷后段仍在切换场景和主体；按相机距离重排曾把最后三景压到极短滑块区间，连带末两段正文没有有效展示时间，因此新版已停用该压缩。第四卷较快转场和阅读停留也遵循作者时序；距离路线只保留给历史版本。第三卷完整 markers 保留9个“参考全景”，它们不重复进入交互 stops。第二卷第一标记原帧1保留在 `authoredFrame`，实际入口按源起始帧33。首卷149个导出物体中45个首帧可见、104个以后出现；另一个原生 MESH 全程隐藏，不应强行显示。
 
-透明云气、淡墨接地影的原径向透明关系已恢复为小型 RGBA 纹理。纸面保留原材质配色；浏览器采用无光照绘画表面，未完整复刻 Blender 的灯光、噪声着色或全部程序材质。四卷共19组真实HTML题文/中性装饰印，其中第三卷15组竖题；沿同一相机投影，按窗口与文字需求保障可读，文化长文仍在抽屉。指定低清题文已清除或退役，其余原画题文保留。
+现行资源由 `src/data/sourceEdition.ts` 指向 `public/assets/new-scrolls/chapter-1..4/`。新 `sourceRevision` 不运行旧 `ArtDirectionLayer` 和 `CalligraphyLayer` 的补画/题字流程，旧结束帧也不截断新版路线。世界矩阵、相机、标记、源动画及逐帧可见性来自本轮文件；贴图加载回调不会把源隐藏物体提前显示。
 
-## 上一轮基础图层重构
+四份活跃可编辑交付位于 `artwork/blender-reconstructed/chapter-{1..4}_reconstructed.blend`，本轮已替换为新输入的打包副本。首卷输入原件仍有一张旧绝对路径未打包图片，交付副本已装入精确原图；输入未保存改写。网页 WebP 最大边长2048，保持透明通道，采用未打光绘画表面，不宣称复刻所有 Blender 灯光或程序着色。
 
-四卷263张源纹理完成审校：216保留、35修复、12重生成。实际选用12项重生成、20项像素补绘和2项共享云气/远山，共34项生产图；补入152个独立世界图层及8个HTML文字层。图层裁决与逐实例实施结果分别记录，修复还包括完整UV、自然墨边和退役重复辅助片。
+## 游观、文字与配乐
 
-完整交付、图层表、四份Blender副本、修改文件清单、前后截图和动效录像见 [重构交付索引](reports/reconstruction/README.md)。原四份源工程保留不变，网页通过 `public/assets/reconstruction/manifest.json` 叠加可追溯修订，原相机路径与阅读节点保持。
+滚轮、拖拽、方向键、Home/End、时间轴与分镜继续控制真实画卷；自动展卷可暂停，手动输入接管，四卷会话进度独立保存。顶部显示当前卷名、四卷导航与返回书房。画心占据主要可用空间，手机另行取景并保留清晰入口。
 
-历史维护入口：`scripts/build-reconstruction.mjs` 与 `scripts/build-blank-design.mjs` 生成前两轮清单（当前改用 `scripts/build-chapter-3-refinement.mjs`）；`scripts/prepare-reconstruction-assets.py` 负责透明安全边和WebP；`scripts/reconstruct-blender.py` 生成派生副本；`scripts/report-reconstruction-status.mjs` 对照实际运行逻辑输出逐实例实施表。正常启动网页无需Blender或Python。
+主线正文只读提取自 `主线内容(2).docx`，25段按四卷6／6／6／7段逐字保留。`newNarrative.ts` 保存正文，`narrativeTrack.ts` 按新源节点顺序分配短题跋，并按字数保留最低阅读窗口，短句也留出渐显时间。测试直接使用实际 `prepareScene` 的当前时序，检查25段及各响应式片段均有非零区间。楷体由本地霞鹜文楷子集提供，许可证和来源在 `public/fonts/`；文字独立于原画，以650ms CSS 渐显渐隐，减少动态为180ms，不拦截游观输入。`NarrativeSpace` 采样实际 WebGL 画面，在候选区比较纸白与边缘密度后选择较安静位置；这是启发式避让，是否遮挡主体仍需逐景截图审阅。较密区域使用很淡的纸绢衬底。
 
-## 目录与可配置项
+卷末退去正文，停止局部动效并显示大卷名、末句题跋与一次落印；保留再观和下一卷入口。局部动效只绑定经过纹理审阅的独立花瓣、少量飘带和灯笼，人物、建筑、组合画层保持源姿态；追加单瓣取自新版首卷真实纹理，按世界坐标加入同一资源和释放队列。
 
-```text
-src/
-  App.tsx                     统一展陈框架、导航、时间轴、卷末
-  styles.css                  样式入口
-  styles/
-    exhibition-theme.css      颜色、字体、装裱尺寸统一配置
-    handscroll.css            手卷、卷轴、织锦、宣纸与桌面布局
-    reading-panel.css         文化解读与卷末题跋
-  components/
-    ScrollViewport.tsx        滚轮、指针拖拽、键盘
-    CulturePanel.tsx          文化全文、总序、焦点管理
-    AudioController.tsx       点击启用的合成环境声
-    ScrollOrnaments.tsx       可复用卷轴、织锦和氛围装饰
-  hooks/useScrollController.ts 平滑移动、自动展卷、独立进度
-  scene/
-    SceneRenderer.ts          Three.js真实网格、视差、按需纹理/释放
-    ArtDirectionLayer.ts      可追溯图像替换、完整UV、自然边缘和连接层
-    MotionDirector.ts         局部UV基、独立时钟、动作配额与第四卷盛衰
-    prepareScene.ts           原相机轨迹到连续游观进度的映射
-    CalligraphyLayer.ts/.css   随世界位置移动的 HTML 竖排题字
-  data/
-    chapters.ts               四卷标题、策划正文、总序、题跋
-    sceneOptions.ts           各卷阅读结束帧、自动展卷时长
-    annotations.ts            四卷题字配置、世界位置、字号、显示区间
-  types.ts                    资产接口
-public/assets/chapter-1..4/
-  scene.json                  资产清单、变换、深度、完整相机/分镜/动画
-  textures/*.webp             原始平面提取与优化图像
-public/assets/reconstruction/ 修订清单与34项选定透明生产图
-artwork/                      原始生成图、生产PNG和四卷派生Blender
-scripts/                      Blender导出、优化与验证
-reports/                      资产审查、测试报告、参考渲染与网页截图
-```
+「古筝配乐」须用户点击开启，可调音量，离开画卷或页面隐藏时暂停。`public/audio/peony-guzheng-original.mp3` 是脚本创作的五声音阶乐曲与**合成古筝意境拨弦音色**，并非真人古筝录音，也无语音朗读。乐谱、生成脚本与来源说明一并保留。
 
-修改题名和文字用 `src/data/chapters.ts`；内容来自所提供的完整策划文字，四份本地 DOCX 脚本亦已逐段核对。`sceneOptions.ts` 可调整阅读结束帧与自动播放秒数；实际分镜名字和位置来自 `scene.json` 中的 `stops`，应优先在 Blender 标记中修改并重新导出。
+## 维护入口
 
-## 重新导出
+| 入口 | 用途 |
+| --- | --- |
+| `src/scene/StudyRoomRenderer.ts`、`components/StudyHome.tsx` | 参考投影 relief、实体卷杆与题签 |
+| `src/hooks/useStudyJourney.ts`、`scene/ScrollUnfurlScene.ts` | 状态、最低展示与几何闭卷展开 |
+| `src/scene/SceneRenderer.ts`、`prepareScene.ts` | 新源几何、完整作者时序、流式纹理与可见性 |
+| `src/data/newNarrative.ts`、`narrativeTrack.ts`、`scene/NarrativeSpace.ts` | 本轮正文、节点与画面留白采样 |
+| `src/data/newMotionProfiles.ts`、`scene/NewScrollAtmosphere.ts` | 新源独立局部轻动 |
+| `scripts/new-scroll-sources.json` | 新四卷本地源位置 |
+| `scripts/export-new-scrolls.py`、`prepare-new-scrolls.py` | 源导出、索引化与 WebP |
+| `scripts/pack-new-scroll-delivery.py` | 活跃可编辑副本打包 |
+| `scripts/create-peony-music.py` | 原创合成拨弦配乐制作 |
+
+重新制作资源需本机原始输入与 Blender/Python 依赖；先检查配置和源 SHA，再执行对应脚本。**旧 `build-reconstruction.mjs`、`build-blank-design.mjs`、`build-chapter-3-refinement.mjs` 只对应历史版，不得用于恢复当前新源。**旧交付来由保存在 [历史重构](reports/reconstruction/README.md)、[历史第三卷](reports/chapter-3-refinement/README.md) 和 [前轮首页](reports/study-faithful/README.md)。
+
+## 本轮验证与限制
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\run-export.ps1 -SourceRoot '<四卷源工程的上级目录>' -MaterialsRoot '<素材目录>'
-# 另按源场景尺寸生成参考图（可用 -ReferenceWidth / -ReferenceHeight 调整）：
-powershell -ExecutionPolicy Bypass -File .\scripts\run-export.ps1 -SourceRoot '<四卷源工程的上级目录>' -MaterialsRoot '<素材目录>' -RenderReferences
+npm run build
+npm test
+npm run validate:assets
+node scripts/validate-new-scroll-assets.mjs
+node scripts/validate-new-narrative.mjs
+node scripts/validate-new-motion.mjs
+node scripts/validate-projection-home.mjs
+node scripts/validate-new-scroll-runtime.mjs
+node scripts/validate-new-scroll-journey.mjs
 ```
 
-Blender、Python、Node 从 `PATH` 查找，也可传 `-Blender` / `-Python` / `-Node` 指定。源工程与素材位置统一由 `scripts/asset_config.py` 解析，可使用命令行参数、`MDGS_*` 环境变量或根目录的 `asset-pipeline.local.json`；配置示例见 `scripts/asset-pipeline.example.json`。本机配置被 Git 忽略，配置中的相对路径按配置文件所在目录解析。详见 `reports/assets-readme.md`。脚本依次读取、导出、索引化、WebP优化、恢复程序透明材质、统计并验证；全过程不保存原 Blender 文件。浏览网页无需这些外部源工程与工具。
+独立资源验证需要包含 Pillow 的 Python，可由 `MDGS_PYTHON` 指定；原生验证命令为 `blender --background --disable-autoexec --python scripts/validate-new-scroll-native.py`。浏览器脚本需要 Playwright/Chromium，可由 `MDGS_PLAYWRIGHT_MODULE`、`MDGS_TEST_BROWSER`、`MDGS_PREVIEW_URL` 指定，均不属于产品运行配置。`--static-only` 的首页检查只验证文件身份，不证明浏览器画面。
 
-## 检查与实际限制
+已实际通过的新版证据：四源及四交付的独立 Blender 只读重开、几何/UV、相机和矩阵轨道、全整数帧可见性、当前文件 SHA、244张 WebP 完整像素解码；完整源区间和可见性映射；25段正文逐字、真实 prepared 时序与各响应式片段非零窗口校验；局部动效 CPU/状态校验；投影首页素材静态哈希与 TypeScript 检查。详见 [源与资产复核](reports/new-scrolls/audit-README.md)、[正文说明](reports/new-scrolls/narrative-README.md)、[动效说明](reports/new-scrolls/motion-README.md)。
 
-```powershell
-npm run validate:assets  # 全部资源、矩阵/几何、UV/索引、相机/分镜与文件完整性
-npm test                # 四卷连续路径、分镜顺序、结束帧及原几何不被修改
-npm run build           # TypeScript和生产构建
-```
-
-浏览器采用当前画卷的扩大可视范围加载纹理，最多4个并行加载；离开视野的纹理通过约160 MiB目标LRU释放（可见资源不强行卸载），切章节释放全部旧场景GPU资源，DPR上限1.65。实际峰值显存与帧率取决于设备，结构检查不等于所有设备性能保证。
-
-网页截图见 `reports/screenshots/`；Blender参考图见 `reports/assets-reference-chapter-*.png`。本次 UI 重构与验证见 `reports/handscroll-ui-review.md`；此前场景功能记录见 `reports/browser-validation.md`。正式上线部署不在本次本地开发任务范围内。
-
-最新启动冲突、路径可移植和窗口自适应整改见 [验收记录](reports/portability-review.md)，包括并发启动、端口占用回退、9种窗口尺寸及子目录资源加载验证。重新验证启动行为前先 `npm run build`，再运行 `npm run test:startup`。
-
-最终重构版本已复测生产子目录的全部四卷和核心交互。浏览器测试环境提供Playwright/Chromium后运行 `npm run test:subpath`；可用 `MDGS_PLAYWRIGHT_MODULE` / `MDGS_TEST_BROWSER` 指定工具，不作为正常运行依赖。
+实际生产浏览器新版运行30组通过：桌面/手机80次节点、166个响应式正文片段全部访问，25段正文字符一致，末帧/落印、实际音乐解码与gain、off/reduce通过；首页13组通过。入卷最终8组覆盖真实四入口闭半全开、持续慢加载、cover503重试、取消旧manifest、手机音乐布局/音频503重试/返回清理。计时8组和生产子目录四卷/字体音乐/保留交互均通过，详见 [总验收页与8张全节点接触表](reports/new-scrolls/README.md)。提交、推送及 LFS 状态仍待最终核对，日志暂未完成。尚不宣称实体手机、Safari/Firefox、稳定60FPS、物理扬声器听感或线上部署通过。
 
 ## 工程记忆
 
-后续开发从 [工程记忆导航](wiki_memory/README.md) 进入，先读根 `AGENTS.md` 与记忆维护协议。当前采用 lite 模式；维护工具已随仓库保存，无需依赖原技能目录。
+后续开发从 [工程记忆导航](wiki_memory/README.md) 进入，先读根 `AGENTS.md` 与记忆维护协议。当前实现选择见 [ADR-006](wiki_memory/决策/ADR-006-新版四卷与参考投影书房.md)，它替代前轮首页与活动源选择，继续保留四秒闭卷和真实首帧门控。

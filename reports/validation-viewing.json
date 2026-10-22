@@ -1,42 +1,120 @@
-[
-  {
-    "chapter": 1,
-    "stops": 15,
-    "cameraSamples": 305,
-    "sourceFrameRange": [
-      489,
-      13474.00020809981
-    ],
-    "passed": true
-  },
-  {
-    "chapter": 2,
-    "stops": 7,
-    "cameraSamples": 286,
-    "sourceFrameRange": [
-      145,
-      5521.000067198769
-    ],
-    "passed": true
-  },
-  {
-    "chapter": 3,
-    "stops": 9,
-    "cameraSamples": 321,
-    "sourceFrameRange": [
-      162,
-      6539.159944198459
-    ],
-    "passed": true
-  },
-  {
-    "chapter": 4,
-    "stops": 9,
-    "cameraSamples": 301,
-    "sourceFrameRange": [
-      97,
-      4610.410438944595
-    ],
-    "passed": true
-  }
-]
+{
+  "status": "pass",
+  "testedAt": "2026-10-22T05:44:03.305Z",
+  "activeEdition": "peony-2026-10-21",
+  "scope": "CPU route and immutable source validation for the retained legacy works and the runtime-selected revised edition. No browser claim.",
+  "results": [
+    {
+      "edition": "legacy",
+      "active": false,
+      "chapter": 1,
+      "assetBase": "./assets/chapter-1/",
+      "stops": 15,
+      "cameraSamples": 305,
+      "sourceFrameRange": [
+        489,
+        13474.00020809981
+      ],
+      "sourceVisibilityBoundaries": 0,
+      "passed": true
+    },
+    {
+      "edition": "legacy",
+      "active": false,
+      "chapter": 2,
+      "assetBase": "./assets/chapter-2/",
+      "stops": 7,
+      "cameraSamples": 286,
+      "sourceFrameRange": [
+        145,
+        5521.000067198769
+      ],
+      "sourceVisibilityBoundaries": 0,
+      "passed": true
+    },
+    {
+      "edition": "legacy",
+      "active": false,
+      "chapter": 3,
+      "assetBase": "./assets/chapter-3/",
+      "stops": 9,
+      "cameraSamples": 321,
+      "sourceFrameRange": [
+        162,
+        6539.159944198459
+      ],
+      "sourceVisibilityBoundaries": 0,
+      "passed": true
+    },
+    {
+      "edition": "legacy",
+      "active": false,
+      "chapter": 4,
+      "assetBase": "./assets/chapter-4/",
+      "stops": 9,
+      "cameraSamples": 301,
+      "sourceFrameRange": [
+        97,
+        4610.410438944595
+      ],
+      "sourceVisibilityBoundaries": 0,
+      "passed": true
+    },
+    {
+      "edition": "peony-2026-10-21",
+      "active": true,
+      "chapter": 1,
+      "assetBase": "./assets/new-scrolls/chapter-1/",
+      "stops": 15,
+      "cameraSamples": 458,
+      "sourceFrameRange": [
+        1,
+        3024
+      ],
+      "sourceVisibilityBoundaries": 362,
+      "passed": true
+    },
+    {
+      "edition": "peony-2026-10-21",
+      "active": true,
+      "chapter": 2,
+      "assetBase": "./assets/new-scrolls/chapter-2/",
+      "stops": 7,
+      "cameraSamples": 468,
+      "sourceFrameRange": [
+        33,
+        2184
+      ],
+      "sourceVisibilityBoundaries": 58,
+      "passed": true
+    },
+    {
+      "edition": "peony-2026-10-21",
+      "active": true,
+      "chapter": 3,
+      "assetBase": "./assets/new-scrolls/chapter-3/",
+      "stops": 9,
+      "cameraSamples": 891,
+      "sourceFrameRange": [
+        1,
+        2068
+      ],
+      "sourceVisibilityBoundaries": 79,
+      "passed": true
+    },
+    {
+      "edition": "peony-2026-10-21",
+      "active": true,
+      "chapter": 4,
+      "assetBase": "./assets/new-scrolls/chapter-4/",
+      "stops": 9,
+      "cameraSamples": 1236,
+      "sourceFrameRange": [
+        1,
+        2160
+      ],
+      "sourceVisibilityBoundaries": 53,
+      "passed": true
+    }
+  ]
+}

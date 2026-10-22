@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { SceneRenderer } from '../scene/SceneRenderer';
 import type { ScenePreparationState } from '../scene/SceneRenderer';
 import type { SceneManifest } from '../types';
+import type { NarrativeSpace } from '../scene/NarrativeSpace';
 
 export type { ScenePreparationState } from '../scene/SceneRenderer';
 
@@ -15,14 +16,15 @@ export interface ScrollViewportProps {
   interactive?: boolean; retryKey?: number;
   onPreparation?: (state: ScenePreparationState) => void;
   onReady?: () => void;
+  onNarrativePlacement?: (placement: NarrativeSpace) => void;
 }
 
 export default function ScrollViewport({ chapterId, progress, motionEnabled, onMotionState, onNudge, onSeek, onManualInput, onManifest,
-  interactive = true, retryKey = 0, onPreparation, onReady }: ScrollViewportProps) {
+  interactive = true, retryKey = 0, onPreparation, onReady, onNarrativePlacement }: ScrollViewportProps) {
   const host = useRef<HTMLDivElement>(null);
   const engine = useRef<SceneRenderer | null>(null);
-  const actions = useRef({ onNudge, onSeek, onManualInput, onManifest, onMotionState, onPreparation, onReady });
-  actions.current = { onNudge, onSeek, onManualInput, onManifest, onMotionState, onPreparation, onReady };
+  const actions = useRef({ onNudge, onSeek, onManualInput, onManifest, onMotionState, onPreparation, onReady, onNarrativePlacement });
+  actions.current = { onNudge, onSeek, onManualInput, onManifest, onMotionState, onPreparation, onReady, onNarrativePlacement };
   const interactiveRef = useRef(interactive);
   interactiveRef.current = interactive;
   const [status, setStatus] = useState<string | null>('正在展卷');
@@ -58,7 +60,7 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
         if (!alive) return;
         actions.current.onPreparation?.(state);
         if (state.stage === 'ready') { setReady(true); actions.current.onReady?.(); }
-      });
+      }, placement=> { if(alive) actions.current.onNarrativePlacement?.(placement); });
       engine.current = renderer;
       renderer.setPreparationActive(!interactiveRef.current);
       if (element.clientWidth && element.clientHeight) renderer.resize(element.clientWidth, element.clientHeight);

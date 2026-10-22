@@ -3,7 +3,7 @@ r"""Export the four source scrolls without modifying any .blend file.
 Run: blender --background --python scripts/export_blender.py -- --source-root <folder>
 Then run optimize_textures.py with Pillow to create browser WebP textures.
 """
-import json, math, hashlib, sys
+import json, math, hashlib, sys, os
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from asset_config import ROOT, load_pipeline, image_index, resolve_image, ImageResolutionError
@@ -11,9 +11,20 @@ from asset_config import ROOT, load_pipeline, image_index, resolve_image, ImageR
 CONFIG = load_pipeline()
 import bpy
 from mathutils import Vector
-ASSETS = ROOT / 'public' / 'assets'
+ASSETS = Path(os.environ.get('MDGS_EXPORT_ASSETS', ROOT / 'public' / 'assets')).resolve()
 SOURCES = CONFIG.sources
 file_index = image_index(CONFIG.materials_root)
+SOURCE_REVISION = os.environ.get('MDGS_SOURCE_REVISION')
+
+def action_curves(obj):
+    action = obj.animation_data.action if obj.animation_data else None
+    if not action: return []
+    curves = list(getattr(action, 'fcurves', []))
+    for layer in getattr(action, 'layers', []):
+        for strip in layer.strips:
+            for bag in getattr(strip, 'channelbags', []):
+                curves.extend(bag.fcurves)
+    return curves
 
 def nums(values):
     return [round(float(x), 7) for x in values]
@@ -63,6 +74,28 @@ def export_chapter(cid, source):
     materials=[];material_index={}
     geometry=[];texts=[];skipped=[];animated=[]
     dg=bpy.context.evaluated_depsgraph_get()
+    sample_frames=set(range(s.frame_start,s.frame_end+1,max(1,round((s.frame_end-s.frame_start)/300))))
+    sample_frames.update([s.frame_start,s.frame_end])
+    sample_frames.update(m.frame for m in s.timeline_markers if s.frame_start<=m.frame<=s.frame_end)
+    visibility_samples={};first_visible={};initial_matrices={}
+    if SOURCE_REVISION:
+        # New films hide whole later scenes at frame 1. Static-start filtering
+        # would silently delete most of the first scroll's authored paintings.
+        candidates=[o for o in s.objects if o.type in ('MESH','CURVE','FONT','SURFACE','META')]
+        for obj in s.objects:
+            for curve in action_curves(obj):
+                sample_frames.update(round(p.co[0]) for p in curve.keyframe_points if s.frame_start<=p.co[0]<=s.frame_end)
+        initial_matrices={o.name:matrix(o.evaluated_get(dg).matrix_world) for o in candidates}
+        for frame in sorted(sample_frames):
+            s.frame_set(frame)
+            for obj in candidates:
+                visible=not obj.hide_render
+                samples=visibility_samples.setdefault(obj.name,[])
+                if not samples or samples[-1]['visible']!=visible:
+                    samples.append({'progress':round((frame-s.frame_start)/(s.frame_end-s.frame_start),7),'visible':visible,'frame':frame})
+                if visible:first_visible.setdefault(obj.name,frame)
+        s.frame_set(s.frame_start)
+        dg=bpy.context.evaluated_depsgraph_get()
 
     def material_id(mat):
         key=mat.name if mat else '__default'
@@ -99,7 +132,11 @@ def export_chapter(cid, source):
         return idx
 
     for obj in s.objects:
-        if obj.hide_render or obj.type not in ('MESH','CURVE','FONT','SURFACE','META'):continue
+        if obj.type not in ('MESH','CURVE','FONT','SURFACE','META'):continue
+        if SOURCE_REVISION:
+            if obj.name not in first_visible:continue
+            s.frame_set(first_visible[obj.name]);dg=bpy.context.evaluated_depsgraph_get()
+        elif obj.hide_render:continue
         if obj.type=='FONT':
             texts.append({'name':obj.name,'body':obj.data.body,'matrix':matrix(obj.matrix_world),'size':obj.data.size})
         try:
@@ -121,7 +158,7 @@ def export_chapter(cid, source):
             for slot,g in groups.items():
                 mat=mesh.materials[slot] if slot<len(mesh.materials) else None
                 mid=material_id(mat)
-                geometry.append({'name':obj.name,'type':obj.type,'matrix':matrix(ev.matrix_world),'positions':g['positions'],'uvs':g['uvs'],'material':mid,'bounds':{'min':nums(min(v[i] for v in bounds) for i in range(3)),'max':nums(max(v[i] for v in bounds) for i in range(3))},'animated':bool(obj.animation_data),'isText':obj.type=='FONT'})
+                geometry.append({'name':obj.name,'type':obj.type,'matrix':initial_matrices.get(obj.name,matrix(ev.matrix_world)),'positions':g['positions'],'uvs':g['uvs'],'material':mid,'bounds':{'min':nums(min(v[i] for v in bounds) for i in range(3)),'max':nums(max(v[i] for v in bounds) for i in range(3))},'animated':bool(obj.animation_data),'isText':obj.type=='FONT'})
             if obj.animation_data and obj.type=='MESH':animated.append(obj)
             ev.to_mesh_clear()
         except ImageResolutionError:
@@ -133,9 +170,6 @@ def export_chapter(cid, source):
 
     # Exact projection-derived vertical FOV, independent of Blender sensor fit.
     cam=s.camera
-    sample_frames=set(range(s.frame_start,s.frame_end+1,max(1,round((s.frame_end-s.frame_start)/300))))
-    sample_frames.update([s.frame_start,s.frame_end])
-    sample_frames.update(m.frame for m in s.timeline_markers)
     cameras=[];animation_samples={o.name:[] for o in animated}
     for frame in sorted(sample_frames):
         s.frame_set(frame)
@@ -153,18 +187,21 @@ def export_chapter(cid, source):
     stops=[m for m in markers if '稳定阅读' in m['name'] or '阅读' in m['name']]
     if not stops:stops=markers
     camera_by_frame={c['frame']:c for c in cameras}
-    reading_first=camera_by_frame[stops[0]['frame']]
-    reading_last=camera_by_frame[stops[-1]['frame']]
+    reading_first=camera_by_frame.get(stops[0]['frame'],cameras[0])
+    reading_last=camera_by_frame.get(stops[-1]['frame'],cameras[-1])
     # An authored end-of-scroll crane/pullback must not redefine the reading axis.
     direction=Vector(reading_last['position'])-Vector(reading_first['position'])
     axis=max(range(3),key=lambda i:abs(direction[i]))
     axis_name='XYZ'[axis]
     axis_sign=1 if direction[axis]>=0 else -1
     data={'version':1,'id':cid,'source':source,'coordinateSystem':'BLENDER_WORLD_UNCHANGED','matrixOrder':'column-major','quaternionOrder':'xyzw','frameRange':[s.frame_start,s.frame_end],'fps':s.render.fps,'render':{'width':s.render.resolution_x,'height':s.render.resolution_y,'pixelAspectX':s.render.pixel_aspect_x,'pixelAspectY':s.render.pixel_aspect_y},'travel':{'axis':axis_name,'sign':axis_sign,'range':[cameras[0]['position'][axis],cameras[-1]['position'][axis]]},'camera':{'name':cam.name,'near':0.01,'far':5000,'sensorFit':cam.data.sensor_fit,'sensorWidth':cam.data.sensor_width,'sensorHeight':cam.data.sensor_height},'cameras':cameras,'markers':markers,'stops':stops,'meshes':geometry,'materials':materials,'images':image_list,'textObjects':texts,'animations':animation_samples,'audit':{'repairs':repairs,'missingImages':missing,'skippedObjects':skipped,'proceduralMaterialApproximation':'Procedural paper, ground and line materials retain base colors; Blender lighting and shader noise are replaced with unlit painted surfaces.'}}
+    if SOURCE_REVISION:
+        data['visibility']={name:samples for name,samples in visibility_samples.items() if name in first_visible}
+        data['sourceRevision']=SOURCE_REVISION
     write_json(dest/'scene.json',data)
     summary={'id':cid,'meshes':len(geometry),'materials':len(materials),'textures':len(image_list),'stops':len(stops),'repairs':len(repairs),'missingImages':missing,'skippedObjects':skipped,'axis':axis_name,'sign':axis_sign,'cameraFovRange':[min(c['fov'] for c in cameras),max(c['fov'] for c in cameras)],'cameraPositionStart':cameras[0]['position'],'cameraPositionEnd':cameras[-1]['position']}
     print('EXPORTED',json.dumps(summary,ensure_ascii=False),flush=True)
     return summary
 
 summaries=[export_chapter(cid,path) for cid,path in SOURCES]
-write_json(ROOT/'reports'/'assets-export.json',summaries)
+write_json(Path(os.environ.get('MDGS_EXPORT_REPORT', ROOT/'reports'/'assets-export.json')),summaries)

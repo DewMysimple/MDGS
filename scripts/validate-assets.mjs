@@ -133,18 +133,26 @@ async function validateChapter(number) {
     if (!finite(determinant) || determinant === 0) warn(location, '矩阵不可逆；请确认源场景是否有刻意压平或零缩放对象。');
   }
 
-  function validateTimeline(items, location, { requireEndpoints = false, withFrame = true } = {}) {
+  function validateTimeline(items, location, { requireEndpoints = false, withFrame = true, authoredMarkers = false } = {}) {
     if (!Array.isArray(items) || items.length === 0) { error(location, '时间序列必须为非空数组。'); return []; }
     let previous = -Infinity;
     for (const [index, item] of items.entries()) {
       const at = `${location}[${index}]`;
-      if (!finite(item.progress) || item.progress < 0 || item.progress > 1) error(`${at}.progress`, '进度必须在 0..1 内。');
+      // Revised Blender scenes may retain an original pre-roll marker while the
+      // executable stop is clamped to their actual render range. Accept only an
+      // explicit same-name authoredFrame link with the exact clamped stop; this
+      // exception never applies to cameras, stops or object animation tracks.
+      const authoredStop = authoredMarkers && typeof scene.sourceRevision === 'string' && frameRangeValid
+        && scene.stops?.find(stop => stop.name === item.name && stop.authoredFrame === item.frame
+          && stop.frame === Math.min(scene.frameRange[1], Math.max(scene.frameRange[0], item.frame))
+          && finite(stop.progress) && stop.progress >= 0 && stop.progress <= 1);
+      if (!finite(item.progress) || ((!authoredStop) && (item.progress < 0 || item.progress > 1))) error(`${at}.progress`, '进度必须在 0..1 内；源档案标记须有明确且正确裁定的执行节点。');
       else {
         if (item.progress < previous) error(`${at}.progress`, '时间序列未按进度单调排列。');
         previous = item.progress;
       }
       if (withFrame && frameRangeValid) {
-        if (!finite(item.frame) || item.frame < scene.frameRange[0] || item.frame > scene.frameRange[1]) error(`${at}.frame`, '帧超出场景范围或数值无效。');
+        if (!finite(item.frame) || (!authoredStop && (item.frame < scene.frameRange[0] || item.frame > scene.frameRange[1]))) error(`${at}.frame`, '帧超出场景范围或数值无效。');
         else if (finite(item.progress) && Math.abs(item.progress - (item.frame - scene.frameRange[0]) / (scene.frameRange[1] - scene.frameRange[0])) > 0.000002) error(at, '帧数与归一化进度不一致。');
       }
     }
@@ -169,7 +177,7 @@ async function validateChapter(number) {
   }
   const stops = validateTimeline(scene.stops, 'stops');
   for (const [index, stop] of stops.entries()) if (typeof stop.name !== 'string' || !stop.name.trim()) error(`stops[${index}].name`, '分镜名称不能为空。');
-  if (Array.isArray(scene.markers) && scene.markers.length) validateTimeline(scene.markers, 'markers');
+  if (Array.isArray(scene.markers) && scene.markers.length) validateTimeline(scene.markers, 'markers', { authoredMarkers: true });
 
   const materials = Array.isArray(scene.materials) ? scene.materials : [];
   const meshes = Array.isArray(scene.meshes) ? scene.meshes : [];

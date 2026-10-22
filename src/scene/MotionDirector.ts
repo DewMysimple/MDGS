@@ -125,8 +125,8 @@ export class MotionDirector {
   private center = new THREE.Vector3();
   private offset = new THREE.Vector3();
 
-  constructor(chapterId: number, objects: MotionObject[], stops: StoryStop[] = []) {
-    this.profile = getMotionProfile(chapterId);
+  constructor(chapterId: number, objects: MotionObject[], stops: StoryStop[] = [], profile?: ChapterMotionProfile) {
+    this.profile = profile ?? getMotionProfile(chapterId);
     this.narrative = resolveNarrative(this.profile,stops);
     this.envelope = envelopeAt(this.profile,this.narrative,0);
     if (!this.profile.enabled) return;
@@ -166,7 +166,7 @@ export class MotionDirector {
       // Narrative cloud sparsity belongs to the reading position, so pausing or
       // reduced-motion never flashes the quiet tail back into a dense cloud layer.
       material.opacity = config.kind === 'fall' ? 0 : binding.opacity*(config.atmosphere === 'cloud' ? this.envelope.cloudDensity : 1);
-      if (!enabled || !mesh.visible || !this.frustum.intersectsObject(mesh)) continue;
+      if (!enabled || !mesh.visible || mesh.userData.sourceVisible === false || !this.frustum.intersectsObject(mesh)) continue;
       this.center.setFromMatrixPosition(base);
       candidates.push({ binding,distance:this.center.distanceToSquared(camera.position) });
     }

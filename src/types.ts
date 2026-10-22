@@ -5,6 +5,9 @@ export interface CameraSample {
   type: 'PERSP' | 'ORTHO'; orthoScale: number; lens: number; shift?: number[];
 }
 export interface SceneManifest {
+  sourceRevision?: string;
+  sourceSha256?: string;
+  visibility?: Record<string, { progress: number; visible: boolean }[]>;
   version: number; id: string; frameRange: [number, number]; fps: number;
   render: { width: number; height: number; pixelAspectX: number; pixelAspectY: number };
   travel: { axis: 'X' | 'Y'; sign: number; range: [number, number] };

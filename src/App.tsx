@@ -12,6 +12,9 @@ import StudyHome from './components/StudyHome';
 import ScrollLoadingScene from './components/ScrollLoadingScene';
 import { useStudyJourney } from './hooks/useStudyJourney';
 import type { SceneManifest } from './types';
+import NarrativeCalligraphy from './components/NarrativeCalligraphy';
+import { narrativeChapters } from './data/newNarrative';
+import type { NarrativeSpace } from './scene/NarrativeSpace';
 import './styles.css';
 
 const ordinal = ['一', '二', '三', '四'];
@@ -34,6 +37,7 @@ export default function App() {
   const [cultureOpen, setCultureOpen] = useState(false);
   const [fullscreen, setFullscreen] = useState(Boolean(document.fullscreenElement));
   const [notice, setNotice] = useState('');
+  const [narrativePlacement,setNarrativePlacement]=useState<NarrativeSpace>();
   const [motionEnabled, setMotionEnabled] = useState(readMotionPreference);
   const [motionState, setMotionState] = useState<ViewportMotionState>({ enabled: false, reducedMotion: matchMedia('(prefers-reduced-motion: reduce)').matches, supported: false });
   const [manifests, setManifests] = useState<Record<number, Pick<SceneManifest, 'id' | 'stops'>>>({});
@@ -45,7 +49,7 @@ export default function App() {
   const stops = manifest?.stops?.length ? manifest.stops : [{ name: '卷首', progress: 0 }, { name: '卷末', progress: 1 }];
   const currentIndex = stops.reduce((latest, item, index) => progress + 0.012 >= item.progress ? index : latest, 0);
   const currentStop = stops[currentIndex];
-  const finished = progress >= 0.995;
+  const finished = progress === 1;
   const stageRef = useRef<HTMLDivElement>(null);
   const closeCulture = useCallback(() => setCultureOpen(false), []);
   const receiveMotionState = useCallback((state: ViewportMotionState) => setMotionState(state), []);
@@ -140,6 +144,7 @@ export default function App() {
           <span className="brand-seal" aria-hidden="true">牡<br />丹</span>
           <span className="brand-wordmark">国色长卷<span>返回书房 · 数字牡丹赋</span></span>
         </button>
+        <h1 className="viewer-work-title"><small>第{ordinal[chapterIndex]}卷</small>{chapter.title}</h1>
         <nav className="chapter-nav" aria-label="四卷导航">
           {chapters.map((item, index) => (
             <button
@@ -180,19 +185,22 @@ export default function App() {
                 onPreparation={journey.onPreparation}
                 onReady={journey.onReady}
                 progress={progress}
-                motionEnabled={motionEnabled}
+                motionEnabled={motionEnabled && journey.interactive && !finished}
                 onMotionState={receiveMotionState}
+                onNarrativePlacement={setNarrativePlacement}
                 onNudge={nudge}
                 onSeek={seek}
                 onManualInput={stop}
                 onManifest={receiveManifest}
               />
+              {manifest && <NarrativeCalligraphy chapterId={chapterId} progress={progress} stops={manifest.stops} placement={narrativePlacement} active={journey.interactive && !finished} />}
               {finished && (
                 <aside className="end-colophon" aria-label="卷末题跋">
                   <span className="end-seal" aria-hidden="true">阅<br />毕</span>
                   <p className="eyebrow">第{ordinal[chapterIndex]}卷 · 卷末</p>
-                  <h2>花事有尽，余韵悠长</h2>
-                  <p className="end-colophon-text">{chapter.colophon}</p>
+                  <h2>{chapter.title}</h2>
+                  <p className="end-theme-subtitle">{chapter.subtitle}</p>
+                  <p className="end-colophon-text">{narrativeChapters[chapterId]?.ending ?? chapter.colophon}</p>
                   <div className="end-actions">
                     <button className="text-button" type="button" onClick={() => goTo(0)}><RotateCcw size={14} strokeWidth={1.4} />再观此卷</button>
                     <button className="text-button" type="button" onClick={() => changeChapter(chapters[(chapterIndex + 1) % chapters.length].id)}>{chapterIndex === chapters.length - 1 ? '重游四卷' : '展开下一卷'}<ArrowRight size={15} strokeWidth={1.4} /></button>
@@ -242,7 +250,7 @@ export default function App() {
                 <Wind size={16} strokeWidth={1.4} /><span>画中轻动</span>
                 <small id="painting-motion-state" role="status">{motionState.reducedMotion ? '随系统静止' : !motionState.supported ? '本卷静态' : motionState.enabled ? '已开' : '已关'}</small>
               </button>
-              <span className="secondary-divider" /><AudioController /><span className="secondary-divider" />
+              <span className="secondary-divider" /><AudioController active={journey.interactive} /><span className="secondary-divider" />
               <button type="button" className="utility-button" onClick={() => { stop(); setCultureOpen(true); }} aria-label="打开文化解读"><BookOpen size={16} strokeWidth={1.4} /><span>画外拾遗</span></button>
             </div>
           </div>

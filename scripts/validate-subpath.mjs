@@ -1,16 +1,32 @@
 import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
-import { readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import ts from 'typescript';
 
 const { chromium } = createRequire(import.meta.url)(process.env.MDGS_PLAYWRIGHT_MODULE || 'playwright');
 const root = fileURLToPath(new URL('../', import.meta.url));
 const dist = path.join(root, 'dist');
-const revision = JSON.parse(await readFile(path.join(root, 'public/assets/reconstruction/manifest.json'), 'utf8'));
 const prefix = '/portable/nested/';
-const mime = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.png': 'image/png' };
+// Explicit historical fixture mode checks a separately built legacy runtime;
+// it never changes the running application's source edition behind the test.
+const legacy = process.env.MDGS_LEGACY_RECONSTRUCTION === '1';
+const revision = legacy ? JSON.parse(await readFile(path.join(root, 'public/assets/reconstruction/manifest.json'), 'utf8')) : undefined;
+const compile = text => ts.transpileModule(text, { compilerOptions: { module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022 } }).outputText;
+const editionCode = compile(await readFile(path.join(root,'src/data/sourceEdition.ts'),'utf8')).replaceAll('import.meta.env.BASE_URL',JSON.stringify(prefix));
+const { activeSourceEdition,chapterAssetBase } = await import(`data:text/javascript;base64,${Buffer.from(editionCode).toString('base64')}`);
+const activeManifests = new Map();
+if (!legacy) for (const id of [1,2,3,4]) {
+  const base = chapterAssetBase(id);
+  assert(base.startsWith(prefix+'assets/'),'Active edition paths must remain portable under a nested prefix.');
+  const manifest=JSON.parse(await readFile(path.join(root,'public',base.slice(prefix.length),'scene.json'),'utf8'));
+  assert.equal(manifest.sourceRevision,activeSourceEdition);
+  activeManifests.set(id,manifest);
+}
+const titles=['神都花事','花入万家','锦绣花意','国色倾城'];
+const mime = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.png': 'image/png', '.woff2':'font/woff2', '.ttf':'font/ttf', '.mp3':'audio/mpeg', '.ogg':'audio/ogg', '.wav':'audio/wav' };
 const server = createServer(async (request, response) => {
   try {
     const pathname = decodeURIComponent(new URL(request.url, 'http://local').pathname);
@@ -24,25 +40,39 @@ const server = createServer(async (request, response) => {
 });
 await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
 const url = `http://127.0.0.1:${server.address().port}${prefix}`;
+const reportPath=path.join(root,`reports/validation-portable-subpath${legacy?'-legacy':''}.json`);
+await mkdir(path.join(root,'reports/screenshots'),{recursive:true});
+const startedAt=new Date().toISOString(), pageErrors=[],failedResources=[],chapters=[];
+const report = status=>({status,startedAt,completedAt:new Date().toISOString(),url,sourceMode:legacy?'legacy-reconstruction':activeSourceEdition,chapters,pageErrors,failedResources});
+await writeFile(reportPath,JSON.stringify(report('running'),null,2)+'\n');
 let browser;
 try {
   browser = await chromium.launch({ headless: true, executablePath: process.env.MDGS_TEST_BROWSER });
   const page = await browser.newPage({ viewport: { width: 1280, height: 720 } });
   await page.route('https://fonts.googleapis.com/**', route => route.fulfill({ status: 200, contentType: 'text/css', body: '' }));
-  const pageErrors = [], failedResources = [];
+  await page.addInitScript(()=>localStorage.setItem('guose-fanghua:painting-motion','on'));
   page.on('pageerror', error => pageErrors.push(error.message));
   page.on('response', response => { if (new URL(response.url()).origin === new URL(url).origin && response.status() >= 400) failedResources.push(response.url()); });
   await page.goto(url, { waitUntil: 'domcontentloaded' });
+  await page.waitForFunction(()=>[...document.querySelectorAll('.study-entry-button')].length===4&&[...document.querySelectorAll('.study-entry-button')].every(button=>!button.disabled),null,{timeout:45000});
+  const homepage=legacy?undefined:await page.evaluate(()=>window.__MDGS_STUDY__?.snapshot());
+  if (!legacy) {
+    assert.equal(homepage?.projectionMethod,'reference-camera-relief-and-closed-solids');
+    assert.equal(homepage.compiled,true);assert.equal(homepage.ready,true);
+    assert(new URL(homepage.referenceSource,url).href.startsWith(url),'The served homepage reference must resolve beneath the nested prefix.');
+    const homeResources=await page.evaluate(()=>performance.getEntriesByType('resource').map(item=>item.name));
+    for(const asset of ['reference.png','plaque-backing.webp']) assert(homeResources.some(name=>name.startsWith(url)&&new URL(name).pathname.endsWith(`/ui/study-projection/${asset}`)),`Missing nested homepage source ${asset}`);
+  }
   await page.locator('[data-chapter-id="1"]').click();
   const waitViewer = () => page.waitForFunction(() => document.querySelector('[data-journey-phase]')?.getAttribute('data-journey-phase') === 'SCROLL_VIEWER', null, { timeout: 60000 });
   await waitViewer();
   await page.locator('.painting canvas').waitFor();
   await page.locator('.scene-loading').waitFor({ state: 'hidden', timeout: 60000 });
   const ornamentPaths = await page.locator('.exhibition-atmosphere img').evaluateAll(images => images.map(image => ({ src: image.src, loaded: image.complete && image.naturalWidth > 0 })));
+  assert(ornamentPaths.length>0,'The ornamental surfaces must be present in the real viewer.');
   assert(ornamentPaths.every(image => image.src.startsWith(url) && image.loaded), 'Ornaments must load beneath the nested prefix.');
   const brocade = await page.locator('.brocade-border__pattern').first().evaluate(element => getComputedStyle(element).backgroundImage);
   assert(brocade.includes(prefix + 'ui/'), 'CSS public asset references must use the nested prefix.');
-  const chapters = [];
   const ready = async chapter => page.waitForFunction(chapter => document.querySelector('.painting canvas')?.dataset.chapter === String(chapter) && document.querySelector('.scene-viewport.is-ready') && document.querySelector('.painting canvas')?.dataset.loadingTextures === '0', chapter, { timeout: 60000 });
   for (let index = 0; index < 4; index++) {
     await page.locator('.chapter-link').nth(index).click();
@@ -52,13 +82,45 @@ try {
     await ready(index + 1);
     assert.equal(await page.locator('.painting canvas').count(), 1);
     const canvas = await page.locator('.painting canvas').evaluate(canvas => ({ ...canvas.dataset }));
-    const chapter = revision.chapters[String(index + 1)];
-    assert.equal(Number(canvas.artAddedLayers), chapter.addedLayers.length, 'Production must load the current reconstruction from the nested prefix.');
-    assert.equal(Number(canvas.artTextLayers), chapter.textLayers.length);
+    const chapter=legacy?revision.chapters[String(index+1)]:activeManifests.get(index+1);
+    const expectedAdded=legacy?chapter.addedLayers.length:chapter.stops.length*2;
+    const expectedText=legacy?chapter.textLayers.length:0;
+    assert.equal(Number(canvas.artAddedLayers),expectedAdded,'The actual runtime must use this edition’s expected world additions.');
+    assert.equal(Number(canvas.artTextLayers),expectedText,'Revised works use their DOCX narrative instead of historical reconstruction lettering.');
+    let resources;
+    if(!legacy){
+      assert.equal(Number(canvas.editionAtmosphereLayers),expectedAdded);
+      assert.equal(Number(canvas.sourceHiddenVisibleLayers),0);
+      resources=await page.evaluate(()=>performance.getEntriesByType('resource').map(item=>item.name));
+      const base=new URL(chapterAssetBase(index+1),url).href;
+      assert(resources.includes(`${base}scene.json`),'The browser must actually request the active scene manifest beneath the prefix.');
+      assert(resources.includes(`${base}cover.webp`),'The loading ceremony must actually decode this chapter’s cover beneath the prefix.');
+      assert(resources.some(name=>name.startsWith(`${base}textures/`)),'The actual scene must stream its new source textures.');
+      await page.locator(`.narrative-calligraphy[data-chapter="${index+1}"] .narrative-passage.is-visible`).waitFor();
+    }
     assert.equal(Number(canvas.textureFailed), 0);
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
     assert.equal(overflow, false);
-    chapters.push({ chapter: index + 1, loaded: true, addedLayers: Number(canvas.artAddedLayers), textLayers: Number(canvas.artTextLayers), overflow });
+    chapters.push({ chapter: index + 1, loaded: true, sourceRevision:legacy?undefined:chapter.sourceRevision, meshes:legacy?undefined:chapter.meshes.length, addedLayers: Number(canvas.artAddedLayers), textLayers: Number(canvas.artTextLayers), overflow, resources:resources?.filter(name=>name.includes(`/chapter-${index+1}/`)) });
+  }
+  let localFont,audio;
+  if(!legacy){
+    localFont=await page.evaluate(async()=>{
+      await document.fonts.load('20px "MDGS Kai"','国色长卷牡丹');await document.fonts.ready;
+      return{faces:[...document.fonts].filter(face=>face.family.replaceAll('"','').replaceAll("'",'')==='MDGS Kai').map(face=>({family:face.family,status:face.status})),check:document.fonts.check('20px "MDGS Kai"','国色长卷牡丹'),computed:getComputedStyle(document.querySelector('.narrative-ink p')).fontFamily,resources:performance.getEntriesByType('resource').map(item=>item.name).filter(name=>name.includes('/fonts/'))};
+    });
+    assert(localFont.check&&localFont.faces.some(face=>face.status==='loaded')&&localFont.computed.includes('MDGS Kai'),'The local Kai typeface must be loaded and used by the real narrative.');
+    assert(localFont.resources.some(name=>name.startsWith(url)&&new URL(name).pathname.endsWith('/fonts/wenkai-web.woff2')),'Local Kai must load beneath the nested prefix.');
+    await page.getByRole('button',{name:'开启古筝意境配乐',exact:true}).click();
+    await page.waitForFunction(()=>document.querySelector('.audio-control')?.dataset.audioState==='playing',null,{timeout:30000});
+    const volume=page.getByRole('slider',{name:'古筝配乐音量',exact:true});
+    await volume.focus();await page.keyboard.press('Home');await page.keyboard.press('ArrowRight');
+    assert.equal(await volume.inputValue(),'1');
+    audio=await page.locator('.audio-control').evaluate(element=>({state:element.dataset.audioState,enabled:element.dataset.audioEnabled,resources:performance.getEntriesByType('resource').map(item=>item.name).filter(name=>name.includes('/audio/'))}));
+    assert.equal(audio.enabled,'true');
+    assert(audio.resources.includes(new URL('audio/peony-guzheng-original.mp3',url).href),'The user-enabled local score must load beneath the prefix.');
+    await page.getByRole('button',{name:'关闭古筝意境配乐',exact:true}).click();
+    await page.waitForFunction(()=>document.querySelector('.audio-control')?.dataset.audioState==='off');
   }
   await page.getByRole('button', { name: '打开文化解读' }).click();
   await page.getByRole('dialog').waitFor();
@@ -105,16 +167,19 @@ try {
   await page.waitForFunction(() => document.fullscreenElement !== null);
   await page.getByRole('button', { name: '退出全屏', exact: true }).click();
   await page.waitForFunction(() => document.fullscreenElement === null);
-  await page.locator('input[type=range]').focus();
+  await page.getByRole('slider',{name:'画卷游观进度',exact:true}).focus();
   await page.keyboard.press('Home');
   await page.waitForFunction(() => Number(document.querySelector('.painting canvas')?.dataset.progress) < .001);
   await ready(1);
   await page.screenshot({ path: path.join(root, 'reports/screenshots/portable-subpath-1280x720.png') });
   assert.deepEqual(pageErrors, []);
   assert.deepEqual(failedResources, []);
-  const result = { status: 'pass', testedAt: new Date().toISOString(), url, chapters, ornaments: ornamentPaths, cssAssetRebased: true, cultureDialog: true, interactions: ['wheel', 'drag', 'keyboard', 'next-scene', 'autoplay-pause', 'motion-toggle', 'fullscreen', 'progress-home', 'drawer-escape-focus'], pageErrors, failedResources };
-  await writeFile(path.join(root, 'reports/validation-portable-subpath.json'), JSON.stringify(result, null, 2) + '\n');
+  const result = { ...report('pass'), testedAt: new Date().toISOString(), ornaments: ornamentPaths, cssAssetRebased: true, cultureDialog: true, homepage,localFont,audio, interactions: ['wheel', 'drag', 'keyboard', 'next-scene', 'autoplay-pause', 'motion-toggle', 'fullscreen', 'progress-home', 'drawer-escape-focus',...(!legacy?['local-kai-font','user-enabled-audio-volume-off','active-source-covers-and-textures']:[])] };
+  await writeFile(reportPath, JSON.stringify(result, null, 2) + '\n');
   console.log(JSON.stringify(result, null, 2));
+} catch(error) {
+  await writeFile(reportPath,JSON.stringify({...report('fail'),failure:{message:error.message,stack:error.stack}},null,2)+'\n');
+  throw error;
 } finally {
   await browser?.close();
   await new Promise((resolve, reject) => server.close(error => error ? reject(error) : resolve()));

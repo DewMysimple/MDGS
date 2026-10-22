@@ -1,0 +1,323 @@
+{
+  "status": "pass",
+  "startedAt": "2026-10-22T06:45:13.372Z",
+  "scope": "Actual current-production four home entries, physical paper geometry, at least 4s visible loading, repeated input, return, slow resource waiting, cover failure/retry, and cancelled manifest invalidation.",
+  "checks": [
+    {
+      "test": "real-entry-1-closed-coil-unfurl-four-seconds",
+      "closed": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-1/cover.webp",
+        "unfurl": "0.0000",
+        "rodSeparation": "0.6134",
+        "paperCurvature": "0.2914",
+        "renderCount": "4",
+        "paperVertices": "2415",
+        "paperZRange": "0.63496",
+        "paintingReady": "true"
+      },
+      "half": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-1/cover.webp",
+        "unfurl": "0.4426",
+        "rodSeparation": "4.5215",
+        "paperCurvature": "0.2246",
+        "renderCount": "194",
+        "paperVertices": "2415",
+        "paperZRange": "0.48477",
+        "paintingReady": "true"
+      },
+      "opened": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-1/cover.webp",
+        "unfurl": "0.9996",
+        "rodSeparation": "9.4398",
+        "paperCurvature": "0.1406",
+        "renderCount": "396",
+        "paperVertices": "2415",
+        "paperZRange": "0.01446",
+        "paintingReady": "true"
+      },
+      "loadingMs": 4013.2000000476837,
+      "events": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 1183
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 1749.5
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 2255.9000000953674
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 3638.7000000476837
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 7651.900000095367
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 7903.900000095367
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 8307.200000047684
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "real-entry-2-closed-coil-unfurl-four-seconds",
+      "closed": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-2/cover.webp",
+        "unfurl": "0.0000",
+        "rodSeparation": "0.6134",
+        "paperCurvature": "0.2914",
+        "renderCount": "5",
+        "paperVertices": "2415",
+        "paperZRange": "0.63496",
+        "paintingReady": "true"
+      },
+      "half": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-2/cover.webp",
+        "unfurl": "0.4360",
+        "rodSeparation": "4.4633",
+        "paperCurvature": "0.2256",
+        "renderCount": "194",
+        "paperVertices": "2415",
+        "paperZRange": "0.48393",
+        "paintingReady": "true"
+      },
+      "opened": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-2/cover.webp",
+        "unfurl": "0.9996",
+        "rodSeparation": "9.4398",
+        "paperCurvature": "0.1406",
+        "renderCount": "397",
+        "paperVertices": "2415",
+        "paperZRange": "0.01446",
+        "paintingReady": "true"
+      },
+      "loadingMs": 4008.600000023842,
+      "events": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 10409
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 11006.100000023842
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 11482.400000095367
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 11837.700000047684
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 15846.300000071526
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 16100.900000095367
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 16502.600000023842
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "real-entry-3-closed-coil-unfurl-four-seconds",
+      "closed": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-3/cover.webp",
+        "unfurl": "0.0000",
+        "rodSeparation": "0.6134",
+        "paperCurvature": "0.2914",
+        "renderCount": "5",
+        "paperVertices": "2415",
+        "paperZRange": "0.63496",
+        "paintingReady": "true"
+      },
+      "half": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-3/cover.webp",
+        "unfurl": "0.4392",
+        "rodSeparation": "4.4921",
+        "paperCurvature": "0.2251",
+        "renderCount": "195",
+        "paperVertices": "2415",
+        "paperZRange": "0.48421",
+        "paintingReady": "true"
+      },
+      "opened": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-3/cover.webp",
+        "unfurl": "0.9991",
+        "rodSeparation": "9.4362",
+        "paperCurvature": "0.1407",
+        "renderCount": "397",
+        "paperVertices": "2415",
+        "paperZRange": "0.01450",
+        "paintingReady": "true"
+      },
+      "loadingMs": 4008,
+      "events": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 17811.300000071526
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 18034.800000071526
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 18863
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 19266.800000071526
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 23274.800000071526
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 23527.900000095367
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 23938.100000023842
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "real-entry-4-closed-coil-unfurl-four-seconds",
+      "closed": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-4/cover.webp",
+        "unfurl": "0.0000",
+        "rodSeparation": "0.6134",
+        "paperCurvature": "0.2914",
+        "renderCount": "5",
+        "paperVertices": "2415",
+        "paperZRange": "0.63496",
+        "paintingReady": "true"
+      },
+      "half": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-4/cover.webp",
+        "unfurl": "0.4391",
+        "rodSeparation": "4.4904",
+        "paperCurvature": "0.2252",
+        "renderCount": "178",
+        "paperVertices": "2415",
+        "paperZRange": "0.48415",
+        "paintingReady": "true"
+      },
+      "opened": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-4/cover.webp",
+        "unfurl": "0.9993",
+        "rodSeparation": "9.4379",
+        "paperCurvature": "0.1407",
+        "renderCount": "376",
+        "paperVertices": "2415",
+        "paperZRange": "0.01448",
+        "paintingReady": "true"
+      },
+      "loadingMs": 4002.6999999284744,
+      "events": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 25200.400000095367
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 25709.200000047684
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 26207.200000047684
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 26614.300000071526
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 30617
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 30870
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 31272.600000023842
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "slow-textures-wait-with-continuous-art-rendering",
+      "frames": 89,
+      "passed": true
+    },
+    {
+      "test": "chapter-specific-loading-art-error-and-full-retry",
+      "passed": true
+    },
+    {
+      "test": "cancelled-old-manifest-cannot-switch-or-revive-a-second-world",
+      "passed": true
+    },
+    {
+      "test": "mobile-music-failure-retry-controls-and-return-cleanup",
+      "controls": {
+        "x": 19,
+        "y": 112,
+        "width": 352,
+        "height": 181
+      },
+      "painting": {
+        "x": 15,
+        "y": 304,
+        "width": 360,
+        "height": 521
+      },
+      "volume": {
+        "x": 272,
+        "y": 216.5,
+        "width": 55,
+        "height": 3
+      },
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "expectedHttpFailures": [
+    "chapter-3 cover 503",
+    "chapter-3 cover 503",
+    "chapter-3 cover 503",
+    "audio 503"
+  ],
+  "url": "http://127.0.0.1:51589/",
+  "completedAt": "2026-10-22T06:46:16.643Z"
+}

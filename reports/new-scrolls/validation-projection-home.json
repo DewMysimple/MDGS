@@ -1,0 +1,1091 @@
+{
+  "status": "pass",
+  "startedAt": "2026-10-22T05:08:09.347Z",
+  "scope": "Real WebGL projection relief, shader failure gate, source image provenance, native HTML controls, responsive layout, environment controls. Painting quality and pixel similarity require human screenshot review.",
+  "checks": [
+    {
+      "test": "exact-reference-and-backing-current-byte-provenance",
+      "assets": [
+        {
+          "file": "plaque-backing.png",
+          "bytes": 3089195,
+          "sha256": "b4f9d5ce94942b861e6701c83213ace7f90726302ada36c0e47b16c4f61e1971"
+        },
+        {
+          "file": "plaque-backing.webp",
+          "bytes": 641166,
+          "sha256": "8baa5c5c711a4ab11fa31d990a433b70cacb40e1d2f3352e42015a9c7485ed2b"
+        },
+        {
+          "file": "reference.png",
+          "bytes": 3347941,
+          "sha256": "5ddde6154a57aa96bec01bdcb2f2e85bf0599ff28b01439988355768d1639f27"
+        }
+      ],
+      "rootOriginalAvailable": true,
+      "passed": true
+    },
+    {
+      "test": "actual-relief-paper-thickness-solid-sha-first-draw",
+      "room": {
+        "ready": true,
+        "compiled": true,
+        "failure": null,
+        "shaderErrors": [],
+        "projectionMethod": "reference-camera-relief-and-closed-solids",
+        "referenceSource": "./ui/study-projection/reference.png",
+        "depthRange": [
+          -2.200000047683716,
+          7.910472869873047
+        ],
+        "camera": {
+          "x": 0.00015443810512083872,
+          "y": 0.0001346371750820853,
+          "z": 18
+        },
+        "renderCount": 3,
+        "environmentTime": 0.066,
+        "environmentActive": true,
+        "dimensions": {
+          "width": 1672,
+          "height": 941
+        },
+        "referenceViewport": {
+          "x": 0,
+          "y": 0,
+          "width": 1672,
+          "height": 941
+        },
+        "objects": [
+          {
+            "name": "continuous-reference-relief-window-desk-foreground",
+            "geometryType": "BufferGeometry",
+            "vertices": 28575,
+            "worldPosition": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "screenPosition": {
+              "x": 836,
+              "y": 470.5
+            }
+          },
+          {
+            "name": "bending-silk-front",
+            "geometryType": "BufferGeometry",
+            "vertices": 1029,
+            "worldPosition": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "screenPosition": {
+              "x": 836,
+              "y": 470.5
+            }
+          },
+          {
+            "name": "silk-paper-thickness",
+            "geometryType": "BufferGeometry",
+            "vertices": 1029,
+            "worldPosition": {
+              "x": 0,
+              "y": 0,
+              "z": -0.025
+            },
+            "screenPosition": {
+              "x": 836.0000177575898,
+              "y": 470.4999845191591
+            }
+          },
+          {
+            "name": "projected-solid-silk-axis",
+            "geometryType": "CylinderGeometry",
+            "vertices": 244,
+            "worldPosition": {
+              "x": -5.177144326892729,
+              "y": -0.903803978321606,
+              "z": 4.35
+            },
+            "screenPosition": {
+              "x": 270.0260420106017,
+              "y": 569.3081864973434
+            }
+          },
+          {
+            "name": "projected-solid-silk-axis",
+            "geometryType": "CylinderGeometry",
+            "vertices": 244,
+            "worldPosition": {
+              "x": -4.30491703642906,
+              "y": 1.292819624040496,
+              "z": 2.35
+            },
+            "screenPosition": {
+              "x": 425.52279266018934,
+              "y": 347.23089078459725
+            }
+          },
+          {
+            "name": "bending-silk-front",
+            "geometryType": "BufferGeometry",
+            "vertices": 1029,
+            "worldPosition": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "screenPosition": {
+              "x": 836,
+              "y": 470.5
+            }
+          },
+          {
+            "name": "silk-paper-thickness",
+            "geometryType": "BufferGeometry",
+            "vertices": 1029,
+            "worldPosition": {
+              "x": 0,
+              "y": 0,
+              "z": -0.025
+            },
+            "screenPosition": {
+              "x": 836.0000177575898,
+              "y": 470.4999845191591
+            }
+          },
+          {
+            "name": "projected-solid-silk-axis",
+            "geometryType": "CylinderGeometry",
+            "vertices": 244,
+            "worldPosition": {
+              "x": -1.5294370241928301,
+              "y": -0.903803978321606,
+              "z": 4.35
+            },
+            "screenPosition": {
+              "x": 668.7961634268468,
+              "y": 569.3084130716412
+            }
+          },
+          {
+            "name": "projected-solid-silk-axis",
+            "geometryType": "CylinderGeometry",
+            "vertices": 244,
+            "worldPosition": {
+              "x": -1.4028242888567204,
+              "y": 1.292819624040496,
+              "z": 2.35
+            },
+            "screenPosition": {
+              "x": 702.2380977099892,
+              "y": 347.2306946772923
+            }
+          },
+          {
+            "name": "bending-silk-front",
+            "geometryType": "BufferGeometry",
+            "vertices": 1029,
+            "worldPosition": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "screenPosition": {
+              "x": 836,
+              "y": 470.5
+            }
+          },
+          {
+            "name": "silk-paper-thickness",
+            "geometryType": "BufferGeometry",
+            "vertices": 1029,
+            "worldPosition": {
+              "x": 0,
+              "y": 0,
+              "z": -0.025
+            },
+            "screenPosition": {
+              "x": 836.0000177575898,
+              "y": 470.4999845191591
+            }
+          },
+          {
+            "name": "projected-solid-silk-axis",
+            "geometryType": "CylinderGeometry",
+            "vertices": 244,
+            "worldPosition": {
+              "x": 1.8735603546362165,
+              "y": -0.903803978321606,
+              "z": 4.35
+            },
+            "screenPosition": {
+              "x": 1040.8160595876443,
+              "y": 569.308624446923
+            }
+          },
+          {
+            "name": "projected-solid-silk-axis",
+            "geometryType": "CylinderGeometry",
+            "vertices": 244,
+            "worldPosition": {
+              "x": 1.3677536816353024,
+              "y": 1.292819624040496,
+              "z": 2.35
+            },
+            "screenPosition": {
+              "x": 966.4142558295898,
+              "y": 347.23050745644315
+            }
+          },
+          {
+            "name": "bending-silk-front",
+            "geometryType": "BufferGeometry",
+            "vertices": 1029,
+            "worldPosition": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "screenPosition": {
+              "x": 836,
+              "y": 470.5
+            }
+          },
+          {
+            "name": "silk-paper-thickness",
+            "geometryType": "BufferGeometry",
+            "vertices": 1029,
+            "worldPosition": {
+              "x": 0,
+              "y": 0,
+              "z": -0.025
+            },
+            "screenPosition": {
+              "x": 836.0000177575898,
+              "y": 470.4999845191591
+            }
+          },
+          {
+            "name": "projected-solid-silk-axis",
+            "geometryType": "CylinderGeometry",
+            "vertices": 244,
+            "worldPosition": {
+              "x": 5.398912695400689,
+              "y": -0.903803978321606,
+              "z": 4.35
+            },
+            "screenPosition": {
+              "x": 1426.2136303838981,
+              "y": 569.3088434231685
+            }
+          },
+          {
+            "name": "projected-solid-silk-axis",
+            "geometryType": "CylinderGeometry",
+            "vertices": 244,
+            "worldPosition": {
+              "x": 4.296149384623706,
+              "y": 1.292819624040496,
+              "z": 2.35
+            },
+            "screenPosition": {
+              "x": 1245.6392953618417,
+              "y": 347.23030957049696
+            }
+          },
+          {
+            "name": "solid-carved-desk-apron",
+            "geometryType": "BoxGeometry",
+            "vertices": 24,
+            "worldPosition": {
+              "x": 0,
+              "y": -1.6623561105824418,
+              "z": 4.27
+            },
+            "screenPosition": {
+              "x": 835.996018229461,
+              "y": 651.1753076128248
+            }
+          },
+          {
+            "name": "solid-window-timber",
+            "geometryType": "BoxGeometry",
+            "vertices": 24,
+            "worldPosition": {
+              "x": -8.71555010453035,
+              "y": 3.339644771806193,
+              "z": 1.45
+            },
+            "screenPosition": {
+              "x": 50.16124292296496,
+              "y": 169.3818839489313
+            }
+          },
+          {
+            "name": "solid-window-timber",
+            "geometryType": "BoxGeometry",
+            "vertices": 24,
+            "worldPosition": {
+              "x": -6.39758465119781,
+              "y": 3.339644771806193,
+              "z": 1.45
+            },
+            "screenPosition": {
+              "x": 259.1599208477108,
+              "y": 169.3815221136415
+            }
+          },
+          {
+            "name": "solid-window-timber",
+            "geometryType": "BoxGeometry",
+            "vertices": 24,
+            "worldPosition": {
+              "x": -5.19224261546489,
+              "y": 3.339644771806193,
+              "z": 1.45
+            },
+            "screenPosition": {
+              "x": 367.8394318778872,
+              "y": 169.3813339589471
+            }
+          },
+          {
+            "name": "solid-window-timber",
+            "geometryType": "BoxGeometry",
+            "vertices": 24,
+            "worldPosition": {
+              "x": 6.861177741864319,
+              "y": 3.339644771806193,
+              "z": 1.45
+            },
+            "screenPosition": {
+              "x": 1454.642012458702,
+              "y": 169.37945239907023
+            }
+          },
+          {
+            "name": "solid-window-timber",
+            "geometryType": "BoxGeometry",
+            "vertices": 24,
+            "worldPosition": {
+              "x": 7.788363923197336,
+              "y": 3.339644771806193,
+              "z": 1.45
+            },
+            "screenPosition": {
+              "x": 1538.2427735505873,
+              "y": 169.3793076627211
+            }
+          },
+          {
+            "name": "solid-window-timber",
+            "geometryType": "BoxGeometry",
+            "vertices": 24,
+            "worldPosition": {
+              "x": 8.938074788050274,
+              "y": 3.339644771806193,
+              "z": 1.45
+            },
+            "screenPosition": {
+              "x": 1641.9078289223396,
+              "y": 169.37912818945486
+            }
+          },
+          {
+            "name": "solid-lantern-column",
+            "geometryType": "CylinderGeometry",
+            "vertices": 100,
+            "worldPosition": {
+              "x": -8.049544707328726,
+              "y": 3.03979562358228,
+              "z": 2.45
+            },
+            "screenPosition": {
+              "x": 63.53628421464146,
+              "y": 178.7926276409267
+            }
+          },
+          {
+            "name": "solid-incense-vessel",
+            "geometryType": "SphereGeometry",
+            "vertices": 551,
+            "worldPosition": {
+              "x": 7.379169490057977,
+              "y": 1.6818667996382737,
+              "z": 3.1
+            },
+            "screenPosition": {
+              "x": 1575.0251003442786,
+              "y": 302.0624643672812
+            }
+          },
+          {
+            "name": "wind-carried-peony-petal",
+            "geometryType": "PlaneGeometry",
+            "vertices": 99,
+            "worldPosition": {
+              "x": -8.965685776273693,
+              "y": 5.532411134904664,
+              "z": 2
+            },
+            "screenPosition": {
+              "x": -0.18182357481282274,
+              "y": -45.47617677547912
+            }
+          },
+          {
+            "name": "wind-carried-peony-petal",
+            "geometryType": "PlaneGeometry",
+            "vertices": 99,
+            "worldPosition": {
+              "x": 1.8292219218280474,
+              "y": 4.111678177378417,
+              "z": 3.3
+            },
+            "screenPosition": {
+              "x": 1021.6868025184048,
+              "y": 53.114007113371756
+            }
+          },
+          {
+            "name": "wind-carried-peony-petal",
+            "geometryType": "PlaneGeometry",
+            "vertices": 99,
+            "worldPosition": {
+              "x": -4.170583739664645,
+              "y": 2.8627264332752738,
+              "z": 4.6
+            },
+            "screenPosition": {
+              "x": 371.55636381038227,
+              "y": 151.70853217040369
+            }
+          },
+          {
+            "name": "wind-carried-peony-petal",
+            "geometryType": "PlaneGeometry",
+            "vertices": 99,
+            "worldPosition": {
+              "x": 5.977672811617411,
+              "y": 2.3679578356101403,
+              "z": 2
+            },
+            "screenPosition": {
+              "x": 1393.5067229708093,
+              "y": 249.65354285545618
+            }
+          },
+          {
+            "name": "wind-carried-peony-petal",
+            "geometryType": "PlaneGeometry",
+            "vertices": 99,
+            "worldPosition": {
+              "x": -0.9124276360851696,
+              "y": 1.2043367086515724,
+              "z": 3.3
+            },
+            "screenPosition": {
+              "x": 743.3742083858718,
+              "y": 348.247134291575
+            }
+          },
+          {
+            "name": "wind-carried-peony-petal",
+            "geometryType": "PlaneGeometry",
+            "vertices": 99,
+            "worldPosition": {
+              "x": -6.669774493136559,
+              "y": 0.21249679511610928,
+              "z": 4.6
+            },
+            "screenPosition": {
+              "x": 93.24694966765655,
+              "y": 446.8401066509682
+            }
+          },
+          {
+            "name": "wind-carried-peony-petal",
+            "geometryType": "PlaneGeometry",
+            "vertices": 99,
+            "worldPosition": {
+              "x": 2.9935644492628914,
+              "y": -0.7964954636843833,
+              "z": 2
+            },
+            "screenPosition": {
+              "x": 1115.1926629880666,
+              "y": 544.78640497384
+            }
+          },
+          {
+            "name": "wind-carried-peony-petal",
+            "geometryType": "PlaneGeometry",
+            "vertices": 99,
+            "worldPosition": {
+              "x": -3.654077193998392,
+              "y": -1.7030047600752722,
+              "z": 3.3
+            },
+            "screenPosition": {
+              "x": 465.06332840850206,
+              "y": 643.3784437152656
+            }
+          },
+          {
+            "name": "wind-carried-peony-petal",
+            "geometryType": "PlaneGeometry",
+            "vertices": 99,
+            "worldPosition": {
+              "x": 5.845288324222243,
+              "y": -2.437732843043055,
+              "z": 4.6
+            },
+            "screenPosition": {
+              "x": 1486.9334160582878,
+              "y": 741.9724732795806
+            }
+          },
+          {
+            "name": "wind-carried-peony-petal",
+            "geometryType": "PlaneGeometry",
+            "vertices": 99,
+            "worldPosition": {
+              "x": 0.009456086908370406,
+              "y": -3.960948762978909,
+              "z": 2
+            },
+            "screenPosition": {
+              "x": 836.8803171714917,
+              "y": 839.9174493372487
+            }
+          },
+          {
+            "name": "wind-carried-peony-petal",
+            "geometryType": "PlaneGeometry",
+            "vertices": 99,
+            "worldPosition": {
+              "x": -6.395726751911608,
+              "y": -4.610346228802116,
+              "z": 3.3
+            },
+            "screenPosition": {
+              "x": 186.75416257045967,
+              "y": 938.5079354012373
+            }
+          },
+          {
+            "name": "",
+            "geometryType": "SphereGeometry",
+            "vertices": 221,
+            "worldPosition": {
+              "x": -7.764834122825137,
+              "y": 2.9322787365745464,
+              "z": 3
+            },
+            "screenPosition": {
+              "x": 63.53574080400124,
+              "y": 178.79310138471624
+            }
+          }
+        ],
+        "scrolls": [
+          {
+            "id": 1,
+            "center": {
+              "x": 355.7170420914497,
+              "y": 451.68201604388645
+            },
+            "corners": [
+              {
+                "x": 305.9763882023486,
+                "y": 349.1120671625166
+              },
+              {
+                "x": 550.0883833421194,
+                "y": 349.11105484783985
+              },
+              {
+                "x": 461.469000414816,
+                "y": 554.2522545845377
+              },
+              {
+                "x": 105.33453640084173,
+                "y": 554.252820671176
+              }
+            ],
+            "paperBounds": {
+              "left": 105.33453640084173,
+              "right": 550.0883833421194,
+              "top": 349.11105314461383,
+              "bottom": 554.252820671176
+            },
+            "paperVertices": 1029,
+            "rodRadius": 0.13,
+            "open": 1
+          },
+          {
+            "id": 2,
+            "center": {
+              "x": 682.1738954542245,
+              "y": 451.6819546621937
+            },
+            "corners": [
+              {
+                "x": 593.5602665422209,
+                "y": 349.11102410670276
+              },
+              {
+                "x": 810.9200660078328,
+                "y": 349.1108769462517
+              },
+              {
+                "x": 824.2921277681739,
+                "y": 554.2523381142651
+              },
+              {
+                "x": 499.92484858229943,
+                "y": 554.252235721174
+              }
+            ],
+            "paperBounds": {
+              "left": 499.92484858229943,
+              "right": 824.2921277681739,
+              "top": 349.11086951853133,
+              "bottom": 554.2523381142651
+            },
+            "paperVertices": 1029,
+            "rodRadius": 0.13,
+            "open": 1
+          },
+          {
+            "id": 3,
+            "center": {
+              "x": 1001.9439508525747,
+              "y": 451.6819192119853
+            },
+            "corners": [
+              {
+                "x": 857.7360953942399,
+                "y": 349.1108466208772
+              },
+              {
+                "x": 1075.096543727285,
+                "y": 349.1106931481259
+              },
+              {
+                "x": 1197.1486634274243,
+                "y": 554.2525549988682
+              },
+              {
+                "x": 877.7961147605715,
+                "y": 554.2523637090662
+              }
+            ],
+            "paperBounds": {
+              "left": 857.7360953942399,
+              "right": 1197.1486634274243,
+              "top": 349.1106868134641,
+              "bottom": 554.2525549988682
+            },
+            "paperVertices": 1029,
+            "rodRadius": 0.13,
+            "open": 1
+          },
+          {
+            "id": 4,
+            "center": {
+              "x": 1330.911194303462,
+              "y": 451.6819003205633
+            },
+            "corners": [
+              {
+                "x": 1128.6007439606292,
+                "y": 349.1106535966474
+              },
+              {
+                "x": 1361.0099902667794,
+                "y": 349.1104878460486
+              },
+              {
+                "x": 1593.4143232939068,
+                "y": 554.2533737211093
+              },
+              {
+                "x": 1240.620816999123,
+                "y": 554.2526168124106
+              }
+            ],
+            "paperBounds": {
+              "left": 1128.6007439606292,
+              "right": 1593.4143232939068,
+              "top": 349.11048680062925,
+              "bottom": 554.2533737211093
+            },
+            "paperVertices": 1029,
+            "rodRadius": 0.13,
+            "open": 1
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test": "native-button-layout-1672x941",
+      "items": [
+        {
+          "id": 1,
+          "title": "神都花事",
+          "tag": "BUTTON",
+          "left": 248.96875,
+          "right": 325.96875,
+          "top": 541.03125,
+          "bottom": 749.03125,
+          "width": 77,
+          "height": 208,
+          "fontSize": 26.18,
+          "pointer": true
+        },
+        {
+          "id": 2,
+          "title": "花入万家",
+          "tag": "BUTTON",
+          "left": 636.953125,
+          "right": 713.953125,
+          "top": 541.03125,
+          "bottom": 749.03125,
+          "width": 77,
+          "height": 208,
+          "fontSize": 26.18,
+          "pointer": true
+        },
+        {
+          "id": 3,
+          "title": "锦绣花意",
+          "tag": "BUTTON",
+          "left": 1006.953125,
+          "right": 1083.953125,
+          "top": 541.03125,
+          "bottom": 749.03125,
+          "width": 77,
+          "height": 208,
+          "fontSize": 26.18,
+          "pointer": true
+        },
+        {
+          "id": 4,
+          "title": "国色倾城",
+          "tag": "BUTTON",
+          "left": 1362.96875,
+          "right": 1439.96875,
+          "top": 541.03125,
+          "bottom": 749.03125,
+          "width": 77,
+          "height": 208,
+          "fontSize": 26.18,
+          "pointer": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "real-perspective-camera-and-continuous-environment",
+      "before": {
+        "x": -0.08167590140439127,
+        "y": 0.046572241359705224,
+        "z": 18
+      },
+      "after": {
+        "x": 0.07691017441053775,
+        "y": 0.04784589281732812,
+        "z": 18
+      },
+      "passed": true
+    },
+    {
+      "test": "hover-and-real-keyboard-focus-feedback",
+      "normal": {
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "filter": "none",
+        "outline": "none",
+        "arrow": "matrix(1, 0, 0, 1, -16.5547, 0)"
+      },
+      "hovered": {
+        "transform": "matrix(1, 0, 0, 1, 0, -5)",
+        "filter": "brightness(1.035) drop-shadow(rgba(112, 83, 50, 0.333) 0px 6px 4px)",
+        "outline": "none",
+        "arrow": "matrix(1, 0, 0, 1, -14.5547, 0)"
+      },
+      "focused": {
+        "transform": "matrix(1, 0, 0, 1, 0, -5)",
+        "filter": "brightness(1.035) drop-shadow(rgba(112, 83, 50, 0.333) 0px 6px 4px)",
+        "outline": "solid",
+        "arrow": "matrix(1, 0, 0, 1, -14.5547, 0)"
+      },
+      "passed": true
+    },
+    {
+      "test": "native-button-layout-1440x900",
+      "items": [
+        {
+          "id": 1,
+          "title": "神都花事",
+          "tag": "BUTTON",
+          "left": 216.0625,
+          "right": 282.375,
+          "top": 507.703125,
+          "bottom": 686.828125,
+          "width": 66.3125,
+          "height": 179.125,
+          "fontSize": 22.5474,
+          "pointer": true
+        },
+        {
+          "id": 2,
+          "title": "花入万家",
+          "tag": "BUTTON",
+          "left": 551,
+          "right": 617.3125,
+          "top": 512.59375,
+          "bottom": 691.71875,
+          "width": 66.3125,
+          "height": 179.125,
+          "fontSize": 22.5474,
+          "pointer": true
+        },
+        {
+          "id": 3,
+          "title": "锦绣花意",
+          "tag": "BUTTON",
+          "left": 869.515625,
+          "right": 935.828125,
+          "top": 512.515625,
+          "bottom": 691.640625,
+          "width": 66.3125,
+          "height": 179.125,
+          "fontSize": 22.5474,
+          "pointer": true
+        },
+        {
+          "id": 4,
+          "title": "国色倾城",
+          "tag": "BUTTON",
+          "left": 1175.1875,
+          "right": 1241.5,
+          "top": 512.421875,
+          "bottom": 691.546875,
+          "width": 66.3125,
+          "height": 179.125,
+          "fontSize": 22.5474,
+          "pointer": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "native-button-layout-1920x1080",
+      "items": [
+        {
+          "id": 1,
+          "title": "神都花事",
+          "tag": "BUTTON",
+          "left": 288.4453125,
+          "right": 376.8046875,
+          "top": 618.59375,
+          "bottom": 857.3125,
+          "width": 88.359375,
+          "height": 238.71875,
+          "fontSize": 30.0472,
+          "pointer": true
+        },
+        {
+          "id": 2,
+          "title": "花入万家",
+          "tag": "BUTTON",
+          "left": 734.7578125,
+          "right": 823.1171875,
+          "top": 623.46875,
+          "bottom": 862.1875,
+          "width": 88.359375,
+          "height": 238.71875,
+          "fontSize": 30.0472,
+          "pointer": true
+        },
+        {
+          "id": 3,
+          "title": "锦绣花意",
+          "tag": "BUTTON",
+          "left": 1159.2265625,
+          "right": 1247.5859375,
+          "top": 623.359375,
+          "bottom": 862.078125,
+          "width": 88.359375,
+          "height": 238.71875,
+          "fontSize": 30.0472,
+          "pointer": true
+        },
+        {
+          "id": 4,
+          "title": "国色倾城",
+          "tag": "BUTTON",
+          "left": 1566.5859375,
+          "right": 1654.9453125,
+          "top": 623.234375,
+          "bottom": 861.953125,
+          "width": 88.359375,
+          "height": 238.71875,
+          "fontSize": 30.0472,
+          "pointer": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "native-button-layout-375x800",
+      "items": [
+        {
+          "id": 1,
+          "title": "神都花事",
+          "tag": "BUTTON",
+          "left": 75.75,
+          "right": 135.75,
+          "top": 433,
+          "bottom": 595.0625,
+          "width": 60,
+          "height": 162.0625,
+          "fontSize": 20.4,
+          "pointer": true
+        },
+        {
+          "id": 2,
+          "title": "花入万家",
+          "tag": "BUTTON",
+          "left": 239.25,
+          "right": 299.25,
+          "top": 438,
+          "bottom": 600.0625,
+          "width": 60,
+          "height": 162.0625,
+          "fontSize": 20.4,
+          "pointer": true
+        },
+        {
+          "id": 3,
+          "title": "锦绣花意",
+          "tag": "BUTTON",
+          "left": 75.75,
+          "right": 135.75,
+          "top": 620.0625,
+          "bottom": 782.125,
+          "width": 60,
+          "height": 162.0625,
+          "fontSize": 20.4,
+          "pointer": true
+        },
+        {
+          "id": 4,
+          "title": "国色倾城",
+          "tag": "BUTTON",
+          "left": 239.25,
+          "right": 299.25,
+          "top": 620.0625,
+          "bottom": 782.125,
+          "width": 60,
+          "height": 162.0625,
+          "fontSize": 20.4,
+          "pointer": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "native-button-layout-620x360",
+      "items": [
+        {
+          "id": 1,
+          "title": "神都花事",
+          "tag": "BUTTON",
+          "left": 85.28125,
+          "right": 129.28125,
+          "top": 202.015625,
+          "bottom": 320.859375,
+          "width": 44,
+          "height": 118.84375,
+          "fontSize": 16,
+          "pointer": true
+        },
+        {
+          "id": 2,
+          "title": "花入万家",
+          "tag": "BUTTON",
+          "left": 229.46875,
+          "right": 273.46875,
+          "top": 206.96875,
+          "bottom": 325.8125,
+          "width": 44,
+          "height": 118.84375,
+          "fontSize": 16,
+          "pointer": true
+        },
+        {
+          "id": 3,
+          "title": "锦绣花意",
+          "tag": "BUTTON",
+          "left": 366.609375,
+          "right": 410.609375,
+          "top": 206.9375,
+          "bottom": 325.78125,
+          "width": 44,
+          "height": 118.84375,
+          "fontSize": 16,
+          "pointer": true
+        },
+        {
+          "id": 4,
+          "title": "国色倾城",
+          "tag": "BUTTON",
+          "left": 498.234375,
+          "right": 542.234375,
+          "top": 206.90625,
+          "bottom": 325.75,
+          "width": 44,
+          "height": 118.84375,
+          "fontSize": 16,
+          "pointer": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "off-and-system-reduce-stop-webgl-and-css-loops",
+      "offTime": 9.157900000000009,
+      "reducedTime": 9.214900000000009,
+      "passed": true
+    },
+    {
+      "test": "keyboard-enter-selects-associated-chapter",
+      "hash": "#chapter-2",
+      "passed": true
+    },
+    {
+      "test": "phone-touch-selects-associated-chapter",
+      "hash": "#chapter-3",
+      "passed": true
+    },
+    {
+      "test": "real-glsl-link-failure-cannot-unlock-entries-and-retry-recovers",
+      "diagnostics": [
+        "Fragment shader is not compiled.\n\nERROR: 0:67: 'INTENTIONAL_PROJECTION_SHADER_FAILURE' : syntax error\n"
+      ],
+      "passed": true
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "badResponses": [],
+  "expectedShaderErrors": [],
+  "referenceSha256": "5ddde6154a57aa96bec01bdcb2f2e85bf0599ff28b01439988355768d1639f27",
+  "url": "http://127.0.0.1:55414/",
+  "completedAt": "2026-10-22T05:08:26.887Z"
+}

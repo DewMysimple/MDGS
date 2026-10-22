@@ -1,114 +1,112 @@
 import { useEffect, useRef, useState } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
+import '../styles/audio-controller.css';
 
-/** A quiet, locally synthesised pentatonic soundscape. No network audio is used. */
-export default function AudioController() {
+type Playback = 'off' | 'loading' | 'playing' | 'paused' | 'error';
+const volumeKey = 'guose-fanghua:music-volume';
+const musicUrl = `${import.meta.env.BASE_URL}audio/peony-guzheng-original.mp3`;
+
+/** A local original score, with a synthesized guzheng-inspired plucked timbre.
+ * Playback can only be enabled by the user; hiding/leaving the world suspends
+ * the same clock, and disabling/unmounting releases the graph and fetch. */
+export default function AudioController({ active = true }: { active?: boolean }) {
   const [enabled, setEnabled] = useState(false);
+  const [playback, setPlayback] = useState<Playback>('off');
+  const [volume, setVolume] = useState(() => {
+    try { const value = Number(localStorage.getItem(volumeKey)); return localStorage.getItem(volumeKey) !== null && Number.isFinite(value) ? Math.min(100, Math.max(0, value)) : 40; }
+    catch { return 40; }
+  });
   const contextRef = useRef<AudioContext | null>(null);
-  const timerRef = useRef<number | undefined>(undefined);
-  const generationRef = useRef(0);
-  const startingRef = useRef(false);
-  const [unavailable, setUnavailable] = useState(false);
+  const sourceRef = useRef<AudioBufferSourceNode | null>(null);
+  const gainRef = useRef<GainNode | null>(null);
+  const requestRef = useRef<AbortController | null>(null);
+  const enabledRef = useRef(false), activeRef = useRef(active), mountedRef = useRef(true);
+  const volumeRef = useRef(volume), generationRef = useRef(0), activityRef = useRef(0);
+  const synchronizeRef = useRef<() => void>(() => {});
+  activeRef.current = active;
 
-  const dispose = () => {
-    generationRef.current += 1;
-    window.clearInterval(timerRef.current);
-    timerRef.current = undefined;
+  function dispose() {
+    generationRef.current++; activityRef.current++;
+    requestRef.current?.abort(); requestRef.current = null;
+    const source = sourceRef.current; sourceRef.current = null;
+    if (source) { try { source.stop(); } catch { /* Already stopped or not started. */ } source.disconnect(); }
+    gainRef.current?.disconnect(); gainRef.current = null;
+    const context = contextRef.current; contextRef.current = null;
+    if (context && context.state !== 'closed') void context.close().catch(() => {});
+  }
+
+  async function synchronize() {
     const context = contextRef.current;
-    contextRef.current = null;
-    if (context && context.state !== 'closed') void context.close();
-  };
+    if (!enabledRef.current || !context || !sourceRef.current || context.state === 'closed') return;
+    const ticket = ++activityRef.current, generation = generationRef.current;
+    const shouldPlay = activeRef.current && !document.hidden;
+    try {
+      await (shouldPlay ? context.resume() : context.suspend());
+      if (mountedRef.current && ticket === activityRef.current && generation === generationRef.current) setPlayback(shouldPlay ? 'playing' : 'paused');
+    } catch {
+      if (mountedRef.current && ticket === activityRef.current && generation === generationRef.current) setPlayback('paused');
+    }
+  }
+  synchronizeRef.current = () => { void synchronize(); };
 
-  useEffect(() => () => dispose(), []);
+  useEffect(() => {
+    mountedRef.current = true;
+    const visibility = () => synchronizeRef.current();
+    document.addEventListener('visibilitychange', visibility);
+    return () => { mountedRef.current = false; enabledRef.current = false; document.removeEventListener('visibilitychange', visibility); dispose(); };
+  }, []);
+  useEffect(() => { synchronizeRef.current(); }, [active, enabled]);
 
   async function toggle() {
-    if (startingRef.current) return;
-    if (enabled) {
-      dispose();
-      setEnabled(false);
-      return;
+    if (enabledRef.current) {
+      enabledRef.current = false; dispose(); setEnabled(false); setPlayback('off'); return;
     }
-    startingRef.current = true;
+    if (!activeRef.current) return;
+    const generation = ++generationRef.current;
+    enabledRef.current = true; setEnabled(true); setPlayback('loading');
+    const request = new AbortController(); requestRef.current = request;
     try {
-      const generation = ++generationRef.current;
-      const context = new AudioContext();
-      contextRef.current = context;
+      // Creating/resuming directly in this click grants the initial audio gesture.
+      const context = new AudioContext(); contextRef.current = context;
       await context.resume();
-      if (generation !== generationRef.current || context.state === 'closed') {
-        if (context.state !== 'closed') void context.close();
-        return;
-      }
-      const master = context.createGain();
-      master.gain.value = 0.18;
-      master.connect(context.destination);
-      const convolver = context.createConvolver();
-      const impulse = context.createBuffer(2, context.sampleRate * 2.8, context.sampleRate);
-      for (let channel = 0; channel < 2; channel++) {
-        const data = impulse.getChannelData(channel);
-        for (let index = 0; index < data.length; index++) {
-          data[index] = (Math.random() * 2 - 1) * Math.pow(1 - index / data.length, 3.5);
-        }
-      }
-      convolver.buffer = impulse;
-      const wet = context.createGain();
-      wet.gain.value = 0.28;
-      convolver.connect(wet);
-      wet.connect(master);
-      const notes = [293.665, 329.628, 369.994, 440, 493.883];
-      let noteIndex = 0;
-      const playTone = () => {
-        if (context.state === 'closed') return;
-        const time = context.currentTime;
-        const frequency = notes[[0, 3, 1, 4, 2, 3, 0, 2][noteIndex++ % 8]];
-        const envelope = context.createGain();
-        envelope.gain.setValueAtTime(0, time);
-        envelope.gain.linearRampToValueAtTime(0.18, time + 0.08);
-        envelope.gain.exponentialRampToValueAtTime(0.001, time + 6);
-        envelope.gain.linearRampToValueAtTime(0, time + 7);
-        envelope.connect(master);
-        envelope.connect(convolver);
-        [1, 2.001, 3.997].forEach((ratio, index) => {
-          const oscillator = context.createOscillator();
-          const harmonic = context.createGain();
-          oscillator.type = 'sine';
-          oscillator.frequency.value = frequency * ratio;
-          harmonic.gain.value = [1, 0.22, 0.045][index];
-          oscillator.connect(harmonic);
-          harmonic.connect(envelope);
-          oscillator.start(time);
-          oscillator.stop(time + 7.2);
-          oscillator.onended = () => {
-            oscillator.disconnect();
-            harmonic.disconnect();
-            if (index === 2) envelope.disconnect();
-          };
-        });
-      };
-      playTone();
-      timerRef.current = window.setInterval(playTone, 4600);
-      setEnabled(true);
-      setUnavailable(false);
+      if (generation !== generationRef.current || !mountedRef.current) return;
+      const response = await fetch(musicUrl, { signal: request.signal });
+      if (!response.ok) throw new Error('The local accompaniment could not be loaded.');
+      const buffer = await context.decodeAudioData(await response.arrayBuffer());
+      if (generation !== generationRef.current || !mountedRef.current || context.state === 'closed') return;
+      requestRef.current = null;
+      const source = context.createBufferSource(), gain = context.createGain();
+      source.buffer = buffer; source.loop = true; source.loopStart = 0; source.loopEnd = buffer.duration;
+      gain.gain.setValueAtTime(0, context.currentTime);
+      gain.gain.linearRampToValueAtTime(volumeRef.current / 100, context.currentTime + .16);
+      source.connect(gain); gain.connect(context.destination);
+      sourceRef.current = source; gainRef.current = gain; source.start();
+      await synchronize();
     } catch {
-      dispose();
-      setUnavailable(true);
-      setEnabled(false);
-    } finally {
-      startingRef.current = false;
+      if (generation !== generationRef.current || !mountedRef.current) return;
+      enabledRef.current = false; dispose(); setEnabled(false); setPlayback('error');
     }
   }
 
-  return (
-    <button
-      className={`utility-button audio-button${enabled ? ' is-active' : ''}`}
-      type="button"
-      onClick={() => void toggle()}
-      aria-pressed={enabled}
-      aria-label={enabled ? '关闭五声音阶环境声' : '开启五声音阶环境声'}
-      title={unavailable ? '当前浏览器未能启用声音，可再次尝试' : enabled ? '关闭五声音阶环境声' : '开启五声音阶环境声'}
-    >
+  function changeVolume(value: number) {
+    volumeRef.current = value; setVolume(value);
+    try { localStorage.setItem(volumeKey, String(value)); } catch { /* Session volume still works. */ }
+    const gain = gainRef.current, context = contextRef.current;
+    if (gain && context && context.state !== 'closed') {
+      gain.gain.cancelScheduledValues(context.currentTime);
+      gain.gain.setTargetAtTime(value / 100, context.currentTime, .035);
+    }
+  }
+
+  const label = enabled ? '关闭古筝意境配乐' : playback === 'error' ? '重试古筝意境配乐' : '开启古筝意境配乐';
+  return <span className="audio-control" data-audio-state={playback} data-audio-enabled={enabled}>
+    <button className={`utility-button audio-button${enabled ? ' is-active' : ''}`} type="button" onClick={() => void toggle()}
+      disabled={!active} aria-pressed={enabled} aria-label={label} title={playback === 'error' ? '配乐暂未载入，轻触重试' : '原创古筝意境配乐'}>
       {enabled ? <Volume2 size={17} strokeWidth={1.5} /> : <VolumeX size={17} strokeWidth={1.5} />}
-      <span>{unavailable ? '重试声音' : enabled ? '听音中' : '听音'}</span>
-      {enabled && <span className="sound-indicator" aria-hidden="true"><i /><i /><i /></span>}
+      <span>{playback === 'loading' ? '调弦中' : playback === 'error' ? '重试配乐' : '古筝配乐'}</span>
+      {playback === 'playing' && <span className="sound-indicator" aria-hidden="true"><i /><i /><i /></span>}
     </button>
-  );
+    {enabled && <label className="audio-volume"><span>音量</span><input type="range" min="0" max="100" step="1" value={volume} onChange={event => changeVolume(Number(event.target.value))} aria-label="古筝配乐音量" /><output>{volume}</output></label>}
+    <span className="visually-hidden" role="status">{playback === 'loading' ? '正在准备原创古筝意境配乐' : playback === 'error' ? '配乐未能载入，可轻触重试' : playback === 'paused' ? '画卷暂歇，配乐已暂停' : playback === 'playing' ? '原创古筝意境配乐正在循环播放' : '配乐已关闭'}</span>
+  </span>;
 }
