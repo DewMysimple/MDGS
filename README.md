@@ -84,7 +84,7 @@ node scripts/validate-new-scroll-journey.mjs
 
 已实际通过的新版证据：四源及四交付的独立 Blender 只读重开、几何/UV、相机和矩阵轨道、全整数帧可见性、当前文件 SHA、244张 WebP 完整像素解码；完整源区间和可见性映射；25段正文逐字、真实 prepared 时序与各响应式片段非零窗口校验；局部动效 CPU/状态校验；投影首页素材静态哈希与 TypeScript 检查。详见 [源与资产复核](reports/new-scrolls/audit-README.md)、[正文说明](reports/new-scrolls/narrative-README.md)、[动效说明](reports/new-scrolls/motion-README.md)。
 
-实际生产浏览器新版运行30组通过：桌面/手机80次节点、166个响应式正文片段全部访问，25段正文字符一致，末帧/落印、实际音乐解码与gain、off/reduce通过；首页13组通过。入卷最终8组覆盖真实四入口闭半全开、持续慢加载、cover503重试、取消旧manifest、手机音乐布局/音频503重试/返回清理。计时8组和生产子目录四卷/字体音乐/保留交互均通过，详见 [总验收页与8张全节点接触表](reports/new-scrolls/README.md)。提交、推送及 LFS 状态仍待最终核对，日志暂未完成。尚不宣称实体手机、Safari/Firefox、稳定60FPS、物理扬声器听感或线上部署通过。
+实际生产浏览器新版运行30组通过：桌面/手机80次节点、166个响应式正文片段全部访问，25段正文字符一致，末帧/落印、实际音乐解码与gain、off/reduce通过；首页13组通过。入卷最终8组覆盖真实四入口闭半全开、持续慢加载、cover503重试、取消旧manifest、手机音乐布局/音频503重试/返回清理。计时8组和生产子目录四卷/字体音乐/保留交互均通过，详见 [总验收页与8张全节点接触表](reports/new-scrolls/README.md)。功能与素材提交 `d849765` 已推送并核对 `origin/main` 一致，`git lfs fsck --objects HEAD` 通过；终态记录见 [Git交付证据](reports/new-scrolls/git-delivery.json)。尚不宣称实体手机、Safari/Firefox、稳定60FPS、物理扬声器听感或线上部署通过。
 
 ## 工程记忆
 
