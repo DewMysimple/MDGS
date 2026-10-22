@@ -3,6 +3,7 @@ import { SceneRenderer } from '../scene/SceneRenderer';
 import type { ScenePreparationState } from '../scene/SceneRenderer';
 import type { SceneManifest } from '../types';
 import type { NarrativeSpace } from '../scene/NarrativeSpace';
+import { dragGlide, wheelProgress } from '../hooks/scrollMotion';
 
 export type { ScenePreparationState } from '../scene/SceneRenderer';
 
@@ -17,16 +18,19 @@ export interface ScrollViewportProps {
   onPreparation?: (state: ScenePreparationState) => void;
   onReady?: () => void;
   onNarrativePlacement?: (placement: NarrativeSpace) => void;
+  wheelSpeed?: number;
 }
 
 export default function ScrollViewport({ chapterId, progress, motionEnabled, onMotionState, onNudge, onSeek, onManualInput, onManifest,
-  interactive = true, retryKey = 0, onPreparation, onReady, onNarrativePlacement }: ScrollViewportProps) {
+  interactive = true, retryKey = 0, onPreparation, onReady, onNarrativePlacement, wheelSpeed = 0.5 }: ScrollViewportProps) {
   const host = useRef<HTMLDivElement>(null);
   const engine = useRef<SceneRenderer | null>(null);
   const actions = useRef({ onNudge, onSeek, onManualInput, onManifest, onMotionState, onPreparation, onReady, onNarrativePlacement });
   actions.current = { onNudge, onSeek, onManualInput, onManifest, onMotionState, onPreparation, onReady, onNarrativePlacement };
   const interactiveRef = useRef(interactive);
   interactiveRef.current = interactive;
+  const wheelSpeedRef = useRef(wheelSpeed);
+  wheelSpeedRef.current = wheelSpeed;
   const [status, setStatus] = useState<string | null>('正在展卷');
   const [error, setError] = useState(false);
   const [ready, setReady] = useState(false);
@@ -87,19 +91,27 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
     });
     observer.observe(element);
     const wheel = (event: WheelEvent) => {
+      if (!interactiveRef.current || event.ctrlKey) return;
       event.preventDefault();
-      if (!interactiveRef.current) return;
-      cancelAnimationFrame(inertia.current);
+      cancelAnimationFrame(inertia.current); inertia.current = 0;
       actions.current.onManualInput();
-      const delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
-      const pixels = delta * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? element.clientHeight : 1);
-      actions.current.onNudge(pixels * 0.00016);
+      actions.current.onNudge(wheelProgress(event.deltaX, event.deltaY, event.deltaMode, element.clientHeight, wheelSpeedRef.current));
     };
     element.addEventListener('wheel', wheel, { passive: false });
+    const onVisibility = () => {
+      if (!document.hidden) return;
+      cancelAnimationFrame(inertia.current); inertia.current = 0;
+      if (drag.current && element.hasPointerCapture(drag.current.id)) element.releasePointerCapture(drag.current.id);
+      drag.current = null;
+      element.style.cursor = interactiveRef.current ? 'grab' : 'default';
+      renderer.setPointer(0, 0);
+    };
+    document.addEventListener('visibilitychange', onVisibility);
     return () => {
       alive = false; observer.disconnect();
       unsubscribeMotion?.();
       element.removeEventListener('wheel', wheel);
+      document.removeEventListener('visibilitychange', onVisibility);
       cancelAnimationFrame(inertia.current);
       renderer.dispose(); engine.current = null;
     };
@@ -110,7 +122,7 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
   useEffect(() => {
     engine.current?.setPreparationActive(!interactive);
     if (interactive) return;
-    cancelAnimationFrame(inertia.current);
+    cancelAnimationFrame(inertia.current); inertia.current = 0;
     const element = host.current;
     if (drag.current && element?.hasPointerCapture(drag.current.id)) element.releasePointerCapture(drag.current.id);
     drag.current = null;
@@ -135,6 +147,7 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
   return <div
     ref={host}
     className={`scene-viewport${drag.current ? ' is-dragging' : ''}${ready ? ' is-ready' : ''}`}
+    data-wheel-speed={wheelSpeed}
     style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden', touchAction: 'pan-y', cursor: interactive ? 'grab' : 'default', outlineOffset: -6 }}
     tabIndex={interactive ? 0 : -1}
     role="region"
@@ -145,7 +158,7 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
       if (!interactiveRef.current) return;
       if ((event.target as HTMLElement).closest('button, a, input')) return;
       if (event.button !== 0) return;
-      cancelAnimationFrame(inertia.current);
+      cancelAnimationFrame(inertia.current); inertia.current = 0;
       actions.current.onManualInput();
       drag.current = { id: event.pointerId, x: event.clientX, time: performance.now(), velocity: 0 };
       event.currentTarget.setPointerCapture(event.pointerId);
@@ -155,8 +168,8 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
       if (!interactiveRef.current) return;
       if (drag.current?.id === event.pointerId) {
         const time = performance.now();
-        const delta = (drag.current.x - event.clientX) / event.currentTarget.clientWidth * 0.2;
-        drag.current.velocity = delta / Math.max(12, time - drag.current.time);
+        const delta = (drag.current.x - event.clientX) / Math.max(1, event.currentTarget.clientWidth) * 0.2;
+        drag.current.velocity = Math.max(-0.12, Math.min(0.12, delta / Math.max(8, time - drag.current.time) * 1000));
         drag.current.x = event.clientX; drag.current.time = time;
         actions.current.onNudge(delta);
       } else {
@@ -166,21 +179,32 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
     }}
     onPointerUp={event => {
       if (drag.current?.id !== event.pointerId) return;
-      let velocity = Math.abs(performance.now() - drag.current.time) < 100 ? Math.max(-0.002, Math.min(0.002, drag.current.velocity * 16)) : 0;
+      let velocity = Math.abs(performance.now() - drag.current.time) < 100 ? drag.current.velocity : 0;
       drag.current = null;
-      event.currentTarget.releasePointerCapture(event.pointerId);
+      if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
       event.currentTarget.style.cursor = 'grab';
       if (!interactiveRef.current || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const glide = () => {
-        if (!interactiveRef.current) return;
-        velocity *= 0.88;
-        if (Math.abs(velocity) < 0.00001) return;
-        actions.current.onNudge(velocity);
+      let previous = performance.now();
+      const glide = (now: number) => {
+        inertia.current = 0;
+        if (!interactiveRef.current || document.hidden || Math.abs(velocity) < 0.0006) return;
+        const step = dragGlide(velocity, Math.min(0.25, Math.max(0, (now - previous) / 1000)));
+        previous = now; velocity = step.velocity;
+        actions.current.onNudge(step.distance);
         inertia.current = requestAnimationFrame(glide);
       };
       inertia.current = requestAnimationFrame(glide);
     }}
-    onPointerCancel={event => { drag.current = null; event.currentTarget.style.cursor = 'grab'; }}
+    onPointerCancel={event => {
+      cancelAnimationFrame(inertia.current); inertia.current = 0;
+      drag.current = null;
+      if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+      event.currentTarget.style.cursor = interactiveRef.current ? 'grab' : 'default';
+    }}
+    onLostPointerCapture={event => {
+      if (drag.current?.id !== event.pointerId) return;
+      drag.current = null; event.currentTarget.style.cursor = interactiveRef.current ? 'grab' : 'default';
+    }}
     onPointerLeave={() => engine.current?.setPointer(0, 0)}
     onKeyDown={event => {
       if (!interactiveRef.current) return;

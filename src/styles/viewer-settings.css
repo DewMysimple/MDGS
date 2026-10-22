@@ -1,0 +1,47 @@
+.peony-experience .app-shell .site-header{grid-template-columns:minmax(170px,1fr) minmax(145px,.7fr) auto auto 48px;gap:12px}
+.settings-button{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:0;background:none;color:#79583f;font-size:14px;cursor:pointer;min-height:36px;padding:5px 9px;white-space:nowrap}
+.viewer-settings{position:fixed;inset:0;margin:auto;width:min(680px,calc(100vw - 28px));max-width:none;max-height:min(90dvh,850px);padding:0;border:1px solid #aa8d6599;border-radius:12px;color:#59452f;background:#f4ecdc;box-shadow:0 20px 80px #261b1755;overflow:hidden;overscroll-behavior:contain}
+.viewer-settings[open]{display:flex;flex-direction:column}
+.viewer-settings::backdrop{background:#201b1959}
+.viewer-settings button,.viewer-settings input{accent-color:#986043}
+.settings-heading,.settings-footer{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 24px;background:rgb(var(--text-plate-rgb,247 239 223) / var(--text-plate-opacity,.8));flex:none}
+.settings-heading{border-bottom:1px solid rgb(140 108 69 / var(--text-plate-border-opacity,0))}
+.settings-eyebrow{font-size:11px;letter-spacing:.24em;color:#93734d}
+.settings-heading h2{display:flex;align-items:center;gap:10px;font-size:25px;font-weight:400;margin:4px 0 0;letter-spacing:.18em}
+.settings-body{padding:0 24px 24px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;min-height:0}
+.settings-intro,.settings-help{font-size:13px;line-height:1.8;color:#795f44;margin:16px 0}
+.settings-body h3{font-size:19px;letter-spacing:.12em;font-weight:400;margin:22px 0 4px}
+.settings-help{margin:6px 0 16px}
+.settings-chapters{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.settings-chapters fieldset{min-width:0;margin:0;padding:8px 12px 12px;border:1px solid rgb(140 108 69 / var(--text-plate-border-opacity,0));border-radius:var(--text-plate-radius,0px);background:rgb(var(--text-plate-rgb,247 239 223) / var(--text-plate-opacity,.8))}
+.settings-chapters fieldset.is-current{border-color:#a56549}
+.settings-chapters legend{font-size:15px;padding:0 5px;background:rgb(var(--text-plate-rgb,247 239 223) / var(--text-plate-opacity,.8));border-radius:3px}
+.settings-chapters legend small{font-size:10px;color:#9d5036;margin-left:8px}
+.settings-range{display:block;margin:9px 0 0;font-size:12px}
+.settings-range>span{display:flex;align-items:center;justify-content:space-between;gap:8px;line-height:1.8;flex-wrap:wrap}
+.settings-range output{color:#905237;font-variant-numeric:tabular-nums;font-size:12px}
+.settings-range input{display:block;width:100%;min-height:30px;margin:0;cursor:pointer}
+.settings-text{margin-top:22px;padding-top:2px;border-top:1px solid #bda88966}
+.settings-text>.settings-range,.settings-color{padding:6px 10px;border-radius:var(--text-plate-radius,0px);background:rgb(var(--text-plate-rgb,247 239 223) / var(--text-plate-opacity,.8))}
+.settings-color,.settings-color>span:last-child{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px}
+.settings-color select{min-width:86px;height:32px;padding:2px 8px;background:var(--text-plate-fill);color:#59452f;border:1px solid #b49d7a;cursor:pointer}
+.settings-color output{font-size:12px;color:#795f44}
+.settings-preview{margin-top:18px;padding:24px;background:repeating-linear-gradient(135deg,#ab8b70 0 10px,#e2c59f 10px 20px);border-radius:6px;text-align:center}
+.settings-preview>span,.settings-preview>p,.settings-preview>small{display:table;margin:6px auto;background:rgb(var(--text-plate-rgb,247 239 223) / var(--text-plate-opacity,.8));padding:var(--text-plate-padding,12px);border:1px solid rgb(140 108 69 / var(--text-plate-border-opacity,0));border-radius:var(--text-plate-radius,0px)}
+.settings-preview>p{font-size:25px;letter-spacing:.12em}.settings-preview>small{font-size:11px}
+.settings-footer{border-top:1px solid #bda88966}
+.settings-footer .text-button{display:inline-flex;align-items:center;gap:8px;font-size:13px}
+.settings-done{border:1px solid #a18056;border-radius:5px;background:#976142;color:#fff6e4;cursor:pointer;padding:8px 22px;font-size:14px}
+.viewer-settings :focus-visible,.settings-button:focus-visible{outline:2px solid #9d5139;outline-offset:3px}
+@media(max-width:1100px) and (min-width:701px){.peony-experience .app-shell .site-header{grid-template-columns:minmax(150px,1fr) 135px auto auto 38px;gap:5px}.peony-experience .app-shell .chapter-link{padding-inline:5px;font-size:12px}.peony-experience .app-shell .viewer-work-title{font-size:24px}.peony-experience .app-shell .brand-wordmark{font-size:24px}.settings-button{font-size:12px;padding-inline:5px}}
+@media(min-width:701px) and (max-width:920px){.peony-experience .app-shell{--header-height:112px}.peony-experience .app-shell .site-header{grid-template-columns:1fr auto auto;grid-template-rows:46px 25px 34px;gap:0 10px}.peony-experience .app-shell .brand{grid-column:1;grid-row:1}.peony-experience .app-shell .settings-button{grid-column:2;grid-row:1}.peony-experience .app-shell .fullscreen-button{grid-column:3;grid-row:1}.peony-experience .app-shell .viewer-work-title{grid-column:1/-1;grid-row:2;font-size:20px;line-height:1.1;padding-block:0}.peony-experience .app-shell .viewer-work-title small{display:inline;font-size:11px;margin-right:9px}.peony-experience .app-shell .chapter-nav{grid-column:1/-1;grid-row:3;justify-content:space-between}.peony-experience .app-shell .chapter-link{flex:1;justify-content:center;font-size:14px}.peony-experience .app-shell .brand-wordmark{padding-block:0;line-height:1.15}.peony-experience .app-shell .brand-wordmark>span{line-height:1.3}}
+@media(max-width:700px){.peony-experience .app-shell .site-header{grid-template-columns:1fr auto auto;gap:0 10px}.peony-experience .app-shell .settings-button{grid-row:1;grid-column:2;font-size:13px}.peony-experience .app-shell .fullscreen-button{grid-column:3}.peony-experience .app-shell .viewer-work-title,.peony-experience .app-shell .chapter-nav{grid-column:1/-1}.settings-heading,.settings-footer{padding:14px 16px}.settings-body{padding:0 16px 16px}.settings-chapters{grid-template-columns:1fr}.viewer-settings{max-height:92dvh}.settings-range{font-size:13px}.settings-range input{min-height:36px}}
+@media(max-width:380px){.peony-experience .app-shell .site-header{gap:0 6px}.peony-experience .app-shell .brand-wordmark{font-size:21px}.peony-experience .app-shell .fullscreen-button>span{display:none}.peony-experience .app-shell .chapter-link{font-size:11px;gap:3px;padding-inline:2px}.peony-experience .app-shell .chapter-numeral{font-size:16px}.peony-experience .app-shell .settings-button{padding-inline:5px;font-size:12px}}
+@media(max-height:500px) and (orientation:landscape){.peony-experience .app-shell .site-header{display:flex}.settings-heading,.settings-footer{padding-block:8px}.settings-heading h2{font-size:20px}.settings-eyebrow{display:none}}
+@media(max-width:700px){.peony-experience .app-shell{--header-height:120px}.peony-experience .app-shell .site-header{grid-template-rows:54px 25px 34px}}
+@media(max-width:380px){.peony-experience .app-shell{--controls-height:173px}.peony-experience .app-shell:has(.audio-control[data-audio-enabled=true]){--controls-height:217px}}
+@media(max-height:500px) and (orientation:landscape){.peony-experience .app-shell{--header-height:60px}}
+@media(min-width:381px) and (max-height:500px) and (orientation:landscape){.peony-experience .app-shell{--controls-height:98px}}
+@media(min-width:701px) and (max-width:920px){.peony-experience .app-shell{--header-height:124px}.peony-experience .app-shell .site-header{grid-template-rows:58px 25px 34px}}
+@media(min-width:701px) and (max-width:1100px){.peony-experience .app-shell{--controls-height:104px}}
+@media(min-width:701px) and (max-width:920px){.peony-experience .app-shell .chapter-link{padding-block:2px}}

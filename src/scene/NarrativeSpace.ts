@@ -3,13 +3,20 @@ export interface NarrativeSpace {
   dense: boolean; orientation: 'vertical' | 'horizontal'; quietFraction: number;
 }
 
-/** Sample the actual rendered painting, rather than treating empty mesh bounds
- * as ink. Large transparent image sheets can contain excellent blank paper. */
-export function findNarrativeSpace(gl: WebGLRenderingContext | WebGL2RenderingContext, previous?: NarrativeSpace): NarrativeSpace {
-  const w=gl.drawingBufferWidth,h=gl.drawingBufferHeight;
-  const pixels=new Uint8Array(w*h*4);
-  gl.readPixels(0,0,w,h,gl.RGBA,gl.UNSIGNED_BYTE,pixels);
-  const portrait=w/h<1.15;
+export const isCompactNarrativeViewport = (width: number, height: number) => width < 900 || height < 400;
+
+/** Bound placement work independently of the display's size and pixel ratio. */
+export function narrativeSampleSize(width: number, height: number) {
+  const scale = Math.min(1, 256 / Math.max(1, width), 192 / Math.max(1, height));
+  return { width: Math.max(1, Math.round(width * scale)), height: Math.max(1, Math.round(height * scale)) };
+}
+
+/** Inspect a small, asynchronously read painting thumbnail. The pixel buffer
+ * belongs to SceneRenderer and is reused, never a full-screen GPU readback. */
+export function findNarrativeSpace(pixels: Uint8Array, w: number, h: number, previous?: NarrativeSpace, compact = false): NarrativeSpace {
+  // Thumbnail dimensions alone cannot reveal whether full-size characters fit
+  // in a short landscape viewport. The renderer supplies its real CSS size.
+  const portrait=compact || w/h<1.15;
   const regions=portrait
     ? [ {x:.045,y:.035,width:.91,height:.22}, {x:.045,y:.745,width:.91,height:.22} ]
     : [.035,.73].flatMap(x=>[.055,.35,.5].map(y=>({x,y,width:.235,height:.44})));

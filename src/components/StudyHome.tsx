@@ -3,9 +3,9 @@ import { chapters } from '../data/chapters';
 import { StudyRoomRenderer } from '../scene/StudyRoomRenderer';
 import '../styles/volume-study.css';
 
-export interface StudyHomeProps { phase: string; chapterId: number; onSelect: (id: number) => void; motionEnabled: boolean; onToggleMotion: () => void }
+export interface StudyHomeProps { phase: string; chapterId: number; onSelect: (id: number) => void; motionEnabled: boolean; onToggleMotion: () => void; onOpenSettings: () => void }
 
-export default function StudyHome({ phase, chapterId, onSelect, motionEnabled, onToggleMotion }: StudyHomeProps) {
+export default function StudyHome({ phase, chapterId, onSelect, motionEnabled, onToggleMotion, onOpenSettings }: StudyHomeProps) {
   const root = useRef<HTMLElement>(null), host = useRef<HTMLDivElement>(null), engine = useRef<StudyRoomRenderer | null>(null);
   const current = useRef({ phase, chapterId, onSelect, motionEnabled }); current.current = { phase, chapterId, onSelect, motionEnabled };
   const [hover, setHover] = useState<number | null>(null), [ready, setReady] = useState(false);
@@ -48,7 +48,7 @@ export default function StudyHome({ phase, chapterId, onSelect, motionEnabled, o
         <span className={`study-plaque-tassel tassel-${i}`} aria-hidden="true" />
       </button>
     </div>)}</div>
-    <header className="study-small-controls"><span>国色长卷 <i>·</i> 入境</span><button type="button" ref={aboutTrigger} onClick={() => setAbout(true)} disabled={!home}>观卷小记</button><button type="button" className="study-motion-toggle" onClick={onToggleMotion} disabled={!home} aria-label="书房环境动画" aria-pressed={motionEnabled}>环境动效 <b>{motionEnabled ? '开' : '关'}</b></button></header>
+    <header className="study-small-controls"><span>国色长卷 <i>·</i> 入境</span><button type="button" onClick={onOpenSettings} disabled={!home} aria-label="打开设置" aria-haspopup="dialog">设置</button><button type="button" ref={aboutTrigger} onClick={() => setAbout(true)} disabled={!home}>观卷小记</button><button type="button" className="study-motion-toggle" onClick={onToggleMotion} disabled={!home} aria-label="书房环境动画" aria-pressed={motionEnabled}>环境动效 <b>{motionEnabled ? '开' : '关'}</b></button></header>
     <p className="study-visit-hint visually-hidden">择一卷而入，赏千年国色</p>
     {!ready && <div className={`study-material-state${error ? ' has-error' : ''}`} role={error ? 'alert' : 'status'}><strong>{error ? '书房画材暂未齐备' : '正在陈设书房'}</strong><p>{error || '铺开纸绢 · 安置案几 · 点亮天光'}</p>{error && <button type="button" onClick={() => setAttempt(value => value + 1)}>重新陈设</button>}</div>}
     <dialog className="study-note-dialog" ref={dialog} aria-labelledby="study-note-title" onCancel={event => { event.preventDefault(); closeAbout(); }} onClick={event => { if (event.target === event.currentTarget) closeAbout(); }}><button className="study-note-close" type="button" onClick={closeAbout} aria-label="关闭观卷小记">×</button><span>国 色 长 卷</span><h2 id="study-note-title">一卷锦绣，万象渐生</h2><p>移步书案，轻触绢纸题签，亲启神都花事、花入万家、锦绣花意、国色倾城四卷。入卷后可滚轮、拖拽、键盘游观，也可自动展卷，阅览画外拾遗。</p><p>清风、花影与青烟可随心开启或静赏。每次入卷，皆留一段舒卷赏画的时光。</p><button type="button" onClick={closeAbout}>归于书案</button></dialog>

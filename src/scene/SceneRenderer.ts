@@ -8,7 +8,7 @@ import { applyArtDirection } from './ArtDirectionLayer';
 import { StableLayerSorting } from './StableLayerSorting';
 import { activeSourceEdition, chapterAssetBase } from '../data/sourceEdition';
 import { createNewScrollAtmosphere } from './NewScrollAtmosphere';
-import { findNarrativeSpace, type NarrativeSpace } from './NarrativeSpace';
+import { findNarrativeSpace, isCompactNarrativeViewport, narrativeSampleSize, type NarrativeSpace } from './NarrativeSpace';
 
 interface TextureEntry { texture?: THREE.Texture; loading: boolean; lastSeen: number; bytes: number }
 interface SceneObject { mesh: THREE.Mesh; material: THREE.MeshBasicMaterial; url?: string; animation?: { progress: number; matrix: number[] }[]; visibility?: { progress: number; visible: boolean }[] }
@@ -47,6 +47,8 @@ export class SceneRenderer {
   private lastTextureCheck = 0;
   private textureRefreshPending = false;
   private currentVisible = new Set<string>();
+  private prefetched = new Set<string>();
+  private preloadCamera = new THREE.PerspectiveCamera();
   private frustum = new THREE.Frustum();
   private projection = new THREE.Matrix4();
   private q1 = new THREE.Quaternion();
@@ -83,16 +85,40 @@ export class SceneRenderer {
   private calligraphy: CalligraphyLayer;
   private narrativeSpace?: NarrativeSpace;
   private narrativeBucket = '';
+  private narrativeTarget?: THREE.WebGLRenderTarget;
+  private narrativePixels = new Uint8Array(0);
+  private narrativePending = false;
+  private narrativeGeneration = 0;
+  private narrativeTimer = 0;
+  private narrativeReads = 0;
+  private lastViewChange = 0;
+  private lastNarrativeReadProgress = 0;
+  private sourceProgress = 0;
+  private appliedSourceProgress = -1;
+  private travelDirection = 1;
+  private shaderFailed = false;
 
   constructor(private host: HTMLElement, private status: (message: string | null) => void,
     private preparation?: (state: ScenePreparationState) => void,
     private onNarrativeSpace?: (placement: NarrativeSpace) => void) {
     this.readingLayoutRoot = host.closest<HTMLElement>('.app-shell');
     this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'high-performance' });
+    this.renderer.debug.checkShaderErrors = true;
+    this.renderer.debug.onShaderError = () => {
+      this.shaderFailed = true;
+      this.ready = false;
+      this.firstFrameReady = false;
+      cancelAnimationFrame(this.frame); this.frame = 0;
+      this.status('画面暂时中断，请恢复画卷');
+      this.reportPreparation('error', 0, this.currentVisible.size, '画材暂未显现，请重新展卷。');
+    };
     this.renderer.setPixelRatio(Math.min(devicePixelRatio, 1.65));
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     this.renderer.setClearColor(0xf8f5ed, 0);
     this.renderer.sortObjects = true;
+    // Every source pose and independent motion explicitly updates its world
+    // matrix. Avoid recursively revisiting all static sheets on every draw.
+    this.scene.matrixWorldAutoUpdate = false;
     this.renderer.domElement.setAttribute('aria-label', '原始 Blender 分层国画场景');
     this.host.appendChild(this.renderer.domElement);
     this.contextExtension = this.renderer.getContext().getExtension('WEBGL_lose_context');
@@ -179,8 +205,10 @@ export class SceneRenderer {
   }
 
   resize(width: number, height: number) {
+    if (width === this.width && height === this.height) return;
     if (this.preparationActive && (width !== this.width || height !== this.height)) this.firstFrameReady = false;
     this.width = width; this.height = height;
+    this.lastViewChange = performance.now();
     this.updateReadingMinimum();
     this.renderer.setSize(width, height);
     this.calligraphy.resize(width, height);
@@ -199,6 +227,8 @@ export class SceneRenderer {
 
   setProgress(progress: number) {
     if (this.progress === progress) return;
+    this.travelDirection = progress > this.progress ? 1 : -1;
+    this.lastViewChange = performance.now();
     if (this.preparationActive) this.firstFrameReady = false;
     this.progress = clamp(progress); this.dirty = true; this.requestFrame();
   }
@@ -215,7 +245,7 @@ export class SceneRenderer {
   getMotionState(): SceneMotionState {
     const supported = (this.motionDirector?.profile ?? getMotionProfile(this.chapterId)).enabled;
     const reducedMotion = this.motionMedia.matches;
-    return { enabled: supported && this.loaded && this.motionRequested && !reducedMotion && !this.contextLost && !this.disposed && !document.hidden, reducedMotion, supported };
+    return { enabled: supported && this.loaded && this.motionRequested && !reducedMotion && !this.contextLost && !this.shaderFailed && !this.disposed && !document.hidden, reducedMotion, supported };
   }
 
   subscribeMotionState(callback: (state: SceneMotionState) => void) {
@@ -234,7 +264,7 @@ export class SceneRenderer {
 
   /** Explicit finite UI retries only; errors never requeue themselves on every frame. */
   retryFailedAssets(): boolean {
-    if (this.disposed || !this.manifest || !this.loaded) return false;
+    if (this.disposed || this.shaderFailed || !this.manifest || !this.loaded) return false;
     if (this.contextLost) {
       if (!this.contextExtension || this.contextRetryRequested) return false;
       try {
@@ -287,6 +317,14 @@ export class SceneRenderer {
     if (this.disposed) return;
     event.preventDefault();
     this.contextLost = true;
+    // Fence results from the lost GPU belong to a different resource lifetime.
+    // Detach their buffer so a late completion cannot write into a new sample.
+    this.narrativeGeneration++;
+    this.narrativePending = false;
+    this.narrativeBucket = '';
+    this.narrativeTarget?.dispose(); this.narrativeTarget = undefined;
+    this.narrativePixels = new Uint8Array(0);
+    window.clearTimeout(this.narrativeTimer); this.narrativeTimer = 0;
     if (this.preparationActive) this.firstFrameReady = false;
     this.contextRetryRequested = false;
     this.previousFrameTime = 0;
@@ -321,7 +359,7 @@ export class SceneRenderer {
   };
 
   private requestFrame() {
-    if (!this.frame && !this.disposed && !this.contextLost && !document.hidden) this.frame = requestAnimationFrame(this.render);
+    if (!this.frame && !this.disposed && !this.contextLost && !this.shaderFailed && !document.hidden) this.frame = requestAnimationFrame(this.render);
   }
 
   private bracket<T extends { progress: number }>(samples: T[], progress = this.progress) {
@@ -339,6 +377,7 @@ export class SceneRenderer {
     if (!this.manifest?.cameras.length) return;
     const { a, b, t } = this.bracket(this.manifest.cameras);
     const sourceProgress = THREE.MathUtils.lerp(a.sourceProgress ?? a.progress, b.sourceProgress ?? b.progress, t);
+    this.sourceProgress = sourceProgress;
     this.camera.position.fromArray(a.position).lerp(this.p2.fromArray(b.position), t);
     this.camera.quaternion.fromArray(a.quaternion).normalize().slerp(this.q2.fromArray(b.quaternion).normalize(), t);
     const fov = THREE.MathUtils.lerp(a.fov, b.fov, t);
@@ -364,16 +403,20 @@ export class SceneRenderer {
     } else this.camera.clearViewOffset();
     this.camera.updateProjectionMatrix();
     this.camera.updateMatrixWorld(true);
+    // Pointer parallax, texture arrivals and ambient frames do not advance the
+    // authored timeline. Keep their source matrices and visibility unchanged.
+    const sourceChanged = this.appliedSourceProgress !== sourceProgress;
+    this.appliedSourceProgress = sourceProgress;
     for (const object of this.objects) {
       const visibility = object.visibility;
-      let sourceVisible = true;
-      if (visibility?.length) {
+      let sourceVisible = sourceChanged ? true : object.mesh.userData.sourceVisible !== false;
+      if (sourceChanged && visibility?.length) {
         sourceVisible = visibility[0].visible;
         for (const key of visibility) { if (key.progress > sourceProgress + 1e-7) break; sourceVisible = key.visible; }
       }
       object.mesh.userData.sourceVisible = sourceVisible;
       object.mesh.visible = sourceVisible && !object.mesh.userData.artHidden && (!object.url || !!this.textures.get(object.url)?.texture);
-      if (!object.animation?.length) continue;
+      if (!sourceChanged || !object.animation?.length) continue;
       const { a: key1, b: key2, t: mix } = this.bracket(object.animation, sourceProgress);
       this.m1.fromArray(key1.matrix).decompose(this.p1, this.q1, this.s1);
       this.m2.fromArray(key2.matrix).decompose(this.p2, this.q2, this.s2);
@@ -385,9 +428,9 @@ export class SceneRenderer {
   }
 
   private updateTextures() {
-    if (this.disposed || this.contextLost) return;
+    if (this.disposed || this.contextLost || this.shaderFailed) return;
     // Enlarge the frustum to prefetch neighbouring planes before they enter the painting.
-    const preloadCamera = this.camera.clone();
+    const preloadCamera = this.preloadCamera.copy(this.camera);
     preloadCamera.fov = Math.min(125, this.camera.fov * 1.35);
     preloadCamera.aspect *= 1.45;
     preloadCamera.updateProjectionMatrix();
@@ -395,10 +438,22 @@ export class SceneRenderer {
     this.frustum.setFromProjectionMatrix(this.projection);
     const now = performance.now();
     this.currentVisible.clear();
+    this.prefetched.clear();
     for (const object of this.objects) {
-      if (!object.url || object.mesh.userData.sourceVisible === false) continue;
-      if (this.frustum.intersectsObject(object.mesh)) {
-        this.currentVisible.add(object.url);
+      if (!object.url) continue;
+      const sourceVisible = object.mesh.userData.sourceVisible !== false;
+      // Source-hidden sheets previously started loading only after their first
+      // visible frame. Warm a short authored interval without displaying them
+      // early or making future resources part of the entry readiness gate.
+      const nextSource = clamp(this.sourceProgress + this.travelDirection * .012);
+      let upcoming = false;
+      if (!sourceVisible && object.visibility?.length) {
+        for (const key of object.visibility) { if (key.progress > nextSource) break; upcoming = key.visible; }
+        upcoming ||= object.visibility.some(key => key.visible && key.progress >= Math.min(this.sourceProgress, nextSource) && key.progress <= Math.max(this.sourceProgress, nextSource));
+      }
+      if ((sourceVisible && this.frustum.intersectsObject(object.mesh)) || upcoming) {
+        if (sourceVisible) this.currentVisible.add(object.url);
+        else this.prefetched.add(object.url);
         const entry = this.textures.get(object.url);
         if (entry) entry.lastSeen = now;
         else if (!this.pending.has(object.url) && !this.errorUrls.has(object.url)) {
@@ -408,7 +463,7 @@ export class SceneRenderer {
     }
     this.pumpQueue();
     let totalBytes = [...this.textures.values()].reduce((sum, value) => sum + value.bytes, 0);
-    const oldTextures = [...this.textures.entries()].filter(([url, entry]) => !this.currentVisible.has(url) && !entry.loading).sort((a, b) => a[1].lastSeen - b[1].lastSeen);
+    const oldTextures = [...this.textures.entries()].filter(([url, entry]) => !this.currentVisible.has(url) && !this.prefetched.has(url) && !entry.loading).sort((a, b) => a[1].lastSeen - b[1].lastSeen);
     for (const [url, entry] of oldTextures) {
       if (totalBytes < 160 * 1024 * 1024 && now - entry.lastSeen < 12000) break;
       entry.texture?.dispose();
@@ -424,10 +479,8 @@ export class SceneRenderer {
       else if (waiting) this.reportPreparation('textures', loaded, this.currentVisible.size, '正在唤醒花影……');
       else if (this.width > 1 && this.height > 1) this.reportPreparation('first-frame', loaded, this.currentVisible.size, '山河已绘，正在点亮画境……');
     }
-    if (!waiting) {
-      this.ready = true;
-      this.status(this.errorUrls.size ? '部分画面资源未能加载，可重试补全' : null);
-    }
+    this.ready = !waiting;
+    if (!waiting) this.status(failed ? '部分画面资源未能加载，可重试补全' : null);
     this.updateDiagnostics();
   }
 
@@ -440,17 +493,23 @@ export class SceneRenderer {
   }
 
   private pumpQueue() {
-    if (this.disposed || this.contextLost) return;
+    if (this.disposed || this.contextLost || this.shaderFailed) return;
     let loadingCount = [...this.textures.values()].filter(entry => entry.loading).length;
+    let speculativeLoading = [...this.textures.entries()].filter(([url, entry]) => entry.loading && !this.currentVisible.has(url)).length;
+    // Newly exposed sheets take priority over speculative upcoming resources.
+    this.queue.sort((a, b) => Number(this.currentVisible.has(b)) - Number(this.currentVisible.has(a)));
     while (this.queue.length && loadingCount < 4) {
+      // Keep three download slots available for currently exposed artwork.
+      if (!this.currentVisible.has(this.queue[0]) && this.prefetched.has(this.queue[0]) && speculativeLoading >= 1) break;
       const url = this.queue.shift()!;
       this.pending.delete(url);
-      if (!this.currentVisible.has(url)) continue;
+      if (!this.currentVisible.has(url) && !this.prefetched.has(url)) continue;
       const entry: TextureEntry = { loading: true, lastSeen: performance.now(), bytes: 0 };
       this.textures.set(url, entry);
       loadingCount++;
+      if (!this.currentVisible.has(url)) speculativeLoading++;
       this.loader.load(url, texture => {
-        if (this.disposed) { texture.dispose(); return; }
+        if (this.disposed || this.shaderFailed) { texture.dispose(); entry.loading = false; return; }
         texture.colorSpace = THREE.SRGBColorSpace;
         texture.anisotropy = Math.min(4, this.renderer.capabilities.getMaxAnisotropy());
         texture.generateMipmaps = true;
@@ -467,19 +526,19 @@ export class SceneRenderer {
         this.pumpQueue();
         this.updateTextures();
       }, undefined, () => {
-        if (this.disposed) return;
+        if (this.disposed || this.shaderFailed) { entry.loading = false; return; }
         this.errorUrls.add(url);
         this.textures.delete(url);
         this.pumpQueue();
         this.updateTextures();
-        if (!this.contextLost) this.status('部分画面资源未能加载，可重试补全');
+        if (!this.contextLost && this.currentVisible.has(url)) this.status('部分画面资源未能加载，可重试补全');
       });
     }
   }
 
   private render = (now: number) => {
     this.frame = 0;
-    if (this.disposed || this.contextLost || document.hidden) return;
+    if (this.disposed || this.contextLost || this.shaderFailed || document.hidden) return;
     this.rafTicks++;
     const motion = this.getMotionState().enabled;
     // A media query can change before its asynchronous change event arrives.
@@ -506,14 +565,8 @@ export class SceneRenderer {
       if (!this.firstFrameReady) this.updateTextures();
       this.motionDirector?.update(this.camera, motion, this.progress);
       this.renderer.render(this.scene, this.camera);
-      if(this.manifest.sourceRevision && this.onNarrativeSpace && this.ready) {
-        const bucket=`${this.width}:${this.height}:${Math.floor(this.progress*24)}`;
-        if(this.narrativeBucket!==bucket) {
-          this.narrativeBucket=bucket;
-          this.narrativeSpace=findNarrativeSpace(this.renderer.getContext(),this.narrativeSpace);
-          this.onNarrativeSpace(this.narrativeSpace);
-        }
-      }
+      if (this.shaderFailed) return;
+      this.updateNarrativeSpace(now);
       this.calligraphy.render(this.camera, this.progress);
       this.dirty = false;
       this.lastAmbientFrame = now;
@@ -536,6 +589,61 @@ export class SceneRenderer {
     if (this.loaded && (visibleMotion || this.textureRefreshPending || this.dirty || pointerMoving)) this.requestFrame();
     this.updateDiagnostics(!!this.frame);
   };
+
+  private updateNarrativeSpace(now: number) {
+    if (!this.manifest?.sourceRevision || !this.onNarrativeSpace || !this.ready || this.narrativePending || this.progress >= .982) return;
+    const bucket = `${this.width}:${this.height}:${Math.floor(this.progress * 24)}`;
+    if (bucket === this.narrativeBucket) return;
+    window.clearTimeout(this.narrativeTimer);
+    this.narrativeTimer = 0;
+    // Placement should not chase each wheel/drag frame. A single timer asks for
+    // one final sample even when the painting has no ambient animation or RAF.
+    const delay = this.preparationActive ? 0 : Math.max(0, 180 - (now - this.lastViewChange));
+    if (delay) {
+      this.narrativeTimer = window.setTimeout(() => {
+        this.narrativeTimer = 0;
+        if (this.disposed || document.hidden) return;
+        this.dirty = true;
+        this.requestFrame();
+      }, delay);
+      return;
+    }
+    const { width, height } = narrativeSampleSize(this.width, this.height);
+    if (!this.narrativeTarget) {
+      this.narrativeTarget = new THREE.WebGLRenderTarget(width, height, { depthBuffer: true, stencilBuffer: false });
+      this.narrativeTarget.texture.colorSpace = THREE.SRGBColorSpace;
+    }
+    else if (this.narrativeTarget.width !== width || this.narrativeTarget.height !== height) this.narrativeTarget.setSize(width, height);
+    if (this.narrativePixels.length !== width * height * 4) this.narrativePixels = new Uint8Array(width * height * 4);
+    const previousTarget = this.renderer.getRenderTarget();
+    this.renderer.setRenderTarget(this.narrativeTarget);
+    this.renderer.render(this.scene, this.camera);
+    this.renderer.setRenderTarget(previousTarget);
+    this.narrativePending = true;
+    this.narrativeBucket = bucket;
+    this.narrativeReads++;
+    this.lastNarrativeReadProgress = this.progress;
+    const generation = this.narrativeGeneration, pixels = this.narrativePixels;
+    // WebGL2's fence-backed read avoids synchronously draining the display's
+    // GPU command queue. The thumbnail and its CPU buffer remain bounded.
+    this.renderer.readRenderTargetPixelsAsync(this.narrativeTarget, 0, 0, width, height, pixels).then(() => {
+      if (this.disposed || this.contextLost || generation !== this.narrativeGeneration) return;
+      const currentBucket = `${this.width}:${this.height}:${Math.floor(this.progress * 24)}`;
+      if (currentBucket !== bucket) { this.narrativeBucket = ''; return; }
+      this.narrativeSpace = findNarrativeSpace(pixels, width, height, this.narrativeSpace, isCompactNarrativeViewport(this.width, this.height));
+      this.onNarrativeSpace?.(this.narrativeSpace);
+    }).catch(() => {
+      // Placement is optional. A lost context must not turn it into a failed
+      // painting or an unbounded readback retry loop.
+      if (!this.contextLost && generation === this.narrativeGeneration) this.narrativeBucket = bucket;
+    }).finally(() => {
+      if (generation !== this.narrativeGeneration) return;
+      this.narrativePending = false;
+      if (`${this.width}:${this.height}:${Math.floor(this.progress * 24)}` !== bucket) this.narrativeBucket = '';
+      if (!this.disposed && !this.contextLost && this.narrativeBucket === '') { this.dirty = true; this.requestFrame(); }
+      if (!this.disposed) this.updateDiagnostics();
+    });
+  }
 
   /** Read-only canvas data is intentionally absent from the product interface. */
   private updateDiagnostics(throttled = false) {
@@ -567,6 +675,9 @@ export class SceneRenderer {
       textureBytes: String(Math.round(textureEntries.reduce((sum, entry) => sum + entry.bytes, 0))),
       textureFailed: String(this.errorUrls.size), loadingTextures: String(textureEntries.filter(entry => entry.loading).length),
       visibleTextures: String(this.currentVisible.size), queuedTextures: String(this.queue.length),
+      prefetchedTextures: String(this.prefetched.size),
+      narrativeReads: String(this.narrativeReads), narrativeReadPending: String(this.narrativePending),
+      narrativeSamplePixels: String(this.narrativePixels.length / 4), narrativeReadProgress: String(this.lastNarrativeReadProgress),
       drawCalls: String(this.renderer.info.render.calls), geometries: String(this.renderer.info.memory.geometries),
     });
   }
@@ -574,10 +685,12 @@ export class SceneRenderer {
   dispose() {
     if (this.disposed) return;
     this.disposed = true;
+    this.narrativeGeneration++;
     this.abort.abort();
     cancelAnimationFrame(this.frame);
     this.frame = 0;
     window.clearTimeout(this.recoveryTimer);
+    window.clearTimeout(this.narrativeTimer);
     document.removeEventListener('visibilitychange', this.onVisibility);
     this.motionMedia.removeEventListener('change', this.onMotionPreference);
     this.renderer.domElement.removeEventListener('webglcontextlost', this.onContextLost);
@@ -588,6 +701,7 @@ export class SceneRenderer {
     for (const { mesh, material } of this.objects) { mesh.geometry.dispose(); material.dispose(); }
     for (const entry of this.textures.values()) entry.texture?.dispose();
     this.calligraphy.dispose();
+    this.narrativeTarget?.dispose();
     this.textures.clear();
     this.pending.clear(); this.queue = []; this.currentVisible.clear();
     this.scene.clear();

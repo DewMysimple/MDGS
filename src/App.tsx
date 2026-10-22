@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { CSSProperties, KeyboardEvent } from 'react';
-import { ArrowRight, BookOpen, ChevronLeft, ChevronRight, Maximize, Minimize, Mouse, MoveHorizontal, Pause, Play, RotateCcw, Wind } from 'lucide-react';
+import { ArrowRight, BookOpen, ChevronLeft, ChevronRight, Maximize, Minimize, Mouse, MoveHorizontal, Pause, Play, RotateCcw, Settings, Wind } from 'lucide-react';
 import ScrollViewport from './components/ScrollViewport';
 import type { ViewportMotionState } from './components/ScrollViewport';
 import CulturePanel from './components/CulturePanel';
@@ -15,6 +15,8 @@ import type { SceneManifest } from './types';
 import NarrativeCalligraphy from './components/NarrativeCalligraphy';
 import { narrativeChapters } from './data/newNarrative';
 import type { NarrativeSpace } from './scene/NarrativeSpace';
+import ViewerSettingsPanel from './components/ViewerSettingsPanel';
+import { readViewerSettings, textPlateVariables, viewerSettingsKey } from './data/viewerSettings';
 import './styles.css';
 
 const ordinal = ['一', '二', '三', '四'];
@@ -35,13 +37,17 @@ export default function App() {
   const [studyVisited, setStudyVisited] = useState(() => journey.phase === 'HOME');
   useEffect(() => { if (journey.phase === 'HOME' || journey.phase === 'RETURNING_HOME') setStudyVisited(true); }, [journey.phase]);
   const [cultureOpen, setCultureOpen] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [settings, setSettings] = useState(readViewerSettings);
+  useEffect(() => { setSettingsOpen(false); }, [journey.phase, journey.attempt]);
   const [fullscreen, setFullscreen] = useState(Boolean(document.fullscreenElement));
   const [notice, setNotice] = useState('');
   const [narrativePlacement,setNarrativePlacement]=useState<NarrativeSpace>();
   const [motionEnabled, setMotionEnabled] = useState(readMotionPreference);
   const [motionState, setMotionState] = useState<ViewportMotionState>({ enabled: false, reducedMotion: matchMedia('(prefers-reduced-motion: reduce)').matches, supported: false });
   const [manifests, setManifests] = useState<Record<number, Pick<SceneManifest, 'id' | 'stops'>>>({});
-  const { progress, target, seek, nudge, playing, togglePlaying, stop } = useScrollController(chapterId);
+  const chapterSettings = settings.chapters[chapterId];
+  const { progress, target, seek, nudge, playing, togglePlaying, stop } = useScrollController(chapterId, { smoothingMs: chapterSettings.smoothingMs, active: journey.interactive });
   stopRef.current = stop;
   const chapterIndex = chapters.findIndex(item => item.id === chapterId);
   const chapter = chapters[chapterIndex];
@@ -52,6 +58,8 @@ export default function App() {
   const finished = progress === 1;
   const stageRef = useRef<HTMLDivElement>(null);
   const closeCulture = useCallback(() => setCultureOpen(false), []);
+  const closeSettings = useCallback(() => setSettingsOpen(false), []);
+  const openSettings = useCallback(() => { stopRef.current(); setCultureOpen(false); setSettingsOpen(true); }, []);
   const receiveMotionState = useCallback((state: ViewportMotionState) => setMotionState(state), []);
   const receiveManifest = useCallback((data: SceneManifest) => {
     setManifests(previous => ({ ...previous, [chapterId]: { id: data.id, stops: data.stops } }));
@@ -109,6 +117,11 @@ export default function App() {
     catch { /* Viewing and the current preference still work when storage is unavailable. */ }
   }, [motionEnabled]);
 
+  useEffect(() => {
+    try { localStorage.setItem(viewerSettingsKey, JSON.stringify(settings)); }
+    catch { /* Live settings remain usable when browser storage is unavailable. */ }
+  }, [settings]);
+
   function stageKeydown(event: KeyboardEvent<HTMLDivElement>) {
     if (!journey.interactive) return;
     if ((event.target as HTMLElement).closest('button, a, input, select, textarea')) return;
@@ -132,9 +145,9 @@ export default function App() {
   }
 
   return (
-    <div className={`peony-experience phase-${journey.phase.toLowerCase().replaceAll('_', '-')} ${motionEnabled ? '' : 'environment-off'}`} data-journey-phase={journey.phase}>
+    <div className={`peony-experience phase-${journey.phase.toLowerCase().replaceAll('_', '-')} ${motionEnabled ? '' : 'environment-off'}`} data-journey-phase={journey.phase} style={textPlateVariables(settings) as CSSProperties}>
     {studyVisited && <div className="journey-study" inert={journey.phase !== 'HOME'} aria-hidden={journey.phase !== 'HOME'}>
-      <StudyHome phase={journey.phase} chapterId={chapterId} onSelect={journey.select} motionEnabled={motionEnabled} onToggleMotion={() => setMotionEnabled(value => !value)} />
+      <StudyHome phase={journey.phase} chapterId={chapterId} onSelect={journey.select} motionEnabled={motionEnabled} onToggleMotion={() => setMotionEnabled(value => !value)} onOpenSettings={openSettings} />
     </div>}
     {journey.viewerMounted && <div className={`app-shell journey-viewer${journey.interactive ? ' is-interactive' : ''}`} inert={!journey.interactive} aria-hidden={!journey.interactive}>
       <ExhibitionAtmosphere />
@@ -157,6 +170,7 @@ export default function App() {
             ><span className="chapter-numeral">{item.numeral}</span><span className="chapter-nav-name">{item.title}</span></button>
           ))}
         </nav>
+        <button className="settings-button" type="button" onClick={openSettings} aria-label="打开设置" aria-haspopup="dialog"><Settings size={17} strokeWidth={1.4} /><span>设置</span></button>
         <span className="header-divider" />
         <button className="fullscreen-button icon-button" type="button" onClick={() => void toggleFullscreen()} aria-label={fullscreen ? '退出全屏' : '进入全屏'} title={fullscreen ? '退出全屏' : '全屏观画'}>
           {fullscreen ? <Minimize size={18} strokeWidth={1.4} /> : <Maximize size={18} strokeWidth={1.4} />}<span>{fullscreen ? '退出' : '全屏'}</span>
@@ -192,8 +206,9 @@ export default function App() {
                 onSeek={seek}
                 onManualInput={stop}
                 onManifest={receiveManifest}
+                wheelSpeed={chapterSettings.wheelSpeed}
               />
-              {manifest && <NarrativeCalligraphy chapterId={chapterId} progress={progress} stops={manifest.stops} placement={narrativePlacement} active={journey.interactive && !finished} />}
+              {manifest && <NarrativeCalligraphy chapterId={chapterId} progress={progress} stops={manifest.stops} placement={narrativePlacement} active={journey.interactive && !finished} platePadding={settings.textPlate.padding} />}
               {finished && (
                 <aside className="end-colophon" aria-label="卷末题跋">
                   <span className="end-seal" aria-hidden="true">阅<br />毕</span>
@@ -264,6 +279,7 @@ export default function App() {
       chapter={chapter} phase={journey.phase} preparation={journey.preparation} error={journey.error}
       onRetry={journey.retry} onReturn={returnToStudy} motionEnabled={motionEnabled}
       onFailure={journey.onPresentationFailure} />}
+    <ViewerSettingsPanel open={settingsOpen} chapterId={chapterId} settings={settings} onChange={setSettings} onClose={closeSettings} />
     </div>
   );
 }

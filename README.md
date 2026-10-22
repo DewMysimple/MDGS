@@ -2,7 +2,7 @@
 
 React、TypeScript、Vite 与 Three.js 数字手卷。首页以指定的浅淡工笔纸绢参考构图呈现书房与案上四卷，独立 HTML 题签依次进入神都花事、花入万家、锦绣花意、国色倾城。现行版本为 `peony-2026-10-21`，来自本轮“牡丹”目录的四份新版 Blender；旧版补绘和 canonical 保留作历史资料，不参与新世界构建。
 
-本轮新版世界、首页、真实入卷、手机音频异常、计时和子目录验收已通过，正在收尾 Git 交付。完整目标、证据及截图见 [本轮总验收](reports/new-scrolls/README.md)，不以旧版本报告证明新版通过。
+新版世界与参考投影首页的来源、既有验收及截图见 [新版交付记录](reports/new-scrolls/README.md)。2026-10-23 的滚动、文字底板和性能调整按当前代码另行验证，历史报告不能代替本次验证。
 
 ## 运行
 
@@ -42,9 +42,15 @@ npm run dev
 
 ## 游观、文字与配乐
 
-滚轮、拖拽、方向键、Home/End、时间轴与分镜继续控制真实画卷；自动展卷可暂停，手动输入接管，四卷会话进度独立保存。顶部显示当前卷名、四卷导航与返回书房。画心占据主要可用空间，手机另行取景并保留清晰入口。
+滚轮、拖拽、方向键、Home/End、时间轴与分镜继续控制真实画卷；自动展卷可暂停，手动输入接管，四卷会话进度独立保存。顶部显示当前卷名、四卷导航、设置与返回书房，首页右上角也可打开设置。画心占据主要可用空间，手机另行取景并保留清晰入口。
 
-主线正文只读提取自 `主线内容(2).docx`，25段按四卷6／6／6／7段逐字保留。`newNarrative.ts` 保存正文，`narrativeTrack.ts` 按新源节点顺序分配短题跋，并按字数保留最低阅读窗口，短句也留出渐显时间。测试直接使用实际 `prepareScene` 的当前时序，检查25段及各响应式片段均有非零区间。楷体由本地霞鹜文楷子集提供，许可证和来源在 `public/fonts/`；文字独立于原画，以650ms CSS 渐显渐隐，减少动态为180ms，不拦截游观输入。`NarrativeSpace` 采样实际 WebGL 画面，在候选区比较纸白与边缘密度后选择较安静位置；这是启发式避让，是否遮挡主体仍需逐景截图审阅。较密区域使用很淡的纸绢衬底。
+「设置」中四卷各有独立滚轮速度和平滑时间。默认每100 CSS像素滚轮输入推进全卷0.5%（此前为1.6%），可调0.1%—2%；默认使用180ms指数跟随，可调60—500ms。滚轮统一像素、行、页单位，限制异常大事件和连续输入积压，反向滚动立即切换目标方向；拖拽惯性按经过时间衰减，避免屏幕刷新率改变手感。平滑时间越长起停越柔和，越短越跟手；系统减少动态设置仍优先。参数即时生效，通过 `localStorage` 保存在当前浏览器，可恢复全部默认；画卷会话进度另存于 `sessionStorage`。
+
+题跋、导航、说明、控件等 HTML 文字统一常显微透明纸绢底，渐变纸色和柔化上下边缘沿用参考图的效果，文字保持自身不透明度。设置提供米白、素纸、暖绢、浅玉、素灰五种浅纸色，并公开纸底不透明度、留白、圆角和边框浓度。默认分别为80%、12px、0px、0%；可调范围为20%—100%、4—24px、0—20px、0%—60%。80%表示纸色最浓处的不透明度，渐变两侧与上下边缘更轻。默认无描边、圆角或纸底投影。正文分段容量随底板留白与可用区域重新计算，紧凑控件使用比例留白保持导航空间。
+
+主线正文只读提取自 `主线内容(2).docx`，25段按四卷6／6／6／7段逐字保留。`newNarrative.ts` 保存正文，`narrativeTrack.ts` 按新源节点顺序分配短题跋，并按字数保留最低阅读窗口，短句也留出渐显时间。测试直接使用实际 `prepareScene` 的当前时序，检查25段及各响应式片段均有非零区间。楷体由本地霞鹜文楷子集提供，许可证和来源在 `public/fonts/`；文字独立于原画，以650ms CSS 渐显渐隐，减少动态为180ms，不拦截游观输入。`NarrativeSpace` 在候选区比较纸白与边缘密度后选择较安静位置；这是启发式避让，是否遮挡主体仍需逐景截图审阅。
+
+画面留白分析使用保持比例、最大256×192像素的离屏缩略图和异步像素回读。游观期间保持既有题跋位置，视图停止变化180ms后再采样，准备阶段可立即采样；不在每次滚轮变化时同步读取完整画面。纹理按当前视野及短期源显隐预取，当前可见资源优先，不提前显示源隐藏物体。相机进度未变时复用源动画和显隐结果；静态或当前视野无活动轻动绑定时按需绘制，隐藏页面停止调度。实际表现仍取决于设备、视野和资源状态，不保证固定帧率。
 
 卷末退去正文，停止局部动效并显示大卷名、末句题跋与一次落印；保留再观和下一卷入口。局部动效只绑定经过纹理审阅的独立花瓣、少量飘带和灯笼，人物、建筑、组合画层保持源姿态；追加单瓣取自新版首卷真实纹理，按世界坐标加入同一资源和释放队列。
 
@@ -57,6 +63,9 @@ npm run dev
 | `src/scene/StudyRoomRenderer.ts`、`components/StudyHome.tsx` | 参考投影 relief、实体卷杆与题签 |
 | `src/hooks/useStudyJourney.ts`、`scene/ScrollUnfurlScene.ts` | 状态、最低展示与几何闭卷展开 |
 | `src/scene/SceneRenderer.ts`、`prepareScene.ts` | 新源几何、完整作者时序、流式纹理与可见性 |
+| `src/data/viewerSettings.ts`、`components/ViewerSettingsPanel.tsx` | 四卷独立参数、底板设置、校验与浏览器保存 |
+| `src/hooks/useScrollController.ts`、`hooks/scrollMotion.ts`、`components/ScrollViewport.tsx` | 时间步平滑、滚轮归一化、拖拽与输入积压限制 |
+| `src/styles/text-backplates.css`、`styles/viewer-settings.css`、`styles/narrative-calligraphy.css` | 统一文字底板、设置布局与题跋排版 |
 | `src/data/newNarrative.ts`、`narrativeTrack.ts`、`scene/NarrativeSpace.ts` | 本轮正文、节点与画面留白采样 |
 | `src/data/newMotionProfiles.ts`、`scene/NewScrollAtmosphere.ts` | 新源独立局部轻动 |
 | `scripts/new-scroll-sources.json` | 新四卷本地源位置 |
@@ -66,11 +75,14 @@ npm run dev
 
 重新制作资源需本机原始输入与 Blender/Python 依赖；先检查配置和源 SHA，再执行对应脚本。**旧 `build-reconstruction.mjs`、`build-blank-design.mjs`、`build-chapter-3-refinement.mjs` 只对应历史版，不得用于恢复当前新源。**旧交付来由保存在 [历史重构](reports/reconstruction/README.md)、[历史第三卷](reports/chapter-3-refinement/README.md) 和 [前轮首页](reports/study-faithful/README.md)。
 
-## 本轮验证与限制
+## 验证与限制
 
 ```powershell
 npm run build
 npm test
+npm run test:scroll-input
+npm run test:render-performance
+npm run test:viewer-settings
 npm run validate:assets
 node scripts/validate-new-scroll-assets.mjs
 node scripts/validate-new-narrative.mjs
@@ -84,7 +96,9 @@ node scripts/validate-new-scroll-journey.mjs
 
 已实际通过的新版证据：四源及四交付的独立 Blender 只读重开、几何/UV、相机和矩阵轨道、全整数帧可见性、当前文件 SHA、244张 WebP 完整像素解码；完整源区间和可见性映射；25段正文逐字、真实 prepared 时序与各响应式片段非零窗口校验；局部动效 CPU/状态校验；投影首页素材静态哈希与 TypeScript 检查。详见 [源与资产复核](reports/new-scrolls/audit-README.md)、[正文说明](reports/new-scrolls/narrative-README.md)、[动效说明](reports/new-scrolls/motion-README.md)。
 
-实际生产浏览器新版运行30组通过：桌面/手机80次节点、166个响应式正文片段全部访问，25段正文字符一致，末帧/落印、实际音乐解码与gain、off/reduce通过；首页13组通过。入卷最终8组覆盖真实四入口闭半全开、持续慢加载、cover503重试、取消旧manifest、手机音乐布局/音频503重试/返回清理。计时8组和生产子目录四卷/字体音乐/保留交互均通过，详见 [总验收页与8张全节点接触表](reports/new-scrolls/README.md)。功能与素材提交 `d849765` 已推送并核对 `origin/main` 一致，`git lfs fsck --objects HEAD` 通过；终态记录见 [Git交付证据](reports/new-scrolls/git-delivery.json)。尚不宣称实体手机、Safari/Firefox、稳定60FPS、物理扬声器听感或线上部署通过。
+新版导入交付的浏览器记录、全节点接触表、音频异常、计时和子目录证据保留在 [新版验收页](reports/new-scrolls/README.md)，既有素材交付记录见 [Git交付证据](reports/new-scrolls/git-delivery.json)。新增滚轮数学、回读预算及设置交互分别由上列三个 `test:` 命令检查；浏览器检查应先构建当前代码。实体手机、Safari/Firefox、持续帧率、物理扬声器听感及线上部署仍需各自验证，历史交付记录不覆盖后续代码修改。
+
+2026-10-23本轮微透明纸底、设置、滚动和性能更新的实际截图与验收见 [游观与微透明纸底](reports/viewer-settings/README.md)。最终同一构建通过设置18组、全节点运行30组（80节点、180正文片段）及入卷8组；原DOCX当前不在工作区，原件SHA未重新核验，正文数据未改，浏览器与既有提取记录逐字比较。
 
 ## 工程记忆
 

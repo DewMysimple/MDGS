@@ -110,6 +110,7 @@ for (let chapterId = 1; chapterId <= 4; chapterId++) {
 // edition/profile/object integration; it is not rendered-pixel evidence.
 const gpuStub = dataUrl(`export * from ${JSON.stringify(threeUrl)};
 export class WebGLRenderer {
+  debug = {};
   domElement = { dataset:{}, setAttribute(){}, addEventListener(){}, removeEventListener(){}, remove(){} };
   info = { render:{calls:0}, memory:{geometries:0} };
   capabilities = { getMaxAnisotropy(){return 1;} };
@@ -121,6 +122,8 @@ export class CalligraphyLayer { getMinimumReadingHeight(){return 0;} getCompactL
 export class StableLayerSorting { compare(){return 0;} updateBase(){} }
 export const applyArtDirection = async()=>({replacements:0,geometryRepairs:0,edgeRepairs:0,addedLayers:0,textLayers:[]});
 export const findNarrativeSpace = ()=>({});
+export const narrativeSampleSize = ()=>({width:1,height:1});
+export const isCompactNarrativeViewport = ()=>false;
 `);
 const sourceEdition = dataUrl(compile(await read('src/data/sourceEdition.ts')).replaceAll('import.meta.env.BASE_URL', '"./"'));
 const imports = { three:gpuStub, './prepareScene':prepareUrl, './CalligraphyLayer':surfaceStub,

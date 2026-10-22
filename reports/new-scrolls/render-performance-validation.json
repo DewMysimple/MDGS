@@ -1,0 +1,30 @@
+{
+  "status": "pass",
+  "testedAt": "2026-10-22T16:36:27.067Z",
+  "scope": "CPU thumbnail bounds and production streaming/failure logic with GPU stubbed. No FPS or rendered-pixel claim.",
+  "checks": [
+    {
+      "test": "placement-buffer-bounded-through-8k-and-distinguishes-paper-from-ink",
+      "maximumPixels": 49152,
+      "passed": true
+    },
+    {
+      "test": "visible-resource-priority-single-speculative-slot-readiness-source-visibility-and-failure",
+      "requested": [
+        "future-a",
+        "current-0",
+        "current-1",
+        "current-2",
+        "current-3",
+        "future-b"
+      ],
+      "passed": true
+    },
+    {
+      "test": "shader-failure-invalidates-first-frame-and-survives-late-texture-success-failure",
+      "queuedStartsBeforeFailure": 10,
+      "queuedStartsAfterFailure": 10,
+      "passed": true
+    }
+  ]
+}

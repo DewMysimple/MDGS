@@ -1,0 +1,95 @@
+{
+  "status": "pass",
+  "testedAt": "2026-10-22T16:18:59.248Z",
+  "scope": "CPU checks for device wheel units, bounded jumps and queued input, direction reversal, exact settling, and equal elapsed-time smoothing/inertia across 15–144 Hz. Browser lifecycle is tested separately.",
+  "checks": [
+    {
+      "name": "default-100-css-pixels-is-half-percent",
+      "passed": true
+    },
+    {
+      "name": "line-and-pixel-device-units-agree",
+      "passed": true
+    },
+    {
+      "name": "dominant-horizontal-axis-and-reverse-directions",
+      "passed": true
+    },
+    {
+      "name": "fine-trackpad-deltas-remain-proportional",
+      "passed": true
+    },
+    {
+      "name": "page-mode-and-extreme-driver-events-are-bounded",
+      "passed": true
+    },
+    {
+      "name": "setting-scales-distance-without-changing-input-units",
+      "passed": true
+    },
+    {
+      "name": "malformed-events-cannot-poison-progress",
+      "passed": true
+    },
+    {
+      "name": "rapid-wheel-events-cannot-queue-an-entire-world",
+      "passed": true
+    },
+    {
+      "name": "reversing-direction-discards-stale-forward-travel",
+      "passed": true
+    },
+    {
+      "name": "keyboard-step-and-scroll-endpoints-still-work",
+      "passed": true
+    },
+    {
+      "name": "same-smoothing-time-at-15hz",
+      "passed": true
+    },
+    {
+      "name": "same-drag-inertia-distance-at-15hz",
+      "passed": true
+    },
+    {
+      "name": "same-smoothing-time-at-30hz",
+      "passed": true
+    },
+    {
+      "name": "same-drag-inertia-distance-at-30hz",
+      "passed": true
+    },
+    {
+      "name": "same-smoothing-time-at-60hz",
+      "passed": true
+    },
+    {
+      "name": "same-drag-inertia-distance-at-60hz",
+      "passed": true
+    },
+    {
+      "name": "same-smoothing-time-at-120hz",
+      "passed": true
+    },
+    {
+      "name": "same-drag-inertia-distance-at-120hz",
+      "passed": true
+    },
+    {
+      "name": "same-smoothing-time-at-144hz",
+      "passed": true
+    },
+    {
+      "name": "same-drag-inertia-distance-at-144hz",
+      "passed": true
+    },
+    {
+      "name": "smoothing-settles-exactly-and-never-overshoots",
+      "passed": true
+    },
+    {
+      "name": "larger-smoothing-setting-eases-more-gradually",
+      "passed": true
+    }
+  ]
+}

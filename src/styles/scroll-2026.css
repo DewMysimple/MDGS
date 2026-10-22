@@ -30,6 +30,6 @@ body,button,input,select,textarea,.peony-experience *{font-family:var(--kai)!imp
 @media(max-width:700px){.app-shell{--header-height:112px}.app-shell .site-header{grid-template-columns:1fr auto;grid-template-rows:46px 25px 34px}.app-shell .brand{grid-row:1;grid-column:1}.app-shell .fullscreen-button{grid-row:1;grid-column:2}.viewer-work-title{grid-column:1/-1;grid-row:2;font-size:20px;line-height:1.1}.viewer-work-title small{display:inline;font-size:11px;margin-right:9px}.app-shell .chapter-nav{grid-row:3}.app-shell .end-colophon{bottom:3%;max-height:62%;padding:17px 16px}.app-shell .end-colophon h2{font-size:33px;margin:8px 0}.app-shell .end-colophon-text{font-size:15px;line-height:1.75}.app-shell .end-theme-subtitle{font-size:15px}.app-shell .end-actions{gap:9px;margin-top:11px;padding-top:10px}}
 .app-shell .end-seal{top:9px;right:16px;font-size:18px;padding:6px}
 @media(max-width:700px){.app-shell .end-colophon{top:5%;bottom:auto;max-height:62%}}
-.narrative-calligraphy.has-observed-placement .narrative-passage{transition:left .7s ease,top .7s ease,opacity .65s ease,visibility 0s linear .65s}
-.narrative-calligraphy.has-observed-placement .narrative-passage.is-visible{transition:left .7s ease,top .7s ease,opacity .65s ease,visibility 0s linear 0s}
+.narrative-calligraphy.has-observed-placement .narrative-passage{transition:opacity .65s ease,visibility 0s linear .65s}
+.narrative-calligraphy.has-observed-placement .narrative-passage.is-visible{transition:opacity .65s ease,visibility 0s linear 0s}
 @media(max-width:700px){.app-shell:has(.audio-control[data-audio-enabled=true]){--controls-height:181px}}

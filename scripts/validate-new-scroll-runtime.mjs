@@ -11,7 +11,7 @@ const root=fileURLToPath(new URL('../',import.meta.url));
 const output=path.join(root,'reports/new-scrolls');
 const shots=path.join(root,'tmp/new-scrolls/runtime');
 const {chromium}=createRequire(import.meta.url)(process.env.MDGS_PLAYWRIGHT_MODULE||'playwright');
-const report={status:'running',startedAt:new Date().toISOString(),scope:'Actual revised four-world WebGL, all authored reading nodes at desktop and phone sizes, paper narration bounds/fades, local Kai font, small motion controls, exact final hold/stamp, decoded looping audio and playback lifecycle.',checks:[],nodes:[],errors:[],expectedErrors:[]};
+const report={status:'running',startedAt:new Date().toISOString(),scope:'Actual revised four-world WebGL, all authored reading nodes at desktop and phone sizes, paper narration bounds/fades, local Kai font, small motion controls, exact final hold/stamp, decoded looping audio and playback lifecycle. Exhaustive timeline jumps use the supported 60ms smoothing setting; default 180ms wheel behavior is checked by validate-viewer-settings.',checks:[],nodes:[],errors:[],expectedErrors:[]};
 let browser,server,page;
 await mkdir(output,{recursive:true});await mkdir(shots,{recursive:true});
 const save=()=>writeFile(path.join(output,'validation-runtime-new.json'),JSON.stringify(report,null,2)+'\n');
@@ -37,6 +37,7 @@ try{
  page.on('console',message=>{if(message.type()==='error')report.errors.push(message.text());});
  await page.addInitScript(()=>{
   localStorage.setItem('guose-fanghua:painting-motion','on');
+  localStorage.setItem('guose-fanghua:viewer-settings:v2',JSON.stringify({version:2,chapters:Object.fromEntries([1,2,3,4].map(id=>[id,{wheelSpeed:.5,smoothingMs:60}]))}));
   window.__audioAudit={contexts:[],sources:[],gains:[]};
   const Original=window.AudioContext;
   window.AudioContext=class extends Original{constructor(...args){super(...args);window.__audioAudit.contexts.push(this);}

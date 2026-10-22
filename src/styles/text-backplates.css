@@ -1,0 +1,111 @@
+/* Translucent silk sits beneath HTML ink. Alpha and edge masks apply only to
+   the paper pseudo-elements, never to the text or its parent container. */
+.peony-experience {
+  --text-plate-fill: rgb(var(--text-plate-rgb,247 239 223) / calc(var(--text-plate-opacity,.8) * .72));
+  --text-plate-line: rgb(148 119 80 / var(--text-plate-border-opacity,0));
+  --text-plate-silk: linear-gradient(90deg,
+    rgb(var(--text-plate-rgb,247 239 223) / calc(var(--text-plate-opacity,.8) * .8)),
+    rgb(var(--text-plate-rgb,247 239 223) / var(--text-plate-opacity,.8)) 25%,
+    rgb(var(--text-plate-rgb,247 239 223) / calc(var(--text-plate-opacity,.8) * .92)) 75%,
+    rgb(var(--text-plate-rgb,247 239 223) / calc(var(--text-plate-opacity,.8) * .43)));
+}
+
+.peony-experience :is(
+  .brand-wordmark,.viewer-work-title,.chapter-nav,.fullscreen-button,.settings-button,
+  .current-scene,.progress-caption,.interaction-hint,.playback-controls,.secondary-controls,
+  .study-small-controls button
+) { position: relative; }
+
+.peony-experience :is(
+  .brand-wordmark,.viewer-work-title,.chapter-nav,.fullscreen-button,.settings-button,
+  .current-scene,.progress-caption,.interaction-hint,.playback-controls,.secondary-controls,
+  .study-small-controls button,.art-loading__return,.end-colophon,.scene-loading,
+  .status-notice,.art-loading__heading,.art-loading__caption
+) {
+  isolation: isolate;
+  background: none;
+  border-color: var(--text-plate-line);
+  border-radius: var(--text-plate-radius,0px);
+  box-shadow: none;
+  text-shadow: 0 0 3px #f4eadbb8,0 0 1px #fbf6e8;
+}
+.peony-experience :is(
+  .brand-wordmark,.viewer-work-title,.chapter-nav,.fullscreen-button,.settings-button,
+  .current-scene,.progress-caption,.interaction-hint,.playback-controls,.secondary-controls,
+  .study-small-controls button,.art-loading__return,.end-colophon,.scene-loading,
+  .status-notice,.art-loading__heading,.art-loading__caption
+)::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -3px 0;
+  pointer-events: none;
+  background: var(--text-plate-silk);
+  mask-image: linear-gradient(0deg,transparent,#000 12% 88%,transparent);
+  border: 1px solid var(--text-plate-line);
+  border-radius: var(--text-plate-radius,0px);
+}
+
+.app-shell :is(.brand-wordmark,.viewer-work-title) {
+  padding: calc(var(--text-plate-padding,12px) * .18) calc(var(--text-plate-padding,12px) * .45);
+}
+.app-shell .chapter-nav {
+  align-self: center;
+  padding-block: calc(var(--text-plate-padding,12px) * .18);
+}
+.app-shell :is(.current-scene,.progress-caption,.interaction-hint,.playback-controls,.secondary-controls) {
+  padding-inline: calc(var(--text-plate-padding,12px) * .35);
+}
+.app-shell .interaction-hint { opacity: 1; color: #79664b; }
+.app-shell .play-button { background-color: rgb(180 145 97 / .06); }
+.app-shell .play-button:is(:hover,.is-playing) { background-color: rgb(163 75 58 / .1); }
+
+/* Drawers and dialogs retain their structure and one translucent paper sheet. */
+.peony-experience :is(.culture-panel,.study-note-dialog,.study-material-state) {
+  background: var(--text-plate-fill);
+  border-color: var(--text-plate-line);
+  border-radius: var(--text-plate-radius,0px);
+  box-shadow: none;
+}
+.peony-experience :is(.end-colophon,.study-note-dialog,.study-material-state) {
+  padding: calc(var(--text-plate-padding,12px) + 10px);
+}
+.peony-experience .culture-topline { background: var(--text-plate-fill); }
+.peony-experience .culture-rule > span { background: var(--text-plate-fill); }
+.peony-experience .status-notice { color: #5e4b37; padding: var(--text-plate-padding,12px) calc(var(--text-plate-padding,12px) + 8px); }
+.peony-experience .art-loading__heading,
+.peony-experience .art-loading__caption {
+  padding: var(--text-plate-padding,12px);
+  border: 0;
+}
+.peony-experience .art-loading__error { background: transparent; border: 0; box-shadow: none; }
+.peony-experience .art-loading__seal { background: var(--text-plate-fill); }
+.peony-experience .scene-loading.is-partial { padding: var(--text-plate-padding,12px); }
+.peony-experience .end-colophon { background: var(--text-plate-silk); }
+.peony-experience .end-colophon::before { display: none; }
+
+/* The physical plaque's clean paper still masks baked lettering in its source
+   crop. A translucent tint sits over that material, rather than revealing a
+   second title beneath the live HTML label. */
+.peony-experience .study-plaque-face::before {
+  background: var(--text-plate-silk),linear-gradient(90deg,#f2e5c7,#f9eed5 45%,#f3e6c7);
+  mask-image: none;
+  border-radius: var(--text-plate-radius,0px);
+  box-shadow: none;
+}
+.peony-experience .study-plaque-invitation { color: #8c704c; }
+
+@media(max-width:700px) {
+  .app-shell :is(.brand-wordmark,.viewer-work-title) { padding-block: 0; }
+  .app-shell .brand-wordmark { line-height: 1.15; }
+  .app-shell .brand-wordmark > span { line-height: 1.3; }
+  .app-shell .chapter-nav { align-self: stretch; }
+  .app-shell :is(.current-scene,.progress-caption,.playback-controls,.secondary-controls) {
+    padding-inline: calc(var(--text-plate-padding,12px) * .2);
+  }
+  .peony-experience :is(.end-colophon,.study-note-dialog,.study-material-state) {
+    padding: calc(var(--text-plate-padding,12px) + 4px);
+  }
+  .peony-experience .art-loading__heading,
+  .peony-experience .art-loading__caption { padding: calc(var(--text-plate-padding,12px) * .75); }
+}
