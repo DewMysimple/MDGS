@@ -15,11 +15,12 @@ export interface NarrativeCalligraphyProps {
   active?: boolean;
   placement?: NarrativePlacement;
   platePadding?: number;
+  durationSeconds?: number;
 }
 
 /** HTML ink remains separate from artwork pixels. A short passage crossfades at
  * narrative boundaries, in both directions and on arbitrary timeline seeks. */
-export default function NarrativeCalligraphy({ chapterId, progress, stops, active = true, placement, platePadding = 12 }: NarrativeCalligraphyProps) {
+export default function NarrativeCalligraphy({ chapterId, progress, stops, active = true, placement, platePadding = 12, durationSeconds }: NarrativeCalligraphyProps) {
   const [size, setSize] = useState({ width: 1200, height: 600 });
   const horizontal = placement?.orientation === 'horizontal' || (!placement?.orientation && isCompactNarrativeViewport(size.width, size.height));
   const regionWidth = size.width * (placement?.width ?? (horizontal ? .92 : .24));
@@ -35,7 +36,7 @@ export default function NarrativeCalligraphy({ chapterId, progress, stops, activ
     : Math.max(1, Math.floor((regionWidth - padding * 2 - headingWidth - 17) / (fontSize * 1.7)))
       * Math.max(1, Math.floor((regionHeight - padding * 2 - 18) / (fontSize * 1.055)));
   const maximum = Math.max(14, Math.min(68, Math.floor(capacity)));
-  const track = useMemo(() => buildNarrativeTrack(chapterId, stops, maximum), [chapterId, stops, maximum]);
+  const track = useMemo(() => buildNarrativeTrack(chapterId, stops, maximum, durationSeconds), [chapterId, stops, maximum, durationSeconds]);
   const cue = activeNarrativeCue(track, progress);
   const [entered, setEntered] = useState(false);
   const root = useRef<HTMLDivElement>(null);

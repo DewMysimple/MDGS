@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { sceneOptions } from '../data/sceneOptions';
 import { nudgedTarget, smoothProgress } from './scrollMotion';
+import { activeSourceEdition } from '../data/sourceEdition';
+import { advanceSourceProgress, sourceDuration, type SourceTiming } from '../scene/sourceClock';
 
 const savedProgress = new Map<number, number>();
 const clamp = (n: number) => Math.max(0, Math.min(1, n));
-const progressKey = (id: number) => `guose-fanghua:chapter-${id}:position`;
+const progressKey = (id: number) => `guose-fanghua:${activeSourceEdition}:chapter-${id}:position`;
 function restoreProgress(id: number) {
   if (savedProgress.has(id)) return savedProgress.get(id)!;
   try {
@@ -17,10 +19,10 @@ function persistProgress(id: number, value: number) {
   try { sessionStorage.setItem(progressKey(id), String(value)); } catch { /* Private storage can be disabled. */ }
 }
 
-interface ScrollControllerOptions { smoothingMs?: number; active?: boolean }
+interface ScrollControllerOptions { smoothingMs?: number; active?: boolean; timing?: SourceTiming }
 
 /** All input shares one time-based follower; idle and covered scrolls have no RAF loop. */
-export function useScrollController(chapterId: number, { smoothingMs = 180, active = true }: ScrollControllerOptions = {}) {
+export function useScrollController(chapterId: number, { smoothingMs = 180, active = true, timing }: ScrollControllerOptions = {}) {
   const [progress, setProgress] = useState(() => restoreProgress(chapterId));
   const [target, setTarget] = useState(progress);
   const [playing, setPlaying] = useState(false);
@@ -33,6 +35,8 @@ export function useScrollController(chapterId: number, { smoothingMs = 180, acti
   options.current = { smoothingMs, active };
   const wake = useRef<() => void>(() => {});
   const suspend = useRef<() => void>(() => {});
+  const timingRef = useRef(timing);
+  timingRef.current = timing;
 
   useEffect(() => {
     const media = matchMedia('(prefers-reduced-motion: reduce)');
@@ -84,10 +88,20 @@ export function useScrollController(chapterId: number, { smoothingMs = 180, acti
     const animate = (now: number) => {
       frame = 0;
       if (document.hidden || !options.current.active) return;
-      const dt = Math.min(Math.max(0, (now - previous) / 1000), 0.25);
+      const elapsed = Math.max(0, (now - previous) / 1000);
+      const dt = Math.min(elapsed, 0.25);
       previous = now;
       if (playingRef.current) {
-        destination.current = clamp(destination.current + dt / (sceneOptions[chapterRef.current]?.autoplayDuration ?? 154));
+        const duration = sourceDuration(timingRef.current, sceneOptions[chapterRef.current]?.autoplayDuration ?? 154);
+        const nativeClock = !!timingRef.current?.sourceRevision;
+        destination.current = advanceSourceProgress(destination.current, nativeClock ? elapsed : dt, duration);
+        // Smoothing remains for manual navigation. Playback follows the source
+        // clock directly, so easing and a low display rate cannot slow the film.
+        if (nativeClock) {
+          position.current = destination.current;
+          setProgress(position.current);
+          savedProgress.set(chapterRef.current, position.current);
+        }
         setTarget(destination.current);
       }
       const next = reducedMotion.current ? destination.current : smoothProgress(position.current, destination.current, dt, options.current.smoothingMs);

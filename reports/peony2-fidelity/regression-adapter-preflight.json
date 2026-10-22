@@ -1,0 +1,32 @@
+{
+  "status": "adapter-preflight-pass",
+  "testedAt": "2026-10-22T18:07:06.429169+00:00",
+  "browserStarted": false,
+  "browserModesExecuted": 0,
+  "adapterModesChecked": 2,
+  "boundArtifactsPerMode": 36,
+  "scope": "Only adapter driver syntax and current public/dist artifact hash equality. Full settings and subpath browser regressions were not started.",
+  "executionDisposition": "Cancelled before browser launch at user direction to finish and merge to main; no additional mobile optimization requested.",
+  "results": [
+    {
+      "status": "adapter-syntax-pass",
+      "mode": "settings",
+      "upstreamAcceptanceSha256": "340f579945fd345e9d813fd9392ccaee96339366d199a079879828a076679339",
+      "boundArtifacts": 36,
+      "reportDirectory": "reports/peony2-fidelity/settings",
+      "browserStarted": false,
+      "command": "node scripts/validate-peony2-regressions.mjs --settings --check-adapter",
+      "exitCode": 0
+    },
+    {
+      "status": "adapter-syntax-pass",
+      "mode": "subpath",
+      "upstreamAcceptanceSha256": "363771607f10476794fb941e6034e0c79db14b761be8ec1d111e2c66b25bb6a7",
+      "boundArtifacts": 36,
+      "reportDirectory": "reports/peony2-fidelity/subpath",
+      "browserStarted": false,
+      "command": "node scripts/validate-peony2-regressions.mjs --subpath --check-adapter",
+      "exitCode": 0
+    }
+  ]
+}

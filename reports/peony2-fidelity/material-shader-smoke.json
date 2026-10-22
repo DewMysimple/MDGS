@@ -1,0 +1,2828 @@
+{
+  "startedAt": "2026-10-22T17:36:56.753Z",
+  "status": "pass",
+  "chapters": [
+    {
+      "chapter": 1,
+      "sourceSha256": "668566361fc6cfde4cf449cee615dbed5a4101f12ba6b39056ce3d7e32939c5d",
+      "objects": 149,
+      "morphMeshes": 25,
+      "morphTargets": 25,
+      "nativeFields": 4,
+      "passes": [
+        {
+          "pass": "color",
+          "error": 0,
+          "linkedPrograms": 67,
+          "drawCalls": 297
+        },
+        {
+          "pass": "glow",
+          "error": 0,
+          "linkedPrograms": 67,
+          "drawCalls": 297
+        },
+        {
+          "pass": "depth",
+          "error": 0,
+          "linkedPrograms": 100,
+          "drawCalls": 149
+        },
+        {
+          "pass": "dithered",
+          "error": 0,
+          "linkedPrograms": 100,
+          "drawCalls": 28
+        },
+        {
+          "pass": "blended",
+          "error": 0,
+          "linkedPrograms": 102,
+          "drawCalls": 242
+        }
+      ],
+      "shaderErrors": []
+    },
+    {
+      "chapter": 2,
+      "sourceSha256": "e58ac7493074b41d416de04b6456871a2a5b157b3044c94906cbcb71539ce5b0",
+      "objects": 58,
+      "morphMeshes": 0,
+      "morphTargets": 0,
+      "nativeFields": 9,
+      "passes": [
+        {
+          "pass": "color",
+          "error": 0,
+          "linkedPrograms": 51,
+          "drawCalls": 115
+        },
+        {
+          "pass": "glow",
+          "error": 0,
+          "linkedPrograms": 51,
+          "drawCalls": 115
+        },
+        {
+          "pass": "depth",
+          "error": 0,
+          "linkedPrograms": 76,
+          "drawCalls": 58
+        },
+        {
+          "pass": "dithered",
+          "error": 0,
+          "linkedPrograms": 76,
+          "drawCalls": 4
+        },
+        {
+          "pass": "blended",
+          "error": 0,
+          "linkedPrograms": 78,
+          "drawCalls": 108
+        }
+      ],
+      "shaderErrors": []
+    },
+    {
+      "chapter": 3,
+      "sourceSha256": "437d5bcaaabe36e60f699a39cd932499b948cdba546d3465591d7d85390a39fc",
+      "objects": 79,
+      "morphMeshes": 0,
+      "morphTargets": 0,
+      "nativeFields": 4,
+      "passes": [
+        {
+          "pass": "color",
+          "error": 0,
+          "linkedPrograms": 152,
+          "drawCalls": 156
+        },
+        {
+          "pass": "glow",
+          "error": 0,
+          "linkedPrograms": 152,
+          "drawCalls": 156
+        },
+        {
+          "pass": "depth",
+          "error": 0,
+          "linkedPrograms": 227,
+          "drawCalls": 79
+        },
+        {
+          "pass": "dithered",
+          "error": 0,
+          "linkedPrograms": 227,
+          "drawCalls": 3
+        },
+        {
+          "pass": "blended",
+          "error": 0,
+          "linkedPrograms": 231,
+          "drawCalls": 152
+        }
+      ],
+      "shaderErrors": []
+    },
+    {
+      "chapter": 4,
+      "sourceSha256": "dc5a1cf93c7e15eea9a00618d6d3ba8bd6927d964070cf24031edba286fd570f",
+      "objects": 52,
+      "morphMeshes": 0,
+      "morphTargets": 0,
+      "nativeFields": 19,
+      "passes": [
+        {
+          "pass": "color",
+          "error": 0,
+          "linkedPrograms": 59,
+          "drawCalls": 103
+        },
+        {
+          "pass": "glow",
+          "error": 0,
+          "linkedPrograms": 59,
+          "drawCalls": 103
+        },
+        {
+          "pass": "depth",
+          "error": 0,
+          "linkedPrograms": 88,
+          "drawCalls": 52
+        },
+        {
+          "pass": "dithered",
+          "error": 0,
+          "linkedPrograms": 88,
+          "drawCalls": 1
+        },
+        {
+          "pass": "blended",
+          "error": 0,
+          "linkedPrograms": 90,
+          "drawCalls": 102
+        }
+      ],
+      "shaderErrors": []
+    }
+  ],
+  "console": [
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (198,1): warning X4000: use of potentially uninitialized variable (f_sourceNoiseFbm3)"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (180,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (177,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (177,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (177,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (177,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (177,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (177,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (166,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (166,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (172,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (172,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (166,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (166,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (166,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (172,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (173,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (166,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(185,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(187,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value\n(186,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (179,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (172,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (172,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (175,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (175,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (176,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (176,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (176,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (176,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (176,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (176,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (172,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (172,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (175,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (172,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (176,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (176,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (176,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (170,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (172,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    },
+    {
+      "type": "warning",
+      "text": "THREE.WebGLProgram: Program Info Log: (171,12-86): warning X3595: gradient instruction used in a loop with varying iteration; partial derivatives may have undefined value"
+    }
+  ],
+  "errors": [],
+  "gzipProbe": {
+    "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-1/material-fields/88ea82327d0febc425929b63.f16.gz",
+    "compressedBytes": 977021,
+    "header": [
+      31,
+      139
+    ],
+    "responseContentEncoding": null
+  },
+  "fieldResponseEncodings": [
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-1/material-fields/88ea82327d0febc425929b63.f16.gz",
+      "contentEncoding": null
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-1/material-fields/49e383a33c808a8e6321ae03.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-1/material-fields/f91ca43c925c36f93efb0957.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-1/material-fields/efc57e665aeec1cd4ee22bfb.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-2/material-fields/0037a8d456936e2d4ba3dbb1.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-2/material-fields/d1247149959fbbcb6392e9e6.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-2/material-fields/c67f35dd58bf9eae588466bf.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-2/material-fields/060ac56479939c2d4ce20844.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-2/material-fields/7af213ba13726460a761bb0a.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-2/material-fields/d0722376d15c136dfede4bd5.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-2/material-fields/124863892cca985c9f710774.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-2/material-fields/84caa60a67f075c238406e49.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-2/material-fields/f49af4226c8d34b0e57fdb5c.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-3/material-fields/ef14eb3753ee90c870bb68e6.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-3/material-fields/51ac8af3c1bb4e8c7beb19d0.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-3/material-fields/90cd44d256373cd1652fed8c.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-3/material-fields/9d762a85585bccd4b41f6208.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/ce8eb8270961d2a167afc6e9.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/2f3d62f06e8aa46cf73cb424.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/c2a80c5ff8ff7204d9f6f526.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/89681fc06c17534450fcbf21.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/915666d024473caedc1193b4.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/d40ef0cb3dc3ec6777dadb49.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/59c9df7915094a5a9381802c.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/033194c169fcd46cc9e1b48b.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/2aabcf3d2aae8e630d9c9dc9.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/9e020e6dfe1d867c1582064d.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/6185c02c44e6e413a4df2453.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/0d9d3af90c0f6dadde3afb4c.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/485aea9513b9277ebdd2a8a5.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/d141731b61e1e44059857a56.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/c64e288d57b04a32909a83ae.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/4f9ec81a3c428eceaa3f3682.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/fdfb966029228599fc2bcaf0.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/3d480cef4053049ed68433d0.f16.gz",
+      "contentEncoding": "gzip"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/new-scrolls/chapter-4/material-fields/5bbf0e946e78e93d58770a72.f16.gz",
+      "contentEncoding": "gzip"
+    }
+  ],
+  "nativeNoise": {
+    "blenderVersion": "5.2.3 LTS",
+    "engine": "CYCLES_CPU",
+    "cases": [
+      {
+        "coordinate": [
+          0.125,
+          0.375,
+          0.625
+        ],
+        "scale": 3.5,
+        "detail": 3,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": true,
+        "native": 0.5377503037452698,
+        "mathematicalFloat32": 0.5377503037452698,
+        "absoluteError": 0,
+        "webGL": 0.5377503037452698,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          0.125,
+          0.375,
+          0.625
+        ],
+        "scale": 1700,
+        "detail": 2,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": true,
+        "native": 0.5,
+        "mathematicalFloat32": 0.5,
+        "absoluteError": 0,
+        "webGL": 0.5,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          0.125,
+          0.375,
+          0.625
+        ],
+        "scale": 0.75,
+        "detail": 2.375,
+        "roughness": 0.7,
+        "lacunarity": 1.7,
+        "normalize": true,
+        "native": 0.485713392496109,
+        "mathematicalFloat32": 0.4857134222984314,
+        "absoluteError": 2.9802322387695312e-08,
+        "webGL": 0.4857134222984314,
+        "webGLAbsoluteError": 2.9802322387695312e-08
+      },
+      {
+        "coordinate": [
+          0.125,
+          0.375,
+          0.625
+        ],
+        "scale": 1,
+        "detail": 0,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": false,
+        "native": 0.19714853167533875,
+        "mathematicalFloat32": 0.19714853167533875,
+        "absoluteError": 0,
+        "webGL": 0.19714853167533875,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          -0.125,
+          -0.375,
+          0.625
+        ],
+        "scale": 3.5,
+        "detail": 3,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": true,
+        "native": 0.6201016902923584,
+        "mathematicalFloat32": 0.6201016902923584,
+        "absoluteError": 0,
+        "webGL": 0.6201017498970032,
+        "webGLAbsoluteError": 5.960464477539063e-08
+      },
+      {
+        "coordinate": [
+          -0.125,
+          -0.375,
+          0.625
+        ],
+        "scale": 1700,
+        "detail": 2,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": true,
+        "native": 0.39478570222854614,
+        "mathematicalFloat32": 0.39478570222854614,
+        "absoluteError": 0,
+        "webGL": 0.39478570222854614,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          -0.125,
+          -0.375,
+          0.625
+        ],
+        "scale": 0.75,
+        "detail": 2.375,
+        "roughness": 0.7,
+        "lacunarity": 1.7,
+        "normalize": true,
+        "native": 0.40666618943214417,
+        "mathematicalFloat32": 0.40666618943214417,
+        "absoluteError": 0,
+        "webGL": 0.40666618943214417,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          -0.125,
+          -0.375,
+          0.625
+        ],
+        "scale": 1,
+        "detail": 0,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": false,
+        "native": -0.1597745269536972,
+        "mathematicalFloat32": -0.1597745269536972,
+        "absoluteError": 0,
+        "webGL": -0.159774512052536,
+        "webGLAbsoluteError": 1.4901161193847656e-08
+      },
+      {
+        "coordinate": [
+          3.731,
+          -1.425,
+          0.071
+        ],
+        "scale": 3.5,
+        "detail": 3,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": true,
+        "native": 0.4809896647930145,
+        "mathematicalFloat32": 0.4809896647930145,
+        "absoluteError": 0,
+        "webGL": 0.4809896647930145,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          3.731,
+          -1.425,
+          0.071
+        ],
+        "scale": 1700,
+        "detail": 2,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": true,
+        "native": 0.6532947421073914,
+        "mathematicalFloat32": 0.6532948017120361,
+        "absoluteError": 5.960464477539063e-08,
+        "webGL": 0.6532947421073914,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          3.731,
+          -1.425,
+          0.071
+        ],
+        "scale": 0.75,
+        "detail": 2.375,
+        "roughness": 0.7,
+        "lacunarity": 1.7,
+        "normalize": true,
+        "native": 0.48831915855407715,
+        "mathematicalFloat32": 0.48831918835639954,
+        "absoluteError": 2.9802322387695312e-08,
+        "webGL": 0.48831915855407715,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          3.731,
+          -1.425,
+          0.071
+        ],
+        "scale": 1,
+        "detail": 0,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": false,
+        "native": 0.014777719974517822,
+        "mathematicalFloat32": 0.014777632430195808,
+        "absoluteError": 8.754432201385498e-08,
+        "webGL": 0.014777670614421368,
+        "webGLAbsoluteError": 4.936009645462036e-08
+      },
+      {
+        "coordinate": [
+          -103.125,
+          57.375,
+          -0.625
+        ],
+        "scale": 3.5,
+        "detail": 3,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": true,
+        "native": 0.5134434103965759,
+        "mathematicalFloat32": 0.5134434103965759,
+        "absoluteError": 0,
+        "webGL": 0.5134434103965759,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          -103.125,
+          57.375,
+          -0.625
+        ],
+        "scale": 1700,
+        "detail": 2,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": true,
+        "native": 0.5,
+        "mathematicalFloat32": 0.5,
+        "absoluteError": 0,
+        "webGL": 0.5,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          -103.125,
+          57.375,
+          -0.625
+        ],
+        "scale": 0.75,
+        "detail": 2.375,
+        "roughness": 0.7,
+        "lacunarity": 1.7,
+        "normalize": true,
+        "native": 0.5332876443862915,
+        "mathematicalFloat32": 0.5332876443862915,
+        "absoluteError": 0,
+        "webGL": 0.5332876443862915,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          -103.125,
+          57.375,
+          -0.625
+        ],
+        "scale": 1,
+        "detail": 0,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": false,
+        "native": 0.5434701442718506,
+        "mathematicalFloat32": 0.5434701442718506,
+        "absoluteError": 0,
+        "webGL": 0.5434701442718506,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          257.125,
+          -25.375,
+          3.625
+        ],
+        "scale": 3.5,
+        "detail": 3,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": true,
+        "native": 0.6331986784934998,
+        "mathematicalFloat32": 0.6331986784934998,
+        "absoluteError": 0,
+        "webGL": 0.6331986784934998,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          257.125,
+          -25.375,
+          3.625
+        ],
+        "scale": 1700,
+        "detail": 2,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": true,
+        "native": 0.6753571033477783,
+        "mathematicalFloat32": 0.6753571033477783,
+        "absoluteError": 0,
+        "webGL": 0.6753571629524231,
+        "webGLAbsoluteError": 5.960464477539063e-08
+      },
+      {
+        "coordinate": [
+          257.125,
+          -25.375,
+          3.625
+        ],
+        "scale": 0.75,
+        "detail": 2.375,
+        "roughness": 0.7,
+        "lacunarity": 1.7,
+        "normalize": true,
+        "native": 0.4457502067089081,
+        "mathematicalFloat32": 0.4457501769065857,
+        "absoluteError": 2.9802322387695312e-08,
+        "webGL": 0.4457502067089081,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          257.125,
+          -25.375,
+          3.625
+        ],
+        "scale": 1,
+        "detail": 0,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": false,
+        "native": -0.22608768939971924,
+        "mathematicalFloat32": -0.22608768939971924,
+        "absoluteError": 0,
+        "webGL": -0.22608768939971924,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          100001.125,
+          -100001.375,
+          3.625
+        ],
+        "scale": 3.5,
+        "detail": 3,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": true,
+        "native": 0.6204788088798523,
+        "mathematicalFloat32": 0.6204788088798523,
+        "absoluteError": 0,
+        "webGL": 0.6204788088798523,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          100001.125,
+          -100001.375,
+          3.625
+        ],
+        "scale": 1700,
+        "detail": 2,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": true,
+        "native": 0.4561607241630554,
+        "mathematicalFloat32": 0.4561607241630554,
+        "absoluteError": 0,
+        "webGL": 0.4561607241630554,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          100001.125,
+          -100001.375,
+          3.625
+        ],
+        "scale": 0.75,
+        "detail": 2.375,
+        "roughness": 0.7,
+        "lacunarity": 1.7,
+        "normalize": true,
+        "native": 0.44405362010002136,
+        "mathematicalFloat32": 0.44405362010002136,
+        "absoluteError": 0,
+        "webGL": 0.444053590297699,
+        "webGLAbsoluteError": 2.9802322387695312e-08
+      },
+      {
+        "coordinate": [
+          100001.125,
+          -100001.375,
+          3.625
+        ],
+        "scale": 1,
+        "detail": 0,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": false,
+        "native": -0.016710473224520683,
+        "mathematicalFloat32": -0.016710473224520683,
+        "absoluteError": 0,
+        "webGL": -0.016710471361875534,
+        "webGLAbsoluteError": 1.862645149230957e-09
+      },
+      {
+        "coordinate": [
+          1000001.125,
+          -1000001.375,
+          3.625
+        ],
+        "scale": 3.5,
+        "detail": 3,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": true,
+        "native": 0.47584161162376404,
+        "mathematicalFloat32": 0.47584161162376404,
+        "absoluteError": 0,
+        "webGL": 0.47584161162376404,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          1000001.125,
+          -1000001.375,
+          3.625
+        ],
+        "scale": 1700,
+        "detail": 2,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": true,
+        "native": 0.5526071190834045,
+        "mathematicalFloat32": 0.5526071190834045,
+        "absoluteError": 0,
+        "webGL": 0.5526071190834045,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          1000001.125,
+          -1000001.375,
+          3.625
+        ],
+        "scale": 0.75,
+        "detail": 2.375,
+        "roughness": 0.7,
+        "lacunarity": 1.7,
+        "normalize": true,
+        "native": 0.4722748100757599,
+        "mathematicalFloat32": 0.4722748100757599,
+        "absoluteError": 0,
+        "webGL": 0.4722748100757599,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          1000001.125,
+          -1000001.375,
+          3.625
+        ],
+        "scale": 1,
+        "detail": 0,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": false,
+        "native": -0.42473354935646057,
+        "mathematicalFloat32": -0.42473354935646057,
+        "absoluteError": 0,
+        "webGL": -0.42473354935646057,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          0,
+          0,
+          0
+        ],
+        "scale": 3.5,
+        "detail": 3,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": true,
+        "native": 0.5,
+        "mathematicalFloat32": 0.5,
+        "absoluteError": 0,
+        "webGL": 0.5,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          0,
+          0,
+          0
+        ],
+        "scale": 1700,
+        "detail": 2,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": true,
+        "native": 0.5,
+        "mathematicalFloat32": 0.5,
+        "absoluteError": 0,
+        "webGL": 0.5,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          0,
+          0,
+          0
+        ],
+        "scale": 0.75,
+        "detail": 2.375,
+        "roughness": 0.7,
+        "lacunarity": 1.7,
+        "normalize": true,
+        "native": 0.5,
+        "mathematicalFloat32": 0.5,
+        "absoluteError": 0,
+        "webGL": 0.5,
+        "webGLAbsoluteError": 0
+      },
+      {
+        "coordinate": [
+          0,
+          0,
+          0
+        ],
+        "scale": 1,
+        "detail": 0,
+        "roughness": 0.5,
+        "lacunarity": 2,
+        "normalize": false,
+        "native": 0,
+        "mathematicalFloat32": 0,
+        "absoluteError": 0,
+        "webGL": 0,
+        "webGLAbsoluteError": 0
+      }
+    ],
+    "maxAbsoluteError": 8.754432201385498e-08,
+    "meanAbsoluteError": 7.392372936010361e-09,
+    "maxWebGLAbsoluteError": 5.960464477539063e-08,
+    "meanWebGLAbsoluteError": 7.654307410120964e-09,
+    "glError": 0,
+    "passed": true
+  },
+  "completedAt": "2026-10-22T17:37:04.869Z",
+  "scope": "338 native material programs, 25 nonzero morph normals, all 36 actual f16 fields, five passes color/glow/depth/dithered/blended. Depth interval samplers are populated synthetic 0.001/0.9999 float textures. Image samplers use white texture for compilation; this is not a native scene pixel acceptance.",
+  "artifacts": {
+    "src/scene/SourceMaterial.ts": "78ff5a1942a75ca05a83f26b1e6920f2d57962e8ee00b9eb31ecd75097a7ecce",
+    "src/scene/SourceNoise3D.ts": "97c4ce5460d96be8a2b049ab6eba2206a2568b6c22f4cdceed32170871926edd",
+    "src/scene/SourceLighting.ts": "e7233ba079be8355e16dbdee1861d9394ffd437929206ca0d210f3be1e7b5a89",
+    "scripts/export-source-materials.py": "516644337a377a38ae1d41e0660f11882dfc4fec8209131f8178409ba0e75b98",
+    "public/assets/new-scrolls/chapter-1/source-materials.json": "2ba8a03264fce063d7076433b977329f596dae5e5b4e12a4e77b3771e26ffdca",
+    "public/assets/new-scrolls/chapter-2/source-materials.json": "41466399e00cabfbfbd039bc6b6a293f1c94930acda12c4c989ba8d7bf821e83",
+    "public/assets/new-scrolls/chapter-3/source-materials.json": "26394d2e5987d39b3f6b8f46c1e473ff12aaf8fd796baa9c3c162622040f4792",
+    "public/assets/new-scrolls/chapter-4/source-materials.json": "40f31e4dfe29c69344aae7eeb54860f7e30591dff1bc9cc79778585dcd553f86"
+  }
+}

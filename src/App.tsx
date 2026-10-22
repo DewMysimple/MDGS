@@ -17,11 +17,13 @@ import { narrativeChapters } from './data/newNarrative';
 import type { NarrativeSpace } from './scene/NarrativeSpace';
 import ViewerSettingsPanel from './components/ViewerSettingsPanel';
 import { readViewerSettings, textPlateVariables, viewerSettingsKey } from './data/viewerSettings';
+import { activeSourceEdition } from './data/sourceEdition';
 import './styles.css';
 
 const ordinal = ['一', '二', '三', '四'];
 const clamp = (value: number) => Math.min(1, Math.max(0, value));
 const motionPreferenceKey = 'guose-fanghua:painting-motion';
+type ViewerManifest = Pick<SceneManifest, 'id' | 'stops' | 'sourceRevision' | 'frameRange' | 'fps' | 'fpsBase' | 'sourceDurationSeconds'>;
 
 function readMotionPreference() {
   try { return localStorage.getItem(motionPreferenceKey) !== 'off'; }
@@ -45,13 +47,16 @@ export default function App() {
   const [narrativePlacement,setNarrativePlacement]=useState<NarrativeSpace>();
   const [motionEnabled, setMotionEnabled] = useState(readMotionPreference);
   const [motionState, setMotionState] = useState<ViewportMotionState>({ enabled: false, reducedMotion: matchMedia('(prefers-reduced-motion: reduce)').matches, supported: false });
-  const [manifests, setManifests] = useState<Record<number, Pick<SceneManifest, 'id' | 'stops'>>>({});
+  const [manifests, setManifests] = useState<Record<number, ViewerManifest>>({});
+  const manifest = manifests[chapterId];
+  const nativeEdition = manifest?.sourceRevision === activeSourceEdition;
   const chapterSettings = settings.chapters[chapterId];
-  const { progress, target, seek, nudge, playing, togglePlaying, stop } = useScrollController(chapterId, { smoothingMs: chapterSettings.smoothingMs, active: journey.interactive });
+  const { progress, target, seek, nudge, playing, togglePlaying, stop } = useScrollController(chapterId, {
+    smoothingMs: chapterSettings.smoothingMs, active: journey.interactive, timing: manifest,
+  });
   stopRef.current = stop;
   const chapterIndex = chapters.findIndex(item => item.id === chapterId);
   const chapter = chapters[chapterIndex];
-  const manifest = manifests[chapterId];
   const stops = manifest?.stops?.length ? manifest.stops : [{ name: '卷首', progress: 0 }, { name: '卷末', progress: 1 }];
   const currentIndex = stops.reduce((latest, item, index) => progress + 0.012 >= item.progress ? index : latest, 0);
   const currentStop = stops[currentIndex];
@@ -62,7 +67,8 @@ export default function App() {
   const openSettings = useCallback(() => { stopRef.current(); setCultureOpen(false); setSettingsOpen(true); }, []);
   const receiveMotionState = useCallback((state: ViewportMotionState) => setMotionState(state), []);
   const receiveManifest = useCallback((data: SceneManifest) => {
-    setManifests(previous => ({ ...previous, [chapterId]: { id: data.id, stops: data.stops } }));
+    const { id, stops, sourceRevision, frameRange, fps, fpsBase, sourceDurationSeconds } = data;
+    setManifests(previous => ({ ...previous, [chapterId]: { id, stops, sourceRevision, frameRange, fps, fpsBase, sourceDurationSeconds } }));
   }, [chapterId]);
 
   const changeChapter = useCallback((id: number) => {
@@ -208,7 +214,7 @@ export default function App() {
                 onManifest={receiveManifest}
                 wheelSpeed={chapterSettings.wheelSpeed}
               />
-              {manifest && <NarrativeCalligraphy chapterId={chapterId} progress={progress} stops={manifest.stops} placement={narrativePlacement} active={journey.interactive && !finished} platePadding={settings.textPlate.padding} />}
+              {manifest && <NarrativeCalligraphy chapterId={chapterId} progress={progress} stops={manifest.stops} placement={narrativePlacement} active={journey.interactive && !finished} platePadding={settings.textPlate.padding} durationSeconds={manifest.sourceDurationSeconds} />}
               {finished && (
                 <aside className="end-colophon" aria-label="卷末题跋">
                   <span className="end-seal" aria-hidden="true">阅<br />毕</span>
@@ -256,7 +262,7 @@ export default function App() {
               <button className="step-button" type="button" onClick={nextScene} disabled={finished} aria-label="下一分镜" title="下一分镜"><span>下一景</span><ChevronRight size={18} strokeWidth={1.35} /></button>
             </div>
             <div className="secondary-controls">
-              <button type="button" className={`utility-button motion-button${motionState.enabled ? ' is-active' : ''}`}
+              {!nativeEdition && <><button type="button" className={`utility-button motion-button${motionState.enabled ? ' is-active' : ''}`}
                 onClick={() => setMotionEnabled(value => !value)}
                 aria-label="画中轻动" aria-pressed={motionState.enabled}
                 disabled={motionState.reducedMotion || !motionState.supported}
@@ -264,8 +270,8 @@ export default function App() {
                 title={motionState.reducedMotion ? '遵循系统减少动态效果设置' : !motionState.supported ? '本卷保持静态' : '切换花枝与云气轻动，不影响自动展卷'}>
                 <Wind size={16} strokeWidth={1.4} /><span>画中轻动</span>
                 <small id="painting-motion-state" role="status">{motionState.reducedMotion ? '随系统静止' : !motionState.supported ? '本卷静态' : motionState.enabled ? '已开' : '已关'}</small>
-              </button>
-              <span className="secondary-divider" /><AudioController active={journey.interactive} /><span className="secondary-divider" />
+              </button><span className="secondary-divider" /></>}
+              <AudioController active={journey.interactive} /><span className="secondary-divider" />
               <button type="button" className="utility-button" onClick={() => { stop(); setCultureOpen(true); }} aria-label="打开文化解读"><BookOpen size={16} strokeWidth={1.4} /><span>画外拾遗</span></button>
             </div>
           </div>

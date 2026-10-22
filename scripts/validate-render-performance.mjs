@@ -1,7 +1,7 @@
 /** CPU checks for bounded reading placement and prioritized source-layer streaming.
  * Real GPU readback, frame times and rendered fidelity require browser acceptance. */
 import assert from 'node:assert/strict';
-import { readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import path from 'node:path';
 import ts from 'typescript';
@@ -12,7 +12,9 @@ const compile = source => ts.transpileModule(source, { compilerOptions: { module
 const moduleUrl = source => `data:text/javascript;base64,${Buffer.from(source).toString('base64')}`;
 const read = file => readFile(path.join(root, file), 'utf8');
 const placementUrl = moduleUrl(compile(await read('src/scene/NarrativeSpace.ts')));
+const viewportUrl = moduleUrl(compile(await read('src/scene/sourceViewport.ts')));
 const { narrativeSampleSize, findNarrativeSpace } = await import(placementUrl);
+const { fitSourceViewport } = await import(viewportUrl);
 const checks = [];
 for (const [width, height] of [[1, 1], [320, 568], [390, 844], [1672, 941], [3840, 2160], [7680, 4320]]) {
   const sample = narrativeSampleSize(width, height);
@@ -26,6 +28,15 @@ for (const [width, height] of [[1, 1], [320, 568], [390, 844], [1672, 941], [384
 }
 checks.push({ test: 'placement-buffer-bounded-through-8k-and-distinguishes-paper-from-ink', maximumPixels: 49152, passed: true });
 assert.equal(findNarrativeSpace(new Uint8Array(256 * 100 * 4).fill(255), 256, 100, undefined, true).orientation, 'horizontal', 'Short landscape reading areas need horizontal text even when their thumbnail is wide.');
+for (const [width, height] of [[390, 844], [1672, 941], [1920, 480]]) {
+  const gate = fitSourceViewport(width, height, { width: 1920, height: 1080, pixelAspectX: 1, pixelAspectY: 1 });
+  assert(Math.abs(gate.width / gate.height - 16 / 9) < 1e-10);
+  assert(gate.x >= 0 && gate.y >= 0 && gate.width <= width && gate.height <= height);
+  assert(Math.abs(gate.x * 2 + gate.width - width) < 1e-10);
+  assert(Math.abs(gate.y * 2 + gate.height - height) < 1e-10);
+}
+assert.equal(fitSourceViewport(400, 400, { width: 100, height: 100, pixelAspectX: 2, pixelAspectY: 1 }).aspect, 2);
+checks.push({ test: 'whole-source-camera-gate-centered-with-source-pixel-aspect', passed: true });
 
 // GPU and unrelated presentation surfaces are replaced, while the production
 // streaming, visibility, readiness and shader-failure logic executes unchanged.
@@ -37,13 +48,29 @@ export class WebGLRenderer {
  setPixelRatio(){} setClearColor(){} dispose(){} forceContextLoss(){}
  getContext(){return {getExtension(){return null;}};}
 }`);
-const surfaceUrl = moduleUrl(`export class CalligraphyLayer {dispose(){}}
-export class MotionDirector {} export class StableLayerSorting {}
-export const getMotionProfile=()=>({enabled:false}); export const prepareScene=x=>x;
-export const applyArtDirection=()=>{}; export const createNewScrollAtmosphere=()=>{};
-export const activeSourceEdition='test'; export const chapterAssetBase=()=>'';`);
-const imports = { three: gpuUrl, './NarrativeSpace': placementUrl };
-const rendererSource = compile(await read('src/scene/SceneRenderer.ts')).replace(/from (['"])([^'"]+)\1/g, (match, quote, name) => `from ${JSON.stringify(imports[name] || surfaceUrl)}`);
+// Each presentation/GPU dependency has an explicit module boundary. A new
+// production import must be reviewed instead of silently receiving an unrelated
+// catch-all surface. Source geometry and queue/readiness methods stay real.
+const imports = {
+  three: gpuUrl,
+  './NarrativeSpace': placementUrl,
+  './sourceViewport': viewportUrl,
+  './prepareScene': moduleUrl('export const prepareScene=x=>x;'),
+  './CalligraphyLayer': moduleUrl('export class CalligraphyLayer {dispose(){}}'),
+  './MotionDirector': moduleUrl('export class MotionDirector {}'),
+  './StableLayerSorting': moduleUrl('export class StableLayerSorting {}'),
+  '../data/motionProfiles': moduleUrl('export const getMotionProfile=()=>({enabled:false});'),
+  '../data/sourceEdition': moduleUrl("export const activeSourceEdition='peony-2.0-2026-10-23'; export const chapterAssetBase=()=>'';"),
+  './ArtDirectionLayer': moduleUrl('export const applyArtDirection=()=>{};'),
+  './NewScrollAtmosphere': moduleUrl('export const createNewScrollAtmosphere=()=>{};'),
+  './SourceMaterial': moduleUrl('export const loadSourceMaterialLibrary=()=>{throw new Error("Unexpected GPU material construction in CPU streaming test");};'),
+  './SourceLighting': moduleUrl('export const loadSourceRenderSettings=()=>{throw new Error("Unexpected render-settings fetch in CPU streaming test");}; export const createSourceLighting=()=>{throw new Error("Unexpected GPU lighting construction in CPU streaming test");};'),
+  './SourcePostProcessing': moduleUrl('export class SourcePostProcessing {constructor(){throw new Error("Unexpected GPU post-processing construction in CPU streaming test");}}'),
+};
+const rendererSource = compile(await read('src/scene/SceneRenderer.ts')).replace(/from (['"])([^'"]+)\1/g, (match, quote, name) => {
+  assert(imports[name], `Review the CPU boundary for the new production dependency: ${name}`);
+  return `from ${JSON.stringify(imports[name])}`;
+});
 const { SceneRenderer } = await import(moduleUrl(rendererSource));
 globalThis.devicePixelRatio = 1;
 globalThis.document = { hidden: false, addEventListener() {}, removeEventListener() {} };
@@ -54,7 +81,8 @@ globalThis.cancelAnimationFrame = () => {};
 const statuses = [], preparation = [];
 const renderer = new SceneRenderer({ appendChild() {}, closest() { return null; } }, status => statuses.push(status), state => preparation.push(state));
 const requested = [], callbacks = new Map();
-renderer.loader = { load(url, success, progress, failure) { requested.push(url); callbacks.set(url, { success, failure }); } };
+const load = url => new Promise((success, failure) => { requested.push(url); callbacks.set(url, { success, failure }); });
+renderer.loader = { loadAsync: load };
 renderer.camera.aspect = 1; renderer.camera.updateProjectionMatrix(); renderer.camera.updateMatrixWorld(true);
 const objects = [];
 function layer(url, visible) {
@@ -73,18 +101,18 @@ const current = Array.from({ length: 4 }, (_, index) => layer(`current-${index}`
 renderer.updateTextures();
 assert.deepEqual(requested.slice(1), ['current-0', 'current-1', 'current-2']);
 assert.equal(renderer.ready, false);
-function complete(url) {
-  const texture = new THREE.Texture({ width: 4, height: 4 });
-  callbacks.get(url).success(texture);
+const settle = async () => { for (let index = 0; index < 4; index++) await Promise.resolve(); };
+async function complete(url, texture = new THREE.Texture({ width: 4, height: 4 })) {
+  callbacks.get(url).success(texture); await settle(); return texture;
 }
-for (const object of current) complete(object.url);
+for (const object of current) await complete(object.url);
 assert.equal(renderer.ready, true);
 assert.equal(requested.filter(url => url.startsWith('future')).length, 1);
 assert(future.every(object => !object.mesh.visible), 'Prefetch must preserve the source hidden state.');
-complete('future-a');
+await complete('future-a');
 assert.equal(requested.at(-1), 'future-b');
 assert.equal(renderer.ready, true, 'An unfinished speculative image must not turn off current readiness.');
-callbacks.get('future-b').failure();
+callbacks.get('future-b').failure(new Error('Speculative source image unavailable')); await settle();
 assert.equal(statuses.at(-1), null, 'A speculative failure must not report missing current artwork.');
 checks.push({ test: 'visible-resource-priority-single-speculative-slot-readiness-source-visibility-and-failure', requested: [...requested], passed: true });
 // Fail a shader while four visible textures are in flight and a fifth is
@@ -94,12 +122,12 @@ renderer.updateTextures();
 assert(callbacks.has('shader-late-0') && callbacks.has('shader-late-3'));
 assert(!callbacks.has('shader-late-4'));
 renderer.firstFrameReady = true;
-renderer.renderer.debug.onShaderError();
+renderer.renderer.debug.onShaderError({ getProgramInfoLog: () => 'Intentional shader failure', getShaderInfoLog: () => '' }, {}, {}, {});
 assert.equal(renderer.ready, false); assert.equal(preparation.at(-1).stage, 'error');
 assert.equal(renderer.firstFrameReady, false);
 const shaderErrorStatus = statuses.at(-1), shaderErrorPreparation = preparation.at(-1), startedBeforeFailure = requested.length;
-complete('shader-late-0');
-callbacks.get('shader-late-1').failure();
+await complete('shader-late-0');
+callbacks.get('shader-late-1').failure(new Error('Late source image unavailable')); await settle();
 renderer.updateTextures(); renderer.pumpQueue();
 assert.equal(renderer.ready, false); assert.equal(renderer.firstFrameReady, false);
 assert.equal(statuses.at(-1), shaderErrorStatus); assert.equal(preparation.at(-1), shaderErrorPreparation);
@@ -110,6 +138,63 @@ assert.equal(renderer.retryFailedAssets(), false, 'Shader failures must rebuild 
 renderer.frame = 0; renderer.requestFrame(); assert.equal(renderer.frame, 0, 'Failed shaders must stop RAF and never unlock first-frame readiness.');
 renderer.dispose();
 checks.push({ test: 'shader-failure-invalidates-first-frame-and-survives-late-texture-success-failure', queuedStartsBeforeFailure: startedBeforeFailure, queuedStartsAfterFailure: requested.length, passed: true });
+
+// Real source fields and compositor plates use the same bounded queue, with
+// different decoding providers. They must gate readiness just like the image,
+// preserve linear float data and wait for every field before showing a mesh.
+const native = new SceneRenderer({ appendChild() {}, closest() { return null; } }, () => {});
+native.loader = { loadAsync: load };
+native.camera.aspect = 1; native.camera.updateProjectionMatrix(); native.camera.updateMatrixWorld(true);
+const geometry = new THREE.PlaneGeometry(1, 1), material = new THREE.MeshBasicMaterial();
+const mesh = new THREE.Mesh(geometry, material);
+mesh.position.z = -5; mesh.updateMatrixWorld(true); mesh.userData.sourceVisible = true; mesh.visible = false;
+const assigned = new Map(), providers = [];
+let upcomingPost = [];
+const fieldUrls = ['native-field-a', 'native-field-b', 'native-field-c'];
+native.sourceFieldUrls = new Set(fieldUrls);
+native.sourceMaterials = { loadTexture(url, signal) { assert(signal instanceof AbortSignal); providers.push(['material', url]); return load(url); }, dispose() {} };
+native.sourcePost = {
+  requiredUrls: () => ['native-glare'], prefetchUrls: () => upcomingPost, hasUrl: url => url.startsWith('native-glare'),
+  loadTexture(url, signal) { assert(signal instanceof AbortSignal); providers.push(['post', url]); return load(url); },
+  assign(url, texture) { assigned.set(url, texture); }, dispose() {},
+};
+native.objects = [{ mesh, material, url: 'native-image', fields: [...fieldUrls, fieldUrls[0]].map(url => ({ url, assign: texture => assigned.set(url, texture) })) }];
+const nativeStart = requested.length;
+native.updateTextures();
+assert.deepEqual(requested.slice(nativeStart), ['native-image', ...fieldUrls]);
+assert.equal(native.ready, false); assert.equal(mesh.visible, false);
+assert.equal(native.queue.length, 1, 'The fifth resource must wait for one of the four shared slots.');
+const image = await complete('native-image');
+assert.equal(image.colorSpace, THREE.SRGBColorSpace);
+assert.equal(requested.at(-1), 'native-glare');
+assert.equal(native.ready, false); assert.equal(mesh.visible, false);
+for (const url of fieldUrls) {
+  const field = new THREE.DataTexture(new Uint16Array(2 * 2 * 4), 2, 2, THREE.RGBAFormat, THREE.HalfFloatType);
+  await complete(url, field);
+  assert.equal(field.colorSpace, THREE.NoColorSpace, 'A native half-float field must remain linear data.');
+  assert.equal(field.generateMipmaps, false, 'Field decoding controls its sampling, not the ordinary-image loader.');
+  assert.equal(native.textures.get(url).bytes, 32, 'Field residency must use the actual half-float byte count.');
+  assert.equal(assigned.get(url), field);
+  assert.equal(mesh.visible, url === fieldUrls.at(-1));
+}
+assert.equal(native.ready, false, 'A required compositor plate must hold the current-frame gate.');
+const plate = await complete('native-glare', new THREE.DataTexture(new Uint16Array(16), 2, 2, THREE.RGBAFormat, THREE.HalfFloatType));
+assert.equal(assigned.get('native-glare'), plate); assert.equal(native.ready, true);
+assert.deepEqual(providers, [...fieldUrls.map(url => ['material', url]), ['post', 'native-glare']]);
+assert.equal(requested.filter(url => url === fieldUrls[0]).length, 1, 'Repeated field bindings share a single request.');
+upcomingPost = ['native-glare-future-a', 'native-glare-future-b'];
+native.updateTextures();
+assert.equal(requested.at(-1), upcomingPost[0]);
+assert(!callbacks.has(upcomingPost[1]), 'Compositor look-ahead must respect the single speculative slot.');
+assert.equal(native.ready, true, 'Upcoming compositor frames cannot block the authored current frame.');
+callbacks.get(upcomingPost[0]).failure(new Error('Speculative compositor frame unavailable')); await settle();
+assert.equal(requested.at(-1), upcomingPost[1]); assert.equal(native.ready, true);
+await complete(upcomingPost[1], new THREE.DataTexture(new Uint16Array(16), 2, 2, THREE.RGBAFormat, THREE.HalfFloatType));
+assert.equal(native.ready, true);
+native.dispose();
+checks.push({ test: 'native-fields-and-compositor-share-four-slots-linear-decoding-and-current-readiness', requested: requested.slice(nativeStart), decodedProviders: providers, passed: true });
 const report = { status: 'pass', testedAt: new Date().toISOString(), scope: 'CPU thumbnail bounds and production streaming/failure logic with GPU stubbed. No FPS or rendered-pixel claim.', checks };
-await writeFile(path.join(root, 'reports/new-scrolls/render-performance-validation.json'), JSON.stringify(report, null, 2) + '\n');
+const output = path.join(root, 'reports/peony2-fidelity');
+await mkdir(output, { recursive: true });
+await writeFile(path.join(output, 'render-performance-validation.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({ status: report.status, checks: checks.length }));

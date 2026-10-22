@@ -1,0 +1,169 @@
+{
+  "status": "pass",
+  "sourceUnchanged": true,
+  "method": "Blender 5.2.3 LTS read-only --disable-autoexec; sampling-only merge; all preexisting non-sampling keys compared by canonical SHA256 before and after.",
+  "chapters": [
+    {
+      "chapter": 1,
+      "sourceSha256": "668566361fc6cfde4cf449cee615dbed5a4101f12ba6b39056ce3d7e32939c5d",
+      "nonSamplingMetadataUnchanged": true,
+      "preservedNativeGlareKeys": [
+        "nativeGlareFrames",
+        "nativeGlareIncludesMixFactor",
+        "nativeGlareSourceSha256",
+        "nativeGlareRecipe"
+      ],
+      "sampling": {
+        "blenderVersion": "5.2.3 LTS",
+        "blenderBuildHash": "e13b728c6880",
+        "filterSize": 1.5,
+        "eevee": {
+          "taa_render_samples": 48,
+          "taa_samples": 16,
+          "use_taa_reprojection": true,
+          "use_shadow_jitter_viewport": false
+        },
+        "resolutionPercentage": 100,
+        "motionBlur": {
+          "use_motion_blur": false,
+          "motion_blur_shutter": 0.5,
+          "motion_blur_position": "CENTER"
+        },
+        "filmReconstruction": {
+          "kernel": "Gaussian fit to Blackman-Harris",
+          "sigmaPerFilterRadius": 0.284,
+          "linearColor": true,
+          "projectionJitter": true,
+          "disableForSingleSample": true,
+          "textureLodFootprintScale": 0.6666666666666666,
+          "reference": "https://raw.githubusercontent.com/blender/blender/blender-v5.2-release/source/blender/draw/engines/eevee/eevee_film_shared.hh",
+          "samplingReference": "https://raw.githubusercontent.com/blender/blender/blender-v5.2-release/source/blender/draw/engines/eevee/eevee_film.cc"
+        }
+      },
+      "interpolationCounts": {
+        "Linear": 107
+      },
+      "extensionCounts": {
+        "CLIP": 107
+      }
+    },
+    {
+      "chapter": 2,
+      "sourceSha256": "e58ac7493074b41d416de04b6456871a2a5b157b3044c94906cbcb71539ce5b0",
+      "nonSamplingMetadataUnchanged": true,
+      "preservedNativeGlareKeys": [],
+      "sampling": {
+        "blenderVersion": "5.2.3 LTS",
+        "blenderBuildHash": "e13b728c6880",
+        "filterSize": 1.5,
+        "eevee": {
+          "taa_render_samples": 24,
+          "taa_samples": 16,
+          "use_taa_reprojection": true,
+          "use_shadow_jitter_viewport": false
+        },
+        "resolutionPercentage": 100,
+        "motionBlur": {
+          "use_motion_blur": false,
+          "motion_blur_shutter": 0.5,
+          "motion_blur_position": "CENTER"
+        },
+        "filmReconstruction": {
+          "kernel": "Gaussian fit to Blackman-Harris",
+          "sigmaPerFilterRadius": 0.284,
+          "linearColor": true,
+          "projectionJitter": true,
+          "disableForSingleSample": true,
+          "textureLodFootprintScale": 0.6666666666666666,
+          "reference": "https://raw.githubusercontent.com/blender/blender/blender-v5.2-release/source/blender/draw/engines/eevee/eevee_film_shared.hh",
+          "samplingReference": "https://raw.githubusercontent.com/blender/blender/blender-v5.2-release/source/blender/draw/engines/eevee/eevee_film.cc"
+        }
+      },
+      "interpolationCounts": {
+        "Linear": 46
+      },
+      "extensionCounts": {
+        "CLIP": 44,
+        "REPEAT": 2
+      }
+    },
+    {
+      "chapter": 3,
+      "sourceSha256": "437d5bcaaabe36e60f699a39cd932499b948cdba546d3465591d7d85390a39fc",
+      "nonSamplingMetadataUnchanged": true,
+      "preservedNativeGlareKeys": [],
+      "sampling": {
+        "blenderVersion": "5.2.3 LTS",
+        "blenderBuildHash": "e13b728c6880",
+        "filterSize": 1.5,
+        "eevee": {
+          "taa_render_samples": 32,
+          "taa_samples": 16,
+          "use_taa_reprojection": true,
+          "use_shadow_jitter_viewport": false
+        },
+        "resolutionPercentage": 100,
+        "motionBlur": {
+          "use_motion_blur": false,
+          "motion_blur_shutter": 0.5,
+          "motion_blur_position": "CENTER"
+        },
+        "filmReconstruction": {
+          "kernel": "Gaussian fit to Blackman-Harris",
+          "sigmaPerFilterRadius": 0.284,
+          "linearColor": true,
+          "projectionJitter": true,
+          "disableForSingleSample": true,
+          "textureLodFootprintScale": 0.6666666666666666,
+          "reference": "https://raw.githubusercontent.com/blender/blender/blender-v5.2-release/source/blender/draw/engines/eevee/eevee_film_shared.hh",
+          "samplingReference": "https://raw.githubusercontent.com/blender/blender/blender-v5.2-release/source/blender/draw/engines/eevee/eevee_film.cc"
+        }
+      },
+      "interpolationCounts": {
+        "Linear": 75
+      },
+      "extensionCounts": {
+        "CLIP": 75
+      }
+    },
+    {
+      "chapter": 4,
+      "sourceSha256": "dc5a1cf93c7e15eea9a00618d6d3ba8bd6927d964070cf24031edba286fd570f",
+      "nonSamplingMetadataUnchanged": true,
+      "preservedNativeGlareKeys": [],
+      "sampling": {
+        "blenderVersion": "5.2.3 LTS",
+        "blenderBuildHash": "e13b728c6880",
+        "filterSize": 1.5,
+        "eevee": {
+          "taa_render_samples": 16,
+          "taa_samples": 16,
+          "use_taa_reprojection": true,
+          "use_shadow_jitter_viewport": false
+        },
+        "resolutionPercentage": 100,
+        "motionBlur": {
+          "use_motion_blur": false,
+          "motion_blur_shutter": 0.5,
+          "motion_blur_position": "CENTER"
+        },
+        "filmReconstruction": {
+          "kernel": "Gaussian fit to Blackman-Harris",
+          "sigmaPerFilterRadius": 0.284,
+          "linearColor": true,
+          "projectionJitter": true,
+          "disableForSingleSample": true,
+          "textureLodFootprintScale": 0.6666666666666666,
+          "reference": "https://raw.githubusercontent.com/blender/blender/blender-v5.2-release/source/blender/draw/engines/eevee/eevee_film_shared.hh",
+          "samplingReference": "https://raw.githubusercontent.com/blender/blender/blender-v5.2-release/source/blender/draw/engines/eevee/eevee_film.cc"
+        }
+      },
+      "interpolationCounts": {
+        "Linear": 50
+      },
+      "extensionCounts": {
+        "CLIP": 50
+      }
+    }
+  ]
+}

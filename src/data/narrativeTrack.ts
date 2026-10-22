@@ -39,7 +39,7 @@ export function splitNarrativeText(text: string, maximum = 68): string[] {
   return result.length ? result : [text];
 }
 
-export function buildNarrativeTrack(chapterId: number, stops: StoryStop[], maximum = 68): NarrativeCue[] {
+export function buildNarrativeTrack(chapterId: number, stops: StoryStop[], maximum = 68, durationSeconds?: number): NarrativeCue[] {
   const chapter = narrativeChapters[chapterId], mapping = narrativeSceneRanges[chapterId];
   if (!chapter || !mapping) return [];
   const canonical = stops.filter(stop => !/参考全景/.test(stop.name)).slice(0, mapping.sceneCount);
@@ -61,7 +61,16 @@ export function buildNarrativeTrack(chapterId: number, stops: StoryStop[], maxim
   // required room; no camera, Blender key or prose is changed.
   const characters = chapter.paragraphs.map(paragraph => Math.max(1, [...paragraph.text].length));
   const characterTotal = characters.reduce((total, count) => total + count, 0);
-  const minimumSpans = characters.map(count => end * .7 * count / characterTotal);
+  const paragraphPassages = chapter.paragraphs.map(paragraph => splitNarrativeText(paragraph.text, maximum));
+  const passageCount = paragraphPassages.reduce((sum, passages) => sum + passages.length, 0);
+  // Native films are shorter than the retired fixed autoplay durations. Reserve
+  // real seconds for every clause before distributing flexible reading time.
+  const minimumPassage = durationSeconds && durationSeconds > 0
+    ? Math.min(.95 / durationSeconds, end * .95 / passageCount) : 0;
+  const reserved = minimumPassage * passageCount;
+  const minimumSpans = characters.map((count, index) => minimumPassage
+    ? minimumPassage * paragraphPassages[index].length + (end - reserved) * .7 * count / characterTotal
+    : end * .7 * count / characterTotal);
   const boundaries = [...mapping.ranges.map(range => sourceProgress(range[0])), end];
   boundaries[0] = 0;
   for (let i = chapter.paragraphs.length - 1; i > 0; i--)
@@ -69,7 +78,7 @@ export function buildNarrativeTrack(chapterId: number, stops: StoryStop[], maxim
   for (let i = 1; i < chapter.paragraphs.length; i++)
     boundaries[i] = Math.max(boundaries[i], boundaries[i - 1] + minimumSpans[i - 1]);
   return chapter.paragraphs.flatMap((paragraph: NarrativeParagraph, index) => {
-    const range = mapping.ranges[index], passages = splitNarrativeText(paragraph.text, maximum);
+    const range = mapping.ranges[index], passages = paragraphPassages[index];
     const start = boundaries[index], finish = boundaries[index + 1];
     // A short closing clause still needs time to finish its ink fade. Weighting
     // it as at least twelve characters preserves every original character and
@@ -79,8 +88,10 @@ export function buildNarrativeTrack(chapterId: number, stops: StoryStop[], maxim
     let consumed = 0;
     return passages.map((text, partIndex) => {
       const begin = consumed / Math.max(1, total); consumed += weights[partIndex];
+      const flexible = Math.max(0, finish - start - minimumPassage * passages.length);
       return { id: `${paragraph.id}-${partIndex + 1}`, paragraphId: paragraph.id, heading: paragraph.heading, text,
-        start: start + (finish - start) * begin, end: start + (finish - start) * (consumed / Math.max(1, total)),
+        start: partIndex === 0 ? start : start + minimumPassage * partIndex + flexible * begin,
+        end: partIndex === passages.length - 1 ? finish : start + minimumPassage * (partIndex + 1) + flexible * (consumed / Math.max(1, total)),
         paragraphIndex: index, partIndex, partCount: passages.length,
         sourceNode: canonical[Math.min(canonical.length - 1, Math.floor(range[0]))]?.name ?? paragraph.heading };
     });

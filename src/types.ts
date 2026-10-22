@@ -3,10 +3,14 @@ export interface CameraSample {
   frame: number; progress: number; sourceProgress?: number; position: [number, number, number];
   quaternion: [number, number, number, number]; fov: number;
   type: 'PERSP' | 'ORTHO'; orthoScale: number; lens: number; shift?: number[];
+  dof?: { enabled: boolean; focusDistance: number; fstop: number; blades: number; rotation: number; ratio: number; focusObject?: string | null };
 }
 export interface SceneManifest {
   sourceRevision?: string;
   sourceSha256?: string;
+  fpsBase?: number;
+  sourceDurationSeconds?: number;
+  sourceRenderSettings?: string;
   visibility?: Record<string, { progress: number; visible: boolean }[]>;
   version: number; id: string; frameRange: [number, number]; fps: number;
   render: { width: number; height: number; pixelAspectX: number; pixelAspectY: number };
@@ -16,8 +20,11 @@ export interface SceneManifest {
   stops: StoryStop[];
   markers: StoryStop[];
   meshes: {
-    name: string; type: string; matrix: number[]; positions: number[]; uvs: number[];
+    name: string; type: string; matrix: number[]; positions: number[]; normals?: number[]; uvs: number[];
     material: number; indices?: number[]; bounds: { min: number[]; max: number[] }; animated: boolean; isText: boolean;
+    morphTargetsRelative?: boolean;
+    morphTargets?: { name: string; positions: number[]; normals?: number[] }[];
+    morphWeights?: { frame: number; progress: number; weights: number[] }[];
   }[];
   materials: {
     id: number; name: string; texture: string | null; color: number[]; opacity: number;

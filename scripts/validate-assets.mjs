@@ -98,7 +98,7 @@ async function validateChapter(number) {
   const id = `chapter-${number}`;
   const directory = path.join(options.assetsDir, id);
   const manifestPath = path.join(directory, 'scene.json');
-  const result = { id, manifestPath, status: 'fail', errors: [], warnings: [], counts: {}, sizes: {}, textures: [], sourceAudit: {} };
+  const result = { id, manifestPath: path.relative(projectRoot, manifestPath).split(path.sep).join('/'), status: 'fail', errors: [], warnings: [], counts: {}, sizes: {}, textures: [], sourceAudit: {} };
   const error = (location, message) => result.errors.push({ location, message });
   const warn = (location, message) => result.warnings.push({ location, message });
   let scene, raw;
@@ -133,7 +133,7 @@ async function validateChapter(number) {
     if (!finite(determinant) || determinant === 0) warn(location, '矩阵不可逆；请确认源场景是否有刻意压平或零缩放对象。');
   }
 
-  function validateTimeline(items, location, { requireEndpoints = false, withFrame = true, authoredMarkers = false } = {}) {
+  function validateTimeline(items, location, { requireEndpoints = false, withFrame = true, authoredMarkers = false, ordered = true } = {}) {
     if (!Array.isArray(items) || items.length === 0) { error(location, '时间序列必须为非空数组。'); return []; }
     let previous = -Infinity;
     for (const [index, item] of items.entries()) {
@@ -148,7 +148,7 @@ async function validateChapter(number) {
           && finite(stop.progress) && stop.progress >= 0 && stop.progress <= 1);
       if (!finite(item.progress) || ((!authoredStop) && (item.progress < 0 || item.progress > 1))) error(`${at}.progress`, '进度必须在 0..1 内；源档案标记须有明确且正确裁定的执行节点。');
       else {
-        if (item.progress < previous) error(`${at}.progress`, '时间序列未按进度单调排列。');
+        if (ordered && item.progress < previous) error(`${at}.progress`, '时间序列未按进度单调排列。');
         previous = item.progress;
       }
       if (withFrame && frameRangeValid) {
@@ -177,7 +177,10 @@ async function validateChapter(number) {
   }
   const stops = validateTimeline(scene.stops, 'stops');
   for (const [index, stop] of stops.entries()) if (typeof stop.name !== 'string' || !stop.name.trim()) error(`stops[${index}].name`, '分镜名称不能为空。');
-  if (Array.isArray(scene.markers) && scene.markers.length) validateTimeline(scene.markers, 'markers', { authoredMarkers: true });
+  // Blender's marker collection retains insertion order. Later-authored effect
+  // markers need not follow scene-entry markers chronologically; each still
+  // has to match its exact source frame/progress. Executable tracks stay ordered.
+  if (Array.isArray(scene.markers) && scene.markers.length) validateTimeline(scene.markers, 'markers', { authoredMarkers: true, ordered: false });
 
   const materials = Array.isArray(scene.materials) ? scene.materials : [];
   const meshes = Array.isArray(scene.meshes) ? scene.meshes : [];
@@ -264,7 +267,7 @@ const report = {
   checkedAt: new Date().toISOString(),
   localTime: formatTime(new Date()),
   timeZone: 'Asia/Shanghai',
-  assetsDir: options.assetsDir,
+  assetsDir: path.relative(projectRoot, options.assetsDir).split(path.sep).join('/') || '.',
   status: chapters.some(chapter => chapter.errors.length) ? 'fail' : 'pass',
   scope: '结构与文件完整性检查；不代替浏览器视觉、运行帧率或 GPU 资源释放验收。',
   totals: { chapters: chapters.length, errors: sum(chapters.map(chapter => chapter.errors.length)), warnings: sum(chapters.map(chapter => chapter.warnings.length)), browserBytes: sum(chapters.map(chapter => chapter.sizes.browserBytes ?? 0)), directoryBytes: sum(chapters.map(chapter => chapter.sizes.directoryBytes ?? 0)) },

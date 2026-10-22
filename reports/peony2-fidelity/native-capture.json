@@ -1,0 +1,179 @@
+{
+  "status": "captured",
+  "startedAt": "2026-10-22T16:59:15Z",
+  "mode": "capture-only",
+  "chapters": [
+    {
+      "chapter": 1,
+      "status": "captured",
+      "sourceSha256": "668566361fc6cfde4cf449cee615dbed5a4101f12ba6b39056ce3d7e32939c5d",
+      "manifestSha256": null,
+      "counts": {
+        "objects": 157,
+        "exportableGeometry": 149,
+        "imageDatablocks": 100,
+        "uniqueOriginalImageBytes": 100,
+        "usedUniqueOriginalImageBytes": 99,
+        "integerVisibilityFrames": 3024,
+        "exactCameraSamplesCompared": 0,
+        "objectMatrixSamplesCompared": 0,
+        "geometryObjectsCompared": 0,
+        "morphObjects": 25,
+        "integerMorphWeightSamplesCompared": 0,
+        "blenderEvaluatedMorphGeometryChecks": 336
+      },
+      "errors": [],
+      "evidence": "reports/peony2-fidelity/chapter-1-capture.json",
+      "evidenceSha256": "c9456079ff0b25234a0823762ca4ff3b676035c0af5dfab02109172faad222bf",
+      "renders": [
+        {
+          "chapter": 1,
+          "frame": 2540,
+          "sourceSha256": "668566361fc6cfde4cf449cee615dbed5a4101f12ba6b39056ce3d7e32939c5d",
+          "path": "reports/peony2-fidelity/renders/chapter-1-frame-2540.png",
+          "sha256": "6327467c88e35535eba076456799c136c396070d2c4fed69b3052780bad89427",
+          "renderSeconds": 5.6488721999994596,
+          "scalePercent": 50,
+          "engine": "BLENDER_EEVEE",
+          "sourceRenderResolution": [
+            1920,
+            1080
+          ],
+          "sourceResolutionPercentage": 100,
+          "nativeMaterialsLightingDepthOfFieldAndCompositing": true
+        },
+        {
+          "chapter": 1,
+          "frame": 2568,
+          "sourceSha256": "668566361fc6cfde4cf449cee615dbed5a4101f12ba6b39056ce3d7e32939c5d",
+          "path": "reports/peony2-fidelity/renders/chapter-1-frame-2568.png",
+          "sha256": "9fdd35b6e311b43e1ec4053ecc931847d30e4eab2d9d7ee3eecf63abfde3e6ab",
+          "renderSeconds": 0.4825418000036734,
+          "scalePercent": 50,
+          "engine": "BLENDER_EEVEE",
+          "sourceRenderResolution": [
+            1920,
+            1080
+          ],
+          "sourceResolutionPercentage": 100,
+          "nativeMaterialsLightingDepthOfFieldAndCompositing": true
+        },
+        {
+          "chapter": 1,
+          "frame": 2596,
+          "sourceSha256": "668566361fc6cfde4cf449cee615dbed5a4101f12ba6b39056ce3d7e32939c5d",
+          "path": "reports/peony2-fidelity/renders/chapter-1-frame-2596.png",
+          "sha256": "84e7e94d34cb9ebdc8eab45653b29e0278c95456bee87ecc839ad5e7eecb014a",
+          "renderSeconds": 0.4926696999973501,
+          "scalePercent": 50,
+          "engine": "BLENDER_EEVEE",
+          "sourceRenderResolution": [
+            1920,
+            1080
+          ],
+          "sourceResolutionPercentage": 100,
+          "nativeMaterialsLightingDepthOfFieldAndCompositing": true
+        }
+      ],
+      "ablations": [
+        {
+          "chapter": 1,
+          "frame": 2596,
+          "sourceSha256": "668566361fc6cfde4cf449cee615dbed5a4101f12ba6b39056ce3d7e32939c5d",
+          "featureDisabled": "source-light-objects",
+          "authoredPath": "reports/peony2-fidelity/ablations/chapter-1-frame-2596-authored.png",
+          "variantPath": "reports/peony2-fidelity/ablations/chapter-1-frame-2596-without-source-light-objects.png",
+          "authoredSha256": "d16d4eb670d4eadd696f3dfe318df0dc299033dd3f5118dbd1a65ecf1f21a22c",
+          "variantSha256": "94315ce85c511b4ec581a6bba8882d05edbfc87d311941142b2fc7b400eb3944",
+          "decodedPixelSize": [
+            960,
+            540
+          ],
+          "normalizedDecodedRGBA_meanAbsoluteError": 0.024523507803678513,
+          "normalizedDecodedRGBA_rootMeanSquareError": 0.03483983874320984,
+          "normalizedDecodedRGBA_maximumError": 0.11372548341751099,
+          "channelsDifferingAbove1eMinus6": 1541388,
+          "totalChannels": 2073600
+        },
+        {
+          "chapter": 1,
+          "frame": 2596,
+          "sourceSha256": "668566361fc6cfde4cf449cee615dbed5a4101f12ba6b39056ce3d7e32939c5d",
+          "featureDisabled": "world-background-strength",
+          "authoredPath": "reports/peony2-fidelity/ablations/chapter-1-frame-2596-authored.png",
+          "variantPath": "reports/peony2-fidelity/ablations/chapter-1-frame-2596-without-world-background-strength.png",
+          "authoredSha256": "d16d4eb670d4eadd696f3dfe318df0dc299033dd3f5118dbd1a65ecf1f21a22c",
+          "variantSha256": "2bab5d9e93fb0210f2397d8b82c5944ba2b81927d400807e24b11b6c05f3313b",
+          "decodedPixelSize": [
+            960,
+            540
+          ],
+          "normalizedDecodedRGBA_meanAbsoluteError": 0.10929180681705475,
+          "normalizedDecodedRGBA_rootMeanSquareError": 0.16230256855487823,
+          "normalizedDecodedRGBA_maximumError": 0.6274510622024536,
+          "channelsDifferingAbove1eMinus6": 1555200,
+          "totalChannels": 2073600
+        },
+        {
+          "chapter": 1,
+          "frame": 2596,
+          "sourceSha256": "668566361fc6cfde4cf449cee615dbed5a4101f12ba6b39056ce3d7e32939c5d",
+          "featureDisabled": "depth-of-field",
+          "authoredPath": "reports/peony2-fidelity/ablations/chapter-1-frame-2596-authored.png",
+          "variantPath": "reports/peony2-fidelity/ablations/chapter-1-frame-2596-without-depth-of-field.png",
+          "authoredSha256": "d16d4eb670d4eadd696f3dfe318df0dc299033dd3f5118dbd1a65ecf1f21a22c",
+          "variantSha256": "ae317b0118901cd0f305bd114051282ca16113b2738361189d17f5ae8c9d9341",
+          "decodedPixelSize": [
+            960,
+            540
+          ],
+          "normalizedDecodedRGBA_meanAbsoluteError": 0.0,
+          "normalizedDecodedRGBA_rootMeanSquareError": 0.0,
+          "normalizedDecodedRGBA_maximumError": 0.0,
+          "channelsDifferingAbove1eMinus6": 0,
+          "totalChannels": 2073600
+        },
+        {
+          "chapter": 1,
+          "frame": 2596,
+          "sourceSha256": "668566361fc6cfde4cf449cee615dbed5a4101f12ba6b39056ce3d7e32939c5d",
+          "featureDisabled": "compositing",
+          "authoredPath": "reports/peony2-fidelity/ablations/chapter-1-frame-2596-authored.png",
+          "variantPath": "reports/peony2-fidelity/ablations/chapter-1-frame-2596-without-compositing.png",
+          "authoredSha256": "d16d4eb670d4eadd696f3dfe318df0dc299033dd3f5118dbd1a65ecf1f21a22c",
+          "variantSha256": "aaefd6b0533fa6f20f994c5199e1f4a2e8a0c217c9b901cac7466b222d92db72",
+          "decodedPixelSize": [
+            960,
+            540
+          ],
+          "normalizedDecodedRGBA_meanAbsoluteError": 0.0,
+          "normalizedDecodedRGBA_rootMeanSquareError": 0.0,
+          "normalizedDecodedRGBA_maximumError": 0.0,
+          "channelsDifferingAbove1eMinus6": 0,
+          "totalChannels": 2073600
+        },
+        {
+          "chapter": 1,
+          "frame": 2596,
+          "sourceSha256": "668566361fc6cfde4cf449cee615dbed5a4101f12ba6b39056ce3d7e32939c5d",
+          "featureDisabled": "source-light-shadows",
+          "authoredPath": "reports/peony2-fidelity/ablations/chapter-1-frame-2596-authored-for-source-light-shadows.png",
+          "variantPath": "reports/peony2-fidelity/ablations/chapter-1-frame-2596-without-source-light-shadows.png",
+          "authoredSha256": "1248c586ad3403b512873c940db3c9f18c0ca46d1e807430fc6c4f9b6e32bd35",
+          "variantSha256": "83a26a0da412f331f63de306a27c45d011db73cb6a957ab3387de82408f674ef",
+          "decodedPixelSize": [
+            960,
+            540
+          ],
+          "normalizedDecodedRGBA_meanAbsoluteError": 0.0007681176066398621,
+          "normalizedDecodedRGBA_rootMeanSquareError": 0.003956683911383152,
+          "normalizedDecodedRGBA_maximumError": 0.07058823108673096,
+          "channelsDifferingAbove1eMinus6": 121183,
+          "totalChannels": 2073600
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "completedAt": "2026-10-22T16:59:28Z"
+}

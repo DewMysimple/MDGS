@@ -9,9 +9,19 @@ import { StableLayerSorting } from './StableLayerSorting';
 import { activeSourceEdition, chapterAssetBase } from '../data/sourceEdition';
 import { createNewScrollAtmosphere } from './NewScrollAtmosphere';
 import { findNarrativeSpace, isCompactNarrativeViewport, narrativeSampleSize, type NarrativeSpace } from './NarrativeSpace';
+import { fitSourceViewport, type SourceViewport } from './sourceViewport';
+import { loadSourceMaterialLibrary, type SourceMaterialLibrary, type SourceFieldBinding } from './SourceMaterial';
+import { createSourceLighting, loadSourceRenderSettings, type SourceRenderSettings, type SourceLightingState } from './SourceLighting';
+import { SourcePostProcessing } from './SourcePostProcessing';
 
 interface TextureEntry { texture?: THREE.Texture; loading: boolean; lastSeen: number; bytes: number }
-interface SceneObject { mesh: THREE.Mesh; material: THREE.MeshBasicMaterial; url?: string; animation?: { progress: number; matrix: number[] }[]; visibility?: { progress: number; visible: boolean }[] }
+interface SceneObject {
+  mesh: THREE.Mesh; material: THREE.MeshBasicMaterial; url?: string;
+  animation?: { progress: number; matrix: number[] }[];
+  visibility?: { progress: number; visible: boolean }[];
+  morphWeights?: { frame: number; progress: number; weights: number[] }[];
+  fields?: SourceFieldBinding[];
+}
 const clamp = (v: number) => Math.min(1, Math.max(0, v));
 
 export interface SceneMotionState { enabled: boolean; reducedMotion: boolean; supported: boolean }
@@ -42,6 +52,8 @@ export class SceneRenderer {
   private preparationSignature = '';
   private loaded = false;
   private errorUrls = new Set<string>();
+  private textureErrors = new Map<string, string>();
+  private shaderErrors: string[] = [];
   private pending = new Set<string>();
   private queue: string[] = [];
   private lastTextureCheck = 0;
@@ -97,22 +109,32 @@ export class SceneRenderer {
   private appliedSourceProgress = -1;
   private travelDirection = 1;
   private shaderFailed = false;
+  private sourceViewport: SourceViewport = { x: 0, y: 0, width: 1, height: 1, aspect: 1 };
+  private sourceMaterials?: SourceMaterialLibrary;
+  private sourceFieldUrls = new Set<string>();
+  private sourceRenderSettings?: SourceRenderSettings;
+  private sourceLighting?: SourceLightingState;
+  private sourceFocusDistance = 10;
+  private sourcePost?: SourcePostProcessing;
+
+  private get sourceFaithful() { return this.manifest?.sourceRevision === activeSourceEdition; }
 
   constructor(private host: HTMLElement, private status: (message: string | null) => void,
     private preparation?: (state: ScenePreparationState) => void,
     private onNarrativeSpace?: (placement: NarrativeSpace) => void) {
     this.readingLayoutRoot = host.closest<HTMLElement>('.app-shell');
     this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'high-performance' });
-    this.renderer.debug.checkShaderErrors = true;
-    this.renderer.debug.onShaderError = () => {
-      this.shaderFailed = true;
-      this.ready = false;
-      this.firstFrameReady = false;
-      cancelAnimationFrame(this.frame); this.frame = 0;
-      this.status('画面暂时中断，请恢复画卷');
-      this.reportPreparation('error', 0, this.currentVisible.size, '画材暂未显现，请重新展卷。');
-    };
     this.renderer.setPixelRatio(Math.min(devicePixelRatio, 1.65));
+    this.renderer.debug.checkShaderErrors = true;
+    this.renderer.debug.onShaderError = (gl, program, vertex, fragment) => {
+      this.shaderErrors.push([gl.getProgramInfoLog(program), gl.getShaderInfoLog(vertex), gl.getShaderInfoLog(fragment)].filter(Boolean).join('\n'));
+      this.shaderFailed = true;
+      cancelAnimationFrame(this.frame); this.frame = 0;
+      this.ready = false; this.firstFrameReady = false;
+      this.status('画面暂时中断，请重新展卷');
+      this.reportPreparation('error', 0, this.currentVisible.size, '画境未能绘就，请重新展卷。');
+      this.updateDiagnostics();
+    };
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     this.renderer.setClearColor(0xf8f5ed, 0);
     this.renderer.sortObjects = true;
@@ -141,6 +163,34 @@ export class SceneRenderer {
     const manifest = prepareScene(await response.json(), chapterId);
     if (this.disposed) throw new DOMException('Aborted', 'AbortError');
     this.manifest = manifest;
+    const [sourceMaterials, renderSettings] = await Promise.all([
+      loadSourceMaterialLibrary(base, manifest, this.abort.signal),
+      this.sourceFaithful ? loadSourceRenderSettings(base, manifest, this.abort.signal) : undefined,
+    ]);
+    if (this.disposed) { sourceMaterials?.dispose(); throw new DOMException('Aborted', 'AbortError'); }
+    this.sourceMaterials = sourceMaterials;
+    this.sourceRenderSettings = renderSettings;
+    if (this.sourceFaithful) this.renderer.setTransparentSort((a, b) => {
+      if (a.groupOrder !== b.groupOrder) return a.groupOrder - b.groupOrder;
+      if (a.renderOrder !== b.renderOrder) return a.renderOrder - b.renderOrder;
+      const view = this.camera.matrixWorldInverse.elements;
+      const originZ = (object: THREE.Object3D) => {
+        const matrix = object.matrixWorld.elements;
+        return view[2] * matrix[12] + view[6] * matrix[13] + view[10] * matrix[14] + view[14];
+      };
+      return originZ(a.object) - originZ(b.object) || a.id - b.id;
+    });
+    if (renderSettings) {
+      this.sourceLighting = createSourceLighting(renderSettings);
+      this.sourceMaterials!.configureLighting(this.sourceLighting);
+      this.sourcePost = new SourcePostProcessing(base, renderSettings);
+      if (!renderSettings.filmTransparent) {
+        const color = renderSettings.world.color;
+        const strength = renderSettings.world.strength;
+        this.scene.background = new THREE.Color().setRGB(color[0] * strength, color[1] * strength, color[2] * strength, THREE.LinearSRGBColorSpace);
+      }
+    }
+    if (this.disposed) { this.sourceMaterials?.dispose(); throw new DOMException('Aborted', 'AbortError'); }
     for (const source of manifest.meshes) {
       // Long Blender FONT captions belong to the reading drawer. Painted lettering stays intact.
       if (source.isText) continue;
@@ -148,11 +198,24 @@ export class SceneRenderer {
       if (!definition || !source.positions.length) continue;
       const geometry = new THREE.BufferGeometry();
       geometry.setAttribute('position', new THREE.Float32BufferAttribute(source.positions, 3));
+      if (source.normals?.length) geometry.setAttribute('normal', new THREE.Float32BufferAttribute(source.normals, 3));
       if (source.uvs.length) geometry.setAttribute('uv', new THREE.Float32BufferAttribute(source.uvs, 2));
       if (source.indices?.length) geometry.setIndex(source.indices);
+      if (source.morphTargets?.length) {
+        geometry.morphTargetsRelative = source.morphTargetsRelative ?? true;
+        geometry.morphAttributes.position = source.morphTargets.map(target => {
+          const attribute = new THREE.Float32BufferAttribute(target.positions, 3);
+          attribute.name = target.name;
+          return attribute;
+        });
+        if (source.normals?.length && source.morphTargets.every(target => target.normals?.length === source.normals!.length)) {
+          geometry.morphAttributes.normal = source.morphTargets.map(target => new THREE.Float32BufferAttribute(target.normals!, 3));
+        }
+      }
       geometry.computeBoundingSphere();
       const color = new THREE.Color().setRGB(definition.color[0] ?? 1, definition.color[1] ?? 1, definition.color[2] ?? 1, THREE.LinearSRGBColorSpace);
-      const material = new THREE.MeshBasicMaterial({
+      const nativeMaterial = this.sourceMaterials?.create(source.material, source.name, geometry);
+      const material = nativeMaterial?.material ?? new THREE.MeshBasicMaterial({
         color, opacity: definition.opacity ?? 1,
         transparent: definition.transparent || !!definition.texture,
         alphaTest: definition.alphaTest ?? 0.012,
@@ -160,6 +223,7 @@ export class SceneRenderer {
         depthWrite: definition.texture ? false : definition.depthWrite,
         toneMapped: false,
       });
+      for (const field of nativeMaterial?.fields ?? []) this.sourceFieldUrls.add(field.url);
       const mesh = new THREE.Mesh(geometry, material);
       mesh.name = source.name;
       mesh.matrix.fromArray(source.matrix);
@@ -167,7 +231,7 @@ export class SceneRenderer {
       mesh.updateMatrixWorld(true);
       mesh.visible = !definition.texture;
       this.scene.add(mesh);
-      this.objects.push({ mesh, material, url: definition.texture ? `${base}${definition.texture}` : undefined, animation: manifest.animations?.[source.name], visibility: manifest.visibility?.[source.name] });
+      this.objects.push({ mesh, material, url: definition.texture ? new URL(`${base}${definition.texture}`, document.baseURI).href : undefined, animation: manifest.animations?.[source.name], visibility: manifest.visibility?.[source.name], morphWeights: source.morphWeights, fields: nativeMaterial?.fields });
     }
     // Source manifests stay untouched. Replacements and new world-space bridges share
     // this same streaming queue and disposal lifecycle, never a second texture loader.
@@ -178,7 +242,7 @@ export class SceneRenderer {
     // The revised edition has different object identities and local UV planes.
     // Only reviewed independent layers use its profile; its small world-space
     // petals enter the same texture queue and disposal lifecycle as source art.
-    const atmosphere = manifest.sourceRevision === activeSourceEdition
+    const atmosphere = manifest.sourceRevision === 'peony-2026-10-21'
       ? createNewScrollAtmosphere(manifest, chapterId) : undefined;
     for (const object of atmosphere?.objects ?? []) {
       this.scene.add(object.mesh);
@@ -187,11 +251,11 @@ export class SceneRenderer {
     // The first scroll is an overlapping sheet composition. Camera-yaw sorting
     // flips almost coplanar palace/figure sheets while their source poses stand
     // still. Use a source-derived stable viewing axis for this composition.
-    if (chapterId === 1) {
+    if (chapterId === 1 && !this.sourceFaithful) {
       this.layerSorting = new StableLayerSorting(manifest, this.objects.map(object => object.mesh));
       this.renderer.setTransparentSort(this.layerSorting.compare);
     }
-    this.motionDirector = new MotionDirector(chapterId, this.objects, manifest.stops, atmosphere?.profile);
+    if (!this.sourceFaithful) this.motionDirector = new MotionDirector(chapterId, this.objects, manifest.stops, atmosphere?.profile);
     this.artCounts = { replacements: art.replacements, geometryRepairs: art.geometryRepairs, edgeRepairs: art.edgeRepairs, addedLayers: art.addedLayers + (atmosphere?.objects.length ?? 0), textLayers: art.textLayers.length };
     this.loaded = true;
     this.dirty = true;
@@ -243,7 +307,7 @@ export class SceneRenderer {
   }
 
   getMotionState(): SceneMotionState {
-    const supported = (this.motionDirector?.profile ?? getMotionProfile(this.chapterId)).enabled;
+    const supported = !this.sourceFaithful && (this.motionDirector?.profile ?? getMotionProfile(this.chapterId)).enabled;
     const reducedMotion = this.motionMedia.matches;
     return { enabled: supported && this.loaded && this.motionRequested && !reducedMotion && !this.contextLost && !this.shaderFailed && !this.disposed && !document.hidden, reducedMotion, supported };
   }
@@ -280,6 +344,7 @@ export class SceneRenderer {
     }
     if (!this.errorUrls.size) return false;
     this.errorUrls.clear();
+    this.textureErrors.clear();
     this.ready = false;
     this.status('正在恢复画卷');
     this.updateTextures();
@@ -340,6 +405,7 @@ export class SceneRenderer {
     this.contextLost = false;
     this.contextRetryRequested = false;
     this.contextRestoreCount++;
+    this.shaderErrors = [];
     window.clearTimeout(this.recoveryTimer);
     // Three rebuilds GL state after loss. Its default restored viewport follows
     // the integer drawing buffer, while setSize used the fractional responsive
@@ -378,15 +444,21 @@ export class SceneRenderer {
     const { a, b, t } = this.bracket(this.manifest.cameras);
     const sourceProgress = THREE.MathUtils.lerp(a.sourceProgress ?? a.progress, b.sourceProgress ?? b.progress, t);
     this.sourceProgress = sourceProgress;
+    this.sourceMaterials?.update(sourceProgress);
+    this.sourcePost?.update(this.manifest, a, b, t, sourceProgress);
+    this.sourceFocusDistance = THREE.MathUtils.lerp(a.dof?.focusDistance ?? 10, b.dof?.focusDistance ?? 10, t);
     this.camera.position.fromArray(a.position).lerp(this.p2.fromArray(b.position), t);
     this.camera.quaternion.fromArray(a.quaternion).normalize().slerp(this.q2.fromArray(b.quaternion).normalize(), t);
     const fov = THREE.MathUtils.lerp(a.fov, b.fov, t);
     this.camera.fov = Math.max(5, Math.min(115, fov));
     this.camera.near = this.manifest.camera.near || 0.01;
     this.camera.far = this.manifest.camera.far || 5000;
-    this.camera.aspect = this.width / this.height;
+    this.sourceViewport = this.sourceFaithful
+      ? fitSourceViewport(this.width, this.height, this.manifest.render)
+      : { x: 0, y: 0, width: this.width, height: this.height, aspect: this.width / this.height };
+    this.camera.aspect = this.sourceViewport.aspect;
     // The source already contains depth. A small lateral displacement makes it perceptible without rotating the view.
-    if (this.motionRequested && !this.motionMedia.matches) {
+    if (!this.sourceFaithful && this.motionRequested && !this.motionMedia.matches) {
       const amplitude = Math.min(0.07, Math.abs(this.manifest.travel.range[1] - this.manifest.travel.range[0]) * 0.0002);
       this.p1.set(this.pointer.x * amplitude, this.pointer.y * amplitude * 0.4, 0).applyQuaternion(this.camera.quaternion);
       this.camera.position.add(this.p1);
@@ -394,7 +466,7 @@ export class SceneRenderer {
     // Short vertical captions need real paper space in a narrow window. Fit the
     // same source view uniformly into the lower part of the painting instead
     // of letting minimum-size lettering cover faces and embroidered patterns.
-    const compact = this.calligraphy.getCompactLayout(this.width, this.height);
+    const compact = this.sourceFaithful ? undefined : this.calligraphy.getCompactLayout(this.width, this.height);
     this.compactReserve = compact?.reserveFraction ?? 0;
     if (compact) {
       const scale = 1 - compact.reserveFraction;
@@ -415,7 +487,13 @@ export class SceneRenderer {
         for (const key of visibility) { if (key.progress > sourceProgress + 1e-7) break; sourceVisible = key.visible; }
       }
       object.mesh.userData.sourceVisible = sourceVisible;
-      object.mesh.visible = sourceVisible && !object.mesh.userData.artHidden && (!object.url || !!this.textures.get(object.url)?.texture);
+      object.mesh.visible = sourceVisible && !object.mesh.userData.artHidden && this.objectTexturesReady(object);
+      if (sourceChanged && object.morphWeights?.length && object.mesh.morphTargetInfluences) {
+        const { a: weightA, b: weightB, t: weightMix } = this.bracket(object.morphWeights, sourceProgress);
+        for (let i = 0; i < object.mesh.morphTargetInfluences.length; i++) {
+          object.mesh.morphTargetInfluences[i] = THREE.MathUtils.lerp(weightA.weights[i] ?? 0, weightB.weights[i] ?? 0, weightMix);
+        }
+      }
       if (!sourceChanged || !object.animation?.length) continue;
       const { a: key1, b: key2, t: mix } = this.bracket(object.animation, sourceProgress);
       this.m1.fromArray(key1.matrix).decompose(this.p1, this.q1, this.s1);
@@ -440,7 +518,8 @@ export class SceneRenderer {
     this.currentVisible.clear();
     this.prefetched.clear();
     for (const object of this.objects) {
-      if (!object.url) continue;
+      const urls = this.objectTextureUrls(object);
+      if (!urls.length) continue;
       const sourceVisible = object.mesh.userData.sourceVisible !== false;
       // Source-hidden sheets previously started loading only after their first
       // visible frame. Warm a short authored interval without displaying them
@@ -452,14 +531,28 @@ export class SceneRenderer {
         upcoming ||= object.visibility.some(key => key.visible && key.progress >= Math.min(this.sourceProgress, nextSource) && key.progress <= Math.max(this.sourceProgress, nextSource));
       }
       if ((sourceVisible && this.frustum.intersectsObject(object.mesh)) || upcoming) {
-        if (sourceVisible) this.currentVisible.add(object.url);
-        else this.prefetched.add(object.url);
-        const entry = this.textures.get(object.url);
-        if (entry) entry.lastSeen = now;
-        else if (!this.pending.has(object.url) && !this.errorUrls.has(object.url)) {
-          this.pending.add(object.url); this.queue.push(object.url);
+        for (const url of urls) {
+          if (sourceVisible) this.currentVisible.add(url);
+          else this.prefetched.add(url);
+          const entry = this.textures.get(url);
+          if (entry) entry.lastSeen = now;
+          else if (!this.pending.has(url) && !this.errorUrls.has(url)) {
+            this.pending.add(url); this.queue.push(url);
+          }
         }
       }
+    }
+    for (const url of this.sourcePost?.requiredUrls() ?? []) {
+      this.currentVisible.add(url);
+      const entry = this.textures.get(url);
+      if (entry) entry.lastSeen = now;
+      else if (!this.pending.has(url) && !this.errorUrls.has(url)) { this.pending.add(url); this.queue.push(url); }
+    }
+    for (const url of this.sourcePost?.prefetchUrls() ?? []) {
+      this.prefetched.add(url);
+      const entry = this.textures.get(url);
+      if (entry) entry.lastSeen = now;
+      else if (!this.pending.has(url) && !this.errorUrls.has(url)) { this.pending.add(url); this.queue.push(url); }
     }
     this.pumpQueue();
     let totalBytes = [...this.textures.values()].reduce((sum, value) => sum + value.bytes, 0);
@@ -469,7 +562,7 @@ export class SceneRenderer {
       entry.texture?.dispose();
       totalBytes -= entry.bytes;
       this.textures.delete(url);
-      for (const object of this.objects) if (object.url === url) { object.material.map = null; object.material.needsUpdate = true; object.mesh.visible = false; }
+      this.assignTexture(url, null);
     }
     const waiting = [...this.currentVisible].filter(url => !this.textures.get(url)?.texture && !this.errorUrls.has(url)).length;
     const failed = [...this.currentVisible].filter(url => this.errorUrls.has(url)).length;
@@ -482,6 +575,25 @@ export class SceneRenderer {
     this.ready = !waiting;
     if (!waiting) this.status(failed ? '部分画面资源未能加载，可重试补全' : null);
     this.updateDiagnostics();
+  }
+
+  private objectTextureUrls(object: SceneObject): string[] {
+    return [...new Set([...(object.url ? [object.url] : []), ...(object.fields?.map(field => field.url) ?? [])])];
+  }
+
+  private objectTexturesReady(object: SceneObject) {
+    return this.objectTextureUrls(object).every(url => !!this.textures.get(url)?.texture);
+  }
+
+  private assignTexture(url: string, texture: THREE.Texture | null) {
+    if (this.sourcePost?.hasUrl(url)) this.sourcePost.assign(url, texture);
+    for (const object of this.objects) {
+      if (object.url === url) { object.material.map = texture; object.material.needsUpdate = true; }
+      for (const field of object.fields ?? []) if (field.url === url) field.assign(texture);
+      if (object.url === url || object.fields?.some(field => field.url === url)) {
+        object.mesh.visible = object.mesh.userData.sourceVisible !== false && !object.mesh.userData.artHidden && this.objectTexturesReady(object);
+      }
+    }
   }
 
   private reportPreparation(stage: ScenePreparationState['stage'], loaded: number, total: number, message: string) {
@@ -508,26 +620,30 @@ export class SceneRenderer {
       this.textures.set(url, entry);
       loadingCount++;
       if (!this.currentVisible.has(url)) speculativeLoading++;
-      this.loader.load(url, texture => {
+      const load = this.sourcePost?.hasUrl(url) ? this.sourcePost.loadTexture(url, this.abort.signal)
+        : this.sourceFieldUrls.has(url) && this.sourceMaterials
+        ? this.sourceMaterials.loadTexture(url, this.abort.signal)
+        : this.loader.loadAsync(url);
+      load.then(texture => {
         if (this.disposed || this.shaderFailed) { texture.dispose(); entry.loading = false; return; }
-        texture.colorSpace = THREE.SRGBColorSpace;
-        texture.anisotropy = Math.min(4, this.renderer.capabilities.getMaxAnisotropy());
-        texture.generateMipmaps = true;
-        texture.minFilter = THREE.LinearMipmapLinearFilter;
-        entry.texture = texture; entry.loading = false;
-        entry.bytes = texture.image.width * texture.image.height * 4 * 1.333;
-        for (const object of this.objects) if (object.url === url) {
-          object.material.map = texture;
-          object.material.needsUpdate = true;
-          object.mesh.visible = object.mesh.userData.sourceVisible !== false && !object.mesh.userData.artHidden;
+        if (!(texture instanceof THREE.DataTexture)) {
+          if (!this.sourceFieldUrls.has(url)) texture.colorSpace = THREE.SRGBColorSpace;
+          texture.anisotropy = Math.min(4, this.renderer.capabilities.getMaxAnisotropy());
+          texture.generateMipmaps = true;
+          texture.minFilter = THREE.LinearMipmapLinearFilter;
         }
+        entry.texture = texture; entry.loading = false;
+        const pixels = texture.image as { width: number; height: number; data?: ArrayBufferView };
+        entry.bytes = pixels.data?.byteLength ?? pixels.width * pixels.height * 4 * 1.333;
+        this.assignTexture(url, texture);
         this.dirty = true;
         this.requestFrame();
         this.pumpQueue();
         this.updateTextures();
-      }, undefined, () => {
+      }).catch((error: unknown) => {
         if (this.disposed || this.shaderFailed) { entry.loading = false; return; }
         this.errorUrls.add(url);
+        this.textureErrors.set(url, error instanceof Error ? error.message : String(error));
         this.textures.delete(url);
         this.pumpQueue();
         this.updateTextures();
@@ -553,7 +669,7 @@ export class SceneRenderer {
     const dt = this.previousFrameTime ? Math.min((now - this.previousFrameTime) / 1000, 0.05) : 0;
     this.previousFrameTime = now;
     if (motion) this.motionDirector?.advance(dt, this.progress);
-    const pointerMoving = this.pointer.distanceToSquared(this.pointerTarget) > 0.0001 && this.motionRequested && !this.motionMedia.matches;
+    const pointerMoving = !this.sourceFaithful && this.pointer.distanceToSquared(this.pointerTarget) > 0.0001 && this.motionRequested && !this.motionMedia.matches;
     if (pointerMoving) { this.pointer.lerp(this.pointerTarget, 0.06); this.dirty = true; }
     const ambientVisible = (this.motionDirector?.getDiagnostics().activeBindings ?? 0) > 0;
     const ambientFps = this.motionDirector?.profile.ambientFps ?? getMotionProfile(this.chapterId).ambientFps;
@@ -564,14 +680,29 @@ export class SceneRenderer {
       // then upload/draw its textures before allowing the outer ceremony to reveal it.
       if (!this.firstFrameReady) this.updateTextures();
       this.motionDirector?.update(this.camera, motion, this.progress);
+      if (this.sourceMaterials) this.sourceLighting?.prepareShadows(this.renderer, this.scene, this.sourceMaterials, this.camera, this.sourceFocusDistance);
+      if (this.sourcePost && this.sourceMaterials) {
+        this.sourcePost.render(this.renderer, this.scene, this.camera, this.sourceMaterials, this.sourceViewport, this.width, this.height);
+      } else {
+      if (this.sourceFaithful) {
+        this.renderer.setScissorTest(false);
+        this.renderer.setViewport(0, 0, this.width, this.height);
+        this.renderer.clear();
+        const view = this.sourceViewport;
+        this.renderer.setViewport(view.x, view.y, view.width, view.height);
+        this.renderer.setScissor(view.x, view.y, view.width, view.height);
+        this.renderer.setScissorTest(true);
+      }
       this.renderer.render(this.scene, this.camera);
+      this.renderer.setScissorTest(false);
+      }
       if (this.shaderFailed) return;
       this.updateNarrativeSpace(now);
       this.calligraphy.render(this.camera, this.progress);
       this.dirty = false;
       this.lastAmbientFrame = now;
       this.renderCount++;
-      if (!this.firstFrameReady && this.ready && this.width > 1 && this.height > 1
+      if (!this.shaderErrors.length && !this.firstFrameReady && this.ready && this.width > 1 && this.height > 1
         && ![...this.currentVisible].some(url => !this.textures.get(url)?.texture)) {
         this.firstFrameReady = true;
         this.reportPreparation('ready', this.currentVisible.size, this.currentVisible.size, '长卷已备，邀君共赏。');
@@ -586,7 +717,7 @@ export class SceneRenderer {
     // A narrow view can contain no authored independent motion at all. Keep that
     // painting quiet until resize, seek or a completed texture requests a new frame.
     if (!visibleMotion) this.previousFrameTime = 0;
-    if (this.loaded && (visibleMotion || this.textureRefreshPending || this.dirty || pointerMoving)) this.requestFrame();
+    if (!this.shaderErrors.length && this.loaded && (visibleMotion || this.textureRefreshPending || this.dirty || pointerMoving)) this.requestFrame();
     this.updateDiagnostics(!!this.frame);
   };
 
@@ -667,6 +798,15 @@ export class SceneRenderer {
       editionAtmosphereLayers: String(atmosphere.length), editionAtmosphereActive: String(atmosphere.filter(object => activeNames.has(object.mesh.name)).length),
       editionAtmosphereOpacityMax: Math.max(0, ...atmosphere.map(object => object.material.opacity)).toFixed(6),
       sourceHiddenVisibleLayers: String(this.objects.filter(object => object.mesh.userData.sourceVisible === false && object.mesh.visible).length),
+      sourceRevision: this.manifest?.sourceRevision ?? '',
+      sourceFrame: this.manifest ? String(this.manifest.frameRange[0] + this.progress * (this.manifest.frameRange[1] - this.manifest.frameRange[0])) : '',
+      sourceViewport: JSON.stringify(this.sourceViewport),
+      sourceMorphObjects: String(this.objects.filter(object => object.morphWeights?.length).length),
+      sourceMaterialsReady: String(!!this.sourceMaterials),
+      sourceMaterialFields: String(this.sourceFieldUrls.size),
+      sourcePostTextures: String(this.sourcePost?.requiredUrls().length ?? 0),
+      shaderErrors: JSON.stringify(this.shaderErrors),
+      textureErrors: JSON.stringify(Object.fromEntries(this.textureErrors)),
       compactReadingReserve: String(this.compactReserve),
       renderCount: String(this.renderCount), rafTicks: String(this.rafTicks), rafRunning: String(!!this.frame),
       firstFrameReady: String(this.firstFrameReady),
@@ -697,6 +837,9 @@ export class SceneRenderer {
     this.renderer.domElement.removeEventListener('webglcontextrestored', this.onContextRestored);
     this.motionListeners.clear();
     this.motionDirector?.dispose();
+    this.sourceMaterials?.dispose();
+    this.sourceLighting?.dispose();
+    this.sourcePost?.dispose();
     this.readingLayoutRoot?.style.removeProperty('--reading-min-paint-height');
     for (const { mesh, material } of this.objects) { mesh.geometry.dispose(); material.dispose(); }
     for (const entry of this.textures.values()) entry.texture?.dispose();
@@ -704,6 +847,7 @@ export class SceneRenderer {
     this.narrativeTarget?.dispose();
     this.textures.clear();
     this.pending.clear(); this.queue = []; this.currentVisible.clear();
+    this.sourceFieldUrls.clear();
     this.scene.clear();
     this.renderer.dispose();
     this.renderer.forceContextLoss();
