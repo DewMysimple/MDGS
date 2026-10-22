@@ -1,6 +1,6 @@
 # 新版四卷与沉浸书房交付验收
 
-本页汇总2026-10-22本轮 `peony-2026-10-21` 的实际代码、原生交付和生产网页证据。当前四世界、首页、真实入卷、手机音频异常、计时和子目录验收已通过；**Git/LFS 交付核对仍待收尾**，任务尚未标记完成。历史 reconstruction、study-faithful 或第三卷专项报告不能替代本页新版证据。
+本页汇总2026-10-22本轮 `peony-2026-10-21` 的实际代码、原生交付和生产网页证据。当前四世界、首页、真实入卷、手机音频异常、计时和子目录验收已通过；功能与素材提交 **d849765** 已推送，远程 `main` 一致，Git LFS 完整性检查通过。历史 reconstruction、study-faithful 或第三卷专项报告不能替代本页新版证据。
 
 ## 七项目标与证据
 
@@ -77,10 +77,10 @@ npm run test:subpath
 
 原生只读复核：`blender --background --disable-autoexec --python scripts/validate-new-scroll-native.py`。`validate:new-assets`需要有Pillow的Python，可用`MDGS_PYTHON`指定；浏览器测试需Playwright/Chromium，可指定`MDGS_PLAYWRIGHT_MODULE`、`MDGS_TEST_BROWSER`及可选`MDGS_PREVIEW_URL`。这些是验收依赖，普通网页不需要。历史测试适用范围见 [test-applicability.md](test-applicability.md)。
 
-## 剩余收尾与限制
+## Git交付与限制
 
 `test:study-timing`于2026-10-22 06:10:47 UTC最终通过8组，见 [计时报告](../study/validation-timing.json)；旧测试已改为只拦world纹理，避免把新增cover也一并拦住。后台可见时间采用模拟visibility事件检查，不推断真实OS后台行为。`test:subpath`于06:18:07 UTC通过 `/portable/nested/` 中当前四卷、字体/音乐/cover路径和保留交互，页面与资源错误均为空，见 [子目录报告](../validation-portable-subpath.json)。
 
-手机开启音乐控件布局与音频503重试已通过，控件位于画心上方并支持返回清理。Git提交revision、远程跟踪分支一致性和LFS状态仍待核；不将素材上传或本地测试当作远程交付完成。根任务取得Git终态后再更新本页、README和工程日志。
+手机开启音乐控件布局与音频503重试已通过，控件位于画心上方并支持返回清理。功能与素材提交 `d849765dea149c8fe7fd9ede965ca8c47fa4e89c` 已成功推送 `origin/main`，直接读取GitHub远程提交号核对相等，核对前工作树干净，`git lfs fsck --objects HEAD` 返回 OK。见 [Git交付证据](git-delivery.json)。本段终态记录作为后续文档提交交付；最终分支HEAD以Git核对为准。
 
 尚未验证实体手机、Safari/Firefox、持续60FPS、物理扬声器听感和线上部署；浏览器没有逐像素复刻Blender程序着色/灯光，首页不是完整自由视角场景。

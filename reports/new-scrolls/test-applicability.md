@@ -31,18 +31,20 @@
 
 历史`reconstruction/manifest.json`补层/题字计数仅在明确设置`MDGS_LEGACY_RECONSTRUCTION=1`时读取。该模式要求另行构建旧版应用fixture，不会偷偷改变当前运行源码；它的报告写入`validation-portable-subpath-legacy.json`，不能当作新四卷通过。默认当前报告为`validation-portable-subpath.json`，启动/失败均先覆盖状态，避免保留旧通过记录。
 
-本轮只执行`node --check scripts/validate-subpath.mjs`，没有执行该浏览器命令；根任务需构建最新dist后独占GPU运行。
+根任务已在最新生产dist实跑默认新版子目录验收，结果pass，见reports/validation-portable-subpath.json；本段早期审计的语法检查不能替代该最终运行证据。
 
 ## 其他浏览器脚本适用性
 
 | 脚本 | 当前适用性 |
 | --- | --- |
 | `validate-projection-home.mjs` | 当前首页专用入口；默认浏览器检查真实投影几何、shader错误门控、按钮及移动适配。已增package入口`test:projection-home`，根任务运行。 |
-| `validate-study-timing.mjs` | 仍适用：完整阶段链、4秒可见加载、缓存/刷新/历史/retry/hidden与真实慢纹理。网络glob可命中新目录；需根实际跑。 |
+| `validate-study-timing.mjs` | 仍适用：完整阶段链、4秒可见加载、缓存/刷新/历史/retry/hidden与真实慢纹理。网络glob已限定textures目录，最终8例实际通过。 |
 | `validate-study-renderer.mjs` | 准备门控、取消、纹理重试、context恢复、原输入验证仍有意义；宽屏resize“必然请求未缓存纹理”的场景假设需在新卷重新实测。 |
 | `validate-study-journey.mjs` | 基础旅程多数仍有意义；末尾旧`ui/study-volume/paintings-atlas.webp`故障注入应换为当前本卷cover，旧data-painting-src以`#chapter-N`结尾的断言不再适用。 |
 | `validate-faithful-home.mjs` | 属于旧分离材质建模首页；强制旧`gongbi-volumetric-peony-corolla`、`study-faithful/garden.webp`等资产和对象，不作为当前首页通过条件。保留历史脚本。 |
-| `validate-volume-home.mjs`及`test:layered-home`旧alias | 曲面展卷/门控理念仍适用，但书房brush-holder射线阻挡、旧garden故障注入和旧物件身份已变；需独立适配后再用，不能把旧物件缺失称为新版本运行失败。 |
+| `validate-volume-home.mjs`及历史旧alias | 曲面展卷/门控理念仍适用，但书房brush-holder射线阻挡、旧garden故障注入和旧物件身份已变；需独立适配后再用，不能把旧物件缺失称为新版本运行失败。 |
 | `validate-all-motion.mjs`、`validate-motion-*.mjs`、`validate-pilot-motion.mjs` | 读取旧canonical/R1/R4、旧花枝和云密度要求；仅作历史版本回归，当前以新显式profile/单瓣绑定和卷末全部停动验收。原艺术规范保留。 |
 | `validate-blank-*.mjs`、`validate-third-*.mjs`及旧layer-sorting整图快照 | 绑定旧重建SHA、45个补绘层或旧题字布局，保留历史证据。当前新源应使用独立资产/native审阅与新画面截图，不以这些旧计数覆盖原生源。 |
 | `validate-startup.mjs` | HTTP端口/项目路径校验仍适用，无浏览器；运行需要允许Vite配置读取和监听本地端口。本轮未重复启动五台服务。 |
+
+当前默认npm入口：test:study已指向test:new-journey，旧脚本保留test:study-legacy；test:layered-home已指向test:projection-home。新增test:new-runtime/test:new-journey为当前真实浏览器验收，不把旧fixture计数当新版要求。
