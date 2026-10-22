@@ -1,0 +1,39 @@
+{
+  "status": "verified",
+  "verifiedAt": "2026-10-22 18:12:40 UTC",
+  "scope": "Implementation, assets and acceptance evidence. A following documentation commit records this verified delivery.",
+  "remote": "origin",
+  "branch": "main",
+  "baselineCommit": "fa08c92b8de64a97912b281eb6ae114cbaa6ec97",
+  "implementationCommit": "2dd9ccbeaea5876f823ffb023f8c59bafff52125",
+  "remoteCommitAtVerification": "2dd9ccbeaea5876f823ffb023f8c59bafff52125",
+  "push": "success: HEAD -> main",
+  "remoteVerification": "git ls-remote origin refs/heads/main",
+  "lfsIntegrity": {
+    "command": "git lfs fsck --objects HEAD",
+    "result": "Git LFS fsck OK"
+  },
+  "artifactBindingSha256": "c144d633bb7f4e8b6a0ea75aefe824af60845a732c769d525fba9da3553fca28",
+  "fidelity": {
+    "status": "pass",
+    "frames": 59,
+    "passed": 59,
+    "errors": 0
+  },
+  "functional": {
+    "status": "partial-user-scoped-stop",
+    "completedAssertions": 19,
+    "nodes": 62,
+    "fullyExecuted": false,
+    "reason": "User requested desktop priority and immediate delivery; remaining functional, journey, settings/subpath browser suites were stopped or not launched."
+  },
+  "originalFilesUnchanged": true,
+  "editableDeliveriesByteIdenticalToOriginals": true,
+  "sourceSha256": [
+    "668566361fc6cfde4cf449cee615dbed5a4101f12ba6b39056ce3d7e32939c5d",
+    "e58ac7493074b41d416de04b6456871a2a5b157b3044c94906cbcb71539ce5b0",
+    "437d5bcaaabe36e60f699a39cd932499b948cdba546d3465591d7d85390a39fc",
+    "dc5a1cf93c7e15eea9a00618d6d3ba8bd6927d964070cf24031edba286fd570f"
+  ],
+  "deployment": "not performed"
+}
