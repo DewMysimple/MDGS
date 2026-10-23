@@ -35,6 +35,9 @@ interface SceneObject {
   fields?: SourceFieldBinding[];
 }
 const clamp = (v: number) => Math.min(1, Math.max(0, v));
+// The final source frames of scroll one pull the camera away from the intended
+// ending composition. Hold the last composed frame through the end card.
+const chapterOneCompositionEnd = 0.99;
 
 export interface SceneMotionState { enabled: boolean; reducedMotion: boolean; supported: boolean }
 export interface SceneRecoveryState { kind: 'none' | 'textures' | 'context-lost'; canRetry: boolean; failedTextures: number }
@@ -346,7 +349,7 @@ export class SceneRenderer {
     const context = copy.getContext('2d');
     if (!context) { this.rejectArtworkSnapshots(new Error('当前浏览器暂不能留存画心。')); return; }
     const metadata = { chapterId: this.chapterId, sourceRevision: this.manifest.sourceRevision ?? '',
-      progress: this.progress, sourceFrame: this.manifest.frameRange[0] + this.progress * (this.manifest.frameRange[1] - this.manifest.frameRange[0]), width, height };
+      progress: this.progress, sourceFrame: this.manifest.frameRange[0] + this.visualProgress * (this.manifest.frameRange[1] - this.manifest.frameRange[0]), width, height };
     requests.forEach(request => { request.encoding = true; });
     try {
       // Same JavaScript task as the successful final GPU composite; no DOM ink,
@@ -403,6 +406,9 @@ export class SceneRenderer {
     this.lastViewChange = performance.now();
     if (this.preparationActive) this.firstFrameReady = false;
     this.progress = clamp(progress); this.dirty = true; this.requestFrame();
+  }
+  private get visualProgress() {
+    return this.chapterId === 1 ? Math.min(this.progress, chapterOneCompositionEnd) : this.progress;
   }
   setPointer(x: number, y: number) { this.pointerTarget.set(x, y); this.requestFrame(); }
 
@@ -482,7 +488,7 @@ export class SceneRenderer {
   private onMotionPreference = () => {
     this.previousFrameTime = 0;
     if (!this.motionRequested || this.motionMedia.matches) { this.pointer.set(0, 0); this.pointerTarget.set(0, 0); }
-    if (!this.getMotionState().enabled) this.motionDirector?.update(this.camera, false, this.progress);
+    if (!this.getMotionState().enabled) this.motionDirector?.update(this.camera, false, this.visualProgress);
     this.dirty = true;
     this.emitMotionState();
     this.requestFrame();
@@ -492,7 +498,7 @@ export class SceneRenderer {
     this.previousFrameTime = 0;
     if (document.hidden) {
       cancelAnimationFrame(this.frame); this.frame = 0;
-      this.motionDirector?.update(this.camera, false, this.progress);
+      this.motionDirector?.update(this.camera, false, this.visualProgress);
     }
     else { this.dirty = true; this.requestFrame(); }
     this.emitMotionState();
@@ -515,7 +521,7 @@ export class SceneRenderer {
     if (this.preparationActive) this.firstFrameReady = false;
     this.contextRetryRequested = false;
     this.previousFrameTime = 0;
-    this.motionDirector?.update(this.camera, false, this.progress);
+    this.motionDirector?.update(this.camera, false, this.visualProgress);
     cancelAnimationFrame(this.frame); this.frame = 0;
     this.status('画面暂时中断，请恢复画卷');
     this.reportPreparation('error', 0, this.currentVisible.size, '画境暂时中断，请重试唤醒。');
@@ -576,7 +582,7 @@ export class SceneRenderer {
 
   private updateCamera() {
     if (!this.manifest?.cameras.length) return;
-    const { a, b, t } = this.bracket(this.manifest.cameras);
+    const { a, b, t } = this.bracket(this.manifest.cameras, this.visualProgress);
     const sourceProgress = THREE.MathUtils.lerp(a.sourceProgress ?? a.progress, b.sourceProgress ?? b.progress, t);
     this.sourceProgress = sourceProgress;
     this.sourceMaterials?.update(sourceProgress);
@@ -855,7 +861,7 @@ export class SceneRenderer {
     }
     const dt = this.previousFrameTime ? Math.min((now - this.previousFrameTime) / 1000, 0.05) : 0;
     this.previousFrameTime = now;
-    if (motion) this.motionDirector?.advance(dt, this.progress);
+    if (motion) this.motionDirector?.advance(dt, this.visualProgress);
     const pointerMoving = !this.sourceFaithful && this.pointer.distanceToSquared(this.pointerTarget) > 0.0001 && this.motionRequested && !this.motionMedia.matches;
     if (pointerMoving) { this.pointer.lerp(this.pointerTarget, 0.06); this.dirty = true; }
     const ambientVisible = (this.motionDirector?.getDiagnostics().activeBindings ?? 0) > 0;
@@ -872,7 +878,7 @@ export class SceneRenderer {
         this.updateDiagnostics();
         return;
       }
-      this.motionDirector?.update(this.camera, motion, this.progress);
+      this.motionDirector?.update(this.camera, motion, this.visualProgress);
       if (this.sourceMaterials) this.sourceLighting?.prepareShadows(this.renderer, this.scene, this.sourceMaterials, this.camera, this.sourceFocusDistance);
       if (this.sourcePost && this.sourceMaterials) {
         this.sourcePost.render(this.renderer, this.scene, this.camera, this.sourceMaterials, this.sourceViewport, this.width, this.height);
@@ -892,7 +898,7 @@ export class SceneRenderer {
       if (this.shaderFailed) return;
       this.copyPendingArtworkSnapshots();
       this.updateNarrativeSpace(now);
-      this.calligraphy.render(this.camera, this.progress);
+      this.calligraphy.render(this.camera, this.visualProgress);
       if (this.artworkAnchors.length && this.onArtworkAnchors) {
         this.onArtworkAnchors(this.artworkProjector.project(this.scene, this.camera, this.sourceViewport, this.width, this.height, this.artworkAnchors));
       }
@@ -999,7 +1005,7 @@ export class SceneRenderer {
       editionAtmosphereOpacityMax: Math.max(0, ...atmosphere.map(object => object.material.opacity)).toFixed(6),
       sourceHiddenVisibleLayers: String(this.objects.filter(object => object.mesh.userData.sourceVisible === false && object.mesh.visible).length),
       sourceRevision: this.manifest?.sourceRevision ?? '',
-      sourceFrame: this.manifest ? String(this.manifest.frameRange[0] + this.progress * (this.manifest.frameRange[1] - this.manifest.frameRange[0])) : '',
+      sourceFrame: this.manifest ? String(this.manifest.frameRange[0] + this.visualProgress * (this.manifest.frameRange[1] - this.manifest.frameRange[0])) : '',
       sourceViewport: JSON.stringify(this.sourceViewport),
       sourceMorphObjects: String(this.objects.filter(object => object.morphWeights?.length).length),
       sourceMaterialsReady: String(!!this.sourceMaterials),

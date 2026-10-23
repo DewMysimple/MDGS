@@ -2,18 +2,18 @@
   "status": "passed",
   "generator": "MDGS Windows portable delivery",
   "version": "1.0.0",
-  "createdAt": "2026-10-23T08:39:59.359Z",
+  "createdAt": "2026-10-23T09:40:39.120Z",
   "platform": "win32-x64",
   "electron": "45.0.0",
   "includesBrowserAndNode": true,
   "offlineRuntime": true,
   "originalArtworkCopiedWithoutReencoding": true,
-  "exhibitionInventorySha256": "d93f0078a7b8a75b804096ceb515de09ed045fcbcfa6599a7e1d8ec70a0f5b99",
+  "exhibitionInventorySha256": "6d933155fec875066efa7d9dec36b216a4f0bb99221f2e984eb36cfc11944232",
   "files": [
     {
       "path": "数字牡丹赋.exe",
-      "bytes": 623141074,
-      "sha256": "878eec1fd16e958bf0bbb4e81206babb8c64347d0d175e9d844a9afcc8c447c7"
+      "bytes": 623137902,
+      "sha256": "fdf8abec685685d26dde0e1c26dbca71ef9039f1b72f8451ca662b322da8aa18"
     },
     {
       "path": "运行说明.txt",
@@ -24,21 +24,12 @@
   "sourceBuildVerified": true,
   "desktopBuildMode": "Electron builder executed by this command.",
   "zip": {
-    "path": "C:\\Users\\Administrator\\Desktop\\数字牡丹赋\\数字牡丹赋-Windows-x64.zip",
-    "bytes": 623143921,
-    "sha256": "a32e795138f8de893cebad0cc5ee6e28eba5a1976c66e0aa99ce2a413ed6b956",
+    "path": "C:\\Users\\Administrator\\Desktop\\数字牡丹赋-画卷全屏更新\\数字牡丹赋-Windows-x64.zip",
+    "bytes": 623140749,
+    "sha256": "b857c0bb58bec045a6e7c06576e66b1f83975b75f0e84e4a98aa0b65c67ef8d0",
     "integrityTestPassed": true
   },
-  "extractedDirectory": "C:\\Users\\Administrator\\Desktop\\数字牡丹赋\\数字牡丹赋-Windows-x64",
+  "extractedDirectory": "C:\\Users\\Administrator\\Desktop\\数字牡丹赋-画卷全屏更新\\数字牡丹赋-Windows-x64",
   "extractedFileHashesPassed": true,
-  "runtimeValidation": {
-    "status": "passed",
-    "desktopReport": "reports/desktop/validation.json",
-    "desktopChecks": 11,
-    "portableReport": "reports/desktop/portable-validation.json",
-    "portableChecks": 7,
-    "portableExecutableSha256": "878eec1fd16e958bf0bbb4e81206babb8c64347d0d175e9d844a9afcc8c447c7",
-    "portableMatchesValidatedHost": true,
-    "signature": "NotSigned"
-  }
+  "runtimeValidation": "Run npm run test:desktop against the packaged executable; this report verifies packaging, not interactive behavior."
 }

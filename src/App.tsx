@@ -106,6 +106,7 @@ export default function App() {
   const currentStop = stops[currentIndex];
   const finished = progress === 1;
   const stageRef = useRef<HTMLDivElement>(null);
+  const scrollExhibitionRef = useRef<HTMLElement>(null);
   const closeCulture = useCallback(() => setCultureOpen(false), []);
   const closeSettings = useCallback(() => setSettingsOpen(false), []);
   const openSettings = useCallback(() => { stopRef.current(); setCultureOpen(false); setSettingsOpen(true); }, []);
@@ -206,8 +207,8 @@ export default function App() {
 
   async function toggleFullscreen() {
     try {
-      if (document.fullscreenElement) await document.exitFullscreen();
-      else await document.documentElement.requestFullscreen();
+      if (document.fullscreenElement === scrollExhibitionRef.current) await document.exitFullscreen();
+      else await scrollExhibitionRef.current?.requestFullscreen();
     } catch {
       setNotice('当前浏览器暂不支持全屏显示。');
       window.setTimeout(() => setNotice(''), 4000);
@@ -215,7 +216,7 @@ export default function App() {
   }
 
   useEffect(() => {
-    const update = () => setFullscreen(Boolean(document.fullscreenElement));
+    const update = () => setFullscreen(document.fullscreenElement === scrollExhibitionRef.current);
     document.addEventListener('fullscreenchange', update);
     return () => document.removeEventListener('fullscreenchange', update);
   }, []);
@@ -289,7 +290,10 @@ export default function App() {
       <main className="exhibition">
         <h1 className="visually-hidden" id="chapter-title">第{ordinal[chapterIndex]}卷 · {chapter.title}</h1>
 
-        <section className="scroll-exhibition" aria-label={`第${ordinal[chapterIndex]}卷：${chapter.title}`}>
+        <section ref={scrollExhibitionRef} className="scroll-exhibition" aria-label={`第${ordinal[chapterIndex]}卷：${chapter.title}`}>
+          {fullscreen && <button className="scroll-fullscreen-exit" type="button" onClick={() => void toggleFullscreen()} aria-label="退出画卷全屏" title="退出全屏">
+            <Minimize size={17} strokeWidth={1.4} /><span>退出全屏</span>
+          </button>}
           <div className="scroll-mount">
             <BrocadeBorder edge="top" />
             <div
