@@ -10,7 +10,7 @@ import { StableLayerSorting } from './StableLayerSorting';
 import { activeSourceEdition, chapterAssetBase } from '../data/sourceEdition';
 import { createNewScrollAtmosphere } from './NewScrollAtmosphere';
 import { findNarrativeSpace, isCompactNarrativeViewport, narrativeSampleSize, type NarrativeSpace } from './NarrativeSpace';
-import { fitSourceViewport, type SourceViewport } from './sourceViewport';
+import { sourceVerticalFov, sourceViewportLayout, type SourceViewport } from './sourceViewport';
 import { loadSourceMaterialLibrary, type SourceMaterialLibrary, type SourceFieldBinding } from './SourceMaterial';
 import { createSourceLighting, loadSourceRenderSettings, type SourceRenderSettings, type SourceLightingState } from './SourceLighting';
 import { SourcePostProcessing } from './SourcePostProcessing';
@@ -584,13 +584,17 @@ export class SceneRenderer {
     this.sourceFocusDistance = THREE.MathUtils.lerp(a.dof?.focusDistance ?? 10, b.dof?.focusDistance ?? 10, t);
     this.camera.position.fromArray(a.position).lerp(this.p2.fromArray(b.position), t);
     this.camera.quaternion.fromArray(a.quaternion).normalize().slerp(this.q2.fromArray(b.quaternion).normalize(), t);
-    const fov = THREE.MathUtils.lerp(a.fov, b.fov, t);
-    this.camera.fov = Math.max(5, Math.min(115, fov));
+    const fov = Math.max(5, Math.min(115, THREE.MathUtils.lerp(a.fov, b.fov, t)));
     this.camera.near = this.manifest.camera.near || 0.01;
     this.camera.far = this.manifest.camera.far || 5000;
-    this.sourceViewport = this.sourceFaithful
-      ? fitSourceViewport(this.width, this.height, this.manifest.render)
-      : { x: 0, y: 0, width: this.width, height: this.height, aspect: this.width / this.height };
+    if (this.sourceFaithful) {
+      const layout = sourceViewportLayout(this.width, this.height, this.manifest.render);
+      this.sourceViewport = layout.viewport;
+      this.camera.fov = sourceVerticalFov(fov, layout.verticalFovScale);
+    } else {
+      this.sourceViewport = { x: 0, y: 0, width: this.width, height: this.height, aspect: this.width / this.height };
+      this.camera.fov = fov;
+    }
     this.camera.aspect = this.sourceViewport.aspect;
     // The source already contains depth. A small lateral displacement makes it perceptible without rotating the view.
     if (!this.sourceFaithful && this.motionRequested && !this.motionMedia.matches) {

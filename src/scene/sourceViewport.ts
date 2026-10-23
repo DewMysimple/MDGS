@@ -1,6 +1,7 @@
 import type { SceneManifest } from '../types';
 
 export interface SourceViewport { x: number; y: number; width: number; height: number; aspect: number }
+export interface SourceViewportLayout { viewport: SourceViewport; verticalFovScale: number }
 
 /** All six HDR and three depth buffers share this bounded pixel budget. */
 export function sourceTargetSize(width: number, height: number, pixelRatio: number) {
@@ -18,4 +19,21 @@ export function fitSourceViewport(width: number, height: number, render: SceneMa
   const fittedWidth = Math.min(width, height * aspect);
   const fittedHeight = fittedWidth / aspect;
   return { x: (width - fittedWidth) / 2, y: (height - fittedHeight) / 2, width: fittedWidth, height: fittedHeight, aspect };
+}
+
+/** Fill a wide scroll window without stretching or cutting off the authored horizontal camera gate. */
+export function sourceViewportLayout(width: number, height: number, render: SceneManifest['render']): SourceViewportLayout {
+  const source = fitSourceViewport(width, height, render);
+  const canvasAspect = width / height;
+  if (canvasAspect <= source.aspect) return { viewport: source, verticalFovScale: 1 };
+  return {
+    viewport: { x: 0, y: 0, width, height, aspect: canvasAspect },
+    verticalFovScale: canvasAspect / source.aspect,
+  };
+}
+
+/** Zoom vertically to cover extra canvas width while retaining the full source width and proportions. */
+export function sourceVerticalFov(fov: number, scale: number): number {
+  if (!Number.isFinite(fov) || fov <= 0 || fov >= 180 || !Number.isFinite(scale) || scale < 1) throw new Error('画卷取景参数无效。');
+  return 2 * Math.atan(Math.tan(fov * Math.PI / 360) / scale) * 180 / Math.PI;
 }
