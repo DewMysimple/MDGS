@@ -6,7 +6,7 @@
 
 ## 本轮交付入口
 
-当前艺术版本为第八轮候选，源与三份生产包均有固定指纹。创作表达见[作品说明](reports/art-renewal/作品说明.txt)，完整保真入口见[第八轮验收](reports/art-renewal/art-candidate-8-freeze.json)，观看、导览与独立包信息见[交付索引](reports/art-renewal/交付索引.txt)。
+当前艺术交付版本为第八轮，源与三份生产包均有固定指纹。创作表达见[作品说明](reports/art-renewal/作品说明.txt)，完整保真入口见[第八轮验收](reports/art-renewal/art-candidate-8-freeze.json)，观看、导览与独立包信息见[交付索引](reports/art-renewal/交付索引.txt)。
 
 功能、艺术审视、像素对照各自记录实际范围；[精选证据清单](reports/art-renewal/git-evidence-manifest.json)明确哪些媒体随Git交付，原始JPEG/PCM/trace等留本机。
 

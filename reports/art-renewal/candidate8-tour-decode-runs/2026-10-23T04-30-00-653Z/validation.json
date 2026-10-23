@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "startedAt": "2026-10-23T04:30:00.655Z",
+  "driverSha256": "8bcfb820dc519d262898e78423f7193c6ac9b7bd495efc79c1798198f40920f4",
+  "scope": "Decode every encoded video and audio frame to a null sink with FFmpeg software decoders and strict bitstream error handling. This is separate from fixed independent35 raw PCM/package checks and does not establish original-painting pixel fidelity or visual quality.",
+  "errors": [],
+  "binding": {
+    "path": "reports/art-renewal/candidate8-tour-binding-runs/2026-10-23T04-25-56-163Z/validation.json",
+    "sha256": "20215b6c7580651e8a38ef65bbc6849f1a6c91fc453e3bbad08d582b51b07f12"
+  },
+  "expectedEncodedVideoFrames": 4982,
+  "movie": {
+    "path": "tmp/exhibition-tour-candidate8/2026-10-23T04-25-57-135Z/国色长卷-导览录像.mp4",
+    "bytes": 146466056,
+    "sha256": "9f4d50dc9d9e183ec4641baa629d8a4a52ff245b5db0e9267c3debe18bfc0306"
+  },
+  "command": {
+    "executable": "D:/SoftWare/FFmpeg-n8.0-latest-win64-gpl-shared-8.0/bin/ffmpeg.exe",
+    "args": [
+      "-nostdin",
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-xerror",
+      "-err_detect",
+      "explode",
+      "-threads",
+      "2",
+      "-i",
+      "E:\\数字媒体竞赛\\gitProject\\MDGS\\tmp\\exhibition-tour-candidate8\\2026-10-23T04-25-57-135Z\\国色长卷-导览录像.mp4",
+      "-map",
+      "0:v:0",
+      "-map",
+      "0:a:0",
+      "-threads",
+      "2",
+      "-progress",
+      "pipe:1",
+      "-nostats",
+      "-f",
+      "null",
+      "-"
+    ]
+  },
+  "childPid": 31148,
+  "exitCode": 0,
+  "progressSha256": "ef158f9a0850d84304f2f2b21bffc620131b12fc3eb4d656ace8187165d8913a",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrBytes": 0,
+  "decodedVideoFrames": 4982,
+  "unchanged": true,
+  "completedAt": "2026-10-23T04:30:16.547Z"
+}

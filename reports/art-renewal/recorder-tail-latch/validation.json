@@ -1,0 +1,140 @@
+{
+  "status": "adopted-and-real-rerecord-audited",
+  "checkedAt": "2026-10-23T04:31:34.308Z",
+  "scope": "Recorder-tool fix only. The frozen C8 product, all831 inputs/all744 package files, native artwork and source clocks are unchanged. Fixed independent35 criteria and raw PCM helper are unchanged. First failed capture remains failed and original bytes are preserved.",
+  "firstFailure": {
+    "run": "tmp/exhibition-tour-candidate8/2026-10-23T04-14-51-310Z",
+    "audit": "reports/art-renewal/tour-validation/candidate-8-2026-10-23T04-14-51-310Z/validation.json",
+    "requiredPassed": 34,
+    "requiredTotal": 35,
+    "jsonFrames": 4172,
+    "reportFrames": 4173,
+    "jpegFiles": 4173,
+    "jsonLast": {
+      "file": "frames/004171.jpg",
+      "timestamp": 1792729060.900816
+    },
+    "reportedLastTimestamp": 1792729061.028711,
+    "extraFiles": [
+      "004172.jpg"
+    ],
+    "cause": "A final in-flight screencast callback appended during asynchronous frames.json/concat writes, after the list snapshot but before mutable report fields were read. No media or first report was repaired."
+  },
+  "change": [
+    "Continue acknowledging screencast events.",
+    "After Page.stopScreencast resolves, synchronously close frame intake before any more await.",
+    "Take end time and flush the now-immutable accepted write list before serializing frames/concat/report."
+  ],
+  "newMaster": {
+    "run": "tmp/exhibition-tour-candidate8/2026-10-23T04-25-57-135Z",
+    "artifacts": {
+      "国色长卷-导览录像.mp4": {
+        "path": "tmp/exhibition-tour-candidate8/2026-10-23T04-25-57-135Z/国色长卷-导览录像.mp4",
+        "bytes": 146466056,
+        "sha256": "9f4d50dc9d9e183ec4641baa629d8a4a52ff245b5db0e9267c3debe18bfc0306"
+      },
+      "导览字幕.srt": {
+        "path": "tmp/exhibition-tour-candidate8/2026-10-23T04-25-57-135Z/导览字幕.srt",
+        "bytes": 1109,
+        "sha256": "062a179d1d24e1e3ab9c866a7221c830114e3ce08042ab4718a883e18dee9b15"
+      },
+      "国色长卷·余韵花笺.png": {
+        "path": "tmp/exhibition-tour-candidate8/2026-10-23T04-25-57-135Z/国色长卷·余韵花笺.png",
+        "bytes": 3152365,
+        "sha256": "243e56a769bb3ccd302190c2c2e5134989ffefb598f6e7439d97b28da74a3caf"
+      },
+      "recording.json": {
+        "path": "tmp/exhibition-tour-candidate8/2026-10-23T04-25-57-135Z/recording.json",
+        "bytes": 9674,
+        "sha256": "5caca42c1b92727a389459de34c7197d180a7d5307d566fd7c2e5223edc93efd"
+      },
+      "audio-clock.json": {
+        "path": "tmp/exhibition-tour-candidate8/2026-10-23T04-25-57-135Z/audio-clock.json",
+        "bytes": 26321090,
+        "sha256": "6c0d42e84566ea2c836174d4e934b0e69a710d8c099355bae734256c5fd5f04a"
+      },
+      "frames.json": {
+        "path": "tmp/exhibition-tour-candidate8/2026-10-23T04-25-57-135Z/frames.json",
+        "bytes": 320611,
+        "sha256": "3d4075014e31edb948024fb26da4cdf846969feb3f290ea76c92d34509fc7a84"
+      },
+      "live-sound.f32": {
+        "path": "tmp/exhibition-tour-candidate8/2026-10-23T04-25-57-135Z/live-sound.f32",
+        "bytes": 61692928,
+        "sha256": "8b12cd05c2b0b335af086b1c80601885c2200bb0032cec758921becb0ac7bba4"
+      }
+    },
+    "video": {
+      "width": 1920,
+      "height": 1080,
+      "frames": 4170,
+      "firstFrameEpoch": 1792729560.579625,
+      "lastFrameEpoch": 1792729726.543045,
+      "durationSeconds": 166.05137515068054,
+      "soundStartEpoch": 1792729565.088906,
+      "soundOffsetSeconds": 4.509281158447266,
+      "soundSampleRate": 48000,
+      "soundClockSpreadSeconds": 0.00020313262939453125,
+      "soundSampleFrames": 7711616,
+      "frameRate": 30
+    },
+    "independent35": {
+      "passed": 35,
+      "total": 35,
+      "requiredPassed": 35,
+      "requiredTotal": 35,
+      "nonRequiredObservations": 1
+    },
+    "strictDecode": {
+      "decodedVideoFrames": 4982,
+      "stderrBytes": 0,
+      "status": "passed"
+    }
+  },
+  "manifest": {
+    "previous-recorder.mjs": {
+      "source": "tmp/exhibition-tour-candidate8/2026-10-23T04-14-51-310Z/recorder/capture-exhibition-tour.mjs",
+      "bytes": 18227,
+      "sha256": "95e22c96a086aa62a4f47ab9c8731d1dd5324cc13207feabe63f89e3f4c51fa2"
+    },
+    "adopted-recorder.mjs": {
+      "source": "scripts/capture-exhibition-tour.mjs",
+      "bytes": 18319,
+      "sha256": "fc52cb9d1bfe0ff329f2fcd7c7e5cbc87dbbec36984bf788569cf864b4f98210"
+    },
+    "failed-recording.json": {
+      "source": "tmp/exhibition-tour-candidate8/2026-10-23T04-14-51-310Z/recording.json",
+      "bytes": 9674,
+      "sha256": "b34450aa55b5da7b1629a1157445c99cd93e8ffb78dc445149070558c1688b67"
+    },
+    "failed-frames.json": {
+      "source": "tmp/exhibition-tour-candidate8/2026-10-23T04-14-51-310Z/frames.json",
+      "bytes": 320781,
+      "sha256": "47e2fb25b4a2f093ec58816cb8460789d12248750e07d020d711a133397b3246"
+    },
+    "failed-frames.ffconcat": {
+      "source": "tmp/exhibition-tour-candidate8/2026-10-23T04-14-51-310Z/frames.ffconcat",
+      "bytes": 179442,
+      "sha256": "e51483f8f34eb62a2f2db1576b2cfcf698a1e5a73671a2e467c7f09bc274dd0a"
+    }
+  },
+  "evidence": {
+    "reports/art-renewal/candidate8-tour-binding-runs/2026-10-23T04-25-56-163Z/validation.json": {
+      "bytes": 409972,
+      "sha256": "20215b6c7580651e8a38ef65bbc6849f1a6c91fc453e3bbad08d582b51b07f12"
+    },
+    "reports/art-renewal/tour-validation/candidate-8-2026-10-23T04-25-57-135Z/validation.json": {
+      "bytes": 24353,
+      "sha256": "2ca6eeef5e0a959afaf0e0c592d35c3c1e95a0c040f5eaa9277f3701cfc5664d"
+    },
+    "reports/art-renewal/candidate8-tour-decode-runs/2026-10-23T04-30-00-653Z/validation.json": {
+      "bytes": 1859,
+      "sha256": "491d7c7275f37622c4337aa6e32d05acccf125ee1f898957c64e8174e19a7457"
+    }
+  },
+  "bounds": [
+    "The original 34/35 movie is an unchanged failed capture, not the accepted master.",
+    "The new master has passed fixed35 plus strict full encoded-media decode. Player color review/any separately named compatibility copy is independent and is not claimed by this tool report.",
+    "CDP capture cadence and encoded30fps are not painting presentation FPS."
+  ]
+}

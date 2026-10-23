@@ -28,7 +28,9 @@ soak首末42生命周期核心、333活跃资产、827产品与5代码包SHA全�
 
 首次真实C8影片`tmp/exhibition-tour-candidate8/2026-10-23T04-14-51-310Z`实际34/35 required通过、1失败，不能当作最终通过影片。固定35检查器发现JSON4172帧、实际JPG及report4173帧；录制器stop响应后仍接收晚到帧，异步写盘期间数组漂移。原PCM全部SHA/量子/计数/关闭与包身份均通过，不能覆盖帧清单失败。原媒体/failed报告原字节保留于`tour-validation/candidate-8-2026-10-23T04-14-51-310Z/`，另有明确失败notes。
 
-root随后授权art仅修录制器结束gate：ACK后拒绝边界后的新事件、stop响应后同步关gate再计算end并flush，从此同一帧数组不再变。新主录制器SHA256 `fc52cb9d1bfe0ff329f2fcd7c7e5cbc87dbbec36984bf788569cf864b4f98210`，旧`95e22c96a086aa62a4f47ab9c8731d1dd5324cc13207feabe63f89e3f4c51fa2`已在首次实际run归档；声音helper仍`c3ce6432133fa6403c40a7842473ee0894f8f2631d591289c47faa00017dd4c3`，35检查器不变。此为工具修复，产品C8、原画、声音、通过的soak/六套均未变。新片正在同包重录，尚不声明其验片通过。
+root随后授权art仅修录制器结束gate：ACK后拒绝边界后的新事件、stop响应后同步关gate再计算end并flush，从此同一帧数组不再变。新主录制器SHA256 `fc52cb9d1bfe0ff329f2fcd7c7e5cbc87dbbec36984bf788569cf864b4f98210`，旧`95e22c96a086aa62a4f47ab9c8731d1dd5324cc13207feabe63f89e3f4c51fa2`已在首次实际run归档；声音helper仍`c3ce6432133fa6403c40a7842473ee0894f8f2631d591289c47faa00017dd4c3`，35检查器不变。此为工具修复，产品C8、原画、声音、通过的soak/六套均未变。
+
+新同包母版`tmp/exhibition-tour-candidate8/2026-10-23T04-25-57-135Z`现已实际完整35/35 required通过，另1端点观测，独立报告`tour-validation/candidate-8-2026-10-23T04-25-57-135Z/validation.json`及同目录notes。4170张源帧的清单/文件/首末现一致，PCM61,692,928字节、7,711,616帧及全部2108包/60,247量子无SHA或指纹错误，显式C8身份、context关闭、18段SRT均通过。母版SHA256 `9f4d50dc9d9e183ec4641baa629d8a4a52ff245b5db0e9267c3debe18bfc0306`。最大CDP抓帧空档仍有2.688837秒（第三卷展开），保留原时间，不据此宣称全片流畅/原画显示FPS；颜色/严格全解码另有独立scope，35通过不覆盖颜色差异。没有编辑PCM、覆盖失败历史或重编码母版来通过。
 
 正式顺序为C8身份绑定→同包八卷次真实soak→新运行全部六套→独立SHA封存→退出所有测试浏览器/服务→安静同包最终录片→用预固定C8检查器核验真实PCM、量子、时钟、包、SRT及ffprobe元数据。未录制前不声称已有C8终片。影片采样/容器完整性不代表原画显示FPS、全浏览器认证或人类听觉审美验收。
 

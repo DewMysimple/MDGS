@@ -1,7 +1,7 @@
 {
-  "status": "product-accepted-media-and-git-pending",
+  "status": "desktop-product-and-recording-accepted-final-git-pending",
   "candidate": "art-candidate-8",
-  "reviewedAt": "2026-10-23T04:16:34.490Z",
+  "reviewedAt": "2026-10-23T04:40:31.473Z",
   "buildManifest": "reports/art-renewal/art-candidate-8-build.json",
   "buildManifestSha256": "305dc8b9b429415093889642ae885ffe564cdd33f156edf30a637bac4a172ea9",
   "scope": "Acceptance of the desktop artwork and protected original content. Final media and actual remote Git delivery are separate pending completion items, not inferred from this file.",
@@ -17,7 +17,11 @@
     "runtimeSeal": "reports/art-renewal/candidate8-runtime-seal.json",
     "edge": "reports/art-renewal/edge-desktop/candidate-8-notes.md",
     "originalCacheRecovery": "reports/art-renewal/candidate7-original-cache-recovery.json",
-    "zip": "reports/art-renewal/exhibition-local-archive.json"
+    "zip": "reports/art-renewal/exhibition-local-archive.json",
+    "masterFixed35": "reports/art-renewal/tour-validation/candidate-8-2026-10-23T04-25-57-135Z/validation.json",
+    "masterStrictDecode": "reports/art-renewal/candidate8-tour-decode-runs/2026-10-23T04-30-00-653Z/validation.json",
+    "decoderColour": "reports/art-renewal/candidate8-video-colour/2026-10-23T04-34-compatibility/decoder-colour-validation.json",
+    "recorderRepair": "reports/art-renewal/recorder-tail-latch/validation.json"
   },
   "resolvedObservations": [
     {
@@ -37,12 +41,52 @@
     "Chrome desktop validation with Edge83+15 supplement; not every browser/GPU/OS scale.",
     "Performance numbers are actual isolated short path measurements, not all-frame screen FPS.",
     "Art and listening preferences remain audience judgments; no award or competition-rule approval is claimed.",
-    "Original Film/DOF are numeric reconstructions, not full EEVEE mathematical equivalence."
+    "Original Film/DOF are numeric reconstructions, not full EEVEE mathematical equivalence.",
+    "Guided recording is a166s excerpt; original CDP capture has a2.688837s third-volume gap, retained at real duration. Native artwork fidelity and actual display pacing have separate evidence."
   ],
   "remaining": [
-    "Final C8 real-page/master recording and fixed35required audit",
-    "Strict full video decode and actual Chrome decoder-color check",
-    "Final selected-media manifest and actual commit/push verification",
-    "Continue original ten-hour task until approximately12:29Shanghai"
-  ]
+    "Final selected-media commit/push and engineering-memory completion verification"
+  ],
+  "media": {
+    "originalMaster": {
+      "path": "reports/art-renewal/国色长卷-原始导览录像.mp4",
+      "original": "tmp/exhibition-tour-candidate8/2026-10-23T04-25-57-135Z/国色长卷-导览录像.mp4",
+      "bytes": 146466056,
+      "sha256": "9f4d50dc9d9e183ec4641baa629d8a4a52ff245b5db0e9267c3debe18bfc0306"
+    },
+    "compatible": {
+      "path": "reports/art-renewal/国色长卷-导览节选.mp4",
+      "sha256": "dac7d924ce7d6f7e18fb9141a1e57a6b312b60425e94029c0c9593e5643e050d",
+      "bytes": 154511713,
+      "colourMAE": 1.2125477430555556,
+      "colourP99": 8,
+      "rootActualTwoImageReview": true,
+      "unchangedAAC": true,
+      "unchangedVideoFrameCount": 4982,
+      "unchangedDuration": true,
+      "strictFullDecode": {
+        "exitCode": 0,
+        "decodedFrames": 4982,
+        "allAudio": true,
+        "reportedByIndependentAgentAtShanghai": "2026-10-23 12:39"
+      }
+    },
+    "subtitle": {
+      "path": "reports/art-renewal/国色长卷-导览字幕.srt",
+      "original": "tmp/exhibition-tour-candidate8/2026-10-23T04-25-57-135Z/导览字幕.srt",
+      "bytes": 1109,
+      "sha256": "062a179d1d24e1e3ab9c866a7221c830114e3ce08042ab4718a883e18dee9b15"
+    },
+    "download": {
+      "path": "reports/art-renewal/国色长卷-观者花笺.png",
+      "original": "tmp/exhibition-tour-candidate8/2026-10-23T04-25-57-135Z/国色长卷·余韵花笺.png",
+      "bytes": 3152365,
+      "sha256": "243e56a769bb3ccd302190c2c2e5134989ffefb598f6e7439d97b28da74a3caf"
+    }
+  },
+  "originalTenHours": {
+    "startShanghai": "2026-10-23 02:29:47",
+    "tenHourBoundaryShanghai": "2026-10-23 12:29:47",
+    "continuedPastBoundaryToFinishActualDelivery": true
+  }
 }
