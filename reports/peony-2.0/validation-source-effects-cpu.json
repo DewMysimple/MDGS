@@ -1,0 +1,167 @@
+{
+  "status": "pass",
+  "startedAt": "2026-10-23T02:30:26.047Z",
+  "chapters": [
+    {
+      "chapter": 1,
+      "sourceMaterials": 14,
+      "scalarTracks": 16,
+      "reachableNodes": 301,
+      "shaderTopologies": 3,
+      "shaderHooks": 14,
+      "provenConstantCompletedGraphs": 12,
+      "retainedSpatialCompletedGraphs": 2,
+      "finalDiagnostics": {
+        "registered": 14,
+        "active": 2,
+        "complete": 12,
+        "hidden": 0,
+        "programs": 3,
+        "unsupported": 0,
+        "sourceProgress": 1,
+        "proceduralNoise": "deterministic WebGL approximation; source graph timing/coordinates retained"
+      },
+      "sourceClockUpdateCpuMs": 0.008650416666666338,
+      "passed": true
+    },
+    {
+      "chapter": 2,
+      "sourceMaterials": 16,
+      "scalarTracks": 16,
+      "reachableNodes": 307,
+      "shaderTopologies": 7,
+      "shaderHooks": 16,
+      "provenConstantCompletedGraphs": 11,
+      "retainedSpatialCompletedGraphs": 5,
+      "finalDiagnostics": {
+        "registered": 16,
+        "active": 5,
+        "complete": 11,
+        "hidden": 0,
+        "programs": 7,
+        "unsupported": 0,
+        "sourceProgress": 1,
+        "proceduralNoise": "deterministic WebGL approximation; source graph timing/coordinates retained"
+      },
+      "sourceClockUpdateCpuMs": 0.00645361111111116,
+      "passed": true
+    },
+    {
+      "chapter": 3,
+      "sourceMaterials": 74,
+      "scalarTracks": 82,
+      "reachableNodes": 830,
+      "shaderTopologies": 9,
+      "shaderHooks": 74,
+      "provenConstantCompletedGraphs": 68,
+      "retainedSpatialCompletedGraphs": 6,
+      "finalDiagnostics": {
+        "registered": 74,
+        "active": 2,
+        "complete": 7,
+        "hidden": 65,
+        "programs": 9,
+        "unsupported": 0,
+        "sourceProgress": 1,
+        "proceduralNoise": "deterministic WebGL approximation; source graph timing/coordinates retained"
+      },
+      "sourceClockUpdateCpuMs": 0.05371319444444427,
+      "passed": true
+    },
+    {
+      "chapter": 4,
+      "sourceMaterials": 22,
+      "scalarTracks": 27,
+      "reachableNodes": 389,
+      "shaderTopologies": 6,
+      "shaderHooks": 22,
+      "provenConstantCompletedGraphs": 18,
+      "retainedSpatialCompletedGraphs": 4,
+      "finalDiagnostics": {
+        "registered": 22,
+        "active": 4,
+        "complete": 18,
+        "hidden": 0,
+        "programs": 6,
+        "unsupported": 0,
+        "sourceProgress": 1,
+        "proceduralNoise": "deterministic WebGL approximation; source graph timing/coordinates retained"
+      },
+      "sourceClockUpdateCpuMs": 0.005864444444443962,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "test": "first-scroll-two-burn-planes-share-world-coordinate-mask-and-driver-time",
+      "frames": [
+        2539,
+        2540,
+        2553,
+        2568,
+        2582,
+        2596,
+        2597
+      ],
+      "passed": true
+    },
+    {
+      "test": "native-uv-mask-direction-retained",
+      "frame": 592,
+      "passed": true
+    },
+    {
+      "test": "completed-river-keeps-native-left-and-right-16-percent-uv-feathers",
+      "sourceMaterialId": 24,
+      "progress": 0.5,
+      "mode": 0,
+      "completedAlphaBounds": [
+        0,
+        1
+      ],
+      "samples": [
+        {
+          "u": 0.02,
+          "alpha": 0.0070860530422212535
+        },
+        {
+          "u": 0.08,
+          "alpha": 0.4169100777890908
+        },
+        {
+          "u": 0.5,
+          "alpha": 1
+        },
+        {
+          "u": 0.9,
+          "alpha": 0.6920680729353567
+        },
+        {
+          "u": 0.98,
+          "alpha": 0.025008880217319958
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "completed-alpha-spatial-interval-proof-and-11-by-11-uv-grid",
+      "uvGridSamples": 121,
+      "completeUvSamples": 31339,
+      "invariantCompletedGraphs": 109,
+      "spatialCompletedGraphs": 17,
+      "passed": true
+    },
+    {
+      "test": "all-source-material-graphs-and-real-scalar-driver-samples",
+      "registered": 126,
+      "scalarSamples": 14536,
+      "unsupported": 0,
+      "hiddenStates": 444,
+      "completeStates": 133,
+      "uniqueShaderTopologies": 23,
+      "passed": true
+    }
+  ],
+  "approximation": "Source graph links, sampled scalar/driver timing, Map Range interpolation and coordinate matrices are retained. Noise uses normalized value-noise fBM with source detail/roughness/lacunarity/distortion. 4D W is embedded in 3D; Voronoi uses matching source dimensionality/F1/Euclidean with a different deterministic seed hash. These fields are WebGL approximations, not pixel-identical Cycles Noise/Voronoi. Hidden and proven spatially invariant completed alpha masks take uniform fast paths; native completed UV feathers retain the source graph. No whole-layer UV deformation, new bloom, geometry change or opacity animation is introduced.",
+  "completedAt": "2026-10-23T02:30:33.437Z"
+}

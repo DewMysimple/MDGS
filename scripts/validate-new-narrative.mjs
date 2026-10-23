@@ -1,12 +1,17 @@
 /** Exact supplied-text coverage and monotonic source-node mapping. Browser
  * typography/occlusion must be inspected separately against the new paintings. */
 import assert from 'node:assert/strict';
-import { readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import ts from 'typescript';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
+const reportDirectory=new URL('../reports/peony-2.0/',import.meta.url);
+await mkdir(reportDirectory,{recursive:true});
+const output=new URL('narrative-validation.json',reportDirectory);
+await writeFile(output,JSON.stringify({status:'running',startedAt:new Date().toISOString(),scope:'Current active 2.0 narrative validation; historical source extraction remains read-only.'},null,2)+'\n');
+try {
 const source = JSON.parse(await readFile(new URL('../reports/new-scrolls/narrative-source.json', import.meta.url), 'utf8'));
 const moduleUrl = text => `data:text/javascript;base64,${Buffer.from(text).toString('base64')}`;
 const compile = text => ts.transpileModule(text, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
@@ -34,7 +39,7 @@ for (const text of prose) for (const maximum of [28, 44, 68]) {
 }
 checks.push({ test: 'responsive-passages-preserve-words-punctuation-and-spaces', passed: true });
 for (const chapter of Object.values(data.narrativeChapters)) {
-  const audit = JSON.parse(await readFile(new URL(`../reports/new-scrolls/chapter-${chapter.id}-source-audit.json`, import.meta.url), 'utf8'));
+  const audit = JSON.parse(await readFile(new URL(`chapter-${chapter.id}-source-audit.json`,reportDirectory), 'utf8'));
   const span = audit.frames[1] - audit.frames[0];
   const authoredStops = audit.markers.filter(marker => !/参考全景/.test(marker.name)).map(marker => ({ ...marker, progress: Math.max(0, (marker.frame - audit.frames[0]) / span) }));
   const manifest=JSON.parse(await readFile(new URL(`../public/${chapterAssetBase(chapter.id).replace(/^\.\//,'')}scene.json`,import.meta.url),'utf8'));
@@ -86,6 +91,10 @@ assert(css.includes('transition:opacity .65s')); assert(css.includes('transition
 assert(css.includes('pointer-events:none!important'));
 checks.push({ test: 'css-fade-and-reduced-motion-keep-inputs-transparent', passed: true });
 const report = { status: 'pass', testedAt: new Date().toISOString(), scope: 'CPU exact DOCX text, source storyboard order, route coverage and CSS contract. Actual viewport visibility and artwork occlusion require browser review.', sourceSha256: source.sourceSha256, checks };
-await writeFile(new URL('../reports/new-scrolls/narrative-validation.json', import.meta.url), JSON.stringify(report, null, 2) + '\n');
-await writeFile(new URL('../reports/new-scrolls/narrative-mapping.json', import.meta.url), JSON.stringify({ basis: 'Actual prepareScene runtime reading progress is primary. Authored frame progress is also validated. Source-node anchors remain in order; bounded length-weighted reading windows prevent stationary tail scenes from erasing paragraphs.', mappings }, null, 2) + '\n');
+await writeFile(output, JSON.stringify({...report,sourceRevision:activeSourceEdition}, null, 2) + '\n');
+await writeFile(new URL('narrative-mapping.json',reportDirectory), JSON.stringify({ sourceRevision:activeSourceEdition,basis: 'Actual prepareScene runtime reading progress is primary. Authored frame progress is also validated. Source-node anchors remain in order; bounded length-weighted reading windows prevent stationary tail scenes from erasing paragraphs.', mappings }, null, 2) + '\n');
 console.log(JSON.stringify({ status: 'pass', tests: checks.length, sourceParagraphs: prose.length, passages: mappings.reduce((sum, chapter) => sum + chapter.cues.length, 0), root }));
+} catch(error) {
+  await writeFile(output,JSON.stringify({status:'fail',testedAt:new Date().toISOString(),error:{message:error.message,stack:error.stack}},null,2)+'\n');
+  throw error;
+}

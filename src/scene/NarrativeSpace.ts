@@ -5,10 +5,7 @@ export interface NarrativeSpace {
 
 /** Sample the actual rendered painting, rather than treating empty mesh bounds
  * as ink. Large transparent image sheets can contain excellent blank paper. */
-export function findNarrativeSpace(gl: WebGLRenderingContext | WebGL2RenderingContext, previous?: NarrativeSpace): NarrativeSpace {
-  const w=gl.drawingBufferWidth,h=gl.drawingBufferHeight;
-  const pixels=new Uint8Array(w*h*4);
-  gl.readPixels(0,0,w,h,gl.RGBA,gl.UNSIGNED_BYTE,pixels);
+export function findNarrativeSpace(pixels: Uint8Array, w: number, h: number, previous?: NarrativeSpace): NarrativeSpace {
   const portrait=w/h<1.15;
   const regions=portrait
     ? [ {x:.045,y:.035,width:.91,height:.22}, {x:.045,y:.745,width:.91,height:.22} ]

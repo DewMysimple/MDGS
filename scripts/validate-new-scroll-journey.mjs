@@ -5,7 +5,7 @@ import{createRequire}from'node:module';
 import{fileURLToPath}from'node:url';
 import path from'node:path';
 import{preview}from'vite';
-const root=fileURLToPath(new URL('../',import.meta.url)),dir=path.join(root,'reports/new-scrolls');
+const root=fileURLToPath(new URL('../',import.meta.url)),dir=path.join(root,'reports/peony-2.0');
 const{chromium}=createRequire(import.meta.url)(process.env.MDGS_PLAYWRIGHT_MODULE||'playwright');
 const report={status:'running',startedAt:new Date().toISOString(),scope:'Actual current-production four home entries, physical paper geometry, at least 4s visible loading, repeated input, return, slow resource waiting, cover failure/retry, and cancelled manifest invalidation.',checks:[],errors:[],expectedHttpFailures:[]};
 let server,browser,page;

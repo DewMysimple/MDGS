@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "startedAt": "2026-10-23T02:43:33.689Z",
+  "scope": "Actual parallel shader compiler held through native getProgramParameter KHR completion checks; cancel before completion then open a different real world.",
+  "errors": [],
+  "checks": [
+    {
+      "test": "cancel-during-real-shader-compilation-release-and-reenter",
+      "heldProgramPolls": 11640,
+      "passed": true
+    }
+  ],
+  "completedAt": "2026-10-23T02:43:45.646Z"
+}

@@ -9,9 +9,12 @@ import { StableLayerSorting } from './StableLayerSorting';
 import { activeSourceEdition, chapterAssetBase } from '../data/sourceEdition';
 import { createNewScrollAtmosphere } from './NewScrollAtmosphere';
 import { findNarrativeSpace, type NarrativeSpace } from './NarrativeSpace';
+import { readSceneManifest } from './SceneManifestLoader';
+import { SourceMaterialEffects } from './SourceMaterialEffects';
 
 interface TextureEntry { texture?: THREE.Texture; loading: boolean; lastSeen: number; bytes: number }
-interface SceneObject { mesh: THREE.Mesh; material: THREE.MeshBasicMaterial; url?: string; animation?: { progress: number; matrix: number[] }[]; visibility?: { progress: number; visible: boolean }[] }
+interface AnimationKey { progress: number; position: THREE.Vector3; rotation: THREE.Quaternion; scale: THREE.Vector3 }
+interface SceneObject { mesh: THREE.Mesh; material: THREE.MeshBasicMaterial; url?: string; animation?: { progress:number; matrix:number[] }[]; transforms?: AnimationKey[]; visibility?: { progress: number; visible: boolean }[]; morphs?:{base:number;track:{progress:number;value:number}[]}[] }
 const clamp = (v: number) => Math.min(1, Math.max(0, v));
 
 export interface SceneMotionState { enabled: boolean; reducedMotion: boolean; supported: boolean }
@@ -30,6 +33,10 @@ export class SceneRenderer {
   private objects: SceneObject[] = [];
   private textures = new Map<string, TextureEntry>();
   private loader = new THREE.TextureLoader();
+  private placeholder?: THREE.DataTexture;
+  private decodedTextures: { url: string; texture: THREE.Texture; entry: TextureEntry }[] = [];
+  private textureUploads = 0;
+  private maxTextureUploadMs = 0;
   private frame = 0;
   private disposed = false;
   private progress = 0;
@@ -41,6 +48,7 @@ export class SceneRenderer {
   private preparationActive = true;
   private preparationSignature = '';
   private loaded = false;
+  private compilation?: Promise<unknown>;
   private errorUrls = new Set<string>();
   private pending = new Set<string>();
   private queue: string[] = [];
@@ -65,6 +73,7 @@ export class SceneRenderer {
   private motionMedia = matchMedia('(prefers-reduced-motion: reduce)');
   private motionListeners = new Set<(state: SceneMotionState) => void>();
   private motionDirector?: MotionDirector;
+  private sourceEffects?: SourceMaterialEffects;
   private layerSorting?: StableLayerSorting;
   private artCounts = { replacements: 0, geometryRepairs: 0, edgeRepairs: 0, addedLayers: 0, textLayers: 0 };
   private previousFrameTime = 0;
@@ -83,6 +92,20 @@ export class SceneRenderer {
   private calligraphy: CalligraphyLayer;
   private narrativeSpace?: NarrativeSpace;
   private narrativeBucket = '';
+  private narrativeCache = new Map<string, NarrativeSpace>();
+  private narrativeTarget?: THREE.WebGLRenderTarget;
+  private narrativeReadInFlight = false;
+  private textureGeneration = 0;
+  private narrativePending = true;
+  private progressChangedAt = 0;
+  private narrativeSamples = 0;
+  private maxNarrativeSampleMs = 0;
+  private maxRenderCpuMs = 0;
+  private seekDirection = 1;
+  private desiredTextures = new Set<string>();
+  private preloadCamera = new THREE.PerspectiveCamera();
+  private aheadFrustum = new THREE.Frustum();
+  private sphere = new THREE.Sphere();
 
   constructor(private host: HTMLElement, private status: (message: string | null) => void,
     private preparation?: (state: ScenePreparationState) => void,
@@ -110,11 +133,17 @@ export class SceneRenderer {
     this.status('正在展卷');
     this.reportPreparation('manifest', 0, 0, '正在铺陈千年风华……');
     const base = chapterAssetBase(chapterId);
-    const response = await fetch(`${base}scene.json`, { signal: this.abort.signal });
-    if (!response.ok) throw new Error(`第${chapterId}卷资源读取失败（${response.status}）`);
-    const manifest = prepareScene(await response.json(), chapterId);
+    const manifest = prepareScene(await readSceneManifest(`${base}scene.json`, this.abort.signal), chapterId);
     if (this.disposed) throw new DOMException('Aborted', 'AbortError');
     this.manifest = manifest;
+    this.sourceEffects = new SourceMaterialEffects(manifest.sourceEffects, manifest.frameRange);
+    // A one-pixel map fixes the shader's USE_MAP layout before real bitmaps
+    // arrive. Hidden materials can compile during the opening ceremony.
+    if(typeof THREE.DataTexture==='function'){
+      this.placeholder=new THREE.DataTexture(new Uint8Array([255,255,255,255]),1,1);
+      this.placeholder.colorSpace=THREE.SRGBColorSpace;this.placeholder.needsUpdate=true;
+    }
+    let constructionSlice = performance.now();
     for (const source of manifest.meshes) {
       // Long Blender FONT captions belong to the reading drawer. Painted lettering stays intact.
       if (source.isText) continue;
@@ -124,9 +153,14 @@ export class SceneRenderer {
       geometry.setAttribute('position', new THREE.Float32BufferAttribute(source.positions, 3));
       if (source.uvs.length) geometry.setAttribute('uv', new THREE.Float32BufferAttribute(source.uvs, 2));
       if (source.indices?.length) geometry.setIndex(source.indices);
+      if(source.morphTargets?.length){
+        geometry.morphAttributes.position=source.morphTargets.map(target=>new THREE.Float32BufferAttribute(target.positions,3));
+        geometry.morphTargetsRelative=true;
+      }
       geometry.computeBoundingSphere();
       const color = new THREE.Color().setRGB(definition.color[0] ?? 1, definition.color[1] ?? 1, definition.color[2] ?? 1, THREE.LinearSRGBColorSpace);
       const material = new THREE.MeshBasicMaterial({
+        map:definition.texture?(this.placeholder??null):null,
         color, opacity: definition.opacity ?? 1,
         transparent: definition.transparent || !!definition.texture,
         alphaTest: definition.alphaTest ?? 0.012,
@@ -135,13 +169,26 @@ export class SceneRenderer {
         toneMapped: false,
       });
       const mesh = new THREE.Mesh(geometry, material);
+      this.sourceEffects.register(mesh, source);
       mesh.name = source.name;
       mesh.matrix.fromArray(source.matrix);
       mesh.matrixAutoUpdate = false;
       mesh.updateMatrixWorld(true);
       mesh.visible = !definition.texture;
       this.scene.add(mesh);
-      this.objects.push({ mesh, material, url: definition.texture ? `${base}${definition.texture}` : undefined, animation: manifest.animations?.[source.name], visibility: manifest.visibility?.[source.name] });
+      const animation = manifest.animations?.[source.name];
+      const transforms = animation?.map(key => {
+        const position = new THREE.Vector3(), rotation = new THREE.Quaternion(), scale = new THREE.Vector3();
+        this.m1.fromArray(key.matrix).decompose(position, rotation, scale);
+        return { progress: key.progress, position, rotation, scale };
+      });
+      const morphs=source.morphTargets?.map(target=>({base:target.baseValue,track:source.morphAnimations?.[target.name]??[]}));
+      this.objects.push({ mesh, material, url: definition.texture ? `${base}${definition.texture}` : undefined, animation, transforms, visibility: manifest.visibility?.[source.name],morphs });
+      if (performance.now() - constructionSlice > 5) {
+        await new Promise<void>(resolve => requestAnimationFrame(() => resolve()));
+        if (this.disposed) throw new DOMException('Aborted', 'AbortError');
+        constructionSlice = performance.now();
+      }
     }
     // Source manifests stay untouched. Replacements and new world-space bridges share
     // this same streaming queue and disposal lifecycle, never a second texture loader.
@@ -166,6 +213,18 @@ export class SceneRenderer {
       this.renderer.setTransparentSort(this.layerSorting.compare);
     }
     this.motionDirector = new MotionDirector(chapterId, this.objects, manifest.stops, atmosphere?.profile);
+    if(typeof this.renderer.compileAsync==='function'){
+      await this.precompile();
+      if(this.disposed)throw new DOMException('Aborted','AbortError');
+      // Offscreen caption sampling uses a linear output variant. Warm that
+      // variant here as well, rather than compiling it while the reader scrolls.
+      const target=new THREE.WebGLRenderTarget(16,16);
+      this.renderer.setRenderTarget(target);
+      const compilation=this.precompile();
+      this.renderer.setRenderTarget(null);
+      try{await compilation;}finally{target.dispose();}
+      if(this.disposed)throw new DOMException('Aborted','AbortError');
+    }
     this.artCounts = { replacements: art.replacements, geometryRepairs: art.geometryRepairs, edgeRepairs: art.edgeRepairs, addedLayers: art.addedLayers + (atmosphere?.objects.length ?? 0), textLayers: art.textLayers.length };
     this.loaded = true;
     this.dirty = true;
@@ -178,6 +237,12 @@ export class SceneRenderer {
     return manifest;
   }
 
+  private async precompile() {
+    const compilation=this.renderer.compileAsync(this.scene,this.camera);
+    this.compilation=compilation;
+    try{await compilation;}finally{if(this.compilation===compilation)this.compilation=undefined;}
+  }
+
   resize(width: number, height: number) {
     if (this.preparationActive && (width !== this.width || height !== this.height)) this.firstFrameReady = false;
     this.width = width; this.height = height;
@@ -185,6 +250,7 @@ export class SceneRenderer {
     this.renderer.setSize(width, height);
     this.calligraphy.resize(width, height);
     this.camera.aspect = width / height;
+    this.narrativePending = true;
     this.dirty = true;
     this.requestFrame();
   }
@@ -200,7 +266,9 @@ export class SceneRenderer {
   setProgress(progress: number) {
     if (this.progress === progress) return;
     if (this.preparationActive) this.firstFrameReady = false;
-    this.progress = clamp(progress); this.dirty = true; this.requestFrame();
+    this.seekDirection = progress >= this.progress ? 1 : -1;
+    this.progress = clamp(progress); this.progressChangedAt = performance.now();
+    this.narrativePending = true; this.dirty = true; this.requestFrame();
   }
   setPointer(x: number, y: number) { this.pointerTarget.set(x, y); this.requestFrame(); }
 
@@ -366,39 +434,60 @@ export class SceneRenderer {
     this.camera.updateMatrixWorld(true);
     for (const object of this.objects) {
       const visibility = object.visibility;
-      let sourceVisible = true;
-      if (visibility?.length) {
-        sourceVisible = visibility[0].visible;
-        for (const key of visibility) { if (key.progress > sourceProgress + 1e-7) break; sourceVisible = key.visible; }
-      }
+      const sourceVisible = this.visibleAt(visibility, sourceProgress);
       object.mesh.userData.sourceVisible = sourceVisible;
       object.mesh.visible = sourceVisible && !object.mesh.userData.artHidden && (!object.url || !!this.textures.get(object.url)?.texture);
-      if (!object.animation?.length) continue;
-      const { a: key1, b: key2, t: mix } = this.bracket(object.animation, sourceProgress);
-      this.m1.fromArray(key1.matrix).decompose(this.p1, this.q1, this.s1);
-      this.m2.fromArray(key2.matrix).decompose(this.p2, this.q2, this.s2);
-      object.mesh.matrix.compose(this.p1.lerp(this.p2, mix), this.q1.slerp(this.q2, mix), this.s1.lerp(this.s2, mix));
+      if (!object.transforms?.length) continue;
+      const { a: key1, b: key2, t: mix } = this.bracket(object.transforms, sourceProgress);
+      object.mesh.matrix.compose(this.p1.copy(key1.position).lerp(key2.position, mix), this.q1.copy(key1.rotation).slerp(key2.rotation, mix), this.s1.copy(key1.scale).lerp(key2.scale, mix));
       this.motionDirector?.setBaseMatrix(object.mesh, object.mesh.matrix);
       object.mesh.updateMatrixWorld(true);
       this.layerSorting?.updateBase(object.mesh, object.mesh.matrixWorld);
     }
   }
 
+  private visibleAt(track: SceneObject['visibility'], progress: number) {
+    if (!track?.length) return true;
+    let low = 0, high = track.length;
+    while (low + 1 < high) { const middle = (low + high) >> 1; if (track[middle].progress <= progress + 1e-7) low = middle; else high = middle; }
+    return track[low].visible;
+  }
+
+  private futureIntersects(object: SceneObject, sourceProgress: number) {
+    if (!object.mesh.geometry.boundingSphere) return false;
+    if (object.transforms?.length) {
+      const { a, b, t } = this.bracket(object.transforms, sourceProgress);
+      this.m1.compose(this.p1.copy(a.position).lerp(b.position,t), this.q1.copy(a.rotation).slerp(b.rotation,t), this.s1.copy(a.scale).lerp(b.scale,t));
+    } else this.m1.copy(object.mesh.matrixWorld);
+    return this.aheadFrustum.intersectsSphere(this.sphere.copy(object.mesh.geometry.boundingSphere).applyMatrix4(this.m1));
+  }
+
   private updateTextures() {
     if (this.disposed || this.contextLost) return;
     // Enlarge the frustum to prefetch neighbouring planes before they enter the painting.
-    const preloadCamera = this.camera.clone();
+    const preloadCamera = this.preloadCamera.copy(this.camera);
     preloadCamera.fov = Math.min(125, this.camera.fov * 1.35);
     preloadCamera.aspect *= 1.45;
     preloadCamera.updateProjectionMatrix();
     this.projection.multiplyMatrices(preloadCamera.projectionMatrix, this.camera.matrixWorldInverse);
     this.frustum.setFromProjectionMatrix(this.projection);
+    const { a, b, t } = this.bracket(this.manifest!.cameras, clamp(this.progress + this.seekDirection * .065));
+    preloadCamera.position.fromArray(a.position).lerp(this.p2.fromArray(b.position),t);
+    preloadCamera.quaternion.fromArray(a.quaternion).normalize().slerp(this.q2.fromArray(b.quaternion).normalize(),t);
+    preloadCamera.updateMatrixWorld(true);
+    this.projection.multiplyMatrices(preloadCamera.projectionMatrix,preloadCamera.matrixWorldInverse);
+    this.aheadFrustum.setFromProjectionMatrix(this.projection);
+    const aheadSource = THREE.MathUtils.lerp(a.sourceProgress ?? a.progress,b.sourceProgress ?? b.progress,t);
     const now = performance.now();
     this.currentVisible.clear();
+    this.desiredTextures.clear();
     for (const object of this.objects) {
-      if (!object.url || object.mesh.userData.sourceVisible === false) continue;
-      if (this.frustum.intersectsObject(object.mesh)) {
-        this.currentVisible.add(object.url);
+      if (!object.url) continue;
+      const current = object.mesh.userData.sourceVisible !== false && this.frustum.intersectsObject(object.mesh);
+      const ahead = !current && this.visibleAt(object.visibility,aheadSource) && this.futureIntersects(object,aheadSource);
+      if (current) this.currentVisible.add(object.url);
+      if (current || ahead) {
+        this.desiredTextures.add(object.url);
         const entry = this.textures.get(object.url);
         if (entry) entry.lastSeen = now;
         else if (!this.pending.has(object.url) && !this.errorUrls.has(object.url)) {
@@ -406,12 +495,14 @@ export class SceneRenderer {
         }
       }
     }
+    this.queue.sort((left,right)=>Number(this.currentVisible.has(right))-Number(this.currentVisible.has(left)));
     this.pumpQueue();
     let totalBytes = [...this.textures.values()].reduce((sum, value) => sum + value.bytes, 0);
-    const oldTextures = [...this.textures.entries()].filter(([url, entry]) => !this.currentVisible.has(url) && !entry.loading).sort((a, b) => a[1].lastSeen - b[1].lastSeen);
+    const oldTextures = [...this.textures.entries()].filter(([url, entry]) => !this.desiredTextures.has(url) && !entry.loading).sort((a, b) => a[1].lastSeen - b[1].lastSeen);
     for (const [url, entry] of oldTextures) {
-      if (totalBytes < 160 * 1024 * 1024 && now - entry.lastSeen < 12000) break;
-      entry.texture?.dispose();
+      const budget=(this.width<700?192:384)*1024*1024;
+      if (totalBytes < budget && now - entry.lastSeen < 30000) break;
+      this.disposeTexture(entry.texture);
       totalBytes -= entry.bytes;
       this.textures.delete(url);
       for (const object of this.objects) if (object.url === url) { object.material.map = null; object.material.needsUpdate = true; object.mesh.visible = false; }
@@ -442,44 +533,104 @@ export class SceneRenderer {
   private pumpQueue() {
     if (this.disposed || this.contextLost) return;
     let loadingCount = [...this.textures.values()].filter(entry => entry.loading).length;
-    while (this.queue.length && loadingCount < 4) {
+    while (this.queue.length && loadingCount < 2) {
       const url = this.queue.shift()!;
       this.pending.delete(url);
-      if (!this.currentVisible.has(url)) continue;
+      if (!this.desiredTextures.has(url)) continue;
       const entry: TextureEntry = { loading: true, lastSeen: performance.now(), bytes: 0 };
       this.textures.set(url, entry);
       loadingCount++;
-      this.loader.load(url, texture => {
-        if (this.disposed) { texture.dispose(); return; }
+      const decoded = (texture: THREE.Texture) => {
+        if (this.disposed) { this.disposeTexture(texture); return; }
         texture.colorSpace = THREE.SRGBColorSpace;
-        texture.anisotropy = Math.min(4, this.renderer.capabilities.getMaxAnisotropy());
+        texture.anisotropy = Math.min(2, this.renderer.capabilities.getMaxAnisotropy());
         texture.generateMipmaps = true;
         texture.minFilter = THREE.LinearMipmapLinearFilter;
-        entry.texture = texture; entry.loading = false;
-        entry.bytes = texture.image.width * texture.image.height * 4 * 1.333;
-        for (const object of this.objects) if (object.url === url) {
-          object.material.map = texture;
-          object.material.needsUpdate = true;
-          object.mesh.visible = object.mesh.userData.sourceVisible !== false && !object.mesh.userData.artHidden;
-        }
-        this.dirty = true;
+        // Decode is asynchronous; upload at most one bitmap in the next frame.
+        // Several arriving images must never force four driver uploads at once.
+        this.decodedTextures.push({url,texture,entry});
         this.requestFrame();
-        this.pumpQueue();
-        this.updateTextures();
-      }, undefined, () => {
+      };
+      const failed = () => {
         if (this.disposed) return;
         this.errorUrls.add(url);
         this.textures.delete(url);
         this.pumpQueue();
         this.updateTextures();
         if (!this.contextLost) this.status('部分画面资源未能加载，可重试补全');
-      });
+      };
+      if (typeof createImageBitmap === 'function') {
+        void fetch(url,{signal:this.abort.signal}).then(response=>{
+          if(!response.ok)throw new Error(`Texture ${response.status}`);return response.blob();
+        }).then(blob=>createImageBitmap(blob,{imageOrientation:'flipY',premultiplyAlpha:'none',colorSpaceConversion:'none'}))
+          .then(bitmap=>{const texture=new THREE.Texture(bitmap);texture.flipY=false;texture.needsUpdate=true;decoded(texture);}).catch(failed);
+      } else this.loader.load(url,decoded,undefined,failed);
     }
+  }
+
+  private flushTextureUpload() {
+    const item=this.decodedTextures.shift();if(!item)return;
+    const started=performance.now();
+    this.renderer.initTexture(item.texture);
+    this.maxTextureUploadMs=Math.max(this.maxTextureUploadMs,performance.now()-started);this.textureUploads++;
+    item.entry.texture=item.texture;item.entry.loading=false;
+    this.textureGeneration++;
+    item.entry.bytes=item.texture.image.width*item.texture.image.height*4*1.333;
+    for(const object of this.objects)if(object.url===item.url){
+      object.material.map=item.texture;object.material.needsUpdate=true;
+      object.mesh.visible=object.mesh.userData.sourceVisible!==false&&!object.mesh.userData.artHidden;
+    }
+    this.dirty=true;this.narrativePending=true;
+    if(this.currentVisible.has(item.url)){this.narrativeCache.delete(this.narrativeBucket);this.narrativeBucket='';}
+    this.updateTextures();
+  }
+
+  private disposeTexture(texture?: THREE.Texture) {
+    if(!texture)return;texture.dispose();
+    if(typeof ImageBitmap!=='undefined'&&texture.image instanceof ImageBitmap)texture.image.close();
+  }
+
+  private updateNarrativeSpace(now: number) {
+    if(!this.narrativePending||this.narrativeReadInFlight||!this.manifest?.sourceRevision||!this.onNarrativeSpace||!this.ready)return;
+    if([...this.currentVisible].some(url=>!this.textures.get(url)?.texture)){this.narrativePending=false;return;}
+    // Analyze a small offscreen image after the reader rests. Async PBO/fence
+    // readback avoids synchronously waiting for the GPU in a scrolling frame.
+    if(!this.preparationActive&&now-this.progressChangedAt<180)return;
+    this.narrativePending=false;
+    const bucket=`${Math.round(this.width)}:${Math.round(this.height)}:${Math.floor(this.progress*32)}`;
+    if(this.narrativeBucket===bucket)return;
+    this.narrativeBucket=bucket;
+    const cached=this.narrativeCache.get(bucket);
+    if(cached){this.narrativeSpace=cached;this.onNarrativeSpace(cached);return;}
+    const started=performance.now(),width=160,height=Math.max(50,Math.min(280,Math.round(width*this.height/this.width)));
+    if(!this.narrativeTarget){this.narrativeTarget=new THREE.WebGLRenderTarget(width,height,{depthBuffer:true});this.narrativeTarget.texture.colorSpace=THREE.SRGBColorSpace;}
+    else this.narrativeTarget.setSize(width,height);
+    const pixels=new Uint8Array(width*height*4),generation=this.textureGeneration;
+    this.renderer.setRenderTarget(this.narrativeTarget);this.renderer.render(this.scene,this.camera);
+    const read=this.renderer.readRenderTargetPixelsAsync(this.narrativeTarget,0,0,width,height,pixels);
+    this.renderer.setRenderTarget(null);
+    this.narrativeReadInFlight=true;
+    this.maxNarrativeSampleMs=Math.max(this.maxNarrativeSampleMs,performance.now()-started);
+    void read.then(()=>{
+      if(this.disposed||this.contextLost)return;
+      if(generation!==this.textureGeneration){this.narrativeBucket='';this.narrativePending=true;return;}
+      const placement=findNarrativeSpace(pixels,width,height,this.narrativeSpace);
+      this.narrativeCache.set(bucket,placement);this.narrativeSamples++;
+      if(this.narrativeBucket===bucket){this.narrativeSpace=placement;this.onNarrativeSpace?.(placement);}
+    }).catch(()=>{
+      // Context recovery retries the layout; rendering itself remains usable.
+      if(!this.disposed){this.narrativeBucket='';this.narrativePending=true;}
+    }).finally(()=>{
+      this.narrativeReadInFlight=false;
+      if(this.narrativePending&&!this.disposed)this.requestFrame();
+    });
   }
 
   private render = (now: number) => {
     this.frame = 0;
     if (this.disposed || this.contextLost || document.hidden) return;
+    const frameStarted=performance.now();
+    this.flushTextureUpload();
     this.rafTicks++;
     const motion = this.getMotionState().enabled;
     // A media query can change before its asynchronous change event arrives.
@@ -505,15 +656,13 @@ export class SceneRenderer {
       // then upload/draw its textures before allowing the outer ceremony to reveal it.
       if (!this.firstFrameReady) this.updateTextures();
       this.motionDirector?.update(this.camera, motion, this.progress);
-      this.renderer.render(this.scene, this.camera);
-      if(this.manifest.sourceRevision && this.onNarrativeSpace && this.ready) {
-        const bucket=`${this.width}:${this.height}:${Math.floor(this.progress*24)}`;
-        if(this.narrativeBucket!==bucket) {
-          this.narrativeBucket=bucket;
-          this.narrativeSpace=findNarrativeSpace(this.renderer.getContext(),this.narrativeSpace);
-          this.onNarrativeSpace(this.narrativeSpace);
-        }
+      this.sourceEffects?.update(this.progress);
+      for(const object of this.objects)for(const [i,morph]of(object.morphs??[]).entries()){
+        const samples=morph.track;if(!samples.length||!object.mesh.morphTargetInfluences)continue;
+        const{a,b,t}=this.bracket(samples);
+        object.mesh.morphTargetInfluences[i]=a.value+(b.value-a.value)*t-morph.base;
       }
+      this.renderer.render(this.scene, this.camera);
       this.calligraphy.render(this.camera, this.progress);
       this.dirty = false;
       this.lastAmbientFrame = now;
@@ -524,6 +673,7 @@ export class SceneRenderer {
         this.reportPreparation('ready', this.currentVisible.size, this.currentVisible.size, '长卷已备，邀君共赏。');
       }
     }
+    this.updateNarrativeSpace(now);
     if (this.textureRefreshPending && this.manifest && this.loaded && now - this.lastTextureCheck > 100) {
       this.updateTextures();
       this.lastTextureCheck = now;
@@ -533,7 +683,8 @@ export class SceneRenderer {
     // A narrow view can contain no authored independent motion at all. Keep that
     // painting quiet until resize, seek or a completed texture requests a new frame.
     if (!visibleMotion) this.previousFrameTime = 0;
-    if (this.loaded && (visibleMotion || this.textureRefreshPending || this.dirty || pointerMoving)) this.requestFrame();
+    if (this.loaded && (visibleMotion || this.textureRefreshPending || this.dirty || pointerMoving || this.decodedTextures.length>0 || this.narrativePending&&!!this.onNarrativeSpace&&this.ready)) this.requestFrame();
+    this.maxRenderCpuMs=Math.max(this.maxRenderCpuMs,performance.now()-frameStarted);
     this.updateDiagnostics(!!this.frame);
   };
 
@@ -565,9 +716,14 @@ export class SceneRenderer {
       contextLost: String(this.contextLost), contextRestores: String(this.contextRestoreCount),
       textureCount: String(textureEntries.filter(entry => !!entry.texture).length),
       textureBytes: String(Math.round(textureEntries.reduce((sum, entry) => sum + entry.bytes, 0))),
+      textureBudgetBytes:String((this.width<700?192:384)*1024*1024),
       textureFailed: String(this.errorUrls.size), loadingTextures: String(textureEntries.filter(entry => entry.loading).length),
       visibleTextures: String(this.currentVisible.size), queuedTextures: String(this.queue.length),
       drawCalls: String(this.renderer.info.render.calls), geometries: String(this.renderer.info.memory.geometries),
+      textureUploads:String(this.textureUploads),decodedTextureQueue:String(this.decodedTextures.length),maxTextureUploadMs:this.maxTextureUploadMs.toFixed(3),
+      narrativeSamples:String(this.narrativeSamples),maxNarrativeSampleMs:this.maxNarrativeSampleMs.toFixed(3),maxRenderCpuMs:this.maxRenderCpuMs.toFixed(3),
+      sourceEffects:JSON.stringify(this.sourceEffects?.getDiagnostics()??{}),
+      sourceMorphMeshes:String(this.objects.filter(object=>object.morphs?.length).length),
     });
   }
 
@@ -585,14 +741,20 @@ export class SceneRenderer {
     this.motionListeners.clear();
     this.motionDirector?.dispose();
     this.readingLayoutRoot?.style.removeProperty('--reading-min-paint-height');
-    for (const { mesh, material } of this.objects) { mesh.geometry.dispose(); material.dispose(); }
-    for (const entry of this.textures.values()) entry.texture?.dispose();
     this.calligraphy.dispose();
-    this.textures.clear();
     this.pending.clear(); this.queue = []; this.currentVisible.clear();
-    this.scene.clear();
-    this.renderer.dispose();
-    this.renderer.forceContextLoss();
     this.renderer.domElement.remove();
+    const release=()=>{
+      this.sourceEffects?.dispose();this.placeholder?.dispose();
+      for(const{mesh,material}of this.objects){mesh.geometry.dispose();material.dispose();}
+      for(const entry of this.textures.values())this.disposeTexture(entry.texture);
+      for(const item of this.decodedTextures)this.disposeTexture(item.texture);this.decodedTextures=[];
+      this.narrativeTarget?.dispose();this.narrativeCache.clear();this.textures.clear();
+      this.scene.clear();this.renderer.dispose();this.renderer.forceContextLoss();
+    };
+    // Three's parallel compiler polls material.currentProgram in a timer. Keep
+    // those resources alive until it settles; cancellation already detached
+    // this scene and stopped its worker, input, animation and texture tasks.
+    if(this.compilation)void this.compilation.then(release,release);else release();
   }
 }

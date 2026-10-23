@@ -12,7 +12,9 @@ import { runInNewContext } from 'node:vm';
 import ts from 'typescript';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
-const output = path.join(root, 'reports/new-scrolls/validation-assets-new.json');
+const reportRoot=process.env.MDGS_SCROLL_REPORT || 'reports/peony-2.0';
+const expectedRevision=process.env.MDGS_SCROLL_REVISION || 'peony-2.0-2026-10-22';
+const output = path.join(root, reportRoot,'validation-assets-new.json');
 const report = { status: 'running', startedAt: new Date().toISOString(),
   scope: 'Current four revised sources and editable deliveries, source-linked indexed JSON, every WebP full pixel decode, and independent read-only Blender evidence. No browser/visual-layout or Git publication claim.',
   chapters: [], checks: [], errors: [] };
@@ -33,10 +35,10 @@ function sequence(items, name, value = 'progress') {
 
 await writeFile(output, JSON.stringify(report, null, 2) + '\n');
 try {
-  const native = await json('reports/new-scrolls/validation-native-new.json');
+  const native = await json(`${reportRoot}/validation-native-new.json`);
   assert.equal(native.status, 'pass', 'Fresh independent native verification must pass first.');
   assert.equal(native.chapters.length, 4);
-  const deliveryEvidence = await json('reports/new-scrolls/native-delivery.json');
+  const deliveryEvidence = await json(`${reportRoot}/native-delivery.json`);
   const prepareSource = (await readFile(path.join(root, 'src/scene/prepareScene.ts'), 'utf8'))
     .replace(/^import[^\n]*\n/gm, '').replace('export function prepareScene', 'function prepareScene');
   const prepareCode = ts.transpileModule(prepareSource, { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.None } }).outputText;
@@ -45,13 +47,13 @@ try {
   for (const id of [1, 2, 3, 4]) {
     const directory = `public/assets/new-scrolls/chapter-${id}`;
     const sceneFile = `${directory}/scene.json`, scene = await json(sceneFile);
-    const sourceAudit = await json(`reports/new-scrolls/chapter-${id}-source-audit.json`);
+    const sourceAudit = await json(`${reportRoot}/chapter-${id}-source-audit.json`);
     const previousDelivery = deliveryEvidence.find(item => item.id === `chapter-${id}`);
     const nativeChapter = native.chapters.find(item => item.chapter === id);
     assert(nativeChapter?.passed && nativeChapter.sourceAndDeliveryEquivalent);
     assert.equal(await digest(sceneFile), nativeChapter.manifestSha256, 'Manifest changed after independent native verification.');
     assert.equal(scene.id, `chapter-${id}`);
-    assert.equal(scene.sourceRevision, 'peony-2026-10-21');
+    assert.equal(scene.sourceRevision, expectedRevision);
     assert.equal(scene.source, sourceAudit.source);
     assert.equal(scene.sourceSha256, await digest(sourceAudit.source));
     assert.equal(scene.sourceSha256, nativeChapter.source.sha256);
@@ -78,7 +80,7 @@ try {
     assert.equal(scene.stops.length, expectedCounts[id - 1]); sequence(scene.stops, `${scene.id} stops`);
     assert(scene.stops.every(stop => stop.progress >= 0 && stop.progress <= 1 && !stop.name.includes('参考全景')));
     assert.deepEqual(scene.markers.map(marker => [marker.name, marker.frame]), sourceAudit.markers.map(marker => [marker.name, marker.frame]));
-    if (id === 2) { assert.equal(scene.stops[0].authoredFrame, 1); assert.equal(scene.stops[0].frame, 33); }
+    if (id === 2) { assert.equal(scene.stops[0].authoredFrame, sourceAudit.markers[0].frame); assert.equal(scene.stops[0].frame, scene.frameRange[0]); }
     if (id === 3) assert.equal(scene.markers.filter(marker => marker.name.includes('参考全景')).length, 9);
     const names = new Set(scene.meshes.map(mesh => mesh.name)), images = new Map(scene.images.map(image => [image.src, image]));
     assert.equal(names.size, scene.meshes.length); assert.equal(images.size, scene.images.length);
@@ -143,7 +145,7 @@ try {
   const imageReport = JSON.parse(decoded.stdout);
   assert.equal(imageReport.decoded, textureFiles.length);
   report.checks.push({ name: 'all-runtime-images-full-pixel-decode', decoded: imageReport.decoded, passed: true });
-  report.nativeEvidence = { file: 'reports/new-scrolls/validation-native-new.json', sha256: await digest('reports/new-scrolls/validation-native-new.json'), completedAt: native.completedAt };
+  report.nativeEvidence = { file: `${reportRoot}/validation-native-new.json`, sha256: await digest(`${reportRoot}/validation-native-new.json`), completedAt: native.completedAt };
   report.status = 'pass';
   console.log(JSON.stringify({ status: report.status, chapters: report.chapters.map(({ id, meshes, textures, futureVisibleGeometry }) => ({ id, meshes, textures, futureVisibleGeometry })), decodedImages: imageReport.decoded }));
 } catch (error) {

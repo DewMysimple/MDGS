@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url';
 import { preview } from 'vite';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
-const output = path.join(root, 'reports/new-scrolls');
+const output = path.join(root, 'reports/peony-2.0');
 const staticOnly = process.argv.includes('--static-only');
 const reportFile = path.join(output, `validation-projection-home${staticOnly ? '-static' : ''}.json`);
 const referenceSha256 = '5ddde6154a57aa96bec01bdcb2f2e85bf0599ff28b01439988355768d1639f27';
@@ -47,6 +47,9 @@ async function observe(page, intentionalShaderFailure = false) {
 }
 async function layout(page, width, height, name) {
   await page.setViewportSize({ width, height }); await page.waitForTimeout(450);
+  const room=await snapshot(page),art=room.referenceViewport;
+  assert.equal(room.referenceFit,'cover');
+  assert(art.x<=0&&art.y<=0&&art.x+art.width>=width&&art.y+art.height>=height,'The actual room projection must cover the whole viewport, including portrait.');
   const items = await page.locator('.study-entry-button').evaluateAll(buttons => buttons.map(button => {
     const rect = button.getBoundingClientRect(), text = button.querySelector('strong');
     return { id: Number(button.dataset.chapterId), title: text?.textContent, tag: button.tagName,
@@ -90,6 +93,7 @@ try {
     const room = await snapshot(page);
     assert.equal(room.projectionMethod, 'reference-camera-relief-and-closed-solids');
     assert.equal(room.compiled, true); assert.equal(room.failure, null); assert.deepEqual(room.shaderErrors, []);
+    assert.equal(room.smokeMode,'continuous-billow-ribbons');assert.equal(room.smokeLayers,2);
     assert(room.depthRange.every(Number.isFinite) && room.depthRange[1] - room.depthRange[0] > 4, 'Relief must contain substantial measured depth.');
     const relief = room.objects.find(item => item.name === 'continuous-reference-relief-window-desk-foreground');
     assert(relief?.vertices > 20000, 'The reference surface must have actual relief vertices.');

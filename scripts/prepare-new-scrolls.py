@@ -1,11 +1,12 @@
 """Index new source meshes and encode their exact extracted pictures for the web."""
-import concurrent.futures, hashlib, json
+import concurrent.futures, hashlib, json, os, re
 from pathlib import Path
 from PIL import Image, ImageOps
 
 ROOT=Path(__file__).resolve().parents[1]
-ASSETS=ROOT/'public/assets/new-scrolls'
-REPORT=ROOT/'reports/new-scrolls'
+ASSETS=Path(os.environ.get('MDGS_EXPORT_ASSETS',ROOT/'public/assets/new-scrolls'))
+REPORT=Path(os.environ.get('MDGS_SCROLL_REPORT',ROOT/'reports/peony-2.0'))
+REVISION=os.environ.get('MDGS_SCROLL_REVISION','peony-2.0-2026-10-22')
 
 def dump(path,data):
     path.write_text(json.dumps(data,ensure_ascii=False,separators=(',',':')),encoding='utf8')
@@ -31,11 +32,14 @@ for chapter in range(1,5):
         raise RuntimeError('Incomplete actual source export: '+data['id'])
     raws=list((folder/'textures').glob('*.source'))
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool: encoded=list(pool.map(encode,raws))
-    images={item['src']:item for item in encoded}
+    images={item['src']:item for item in encoded} if encoded else {item['src']:item for item in data['images']}
     for item in data['images']:
         item.update(images[item['src']])
     before=after=0
     for mesh in data['meshes']:
+        if 'indices' in mesh:
+            before+=len(mesh['indices']);after+=len(mesh['positions'])//3
+            continue
         p=mesh['positions'];uv=mesh['uvs'];positions=[];uvs=[];indices=[];seen={}
         before+=len(p)//3
         for index in range(len(p)//3):
@@ -54,23 +58,49 @@ for chapter in range(1,5):
     start,end=data['frameRange']
     data['cameras']=[sample for sample in data['cameras'] if start<=sample['frame']<=end]
     authored=data['markers']
-    stops=[dict(marker) for marker in authored if '参考全景' not in marker['name']]
+    stops=[dict(marker) for marker in authored if '参考全景' not in marker['name'] and re.match(r'^\d{2}\s*·|^[1-4]-\d+\b',marker['name'])]
     for marker in stops:
         marker['authoredFrame']=marker['frame'];marker['frame']=min(end,max(start,marker['frame']))
         marker['progress']=(marker['frame']-start)/(end-start)
-    data.update(stops=stops,sourceRevision='peony-2026-10-21',sourceSha256=audit['sourceSha256'],
+    data.update(stops=stops,sourceRevision=REVISION,sourceSha256=audit['sourceSha256'],
                 source=audit['source'],geometryEncoding='indexed-json',sourcePipeline='scripts/export-new-scrolls.py + scripts/prepare-new-scrolls.py')
     # Reports retain the recovery proof, but public manifests never expose local paths.
     for repair in data['audit']['repairs']:
-        repair['resolvedPath']='Exact original packed image; see reports/new-scrolls/image-recovery.json'
+        repair['resolvedPath']='Exact original packed image; see edition report image-recovery.json'
     data['audit']['nativeSourceSha256']=audit['sourceSha256']
     data['audit']['visibleNativeMeshesAtStart']=sum(o['type']=='MESH' and not o['hidden'] for o in audit['objects'])
     data['audit']['exportedEverVisibleMeshes']=len(data['meshes'])
     data['audit']['sourceVisibilityScanned']=True
     data['audit']['losslessHeldMatrixSamples']={'before':samples_before,'after':sum(len(track) for track in data['animations'].values())}
     data['audit']['rawSourcesMovedToIgnoredCache']=True
+    effects_file=REPORT/f'chapter-{chapter}-source-effects.json'
+    if effects_file.exists():
+        source_effects=json.loads(effects_file.read_text(encoding='utf8'))
+        exported_materials={m['name']:m['id'] for m in data['materials']}
+        effect_materials=[]
+        scalar_tracks={}
+        for effect in source_effects['materials']:
+            if effect['name'] not in exported_materials:continue
+            effect=dict(effect);effect['materialId']=exported_materials[effect['name']]
+            label=effect['name']+' '+' '.join(node['name'] for node in effect['nodes'])
+            effect['kind']='burn' if '灼烧' in label else 'ink' if '墨' in label else 'fade'
+            keys=[key for key in source_effects['scalarTracks'] if key.startswith(effect['name']+'|')]
+            effect['scalarKeys']=keys
+            preferred=['灼烧入场','选择性出场进度','出场效果进度','水墨蔓延进度','显现进度','清晰显现进度']
+            effect['progressScalarKey']=next((key for token in preferred for key in keys if token in key),keys[0] if keys else None)
+            effect['noiseDefaults']=[{'node':node['name'],'inputs':{item['name']:item['value'] for item in node['inputs'] if item['value'] is not None}}
+                for node in effect['nodes'] if node['type']=='TEX_NOISE']
+            effect_materials.append(effect)
+            scalar_tracks.update({key:source_effects['scalarTracks'][key] for key in keys})
+        objects={node.get('object') for effect in effect_materials for node in effect['nodes'] if node.get('object')}
+        data['sourceEffects']={'materials':effect_materials,'scalarTracks':scalar_tracks,
+            'nodeGroups':source_effects.get('nodeGroups',[]),
+            'coordinateObjects':[obj for obj in source_effects['objects'] if obj['name'] in objects],
+            'sourceReport':effects_file.relative_to(ROOT).as_posix(),
+            'sourceReportSha256':hashlib.sha256(effects_file.read_bytes()).hexdigest(),
+            'scope':'Exact native graph metadata and evaluated frame scalar tracks; renderer noise approximation is separate.'}
     dump(manifest,data)
-    cache=ROOT/'.asset-cache/new-scrolls'/data['id'];cache.mkdir(parents=True,exist_ok=True)
+    cache=ROOT/'.asset-cache'/REVISION/data['id'];cache.mkdir(parents=True,exist_ok=True)
     for raw in raws: raw.replace(cache/raw.name)
     candidates=[]
     for mesh in data['meshes']:
@@ -90,6 +120,8 @@ for chapter in range(1,5):
              'manifestBytes':manifest.stat().st_size,'manifestSha256':hashlib.sha256(manifest.read_bytes()).hexdigest(),
              'missingImages':data['audit']['missingImages'],'skippedObjects':data['audit']['skippedObjects'],
              'sourceAnimationObjects':list(data['animations']),'motionCandidates':candidates}
+    summary['sourceEffects']=[{'materialId':m['materialId'],'name':m['name'],'kind':m['kind'],'users':m['users'],
+        'progressScalarKey':m['progressScalarKey'],'scalarKeys':m['scalarKeys']} for m in data.get('sourceEffects',{}).get('materials',[])]
     summaries.append(summary)
     print(json.dumps({k:v for k,v in summary.items() if k not in ('stops','motionCandidates')},ensure_ascii=False),flush=True)
 (REPORT/'web-delivery.json').write_text(json.dumps(summaries,ensure_ascii=False,indent=2),encoding='utf8')

@@ -1,0 +1,304 @@
+{
+  "status": "pass",
+  "testedAt": "2026-10-23T03:13:55.972Z",
+  "environment": "Windows Edge; actual React/Three.js page, real image decoding and first-frame gates",
+  "mode": "owned-production-preview",
+  "targetUrl": "http://127.0.0.1:50532/",
+  "minimumVisibleLoadingMs": 4000,
+  "normalCachedTargetMs": [
+    5000,
+    7000
+  ],
+  "visibilityScope": "Synthetic document.hidden change event checks visible-time accounting; OS background behavior is not inferred.",
+  "results": [
+    {
+      "name": "normal-direct-link-complete-ritual",
+      "loadingMs": 4003.7000000001863,
+      "totalMs": 6661.5999999996275,
+      "phases": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 152.20000000018626
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 1431.0999999996275
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 1891.7000000001863
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 2154.7000000001863
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 6158.4000000003725
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 6411.0999999996275
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 6813.799999999814
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "cached-refresh-complete-ritual",
+      "loadingMs": 4013.5999999996275,
+      "totalMs": 5768.600000000559,
+      "phases": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 91.5
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 450
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 922.1000000005588
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 1191.300000000745
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 5204.9000000003725
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 5457.300000000745
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 5860.100000000559
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "new-hash-complete-ritual",
+      "loadingMs": 4002.7999999998137,
+      "totalMs": 5647.9000000003725,
+      "phases": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 6066
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 6343.800000000745
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 6804.300000000745
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 7056.600000000559
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 11059.400000000373
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 11311.700000000186
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 11713.900000000373
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "browser-back-complete-ritual",
+      "loadingMs": 4003.7999999998137,
+      "totalMs": 5636.100000000559,
+      "phases": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 11873.5
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 12137.5
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 12592.900000000373
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 12851.800000000745
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 16855.60000000056
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 17108.10000000056
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 17509.60000000056
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "reduced-motion-still-four-seconds",
+      "loadingMs": 4003.100000000559,
+      "totalMs": 5053.199999999255,
+      "phases": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 129.1000000005588
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 589.6000000005588
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 741.2999999998137
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 894
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 4897.100000000559
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 5039.5
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 5182.299999999814
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "retry-restarts-full-ritual-and-four-seconds",
+      "loadingMs": 4003.5,
+      "totalMs": 4812.0999999996275,
+      "phases": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 10089.600000000559
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 10330.400000000373
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 10472.5
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 10613.400000000373
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 14616.900000000373
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 14759.299999999814
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 14901.700000000186
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "hidden-time-excluded-synthetic-visibility-event",
+      "loadingMs": 5513.200000000186,
+      "totalMs": 6374.799999999814,
+      "phases": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 15106
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 15365.400000000373
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 15509.799999999814
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 15683.200000000186
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 21196.400000000373
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 21339.299999999814
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 21480.799999999814
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "real-slow-texture-extends-exhibition",
+      "loadingMs": 5042.299999999814,
+      "totalMs": 6126.800000000745,
+      "phases": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 161.5
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 636.3000000007451
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 780.2000000001863
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 956.1000000005588
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 5998.4000000003725
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 6143.700000000186
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 6288.300000000745
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "pageErrors": []
+}

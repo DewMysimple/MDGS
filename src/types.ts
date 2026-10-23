@@ -5,6 +5,7 @@ export interface CameraSample {
   type: 'PERSP' | 'ORTHO'; orthoScale: number; lens: number; shift?: number[];
 }
 export interface SceneManifest {
+  sourceEffects?: import('./scene/SourceMaterialEffects').SourceEffects;
   sourceRevision?: string;
   sourceSha256?: string;
   visibility?: Record<string, { progress: number; visible: boolean }[]>;
@@ -18,6 +19,8 @@ export interface SceneManifest {
   meshes: {
     name: string; type: string; matrix: number[]; positions: number[]; uvs: number[];
     material: number; indices?: number[]; bounds: { min: number[]; max: number[] }; animated: boolean; isText: boolean;
+    morphTargets?: {name:string;positions:number[];baseValue:number}[];
+    morphAnimations?: Record<string,{frame:number;progress:number;value:number}[]>;
   }[];
   materials: {
     id: number; name: string; texture: string | null; color: number[]; opacity: number;

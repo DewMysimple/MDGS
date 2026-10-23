@@ -8,7 +8,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {preview} from 'vite';
 const root=fileURLToPath(new URL('../',import.meta.url));
-const output=path.join(root,'reports/new-scrolls');
+const output=path.join(root,'reports/peony-2.0');
 const shots=path.join(root,'tmp/new-scrolls/runtime');
 const {chromium}=createRequire(import.meta.url)(process.env.MDGS_PLAYWRIGHT_MODULE||'playwright');
 const report={status:'running',startedAt:new Date().toISOString(),scope:'Actual revised four-world WebGL, all authored reading nodes at desktop and phone sizes, paper narration bounds/fades, local Kai font, small motion controls, exact final hold/stamp, decoded looping audio and playback lifecycle.',checks:[],nodes:[],errors:[],expectedErrors:[]};
@@ -48,7 +48,7 @@ try{
   if(id>1)await page.locator('.chapter-link').nth(id-1).click();
   await waitViewer();
   const manifest=JSON.parse(await readFile(path.join(root,`public/assets/new-scrolls/chapter-${id}/scene.json`),'utf8'));
-  assert.equal(manifest.sourceRevision,'peony-2026-10-21');
+  assert.equal(manifest.sourceRevision,'peony-2.0-2026-10-22');
   const first=await data();assert.equal(first.chapter,String(id));assert.equal(first.artReplacements,'0');assert.equal(first.artTextLayers,'0');assert.equal(first.sourceHiddenVisibleLayers,'0');
   assert.equal(Number(first.editionAtmosphereLayers),[30,14,18,18][id-1]);
   assert.equal(await page.locator('.viewer-work-title').innerText().then(text=>text.includes(['神都花事','花入万家','锦绣花意','国色倾城'][id-1])),true);

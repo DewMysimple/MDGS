@@ -13,6 +13,12 @@ export interface LayerMotionBinding {
   priority?: number;
   pivot?: [number, number];
   angleDegrees?: number;
+  /** Added particles can bank visually without rotating their gravity axes. */
+  restAngleDegrees?: number;
+  /** Optional slow three-dimensional flutter, reserved for independent petals. */
+  tiltDegrees?: number;
+  twistDegrees?: number;
+  windRatio?: number;
   xRatio?: number;
   yRatio?: number;
   zRatio?: number;

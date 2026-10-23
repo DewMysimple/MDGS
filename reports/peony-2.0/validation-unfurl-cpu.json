@@ -1,0 +1,135 @@
+{
+  "status": "pass",
+  "startedAt": "2026-10-23T02:45:06.563Z",
+  "checks": [
+    {
+      "test": "closed-coils-continuous-opening-and-shared-backface",
+      "states": [
+        {
+          "open": 0,
+          "shaftSeparation": 0.61344,
+          "zRange": 0.634964857250452
+        },
+        {
+          "open": 0.12,
+          "shaftSeparation": 1.67307936,
+          "zRange": 0.5967845097184181
+        },
+        {
+          "open": 0.37,
+          "shaftSeparation": 3.8806613600000004,
+          "zRange": 0.5071703977882862
+        },
+        {
+          "open": 0.68,
+          "shaftSeparation": 6.618063040000001,
+          "zRange": 0.3978899740613997
+        },
+        {
+          "open": 0.95,
+          "shaftSeparation": 9.0022516,
+          "zRange": 0.16532568912953138
+        },
+        {
+          "open": 1,
+          "shaftSeparation": 9.443768,
+          "zRange": 0.01441397424787283
+        }
+      ],
+      "largestUnitError": 4.153827992681158e-8,
+      "leastNormalAgreement": 0.999999931546965,
+      "passed": true
+    },
+    {
+      "test": "painting-covers-entire-silk-without-distortion-or-margin",
+      "crops": [
+        {
+          "source": [
+            1536,
+            574
+          ],
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 1536,
+            "height": 574
+          },
+          "destination": [
+            0,
+            0,
+            1536,
+            574
+          ]
+        },
+        {
+          "source": [
+            1920,
+            1080
+          ],
+          "crop": {
+            "x": 0,
+            "y": 181.25,
+            "width": 1920,
+            "height": 717.5
+          },
+          "destination": [
+            0,
+            0,
+            1536,
+            574
+          ]
+        },
+        {
+          "source": [
+            1200,
+            1200
+          ],
+          "crop": {
+            "x": 0,
+            "y": 375.78125,
+            "width": 1200,
+            "height": 448.4375
+          },
+          "destination": [
+            0,
+            0,
+            1536,
+            574
+          ]
+        },
+        {
+          "source": [
+            4000,
+            900
+          ],
+          "crop": {
+            "x": 795.8188153310105,
+            "y": 0,
+            "width": 2408.362369337979,
+            "height": 900
+          },
+          "destination": [
+            0,
+            0,
+            1536,
+            574
+          ]
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "benchmark": {
+    "perFrameMedianMs": {
+      "previous": 1.3516020833333338,
+      "optimized": 0.11238750000000171
+    },
+    "speedup": 12.02626700774831,
+    "runs": 5,
+    "framesPerRun": 240,
+    "vertexCount": 2415,
+    "note": "Same process and paper topology; CPU timings exclude WebGL upload/render and depend on host."
+  },
+  "scope": "CPU-only actual paper deformation, analytic normals, stable conservative bounds, aspect-preserving full-surface crop and before/after geometry benchmark. Does not assert GPU/browser FPS.",
+  "completedAt": "2026-10-23T02:45:08.964Z"
+}

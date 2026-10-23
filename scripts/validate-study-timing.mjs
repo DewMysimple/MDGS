@@ -9,7 +9,7 @@ import { preview } from 'vite';
 const project = fileURLToPath(new URL('../', import.meta.url));
 const { chromium } = createRequire(import.meta.url)(process.env.MDGS_PLAYWRIGHT_MODULE || 'playwright');
 const externalPreview = process.env.MDGS_PREVIEW_URL;
-const reportPath = path.join(project, 'reports/study/validation-timing.json');
+const reportPath = path.join(project, 'reports/peony-2.0/validation-timing.json');
 const expected = ['SCROLL_AWAKENING', 'CAMERA_ENTERING', 'ARTISTIC_TRANSITION', 'SCROLL_LOADING', 'PAINTING_REVEAL', 'ENTERING_VIEWER', 'SCROLL_VIEWER'];
 const results = [];
 const errors = [];

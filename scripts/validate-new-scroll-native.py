@@ -8,12 +8,13 @@ import bpy
 import hashlib
 import json
 import math
-import time
+import time,os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'reports/new-scrolls/validation-native-new.json'
-NAMES = ['画卷一_最终修订.blend', '画卷二_街市建筑完整补全版.blend', '画卷三_分镜构图版_图层补全.blend', '画卷四_转场运镜加快版.blend']
+REPORT=Path(os.environ.get('MDGS_SCROLL_REPORT',ROOT/'reports/peony-2.0'))
+OUT = REPORT/'validation-native-new.json'
+SOURCE_AUDITS=json.loads((REPORT/'source-audit.json').read_text(encoding='utf8'))
 report = {'status': 'running', 'startedAt': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
           'scope': 'Independent Blender 5.2 reopen; all integer-frame visibility, every exported camera and object transform sample, all triangulated coordinates/UVs, packed image provenance. No renders or saves.', 'chapters': []}
 OUT.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf8')
@@ -59,8 +60,42 @@ def inspect(path, data, chapter, role):
     first_visible = {}
     fingerprints = hashlib.sha256()
     transform_checks = 0
+    effect_resolvers={}
+    for key,track in data.get('sourceEffects',{}).get('scalarTracks',{}).items():
+        material,socket_path=key.split('|',1)
+        tree=bpy.data.materials[material].node_tree
+        effect_resolvers[key]={'tree':tree,'path':socket_path,'track':track,'index':0}
+    effect_checks=0
+    morph_resolvers=[]
+    for web in data['meshes']:
+        for target in web.get('morphTargets',[]):
+            key=objects[web['name']].data.shape_keys.key_blocks[target['name']]
+            morph_resolvers.append({'key':key,'track':web['morphAnimations'][target['name']],'index':0})
+    morph_checks=0
     for frame in range(start, end + 1):
         scene.frame_set(frame)
+        bpy.context.evaluated_depsgraph_get().update()
+        for entry in morph_resolvers:
+            track=entry['track'];i=entry['index']
+            while i+1<len(track) and track[i+1]['frame']<=frame:i+=1
+            entry['index']=i;a=track[i];b=track[min(i+1,len(track)-1)]
+            mix=(frame-a['frame'])/max(1,b['frame']-a['frame'])
+            expected=a['value']+(b['value']-a['value'])*mix
+            assert abs(entry['key'].value-expected)<2e-6,f'{role} morph weight frame {frame}'
+            morph_checks+=1
+        for key,entry in effect_resolvers.items():
+            track=entry['track'];i=entry['index']
+            while i+1<len(track) and track[i+1]['frame']<=frame:i+=1
+            entry['index']=i;a=track[i];b=track[min(i+1,len(track)-1)]
+            mix=(frame-a['frame'])/max(1,b['frame']-a['frame'])
+            actual=entry['tree'].path_resolve(entry['path'])
+            if isinstance(a['value'],list):
+                expected=[v+(b['value'][axis]-v)*mix for axis,v in enumerate(a['value'])]
+                close(actual,expected,f'{role} shader {key} frame {frame}')
+            else:
+                expected=a['value']+(b['value']-a['value'])*mix
+                assert abs(actual-expected)<2e-6,f'{role} shader {key} frame {frame}'
+            effect_checks+=1
         for name, obj in renderables.items():
             visible = not obj.hide_render
             if not tracks[name] or tracks[name][-1]['visible'] != visible:
@@ -131,6 +166,23 @@ def inspect(path, data, chapter, role):
         expanded_uv = [web['uvs'][index * 2 + axis] for index in indices for axis in range(2)]
         close(actual_positions, expanded_p, f'{role} geometry {name}')
         close(actual_uv, expanded_uv, f'{role} UV {name}')
+        for target in web.get('morphTargets',[]):
+            keys=obj.data.shape_keys
+            assert keys.use_relative and not obj.modifiers,'Nonlinear deformer needs another export'
+            key=keys.key_blocks[target['name']]
+            assert abs(key.value-target['baseValue'])<2e-6,'Morph base weight mismatch'
+            actual_delta=[]
+            for tri in mesh.loop_triangles:
+                for vi in tri.vertices:
+                    delta=key.data[vi].co-key.relative_key.data[vi].co
+                    if key.vertex_group:
+                        group=obj.vertex_groups.get(key.vertex_group)
+                        try:weight=group.weight(vi) if group else 0
+                        except RuntimeError:weight=0
+                        delta*=weight
+                    actual_delta.extend(delta)
+            expanded_delta=[target['positions'][index*3+axis] for index in indices for axis in range(3)]
+            close(actual_delta,expanded_delta,f'{role} morph relative deltas {name}')
         geometry_checks += len(indices)
         evaluated.to_mesh_clear()
     assert source_geometry_names == set(expected_meshes), f'{role} geometry set mismatch'
@@ -149,6 +201,8 @@ def inspect(path, data, chapter, role):
     assert digest_before == sha(path), 'Read-only validation changed file: ' + str(path)
     return {'sha256': digest_before, 'allIntegerVisibilityFrames': end - start + 1,
             'cameraSamplesRecomputed': len(camera_by_frame), 'animationMatricesRecomputed': transform_checks,
+            'nativeMaterialScalarFramesRecomputed':effect_checks,
+            'nativeMorphWeightFramesRecomputed':morph_checks,'relativeMorphMeshes':len({m['name'] for m in data['meshes'] if m.get('morphTargets')}),
             'expandedTriangleVerticesRecomputed': geometry_checks, 'sceneFingerprint': fingerprints.hexdigest(),
             'exportedGeometryObjects': len(source_geometry_names),
             'visibleGeometryAtStart': sum(not objects[n].hide_render for n in source_geometry_names),
@@ -159,11 +213,12 @@ def inspect(path, data, chapter, role):
 
 
 try:
-    for chapter, name in enumerate(NAMES, 1):
+    for audit in SOURCE_AUDITS:
+        chapter=int(audit['id'].split('-')[-1])
         manifest_path = ROOT / f'public/assets/new-scrolls/chapter-{chapter}/scene.json'
         manifest_digest = sha(manifest_path)
         data = json.loads(manifest_path.read_text(encoding='utf8'))
-        source = inspect(ROOT / '牡丹' / name, data, chapter, 'input')
+        source = inspect(ROOT / audit['source'], data, chapter, 'input')
         delivery = inspect(ROOT / f'artwork/blender-reconstructed/chapter-{chapter}_reconstructed.blend', data, chapter, 'delivery')
         assert source['sha256'] == data['sourceSha256']
         assert source['sceneFingerprint'] == delivery['sceneFingerprint'], 'Source/delivery fingerprint differs'

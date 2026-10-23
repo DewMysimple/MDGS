@@ -1,0 +1,2323 @@
+{
+  "status": "pass",
+  "startedAt": "2026-10-23T02:46:25.601Z",
+  "scope": "Actual revised four-world WebGL, all authored reading nodes at desktop and phone sizes, paper narration bounds/fades, local Kai font, small motion controls, exact final hold/stamp, decoded looping audio and playback lifecycle.",
+  "checks": [
+    {
+      "test": "all-current-reading-nodes-1-desktop",
+      "nodes": 15,
+      "paintingBounds": {
+        "x": 23,
+        "y": 175,
+        "width": 1626,
+        "height": 737
+      },
+      "passed": true
+    },
+    {
+      "test": "all-responsive-docx-passages-1-desktop",
+      "passages": 14,
+      "characters": 770,
+      "passed": true
+    },
+    {
+      "test": "exact-final-frame-and-stamp-1-desktop",
+      "progress": "1.000000",
+      "renderCount": "4960",
+      "stamp": {
+        "animation": "final-impression",
+        "opacity": "0.945246",
+        "rect": {
+          "x": 1517.1419677734375,
+          "y": 620.6828002929688,
+          "width": 35.122314453125,
+          "height": 56.1971435546875,
+          "top": 620.6828002929688,
+          "right": 1552.2642822265625,
+          "bottom": 676.8799438476562,
+          "left": 1517.1419677734375
+        }
+      },
+      "passed": true
+    },
+    {
+      "test": "all-current-reading-nodes-1-mobile",
+      "nodes": 15,
+      "paintingBounds": {
+        "x": 15,
+        "y": 260,
+        "width": 360,
+        "height": 565
+      },
+      "passed": true
+    },
+    {
+      "test": "all-responsive-docx-passages-1-mobile",
+      "passages": 28,
+      "characters": 770,
+      "passed": true
+    },
+    {
+      "test": "exact-final-frame-and-stamp-1-mobile",
+      "progress": "1.000000",
+      "renderCount": "12042",
+      "stamp": {
+        "animation": "final-impression",
+        "opacity": "0.949637",
+        "rect": {
+          "x": 310.0546569824219,
+          "y": 301.125732421875,
+          "width": 35.10943603515625,
+          "height": 56.12774658203125,
+          "top": 301.125732421875,
+          "right": 345.1640930175781,
+          "bottom": 357.25347900390625,
+          "left": 310.0546569824219
+        }
+      },
+      "passed": true
+    },
+    {
+      "test": "actual-motion-off-reduce-1",
+      "moving": "[\"N1_WindPetal_01_1\",\"N1_WindPetal_01_2\"]",
+      "passed": true
+    },
+    {
+      "test": "all-current-reading-nodes-2-desktop",
+      "nodes": 7,
+      "paintingBounds": {
+        "x": 23,
+        "y": 175,
+        "width": 1626,
+        "height": 737
+      },
+      "passed": true
+    },
+    {
+      "test": "all-responsive-docx-passages-2-desktop",
+      "passages": 14,
+      "characters": 727,
+      "passed": true
+    },
+    {
+      "test": "exact-final-frame-and-stamp-2-desktop",
+      "progress": "1.000000",
+      "renderCount": "3826",
+      "stamp": {
+        "animation": "final-impression",
+        "opacity": "0.937999",
+        "rect": {
+          "x": 1517.131591796875,
+          "y": 620.479736328125,
+          "width": 35.14306640625,
+          "height": 56.3114013671875,
+          "top": 620.479736328125,
+          "right": 1552.274658203125,
+          "bottom": 676.7911376953125,
+          "left": 1517.131591796875
+        }
+      },
+      "passed": true
+    },
+    {
+      "test": "all-current-reading-nodes-2-mobile",
+      "nodes": 7,
+      "paintingBounds": {
+        "x": 15,
+        "y": 260,
+        "width": 360,
+        "height": 565
+      },
+      "passed": true
+    },
+    {
+      "test": "all-responsive-docx-passages-2-mobile",
+      "passages": 25,
+      "characters": 727,
+      "passed": true
+    },
+    {
+      "test": "exact-final-frame-and-stamp-2-mobile",
+      "progress": "1.000000",
+      "renderCount": "9221",
+      "stamp": {
+        "animation": "final-impression",
+        "opacity": "0.948931",
+        "rect": {
+          "x": 310.0536193847656,
+          "y": 301.13262939453125,
+          "width": 35.11151123046875,
+          "height": 56.138885498046875,
+          "top": 301.13262939453125,
+          "right": 345.1651306152344,
+          "bottom": 357.2715148925781,
+          "left": 310.0536193847656
+        }
+      },
+      "passed": true
+    },
+    {
+      "test": "actual-motion-off-reduce-2",
+      "moving": "[\"N2_WindPetal_01_1\",\"N2_WindPetal_01_2\"]",
+      "passed": true
+    },
+    {
+      "test": "all-current-reading-nodes-3-desktop",
+      "nodes": 9,
+      "paintingBounds": {
+        "x": 23,
+        "y": 175,
+        "width": 1626,
+        "height": 737
+      },
+      "passed": true
+    },
+    {
+      "test": "all-responsive-docx-passages-3-desktop",
+      "passages": 16,
+      "characters": 770,
+      "passed": true
+    },
+    {
+      "test": "exact-final-frame-and-stamp-3-desktop",
+      "progress": "1.000000",
+      "renderCount": "4567",
+      "stamp": {
+        "animation": "final-impression",
+        "opacity": "0.946243",
+        "rect": {
+          "x": 1517.1434326171875,
+          "y": 620.7047729492188,
+          "width": 35.119384765625,
+          "height": 56.181396484375,
+          "top": 620.7047729492188,
+          "right": 1552.2628173828125,
+          "bottom": 676.8861694335938,
+          "left": 1517.1434326171875
+        }
+      },
+      "passed": true
+    },
+    {
+      "test": "all-current-reading-nodes-3-mobile",
+      "nodes": 9,
+      "paintingBounds": {
+        "x": 15,
+        "y": 260,
+        "width": 360,
+        "height": 565
+      },
+      "passed": true
+    },
+    {
+      "test": "all-responsive-docx-passages-3-mobile",
+      "passages": 28,
+      "characters": 770,
+      "passed": true
+    },
+    {
+      "test": "exact-final-frame-and-stamp-3-mobile",
+      "progress": "1.000000",
+      "renderCount": "10979",
+      "stamp": {
+        "animation": "final-impression",
+        "opacity": "0.949845",
+        "rect": {
+          "x": 310.0549621582031,
+          "y": 301.11676025390625,
+          "width": 35.10882568359375,
+          "height": 56.12445068359375,
+          "top": 301.11676025390625,
+          "right": 345.1637878417969,
+          "bottom": 357.2412109375,
+          "left": 310.0549621582031
+        }
+      },
+      "passed": true
+    },
+    {
+      "test": "actual-motion-off-reduce-3",
+      "moving": "[\"N3_WindPetal_01_1\",\"N3_WindPetal_01_2\"]",
+      "passed": true
+    },
+    {
+      "test": "all-current-reading-nodes-4-desktop",
+      "nodes": 9,
+      "paintingBounds": {
+        "x": 23,
+        "y": 175,
+        "width": 1626,
+        "height": 737
+      },
+      "passed": true
+    },
+    {
+      "test": "all-responsive-docx-passages-4-desktop",
+      "passages": 15,
+      "characters": 736,
+      "passed": true
+    },
+    {
+      "test": "exact-final-frame-and-stamp-4-desktop",
+      "progress": "1.000000",
+      "renderCount": "4182",
+      "stamp": {
+        "animation": "final-impression",
+        "opacity": "0.946233",
+        "rect": {
+          "x": 1517.1434326171875,
+          "y": 620.70458984375,
+          "width": 35.119384765625,
+          "height": 56.1815185546875,
+          "top": 620.70458984375,
+          "right": 1552.2628173828125,
+          "bottom": 676.8861083984375,
+          "left": 1517.1434326171875
+        }
+      },
+      "passed": true
+    },
+    {
+      "test": "all-current-reading-nodes-4-mobile",
+      "nodes": 9,
+      "paintingBounds": {
+        "x": 15,
+        "y": 260,
+        "width": 360,
+        "height": 565
+      },
+      "passed": true
+    },
+    {
+      "test": "all-responsive-docx-passages-4-mobile",
+      "passages": 26,
+      "characters": 736,
+      "passed": true
+    },
+    {
+      "test": "exact-final-frame-and-stamp-4-mobile",
+      "progress": "1.000000",
+      "renderCount": "9960",
+      "stamp": {
+        "animation": "final-impression",
+        "opacity": "0.949643",
+        "rect": {
+          "x": 310.0546569824219,
+          "y": 301.12554931640625,
+          "width": 35.10943603515625,
+          "height": 56.127655029296875,
+          "top": 301.12554931640625,
+          "right": 345.1640930175781,
+          "bottom": 357.2532043457031,
+          "left": 310.0546569824219
+        }
+      },
+      "passed": true
+    },
+    {
+      "test": "actual-motion-off-reduce-4",
+      "moving": "[\"N4_WindPetal_01_1\",\"N4_WindPetal_01_2\"]",
+      "passed": true
+    },
+    {
+      "test": "local-kai-loaded-and-all-visible-html-typography",
+      "passed": true
+    },
+    {
+      "test": "actual-mp3-decode-loop-volume-background-pause-dispose",
+      "audio": {
+        "state": "running",
+        "time": 0.7706666666666667,
+        "duration": 76.8,
+        "channels": 2,
+        "loop": true,
+        "gain": 0.4000000059604645
+      },
+      "passed": true
+    }
+  ],
+  "nodes": [
+    {
+      "chapter": 1,
+      "layout": "desktop",
+      "node": 1,
+      "name": "01 · 女帝与牡丹",
+      "progress": 0,
+      "quietFraction": 0.993,
+      "text": "世人说起牡丹，总会联想到武则天贬牡丹的传说，这个故事赋予牡丹不畏强权的傲骨。但拨开文学演绎，真实历史中的武则天并非牡丹的贬谪者，",
+      "bounds": {
+        "x": 139.234375,
+        "y": 215.53125,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 402.671875,
+        "bottom": 539.796875,
+        "left": 139.234375
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_01_1",
+        "N1_WindPetal_01_2"
+      ],
+      "screenshot": "runtime-c1-desktop-01.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop",
+      "node": 2,
+      "name": "02 · 从山野到国色",
+      "progress": 0.064,
+      "quietFraction": 0.497,
+      "text": "世人说起牡丹，总会联想到武则天贬牡丹的传说，这个故事赋予牡丹不畏强权的傲骨。但拨开文学演绎，真实历史中的武则天并非牡丹的贬谪者，",
+      "bounds": {
+        "x": 139.234375,
+        "y": 215.53125,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 402.671875,
+        "bottom": 539.796875,
+        "left": 139.234375
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_02_1",
+        "N1_WindPetal_02_2",
+        "前景 · 08_飘落花瓣.002"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-desktop-02.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop",
+      "node": 3,
+      "name": "03 · 深山寺院与乡野",
+      "progress": 0.135,
+      "quietFraction": 0.895,
+      "text": "武则天掌权以前，牡丹算不上名贵花卉，大多生长在深山寺院与乡野之间。纵然花繁色艳，但地位远不及梅、兰、菊。隋朝虽在洛阳西苑少量栽植牡丹，",
+      "bounds": {
+        "x": 121.390625,
+        "y": 215.53125,
+        "width": 299.125,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 420.515625,
+        "bottom": 539.796875,
+        "left": 121.390625
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_03_1",
+        "N1_WindPetal_03_2",
+        "前景 · 08_飘落花瓣.001"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-desktop-03.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop",
+      "node": 4,
+      "name": "04 · 梅兰菊与牡丹",
+      "progress": 0.198,
+      "quietFraction": 0.566,
+      "text": "武则天掌权以前，牡丹算不上名贵花卉，大多生长在深山寺院与乡野之间。纵然花繁色艳，但地位远不及梅、兰、菊。隋朝虽在洛阳西苑少量栽植牡丹，",
+      "bounds": {
+        "x": 1237.15625,
+        "y": 215.53125,
+        "width": 299.125,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 1536.28125,
+        "bottom": 539.796875,
+        "left": 1237.15625
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_04_1",
+        "N1_WindPetal_04_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-desktop-04.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop",
+      "node": 5,
+      "name": "05 · 隋苑初栽",
+      "progress": 0.254,
+      "quietFraction": 0.497,
+      "text": "武则天掌权以前，牡丹算不上名贵花卉，大多生长在深山寺院与乡野之间。纵然花繁色艳，但地位远不及梅、兰、菊。隋朝虽在洛阳西苑少量栽植牡丹，",
+      "bounds": {
+        "x": 131.9375,
+        "y": 215.53125,
+        "width": 299.125,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 431.0625,
+        "bottom": 539.796875,
+        "left": 131.9375
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_05_1",
+        "N1_WindPetal_05_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-desktop-05.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop",
+      "node": 6,
+      "name": "06 · 神都转折",
+      "progress": 0.318,
+      "quietFraction": 0.587,
+      "text": "也只是小众花木，并未流行。直到武则天定都洛阳，定为神都，牡丹的命运才迎来转折。",
+      "bounds": {
+        "x": 1290.6875,
+        "y": 215.53125,
+        "width": 192.0625,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 1482.75,
+        "bottom": 539.796875,
+        "left": 1290.6875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_06_1",
+        "N1_WindPetal_06_2",
+        "前景 · 08_飘落花瓣.003"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-desktop-06.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop",
+      "node": 7,
+      "name": "07 · 武周气象",
+      "progress": 0.381,
+      "quietFraction": 0.727,
+      "text": "也只是小众花木，并未流行。直到武则天定都洛阳，定为神都，牡丹的命运才迎来转折。",
+      "bounds": {
+        "x": 1304.984375,
+        "y": 215.53125,
+        "width": 192.0625,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 1497.046875,
+        "bottom": 539.796875,
+        "left": 1304.984375
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_07_1",
+        "N1_WindPetal_07_2",
+        "前景 · 08_飘落花瓣.008"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-desktop-07.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop",
+      "node": 8,
+      "name": "08 · 西河寺引种",
+      "progress": 0.445,
+      "quietFraction": 0.552,
+      "text": "武周国力强盛，社会风气开放，皇家审美偏爱盛大饱满的风物，牡丹硕大华贵的花容，正好契合大一统王朝的气象。依据中唐舒元舆《牡丹赋・序》记载，",
+      "bounds": {
+        "x": 1251.453125,
+        "y": 539.921875,
+        "width": 299.125,
+        "height": 324.265625,
+        "top": 539.921875,
+        "right": 1550.578125,
+        "bottom": 864.1875,
+        "left": 1251.453125
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_08_1",
+        "N1_WindPetal_08_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-desktop-08.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop",
+      "node": 9,
+      "name": "09 · 洛阳牡丹始盛",
+      "progress": 0.516,
+      "quietFraction": 0.769,
+      "text": "武则天命人将西河寺院的优良牡丹引种至洛阳西苑，牡丹就此从山野进入皇家园林。北宋欧阳修《洛阳牡丹记》也明确记载 “自唐则天以后，",
+      "bounds": {
+        "x": 151.53125,
+        "y": 543.5,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 543.5,
+        "right": 414.96875,
+        "bottom": 867.765625,
+        "left": 151.53125
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_09_1",
+        "N1_WindPetal_09_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-desktop-09.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop",
+      "node": 10,
+      "name": "10 · 腊日宣诏",
+      "progress": 0.58,
+      "quietFraction": 0.378,
+      "text": "武则天《腊日宣诏幸上苑》一诗常被后世和牡丹抗旨的故事绑定，实际上这首御制诗是政治造势。寒冬下诏百花齐开，是借异象宣扬皇权天授，稳固朝堂，",
+      "bounds": {
+        "x": 121.390625,
+        "y": 543.5,
+        "width": 299.125,
+        "height": 324.265625,
+        "top": 543.5,
+        "right": 420.515625,
+        "bottom": 867.765625,
+        "left": 121.390625
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_10_1",
+        "N1_WindPetal_10_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-desktop-10.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop",
+      "node": 11,
+      "name": "11 · 文学传说",
+      "progress": 0.651,
+      "quietFraction": 0.601,
+      "text": "武则天《腊日宣诏幸上苑》一诗常被后世和牡丹抗旨的故事绑定，实际上这首御制诗是政治造势。寒冬下诏百花齐开，是借异象宣扬皇权天授，稳固朝堂，",
+      "bounds": {
+        "x": 121.390625,
+        "y": 543.5,
+        "width": 299.125,
+        "height": 324.265625,
+        "top": 543.5,
+        "right": 420.515625,
+        "bottom": 867.765625,
+        "left": 121.390625
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_11_1",
+        "N1_WindPetal_11_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-desktop-11.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop",
+      "node": 12,
+      "name": "12 · 文人寄志",
+      "progress": 0.722,
+      "quietFraction": 0.615,
+      "text": "诗中并没有提到牡丹。牡丹拒不奉诏、被贬邙山、烈火之后生出 “洛阳红” 的故事，起源于北宋，成熟于明清，属于后世虚构。",
+      "bounds": {
+        "x": 1245.59375,
+        "y": 222.40625,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 222.40625,
+        "right": 1509.03125,
+        "bottom": 546.671875,
+        "left": 1245.59375
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_12_1",
+        "N1_WindPetal_12_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-desktop-12.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop",
+      "node": 13,
+      "name": "13 · 史实与传说",
+      "progress": 0.786,
+      "quietFraction": 0.706,
+      "text": "史实与传说共同构建牡丹文化：真实历史上，武则天扩建苑囿、推广牡丹种植，使牡丹流入士族宅院，为盛唐 “花开时节动京城” 打下根基；",
+      "bounds": {
+        "x": 1269.296875,
+        "y": 539.328125,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 539.328125,
+        "right": 1532.734375,
+        "bottom": 863.59375,
+        "left": 1269.296875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_13_1",
+        "N1_WindPetal_13_2",
+        "前景 · 08_飘落花瓣.009"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-desktop-13.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop",
+      "node": 14,
+      "name": "14 · 花与女帝",
+      "progress": 0.865,
+      "quietFraction": 0.469,
+      "text": "武周时代赋予牡丹华贵的文化标签，民间传说又赋予它坚韧不屈的精神内核。",
+      "bounds": {
+        "x": 1304.984375,
+        "y": 543.5,
+        "width": 192.0625,
+        "height": 324.265625,
+        "top": 543.5,
+        "right": 1497.046875,
+        "bottom": 867.765625,
+        "left": 1304.984375
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_14_1",
+        "N1_WindPetal_14_2",
+        "前景 · 08_飘落花瓣.009"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-desktop-14.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop",
+      "node": 15,
+      "name": "15 · 洛阳花开",
+      "progress": 0.929,
+      "quietFraction": 0.986,
+      "text": "千百年过去，女皇的功过归于史册，她与牡丹的故事代代相传。武周时代让牡丹摆脱平凡，登上花中高位；牡丹的传奇，也为武则天的一生增添诗意。",
+      "bounds": {
+        "x": 135.6875,
+        "y": 543.5,
+        "width": 299.125,
+        "height": 324.265625,
+        "top": 543.5,
+        "right": 434.8125,
+        "bottom": 867.765625,
+        "left": 135.6875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_15_1",
+        "N1_WindPetal_15_2",
+        "前景 · 08_飘落花瓣.018"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-desktop-15.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "mobile",
+      "node": 1,
+      "name": "01 · 女帝与牡丹",
+      "progress": 0,
+      "quietFraction": 1,
+      "text": "世人说起牡丹，总会联想到武则天贬牡丹的传说，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 393.4375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_01_1"
+      ],
+      "screenshot": "runtime-c1-mobile-01.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "mobile",
+      "node": 2,
+      "name": "02 · 从山野到国色",
+      "progress": 0.064,
+      "quietFraction": 0.977,
+      "text": "真实历史中的武则天并非牡丹的贬谪者，而是推动牡丹声名鹊起的关键人物，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 140.859375,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 420.625,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_02_1",
+        "前景 · 08_飘落花瓣.002"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-mobile-02.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "mobile",
+      "node": 3,
+      "name": "03 · 深山寺院与乡野",
+      "progress": 0.135,
+      "quietFraction": 0.6,
+      "text": "武则天掌权以前，牡丹算不上名贵花卉，大多生长在深山寺院与乡野之间。",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 140.859375,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 420.625,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_03_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-mobile-03.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "mobile",
+      "node": 4,
+      "name": "04 · 梅兰菊与牡丹",
+      "progress": 0.198,
+      "quietFraction": 0.526,
+      "text": "武则天掌权以前，牡丹算不上名贵花卉，大多生长在深山寺院与乡野之间。",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 140.859375,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 420.625,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_04_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-mobile-04.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "mobile",
+      "node": 5,
+      "name": "05 · 隋苑初栽",
+      "progress": 0.254,
+      "quietFraction": 0.744,
+      "text": "纵然花繁色艳，但地位远不及梅、兰、菊。隋朝虽在洛阳西苑少量栽植牡丹，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 140.859375,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 420.625,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_05_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-mobile-05.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "mobile",
+      "node": 6,
+      "name": "06 · 神都转折",
+      "progress": 0.318,
+      "quietFraction": 0.618,
+      "text": "也只是小众花木，并未流行。直到武则天定都洛阳，定为神都，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 393.4375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_06_1",
+        "前景 · 08_飘落花瓣.004"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-mobile-06.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "mobile",
+      "node": 7,
+      "name": "07 · 武周气象",
+      "progress": 0.381,
+      "quietFraction": 0.929,
+      "text": "牡丹的命运才迎来转折。",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 86.484375,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 366.25,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_07_1",
+        "前景 · 08_飘落花瓣.008"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-mobile-07.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "mobile",
+      "node": 8,
+      "name": "08 · 西河寺引种",
+      "progress": 0.445,
+      "quietFraction": 0.98,
+      "text": "牡丹硕大华贵的花容，正好契合大一统王朝的气象。",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 393.4375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_08_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-mobile-08.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "mobile",
+      "node": 9,
+      "name": "09 · 洛阳牡丹始盛",
+      "progress": 0.516,
+      "quietFraction": 0.692,
+      "text": "北宋欧阳修《洛阳牡丹记》也明确记载 “自唐则天以后，洛阳牡丹始盛”，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 393.4375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_09_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-mobile-09.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "mobile",
+      "node": 10,
+      "name": "10 · 腊日宣诏",
+      "progress": 0.58,
+      "quietFraction": 0.536,
+      "text": "武则天《腊日宣诏幸上苑》一诗常被后世和牡丹抗旨的故事绑定，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 393.4375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_10_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-mobile-10.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "mobile",
+      "node": 11,
+      "name": "11 · 文学传说",
+      "progress": 0.651,
+      "quietFraction": 0.391,
+      "text": "实际上这首御制诗是政治造势。寒冬下诏百花齐开，是借异象宣扬皇权天授，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 677.171875,
+        "width": 327.59375,
+        "height": 140.859375,
+        "top": 677.171875,
+        "right": 358.78125,
+        "bottom": 818.03125,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_11_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-mobile-11.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "mobile",
+      "node": 12,
+      "name": "12 · 文人寄志",
+      "progress": 0.722,
+      "quietFraction": 0.643,
+      "text": "烈火之后生出 “洛阳红” 的故事，起源于北宋，成熟于明清，属于后世虚构。",
+      "bounds": {
+        "x": 31.1875,
+        "y": 680.921875,
+        "width": 327.59375,
+        "height": 140.859375,
+        "top": 680.921875,
+        "right": 358.78125,
+        "bottom": 821.78125,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_12_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-mobile-12.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "mobile",
+      "node": 13,
+      "name": "13 · 史实与传说",
+      "progress": 0.786,
+      "quietFraction": 0.466,
+      "text": "史实与传说共同构建牡丹文化：真实历史上，武则天扩建苑囿、推广牡丹种植，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 680.921875,
+        "width": 327.59375,
+        "height": 140.859375,
+        "top": 680.921875,
+        "right": 358.78125,
+        "bottom": 821.78125,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_13_1",
+        "前景 · 08_飘落花瓣.011"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-mobile-13.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "mobile",
+      "node": 14,
+      "name": "14 · 花与女帝",
+      "progress": 0.865,
+      "quietFraction": 0.148,
+      "text": "武周时代赋予牡丹华贵的文化标签，民间传说又赋予它坚韧不屈的精神内核。",
+      "bounds": {
+        "x": 31.1875,
+        "y": 680.921875,
+        "width": 327.59375,
+        "height": 140.859375,
+        "top": 680.921875,
+        "right": 358.78125,
+        "bottom": 821.78125,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_14_1",
+        "前景 · 08_飘落花瓣.009"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-mobile-14.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "mobile",
+      "node": 15,
+      "name": "15 · 洛阳花开",
+      "progress": 0.929,
+      "quietFraction": 0.895,
+      "text": "也为武则天的一生增添诗意。如今洛阳牡丹年年盛开，兼具华贵与傲骨，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 284.84375,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 284.84375,
+        "right": 358.78125,
+        "bottom": 398.515625,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N1_WindPetal_15_1",
+        "前景 · 08_飘落花瓣.018"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c1-mobile-15.png"
+    },
+    {
+      "chapter": 2,
+      "layout": "desktop",
+      "node": 1,
+      "name": "御花与朝野 · 转折初现",
+      "progress": 0,
+      "quietFraction": 0.441,
+      "text": "武周结束、开元盛世尚未到来，中宗、睿宗执政的数十年，是牡丹从宫廷专属御花向全社会普及的关键转折。此前牡丹被禁锢在皇家苑囿，",
+      "bounds": {
+        "x": 139.234375,
+        "y": 215.53125,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 402.671875,
+        "bottom": 539.796875,
+        "left": 139.234375
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N2_WindPetal_01_1",
+        "N2_WindPetal_01_2"
+      ],
+      "screenshot": "runtime-c2-desktop-01.png"
+    },
+    {
+      "chapter": 2,
+      "layout": "desktop",
+      "node": 2,
+      "name": "走出宫墙 · 春日花市",
+      "progress": 0.113,
+      "quietFraction": 0.776,
+      "text": "武周结束、开元盛世尚未到来，中宗、睿宗执政的数十年，是牡丹从宫廷专属御花向全社会普及的关键转折。此前牡丹被禁锢在皇家苑囿，",
+      "bounds": {
+        "x": 1233.390625,
+        "y": 533.078125,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 533.078125,
+        "right": 1496.828125,
+        "bottom": 857.34375,
+        "left": 1233.390625
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N2_WindPetal_02_1",
+        "N2_WindPetal_02_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c2-desktop-02.png"
+    },
+    {
+      "chapter": 2,
+      "layout": "desktop",
+      "node": 3,
+      "name": "宫门内外 · 御苑的边界",
+      "progress": 0.276,
+      "quietFraction": 0.168,
+      "text": "初唐前期，牡丹的栽种观赏被皇室垄断，品种稀少，民间很难见到，没有形成大众审美潮流。神龙政变后时局稳定，宫廷礼制放宽，长安、",
+      "bounds": {
+        "x": 1269.296875,
+        "y": 219.671875,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 219.671875,
+        "right": 1532.734375,
+        "bottom": 543.9375,
+        "left": 1269.296875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N2_WindPetal_03_1",
+        "N2_WindPetal_03_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c2-desktop-03.png"
+    },
+    {
+      "chapter": 2,
+      "layout": "desktop",
+      "node": 4,
+      "name": "士族引种 · 私园春水",
+      "progress": 0.417,
+      "quietFraction": 0.545,
+      "text": "洛阳的贵族官僚纷纷效仿皇家，在私宅引种牡丹，牡丹的观赏场景拓展到士族圈层。赏花也从严肃的政治礼仪转变为朝野流行的春日休闲，",
+      "bounds": {
+        "x": 149.75,
+        "y": 540.4375,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 540.4375,
+        "right": 413.1875,
+        "bottom": 864.703125,
+        "left": 149.75
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N2_WindPetal_04_1",
+        "N2_WindPetal_04_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c2-desktop-04.png"
+    },
+    {
+      "chapter": 2,
+      "layout": "desktop",
+      "node": 5,
+      "name": "宫苑宴游 · 游赏赋诗",
+      "progress": 0.587,
+      "quietFraction": 0.217,
+      "text": "社会风气变化让宫廷赏牡丹变得生活化。中宗喜爱春日游园，每到牡丹盛放，就在宫苑设宴，召集百官游赏赋诗。这类宴游不拘泥朝堂礼法，",
+      "bounds": {
+        "x": 1255.03125,
+        "y": 219.671875,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 219.671875,
+        "right": 1518.46875,
+        "bottom": 543.9375,
+        "left": 1255.03125
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N2_WindPetal_05_1",
+        "N2_WindPetal_05_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c2-desktop-05.png"
+    },
+    {
+      "chapter": 2,
+      "layout": "desktop",
+      "node": 6,
+      "name": "民间静赏 · 消遣春光",
+      "progress": 0.744,
+      "quietFraction": 0.476,
+      "text": "不过此时还没有开元天宝年间举国狂热的景象，不存在重金猎奇攀比，民间栽种多是普通品种，百姓赏花只为消遣春光，牡丹的上层专属壁垒被打破。",
+      "bounds": {
+        "x": 1251.453125,
+        "y": 215.53125,
+        "width": 299.125,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 1550.578125,
+        "bottom": 539.796875,
+        "left": 1251.453125
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N2_WindPetal_06_1",
+        "N2_WindPetal_06_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c2-desktop-06.png"
+    },
+    {
+      "chapter": 2,
+      "layout": "desktop",
+      "node": 7,
+      "name": "朝野共赏 · 静待盛放",
+      "progress": 0.912,
+      "quietFraction": 0.14,
+      "text": "数十年的普及浸润积累了充足的大众审美基础，为开元时期咏牡丹诗歌盛行、花间雅集兴起做好铺垫。中宗睿宗时代承前启后，牡丹完成身份蜕变，",
+      "bounds": {
+        "x": 1269.296875,
+        "y": 215.53125,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 1532.734375,
+        "bottom": 539.796875,
+        "left": 1269.296875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N2_WindPetal_07_1",
+        "N2_WindPetal_07_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c2-desktop-07.png"
+    },
+    {
+      "chapter": 2,
+      "layout": "mobile",
+      "node": 1,
+      "name": "御花与朝野 · 转折初现",
+      "progress": 0,
+      "quietFraction": 0.498,
+      "text": "武周结束、开元盛世尚未到来，中宗、睿宗执政的数十年，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 393.4375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N2_WindPetal_01_1"
+      ],
+      "screenshot": "runtime-c2-mobile-01.png"
+    },
+    {
+      "chapter": 2,
+      "layout": "mobile",
+      "node": 2,
+      "name": "走出宫墙 · 春日花市",
+      "progress": 0.113,
+      "quietFraction": 0.548,
+      "text": "是牡丹从宫廷专属御花向全社会普及的关键转折。此前牡丹被禁锢在皇家苑囿，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 666.921875,
+        "width": 327.59375,
+        "height": 140.859375,
+        "top": 666.921875,
+        "right": 358.78125,
+        "bottom": 807.78125,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N2_WindPetal_02_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c2-mobile-02.png"
+    },
+    {
+      "chapter": 2,
+      "layout": "mobile",
+      "node": 3,
+      "name": "宫门内外 · 御苑的边界",
+      "progress": 0.276,
+      "quietFraction": 0.244,
+      "text": "初唐前期，牡丹的栽种观赏被皇室垄断，品种稀少，民间很难见到，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 680.921875,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 680.921875,
+        "right": 358.78125,
+        "bottom": 794.59375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N2_WindPetal_03_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c2-mobile-03.png"
+    },
+    {
+      "chapter": 2,
+      "layout": "mobile",
+      "node": 4,
+      "name": "士族引种 · 私园春水",
+      "progress": 0.417,
+      "quietFraction": 0.974,
+      "text": "洛阳的贵族官僚纷纷效仿皇家，在私宅引种牡丹，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 680.921875,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 680.921875,
+        "right": 358.78125,
+        "bottom": 794.59375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N2_WindPetal_04_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c2-mobile-04.png"
+    },
+    {
+      "chapter": 2,
+      "layout": "mobile",
+      "node": 5,
+      "name": "宫苑宴游 · 游赏赋诗",
+      "progress": 0.587,
+      "quietFraction": 0.547,
+      "text": "就在宫苑设宴，召集百官游赏赋诗。这类宴游不拘泥朝堂礼法，君臣观景饮酒、",
+      "bounds": {
+        "x": 31.1875,
+        "y": 283.5,
+        "width": 327.59375,
+        "height": 140.859375,
+        "top": 283.5,
+        "right": 358.78125,
+        "bottom": 424.359375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N2_WindPetal_05_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c2-mobile-05.png"
+    },
+    {
+      "chapter": 2,
+      "layout": "mobile",
+      "node": 6,
+      "name": "民间静赏 · 消遣春光",
+      "progress": 0.744,
+      "quietFraction": 0.201,
+      "text": "不过此时还没有开元天宝年间举国狂热的景象，不存在重金猎奇攀比，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 393.4375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N2_WindPetal_06_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c2-mobile-06.png"
+    },
+    {
+      "chapter": 2,
+      "layout": "mobile",
+      "node": 7,
+      "name": "朝野共赏 · 静待盛放",
+      "progress": 0.912,
+      "quietFraction": 0.16,
+      "text": "花间雅集兴起做好铺垫。中宗睿宗时代承前启后，牡丹完成身份蜕变，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 393.4375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N2_WindPetal_07_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c2-mobile-07.png"
+    },
+    {
+      "chapter": 3,
+      "layout": "desktop",
+      "node": 1,
+      "name": "吉祥入生活",
+      "progress": 0,
+      "quietFraction": 0.797,
+      "text": "在全民游园斗花的风尚盛行之前，牡丹已经从普通园林花木演变为深入人心的吉祥符号。不同于后期热闹的赏花竞技，",
+      "bounds": {
+        "x": 157.078125,
+        "y": 215.53125,
+        "width": 227.75,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 384.828125,
+        "bottom": 539.796875,
+        "left": 157.078125
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N3_WindPetal_01_1",
+        "N3_WindPetal_01_2"
+      ],
+      "screenshot": "runtime-c3-desktop-01.png"
+    },
+    {
+      "chapter": 3,
+      "layout": "desktop",
+      "node": 2,
+      "name": "花意串联家国",
+      "progress": 0.116,
+      "quietFraction": 0.476,
+      "text": "此时牡丹大量出现在民俗生活与器物纹样之中。饱满端正的花型，被赋予富足、美满、安泰的寓意。上至宫廷壁画陈设，下到民间嫁衣年画，",
+      "bounds": {
+        "x": 1236.65625,
+        "y": 215.53125,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 1500.09375,
+        "bottom": 539.796875,
+        "left": 1236.65625
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N3_WindPetal_02_1",
+        "N3_WindPetal_02_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c3-desktop-02.png"
+    },
+    {
+      "chapter": 3,
+      "layout": "desktop",
+      "node": 3,
+      "name": "凤穿牡丹嫁衣",
+      "progress": 0.232,
+      "quietFraction": 0.629,
+      "text": "牡丹意象广泛传播，串联起家国祈愿与百姓烟火。",
+      "bounds": {
+        "x": 1322.828125,
+        "y": 215.53125,
+        "width": 156.375,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 1479.203125,
+        "bottom": 539.796875,
+        "left": 1322.828125
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N3_WindPetal_03_1",
+        "N3_WindPetal_03_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c3-desktop-03.png"
+    },
+    {
+      "chapter": 3,
+      "layout": "desktop",
+      "node": 4,
+      "name": "祥瑞良缘",
+      "progress": 0.348,
+      "quietFraction": 0.895,
+      "text": "凤凰代表祥瑞良缘，牡丹象征富贵安稳，二者结合寄托人们期盼婚姻和美、家业兴旺的心愿。纹样线条端庄温润，士族与平民都广泛使用，",
+      "bounds": {
+        "x": 1269.296875,
+        "y": 215.53125,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 1532.734375,
+        "bottom": 539.796875,
+        "left": 1269.296875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N3_WindPetal_04_1",
+        "N3_WindPetal_04_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c3-desktop-04.png"
+    },
+    {
+      "chapter": 3,
+      "layout": "desktop",
+      "node": 5,
+      "name": "岁时灯彩",
+      "progress": 0.464,
+      "quietFraction": 0.545,
+      "text": "是婚嫁礼仪不可或缺的符号。",
+      "bounds": {
+        "x": 243.203125,
+        "y": 215.53125,
+        "width": 120.6875,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 363.890625,
+        "bottom": 539.796875,
+        "left": 243.203125
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N3_WindPetal_05_1",
+        "N3_WindPetal_05_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c3-desktop-05.png"
+    },
+    {
+      "chapter": 3,
+      "layout": "desktop",
+      "node": 6,
+      "name": "岁岁圆满",
+      "progress": 0.581,
+      "quietFraction": 0.937,
+      "text": "借繁花盛放祈愿人丁兴旺、家运昌隆。牡丹花开圆满的特质，契合大众心中岁岁圆满的美好向往。",
+      "bounds": {
+        "x": 1251.28125,
+        "y": 215.53125,
+        "width": 227.75,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 1479.03125,
+        "bottom": 539.796875,
+        "left": 1251.28125
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N3_WindPetal_06_1",
+        "N3_WindPetal_06_2",
+        "08_左上花灯_16_红色灯笼"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c3-desktop-06.png"
+    },
+    {
+      "chapter": 3,
+      "layout": "desktop",
+      "node": 7,
+      "name": "器物与太平",
+      "progress": 0.697,
+      "quietFraction": 0.972,
+      "text": "同时牡丹承载家国层面的寓意，宫廷壁画、殿宇、礼器多用牡丹纹样，借繁花隐喻山河安定、民生富庶，成为太平盛世的象征。安稳的世道，",
+      "bounds": {
+        "x": 175.140625,
+        "y": 215.53125,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 438.578125,
+        "bottom": 539.796875,
+        "left": 175.140625
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N3_WindPetal_07_1",
+        "N3_WindPetal_07_2",
+        "04_中部织锦飘带"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c3-desktop-07.png"
+    },
+    {
+      "chapter": 3,
+      "layout": "desktop",
+      "node": 8,
+      "name": "端庄与自持",
+      "progress": 0.813,
+      "quietFraction": 0.399,
+      "text": "牡丹还生成独特的人格意象，不再只供观赏。世人见牡丹盛开饱满不争，凋零从容内敛，将其定义为 “端庄有德、富贵不骄” 的品格。",
+      "bounds": {
+        "x": 1226.171875,
+        "y": 215.53125,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 1489.609375,
+        "bottom": 539.796875,
+        "left": 1226.171875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N3_WindPetal_08_1",
+        "N3_WindPetal_08_2",
+        "04_中部织锦飘带"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c3-desktop-08.png"
+    },
+    {
+      "chapter": 3,
+      "layout": "desktop",
+      "node": 9,
+      "name": "民俗根基",
+      "progress": 0.929,
+      "quietFraction": 1,
+      "text": "经过沉静的积淀，牡丹跳出小众花木的定位，构建完整民俗体系。它既承载普通人家庭美满、生活富足的朴素愿望，也寄托国泰民安的家国期许。",
+      "bounds": {
+        "x": 1269.296875,
+        "y": 215.53125,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 1532.734375,
+        "bottom": 539.796875,
+        "left": 1269.296875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N3_WindPetal_09_1",
+        "N3_WindPetal_09_2",
+        "09_右上卷曲飘带_09_飘带_上右卷曲"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c3-desktop-09.png"
+    },
+    {
+      "chapter": 3,
+      "layout": "mobile",
+      "node": 1,
+      "name": "吉祥入生活",
+      "progress": 0,
+      "quietFraction": 0.348,
+      "text": "在全民游园斗花的风尚盛行之前，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 86.484375,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 366.25,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N3_WindPetal_01_1"
+      ],
+      "screenshot": "runtime-c3-mobile-01.png"
+    },
+    {
+      "chapter": 3,
+      "layout": "mobile",
+      "node": 2,
+      "name": "花意串联家国",
+      "progress": 0.116,
+      "quietFraction": 0.1,
+      "text": "不同于后期热闹的赏花竞技，此时牡丹大量出现在民俗生活与器物纹样之中。",
+      "bounds": {
+        "x": 31.1875,
+        "y": 665.625,
+        "width": 327.59375,
+        "height": 140.859375,
+        "top": 665.625,
+        "right": 358.78125,
+        "bottom": 806.484375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N3_WindPetal_02_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c3-mobile-02.png"
+    },
+    {
+      "chapter": 3,
+      "layout": "mobile",
+      "node": 3,
+      "name": "凤穿牡丹嫁衣",
+      "progress": 0.232,
+      "quietFraction": 0.866,
+      "text": "下到民间嫁衣年画，牡丹意象广泛传播，串联起家国祈愿与百姓烟火。",
+      "bounds": {
+        "x": 31.1875,
+        "y": 293.765625,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 293.765625,
+        "right": 358.78125,
+        "bottom": 407.4375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N3_WindPetal_03_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c3-mobile-03.png"
+    },
+    {
+      "chapter": 3,
+      "layout": "mobile",
+      "node": 4,
+      "name": "祥瑞良缘",
+      "progress": 0.348,
+      "quietFraction": 0.272,
+      "text": "凤凰代表祥瑞良缘，牡丹象征富贵安稳，二者结合寄托人们期盼婚姻和美、",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 140.859375,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 420.625,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N3_WindPetal_04_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c3-mobile-04.png"
+    },
+    {
+      "chapter": 3,
+      "layout": "mobile",
+      "node": 5,
+      "name": "岁时灯彩",
+      "progress": 0.464,
+      "quietFraction": 0.322,
+      "text": "是婚嫁礼仪不可或缺的符号。",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 86.484375,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 366.25,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N3_WindPetal_05_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c3-mobile-05.png"
+    },
+    {
+      "chapter": 3,
+      "layout": "mobile",
+      "node": 6,
+      "name": "岁岁圆满",
+      "progress": 0.581,
+      "quietFraction": 0.743,
+      "text": "借繁花盛放祈愿人丁兴旺、家运昌隆。牡丹花开圆满的特质，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 393.4375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N3_WindPetal_06_1",
+        "08_左上花灯_16_红色灯笼"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c3-mobile-06.png"
+    },
+    {
+      "chapter": 3,
+      "layout": "mobile",
+      "node": 7,
+      "name": "器物与太平",
+      "progress": 0.697,
+      "quietFraction": 0.519,
+      "text": "同时牡丹承载家国层面的寓意，宫廷壁画、殿宇、礼器多用牡丹纹样，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 393.4375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N3_WindPetal_07_1",
+        "04_中部织锦飘带"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c3-mobile-07.png"
+    },
+    {
+      "chapter": 3,
+      "layout": "mobile",
+      "node": 8,
+      "name": "端庄与自持",
+      "progress": 0.813,
+      "quietFraction": 0.961,
+      "text": "凋零从容内敛，将其定义为 “端庄有德、富贵不骄” 的品格。",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 393.4375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N3_WindPetal_08_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c3-mobile-08.png"
+    },
+    {
+      "chapter": 3,
+      "layout": "mobile",
+      "node": 9,
+      "name": "民俗根基",
+      "progress": 0.929,
+      "quietFraction": 0.248,
+      "text": "它既承载普通人家庭美满、生活富足的朴素愿望，也寄托国泰民安的家国期许。",
+      "bounds": {
+        "x": 31.1875,
+        "y": 670.484375,
+        "width": 327.59375,
+        "height": 140.859375,
+        "top": 670.484375,
+        "right": 358.78125,
+        "bottom": 811.34375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N3_WindPetal_09_1",
+        "09_右上卷曲飘带_09_飘带_上右卷曲"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c3-mobile-09.png"
+    },
+    {
+      "chapter": 4,
+      "layout": "desktop",
+      "node": 1,
+      "name": "· 人花合一",
+      "progress": 0,
+      "quietFraction": 1,
+      "text": "牡丹能够成为家喻户晓的国色名花，源于人与时代的互相成就。长久的民俗积淀让牡丹扎根民间，却尚未迎来审美顶峰。杨玉环的出现，将牡丹、",
+      "bounds": {
+        "x": 139.234375,
+        "y": 215.53125,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 402.671875,
+        "bottom": 539.796875,
+        "left": 139.234375
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N4_WindPetal_01_1",
+        "N4_WindPetal_01_2"
+      ],
+      "screenshot": "runtime-c4-desktop-01.png"
+    },
+    {
+      "chapter": 4,
+      "layout": "desktop",
+      "node": 2,
+      "name": "· 花王配美人",
+      "progress": 0.098,
+      "quietFraction": 0.399,
+      "text": "美人与盛世融为一体，形成 “人花合一” 的文化意象，彻底奠定牡丹华贵倾城的地位。",
+      "bounds": {
+        "x": 1281.25,
+        "y": 215.53125,
+        "width": 192.0625,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 1473.3125,
+        "bottom": 539.796875,
+        "left": 1281.25
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N4_WindPetal_02_1",
+        "N4_WindPetal_02_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c4-desktop-02.png"
+    },
+    {
+      "chapter": 4,
+      "layout": "desktop",
+      "node": 3,
+      "name": "· 沉香亭赏花题诗",
+      "progress": 0.213,
+      "quietFraction": 0.497,
+      "text": "沉香亭赏花题诗的典故，将这份人花羁绊推向顶点。春日牡丹盛开，唐玄宗携杨贵妃游园，觉得旧曲难以匹配名花美人，便召李白现场填词。",
+      "bounds": {
+        "x": 178.625,
+        "y": 215.53125,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 442.0625,
+        "bottom": 539.796875,
+        "left": 178.625
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N4_WindPetal_03_1",
+        "N4_WindPetal_03_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c4-desktop-03.png"
+    },
+    {
+      "chapter": 4,
+      "layout": "desktop",
+      "node": 4,
+      "name": "· 宫廷牡丹风尚",
+      "progress": 0.325,
+      "quietFraction": 0.517,
+      "text": "贵妃的喜好推动牡丹风尚走向鼎盛。盛世民生富庶，社会审美崇尚雍容盛大，牡丹层层盛放的花姿契合时代气质。宫廷上下纷纷效仿，殿宇、陈设、",
+      "bounds": {
+        "x": 139.234375,
+        "y": 215.53125,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 402.671875,
+        "bottom": 539.796875,
+        "left": 139.234375
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N4_WindPetal_04_1",
+        "N4_WindPetal_04_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c4-desktop-04.png"
+    },
+    {
+      "chapter": 4,
+      "layout": "desktop",
+      "node": 5,
+      "name": "· 马嵬与盛世落幕",
+      "progress": 0.425,
+      "quietFraction": 0.566,
+      "text": "服饰妆奁大量使用繁复华丽的牡丹纹样，取代往日简约风格，成为上层社会的审美标志。",
+      "bounds": {
+        "x": 157.078125,
+        "y": 215.53125,
+        "width": 227.75,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 384.828125,
+        "bottom": 539.796875,
+        "left": 157.078125
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N4_WindPetal_05_1",
+        "N4_WindPetal_05_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c4-desktop-05.png"
+    },
+    {
+      "chapter": 4,
+      "layout": "desktop",
+      "node": 6,
+      "name": "· 游宴渐冷",
+      "progress": 0.533,
+      "quietFraction": 0.58,
+      "text": "繁华终会落幕，人与花的命运都和国运紧紧相连。马嵬坡事变，美人逝去，盛世崩塌。盛大的牡丹游宴渐渐冷却，斗花宴游的风气消散，",
+      "bounds": {
+        "x": 139.234375,
+        "y": 215.53125,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 402.671875,
+        "bottom": 539.796875,
+        "left": 139.234375
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N4_WindPetal_06_1",
+        "N4_WindPetal_06_2"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c4-desktop-06.png"
+    },
+    {
+      "chapter": 4,
+      "layout": "desktop",
+      "node": 7,
+      "name": "· 繁花映照兴亡",
+      "progress": 0.641,
+      "quietFraction": 0.336,
+      "text": "世道动荡改写了牡丹的文化内涵。花朵依旧盛放，寓意却已然改变。太平之时，它象征富贵良缘、国泰民安；乱世之中，繁花反衬人世无常、盛景难留。",
+      "bounds": {
+        "x": 1218.90625,
+        "y": 215.53125,
+        "width": 299.125,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 1518.03125,
+        "bottom": 539.796875,
+        "left": 1218.90625
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N4_WindPetal_07_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c4-desktop-07.png"
+    },
+    {
+      "chapter": 4,
+      "layout": "desktop",
+      "node": 8,
+      "name": "· 晚唐文人追忆",
+      "progress": 0.75,
+      "quietFraction": 0.245,
+      "text": "世道动荡改写了牡丹的文化内涵。花朵依旧盛放，寓意却已然改变。太平之时，它象征富贵良缘、国泰民安；乱世之中，繁花反衬人世无常、盛景难留。",
+      "bounds": {
+        "x": 1251.453125,
+        "y": 215.53125,
+        "width": 299.125,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 1550.578125,
+        "bottom": 539.796875,
+        "left": 1251.453125
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N4_WindPetal_08_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c4-desktop-08.png"
+    },
+    {
+      "chapter": 4,
+      "layout": "desktop",
+      "node": 9,
+      "name": "· 千年人花诗意",
+      "progress": 0.875,
+      "quietFraction": 0.399,
+      "text": "千百年间，牡丹的意象伴随美人浮沉、王朝起落。盛世则花开倾城，乱世则繁花载满怅惘，见证兴亡。从盛世祥瑞到寄托故国追忆的符号，",
+      "bounds": {
+        "x": 178.625,
+        "y": 215.53125,
+        "width": 263.4375,
+        "height": 324.265625,
+        "top": 215.53125,
+        "right": 442.0625,
+        "bottom": 539.796875,
+        "left": 178.625
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N4_WindPetal_09_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c4-desktop-09.png"
+    },
+    {
+      "chapter": 4,
+      "layout": "mobile",
+      "node": 1,
+      "name": "· 人花合一",
+      "progress": 0,
+      "quietFraction": 0.932,
+      "text": "牡丹能够成为家喻户晓的国色名花，源于人与时代的互相成就。",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 393.4375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N4_WindPetal_01_1"
+      ],
+      "screenshot": "runtime-c4-mobile-01.png"
+    },
+    {
+      "chapter": 4,
+      "layout": "mobile",
+      "node": 2,
+      "name": "· 花王配美人",
+      "progress": 0.098,
+      "quietFraction": 0.695,
+      "text": "彻底奠定牡丹华贵倾城的地位。",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 86.484375,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 366.25,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N4_WindPetal_02_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c4-mobile-02.png"
+    },
+    {
+      "chapter": 4,
+      "layout": "mobile",
+      "node": 3,
+      "name": "· 沉香亭赏花题诗",
+      "progress": 0.213,
+      "quietFraction": 0.788,
+      "text": "沉香亭赏花题诗的典故，将这份人花羁绊推向顶点。春日牡丹盛开，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 393.4375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N4_WindPetal_03_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c4-mobile-03.png"
+    },
+    {
+      "chapter": 4,
+      "layout": "mobile",
+      "node": 4,
+      "name": "· 宫廷牡丹风尚",
+      "progress": 0.325,
+      "quietFraction": 0.738,
+      "text": "贵妃的喜好推动牡丹风尚走向鼎盛。盛世民生富庶，社会审美崇尚雍容盛大，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 140.859375,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 420.625,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N4_WindPetal_04_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c4-mobile-04.png"
+    },
+    {
+      "chapter": 4,
+      "layout": "mobile",
+      "node": 5,
+      "name": "· 马嵬与盛世落幕",
+      "progress": 0.425,
+      "quietFraction": 0.981,
+      "text": "成为上层社会的审美标志。",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 86.484375,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 366.25,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N4_WindPetal_05_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c4-mobile-05.png"
+    },
+    {
+      "chapter": 4,
+      "layout": "mobile",
+      "node": 6,
+      "name": "· 游宴渐冷",
+      "progress": 0.533,
+      "quietFraction": 0.64,
+      "text": "盛世崩塌。盛大的牡丹游宴渐渐冷却，斗花宴游的风气消散，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 393.4375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N4_WindPetal_06_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c4-mobile-06.png"
+    },
+    {
+      "chapter": 4,
+      "layout": "mobile",
+      "node": 7,
+      "name": "· 繁花映照兴亡",
+      "progress": 0.641,
+      "quietFraction": 0.751,
+      "text": "世道动荡改写了牡丹的文化内涵。花朵依旧盛放，寓意却已然改变。太平之时，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 666.921875,
+        "width": 327.59375,
+        "height": 140.859375,
+        "top": 666.921875,
+        "right": 358.78125,
+        "bottom": 807.78125,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N4_WindPetal_07_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c4-mobile-07.png"
+    },
+    {
+      "chapter": 4,
+      "layout": "mobile",
+      "node": 8,
+      "name": "· 晚唐文人追忆",
+      "progress": 0.75,
+      "quietFraction": 0.392,
+      "text": "它象征富贵良缘、国泰民安；乱世之中，繁花反衬人世无常、盛景难留。",
+      "bounds": {
+        "x": 31.1875,
+        "y": 293.765625,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 293.765625,
+        "right": 358.78125,
+        "bottom": 407.4375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N4_WindPetal_08_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c4-mobile-08.png"
+    },
+    {
+      "chapter": 4,
+      "layout": "mobile",
+      "node": 9,
+      "name": "· 千年人花诗意",
+      "progress": 0.875,
+      "quietFraction": 0.773,
+      "text": "千百年间，牡丹的意象伴随美人浮沉、王朝起落。盛世则花开倾城，",
+      "bounds": {
+        "x": 31.1875,
+        "y": 279.765625,
+        "width": 327.59375,
+        "height": 113.671875,
+        "top": 279.765625,
+        "right": 358.78125,
+        "bottom": 393.4375,
+        "left": 31.1875
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [
+        "N4_WindPetal_09_1"
+      ],
+      "screenshot": "tmp/new-scrolls/runtime/runtime-c4-mobile-09.png"
+    }
+  ],
+  "errors": [],
+  "expectedErrors": [],
+  "buildHtmlSha256": "669712885b3dbf2d183a2a003bdb02bafb3935aafddf3bed3382a0b8416cc704",
+  "url": "http://127.0.0.1:62475/",
+  "completedAt": "2026-10-23T02:56:05.717Z"
+}

@@ -28,8 +28,11 @@ export const reviewedNewNativeMotion: Record<number, string[]> = {
   4: [],
 };
 
-export function createNewMotionProfile(chapterId: number, petals: LayerMotionBinding[] = []): ChapterMotionProfile {
-  const native = (reviewedNewNativeMotion[chapterId] ?? []).map((meshName, index): LayerMotionBinding => ({
+/** A renamed source file is not sufficient evidence to reuse a motion binding. */
+export const nativeMotionReviewRevision = 'peony-2.0-2026-10-22';
+
+export function createNewMotionProfile(chapterId: number, petals: LayerMotionBinding[] = [], sourceRevision = nativeMotionReviewRevision): ChapterMotionProfile {
+  const native = (sourceRevision === nativeMotionReviewRevision ? reviewedNewNativeMotion[chapterId] ?? [] : []).map((meshName, index): LayerMotionBinding => ({
     meshName,
     narrative: chapterId === 1 ? '原画独立花瓣轻漂；相机与源姿态轨道保持。' : '经像素审阅的独立丝带或单灯，小幅缓摆。',
     kind: chapterId === 1 ? 'drift' : 'sway', plane: 'UV', uvDomain: 'current',

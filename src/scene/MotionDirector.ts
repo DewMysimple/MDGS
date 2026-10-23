@@ -121,6 +121,8 @@ export class MotionDirector {
   private projection = new THREE.Matrix4();
   private delta = new THREE.Matrix4();
   private rotation = new THREE.Matrix4();
+  private flutter = new THREE.Matrix4();
+  private flutterAxis = new THREE.Vector3();
   private unpivot = new THREE.Matrix4();
   private center = new THREE.Vector3();
   private offset = new THREE.Vector3();
@@ -188,13 +190,15 @@ export class MotionDirector {
         this.materialMode(binding,true);
         material.opacity *= 1-(config.opacityAmplitude??.02)*(.5+.5*wave)*motionWeight;
       } else if (basis) {
-        const horizontal = (config.xRatio??0)*wave*motionWeight;
+        const horizontal = ((config.xRatio??0)*wave+(config.kind==='fall'?(config.windRatio??0)*(cycle-.5):0))*motionWeight;
         const verticalRatio = config.plane === 'XY' ? config.yRatio??0 : config.zRatio??0;
         const vertical = verticalRatio*(config.kind === 'fall'?.5-cycle:Math.sin(phase*.71+.6))*motionWeight;
         this.offset.copy(basis.alongU).multiplyScalar(horizontal).addScaledVector(basis.alongV,vertical);
-        const angle = THREE.MathUtils.degToRad(config.angleDegrees??0)*wave*motionWeight;
+        const angle = THREE.MathUtils.degToRad((config.restAngleDegrees??0)+(config.angleDegrees??0)*wave*motionWeight);
         this.delta.makeTranslation(pivot.x+this.offset.x,pivot.y+this.offset.y,pivot.z+this.offset.z);
         this.rotation.makeRotationAxis(basis.normal,angle);
+        if(config.tiltDegrees) this.rotation.multiply(this.flutter.makeRotationAxis(this.flutterAxis.copy(basis.alongU).normalize(),THREE.MathUtils.degToRad(config.tiltDegrees)*Math.sin(phase*.63+.9)*motionWeight));
+        if(config.twistDegrees) this.rotation.multiply(this.flutter.makeRotationAxis(this.flutterAxis.copy(basis.alongV).normalize(),THREE.MathUtils.degToRad(config.twistDegrees)*Math.sin(phase*.47+1.7)*motionWeight));
         this.unpivot.makeTranslation(-pivot.x,-pivot.y,-pivot.z);
         this.delta.multiply(this.rotation).multiply(this.unpivot);
         mesh.matrix.copy(base).multiply(this.delta); mesh.updateMatrixWorld(true);

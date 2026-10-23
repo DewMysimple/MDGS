@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import type { CameraSample, SceneManifest } from '../types';
 import type { ArtSceneObject } from './ArtDirectionLayer';
 import type { LayerMotionBinding } from '../data/motionProfiles';
-import { createNewMotionProfile } from '../data/newMotionProfiles';
+import { createNewMotionProfile, nativeMotionReviewRevision } from '../data/newMotionProfiles';
 
 /** A crop of the middle, isolated petal in the actual revised first-scroll atlas.
  * No new texture loader: these objects join SceneRenderer's existing queue. */
@@ -42,7 +42,8 @@ function singlePetalGeometry() {
  * system or extra RAF owns these petals. The shared director caps visibility. */
 export function createNewScrollAtmosphere(manifest: SceneManifest, chapterId: number) {
   const objects: ArtSceneObject[] = [], bindings: LayerMotionBinding[] = [];
-  if (!manifest.cameras.length) return { objects, profile: createNewMotionProfile(chapterId) };
+  if (!manifest.cameras.length || manifest.sourceRevision !== nativeMotionReviewRevision)
+    return { objects, profile: createNewMotionProfile(chapterId, [], manifest.sourceRevision) };
   const geometry = singlePetalGeometry();
   for (let index = 0; index < manifest.stops.length; index++) {
     const stop = manifest.stops[index], camera = viewpointAt(manifest.cameras, stop.progress);
@@ -61,7 +62,9 @@ export function createNewScrollAtmosphere(manifest: SceneManifest, chapterId: nu
       // occupies the outer space of a wide handscroll view.
       const offset = new THREE.Vector3((petal ? -.34 : .11) * height * aspect, height * (.16 + (index % 3) * .055), -distance);
       mesh.position.copy(offset.applyQuaternion(quaternion).add(new THREE.Vector3().fromArray(camera.position)));
-      mesh.quaternion.copy(quaternion).multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 0, 1), index * .83 + petal * 2.1));
+      // Keep gravity and the common breeze aligned with this source view. The
+      // director banks the individual petal inside that frame, not its axes.
+      mesh.quaternion.copy(quaternion);
       mesh.scale.setScalar(height * (.024 + petal * .005));
       mesh.updateMatrix(); mesh.matrixAutoUpdate = false; mesh.updateMatrixWorld(true);
       mesh.visible = false; mesh.castShadow = false; mesh.receiveShadow = false;
@@ -73,9 +76,10 @@ export function createNewScrollAtmosphere(manifest: SceneManifest, chapterId: nu
         meshName: mesh.name, narrative: '从该卷阅读景中的花枝引出的少量独立单瓣；不移动原人物、宫苑或花石组合。',
         kind: 'fall', plane: 'UV', uvDomain: 'current', group: 'petal', priority: 0,
         periodSeconds: 22 + (index % 4) * 2 + petal * 1.3,
-        phase: index * 2.21 + petal * Math.PI, xRatio: .95, zRatio: 11.5, angleDegrees: 8,
+        phase: index * 2.21 + petal * Math.PI, xRatio: .55, windRatio: -1.8, zRatio: 11.5,
+        angleDegrees: 8, restAngleDegrees: THREE.MathUtils.radToDeg(index*.83+petal*2.1), tiltDegrees: 14, twistDegrees: 24,
       });
     }
   }
-  return { objects, profile: createNewMotionProfile(chapterId, bindings) };
+  return { objects, profile: createNewMotionProfile(chapterId, bindings, manifest.sourceRevision) };
 }

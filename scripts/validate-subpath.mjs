@@ -26,10 +26,12 @@ if (!legacy) for (const id of [1,2,3,4]) {
   activeManifests.set(id,manifest);
 }
 const titles=['神都花事','花入万家','锦绣花意','国色倾城'];
+const servedRequests=[];
 const mime = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.png': 'image/png', '.woff2':'font/woff2', '.ttf':'font/ttf', '.mp3':'audio/mpeg', '.ogg':'audio/ogg', '.wav':'audio/wav' };
 const server = createServer(async (request, response) => {
   try {
     const pathname = decodeURIComponent(new URL(request.url, 'http://local').pathname);
+    servedRequests.push(pathname);
     if (pathname === '/favicon.ico') { response.writeHead(204).end(); return; }
     if (!pathname.startsWith(prefix)) { response.writeHead(404).end(); return; }
     const relative = pathname.slice(prefix.length) || 'index.html';
@@ -40,8 +42,9 @@ const server = createServer(async (request, response) => {
 });
 await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
 const url = `http://127.0.0.1:${server.address().port}${prefix}`;
-const reportPath=path.join(root,`reports/validation-portable-subpath${legacy?'-legacy':''}.json`);
-await mkdir(path.join(root,'reports/screenshots'),{recursive:true});
+const reportPath=path.join(root,legacy?'reports/validation-portable-subpath-legacy.json':'reports/peony-2.0/validation-portable-subpath.json');
+const screenshotDirectory=path.dirname(reportPath);
+await mkdir(screenshotDirectory,{recursive:true});
 const startedAt=new Date().toISOString(), pageErrors=[],failedResources=[],chapters=[];
 const report = status=>({status,startedAt,completedAt:new Date().toISOString(),url,sourceMode:legacy?'legacy-reconstruction':activeSourceEdition,chapters,pageErrors,failedResources});
 await writeFile(reportPath,JSON.stringify(report('running'),null,2)+'\n');
@@ -93,7 +96,9 @@ try {
       assert.equal(Number(canvas.sourceHiddenVisibleLayers),0);
       resources=await page.evaluate(()=>performance.getEntriesByType('resource').map(item=>item.name));
       const base=new URL(chapterAssetBase(index+1),url).href;
-      assert(resources.includes(`${base}scene.json`),'The browser must actually request the active scene manifest beneath the prefix.');
+      const manifestPath=new URL(`${base}scene.json`).pathname;
+      assert(servedRequests.includes(manifestPath),'The server must actually serve the active manifest requested by the scene Worker beneath the prefix.');
+      resources.push(`${new URL(url).origin}${manifestPath}`);
       assert(resources.includes(`${base}cover.webp`),'The loading ceremony must actually decode this chapter’s cover beneath the prefix.');
       assert(resources.some(name=>name.startsWith(`${base}textures/`)),'The actual scene must stream its new source textures.');
       await page.locator(`.narrative-calligraphy[data-chapter="${index+1}"] .narrative-passage.is-visible`).waitFor();
@@ -171,7 +176,7 @@ try {
   await page.keyboard.press('Home');
   await page.waitForFunction(() => Number(document.querySelector('.painting canvas')?.dataset.progress) < .001);
   await ready(1);
-  await page.screenshot({ path: path.join(root, 'reports/screenshots/portable-subpath-1280x720.png') });
+  await page.screenshot({ path: path.join(screenshotDirectory, 'portable-subpath-1280x720.png') });
   assert.deepEqual(pageErrors, []);
   assert.deepEqual(failedResources, []);
   const result = { ...report('pass'), testedAt: new Date().toISOString(), ornaments: ornamentPaths, cssAssetRebased: true, cultureDialog: true, homepage,localFont,audio, interactions: ['wheel', 'drag', 'keyboard', 'next-scene', 'autoplay-pause', 'motion-toggle', 'fullscreen', 'progress-home', 'drawer-escape-focus',...(!legacy?['local-kai-font','user-enabled-audio-volume-off','active-source-covers-and-textures']:[])] };

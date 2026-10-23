@@ -1,0 +1,503 @@
+{
+  "status": "pass",
+  "startedAt": "2026-10-23T02:43:47.448Z",
+  "scope": "Actual current-production four home entries, physical paper geometry, at least 4s visible loading, repeated input, return, slow resource waiting, cover failure/retry, and cancelled manifest invalidation.",
+  "checks": [
+    {
+      "test": "real-entry-1-closed-coil-unfurl-four-seconds",
+      "closed": {
+        "preparationStage": "manifest",
+        "paintingSrc": "./assets/new-scrolls/chapter-1/cover.webp",
+        "unfurl": "0.0000",
+        "rodSeparation": "0.6134",
+        "paperCurvature": "0.2914",
+        "renderCount": "4",
+        "paperVertices": "2415",
+        "paperZRange": "0.63496",
+        "geometryUpdates": "2",
+        "diagnosticUpdates": "4",
+        "unfurlFrameP95Ms": "833.40",
+        "unfurlMaxFrameMs": "833.40",
+        "unfurlCpuMs": "0.800",
+        "unfurlMaxCpuMs": "735.600",
+        "unfurlGeometryMs": "0.000",
+        "unfurlRenderMs": "0.700",
+        "unfurlDrawCalls": "34",
+        "unfurlShadowMode": "contact",
+        "unfurlPixelRatio": "1.00",
+        "paintingReady": "true",
+        "paintingFit": "cover",
+        "paintingCrop": "0.000,64.684,1626.000,607.633",
+        "paintingCanvas": "1536,574",
+        "paintingCoverage": "1"
+      },
+      "half": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-1/cover.webp",
+        "unfurl": "0.4871",
+        "rodSeparation": "4.9144",
+        "paperCurvature": "0.2179",
+        "renderCount": "181",
+        "paperVertices": "2415",
+        "paperZRange": "0.46942",
+        "geometryUpdates": "135",
+        "diagnosticUpdates": "13",
+        "unfurlFrameP95Ms": "27.90",
+        "unfurlMaxFrameMs": "833.40",
+        "unfurlCpuMs": "0.600",
+        "unfurlMaxCpuMs": "735.600",
+        "unfurlGeometryMs": "0.100",
+        "unfurlRenderMs": "0.500",
+        "unfurlDrawCalls": "34",
+        "unfurlShadowMode": "contact",
+        "unfurlPixelRatio": "1.00",
+        "paintingReady": "true",
+        "paintingFit": "cover",
+        "paintingCrop": "0.000,64.684,1626.000,607.633",
+        "paintingCanvas": "1536,574",
+        "paintingCoverage": "1"
+      },
+      "opened": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-1/cover.webp",
+        "unfurl": "1.0000",
+        "rodSeparation": "9.4435",
+        "paperCurvature": "0.1406",
+        "renderCount": "413",
+        "paperVertices": "2415",
+        "paperZRange": "0.01442",
+        "geometryUpdates": "356",
+        "diagnosticUpdates": "21",
+        "unfurlFrameP95Ms": "7.00",
+        "unfurlMaxFrameMs": "833.40",
+        "unfurlCpuMs": "0.500",
+        "unfurlMaxCpuMs": "735.600",
+        "unfurlGeometryMs": "0.000",
+        "unfurlRenderMs": "0.500",
+        "unfurlDrawCalls": "34",
+        "unfurlShadowMode": "contact",
+        "unfurlPixelRatio": "1.00",
+        "paintingReady": "true",
+        "paintingFit": "cover",
+        "paintingCrop": "0.000,64.684,1626.000,607.633",
+        "paintingCanvas": "1536,574",
+        "paintingCoverage": "1"
+      },
+      "loadingMs": 4008.7000000001863,
+      "events": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 1226.8999999999069
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 1460.8999999999069
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 1920.2000000001863
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 3066.399999999907
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 7075.100000000093
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 7326.399999999907
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 7729.100000000093
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "real-entry-2-closed-coil-unfurl-four-seconds",
+      "closed": {
+        "preparationStage": "textures",
+        "paintingSrc": "./assets/new-scrolls/chapter-2/cover.webp",
+        "unfurl": "0.0000",
+        "rodSeparation": "0.6134",
+        "paperCurvature": "0.2914",
+        "renderCount": "3",
+        "paperVertices": "2415",
+        "paperZRange": "0.63496",
+        "geometryUpdates": "2",
+        "diagnosticUpdates": "3",
+        "unfurlFrameP95Ms": "159.70",
+        "unfurlMaxFrameMs": "159.70",
+        "unfurlCpuMs": "0.400",
+        "unfurlMaxCpuMs": "117.900",
+        "unfurlGeometryMs": "0.000",
+        "unfurlRenderMs": "0.400",
+        "unfurlDrawCalls": "34",
+        "unfurlShadowMode": "contact",
+        "unfurlPixelRatio": "1.00",
+        "paintingReady": "true",
+        "paintingFit": "cover",
+        "paintingCrop": "0.000,64.684,1626.000,607.633",
+        "paintingCanvas": "1536,574",
+        "paintingCoverage": "1"
+      },
+      "half": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-2/cover.webp",
+        "unfurl": "0.4700",
+        "rodSeparation": "4.7634",
+        "paperCurvature": "0.2205",
+        "renderCount": "208",
+        "paperVertices": "2415",
+        "paperZRange": "0.47465",
+        "geometryUpdates": "168",
+        "diagnosticUpdates": "12",
+        "unfurlFrameP95Ms": "20.80",
+        "unfurlMaxFrameMs": "159.70",
+        "unfurlCpuMs": "0.500",
+        "unfurlMaxCpuMs": "117.900",
+        "unfurlGeometryMs": "0.100",
+        "unfurlRenderMs": "0.400",
+        "unfurlDrawCalls": "34",
+        "unfurlShadowMode": "contact",
+        "unfurlPixelRatio": "1.00",
+        "paintingReady": "true",
+        "paintingFit": "cover",
+        "paintingCrop": "0.000,64.684,1626.000,607.633",
+        "paintingCanvas": "1536,574",
+        "paintingCoverage": "1"
+      },
+      "opened": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-2/cover.webp",
+        "unfurl": "1.0000",
+        "rodSeparation": "9.4435",
+        "paperCurvature": "0.1406",
+        "renderCount": "438",
+        "paperVertices": "2415",
+        "paperZRange": "0.01442",
+        "geometryUpdates": "392",
+        "diagnosticUpdates": "20",
+        "unfurlFrameP95Ms": "7.10",
+        "unfurlMaxFrameMs": "159.70",
+        "unfurlCpuMs": "0.400",
+        "unfurlMaxCpuMs": "117.900",
+        "unfurlGeometryMs": "0.000",
+        "unfurlRenderMs": "0.400",
+        "unfurlDrawCalls": "34",
+        "unfurlShadowMode": "contact",
+        "unfurlPixelRatio": "1.00",
+        "paintingReady": "true",
+        "paintingFit": "cover",
+        "paintingCrop": "0.000,64.684,1626.000,607.633",
+        "paintingCanvas": "1536,574",
+        "paintingCoverage": "1"
+      },
+      "loadingMs": 4038,
+      "events": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 9935.600000000093
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 10141.600000000093
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 10602.100000000093
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 10979.399999999907
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 15017.399999999907
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 15271
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 15673.5
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "real-entry-3-closed-coil-unfurl-four-seconds",
+      "closed": {
+        "preparationStage": "textures",
+        "paintingSrc": "./assets/new-scrolls/chapter-3/cover.webp",
+        "unfurl": "0.0000",
+        "rodSeparation": "0.6134",
+        "paperCurvature": "0.2914",
+        "renderCount": "3",
+        "paperVertices": "2415",
+        "paperZRange": "0.63496",
+        "geometryUpdates": "2",
+        "diagnosticUpdates": "3",
+        "unfurlFrameP95Ms": "180.50",
+        "unfurlMaxFrameMs": "180.50",
+        "unfurlCpuMs": "0.500",
+        "unfurlMaxCpuMs": "113.200",
+        "unfurlGeometryMs": "0.000",
+        "unfurlRenderMs": "0.400",
+        "unfurlDrawCalls": "34",
+        "unfurlShadowMode": "contact",
+        "unfurlPixelRatio": "1.00",
+        "paintingReady": "true",
+        "paintingFit": "cover",
+        "paintingCrop": "0.000,64.684,1626.000,607.633",
+        "paintingCanvas": "1536,574",
+        "paintingCoverage": "1"
+      },
+      "half": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-3/cover.webp",
+        "unfurl": "0.4734",
+        "rodSeparation": "4.7938",
+        "paperCurvature": "0.2200",
+        "renderCount": "193",
+        "paperVertices": "2415",
+        "paperZRange": "0.47390",
+        "geometryUpdates": "154",
+        "diagnosticUpdates": "12",
+        "unfurlFrameP95Ms": "27.70",
+        "unfurlMaxFrameMs": "180.50",
+        "unfurlCpuMs": "0.600",
+        "unfurlMaxCpuMs": "113.200",
+        "unfurlGeometryMs": "0.200",
+        "unfurlRenderMs": "0.400",
+        "unfurlDrawCalls": "34",
+        "unfurlShadowMode": "contact",
+        "unfurlPixelRatio": "1.00",
+        "paintingReady": "true",
+        "paintingFit": "cover",
+        "paintingCrop": "0.000,64.684,1626.000,607.633",
+        "paintingCanvas": "1536,574",
+        "paintingCoverage": "1"
+      },
+      "opened": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-3/cover.webp",
+        "unfurl": "1.0000",
+        "rodSeparation": "9.4435",
+        "paperCurvature": "0.1406",
+        "renderCount": "424",
+        "paperVertices": "2415",
+        "paperZRange": "0.01442",
+        "geometryUpdates": "378",
+        "diagnosticUpdates": "20",
+        "unfurlFrameP95Ms": "7.10",
+        "unfurlMaxFrameMs": "180.50",
+        "unfurlCpuMs": "0.700",
+        "unfurlMaxCpuMs": "113.200",
+        "unfurlGeometryMs": "0.000",
+        "unfurlRenderMs": "0.700",
+        "unfurlDrawCalls": "34",
+        "unfurlShadowMode": "contact",
+        "unfurlPixelRatio": "1.00",
+        "paintingReady": "true",
+        "paintingFit": "cover",
+        "paintingCrop": "0.000,64.684,1626.000,607.633",
+        "paintingCanvas": "1536,574",
+        "paintingCoverage": "1"
+      },
+      "loadingMs": 4007.2000000001863,
+      "events": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 16959.30000000028
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 17160.700000000186
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 17648.700000000186
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 18038.600000000093
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 22045.80000000028
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 22297.600000000093
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 22699.100000000093
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "real-entry-4-closed-coil-unfurl-four-seconds",
+      "closed": {
+        "preparationStage": "manifest",
+        "paintingSrc": "./assets/new-scrolls/chapter-4/cover.webp",
+        "unfurl": "0.0000",
+        "rodSeparation": "0.6134",
+        "paperCurvature": "0.2914",
+        "renderCount": "3",
+        "paperVertices": "2415",
+        "paperZRange": "0.63496",
+        "geometryUpdates": "2",
+        "diagnosticUpdates": "3",
+        "unfurlFrameP95Ms": "138.90",
+        "unfurlMaxFrameMs": "138.90",
+        "unfurlCpuMs": "0.400",
+        "unfurlMaxCpuMs": "101.100",
+        "unfurlGeometryMs": "0.000",
+        "unfurlRenderMs": "0.400",
+        "unfurlDrawCalls": "34",
+        "unfurlShadowMode": "contact",
+        "unfurlPixelRatio": "1.00",
+        "paintingReady": "true",
+        "paintingFit": "cover",
+        "paintingCrop": "0.000,64.684,1626.000,607.633",
+        "paintingCanvas": "1536,574",
+        "paintingCoverage": "1"
+      },
+      "half": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-4/cover.webp",
+        "unfurl": "0.5042",
+        "rodSeparation": "5.0655",
+        "paperCurvature": "0.2154",
+        "renderCount": "213",
+        "paperVertices": "2415",
+        "paperZRange": "0.46384",
+        "geometryUpdates": "170",
+        "diagnosticUpdates": "12",
+        "unfurlFrameP95Ms": "20.90",
+        "unfurlMaxFrameMs": "138.90",
+        "unfurlCpuMs": "0.700",
+        "unfurlMaxCpuMs": "101.100",
+        "unfurlGeometryMs": "0.200",
+        "unfurlRenderMs": "0.400",
+        "unfurlDrawCalls": "34",
+        "unfurlShadowMode": "contact",
+        "unfurlPixelRatio": "1.00",
+        "paintingReady": "true",
+        "paintingFit": "cover",
+        "paintingCrop": "0.000,64.684,1626.000,607.633",
+        "paintingCanvas": "1536,574",
+        "paintingCoverage": "1"
+      },
+      "opened": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-4/cover.webp",
+        "unfurl": "1.0000",
+        "rodSeparation": "9.4435",
+        "paperCurvature": "0.1406",
+        "renderCount": "445",
+        "paperVertices": "2415",
+        "paperZRange": "0.01442",
+        "geometryUpdates": "386",
+        "diagnosticUpdates": "20",
+        "unfurlFrameP95Ms": "7.00",
+        "unfurlMaxFrameMs": "138.90",
+        "unfurlCpuMs": "0.400",
+        "unfurlMaxCpuMs": "101.100",
+        "unfurlGeometryMs": "0.000",
+        "unfurlRenderMs": "0.400",
+        "unfurlDrawCalls": "34",
+        "unfurlShadowMode": "contact",
+        "unfurlPixelRatio": "1.00",
+        "paintingReady": "true",
+        "paintingFit": "cover",
+        "paintingCrop": "0.000,64.684,1626.000,607.633",
+        "paintingCanvas": "1536,574",
+        "paintingCoverage": "1"
+      },
+      "loadingMs": 4002.5,
+      "events": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 23966.5
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 24171.399999999907
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 24626.899999999907
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 24944.200000000186
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 28946.700000000186
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 29198.600000000093
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 29601.100000000093
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "slow-textures-wait-with-continuous-art-rendering",
+      "frames": 87,
+      "passed": true
+    },
+    {
+      "test": "chapter-specific-loading-art-error-and-full-retry",
+      "passed": true
+    },
+    {
+      "test": "cancelled-old-manifest-cannot-switch-or-revive-a-second-world",
+      "passed": true
+    },
+    {
+      "test": "mobile-music-failure-retry-controls-and-return-cleanup",
+      "controls": {
+        "x": 19,
+        "y": 112,
+        "width": 352,
+        "height": 181
+      },
+      "painting": {
+        "x": 15,
+        "y": 304,
+        "width": 360,
+        "height": 521
+      },
+      "volume": {
+        "x": 272,
+        "y": 216.5,
+        "width": 55,
+        "height": 3
+      },
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "expectedHttpFailures": [
+    "chapter-3 cover 503",
+    "chapter-3 cover 503",
+    "chapter-3 cover 503",
+    "audio 503"
+  ],
+  "url": "http://127.0.0.1:53815/",
+  "completedAt": "2026-10-23T02:44:48.563Z"
+}

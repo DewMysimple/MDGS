@@ -1,7 +1,7 @@
 /** CPU/geometry acceptance for the revised-source environment. Actual rendered
  * paint, media settings and RAF behavior still require the browser acceptance. */
 import assert from 'node:assert/strict';
-import { readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import path from 'node:path';
@@ -22,9 +22,14 @@ const sceneOptions = dataUrl(compile(await read('src/data/sceneOptions.ts')));
 const prepareUrl = dataUrl(compile(await read('src/scene/prepareScene.ts')).replace(/from (['"])\.\.\/data\/sceneOptions\1/, `from "${sceneOptions}"`));
 const { MotionDirector } = await import(directorUrl);
 const { createNewScrollAtmosphere, newPetalSource } = await import(atmosphereUrl);
-const { reviewedNewNativeMotion } = await import(newProfile);
+const { reviewedNewNativeMotion,nativeMotionReviewRevision } = await import(newProfile);
 const { prepareScene } = await import(prepareUrl);
 const results = [];
+const reportDirectory=path.join(root,'reports/peony-2.0');
+await mkdir(reportDirectory,{recursive:true});
+const output=path.join(reportDirectory,'motion-validation.json');
+await writeFile(output,JSON.stringify({status:'running',startedAt:new Date().toISOString(),bindingReviewRevision:nativeMotionReviewRevision},null,2)+'\n');
+try {
 
 const sourcePixels = await readFile(path.join(root, 'public', newPetalSource.url));
 assert.equal(createHash('sha256').update(sourcePixels).digest('hex'), newPetalSource.sha256);
@@ -42,8 +47,11 @@ const cameraAt = (cameras, progress, aspect) => {
 
 for (let chapterId = 1; chapterId <= 4; chapterId++) {
   const source = JSON.parse(await read(`public/assets/new-scrolls/chapter-${chapterId}/scene.json`));
+  assert.equal(source.sourceRevision,nativeMotionReviewRevision,'The active source edition must have its own completed pixel review before motion is accepted.');
   const manifest = prepareScene(source, chapterId), extra = createNewScrollAtmosphere(manifest, chapterId);
   assert.equal(extra.objects.length, manifest.stops.length * 2);
+  const morphNames=new Set(source.meshes.filter(mesh=>mesh.morphTargets?.length).map(mesh=>mesh.name));
+  assert(reviewedNewNativeMotion[chapterId].every(name=>!morphNames.has(name)), 'Source shape-key wind must not receive an additional native matrix-wind binding.');
   const sourceObjects = source.meshes.map(item => {
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.Float32BufferAttribute(item.positions, 3));
@@ -85,6 +93,23 @@ for (let chapterId = 1; chapterId <= 4; chapterId++) {
   assert.equal(director.getDiagnostics().elapsedSeconds, clock);
   for (const object of objects) assert.deepEqual(object.mesh.matrix.elements, baseline.get(object.mesh.name).elements);
   for (const object of extra.objects) assert.equal(object.material.opacity, 0);
+  // Visual banking must not turn gravity sideways/upward. Test each added
+  // particle in isolation at its real source camera, including random banks.
+  let gravityChecks=0;
+  for(const [index,object] of extra.objects.entries()){
+    object.mesh.visible=true;object.mesh.userData.sourceVisible=true;
+    const config=extra.profile.bindings.find(binding=>binding.meshName===object.mesh.name);
+    const isolated=new MotionDirector(chapterId,[object],manifest.stops,{...extra.profile,narrativeEnvelope:undefined,bindings:[config],maxVisibleBindings:1,maxVisiblePerGroup:{petal:1}});
+    const camera=cameraAt(manifest.cameras,manifest.stops[Math.floor(index/2)].progress,1440/650);
+    const whole=Math.ceil(config.phase/(Math.PI*2)),phase=config.phase/(Math.PI*2);
+    isolated.elapsed=config.periodSeconds*(whole+.2-phase);isolated.update(camera,true);
+    const a=new THREE.Vector3().setFromMatrixPosition(object.mesh.matrix);
+    isolated.elapsed=config.periodSeconds*(whole+.6-phase);isolated.update(camera,true);
+    const drift=new THREE.Vector3().setFromMatrixPosition(object.mesh.matrix).sub(a);
+    assert(drift.dot(new THREE.Vector3(0,1,0).applyQuaternion(camera.quaternion))<0,'A banked petal must keep falling down.');
+    assert(drift.dot(new THREE.Vector3(1,0,0).applyQuaternion(camera.quaternion))<0,'Independent petals must share the calm leftward breeze.');
+    isolated.update(camera,false);isolated.dispose();gravityChecks++;
+  }
   objects.forEach(object => { object.mesh.visible = false; });
   director.update(endCamera, true, 1); assert.equal(director.getDiagnostics().activeBindings, 0);
   // A completed texture must never revive a source-hidden layer through motion.
@@ -101,7 +126,7 @@ for (let chapterId = 1; chapterId <= 4; chapterId++) {
     assert.deepEqual(native.mesh.matrix.elements, nextSourcePose.elements);
   }
   director.dispose();
-  results.push({ test: `revised-chapter-${chapterId}-reviewed-local-motion-and-all-node-portrait-wide-coverage`, addedPetals: extra.objects.length, sourceBindings: reviewedNewNativeMotion[chapterId], staticSourceObjects: unbound.length, totalNodeAspectChecks: coverage.length, coverage, disabledRestoresSourceAndHidesAddedPetals: true, sourceVisibilityCannotBeRevived: true, sourceAnimationBasePreserved: true, passed: true });
+  results.push({ test: `revised-chapter-${chapterId}-reviewed-local-motion-and-all-node-portrait-wide-coverage`, addedPetals: extra.objects.length, sourceBindings: reviewedNewNativeMotion[chapterId], staticSourceObjects: unbound.length, totalNodeAspectChecks: coverage.length,gravityChecks, coverage, disabledRestoresSourceAndHidesAddedPetals: true, sourceVisibilityCannotBeRevived: true, sourceAnimationBasePreserved: true, passed: true });
   const geometries = new Set(objects.map(object => object.mesh.geometry)); geometries.forEach(geometry => geometry.dispose()); objects.forEach(object => object.material.dispose());
 }
 
@@ -113,6 +138,7 @@ export class WebGLRenderer {
   domElement = { dataset:{}, setAttribute(){}, addEventListener(){}, removeEventListener(){}, remove(){} };
   info = { render:{calls:0}, memory:{geometries:0} };
   capabilities = { getMaxAnisotropy(){return 1;} };
+  uploads=[];initTexture(texture){this.uploads.push(texture);}
   setPixelRatio(){} setClearColor(){} setTransparentSort(){} setSize(){} setViewport(){} render(){} dispose(){} forceContextLoss(){}
   getContext(){return {getExtension(){return null;}};}
 }`);
@@ -123,25 +149,45 @@ export const applyArtDirection = async()=>({replacements:0,geometryRepairs:0,edg
 export const findNarrativeSpace = ()=>({});
 `);
 const sourceEdition = dataUrl(compile(await read('src/data/sourceEdition.ts')).replaceAll('import.meta.env.BASE_URL', '"./"'));
+const manifestLoader=dataUrl(compile(await read('src/scene/SceneManifestLoader.ts')));
+// Compile the real material translator as well. Its uniform graph evaluation
+// remains active in this CPU test; only WebGL execution is outside its scope.
+const sourceMaterialEffects=dataUrl(replaceThree(compile(await read('src/scene/SourceMaterialEffects.ts'))));
 const imports = { three:gpuStub, './prepareScene':prepareUrl, './CalligraphyLayer':surfaceStub,
   './MotionDirector':directorUrl, '../data/motionProfiles':oldProfile, './ArtDirectionLayer':surfaceStub,
   './StableLayerSorting':surfaceStub, '../data/sourceEdition':sourceEdition,
-  './NewScrollAtmosphere':atmosphereUrl, './NarrativeSpace':surfaceStub };
+  './NewScrollAtmosphere':atmosphereUrl, './NarrativeSpace':surfaceStub,'./SceneManifestLoader':manifestLoader,
+  './SourceMaterialEffects':sourceMaterialEffects };
 const rendererUrl = dataUrl(compile(await read('src/scene/SceneRenderer.ts')).replace(/from (['"])([^'"]+)\1/g, (match, quote, name) => imports[name] ? `from ${JSON.stringify(imports[name])}` : match));
 const { SceneRenderer } = await import(rendererUrl);
 let frameId = 0;
+const suppressedRenderCallbacks=new Set();
 globalThis.devicePixelRatio = 1;
 globalThis.document = { hidden:false, addEventListener(){}, removeEventListener(){} };
 globalThis.window = { clearTimeout(){}, setTimeout(){return 0;} };
-globalThis.requestAnimationFrame = ()=>++frameId;
+// Allow real construction slices to yield without starting a simulated GPU
+// render loop. Render methods are driven explicitly by this CPU harness.
+globalThis.requestAnimationFrame = callback=>{const id=++frameId;queueMicrotask(()=>{if(!suppressedRenderCallbacks.has(callback))callback(performance.now());});return id;};
 globalThis.cancelAnimationFrame = ()=>{};
 globalThis.matchMedia = ()=>({ matches:false, addEventListener(){}, removeEventListener(){} });
 globalThis.fetch = async url=>({ ok:true, json:async()=>JSON.parse(await read(`public/${String(url).replace(/^\.\//,'')}`)) });
 for (let chapterId = 1; chapterId <= 4; chapterId++) {
   const host = { appendChild(){}, closest(){return {style:{removeProperty(){},getPropertyValue(){return '';},setProperty(){}}};} };
   const renderer = new SceneRenderer(host, ()=>{});
+  suppressedRenderCallbacks.add(renderer.render);
   renderer.updateTextures = ()=>{};
   const manifest = await renderer.load(chapterId);
+  const sourceShapes=manifest.meshes.filter(mesh=>mesh.morphTargets?.length);
+  assert.equal(sourceShapes.length,chapterId===1?25:0,'Current 2.0 has 25 real source shape-key meshes in the first scroll.');
+  for(const source of sourceShapes){
+    const object=renderer.objects.find(object=>object.mesh.name===source.name);assert(object);
+    assert(object.mesh.geometry.morphTargetsRelative,'Source target positions are deltas from the source base.');
+    assert.equal(object.mesh.geometry.morphAttributes.position.length,source.morphTargets.length);
+    source.morphTargets.forEach((target,index)=>{
+      const attribute=object.mesh.geometry.morphAttributes.position[index];assert.equal(attribute.array.length,target.positions.length);
+      assert(attribute.array.every((value,i)=>Math.abs(value-target.positions[i])<1e-5),'GPU morph deltas must preserve the actual source target.');
+    });
+  }
   const extras = renderer.objects.filter(object => object.mesh.userData.editionAtmosphere);
   assert.equal(extras.length, manifest.stops.length * 2);
   assert.equal(renderer.motionDirector.profile.chapterId, chapterId);
@@ -152,6 +198,23 @@ for (let chapterId = 1; chapterId <= 4; chapterId++) {
   for (const object of renderer.objects) if (object.url) renderer.textures.set(object.url, { texture:new THREE.Texture(), loading:false,lastSeen:0,bytes:0 });
   renderer.ready = true; renderer.updateCamera(); renderer.render(100);
   assert(renderer.motionDirector.getDiagnostics().activeBindings > 0);
+  let morphWeightChecks=0,morphChanged=false;
+  for(const progress of [0,.25,.5,.75,1]){
+    renderer.setProgress(progress);renderer.render(110+progress*50);
+    for(const source of sourceShapes){
+      const object=renderer.objects.find(object=>object.mesh.name===source.name);
+      for(const [index,target]of source.morphTargets.entries()){
+        const samples=source.morphAnimations[target.name],upper=samples.findIndex(sample=>sample.progress>progress);
+        const a=upper<0?samples.at(-1):samples[Math.max(0,upper-1)],b=upper<0?a:samples[upper];
+        const ratio=a===b?0:Math.max(0,Math.min(1,(progress-a.progress)/Math.max(1e-5,b.progress-a.progress)));
+        const expected=a.value+(b.value-a.value)*ratio-target.baseValue;
+        assert(Math.abs(object.mesh.morphTargetInfluences[index]-expected)<1e-6,'Source scalar must drive actual GPU morph influence relative to the first-visible base.');
+        morphChanged ||= Math.abs(expected)>1e-6;morphWeightChecks++;
+      }
+    }
+  }
+  if(sourceShapes.length)assert(morphChanged,'Source shape-key weights must actually change over the source route.');
+  renderer.setProgress(0);renderer.render(180);
   const base = new Map(renderer.objects.map(object=>[object.mesh,object.mesh.matrix.clone()]));
   const restore = () => {
     assert.equal(renderer.motionDirector.getDiagnostics().activeBindings, 0);
@@ -175,9 +238,21 @@ for (let chapterId = 1; chapterId <= 4; chapterId++) {
   assert.equal(diagnostics.activeMotionNames,'[]');
   assert.equal(diagnostics.motionAmbientFps,'30');
   assert.equal(diagnostics.sourceHiddenVisibleLayers,'0');
+  const beforeUploads=renderer.textureUploads;
+  for(let i=0;i<3;i++){
+    const url='cpu-upload-'+i,texture=new THREE.Texture({width:32,height:24}),entry={loading:true,lastSeen:0,bytes:0};
+    renderer.textures.set(url,entry);renderer.decodedTextures.push({url,texture,entry});
+  }
+  renderer.render(600);assert.equal(renderer.textureUploads,beforeUploads+1);assert.equal(renderer.decodedTextures.length,2);
+  renderer.render(650);assert.equal(renderer.textureUploads,beforeUploads+2);assert.equal(renderer.decodedTextures.length,1);
+  renderer.render(700);assert.equal(renderer.textureUploads,beforeUploads+3);assert.equal(renderer.decodedTextures.length,0);
   renderer.dispose();
-  results.push({ test:`scene-renderer-chapter-${chapterId}-edition-profile-shared-objects-off-reduce-hidden-end`, addedPetals:extras.length, passed:true });
+  results.push({ test:`scene-renderer-chapter-${chapterId}-edition-profile-shared-objects-off-reduce-hidden-end`, addedPetals:extras.length,sourceGpuMorphMeshes:sourceShapes.length,morphWeightChecks,sourceMorphsPreserveBaseAndAvoidAdditionalNativeWind:true,constructionSlicesYielded:true,decodedUploadsOnePerFrame:true, passed:true });
 }
 const report = { status: 'pass', testedAt: new Date().toISOString(), scope: 'CPU geometry, signed UV motion, source exclusion, all-node frustum coverage, disabled baseline and pending-texture visibility. Not browser/FPS/media evidence.', results };
-await writeFile(path.join(root, 'reports/new-scrolls/motion-validation.json'), JSON.stringify(report, null, 2) + '\n');
+await writeFile(output, JSON.stringify({...report,bindingReviewRevision:nativeMotionReviewRevision}, null, 2) + '\n');
 console.log(JSON.stringify({ status: report.status, tests: results.length, nodeAspectChecks: results.reduce((sum, result) => sum + (result.totalNodeAspectChecks || 0), 0) }));
+}catch(error){
+  await writeFile(output,JSON.stringify({status:'fail',testedAt:new Date().toISOString(),bindingReviewRevision:nativeMotionReviewRevision,results,error:{message:error.message,stack:error.stack}},null,2)+'\n');
+  throw error;
+}

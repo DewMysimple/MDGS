@@ -38,7 +38,7 @@ export default function StudyHome({ phase, chapterId, onSelect, motionEnabled, o
   }, [home, chapterId]);
   useEffect(() => { if (about && !dialog.current?.open) dialog.current?.showModal(); if (!about && dialog.current?.open) dialog.current.close(); }, [about]);
   function closeAbout() { setAbout(false); aboutTrigger.current?.focus({ preventScroll: true }); }
-  return <section ref={root} className={`study-home volume-study reference-study${!home ? ' is-travelling' : ''}`} data-phase={phase} data-environment={motionEnabled ? 'on' : 'off'} data-paused={!visible || !['HOME','SCROLL_AWAKENING','CAMERA_ENTERING','RETURNING_HOME'].includes(phase)} aria-label="国色长卷·数字牡丹赋，原画投影书房" aria-busy={!ready || !home}>
+  return <section ref={root} className={`study-home volume-study reference-study${!home ? ' is-travelling' : ''}`} data-reference-fit="cover" data-phase={phase} data-environment={motionEnabled ? 'on' : 'off'} data-paused={!visible || !['HOME','SCROLL_AWAKENING','CAMERA_ENTERING','RETURNING_HOME'].includes(phase)} aria-label="国色长卷·数字牡丹赋，原画投影书房" aria-busy={!ready || !home}>
     <div className="study-volume-host" ref={host} data-scene-state="preparing" />
     <div className="study-volume-vignette" aria-hidden="true" />
     <h1 className="study-title visually-hidden">国色长卷 · 数字牡丹赋</h1>

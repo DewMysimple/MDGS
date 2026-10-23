@@ -1,20 +1,26 @@
 """Read the replacement .blend files without executing embedded scripts or saving them."""
-import bpy, hashlib, json, sys
+import bpy, hashlib, json, sys, os
 from pathlib import Path
 from collections import Counter
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'reports/new-scrolls'
+sys.path.insert(0,str(ROOT/'scripts'))
+from asset_config import load_pipeline
+CONFIG=load_pipeline(['--config',os.environ.get('MDGS_SCROLL_CONFIG',str(ROOT/'scripts/peony-2.0-sources.json'))])
+OUT = Path(os.environ.get('MDGS_SCROLL_REPORT',ROOT / 'reports/peony-2.0'))
 OUT.mkdir(parents=True, exist_ok=True)
-sources = [
-    '画卷一_最终修订.blend',
-    '画卷二_街市建筑完整补全版.blend',
-    '画卷三_分镜构图版_图层补全.blend',
-    '画卷四_转场运镜加快版.blend',
-]
+sources = CONFIG.sources
+def curves(obj):
+    action=obj.animation_data.action if obj.animation_data else None
+    if not action:return []
+    result=list(getattr(action,'fcurves',[]))
+    for layer in getattr(action,'layers',[]):
+        for strip in layer.strips:
+            for bag in getattr(strip,'channelbags',[]):result.extend(bag.fcurves)
+    return result
 results = []
-for index, name in enumerate(sources, 1):
-    source = ROOT / '牡丹' / name
+for cid, source_file in sources:
+    index=int(cid.split('-')[-1]);source=Path(source_file)
     digest = hashlib.sha256(source.read_bytes()).hexdigest()
     bpy.ops.wm.open_mainfile(filepath=str(source), load_ui=False, use_scripts=False)
     scene = bpy.context.scene
@@ -24,7 +30,8 @@ for index, name in enumerate(sources, 1):
         item = {'name': obj.name, 'type': obj.type, 'hidden': obj.hide_render,
                 'dimensions': list(obj.dimensions), 'location': list(obj.location),
                 'materials': [m.name if m else None for m in getattr(obj.data, 'materials', [])],
-                'animated': bool(obj.animation_data), 'constraints': [c.type for c in obj.constraints]}
+                'animated': bool(obj.animation_data), 'constraints': [c.type for c in obj.constraints],
+                'animationChannels':sorted(set(c.data_path for c in curves(obj)))}
         if obj.type == 'FONT': item.update(body=obj.data.body, size=obj.data.size)
         if obj.type == 'MESH': item.update(vertices=len(obj.data.vertices), polygons=len(obj.data.polygons))
         objects.append(item)
@@ -47,7 +54,7 @@ for index, name in enumerate(sources, 1):
         samples.append({'frame': frame, 'position': list(cam.matrix_world.translation),
                         'quaternion': [q.x,q.y,q.z,q.w], 'type': cam.data.type,
                         'lens': cam.data.lens, 'orthoScale': cam.data.ortho_scale})
-    result = {'id': f'chapter-{index}', 'source': f'牡丹/{name}', 'sourceSha256': digest,
+    result = {'id': f'chapter-{index}', 'source': source.relative_to(ROOT).as_posix(), 'sourceSha256': digest,
               'sourceBytes': source.stat().st_size, 'frames': [scene.frame_start,scene.frame_end],
               'fps': scene.render.fps, 'render': [scene.render.resolution_x, scene.render.resolution_y],
               'camera': scene.camera.name, 'cameraSamples': samples,
