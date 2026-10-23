@@ -322,6 +322,7 @@ export default function App() {
                 onManualInput={stop}
                 onManifest={receiveManifest}
                 wheelSpeed={chapterSettings.wheelSpeed}
+                sideMarginPercent={settings.sideMarginPercent}
                 artworkAnchors={artworkAnchors}
                 onArtworkAnchors={setProjectedAnchors}
                 onPresentationHandle={receivePresentationHandle}

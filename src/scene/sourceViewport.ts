@@ -21,13 +21,19 @@ export function fitSourceViewport(width: number, height: number, render: SceneMa
   return { x: (width - fittedWidth) / 2, y: (height - fittedHeight) / 2, width: fittedWidth, height: fittedHeight, aspect };
 }
 
-/** Fill a wide scroll window while retaining the authored vertical framing. */
-export function sourceViewportLayout(width: number, height: number, render: SceneManifest['render']): SourceViewportLayout {
+/** Center the source image within equal paper gutters while retaining its authored vertical framing. */
+export function sourceViewportLayout(width: number, height: number, render: SceneManifest['render'], sideMarginPercent = 0): SourceViewportLayout {
   const source = fitSourceViewport(width, height, render);
-  const canvasAspect = width / height;
-  if (canvasAspect <= source.aspect) return { viewport: source, verticalFovScale: 1 };
+  const percent = Number.isFinite(sideMarginPercent) ? Math.max(0, Math.min(49, sideMarginPercent)) : 0;
+  const inset = width * percent / 100;
+  const availableWidth = width - inset * 2;
+  const canvasAspect = availableWidth / height;
+  if (canvasAspect <= source.aspect) {
+    const fitted = fitSourceViewport(availableWidth, height, render);
+    return { viewport: { ...fitted, x: fitted.x + inset }, verticalFovScale: 1 };
+  }
   return {
-    viewport: { x: 0, y: 0, width, height, aspect: canvasAspect },
+    viewport: { x: inset, y: 0, width: availableWidth, height, aspect: canvasAspect },
     // Widen the horizontal view to fill the window. Narrowing the vertical FOV
     // instead crops authored heads and scroll details, most visibly at the end
     // of chapter one where the composition rises close to the top edge.

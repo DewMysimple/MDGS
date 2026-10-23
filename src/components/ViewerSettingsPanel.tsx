@@ -61,6 +61,13 @@ export default function ViewerSettingsPanel({ open, chapterId, settings, onChang
           </label>)}
         </div>
       </section>
+      <section aria-labelledby="settings-margin-title">
+        <h3 id="settings-margin-title">画心左右留白</h3>
+        <p className="settings-help">四卷共用，左右每侧保持相同宽度；数值按画面宽度计算。</p>
+        <RangeSetting id="scroll-side-margin" label="每侧留白" limits={settingLimits.sideMarginPercent}
+          value={settings.sideMarginPercent} display={`${settings.sideMarginPercent}%`}
+          onChange={value => onChange({ ...settings, sideMarginPercent: value })} />
+      </section>
       <section aria-labelledby="settings-scroll-title">
         <h3 id="settings-scroll-title">滚轮游观</h3>
         <p className="settings-help">速度越低，每次移动越细。平滑时间越长，起停越柔和；越短，跟手越快。</p>

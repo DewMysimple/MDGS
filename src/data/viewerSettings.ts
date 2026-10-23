@@ -9,6 +9,8 @@ export type NarrativeMode = 'poetic' | 'original' | 'quiet';
 export interface ViewerSettings {
   version: 2;
   narrativeMode: NarrativeMode;
+  /** Equal left/right paper gutter as a percent of the painting width. */
+  sideMarginPercent: number;
   chapters: Record<number, ChapterViewingSettings>;
   textPlate: { color: string; opacity: number; padding: number; radius: number; borderOpacity: number };
 }
@@ -21,6 +23,7 @@ export const textPlateColors = [
 export const settingLimits = {
   wheelSpeed: { min: 0.1, max: 2, step: 0.05 },
   smoothingMs: { min: 60, max: 500, step: 10 },
+  sideMarginPercent: { min: 0, max: 18, step: 0.5 },
   opacity: { min: 0.2, max: 1, step: 0.01 },
   padding: { min: 4, max: 24, step: 1 },
   radius: { min: 0, max: 20, step: 1 },
@@ -31,6 +34,7 @@ export function defaultViewerSettings(): ViewerSettings {
   return {
     version: 2,
     narrativeMode: 'poetic',
+    sideMarginPercent: 8,
     chapters: Object.fromEntries([1, 2, 3, 4].map(id => [id, { wheelSpeed: 0.5, smoothingMs: 180 }])),
     textPlate: { color: '#f7efdf', opacity: 0.8, padding: 12, radius: 0, borderOpacity: 0 },
   };
@@ -46,6 +50,7 @@ export function sanitizeViewerSettings(value: unknown): ViewerSettings {
   const result = defaultViewerSettings(), source = record(value);
   if (source.version !== 2) return result;
   if (source.narrativeMode === 'poetic' || source.narrativeMode === 'original' || source.narrativeMode === 'quiet') result.narrativeMode = source.narrativeMode;
+  result.sideMarginPercent = bounded(source.sideMarginPercent, result.sideMarginPercent, settingLimits.sideMarginPercent);
   const chapters = record(source.chapters), plate = record(source.textPlate);
   for (const id of [1, 2, 3, 4]) {
     const chapter = record(chapters[id]);

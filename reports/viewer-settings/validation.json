@@ -1,99 +1,95 @@
 {
   "status": "pass",
-  "startedAt": "2026-10-22T16:30:16.378Z",
-  "scope": "Production Chromium: four independent wheel settings, bounded wheel jumps, time-based smoothing, persistent and invalid settings, text plates, mobile controls, large margins, idle and background lifecycle. Frame timings describe this machine only.",
+  "startedAt": "2026-10-23T10:17:08.458Z",
+  "scope": "Production Chromium: equal adjustable paper gutters, four independent wheel settings, bounded wheel jumps, time-based smoothing, persistence, text plates, supported desktop layouts, idle and background lifecycle. Frame timings describe this machine only.",
   "checks": [
     {
       "test": "invalid-version-corrupt-values-and-readable-palette",
       "passed": true
     },
     {
-      "test": "responsive-header-320x568",
+      "test": "supported-desktop-layout-1100x700",
       "passed": true
     },
     {
-      "test": "responsive-header-620x360",
+      "test": "supported-desktop-layout-1280x720",
       "passed": true
     },
     {
-      "test": "responsive-header-768x1024",
-      "passed": true
-    },
-    {
-      "test": "responsive-header-900x700",
-      "passed": true
-    },
-    {
-      "test": "responsive-header-1024x768",
+      "test": "supported-desktop-layout-1672x941",
       "passed": true
     },
     {
       "test": "chapter-1-wheel-default-large-line-live-speed-and-plate",
-      "samplePixels": "29696",
+      "samplePixels": "32768",
+      "sideMargins": {
+        "left": 8,
+        "right": 7.999999999999993
+      },
       "plate": {
         "ink": {
-          "x": 1209.96875,
-          "y": 543.5,
-          "width": 382.109375,
-          "height": 324.265625,
-          "top": 543.5,
-          "right": 1592.078125,
-          "bottom": 867.765625,
-          "left": 1209.96875
+          "x": 75.25,
+          "y": 104.8125,
+          "width": 144.53125,
+          "height": 282.5,
+          "top": 104.8125,
+          "right": 219.78125,
+          "bottom": 387.3125,
+          "left": 75.25
         },
         "paper": {
-          "x": 23,
-          "y": 175,
-          "width": 1626,
-          "height": 737,
-          "top": 175,
-          "right": 1649,
-          "bottom": 912,
-          "left": 23
+          "x": 18,
+          "y": 60,
+          "width": 1636,
+          "height": 815,
+          "top": 60,
+          "right": 1654,
+          "bottom": 875,
+          "left": 18
         },
         "fill": "linear-gradient(90deg, rgba(247, 239, 223, 0.64), rgba(247, 239, 223, 0.8) 25%, rgba(247, 239, 223, 0.737) 75%, rgba(247, 239, 223, 0.345))",
         "mask": "linear-gradient(0deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
         "textOpacity": "1",
         "overflow": [
           {
-            "text": "壹 · 02",
+            "text": "壹 · 04",
             "rect": {
-              "x": 1539.015625,
-              "y": 547.5,
+              "x": 166.71875,
+              "y": 108.8125,
               "width": 41.0625,
               "height": 14,
-              "top": 547.5,
-              "right": 1580.078125,
-              "bottom": 561.5,
-              "left": 1539.015625
+              "top": 108.8125,
+              "right": 207.78125,
+              "bottom": 122.8125,
+              "left": 166.71875
             },
             "outside": false
           },
           {
-            "text": "山野芳踪",
+            "text": "各有风姿",
             "rect": {
-              "x": 1539.078125,
-              "y": 569.5,
-              "width": 42,
-              "height": 143.375,
-              "top": 569.5,
-              "right": 1581.078125,
-              "bottom": 712.875,
-              "left": 1539.078125
+              "x": 170.78125,
+              "y": 130.8125,
+              "width": 38,
+              "height": 134.5625,
+              "top": 130.8125,
+              "right": 208.78125,
+              "bottom": 265.375,
+              "left": 170.78125
             },
             "outside": false
           },
           {
-            "text": "武则天掌权以前，牡丹算不上名贵花卉，大多生长在深山寺院与乡野之间。纵然花繁色艳，但地位远不及梅、兰、菊。隋朝虽在洛阳西苑少量栽植牡丹，",
+            "text": "梅兰菊各有风姿，牡丹静候自己的花期。",
             "rect": {
-              "x": 1315.640625,
-              "y": 569.5,
-              "width": 206.4375,
-              "height": 265.875,
-              "top": 569.5,
-              "right": 1522.078125,
-              "bottom": 835.375,
-              "left": 1315.640625
+              "x": 91.390625,
+              "y": 130.8125,
+              "width": 64.140625,
+              "height": 231.75,
+              "top": 130.8125,
+              "right": 155.53125,
+              "bottom": 362.5625,
+              "left": 91.390625
             },
             "outside": false
           }
@@ -104,71 +100,75 @@
     },
     {
       "test": "chapter-2-wheel-default-large-line-live-speed-and-plate",
-      "samplePixels": "29696",
+      "samplePixels": "32768",
+      "sideMargins": {
+        "left": 8,
+        "right": 7.999999999999993
+      },
       "plate": {
         "ink": {
-          "x": 79.90625,
-          "y": 215.53125,
-          "width": 382.109375,
-          "height": 324.265625,
-          "top": 215.53125,
-          "right": 462.015625,
-          "bottom": 539.796875,
-          "left": 79.90625
+          "x": 75.25,
+          "y": 104.8125,
+          "width": 180.671875,
+          "height": 282.5,
+          "top": 104.8125,
+          "right": 255.921875,
+          "bottom": 387.3125,
+          "left": 75.25
         },
         "paper": {
-          "x": 23,
-          "y": 175,
-          "width": 1626,
-          "height": 737,
-          "top": 175,
-          "right": 1649,
-          "bottom": 912,
-          "left": 23
+          "x": 18,
+          "y": 60,
+          "width": 1636,
+          "height": 815,
+          "top": 60,
+          "right": 1654,
+          "bottom": 875,
+          "left": 18
         },
         "fill": "linear-gradient(90deg, rgba(247, 239, 223, 0.64), rgba(247, 239, 223, 0.8) 25%, rgba(247, 239, 223, 0.737) 75%, rgba(247, 239, 223, 0.345))",
         "mask": "linear-gradient(0deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
         "textOpacity": "1",
         "overflow": [
           {
-            "text": "贰 · 01",
+            "text": "贰 · 02",
             "rect": {
-              "x": 408.953125,
-              "y": 219.53125,
+              "x": 202.859375,
+              "y": 108.8125,
               "width": 41.0625,
               "height": 14,
-              "top": 219.53125,
-              "right": 450.015625,
-              "bottom": 233.53125,
-              "left": 408.953125
+              "top": 108.8125,
+              "right": 243.921875,
+              "bottom": 122.8125,
+              "left": 202.859375
             },
             "outside": false
           },
           {
-            "text": "春色出宫墙",
+            "text": "共此春水",
             "rect": {
-              "x": 409.015625,
-              "y": 241.53125,
-              "width": 42,
-              "height": 179.203125,
-              "top": 241.53125,
-              "right": 451.015625,
-              "bottom": 420.734375,
-              "left": 409.015625
+              "x": 206.921875,
+              "y": 130.8125,
+              "width": 38,
+              "height": 134.5625,
+              "top": 130.8125,
+              "right": 244.921875,
+              "bottom": 265.375,
+              "left": 206.921875
             },
             "outside": false
           },
           {
-            "text": "带有浓厚礼制属性，受众十分有限。李唐复辟之后社会氛围趋于松弛，牡丹摆脱皇权的束缚走出宫墙，催生出初唐晚期的春日赏花风尚，",
+            "text": "桥上人相望，一城春色，也在寻常日子里流动。",
             "rect": {
-              "x": 221.265625,
-              "y": 241.53125,
-              "width": 170.75,
-              "height": 265.875,
-              "top": 241.53125,
-              "right": 392.015625,
-              "bottom": 507.40625,
-              "left": 221.265625
+              "x": 91.390625,
+              "y": 130.8125,
+              "width": 100.28125,
+              "height": 231.75,
+              "top": 130.8125,
+              "right": 191.671875,
+              "bottom": 362.5625,
+              "left": 91.390625
             },
             "outside": false
           }
@@ -179,71 +179,75 @@
     },
     {
       "test": "chapter-3-wheel-default-large-line-live-speed-and-plate",
-      "samplePixels": "29696",
+      "samplePixels": "32768",
+      "sideMargins": {
+        "left": 8,
+        "right": 7.999999999999993
+      },
       "plate": {
         "ink": {
-          "x": 1209.96875,
-          "y": 215.53125,
-          "width": 382.109375,
-          "height": 324.265625,
-          "top": 215.53125,
-          "right": 1592.078125,
-          "bottom": 539.796875,
-          "left": 1209.96875
+          "x": 1452.1875,
+          "y": 104.8125,
+          "width": 144.53125,
+          "height": 282.5,
+          "top": 104.8125,
+          "right": 1596.71875,
+          "bottom": 387.3125,
+          "left": 1452.1875
         },
         "paper": {
-          "x": 23,
-          "y": 175,
-          "width": 1626,
-          "height": 737,
-          "top": 175,
-          "right": 1649,
-          "bottom": 912,
-          "left": 23
+          "x": 18,
+          "y": 60,
+          "width": 1636,
+          "height": 815,
+          "top": 60,
+          "right": 1654,
+          "bottom": 875,
+          "left": 18
         },
         "fill": "linear-gradient(90deg, rgba(247, 239, 223, 0.64), rgba(247, 239, 223, 0.8) 25%, rgba(247, 239, 223, 0.737) 75%, rgba(247, 239, 223, 0.345))",
         "mask": "linear-gradient(0deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
         "textOpacity": "1",
         "overflow": [
           {
-            "text": "叁 · 02",
+            "text": "叁 · 03",
             "rect": {
-              "x": 1539.015625,
-              "y": 219.53125,
+              "x": 1543.65625,
+              "y": 108.8125,
               "width": 41.0625,
               "height": 14,
-              "top": 219.53125,
-              "right": 1580.078125,
-              "bottom": 233.53125,
-              "left": 1539.015625
+              "top": 108.8125,
+              "right": 1584.71875,
+              "bottom": 122.8125,
+              "left": 1543.65625
             },
             "outside": false
           },
           {
-            "text": "凤穿牡丹",
+            "text": "花入嫁衣",
             "rect": {
-              "x": 1539.078125,
-              "y": 241.53125,
-              "width": 42,
-              "height": 143.375,
-              "top": 241.53125,
-              "right": 1581.078125,
-              "bottom": 384.90625,
-              "left": 1539.078125
+              "x": 1547.71875,
+              "y": 130.8125,
+              "width": 38,
+              "height": 134.5625,
+              "top": 130.8125,
+              "right": 1585.71875,
+              "bottom": 265.375,
+              "left": 1547.71875
             },
             "outside": false
           },
           {
-            "text": "婚嫁民俗之中，牡丹是核心吉祥纹饰，大量用于嫁衣、配饰、帷幔织物。“凤穿牡丹” 是最经典的纹样，凤凰穿梭于牡丹花丛，构图华贵。",
+            "text": "凤与牡丹相依，红衣托起对美好姻缘的祝愿。",
             "rect": {
-              "x": 1315.640625,
-              "y": 241.53125,
-              "width": 206.4375,
-              "height": 274.375,
-              "top": 241.53125,
-              "right": 1522.078125,
-              "bottom": 515.90625,
-              "left": 1315.640625
+              "x": 1468.328125,
+              "y": 130.8125,
+              "width": 64.140625,
+              "height": 231.75,
+              "top": 130.8125,
+              "right": 1532.46875,
+              "bottom": 362.5625,
+              "left": 1468.328125
             },
             "outside": false
           }
@@ -254,27 +258,31 @@
     },
     {
       "test": "chapter-4-wheel-default-large-line-live-speed-and-plate",
-      "samplePixels": "29696",
+      "samplePixels": "32768",
+      "sideMargins": {
+        "left": 8,
+        "right": 7.999999999999993
+      },
       "plate": {
         "ink": {
-          "x": 1209.96875,
-          "y": 215.53125,
-          "width": 382.109375,
-          "height": 324.265625,
-          "top": 215.53125,
-          "right": 1592.078125,
-          "bottom": 539.796875,
-          "left": 1209.96875
+          "x": 1416.046875,
+          "y": 104.8125,
+          "width": 180.671875,
+          "height": 282.5,
+          "top": 104.8125,
+          "right": 1596.71875,
+          "bottom": 387.3125,
+          "left": 1416.046875
         },
         "paper": {
-          "x": 23,
-          "y": 175,
-          "width": 1626,
-          "height": 737,
-          "top": 175,
-          "right": 1649,
-          "bottom": 912,
-          "left": 23
+          "x": 18,
+          "y": 60,
+          "width": 1636,
+          "height": 815,
+          "top": 60,
+          "right": 1654,
+          "bottom": 875,
+          "left": 18
         },
         "fill": "linear-gradient(90deg, rgba(247, 239, 223, 0.64), rgba(247, 239, 223, 0.8) 25%, rgba(247, 239, 223, 0.737) 75%, rgba(247, 239, 223, 0.345))",
         "mask": "linear-gradient(0deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
@@ -283,42 +291,42 @@
           {
             "text": "肆 · 03",
             "rect": {
-              "x": 1539.015625,
-              "y": 219.53125,
+              "x": 1543.65625,
+              "y": 108.8125,
               "width": 41.0625,
               "height": 14,
-              "top": 219.53125,
-              "right": 1580.078125,
-              "bottom": 233.53125,
-              "left": 1539.015625
+              "top": 108.8125,
+              "right": 1584.71875,
+              "bottom": 122.8125,
+              "left": 1543.65625
             },
             "outside": false
           },
           {
-            "text": "沉香亭畔",
+            "text": "诗中相逢",
             "rect": {
-              "x": 1539.078125,
-              "y": 241.53125,
-              "width": 42,
-              "height": 143.375,
-              "top": 241.53125,
-              "right": 1581.078125,
-              "bottom": 384.90625,
-              "left": 1539.078125
+              "x": 1547.71875,
+              "y": 130.8125,
+              "width": 38,
+              "height": 134.5625,
+              "top": 130.8125,
+              "right": 1585.71875,
+              "bottom": 265.375,
+              "left": 1547.71875
             },
             "outside": false
           },
           {
-            "text": "《清平调》中 “云想衣裳花想容，春风拂槛露华浓”，把牡丹的娇艳和贵妃的容颜融为一体，花即是人，人即是花，牡丹就此和绝代风华、",
+            "text": "沉香亭的典故里，花入李白的诗，也入人间记忆。",
             "rect": {
-              "x": 1351.328125,
-              "y": 241.53125,
-              "width": 170.75,
-              "height": 277.515625,
-              "top": 241.53125,
-              "right": 1522.078125,
-              "bottom": 519.046875,
-              "left": 1351.328125
+              "x": 1432.1875,
+              "y": 130.8125,
+              "width": 100.28125,
+              "height": 231.75,
+              "top": 130.8125,
+              "right": 1532.46875,
+              "bottom": 362.5625,
+              "left": 1432.1875
             },
             "outside": false
           }
@@ -328,27 +336,35 @@
       "passed": true
     },
     {
-      "test": "chapter-4-mobile-maximum-margin-and-header",
+      "test": "public-side-margin-slider-live-equal-gutters-and-persistent-default",
+      "sideMarginsAtTenPercent": {
+        "left": 10,
+        "right": 10.000000000000009
+      },
+      "passed": true
+    },
+    {
+      "test": "chapter-4-compact-desktop-margin-and-header",
       "plate": {
         "ink": {
-          "x": 31.1875,
-          "y": 287.484375,
-          "width": 327.59375,
-          "height": 107.484375,
-          "top": 287.484375,
-          "right": 358.78125,
-          "bottom": 394.96875,
-          "left": 31.1875
+          "x": 864.21875,
+          "y": 90.90625,
+          "width": 180.53125,
+          "height": 230.59375,
+          "top": 90.90625,
+          "right": 1044.75,
+          "bottom": 321.5,
+          "left": 864.21875
         },
         "paper": {
-          "x": 15,
-          "y": 268,
-          "width": 360,
-          "height": 557,
-          "top": 268,
-          "right": 375,
-          "bottom": 825,
-          "left": 15
+          "x": 18,
+          "y": 60,
+          "width": 1064,
+          "height": 562,
+          "top": 60,
+          "right": 1082,
+          "bottom": 622,
+          "left": 18
         },
         "fill": "linear-gradient(90deg, rgba(231, 237, 228, 0.44), rgba(231, 237, 228, 0.55) 25%, rgba(231, 237, 228, 0.506) 75%, rgba(231, 237, 228, 0.235))",
         "mask": "linear-gradient(0deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
@@ -357,42 +373,42 @@
           {
             "text": "肆 · 05",
             "rect": {
-              "x": 297.453125,
-              "y": 313.484375,
-              "width": 37.328125,
-              "height": 13,
-              "top": 313.484375,
-              "right": 334.78125,
-              "bottom": 326.484375,
-              "left": 297.453125
+              "x": 979.6875,
+              "y": 94.90625,
+              "width": 41.0625,
+              "height": 14,
+              "top": 94.90625,
+              "right": 1020.75,
+              "bottom": 108.90625,
+              "left": 979.6875
             },
             "outside": false
           },
           {
-            "text": "盛景渐远",
+            "text": "马嵬花落",
             "rect": {
-              "x": 55.1875,
-              "y": 310.484375,
-              "width": 94.09375,
-              "height": 28,
-              "top": 310.484375,
-              "right": 149.28125,
-              "bottom": 338.484375,
-              "left": 55.1875
+              "x": 991.75,
+              "y": 128.90625,
+              "width": 31,
+              "height": 106.734375,
+              "top": 128.90625,
+              "right": 1022.75,
+              "bottom": 235.640625,
+              "left": 991.75
             },
             "outside": false
           },
           {
-            "text": "人与花的命运都和国运紧紧相连",
+            "text": "花仍开着，画中人的命运却已转向离散。",
             "rect": {
-              "x": 55.1875,
-              "y": 345.78125,
-              "width": 243.953125,
-              "height": 23,
-              "top": 345.78125,
-              "right": 299.140625,
-              "bottom": 368.78125,
-              "left": 55.1875
+              "x": 891.8125,
+              "y": 128.90625,
+              "width": 85.1875,
+              "height": 156.96875,
+              "top": 128.90625,
+              "right": 977,
+              "bottom": 285.875,
+              "left": 891.8125
             },
             "outside": false
           }
@@ -400,125 +416,135 @@
         "documentOverflow": false
       },
       "layout": {
+        "header": {
+          "x": 24,
+          "y": 0,
+          "width": 1052,
+          "height": 54,
+          "top": 0,
+          "right": 1076,
+          "bottom": 54,
+          "left": 24
+        },
         "brand": {
-          "x": 57,
-          "y": 7.359375,
-          "width": 129.125,
-          "height": 39.28125,
-          "top": 7.359375,
-          "right": 186.125,
-          "bottom": 46.640625,
-          "left": 57
+          "x": 72,
+          "y": 3.09375,
+          "width": 142.5,
+          "height": 46.8125,
+          "top": 3.09375,
+          "right": 214.5,
+          "bottom": 49.90625,
+          "left": 72
         },
         "title": {
-          "x": 18,
-          "y": 55.5,
-          "width": 354,
-          "height": 22,
-          "top": 55.5,
-          "right": 372,
-          "bottom": 77.5,
-          "left": 18
+          "x": 24,
+          "y": 22.1875,
+          "width": 21.59375,
+          "height": 8.625,
+          "top": 22.1875,
+          "right": 45.59375,
+          "bottom": 30.8125,
+          "left": 24
         },
         "nav": {
-          "x": 18,
-          "y": 79,
-          "width": 354,
-          "height": 34,
-          "top": 79,
-          "right": 372,
-          "bottom": 113,
-          "left": 18
+          "x": 377.5,
+          "y": 0,
+          "width": 437,
+          "height": 53,
+          "top": 0,
+          "right": 814.5,
+          "bottom": 53,
+          "left": 377.5
         },
         "painting": {
-          "x": 15,
-          "y": 268,
-          "width": 360,
-          "height": 557,
-          "top": 268,
-          "right": 375,
-          "bottom": 825,
-          "left": 15
+          "x": 18,
+          "y": 60,
+          "width": 1064,
+          "height": 562,
+          "top": 60,
+          "right": 1082,
+          "bottom": 622,
+          "left": 18
         },
         "controls": {
-          "x": 19,
-          "y": 120,
-          "width": 352,
-          "height": 137,
-          "top": 120,
-          "right": 371,
-          "bottom": 257,
-          "left": 19
+          "x": 24,
+          "y": 628,
+          "width": 1052,
+          "height": 68,
+          "top": 628,
+          "right": 1076,
+          "bottom": 696,
+          "left": 24
         }
       },
       "passed": true
     },
     {
-      "test": "chapter-3-mobile-maximum-margin-and-header",
+      "test": "chapter-3-compact-desktop-margin-and-header",
       "plate": {
         "ink": {
-          "x": 31.1875,
-          "y": 287.484375,
-          "width": 327.59375,
-          "height": 107.484375,
-          "top": 287.484375,
-          "right": 358.78125,
-          "bottom": 394.96875,
-          "left": 31.1875
+          "x": 55.234375,
+          "y": 90.90625,
+          "width": 180.53125,
+          "height": 230.59375,
+          "top": 90.90625,
+          "right": 235.765625,
+          "bottom": 321.5,
+          "left": 55.234375
         },
         "paper": {
-          "x": 15,
-          "y": 268,
-          "width": 360,
-          "height": 557,
-          "top": 268,
-          "right": 375,
-          "bottom": 825,
-          "left": 15
+          "x": 18,
+          "y": 60,
+          "width": 1064,
+          "height": 562,
+          "top": 60,
+          "right": 1082,
+          "bottom": 622,
+          "left": 18
         },
         "fill": "linear-gradient(90deg, rgba(231, 237, 228, 0.44), rgba(231, 237, 228, 0.55) 25%, rgba(231, 237, 228, 0.506) 75%, rgba(231, 237, 228, 0.235))",
         "mask": "linear-gradient(0deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
         "textOpacity": "1",
         "overflow": [
           {
-            "text": "叁 · 03",
+            "text": "叁 · 05",
             "rect": {
-              "x": 297.453125,
-              "y": 313.484375,
-              "width": 37.328125,
-              "height": 13,
-              "top": 313.484375,
-              "right": 334.78125,
-              "bottom": 326.484375,
-              "left": 297.453125
+              "x": 170.703125,
+              "y": 94.90625,
+              "width": 41.0625,
+              "height": 14,
+              "top": 94.90625,
+              "right": 211.765625,
+              "bottom": 108.90625,
+              "left": 170.703125
             },
             "outside": false
           },
           {
-            "text": "岁岁圆满",
+            "text": "灯照花枝",
             "rect": {
-              "x": 55.1875,
-              "y": 310.484375,
-              "width": 94.09375,
-              "height": 28,
-              "top": 310.484375,
-              "right": 149.28125,
-              "bottom": 338.484375,
-              "left": 55.1875
+              "x": 182.765625,
+              "y": 128.90625,
+              "width": 31,
+              "height": 106.734375,
+              "top": 128.90625,
+              "right": 213.765625,
+              "bottom": 235.640625,
+              "left": 182.765625
             },
             "outside": false
           },
           {
-            "text": "岁末迎新、春日祈福，",
+            "text": "灯照花枝，孩子奔向热闹，也奔向被祝福的日子。",
             "rect": {
-              "x": 55.1875,
-              "y": 345.78125,
-              "width": 174.25,
-              "height": 23,
-              "top": 345.78125,
-              "right": 229.4375,
-              "bottom": 368.78125,
-              "left": 55.1875
+              "x": 82.828125,
+              "y": 128.90625,
+              "width": 85.1875,
+              "height": 156.96875,
+              "top": 128.90625,
+              "right": 168.015625,
+              "bottom": 285.875,
+              "left": 82.828125
             },
             "outside": false
           }
@@ -526,125 +552,135 @@
         "documentOverflow": false
       },
       "layout": {
+        "header": {
+          "x": 24,
+          "y": 0,
+          "width": 1052,
+          "height": 54,
+          "top": 0,
+          "right": 1076,
+          "bottom": 54,
+          "left": 24
+        },
         "brand": {
-          "x": 57,
-          "y": 7.359375,
-          "width": 129.125,
-          "height": 39.28125,
-          "top": 7.359375,
-          "right": 186.125,
-          "bottom": 46.640625,
-          "left": 57
+          "x": 72,
+          "y": 3.09375,
+          "width": 142.5,
+          "height": 46.8125,
+          "top": 3.09375,
+          "right": 214.5,
+          "bottom": 49.90625,
+          "left": 72
         },
         "title": {
-          "x": 18,
-          "y": 55.5,
-          "width": 354,
-          "height": 22,
-          "top": 55.5,
-          "right": 372,
-          "bottom": 77.5,
-          "left": 18
+          "x": 24,
+          "y": 22.1875,
+          "width": 21.59375,
+          "height": 8.625,
+          "top": 22.1875,
+          "right": 45.59375,
+          "bottom": 30.8125,
+          "left": 24
         },
         "nav": {
-          "x": 18,
-          "y": 79,
-          "width": 354,
-          "height": 34,
-          "top": 79,
-          "right": 372,
-          "bottom": 113,
-          "left": 18
+          "x": 377.5,
+          "y": 0,
+          "width": 437,
+          "height": 53,
+          "top": 0,
+          "right": 814.5,
+          "bottom": 53,
+          "left": 377.5
         },
         "painting": {
-          "x": 15,
-          "y": 268,
-          "width": 360,
-          "height": 557,
-          "top": 268,
-          "right": 375,
-          "bottom": 825,
-          "left": 15
+          "x": 18,
+          "y": 60,
+          "width": 1064,
+          "height": 562,
+          "top": 60,
+          "right": 1082,
+          "bottom": 622,
+          "left": 18
         },
         "controls": {
-          "x": 19,
-          "y": 120,
-          "width": 352,
-          "height": 137,
-          "top": 120,
-          "right": 371,
-          "bottom": 257,
-          "left": 19
+          "x": 24,
+          "y": 628,
+          "width": 1052,
+          "height": 68,
+          "top": 628,
+          "right": 1076,
+          "bottom": 696,
+          "left": 24
         }
       },
       "passed": true
     },
     {
-      "test": "chapter-2-mobile-maximum-margin-and-header",
+      "test": "chapter-2-compact-desktop-margin-and-header",
       "plate": {
         "ink": {
-          "x": 31.1875,
-          "y": 287.484375,
-          "width": 327.59375,
-          "height": 107.484375,
-          "top": 287.484375,
-          "right": 358.78125,
-          "bottom": 394.96875,
-          "left": 31.1875
+          "x": 864.21875,
+          "y": 90.90625,
+          "width": 180.53125,
+          "height": 230.59375,
+          "top": 90.90625,
+          "right": 1044.75,
+          "bottom": 321.5,
+          "left": 864.21875
         },
         "paper": {
-          "x": 15,
-          "y": 268,
-          "width": 360,
-          "height": 557,
-          "top": 268,
-          "right": 375,
-          "bottom": 825,
-          "left": 15
+          "x": 18,
+          "y": 60,
+          "width": 1064,
+          "height": 562,
+          "top": 60,
+          "right": 1082,
+          "bottom": 622,
+          "left": 18
         },
         "fill": "linear-gradient(90deg, rgba(231, 237, 228, 0.44), rgba(231, 237, 228, 0.55) 25%, rgba(231, 237, 228, 0.506) 75%, rgba(231, 237, 228, 0.235))",
         "mask": "linear-gradient(0deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
         "textOpacity": "1",
         "overflow": [
           {
-            "text": "贰 · 02",
+            "text": "贰 · 04",
             "rect": {
-              "x": 297.453125,
-              "y": 313.484375,
-              "width": 37.328125,
-              "height": 13,
-              "top": 313.484375,
-              "right": 334.78125,
-              "bottom": 326.484375,
-              "left": 297.453125
+              "x": 979.6875,
+              "y": 94.90625,
+              "width": 41.0625,
+              "height": 14,
+              "top": 94.90625,
+              "right": 1020.75,
+              "bottom": 108.90625,
+              "left": 979.6875
             },
             "outside": false
           },
           {
-            "text": "士族园林",
+            "text": "私园闲情",
             "rect": {
-              "x": 55.1875,
-              "y": 310.484375,
-              "width": 94.09375,
-              "height": 28,
-              "top": 310.484375,
-              "right": 149.28125,
-              "bottom": 338.484375,
-              "left": 55.1875
+              "x": 991.75,
+              "y": 128.90625,
+              "width": 31,
+              "height": 106.734375,
+              "top": 128.90625,
+              "right": 1022.75,
+              "bottom": 235.640625,
+              "left": 991.75
             },
             "outside": false
           },
           {
-            "text": "赏花也从严肃的政治礼仪转变为",
+            "text": "一枝移向庭前，远山与春水也有了花的倒影。",
             "rect": {
-              "x": 55.1875,
-              "y": 345.78125,
-              "width": 243.953125,
-              "height": 23,
-              "top": 345.78125,
-              "right": 299.140625,
-              "bottom": 368.78125,
-              "left": 55.1875
+              "x": 891.8125,
+              "y": 128.90625,
+              "width": 85.1875,
+              "height": 156.96875,
+              "top": 128.90625,
+              "right": 977,
+              "bottom": 285.875,
+              "left": 891.8125
             },
             "outside": false
           }
@@ -652,125 +688,135 @@
         "documentOverflow": false
       },
       "layout": {
+        "header": {
+          "x": 24,
+          "y": 0,
+          "width": 1052,
+          "height": 54,
+          "top": 0,
+          "right": 1076,
+          "bottom": 54,
+          "left": 24
+        },
         "brand": {
-          "x": 57,
-          "y": 7.359375,
-          "width": 129.125,
-          "height": 39.28125,
-          "top": 7.359375,
-          "right": 186.125,
-          "bottom": 46.640625,
-          "left": 57
+          "x": 72,
+          "y": 3.09375,
+          "width": 142.5,
+          "height": 46.8125,
+          "top": 3.09375,
+          "right": 214.5,
+          "bottom": 49.90625,
+          "left": 72
         },
         "title": {
-          "x": 18,
-          "y": 55.5,
-          "width": 354,
-          "height": 22,
-          "top": 55.5,
-          "right": 372,
-          "bottom": 77.5,
-          "left": 18
+          "x": 24,
+          "y": 22.1875,
+          "width": 21.59375,
+          "height": 8.625,
+          "top": 22.1875,
+          "right": 45.59375,
+          "bottom": 30.8125,
+          "left": 24
         },
         "nav": {
-          "x": 18,
-          "y": 79,
-          "width": 354,
-          "height": 34,
-          "top": 79,
-          "right": 372,
-          "bottom": 113,
-          "left": 18
+          "x": 377.5,
+          "y": 0,
+          "width": 437,
+          "height": 53,
+          "top": 0,
+          "right": 814.5,
+          "bottom": 53,
+          "left": 377.5
         },
         "painting": {
-          "x": 15,
-          "y": 268,
-          "width": 360,
-          "height": 557,
-          "top": 268,
-          "right": 375,
-          "bottom": 825,
-          "left": 15
+          "x": 18,
+          "y": 60,
+          "width": 1064,
+          "height": 562,
+          "top": 60,
+          "right": 1082,
+          "bottom": 622,
+          "left": 18
         },
         "controls": {
-          "x": 19,
-          "y": 120,
-          "width": 352,
-          "height": 137,
-          "top": 120,
-          "right": 371,
-          "bottom": 257,
-          "left": 19
+          "x": 24,
+          "y": 628,
+          "width": 1052,
+          "height": 68,
+          "top": 628,
+          "right": 1076,
+          "bottom": 696,
+          "left": 24
         }
       },
       "passed": true
     },
     {
-      "test": "chapter-1-mobile-maximum-margin-and-header",
+      "test": "chapter-1-compact-desktop-margin-and-header",
       "plate": {
         "ink": {
-          "x": 31.1875,
-          "y": 287.484375,
-          "width": 327.59375,
-          "height": 107.484375,
-          "top": 287.484375,
-          "right": 358.78125,
-          "bottom": 394.96875,
-          "left": 31.1875
+          "x": 55.234375,
+          "y": 341,
+          "width": 180.53125,
+          "height": 230.59375,
+          "top": 341,
+          "right": 235.765625,
+          "bottom": 571.59375,
+          "left": 55.234375
         },
         "paper": {
-          "x": 15,
-          "y": 268,
-          "width": 360,
-          "height": 557,
-          "top": 268,
-          "right": 375,
-          "bottom": 825,
-          "left": 15
+          "x": 18,
+          "y": 60,
+          "width": 1064,
+          "height": 562,
+          "top": 60,
+          "right": 1082,
+          "bottom": 622,
+          "left": 18
         },
         "fill": "linear-gradient(90deg, rgba(231, 237, 228, 0.44), rgba(231, 237, 228, 0.55) 25%, rgba(231, 237, 228, 0.506) 75%, rgba(231, 237, 228, 0.235))",
         "mask": "linear-gradient(0deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
         "textOpacity": "1",
         "overflow": [
           {
-            "text": "壹 · 03",
+            "text": "壹 · 08",
             "rect": {
-              "x": 297.453125,
-              "y": 313.484375,
-              "width": 37.328125,
-              "height": 13,
-              "top": 313.484375,
-              "right": 334.78125,
-              "bottom": 326.484375,
-              "left": 297.453125
+              "x": 170.703125,
+              "y": 345,
+              "width": 41.0625,
+              "height": 14,
+              "top": 345,
+              "right": 211.765625,
+              "bottom": 359,
+              "left": 170.703125
             },
             "outside": false
           },
           {
-            "text": "花入御苑",
+            "text": "远处的风",
             "rect": {
-              "x": 55.1875,
-              "y": 310.484375,
-              "width": 94.09375,
-              "height": 28,
-              "top": 310.484375,
-              "right": 149.28125,
-              "bottom": 338.484375,
-              "left": 55.1875
+              "x": 182.765625,
+              "y": 379,
+              "width": 31,
+              "height": 106.734375,
+              "top": 379,
+              "right": 213.765625,
+              "bottom": 485.734375,
+              "left": 182.765625
             },
             "outside": false
           },
           {
-            "text": "牡丹就此从山野进入皇家园林。",
+            "text": "花从山野来到庭前，也带来了远处的风。",
             "rect": {
-              "x": 55.1875,
-              "y": 345.78125,
-              "width": 243.953125,
-              "height": 23,
-              "top": 345.78125,
-              "right": 299.140625,
-              "bottom": 368.78125,
-              "left": 55.1875
+              "x": 82.828125,
+              "y": 379,
+              "width": 85.1875,
+              "height": 156.96875,
+              "top": 379,
+              "right": 168.015625,
+              "bottom": 535.96875,
+              "left": 82.828125
             },
             "outside": false
           }
@@ -778,63 +824,73 @@
         "documentOverflow": false
       },
       "layout": {
+        "header": {
+          "x": 24,
+          "y": 0,
+          "width": 1052,
+          "height": 54,
+          "top": 0,
+          "right": 1076,
+          "bottom": 54,
+          "left": 24
+        },
         "brand": {
-          "x": 57,
-          "y": 7.359375,
-          "width": 129.125,
-          "height": 39.28125,
-          "top": 7.359375,
-          "right": 186.125,
-          "bottom": 46.640625,
-          "left": 57
+          "x": 72,
+          "y": 3.09375,
+          "width": 142.5,
+          "height": 46.8125,
+          "top": 3.09375,
+          "right": 214.5,
+          "bottom": 49.90625,
+          "left": 72
         },
         "title": {
-          "x": 18,
-          "y": 55.5,
-          "width": 354,
-          "height": 22,
-          "top": 55.5,
-          "right": 372,
-          "bottom": 77.5,
-          "left": 18
+          "x": 24,
+          "y": 22.1875,
+          "width": 21.59375,
+          "height": 8.625,
+          "top": 22.1875,
+          "right": 45.59375,
+          "bottom": 30.8125,
+          "left": 24
         },
         "nav": {
-          "x": 18,
-          "y": 79,
-          "width": 354,
-          "height": 34,
-          "top": 79,
-          "right": 372,
-          "bottom": 113,
-          "left": 18
+          "x": 377.5,
+          "y": 0,
+          "width": 437,
+          "height": 53,
+          "top": 0,
+          "right": 814.5,
+          "bottom": 53,
+          "left": 377.5
         },
         "painting": {
-          "x": 15,
-          "y": 268,
-          "width": 360,
-          "height": 557,
-          "top": 268,
-          "right": 375,
-          "bottom": 825,
-          "left": 15
+          "x": 18,
+          "y": 60,
+          "width": 1064,
+          "height": 562,
+          "top": 60,
+          "right": 1082,
+          "bottom": 622,
+          "left": 18
         },
         "controls": {
-          "x": 19,
-          "y": 120,
-          "width": 352,
-          "height": 137,
-          "top": 120,
-          "right": 371,
-          "bottom": 257,
-          "left": 19
+          "x": 24,
+          "y": 628,
+          "width": 1052,
+          "height": 68,
+          "top": 628,
+          "right": 1076,
+          "bottom": 696,
+          "left": 24
         }
       },
       "passed": true
     },
     {
       "test": "restored-defaults-idle-rendering-and-bounded-sampling-during-wheel",
-      "idleRenderCount": "630",
-      "sampleCount": 236,
+      "idleRenderCount": "589",
+      "sampleCount": 166,
       "activeReadDelta": 0,
       "passed": true
     },
@@ -854,1187 +910,837 @@
   "errors": [],
   "frames": [
     {
-      "at": 43312,
+      "at": 42962.6,
       "progress": 0.4,
       "reads": 3
     },
     {
-      "at": 43317.5,
+      "at": 42967.9,
       "progress": 0.4,
       "reads": 3
     },
     {
-      "at": 43323,
+      "at": 42973.5,
       "progress": 0.4,
       "reads": 3
     },
     {
-      "at": 43328.5,
-      "progress": 0.40002,
+      "at": 42979,
+      "progress": 0.400014,
       "reads": 3
     },
     {
-      "at": 43334.1,
-      "progress": 0.40002,
+      "at": 42984.6,
+      "progress": 0.400014,
       "reads": 3
     },
     {
-      "at": 43339.6,
-      "progress": 0.40002,
+      "at": 42990.2,
+      "progress": 0.400014,
       "reads": 3
     },
     {
-      "at": 43345.3,
-      "progress": 0.40002,
+      "at": 42995.7,
+      "progress": 0.400014,
       "reads": 3
     },
     {
-      "at": 43350.8,
-      "progress": 0.40002,
+      "at": 43001.3,
+      "progress": 0.400014,
       "reads": 3
     },
     {
-      "at": 43356.4,
-      "progress": 0.40002,
+      "at": 43006.9,
+      "progress": 0.400014,
       "reads": 3
     },
     {
-      "at": 43361.9,
-      "progress": 0.40002,
+      "at": 43012.4,
+      "progress": 0.400014,
       "reads": 3
     },
     {
-      "at": 43367.5,
-      "progress": 0.40002,
+      "at": 43018,
+      "progress": 0.400014,
       "reads": 3
     },
     {
-      "at": 43373.1,
-      "progress": 0.40002,
+      "at": 43023.5,
+      "progress": 0.400014,
       "reads": 3
     },
     {
-      "at": 43378.7,
-      "progress": 0.40002,
+      "at": 43029.1,
+      "progress": 0.400014,
       "reads": 3
     },
     {
-      "at": 43384.2,
-      "progress": 0.40002,
+      "at": 43034.6,
+      "progress": 0.400014,
       "reads": 3
     },
     {
-      "at": 43389.6,
-      "progress": 0.40002,
+      "at": 43040.2,
+      "progress": 0.400014,
       "reads": 3
     },
     {
-      "at": 43395.2,
-      "progress": 0.40002,
+      "at": 43045.7,
+      "progress": 0.400014,
       "reads": 3
     },
     {
-      "at": 43400.9,
-      "progress": 0.40002,
+      "at": 43051.3,
+      "progress": 0.400014,
       "reads": 3
     },
     {
-      "at": 43406.4,
-      "progress": 0.40002,
+      "at": 43056.9,
+      "progress": 0.400014,
       "reads": 3
     },
     {
-      "at": 43411.9,
-      "progress": 0.40002,
+      "at": 43062.4,
+      "progress": 0.400014,
       "reads": 3
     },
     {
-      "at": 43417.5,
-      "progress": 0.40002,
+      "at": 43068,
+      "progress": 0.400014,
       "reads": 3
     },
     {
-      "at": 43423,
-      "progress": 0.40002,
+      "at": 43073.6,
+      "progress": 0.400014,
       "reads": 3
     },
     {
-      "at": 43428.5,
-      "progress": 0.40002,
+      "at": 43079,
+      "progress": 0.400811,
       "reads": 3
     },
     {
-      "at": 43434.1,
-      "progress": 0.400901,
+      "at": 43084.6,
+      "progress": 0.400811,
       "reads": 3
     },
     {
-      "at": 43439.7,
-      "progress": 0.400901,
+      "at": 43095.7,
+      "progress": 0.400811,
       "reads": 3
     },
     {
-      "at": 43445.3,
-      "progress": 0.400901,
+      "at": 43101.3,
+      "progress": 0.400811,
       "reads": 3
     },
     {
-      "at": 43450.9,
-      "progress": 0.400901,
+      "at": 43106.9,
+      "progress": 0.400811,
       "reads": 3
     },
     {
-      "at": 43456.4,
-      "progress": 0.400901,
+      "at": 43112.4,
+      "progress": 0.400811,
       "reads": 3
     },
     {
-      "at": 43461.9,
-      "progress": 0.400901,
+      "at": 43117.9,
+      "progress": 0.400811,
       "reads": 3
     },
     {
-      "at": 43467.5,
-      "progress": 0.400901,
+      "at": 43123.5,
+      "progress": 0.400811,
       "reads": 3
     },
     {
-      "at": 43473,
-      "progress": 0.400901,
+      "at": 43129.1,
+      "progress": 0.400811,
       "reads": 3
     },
     {
-      "at": 43478.6,
-      "progress": 0.400901,
+      "at": 43134.6,
+      "progress": 0.400811,
       "reads": 3
     },
     {
-      "at": 43484.1,
-      "progress": 0.400901,
+      "at": 43140.2,
+      "progress": 0.400811,
       "reads": 3
     },
     {
-      "at": 43489.7,
-      "progress": 0.400901,
+      "at": 43145.7,
+      "progress": 0.400811,
       "reads": 3
     },
     {
-      "at": 43495.2,
-      "progress": 0.400901,
+      "at": 43151.3,
+      "progress": 0.400811,
       "reads": 3
     },
     {
-      "at": 43500.8,
-      "progress": 0.400901,
+      "at": 43156.8,
+      "progress": 0.400811,
       "reads": 3
     },
     {
-      "at": 43506.3,
-      "progress": 0.400901,
+      "at": 43162.5,
+      "progress": 0.400811,
       "reads": 3
     },
     {
-      "at": 43511.9,
-      "progress": 0.400901,
+      "at": 43167.9,
+      "progress": 0.400811,
       "reads": 3
     },
     {
-      "at": 43517.5,
-      "progress": 0.400901,
+      "at": 43184.6,
+      "progress": 0.400811,
       "reads": 3
     },
     {
-      "at": 43523,
-      "progress": 0.400901,
+      "at": 43195.7,
+      "progress": 0.402169,
       "reads": 3
     },
     {
-      "at": 43528.5,
-      "progress": 0.400901,
+      "at": 43201.2,
+      "progress": 0.402169,
       "reads": 3
     },
     {
-      "at": 43534.1,
-      "progress": 0.402464,
+      "at": 43206.9,
+      "progress": 0.402169,
       "reads": 3
     },
     {
-      "at": 43539.7,
-      "progress": 0.40257,
+      "at": 43212.4,
+      "progress": 0.402169,
       "reads": 3
     },
     {
-      "at": 43545.2,
-      "progress": 0.40257,
+      "at": 43217.9,
+      "progress": 0.402169,
       "reads": 3
     },
     {
-      "at": 43550.8,
-      "progress": 0.40257,
+      "at": 43229,
+      "progress": 0.402169,
       "reads": 3
     },
     {
-      "at": 43556.3,
-      "progress": 0.40257,
+      "at": 43234.6,
+      "progress": 0.402169,
       "reads": 3
     },
     {
-      "at": 43562,
-      "progress": 0.40257,
+      "at": 43240.1,
+      "progress": 0.402169,
       "reads": 3
     },
     {
-      "at": 43567.5,
-      "progress": 0.40257,
+      "at": 43251.3,
+      "progress": 0.402169,
       "reads": 3
     },
     {
-      "at": 43573,
-      "progress": 0.40257,
+      "at": 43262.4,
+      "progress": 0.402169,
       "reads": 3
     },
     {
-      "at": 43578.5,
-      "progress": 0.40257,
+      "at": 43268,
+      "progress": 0.402169,
       "reads": 3
     },
     {
-      "at": 43584.2,
-      "progress": 0.40257,
+      "at": 43279,
+      "progress": 0.402169,
       "reads": 3
     },
     {
-      "at": 43589.7,
-      "progress": 0.40257,
+      "at": 43284.6,
+      "progress": 0.402169,
       "reads": 3
     },
     {
-      "at": 43595.3,
-      "progress": 0.40257,
+      "at": 43295.7,
+      "progress": 0.404482,
       "reads": 3
     },
     {
-      "at": 43600.9,
-      "progress": 0.40257,
+      "at": 43301.3,
+      "progress": 0.40459,
       "reads": 3
     },
     {
-      "at": 43606.3,
-      "progress": 0.40257,
+      "at": 43312.4,
+      "progress": 0.40459,
       "reads": 3
     },
     {
-      "at": 43612,
-      "progress": 0.40257,
+      "at": 43318,
+      "progress": 0.40459,
       "reads": 3
     },
     {
-      "at": 43617.6,
-      "progress": 0.40257,
+      "at": 43329,
+      "progress": 0.40459,
       "reads": 3
     },
     {
-      "at": 43623,
-      "progress": 0.40257,
+      "at": 43334.7,
+      "progress": 0.40459,
       "reads": 3
     },
     {
-      "at": 43628.5,
-      "progress": 0.40257,
+      "at": 43345.7,
+      "progress": 0.40459,
       "reads": 3
     },
     {
-      "at": 43634.2,
-      "progress": 0.40257,
+      "at": 43351.3,
+      "progress": 0.40459,
       "reads": 3
     },
     {
-      "at": 43639.7,
-      "progress": 0.404505,
+      "at": 43362.4,
+      "progress": 0.40459,
       "reads": 3
     },
     {
-      "at": 43645.3,
-      "progress": 0.404505,
+      "at": 43367.9,
+      "progress": 0.40459,
       "reads": 3
     },
     {
-      "at": 43650.8,
-      "progress": 0.404505,
+      "at": 43379.1,
+      "progress": 0.40459,
       "reads": 3
     },
     {
-      "at": 43656.3,
-      "progress": 0.404505,
+      "at": 43390.2,
+      "progress": 0.40459,
       "reads": 3
     },
     {
-      "at": 43662,
-      "progress": 0.404505,
+      "at": 43395.7,
+      "progress": 0.40459,
       "reads": 3
     },
     {
-      "at": 43667.5,
-      "progress": 0.404505,
+      "at": 43401.3,
+      "progress": 0.407021,
       "reads": 3
     },
     {
-      "at": 43673,
-      "progress": 0.404505,
+      "at": 43412.4,
+      "progress": 0.40717,
       "reads": 3
     },
     {
-      "at": 43678.6,
-      "progress": 0.404505,
+      "at": 43418,
+      "progress": 0.40717,
       "reads": 3
     },
     {
-      "at": 43684.1,
-      "progress": 0.404505,
+      "at": 43429.1,
+      "progress": 0.40717,
       "reads": 3
     },
     {
-      "at": 43689.7,
-      "progress": 0.404505,
+      "at": 43440.2,
+      "progress": 0.40717,
       "reads": 3
     },
     {
-      "at": 43695.3,
-      "progress": 0.404505,
+      "at": 43445.8,
+      "progress": 0.40717,
       "reads": 3
     },
     {
-      "at": 43700.9,
-      "progress": 0.404505,
+      "at": 43456.9,
+      "progress": 0.40717,
       "reads": 3
     },
     {
-      "at": 43706.4,
-      "progress": 0.404505,
+      "at": 43462.4,
+      "progress": 0.40717,
       "reads": 3
     },
     {
-      "at": 43711.9,
-      "progress": 0.404505,
+      "at": 43473.5,
+      "progress": 0.40717,
       "reads": 3
     },
     {
-      "at": 43717.5,
-      "progress": 0.404505,
+      "at": 43479.1,
+      "progress": 0.40717,
       "reads": 3
     },
     {
-      "at": 43723,
-      "progress": 0.404505,
+      "at": 43490.1,
+      "progress": 0.40717,
       "reads": 3
     },
     {
-      "at": 43728.6,
-      "progress": 0.404505,
+      "at": 43495.8,
+      "progress": 0.40717,
       "reads": 3
     },
     {
-      "at": 43734.2,
-      "progress": 0.404505,
+      "at": 43506.8,
+      "progress": 0.40717,
       "reads": 3
     },
     {
-      "at": 43739.7,
-      "progress": 0.404505,
+      "at": 43512.4,
+      "progress": 0.409527,
       "reads": 3
     },
     {
-      "at": 43745.2,
-      "progress": 0.406622,
+      "at": 43523.5,
+      "progress": 0.409527,
       "reads": 3
     },
     {
-      "at": 43750.8,
-      "progress": 0.406622,
+      "at": 43534.6,
+      "progress": 0.409527,
       "reads": 3
     },
     {
-      "at": 43756.4,
-      "progress": 0.406622,
+      "at": 43540.1,
+      "progress": 0.409527,
       "reads": 3
     },
     {
-      "at": 43762,
-      "progress": 0.406622,
+      "at": 43545.7,
+      "progress": 0.409527,
       "reads": 3
     },
     {
-      "at": 43767.5,
-      "progress": 0.406622,
+      "at": 43556.9,
+      "progress": 0.409527,
       "reads": 3
     },
     {
-      "at": 43773,
-      "progress": 0.406622,
+      "at": 43567.9,
+      "progress": 0.409527,
       "reads": 3
     },
     {
-      "at": 43778.6,
-      "progress": 0.406622,
+      "at": 43573.5,
+      "progress": 0.409527,
       "reads": 3
     },
     {
-      "at": 43784.1,
-      "progress": 0.406622,
+      "at": 43584.6,
+      "progress": 0.409527,
       "reads": 3
     },
     {
-      "at": 43789.7,
-      "progress": 0.406622,
+      "at": 43590.2,
+      "progress": 0.409527,
       "reads": 3
     },
     {
-      "at": 43795.4,
-      "progress": 0.406622,
+      "at": 43601.3,
+      "progress": 0.409527,
       "reads": 3
     },
     {
-      "at": 43800.9,
-      "progress": 0.406622,
+      "at": 43606.8,
+      "progress": 0.409527,
       "reads": 3
     },
     {
-      "at": 43806.4,
-      "progress": 0.406622,
+      "at": 43618,
+      "progress": 0.411821,
       "reads": 3
     },
     {
-      "at": 43811.9,
-      "progress": 0.406622,
+      "at": 43623.5,
+      "progress": 0.411916,
       "reads": 3
     },
     {
-      "at": 43817.5,
-      "progress": 0.406622,
+      "at": 43634.7,
+      "progress": 0.411916,
       "reads": 3
     },
     {
-      "at": 43823,
-      "progress": 0.406622,
+      "at": 43640.2,
+      "progress": 0.411916,
       "reads": 3
     },
     {
-      "at": 43828.5,
-      "progress": 0.406622,
+      "at": 43651.3,
+      "progress": 0.411916,
       "reads": 3
     },
     {
-      "at": 43834.1,
-      "progress": 0.406622,
+      "at": 43656.9,
+      "progress": 0.411916,
       "reads": 3
     },
     {
-      "at": 43839.7,
-      "progress": 0.406622,
+      "at": 43668,
+      "progress": 0.411916,
       "reads": 3
     },
     {
-      "at": 43845.2,
-      "progress": 0.406622,
+      "at": 43673.6,
+      "progress": 0.411916,
       "reads": 3
     },
     {
-      "at": 43850.8,
-      "progress": 0.408843,
+      "at": 43684.6,
+      "progress": 0.411916,
       "reads": 3
     },
     {
-      "at": 43856.3,
-      "progress": 0.408843,
+      "at": 43690.2,
+      "progress": 0.411916,
       "reads": 3
     },
     {
-      "at": 43861.9,
-      "progress": 0.408843,
+      "at": 43701.3,
+      "progress": 0.411916,
       "reads": 3
     },
     {
-      "at": 43867.5,
-      "progress": 0.408843,
+      "at": 43706.9,
+      "progress": 0.411916,
       "reads": 3
     },
     {
-      "at": 43873.1,
-      "progress": 0.408843,
+      "at": 43718,
+      "progress": 0.411916,
       "reads": 3
     },
     {
-      "at": 43878.5,
-      "progress": 0.408843,
+      "at": 43723.5,
+      "progress": 0.413232,
       "reads": 3
     },
     {
-      "at": 43884.2,
-      "progress": 0.408843,
+      "at": 43734.6,
+      "progress": 0.413338,
       "reads": 3
     },
     {
-      "at": 43889.7,
-      "progress": 0.408843,
+      "at": 43745.7,
+      "progress": 0.413338,
       "reads": 3
     },
     {
-      "at": 43895.2,
-      "progress": 0.408843,
+      "at": 43751.3,
+      "progress": 0.413338,
       "reads": 3
     },
     {
-      "at": 43900.9,
-      "progress": 0.408843,
+      "at": 43756.8,
+      "progress": 0.413338,
       "reads": 3
     },
     {
-      "at": 43906.3,
-      "progress": 0.408843,
+      "at": 43767.9,
+      "progress": 0.413338,
       "reads": 3
     },
     {
-      "at": 43911.9,
-      "progress": 0.408843,
+      "at": 43779,
+      "progress": 0.413338,
       "reads": 3
     },
     {
-      "at": 43917.5,
-      "progress": 0.408843,
+      "at": 43784.7,
+      "progress": 0.413338,
       "reads": 3
     },
     {
-      "at": 43923,
-      "progress": 0.408843,
+      "at": 43790.2,
+      "progress": 0.413338,
       "reads": 3
     },
     {
-      "at": 43928.6,
-      "progress": 0.408843,
+      "at": 43801.4,
+      "progress": 0.413338,
       "reads": 3
     },
     {
-      "at": 43934.2,
-      "progress": 0.408843,
+      "at": 43812.4,
+      "progress": 0.413338,
       "reads": 3
     },
     {
-      "at": 43939.7,
-      "progress": 0.408843,
+      "at": 43817.9,
+      "progress": 0.413338,
       "reads": 3
     },
     {
-      "at": 43945.3,
-      "progress": 0.408843,
+      "at": 43829,
+      "progress": 0.413338,
       "reads": 3
     },
     {
-      "at": 43950.8,
-      "progress": 0.410992,
+      "at": 43834.7,
+      "progress": 0.414046,
       "reads": 3
     },
     {
-      "at": 43956.4,
-      "progress": 0.410992,
+      "at": 43845.8,
+      "progress": 0.414046,
       "reads": 3
     },
     {
-      "at": 43961.9,
-      "progress": 0.410992,
+      "at": 43851.4,
+      "progress": 0.414046,
       "reads": 3
     },
     {
-      "at": 43967.5,
-      "progress": 0.410992,
+      "at": 43862.4,
+      "progress": 0.414046,
       "reads": 3
     },
     {
-      "at": 43973.1,
-      "progress": 0.410992,
+      "at": 43873.5,
+      "progress": 0.414046,
       "reads": 3
     },
     {
-      "at": 43978.6,
-      "progress": 0.410992,
+      "at": 43879.1,
+      "progress": 0.414046,
       "reads": 3
     },
     {
-      "at": 43984.1,
-      "progress": 0.410992,
+      "at": 43884.7,
+      "progress": 0.414046,
       "reads": 3
     },
     {
-      "at": 43989.7,
-      "progress": 0.410992,
+      "at": 43895.7,
+      "progress": 0.414046,
       "reads": 3
     },
     {
-      "at": 43995.3,
-      "progress": 0.410992,
+      "at": 43906.8,
+      "progress": 0.414046,
       "reads": 3
     },
     {
-      "at": 44000.8,
-      "progress": 0.410992,
+      "at": 43912.4,
+      "progress": 0.414046,
       "reads": 3
     },
     {
-      "at": 44006.4,
-      "progress": 0.410992,
+      "at": 43923.5,
+      "progress": 0.414046,
       "reads": 3
     },
     {
-      "at": 44011.9,
-      "progress": 0.410992,
+      "at": 43929.1,
+      "progress": 0.414046,
       "reads": 3
     },
     {
-      "at": 44017.5,
-      "progress": 0.410992,
+      "at": 43940.1,
+      "progress": 0.414469,
       "reads": 3
     },
     {
-      "at": 44023,
-      "progress": 0.410992,
+      "at": 43951.4,
+      "progress": 0.414469,
       "reads": 3
     },
     {
-      "at": 44028.6,
-      "progress": 0.410992,
+      "at": 43956.8,
+      "progress": 0.414469,
       "reads": 3
     },
     {
-      "at": 44034.2,
-      "progress": 0.410992,
+      "at": 43968,
+      "progress": 0.414469,
       "reads": 3
     },
     {
-      "at": 44039.7,
-      "progress": 0.410992,
+      "at": 43973.6,
+      "progress": 0.414469,
       "reads": 3
     },
     {
-      "at": 44045.2,
-      "progress": 0.410992,
+      "at": 43984.6,
+      "progress": 0.414469,
       "reads": 3
     },
     {
-      "at": 44050.8,
-      "progress": 0.410992,
+      "at": 43990.3,
+      "progress": 0.414469,
       "reads": 3
     },
     {
-      "at": 44056.3,
-      "progress": 0.412769,
+      "at": 44001.3,
+      "progress": 0.414469,
       "reads": 3
     },
     {
-      "at": 44061.9,
-      "progress": 0.412769,
+      "at": 44006.8,
+      "progress": 0.414469,
       "reads": 3
     },
     {
-      "at": 44067.5,
-      "progress": 0.412769,
+      "at": 44017.9,
+      "progress": 0.414469,
       "reads": 3
     },
     {
-      "at": 44073.1,
-      "progress": 0.412769,
+      "at": 44023.6,
+      "progress": 0.414469,
       "reads": 3
     },
     {
-      "at": 44078.5,
-      "progress": 0.412769,
+      "at": 44034.7,
+      "progress": 0.414469,
       "reads": 3
     },
     {
-      "at": 44084.2,
-      "progress": 0.412769,
+      "at": 44045.7,
+      "progress": 0.414696,
       "reads": 3
     },
     {
-      "at": 44089.7,
-      "progress": 0.412769,
+      "at": 44051.4,
+      "progress": 0.414696,
       "reads": 3
     },
     {
-      "at": 44095.3,
-      "progress": 0.412769,
+      "at": 44062.5,
+      "progress": 0.414696,
       "reads": 3
     },
     {
-      "at": 44100.8,
-      "progress": 0.412769,
+      "at": 44068,
+      "progress": 0.414696,
       "reads": 3
     },
     {
-      "at": 44106.3,
-      "progress": 0.412769,
+      "at": 44079.1,
+      "progress": 0.414696,
       "reads": 3
     },
     {
-      "at": 44112,
-      "progress": 0.412769,
+      "at": 44084.7,
+      "progress": 0.414696,
       "reads": 3
     },
     {
-      "at": 44117.5,
-      "progress": 0.412769,
+      "at": 44095.7,
+      "progress": 0.414696,
       "reads": 3
     },
     {
-      "at": 44123,
-      "progress": 0.412769,
+      "at": 44101.3,
+      "progress": 0.414696,
       "reads": 3
     },
     {
-      "at": 44128.6,
-      "progress": 0.412769,
+      "at": 44112.4,
+      "progress": 0.414696,
       "reads": 3
     },
     {
-      "at": 44134.3,
-      "progress": 0.412769,
+      "at": 44123.5,
+      "progress": 0.414696,
       "reads": 3
     },
     {
-      "at": 44139.7,
-      "progress": 0.412769,
+      "at": 44129.1,
+      "progress": 0.414696,
       "reads": 3
     },
     {
-      "at": 44145.3,
-      "progress": 0.412769,
+      "at": 44140.2,
+      "progress": 0.414696,
       "reads": 3
     },
     {
-      "at": 44150.8,
-      "progress": 0.412769,
+      "at": 44145.8,
+      "progress": 0.414831,
       "reads": 3
     },
     {
-      "at": 44156.4,
-      "progress": 0.412769,
+      "at": 44156.9,
+      "progress": 0.414831,
       "reads": 3
     },
     {
-      "at": 44161.9,
-      "progress": 0.413759,
+      "at": 44168,
+      "progress": 0.414831,
       "reads": 3
     },
     {
-      "at": 44167.6,
-      "progress": 0.413759,
+      "at": 44173.6,
+      "progress": 0.414831,
       "reads": 3
     },
     {
-      "at": 44173.1,
-      "progress": 0.413759,
+      "at": 44184.6,
+      "progress": 0.414831,
       "reads": 3
     },
     {
-      "at": 44178.6,
-      "progress": 0.413759,
+      "at": 44190.2,
+      "progress": 0.414831,
       "reads": 3
     },
     {
-      "at": 44184.2,
-      "progress": 0.413759,
+      "at": 44201.3,
+      "progress": 0.414831,
       "reads": 3
     },
     {
-      "at": 44189.7,
-      "progress": 0.413759,
+      "at": 44206.9,
+      "progress": 0.414831,
       "reads": 3
     },
     {
-      "at": 44195.3,
-      "progress": 0.413759,
+      "at": 44217.9,
+      "progress": 0.414831,
       "reads": 3
     },
     {
-      "at": 44200.9,
-      "progress": 0.413759,
+      "at": 44223.5,
+      "progress": 0.414831,
       "reads": 3
     },
     {
-      "at": 44206.3,
-      "progress": 0.413759,
+      "at": 44234.6,
+      "progress": 0.414831,
       "reads": 3
     },
     {
-      "at": 44211.9,
-      "progress": 0.413759,
+      "at": 44245.7,
+      "progress": 0.414831,
       "reads": 3
     },
     {
-      "at": 44217.4,
-      "progress": 0.413759,
+      "at": 44251.4,
+      "progress": 0.414906,
       "reads": 3
     },
     {
-      "at": 44223,
-      "progress": 0.413759,
+      "at": 44262.3,
+      "progress": 0.414906,
       "reads": 3
     },
     {
-      "at": 44228.6,
-      "progress": 0.413759,
-      "reads": 3
-    },
-    {
-      "at": 44234.1,
-      "progress": 0.413759,
-      "reads": 3
-    },
-    {
-      "at": 44239.7,
-      "progress": 0.413759,
-      "reads": 3
-    },
-    {
-      "at": 44245.3,
-      "progress": 0.413759,
-      "reads": 3
-    },
-    {
-      "at": 44250.9,
-      "progress": 0.413759,
-      "reads": 3
-    },
-    {
-      "at": 44256.4,
-      "progress": 0.413759,
-      "reads": 3
-    },
-    {
-      "at": 44262,
-      "progress": 0.414289,
-      "reads": 3
-    },
-    {
-      "at": 44267.5,
-      "progress": 0.41431,
-      "reads": 3
-    },
-    {
-      "at": 44273.1,
-      "progress": 0.41431,
-      "reads": 3
-    },
-    {
-      "at": 44278.6,
-      "progress": 0.41431,
-      "reads": 3
-    },
-    {
-      "at": 44284.1,
-      "progress": 0.41431,
-      "reads": 3
-    },
-    {
-      "at": 44289.7,
-      "progress": 0.41431,
-      "reads": 3
-    },
-    {
-      "at": 44295.2,
-      "progress": 0.41431,
-      "reads": 3
-    },
-    {
-      "at": 44300.8,
-      "progress": 0.41431,
-      "reads": 3
-    },
-    {
-      "at": 44306.4,
-      "progress": 0.41431,
-      "reads": 3
-    },
-    {
-      "at": 44311.9,
-      "progress": 0.41431,
-      "reads": 3
-    },
-    {
-      "at": 44317.5,
-      "progress": 0.41431,
-      "reads": 3
-    },
-    {
-      "at": 44323,
-      "progress": 0.41431,
-      "reads": 3
-    },
-    {
-      "at": 44328.6,
-      "progress": 0.41431,
-      "reads": 3
-    },
-    {
-      "at": 44334.1,
-      "progress": 0.41431,
-      "reads": 3
-    },
-    {
-      "at": 44339.7,
-      "progress": 0.41431,
-      "reads": 3
-    },
-    {
-      "at": 44345.3,
-      "progress": 0.41431,
-      "reads": 3
-    },
-    {
-      "at": 44350.8,
-      "progress": 0.41431,
-      "reads": 3
-    },
-    {
-      "at": 44356.4,
-      "progress": 0.41431,
-      "reads": 3
-    },
-    {
-      "at": 44361.9,
-      "progress": 0.41431,
-      "reads": 3
-    },
-    {
-      "at": 44367.5,
-      "progress": 0.414604,
-      "reads": 3
-    },
-    {
-      "at": 44373.1,
-      "progress": 0.414616,
-      "reads": 3
-    },
-    {
-      "at": 44378.6,
-      "progress": 0.414616,
-      "reads": 3
-    },
-    {
-      "at": 44384.2,
-      "progress": 0.414616,
-      "reads": 3
-    },
-    {
-      "at": 44389.7,
-      "progress": 0.414616,
-      "reads": 3
-    },
-    {
-      "at": 44395.2,
-      "progress": 0.414616,
-      "reads": 3
-    },
-    {
-      "at": 44400.8,
-      "progress": 0.414616,
-      "reads": 3
-    },
-    {
-      "at": 44406.3,
-      "progress": 0.414616,
-      "reads": 3
-    },
-    {
-      "at": 44412,
-      "progress": 0.414616,
-      "reads": 3
-    },
-    {
-      "at": 44417.5,
-      "progress": 0.414616,
-      "reads": 3
-    },
-    {
-      "at": 44423,
-      "progress": 0.414616,
-      "reads": 3
-    },
-    {
-      "at": 44428.6,
-      "progress": 0.414616,
-      "reads": 3
-    },
-    {
-      "at": 44434.2,
-      "progress": 0.414616,
-      "reads": 3
-    },
-    {
-      "at": 44439.7,
-      "progress": 0.414616,
-      "reads": 3
-    },
-    {
-      "at": 44445.3,
-      "progress": 0.414616,
-      "reads": 3
-    },
-    {
-      "at": 44450.9,
-      "progress": 0.414616,
-      "reads": 3
-    },
-    {
-      "at": 44456.3,
-      "progress": 0.414616,
-      "reads": 3
-    },
-    {
-      "at": 44462,
-      "progress": 0.414616,
-      "reads": 3
-    },
-    {
-      "at": 44467.6,
-      "progress": 0.414616,
-      "reads": 3
-    },
-    {
-      "at": 44473,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44478.5,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44484.2,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44489.7,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44495.3,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44500.8,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44506.3,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44511.9,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44517.4,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44523,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44528.6,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44534.1,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44539.8,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44545.3,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44550.8,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44556.4,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44562,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44567.5,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44573.1,
-      "progress": 0.41478,
-      "reads": 3
-    },
-    {
-      "at": 44578.6,
-      "progress": 0.414877,
-      "reads": 3
-    },
-    {
-      "at": 44584.1,
-      "progress": 0.414877,
-      "reads": 3
-    },
-    {
-      "at": 44589.7,
-      "progress": 0.414877,
-      "reads": 3
-    },
-    {
-      "at": 44595.2,
-      "progress": 0.414877,
-      "reads": 3
-    },
-    {
-      "at": 44600.8,
-      "progress": 0.414877,
-      "reads": 3
-    },
-    {
-      "at": 44606.4,
-      "progress": 0.414877,
-      "reads": 3
-    },
-    {
-      "at": 44611.9,
-      "progress": 0.414877,
-      "reads": 3
-    },
-    {
-      "at": 44617.5,
-      "progress": 0.414877,
+      "at": 44268,
+      "progress": 0.414906,
       "reads": 3
     }
   ],
-  "buildHtmlSha256": "8425ee6964967d199eca18286f3158aa93f714561838670c516af09e6e7d587c",
-  "browserVersion": "156.0.8078.47",
-  "completedAt": "2026-10-22T16:32:34.675Z"
+  "buildHtmlSha256": "82d27f4b743b883045affeec4b832708f283c1bf18f52ea62c1e241ddb13b44e",
+  "browserVersion": "155.0.4283.62",
+  "completedAt": "2026-10-23T10:19:23.294Z"
 }

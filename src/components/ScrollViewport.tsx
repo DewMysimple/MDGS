@@ -24,6 +24,7 @@ export interface ScrollViewportProps {
   onReady?: () => void;
   onNarrativePlacement?: (placement: NarrativeSpace) => void;
   wheelSpeed?: number;
+  sideMarginPercent?: number;
   artworkAnchors?: readonly ArtworkAnchorSpec[];
   onArtworkAnchors?: (anchors: ProjectedArtAnchor[]) => void;
   onPresentationHandle?: (handle: ScrollPresentationHandle | null) => void;
@@ -33,7 +34,7 @@ export interface ScrollViewportProps {
 }
 
 export default function ScrollViewport({ chapterId, progress, motionEnabled, onMotionState, onNudge, onSeek, onManualInput, onManifest,
-  interactive = true, retryKey = 0, preparationCancelled = false, onPreparation, onReady, onNarrativePlacement, wheelSpeed = 0.5, artworkAnchors = noArtworkAnchors, onArtworkAnchors,
+  interactive = true, retryKey = 0, preparationCancelled = false, onPreparation, onReady, onNarrativePlacement, wheelSpeed = 0.5, sideMarginPercent = 8, artworkAnchors = noArtworkAnchors, onArtworkAnchors,
   onPresentationHandle, onPresentationSnapshot, onPresentationError, playbackActive = false }: ScrollViewportProps) {
   const host = useRef<HTMLDivElement>(null);
   const engine = useRef<SceneRenderer | null>(null);
@@ -99,6 +100,7 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
         if (state.stage === 'ready') { firstFramePresented = true; setReady(true); actions.current.onReady?.(); captureReadyFrame(); }
       }, placement=> { if(alive) actions.current.onNarrativePlacement?.(placement); }, anchors => { if (alive) actions.current.onArtworkAnchors?.(anchors); });
       engine.current = renderer;
+      renderer.setSideMarginPercent(sideMarginPercent);
       if (preparationCancelledRef.current) renderer.cancelPreparation();
       actions.current.onPresentationHandle?.({ capture: () => renderer.captureArtworkSnapshot() });
       renderer.setArtworkAnchors(artworkAnchorsRef.current);
@@ -159,6 +161,7 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
   useEffect(() => { if (ready && onPresentationSnapshot) capturePrepared.current?.(); }, [ready, onPresentationSnapshot]);
 
   useEffect(() => { engine.current?.setProgress(progress); }, [progress]);
+  useEffect(() => { engine.current?.setSideMarginPercent(sideMarginPercent); }, [sideMarginPercent]);
   useLayoutEffect(() => { if (preparationCancelled) engine.current?.cancelPreparation(); }, [preparationCancelled]);
   useEffect(() => { engine.current?.setNarrativePlaybackActive(playbackActive); }, [playbackActive]);
   useEffect(() => { engine.current?.setArtworkAnchors(artworkAnchors); }, [artworkAnchors]);

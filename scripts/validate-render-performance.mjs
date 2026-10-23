@@ -15,7 +15,7 @@ const placementUrl = moduleUrl(compile(await read('src/scene/NarrativeSpace.ts')
 const viewportUrl = moduleUrl(compile(await read('src/scene/sourceViewport.ts')));
 const texturePreparationUrl = moduleUrl(compile(await read('src/scene/texturePreparation.ts')));
 const { narrativeSampleSize, findNarrativeSpace } = await import(placementUrl);
-const { fitSourceViewport } = await import(viewportUrl);
+const { fitSourceViewport, sourceViewportLayout } = await import(viewportUrl);
 const checks = [];
 for (const [width, height] of [[1, 1], [320, 568], [390, 844], [1672, 941], [3840, 2160], [7680, 4320]]) {
   const sample = narrativeSampleSize(width, height);
@@ -37,7 +37,16 @@ for (const [width, height] of [[390, 844], [1672, 941], [1920, 480]]) {
   assert(Math.abs(gate.y * 2 + gate.height - height) < 1e-10);
 }
 assert.equal(fitSourceViewport(400, 400, { width: 100, height: 100, pixelAspectX: 2, pixelAspectY: 1 }).aspect, 2);
-checks.push({ test: 'whole-source-camera-gate-centered-with-source-pixel-aspect', passed: true });
+const sourceRender = { width: 1920, height: 1080, pixelAspectX: 1, pixelAspectY: 1 };
+const insetLayout = sourceViewportLayout(2048, 1079, sourceRender, 8).viewport;
+assert(Math.abs(insetLayout.x - 2048 * .08) < 1e-10);
+assert(Math.abs(2048 - insetLayout.x - insetLayout.width - insetLayout.x) < 1e-10, 'configured paper gutters are equal');
+assert(insetLayout.y > 0 && insetLayout.y * 2 + insetLayout.height <= 1079 + 1e-10);
+const noInsetWide = sourceViewportLayout(1920, 480, sourceRender).viewport;
+assert.equal(noInsetWide.x, 0); assert.equal(noInsetWide.width, 1920); assert.equal(noInsetWide.height, 480);
+const boundedInset = sourceViewportLayout(2048, 1079, sourceRender, 80).viewport;
+assert(Math.abs(boundedInset.x - 2048 * .49) < 1e-10);
+checks.push({ test: 'whole-source-camera-gate-centered-with-adjustable-equal-paper-gutters', passed: true });
 
 // GPU and unrelated presentation surfaces are replaced, while the production
 // streaming, visibility, readiness and shader-failure logic executes unchanged.

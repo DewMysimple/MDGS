@@ -59,6 +59,7 @@ export class SceneRenderer {
   private frame = 0;
   private disposed = false;
   private progress = 0;
+  private sideMarginPercent = 0;
   private width = 1;
   private height = 1;
   private dirty = true;
@@ -407,6 +408,13 @@ export class SceneRenderer {
     if (this.preparationActive) this.firstFrameReady = false;
     this.progress = clamp(progress); this.dirty = true; this.requestFrame();
   }
+  setSideMarginPercent(value: number) {
+    if (this.sideMarginPercent === value) return;
+    this.sideMarginPercent = value;
+    this.lastViewChange = performance.now();
+    this.dirty = true;
+    this.requestFrame();
+  }
   private get visualProgress() {
     return this.chapterId === 1 ? Math.min(this.progress, chapterOneCompositionEnd) : this.progress;
   }
@@ -594,7 +602,7 @@ export class SceneRenderer {
     this.camera.near = this.manifest.camera.near || 0.01;
     this.camera.far = this.manifest.camera.far || 5000;
     if (this.sourceFaithful) {
-      const layout = sourceViewportLayout(this.width, this.height, this.manifest.render);
+      const layout = sourceViewportLayout(this.width, this.height, this.manifest.render, this.sideMarginPercent);
       this.sourceViewport = layout.viewport;
       this.camera.fov = sourceVerticalFov(fov, layout.verticalFovScale);
     } else {
