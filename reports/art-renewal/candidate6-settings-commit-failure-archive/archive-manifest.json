@@ -1,0 +1,256 @@
+{
+  "status": "original-failed-chain-and-nine-driver-bytes-preserved-before-test-correction",
+  "createdAt": "2026-10-23T01:40:47.941Z",
+  "buildDirectory": "tmp/art-candidate-6-dist",
+  "runId": "2026-10-23T01-13-37-572Z",
+  "originalStatus": "fail",
+  "suites": [
+    {
+      "id": "ui",
+      "passed": true,
+      "checks": 83
+    },
+    {
+      "id": "audio",
+      "passed": true,
+      "checks": 15
+    },
+    {
+      "id": "runtime",
+      "passed": true,
+      "checks": 34
+    },
+    {
+      "id": "journey",
+      "passed": true,
+      "checks": 9
+    },
+    {
+      "id": "settings",
+      "passed": false,
+      "checks": 15
+    },
+    {
+      "id": "subpath",
+      "passed": true,
+      "checks": 1
+    }
+  ],
+  "originalSourceStable": true,
+  "originalBundleStable": true,
+  "originalDriversStable": true,
+  "approval": "Root explicitly reviewed25 native visibility cycles and authorized only the hidden-block measurement correction; no product/clock/epsilon change.",
+  "files": [
+    {
+      "role": "old-executed-driver",
+      "source": "scripts/validate-art-renewal-final.mjs",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/driver-00-validate-art-renewal-final.mjs",
+      "sha256": "e88d14d3046d9c05d8a8547cada81f17bfe47a664ea287ee11b5a23ceaec755a",
+      "bytes": 11289
+    },
+    {
+      "role": "old-executed-driver",
+      "source": "scripts/validate-art-renewal-ui.mjs",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/driver-01-validate-art-renewal-ui.mjs",
+      "sha256": "f978cf6666001687b5268c241798edff142ba2d804712f25294bff0ae285d58f",
+      "bytes": 32553
+    },
+    {
+      "role": "old-executed-driver",
+      "source": "scripts/validate-peony-soundscape.mjs",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/driver-02-validate-peony-soundscape.mjs",
+      "sha256": "f34fa4d41a09e02ca7bf1cd0d1e7287baa3595b1f01377007e78cbbc26449687",
+      "bytes": 17956
+    },
+    {
+      "role": "old-executed-driver",
+      "source": "scripts/validate-peony2-runtime.mjs",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/driver-03-validate-peony2-runtime.mjs",
+      "sha256": "36364a5356fb50472d1a0525d93b8ce5d80c78864a4001fb3a753d0f5f4e5d4f",
+      "bytes": 9740
+    },
+    {
+      "role": "old-executed-driver",
+      "source": "scripts/validate-peony2-regressions.mjs",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/driver-04-validate-peony2-regressions.mjs",
+      "sha256": "a15c0085702817803ee2397525df42c3cb137f183365db5d05734a6911dc5e4b",
+      "bytes": 714
+    },
+    {
+      "role": "old-executed-driver",
+      "source": "scripts/validate-peony2-original-driver.mjs",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/driver-05-validate-peony2-original-driver.mjs",
+      "sha256": "fa4e9b6196a9c6f9006c426f0e3353324437dac11cf6d07c807ea3ef89673e82",
+      "bytes": 22755
+    },
+    {
+      "role": "old-executed-driver",
+      "source": "scripts/validate-peony2-journey-driver.mjs",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/driver-06-validate-peony2-journey-driver.mjs",
+      "sha256": "9d74b563a223080675f2e37edeff9d9e61afdeb23d5be956cf778e20586c7e5e",
+      "bytes": 16741
+    },
+    {
+      "role": "old-executed-driver",
+      "source": "scripts/validate-peony2-settings-driver.mjs",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/driver-07-validate-peony2-settings-driver.mjs",
+      "sha256": "83a73733bb00771c5381c397b75742abb6934e78af30deac5c8dc02fc72e3564",
+      "bytes": 20726
+    },
+    {
+      "role": "old-executed-driver",
+      "source": "scripts/validate-peony2-subpath-driver.mjs",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/driver-08-validate-peony2-subpath-driver.mjs",
+      "sha256": "1041f8b91fe1ddab3c95326fa12804f66dabc602a2d07f8fe4a8434c5124808d",
+      "bytes": 17992
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/validation.json",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-09-validation.json",
+      "sha256": "7a182574f3afc5f86271a330e79755618c1912df0a587c51336c32317279695c",
+      "bytes": 233421
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/ui.log",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-10-ui.log",
+      "sha256": "0c703d6e119a0be0c67f6406d81371b4986aae8dc3a7ca76476e0867eaba5813",
+      "bytes": 3873
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/ui/ui-all-validation.json",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-11-ui-all-validation.json",
+      "sha256": "162a9ca9e5bd9f91a5471e7efb6bd255d3c15ee30a4fe183f25dab2b1ded2d19",
+      "bytes": 95958
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/audio.log",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-12-audio.log",
+      "sha256": "ed44b32b03302678999858db6111bd034bc80fab1c87e20a00a623e9b23dbcec",
+      "bytes": 148
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/audio-app-validation.json",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-13-audio-app-validation.json",
+      "sha256": "6e38ccb5cad4be389a3a1aaed65444c631fe5115d21af243fd776018f0cbefa6",
+      "bytes": 10320
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/runtime.log",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-14-runtime.log",
+      "sha256": "ce6c6c09f765e62ec8312b7027c9f94d4b3a097508fad34a24013fd04ff2da7e",
+      "bytes": 1066
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/legacy/runtime/2026-10-23T01-16-37-395Z-runtime/validation.json",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-15-validation.json",
+      "sha256": "7cb87bcc99c75842eb790df96b422e0c4a6e66ffedffecae83a778fe3995e25a",
+      "bytes": 78352
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/legacy/runtime/runtime-latest.json",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-16-runtime-latest.json",
+      "sha256": "1c16e0d75c0a51bd8b3df78bc163c89a5cc90cf4b894e96769a685568ed339f4",
+      "bytes": 501
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/legacy/runtime/2026-10-23T01-16-37-395Z-runtime/acceptance.json",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-17-acceptance.json",
+      "sha256": "d7a08b7389d31c3366b9ab5a2503677b017f3cdf94b0076fd33eeed498dc498a",
+      "bytes": 55600
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/journey.log",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-18-journey.log",
+      "sha256": "e21c6217cb5028417b5d914d52dcb784bda53a6f2bd63fbf338ed16642187646",
+      "bytes": 742
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/legacy/journey/2026-10-23T01-23-18-175Z-journey/validation.json",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-19-validation.json",
+      "sha256": "3e47a336f51d23d57f36e0d36ac107b9e5ffb56bfeee300fba979bd9c0cb3653",
+      "bytes": 16818
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/legacy/journey/journey-latest.json",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-20-journey-latest.json",
+      "sha256": "76e7d3cc1d367518bbc7ce47fd236acd31eac110617da359a3e634411058179f",
+      "bytes": 485
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/legacy/journey/2026-10-23T01-23-18-175Z-journey/acceptance.json",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-21-acceptance.json",
+      "sha256": "d8bfa521bc6a380e720fce5ab225994b71eedb894b5b7930ffe79dba4bfeec84",
+      "bytes": 37865
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/settings.log",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-22-settings.log",
+      "sha256": "485e3725ed63cb57738a27ce976e357aef0da5d4cca7cc7cabd68c5943cd0e42",
+      "bytes": 740
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/legacy/settings/2026-10-23T01-24-20-675Z-settings/validation.json",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-23-validation.json",
+      "sha256": "aa4e3ba8b27d7b9753c6143c427381b16c9029301b6e5b717a7e9180c3a268fc",
+      "bytes": 42835
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/legacy/settings/settings-latest.json",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-24-settings-latest.json",
+      "sha256": "4aaf12fb7cc76b2275d852261b0658df281a5dfdcdb0fa238723faefc7feb87f",
+      "bytes": 476
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/legacy/settings/2026-10-23T01-24-20-675Z-settings/acceptance.json",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-25-acceptance.json",
+      "sha256": "39e1d51baebb4bf137e8fcad33a491d411d2f3ce88290dc0ba69cc649fed9c2e",
+      "bytes": 37858
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/subpath.log",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-26-subpath.log",
+      "sha256": "9c1d1b28caf9a64e7ccc37b0701eeb45351b5562a6048a4ca52f3e1b1a40ae85",
+      "bytes": 562
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/legacy/subpath/2026-10-23T01-26-25-615Z-subpath/validation.json",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-27-validation.json",
+      "sha256": "9b1050437eedde7556ff085e998e4fe81470d47202740d32c16b7440d86505fe",
+      "bytes": 10823
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/legacy/subpath/subpath-latest.json",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-28-subpath-latest.json",
+      "sha256": "b26178dc8c52feec5f59d26512807e942ecd55b645d7fac5b33d03a137442389",
+      "bytes": 485
+    },
+    {
+      "role": "actual-failed-chain-evidence",
+      "source": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/legacy/subpath/2026-10-23T01-26-25-615Z-subpath/acceptance.json",
+      "archive": "reports/art-renewal/candidate6-settings-commit-failure-archive/evidence-29-acceptance.json",
+      "sha256": "ff9deb41571c40009cabb097598473062eca05c6d23552214702a3613e61199f",
+      "bytes": 34274
+    }
+  ],
+  "scope": "Original run and failures stay in place. This archive copies driver bytes and JSON/log evidence; PNG artifacts remain at their recorded original paths and SHA. New validation must run all six suites anew on the unchanged C6 build."
+}

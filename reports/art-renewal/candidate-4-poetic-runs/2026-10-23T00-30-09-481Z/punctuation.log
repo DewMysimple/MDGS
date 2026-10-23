@@ -1,0 +1,78 @@
+{
+  "at": "2026-10-23T00:43:32.164Z",
+  "base": "http://127.0.0.1:5196/",
+  "driver": "reports/art-renewal/poetic-narrative/verify-punctuation-contact.cjs",
+  "driverSha256": "262f308eef4affc9b099343ddf15e3f9a20237cb6e473612ff19ffbd1fa34dac",
+  "browser": "156.0.8078.47",
+  "viewport": {
+    "width": 2560,
+    "height": 1440
+  },
+  "reducedMotion": "reduce",
+  "referenceDriverSha256": "9ac940d735cb2dbfe5266a8fc15fa62141caf2ba3a1f85f00282963718f763de",
+  "targetCue": "poetic-c4-s3-1",
+  "sourceHashesBefore": {
+    "src/data/poeticNarrative.ts": "a39fa947d28044efd1699ac5fc022b88f98f6b498097e39b672b673c677b74a9",
+    "src/components/NarrativeCalligraphy.tsx": "b4ed5a08a983105e2644dd3827cf7947c6e20e946d3b64b43ad360d575a3c406",
+    "src/styles/narrative-calligraphy.css": "f9e7932915357479a7fbfe0c922b3d828187eb8544577231f7db3cb641c80edd",
+    "src/App.tsx": "1d18ac4f1d03f0b0da602797db7557588e9e60ba39f24b31f18a52f8fc7e66f7"
+  },
+  "sourceHashesAfter": {
+    "src/data/poeticNarrative.ts": "a39fa947d28044efd1699ac5fc022b88f98f6b498097e39b672b673c677b74a9",
+    "src/components/NarrativeCalligraphy.tsx": "b4ed5a08a983105e2644dd3827cf7947c6e20e946d3b64b43ad360d575a3c406",
+    "src/styles/narrative-calligraphy.css": "f9e7932915357479a7fbfe0c922b3d828187eb8544577231f7db3cb641c80edd",
+    "src/App.tsx": "1d18ac4f1d03f0b0da602797db7557588e9e60ba39f24b31f18a52f8fc7e66f7"
+  },
+  "sourceStable": true,
+  "bundle": [
+    {
+      "url": "./assets/index-DBUrlwwr.js",
+      "status": 200,
+      "sha256": "070201f3f072c86b3e7fda4a2e7483d7029850c618adce2aa23e4d9d4487f8b8"
+    },
+    {
+      "url": "./assets/index-C5txKLE_.css",
+      "status": 200,
+      "sha256": "db346cac5c7e39fe33b73b46b0186cf37cc411ed9643163849497c5f82cc11ae"
+    }
+  ],
+  "actual": {
+    "text": "沉香亭的典故里，花入李白的诗，也入人间记忆。",
+    "heading": "诗中相逢",
+    "mode": "poetic",
+    "bodyFont": "24px",
+    "padding": "12px",
+    "seal": {
+      "x": 123.58086395263672,
+      "y": 470.3326721191406,
+      "width": 20.463279724121094,
+      "height": 37.53778076171875,
+      "top": 470.3326721191406,
+      "right": 144.0441436767578,
+      "bottom": 507.8704528808594,
+      "left": 123.58086395263672
+    },
+    "contacts": [
+      {
+        "char": "。",
+        "box": {
+          "x": 138.015625,
+          "y": 452.140625,
+          "width": 32,
+          "height": 26.171875,
+          "top": 452.140625,
+          "right": 170.015625,
+          "bottom": 478.3125,
+          "left": 138.015625
+        }
+      }
+    ]
+  },
+  "screenshot": {
+    "file": "punctuation-c4-s3-2560.png",
+    "sha256": "eafe59a06a30bf7ac8fdc60154d8b5be1aa4113868925524d8415650ebcf3c3b"
+  },
+  "interpretation": "DOM Range measures full-em ideographic punctuation cells. Inspect this unretouched screenshot for visible ink separation; no Han/letter/digit overlap was exempted.",
+  "errors": [],
+  "passed": true
+}

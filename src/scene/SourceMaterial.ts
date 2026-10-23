@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import type { SceneManifest } from '../types';
 import { SOURCE_NOISE_3D } from './SourceNoise3D';
+import { decodeTextureImage } from './texturePreparation';
 
 /** Native shader fields contain linear half floats, never display encoded PNGs. */
 interface NativeField {
@@ -23,7 +24,7 @@ interface NativeMaterialData {
   programs: Record<string, Program>; tracks: Record<string, SourceTrack>;
   coordinateTracks: Record<string, SourceTrack>;
 }
-export interface SourceFieldBinding { url: string; assign(texture: THREE.Texture | null): void }
+export interface SourceFieldBinding { url: string; prepare?(texture: THREE.Texture): THREE.Texture | undefined; assign(texture: THREE.Texture | null): void }
 export interface SourceLighting {
   /** Defines sourceLighting, sourceDiffuse and sourcePrincipled source closures. */
   fragment: string;
@@ -156,8 +157,11 @@ export class SourceMaterialLibrary {
       declarations.push(`uniform sampler2D ${field.uniform};`);
       uniforms[field.uniform] = { value: null };
       let sampler: THREE.Texture | undefined;
-      return { url: this.absolute(field.url), assign: texture => {
+      let preparedImage: THREE.Texture | null = null;
+      const prepare = (texture: THREE.Texture | null) => {
+        if (texture === preparedImage) return sampler;
         if (sampler) { this.imageSamplers.delete(sampler); sampler.dispose(); sampler = undefined; }
+        preparedImage = texture;
         if (texture && field.encoding === 'image') {
           // One source image can be used by both CLIP and REPEAT nodes. Keep
           // each node's sampler state without mutating the shared URL cache.
@@ -167,7 +171,10 @@ export class SourceMaterialLibrary {
           sampler.colorSpace = field.colorSpace === 'Non-Color' ? THREE.NoColorSpace : THREE.SRGBColorSpace;
           sampler.needsUpdate = true; this.imageSamplers.add(sampler);
         }
-        uniforms[field.uniform].value = sampler ?? texture;
+        return sampler;
+      };
+      return { url: this.absolute(field.url), prepare, assign: texture => {
+        uniforms[field.uniform].value = prepare(texture) ?? texture;
       } };
     });
     const material = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: !program.opaque,
@@ -230,7 +237,7 @@ export class SourceMaterialLibrary {
     const definition = this.textureDefinitions.get(url);
     if (!definition) throw new Error('未知的源材质贴图。');
     if (definition.encoding === 'image') {
-      const texture = await new THREE.TextureLoader().loadAsync(url);
+      const texture = await decodeTextureImage(await new THREE.TextureLoader().loadAsync(url), signal);
       if (signal?.aborted || this.disposed) { texture.dispose(); throw new DOMException('Aborted', 'AbortError'); }
       texture.colorSpace = definition.colorSpace === 'Non-Color' ? THREE.NoColorSpace : THREE.SRGBColorSpace;
       return texture;

@@ -1,6 +1,6 @@
 {
   "status": "pass",
-  "testedAt": "2026-10-22T17:41:14.763Z",
+  "testedAt": "2026-10-23T03:23:39.361Z",
   "scope": "CPU thumbnail bounds and production streaming/failure logic with GPU stubbed. No FPS or rendered-pixel claim.",
   "checks": [
     {
@@ -67,6 +67,26 @@
           "native-glare-future-b"
         ]
       ],
+      "passed": true
+    },
+    {
+      "test": "real-image-decode-boundary-awaits-completion-and-disposes-errors-or-owner-abort",
+      "passed": true
+    },
+    {
+      "test": "actual-sampler-variants-prepare-one-per-turn-before-shared-resource-readiness",
+      "passed": true
+    },
+    {
+      "test": "context-restoration-restarts-every-pending-sampler-variant-including-pre-loss-completed-prefix",
+      "passed": true
+    },
+    {
+      "test": "owner-return-discards-unprepared-textures-without-gpu-upload-or-raf",
+      "passed": true
+    },
+    {
+      "test": "recent-cache-separately-bounded-to-96mib-images-24mib-post-and-expires-without-evicting-current",
       "passed": true
     }
   ]

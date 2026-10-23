@@ -1,0 +1,173 @@
+{
+  "status": "observed-delayed-request-metadata-with-frozen-controller-and-draws",
+  "verifiedAt": "2026-10-23T01:37:50.886Z",
+  "buildDirectory": "tmp/art-candidate-6-dist",
+  "freeze": {
+    "path": "reports/art-renewal/art-candidate-6-build.json",
+    "sha256": "516efd7a1d451b7e62f79e90564b22f7a706b9b14bde6cb359c8656021fbf359"
+  },
+  "originalFinal": {
+    "path": "reports/art-renewal/final-regressions/2026-10-23T01-13-37-572Z/validation.json",
+    "sha256": "7a182574f3afc5f86271a330e79755618c1912df0a587c51336c32317279695c",
+    "status": "fail-preserved"
+  },
+  "failedFirstProbe": {
+    "path": "reports/art-renewal/hidden-commit-probe/2026-10-23T01-34-05-665Z/validation.json",
+    "sha256": "67f3c9f7ef574c1550624b5115fa93f86a4cba5dfbb30c55ec3f49923bee68e9",
+    "driver": "reports/art-renewal/hidden-commit-probe/2026-10-23T01-34-05-665Z/probe-at-run.mjs",
+    "driverSha256": "8223093f06b8f15b86afb12df399ade8699c978b60cb70812afb8a59dd282160",
+    "result": "Timeout while requiring raw input numeric representation to equal full persisted position; diagnostic gap before pending start was saved remains preserved."
+  },
+  "successfulProbe": {
+    "path": "reports/art-renewal/hidden-commit-probe/2026-10-23T01-35-56-132Z/validation.json",
+    "sha256": "d8f314c6b70c39a6b6deffb2bcaa9d0e28f24e27df2b32a8f260c3d00f3c0fff",
+    "driver": "reports/art-renewal/hidden-commit-probe/2026-10-23T01-35-56-132Z/probe-at-run.mjs",
+    "driverSha256": "b4f2211f301d59af221647ff81abe9b5f8c7676388c911396bc1d075fcf75da7",
+    "status": "pass",
+    "rounds": 25
+  },
+  "observations": {
+    "immediateCanvasDiffersFromSynchronousPersistedPosition": 18,
+    "canvasChangesAfterHidden": [
+      {
+        "round": 7,
+        "immediate": "0.416696",
+        "after": 0.416752,
+        "persisted": "0.41675157128727375",
+        "mutations": [
+          {
+            "at": 13998,
+            "hidden": true,
+            "dom": "0.416696",
+            "persisted": "0.41675157128727375",
+            "input": "0.416751571287274",
+            "inputStep": "any",
+            "renderCount": "380",
+            "rafTicks": "641",
+            "nativePaintingDrawCalls": 46715,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          },
+          {
+            "at": 14041.79999999702,
+            "hidden": true,
+            "dom": "0.416752",
+            "persisted": "0.41675157128727375",
+            "input": "0.416751571287274",
+            "inputStep": "any",
+            "renderCount": "380",
+            "rafTicks": "641",
+            "nativePaintingDrawCalls": 46715,
+            "playLabel": "自动展卷",
+            "playing": "false"
+          }
+        ]
+      },
+      {
+        "round": 15,
+        "immediate": "0.433639",
+        "after": 0.433749,
+        "persisted": "0.43374925570716893",
+        "mutations": [
+          {
+            "at": 19261.59999999404,
+            "hidden": true,
+            "dom": "0.433639",
+            "persisted": "0.43374925570716893",
+            "input": "0.433694674165654",
+            "inputStep": "any",
+            "renderCount": "622",
+            "rafTicks": "944",
+            "nativePaintingDrawCalls": 77872,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          },
+          {
+            "at": 19264.39999999106,
+            "hidden": true,
+            "dom": "0.433749",
+            "persisted": "0.43374925570716893",
+            "input": "0.433749255707169",
+            "inputStep": "any",
+            "renderCount": "622",
+            "rafTicks": "944",
+            "nativePaintingDrawCalls": 77872,
+            "playLabel": "自动展卷",
+            "playing": "false"
+          },
+          {
+            "at": 19285.89999999106,
+            "hidden": true,
+            "dom": "0.433749",
+            "persisted": "0.43374925570716893",
+            "input": "0.433749255707169",
+            "inputStep": "any",
+            "renderCount": "622",
+            "rafTicks": "944",
+            "nativePaintingDrawCalls": 77872,
+            "playLabel": "自动展卷",
+            "playing": "false"
+          },
+          {
+            "at": 19302.5,
+            "hidden": true,
+            "dom": "0.433749",
+            "persisted": "0.43374925570716893",
+            "input": "0.433749255707169",
+            "inputStep": "any",
+            "renderCount": "622",
+            "rafTicks": "944",
+            "nativePaintingDrawCalls": 77872,
+            "playLabel": "自动展卷",
+            "playing": "false"
+          }
+        ]
+      },
+      {
+        "round": 16,
+        "immediate": "0.435606",
+        "after": 0.435662,
+        "persisted": "0.4356615944435237",
+        "mutations": [
+          {
+            "at": 19906.89999999106,
+            "hidden": true,
+            "dom": "0.435606",
+            "persisted": "0.4356615944435237",
+            "input": "0.435661594443524",
+            "inputStep": "any",
+            "renderCount": "654",
+            "rafTicks": "979",
+            "nativePaintingDrawCalls": 82078,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          },
+          {
+            "at": 19918.69999998808,
+            "hidden": true,
+            "dom": "0.435662",
+            "persisted": "0.4356615944435237",
+            "input": "0.435661594443524",
+            "inputStep": "any",
+            "renderCount": "654",
+            "rafTicks": "979",
+            "nativePaintingDrawCalls": 82078,
+            "playLabel": "自动展卷",
+            "playing": "false"
+          }
+        ]
+      }
+    ],
+    "nativeGLDrawsWhileHidden": 0,
+    "initialToFinalRenderCountOrRafTicksChanges": 0,
+    "mutationRenderCountOrRafTicksChanges": 0,
+    "inputNumericRepresentationDiffersFromFullPersistedPosition": 24,
+    "inputSteps": [
+      "any"
+    ],
+    "maximumPauseCommitWaitMs": 18.099999994039536
+  },
+  "interpretation": "In these three actual cases, data-progress changes while synchronous saved controller position, raw committed range value, native GL draw count and renderer draw/tick metadata remain fixed. data-progress is SceneRenderer requested-progress diagnostics, not a presented-frame timestamp. The trace alone does not identify which queued React/effect/promise callback refreshed it; source updateDiagnostics/finally provides a compatible mechanism.",
+  "proposedAcceptance": "Review before any frozen driver change: capture synchronous saved position string in the hidden-dispatch evaluation, await actual pause aria-pressed=false commit, preserve committed raw range string, then require 400ms exact equality of saved position/input and frozen draw/tick counters. Keep canvas diagnostics as observations. No epsilon, extra chance sleeps, product edit or source-clock acceleration.",
+  "limits": "Same document.hidden override as historical test, not native OS minimize. Native WebGL draw wrappers count actual painting draw submissions, not display refresh. Input and saved position are compared within each own representation; their numeric serialized strings differ at full precision in this browser. 400ms endpoint + mutation trace observations; no full-thread scheduler causal proof."
+}

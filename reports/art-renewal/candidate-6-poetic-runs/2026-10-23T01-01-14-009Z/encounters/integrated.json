@@ -1,0 +1,796 @@
+{
+  "metadata": {
+    "at": "2026-10-23T01:12:22.131Z",
+    "base": "http://127.0.0.1:5196/",
+    "browser": "156.0.8078.47",
+    "reducedMotion": "reduce",
+    "sourceEdition": "peony-2.0-2026-10-23",
+    "baseCommit": "e420f0e9b6d822df216a3b62ae71cd1fbca985f0",
+    "driver": "reports/art-renewal/encounters/verify-integrated.cjs",
+    "driverSha256": "e45d4413706fe6cb1da6ac6b1c4ca7f50871c0dc6e2fee1fbdb96cd4c685a41c",
+    "workingTree": "Uncommitted art-renewal implementation; Vite production preview, not deployed.",
+    "production": true,
+    "bundle": [
+      {
+        "url": "./assets/index-CTrqtaDU.js",
+        "status": 200,
+        "sha256": "70a48d047600b981f7317ff38b846d8e2e0e310e9bcd904339694e806423f92a"
+      },
+      {
+        "url": "./assets/index-C5txKLE_.css",
+        "status": 200,
+        "sha256": "db346cac5c7e39fe33b73b46b0186cf37cc411ed9643163849497c5f82cc11ae"
+      }
+    ],
+    "sourceStable": true,
+    "sourceHashesBefore": {
+      "src/components/ArtEncounters.tsx": "265fdafa82d6433e3957f74ae268ca8720991aed322acf6fa525fcb1cb95aa1e",
+      "src/styles/art-encounters.css": "ddd069d12e8e16de8fd708cf57d90eb6f9780c6bbe35a938d32914fb0ae80966",
+      "src/data/artEncounters.ts": "11625b51e66a0e2f01decd03187de846f317a256ce43861bc9f2c27739e67f27",
+      "src/scene/artworkProjection.ts": "243b219ec3addfdd87448cdabb66a462d88ccf3988776d5ea446d8f1f0813198",
+      "src/scene/SceneRenderer.ts": "3caaa571a0e18b9542f709df10512556aef76cd25692a3e550de1157305c19e8",
+      "src/components/ScrollViewport.tsx": "d85d082e3e13db9385a3410bbf7efdc9c72a21f05a0a768ebd566a1339b3ae34",
+      "src/App.tsx": "08826e7b9c2dfd1b7744c80fb3bd8a90a92c5a93c5df8a4f8a4299b42446d55e"
+    },
+    "sourceHashesAfter": {
+      "src/components/ArtEncounters.tsx": "265fdafa82d6433e3957f74ae268ca8720991aed322acf6fa525fcb1cb95aa1e",
+      "src/styles/art-encounters.css": "ddd069d12e8e16de8fd708cf57d90eb6f9780c6bbe35a938d32914fb0ae80966",
+      "src/data/artEncounters.ts": "11625b51e66a0e2f01decd03187de846f317a256ce43861bc9f2c27739e67f27",
+      "src/scene/artworkProjection.ts": "243b219ec3addfdd87448cdabb66a462d88ccf3988776d5ea446d8f1f0813198",
+      "src/scene/SceneRenderer.ts": "3caaa571a0e18b9542f709df10512556aef76cd25692a3e550de1157305c19e8",
+      "src/components/ScrollViewport.tsx": "d85d082e3e13db9385a3410bbf7efdc9c72a21f05a0a768ebd566a1339b3ae34",
+      "src/App.tsx": "08826e7b9c2dfd1b7744c80fb3bd8a90a92c5a93c5df8a4f8a4299b42446d55e"
+    }
+  },
+  "errors": [],
+  "results": [
+    {
+      "id": 1,
+      "narrativeRetracted": true
+    },
+    {
+      "chapterId": 1,
+      "width": 1280,
+      "inside": true,
+      "narrativeOverlap": false,
+      "controlsOverlap": false,
+      "sourceViewport": {
+        "x": 144.66666666666669,
+        "y": 0,
+        "width": 922.6666666666666,
+        "height": 519,
+        "aspect": 1.7777777777777777
+      },
+      "note": {
+        "x": 724.828125,
+        "y": 510.1875,
+        "width": 436.3125,
+        "height": 83.484375,
+        "top": 510.1875,
+        "right": 1161.140625,
+        "bottom": 593.671875,
+        "left": 724.828125
+      },
+      "markers": [
+        {
+          "label": "辨读火中牡丹的传说",
+          "box": {
+            "x": 733.109375,
+            "y": 382.84375,
+            "width": 44,
+            "height": 44,
+            "top": 382.84375,
+            "right": 777.109375,
+            "bottom": 426.84375,
+            "left": 733.109375
+          }
+        },
+        {
+          "label": "读北宋牡丹史料",
+          "box": {
+            "x": 565.46875,
+            "y": 288.078125,
+            "width": 44,
+            "height": 44,
+            "top": 288.078125,
+            "right": 609.46875,
+            "bottom": 332.078125,
+            "left": 565.46875
+          }
+        }
+      ],
+      "bodyFont": "18px",
+      "sourceFont": "12px",
+      "shader": "[]",
+      "textureFailed": "0"
+    },
+    {
+      "chapterId": 1,
+      "width": 1920,
+      "inside": true,
+      "narrativeOverlap": false,
+      "controlsOverlap": false,
+      "sourceViewport": {
+        "x": 170.44444444444446,
+        "y": 0,
+        "width": 1511.111111111111,
+        "height": 850,
+        "aspect": 1.7777777777777777
+      },
+      "note": {
+        "x": 1089.625,
+        "y": 833.015625,
+        "width": 650,
+        "height": 91.1875,
+        "top": 833.015625,
+        "right": 1739.625,
+        "bottom": 924.203125,
+        "left": 1089.625
+      },
+      "markers": [
+        {
+          "label": "辨读火中牡丹的传说",
+          "box": {
+            "x": 1126.53125,
+            "y": 601.484375,
+            "width": 44,
+            "height": 44,
+            "top": 601.484375,
+            "right": 1170.53125,
+            "bottom": 645.484375,
+            "left": 1126.53125
+          }
+        },
+        {
+          "label": "读北宋牡丹史料",
+          "box": {
+            "x": 851.96875,
+            "y": 446.25,
+            "width": 44,
+            "height": 44,
+            "top": 446.25,
+            "right": 895.96875,
+            "bottom": 490.25,
+            "left": 851.96875
+          }
+        }
+      ],
+      "bodyFont": "18px",
+      "sourceFont": "12px",
+      "shader": "[]",
+      "textureFailed": "0"
+    },
+    {
+      "chapterId": 1,
+      "width": 2560,
+      "inside": true,
+      "narrativeOverlap": false,
+      "controlsOverlap": false,
+      "sourceViewport": {
+        "x": 170.44444444444457,
+        "y": 0,
+        "width": 2151.111111111111,
+        "height": 1210,
+        "aspect": 1.7777777777777777
+      },
+      "note": {
+        "x": 1454.4375,
+        "y": 1176.234375,
+        "width": 650,
+        "height": 97.890625,
+        "top": 1176.234375,
+        "right": 2104.4375,
+        "bottom": 1274.125,
+        "left": 1454.4375
+      },
+      "markers": [
+        {
+          "label": "辨读火中牡丹的传说",
+          "box": {
+            "x": 1526.390625,
+            "y": 824.046875,
+            "width": 44,
+            "height": 44,
+            "top": 824.046875,
+            "right": 1570.390625,
+            "bottom": 868.046875,
+            "left": 1526.390625
+          }
+        },
+        {
+          "label": "读北宋牡丹史料",
+          "box": {
+            "x": 1135.53125,
+            "y": 603.078125,
+            "width": 44,
+            "height": 44,
+            "top": 603.078125,
+            "right": 1179.53125,
+            "bottom": 647.078125,
+            "left": 1135.53125
+          }
+        }
+      ],
+      "bodyFont": "20px",
+      "sourceFont": "14px",
+      "shader": "[]",
+      "textureFailed": "0"
+    },
+    {
+      "id": 1,
+      "narrativeRestored": true,
+      "narrativeMode": "poetic"
+    },
+    {
+      "id": 1,
+      "escClosed": true,
+      "wheelWorks": true,
+      "before": "0.651009",
+      "after": "0.656009"
+    },
+    {
+      "id": 2,
+      "narrativeRetracted": true
+    },
+    {
+      "chapterId": 2,
+      "width": 1280,
+      "inside": true,
+      "narrativeOverlap": false,
+      "controlsOverlap": false,
+      "sourceViewport": {
+        "x": 144.66666666666669,
+        "y": 0,
+        "width": 922.6666666666666,
+        "height": 519,
+        "aspect": 1.7777777777777777
+      },
+      "note": {
+        "x": 124.890625,
+        "y": 515.90625,
+        "width": 739.3125,
+        "height": 83.984375,
+        "top": 515.90625,
+        "right": 864.203125,
+        "bottom": 599.890625,
+        "left": 124.890625
+      },
+      "markers": [
+        {
+          "label": "望向花间",
+          "box": {
+            "x": 377.46875,
+            "y": 454.28125,
+            "width": 44,
+            "height": 44,
+            "top": 454.28125,
+            "right": 421.46875,
+            "bottom": 498.28125,
+            "left": 377.46875
+          }
+        },
+        {
+          "label": "望向舟中",
+          "box": {
+            "x": 686.359375,
+            "y": 346.46875,
+            "width": 44,
+            "height": 44,
+            "top": 346.46875,
+            "right": 730.359375,
+            "bottom": 390.46875,
+            "left": 686.359375
+          }
+        },
+        {
+          "label": "望向桥上",
+          "box": {
+            "x": 903.34375,
+            "y": 243.0625,
+            "width": 44,
+            "height": 44,
+            "top": 243.0625,
+            "right": 947.34375,
+            "bottom": 287.0625,
+            "left": 903.34375
+          }
+        }
+      ],
+      "bodyFont": "18px",
+      "sourceFont": "12px",
+      "shader": "[]",
+      "textureFailed": "0"
+    },
+    {
+      "chapterId": 2,
+      "width": 1920,
+      "inside": true,
+      "narrativeOverlap": false,
+      "controlsOverlap": false,
+      "sourceViewport": {
+        "x": 170.44444444444446,
+        "y": 0,
+        "width": 1511.111111111111,
+        "height": 850,
+        "aspect": 1.7777777777777777
+      },
+      "note": {
+        "x": 172.890625,
+        "y": 828.515625,
+        "width": 1129.71875,
+        "height": 93.984375,
+        "top": 828.515625,
+        "right": 1302.609375,
+        "bottom": 922.5,
+        "left": 172.890625
+      },
+      "markers": [
+        {
+          "label": "望向花间",
+          "box": {
+            "x": 544.078125,
+            "y": 718.46875,
+            "width": 44,
+            "height": 44,
+            "top": 718.46875,
+            "right": 588.078125,
+            "bottom": 762.46875,
+            "left": 544.078125
+          }
+        },
+        {
+          "label": "望向舟中",
+          "box": {
+            "x": 1049.96875,
+            "y": 541.890625,
+            "width": 44,
+            "height": 44,
+            "top": 541.890625,
+            "right": 1093.96875,
+            "bottom": 585.890625,
+            "left": 1049.96875
+          }
+        },
+        {
+          "label": "望向桥上",
+          "box": {
+            "x": 1405.34375,
+            "y": 372.53125,
+            "width": 44,
+            "height": 44,
+            "top": 372.53125,
+            "right": 1449.34375,
+            "bottom": 416.53125,
+            "left": 1405.34375
+          }
+        }
+      ],
+      "bodyFont": "18px",
+      "sourceFont": "12px",
+      "shader": "[]",
+      "textureFailed": "0"
+    },
+    {
+      "chapterId": 2,
+      "width": 2560,
+      "inside": true,
+      "narrativeOverlap": false,
+      "controlsOverlap": false,
+      "sourceViewport": {
+        "x": 170.44444444444457,
+        "y": 0,
+        "width": 2151.111111111111,
+        "height": 1210,
+        "aspect": 1.7777777777777777
+      },
+      "note": {
+        "x": 220.890625,
+        "y": 1170.8125,
+        "width": 1150,
+        "height": 100.890625,
+        "top": 1170.8125,
+        "right": 1370.890625,
+        "bottom": 1271.703125,
+        "left": 220.890625
+      },
+      "markers": [
+        {
+          "label": "望向花间",
+          "box": {
+            "x": 697.234375,
+            "y": 990.5625,
+            "width": 44,
+            "height": 44,
+            "top": 990.5625,
+            "right": 741.234375,
+            "bottom": 1034.5625,
+            "left": 697.234375
+          }
+        },
+        {
+          "label": "望向舟中",
+          "box": {
+            "x": 1417.390625,
+            "y": 739.203125,
+            "width": 44,
+            "height": 44,
+            "top": 739.203125,
+            "right": 1461.390625,
+            "bottom": 783.203125,
+            "left": 1417.390625
+          }
+        },
+        {
+          "label": "望向桥上",
+          "box": {
+            "x": 1923.28125,
+            "y": 498.125,
+            "width": 44,
+            "height": 44,
+            "top": 498.125,
+            "right": 1967.28125,
+            "bottom": 542.125,
+            "left": 1923.28125
+          }
+        }
+      ],
+      "bodyFont": "20px",
+      "sourceFont": "14px",
+      "shader": "[]",
+      "textureFailed": "0"
+    },
+    {
+      "id": 2,
+      "narrativeRestored": true,
+      "narrativeMode": "poetic"
+    },
+    {
+      "id": 2,
+      "escClosed": true,
+      "wheelWorks": true,
+      "before": "0.112506",
+      "after": "0.117506"
+    },
+    {
+      "id": 3,
+      "narrativeRetracted": true
+    },
+    {
+      "id": 3,
+      "keyboardWeaving": true
+    },
+    {
+      "id": 3,
+      "resetFocus": true
+    },
+    {
+      "chapterId": 3,
+      "width": 1280,
+      "inside": true,
+      "narrativeOverlap": false,
+      "controlsOverlap": false,
+      "sourceViewport": {
+        "x": 144.66666666666669,
+        "y": 0,
+        "width": 922.6666666666666,
+        "height": 519,
+        "aspect": 1.7777777777777777
+      },
+      "note": {
+        "x": 627.875,
+        "y": 94.375,
+        "width": 278.75,
+        "height": 142.734375,
+        "top": 94.375,
+        "right": 906.625,
+        "bottom": 237.109375,
+        "left": 627.875
+      },
+      "markers": [
+        {
+          "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+          "box": {
+            "x": 618.453125,
+            "y": 550.0625,
+            "width": 44,
+            "height": 44,
+            "top": 550.0625,
+            "right": 662.453125,
+            "bottom": 594.0625,
+            "left": 618.453125
+          }
+        },
+        {
+          "label": "锦面牡丹，请先选取花意",
+          "box": {
+            "x": 474.609375,
+            "y": 468.1875,
+            "width": 44,
+            "height": 44,
+            "top": 468.1875,
+            "right": 518.609375,
+            "bottom": 512.1875,
+            "left": 474.609375
+          }
+        }
+      ],
+      "bodyFont": "18px",
+      "sourceFont": "12px",
+      "shader": "[]",
+      "textureFailed": "0"
+    },
+    {
+      "chapterId": 3,
+      "width": 1920,
+      "inside": true,
+      "narrativeOverlap": false,
+      "controlsOverlap": false,
+      "sourceViewport": {
+        "x": 170.44444444444446,
+        "y": 0,
+        "width": 1511.111111111111,
+        "height": 850,
+        "aspect": 1.7777777777777777
+      },
+      "note": {
+        "x": 960,
+        "y": 123.5,
+        "width": 407.4375,
+        "height": 216.40625,
+        "top": 123.5,
+        "right": 1367.4375,
+        "bottom": 339.90625,
+        "left": 960
+      },
+      "markers": [
+        {
+          "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+          "box": {
+            "x": 938.75,
+            "y": 875.34375,
+            "width": 44,
+            "height": 44,
+            "top": 875.34375,
+            "right": 982.75,
+            "bottom": 919.34375,
+            "left": 938.75
+          }
+        },
+        {
+          "label": "锦面牡丹，请先选取花意",
+          "box": {
+            "x": 703.15625,
+            "y": 741.234375,
+            "width": 44,
+            "height": 44,
+            "top": 741.234375,
+            "right": 747.15625,
+            "bottom": 785.234375,
+            "left": 703.15625
+          }
+        }
+      ],
+      "bodyFont": "18px",
+      "sourceFont": "12px",
+      "shader": "[]",
+      "textureFailed": "0"
+    },
+    {
+      "chapterId": 3,
+      "width": 2560,
+      "inside": true,
+      "narrativeOverlap": false,
+      "controlsOverlap": false,
+      "sourceViewport": {
+        "x": 170.44444444444457,
+        "y": 0,
+        "width": 2151.111111111111,
+        "height": 1210,
+        "aspect": 1.7777777777777777
+      },
+      "note": {
+        "x": 1280,
+        "y": 134.296875,
+        "width": 440,
+        "height": 232.421875,
+        "top": 134.296875,
+        "right": 1720,
+        "bottom": 366.71875,
+        "left": 1280
+      },
+      "markers": [
+        {
+          "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+          "box": {
+            "x": 1259.0625,
+            "y": 1213.890625,
+            "width": 44,
+            "height": 44,
+            "top": 1213.890625,
+            "right": 1303.0625,
+            "bottom": 1257.890625,
+            "left": 1259.0625
+          }
+        },
+        {
+          "label": "锦面牡丹，请先选取花意",
+          "box": {
+            "x": 923.703125,
+            "y": 1022.984375,
+            "width": 44,
+            "height": 44,
+            "top": 1022.984375,
+            "right": 967.703125,
+            "bottom": 1066.984375,
+            "left": 923.703125
+          }
+        }
+      ],
+      "bodyFont": "20px",
+      "sourceFont": "12px",
+      "shader": "[]",
+      "textureFailed": "0"
+    },
+    {
+      "id": 3,
+      "narrativeRestored": true,
+      "narrativeMode": "poetic"
+    },
+    {
+      "id": 3,
+      "escClosed": true,
+      "wheelWorks": true,
+      "before": "0.580552",
+      "after": "0.585552"
+    },
+    {
+      "id": 4,
+      "narrativeRetracted": true
+    },
+    {
+      "id": 4,
+      "poemToggleFocus": true
+    },
+    {
+      "chapterId": 4,
+      "width": 1280,
+      "inside": true,
+      "narrativeOverlap": false,
+      "controlsOverlap": false,
+      "sourceViewport": {
+        "x": 242.70000000000005,
+        "y": 0,
+        "width": 726.5999999999999,
+        "height": 519,
+        "aspect": 1.4
+      },
+      "note": {
+        "x": 1084.828125,
+        "y": 130.703125,
+        "width": 127.25,
+        "height": 446.359375,
+        "top": 130.703125,
+        "right": 1212.078125,
+        "bottom": 577.0625,
+        "left": 1084.828125
+      },
+      "markers": [
+        {
+          "label": "展读原画诗笺，清平调其一",
+          "box": {
+            "x": 544.015625,
+            "y": 421.390625,
+            "width": 44,
+            "height": 44,
+            "top": 421.390625,
+            "right": 588.015625,
+            "bottom": 465.390625,
+            "left": 544.015625
+          }
+        }
+      ],
+      "bodyFont": "18px",
+      "sourceFont": "12px",
+      "shader": "[]",
+      "textureFailed": "0"
+    },
+    {
+      "chapterId": 4,
+      "width": 1920,
+      "inside": true,
+      "narrativeOverlap": false,
+      "controlsOverlap": false,
+      "sourceViewport": {
+        "x": 331,
+        "y": 0,
+        "width": 1190,
+        "height": 850,
+        "aspect": 1.4
+      },
+      "note": {
+        "x": 1639.703125,
+        "y": 225.5,
+        "width": 194.453125,
+        "height": 646,
+        "top": 225.5,
+        "right": 1834.15625,
+        "bottom": 871.5,
+        "left": 1639.703125
+      },
+      "markers": [
+        {
+          "label": "展读原画诗笺，清平调其一",
+          "box": {
+            "x": 816.828125,
+            "y": 664.59375,
+            "width": 44,
+            "height": 44,
+            "top": 664.59375,
+            "right": 860.828125,
+            "bottom": 708.59375,
+            "left": 816.828125
+          }
+        }
+      ],
+      "bodyFont": "18px",
+      "sourceFont": "12px",
+      "shader": "[]",
+      "textureFailed": "0"
+    },
+    {
+      "chapterId": 4,
+      "width": 2560,
+      "inside": true,
+      "narrativeOverlap": false,
+      "controlsOverlap": false,
+      "sourceViewport": {
+        "x": 399,
+        "y": 0,
+        "width": 1694,
+        "height": 1210,
+        "aspect": 1.4
+      },
+      "note": {
+        "x": 2194.578125,
+        "y": 279.5,
+        "width": 261.65625,
+        "height": 919.609375,
+        "top": 279.5,
+        "right": 2456.234375,
+        "bottom": 1199.109375,
+        "left": 2194.578125
+      },
+      "markers": [
+        {
+          "label": "展读原画诗笺，清平调其一",
+          "box": {
+            "x": 1085.515625,
+            "y": 913.890625,
+            "width": 44,
+            "height": 44,
+            "top": 913.890625,
+            "right": 1129.515625,
+            "bottom": 957.890625,
+            "left": 1085.515625
+          }
+        }
+      ],
+      "bodyFont": "20px",
+      "sourceFont": "12px",
+      "shader": "[]",
+      "textureFailed": "0"
+    },
+    {
+      "id": 4,
+      "narrativeRestored": true,
+      "narrativeMode": "poetic"
+    },
+    {
+      "id": 4,
+      "escClosed": true,
+      "wheelWorks": true,
+      "before": "0.324625",
+      "after": "0.329625"
+    }
+  ]
+}

@@ -1,0 +1,2110 @@
+{
+  "checkedAt": "2026-10-23T03:23:39.421Z",
+  "localTime": "2026-10-23 11:23:39",
+  "timeZone": "Asia/Shanghai",
+  "assetsDir": "public/assets/new-scrolls",
+  "status": "pass",
+  "scope": "结构与文件完整性检查；不代替浏览器视觉、运行帧率或 GPU 资源释放验收。",
+  "totals": {
+    "chapters": 4,
+    "errors": 0,
+    "warnings": 1,
+    "browserBytes": 403415325,
+    "directoryBytes": 533088809
+  },
+  "chapters": [
+    {
+      "id": "chapter-1",
+      "manifestPath": "public/assets/new-scrolls/chapter-1/scene.json",
+      "status": "pass-with-warnings",
+      "errors": [],
+      "warnings": [
+        {
+          "location": "sizes.browserBytes",
+          "message": "本卷浏览器资源合计 158.28 MiB，建议检查分段加载。"
+        }
+      ],
+      "counts": {
+        "meshes": 149,
+        "textMeshes": 0,
+        "materials": 108,
+        "textures": 99,
+        "validTextures": 99,
+        "vertices": 47418,
+        "triangles": 34253,
+        "cameraSamples": 3024,
+        "stops": 15,
+        "markers": 17,
+        "animatedObjects": 22
+      },
+      "sizes": {
+        "manifestBytes": 6706197,
+        "directoryBytes": 241599560,
+        "fileCount": 142,
+        "textureBytes": 159267162,
+        "browserBytes": 165973359,
+        "decodedRgbaBytes": 574054704,
+        "maxTextureEdge": 2084
+      },
+      "textures": [
+        {
+          "src": "textures/3e7036a34bd54ab5.webp",
+          "format": "WebP",
+          "width": 1442,
+          "height": 1091,
+          "bytes": 2001286,
+          "references": 2
+        },
+        {
+          "src": "textures/acfc4e0d47c0a8f9.webp",
+          "format": "WebP",
+          "width": 1774,
+          "height": 887,
+          "bytes": 1372128,
+          "references": 2
+        },
+        {
+          "src": "textures/f39745ee605b1d66.webp",
+          "format": "WebP",
+          "width": 1774,
+          "height": 887,
+          "bytes": 1335268,
+          "references": 2
+        },
+        {
+          "src": "textures/8e9aa67529516445.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2388458,
+          "references": 2
+        },
+        {
+          "src": "textures/e2a1b0d11ff61f17.webp",
+          "format": "WebP",
+          "width": 1173,
+          "height": 1341,
+          "bytes": 1073396,
+          "references": 2
+        },
+        {
+          "src": "textures/e924d6510b01a962.webp",
+          "format": "WebP",
+          "width": 1672,
+          "height": 941,
+          "bytes": 1681714,
+          "references": 2
+        },
+        {
+          "src": "textures/0ee3549e1a2ea5c2.webp",
+          "format": "WebP",
+          "width": 1299,
+          "height": 1211,
+          "bytes": 1447108,
+          "references": 2
+        },
+        {
+          "src": "textures/cb87024bde671a38.webp",
+          "format": "WebP",
+          "width": 1145,
+          "height": 1373,
+          "bytes": 1782896,
+          "references": 2
+        },
+        {
+          "src": "textures/abf5eafec62393e4.webp",
+          "format": "WebP",
+          "width": 1364,
+          "height": 1153,
+          "bytes": 1298336,
+          "references": 2
+        },
+        {
+          "src": "textures/9626fe28b66e4a17.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2025812,
+          "references": 2
+        },
+        {
+          "src": "textures/4560ef49860878c0.webp",
+          "format": "WebP",
+          "width": 1263,
+          "height": 1246,
+          "bytes": 1194770,
+          "references": 2
+        },
+        {
+          "src": "textures/5c6ddc8b533630fa.webp",
+          "format": "WebP",
+          "width": 1374,
+          "height": 1134,
+          "bytes": 1731396,
+          "references": 2
+        },
+        {
+          "src": "textures/bd4254cbff8d7912.webp",
+          "format": "WebP",
+          "width": 1266,
+          "height": 1202,
+          "bytes": 1636568,
+          "references": 2
+        },
+        {
+          "src": "textures/fcdcb29c987e5a59.webp",
+          "format": "WebP",
+          "width": 1255,
+          "height": 1247,
+          "bytes": 1657804,
+          "references": 2
+        },
+        {
+          "src": "textures/f3abade799e647f4.webp",
+          "format": "WebP",
+          "width": 1508,
+          "height": 1001,
+          "bytes": 1282448,
+          "references": 2
+        },
+        {
+          "src": "textures/2324939eb1e340e5.webp",
+          "format": "WebP",
+          "width": 1475,
+          "height": 960,
+          "bytes": 1423864,
+          "references": 2
+        },
+        {
+          "src": "textures/fd4a640b47a03243.webp",
+          "format": "WebP",
+          "width": 1357,
+          "height": 964,
+          "bytes": 1084646,
+          "references": 2
+        },
+        {
+          "src": "textures/b94fc82c9eb4020a.webp",
+          "format": "WebP",
+          "width": 1960,
+          "height": 802,
+          "bytes": 897312,
+          "references": 2
+        },
+        {
+          "src": "textures/f93191a5033db4b5.webp",
+          "format": "WebP",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 2209610,
+          "references": 2
+        },
+        {
+          "src": "textures/808754b982d784ec.webp",
+          "format": "WebP",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 1109080,
+          "references": 2
+        },
+        {
+          "src": "textures/c89eeebd8405cb3f.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2096484,
+          "references": 2
+        },
+        {
+          "src": "textures/ffdf16c747f152bd.webp",
+          "format": "WebP",
+          "width": 1697,
+          "height": 667,
+          "bytes": 1248074,
+          "references": 2
+        },
+        {
+          "src": "textures/193d747551251c10.webp",
+          "format": "WebP",
+          "width": 1655,
+          "height": 831,
+          "bytes": 1557296,
+          "references": 2
+        },
+        {
+          "src": "textures/4bfe2c5cccd25bf3.webp",
+          "format": "WebP",
+          "width": 797,
+          "height": 1363,
+          "bytes": 828166,
+          "references": 2
+        },
+        {
+          "src": "textures/3e04bfd91a7644f1.webp",
+          "format": "WebP",
+          "width": 736,
+          "height": 1282,
+          "bytes": 718056,
+          "references": 2
+        },
+        {
+          "src": "textures/5d46455c79d6200f.webp",
+          "format": "WebP",
+          "width": 2021,
+          "height": 700,
+          "bytes": 886282,
+          "references": 2
+        },
+        {
+          "src": "textures/c68cc7fc877955bc.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2342472,
+          "references": 2
+        },
+        {
+          "src": "textures/ed99a2a1017c293e.webp",
+          "format": "WebP",
+          "width": 1494,
+          "height": 1004,
+          "bytes": 1270284,
+          "references": 2
+        },
+        {
+          "src": "textures/feb3ba4cb2b5bd5b.webp",
+          "format": "WebP",
+          "width": 1626,
+          "height": 967,
+          "bytes": 1989024,
+          "references": 3
+        },
+        {
+          "src": "textures/b78c04b61bfa618e.webp",
+          "format": "WebP",
+          "width": 1474,
+          "height": 978,
+          "bytes": 1506330,
+          "references": 2
+        },
+        {
+          "src": "textures/6548394920703cf7.webp",
+          "format": "WebP",
+          "width": 1647,
+          "height": 955,
+          "bytes": 2063542,
+          "references": 2
+        },
+        {
+          "src": "textures/4a13b75621827763.webp",
+          "format": "WebP",
+          "width": 1347,
+          "height": 1167,
+          "bytes": 1801356,
+          "references": 2
+        },
+        {
+          "src": "textures/02e11304c2017df6.webp",
+          "format": "WebP",
+          "width": 1439,
+          "height": 1093,
+          "bytes": 1682116,
+          "references": 2
+        },
+        {
+          "src": "textures/fdd0ad9b29bcb9e7.webp",
+          "format": "WebP",
+          "width": 1649,
+          "height": 860,
+          "bytes": 1652588,
+          "references": 2
+        },
+        {
+          "src": "textures/76723c1dd92b9b3a.webp",
+          "format": "WebP",
+          "width": 827,
+          "height": 799,
+          "bytes": 404394,
+          "references": 2
+        },
+        {
+          "src": "textures/b9468fdb8edfbf9d.webp",
+          "format": "WebP",
+          "width": 1583,
+          "height": 955,
+          "bytes": 1658306,
+          "references": 3
+        },
+        {
+          "src": "textures/db82884a9ce546f0.webp",
+          "format": "WebP",
+          "width": 1494,
+          "height": 923,
+          "bytes": 1997416,
+          "references": 2
+        },
+        {
+          "src": "textures/b69c05f297e666b3.webp",
+          "format": "WebP",
+          "width": 2084,
+          "height": 754,
+          "bytes": 888488,
+          "references": 2
+        },
+        {
+          "src": "textures/39dcfe1b7ab846de.webp",
+          "format": "WebP",
+          "width": 1490,
+          "height": 1038,
+          "bytes": 1590154,
+          "references": 2
+        },
+        {
+          "src": "textures/53cb0f1133bd6870.webp",
+          "format": "WebP",
+          "width": 1514,
+          "height": 1008,
+          "bytes": 2389818,
+          "references": 2
+        },
+        {
+          "src": "textures/f44fd9d8ef6259ec.webp",
+          "format": "WebP",
+          "width": 1424,
+          "height": 1105,
+          "bytes": 2156696,
+          "references": 2
+        },
+        {
+          "src": "textures/50017de3a8408eda.webp",
+          "format": "WebP",
+          "width": 1964,
+          "height": 767,
+          "bytes": 1648876,
+          "references": 2
+        },
+        {
+          "src": "textures/901cc3d0946f5cf3.webp",
+          "format": "WebP",
+          "width": 895,
+          "height": 1451,
+          "bytes": 1872158,
+          "references": 2
+        },
+        {
+          "src": "textures/e3daa768cdd77bd1.webp",
+          "format": "WebP",
+          "width": 829,
+          "height": 1396,
+          "bytes": 1690332,
+          "references": 2
+        },
+        {
+          "src": "textures/f7f961e27e773893.webp",
+          "format": "WebP",
+          "width": 834,
+          "height": 1370,
+          "bytes": 1803208,
+          "references": 2
+        },
+        {
+          "src": "textures/46a4b644ce449d89.webp",
+          "format": "WebP",
+          "width": 2048,
+          "height": 692,
+          "bytes": 1921688,
+          "references": 3
+        },
+        {
+          "src": "textures/3fd09c5dfd252ca1.webp",
+          "format": "WebP",
+          "width": 1644,
+          "height": 698,
+          "bytes": 1554722,
+          "references": 2
+        },
+        {
+          "src": "textures/81f78acaf78c4254.webp",
+          "format": "WebP",
+          "width": 1334,
+          "height": 1179,
+          "bytes": 1313340,
+          "references": 2
+        },
+        {
+          "src": "textures/4fd1e30f57496085.webp",
+          "format": "WebP",
+          "width": 998,
+          "height": 1425,
+          "bytes": 2166004,
+          "references": 2
+        },
+        {
+          "src": "textures/f612713300327382.webp",
+          "format": "WebP",
+          "width": 1169,
+          "height": 1279,
+          "bytes": 1966098,
+          "references": 2
+        },
+        {
+          "src": "textures/6844fa33868cc53b.webp",
+          "format": "WebP",
+          "width": 1458,
+          "height": 911,
+          "bytes": 1841112,
+          "references": 2
+        },
+        {
+          "src": "textures/968084d1d8e00ba7.webp",
+          "format": "WebP",
+          "width": 1487,
+          "height": 834,
+          "bytes": 1970812,
+          "references": 3
+        },
+        {
+          "src": "textures/16fe9a9c5cd646ba.webp",
+          "format": "WebP",
+          "width": 1653,
+          "height": 839,
+          "bytes": 1836716,
+          "references": 2
+        },
+        {
+          "src": "textures/ac247ff91b633456.webp",
+          "format": "WebP",
+          "width": 1319,
+          "height": 1182,
+          "bytes": 1748908,
+          "references": 2
+        },
+        {
+          "src": "textures/179c4b549bf8b52c.webp",
+          "format": "WebP",
+          "width": 1011,
+          "height": 1527,
+          "bytes": 1937466,
+          "references": 2
+        },
+        {
+          "src": "textures/71f8cb3c5a2d5b83.webp",
+          "format": "WebP",
+          "width": 1011,
+          "height": 1528,
+          "bytes": 1562112,
+          "references": 2
+        },
+        {
+          "src": "textures/5d71f34e5eea46dc.webp",
+          "format": "WebP",
+          "width": 1466,
+          "height": 1073,
+          "bytes": 1458754,
+          "references": 2
+        },
+        {
+          "src": "textures/19b0a0d6cfd17d47.webp",
+          "format": "WebP",
+          "width": 1657,
+          "height": 876,
+          "bytes": 1690778,
+          "references": 2
+        },
+        {
+          "src": "textures/2d66886d8b0d4367.webp",
+          "format": "WebP",
+          "width": 1883,
+          "height": 746,
+          "bytes": 1716832,
+          "references": 2
+        },
+        {
+          "src": "textures/1cf7f5363f972dd2.webp",
+          "format": "WebP",
+          "width": 1980,
+          "height": 763,
+          "bytes": 1932398,
+          "references": 2
+        },
+        {
+          "src": "textures/baf050d9d94c1a19.webp",
+          "format": "WebP",
+          "width": 1670,
+          "height": 942,
+          "bytes": 1696186,
+          "references": 2
+        },
+        {
+          "src": "textures/dadefcc08d342080.webp",
+          "format": "WebP",
+          "width": 1386,
+          "height": 1135,
+          "bytes": 2059008,
+          "references": 2
+        },
+        {
+          "src": "textures/58cf7cbba7d522a5.webp",
+          "format": "WebP",
+          "width": 1412,
+          "height": 1104,
+          "bytes": 1785406,
+          "references": 2
+        },
+        {
+          "src": "textures/57a1cbf81cb84316.webp",
+          "format": "WebP",
+          "width": 1647,
+          "height": 877,
+          "bytes": 1965384,
+          "references": 2
+        },
+        {
+          "src": "textures/8fa99b0942487031.webp",
+          "format": "WebP",
+          "width": 1290,
+          "height": 991,
+          "bytes": 1511672,
+          "references": 2
+        },
+        {
+          "src": "textures/89351583b2859b80.webp",
+          "format": "WebP",
+          "width": 1438,
+          "height": 933,
+          "bytes": 1302964,
+          "references": 2
+        },
+        {
+          "src": "textures/834c9f86ced2650c.webp",
+          "format": "WebP",
+          "width": 1525,
+          "height": 1014,
+          "bytes": 2022216,
+          "references": 3
+        },
+        {
+          "src": "textures/233c9a378f4b387b.webp",
+          "format": "WebP",
+          "width": 2048,
+          "height": 676,
+          "bytes": 1294172,
+          "references": 2
+        },
+        {
+          "src": "textures/785c427be2863299.webp",
+          "format": "WebP",
+          "width": 1641,
+          "height": 927,
+          "bytes": 1946196,
+          "references": 2
+        },
+        {
+          "src": "textures/b2985031fe52d2c8.webp",
+          "format": "WebP",
+          "width": 1776,
+          "height": 886,
+          "bytes": 1853662,
+          "references": 2
+        },
+        {
+          "src": "textures/c89669d0003491ac.webp",
+          "format": "WebP",
+          "width": 1260,
+          "height": 1023,
+          "bytes": 1258484,
+          "references": 2
+        },
+        {
+          "src": "textures/379b4eeaa463d414.webp",
+          "format": "WebP",
+          "width": 1313,
+          "height": 1198,
+          "bytes": 2093808,
+          "references": 2
+        },
+        {
+          "src": "textures/f3fd30718916f244.webp",
+          "format": "WebP",
+          "width": 1521,
+          "height": 875,
+          "bytes": 1474156,
+          "references": 3
+        },
+        {
+          "src": "textures/d7c1abb927b9d7ba.webp",
+          "format": "WebP",
+          "width": 1309,
+          "height": 1202,
+          "bytes": 2091378,
+          "references": 2
+        },
+        {
+          "src": "textures/b2d3963198ef6049.webp",
+          "format": "WebP",
+          "width": 1282,
+          "height": 1227,
+          "bytes": 1706112,
+          "references": 2
+        },
+        {
+          "src": "textures/053eec4391d3ec32.webp",
+          "format": "WebP",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 1701798,
+          "references": 2
+        },
+        {
+          "src": "textures/9e4e39e56f2ccd75.webp",
+          "format": "WebP",
+          "width": 1066,
+          "height": 1389,
+          "bytes": 1665372,
+          "references": 2
+        },
+        {
+          "src": "textures/733141417f39706d.webp",
+          "format": "WebP",
+          "width": 1721,
+          "height": 823,
+          "bytes": 1312394,
+          "references": 2
+        },
+        {
+          "src": "textures/82fd41e8f44ddf4b.webp",
+          "format": "WebP",
+          "width": 1583,
+          "height": 943,
+          "bytes": 1752818,
+          "references": 2
+        },
+        {
+          "src": "textures/71f24d37b5e81014.webp",
+          "format": "WebP",
+          "width": 1356,
+          "height": 1142,
+          "bytes": 1428386,
+          "references": 2
+        },
+        {
+          "src": "textures/cfc28531ae70b13c.webp",
+          "format": "WebP",
+          "width": 1638,
+          "height": 918,
+          "bytes": 1672966,
+          "references": 2
+        },
+        {
+          "src": "textures/77426e1d8846739e.webp",
+          "format": "WebP",
+          "width": 1372,
+          "height": 1072,
+          "bytes": 1784970,
+          "references": 3
+        },
+        {
+          "src": "textures/def1dd7d18f321f1.webp",
+          "format": "WebP",
+          "width": 2048,
+          "height": 689,
+          "bytes": 1543724,
+          "references": 2
+        },
+        {
+          "src": "textures/006f8351ff07c9c3.webp",
+          "format": "WebP",
+          "width": 1475,
+          "height": 966,
+          "bytes": 1261728,
+          "references": 2
+        },
+        {
+          "src": "textures/e12bc61b760d1add.webp",
+          "format": "WebP",
+          "width": 1328,
+          "height": 1184,
+          "bytes": 2001090,
+          "references": 2
+        },
+        {
+          "src": "textures/36f34e28119e6fa8.webp",
+          "format": "WebP",
+          "width": 1267,
+          "height": 1201,
+          "bytes": 1498046,
+          "references": 2
+        },
+        {
+          "src": "textures/6752696ca83b8e7a.webp",
+          "format": "WebP",
+          "width": 1263,
+          "height": 1230,
+          "bytes": 1515258,
+          "references": 2
+        },
+        {
+          "src": "textures/4bcd42c0f7a2e6d7.webp",
+          "format": "WebP",
+          "width": 1514,
+          "height": 999,
+          "bytes": 1218974,
+          "references": 2
+        },
+        {
+          "src": "textures/d5ad75bf3b9e5965.webp",
+          "format": "WebP",
+          "width": 1351,
+          "height": 1100,
+          "bytes": 1719280,
+          "references": 2
+        },
+        {
+          "src": "textures/75f94d7cb2f8123a.webp",
+          "format": "WebP",
+          "width": 1513,
+          "height": 1013,
+          "bytes": 1967378,
+          "references": 2
+        },
+        {
+          "src": "textures/31eeb9d6290b37e3.webp",
+          "format": "WebP",
+          "width": 1426,
+          "height": 1103,
+          "bytes": 1831634,
+          "references": 2
+        },
+        {
+          "src": "textures/4b35855ed5ffa59f.webp",
+          "format": "WebP",
+          "width": 1506,
+          "height": 950,
+          "bytes": 649050,
+          "references": 2
+        },
+        {
+          "src": "textures/03748d08d36315cd.webp",
+          "format": "WebP",
+          "width": 1017,
+          "height": 1493,
+          "bytes": 1599404,
+          "references": 2
+        },
+        {
+          "src": "textures/a4ee5c4880ffeafb.webp",
+          "format": "WebP",
+          "width": 1419,
+          "height": 1014,
+          "bytes": 1611822,
+          "references": 2
+        },
+        {
+          "src": "textures/2d00dd3b91177fdf.webp",
+          "format": "WebP",
+          "width": 1435,
+          "height": 920,
+          "bytes": 1410314,
+          "references": 3
+        },
+        {
+          "src": "textures/033361d9cdfdf379.webp",
+          "format": "WebP",
+          "width": 1245,
+          "height": 1101,
+          "bytes": 1593954,
+          "references": 2
+        },
+        {
+          "src": "textures/77deecd75d232ec3.webp",
+          "format": "WebP",
+          "width": 1288,
+          "height": 1061,
+          "bytes": 1583530,
+          "references": 2
+        },
+        {
+          "src": "textures/786854ef284f5f8d.webp",
+          "format": "WebP",
+          "width": 1291,
+          "height": 1023,
+          "bytes": 1385390,
+          "references": 2
+        },
+        {
+          "src": "textures/bb7cac307430ce1e.webp",
+          "format": "WebP",
+          "width": 698,
+          "height": 603,
+          "bytes": 503522,
+          "references": 2
+        }
+      ],
+      "sourceAudit": {
+        "missingImages": [],
+        "skippedObjects": [],
+        "repairedImages": 0
+      }
+    },
+    {
+      "id": "chapter-2",
+      "manifestPath": "public/assets/new-scrolls/chapter-2/scene.json",
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "meshes": 58,
+        "textMeshes": 0,
+        "materials": 47,
+        "textures": 35,
+        "validTextures": 35,
+        "vertices": 246,
+        "triangles": 130,
+        "cameraSamples": 2152,
+        "stops": 7,
+        "markers": 21,
+        "animatedObjects": 4
+      },
+      "sizes": {
+        "manifestBytes": 929511,
+        "directoryBytes": 72415090,
+        "fileCount": 48,
+        "textureBytes": 58908172,
+        "browserBytes": 59837683,
+        "decodedRgbaBytes": 218007356,
+        "maxTextureEdge": 2172
+      },
+      "textures": [
+        {
+          "src": "textures/90389c2df78e00c2.webp",
+          "format": "WebP",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 2166962,
+          "references": 2
+        },
+        {
+          "src": "textures/dd4a8057e2ea4775.webp",
+          "format": "WebP",
+          "width": 1280,
+          "height": 1229,
+          "bytes": 1667564,
+          "references": 2
+        },
+        {
+          "src": "textures/c0622f8b084d1b9f.webp",
+          "format": "WebP",
+          "width": 2129,
+          "height": 739,
+          "bytes": 1983198,
+          "references": 2
+        },
+        {
+          "src": "textures/cfad0abb19db9698.webp",
+          "format": "WebP",
+          "width": 1445,
+          "height": 1089,
+          "bytes": 1305356,
+          "references": 2
+        },
+        {
+          "src": "textures/c2f41850197ebcf6.webp",
+          "format": "WebP",
+          "width": 1671,
+          "height": 917,
+          "bytes": 1629556,
+          "references": 2
+        },
+        {
+          "src": "textures/64a71e2fd856fae2.webp",
+          "format": "WebP",
+          "width": 1214,
+          "height": 1296,
+          "bytes": 1897298,
+          "references": 2
+        },
+        {
+          "src": "textures/270f4d6f34a96087.webp",
+          "format": "WebP",
+          "width": 1870,
+          "height": 841,
+          "bytes": 1681926,
+          "references": 2
+        },
+        {
+          "src": "textures/d765675fab19be5e.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2026810,
+          "references": 2
+        },
+        {
+          "src": "textures/24c140c035db3876.webp",
+          "format": "WebP",
+          "width": 1502,
+          "height": 962,
+          "bytes": 1686322,
+          "references": 7
+        },
+        {
+          "src": "textures/4bc4393b33402ddd.webp",
+          "format": "WebP",
+          "width": 1534,
+          "height": 853,
+          "bytes": 1832516,
+          "references": 2
+        },
+        {
+          "src": "textures/dbc949f3a0212251.webp",
+          "format": "WebP",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1004104,
+          "references": 2
+        },
+        {
+          "src": "textures/98fa9cc171437a73.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 950,
+          "bytes": 1841590,
+          "references": 5
+        },
+        {
+          "src": "textures/c8733530185b5a2f.webp",
+          "format": "WebP",
+          "width": 2033,
+          "height": 773,
+          "bytes": 1546616,
+          "references": 2
+        },
+        {
+          "src": "textures/44be6975ecdad9d2.webp",
+          "format": "WebP",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 787782,
+          "references": 2
+        },
+        {
+          "src": "textures/201ef17c5263b3b2.webp",
+          "format": "WebP",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1600136,
+          "references": 2
+        },
+        {
+          "src": "textures/0cea041885148293.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2057544,
+          "references": 2
+        },
+        {
+          "src": "textures/97f7f628d0ca4b00.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 1622784,
+          "references": 2
+        },
+        {
+          "src": "textures/dcb33577b571009f.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 1975782,
+          "references": 2
+        },
+        {
+          "src": "textures/f38c8545751da5f2.webp",
+          "format": "WebP",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 1292020,
+          "references": 2
+        },
+        {
+          "src": "textures/9ce43389834b999b.webp",
+          "format": "WebP",
+          "width": 1211,
+          "height": 1299,
+          "bytes": 1416936,
+          "references": 4
+        },
+        {
+          "src": "textures/c495b5e096c5d60c.webp",
+          "format": "WebP",
+          "width": 1670,
+          "height": 942,
+          "bytes": 2146418,
+          "references": 2
+        },
+        {
+          "src": "textures/fab16d2f6a5b2ac3.webp",
+          "format": "WebP",
+          "width": 1670,
+          "height": 941,
+          "bytes": 1878322,
+          "references": 2
+        },
+        {
+          "src": "textures/8fdda96ed5170315.webp",
+          "format": "WebP",
+          "width": 1671,
+          "height": 941,
+          "bytes": 1705844,
+          "references": 2
+        },
+        {
+          "src": "textures/dc4dd5ae9c838f22.webp",
+          "format": "WebP",
+          "width": 1821,
+          "height": 864,
+          "bytes": 1368158,
+          "references": 2
+        },
+        {
+          "src": "textures/25b1b4676324d238.webp",
+          "format": "WebP",
+          "width": 1433,
+          "height": 1098,
+          "bytes": 1356314,
+          "references": 2
+        },
+        {
+          "src": "textures/9d27fc9598094e65.webp",
+          "format": "WebP",
+          "width": 1433,
+          "height": 1098,
+          "bytes": 1383708,
+          "references": 2
+        },
+        {
+          "src": "textures/06c8dd1a2b3e6a10.webp",
+          "format": "WebP",
+          "width": 2037,
+          "height": 772,
+          "bytes": 1423090,
+          "references": 2
+        },
+        {
+          "src": "textures/7259aec9a67964fd.webp",
+          "format": "WebP",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 2456790,
+          "references": 2
+        },
+        {
+          "src": "textures/ae8f6974749c4a81.webp",
+          "format": "WebP",
+          "width": 1584,
+          "height": 993,
+          "bytes": 1561612,
+          "references": 3
+        },
+        {
+          "src": "textures/49de425e58f15777.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2339008,
+          "references": 2
+        },
+        {
+          "src": "textures/ca6ba6ff7d6e5eb0.webp",
+          "format": "WebP",
+          "width": 1359,
+          "height": 1158,
+          "bytes": 2086690,
+          "references": 2
+        },
+        {
+          "src": "textures/2196b09f5585c401.webp",
+          "format": "WebP",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 1823994,
+          "references": 2
+        },
+        {
+          "src": "textures/8448d27ccf37d39f.webp",
+          "format": "WebP",
+          "width": 1505,
+          "height": 1045,
+          "bytes": 1762736,
+          "references": 2
+        },
+        {
+          "src": "textures/9a209353d7c66eda.webp",
+          "format": "WebP",
+          "width": 1606,
+          "height": 979,
+          "bytes": 1328262,
+          "references": 2
+        },
+        {
+          "src": "textures/ee74efa141e035fb.webp",
+          "format": "WebP",
+          "width": 2172,
+          "height": 724,
+          "bytes": 1264424,
+          "references": 2
+        }
+      ],
+      "sourceAudit": {
+        "missingImages": [],
+        "skippedObjects": [],
+        "repairedImages": 0
+      }
+    },
+    {
+      "id": "chapter-3",
+      "manifestPath": "public/assets/new-scrolls/chapter-3/scene.json",
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "meshes": 79,
+        "textMeshes": 0,
+        "materials": 76,
+        "textures": 66,
+        "validTextures": 66,
+        "vertices": 327,
+        "triangles": 167,
+        "cameraSamples": 2068,
+        "stops": 9,
+        "markers": 18,
+        "animatedObjects": 23
+      },
+      "sizes": {
+        "manifestBytes": 6496305,
+        "directoryBytes": 112782644,
+        "fileCount": 74,
+        "textureBytes": 99493678,
+        "browserBytes": 105989983,
+        "decodedRgbaBytes": 392447600,
+        "maxTextureEdge": 2230
+      },
+      "textures": [
+        {
+          "src": "textures/8818501ede5169de.webp",
+          "format": "WebP",
+          "width": 1918,
+          "height": 820,
+          "bytes": 632686,
+          "references": 2
+        },
+        {
+          "src": "textures/a6ce9f5567e5b029.webp",
+          "format": "WebP",
+          "width": 1269,
+          "height": 1240,
+          "bytes": 1511276,
+          "references": 2
+        },
+        {
+          "src": "textures/49127f96ea52cdf3.webp",
+          "format": "WebP",
+          "width": 1312,
+          "height": 1199,
+          "bytes": 1438962,
+          "references": 2
+        },
+        {
+          "src": "textures/130f01411cd76a35.webp",
+          "format": "WebP",
+          "width": 1165,
+          "height": 1314,
+          "bytes": 1324462,
+          "references": 2
+        },
+        {
+          "src": "textures/f0ced5d3b76d2fd4.webp",
+          "format": "WebP",
+          "width": 1001,
+          "height": 1451,
+          "bytes": 1760992,
+          "references": 2
+        },
+        {
+          "src": "textures/4d0cc15e983e9292.webp",
+          "format": "WebP",
+          "width": 1212,
+          "height": 1297,
+          "bytes": 1488856,
+          "references": 2
+        },
+        {
+          "src": "textures/3a96055d6b126f75.webp",
+          "format": "WebP",
+          "width": 1535,
+          "height": 1024,
+          "bytes": 1676088,
+          "references": 2
+        },
+        {
+          "src": "textures/eeee442a793c3a58.webp",
+          "format": "WebP",
+          "width": 1589,
+          "height": 782,
+          "bytes": 1378224,
+          "references": 2
+        },
+        {
+          "src": "textures/d1b27e3da2727f8d.webp",
+          "format": "WebP",
+          "width": 1920,
+          "height": 712,
+          "bytes": 1354460,
+          "references": 3
+        },
+        {
+          "src": "textures/8a9cddfe7e904b6d.webp",
+          "format": "WebP",
+          "width": 2170,
+          "height": 615,
+          "bytes": 1693654,
+          "references": 2
+        },
+        {
+          "src": "textures/c529c3ba0a061e67.webp",
+          "format": "WebP",
+          "width": 1797,
+          "height": 943,
+          "bytes": 1662802,
+          "references": 2
+        },
+        {
+          "src": "textures/86237d240ae7acea.webp",
+          "format": "WebP",
+          "width": 2018,
+          "height": 778,
+          "bytes": 1972516,
+          "references": 2
+        },
+        {
+          "src": "textures/9f82d44b781d0eca.webp",
+          "format": "WebP",
+          "width": 1522,
+          "height": 809,
+          "bytes": 1242046,
+          "references": 2
+        },
+        {
+          "src": "textures/a797187b38eac717.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 1690020,
+          "references": 2
+        },
+        {
+          "src": "textures/9b84c590d5d9d4f2.webp",
+          "format": "WebP",
+          "width": 995,
+          "height": 1436,
+          "bytes": 1427102,
+          "references": 2
+        },
+        {
+          "src": "textures/7a72d676b9312cc5.webp",
+          "format": "WebP",
+          "width": 1148,
+          "height": 1371,
+          "bytes": 1577198,
+          "references": 2
+        },
+        {
+          "src": "textures/276570b9f7b76cf7.webp",
+          "format": "WebP",
+          "width": 1650,
+          "height": 887,
+          "bytes": 1386330,
+          "references": 6
+        },
+        {
+          "src": "textures/f23761df4589aefc.webp",
+          "format": "WebP",
+          "width": 1024,
+          "height": 1535,
+          "bytes": 1347226,
+          "references": 2
+        },
+        {
+          "src": "textures/7f9c4785e4483f30.webp",
+          "format": "WebP",
+          "width": 1492,
+          "height": 923,
+          "bytes": 1730260,
+          "references": 2
+        },
+        {
+          "src": "textures/29aec8c98b606831.webp",
+          "format": "WebP",
+          "width": 1402,
+          "height": 1114,
+          "bytes": 1458006,
+          "references": 2
+        },
+        {
+          "src": "textures/96ebf973cce1902b.webp",
+          "format": "WebP",
+          "width": 1670,
+          "height": 941,
+          "bytes": 1893938,
+          "references": 2
+        },
+        {
+          "src": "textures/3b20bed736524e12.webp",
+          "format": "WebP",
+          "width": 1670,
+          "height": 942,
+          "bytes": 1514186,
+          "references": 2
+        },
+        {
+          "src": "textures/75d7eb346bf6a2c0.webp",
+          "format": "WebP",
+          "width": 1670,
+          "height": 941,
+          "bytes": 1454410,
+          "references": 2
+        },
+        {
+          "src": "textures/0e0646fc3f62d3c1.webp",
+          "format": "WebP",
+          "width": 1670,
+          "height": 942,
+          "bytes": 1564594,
+          "references": 2
+        },
+        {
+          "src": "textures/5aeba0d56912f4b2.webp",
+          "format": "WebP",
+          "width": 1671,
+          "height": 941,
+          "bytes": 1663786,
+          "references": 2
+        },
+        {
+          "src": "textures/35342c74cb321abb.webp",
+          "format": "WebP",
+          "width": 1672,
+          "height": 941,
+          "bytes": 1329978,
+          "references": 2
+        },
+        {
+          "src": "textures/141739ea495b46e4.webp",
+          "format": "WebP",
+          "width": 1374,
+          "height": 1145,
+          "bytes": 1893660,
+          "references": 3
+        },
+        {
+          "src": "textures/bbb326dc469c79fb.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2407690,
+          "references": 2
+        },
+        {
+          "src": "textures/9c6e40d139f71e91.webp",
+          "format": "WebP",
+          "width": 1350,
+          "height": 1165,
+          "bytes": 2046178,
+          "references": 2
+        },
+        {
+          "src": "textures/8ab61aa2afc77092.webp",
+          "format": "WebP",
+          "width": 1013,
+          "height": 1434,
+          "bytes": 1687566,
+          "references": 2
+        },
+        {
+          "src": "textures/2bb980912949e4df.webp",
+          "format": "WebP",
+          "width": 863,
+          "height": 1527,
+          "bytes": 1368632,
+          "references": 2
+        },
+        {
+          "src": "textures/65a107275085ea4f.webp",
+          "format": "WebP",
+          "width": 1525,
+          "height": 1031,
+          "bytes": 1429532,
+          "references": 2
+        },
+        {
+          "src": "textures/d1bfbb35f803eece.webp",
+          "format": "WebP",
+          "width": 1854,
+          "height": 848,
+          "bytes": 2044626,
+          "references": 3
+        },
+        {
+          "src": "textures/f72eae0375135dc3.webp",
+          "format": "WebP",
+          "width": 1842,
+          "height": 854,
+          "bytes": 1448062,
+          "references": 2
+        },
+        {
+          "src": "textures/2f0300d5ad7d4480.webp",
+          "format": "WebP",
+          "width": 1495,
+          "height": 1052,
+          "bytes": 1422956,
+          "references": 2
+        },
+        {
+          "src": "textures/cc09d6c05fa98304.webp",
+          "format": "WebP",
+          "width": 1599,
+          "height": 984,
+          "bytes": 1834436,
+          "references": 2
+        },
+        {
+          "src": "textures/e2c01f7b1c66a607.webp",
+          "format": "WebP",
+          "width": 1286,
+          "height": 1223,
+          "bytes": 2086230,
+          "references": 2
+        },
+        {
+          "src": "textures/4f406a818d5f4a0a.webp",
+          "format": "WebP",
+          "width": 1658,
+          "height": 949,
+          "bytes": 1805710,
+          "references": 2
+        },
+        {
+          "src": "textures/20a9f98adb1ab008.webp",
+          "format": "WebP",
+          "width": 501,
+          "height": 1502,
+          "bytes": 652876,
+          "references": 2
+        },
+        {
+          "src": "textures/b011c13990a3b4bd.webp",
+          "format": "WebP",
+          "width": 1401,
+          "height": 972,
+          "bytes": 583716,
+          "references": 2
+        },
+        {
+          "src": "textures/b27e57e9842bddbb.webp",
+          "format": "WebP",
+          "width": 1259,
+          "height": 1063,
+          "bytes": 581400,
+          "references": 2
+        },
+        {
+          "src": "textures/d300ca6da2db054f.webp",
+          "format": "WebP",
+          "width": 1671,
+          "height": 941,
+          "bytes": 1788124,
+          "references": 2
+        },
+        {
+          "src": "textures/102e77bcdbdce07c.webp",
+          "format": "WebP",
+          "width": 1671,
+          "height": 941,
+          "bytes": 1880420,
+          "references": 2
+        },
+        {
+          "src": "textures/5f40f69fad90d85e.webp",
+          "format": "WebP",
+          "width": 1374,
+          "height": 1145,
+          "bytes": 1788476,
+          "references": 2
+        },
+        {
+          "src": "textures/93fc356ca9994085.webp",
+          "format": "WebP",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 1452040,
+          "references": 2
+        },
+        {
+          "src": "textures/94a2f1052f8cfb74.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 1662130,
+          "references": 2
+        },
+        {
+          "src": "textures/6bd5cddc8726a6af.webp",
+          "format": "WebP",
+          "width": 1857,
+          "height": 847,
+          "bytes": 1324984,
+          "references": 2
+        },
+        {
+          "src": "textures/d51d239bf784ab89.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2017072,
+          "references": 2
+        },
+        {
+          "src": "textures/67215efc9dab6153.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 1815542,
+          "references": 4
+        },
+        {
+          "src": "textures/ba1fcc4bae8b5d6f.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 1437446,
+          "references": 2
+        },
+        {
+          "src": "textures/7b72f64ecfee7311.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 1932346,
+          "references": 2
+        },
+        {
+          "src": "textures/7a896bd6e04c152d.webp",
+          "format": "WebP",
+          "width": 1470,
+          "height": 1070,
+          "bytes": 1696348,
+          "references": 2
+        },
+        {
+          "src": "textures/9c3d8a95e6ce7f79.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2097066,
+          "references": 2
+        },
+        {
+          "src": "textures/d79e0858f6fb7a33.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 1999284,
+          "references": 2
+        },
+        {
+          "src": "textures/6ec63434ab7c0e99.webp",
+          "format": "WebP",
+          "width": 2043,
+          "height": 770,
+          "bytes": 304772,
+          "references": 2
+        },
+        {
+          "src": "textures/fd89772232a716f4.webp",
+          "format": "WebP",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 739938,
+          "references": 2
+        },
+        {
+          "src": "textures/7118a0c582eaccd3.webp",
+          "format": "WebP",
+          "width": 1672,
+          "height": 941,
+          "bytes": 311480,
+          "references": 2
+        },
+        {
+          "src": "textures/bdc40487053f2822.webp",
+          "format": "WebP",
+          "width": 1668,
+          "height": 805,
+          "bytes": 1745270,
+          "references": 2
+        },
+        {
+          "src": "textures/6d7bc64618fc0cf2.webp",
+          "format": "WebP",
+          "width": 2037,
+          "height": 772,
+          "bytes": 1720148,
+          "references": 2
+        },
+        {
+          "src": "textures/5a59bcaea24a7389.webp",
+          "format": "WebP",
+          "width": 1798,
+          "height": 875,
+          "bytes": 1666912,
+          "references": 2
+        },
+        {
+          "src": "textures/91feb9903181a4d6.webp",
+          "format": "WebP",
+          "width": 2230,
+          "height": 632,
+          "bytes": 1101708,
+          "references": 2
+        },
+        {
+          "src": "textures/160a260ca03505cb.webp",
+          "format": "WebP",
+          "width": 1334,
+          "height": 1154,
+          "bytes": 1635194,
+          "references": 2
+        },
+        {
+          "src": "textures/fffd2f612972c03f.webp",
+          "format": "WebP",
+          "width": 305,
+          "height": 582,
+          "bytes": 263758,
+          "references": 2
+        },
+        {
+          "src": "textures/26a1dbcf3c942589.webp",
+          "format": "WebP",
+          "width": 1534,
+          "height": 1024,
+          "bytes": 1876398,
+          "references": 2
+        },
+        {
+          "src": "textures/b9e663a152ff3473.webp",
+          "format": "WebP",
+          "width": 633,
+          "height": 1523,
+          "bytes": 997388,
+          "references": 2
+        },
+        {
+          "src": "textures/d5a777bfc392568e.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 1772106,
+          "references": 2
+        }
+      ],
+      "sourceAudit": {
+        "missingImages": [],
+        "skippedObjects": [],
+        "repairedImages": 0
+      }
+    },
+    {
+      "id": "chapter-4",
+      "manifestPath": "public/assets/new-scrolls/chapter-4/scene.json",
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "meshes": 52,
+        "textMeshes": 0,
+        "materials": 51,
+        "textures": 43,
+        "validTextures": 43,
+        "vertices": 222,
+        "triangles": 118,
+        "cameraSamples": 1800,
+        "stops": 9,
+        "markers": 9,
+        "animatedObjects": 0
+      },
+      "sizes": {
+        "manifestBytes": 729974,
+        "directoryBytes": 106291515,
+        "fileCount": 66,
+        "textureBytes": 70884326,
+        "browserBytes": 71614300,
+        "decodedRgbaBytes": 265174156,
+        "maxTextureEdge": 2172
+      },
+      "textures": [
+        {
+          "src": "textures/3d5bc1843f5cca86.webp",
+          "format": "WebP",
+          "width": 1453,
+          "height": 1083,
+          "bytes": 2197566,
+          "references": 2
+        },
+        {
+          "src": "textures/2fe328c10224ce6e.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2283558,
+          "references": 2
+        },
+        {
+          "src": "textures/e1cae9c94d5623d6.webp",
+          "format": "WebP",
+          "width": 1186,
+          "height": 1327,
+          "bytes": 1850274,
+          "references": 2
+        },
+        {
+          "src": "textures/dff6d174979f0f7f.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 995,
+          "bytes": 2098716,
+          "references": 6
+        },
+        {
+          "src": "textures/d947d4abe5555f97.webp",
+          "format": "WebP",
+          "width": 1676,
+          "height": 939,
+          "bytes": 2114764,
+          "references": 2
+        },
+        {
+          "src": "textures/67f7af134f48d513.webp",
+          "format": "WebP",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 2250096,
+          "references": 2
+        },
+        {
+          "src": "textures/06c1bac4ac5d7cee.webp",
+          "format": "WebP",
+          "width": 1772,
+          "height": 778,
+          "bytes": 1222028,
+          "references": 2
+        },
+        {
+          "src": "textures/7a67765592ab5b17.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2201786,
+          "references": 2
+        },
+        {
+          "src": "textures/e014012c44a59199.webp",
+          "format": "WebP",
+          "width": 1460,
+          "height": 986,
+          "bytes": 1487526,
+          "references": 2
+        },
+        {
+          "src": "textures/3dd11823c39694b7.webp",
+          "format": "WebP",
+          "width": 1306,
+          "height": 1205,
+          "bytes": 1509788,
+          "references": 2
+        },
+        {
+          "src": "textures/c560c026f36c6328.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 1692388,
+          "references": 2
+        },
+        {
+          "src": "textures/0bf031154de85f93.webp",
+          "format": "WebP",
+          "width": 1220,
+          "height": 1289,
+          "bytes": 1702544,
+          "references": 2
+        },
+        {
+          "src": "textures/7ad96b4a92e8362f.webp",
+          "format": "WebP",
+          "width": 1449,
+          "height": 1086,
+          "bytes": 1400586,
+          "references": 3
+        },
+        {
+          "src": "textures/8d8a3c10a919636e.webp",
+          "format": "WebP",
+          "width": 2043,
+          "height": 770,
+          "bytes": 1670966,
+          "references": 3
+        },
+        {
+          "src": "textures/41c28353f0f3de2f.webp",
+          "format": "WebP",
+          "width": 2043,
+          "height": 770,
+          "bytes": 1802144,
+          "references": 2
+        },
+        {
+          "src": "textures/b1df6060dd559180.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 1852664,
+          "references": 2
+        },
+        {
+          "src": "textures/fd7ee310ecee7a84.webp",
+          "format": "WebP",
+          "width": 1289,
+          "height": 1221,
+          "bytes": 1567956,
+          "references": 2
+        },
+        {
+          "src": "textures/a7c45ede8f4fcf14.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 1944732,
+          "references": 2
+        },
+        {
+          "src": "textures/cb2d07ff065afd19.webp",
+          "format": "WebP",
+          "width": 1319,
+          "height": 1192,
+          "bytes": 1701108,
+          "references": 2
+        },
+        {
+          "src": "textures/8bea2691a5d6714c.webp",
+          "format": "WebP",
+          "width": 2172,
+          "height": 527,
+          "bytes": 1088174,
+          "references": 2
+        },
+        {
+          "src": "textures/77e0d5733c635f4c.webp",
+          "format": "WebP",
+          "width": 1672,
+          "height": 940,
+          "bytes": 1036580,
+          "references": 2
+        },
+        {
+          "src": "textures/b6e92ef0c2f7d276.webp",
+          "format": "WebP",
+          "width": 1362,
+          "height": 1155,
+          "bytes": 1720306,
+          "references": 2
+        },
+        {
+          "src": "textures/05b13313e4108166.webp",
+          "format": "WebP",
+          "width": 1672,
+          "height": 940,
+          "bytes": 1452304,
+          "references": 2
+        },
+        {
+          "src": "textures/9762298a57d73ac0.webp",
+          "format": "WebP",
+          "width": 1799,
+          "height": 512,
+          "bytes": 1167430,
+          "references": 2
+        },
+        {
+          "src": "textures/9461c841e2266020.webp",
+          "format": "WebP",
+          "width": 1670,
+          "height": 942,
+          "bytes": 1630916,
+          "references": 2
+        },
+        {
+          "src": "textures/bc4a5364170447bc.webp",
+          "format": "WebP",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 1276942,
+          "references": 2
+        },
+        {
+          "src": "textures/71154db41aab50b1.webp",
+          "format": "WebP",
+          "width": 1672,
+          "height": 941,
+          "bytes": 1285032,
+          "references": 2
+        },
+        {
+          "src": "textures/1964420d40547009.webp",
+          "format": "WebP",
+          "width": 2172,
+          "height": 724,
+          "bytes": 1167478,
+          "references": 2
+        },
+        {
+          "src": "textures/889b1d9a72fb5750.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2369174,
+          "references": 2
+        },
+        {
+          "src": "textures/286c1b877a66f4c5.webp",
+          "format": "WebP",
+          "width": 1672,
+          "height": 941,
+          "bytes": 1855428,
+          "references": 2
+        },
+        {
+          "src": "textures/1f23b484842f440c.webp",
+          "format": "WebP",
+          "width": 1305,
+          "height": 1200,
+          "bytes": 1425940,
+          "references": 2
+        },
+        {
+          "src": "textures/462f0bccecdd9fb4.webp",
+          "format": "WebP",
+          "width": 1518,
+          "height": 1024,
+          "bytes": 1637566,
+          "references": 2
+        },
+        {
+          "src": "textures/e68625aaa294045e.webp",
+          "format": "WebP",
+          "width": 1661,
+          "height": 931,
+          "bytes": 1719948,
+          "references": 2
+        },
+        {
+          "src": "textures/2d785fcc5f8fba58.webp",
+          "format": "WebP",
+          "width": 1704,
+          "height": 923,
+          "bytes": 1791586,
+          "references": 2
+        },
+        {
+          "src": "textures/5e74de1194bad7cf.webp",
+          "format": "WebP",
+          "width": 1376,
+          "height": 1143,
+          "bytes": 1277120,
+          "references": 2
+        },
+        {
+          "src": "textures/4460e78f1171c8d0.webp",
+          "format": "WebP",
+          "width": 1578,
+          "height": 1060,
+          "bytes": 1311080,
+          "references": 2
+        },
+        {
+          "src": "textures/9dd4d859489ec0c5.webp",
+          "format": "WebP",
+          "width": 1343,
+          "height": 1217,
+          "bytes": 1632282,
+          "references": 3
+        },
+        {
+          "src": "textures/21289b2e002ca7e7.webp",
+          "format": "WebP",
+          "width": 1670,
+          "height": 942,
+          "bytes": 1859962,
+          "references": 2
+        },
+        {
+          "src": "textures/77a423cccdc1be24.webp",
+          "format": "WebP",
+          "width": 1971,
+          "height": 798,
+          "bytes": 1511216,
+          "references": 2
+        },
+        {
+          "src": "textures/d246111f449a1e17.webp",
+          "format": "WebP",
+          "width": 1404,
+          "height": 1120,
+          "bytes": 1508068,
+          "references": 2
+        },
+        {
+          "src": "textures/b5fbb2045f86d536.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 1263868,
+          "references": 2
+        },
+        {
+          "src": "textures/304ad65e52aa7b85.webp",
+          "format": "WebP",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 1925086,
+          "references": 2
+        },
+        {
+          "src": "textures/15a5bc4fe987db37.webp",
+          "format": "WebP",
+          "width": 1671,
+          "height": 941,
+          "bytes": 1419650,
+          "references": 2
+        }
+      ],
+      "sourceAudit": {
+        "missingImages": [],
+        "skippedObjects": [],
+        "repairedImages": 0
+      }
+    }
+  ]
+}

@@ -21,3 +21,15 @@
 .narrative-calligraphy[data-layout=horizontal] .narrative-ink p{writing-mode:horizontal-tb;width:auto;max-width:none;height:auto;font-size:17px;line-height:1.6;letter-spacing:.025em;padding-right:10px}
 .narrative-calligraphy[data-layout=horizontal] .narrative-small-seal{left:auto;right:4px;bottom:6px;font-size:10px;padding:3px 1px}
 @media(prefers-reduced-motion:reduce){.narrative-calligraphy .narrative-passage{transition:opacity .18s ease,visibility 0s linear .18s!important}.narrative-calligraphy .narrative-passage.is-visible{transition:opacity .18s ease,visibility 0s linear 0s!important}}
+
+/* Short exhibition verse uses only the paper its ink needs. The complete
+   supplied narrative retains its fixed, capacity-tested reading box above. */
+.narrative-calligraphy[data-mode=poetic][data-side=left] .narrative-passage { justify-content:flex-start; }
+.narrative-calligraphy[data-mode=poetic][data-side=right] .narrative-passage { justify-content:flex-end; }
+.narrative-calligraphy[data-mode=poetic][data-layout=vertical] .narrative-ink { width:max-content; height:auto; max-height:100%; gap:12px; }
+.narrative-calligraphy[data-mode=poetic][data-layout=vertical] .narrative-ink h2 { font-size:clamp(23px,1.8cqw,29px); letter-spacing:.16em; }
+.narrative-calligraphy[data-mode=poetic][data-layout=vertical] .narrative-ink p { flex:none; width:max-content; height:clamp(125px,30cqh,310px); font-size:clamp(18px,1.3cqw,24px); line-height:1.7; color:#435840; letter-spacing:.09em; }
+.narrative-calligraphy[data-mode=poetic][data-layout=horizontal] .narrative-ink { width:min(100%,540px); }
+.narrative-calligraphy[data-mode=poetic] .narrative-ordinal { color:#7f7155; }
+.narrative-calligraphy[data-mode=poetic] .narrative-small-seal { opacity:.7; }
+.narrative-calligraphy[hidden] { display:none; }

@@ -1,0 +1,45 @@
+{
+  "status": "interrupted",
+  "coordinator": "root",
+  "observedAndSealedAt": "2026-10-23T00:57:41.183Z",
+  "reason": "Root independently reproduced C5 normal-button capture-error fallback regression. C6 will restore viewer fallback while retaining returning-cache race protection. Root explicitly ordered safe interruption rather than continuing known-defective C5 long acceptance.",
+  "mechanism": "SIGINT/Ctrl+C on unified exec session1962; observed exit code1. Matching soak Node process no longer exists, own preview endpoint refuses connection; remaining Playwright browser owner is a live unrelated Node, not this soak. No unrelated process was killed.",
+  "originalPartial": "reports/art-renewal/soak/2026-10-23T00-50-53-862Z/validation.json",
+  "originalPartialSha256": "f71cac1a294455cb5daf700d9789ac185bd28014bd1e991e2e09739a252e0879",
+  "originalStatus": "running",
+  "persistedChecks": 5,
+  "persistedVisits": 2,
+  "persistedSamples": 270,
+  "lastPersistedSample": {
+    "phase": "SCROLL_VIEWER",
+    "chapter": 3,
+    "progress": 0.565,
+    "at": 261682.5
+  },
+  "sourceFreeze": "reports/art-renewal/art-candidate-5-build.json",
+  "sourceFreezeSha256": "ede5591dac6ca2bc5310b29826bc48466f410afcbaa66b46ea884ee32c4dac85",
+  "sourceInputsVerifiedAtStop": 829,
+  "sourceMismatches": [],
+  "bundleAtStop": {
+    "assets/flowerLetter-BoA6RdO3.js": "e972d20a9c1334005c84f6a5ebb15ed218071e95375ac51bbb82aec3a027e66c",
+    "assets/index-Bh74KHap.js": "b1b5c6a725f17f237245e294d8dfd0797d3216cf4f6a6423b23346ffcbfdfe77",
+    "assets/index-C5txKLE_.css": "db346cac5c7e39fe33b73b46b0186cf37cc411ed9643163849497c5f82cc11ae",
+    "assets/three-BetNTb4e.js": "68f6f4af9b65531830834e41fcad5f941cfcd557e6996a7f32a8c45e83290d10",
+    "index.html": "475d539955370290d15c6e9cb29e0fc960e9296fbb64a788554a06f4de81da42"
+  },
+  "screenshots": [
+    {
+      "path": "tmp/art-renewal-soak/2026-10-23T00-50-53-862Z/r1-c1-natural-end.png",
+      "sha256": "a955e84b641b5da6365ca8b80eca3ebac7715fc8c245122dafd7b46107c28b81",
+      "bytes": 1583161
+    },
+    {
+      "path": "tmp/art-renewal-soak/2026-10-23T00-50-53-862Z/r1-c2-natural-end.png",
+      "sha256": "962d6b4ca80e462b2159f7d3c078213e0645849ed88618705070e40a05be22de",
+      "bytes": 2410828
+    }
+  ],
+  "serverUnavailable": true,
+  "noRuntimeFailureObservedInOwnPersistedChecks": true,
+  "limits": "Not a passing soak. Final stop/disconnect/native-source-end assertions were not executed; browser teardown is not counted as application release or explicit URL revocation. Original partial JSON stays byte-for-byte unchanged. No six-suite regression started."
+}

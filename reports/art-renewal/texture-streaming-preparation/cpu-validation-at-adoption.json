@@ -1,0 +1,93 @@
+{
+  "status": "pass",
+  "testedAt": "2026-10-23T02:39:10.673Z",
+  "scope": "CPU thumbnail bounds and production streaming/failure logic with GPU stubbed. No FPS or rendered-pixel claim.",
+  "checks": [
+    {
+      "test": "placement-buffer-bounded-through-8k-and-distinguishes-paper-from-ink",
+      "maximumPixels": 49152,
+      "passed": true
+    },
+    {
+      "test": "whole-source-camera-gate-centered-with-source-pixel-aspect",
+      "passed": true
+    },
+    {
+      "test": "visible-resource-priority-single-speculative-slot-readiness-source-visibility-and-failure",
+      "requested": [
+        "future-a",
+        "current-0",
+        "current-1",
+        "current-2",
+        "current-3",
+        "future-b"
+      ],
+      "passed": true
+    },
+    {
+      "test": "shader-failure-invalidates-first-frame-and-survives-late-texture-success-failure",
+      "queuedStartsBeforeFailure": 10,
+      "queuedStartsAfterFailure": 10,
+      "passed": true
+    },
+    {
+      "test": "native-fields-and-compositor-share-four-slots-linear-decoding-and-current-readiness",
+      "requested": [
+        "native-image",
+        "native-field-a",
+        "native-field-b",
+        "native-field-c",
+        "native-glare",
+        "native-glare-future-a",
+        "native-glare-future-b"
+      ],
+      "decodedProviders": [
+        [
+          "material",
+          "native-field-a"
+        ],
+        [
+          "material",
+          "native-field-b"
+        ],
+        [
+          "material",
+          "native-field-c"
+        ],
+        [
+          "post",
+          "native-glare"
+        ],
+        [
+          "post",
+          "native-glare-future-a"
+        ],
+        [
+          "post",
+          "native-glare-future-b"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "test": "real-image-decode-boundary-awaits-completion-and-disposes-errors-or-owner-abort",
+      "passed": true
+    },
+    {
+      "test": "actual-sampler-variants-prepare-one-per-turn-before-shared-resource-readiness",
+      "passed": true
+    },
+    {
+      "test": "context-restoration-restarts-every-pending-sampler-variant-including-pre-loss-completed-prefix",
+      "passed": true
+    },
+    {
+      "test": "owner-return-discards-unprepared-textures-without-gpu-upload-or-raf",
+      "passed": true
+    },
+    {
+      "test": "recent-cache-separately-bounded-to-96mib-images-24mib-post-and-expires-without-evicting-current",
+      "passed": true
+    }
+  ]
+}

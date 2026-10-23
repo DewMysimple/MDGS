@@ -1,0 +1,121 @@
+{
+  "status": "passed",
+  "startedAt": "2026-10-23T00:22:16.917Z",
+  "buildManifest": "reports/art-renewal/art-candidate-4-build.json",
+  "buildManifestSha256": "ebbda506b0e467b1a58bf3dc0f1b9d35c1343dbe9d860cfc4e652f2c8a555ef7",
+  "scope": "Real production pure-CPU/data checks. This does not replace native GPU pixel comparisons or runtime browser acceptance.",
+  "steps": [
+    {
+      "name": "viewing",
+      "command": [
+        "node",
+        "scripts/validate-viewing.mjs"
+      ],
+      "driverSha256": "15d29db2497c5f44aaac3114b1ffbf654971093e2ff729893ba8a69439e1119b",
+      "exitCode": 0,
+      "startedAt": "2026-10-23T00:22:40.544Z",
+      "completedAt": "2026-10-23T00:22:41.516Z",
+      "log": "viewing.log",
+      "logSha256": "4f8e406495dae0d635d7989cfd07d671572497d47e5539bb4f5c2dea9d7f28b8"
+    },
+    {
+      "name": "scroll-input",
+      "command": [
+        "node",
+        "scripts/validate-scroll-input.mjs"
+      ],
+      "driverSha256": "ad6959e5e66d5bd003941c202c1d45dbd41880254d4d7e9d34091f3e66b54959",
+      "exitCode": 0,
+      "startedAt": "2026-10-23T00:22:41.516Z",
+      "completedAt": "2026-10-23T00:22:41.713Z",
+      "log": "scroll-input.log",
+      "logSha256": "463d1c0db0bc1b665b7816b98ff045923fabe0c8f107a2ac706cceedd673fac1"
+    },
+    {
+      "name": "render-performance",
+      "command": [
+        "node",
+        "scripts/validate-render-performance.mjs"
+      ],
+      "driverSha256": "545ba0efe75221534c635250989bd500c578d930069d287c5970023255e235b0",
+      "exitCode": 0,
+      "startedAt": "2026-10-23T00:22:41.713Z",
+      "completedAt": "2026-10-23T00:22:42.031Z",
+      "log": "render-performance.log",
+      "logSha256": "b4ad5301676f843ff5bc8fa70581f8b5eb474d3a852eb6245a3a633d9f28eb44"
+    },
+    {
+      "name": "source-clock",
+      "command": [
+        "node",
+        "scripts/validate-peony2-clock.mjs"
+      ],
+      "driverSha256": "b2cdbca418ae9cabd15324b858db7ca78308bb13387027018ffa3764dcc97890",
+      "exitCode": 0,
+      "startedAt": "2026-10-23T00:22:42.031Z",
+      "completedAt": "2026-10-23T00:22:42.239Z",
+      "log": "source-clock.log",
+      "logSha256": "82bc0e69b1dc05a83c23e60b9c0d59c1a8284b655ccd6a06d48d371e402e1f8b"
+    },
+    {
+      "name": "original-narrative",
+      "command": [
+        "node",
+        "scripts/validate-peony2-narrative.mjs"
+      ],
+      "driverSha256": "ffc0df7c5a67b38924a9a82a1aaf221f79a034f32e63ebc1bd1fc881fb985db2",
+      "exitCode": 0,
+      "startedAt": "2026-10-23T00:22:42.239Z",
+      "completedAt": "2026-10-23T00:22:42.519Z",
+      "log": "original-narrative.log",
+      "logSha256": "83a2ba9ae161e201f6ed275a6bdfc487e22831507a02ba9ecf0a594f9dc66743"
+    },
+    {
+      "name": "artwork-projection",
+      "command": [
+        "node",
+        "scripts/validate-artwork-projection.mjs"
+      ],
+      "driverSha256": "1614bea5d41a74218eb3d8528dd87e135773ac61e0c098cd1202252a5d4de31f",
+      "exitCode": 0,
+      "startedAt": "2026-10-23T00:22:42.519Z",
+      "completedAt": "2026-10-23T00:22:42.747Z",
+      "log": "artwork-projection.log",
+      "logSha256": "8595c911d3dcc6aa5b5d14be3b8624c764c71699e4582426f95ce01837b4b634"
+    },
+    {
+      "name": "legacy-assets",
+      "command": [
+        "node",
+        "scripts/validate-assets.mjs",
+        "--report-dir",
+        "reports/peony2-fidelity/legacy-assets"
+      ],
+      "driverSha256": "f1525c25f9b1038fd56e95aa0b97aa9e10de0c80cb69f23a4d1e63bb68659af7",
+      "exitCode": 0,
+      "startedAt": "2026-10-23T00:22:42.747Z",
+      "completedAt": "2026-10-23T00:22:43.033Z",
+      "log": "legacy-assets.log",
+      "logSha256": "ac8982529b3b77961776989cbcca188778500edb3a74a0160444787c9745ad3a"
+    },
+    {
+      "name": "current-assets",
+      "command": [
+        "node",
+        "scripts/validate-assets.mjs",
+        "--assets-dir",
+        "public/assets/new-scrolls",
+        "--report-dir",
+        "reports/peony2-fidelity/assets"
+      ],
+      "driverSha256": "f1525c25f9b1038fd56e95aa0b97aa9e10de0c80cb69f23a4d1e63bb68659af7",
+      "exitCode": 0,
+      "startedAt": "2026-10-23T00:22:43.033Z",
+      "completedAt": "2026-10-23T00:22:43.391Z",
+      "log": "current-assets.log",
+      "logSha256": "a4ef364f94a0e483f74ce979239436671cb9cac7b7e488000443550b449fae09"
+    }
+  ],
+  "changedInputs": [],
+  "completedAt": "2026-10-23T00:22:43.996Z"
+}

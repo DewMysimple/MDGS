@@ -1,0 +1,3480 @@
+{
+  "status": "passed",
+  "runId": "2026-10-23T02-42-06-040Z",
+  "suite": "all",
+  "startedAt": "2026-10-23T02:42:06.040Z",
+  "scope": "Fresh isolated tool fixtures for unmarked/symlink/lock protection, then read-only actual standalone package inventory/HTTP/Chrome four-scroll interactions/audio/PNG export. Fixture build commands are explicit stubs, not production-build proof.",
+  "checks": [
+    {
+      "test": "fixture-successful-byte-copy-and-explicit-prebuilt-association",
+      "passed": true,
+      "code": 0,
+      "pid": 54476,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/fixture-success.log",
+      "logSha256": "1d4365265505a15b8f1d538d9d0d5bf581db36b220166fc6f057852fad7132c0",
+      "inventoryFiles": 34,
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/success/project"
+    },
+    {
+      "test": "unmarked-dist-exhibition-sentinel-preserved",
+      "passed": true,
+      "code": 1,
+      "pid": 40720,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/unmarked-dist-exhibition.log",
+      "logSha256": "5f9f625be6a69b51609e5643f29dfe38bdab01108a03004c2065b4130697619c",
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/unmarked-dist-exhibition/project"
+    },
+    {
+      "test": "unmarked-dist-exhibition.staging-sentinel-preserved",
+      "passed": true,
+      "code": 1,
+      "pid": 52316,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/unmarked-dist-exhibition.staging.log",
+      "logSha256": "4ab228d2d8920635934ad328ed60d3074523a7ed49f3ce73ff1a274dc5edb4d7",
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/unmarked-dist-exhibition.staging/project"
+    },
+    {
+      "test": "actual-concurrent-export-lock-rejects-second-process",
+      "passed": true,
+      "first": {
+        "code": 0,
+        "pid": 40020,
+        "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/concurrent-first.log",
+        "logSha256": "f26a8fef49519c739a41fa113e382e808619a2ac04d23f3a637cf9edc576680f"
+      },
+      "second": {
+        "code": 1,
+        "pid": 54228,
+        "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/concurrent-second.log",
+        "logSha256": "89447ce01a7802800ef368073bdee29266d87a06919161c9294e2a1da6cd759d"
+      }
+    },
+    {
+      "test": "reject-linked-dist-root-external-sentinel-preserved",
+      "passed": true,
+      "code": 1,
+      "pid": 35440,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/linked-dist-root.log",
+      "logSha256": "36daf23035429b4959d4dd850b71ec9e28e8e15c51334e6770a8a3bef2b343d2",
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-dist-root/project",
+      "externalSentinelSha256": "814b4d8cc2dd680f13bb97a54687b76a3893d4065a32a184613bed0a27b49ab8"
+    },
+    {
+      "test": "reject-linked-public-root-external-sentinel-preserved",
+      "passed": true,
+      "code": 1,
+      "pid": 52428,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/linked-public-root.log",
+      "logSha256": "22e3892ce9859b8f590c68125a1f5fab045f0e42373217d8339aaadfe30856bf",
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-public-root/project",
+      "externalSentinelSha256": "3b1ef78bd945ba09a342999b2cce51ffabf175253978a34082ef9f337cb22bfa"
+    },
+    {
+      "test": "reject-linked-public-parent-external-sentinel-preserved",
+      "passed": true,
+      "code": 1,
+      "pid": 41876,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/linked-public-parent.log",
+      "logSha256": "43ed00b19d8ffd229dcb81ce6684bd3acf4894db03f6ea0192bcabb344313e9b",
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-public-parent/project",
+      "externalSentinelSha256": "307d59f3127432a663d6df47bd8eeee940347345780d27127ccea71498659d58"
+    },
+    {
+      "test": "reject-linked-public-single-file-external-sentinel-preserved",
+      "passed": true,
+      "code": 1,
+      "pid": 30052,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/linked-public-single-file.log",
+      "logSha256": "3b4f13dda3a1995c41ac7840957d6bee52f7c1f2674e483451a7d767d501f777",
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-public-single-file/project",
+      "externalSentinelSha256": "7d2ea6cebfb6e02caf16fee0ad0a86300428a0b0fd25c992b7e0388978b296c5"
+    },
+    {
+      "test": "reject-linked-dist-single-file-external-sentinel-preserved",
+      "passed": true,
+      "code": 1,
+      "pid": 47608,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/linked-dist-single-file.log",
+      "logSha256": "448c43cb813250d4f39d7cc1305c66d3418253125903249224fd0f81d4f99c10",
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-dist-single-file/project",
+      "externalSentinelSha256": "438efdabff4137d6999143211331c36e0d97b7f6b527588fbc689bddf1d9496d"
+    },
+    {
+      "test": "reject-linked-destination-external-sentinel-preserved",
+      "passed": true,
+      "code": 1,
+      "pid": 56084,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/linked-destination.log",
+      "logSha256": "b11cf70535bdfa7560f3b5fd8e1b838ce75145f3a7f0c8bff4ea7e9eef3a4925",
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-destination/project",
+      "externalSentinelSha256": "d9a8c43687bcea1ec18700cd5434f043a5be8c1e3ba44f65cbe7ce2093a9d18b"
+    },
+    {
+      "test": "reject-linked-staging-external-sentinel-preserved",
+      "passed": true,
+      "code": 1,
+      "pid": 2356,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/linked-staging.log",
+      "logSha256": "fd2acd3f28b0d7e4edd7013d637e6fef5653a2a342b4c11d6815f17e0ac27337",
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-staging/project",
+      "externalSentinelSha256": "6a182b5eb393ef0f18bd4147379afc8d7d9b81d30061236f2bd61bfea4e8af88"
+    },
+    {
+      "test": "actual-package-closed-inventory-and-original-public-bytes",
+      "passed": true,
+      "files": 361,
+      "publicBindings": 346,
+      "distBindings": 351,
+      "packageBytes": 540707423
+    },
+    {
+      "test": "actual-http-all-inventory-files-byte-identical",
+      "passed": true,
+      "responses": 361,
+      "bytes": 540707423
+    },
+    {
+      "test": "http-gzip-q0-native-field-head-etag-and-paths",
+      "passed": true,
+      "plainHeaders": {
+        "content-type": "application/json; charset=utf-8",
+        "cache-control": "no-cache",
+        "etag": "W/\"1517-1a1669e3472.eca\"",
+        "vary": "Accept-Encoding",
+        "content-length": "1517",
+        "date": "Fri, 23 Oct 2026 02:42:10 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "gzipHeaders": {
+        "content-type": "application/json; charset=utf-8",
+        "cache-control": "no-cache",
+        "etag": "W/\"1517-1a1669e3472.eca\"",
+        "vary": "Accept-Encoding",
+        "content-encoding": "gzip",
+        "date": "Fri, 23 Oct 2026 02:42:10 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "q0Headers": {
+        "content-type": "application/json; charset=utf-8",
+        "cache-control": "no-cache",
+        "etag": "W/\"1517-1a1669e3472.eca\"",
+        "vary": "Accept-Encoding",
+        "content-length": "1517",
+        "date": "Fri, 23 Oct 2026 02:42:10 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "cachedStatus": 304,
+      "nativeField": "assets/new-scrolls/chapter-1/material-fields/49e383a33c808a8e6321ae03.f16.gz",
+      "nativeFieldHeaders": {
+        "content-type": "application/octet-stream",
+        "cache-control": "no-cache",
+        "etag": "W/\"1449940-1a1669e2df2.34c\"",
+        "vary": "Accept-Encoding",
+        "content-length": "1449940",
+        "date": "Fri, 23 Oct 2026 02:42:10 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "nativeFieldSha256": "a4910eae07816c98f067a3f53123000abfd71e4a8e4c50987e8f8f1aed752477",
+      "escapedStatus": 403,
+      "malformedStatus": 400
+    },
+    {
+      "test": "standalone-home-font-four-layers-and-local-original-soundscape",
+      "passed": true,
+      "images": [
+        {
+          "src": "http://127.0.0.1:10940/ui/peony-atlas/landscape.webp",
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "src": "http://127.0.0.1:10940/ui/peony-atlas/cinnabar-peonies.webp",
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "src": "http://127.0.0.1:10940/ui/peony-atlas/ivory-branch.webp",
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "src": "http://127.0.0.1:10940/ui/peony-atlas/title.webp",
+          "width": 2172,
+          "height": 724
+        },
+        {
+          "src": "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/cover.webp",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "src": "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/cover.webp",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "src": "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/cover.webp",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "src": "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/cover.webp",
+          "width": 1280,
+          "height": 914
+        },
+        {
+          "src": "http://127.0.0.1:10940/ui/peony-atlas/ivory-branch.webp",
+          "width": 1536,
+          "height": 1024
+        }
+      ],
+      "fonts": [
+        {
+          "family": "MDGS Kai",
+          "status": "loaded"
+        }
+      ],
+      "sound": {
+        "enabled": true,
+        "playback": "playing",
+        "volume": 52,
+        "clock": 0,
+        "contextState": "running",
+        "sourceCount": 3,
+        "loopDurations": [
+          160,
+          160,
+          24
+        ],
+        "zone": "一庭春深",
+        "targetLevels": [
+          0.24,
+          0.12,
+          0.24
+        ],
+        "levels": [
+          0.004986932501196861,
+          0.0024934662505984306,
+          0.004986932501196861
+        ],
+        "musicGain": 1,
+        "reading": false,
+        "sourceEpoch": 0.327,
+        "effects": 0,
+        "cuesPlayed": 0,
+        "decodedBuffers": 3,
+        "retiredGraphs": 0,
+        "decodedBytes": 96768000
+      }
+    },
+    {
+      "test": "standalone-chapter-1-nodes-encounter-and-culture",
+      "passed": true,
+      "chapter": 1,
+      "canvas": {
+        "engine": "three.js r180",
+        "chapter": "1",
+        "progress": "0.000000",
+        "motionEnabled": "false",
+        "motionRequested": "true",
+        "motionSupported": "false",
+        "motionAmbientFps": "0",
+        "reducedMotion": "false",
+        "motionTime": "0.000000",
+        "motionBindings": "0",
+        "activeMotionLayers": "0",
+        "activePetals": "0",
+        "activeBridges": "0",
+        "activeMotionNames": "[]",
+        "motionClockSpeed": "1.000000",
+        "petalDensity": "1.000000",
+        "cloudDensity": "1.000000",
+        "narrativePhase": "calm",
+        "effectiveMotionBudget": "0",
+        "artReplacements": "0",
+        "artGeometryRepairs": "0",
+        "artEdgeRepairs": "0",
+        "artAddedLayers": "0",
+        "artTextLayers": "0",
+        "editionAtmosphereLayers": "0",
+        "editionAtmosphereActive": "0",
+        "editionAtmosphereOpacityMax": "0.000000",
+        "sourceHiddenVisibleLayers": "0",
+        "sourceRevision": "peony-2.0-2026-10-23",
+        "sourceFrame": "1",
+        "sourceViewport": "{\"x\":94,\"y\":0,\"width\":1696,\"height\":954,\"aspect\":1.7777777777777777}",
+        "sourceMorphObjects": "25",
+        "sourceMaterialsReady": "true",
+        "sourceMaterialFields": "103",
+        "sourcePostTextures": "0",
+        "shaderErrors": "[]",
+        "textureErrors": "{}",
+        "compactReadingReserve": "0",
+        "renderCount": "27",
+        "rafTicks": "173",
+        "rafRunning": "false",
+        "firstFrameReady": "true",
+        "contextLost": "false",
+        "contextRestores": "0",
+        "textureUploads": "0",
+        "textureCount": "14",
+        "textureBytes": "94964356",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "visibleTextures": "14",
+        "queuedTextures": "0",
+        "prefetchedTextures": "0",
+        "narrativeReads": "1",
+        "narrativeReadPending": "false",
+        "narrativeSamplePixels": "33280",
+        "narrativeReadProgress": "0",
+        "drawCalls": "1",
+        "geometries": "20",
+        "shaderWarmup": "{\"extension\":true,\"generation\":0,\"queue\":0,\"pending\":0,\"submitted\":0,\"completed\":149,\"batches\":149,\"polls\":722,\"compilationMs\":83.50000011920929,\"hidden\":false,\"contextLost\":false,\"abandoned\":false,\"reason\":\"\",\"disposed\":false,\"cancelled\":false,\"checkShaderErrors\":true}"
+      },
+      "encounter": "传说\n记载\n一花，两种记忆\n传说\n／\n史料\n\n“自唐则天已后，洛阳牡丹始盛。”\n\n画外补笺 · 北宋 · 欧阳修《洛阳牡丹记》 ↗",
+      "originalCharacters": 914,
+      "sourceEndFrame": "3024"
+    },
+    {
+      "test": "standalone-chapter-2-nodes-encounter-and-culture",
+      "passed": true,
+      "chapter": 2,
+      "canvas": {
+        "engine": "three.js r180",
+        "chapter": "2",
+        "progress": "0.000000",
+        "motionEnabled": "false",
+        "motionRequested": "true",
+        "motionSupported": "false",
+        "motionAmbientFps": "0",
+        "reducedMotion": "false",
+        "motionTime": "0.000000",
+        "motionBindings": "0",
+        "activeMotionLayers": "0",
+        "activePetals": "0",
+        "activeBridges": "0",
+        "activeMotionNames": "[]",
+        "motionClockSpeed": "1.000000",
+        "petalDensity": "1.000000",
+        "cloudDensity": "1.000000",
+        "narrativePhase": "calm",
+        "effectiveMotionBudget": "0",
+        "artReplacements": "0",
+        "artGeometryRepairs": "0",
+        "artEdgeRepairs": "0",
+        "artAddedLayers": "0",
+        "artTextLayers": "0",
+        "editionAtmosphereLayers": "0",
+        "editionAtmosphereActive": "0",
+        "editionAtmosphereOpacityMax": "0.000000",
+        "sourceHiddenVisibleLayers": "0",
+        "sourceRevision": "peony-2.0-2026-10-23",
+        "sourceFrame": "33",
+        "sourceViewport": "{\"x\":94,\"y\":0,\"width\":1696,\"height\":954,\"aspect\":1.7777777777777777}",
+        "sourceMorphObjects": "0",
+        "sourceMaterialsReady": "true",
+        "sourceMaterialFields": "44",
+        "sourcePostTextures": "0",
+        "shaderErrors": "[]",
+        "textureErrors": "{}",
+        "compactReadingReserve": "0",
+        "renderCount": "12",
+        "rafTicks": "93",
+        "rafRunning": "false",
+        "firstFrameReady": "true",
+        "contextLost": "false",
+        "contextRestores": "0",
+        "textureUploads": "0",
+        "textureCount": "10",
+        "textureBytes": "80941957",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "visibleTextures": "10",
+        "queuedTextures": "0",
+        "prefetchedTextures": "0",
+        "narrativeReads": "1",
+        "narrativeReadPending": "false",
+        "narrativeSamplePixels": "33280",
+        "narrativeReadProgress": "0",
+        "drawCalls": "1",
+        "geometries": "15",
+        "shaderWarmup": "{\"extension\":true,\"generation\":0,\"queue\":0,\"pending\":0,\"submitted\":0,\"completed\":58,\"batches\":58,\"polls\":231,\"compilationMs\":41.39999997615814,\"hidden\":false,\"contextLost\":false,\"abandoned\":false,\"reason\":\"\",\"disposed\":false,\"cancelled\":false,\"checkShaderErrors\":true}"
+      },
+      "encounter": "花间\n舟中\n桥上\n画中游观\n共此一城春\n01花间\n02舟中\n03桥上\n\n桥上人相望，一城春色，众人同赏。\n\n画外补笺 · 共赏之意\n宋人亦记“士庶竞为游遨”。北宋 · 欧阳修《洛阳牡丹记》 ↗",
+      "originalCharacters": 941,
+      "sourceEndFrame": "2184"
+    },
+    {
+      "test": "standalone-chapter-3-nodes-encounter-and-culture",
+      "passed": true,
+      "chapter": 3,
+      "canvas": {
+        "engine": "three.js r180",
+        "chapter": "3",
+        "progress": "0.000000",
+        "motionEnabled": "false",
+        "motionRequested": "true",
+        "motionSupported": "false",
+        "motionAmbientFps": "0",
+        "reducedMotion": "false",
+        "motionTime": "0.000000",
+        "motionBindings": "0",
+        "activeMotionLayers": "0",
+        "activePetals": "0",
+        "activeBridges": "0",
+        "activeMotionNames": "[]",
+        "motionClockSpeed": "1.000000",
+        "petalDensity": "1.000000",
+        "cloudDensity": "1.000000",
+        "narrativePhase": "calm",
+        "effectiveMotionBudget": "0",
+        "artReplacements": "0",
+        "artGeometryRepairs": "0",
+        "artEdgeRepairs": "0",
+        "artAddedLayers": "0",
+        "artTextLayers": "0",
+        "editionAtmosphereLayers": "0",
+        "editionAtmosphereActive": "0",
+        "editionAtmosphereOpacityMax": "0.000000",
+        "sourceHiddenVisibleLayers": "0",
+        "sourceRevision": "peony-2.0-2026-10-23",
+        "sourceFrame": "1",
+        "sourceViewport": "{\"x\":94,\"y\":0,\"width\":1696,\"height\":954,\"aspect\":1.7777777777777777}",
+        "sourceMorphObjects": "0",
+        "sourceMaterialsReady": "true",
+        "sourceMaterialFields": "70",
+        "sourcePostTextures": "0",
+        "shaderErrors": "[]",
+        "textureErrors": "{}",
+        "compactReadingReserve": "0",
+        "renderCount": "35",
+        "rafTicks": "118",
+        "rafRunning": "false",
+        "firstFrameReady": "true",
+        "contextLost": "false",
+        "contextRestores": "0",
+        "textureUploads": "0",
+        "textureCount": "16",
+        "textureBytes": "119609559",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "visibleTextures": "16",
+        "queuedTextures": "0",
+        "prefetchedTextures": "0",
+        "narrativeReads": "1",
+        "narrativeReadPending": "false",
+        "narrativeSamplePixels": "33280",
+        "narrativeReadProgress": "0",
+        "drawCalls": "1",
+        "geometries": "19",
+        "shaderWarmup": "{\"extension\":true,\"generation\":0,\"queue\":0,\"pending\":0,\"submitted\":0,\"completed\":79,\"batches\":79,\"polls\":1372,\"compilationMs\":264.20000000298023,\"hidden\":false,\"contextLost\":false,\"abandoned\":false,\"reason\":\"\",\"disposed\":false,\"cancelled\":false,\"checkShaderErrors\":true}"
+      },
+      "encounter": "花意\n锦绣\n选花入锦\n重拾\n锦上之花\n\n花入锦绣，岁岁圆满。\n\n花与织物的艺术化联想\n故宫 · 万紫千红 ↗",
+      "originalCharacters": 910,
+      "sourceEndFrame": "2068"
+    },
+    {
+      "test": "standalone-chapter-4-nodes-encounter-and-culture",
+      "passed": true,
+      "chapter": 4,
+      "canvas": {
+        "engine": "three.js r180",
+        "chapter": "4",
+        "progress": "0.000000",
+        "motionEnabled": "false",
+        "motionRequested": "true",
+        "motionSupported": "false",
+        "motionAmbientFps": "0",
+        "reducedMotion": "false",
+        "motionTime": "0.000000",
+        "motionBindings": "0",
+        "activeMotionLayers": "0",
+        "activePetals": "0",
+        "activeBridges": "0",
+        "activeMotionNames": "[]",
+        "motionClockSpeed": "1.000000",
+        "petalDensity": "1.000000",
+        "cloudDensity": "1.000000",
+        "narrativePhase": "calm",
+        "effectiveMotionBudget": "0",
+        "artReplacements": "0",
+        "artGeometryRepairs": "0",
+        "artEdgeRepairs": "0",
+        "artAddedLayers": "0",
+        "artTextLayers": "0",
+        "editionAtmosphereLayers": "0",
+        "editionAtmosphereActive": "0",
+        "editionAtmosphereOpacityMax": "0.000000",
+        "sourceHiddenVisibleLayers": "0",
+        "sourceRevision": "peony-2.0-2026-10-23",
+        "sourceFrame": "1",
+        "sourceViewport": "{\"x\":274.20000000000005,\"y\":0,\"width\":1335.6,\"height\":954,\"aspect\":1.4}",
+        "sourceMorphObjects": "0",
+        "sourceMaterialsReady": "true",
+        "sourceMaterialFields": "62",
+        "sourcePostTextures": "0",
+        "shaderErrors": "[]",
+        "textureErrors": "{}",
+        "compactReadingReserve": "0",
+        "renderCount": "38",
+        "rafTicks": "84",
+        "rafRunning": "false",
+        "firstFrameReady": "true",
+        "contextLost": "false",
+        "contextRestores": "0",
+        "textureUploads": "0",
+        "textureCount": "9",
+        "textureBytes": "54291784",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "visibleTextures": "9",
+        "queuedTextures": "0",
+        "prefetchedTextures": "0",
+        "narrativeReads": "1",
+        "narrativeReadPending": "false",
+        "narrativeSamplePixels": "33280",
+        "narrativeReadProgress": "0",
+        "drawCalls": "1",
+        "geometries": "10",
+        "shaderWarmup": "{\"extension\":true,\"generation\":0,\"queue\":0,\"pending\":0,\"submitted\":0,\"completed\":52,\"batches\":52,\"polls\":313,\"compilationMs\":51.79999998211861,\"hidden\":false,\"contextLost\":false,\"abandoned\":false,\"reason\":\"\",\"disposed\":false,\"cancelled\":false,\"checkShaderErrors\":true}"
+      },
+      "encounter": "展读\n花容入诗\n\n云想衣裳花想容\n\n春风拂槛露华浓\n\n李白 · 清平调其一\n\n以花映人，\n以诗留春。\n\n诗文 · 北京园林 ↗\n合笺",
+      "originalCharacters": 883,
+      "sourceEndFrame": "1800"
+    },
+    {
+      "test": "standalone-lazy-flower-letter-seal-and-real-png-download",
+      "passed": true,
+      "download": "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/flower-letter.png",
+      "bytes": 3152365,
+      "sha256": "243e56a769bb3ccd302190c2c2e5134989ffefb598f6e7439d97b28da74a3caf",
+      "suggestedFilename": "国色长卷·余韵花笺.png"
+    },
+    {
+      "test": "standalone-browser-no404-no-external-runtime-dependency",
+      "passed": true,
+      "requestedURLs": [
+        "blob:http://127.0.0.1:10940/6a313574-46ba-4223-8e1c-8e445e35e7ab",
+        "blob:http://127.0.0.1:10940/84e2fe09-5aaf-40d9-afac-9ceb19f6eed3",
+        "http://127.0.0.1:10940/",
+        "http://127.0.0.1:10940/assets/flowerLetter-BJtbSAA4.js",
+        "http://127.0.0.1:10940/assets/index-CpndIdbA.js",
+        "http://127.0.0.1:10940/assets/index-RpqBDuXe.css",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/cover.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/material-fields/49e383a33c808a8e6321ae03.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/material-fields/88ea82327d0febc425929b63.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/material-fields/efc57e665aeec1cd4ee22bfb.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/material-fields/f91ca43c925c36f93efb0957.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/render-settings.json",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/scene.json",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/source-materials.json",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/02e11304c2017df6.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/033361d9cdfdf379.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/053eec4391d3ec32.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/0ee3549e1a2ea5c2.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/16fe9a9c5cd646ba.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/193d747551251c10.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/19b0a0d6cfd17d47.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/1cf7f5363f972dd2.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/233c9a378f4b387b.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/2d00dd3b91177fdf.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/2d66886d8b0d4367.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/31eeb9d6290b37e3.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/379b4eeaa463d414.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/3e04bfd91a7644f1.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/3e7036a34bd54ab5.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/3fd09c5dfd252ca1.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/4560ef49860878c0.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/4a13b75621827763.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/4bfe2c5cccd25bf3.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/50017de3a8408eda.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/57a1cbf81cb84316.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/58cf7cbba7d522a5.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/5c6ddc8b533630fa.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/5d46455c79d6200f.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/6548394920703cf7.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/71f24d37b5e81014.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/733141417f39706d.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/76723c1dd92b9b3a.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/77deecd75d232ec3.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/785c427be2863299.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/808754b982d784ec.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/81f78acaf78c4254.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/82fd41e8f44ddf4b.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/834c9f86ced2650c.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/89351583b2859b80.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/8e9aa67529516445.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/9626fe28b66e4a17.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/9e4e39e56f2ccd75.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/abf5eafec62393e4.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/acfc4e0d47c0a8f9.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/b2985031fe52d2c8.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/b2d3963198ef6049.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/b69c05f297e666b3.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/b78c04b61bfa618e.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/b9468fdb8edfbf9d.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/b94fc82c9eb4020a.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/baf050d9d94c1a19.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/bb7cac307430ce1e.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/bd4254cbff8d7912.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/c68cc7fc877955bc.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/c89669d0003491ac.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/c89eeebd8405cb3f.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/cb87024bde671a38.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/d7c1abb927b9d7ba.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/dadefcc08d342080.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/db82884a9ce546f0.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/e2a1b0d11ff61f17.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/e924d6510b01a962.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/ed99a2a1017c293e.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/f39745ee605b1d66.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/f3abade799e647f4.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/f3fd30718916f244.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/f93191a5033db4b5.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/fdd0ad9b29bcb9e7.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/feb3ba4cb2b5bd5b.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-1/textures/ffdf16c747f152bd.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/cover.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/material-fields/0037a8d456936e2d4ba3dbb1.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/material-fields/060ac56479939c2d4ce20844.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/material-fields/124863892cca985c9f710774.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/material-fields/7af213ba13726460a761bb0a.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/material-fields/84caa60a67f075c238406e49.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/material-fields/c67f35dd58bf9eae588466bf.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/material-fields/d0722376d15c136dfede4bd5.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/material-fields/d1247149959fbbcb6392e9e6.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/material-fields/f49af4226c8d34b0e57fdb5c.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/render-settings.json",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/scene.json",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/source-materials.json",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/06c8dd1a2b3e6a10.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/0cea041885148293.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/201ef17c5263b3b2.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/2196b09f5585c401.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/24c140c035db3876.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/25b1b4676324d238.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/270f4d6f34a96087.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/44be6975ecdad9d2.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/49de425e58f15777.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/4bc4393b33402ddd.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/64a71e2fd856fae2.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/7259aec9a67964fd.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/8448d27ccf37d39f.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/8fdda96ed5170315.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/90389c2df78e00c2.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/97f7f628d0ca4b00.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/98fa9cc171437a73.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/9a209353d7c66eda.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/9ce43389834b999b.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/9d27fc9598094e65.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/ae8f6974749c4a81.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/c0622f8b084d1b9f.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/c2f41850197ebcf6.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/c495b5e096c5d60c.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/c8733530185b5a2f.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/ca6ba6ff7d6e5eb0.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/cfad0abb19db9698.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/d765675fab19be5e.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/dbc949f3a0212251.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/dc4dd5ae9c838f22.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/dcb33577b571009f.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/dd4a8057e2ea4775.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/ee74efa141e035fb.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-2/textures/fab16d2f6a5b2ac3.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/cover.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/material-fields/51ac8af3c1bb4e8c7beb19d0.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/material-fields/90cd44d256373cd1652fed8c.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/material-fields/9d762a85585bccd4b41f6208.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/material-fields/ef14eb3753ee90c870bb68e6.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/render-settings.json",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/scene.json",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/source-materials.json",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/0e0646fc3f62d3c1.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/102e77bcdbdce07c.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/130f01411cd76a35.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/141739ea495b46e4.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/160a260ca03505cb.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/20a9f98adb1ab008.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/26a1dbcf3c942589.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/276570b9f7b76cf7.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/29aec8c98b606831.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/2bb980912949e4df.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/2f0300d5ad7d4480.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/3a96055d6b126f75.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/3b20bed736524e12.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/49127f96ea52cdf3.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/4d0cc15e983e9292.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/4f406a818d5f4a0a.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/5a59bcaea24a7389.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/5f40f69fad90d85e.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/65a107275085ea4f.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/67215efc9dab6153.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/6bd5cddc8726a6af.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/6d7bc64618fc0cf2.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/6ec63434ab7c0e99.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/7118a0c582eaccd3.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/75d7eb346bf6a2c0.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/7a72d676b9312cc5.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/7a896bd6e04c152d.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/7b72f64ecfee7311.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/7f9c4785e4483f30.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/86237d240ae7acea.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/8818501ede5169de.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/8a9cddfe7e904b6d.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/8ab61aa2afc77092.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/91feb9903181a4d6.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/93fc356ca9994085.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/94a2f1052f8cfb74.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/96ebf973cce1902b.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/9b84c590d5d9d4f2.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/9c3d8a95e6ce7f79.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/9c6e40d139f71e91.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/9f82d44b781d0eca.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/a6ce9f5567e5b029.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/a797187b38eac717.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/b011c13990a3b4bd.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/b27e57e9842bddbb.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/b9e663a152ff3473.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/bbb326dc469c79fb.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/bdc40487053f2822.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/c529c3ba0a061e67.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/cc09d6c05fa98304.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/d1b27e3da2727f8d.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/d1bfbb35f803eece.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/d300ca6da2db054f.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/d51d239bf784ab89.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/d5a777bfc392568e.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/d79e0858f6fb7a33.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/e2c01f7b1c66a607.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/eeee442a793c3a58.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/f0ced5d3b76d2fd4.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/f23761df4589aefc.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/f72eae0375135dc3.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/fd89772232a716f4.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-3/textures/fffd2f612972c03f.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/cover.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/033194c169fcd46cc9e1b48b.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/0d9d3af90c0f6dadde3afb4c.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/2aabcf3d2aae8e630d9c9dc9.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/2f3d62f06e8aa46cf73cb424.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/3d480cef4053049ed68433d0.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/485aea9513b9277ebdd2a8a5.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/4f9ec81a3c428eceaa3f3682.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/59c9df7915094a5a9381802c.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/5bbf0e946e78e93d58770a72.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/6185c02c44e6e413a4df2453.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/89681fc06c17534450fcbf21.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/915666d024473caedc1193b4.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/9e020e6dfe1d867c1582064d.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/c2a80c5ff8ff7204d9f6f526.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/c64e288d57b04a32909a83ae.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/ce8eb8270961d2a167afc6e9.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/d141731b61e1e44059857a56.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/d40ef0cb3dc3ec6777dadb49.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/material-fields/fdfb966029228599fc2bcaf0.f16.gz",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/render-settings.json",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/scene.json",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/source-materials.json",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/05b13313e4108166.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/06c1bac4ac5d7cee.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/0bf031154de85f93.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/15a5bc4fe987db37.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/1964420d40547009.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/21289b2e002ca7e7.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/286c1b877a66f4c5.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/2d785fcc5f8fba58.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/2fe328c10224ce6e.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/304ad65e52aa7b85.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/3d5bc1843f5cca86.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/3dd11823c39694b7.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/4460e78f1171c8d0.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/462f0bccecdd9fb4.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/5e74de1194bad7cf.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/67f7af134f48d513.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/71154db41aab50b1.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/77a423cccdc1be24.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/77e0d5733c635f4c.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/7a67765592ab5b17.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/7ad96b4a92e8362f.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/889b1d9a72fb5750.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/8bea2691a5d6714c.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/8d8a3c10a919636e.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/9461c841e2266020.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/9762298a57d73ac0.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/9dd4d859489ec0c5.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/a7c45ede8f4fcf14.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/b1df6060dd559180.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/b5fbb2045f86d536.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/b6e92ef0c2f7d276.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/bc4a5364170447bc.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/c560c026f36c6328.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/cb2d07ff065afd19.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/d246111f449a1e17.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/d947d4abe5555f97.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/dff6d174979f0f7f.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/e014012c44a59199.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/e1cae9c94d5623d6.webp",
+        "http://127.0.0.1:10940/assets/new-scrolls/chapter-4/textures/fd7ee310ecee7a84.webp",
+        "http://127.0.0.1:10940/assets/three-3iQHpLLu.js",
+        "http://127.0.0.1:10940/audio/peony-v3-atmosphere.mp3",
+        "http://127.0.0.1:10940/audio/peony-v3-breath.mp3",
+        "http://127.0.0.1:10940/audio/peony-v3-strings.mp3",
+        "http://127.0.0.1:10940/favicon.svg",
+        "http://127.0.0.1:10940/fonts/wenkai-web.woff2",
+        "http://127.0.0.1:10940/ui/brocade.svg",
+        "http://127.0.0.1:10940/ui/peony-atlas/cinnabar-peonies.webp",
+        "http://127.0.0.1:10940/ui/peony-atlas/ivory-branch.webp",
+        "http://127.0.0.1:10940/ui/peony-atlas/landscape.webp",
+        "http://127.0.0.1:10940/ui/peony-atlas/title.webp"
+      ],
+      "expectedRendererDisposalAborts": 0
+    },
+    {
+      "test": "standalone-package-immutable-after-http-browser-and-download",
+      "passed": true,
+      "filesRechecked": 361,
+      "inventorySha256": "a88f1b8cb1ccc548003d03b4c052ee9b362210a013eab3b9a7f09b0f5c048485"
+    }
+  ],
+  "errors": [],
+  "expectedFailures": [
+    {
+      "fixture": "dist-exhibition",
+      "rejection": "file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/unmarked-dist-exhibition/project/scripts/package-exhibition.mjs:63\r\n      throw new Error(`Refusing to replace an unmarked directory: ${relative(directory)}`);\r\n            ^\r\n\r\nError: Refusing to replace an unmarked directory: dist-exhibition\r\n    at assertGenerated (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/unmarked-dist-exhibition/project/scripts/package-exhibition.mjs:63:13)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/unmarked-dist-exhibition/project/scripts/package-exhibition.mjs:95:1\r\n\r\nNode.js v24.16.0"
+    },
+    {
+      "fixture": "dist-exhibition.staging",
+      "rejection": "file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/unmarked-dist-exhibition.staging/project/scripts/package-exhibition.mjs:63\r\n      throw new Error(`Refusing to replace an unmarked directory: ${relative(directory)}`);\r\n            ^\r\n\r\nError: Refusing to replace an unmarked directory: dist-exhibition.staging\r\n    at assertGenerated (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/unmarked-dist-exhibition.staging/project/scripts/package-exhibition.mjs:63:13)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/unmarked-dist-exhibition.staging/project/scripts/package-exhibition.mjs:96:5\r\n\r\nNode.js v24.16.0"
+    },
+    {
+      "fixture": "dist-root",
+      "rejection": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Input parent must not redirect outside its expected location: dist/assets/new-scrolls\r\n+ actual - expected\r\n\r\n+ '..\\\\..\\\\..\\\\..\\\\external\\\\dist\\\\assets\\\\new-scrolls'\r\n- ''\r\n\r\n    at assertLocalInput (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-dist-root/project/scripts/package-exhibition.mjs:26:10)\r\n    at async walk (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-dist-root/project/scripts/package-exhibition.mjs:29:3)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-dist-root/project/scripts/package-exhibition.mjs:89:49 {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: '..\\\\..\\\\..\\\\..\\\\external\\\\dist\\\\assets\\\\new-scrolls',\r\n  expected: '',\r\n  operator: 'strictEqual',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.16.0"
+    },
+    {
+      "fixture": "public-root",
+      "rejection": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Unexpected linked or non-regular input: public/fonts\r\n    at assertLocalInput (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-public-root/project/scripts/package-exhibition.mjs:25:3)\r\n    at async walk (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-public-root/project/scripts/package-exhibition.mjs:29:3)\r\n    at async sourceInputFiles (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-public-root/project/scripts/package-exhibition.mjs:72:54)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-public-root/project/scripts/package-exhibition.mjs:80:21 {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: false,\r\n  expected: true,\r\n  operator: '==',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.16.0"
+    },
+    {
+      "fixture": "public-parent",
+      "rejection": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Input parent must not redirect outside its expected location: public/audio/peony-v3-atmosphere.mp3\r\n+ actual - expected\r\n\r\n+ '..\\\\..\\\\..\\\\..\\\\external\\\\redirected-public\\\\audio\\\\peony-v3-atmosphere.mp3'\r\n- ''\r\n\r\n    at assertLocalInput (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-public-parent/project/scripts/package-exhibition.mjs:26:10)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-public-parent/project/scripts/package-exhibition.mjs:41:78\r\n    at async Promise.all (index 3)\r\n    at async hashFiles (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-public-parent/project/scripts/package-exhibition.mjs:40:3)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-public-parent/project/scripts/package-exhibition.mjs:81:16 {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: '..\\\\..\\\\..\\\\..\\\\external\\\\redirected-public\\\\audio\\\\peony-v3-atmosphere.mp3',\r\n  expected: '',\r\n  operator: 'strictEqual',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.16.0"
+    },
+    {
+      "fixture": "public-single-file",
+      "rejection": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Unexpected linked or non-regular input: public/favicon.svg\r\n    at assertLocalInput (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-public-single-file/project/scripts/package-exhibition.mjs:25:3)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-public-single-file/project/scripts/package-exhibition.mjs:41:78\r\n    at async Promise.all (index 0)\r\n    at async hashFiles (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-public-single-file/project/scripts/package-exhibition.mjs:40:3)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-public-single-file/project/scripts/package-exhibition.mjs:81:16 {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: false,\r\n  expected: true,\r\n  operator: '==',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.16.0"
+    },
+    {
+      "fixture": "dist-single-file",
+      "rejection": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Package inputs must not be symlinks: dist/favicon.svg\r\n    at walk (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-dist-single-file/project/scripts/package-exhibition.mjs:32:5)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-dist-single-file/project/scripts/package-exhibition.mjs:94:58 {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: false,\r\n  expected: true,\r\n  operator: '==',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.16.0"
+    },
+    {
+      "fixture": "destination",
+      "rejection": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Package target must be a real directory.\r\n    at assertGenerated (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-destination/project/scripts/package-exhibition.mjs:58:42)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-destination/project/scripts/package-exhibition.mjs:95:1 {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: false,\r\n  expected: true,\r\n  operator: '==',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.16.0"
+    },
+    {
+      "fixture": "staging",
+      "rejection": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Package target must be a real directory.\r\n    at assertGenerated (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-staging/project/scripts/package-exhibition.mjs:58:42)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-staging/project/scripts/package-exhibition.mjs:96:5 {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: false,\r\n  expected: true,\r\n  operator: '==',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.16.0"
+    }
+  ],
+  "browserErrors": [],
+  "badResponses": [],
+  "failedRequests": [],
+  "externalRequests": [],
+  "inputsBefore": {
+    "scripts/package-exhibition.mjs": "60ed05c1fdc866ee95d8243031b79cb07bac1f560092b0c1620fefd57b488bd2",
+    "scripts/serve-exhibition.cjs": "dcf4d549bb051100c0f8532beb8f1003667d6ff6b34cd87b659ebec66fdb0f7d",
+    "scripts/validate-exhibition-package.mjs": "14ebc9e89fab3c0ae08312e88f912e84604c5745733003974778a8362d2f14a8"
+  },
+  "package": {
+    "directory": "dist-exhibition",
+    "inventorySha256": "a88f1b8cb1ccc548003d03b4c052ee9b362210a013eab3b9a7f09b0f5c048485",
+    "createdAt": "2026-10-23T02:36:46.886Z",
+    "runtimeEdition": "peony-2.0-2026-10-23",
+    "buildSourceVerified": true,
+    "files": 361,
+    "bytes": 540707423,
+    "inventorySha256After": "a88f1b8cb1ccc548003d03b4c052ee9b362210a013eab3b9a7f09b0f5c048485"
+  },
+  "currentDistAssociation": {
+    "required": true,
+    "matchedFiles": 351,
+    "mismatches": [],
+    "note": "A later workspace build can replace hashed chunks without changing the independently runnable package. Final unified freeze requires this list to be empty."
+  },
+  "url": "http://127.0.0.1:10940/",
+  "httpFiles": [
+    {
+      "path": "assets/flowerLetter-BJtbSAA4.js",
+      "status": 200,
+      "bytes": 2326,
+      "sha256": "0f48e7652a752eed7ed90dbab190b1dc405268f1bbf8db2dadf1c5fbaafe1284",
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/index-CpndIdbA.js",
+      "status": 200,
+      "bytes": 537467,
+      "sha256": "bbabc3d8e27274c64e7d9507c5e99d60bf08b723bd40f49ea7182677bab82422",
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "path": "assets/index-RpqBDuXe.css",
+      "status": 200,
+      "bytes": 119448,
+      "sha256": "79d6657bddb32eb3b10c8118feb3a0ea2bb43e934481e9883e5ba34aad77ff4d",
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/cover.webp",
+      "status": 200,
+      "bytes": 838938,
+      "sha256": "0979ba81d60f36cfb1386f3c8037192268520209043843c4f194a766d7f062b2",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/material-fields/49e383a33c808a8e6321ae03.f16.gz",
+      "status": 200,
+      "bytes": 1449940,
+      "sha256": "a4910eae07816c98f067a3f53123000abfd71e4a8e4c50987e8f8f1aed752477",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/material-fields/88ea82327d0febc425929b63.f16.gz",
+      "status": 200,
+      "bytes": 977021,
+      "sha256": "6d28378d82dd7a921783732fe4d0fdcf4913d9329cf1140d1ff38c73b1aaa553",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/material-fields/efc57e665aeec1cd4ee22bfb.f16.gz",
+      "status": 200,
+      "bytes": 1338401,
+      "sha256": "5653e1d0fc15ea90df80d51eb8097593b039149a64c515b79bf9c5fc67dbbf53",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/material-fields/f91ca43c925c36f93efb0957.f16.gz",
+      "status": 200,
+      "bytes": 1535756,
+      "sha256": "37e8e1fd827960fc27a3801e85bad75b14f4080f779f4b45799702ede57d7bbe",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2553.f16.gz",
+      "status": 200,
+      "bytes": 352181,
+      "sha256": "f5ab2a6c47d108ab510e0519766732ebf3a13d1e4248677d044c5977e49802e1",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2554.f16.gz",
+      "status": 200,
+      "bytes": 385284,
+      "sha256": "581f087c735dc1ec9a4492650bcacbe486bce1f6bc7c6a32a2a5e0e288804a38",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2555.f16.gz",
+      "status": 200,
+      "bytes": 457381,
+      "sha256": "880ae8c23bb4ff447271f89fc227af074da0048caea8ded95fb860e7e5bd00a3",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2556.f16.gz",
+      "status": 200,
+      "bytes": 465385,
+      "sha256": "c7cdb1dc475730be09369379c4459b86557af30d2d71188e97f79c027c92df61",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2557.f16.gz",
+      "status": 200,
+      "bytes": 559792,
+      "sha256": "179ab17f5949584342c9a056a0bbe00e8a3e4b4162ca5f87e730aa78ab771a52",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2558.f16.gz",
+      "status": 200,
+      "bytes": 575648,
+      "sha256": "087a1fc0576d4b4633b4a83a753196e08d3b66ffd54e70b37506abeb3dc8e321",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2559.f16.gz",
+      "status": 200,
+      "bytes": 673093,
+      "sha256": "b4e9be6ca4680f107ae39e95578ed7ce30e4ccd00abc2ec3c5905829c353999d",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2560.f16.gz",
+      "status": 200,
+      "bytes": 814943,
+      "sha256": "1d14d0b316bc3472736c55673bbea974daac3b08642cf89e10f90f6e7b287613",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2561.f16.gz",
+      "status": 200,
+      "bytes": 768862,
+      "sha256": "d6e3ba258f8710248946848e52c1832da11fcd6f0219acd02d771735d561c48a",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2562.f16.gz",
+      "status": 200,
+      "bytes": 987212,
+      "sha256": "eab30437ae64f1ab75f688fd351eb3b44f8911325b33b2e2583d2746931eb3fe",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2563.f16.gz",
+      "status": 200,
+      "bytes": 998415,
+      "sha256": "ff10d4793f64fa04b016036236910706c68086f69e905fbc30928f5eee22278e",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2564.f16.gz",
+      "status": 200,
+      "bytes": 970014,
+      "sha256": "c10cd5da6ac7d7c1f84431532b4cdc1dd5bcdb629bb46e1b9bb6dd470346b547",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2565.f16.gz",
+      "status": 200,
+      "bytes": 1130934,
+      "sha256": "2d0f3033742b0df37a76683388d05e4e3048dc21bf176a38599dabe5ecbab4fc",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2566.f16.gz",
+      "status": 200,
+      "bytes": 1289325,
+      "sha256": "a7c90b065a5d54980867b8b66b62bdd8fe7da03ac0147dc02141bd1e11db53af",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2567.f16.gz",
+      "status": 200,
+      "bytes": 1523613,
+      "sha256": "7ceae05ef4d49edac73f50c247ad3df9e58e633cb461b74b64a337c92c1923f3",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2568.f16.gz",
+      "status": 200,
+      "bytes": 1673235,
+      "sha256": "eb42aed4eaf62f3aab57f262e7872088cd1c0780fae6262d3c0b4a337ecd2027",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2569.f16.gz",
+      "status": 200,
+      "bytes": 1781700,
+      "sha256": "4d4ec822849d5e798b7e59e00d11619c39576b6316c209b596c414c0d3b0d294",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2570.f16.gz",
+      "status": 200,
+      "bytes": 2075211,
+      "sha256": "35af8782c8f39c6c97a5807b1bf948bc23b16f0fd45b8a48d41a174282d958f4",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2571.f16.gz",
+      "status": 200,
+      "bytes": 2190894,
+      "sha256": "36a3d0f6e6e98f001e46fdab8f985edbf0e5b0a298f998825140e45c817e6de6",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2572.f16.gz",
+      "status": 200,
+      "bytes": 2533835,
+      "sha256": "1cdbe6bf03e843ede207c62d08fa3879f9969c8b0efbdbe9cc79638653c77570",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2573.f16.gz",
+      "status": 200,
+      "bytes": 2818866,
+      "sha256": "0d14385e75edccb9fe10188b62fd8e65948b269805fbb98a3b092cf6cdb0f77e",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2574.f16.gz",
+      "status": 200,
+      "bytes": 2932720,
+      "sha256": "574a8a0368f972ffc1726ebae84f6e4453a7862bddddd99a530ae751697c9c3b",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2575.f16.gz",
+      "status": 200,
+      "bytes": 3444381,
+      "sha256": "b44a974a35d3e113e2ee1b67c8eca38535b4a1bed6a598f3a1b433cc370c67f8",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2576.f16.gz",
+      "status": 200,
+      "bytes": 3730561,
+      "sha256": "a0864fef55693c77b6222b4a9e61414bf16d65fa3ad75f11e106847d85e9c097",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2577.f16.gz",
+      "status": 200,
+      "bytes": 3894269,
+      "sha256": "a1e5e8f529877ddc4fce3dc2d5138fc306d9fa77c138e828f3752d0a53d2d908",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2578.f16.gz",
+      "status": 200,
+      "bytes": 4023900,
+      "sha256": "ef01b289fa0e11ab1d6fd3394b0adc46d52d60016b63c412adcd6a9c4e4f4839",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2579.f16.gz",
+      "status": 200,
+      "bytes": 4123961,
+      "sha256": "66cd36e2f4729cfa62c31b96edbbae80982685eeb2ad6323f663fc6521603ee4",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2580.f16.gz",
+      "status": 200,
+      "bytes": 4035189,
+      "sha256": "b81c4e483db693b6add2fb8e3ec1fef46257e14d871661fffcd046511da8a739",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2581.f16.gz",
+      "status": 200,
+      "bytes": 3638487,
+      "sha256": "455829ad8770db5d4e0c112aa0a528c591b31ebb0df8380a689760bb4dda1f96",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2582.f16.gz",
+      "status": 200,
+      "bytes": 3048890,
+      "sha256": "cfac348df907365cace7dbc072cfb421a98fbc45d3af2e0c37df936b748a6407",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2583.f16.gz",
+      "status": 200,
+      "bytes": 2851032,
+      "sha256": "f6d15faf9bb64a726d9bd048c97082c41d8f97a191329146148baccddead347d",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2584.f16.gz",
+      "status": 200,
+      "bytes": 2424447,
+      "sha256": "f520758cce287366edb0c0dc2b18b88d52d6c9fcff8837195d8345ab4a4617bd",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2585.f16.gz",
+      "status": 200,
+      "bytes": 2114284,
+      "sha256": "b19c332402511c13448f05624098cb0128ff150c6758d1c8d2baabf0084b4c2f",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2586.f16.gz",
+      "status": 200,
+      "bytes": 1386739,
+      "sha256": "0556f8ee20d9114375183492863e439a73ebaee186d2d6092f234d42bd4b49cc",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/post-glare/frame-2587.f16.gz",
+      "status": 200,
+      "bytes": 780411,
+      "sha256": "5ecd6a19d28b1e9f485bea77e7a4b871335f163f95c5f60f1f4af454076699eb",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/render-settings.json",
+      "status": 200,
+      "bytes": 172359,
+      "sha256": "1c90dca515394e0b63e09788010e5730eeff95eb81627853b780bf0b53e6c7df",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/scene.json",
+      "status": 200,
+      "bytes": 6706197,
+      "sha256": "f70f469adfad2e146944447d64ddc8b157915a90bf3d6a8732c66bff75981121",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/source-materials.json",
+      "status": 200,
+      "bytes": 1858692,
+      "sha256": "2ba8a03264fce063d7076433b977329f596dae5e5b4e12a4e77b3771e26ffdca",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/006f8351ff07c9c3.webp",
+      "status": 200,
+      "bytes": 1261728,
+      "sha256": "1decbf0cceaee22a3d3c57862e585d74f5a76d4dfb63cf3970ca6268969fac53",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/02e11304c2017df6.webp",
+      "status": 200,
+      "bytes": 1682116,
+      "sha256": "78554ea640c828423cee3dccd4360508159c29ce1f6a81c6983b6cb72d34a10e",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/033361d9cdfdf379.webp",
+      "status": 200,
+      "bytes": 1593954,
+      "sha256": "d222cae7026f77556e52c4df75d5bfe210a66b8833e1354050749e5e2d8c7ab1",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/03748d08d36315cd.webp",
+      "status": 200,
+      "bytes": 1599404,
+      "sha256": "d27e54e5fc1c377fe6cb15745b3cd7318a9107bc7e59293e11de028187130193",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/053eec4391d3ec32.webp",
+      "status": 200,
+      "bytes": 1701798,
+      "sha256": "b42d3b516900455aa43d3cf81e4ac8ffcf19b8eb1eda3ea9643547d6ff55ba34",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/0ee3549e1a2ea5c2.webp",
+      "status": 200,
+      "bytes": 1447108,
+      "sha256": "297cfd4b7e6fb9548ad938c934a0c6ae055eef8e4403445ee7052ee8653df6af",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/16fe9a9c5cd646ba.webp",
+      "status": 200,
+      "bytes": 1836716,
+      "sha256": "8059586e472a7cd9cf841a117dccecd9f48a3e06b5c3c4890155fb34be27ff62",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/179c4b549bf8b52c.webp",
+      "status": 200,
+      "bytes": 1937466,
+      "sha256": "8175828c4a9615c5518b72c168a6c2bc625f946f0de3421a022f6d9ff60e57a8",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/193d747551251c10.webp",
+      "status": 200,
+      "bytes": 1557296,
+      "sha256": "4a5e7bca24a6e8f195ca3d2d7fa2befadadb4f50d45aeabf50bec5370d7ec483",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/19b0a0d6cfd17d47.webp",
+      "status": 200,
+      "bytes": 1690778,
+      "sha256": "e229f6fc1e6108238b50aa5afd00e65b657f1539a9af55652d32725876bcf25c",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/1cf7f5363f972dd2.webp",
+      "status": 200,
+      "bytes": 1932398,
+      "sha256": "b9dbee6ad57a79e966134973116e95a6d60a5ed2c7b2f9fc95033ab71c7e3d98",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/2324939eb1e340e5.webp",
+      "status": 200,
+      "bytes": 1423864,
+      "sha256": "9b48326ba7aeb00c723ba112cae23ab2c75c3a73cc23ec7f8218dbee32535f84",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/233c9a378f4b387b.webp",
+      "status": 200,
+      "bytes": 1294172,
+      "sha256": "08962dfdcb4b04bf0a10c1c0707711a6a0c44ef3b7667c91059b5297c11b2a76",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/2d00dd3b91177fdf.webp",
+      "status": 200,
+      "bytes": 1410314,
+      "sha256": "bff730630862c92f97dc5cb3d502858a33eec8bfa195d620876ba24e14e1aab5",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/2d66886d8b0d4367.webp",
+      "status": 200,
+      "bytes": 1716832,
+      "sha256": "813de0935ce28ccccf9c1a89f63f45a1b52acb78d9e3850963e1c2f6ba103cf8",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/31eeb9d6290b37e3.webp",
+      "status": 200,
+      "bytes": 1831634,
+      "sha256": "05868bb552bad5fe2a230005e3a248e50baa1693a56b0c395fade37e4117ca12",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/36f34e28119e6fa8.webp",
+      "status": 200,
+      "bytes": 1498046,
+      "sha256": "2b2d8c25156d24d4423ddf6d2f6dd980b56ff2ab76ad7336c7ececb0a1c3c2fd",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/379b4eeaa463d414.webp",
+      "status": 200,
+      "bytes": 2093808,
+      "sha256": "d597f69fd8517fbc194a6f4900c826e8286aa869510c4a8c12542075c31cb877",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/39dcfe1b7ab846de.webp",
+      "status": 200,
+      "bytes": 1590154,
+      "sha256": "b02e1a0c45ff23e35cf9ba59216fc3dbef7203dc491dd6bc0b3ab7694104ca19",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/3e04bfd91a7644f1.webp",
+      "status": 200,
+      "bytes": 718056,
+      "sha256": "6d2ca420c01af5f0f2a2c7b6e6342e09587462eed0b4ce0b9db97c58ee6ff1ff",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/3e7036a34bd54ab5.webp",
+      "status": 200,
+      "bytes": 2001286,
+      "sha256": "cfe1579114bf365f8b6f525b7c97b99749e8d1e504d975b3477658529086f078",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/3fd09c5dfd252ca1.webp",
+      "status": 200,
+      "bytes": 1554722,
+      "sha256": "587fbbfc205a89ca89a43ccb3378fd0c142bdbe40cee0ecd7979cacddda28908",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/4560ef49860878c0.webp",
+      "status": 200,
+      "bytes": 1194770,
+      "sha256": "cbd0983d39076b692b369b49b7215242144acb33e440ce9fc3c81a1b01f8ea22",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/46a4b644ce449d89.webp",
+      "status": 200,
+      "bytes": 1921688,
+      "sha256": "3314b2a1cbf2fb496f6e0701c08801d2e916c2833caf7d0ea5a4597b754a9ef6",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/4a13b75621827763.webp",
+      "status": 200,
+      "bytes": 1801356,
+      "sha256": "332e8e9a85f61d9b13b9e85fef055fb1300f587436bdef63905b1632ea9c5ef1",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/4b35855ed5ffa59f.webp",
+      "status": 200,
+      "bytes": 649050,
+      "sha256": "600f589c3df7de6c57dc933f60158d89c91e43e368eb44316be9312ab10b34fc",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/4bcd42c0f7a2e6d7.webp",
+      "status": 200,
+      "bytes": 1218974,
+      "sha256": "828613f116d843358e89a3cced13e2749aa7a1d8a1fefd2639640cd7302b9c33",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/4bfe2c5cccd25bf3.webp",
+      "status": 200,
+      "bytes": 828166,
+      "sha256": "d0ba57241976ea5b57d7ea9fca825c51d70349cd740f4eaf00169f30a8679c86",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/4fd1e30f57496085.webp",
+      "status": 200,
+      "bytes": 2166004,
+      "sha256": "7cdfef2c4a28722aec3c39916607f04b1ce8915711367618a36a729edfd12495",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/50017de3a8408eda.webp",
+      "status": 200,
+      "bytes": 1648876,
+      "sha256": "894d05053e39daf9bd7d7fa355d9c3b72cd04123189053a06b57554d5e7e3977",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/53cb0f1133bd6870.webp",
+      "status": 200,
+      "bytes": 2389818,
+      "sha256": "032f2451f623f5d4ced3fbf8bbc278db122fbd872bb733f786fbce64c7dd9d55",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/57a1cbf81cb84316.webp",
+      "status": 200,
+      "bytes": 1965384,
+      "sha256": "84e9024b88afa2e0e934c8bbcd12fb08b0795843d8cf4c1d879aa1b62f8ae8a0",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/58cf7cbba7d522a5.webp",
+      "status": 200,
+      "bytes": 1785406,
+      "sha256": "db665a966106ec257af10d32612265080c6dd1afde888cf19a041a0226c9d37d",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/5c6ddc8b533630fa.webp",
+      "status": 200,
+      "bytes": 1731396,
+      "sha256": "617239a132d407a09bfafcdf69a38e5fb8573fcee7e02497e505f7becc4a7480",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/5d46455c79d6200f.webp",
+      "status": 200,
+      "bytes": 886282,
+      "sha256": "b09b90d4736288f40d1a655e17dfc00b51433909967dcd8117b87b7747ce596b",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/5d71f34e5eea46dc.webp",
+      "status": 200,
+      "bytes": 1458754,
+      "sha256": "1ab9fbdb9fd4184a2ecdb5ddfd2a25e5dfc4fc4b74bf9a45919a9c24375f6d2c",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/6548394920703cf7.webp",
+      "status": 200,
+      "bytes": 2063542,
+      "sha256": "22443c1231d96635bbcbc99dfe98796b1069f8b5f6fb41c053d25b5ccb2aec5f",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/6752696ca83b8e7a.webp",
+      "status": 200,
+      "bytes": 1515258,
+      "sha256": "36783f639a0c094db013882141d03ac3f5c7b387035b49fc45af352ff54c90da",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/6844fa33868cc53b.webp",
+      "status": 200,
+      "bytes": 1841112,
+      "sha256": "41d74a1ac5bfe746bf396f7d1a9bd738a720874afcd246fbc0396443f11b0f8f",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/71f24d37b5e81014.webp",
+      "status": 200,
+      "bytes": 1428386,
+      "sha256": "15f4b391fdb38e889297750c90eca4ba55d87ad584db4dee6c68e2f314595b42",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/71f8cb3c5a2d5b83.webp",
+      "status": 200,
+      "bytes": 1562112,
+      "sha256": "83683c633a981aee92b58bbc3414bfa03be92cb6b86e9a7ad67c67fd5afc4b72",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/733141417f39706d.webp",
+      "status": 200,
+      "bytes": 1312394,
+      "sha256": "0cf43378186b9fed1a2743dd90909319ba6b289f02d6a50878013969745e03d6",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/75f94d7cb2f8123a.webp",
+      "status": 200,
+      "bytes": 1967378,
+      "sha256": "184109b7a6c247174528129f6c71464f7f6930bc95a9b1d4e4d769c78c10866f",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/76723c1dd92b9b3a.webp",
+      "status": 200,
+      "bytes": 404394,
+      "sha256": "434af0cce0e891ca238fad3ebe99447e2be9a2dd0910c76e7376997acb9323cf",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/77426e1d8846739e.webp",
+      "status": 200,
+      "bytes": 1784970,
+      "sha256": "8220de0cca71ec6d69a7810eeeb864d7bf761d0e289ad13e371b22db97c2a928",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/77deecd75d232ec3.webp",
+      "status": 200,
+      "bytes": 1583530,
+      "sha256": "2ee023239a542b0e258684ea21947d794fc4612574e723b437c2b20b9d24fb39",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/785c427be2863299.webp",
+      "status": 200,
+      "bytes": 1946196,
+      "sha256": "1b225f9b9835f624fad5c268d03e11cf2a9e09c6130a122724ef3cb861e321a4",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/786854ef284f5f8d.webp",
+      "status": 200,
+      "bytes": 1385390,
+      "sha256": "e251740f451edf996763ead487e6f7fdc371094c70233e5c10e6b92f6ceed62c",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/808754b982d784ec.webp",
+      "status": 200,
+      "bytes": 1109080,
+      "sha256": "1c61ab4b3b84de5f8a6f3616c2813c4c2372f6f5c0045bc01f55be903ffa476b",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/81f78acaf78c4254.webp",
+      "status": 200,
+      "bytes": 1313340,
+      "sha256": "b01d1daf7b38a537779b37ccec51af05bf539bb6159a9680943e064b225d7fd2",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/82fd41e8f44ddf4b.webp",
+      "status": 200,
+      "bytes": 1752818,
+      "sha256": "8905505559d568b682282e5318ff09833109d7d467da81dd5f99b96b29ece87b",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/834c9f86ced2650c.webp",
+      "status": 200,
+      "bytes": 2022216,
+      "sha256": "000c19809c0ae54486d485b607ebf2c98165a35543d5b5344bc98cf422e6e9d0",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/89351583b2859b80.webp",
+      "status": 200,
+      "bytes": 1302964,
+      "sha256": "00a7b39b712b1584d34cb1f73434655cdebe375812e5bd12868dc5e4bca50a35",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/8e9aa67529516445.webp",
+      "status": 200,
+      "bytes": 2388458,
+      "sha256": "413019f887c818bff704c021c50982481ebcfeb3ef2ceba9088057412688ce7e",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/8fa99b0942487031.webp",
+      "status": 200,
+      "bytes": 1511672,
+      "sha256": "26e92ca52a8369f17b5824fef91f0eae083295580ddcaf2b8081956bff705056",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/901cc3d0946f5cf3.webp",
+      "status": 200,
+      "bytes": 1872158,
+      "sha256": "04aff2773216cb44f975fe90e8e079032dd72f52c40369b4e6ed07044cf365aa",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/9626fe28b66e4a17.webp",
+      "status": 200,
+      "bytes": 2025812,
+      "sha256": "c2e99b238b35bfc2bd7dc577046adabff3ee88d545de3d858d18a7ffaa7e503b",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/968084d1d8e00ba7.webp",
+      "status": 200,
+      "bytes": 1970812,
+      "sha256": "98a58d94b5fd5391760dff5e4da58dbdd480661a2d7a2372727b1defbf894c8e",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/9e4e39e56f2ccd75.webp",
+      "status": 200,
+      "bytes": 1665372,
+      "sha256": "395c60a8cfbd2c57059480f54f4c93b49f84ff3173a79375ec4e52c39536ddf5",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/a4ee5c4880ffeafb.webp",
+      "status": 200,
+      "bytes": 1611822,
+      "sha256": "babbdc0925c1650bca7bea9cceed22d16d421ea90ba02821a3641e409bab6ee2",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/abf5eafec62393e4.webp",
+      "status": 200,
+      "bytes": 1298336,
+      "sha256": "ed8c5b2d9338bf5c0ef1e17108206ad2052811c20e6a6ab5360787de3b167a3b",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/ac247ff91b633456.webp",
+      "status": 200,
+      "bytes": 1748908,
+      "sha256": "f57ec86bb1121436287684522e2b002aa8e2719d443acc85da47f30d5e4118e9",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/acfc4e0d47c0a8f9.webp",
+      "status": 200,
+      "bytes": 1372128,
+      "sha256": "ccc37cb09886c0d777e3e75322d99e506add05fbc287277a82c9e66cf54d85f7",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/b2985031fe52d2c8.webp",
+      "status": 200,
+      "bytes": 1853662,
+      "sha256": "d5073c1600167bf250d30eef1a44d9058667d3fc33d1422d0b2328f126ea4869",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/b2d3963198ef6049.webp",
+      "status": 200,
+      "bytes": 1706112,
+      "sha256": "0a3732b64a42aead681be1e78fadb933c2ff38671ca648a57aff6358c1651b84",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/b69c05f297e666b3.webp",
+      "status": 200,
+      "bytes": 888488,
+      "sha256": "fc4c3d1fadad91653ca58c4e29dd85e23f98a9ff9c8458d53bbb2f2eb0ab3304",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/b78c04b61bfa618e.webp",
+      "status": 200,
+      "bytes": 1506330,
+      "sha256": "e8b4b3b98db7dcf5f9ee116ac8f40840a788bb81b02512dda29c0c7b07a06fff",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/b9468fdb8edfbf9d.webp",
+      "status": 200,
+      "bytes": 1658306,
+      "sha256": "96de6e9d165b3aa5ad9eacd428c770bab6b0e9517e3a78c7c5bbc1721182f4c9",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/b94fc82c9eb4020a.webp",
+      "status": 200,
+      "bytes": 897312,
+      "sha256": "32225fa70f0f130ff718fd89cb2c81d4107d9e7a1242222b27f8bdc90216a4ed",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/baf050d9d94c1a19.webp",
+      "status": 200,
+      "bytes": 1696186,
+      "sha256": "8229145bf3cdd4ab0ce307d9cf0b3002f9d6c01d457e1d40c3b07b5681fa47aa",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/bb7cac307430ce1e.webp",
+      "status": 200,
+      "bytes": 503522,
+      "sha256": "b288a71f7cf64e578e03f02d5b315f528e1eeb0078a43307b929f013e350267d",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/bd4254cbff8d7912.webp",
+      "status": 200,
+      "bytes": 1636568,
+      "sha256": "feb33734eab8f8a8e4d95f6a464ebcdd45297387bb0a23d8d28b3a7ddc77d8b7",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/c68cc7fc877955bc.webp",
+      "status": 200,
+      "bytes": 2342472,
+      "sha256": "76de5c7c3ffd3cd1bb45ea637ff793094c41c81f2febda0b843d730d733bb83e",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/c89669d0003491ac.webp",
+      "status": 200,
+      "bytes": 1258484,
+      "sha256": "b58bc574e930d2eeee96c6d7cf83354fcbf35250a425f575d611c07e4ace7ef3",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/c89eeebd8405cb3f.webp",
+      "status": 200,
+      "bytes": 2096484,
+      "sha256": "85f325997edf5c041f58ff2dae526e3bcac38d8d600d1909e9753b4ab0c37658",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/cb87024bde671a38.webp",
+      "status": 200,
+      "bytes": 1782896,
+      "sha256": "a60b41be4d4032318a8e786ca8644675452d5a730c0ffb1a4ab44f1994060c64",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/cfc28531ae70b13c.webp",
+      "status": 200,
+      "bytes": 1672966,
+      "sha256": "c5865e2c7bd36e3e5fa7f4646e3d3404bddd04386d305de77c1c0bac747fa34d",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/d5ad75bf3b9e5965.webp",
+      "status": 200,
+      "bytes": 1719280,
+      "sha256": "35e4bfa3718711e313310458f8461bff2a3f8d91bd1bc73fe344ac1702a81bad",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/d7c1abb927b9d7ba.webp",
+      "status": 200,
+      "bytes": 2091378,
+      "sha256": "8de1a0bf48b69288d14a6ba7fecfa2b379cb5b44a4a4ea0f230df6007dd002f0",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/dadefcc08d342080.webp",
+      "status": 200,
+      "bytes": 2059008,
+      "sha256": "b322ac0bec8c6941359113881ca27bd44999f14c6102f4a245551831ce66ed34",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/db82884a9ce546f0.webp",
+      "status": 200,
+      "bytes": 1997416,
+      "sha256": "0d6ebf7f5af24972c6883f3fcad253ad64c9c933f25f1bc8477a50ed09322b5c",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/def1dd7d18f321f1.webp",
+      "status": 200,
+      "bytes": 1543724,
+      "sha256": "65d70ba7cf9935148ed21a8a1518ba8710218f31bbc2fed97d19bde28f8cfd1f",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/e12bc61b760d1add.webp",
+      "status": 200,
+      "bytes": 2001090,
+      "sha256": "b2a17e630b7644fd8f425f3d3deb81cd393712de4d2d6e0a536a2ecc228f2ed8",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/e2a1b0d11ff61f17.webp",
+      "status": 200,
+      "bytes": 1073396,
+      "sha256": "bdf0474433afcfb62628c3d63bfc9d430795518460cad5a96aa1bfddb0ec0639",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/e3daa768cdd77bd1.webp",
+      "status": 200,
+      "bytes": 1690332,
+      "sha256": "184c79c1811225db5f8e72728e12b09b5ec6e87956383181050dbbc1f85d9991",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/e924d6510b01a962.webp",
+      "status": 200,
+      "bytes": 1681714,
+      "sha256": "1320c6738879726184f270347f0d0019d27f235622b9827a0ce949409e795cc5",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/ed99a2a1017c293e.webp",
+      "status": 200,
+      "bytes": 1270284,
+      "sha256": "1867a0d3233bbf1a79cfd7998e265bc54207d790fd796ea549776a1c8808cd8e",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/f39745ee605b1d66.webp",
+      "status": 200,
+      "bytes": 1335268,
+      "sha256": "84a4fde55dad4f56dc14f6d3f86f1635e112dcf293d4e144b0491550a943a45c",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/f3abade799e647f4.webp",
+      "status": 200,
+      "bytes": 1282448,
+      "sha256": "a4c3c064c9c246b4f76b85d05431969c511178196feb8a2879aa8ff584002c8f",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/f3fd30718916f244.webp",
+      "status": 200,
+      "bytes": 1474156,
+      "sha256": "86d901988f416caef83ac804e086f9ead1cd4e5a55efce0c5a79bd0c163c493a",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/f44fd9d8ef6259ec.webp",
+      "status": 200,
+      "bytes": 2156696,
+      "sha256": "5175f8fc7c34a1fb0570432a04d19643dad1b837cc4fa634ae193c563f92ddd4",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/f612713300327382.webp",
+      "status": 200,
+      "bytes": 1966098,
+      "sha256": "c70c0d62959a7e40d227453e7abcf6411ef622b239c9749bda4eb2ca19fb6104",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/f7f961e27e773893.webp",
+      "status": 200,
+      "bytes": 1803208,
+      "sha256": "a8fe75415c89a225cbabff46c050a9b124646e9f80847c3d200b319613358dd6",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/f93191a5033db4b5.webp",
+      "status": 200,
+      "bytes": 2209610,
+      "sha256": "3da0f13a36091360627f97478ede87006ceb68717ee4ad61dd700db627431a26",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/fcdcb29c987e5a59.webp",
+      "status": 200,
+      "bytes": 1657804,
+      "sha256": "511c244d31330eeaca8d0683f516a0dacab05f846f5ef7494c37c384d26a7070",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/fd4a640b47a03243.webp",
+      "status": 200,
+      "bytes": 1084646,
+      "sha256": "acb0285afbaec18fa510c9179629ef6657e0ad68b3f0783703977210009031c7",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/fdd0ad9b29bcb9e7.webp",
+      "status": 200,
+      "bytes": 1652588,
+      "sha256": "60f08fa415e86633658a9090fcdc60547f9103a7279ed76f8ac4cebfd48207af",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/feb3ba4cb2b5bd5b.webp",
+      "status": 200,
+      "bytes": 1989024,
+      "sha256": "cf7b7312a93b4b5bc15361a095e0f9166cf700acf17bb1a889f54c5bc4cbc356",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-1/textures/ffdf16c747f152bd.webp",
+      "status": 200,
+      "bytes": 1248074,
+      "sha256": "2d54ac86203c9b66908a86c99b83f09b0848ae195381922191e4b213e2e2d9ba",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/cover.webp",
+      "status": 200,
+      "bytes": 1329446,
+      "sha256": "dea085cc247d1284f491aeabc508446c65f81ddfaa331b5e263f8e1b8681c9a6",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/material-fields/0037a8d456936e2d4ba3dbb1.f16.gz",
+      "status": 200,
+      "bytes": 808458,
+      "sha256": "adc0c9316b70b89cbc9ee2a4c767af51639c4a557ca77a7ebb8fecaf624f83e7",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/material-fields/060ac56479939c2d4ce20844.f16.gz",
+      "status": 200,
+      "bytes": 1500198,
+      "sha256": "fa548fb1a640c747b27d53f7f6b7c9407f48431a8064d51c83f558fa137e2aa4",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/material-fields/124863892cca985c9f710774.f16.gz",
+      "status": 200,
+      "bytes": 1473020,
+      "sha256": "81818afbd5618463139483457d59afb06c18c67480e7d351ab981a109612a7d0",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/material-fields/7af213ba13726460a761bb0a.f16.gz",
+      "status": 200,
+      "bytes": 776748,
+      "sha256": "c08b8b359569ad735b4370ab628a27eecb294f61eaf02739cfbce5ce8a0f71ca",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/material-fields/84caa60a67f075c238406e49.f16.gz",
+      "status": 200,
+      "bytes": 1099462,
+      "sha256": "2d6ed6f32b4dc85fe9a7cf18290d6b519641dd7df9d6807c510cd164411caa85",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/material-fields/c67f35dd58bf9eae588466bf.f16.gz",
+      "status": 200,
+      "bytes": 1061591,
+      "sha256": "5dafea547635950d65f4203c797cf7b43e8c41a93649d70afcafe96e454ac7d9",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/material-fields/d0722376d15c136dfede4bd5.f16.gz",
+      "status": 200,
+      "bytes": 853760,
+      "sha256": "c8d286db835d63b26277dbc778b3f0550c3844bba2fec8e7a55c0e9ffeee3879",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/material-fields/d1247149959fbbcb6392e9e6.f16.gz",
+      "status": 200,
+      "bytes": 1479310,
+      "sha256": "880e4cd82018653de87a65ce6b6a132e27b47377f732986ad94e7b535e781ccb",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/material-fields/f49af4226c8d34b0e57fdb5c.f16.gz",
+      "status": 200,
+      "bytes": 1491080,
+      "sha256": "678908133a854269975dd1a659622035f4623aa5210111356a25b9963e9a6868",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/render-settings.json",
+      "status": 200,
+      "bytes": 26785,
+      "sha256": "e71958f291708639cb2f8e0f2e12ad185aae439c5f090e91c987045fea1c5850",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/scene.json",
+      "status": 200,
+      "bytes": 929511,
+      "sha256": "3919e11d71aadc75bfaab934a1255e3bb7ddab2aada69dbd60639e827f8fb42a",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/source-materials.json",
+      "status": 200,
+      "bytes": 677549,
+      "sha256": "41466399e00cabfbfbd039bc6b6a293f1c94930acda12c4c989ba8d7bf821e83",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/06c8dd1a2b3e6a10.webp",
+      "status": 200,
+      "bytes": 1423090,
+      "sha256": "24cf750e00c731841736e01dea24019c4d28e5b563e232e158f0ef181dbaeea8",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/0cea041885148293.webp",
+      "status": 200,
+      "bytes": 2057544,
+      "sha256": "2fea97b0703fef7711904c39af502c1f271b843ac5dd6d803084b577f2294957",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/201ef17c5263b3b2.webp",
+      "status": 200,
+      "bytes": 1600136,
+      "sha256": "0c96e9612b214c82809f306fdee197a41fbbea9b657dcab9ab4ea721a30df664",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/2196b09f5585c401.webp",
+      "status": 200,
+      "bytes": 1823994,
+      "sha256": "26892ed3714db38ea51c4fa649c402a7f86b3506ae5d9c0537bf9c3ea3f9362b",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/24c140c035db3876.webp",
+      "status": 200,
+      "bytes": 1686322,
+      "sha256": "dbe7d8667b96f9d722497ba922ae7ba1896b863586fbf246181e95dd1b3c71c5",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/25b1b4676324d238.webp",
+      "status": 200,
+      "bytes": 1356314,
+      "sha256": "a9c904452eb547b35d82c26c7a148231732ae8dcb2cd97718fbeb405aee668f3",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/270f4d6f34a96087.webp",
+      "status": 200,
+      "bytes": 1681926,
+      "sha256": "8113cb6092baec140d2b34374db3543877494918593014e36a3d4b3a347e30a5",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/44be6975ecdad9d2.webp",
+      "status": 200,
+      "bytes": 787782,
+      "sha256": "9b8538a1a7965b7df74f9d768ebaba243d4793587522d14b0e5a04b096401b68",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/49de425e58f15777.webp",
+      "status": 200,
+      "bytes": 2339008,
+      "sha256": "5519e3b495e88dcae74edb29b68ac0b892ef0b107ec6bf7eca83a7dd924f75c6",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/4bc4393b33402ddd.webp",
+      "status": 200,
+      "bytes": 1832516,
+      "sha256": "3b4ee350f38f7ef38df69242a08a06f9d1bb6036508efad04b3ee29fe6cfdaac",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/64a71e2fd856fae2.webp",
+      "status": 200,
+      "bytes": 1897298,
+      "sha256": "a07f04a307bdaedb25816741589f5cfb5554173fd35a1dc6d5fe83fcd2c82ac5",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/7259aec9a67964fd.webp",
+      "status": 200,
+      "bytes": 2456790,
+      "sha256": "203c48a94b4c97bf13f19f6671dabe2f14e863689c0b34dc12189cd20029c420",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/8448d27ccf37d39f.webp",
+      "status": 200,
+      "bytes": 1762736,
+      "sha256": "32b862e5b2d83207873c6209c8549085107ca723e80c5fa29debab9cd9fc7df8",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/8fdda96ed5170315.webp",
+      "status": 200,
+      "bytes": 1705844,
+      "sha256": "bce206e216a40ad5d110b8c39f74e42c703c4d54eeceeaa7ab969da66ee8767f",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/90389c2df78e00c2.webp",
+      "status": 200,
+      "bytes": 2166962,
+      "sha256": "6b75099c78d7e41d421b0904129cc508f961eb14127e012fe3f52f6d6689f987",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/97f7f628d0ca4b00.webp",
+      "status": 200,
+      "bytes": 1622784,
+      "sha256": "9c85e1adb8dcfd6120fdb35e8bade083d43f8d1a8cc74009679627dac26af92b",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/98fa9cc171437a73.webp",
+      "status": 200,
+      "bytes": 1841590,
+      "sha256": "9ffe19b1b4b89faa66831978cdfac6426bc6d0ce2b9af58345baea87bc8ed1b3",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/9a209353d7c66eda.webp",
+      "status": 200,
+      "bytes": 1328262,
+      "sha256": "2dba5416200834a603ffae2d87d529cc226a7b17321c047d0b6beeb27774faa2",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/9ce43389834b999b.webp",
+      "status": 200,
+      "bytes": 1416936,
+      "sha256": "15da47a16f48474627cef1f479e06e96554517b8bf5408c27cff8b7370627e70",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/9d27fc9598094e65.webp",
+      "status": 200,
+      "bytes": 1383708,
+      "sha256": "d6f38899011d341582a5263833c163a5d1ba00cff4a28c5a00fc616d3638bb62",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/ae8f6974749c4a81.webp",
+      "status": 200,
+      "bytes": 1561612,
+      "sha256": "8566d52ceb8a8894a540cf7dbeb842e97d68a2420895f4df45fb14c5441c93ae",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/c0622f8b084d1b9f.webp",
+      "status": 200,
+      "bytes": 1983198,
+      "sha256": "989d14572a1310aab0370156e540abbf36cc16281a72d1b21d90093c5985844a",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/c2f41850197ebcf6.webp",
+      "status": 200,
+      "bytes": 1629556,
+      "sha256": "3a4512ea5f63fbcc871d4700aabbe9329aafa9d81958a49005b7c5417089d2dd",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/c495b5e096c5d60c.webp",
+      "status": 200,
+      "bytes": 2146418,
+      "sha256": "eaf629f5bc7e9d27216d7b0aacbbbe7545dbe0d4aa74746ae62c4fdef513070d",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/c8733530185b5a2f.webp",
+      "status": 200,
+      "bytes": 1546616,
+      "sha256": "421e9c571d8b93a44e03d9c7318148b612d9bc502f9f34cf7cc62957476ad127",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/ca6ba6ff7d6e5eb0.webp",
+      "status": 200,
+      "bytes": 2086690,
+      "sha256": "191592c12b7fe66f27e02cbdb6fab4eb8a477f43bd67edf3ff71926dae74372a",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/cfad0abb19db9698.webp",
+      "status": 200,
+      "bytes": 1305356,
+      "sha256": "c55ff32dd1ba0b51d8dbd80da367b9592fb6a921e492297ee834547f0b778de8",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/d765675fab19be5e.webp",
+      "status": 200,
+      "bytes": 2026810,
+      "sha256": "a00efb967be8e6f24d2e7bc8356f372a9c3512940db92cddde17a3a967356d9d",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/dbc949f3a0212251.webp",
+      "status": 200,
+      "bytes": 1004104,
+      "sha256": "70b2e69e3e3bd077779dd4e4b309595e9e63149a4f9b97d96f970b961f6ee746",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/dc4dd5ae9c838f22.webp",
+      "status": 200,
+      "bytes": 1368158,
+      "sha256": "f402b0207cd05d38045fb374be1ff6d5e80d12b8a480da3b5f080b9a7b269d1a",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/dcb33577b571009f.webp",
+      "status": 200,
+      "bytes": 1975782,
+      "sha256": "8898ae21ada8e86155451b743b50115af3ec96115302c2b5b5b11916c9b46c58",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/dd4a8057e2ea4775.webp",
+      "status": 200,
+      "bytes": 1667564,
+      "sha256": "5061029fc1f09b594c5f119d930341bdd4dd7c5cd10b40ea14497377b86283d1",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/ee74efa141e035fb.webp",
+      "status": 200,
+      "bytes": 1264424,
+      "sha256": "da2d53b56d77d214761dd8b1c0c7b068c8a08e217c1283e539ea9113ebab24a1",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/f38c8545751da5f2.webp",
+      "status": 200,
+      "bytes": 1292020,
+      "sha256": "d86b1abf3cb10f6fbabb73b83cb19d2b7767b1f29cdc394e7e593a8b21c8a71c",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-2/textures/fab16d2f6a5b2ac3.webp",
+      "status": 200,
+      "bytes": 1878322,
+      "sha256": "50b4c56cd8381f761db8a10407bd7d312ac88ff377cf6c120810315dd7a66a77",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/cover.webp",
+      "status": 200,
+      "bytes": 1196844,
+      "sha256": "1ac50cab0acca146dfb911d8e6b01987e7bddbf2ffe258197498863b74e54236",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/material-fields/51ac8af3c1bb4e8c7beb19d0.f16.gz",
+      "status": 200,
+      "bytes": 1114292,
+      "sha256": "ffae2a23abb39e1f0052cbeb27ad90a7270cbfd59aa9d167195c424f8e472c72",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/material-fields/90cd44d256373cd1652fed8c.f16.gz",
+      "status": 200,
+      "bytes": 1233043,
+      "sha256": "5c54970b930648af06d232b11b1179da20300b60f7c8ad3ceb3bebf5f6d44007",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/material-fields/9d762a85585bccd4b41f6208.f16.gz",
+      "status": 200,
+      "bytes": 1043365,
+      "sha256": "a53dc0201f0d4482ac00b65c87c3920593c3eb766d277c6746fa43cc938425a0",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/material-fields/ef14eb3753ee90c870bb68e6.f16.gz",
+      "status": 200,
+      "bytes": 1108038,
+      "sha256": "273380206d7e3934965e96a12ed00c392e161011879437155acb88f2b0d989e9",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/render-settings.json",
+      "status": 200,
+      "bytes": 39153,
+      "sha256": "f4e6baf9014ab83d76af0574a05c7c82d80a6fdc0dbc6ef07a806ee49a52077d",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/scene.json",
+      "status": 200,
+      "bytes": 6496305,
+      "sha256": "831918f3365da1e29a1d9293135a463acddd87e07e0525d7982a9e4fef071159",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/source-materials.json",
+      "status": 200,
+      "bytes": 1057926,
+      "sha256": "26394d2e5987d39b3f6b8f46c1e473ff12aaf8fd796baa9c3c162622040f4792",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/0e0646fc3f62d3c1.webp",
+      "status": 200,
+      "bytes": 1564594,
+      "sha256": "825a5e681c9b942a50d8491707d3309f2153bb4b5c0a5022c593bf8f63841137",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/102e77bcdbdce07c.webp",
+      "status": 200,
+      "bytes": 1880420,
+      "sha256": "034cc1caae89569f9ffca11348a5355fd11d2382d72cd9178746fef705b8e070",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/130f01411cd76a35.webp",
+      "status": 200,
+      "bytes": 1324462,
+      "sha256": "6a309983d85b53e7d9f8c32329087cce0590ea560a97ac174864c641374a2fad",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/141739ea495b46e4.webp",
+      "status": 200,
+      "bytes": 1893660,
+      "sha256": "ba2b9ce84f0cbac3c092db51d79192c6d4f56d51ce411856b8766d7d7ac46af7",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/160a260ca03505cb.webp",
+      "status": 200,
+      "bytes": 1635194,
+      "sha256": "ee00c48b2dcf258c0d9212f8a5765a504877d2e5c40e4b8beb19f1f8ba275e11",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/20a9f98adb1ab008.webp",
+      "status": 200,
+      "bytes": 652876,
+      "sha256": "1cc6894fca9f75324232c309d3719f0a34bce8c4a74c0c1233af9ac573e6343b",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/26a1dbcf3c942589.webp",
+      "status": 200,
+      "bytes": 1876398,
+      "sha256": "658b5ce37ff73fe2c36b1e16ab8da2e0f234f511044d8ea86f4e3ab0ee073b1f",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/276570b9f7b76cf7.webp",
+      "status": 200,
+      "bytes": 1386330,
+      "sha256": "8ad0c9129fb87a0fafe25a495b550ce308cb977e3005332623c7595b5d2d1944",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/29aec8c98b606831.webp",
+      "status": 200,
+      "bytes": 1458006,
+      "sha256": "160515040e392956842cbdc3a9e24955db6ada04dd5653b025dc65208cdabb85",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/2bb980912949e4df.webp",
+      "status": 200,
+      "bytes": 1368632,
+      "sha256": "eb35fda6abab45ad10213638664951617f5d24d7951edfaa38f90636ad231405",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/2f0300d5ad7d4480.webp",
+      "status": 200,
+      "bytes": 1422956,
+      "sha256": "3cef4472c0cbb8b363332e6b52b5f45770c79b7b80fdefb9fd125fae335f1216",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/35342c74cb321abb.webp",
+      "status": 200,
+      "bytes": 1329978,
+      "sha256": "fadfbb45aafabfbddcbac458e198fd5c50d838603e404fae6ad84203b5ad7837",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/3a96055d6b126f75.webp",
+      "status": 200,
+      "bytes": 1676088,
+      "sha256": "28ebfb9ecdd006add75b5ac0c401c5ac3de8ba378adf2bbd0f330a026d5ad797",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/3b20bed736524e12.webp",
+      "status": 200,
+      "bytes": 1514186,
+      "sha256": "c6151ab150b010bb89c621c107041179792ff62849457cd5674e15bae0f695e8",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/49127f96ea52cdf3.webp",
+      "status": 200,
+      "bytes": 1438962,
+      "sha256": "e234845537ccaa9286166acd04251f53c14add546fdd65e427bf8e771e7b53c9",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/4d0cc15e983e9292.webp",
+      "status": 200,
+      "bytes": 1488856,
+      "sha256": "ba13344a4429def95d3004834f966a20a46d753abef22718440a7b342335b532",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/4f406a818d5f4a0a.webp",
+      "status": 200,
+      "bytes": 1805710,
+      "sha256": "f99e7a4c88ceb6b585c0ea2c571dccf2497179b3460596fc32020ccd9bdc7dca",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/5a59bcaea24a7389.webp",
+      "status": 200,
+      "bytes": 1666912,
+      "sha256": "317f0e8a089cd374710e4a6488c16d852b3ced3f2f5cd6bd1a41229dcd3809aa",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/5aeba0d56912f4b2.webp",
+      "status": 200,
+      "bytes": 1663786,
+      "sha256": "0cd2d0b8d972d21888566f74bc7d4d46042bdf7ed6631f6935e425c3defcf6c8",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/5f40f69fad90d85e.webp",
+      "status": 200,
+      "bytes": 1788476,
+      "sha256": "4114672cc778774e35ce6e4b93f2401411cc0923eb7af660a516db41b427015c",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/65a107275085ea4f.webp",
+      "status": 200,
+      "bytes": 1429532,
+      "sha256": "13d747918bac33b35fdbe3a3811924c5136f0df696d2ed6acbde4bd8625dd307",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/67215efc9dab6153.webp",
+      "status": 200,
+      "bytes": 1815542,
+      "sha256": "20dbe15eac2535d7c8b62f6233c13bddba898b96eb5cb424a89c09fbf83f29f9",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/6bd5cddc8726a6af.webp",
+      "status": 200,
+      "bytes": 1324984,
+      "sha256": "465433036b5d730cfe5a6b394b6a1745dccf0f9a2d064224b668d8851bbe821b",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/6d7bc64618fc0cf2.webp",
+      "status": 200,
+      "bytes": 1720148,
+      "sha256": "0f3424db42c8d912a02df9348b9495d47645a4f485b100dc1494cd82d4892ab2",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/6ec63434ab7c0e99.webp",
+      "status": 200,
+      "bytes": 304772,
+      "sha256": "edc09d5d075d5ad35150b6fb6eae8a294ea8d635ae63565bea2de2040e0c8d74",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/7118a0c582eaccd3.webp",
+      "status": 200,
+      "bytes": 311480,
+      "sha256": "24b43ae8e1dbea60f998e3c6233e724d722f447877028bb28fac3ccf494eddab",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/75d7eb346bf6a2c0.webp",
+      "status": 200,
+      "bytes": 1454410,
+      "sha256": "52aa92a1f616ee26e48969f44bb237fde84c10d52260920341fcc21992e51d48",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/7a72d676b9312cc5.webp",
+      "status": 200,
+      "bytes": 1577198,
+      "sha256": "e01e8cbd732a551ef66ac44c860a1a3bf8f808489d267f1f88b80803e1b7488b",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/7a896bd6e04c152d.webp",
+      "status": 200,
+      "bytes": 1696348,
+      "sha256": "e1c997a4e24f3522d391f241ef2d7351424310960eb3b2e0ab9caed9bb5051d8",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/7b72f64ecfee7311.webp",
+      "status": 200,
+      "bytes": 1932346,
+      "sha256": "4bdb8374acfd8f7a12399751ddca62a59262db07a12190dc56568b65ee4b6a7d",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/7f9c4785e4483f30.webp",
+      "status": 200,
+      "bytes": 1730260,
+      "sha256": "e32efabb0ebbfd6ef4afc73ccf17643c193086de39019fe4db01fca40637b333",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/86237d240ae7acea.webp",
+      "status": 200,
+      "bytes": 1972516,
+      "sha256": "419a053e3b7479e01a08eefd6bfae01df833d96e39db9dec2e193db7e34e345d",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/8818501ede5169de.webp",
+      "status": 200,
+      "bytes": 632686,
+      "sha256": "dc45753ec566ab87fb60affe59162902b6b2a42b0cc5f0bc34c6ee730d77a016",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/8a9cddfe7e904b6d.webp",
+      "status": 200,
+      "bytes": 1693654,
+      "sha256": "e9eabc5ac983c842ea26c31f071ad9ace13707ba862e60eccbbff44014e42dec",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/8ab61aa2afc77092.webp",
+      "status": 200,
+      "bytes": 1687566,
+      "sha256": "a042a44e688b1519f585eef08cf622d3e9bd47a86ed336d2c7a1f7137e8a97cb",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/91feb9903181a4d6.webp",
+      "status": 200,
+      "bytes": 1101708,
+      "sha256": "850afd23bd4aa9d19cd8c625df1da2b2160046d5badc30bbc6f7cfbe33d0db15",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/93fc356ca9994085.webp",
+      "status": 200,
+      "bytes": 1452040,
+      "sha256": "8191394b1667cef36742c2225060ae95b46847479051de55e31a0f00cdd78435",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/94a2f1052f8cfb74.webp",
+      "status": 200,
+      "bytes": 1662130,
+      "sha256": "79716edc750b270b22eee636bd3e91f35ddf200ef3609746b893129e2c31b1c1",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/96ebf973cce1902b.webp",
+      "status": 200,
+      "bytes": 1893938,
+      "sha256": "5a12ac784ad438f475e05b25e5d5709d025d781698dd65dcc1269f0e7709e56d",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/9b84c590d5d9d4f2.webp",
+      "status": 200,
+      "bytes": 1427102,
+      "sha256": "6b1186d77dd60c4626ccbc2e0fc21979815367e8247d75c29e814b818eaa3dea",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/9c3d8a95e6ce7f79.webp",
+      "status": 200,
+      "bytes": 2097066,
+      "sha256": "61a6bc25d66c2efd814e8637f1d1dbba3eff4cece0b945a4578bf0845b012eda",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/9c6e40d139f71e91.webp",
+      "status": 200,
+      "bytes": 2046178,
+      "sha256": "c323e98d9333c1a900e95c69df778c94f7d69d568290d9f38bef43d355119e01",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/9f82d44b781d0eca.webp",
+      "status": 200,
+      "bytes": 1242046,
+      "sha256": "225d66bc2e731b98033ed5bfc5e5c326fd783f4ae923e7f35297567366865c26",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/a6ce9f5567e5b029.webp",
+      "status": 200,
+      "bytes": 1511276,
+      "sha256": "2e7a4e2a48556a906af61841ec1319c414efb317ce45917c9629c00972625eba",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/a797187b38eac717.webp",
+      "status": 200,
+      "bytes": 1690020,
+      "sha256": "753ed0a6e6914f8391807c35c2cb35b3c160c37d32af6d3ade36a97f7fb21254",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/b011c13990a3b4bd.webp",
+      "status": 200,
+      "bytes": 583716,
+      "sha256": "2d18a14afa60f2418e923c417f745794540a3f592fc2afc5158abefabbc8999a",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/b27e57e9842bddbb.webp",
+      "status": 200,
+      "bytes": 581400,
+      "sha256": "2a4034583996bfc77d97b3ba162959c489da3a4748c966c3f2d2de16b537332d",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/b9e663a152ff3473.webp",
+      "status": 200,
+      "bytes": 997388,
+      "sha256": "3599c9aa9eb6a94e005ac0a561788ae4c52528f81f714c78af7be3bd74771285",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/ba1fcc4bae8b5d6f.webp",
+      "status": 200,
+      "bytes": 1437446,
+      "sha256": "83b2b75e620e1c053a397244736ea3539853689a239a312010d6437dd13f3bec",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/bbb326dc469c79fb.webp",
+      "status": 200,
+      "bytes": 2407690,
+      "sha256": "74395c4c36f5be4bbbaab8c2e11b0fe3c8088231ec472e4c87d8c57fa5aea115",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/bdc40487053f2822.webp",
+      "status": 200,
+      "bytes": 1745270,
+      "sha256": "40fa005f72eceba60ddf27e2ef4de0445cf23cf888d9628f3d4fc5b633ac7fa5",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/c529c3ba0a061e67.webp",
+      "status": 200,
+      "bytes": 1662802,
+      "sha256": "c1aa0dd5c83d70684543fe2babffc64895f9c1ecdb2580a49311c7d8fcaddbde",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/cc09d6c05fa98304.webp",
+      "status": 200,
+      "bytes": 1834436,
+      "sha256": "822be3d86fa1c077a028c17b2e79c1addde7f4568ffe834e85b3bc3d81e028e6",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/d1b27e3da2727f8d.webp",
+      "status": 200,
+      "bytes": 1354460,
+      "sha256": "d3b6c16d06ce9a8ebee3c8059560185c50a1c06143d289421f836c72bbb4f1f0",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/d1bfbb35f803eece.webp",
+      "status": 200,
+      "bytes": 2044626,
+      "sha256": "93714770c2b0260716d8175d04aec103ce0f9cd14adb331d7857a85d920bca5f",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/d300ca6da2db054f.webp",
+      "status": 200,
+      "bytes": 1788124,
+      "sha256": "68033bad8132d86cf78b13c58276dae2e4b8860a0986d5c345c2e674b0fb03e1",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/d51d239bf784ab89.webp",
+      "status": 200,
+      "bytes": 2017072,
+      "sha256": "3393e2403c64488cbec74b32359223d8f6e4e6928192b5ea98f06dee77996f43",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/d5a777bfc392568e.webp",
+      "status": 200,
+      "bytes": 1772106,
+      "sha256": "4572d2db80d0541a1a15f7885689c85561a3c06f04515f9e0dc4ee0886457751",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/d79e0858f6fb7a33.webp",
+      "status": 200,
+      "bytes": 1999284,
+      "sha256": "6f1080a728a2080fbde63b02285bba1e4b84b82e284fc4a5b89dae0909e7027c",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/e2c01f7b1c66a607.webp",
+      "status": 200,
+      "bytes": 2086230,
+      "sha256": "95ea97ddeb897373e4f534681a825ff1ad00fae222da70d663baa186f26ec4ec",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/eeee442a793c3a58.webp",
+      "status": 200,
+      "bytes": 1378224,
+      "sha256": "bd50cf6b1dbe0c0375765ac0ee25e08e46df144e0b3c9b4521899b1bd5fe4588",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/f0ced5d3b76d2fd4.webp",
+      "status": 200,
+      "bytes": 1760992,
+      "sha256": "82bfd40a9e4a8685b5323e24724fae5121f46886e048f05dd224d4f53712209d",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/f23761df4589aefc.webp",
+      "status": 200,
+      "bytes": 1347226,
+      "sha256": "64f29d8366501f83b881a7167c6e5678646770eedbb5f2ead461f9ba46135a27",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/f72eae0375135dc3.webp",
+      "status": 200,
+      "bytes": 1448062,
+      "sha256": "02351ee5700bbac6182f8e00e035940b597560873c4b936250a579e4cac8b631",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/fd89772232a716f4.webp",
+      "status": 200,
+      "bytes": 739938,
+      "sha256": "2ddf559e3c8c17325397937cd63bd760f715ee1453542a8c7f6732d4928b8bac",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-3/textures/fffd2f612972c03f.webp",
+      "status": 200,
+      "bytes": 263758,
+      "sha256": "69d862cd42254514d13e4e6c5a43c85c1eece5fbcb5cf12bb09285e500fc3a09",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/cover.webp",
+      "status": 200,
+      "bytes": 816178,
+      "sha256": "4252017b2a950c81557aa9dcc380024b9ae4f6442c91f4383dd198136fbe6c94",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/033194c169fcd46cc9e1b48b.f16.gz",
+      "status": 200,
+      "bytes": 4451830,
+      "sha256": "20754c0e18e47540cf297baceaeb91a7500133383c89556524f0697217e01c43",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/0d9d3af90c0f6dadde3afb4c.f16.gz",
+      "status": 200,
+      "bytes": 4459585,
+      "sha256": "7840c9626ee62522ac7e2ccd69ef1e2f4c415d7adf839f5d5ea75aace359cd1e",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/2aabcf3d2aae8e630d9c9dc9.f16.gz",
+      "status": 200,
+      "bytes": 633388,
+      "sha256": "4806d4387354cf2a0e20a0e327362d669bc0b24eed052df0bfa943ec098cae10",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/2f3d62f06e8aa46cf73cb424.f16.gz",
+      "status": 200,
+      "bytes": 4514441,
+      "sha256": "24973d4329b2096eececba276786215b4b241b61d16b63f834065472da834abf",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/3d480cef4053049ed68433d0.f16.gz",
+      "status": 200,
+      "bytes": 1459760,
+      "sha256": "57a471f98d66f5733f835a338eebb27c46e5fbcd78c71fac5cdf357ced1cdda8",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/485aea9513b9277ebdd2a8a5.f16.gz",
+      "status": 200,
+      "bytes": 583878,
+      "sha256": "b70e0bdef6ed3847d60ebf6acb40c0c50a62626f2c0ccc5d1c5c7fe702d601ea",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/4f9ec81a3c428eceaa3f3682.f16.gz",
+      "status": 200,
+      "bytes": 4514901,
+      "sha256": "594937b856e06046adb0590a2e446097a555569dda4316a8114bb3ca3e2d4220",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/59c9df7915094a5a9381802c.f16.gz",
+      "status": 200,
+      "bytes": 958147,
+      "sha256": "e7cf73df24c3a7ba6e8b27c14952774a9787919fc6732467b90b035e6030729d",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/5bbf0e946e78e93d58770a72.f16.gz",
+      "status": 200,
+      "bytes": 824126,
+      "sha256": "36a098a3ebd8baa90bf68efba61d3a735c3307518458f9079cb76d19a8e9f74f",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/6185c02c44e6e413a4df2453.f16.gz",
+      "status": 200,
+      "bytes": 1029706,
+      "sha256": "b014fa28c6a4e12f08f63369223c8366bd67de3b70676a5c53a3aabb86d6ae45",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/89681fc06c17534450fcbf21.f16.gz",
+      "status": 200,
+      "bytes": 1459154,
+      "sha256": "447c76c6139144068b95d89325ebdab2d3f26a6fa86540b7642b18fbfb25c0c1",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/915666d024473caedc1193b4.f16.gz",
+      "status": 200,
+      "bytes": 820005,
+      "sha256": "2f04ef80a661fbe149d6be5d351a719f3674ea1e047758eb662d088fffdf5a4d",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/9e020e6dfe1d867c1582064d.f16.gz",
+      "status": 200,
+      "bytes": 1425426,
+      "sha256": "b8df0b4cbd8c3c1b04d783bc96d45a98f7e84d02508e2317cb0b51534d8ed45c",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/c2a80c5ff8ff7204d9f6f526.f16.gz",
+      "status": 200,
+      "bytes": 759488,
+      "sha256": "91047a31797dc95e12063b8d6d7f66a8047cc97423c8b6ad25958c3c7bd8a646",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/c64e288d57b04a32909a83ae.f16.gz",
+      "status": 200,
+      "bytes": 1131322,
+      "sha256": "ff5372a861e71640770480dac3e8477c6c180a4af62d9d9af4217b743782eb39",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/ce8eb8270961d2a167afc6e9.f16.gz",
+      "status": 200,
+      "bytes": 1106851,
+      "sha256": "8bd58533246b87aad97a6f3847e15637dafa9dd2e6fba49e6a8ef3cb9d13b836",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/d141731b61e1e44059857a56.f16.gz",
+      "status": 200,
+      "bytes": 1427525,
+      "sha256": "04eb146e3745a54987a4ad28713c336c8ffb66232d468ad1cd505e0aa0897513",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/d40ef0cb3dc3ec6777dadb49.f16.gz",
+      "status": 200,
+      "bytes": 833382,
+      "sha256": "4f6667d71cdc21e015db2f9e17cb70e887f7587b28ba521163fee39d4df78d3c",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/material-fields/fdfb966029228599fc2bcaf0.f16.gz",
+      "status": 200,
+      "bytes": 769915,
+      "sha256": "a4f5c59f8cc7f698cbf9da4fe92d28655e4d4b2729c497aa760dd548379bbe58",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/render-settings.json",
+      "status": 200,
+      "bytes": 24850,
+      "sha256": "e69109099ffe1c14fd3b9651f67b74976bf3b63ac3c840b6b015fff26f2cbcb2",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/scene.json",
+      "status": 200,
+      "bytes": 729974,
+      "sha256": "1274381aca06e8c7580aca7818f4cbfc1a24957084c1747a5a70d2213b3a2a63",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/source-materials.json",
+      "status": 200,
+      "bytes": 673357,
+      "sha256": "40f31e4dfe29c69344aae7eeb54860f7e30591dff1bc9cc79778585dcd553f86",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/05b13313e4108166.webp",
+      "status": 200,
+      "bytes": 1452304,
+      "sha256": "7c04678cec0c6df7acfe6edd6ad2f0bd1838220681c00bb0b2da08fcff2beed0",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/06c1bac4ac5d7cee.webp",
+      "status": 200,
+      "bytes": 1222028,
+      "sha256": "f6016bbc860e5874bc7447b15ac1792f4735277f93a562d6d6cda632d71b2662",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/0bf031154de85f93.webp",
+      "status": 200,
+      "bytes": 1702544,
+      "sha256": "414bd95b1347da83dcde4e60e376cb744409242f605caee3d42960db89ef0f9b",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/15a5bc4fe987db37.webp",
+      "status": 200,
+      "bytes": 1419650,
+      "sha256": "687b916bc87861db797476505a0032f0365dd101f9720f6522d54584df85bbbc",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/1964420d40547009.webp",
+      "status": 200,
+      "bytes": 1167478,
+      "sha256": "632e8ec40ba192879f29e0bad2312a2b7c4ecb454cedfb244649cc3adc3d0ad4",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/1f23b484842f440c.webp",
+      "status": 200,
+      "bytes": 1425940,
+      "sha256": "953a7e3d7d76cb74066f251150498552e4e0b128fa38b80f9f50b5393d44e588",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/21289b2e002ca7e7.webp",
+      "status": 200,
+      "bytes": 1859962,
+      "sha256": "f33c902096f449e3beda58ed4ff05378e6752c76c7db73175b9d888c2e282a1c",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/286c1b877a66f4c5.webp",
+      "status": 200,
+      "bytes": 1855428,
+      "sha256": "211fd5f05db4429d9b8d92892fe1f9c0c90cc629b3c8654f5d423507bb7be985",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/2d785fcc5f8fba58.webp",
+      "status": 200,
+      "bytes": 1791586,
+      "sha256": "6580cac133dd379a795a65ece50e3bee43213b6f2c5c595ed06306f9bd0a53dd",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/2fe328c10224ce6e.webp",
+      "status": 200,
+      "bytes": 2283558,
+      "sha256": "629a217855143effb7b0e34add8142b4d3eb51db8b4f98192de8606aa74c9490",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/304ad65e52aa7b85.webp",
+      "status": 200,
+      "bytes": 1925086,
+      "sha256": "a983f7e441a057e604fb0ddf5cf8c4e8c641b975613227f272b86474c3d2a810",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/3d5bc1843f5cca86.webp",
+      "status": 200,
+      "bytes": 2197566,
+      "sha256": "e2b2c69bac619e1c2c4b5bada6ea8000cd5c64eec1371513d361c611f9d79e5f",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/3dd11823c39694b7.webp",
+      "status": 200,
+      "bytes": 1509788,
+      "sha256": "6a92100043709585135d5265098e18cca217d805d789c17c4b89dafc1930123e",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/41c28353f0f3de2f.webp",
+      "status": 200,
+      "bytes": 1802144,
+      "sha256": "94db8f1ddae123f976bacbbdf3922952b4fbff239321ea705e85c13883222353",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/4460e78f1171c8d0.webp",
+      "status": 200,
+      "bytes": 1311080,
+      "sha256": "de5c8addd6ef9cd3f6f1898faf8ece99507fe764c43b44ba5a74b72ea823b7f0",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/462f0bccecdd9fb4.webp",
+      "status": 200,
+      "bytes": 1637566,
+      "sha256": "39c00afcd902362795014730337331fc71a03ddd4e4db72e0d9afd208b841caa",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/5e74de1194bad7cf.webp",
+      "status": 200,
+      "bytes": 1277120,
+      "sha256": "289a4d19e80526c66c0fcc5a3df230b2fd22074a23766a6b30ad961cd0381410",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/67f7af134f48d513.webp",
+      "status": 200,
+      "bytes": 2250096,
+      "sha256": "3ba36bfbe28c8142a32410f2a58c195f4bf3b52a44a85d36bcb527234e553565",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/71154db41aab50b1.webp",
+      "status": 200,
+      "bytes": 1285032,
+      "sha256": "f613c2f3d239a2c9f3444fd6d6d402abd76b89ef32c77783173ada45803fb235",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/77a423cccdc1be24.webp",
+      "status": 200,
+      "bytes": 1511216,
+      "sha256": "cfcf1da140bba69b1e0c60f1b3d9b3db29a432e87798fb30dc3652f485502b14",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/77e0d5733c635f4c.webp",
+      "status": 200,
+      "bytes": 1036580,
+      "sha256": "e4b353438d6157f306a630b7ba5939ee611d5dd7705a30a77d51d6b379b3d599",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/7a67765592ab5b17.webp",
+      "status": 200,
+      "bytes": 2201786,
+      "sha256": "a97355c6f1306dfaac3d802b5456c7fa03e097735071e7cf6aa7d8c6bc2d77d8",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/7ad96b4a92e8362f.webp",
+      "status": 200,
+      "bytes": 1400586,
+      "sha256": "95e0a8e5f8faab389f4a33829f6c6dc2c3167ab8451050c6c66545438a602e8b",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/889b1d9a72fb5750.webp",
+      "status": 200,
+      "bytes": 2369174,
+      "sha256": "1d0b06674021b9f9c3921ce8d0ea76ea66f0535aee1c2e915840502fe78a8617",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/8bea2691a5d6714c.webp",
+      "status": 200,
+      "bytes": 1088174,
+      "sha256": "4529a83b0e3bcad3f5a5c8edb4cd75e8ed0a0677528dc4655064334d871ec79c",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/8d8a3c10a919636e.webp",
+      "status": 200,
+      "bytes": 1670966,
+      "sha256": "91acb55f5731a14e2fc11e06798a8502efc19d2b09163955a384c094bd3b640c",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/9461c841e2266020.webp",
+      "status": 200,
+      "bytes": 1630916,
+      "sha256": "924707e4031a4c6aa573fe593ce47a5e65056909589cee3306dcca77a1970c2c",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/9762298a57d73ac0.webp",
+      "status": 200,
+      "bytes": 1167430,
+      "sha256": "0baf142c38c6005194d8a3c9accefb049fa0dcaaeee7260c4df6a9e7d1888d74",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/9dd4d859489ec0c5.webp",
+      "status": 200,
+      "bytes": 1632282,
+      "sha256": "9c4afd1c2b1b99d4ccb2a6729fbf927a27b52778c522d659a347ee494abefd8d",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/a7c45ede8f4fcf14.webp",
+      "status": 200,
+      "bytes": 1944732,
+      "sha256": "149ce2cca0510a06d85d91cad0def22686a922107a08875c905046864ac5b939",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/b1df6060dd559180.webp",
+      "status": 200,
+      "bytes": 1852664,
+      "sha256": "08d80a309fab88cf49bfd198d0da97b743c82661d5ff945e187926177d7894b8",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/b5fbb2045f86d536.webp",
+      "status": 200,
+      "bytes": 1263868,
+      "sha256": "9cc02022c1805b15108e6379ecb42a3e1d530634d3023073d74103872a858f7c",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/b6e92ef0c2f7d276.webp",
+      "status": 200,
+      "bytes": 1720306,
+      "sha256": "503f6c9a82cbf9db35ef257b04ef3b06b03c6d64aaa912588f05163a3323dbfd",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/bc4a5364170447bc.webp",
+      "status": 200,
+      "bytes": 1276942,
+      "sha256": "ccfb6e75bb45736309969be8933176c2ffd363610cc207d0f966192dda5d1417",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/c560c026f36c6328.webp",
+      "status": 200,
+      "bytes": 1692388,
+      "sha256": "10c76ef33b979440933390521bce54d337231b91b2c23995346c99d45dcb3a46",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/cb2d07ff065afd19.webp",
+      "status": 200,
+      "bytes": 1701108,
+      "sha256": "bda7030d7c31a4d8215512fdf5cac1b4c2f355ad0956001c38ba9e40afae864b",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/d246111f449a1e17.webp",
+      "status": 200,
+      "bytes": 1508068,
+      "sha256": "c5542ebf4c7ddd351b24e2c09947f8f2d55a55d109b7299713c475412d83dac9",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/d947d4abe5555f97.webp",
+      "status": 200,
+      "bytes": 2114764,
+      "sha256": "a5ca7b6ed65ceb80705eabc076b18d30e8364666c0384fb9aaafd91ce04b4e6d",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/dff6d174979f0f7f.webp",
+      "status": 200,
+      "bytes": 2098716,
+      "sha256": "f9fb8a097bccc98b94541e75329521bd0a35e9dfb4ecc81456ef040d2f6c3da6",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/e014012c44a59199.webp",
+      "status": 200,
+      "bytes": 1487526,
+      "sha256": "e56b7375b919317ac7ad3f7c717a7a98fdf486e3f0d4a879b5168c7e1a4bb015",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/e1cae9c94d5623d6.webp",
+      "status": 200,
+      "bytes": 1850274,
+      "sha256": "e3d0b2f4947ecb7f714d2c781add838534c2c01433885906e436159f10b5eb71",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/e68625aaa294045e.webp",
+      "status": 200,
+      "bytes": 1719948,
+      "sha256": "9f2c177fe556aa658f521338d2dd8d801ba52c3110e5563edcfa1a6fe471a504",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/new-scrolls/chapter-4/textures/fd7ee310ecee7a84.webp",
+      "status": 200,
+      "bytes": 1567956,
+      "sha256": "2a367ce05d9ce04b9c81580eb69a6c4dec152a76373d8fe035b696962cf1ead8",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "assets/three-3iQHpLLu.js",
+      "status": 200,
+      "bytes": 481608,
+      "sha256": "e6d19400e10db394ec44148367bf37b19a27b9fe57a9af3a3c5d23e543c3cd04",
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "path": "audio/peony-v3-atmosphere.mp3",
+      "status": 200,
+      "bytes": 192939,
+      "sha256": "27e0f2700fc498d94a461d9e3ff7a38c56d309578a3b9e9a6b0145ee34dc51c5",
+      "contentType": "audio/mpeg"
+    },
+    {
+      "path": "audio/peony-v3-breath.mp3",
+      "status": 200,
+      "bytes": 1921371,
+      "sha256": "0e829c497875874e7942584c0cca22fbded6c5be28b1a85a3c9b5578f26fb242",
+      "contentType": "audio/mpeg"
+    },
+    {
+      "path": "audio/peony-v3-manifest.json",
+      "status": 200,
+      "bytes": 1517,
+      "sha256": "7ad95f4cb7880f6ae76d5c4d17338c4f767e31c785f396986b8868b65fdde0d3",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "audio/peony-v3-provenance.json",
+      "status": 200,
+      "bytes": 1756,
+      "sha256": "3b62369ea95beeb6414323a3611703b5006283392b61158e7a2849820d0c4fec",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "audio/peony-v3-score.json",
+      "status": 200,
+      "bytes": 8531,
+      "sha256": "49e627075dfc72d4a53b8e90bc7c65acf349f2cd5b5ce9e7865e910b7cebf3bd",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "audio/peony-v3-strings.mp3",
+      "status": 200,
+      "bytes": 2561739,
+      "sha256": "24fffbea7728615d4ea32a3dcf7f12545ceeb1e64c61763be1509c54e1cfd7d0",
+      "contentType": "audio/mpeg"
+    },
+    {
+      "path": "favicon.svg",
+      "status": 200,
+      "bytes": 434,
+      "sha256": "88cf0da65928acbc6b704d13e25dc9e62563291f74768e3cbd917061963e4cc0",
+      "contentType": "image/svg+xml"
+    },
+    {
+      "path": "fonts/OFL-WenKai.txt",
+      "status": 200,
+      "bytes": 5171,
+      "sha256": "1a25e35da1031c6c3436fde545bb9cb5aca954e9873afe510c834b8b79bd21a0",
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "fonts/provenance.json",
+      "status": 200,
+      "bytes": 817,
+      "sha256": "76daba9522d3fadb2ee7f20ff992b8c6dc57c0d94efe673b31c38e529f767151",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "fonts/wenkai-web.woff2",
+      "status": 200,
+      "bytes": 279764,
+      "sha256": "c619ddc07c72b9afca0ab20b1e33ed1a67c974ae3a7d1ec44de611895a79f59d",
+      "contentType": "font/woff2"
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 902,
+      "sha256": "e6b3603e360f48ef4e6c4cd8601f07d2c346a097b99fff139f4f89360cd33cd4",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "path": "ui/brocade.svg",
+      "status": 200,
+      "bytes": 2829,
+      "sha256": "80b4f44ea63ad8d477fb7af388cd27bc98dd8b39d8a9ebb99baaf91620f3dbf1",
+      "contentType": "image/svg+xml"
+    },
+    {
+      "path": "ui/peony-atlas/cinnabar-peonies.webp",
+      "status": 200,
+      "bytes": 522226,
+      "sha256": "08ab2c66c08a0b417168dd65b2053ca616bb3b526bbadacab35ba2758f0f9570",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "ui/peony-atlas/ivory-branch.webp",
+      "status": 200,
+      "bytes": 336150,
+      "sha256": "0b42754463b800bdd1a4f26089d4d3ba45f737356edbe10d0136dd0017319edd",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "ui/peony-atlas/landscape.webp",
+      "status": 200,
+      "bytes": 298152,
+      "sha256": "a72d7349074c1ab618e3ec228df3ccc1264270579840649e9b7bac089d1208e3",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "ui/peony-atlas/provenance.json",
+      "status": 200,
+      "bytes": 8093,
+      "sha256": "4f96a6d840485ef6d6fc3acb0eb1fba03d653aa232c5534df585e56b71cf57f5",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "ui/peony-atlas/title.webp",
+      "status": 200,
+      "bytes": 323286,
+      "sha256": "a9cd0b3b9a1366679f6c6eb813843fc20344a3ad213b5e6656b7113fc9893578",
+      "contentType": "image/webp"
+    },
+    {
+      "path": "serve.cjs",
+      "status": 200,
+      "bytes": 4296,
+      "sha256": "dcf4d549bb051100c0f8532beb8f1003667d6ff6b34cd87b659ebec66fdb0f7d",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "启动展览.cmd",
+      "status": 200,
+      "bytes": 72,
+      "sha256": "341a6aec682f67d8d2a13b3fd2225cbfddea45b6e814bcf105878dc18b6eb9c7",
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "运行说明.txt",
+      "status": 200,
+      "bytes": 791,
+      "sha256": "1b560a128582049fbc55aeac979af909e348a88aef70fba684f6f904888e92bb",
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "创作与来源.txt",
+      "status": 200,
+      "bytes": 1320,
+      "sha256": "5de3427fb41d3efe86bc991dc407aed7bc04e18d0f035662b4ac48d1f7766e84",
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "third-party-licenses/react.txt",
+      "status": 200,
+      "bytes": 1088,
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "third-party-licenses/react-dom.txt",
+      "status": 200,
+      "bytes": 1088,
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "third-party-licenses/scheduler.txt",
+      "status": 200,
+      "bytes": 1088,
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "third-party-licenses/three.txt",
+      "status": 200,
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "third-party-licenses/lucide-react.txt",
+      "status": 200,
+      "bytes": 880,
+      "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "third-party-licenses/NOTICE.txt",
+      "status": 200,
+      "bytes": 384,
+      "sha256": "9cc37a082c09742235903423116ac55a8fd7a6abefa1f05c9f6196c0b8a2c9c6",
+      "contentType": "text/plain; charset=utf-8"
+    }
+  ],
+  "browserVersion": "156.0.8078.47",
+  "gpu": {
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Ti (0x00002C05) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+  },
+  "inputsAfter": {
+    "scripts/package-exhibition.mjs": "60ed05c1fdc866ee95d8243031b79cb07bac1f560092b0c1620fefd57b488bd2",
+    "scripts/serve-exhibition.cjs": "dcf4d549bb051100c0f8532beb8f1003667d6ff6b34cd87b659ebec66fdb0f7d",
+    "scripts/validate-exhibition-package.mjs": "14ebc9e89fab3c0ae08312e88f912e84604c5745733003974778a8362d2f14a8"
+  },
+  "artifacts": {
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/chapter-1-encounter.png": "a57710af023b786ef58be80214b6d9da87665c6eb2e4a85d4e97932c2e3f0a38",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/chapter-1-end.png": "bc33d684e336172fa0fee3501496d0aa0825303fee59c638608a35bc0ad856e4",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/chapter-1-middle.png": "197934ca2126ca4d1185010a36970a2413bd4d818619e22eb20eec093dbbb029",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/chapter-2-encounter.png": "f85b41b61d3a032dcb5742d7ab37fbfa9f52e92c03b5c227870765a79e996a31",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/chapter-2-end.png": "b68667cf4db48e3df813836062c2a981f7d3e3382f61ad0fd66b940c0809eeda",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/chapter-2-middle.png": "7b27c865e26561c0f2c904b6dcade09838b62c4589a7ccddf6c501a789112bfc",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/chapter-3-encounter.png": "3afb36fc2668057183bfd17006b67151337cb9c150bfb440562a9a0b1181961c",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/chapter-3-end.png": "1dbda04c90c9606064ffc2b63c32c2f013060d56be08644c3b82dc76dfe3d6b1",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/chapter-3-middle.png": "3e46838f5814f255823de6c52632a785399ca34ffd73f0f56893028cd91ff3aa",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/chapter-4-encounter.png": "0b9f3406f424019feafe5fd9cffa5b4ff19375e5fa4f275d7250fbd5d52eaf4e",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/chapter-4-end.png": "d85baa6bcff36fb9e8eae9663e0502d0b7a43f016b2f49fbba09fb546ff6dddd",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/chapter-4-middle.png": "9abe99c87fbd9724e3ac7dcdf8726b8ed670545c42549b3af8732f01678133fb",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/concurrent-first.log": "f26a8fef49519c739a41fa113e382e808619a2ac04d23f3a637cf9edc576680f",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/concurrent-second.log": "89447ce01a7802800ef368073bdee29266d87a06919161c9294e2a1da6cd759d",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/fixture-success.log": "1d4365265505a15b8f1d538d9d0d5bf581db36b220166fc6f057852fad7132c0",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/flower-letter.png": "243e56a769bb3ccd302190c2c2e5134989ffefb598f6e7439d97b28da74a3caf",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/home.png": "f2f8182fc5b3bd8ff584f7b4f2ebb44961e025f59dbbaada028204a35428e3f0",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/linked-destination.log": "b11cf70535bdfa7560f3b5fd8e1b838ce75145f3a7f0c8bff4ea7e9eef3a4925",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/linked-dist-root.log": "36daf23035429b4959d4dd850b71ec9e28e8e15c51334e6770a8a3bef2b343d2",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/linked-dist-single-file.log": "448c43cb813250d4f39d7cc1305c66d3418253125903249224fd0f81d4f99c10",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/linked-public-parent.log": "43ed00b19d8ffd229dcb81ce6684bd3acf4894db03f6ea0192bcabb344313e9b",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/linked-public-root.log": "22e3892ce9859b8f590c68125a1f5fab045f0e42373217d8339aaadfe30856bf",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/linked-public-single-file.log": "3b4f13dda3a1995c41ac7840957d6bee52f7c1f2674e483451a7d767d501f777",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/linked-staging.log": "fd2acd3f28b0d7e4edd7013d637e6fef5653a2a342b4c11d6815f17e0ac27337",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/page@d8323a8059b59e6c4b935a0d1419e467.webm": "28a7be80e3be010bc48008a19c748a21af1923b81d8207c1ac388d9c970c5a26",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/sealed-flower-letter.png": "a4d827c1ca8df599c3ea0bd6da7d8c0cc7dde6b9ec48f3c92eb620b19645c5d2",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/unmarked-dist-exhibition.log": "5f9f625be6a69b51609e5643f29dfe38bdab01108a03004c2065b4130697619c",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T02-42-06-040Z/unmarked-dist-exhibition.staging.log": "4ab228d2d8920635934ad328ed60d3074523a7ed49f3ce73ff1a274dc5edb4d7"
+  },
+  "completedAt": "2026-10-23T02:43:06.401Z"
+}

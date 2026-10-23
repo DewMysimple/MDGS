@@ -1,0 +1,533 @@
+passed four-second-native-frame-1-1920x1080
+passed four-second-native-frame-2-1920x1080
+passed four-second-native-frame-3-1920x1080
+passed four-second-native-frame-4-1920x1080
+passed four-second-native-frame-1-1280x720
+passed four-second-native-frame-2-1280x720
+passed four-second-native-frame-3-1280x720
+passed four-second-native-frame-4-1280x720
+passed four-second-native-frame-1-2560x1440
+passed four-second-native-frame-2-2560x1440
+passed four-second-native-frame-3-2560x1440
+passed four-second-native-frame-4-2560x1440
+passed four-second-native-frame-1-3440x1440
+passed four-second-native-frame-2-3440x1440
+passed four-second-native-frame-3-3440x1440
+passed four-second-native-frame-4-3440x1440
+passed four-second-native-frame-1-1920x1080-reduce
+passed four-second-native-frame-4-1920x1080-reduce
+{"status":"passed","checks":23}
+{
+  "status": "passed",
+  "verifiedAt": "2026-10-22T22:07:25.305Z",
+  "scope": "Actual Chrome cancellation at partial geometry, reverse native-frame return, deliberate real WebGL shader compile failure, full retry and renderer cleanup.",
+  "checks": [
+    {
+      "test": "mid-unroll-return-is-continuous-and-monotonically-closes",
+      "passed": true,
+      "before": 0.20187,
+      "maxReturnOpen": 0.20813,
+      "finalOpen": 0.20813
+    },
+    {
+      "test": "viewer-return-matches-native-print-before-closing",
+      "passed": true,
+      "samples": [
+        {
+          "at": 11879.8,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "opacity": 0,
+          "imageOpacity": 0
+        },
+        {
+          "at": 11913.2,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 0,
+          "imageOpacity": 0
+        },
+        {
+          "at": 11996.5,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 0.3221715056348587,
+          "imageOpacity": 1
+        },
+        {
+          "at": 12018.7,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 0.5456253262584572,
+          "imageOpacity": 1
+        },
+        {
+          "at": 12040.9,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 0.6564877278362087,
+          "imageOpacity": 1
+        },
+        {
+          "at": 12063.2,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 0.7612976707362906,
+          "imageOpacity": 1
+        },
+        {
+          "at": 12085.4,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 0.925799617392935,
+          "imageOpacity": 1
+        },
+        {
+          "at": 12107.6,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 0.9767092411720512,
+          "imageOpacity": 1
+        },
+        {
+          "at": 12129.8,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 0.9993317500000003,
+          "imageOpacity": 1
+        },
+        {
+          "at": 12152.1,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0.801749
+        },
+        {
+          "at": 12174.3,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0.4636
+        },
+        {
+          "at": 12196.5,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0.142038
+        },
+        {
+          "at": 12218.8,
+          "phase": "RETURNING_HOME",
+          "open": 0.9996,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12241,
+          "phase": "RETURNING_HOME",
+          "open": 0.99525,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12263.2,
+          "phase": "RETURNING_HOME",
+          "open": 0.98639,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12285.4,
+          "phase": "RETURNING_HOME",
+          "open": 0.95601,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12307.7,
+          "phase": "RETURNING_HOME",
+          "open": 0.93524,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12329.8,
+          "phase": "RETURNING_HOME",
+          "open": 0.91092,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12363.1,
+          "phase": "RETURNING_HOME",
+          "open": 0.85334,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12385.3,
+          "phase": "RETURNING_HOME",
+          "open": 0.7853,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12407.6,
+          "phase": "RETURNING_HOME",
+          "open": 0.74837,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12429.8,
+          "phase": "RETURNING_HOME",
+          "open": 0.70951,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12452,
+          "phase": "RETURNING_HOME",
+          "open": 0.62803,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12474.3,
+          "phase": "RETURNING_HOME",
+          "open": 0.58574,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12496.5,
+          "phase": "RETURNING_HOME",
+          "open": 0.54288,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12518.8,
+          "phase": "RETURNING_HOME",
+          "open": 0.45712,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12541,
+          "phase": "RETURNING_HOME",
+          "open": 0.414,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12563.1,
+          "phase": "RETURNING_HOME",
+          "open": 0.37197,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12585.4,
+          "phase": "RETURNING_HOME",
+          "open": 0.29049,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12607.6,
+          "phase": "RETURNING_HOME",
+          "open": 0.25163,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12629.8,
+          "phase": "RETURNING_HOME",
+          "open": 0.21448,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12652.1,
+          "phase": "RETURNING_HOME",
+          "open": 0.14666,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12674.3,
+          "phase": "RETURNING_HOME",
+          "open": 0.11654,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12696.5,
+          "phase": "RETURNING_HOME",
+          "open": 0.08892,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12718.7,
+          "phase": "RETURNING_HOME",
+          "open": 0.04388,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12741,
+          "phase": "RETURNING_HOME",
+          "open": 0.0268,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12763.2,
+          "phase": "RETURNING_HOME",
+          "open": 0.01361,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12785.4,
+          "phase": "RETURNING_HOME",
+          "open": 0.00039,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12807.6,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12829.9,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12852.1,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12874.3,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12896.5,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 12918.8,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        }
+      ]
+    },
+    {
+      "test": "real-shader-compile-failure-gates-entry-and-retries",
+      "passed": true
+    }
+  ],
+  "errors": []
+}
+{"status":"passed","checks":[{"test":"slow-cover-waits-for-real-paper-then-shows-full-four-seconds","passed":true,"cameraMs":500,"imageWaitMs":5278.79999999702,"visibleLoadingMs":4004,"totalLoadingMs":9282.79999999702}],"errors":[]}
+{
+  "status": "passed",
+  "verifiedAt": "2026-10-22T22:07:37.836Z",
+  "scope": "CPU actual exported geometry at ten openness values, native16:9/1.4, printed/next-reverse winding clearance, seam continuity, finite normals and planar endpoint. Separate browser oblique/reverse screenshots inspect visibility.",
+  "checks": [
+    {
+      "test": "finite-native-aspect-spiral-clearance-1.7777777777777777",
+      "passed": true,
+      "height": 5.113636363636363,
+      "vertices": 5005,
+      "thickness": 0.006136363636363635,
+      "minPrintedToNextReverseGap": 0.0009220413668882567,
+      "maxTangentJump": 0.00000200002708470352,
+      "finalArtZRange": 0
+    },
+    {
+      "test": "finite-native-aspect-spiral-clearance-1.4",
+      "passed": true,
+      "height": 6.274768824306473,
+      "vertices": 5005,
+      "thickness": 0.007529722589167767,
+      "minPrintedToNextReverseGap": 0.0011315968595570734,
+      "maxTangentJump": 0.0000020000270936813235,
+      "finalArtZRange": 0
+    }
+  ]
+}
+pixel captured 1
+pixel captured 2
+pixel captured 3
+pixel captured 4
+E:\数字媒体竞赛\gitProject\MDGS\reports\art-renewal\unfurl-pixel-validate.py:11: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  dif=ImageChops.difference(expected,actual); values=[sum(pixel)/3 for pixel in dif.getdata()]; values.sort(); mae=sum(values)/len(values); p95=values[int(len(values)*.95)]; maximum=max(values)
+{
+  "status": "passed",
+  "scope": "1920x1080 real Chrome screenshots sampled inside actual projected print / sourceViewport; rounded crop and common256px Lanczos comparison. This detects broad depth artifacts and colour/composition jumps, not pixel-identical source rendering. No artwork pixels were edited.",
+  "checks": [
+    {
+      "chapter": 1,
+      "comparison": "physical-versus-current-cover",
+      "meanAbsoluteRGBDifference": 1.4696994357638888,
+      "p95AbsoluteRGBDifference": 6.666666666666667,
+      "maxAbsoluteRGBDifference": 27.666666666666668,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 1,
+      "comparison": "native-versus-current-cover",
+      "meanAbsoluteRGBDifference": 1.0961281105324074,
+      "p95AbsoluteRGBDifference": 5.0,
+      "maxAbsoluteRGBDifference": 20.333333333333332,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 2,
+      "comparison": "physical-versus-current-cover",
+      "meanAbsoluteRGBDifference": 2.5679072627314814,
+      "p95AbsoluteRGBDifference": 9.666666666666666,
+      "maxAbsoluteRGBDifference": 33.666666666666664,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 2,
+      "comparison": "native-versus-current-cover",
+      "meanAbsoluteRGBDifference": 1.7735550491898149,
+      "p95AbsoluteRGBDifference": 6.666666666666667,
+      "maxAbsoluteRGBDifference": 30.666666666666668,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 3,
+      "comparison": "physical-versus-current-cover",
+      "meanAbsoluteRGBDifference": 2.1799678096064814,
+      "p95AbsoluteRGBDifference": 8.0,
+      "maxAbsoluteRGBDifference": 32.666666666666664,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 3,
+      "comparison": "native-versus-current-cover",
+      "meanAbsoluteRGBDifference": 2.136845341435185,
+      "p95AbsoluteRGBDifference": 8.333333333333334,
+      "maxAbsoluteRGBDifference": 31.666666666666668,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 4,
+      "comparison": "physical-versus-current-cover",
+      "meanAbsoluteRGBDifference": 1.3148409039162112,
+      "p95AbsoluteRGBDifference": 6.666666666666667,
+      "maxAbsoluteRGBDifference": 34.333333333333336,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 4,
+      "comparison": "native-versus-current-cover",
+      "meanAbsoluteRGBDifference": 0.20456227231329688,
+      "p95AbsoluteRGBDifference": 0.6666666666666666,
+      "maxAbsoluteRGBDifference": 4.0,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    }
+  ]
+}
+{"status":"passed","totalChecks":37,"errors":[]}

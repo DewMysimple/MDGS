@@ -1,0 +1,302 @@
+{
+  "at": "2026-10-23T02:51:09.489Z",
+  "base": "http://127.0.0.1:5196/",
+  "buildDirectory": "tmp/art-candidate-7-dist",
+  "driver": "reports/art-renewal/poetic-narrative/verify-placement-lock.cjs",
+  "driverSha256": "6a1340cee75af20815ffaec390e5323203217bb4dd6b7ad98bedcfea936678c8",
+  "bundle": [
+    {
+      "url": "./assets/index-CpndIdbA.js",
+      "status": 200,
+      "sha256": "bbabc3d8e27274c64e7d9507c5e99d60bf08b723bd40f49ea7182677bab82422"
+    },
+    {
+      "url": "./assets/index-RpqBDuXe.css",
+      "status": 200,
+      "sha256": "79d6657bddb32eb3b10c8118feb3a0ea2bb43e934481e9883e5ba34aad77ff4d"
+    }
+  ],
+  "sourceFile": "src/components/NarrativeCalligraphy.tsx",
+  "sourceSha256Before": "b4ed5a08a983105e2644dd3827cf7947c6e20e946d3b64b43ad360d575a3c406",
+  "sourceSha256After": "b4ed5a08a983105e2644dd3827cf7947c6e20e946d3b64b43ad360d575a3c406",
+  "sourceStable": true,
+  "checks": [
+    {
+      "name": "manual preparation cue visible",
+      "pass": true
+    },
+    {
+      "name": "adjacent manual cue in the same sample bucket remains readable",
+      "pass": true
+    },
+    {
+      "name": "large manual seek reads the new source cue",
+      "pass": true
+    },
+    {
+      "name": "resize 1280 releases and reacquires the cue",
+      "pass": true
+    },
+    {
+      "name": "resize 2560 releases and reacquires the cue",
+      "pass": true
+    },
+    {
+      "name": "resize 1920 releases and reacquires the cue",
+      "pass": true
+    },
+    {
+      "name": "new caption remains same through resize",
+      "pass": true
+    },
+    {
+      "name": "rapid reverse seeks recover the final source caption",
+      "pass": true
+    },
+    {
+      "name": "pause preparation caption visible",
+      "pass": true
+    },
+    {
+      "name": "pausing inside a cue keeps its readable ink in place",
+      "pass": true
+    },
+    {
+      "name": "no page error",
+      "pass": true
+    },
+    {
+      "name": "source inputs stable throughout capture",
+      "pass": true
+    }
+  ],
+  "states": [
+    {
+      "label": "paused .300",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "progress": "0.300000",
+      "sampleProgress": "0.3",
+      "reads": "2",
+      "ready": "true",
+      "locked": "true",
+      "cue": "poetic-c4-s3-1",
+      "visible": "poetic-c4-s3-1",
+      "text": "沉香亭的典故里，花入李白的诗，也入人间记忆。",
+      "ink": {
+        "x": 1641.40625,
+        "y": 112.46875,
+        "width": 194.640625,
+        "height": 324.1875,
+        "top": 112.46875,
+        "right": 1836.046875,
+        "bottom": 436.65625,
+        "left": 1641.40625
+      }
+    },
+    {
+      "label": "same bucket .324624",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "progress": "0.324625",
+      "sampleProgress": "0.3",
+      "reads": "2",
+      "ready": "true",
+      "locked": "true",
+      "cue": "poetic-c4-s4-1",
+      "visible": "poetic-c4-s4-1",
+      "text": "这一笺花容，把人与花的风华留在纸上。",
+      "ink": {
+        "x": 1682.203125,
+        "y": 112.46875,
+        "width": 153.84375,
+        "height": 324.1875,
+        "top": 112.46875,
+        "right": 1836.046875,
+        "bottom": 436.65625,
+        "left": 1682.203125
+      }
+    },
+    {
+      "label": "large jump .780",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "progress": "0.780000",
+      "sampleProgress": "0.78",
+      "reads": "3",
+      "ready": "true",
+      "locked": "true",
+      "cue": "poetic-c4-s8-1",
+      "visible": "poetic-c4-s8-1",
+      "text": "烟尘遮住旧城，花前的沉默比欢歌更长。",
+      "ink": {
+        "x": 1682.203125,
+        "y": 112.46875,
+        "width": 153.84375,
+        "height": 324.1875,
+        "top": 112.46875,
+        "right": 1836.046875,
+        "bottom": 436.65625,
+        "left": 1682.203125
+      }
+    },
+    {
+      "label": "resize 1280",
+      "viewport": [
+        1280,
+        720
+      ],
+      "progress": "0.780000",
+      "sampleProgress": "0.78",
+      "reads": "4",
+      "ready": "true",
+      "locked": "true",
+      "cue": "poetic-c4-s8-1",
+      "visible": "poetic-c4-s8-1",
+      "text": "烟尘遮住旧城，花前的沉默比欢歌更长。",
+      "ink": {
+        "x": 1061.90625,
+        "y": 92,
+        "width": 156.53125,
+        "height": 212.59375,
+        "top": 92,
+        "right": 1218.4375,
+        "bottom": 304.59375,
+        "left": 1061.90625
+      }
+    },
+    {
+      "label": "resize 2560",
+      "viewport": [
+        2560,
+        1440
+      ],
+      "progress": "0.780000",
+      "sampleProgress": "0.78",
+      "reads": "5",
+      "ready": "true",
+      "locked": "true",
+      "cue": "poetic-c4-s8-1",
+      "visible": "poetic-c4-s8-1",
+      "text": "烟尘遮住旧城，花前的沉默比欢歌更长。",
+      "ink": {
+        "x": 2299.796875,
+        "y": 132.265625,
+        "width": 153.84375,
+        "height": 348,
+        "top": 132.265625,
+        "right": 2453.640625,
+        "bottom": 480.265625,
+        "left": 2299.796875
+      }
+    },
+    {
+      "label": "resize 1920",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "progress": "0.780000",
+      "sampleProgress": "0.78",
+      "reads": "6",
+      "ready": "true",
+      "locked": "true",
+      "cue": "poetic-c4-s8-1",
+      "visible": "poetic-c4-s8-1",
+      "text": "烟尘遮住旧城，花前的沉默比欢歌更长。",
+      "ink": {
+        "x": 1682.203125,
+        "y": 112.46875,
+        "width": 153.84375,
+        "height": 324.1875,
+        "top": 112.46875,
+        "right": 1836.046875,
+        "bottom": 436.65625,
+        "left": 1682.203125
+      }
+    },
+    {
+      "label": "rapid reverse ends .460",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "progress": "0.460000",
+      "sampleProgress": "0.46",
+      "reads": "7",
+      "ready": "true",
+      "locked": "true",
+      "cue": "poetic-c4-s5-1",
+      "visible": "poetic-c4-s5-1",
+      "text": "花仍开着，画中人的命运却已转向离散。",
+      "ink": {
+        "x": 1682.203125,
+        "y": 112.46875,
+        "width": 153.84375,
+        "height": 324.1875,
+        "top": 112.46875,
+        "right": 1836.046875,
+        "bottom": 436.65625,
+        "left": 1682.203125
+      }
+    },
+    {
+      "label": "before pause",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "progress": "0.269042",
+      "sampleProgress": "0.25005002779341556",
+      "reads": "9",
+      "ready": "true",
+      "locked": "true",
+      "cue": "poetic-c4-s3-1",
+      "visible": "poetic-c4-s3-1",
+      "text": "沉香亭的典故里，花入李白的诗，也入人间记忆。",
+      "ink": {
+        "x": 1641.40625,
+        "y": 112.46875,
+        "width": 194.640625,
+        "height": 324.1875,
+        "top": 112.46875,
+        "right": 1836.046875,
+        "bottom": 436.65625,
+        "left": 1641.40625
+      }
+    },
+    {
+      "label": "after pause",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "progress": "0.270340",
+      "sampleProgress": "0.25005002779341556",
+      "reads": "9",
+      "ready": "true",
+      "locked": "true",
+      "cue": "poetic-c4-s3-1",
+      "visible": "poetic-c4-s3-1",
+      "text": "沉香亭的典故里，花入李白的诗，也入人间记忆。",
+      "ink": {
+        "x": 1641.40625,
+        "y": 112.46875,
+        "width": 194.640625,
+        "height": 324.1875,
+        "top": 112.46875,
+        "right": 1836.046875,
+        "bottom": 436.65625,
+        "left": 1641.40625
+      }
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

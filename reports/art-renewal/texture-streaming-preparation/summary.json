@@ -1,0 +1,964 @@
+{
+  "status": "adopted-after-effective-v2-isolated-precheck-formal-c7-acceptance-separate",
+  "createdAt": "2026-10-23T02:41:00.930Z",
+  "scope": "Same C7 UI, exact hash-matched C6 Renderer+SourceMaterial as A. V1 insufficient base-only preupload retained as negative experimental evidence. V2 includes actual authored node samplers. No quality, field, texture colorspace, source clock or asset-byte downgrade.",
+  "comparability": {
+    "allBasePackageFilesExactlyEqual": true,
+    "allOtherSourceInputsEqual": true,
+    "viewport": "1920x1080 DPR1",
+    "cpuSamplingMicroseconds": 1000,
+    "traceAddsOverhead": true,
+    "metrics": "Page rAF gaps and main-thread longtasks; not display FPS or GPU completion. Public count deltas have about100ms diagnostic lag.",
+    "cacheMetric": "textureBytes estimates URL cache CPU/GPU base payloads; it is not total GPU VRAM and does not account for all sampler/render-target allocations."
+  },
+  "normalPathResults": {
+    "baseMaxRafMs": [
+      111.8,
+      171.6
+    ],
+    "v1MaxRafMs": [
+      144.3,
+      82
+    ],
+    "v2MaxRafMs": [
+      31.5,
+      36.1
+    ],
+    "baseLongtasks": [
+      2,
+      2
+    ],
+    "v1Longtasks": [
+      2,
+      4
+    ],
+    "v2Longtasks": [
+      0,
+      0
+    ],
+    "sampledWindowsOnly": true
+  },
+  "runs": [
+    {
+      "name": "base",
+      "startedAt": "2026-10-23T02:23:44.282Z",
+      "completedAt": "2026-10-23T02:24:00.569Z",
+      "browser": "156.0.8078.47",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Ti (0x00002C05) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "sourceCount": 831,
+      "packageCount": 744,
+      "unchanged": true,
+      "binding": {
+        "path": "tmp/manual-drag-ab/binding.json",
+        "sha256": "161cbaaca2801df360b8d936685b12cb6193e1d5ce8712bc7c7cceaa730ca9cf"
+      },
+      "rawReport": {
+        "path": "tmp/manual-drag-ab/runs/base-2026-10-23T02-23-44-282Z/validation.json",
+        "bytes": 1048638,
+        "sha256": "06f116d30599a57487a9acc035cddb46c4bf99d1f7c8df5319f1faa424a4b07d",
+        "storage": "local ignored tmp"
+      },
+      "rawTrace": {
+        "path": "tmp/manual-drag-ab/runs/base-2026-10-23T02-23-44-282Z/1920x1080-dpr1-trace.json",
+        "bytes": 53022483,
+        "sha256": "a72e914e3be33798b034b9d03560698a1a7103c0ec6bed80af4d6b922357a5ba",
+        "storage": "local ignored tmp, no raw trace in Git"
+      },
+      "archived": [
+        {
+          "path": "base-1920x1080-dpr1.cpuprofile",
+          "sha256": "de12e0ba336315a9a662e1d312a373da8cc5294c250e8b5bf0159af4548e4fcb"
+        },
+        {
+          "path": "base-driver.cjs",
+          "sha256": "298a785156ab47d4230a125f1227917505669e661406c2d91ba3a5e0a3142047"
+        }
+      ],
+      "cases": [
+        {
+          "name": "1920x1080-dpr1-canvas-cold-forward",
+          "gesture": {
+            "requestedMs": 900,
+            "actualNodeMs": 1511.6835999999985,
+            "steps": 90
+          },
+          "before": {
+            "at": 8125.79999999702,
+            "case": "1920x1080-dpr1-canvas-cold-forward",
+            "progress": "0.7799938770182087",
+            "range": "0.78",
+            "diag": "0.779989",
+            "frame": "2358.9077391484116",
+            "renderCount": "125",
+            "rafTicks": "281",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "33",
+            "textureBytes": "238361127",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "after": {
+            "at": 10310.5,
+            "case": "1920x1080-dpr1-canvas-cold-forward",
+            "progress": "0.9023775041017194",
+            "range": "0.902",
+            "diag": "0.902112",
+            "frame": "2728.083478457569",
+            "renderCount": "336",
+            "rafTicks": "553",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "25",
+            "textureBytes": "164115133",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "summary": {
+            "progressStart": "0.7799938770182087",
+            "progressEnd": "0.9023775041017194",
+            "rafIntervals": {
+              "count": 273,
+              "p50": 6.200000002980232,
+              "p95": 15.700000002980232,
+              "p99": 49.19999998807907,
+              "max": 111.79999999701977,
+              "over50": 2,
+              "over100": 1
+            },
+            "pointerIntervals": {
+              "count": 90,
+              "p50": 10.700000002980232,
+              "p95": 46.8999999910593,
+              "p99": 123.29999999701977,
+              "max": 123.29999999701977,
+              "over50": 4,
+              "over100": 2
+            },
+            "longtaskCount": 2,
+            "longtaskMaximum": 111,
+            "nativeSubmissions": 211,
+            "resourceRequests": 24,
+            "glareRequests": 13,
+            "peakTextureBytes": 246745596
+          },
+          "pointerdown": {
+            "type": "pointerdown",
+            "at": 8150.20000000298,
+            "trusted": true,
+            "x": 1525.199951171875,
+            "y": 584.7000122070312,
+            "target": "CANVAS",
+            "targetName": "原始 Blender 分层国画场景",
+            "case": "1920x1080-dpr1-canvas-cold-forward",
+            "progress": "0.7799945874741714",
+            "range": "0.78",
+            "diag": "0.779994",
+            "frame": "2358.922597180248",
+            "renderCount": "137",
+            "rafTicks": "293",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "33",
+            "textureBytes": "238361127",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "pointerup": {
+            "type": "pointerup",
+            "at": 9646,
+            "trusted": true,
+            "x": 489,
+            "y": 584.7000122070312,
+            "target": "DIV",
+            "targetName": "第1卷画卷，使用滚轮、左右拖拽或方向键游观",
+            "case": "1920x1080-dpr1-canvas-cold-forward",
+            "progress": "0.8750910881776426",
+            "range": "0.875",
+            "diag": "0.869383",
+            "frame": "2629.146236605744",
+            "renderCount": "241",
+            "rafTicks": "454",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "29",
+            "textureBytes": "204534834",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "longtasks": [
+            {
+              "case": "1920x1080-dpr1-canvas-cold-forward",
+              "at": 8318,
+              "duration": 111
+            },
+            {
+              "case": "1920x1080-dpr1-canvas-cold-forward",
+              "at": 9357.79999999702,
+              "duration": 75
+            }
+          ]
+        },
+        {
+          "name": "1920x1080-dpr1-canvas-warm-return",
+          "gesture": {
+            "requestedMs": 900,
+            "actualNodeMs": 1395.4676,
+            "steps": 90
+          },
+          "before": {
+            "at": 10356.40000000596,
+            "case": "1920x1080-dpr1-canvas-warm-return",
+            "progress": "0.9026653630924829",
+            "range": "0.903",
+            "diag": "0.902112",
+            "frame": "2728.083478457569",
+            "renderCount": "336",
+            "rafTicks": "553",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "25",
+            "textureBytes": "164115133",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "after": {
+            "at": 12415.10000000894,
+            "case": "1920x1080-dpr1-canvas-warm-return",
+            "progress": "0.7882704399571718",
+            "range": "0.788",
+            "diag": "0.788639",
+            "frame": "2385.0547153999205",
+            "renderCount": "532",
+            "rafTicks": "818",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "39",
+            "textureBytes": "288276128",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "summary": {
+            "progressStart": "0.9026653630924829",
+            "progressEnd": "0.7882704399571718",
+            "rafIntervals": {
+              "count": 265,
+              "p50": 5.700000002980232,
+              "p95": 15.400000005960464,
+              "p99": 44.599999994039536,
+              "max": 171.6000000089407,
+              "over50": 2,
+              "over100": 1
+            },
+            "pointerIntervals": {
+              "count": 90,
+              "p50": 7.9000000059604645,
+              "p95": 53.900000005960464,
+              "p99": 198.30000001192093,
+              "max": 198.30000001192093,
+              "over50": 6,
+              "over100": 1
+            },
+            "longtaskCount": 2,
+            "longtaskMaximum": 168,
+            "nativeSubmissions": 196,
+            "resourceRequests": 16,
+            "glareRequests": 13,
+            "peakTextureBytes": 288276128
+          },
+          "pointerdown": {
+            "type": "pointerdown",
+            "at": 10376.79999999702,
+            "trusted": true,
+            "x": 489,
+            "y": 584.7000122070312,
+            "target": "CANVAS",
+            "targetName": "原始 Blender 分层国画场景",
+            "case": "1920x1080-dpr1-canvas-warm-return",
+            "progress": "0.9027274371420307",
+            "range": "0.903",
+            "diag": "0.902112",
+            "frame": "2728.083478457569",
+            "renderCount": "336",
+            "rafTicks": "553",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "25",
+            "textureBytes": "164115133",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "pointerup": {
+            "type": "pointerup",
+            "at": 11762.20000000298,
+            "trusted": true,
+            "x": 1525.199951171875,
+            "y": 584.7000122070312,
+            "target": "DIV",
+            "targetName": "第1卷画卷，使用滚轮、左右拖拽或方向键游观",
+            "case": "1920x1080-dpr1-canvas-warm-return",
+            "progress": "0.8122140208718523",
+            "range": "0.812",
+            "diag": "0.817278",
+            "frame": "2471.6325346697486",
+            "renderCount": "457",
+            "rafTicks": "738",
+            "rafRunning": "true",
+            "loading": "0",
+            "queued": "0",
+            "textures": "26",
+            "textureBytes": "189430604",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "longtasks": [
+            {
+              "case": "1920x1080-dpr1-canvas-warm-return",
+              "at": 10820.70000000298,
+              "duration": 168
+            },
+            {
+              "case": "1920x1080-dpr1-canvas-warm-return",
+              "at": 12043.90000000596,
+              "duration": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "base-only-preupload-v1",
+      "startedAt": "2026-10-23T02:24:16.994Z",
+      "completedAt": "2026-10-23T02:24:33.042Z",
+      "browser": "156.0.8078.47",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Ti (0x00002C05) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "sourceCount": 831,
+      "packageCount": 744,
+      "unchanged": true,
+      "binding": {
+        "path": "tmp/manual-drag-ab/binding.json",
+        "sha256": "161cbaaca2801df360b8d936685b12cb6193e1d5ce8712bc7c7cceaa730ca9cf"
+      },
+      "rawReport": {
+        "path": "tmp/manual-drag-ab/runs/prepared-2026-10-23T02-24-16-994Z/validation.json",
+        "bytes": 1017024,
+        "sha256": "1558007aa82749e3457105169608e933eeba2f237abef04bdeb0d63184f4f6ec",
+        "storage": "local ignored tmp"
+      },
+      "rawTrace": {
+        "path": "tmp/manual-drag-ab/runs/prepared-2026-10-23T02-24-16-994Z/1920x1080-dpr1-trace.json",
+        "bytes": 47063328,
+        "sha256": "645dabad129c7453628f8f99a6ac10f36fb4f96cfb5392216a592ac98bd8d5ca",
+        "storage": "local ignored tmp, no raw trace in Git"
+      },
+      "archived": [
+        {
+          "path": "base-only-preupload-v1-1920x1080-dpr1.cpuprofile",
+          "sha256": "86c305d6ea26b52e22fad0437e9f83c2a1154eeea611a2cabfdd4a41140efb31"
+        },
+        {
+          "path": "base-only-preupload-v1-driver.cjs",
+          "sha256": "298a785156ab47d4230a125f1227917505669e661406c2d91ba3a5e0a3142047"
+        }
+      ],
+      "cases": [
+        {
+          "name": "1920x1080-dpr1-canvas-cold-forward",
+          "gesture": {
+            "requestedMs": 900,
+            "actualNodeMs": 1584.4009999999998,
+            "steps": 90
+          },
+          "before": {
+            "at": 8176.70000000298,
+            "case": "1920x1080-dpr1-canvas-cold-forward",
+            "progress": "0.78",
+            "range": "0.78",
+            "diag": "0.779995",
+            "frame": "2358.9248033244185",
+            "renderCount": "95",
+            "rafTicks": "260",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "45",
+            "textureBytes": "334256561",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "after": {
+            "at": 10429.39999999106,
+            "case": "1920x1080-dpr1-canvas-cold-forward",
+            "progress": "0.9036559081187715",
+            "range": "0.904",
+            "diag": "0.903577",
+            "frame": "2732.5120113106022",
+            "renderCount": "313",
+            "rafTicks": "551",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "34",
+            "textureBytes": "247358289",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "summary": {
+            "progressStart": "0.78",
+            "progressEnd": "0.9036559081187715",
+            "rafIntervals": {
+              "count": 296,
+              "p50": 6.100000008940697,
+              "p95": 14.799999997019768,
+              "p99": 43.29999999701977,
+              "max": 144.29999999701977,
+              "over50": 2,
+              "over100": 1
+            },
+            "pointerIntervals": {
+              "count": 90,
+              "p50": 11,
+              "p95": 54.599999994039536,
+              "p99": 186.09999999403954,
+              "max": 186.09999999403954,
+              "over50": 5,
+              "over100": 2
+            },
+            "longtaskCount": 2,
+            "longtaskMaximum": 143,
+            "nativeSubmissions": 218,
+            "resourceRequests": 20,
+            "glareRequests": 13,
+            "peakTextureBytes": 341673030
+          },
+          "pointerdown": {
+            "type": "pointerdown",
+            "at": 8188.399999991059,
+            "trusted": true,
+            "x": 1525.199951171875,
+            "y": 584.7000122070312,
+            "target": "CANVAS",
+            "targetName": "原始 Blender 分层国画场景",
+            "case": "1920x1080-dpr1-canvas-cold-forward",
+            "progress": "0.78",
+            "range": "0.78",
+            "diag": "0.779995",
+            "frame": "2358.9248033244185",
+            "renderCount": "95",
+            "rafTicks": "260",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "45",
+            "textureBytes": "334256561",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "pointerup": {
+            "type": "pointerup",
+            "at": 9768.29999999702,
+            "trusted": true,
+            "x": 489,
+            "y": 584.7000122070312,
+            "target": "DIV",
+            "targetName": "第1卷画卷，使用滚轮、左右拖拽或方向键游观",
+            "case": "1920x1080-dpr1-canvas-cold-forward",
+            "progress": "0.8808280387303542",
+            "range": "0.881",
+            "diag": "0.878700",
+            "frame": "2657.3089611396194",
+            "renderCount": "214",
+            "rafTicks": "444",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "39",
+            "textureBytes": "289158743",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "longtasks": [
+            {
+              "case": "1920x1080-dpr1-canvas-cold-forward",
+              "at": 8370.70000000298,
+              "duration": 143
+            },
+            {
+              "case": "1920x1080-dpr1-canvas-cold-forward",
+              "at": 9598.09999999404,
+              "duration": 56
+            }
+          ]
+        },
+        {
+          "name": "1920x1080-dpr1-canvas-warm-return",
+          "gesture": {
+            "requestedMs": 900,
+            "actualNodeMs": 1369.3060000000005,
+            "steps": 90
+          },
+          "before": {
+            "at": 10481.79999999702,
+            "case": "1920x1080-dpr1-canvas-warm-return",
+            "progress": "0.9039637096369512",
+            "range": "0.904",
+            "diag": "0.903577",
+            "frame": "2732.5120113106022",
+            "renderCount": "313",
+            "rafTicks": "551",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "34",
+            "textureBytes": "247358289",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "after": {
+            "at": 12517.89999999106,
+            "case": "1920x1080-dpr1-canvas-warm-return",
+            "progress": "0.7807827083003221",
+            "range": "0.781",
+            "diag": "0.781179",
+            "frame": "2362.5051414223576",
+            "renderCount": "492",
+            "rafTicks": "785",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "42",
+            "textureBytes": "313906288",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "summary": {
+            "progressStart": "0.9039637096369512",
+            "progressEnd": "0.7807827083003221",
+            "rafIntervals": {
+              "count": 237,
+              "p50": 5.799999997019768,
+              "p95": 29.5,
+              "p99": 57.400000005960464,
+              "max": 82,
+              "over50": 6,
+              "over100": 0
+            },
+            "pointerIntervals": {
+              "count": 90,
+              "p50": 8.199999988079071,
+              "p95": 55.70000000298023,
+              "p99": 204.1000000089407,
+              "max": 204.1000000089407,
+              "over50": 5,
+              "over100": 1
+            },
+            "longtaskCount": 4,
+            "longtaskMaximum": 79,
+            "nativeSubmissions": 179,
+            "resourceRequests": 16,
+            "glareRequests": 12,
+            "peakTextureBytes": 383720693
+          },
+          "pointerdown": {
+            "type": "pointerdown",
+            "at": 10495.59999999404,
+            "trusted": true,
+            "x": 489,
+            "y": 584.7000122070312,
+            "target": "CANVAS",
+            "targetName": "原始 Blender 分层国画场景",
+            "case": "1920x1080-dpr1-canvas-warm-return",
+            "progress": "0.9039637096369512",
+            "range": "0.904",
+            "diag": "0.903577",
+            "frame": "2732.5120113106022",
+            "renderCount": "313",
+            "rafTicks": "551",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "34",
+            "textureBytes": "247358289",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "pointerup": {
+            "type": "pointerup",
+            "at": 11854,
+            "trusted": true,
+            "x": 1525.199951171875,
+            "y": 584.7000122070312,
+            "target": "DIV",
+            "targetName": "第1卷画卷，使用滚轮、左右拖拽或方向键游观",
+            "case": "1920x1080-dpr1-canvas-warm-return",
+            "progress": "0.8154923358423154",
+            "range": "0.815",
+            "diag": "0.816856",
+            "frame": "2470.3566046148458",
+            "renderCount": "441",
+            "rafTicks": "730",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "40",
+            "textureBytes": "296629493",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "longtasks": [
+            {
+              "case": "1920x1080-dpr1-canvas-warm-return",
+              "at": 10975.79999999702,
+              "duration": 63
+            },
+            {
+              "case": "1920x1080-dpr1-canvas-warm-return",
+              "at": 11039.20000000298,
+              "duration": 51
+            },
+            {
+              "case": "1920x1080-dpr1-canvas-warm-return",
+              "at": 12281.89999999106,
+              "duration": 79
+            },
+            {
+              "case": "1920x1080-dpr1-canvas-warm-return",
+              "at": 12392.20000000298,
+              "duration": 52
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "actual-sampler-preupload-v2",
+      "startedAt": "2026-10-23T02:26:32.254Z",
+      "completedAt": "2026-10-23T02:26:48.150Z",
+      "browser": "156.0.8078.47",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Ti (0x00002C05) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "sourceCount": 831,
+      "packageCount": 744,
+      "unchanged": true,
+      "binding": {
+        "path": "tmp/manual-drag-ab-v2/binding.json",
+        "sha256": "22b664ffe200224b4995d85a08c0efb7867ac8cfc303822772f58eba9fa33e63"
+      },
+      "rawReport": {
+        "path": "tmp/manual-drag-ab-v2/runs/prepared-2026-10-23T02-26-32-254Z/validation.json",
+        "bytes": 1022512,
+        "sha256": "8b50d81f7f2b801ea062032f2ddb13c5f6df523e6be68694115a515903abfd03",
+        "storage": "local ignored tmp"
+      },
+      "rawTrace": {
+        "path": "tmp/manual-drag-ab-v2/runs/prepared-2026-10-23T02-26-32-254Z/1920x1080-dpr1-trace.json",
+        "bytes": 54785888,
+        "sha256": "e19b14481b8ce729b8ab2d524e5ed24d30aa7e4e3b252b4bbd7bf436efce8b56",
+        "storage": "local ignored tmp, no raw trace in Git"
+      },
+      "archived": [
+        {
+          "path": "actual-sampler-preupload-v2-1920x1080-dpr1.cpuprofile",
+          "sha256": "3e0668f101fc16493b01bc91040146815e187cc9003c5326609593e5b8662449"
+        },
+        {
+          "path": "actual-sampler-preupload-v2-driver.cjs",
+          "sha256": "32920e2f31480508866f07c87801f0295b487ae31c0a78643e6770ee4bd007a3"
+        }
+      ],
+      "cases": [
+        {
+          "name": "1920x1080-dpr1-canvas-cold-forward",
+          "gesture": {
+            "requestedMs": 900,
+            "actualNodeMs": 1240.6737999999987,
+            "steps": 90
+          },
+          "before": {
+            "at": 8165.4000000059605,
+            "case": "1920x1080-dpr1-canvas-cold-forward",
+            "progress": "0.7799946294083061",
+            "range": "0.78",
+            "diag": "0.779992",
+            "frame": "2358.916482534476",
+            "renderCount": "184",
+            "rafTicks": "380",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "45",
+            "textureBytes": "332887879",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "after": {
+            "at": 10067.20000000298,
+            "case": "1920x1080-dpr1-canvas-cold-forward",
+            "progress": "0.9033820755829658",
+            "range": "0.903",
+            "diag": "0.902773",
+            "frame": "2730.082788790516",
+            "renderCount": "393",
+            "rafTicks": "651",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "33",
+            "textureBytes": "239366591",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "summary": {
+            "progressStart": "0.7799946294083061",
+            "progressEnd": "0.9033820755829658",
+            "rafIntervals": {
+              "count": 273,
+              "p50": 6.299999997019768,
+              "p95": 13.799999997019768,
+              "p99": 25.799999997019768,
+              "max": 31.5,
+              "over50": 0,
+              "over100": 0
+            },
+            "pointerIntervals": {
+              "count": 90,
+              "p50": 8.600000008940697,
+              "p95": 36.599999994039536,
+              "p99": 47.900000005960464,
+              "max": 47.900000005960464,
+              "over50": 0,
+              "over100": 0
+            },
+            "longtaskCount": 0,
+            "longtaskMaximum": 0,
+            "nativeSubmissions": 209,
+            "resourceRequests": 18,
+            "glareRequests": 11,
+            "peakTextureBytes": 340438407
+          },
+          "pointerdown": {
+            "type": "pointerdown",
+            "at": 8183.20000000298,
+            "trusted": true,
+            "x": 1525.199951171875,
+            "y": 584.7000122070312,
+            "target": "CANVAS",
+            "targetName": "原始 Blender 分层国画场景",
+            "case": "1920x1080-dpr1-canvas-cold-forward",
+            "progress": "0.7799949505899189",
+            "range": "0.78",
+            "diag": "0.779992",
+            "frame": "2358.916482534476",
+            "renderCount": "184",
+            "rafTicks": "380",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "45",
+            "textureBytes": "332887879",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "pointerup": {
+            "type": "pointerup",
+            "at": 9415.79999999702,
+            "trusted": true,
+            "x": 489,
+            "y": 584.7000122070312,
+            "target": "DIV",
+            "targetName": "第1卷画卷，使用滚轮、左右拖拽或方向键游观",
+            "case": "1920x1080-dpr1-canvas-cold-forward",
+            "progress": "0.8743599299963807",
+            "range": "0.874",
+            "diag": "0.871397",
+            "frame": "2635.233676860556",
+            "renderCount": "304",
+            "rafTicks": "558",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "42",
+            "textureBytes": "318632087",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "longtasks": []
+        },
+        {
+          "name": "1920x1080-dpr1-canvas-warm-return",
+          "gesture": {
+            "requestedMs": 900,
+            "actualNodeMs": 1327.8287,
+            "steps": 90
+          },
+          "before": {
+            "at": 10115.09999999404,
+            "case": "1920x1080-dpr1-canvas-warm-return",
+            "progress": "0.9037556211045817",
+            "range": "0.904",
+            "diag": "0.902773",
+            "frame": "2730.082788790516",
+            "renderCount": "393",
+            "rafTicks": "651",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "33",
+            "textureBytes": "239366591",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "after": {
+            "at": 12119.20000000298,
+            "case": "1920x1080-dpr1-canvas-warm-return",
+            "progress": "0.7805401306120839",
+            "range": "0.781",
+            "diag": "0.781356",
+            "frame": "2363.0403686082727",
+            "renderCount": "600",
+            "rafTicks": "918",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "42",
+            "textureBytes": "314028977",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "summary": {
+            "progressStart": "0.9037556211045817",
+            "progressEnd": "0.7805401306120839",
+            "rafIntervals": {
+              "count": 267,
+              "p50": 6.299999997019768,
+              "p95": 16.400000005960464,
+              "p99": 33.80000001192093,
+              "max": 36.1000000089407,
+              "over50": 0,
+              "over100": 0
+            },
+            "pointerIntervals": {
+              "count": 90,
+              "p50": 8,
+              "p95": 39.099999994039536,
+              "p99": 54.599999994039536,
+              "max": 54.599999994039536,
+              "over50": 2,
+              "over100": 0
+            },
+            "longtaskCount": 0,
+            "longtaskMaximum": 0,
+            "nativeSubmissions": 207,
+            "resourceRequests": 16,
+            "glareRequests": 13,
+            "peakTextureBytes": 392109806
+          },
+          "pointerdown": {
+            "type": "pointerdown",
+            "at": 10126.59999999404,
+            "trusted": true,
+            "x": 489,
+            "y": 584.7000122070312,
+            "target": "CANVAS",
+            "targetName": "原始 Blender 分层国画场景",
+            "case": "1920x1080-dpr1-canvas-warm-return",
+            "progress": "0.9037909852968256",
+            "range": "0.904",
+            "diag": "0.903756",
+            "frame": "2733.0532425991505",
+            "renderCount": "407",
+            "rafTicks": "666",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "33",
+            "textureBytes": "239366591",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "pointerup": {
+            "type": "pointerup",
+            "at": 11449.79999999702,
+            "trusted": true,
+            "x": 1525.199951171875,
+            "y": 584.7000122070312,
+            "target": "DIV",
+            "targetName": "第1卷画卷，使用滚轮、左右拖拽或方向键游观",
+            "case": "1920x1080-dpr1-canvas-warm-return",
+            "progress": "0.8147210445322735",
+            "range": "0.815",
+            "diag": "0.822555",
+            "frame": "2487.5830029665976",
+            "renderCount": "520",
+            "rafTicks": "830",
+            "rafRunning": "false",
+            "loading": "0",
+            "queued": "0",
+            "textures": "41",
+            "textureBytes": "305018606",
+            "postTextures": "0",
+            "reads": "1",
+            "readPending": "false"
+          },
+          "longtasks": []
+        }
+      ]
+    }
+  ],
+  "representativePixels": {
+    "status": "pass",
+    "comparisons": 6,
+    "allExact": true,
+    "formal59": false
+  },
+  "cpu": {
+    "status": "pass",
+    "checks": 10,
+    "scope": "Real production methods/helper with explicit GPU stub; native loss/restore still requires actual C7 hardware test."
+  },
+  "adoptedSource": [
+    {
+      "path": "src/scene/SceneRenderer.ts",
+      "sha256": "106a0f26f305e353784f2d244749b27035cbdfca6e027936af016c8c85dbab82"
+    },
+    {
+      "path": "src/scene/SourceMaterial.ts",
+      "sha256": "21e44de8e57bd23fe2798885cdf3c2631ea726cc5e0eb2b676a5652666894d41"
+    },
+    {
+      "path": "src/scene/texturePreparation.ts",
+      "sha256": "749bc35547737ffd11c81f20c24fe2c7bbbcb600deb2df0efdb43d1763daa2e9"
+    }
+  ],
+  "finalDeltaAfterV2": "Only context restoration now restarts the complete pending upload variants list, including its prefix consumed on the lost context. Dedicated production-method CPU regression passed. This final lifecycle branch is outside V2 normal-path A/B/pixel captures and is subject to formal C7 native hardware acceptance.",
+  "failureHistory": "First pixel adapter attempt compared six-decimal progress diagnostics with1e-7 and timed out. Kept raw failure/driver; rerun waits for actual sourceFrame at1e-7 and uses unchanged pixel thresholds. First V1 preupload did not improve cold drag, retained quantitatively."
+}

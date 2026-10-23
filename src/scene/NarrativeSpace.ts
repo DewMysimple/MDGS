@@ -1,6 +1,9 @@
 export interface NarrativeSpace {
   x: number; y: number; width: number; height: number;
   dense: boolean; orientation: 'vertical' | 'horizontal'; quietFraction: number;
+  sampledProgress?: number;
+  sampledWidth?: number;
+  sampledHeight?: number;
 }
 
 export const isCompactNarrativeViewport = (width: number, height: number) => width < 900 || height < 400;

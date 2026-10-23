@@ -1,0 +1,2121 @@
+{
+  "buildDirectory": "tmp/art-candidate-7-dist",
+  "base": "http://127.0.0.1:5196/",
+  "scope": "Read-only DOM/focus event diagnostics on frozen C7. No product delay, mock, injected CSS or state changes.",
+  "driverSha256": "11b8487a0d57efb2ce0eb743dd1e6698a50a1eb9ca0f59f9be66dcfa7458b040",
+  "runs": [
+    {
+      "trial": 1,
+      "trace": [
+        {
+          "at": 5388.79999999702,
+          "event": "start",
+          "anchors": [],
+          "active": {
+            "tag": "DIV",
+            "className": "painting",
+            "label": "锦绣花意画卷，使用滚轮或拖拽游观，也可用方向键移动，空格键自动展卷",
+            "text": "叁 · 01花入日常花在瓶上，也在掌心，把吉祥的心意送进日常。国色叁 · 02一花牵意一朵花牵起衣裳"
+          },
+          "open": false,
+          "progress": "0.000000",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 5415,
+          "event": "focusin",
+          "detail": "art-encounter-entrance ",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-encounter-entrance ",
+            "label": "画中有遇：从一朵花，看见一幅锦绣",
+            "text": "画中有遇选花入锦"
+          },
+          "open": false,
+          "progress": "0.000000",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 5415.20000000298,
+          "event": "click",
+          "detail": {
+            "className": "art-encounter-entrance ",
+            "detail": 1
+          },
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-encounter-entrance ",
+            "label": "画中有遇：从一朵花，看见一幅锦绣",
+            "text": "画中有遇选花入锦"
+          },
+          "open": false,
+          "progress": "0.000000",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 5416.70000000298,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-encounter-entrance is-open",
+            "label": "画中有遇：从一朵花，看见一幅锦绣",
+            "text": "画中有遇选花入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.000000",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 5422.4000000059605,
+          "event": "focusin",
+          "detail": "art-close",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.000000",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 5472.600000008941,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "15"
+        },
+        {
+          "at": 5525.29999999702,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "14"
+        },
+        {
+          "at": 5559.29999999702,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "13"
+        },
+        {
+          "at": 5593.20000000298,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "12"
+        },
+        {
+          "at": 5631.9000000059605,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "11"
+        },
+        {
+          "at": 5660.100000008941,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "10"
+        },
+        {
+          "at": 5703.79999999702,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "9"
+        },
+        {
+          "at": 5733,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "8"
+        },
+        {
+          "at": 5764.79999999702,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "7"
+        },
+        {
+          "at": 5798.4000000059605,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "6"
+        },
+        {
+          "at": 5831.600000008941,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "5"
+        },
+        {
+          "at": 5832.4000000059605,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "5"
+        },
+        {
+          "at": 5833.100000008941,
+          "event": "focusin",
+          "detail": "art-anchor art-anchor--cloth   ",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "5"
+        },
+        {
+          "at": 5884,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "4"
+        },
+        {
+          "at": 5884.9000000059605,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "4"
+        },
+        {
+          "at": 5905.100000008941,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "3"
+        },
+        {
+          "at": 5926.20000000298,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "2"
+        },
+        {
+          "at": 5945.20000000298,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "1"
+        },
+        {
+          "at": 5975.600000008941,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "0"
+        },
+        {
+          "at": 6009,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "3",
+          "queued": "0"
+        },
+        {
+          "at": 6036.4000000059605,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "2",
+          "queued": "0"
+        },
+        {
+          "at": 6063.79999999702,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "1",
+          "queued": "0"
+        },
+        {
+          "at": 6070.20000000298,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 7037,
+          "event": "keydown",
+          "detail": "Enter",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 7037.20000000298,
+          "event": "click",
+          "detail": {
+            "className": "art-anchor art-anchor--cloth   ",
+            "detail": 0
+          },
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 7083,
+          "event": "keydown",
+          "detail": "Enter",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 7083.100000008941,
+          "event": "click",
+          "detail": {
+            "className": "art-anchor art-anchor--cloth   ",
+            "detail": 0
+          },
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "0",
+          "queued": "0"
+        }
+      ],
+      "phase": "waiting",
+      "reset": false,
+      "active": "<button type=\"button\" class=\"art-anchor art-anchor--cloth   \" aria-label=\"锦面牡丹，请先选取花意\" aria-describedby=\"_r_1_\" aria-disabled=\"true\" style=\"left: 37.0749%; top: 78.264%;\"><span class=\"art-anchor__eye\"></span><span class=\"art-anchor__label\">入锦</span></button>",
+      "anchors": [
+        "<button type=\"button\" class=\"art-anchor art-anchor--flower \" aria-label=\"选取原画牡丹的花意，可拖至锦面或按回车选取\" aria-describedby=\"_r_1_\" style=\"left: 50.0413%; top: 94.0406%;\"><span class=\"art-anchor__eye\"></span><span class=\"art-anchor__label\">选花</span></button>",
+        "<button type=\"button\" class=\"art-anchor art-anchor--cloth   \" aria-label=\"锦面牡丹，请先选取花意\" aria-describedby=\"_r_1_\" aria-disabled=\"true\" style=\"left: 37.0749%; top: 78.264%;\"><span class=\"art-anchor__eye\"></span><span class=\"art-anchor__label\">入锦</span></button>"
+      ],
+      "screenshot": {
+        "file": "trial-1.png",
+        "sha256": "fd1a6f89d70819185d32506a9ea8e492b504933ec353e8aa15917db3711ac0c3"
+      }
+    },
+    {
+      "trial": 2,
+      "trace": [
+        {
+          "at": 4952.4000000059605,
+          "event": "start",
+          "anchors": [],
+          "active": {
+            "tag": "DIV",
+            "className": "painting",
+            "label": "锦绣花意画卷，使用滚轮或拖拽游观，也可用方向键移动，空格键自动展卷",
+            "text": "叁 · 01花入日常花在瓶上，也在掌心，把吉祥的心意送进日常。国色叁 · 02一花牵意一朵花牵起衣裳"
+          },
+          "open": false,
+          "progress": "0.000000",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 4978.4000000059605,
+          "event": "focusin",
+          "detail": "art-encounter-entrance ",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-encounter-entrance ",
+            "label": "画中有遇：从一朵花，看见一幅锦绣",
+            "text": "画中有遇选花入锦"
+          },
+          "open": false,
+          "progress": "0.000000",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 4978.70000000298,
+          "event": "click",
+          "detail": {
+            "className": "art-encounter-entrance ",
+            "detail": 1
+          },
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-encounter-entrance ",
+            "label": "画中有遇：从一朵花，看见一幅锦绣",
+            "text": "画中有遇选花入锦"
+          },
+          "open": false,
+          "progress": "0.000000",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 4980.100000008941,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-encounter-entrance is-open",
+            "label": "画中有遇：从一朵花，看见一幅锦绣",
+            "text": "画中有遇选花入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.000000",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 4985.70000000298,
+          "event": "focusin",
+          "detail": "art-close",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.000000",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 5053.4000000059605,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "15"
+        },
+        {
+          "at": 5101.79999999702,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "14"
+        },
+        {
+          "at": 5141.100000008941,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "13"
+        },
+        {
+          "at": 5173.100000008941,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "12"
+        },
+        {
+          "at": 5214.100000008941,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "11"
+        },
+        {
+          "at": 5239.5,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "10"
+        },
+        {
+          "at": 5284.4000000059605,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "9"
+        },
+        {
+          "at": 5313,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "8"
+        },
+        {
+          "at": 5345.5,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "7"
+        },
+        {
+          "at": 5379,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "6"
+        },
+        {
+          "at": 5413,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "5"
+        },
+        {
+          "at": 5413.79999999702,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "5"
+        },
+        {
+          "at": 5414.5,
+          "event": "focusin",
+          "detail": "art-anchor art-anchor--cloth   ",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "5"
+        },
+        {
+          "at": 5446,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "4"
+        },
+        {
+          "at": 5446.9000000059605,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "4"
+        },
+        {
+          "at": 5464,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "3"
+        },
+        {
+          "at": 5485.4000000059605,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "2"
+        },
+        {
+          "at": 5507.5,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "1"
+        },
+        {
+          "at": 5539.600000008941,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "0"
+        },
+        {
+          "at": 5574.20000000298,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "3",
+          "queued": "0"
+        },
+        {
+          "at": 5606.4000000059605,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "2",
+          "queued": "0"
+        },
+        {
+          "at": 5632.70000000298,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "1",
+          "queued": "0"
+        },
+        {
+          "at": 5640.29999999702,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 6627.29999999702,
+          "event": "keydown",
+          "detail": "Enter",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 6627.5,
+          "event": "click",
+          "detail": {
+            "className": "art-anchor art-anchor--cloth   ",
+            "detail": 0
+          },
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 6672.70000000298,
+          "event": "keydown",
+          "detail": "Enter",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 6672.79999999702,
+          "event": "click",
+          "detail": {
+            "className": "art-anchor art-anchor--cloth   ",
+            "detail": 0
+          },
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "0",
+          "queued": "0"
+        }
+      ],
+      "phase": "waiting",
+      "reset": false,
+      "active": "<button type=\"button\" class=\"art-anchor art-anchor--cloth   \" aria-label=\"锦面牡丹，请先选取花意\" aria-describedby=\"_r_1_\" aria-disabled=\"true\" style=\"left: 37.0749%; top: 78.264%;\"><span class=\"art-anchor__eye\"></span><span class=\"art-anchor__label\">入锦</span></button>",
+      "anchors": [
+        "<button type=\"button\" class=\"art-anchor art-anchor--flower \" aria-label=\"选取原画牡丹的花意，可拖至锦面或按回车选取\" aria-describedby=\"_r_1_\" style=\"left: 50.0413%; top: 94.0406%;\"><span class=\"art-anchor__eye\"></span><span class=\"art-anchor__label\">选花</span></button>",
+        "<button type=\"button\" class=\"art-anchor art-anchor--cloth   \" aria-label=\"锦面牡丹，请先选取花意\" aria-describedby=\"_r_1_\" aria-disabled=\"true\" style=\"left: 37.0749%; top: 78.264%;\"><span class=\"art-anchor__eye\"></span><span class=\"art-anchor__label\">入锦</span></button>"
+      ],
+      "screenshot": {
+        "file": "trial-2.png",
+        "sha256": "d1c2cd9780cc0ae72fd3ea097974e134d7552629ba1e9f2f13a433b75ae344e6"
+      }
+    },
+    {
+      "trial": 3,
+      "trace": [
+        {
+          "at": 4856.79999999702,
+          "event": "start",
+          "anchors": [],
+          "active": {
+            "tag": "DIV",
+            "className": "painting",
+            "label": "锦绣花意画卷，使用滚轮或拖拽游观，也可用方向键移动，空格键自动展卷",
+            "text": "叁 · 01花入日常花在瓶上，也在掌心，把吉祥的心意送进日常。国色叁 · 02一花牵意一朵花牵起衣裳"
+          },
+          "open": false,
+          "progress": "0.000000",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 4882.29999999702,
+          "event": "focusin",
+          "detail": "art-encounter-entrance ",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-encounter-entrance ",
+            "label": "画中有遇：从一朵花，看见一幅锦绣",
+            "text": "画中有遇选花入锦"
+          },
+          "open": false,
+          "progress": "0.000000",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 4882.5,
+          "event": "click",
+          "detail": {
+            "className": "art-encounter-entrance ",
+            "detail": 1
+          },
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-encounter-entrance ",
+            "label": "画中有遇：从一朵花，看见一幅锦绣",
+            "text": "画中有遇选花入锦"
+          },
+          "open": false,
+          "progress": "0.000000",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 4884,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-encounter-entrance is-open",
+            "label": "画中有遇：从一朵花，看见一幅锦绣",
+            "text": "画中有遇选花入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.000000",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 4889.5999999940395,
+          "event": "focusin",
+          "detail": "art-close",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.000000",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 4957.399999991059,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "15"
+        },
+        {
+          "at": 5011.0999999940395,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "14"
+        },
+        {
+          "at": 5044.5999999940395,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "13"
+        },
+        {
+          "at": 5076.79999999702,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "12"
+        },
+        {
+          "at": 5118.699999988079,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "11"
+        },
+        {
+          "at": 5144.699999988079,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "10"
+        },
+        {
+          "at": 5187.699999988079,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "9"
+        },
+        {
+          "at": 5216.699999988079,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "8"
+        },
+        {
+          "at": 5244.5999999940395,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "7"
+        },
+        {
+          "at": 5277.5999999940395,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "6"
+        },
+        {
+          "at": 5312.0999999940395,
+          "event": "mutation",
+          "anchors": [],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "5"
+        },
+        {
+          "at": 5313.0999999940395,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-close",
+            "label": "收起画中有遇",
+            "text": ""
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "5"
+        },
+        {
+          "at": 5337.399999991059,
+          "event": "focusin",
+          "detail": "art-anchor art-anchor--cloth   ",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "5"
+        },
+        {
+          "at": 5344,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "4"
+        },
+        {
+          "at": 5344.699999988079,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "4"
+        },
+        {
+          "at": 5362.5,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "3"
+        },
+        {
+          "at": 5383.79999999702,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "2"
+        },
+        {
+          "at": 5400.899999991059,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "1"
+        },
+        {
+          "at": 5432.899999991059,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "4",
+          "queued": "0"
+        },
+        {
+          "at": 5466.899999991059,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "3",
+          "queued": "0"
+        },
+        {
+          "at": 5493.699999988079,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "2",
+          "queued": "0"
+        },
+        {
+          "at": 5519.899999991059,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "1",
+          "queued": "0"
+        },
+        {
+          "at": 5527.5,
+          "event": "mutation",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 6528.79999999702,
+          "event": "keydown",
+          "detail": "Enter",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 6529.0999999940395,
+          "event": "click",
+          "detail": {
+            "className": "art-anchor art-anchor--cloth   ",
+            "detail": 0
+          },
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 6575.699999988079,
+          "event": "keydown",
+          "detail": "Enter",
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "0",
+          "queued": "0"
+        },
+        {
+          "at": 6575.79999999702,
+          "event": "click",
+          "detail": {
+            "className": "art-anchor art-anchor--cloth   ",
+            "detail": 0
+          },
+          "anchors": [
+            {
+              "className": "art-anchor art-anchor--flower ",
+              "label": "选取原画牡丹的花意，可拖至锦面或按回车选取",
+              "disabled": null
+            },
+            {
+              "className": "art-anchor art-anchor--cloth   ",
+              "label": "锦面牡丹，请先选取花意",
+              "disabled": "true"
+            }
+          ],
+          "active": {
+            "tag": "BUTTON",
+            "className": "art-anchor art-anchor--cloth   ",
+            "label": "锦面牡丹，请先选取花意",
+            "text": "入锦"
+          },
+          "phase": "waiting",
+          "open": true,
+          "progress": "0.580552",
+          "loading": "0",
+          "queued": "0"
+        }
+      ],
+      "phase": "waiting",
+      "reset": false,
+      "active": "<button type=\"button\" class=\"art-anchor art-anchor--cloth   \" aria-label=\"锦面牡丹，请先选取花意\" aria-describedby=\"_r_1_\" aria-disabled=\"true\" style=\"left: 37.0749%; top: 78.264%;\"><span class=\"art-anchor__eye\"></span><span class=\"art-anchor__label\">入锦</span></button>",
+      "anchors": [
+        "<button type=\"button\" class=\"art-anchor art-anchor--flower \" aria-label=\"选取原画牡丹的花意，可拖至锦面或按回车选取\" aria-describedby=\"_r_1_\" style=\"left: 50.0413%; top: 94.0406%;\"><span class=\"art-anchor__eye\"></span><span class=\"art-anchor__label\">选花</span></button>",
+        "<button type=\"button\" class=\"art-anchor art-anchor--cloth   \" aria-label=\"锦面牡丹，请先选取花意\" aria-describedby=\"_r_1_\" aria-disabled=\"true\" style=\"left: 37.0749%; top: 78.264%;\"><span class=\"art-anchor__eye\"></span><span class=\"art-anchor__label\">入锦</span></button>"
+      ],
+      "screenshot": {
+        "file": "trial-3.png",
+        "sha256": "d1c2cd9780cc0ae72fd3ea097974e134d7552629ba1e9f2f13a433b75ae344e6"
+      }
+    }
+  ],
+  "errors": [],
+  "browser": "156.0.8078.47",
+  "status": "diagnosis-completed",
+  "finishedAt": "2026-10-23T02:57:03.914Z"
+}

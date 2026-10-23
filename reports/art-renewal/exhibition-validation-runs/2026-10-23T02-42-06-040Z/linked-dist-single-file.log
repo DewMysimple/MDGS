@@ -1,0 +1,22 @@
+exit=1
+pid=47608
+STDOUT
+
+STDERR
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Package inputs must not be symlinks: dist/favicon.svg
+    at walk (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-dist-single-file/project/scripts/package-exhibition.mjs:32:5)
+    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T02-42-06-040Z/linked-dist-single-file/project/scripts/package-exhibition.mjs:94:58 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.16.0
+

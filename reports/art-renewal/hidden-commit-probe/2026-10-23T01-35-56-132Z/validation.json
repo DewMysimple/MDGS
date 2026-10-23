@@ -1,0 +1,1641 @@
+{
+  "status": "pass",
+  "startedAt": "2026-10-23T01:35:56.133Z",
+  "runId": "2026-10-23T01-35-56-132Z",
+  "buildDirectory": "tmp/art-candidate-6-dist",
+  "freeze": {
+    "path": "reports/art-renewal/art-candidate-6-build.json",
+    "sha256": "516efd7a1d451b7e62f79e90564b22f7a706b9b14bde6cb359c8656021fbf359"
+  },
+  "code": {
+    "assets/flowerLetter-DCA_QV0r.js": "a5bac5ccca28d8ef909a70f86af801086fccf0b00ceb02122e2ee4526ba3af63",
+    "assets/index-C5txKLE_.css": "db346cac5c7e39fe33b73b46b0186cf37cc411ed9643163849497c5f82cc11ae",
+    "assets/index-CTrqtaDU.js": "70a48d047600b981f7317ff38b846d8e2e0e310e9bcd904339694e806423f92a",
+    "assets/three-BetNTb4e.js": "68f6f4af9b65531830834e41fcad5f941cfcd557e6996a7f32a8c45e83290d10",
+    "index.html": "b7fb5104aad25eb4bf7180733c23c27e01ede328a20bbb1fb58ac63731af468e"
+  },
+  "scope": "Same document.hidden override + visibilitychange dispatch as historical settings test. Isolates synchronous controller persistence from delayed React/renderer DOM commit. This is not a native OS window background or display-FPS benchmark.",
+  "rounds": [
+    {
+      "index": 0,
+      "start": {
+        "at": 9406.29999999702,
+        "before": "0.401019",
+        "immediateDOM": "0.402066",
+        "persisted": "0.40206615944429014",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 9406.59999999404,
+          "hidden": true,
+          "dom": "0.402066",
+          "persisted": "0.40206615944429014",
+          "input": "0.40206615944429",
+          "inputStep": "any",
+          "renderCount": "176",
+          "rafTicks": "370",
+          "nativePaintingDrawCalls": 20936,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.402066,
+      "committed": {
+        "at": 9413.39999999106,
+        "input": "0.40206615944429",
+        "inputStep": "any",
+        "renderCount": "176",
+        "rafTicks": "370"
+      },
+      "commitAfterMs": 7.0999999940395355,
+      "after": {
+        "dom": 0.402066,
+        "persisted": "0.40206615944429014",
+        "input": "0.40206615944429",
+        "renderCount": "176",
+        "rafTicks": "370",
+        "nativePaintingDrawCalls": 20936,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 9406.699999988079,
+            "hidden": true,
+            "dom": "0.402066",
+            "persisted": "0.40206615944429014",
+            "input": "0.40206615944429",
+            "inputStep": "any",
+            "renderCount": "176",
+            "rafTicks": "370",
+            "nativePaintingDrawCalls": 20936,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": true
+    },
+    {
+      "index": 1,
+      "start": {
+        "at": 10074,
+        "before": "0.403690",
+        "immediateDOM": "0.404130",
+        "persisted": "0.40413033410534116",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 10074.09999999404,
+          "hidden": true,
+          "dom": "0.404130",
+          "persisted": "0.40413033410534116",
+          "input": "0.404130334105341",
+          "inputStep": "any",
+          "renderCount": "203",
+          "rafTicks": "409",
+          "nativePaintingDrawCalls": 24527,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.40413,
+      "committed": {
+        "at": 10078.89999999106,
+        "input": "0.404130334105341",
+        "inputStep": "any",
+        "renderCount": "203",
+        "rafTicks": "409"
+      },
+      "commitAfterMs": 4.899999991059303,
+      "after": {
+        "dom": 0.40413,
+        "persisted": "0.40413033410534116",
+        "input": "0.404130334105341",
+        "renderCount": "203",
+        "rafTicks": "409",
+        "nativePaintingDrawCalls": 24527,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 10074.29999999702,
+            "hidden": true,
+            "dom": "0.404130",
+            "persisted": "0.40413033410534116",
+            "input": "0.404130334105341",
+            "inputStep": "any",
+            "renderCount": "203",
+            "rafTicks": "409",
+            "nativePaintingDrawCalls": 24527,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": true
+    },
+    {
+      "index": 2,
+      "start": {
+        "at": 10730,
+        "before": "0.405873",
+        "immediateDOM": "0.406148",
+        "persisted": "0.4062014555079213",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 10730.39999999106,
+          "hidden": true,
+          "dom": "0.406148",
+          "persisted": "0.4062014555079213",
+          "input": "0.406201455507921",
+          "inputStep": "any",
+          "renderCount": "238",
+          "rafTicks": "445",
+          "nativePaintingDrawCalls": 29101,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.406201,
+      "committed": {
+        "at": 10735.199999988079,
+        "input": "0.406201455507921",
+        "inputStep": "any",
+        "renderCount": "238",
+        "rafTicks": "445"
+      },
+      "commitAfterMs": 5.199999988079071,
+      "after": {
+        "dom": 0.406148,
+        "persisted": "0.4062014555079213",
+        "input": "0.406201455507921",
+        "renderCount": "238",
+        "rafTicks": "445",
+        "nativePaintingDrawCalls": 29101,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 10730.39999999106,
+            "hidden": true,
+            "dom": "0.406148",
+            "persisted": "0.4062014555079213",
+            "input": "0.406201455507921",
+            "inputStep": "any",
+            "renderCount": "238",
+            "rafTicks": "445",
+            "nativePaintingDrawCalls": 29101,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": false
+    },
+    {
+      "index": 3,
+      "start": {
+        "at": 11381.5,
+        "before": "0.408042",
+        "immediateDOM": "0.408265",
+        "persisted": "0.40831822692704134",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 11381.79999999702,
+          "hidden": true,
+          "dom": "0.408265",
+          "persisted": "0.40831822692704134",
+          "input": "0.408318226927041",
+          "inputStep": "any",
+          "renderCount": "271",
+          "rafTicks": "485",
+          "nativePaintingDrawCalls": 33193,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.408318,
+      "committed": {
+        "at": 11387.5,
+        "input": "0.408318226927041",
+        "inputStep": "any",
+        "renderCount": "271",
+        "rafTicks": "485"
+      },
+      "commitAfterMs": 6,
+      "after": {
+        "dom": 0.408265,
+        "persisted": "0.40831822692704134",
+        "input": "0.408318226927041",
+        "renderCount": "271",
+        "rafTicks": "485",
+        "nativePaintingDrawCalls": 33193,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 11381.89999999106,
+            "hidden": true,
+            "dom": "0.408265",
+            "persisted": "0.40831822692704134",
+            "input": "0.408318226927041",
+            "inputStep": "any",
+            "renderCount": "271",
+            "rafTicks": "485",
+            "nativePaintingDrawCalls": 33193,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": false
+    },
+    {
+      "index": 4,
+      "start": {
+        "at": 12030.09999999404,
+        "before": "0.410007",
+        "immediateDOM": "0.410339",
+        "persisted": "0.4103933178963954",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 12030.39999999106,
+          "hidden": true,
+          "dom": "0.410339",
+          "persisted": "0.4103933178963954",
+          "input": "0.41033873635488",
+          "inputStep": "any",
+          "renderCount": "297",
+          "rafTicks": "524",
+          "nativePaintingDrawCalls": 36417,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.410393,
+      "committed": {
+        "at": 12035.09999999404,
+        "input": "0.410393317896395",
+        "inputStep": "any",
+        "renderCount": "297",
+        "rafTicks": "524"
+      },
+      "commitAfterMs": 5,
+      "after": {
+        "dom": 0.410339,
+        "persisted": "0.4103933178963954",
+        "input": "0.410393317896395",
+        "renderCount": "297",
+        "rafTicks": "524",
+        "nativePaintingDrawCalls": 36417,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 12030.5,
+            "hidden": true,
+            "dom": "0.410339",
+            "persisted": "0.4103933178963954",
+            "input": "0.41033873635488",
+            "inputStep": "any",
+            "renderCount": "297",
+            "rafTicks": "524",
+            "nativePaintingDrawCalls": 36417,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": false
+    },
+    {
+      "index": 5,
+      "start": {
+        "at": 12675.09999999404,
+        "before": "0.412179",
+        "immediateDOM": "0.412401",
+        "persisted": "0.41245550777400036",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 12675.29999999702,
+          "hidden": true,
+          "dom": "0.412401",
+          "persisted": "0.41245550777400036",
+          "input": "0.412455507774",
+          "inputStep": "any",
+          "renderCount": "318",
+          "rafTicks": "561",
+          "nativePaintingDrawCalls": 39021,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.412456,
+      "committed": {
+        "at": 12686,
+        "input": "0.412455507774",
+        "inputStep": "any",
+        "renderCount": "318",
+        "rafTicks": "561"
+      },
+      "commitAfterMs": 10.900000005960464,
+      "after": {
+        "dom": 0.412401,
+        "persisted": "0.41245550777400036",
+        "input": "0.412455507774",
+        "renderCount": "318",
+        "rafTicks": "561",
+        "nativePaintingDrawCalls": 39021,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 12675.5,
+            "hidden": true,
+            "dom": "0.412401",
+            "persisted": "0.41245550777400036",
+            "input": "0.412455507774",
+            "inputStep": "any",
+            "renderCount": "318",
+            "rafTicks": "561",
+            "nativePaintingDrawCalls": 39021,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": false
+    },
+    {
+      "index": 6,
+      "start": {
+        "at": 13347.699999988079,
+        "before": "0.414236",
+        "immediateDOM": "0.414569",
+        "persisted": "0.41462189877643424",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 13347.89999999106,
+          "hidden": true,
+          "dom": "0.414569",
+          "persisted": "0.41462189877643424",
+          "input": "0.414621898776434",
+          "inputStep": "any",
+          "renderCount": "346",
+          "rafTicks": "602",
+          "nativePaintingDrawCalls": 42493,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.414622,
+      "committed": {
+        "at": 13352.39999999106,
+        "input": "0.414621898776434",
+        "inputStep": "any",
+        "renderCount": "346",
+        "rafTicks": "602"
+      },
+      "commitAfterMs": 4.700000002980232,
+      "after": {
+        "dom": 0.414569,
+        "persisted": "0.41462189877643424",
+        "input": "0.414621898776434",
+        "renderCount": "346",
+        "rafTicks": "602",
+        "nativePaintingDrawCalls": 42493,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 13347.89999999106,
+            "hidden": true,
+            "dom": "0.414569",
+            "persisted": "0.41462189877643424",
+            "input": "0.414621898776434",
+            "inputStep": "any",
+            "renderCount": "346",
+            "rafTicks": "602",
+            "nativePaintingDrawCalls": 42493,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": false
+    },
+    {
+      "index": 7,
+      "start": {
+        "at": 13997.699999988079,
+        "before": "0.416421",
+        "immediateDOM": "0.416696",
+        "persisted": "0.41675157128727375",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 13997.89999999106,
+          "hidden": true,
+          "dom": "0.416696",
+          "persisted": "0.41675157128727375",
+          "input": "0.416751571287274",
+          "inputStep": "any",
+          "renderCount": "380",
+          "rafTicks": "641",
+          "nativePaintingDrawCalls": 46715,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.416752,
+      "committed": {
+        "at": 14002.199999988079,
+        "input": "0.416751571287274",
+        "inputStep": "any",
+        "renderCount": "380",
+        "rafTicks": "641"
+      },
+      "commitAfterMs": 4.5,
+      "after": {
+        "dom": 0.416752,
+        "persisted": "0.41675157128727375",
+        "input": "0.416751571287274",
+        "renderCount": "380",
+        "rafTicks": "641",
+        "nativePaintingDrawCalls": 46715,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 13998,
+            "hidden": true,
+            "dom": "0.416696",
+            "persisted": "0.41675157128727375",
+            "input": "0.416751571287274",
+            "inputStep": "any",
+            "renderCount": "380",
+            "rafTicks": "641",
+            "nativePaintingDrawCalls": 46715,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          },
+          {
+            "at": 14041.79999999702,
+            "hidden": true,
+            "dom": "0.416752",
+            "persisted": "0.41675157128727375",
+            "input": "0.416751571287274",
+            "inputStep": "any",
+            "renderCount": "380",
+            "rafTicks": "641",
+            "nativePaintingDrawCalls": 46715,
+            "playLabel": "自动展卷",
+            "playing": "false"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": false
+    },
+    {
+      "index": 8,
+      "start": {
+        "at": 14666.79999999702,
+        "before": "0.418585",
+        "immediateDOM": "0.418971",
+        "persisted": "0.4189705590478356",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 14667.09999999404,
+          "hidden": true,
+          "dom": "0.418971",
+          "persisted": "0.4189705590478356",
+          "input": "0.418970559047836",
+          "inputStep": "any",
+          "renderCount": "412",
+          "rafTicks": "682",
+          "nativePaintingDrawCalls": 50822,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.418971,
+      "committed": {
+        "at": 14676.199999988079,
+        "input": "0.418970559047836",
+        "inputStep": "any",
+        "renderCount": "412",
+        "rafTicks": "682"
+      },
+      "commitAfterMs": 9.399999991059303,
+      "after": {
+        "dom": 0.418971,
+        "persisted": "0.4189705590478356",
+        "input": "0.418970559047836",
+        "renderCount": "412",
+        "rafTicks": "682",
+        "nativePaintingDrawCalls": 50822,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 14667.199999988079,
+            "hidden": true,
+            "dom": "0.418971",
+            "persisted": "0.4189705590478356",
+            "input": "0.418970559047836",
+            "inputStep": "any",
+            "renderCount": "412",
+            "rafTicks": "682",
+            "nativePaintingDrawCalls": 50822,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": true
+    },
+    {
+      "index": 9,
+      "start": {
+        "at": 15324.89999999106,
+        "before": "0.420825",
+        "immediateDOM": "0.421047",
+        "persisted": "0.42110122395030947",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 15325,
+          "hidden": true,
+          "dom": "0.421047",
+          "persisted": "0.42110122395030947",
+          "input": "0.421046642408794",
+          "inputStep": "any",
+          "renderCount": "442",
+          "rafTicks": "720",
+          "nativePaintingDrawCalls": 54782,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.421101,
+      "committed": {
+        "at": 15332.5,
+        "input": "0.421101223950309",
+        "inputStep": "any",
+        "renderCount": "442",
+        "rafTicks": "720"
+      },
+      "commitAfterMs": 7.600000008940697,
+      "after": {
+        "dom": 0.421047,
+        "persisted": "0.42110122395030947",
+        "input": "0.421101223950309",
+        "renderCount": "442",
+        "rafTicks": "720",
+        "nativePaintingDrawCalls": 54782,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 15325.09999999404,
+            "hidden": true,
+            "dom": "0.421047",
+            "persisted": "0.42110122395030947",
+            "input": "0.421046642408794",
+            "inputStep": "any",
+            "renderCount": "442",
+            "rafTicks": "720",
+            "nativePaintingDrawCalls": 54782,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": false
+    },
+    {
+      "index": 10,
+      "start": {
+        "at": 15975.59999999404,
+        "before": "0.422902",
+        "immediateDOM": "0.423123",
+        "persisted": "0.423178299702873",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 15975.89999999106,
+          "hidden": true,
+          "dom": "0.423123",
+          "persisted": "0.423178299702873",
+          "input": "0.423122725769694",
+          "inputStep": "any",
+          "renderCount": "471",
+          "rafTicks": "759",
+          "nativePaintingDrawCalls": 58610,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.423178,
+      "committed": {
+        "at": 15981.79999999702,
+        "input": "0.423178299702873",
+        "inputStep": "any",
+        "renderCount": "471",
+        "rafTicks": "759"
+      },
+      "commitAfterMs": 6.200000002980232,
+      "after": {
+        "dom": 0.423123,
+        "persisted": "0.423178299702873",
+        "input": "0.423178299702873",
+        "renderCount": "471",
+        "rafTicks": "759",
+        "nativePaintingDrawCalls": 58610,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 15976,
+            "hidden": true,
+            "dom": "0.423123",
+            "persisted": "0.423178299702873",
+            "input": "0.423122725769694",
+            "inputStep": "any",
+            "renderCount": "471",
+            "rafTicks": "759",
+            "nativePaintingDrawCalls": 58610,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": false
+    },
+    {
+      "index": 11,
+      "start": {
+        "at": 16645.5,
+        "before": "0.425003",
+        "immediateDOM": "0.425335",
+        "persisted": "0.42538934833018316",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 16645.59999999404,
+          "hidden": true,
+          "dom": "0.425335",
+          "persisted": "0.42538934833018316",
+          "input": "0.425334766788668",
+          "inputStep": "any",
+          "renderCount": "506",
+          "rafTicks": "798",
+          "nativePaintingDrawCalls": 63238,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.425389,
+      "committed": {
+        "at": 16651.09999999404,
+        "input": "0.425389348330183",
+        "inputStep": "any",
+        "renderCount": "506",
+        "rafTicks": "798"
+      },
+      "commitAfterMs": 5.5999999940395355,
+      "after": {
+        "dom": 0.425335,
+        "persisted": "0.42538934833018316",
+        "input": "0.425389348330183",
+        "renderCount": "506",
+        "rafTicks": "798",
+        "nativePaintingDrawCalls": 63238,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 16645.69999998808,
+            "hidden": true,
+            "dom": "0.425335",
+            "persisted": "0.42538934833018316",
+            "input": "0.425334766788668",
+            "inputStep": "any",
+            "renderCount": "506",
+            "rafTicks": "798",
+            "nativePaintingDrawCalls": 63238,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": false
+    },
+    {
+      "index": 12,
+      "start": {
+        "at": 17290.29999999702,
+        "before": "0.427192",
+        "immediateDOM": "0.427357",
+        "persisted": "0.42741283493295507",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 17290.5,
+          "hidden": true,
+          "dom": "0.427357",
+          "persisted": "0.42741283493295507",
+          "input": "0.427412834932955",
+          "inputStep": "any",
+          "renderCount": "539",
+          "rafTicks": "835",
+          "nativePaintingDrawCalls": 67627,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.427413,
+      "committed": {
+        "at": 17295.19999998808,
+        "input": "0.427412834932955",
+        "inputStep": "any",
+        "renderCount": "539",
+        "rafTicks": "835"
+      },
+      "commitAfterMs": 4.899999991059303,
+      "after": {
+        "dom": 0.427357,
+        "persisted": "0.42741283493295507",
+        "input": "0.427412834932955",
+        "renderCount": "539",
+        "rafTicks": "835",
+        "nativePaintingDrawCalls": 67627,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 17290.59999999404,
+            "hidden": true,
+            "dom": "0.427357",
+            "persisted": "0.42741283493295507",
+            "input": "0.427412834932955",
+            "inputStep": "any",
+            "renderCount": "539",
+            "rafTicks": "835",
+            "nativePaintingDrawCalls": 67627,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": false
+    },
+    {
+      "index": 13,
+      "start": {
+        "at": 17956.69999998808,
+        "before": "0.429185",
+        "immediateDOM": "0.429627",
+        "persisted": "0.4296268607351976",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 17956.89999999106,
+          "hidden": true,
+          "dom": "0.429627",
+          "persisted": "0.4296268607351976",
+          "input": "0.429626860735198",
+          "inputStep": "any",
+          "renderCount": "570",
+          "rafTicks": "877",
+          "nativePaintingDrawCalls": 71543,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.429627,
+      "committed": {
+        "at": 17960,
+        "input": "0.429626860735198",
+        "inputStep": "any",
+        "renderCount": "570",
+        "rafTicks": "877"
+      },
+      "commitAfterMs": 3.300000011920929,
+      "after": {
+        "dom": 0.429627,
+        "persisted": "0.4296268607351976",
+        "input": "0.429626860735198",
+        "renderCount": "570",
+        "rafTicks": "877",
+        "nativePaintingDrawCalls": 71543,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 17957,
+            "hidden": true,
+            "dom": "0.429627",
+            "persisted": "0.4296268607351976",
+            "input": "0.429626860735198",
+            "inputStep": "any",
+            "renderCount": "570",
+            "rafTicks": "877",
+            "nativePaintingDrawCalls": 71543,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": true
+    },
+    {
+      "index": 14,
+      "start": {
+        "at": 18594,
+        "before": "0.431429",
+        "immediateDOM": "0.431594",
+        "persisted": "0.43164935494627604",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 18594.09999999404,
+          "hidden": true,
+          "dom": "0.431594",
+          "persisted": "0.43164935494627604",
+          "input": "0.431593781013097",
+          "inputStep": "any",
+          "renderCount": "602",
+          "rafTicks": "912",
+          "nativePaintingDrawCalls": 75537,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.431649,
+      "committed": {
+        "at": 18598.59999999404,
+        "input": "0.431649354946276",
+        "inputStep": "any",
+        "renderCount": "602",
+        "rafTicks": "912"
+      },
+      "commitAfterMs": 4.5999999940395355,
+      "after": {
+        "dom": 0.431594,
+        "persisted": "0.43164935494627604",
+        "input": "0.431649354946276",
+        "renderCount": "602",
+        "rafTicks": "912",
+        "nativePaintingDrawCalls": 75537,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 18594.19999998808,
+            "hidden": true,
+            "dom": "0.431594",
+            "persisted": "0.43164935494627604",
+            "input": "0.431593781013097",
+            "inputStep": "any",
+            "renderCount": "602",
+            "rafTicks": "912",
+            "nativePaintingDrawCalls": 75537,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": false
+    },
+    {
+      "index": 15,
+      "start": {
+        "at": 19261.29999999702,
+        "before": "0.433529",
+        "immediateDOM": "0.433639",
+        "persisted": "0.43374925570716893",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 19261.59999999404,
+          "hidden": true,
+          "dom": "0.433639",
+          "persisted": "0.43374925570716893",
+          "input": "0.433694674165654",
+          "inputStep": "any",
+          "renderCount": "622",
+          "rafTicks": "944",
+          "nativePaintingDrawCalls": 77872,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.433749,
+      "committed": {
+        "at": 19273,
+        "input": "0.433749255707169",
+        "inputStep": "any",
+        "renderCount": "622",
+        "rafTicks": "944"
+      },
+      "commitAfterMs": 11.700000002980232,
+      "after": {
+        "dom": 0.433749,
+        "persisted": "0.43374925570716893",
+        "input": "0.433749255707169",
+        "renderCount": "622",
+        "rafTicks": "944",
+        "nativePaintingDrawCalls": 77872,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 19261.59999999404,
+            "hidden": true,
+            "dom": "0.433639",
+            "persisted": "0.43374925570716893",
+            "input": "0.433694674165654",
+            "inputStep": "any",
+            "renderCount": "622",
+            "rafTicks": "944",
+            "nativePaintingDrawCalls": 77872,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          },
+          {
+            "at": 19264.39999999106,
+            "hidden": true,
+            "dom": "0.433749",
+            "persisted": "0.43374925570716893",
+            "input": "0.433749255707169",
+            "inputStep": "any",
+            "renderCount": "622",
+            "rafTicks": "944",
+            "nativePaintingDrawCalls": 77872,
+            "playLabel": "自动展卷",
+            "playing": "false"
+          },
+          {
+            "at": 19285.89999999106,
+            "hidden": true,
+            "dom": "0.433749",
+            "persisted": "0.43374925570716893",
+            "input": "0.433749255707169",
+            "inputStep": "any",
+            "renderCount": "622",
+            "rafTicks": "944",
+            "nativePaintingDrawCalls": 77872,
+            "playLabel": "自动展卷",
+            "playing": "false"
+          },
+          {
+            "at": 19302.5,
+            "hidden": true,
+            "dom": "0.433749",
+            "persisted": "0.43374925570716893",
+            "input": "0.433749255707169",
+            "inputStep": "any",
+            "renderCount": "622",
+            "rafTicks": "944",
+            "nativePaintingDrawCalls": 77872,
+            "playLabel": "自动展卷",
+            "playing": "false"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": false
+    },
+    {
+      "index": 16,
+      "start": {
+        "at": 19906.59999999404,
+        "before": "0.435496",
+        "immediateDOM": "0.435606",
+        "persisted": "0.4356615944435237",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 19906.79999999702,
+          "hidden": true,
+          "dom": "0.435606",
+          "persisted": "0.4356615944435237",
+          "input": "0.435661594443524",
+          "inputStep": "any",
+          "renderCount": "654",
+          "rafTicks": "979",
+          "nativePaintingDrawCalls": 82078,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.435662,
+      "committed": {
+        "at": 19924.69999998808,
+        "input": "0.435661594443524",
+        "inputStep": "any",
+        "renderCount": "654",
+        "rafTicks": "979"
+      },
+      "commitAfterMs": 18.099999994039536,
+      "after": {
+        "dom": 0.435662,
+        "persisted": "0.4356615944435237",
+        "input": "0.435661594443524",
+        "renderCount": "654",
+        "rafTicks": "979",
+        "nativePaintingDrawCalls": 82078,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 19906.89999999106,
+            "hidden": true,
+            "dom": "0.435606",
+            "persisted": "0.4356615944435237",
+            "input": "0.435661594443524",
+            "inputStep": "any",
+            "renderCount": "654",
+            "rafTicks": "979",
+            "nativePaintingDrawCalls": 82078,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          },
+          {
+            "at": 19918.69999998808,
+            "hidden": true,
+            "dom": "0.435662",
+            "persisted": "0.4356615944435237",
+            "input": "0.435661594443524",
+            "inputStep": "any",
+            "renderCount": "654",
+            "rafTicks": "979",
+            "nativePaintingDrawCalls": 82078,
+            "playLabel": "自动展卷",
+            "playing": "false"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": false
+    },
+    {
+      "index": 17,
+      "start": {
+        "at": 20625.19999998808,
+        "before": "0.437358",
+        "immediateDOM": "0.437689",
+        "persisted": "0.43774561693773484",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 20625.39999999106,
+          "hidden": true,
+          "dom": "0.437689",
+          "persisted": "0.43774561693773484",
+          "input": "0.437745616937735",
+          "inputStep": "any",
+          "renderCount": "683",
+          "rafTicks": "1017",
+          "nativePaintingDrawCalls": 85448,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.437746,
+      "committed": {
+        "at": 20630.5,
+        "input": "0.437745616937735",
+        "inputStep": "any",
+        "renderCount": "683",
+        "rafTicks": "1017"
+      },
+      "commitAfterMs": 5.300000011920929,
+      "after": {
+        "dom": 0.437689,
+        "persisted": "0.43774561693773484",
+        "input": "0.437745616937735",
+        "renderCount": "683",
+        "rafTicks": "1017",
+        "nativePaintingDrawCalls": 85448,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 20625.39999999106,
+            "hidden": true,
+            "dom": "0.437689",
+            "persisted": "0.43774561693773484",
+            "input": "0.437745616937735",
+            "inputStep": "any",
+            "renderCount": "683",
+            "rafTicks": "1017",
+            "nativePaintingDrawCalls": 85448,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": false
+    },
+    {
+      "index": 18,
+      "start": {
+        "at": 21292.39999999106,
+        "before": "0.439454",
+        "immediateDOM": "0.439840",
+        "persisted": "0.43989414489010026",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 21292.69999998808,
+          "hidden": true,
+          "dom": "0.439840",
+          "persisted": "0.43989414489010026",
+          "input": "0.4398941448901",
+          "inputStep": "any",
+          "renderCount": "717",
+          "rafTicks": "1058",
+          "nativePaintingDrawCalls": 89394,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.439894,
+      "committed": {
+        "at": 21296.89999999106,
+        "input": "0.4398941448901",
+        "inputStep": "any",
+        "renderCount": "717",
+        "rafTicks": "1058"
+      },
+      "commitAfterMs": 4.5,
+      "after": {
+        "dom": 0.43984,
+        "persisted": "0.43989414489010026",
+        "input": "0.4398941448901",
+        "renderCount": "717",
+        "rafTicks": "1058",
+        "nativePaintingDrawCalls": 89394,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 21292.79999999702,
+            "hidden": true,
+            "dom": "0.439840",
+            "persisted": "0.43989414489010026",
+            "input": "0.4398941448901",
+            "inputStep": "any",
+            "renderCount": "717",
+            "rafTicks": "1058",
+            "nativePaintingDrawCalls": 89394,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": false
+    },
+    {
+      "index": 19,
+      "start": {
+        "at": 21938.69999998808,
+        "before": "0.441695",
+        "immediateDOM": "0.441970",
+        "persisted": "0.44202580218429754",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 21938.79999999702,
+          "hidden": true,
+          "dom": "0.441970",
+          "persisted": "0.44202580218429754",
+          "input": "0.442025802184298",
+          "inputStep": "any",
+          "renderCount": "749",
+          "rafTicks": "1097",
+          "nativePaintingDrawCalls": 93106,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.442026,
+      "committed": {
+        "at": 21940.89999999106,
+        "input": "0.442025802184298",
+        "inputStep": "any",
+        "renderCount": "749",
+        "rafTicks": "1097"
+      },
+      "commitAfterMs": 2.2000000029802322,
+      "after": {
+        "dom": 0.44197,
+        "persisted": "0.44202580218429754",
+        "input": "0.442025802184298",
+        "renderCount": "749",
+        "rafTicks": "1097",
+        "nativePaintingDrawCalls": 93106,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 21938.89999999106,
+            "hidden": true,
+            "dom": "0.441970",
+            "persisted": "0.44202580218429754",
+            "input": "0.442025802184298",
+            "inputStep": "any",
+            "renderCount": "749",
+            "rafTicks": "1097",
+            "nativePaintingDrawCalls": 93106,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": false
+    },
+    {
+      "index": 20,
+      "start": {
+        "at": 22589.89999999106,
+        "before": "0.443882",
+        "immediateDOM": "0.444156",
+        "persisted": "0.4441564670867422",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 22590.09999999404,
+          "hidden": true,
+          "dom": "0.444156",
+          "persisted": "0.4441564670867422",
+          "input": "0.444156467086742",
+          "inputStep": "any",
+          "renderCount": "784",
+          "rafTicks": "1137",
+          "nativePaintingDrawCalls": 97166,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.444156,
+      "committed": {
+        "at": 22599.09999999404,
+        "input": "0.444156467086742",
+        "inputStep": "any",
+        "renderCount": "784",
+        "rafTicks": "1137"
+      },
+      "commitAfterMs": 9.200000002980232,
+      "after": {
+        "dom": 0.444156,
+        "persisted": "0.4441564670867422",
+        "input": "0.444156467086742",
+        "renderCount": "784",
+        "rafTicks": "1137",
+        "nativePaintingDrawCalls": 97166,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 22590.09999999404,
+            "hidden": true,
+            "dom": "0.444156",
+            "persisted": "0.4441564670867422",
+            "input": "0.444156467086742",
+            "inputStep": "any",
+            "renderCount": "784",
+            "rafTicks": "1137",
+            "nativePaintingDrawCalls": 97166,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": true
+    },
+    {
+      "index": 21,
+      "start": {
+        "at": 23236.79999999702,
+        "before": "0.444620",
+        "immediateDOM": "0.444620",
+        "persisted": "0.44467350314366894",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 23236.89999999106,
+          "hidden": true,
+          "dom": "0.444620",
+          "persisted": "0.44467350314366894",
+          "input": "0.444673503143669",
+          "inputStep": "any",
+          "renderCount": "795",
+          "rafTicks": "1148",
+          "nativePaintingDrawCalls": 98454,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.444674,
+      "committed": {
+        "at": 23247,
+        "input": "0.444673503143669",
+        "inputStep": "any",
+        "renderCount": "795",
+        "rafTicks": "1148"
+      },
+      "commitAfterMs": 10.200000002980232,
+      "after": {
+        "dom": 0.44462,
+        "persisted": "0.44467350314366894",
+        "input": "0.444673503143669",
+        "renderCount": "795",
+        "rafTicks": "1148",
+        "nativePaintingDrawCalls": 98454,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 23237,
+            "hidden": true,
+            "dom": "0.444620",
+            "persisted": "0.44467350314366894",
+            "input": "0.444673503143669",
+            "inputStep": "any",
+            "renderCount": "795",
+            "rafTicks": "1148",
+            "nativePaintingDrawCalls": 98454,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": false
+    },
+    {
+      "index": 22,
+      "start": {
+        "at": 23913.39999999106,
+        "before": "0.446610",
+        "immediateDOM": "0.446886",
+        "persisted": "0.4469401257041283",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 23913.69999998808,
+          "hidden": true,
+          "dom": "0.446886",
+          "persisted": "0.4469401257041283",
+          "input": "0.446940125704128",
+          "inputStep": "any",
+          "renderCount": "832",
+          "rafTicks": "1191",
+          "nativePaintingDrawCalls": 103262,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.44694,
+      "committed": {
+        "at": 23918.59999999404,
+        "input": "0.446940125704128",
+        "inputStep": "any",
+        "renderCount": "832",
+        "rafTicks": "1191"
+      },
+      "commitAfterMs": 5.200000002980232,
+      "after": {
+        "dom": 0.446886,
+        "persisted": "0.4469401257041283",
+        "input": "0.446940125704128",
+        "renderCount": "832",
+        "rafTicks": "1191",
+        "nativePaintingDrawCalls": 103262,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 23913.79999999702,
+            "hidden": true,
+            "dom": "0.446886",
+            "persisted": "0.4469401257041283",
+            "input": "0.446940125704128",
+            "inputStep": "any",
+            "renderCount": "832",
+            "rafTicks": "1191",
+            "nativePaintingDrawCalls": 103262,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": false
+    },
+    {
+      "index": 23,
+      "start": {
+        "at": 24562.09999999404,
+        "before": "0.448743",
+        "immediateDOM": "0.449020",
+        "persisted": "0.4490201786317133",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 24562.19999998808,
+          "hidden": true,
+          "dom": "0.449020",
+          "persisted": "0.4490201786317133",
+          "input": "0.449020178631713",
+          "inputStep": "any",
+          "renderCount": "864",
+          "rafTicks": "1229",
+          "nativePaintingDrawCalls": 107187,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.44902,
+      "committed": {
+        "at": 24567.89999999106,
+        "input": "0.449020178631713",
+        "inputStep": "any",
+        "renderCount": "864",
+        "rafTicks": "1229"
+      },
+      "commitAfterMs": 5.799999997019768,
+      "after": {
+        "dom": 0.44902,
+        "persisted": "0.4490201786317133",
+        "input": "0.449020178631713",
+        "renderCount": "864",
+        "rafTicks": "1229",
+        "nativePaintingDrawCalls": 107187,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 24562.29999999702,
+            "hidden": true,
+            "dom": "0.449020",
+            "persisted": "0.4490201786317133",
+            "input": "0.449020178631713",
+            "inputStep": "any",
+            "renderCount": "864",
+            "rafTicks": "1229",
+            "nativePaintingDrawCalls": 107187,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": true
+    },
+    {
+      "index": 24,
+      "start": {
+        "at": 25228.69999998808,
+        "before": "0.450810",
+        "immediateDOM": "0.451251",
+        "persisted": "0.4512510750922423",
+        "key": "guose-fanghua:peony-2.0-2026-10-23:chapter-1:position",
+        "hidden": true,
+        "immediate": {
+          "at": 25228.89999999106,
+          "hidden": true,
+          "dom": "0.451251",
+          "persisted": "0.4512510750922423",
+          "input": "0.451251075092242",
+          "inputStep": "any",
+          "renderCount": "888",
+          "rafTicks": "1269",
+          "nativePaintingDrawCalls": 109953,
+          "playLabel": "暂停展卷",
+          "playing": "true"
+        }
+      },
+      "expected": 0.451251,
+      "committed": {
+        "at": 25238.19999998808,
+        "input": "0.451251075092242",
+        "inputStep": "any",
+        "renderCount": "888",
+        "rafTicks": "1269"
+      },
+      "commitAfterMs": 9.5,
+      "after": {
+        "dom": 0.451251,
+        "persisted": "0.4512510750922423",
+        "input": "0.451251075092242",
+        "renderCount": "888",
+        "rafTicks": "1269",
+        "nativePaintingDrawCalls": 109953,
+        "nativeDrawsWhileHidden": [],
+        "playing": "false",
+        "playLabel": "自动展卷",
+        "trace": [
+          {
+            "at": 25228.89999999106,
+            "hidden": true,
+            "dom": "0.451251",
+            "persisted": "0.4512510750922423",
+            "input": "0.451251075092242",
+            "inputStep": "any",
+            "renderCount": "888",
+            "rafTicks": "1269",
+            "nativePaintingDrawCalls": 109953,
+            "playLabel": "暂停展卷",
+            "playing": "true"
+          }
+        ],
+        "hidden": true,
+        "rendererRAF": "false"
+      },
+      "immediateDOMEqualsSynchronousPosition": true
+    }
+  ],
+  "errors": [],
+  "url": "http://127.0.0.1:9890/",
+  "browserVersion": "156.0.8078.4",
+  "httpHtmlSha256": "b7fb5104aad25eb4bf7180733c23c27e01ede328a20bbb1fb58ac63731af468e",
+  "lateCommitCases": 18,
+  "completedAt": "2026-10-23T01:36:22.337Z"
+}

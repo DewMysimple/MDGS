@@ -1,0 +1,4402 @@
+{
+  "status": "completed-prototype",
+  "prototypeOnly": true,
+  "buildDirectory": "tmp/art-candidate-6-dist",
+  "base": "http://127.0.0.1:5197/",
+  "at": "2026-10-23T02:11:05.583Z",
+  "driverSha256": "37493c1a4d84cf17a419af9a741f8df3c40f14df568a47922e35f7aa64cfe6df",
+  "prototypeCssSha256": "44e4aea424a7d41531f362684c3ab13bdd5159f45aa72ad23f18cafcea1b72ff",
+  "sourceHashesBefore": {
+    "src/App.tsx": "08826e7b9c2dfd1b7744c80fb3bd8a90a92c5a93c5df8a4f8a4299b42446d55e",
+    "src/styles/poetic-exhibition.css": "1cdb65f218de010009971efdc907c4dcf51f39fe9a04abdebe104185a34237a2",
+    "src/styles/scroll-2026.css": "fcedc1c4ce9a3b362b057ac4edff3e66e89a504481012d0f28f27d4937259075",
+    "src/scene/sourceViewport.ts": "70c848adf65a400cdff3582dd0616bf68ae39c0552a86548297d1d141f1e686e",
+    "src/scene/NarrativeSpace.ts": "472edaf832b01cd1e663865bc0c1014a8a564cf0eee8f0d3da8826f43fca34d2",
+    "src/data/poeticNarrative.ts": "a39fa947d28044efd1699ac5fc022b88f98f6b498097e39b672b673c677b74a9"
+  },
+  "rows": [
+    {
+      "chapterId": 1,
+      "variant": "baseline",
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "progress": 0.85,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "painting": {
+        "x": 34,
+        "y": 98,
+        "width": 1852,
+        "height": 850,
+        "top": 98,
+        "right": 1886,
+        "bottom": 948,
+        "left": 34
+      },
+      "sourceViewport": {
+        "x": 170.44444444444446,
+        "y": 0,
+        "width": 1511.111111111111,
+        "height": 850,
+        "aspect": 1.7777777777777777
+      },
+      "sourceGate": {
+        "x": 204.44444444444446,
+        "y": 98,
+        "width": 1511.111111111111,
+        "height": 850
+      },
+      "sourceGateExpected": {
+        "x": 204.44444444444446,
+        "y": 98,
+        "width": 1511.111111111111,
+        "height": 850
+      },
+      "mount": {
+        "x": 34,
+        "y": 88,
+        "width": 1852,
+        "height": 870,
+        "top": 88,
+        "right": 1886,
+        "bottom": 958,
+        "left": 34
+      },
+      "controls": [
+        {
+          "selector": ".site-header",
+          "box": {
+            "x": 86.40625,
+            "y": 0,
+            "width": 1747.1875,
+            "height": 72,
+            "top": 0,
+            "right": 1833.59375,
+            "bottom": 72,
+            "left": 86.40625
+          }
+        },
+        {
+          "selector": ".brand",
+          "box": {
+            "x": 86.40625,
+            "y": 7.25,
+            "width": 240,
+            "height": 56.5,
+            "top": 7.25,
+            "right": 326.40625,
+            "bottom": 63.75,
+            "left": 86.40625
+          }
+        },
+        {
+          "selector": ".chapter-nav",
+          "box": {
+            "x": 740,
+            "y": 0,
+            "width": 538,
+            "height": 71,
+            "top": 0,
+            "right": 1278,
+            "bottom": 71,
+            "left": 740
+          }
+        },
+        {
+          "selector": ".settings-button",
+          "box": {
+            "x": 1691.59375,
+            "y": 17.5,
+            "width": 65,
+            "height": 36,
+            "top": 17.5,
+            "right": 1756.59375,
+            "bottom": 53.5,
+            "left": 1691.59375
+          }
+        },
+        {
+          "selector": ".fullscreen-button",
+          "box": {
+            "x": 1768.59375,
+            "y": 17.5,
+            "width": 65,
+            "height": 36,
+            "top": 17.5,
+            "right": 1833.59375,
+            "bottom": 53.5,
+            "left": 1768.59375
+          }
+        },
+        {
+          "selector": ".scroll-controls",
+          "box": {
+            "x": 86.40625,
+            "y": 958,
+            "width": 1747.1875,
+            "height": 102,
+            "top": 958,
+            "right": 1833.59375,
+            "bottom": 1060,
+            "left": 86.40625
+          }
+        },
+        {
+          "selector": ".current-scene",
+          "box": {
+            "x": 86.40625,
+            "y": 978.5,
+            "width": 240,
+            "height": 29,
+            "top": 978.5,
+            "right": 326.40625,
+            "bottom": 1007.5,
+            "left": 86.40625
+          }
+        },
+        {
+          "selector": ".chapter-timeline",
+          "box": {
+            "x": 356.40625,
+            "y": 979.5,
+            "width": 1349.1875,
+            "height": 27,
+            "top": 979.5,
+            "right": 1705.59375,
+            "bottom": 1006.5,
+            "left": 356.40625
+          }
+        },
+        {
+          "selector": ".progress-caption",
+          "box": {
+            "x": 1742.8125,
+            "y": 978.5,
+            "width": 90.78125,
+            "height": 29,
+            "top": 978.5,
+            "right": 1833.59375,
+            "bottom": 1007.5,
+            "left": 1742.8125
+          }
+        },
+        {
+          "selector": ".playback-controls",
+          "box": {
+            "x": 802.8125,
+            "y": 1012,
+            "width": 314.375,
+            "height": 36,
+            "top": 1012,
+            "right": 1117.1875,
+            "bottom": 1048,
+            "left": 802.8125
+          }
+        },
+        {
+          "selector": ".secondary-controls",
+          "box": {
+            "x": 1497.09375,
+            "y": 1012,
+            "width": 336.5,
+            "height": 36,
+            "top": 1012,
+            "right": 1833.59375,
+            "bottom": 1048,
+            "left": 1497.09375
+          }
+        }
+      ],
+      "headerHeight": "88px",
+      "narrative": {
+        "cue": "poetic-c1-s13-1",
+        "layout": "vertical",
+        "locked": "true",
+        "heading": "两种记忆",
+        "text": "记载与传说各有来处，合成牡丹的两种记忆。",
+        "font": "24px",
+        "ink": {
+          "x": 1626.53125,
+          "y": 523,
+          "width": 194.640625,
+          "height": 293,
+          "top": 523,
+          "right": 1821.171875,
+          "bottom": 816,
+          "left": 1626.53125
+        },
+        "glyphOverflow": [],
+        "glyphPaintingOverflow": []
+      },
+      "chapterLinks": 4,
+      "shader": "[]",
+      "controlOverlaps": []
+    },
+    {
+      "chapterId": 1,
+      "variant": "compact",
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "progress": 0.85,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "painting": {
+        "x": 18,
+        "y": 60,
+        "width": 1884,
+        "height": 954,
+        "top": 60,
+        "right": 1902,
+        "bottom": 1014,
+        "left": 18
+      },
+      "sourceViewport": {
+        "x": 94,
+        "y": 0,
+        "width": 1696,
+        "height": 954,
+        "aspect": 1.7777777777777777
+      },
+      "sourceGate": {
+        "x": 112,
+        "y": 60,
+        "width": 1696,
+        "height": 954
+      },
+      "sourceGateExpected": {
+        "x": 112,
+        "y": 60,
+        "width": 1696,
+        "height": 954
+      },
+      "mount": {
+        "x": 18,
+        "y": 54,
+        "width": 1884,
+        "height": 966,
+        "top": 54,
+        "right": 1902,
+        "bottom": 1020,
+        "left": 18
+      },
+      "controls": [
+        {
+          "selector": ".site-header",
+          "box": {
+            "x": 24,
+            "y": 0,
+            "width": 1872,
+            "height": 54,
+            "top": 0,
+            "right": 1896,
+            "bottom": 54,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".brand",
+          "box": {
+            "x": 24,
+            "y": 4.6875,
+            "width": 210,
+            "height": 43.609375,
+            "top": 4.6875,
+            "right": 234,
+            "bottom": 48.296875,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-nav",
+          "box": {
+            "x": 729,
+            "y": 0,
+            "width": 538,
+            "height": 53,
+            "top": 0,
+            "right": 1267,
+            "bottom": 53,
+            "left": 729
+          }
+        },
+        {
+          "selector": ".settings-button",
+          "box": {
+            "x": 1762,
+            "y": 8.5,
+            "width": 62,
+            "height": 36,
+            "top": 8.5,
+            "right": 1824,
+            "bottom": 44.5,
+            "left": 1762
+          }
+        },
+        {
+          "selector": ".fullscreen-button",
+          "box": {
+            "x": 1834,
+            "y": 8.5,
+            "width": 62,
+            "height": 36,
+            "top": 8.5,
+            "right": 1896,
+            "bottom": 44.5,
+            "left": 1834
+          }
+        },
+        {
+          "selector": ".scroll-controls",
+          "box": {
+            "x": 24,
+            "y": 1020,
+            "width": 1872,
+            "height": 56,
+            "top": 1020,
+            "right": 1896,
+            "bottom": 1076,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".current-scene",
+          "box": {
+            "x": 24,
+            "y": 1039,
+            "width": 220,
+            "height": 18,
+            "top": 1039,
+            "right": 244,
+            "bottom": 1057,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-timeline",
+          "box": {
+            "x": 265,
+            "y": 1034.5,
+            "width": 847.125,
+            "height": 27,
+            "top": 1034.5,
+            "right": 1112.125,
+            "bottom": 1061.5,
+            "left": 265
+          }
+        },
+        {
+          "selector": ".progress-caption",
+          "box": {
+            "x": 1122.34375,
+            "y": 1036.5,
+            "width": 90.78125,
+            "height": 23,
+            "top": 1036.5,
+            "right": 1213.125,
+            "bottom": 1059.5,
+            "left": 1122.34375
+          }
+        },
+        {
+          "selector": ".playback-controls",
+          "box": {
+            "x": 1229.125,
+            "y": 1030,
+            "width": 314.375,
+            "height": 36,
+            "top": 1030,
+            "right": 1543.5,
+            "bottom": 1066,
+            "left": 1229.125
+          }
+        },
+        {
+          "selector": ".secondary-controls",
+          "box": {
+            "x": 1559.5,
+            "y": 1030,
+            "width": 336.5,
+            "height": 36,
+            "top": 1030,
+            "right": 1896,
+            "bottom": 1066,
+            "left": 1559.5
+          }
+        }
+      ],
+      "headerHeight": "54px",
+      "narrative": {
+        "cue": "poetic-c1-s13-1",
+        "layout": "vertical",
+        "locked": "true",
+        "heading": "两种记忆",
+        "text": "记载与传说各有来处，合成牡丹的两种记忆。",
+        "font": "24px",
+        "ink": {
+          "x": 1682.203125,
+          "y": 537,
+          "width": 153.84375,
+          "height": 324.1875,
+          "top": 537,
+          "right": 1836.046875,
+          "bottom": 861.1875,
+          "left": 1682.203125
+        },
+        "glyphOverflow": [],
+        "glyphPaintingOverflow": []
+      },
+      "chapterLinks": 4,
+      "shader": "[]",
+      "controlOverlaps": []
+    },
+    {
+      "chapterId": 1,
+      "variant": "attached",
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "progress": 0.85,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "painting": {
+        "x": 96,
+        "y": 60,
+        "width": 1728,
+        "height": 954,
+        "top": 60,
+        "right": 1824,
+        "bottom": 1014,
+        "left": 96
+      },
+      "sourceViewport": {
+        "x": 16,
+        "y": 0,
+        "width": 1696,
+        "height": 954,
+        "aspect": 1.7777777777777777
+      },
+      "sourceGate": {
+        "x": 112,
+        "y": 60,
+        "width": 1696,
+        "height": 954
+      },
+      "sourceGateExpected": {
+        "x": 112,
+        "y": 60,
+        "width": 1696,
+        "height": 954
+      },
+      "mount": {
+        "x": 96,
+        "y": 54,
+        "width": 1728,
+        "height": 966,
+        "top": 54,
+        "right": 1824,
+        "bottom": 1020,
+        "left": 96
+      },
+      "controls": [
+        {
+          "selector": ".site-header",
+          "box": {
+            "x": 24,
+            "y": 0,
+            "width": 1872,
+            "height": 54,
+            "top": 0,
+            "right": 1896,
+            "bottom": 54,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".brand",
+          "box": {
+            "x": 24,
+            "y": 4.6875,
+            "width": 210,
+            "height": 43.609375,
+            "top": 4.6875,
+            "right": 234,
+            "bottom": 48.296875,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-nav",
+          "box": {
+            "x": 729,
+            "y": 0,
+            "width": 538,
+            "height": 53,
+            "top": 0,
+            "right": 1267,
+            "bottom": 53,
+            "left": 729
+          }
+        },
+        {
+          "selector": ".settings-button",
+          "box": {
+            "x": 1762,
+            "y": 8.5,
+            "width": 62,
+            "height": 36,
+            "top": 8.5,
+            "right": 1824,
+            "bottom": 44.5,
+            "left": 1762
+          }
+        },
+        {
+          "selector": ".fullscreen-button",
+          "box": {
+            "x": 1834,
+            "y": 8.5,
+            "width": 62,
+            "height": 36,
+            "top": 8.5,
+            "right": 1896,
+            "bottom": 44.5,
+            "left": 1834
+          }
+        },
+        {
+          "selector": ".scroll-controls",
+          "box": {
+            "x": 24,
+            "y": 1020,
+            "width": 1872,
+            "height": 56,
+            "top": 1020,
+            "right": 1896,
+            "bottom": 1076,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".current-scene",
+          "box": {
+            "x": 24,
+            "y": 1039,
+            "width": 220,
+            "height": 18,
+            "top": 1039,
+            "right": 244,
+            "bottom": 1057,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-timeline",
+          "box": {
+            "x": 265,
+            "y": 1034.5,
+            "width": 847.125,
+            "height": 27,
+            "top": 1034.5,
+            "right": 1112.125,
+            "bottom": 1061.5,
+            "left": 265
+          }
+        },
+        {
+          "selector": ".progress-caption",
+          "box": {
+            "x": 1122.34375,
+            "y": 1036.5,
+            "width": 90.78125,
+            "height": 23,
+            "top": 1036.5,
+            "right": 1213.125,
+            "bottom": 1059.5,
+            "left": 1122.34375
+          }
+        },
+        {
+          "selector": ".playback-controls",
+          "box": {
+            "x": 1229.125,
+            "y": 1030,
+            "width": 314.375,
+            "height": 36,
+            "top": 1030,
+            "right": 1543.5,
+            "bottom": 1066,
+            "left": 1229.125
+          }
+        },
+        {
+          "selector": ".secondary-controls",
+          "box": {
+            "x": 1559.5,
+            "y": 1030,
+            "width": 336.5,
+            "height": 36,
+            "top": 1030,
+            "right": 1896,
+            "bottom": 1066,
+            "left": 1559.5
+          }
+        }
+      ],
+      "headerHeight": "54px",
+      "narrative": {
+        "cue": "poetic-c1-s13-1",
+        "layout": "vertical",
+        "locked": "true",
+        "heading": "两种记忆",
+        "text": "记载与传说各有来处，合成牡丹的两种记忆。",
+        "font": "22.464px",
+        "ink": {
+          "x": 1614.890625,
+          "y": 537,
+          "width": 148.625,
+          "height": 324.1875,
+          "top": 537,
+          "right": 1763.515625,
+          "bottom": 861.1875,
+          "left": 1614.890625
+        },
+        "glyphOverflow": [],
+        "glyphPaintingOverflow": []
+      },
+      "chapterLinks": 4,
+      "shader": "[]",
+      "controlOverlaps": []
+    },
+    {
+      "chapterId": 4,
+      "variant": "baseline",
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "progress": 0.4688715953307393,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "painting": {
+        "x": 34,
+        "y": 98,
+        "width": 1852,
+        "height": 850,
+        "top": 98,
+        "right": 1886,
+        "bottom": 948,
+        "left": 34
+      },
+      "sourceViewport": {
+        "x": 331,
+        "y": 0,
+        "width": 1190,
+        "height": 850,
+        "aspect": 1.4
+      },
+      "sourceGate": {
+        "x": 365,
+        "y": 98,
+        "width": 1190,
+        "height": 850
+      },
+      "sourceGateExpected": {
+        "x": 365,
+        "y": 98,
+        "width": 1190,
+        "height": 850
+      },
+      "mount": {
+        "x": 34,
+        "y": 88,
+        "width": 1852,
+        "height": 870,
+        "top": 88,
+        "right": 1886,
+        "bottom": 958,
+        "left": 34
+      },
+      "controls": [
+        {
+          "selector": ".site-header",
+          "box": {
+            "x": 86.40625,
+            "y": 0,
+            "width": 1747.1875,
+            "height": 72,
+            "top": 0,
+            "right": 1833.59375,
+            "bottom": 72,
+            "left": 86.40625
+          }
+        },
+        {
+          "selector": ".brand",
+          "box": {
+            "x": 86.40625,
+            "y": 7.25,
+            "width": 240,
+            "height": 56.5,
+            "top": 7.25,
+            "right": 326.40625,
+            "bottom": 63.75,
+            "left": 86.40625
+          }
+        },
+        {
+          "selector": ".chapter-nav",
+          "box": {
+            "x": 740,
+            "y": 0,
+            "width": 538,
+            "height": 71,
+            "top": 0,
+            "right": 1278,
+            "bottom": 71,
+            "left": 740
+          }
+        },
+        {
+          "selector": ".settings-button",
+          "box": {
+            "x": 1691.59375,
+            "y": 17.5,
+            "width": 65,
+            "height": 36,
+            "top": 17.5,
+            "right": 1756.59375,
+            "bottom": 53.5,
+            "left": 1691.59375
+          }
+        },
+        {
+          "selector": ".fullscreen-button",
+          "box": {
+            "x": 1768.59375,
+            "y": 17.5,
+            "width": 65,
+            "height": 36,
+            "top": 17.5,
+            "right": 1833.59375,
+            "bottom": 53.5,
+            "left": 1768.59375
+          }
+        },
+        {
+          "selector": ".scroll-controls",
+          "box": {
+            "x": 86.40625,
+            "y": 958,
+            "width": 1747.1875,
+            "height": 102,
+            "top": 958,
+            "right": 1833.59375,
+            "bottom": 1060,
+            "left": 86.40625
+          }
+        },
+        {
+          "selector": ".current-scene",
+          "box": {
+            "x": 86.40625,
+            "y": 978.5,
+            "width": 240,
+            "height": 29,
+            "top": 978.5,
+            "right": 326.40625,
+            "bottom": 1007.5,
+            "left": 86.40625
+          }
+        },
+        {
+          "selector": ".chapter-timeline",
+          "box": {
+            "x": 356.40625,
+            "y": 979.5,
+            "width": 1349.1875,
+            "height": 27,
+            "top": 979.5,
+            "right": 1705.59375,
+            "bottom": 1006.5,
+            "left": 356.40625
+          }
+        },
+        {
+          "selector": ".progress-caption",
+          "box": {
+            "x": 1742.8125,
+            "y": 978.5,
+            "width": 90.78125,
+            "height": 29,
+            "top": 978.5,
+            "right": 1833.59375,
+            "bottom": 1007.5,
+            "left": 1742.8125
+          }
+        },
+        {
+          "selector": ".playback-controls",
+          "box": {
+            "x": 802.8125,
+            "y": 1012,
+            "width": 314.375,
+            "height": 36,
+            "top": 1012,
+            "right": 1117.1875,
+            "bottom": 1048,
+            "left": 802.8125
+          }
+        },
+        {
+          "selector": ".secondary-controls",
+          "box": {
+            "x": 1497.09375,
+            "y": 1012,
+            "width": 336.5,
+            "height": 36,
+            "top": 1012,
+            "right": 1833.59375,
+            "bottom": 1048,
+            "left": 1497.09375
+          }
+        }
+      ],
+      "headerHeight": "88px",
+      "narrative": {
+        "cue": "poetic-c4-s5-1",
+        "layout": "vertical",
+        "locked": "true",
+        "heading": "马嵬花落",
+        "text": "花仍开着，画中人的命运却已转向离散。",
+        "font": "24px",
+        "ink": {
+          "x": 1667.328125,
+          "y": 144.75,
+          "width": 153.84375,
+          "height": 293,
+          "top": 144.75,
+          "right": 1821.171875,
+          "bottom": 437.75,
+          "left": 1667.328125
+        },
+        "glyphOverflow": [],
+        "glyphPaintingOverflow": []
+      },
+      "chapterLinks": 4,
+      "shader": "[]",
+      "controlOverlaps": []
+    },
+    {
+      "chapterId": 4,
+      "variant": "compact",
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "progress": 0.4688715953307393,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "painting": {
+        "x": 18,
+        "y": 60,
+        "width": 1884,
+        "height": 954,
+        "top": 60,
+        "right": 1902,
+        "bottom": 1014,
+        "left": 18
+      },
+      "sourceViewport": {
+        "x": 274.20000000000005,
+        "y": 0,
+        "width": 1335.6,
+        "height": 954,
+        "aspect": 1.4
+      },
+      "sourceGate": {
+        "x": 292.20000000000005,
+        "y": 60,
+        "width": 1335.6,
+        "height": 954
+      },
+      "sourceGateExpected": {
+        "x": 292.20000000000005,
+        "y": 60,
+        "width": 1335.6,
+        "height": 954
+      },
+      "mount": {
+        "x": 18,
+        "y": 54,
+        "width": 1884,
+        "height": 966,
+        "top": 54,
+        "right": 1902,
+        "bottom": 1020,
+        "left": 18
+      },
+      "controls": [
+        {
+          "selector": ".site-header",
+          "box": {
+            "x": 24,
+            "y": 0,
+            "width": 1872,
+            "height": 54,
+            "top": 0,
+            "right": 1896,
+            "bottom": 54,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".brand",
+          "box": {
+            "x": 24,
+            "y": 4.6875,
+            "width": 210,
+            "height": 43.609375,
+            "top": 4.6875,
+            "right": 234,
+            "bottom": 48.296875,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-nav",
+          "box": {
+            "x": 729,
+            "y": 0,
+            "width": 538,
+            "height": 53,
+            "top": 0,
+            "right": 1267,
+            "bottom": 53,
+            "left": 729
+          }
+        },
+        {
+          "selector": ".settings-button",
+          "box": {
+            "x": 1762,
+            "y": 8.5,
+            "width": 62,
+            "height": 36,
+            "top": 8.5,
+            "right": 1824,
+            "bottom": 44.5,
+            "left": 1762
+          }
+        },
+        {
+          "selector": ".fullscreen-button",
+          "box": {
+            "x": 1834,
+            "y": 8.5,
+            "width": 62,
+            "height": 36,
+            "top": 8.5,
+            "right": 1896,
+            "bottom": 44.5,
+            "left": 1834
+          }
+        },
+        {
+          "selector": ".scroll-controls",
+          "box": {
+            "x": 24,
+            "y": 1020,
+            "width": 1872,
+            "height": 56,
+            "top": 1020,
+            "right": 1896,
+            "bottom": 1076,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".current-scene",
+          "box": {
+            "x": 24,
+            "y": 1039,
+            "width": 220,
+            "height": 18,
+            "top": 1039,
+            "right": 244,
+            "bottom": 1057,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-timeline",
+          "box": {
+            "x": 265,
+            "y": 1034.5,
+            "width": 847.125,
+            "height": 27,
+            "top": 1034.5,
+            "right": 1112.125,
+            "bottom": 1061.5,
+            "left": 265
+          }
+        },
+        {
+          "selector": ".progress-caption",
+          "box": {
+            "x": 1122.34375,
+            "y": 1036.5,
+            "width": 90.78125,
+            "height": 23,
+            "top": 1036.5,
+            "right": 1213.125,
+            "bottom": 1059.5,
+            "left": 1122.34375
+          }
+        },
+        {
+          "selector": ".playback-controls",
+          "box": {
+            "x": 1229.125,
+            "y": 1030,
+            "width": 314.375,
+            "height": 36,
+            "top": 1030,
+            "right": 1543.5,
+            "bottom": 1066,
+            "left": 1229.125
+          }
+        },
+        {
+          "selector": ".secondary-controls",
+          "box": {
+            "x": 1559.5,
+            "y": 1030,
+            "width": 336.5,
+            "height": 36,
+            "top": 1030,
+            "right": 1896,
+            "bottom": 1066,
+            "left": 1559.5
+          }
+        }
+      ],
+      "headerHeight": "54px",
+      "narrative": {
+        "cue": "poetic-c4-s5-1",
+        "layout": "vertical",
+        "locked": "true",
+        "heading": "马嵬花落",
+        "text": "花仍开着，画中人的命运却已转向离散。",
+        "font": "24px",
+        "ink": {
+          "x": 1682.203125,
+          "y": 112.46875,
+          "width": 153.84375,
+          "height": 324.1875,
+          "top": 112.46875,
+          "right": 1836.046875,
+          "bottom": 436.65625,
+          "left": 1682.203125
+        },
+        "glyphOverflow": [],
+        "glyphPaintingOverflow": []
+      },
+      "chapterLinks": 4,
+      "shader": "[]",
+      "controlOverlaps": []
+    },
+    {
+      "chapterId": 4,
+      "variant": "attached",
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "progress": 0.4688715953307393,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "painting": {
+        "x": 276.203125,
+        "y": 60,
+        "width": 1367.59375,
+        "height": 954,
+        "top": 60,
+        "right": 1643.796875,
+        "bottom": 1014,
+        "left": 276.203125
+      },
+      "sourceViewport": {
+        "x": 15.996875000000045,
+        "y": 0,
+        "width": 1335.6,
+        "height": 954,
+        "aspect": 1.4
+      },
+      "sourceGate": {
+        "x": 292.20000000000005,
+        "y": 60,
+        "width": 1335.6,
+        "height": 954
+      },
+      "sourceGateExpected": {
+        "x": 292.20000000000005,
+        "y": 60,
+        "width": 1335.6,
+        "height": 954
+      },
+      "mount": {
+        "x": 276.203125,
+        "y": 54,
+        "width": 1367.59375,
+        "height": 966,
+        "top": 54,
+        "right": 1643.796875,
+        "bottom": 1020,
+        "left": 276.203125
+      },
+      "controls": [
+        {
+          "selector": ".site-header",
+          "box": {
+            "x": 24,
+            "y": 0,
+            "width": 1872,
+            "height": 54,
+            "top": 0,
+            "right": 1896,
+            "bottom": 54,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".brand",
+          "box": {
+            "x": 24,
+            "y": 4.6875,
+            "width": 210,
+            "height": 43.609375,
+            "top": 4.6875,
+            "right": 234,
+            "bottom": 48.296875,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-nav",
+          "box": {
+            "x": 729,
+            "y": 0,
+            "width": 538,
+            "height": 53,
+            "top": 0,
+            "right": 1267,
+            "bottom": 53,
+            "left": 729
+          }
+        },
+        {
+          "selector": ".settings-button",
+          "box": {
+            "x": 1762,
+            "y": 8.5,
+            "width": 62,
+            "height": 36,
+            "top": 8.5,
+            "right": 1824,
+            "bottom": 44.5,
+            "left": 1762
+          }
+        },
+        {
+          "selector": ".fullscreen-button",
+          "box": {
+            "x": 1834,
+            "y": 8.5,
+            "width": 62,
+            "height": 36,
+            "top": 8.5,
+            "right": 1896,
+            "bottom": 44.5,
+            "left": 1834
+          }
+        },
+        {
+          "selector": ".scroll-controls",
+          "box": {
+            "x": 24,
+            "y": 1020,
+            "width": 1872,
+            "height": 56,
+            "top": 1020,
+            "right": 1896,
+            "bottom": 1076,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".current-scene",
+          "box": {
+            "x": 24,
+            "y": 1039,
+            "width": 220,
+            "height": 18,
+            "top": 1039,
+            "right": 244,
+            "bottom": 1057,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-timeline",
+          "box": {
+            "x": 265,
+            "y": 1034.5,
+            "width": 847.125,
+            "height": 27,
+            "top": 1034.5,
+            "right": 1112.125,
+            "bottom": 1061.5,
+            "left": 265
+          }
+        },
+        {
+          "selector": ".progress-caption",
+          "box": {
+            "x": 1122.34375,
+            "y": 1036.5,
+            "width": 90.78125,
+            "height": 23,
+            "top": 1036.5,
+            "right": 1213.125,
+            "bottom": 1059.5,
+            "left": 1122.34375
+          }
+        },
+        {
+          "selector": ".playback-controls",
+          "box": {
+            "x": 1229.125,
+            "y": 1030,
+            "width": 314.375,
+            "height": 36,
+            "top": 1030,
+            "right": 1543.5,
+            "bottom": 1066,
+            "left": 1229.125
+          }
+        },
+        {
+          "selector": ".secondary-controls",
+          "box": {
+            "x": 1559.5,
+            "y": 1030,
+            "width": 336.5,
+            "height": 36,
+            "top": 1030,
+            "right": 1896,
+            "bottom": 1066,
+            "left": 1559.5
+          }
+        }
+      ],
+      "headerHeight": "54px",
+      "narrative": {
+        "cue": "poetic-c4-s5-1",
+        "layout": "vertical",
+        "locked": "true",
+        "heading": "马嵬花落",
+        "text": "花仍开着，画中人的命运却已转向离散。",
+        "font": "18px",
+        "ink": {
+          "x": 1467.96875,
+          "y": 112.46875,
+          "width": 127.9375,
+          "height": 324.1875,
+          "top": 112.46875,
+          "right": 1595.90625,
+          "bottom": 436.65625,
+          "left": 1467.96875
+        },
+        "glyphOverflow": [],
+        "glyphPaintingOverflow": []
+      },
+      "chapterLinks": 4,
+      "shader": "[]",
+      "controlOverlaps": []
+    },
+    {
+      "chapterId": 1,
+      "variant": "baseline",
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "progress": 0.85,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "painting": {
+        "x": 34,
+        "y": 84,
+        "width": 1212,
+        "height": 519,
+        "top": 84,
+        "right": 1246,
+        "bottom": 603,
+        "left": 34
+      },
+      "sourceViewport": {
+        "x": 144.66666666666669,
+        "y": 0,
+        "width": 922.6666666666666,
+        "height": 519,
+        "aspect": 1.7777777777777777
+      },
+      "sourceGate": {
+        "x": 178.66666666666669,
+        "y": 84,
+        "width": 922.6666666666666,
+        "height": 519
+      },
+      "sourceGateExpected": {
+        "x": 178.66666666666669,
+        "y": 84,
+        "width": 922.6666666666666,
+        "height": 519
+      },
+      "mount": {
+        "x": 34,
+        "y": 76,
+        "width": 1212,
+        "height": 535,
+        "top": 76,
+        "right": 1246,
+        "bottom": 611,
+        "left": 34
+      },
+      "controls": [
+        {
+          "selector": ".site-header",
+          "box": {
+            "x": 57.59375,
+            "y": 0,
+            "width": 1164.796875,
+            "height": 63,
+            "top": 0,
+            "right": 1222.390625,
+            "bottom": 63,
+            "left": 57.59375
+          }
+        },
+        {
+          "selector": ".brand",
+          "box": {
+            "x": 57.59375,
+            "y": 3.4375,
+            "width": 210,
+            "height": 55.109375,
+            "top": 3.4375,
+            "right": 267.59375,
+            "bottom": 58.546875,
+            "left": 57.59375
+          }
+        },
+        {
+          "selector": ".chapter-nav",
+          "box": {
+            "x": 467.484375,
+            "y": 0,
+            "width": 437,
+            "height": 62,
+            "top": 0,
+            "right": 904.484375,
+            "bottom": 62,
+            "left": 467.484375
+          }
+        },
+        {
+          "selector": ".settings-button",
+          "box": {
+            "x": 1104.390625,
+            "y": 13,
+            "width": 55,
+            "height": 36,
+            "top": 13,
+            "right": 1159.390625,
+            "bottom": 49,
+            "left": 1104.390625
+          }
+        },
+        {
+          "selector": ".fullscreen-button",
+          "box": {
+            "x": 1167.390625,
+            "y": 13,
+            "width": 55,
+            "height": 36,
+            "top": 13,
+            "right": 1222.390625,
+            "bottom": 49,
+            "left": 1167.390625
+          }
+        },
+        {
+          "selector": ".scroll-controls",
+          "box": {
+            "x": 57.59375,
+            "y": 611,
+            "width": 1164.796875,
+            "height": 94,
+            "top": 611,
+            "right": 1222.390625,
+            "bottom": 705,
+            "left": 57.59375
+          }
+        },
+        {
+          "selector": ".current-scene",
+          "box": {
+            "x": 57.59375,
+            "y": 627,
+            "width": 220,
+            "height": 28,
+            "top": 627,
+            "right": 277.59375,
+            "bottom": 655,
+            "left": 57.59375
+          }
+        },
+        {
+          "selector": ".chapter-timeline",
+          "box": {
+            "x": 302.59375,
+            "y": 627.5,
+            "width": 804.796875,
+            "height": 27,
+            "top": 627.5,
+            "right": 1107.390625,
+            "bottom": 654.5,
+            "left": 302.59375
+          }
+        },
+        {
+          "selector": ".progress-caption",
+          "box": {
+            "x": 1131.609375,
+            "y": 627,
+            "width": 90.78125,
+            "height": 28,
+            "top": 627,
+            "right": 1222.390625,
+            "bottom": 655,
+            "left": 1131.609375
+          }
+        },
+        {
+          "selector": ".playback-controls",
+          "box": {
+            "x": 489.796875,
+            "y": 658,
+            "width": 300.375,
+            "height": 36,
+            "top": 658,
+            "right": 790.171875,
+            "bottom": 694,
+            "left": 489.796875
+          }
+        },
+        {
+          "selector": ".secondary-controls",
+          "box": {
+            "x": 909.890625,
+            "y": 658,
+            "width": 312.5,
+            "height": 36,
+            "top": 658,
+            "right": 1222.390625,
+            "bottom": 694,
+            "left": 909.890625
+          }
+        }
+      ],
+      "headerHeight": "76px",
+      "narrative": {
+        "cue": "poetic-c1-s13-1",
+        "layout": "vertical",
+        "locked": "true",
+        "heading": "两种记忆",
+        "text": "记载与传说各有来处，合成牡丹的两种记忆。",
+        "font": "18px",
+        "ink": {
+          "x": 1047.03125,
+          "y": 343.5,
+          "width": 156.53125,
+          "height": 193.6875,
+          "top": 343.5,
+          "right": 1203.5625,
+          "bottom": 537.1875,
+          "left": 1047.03125
+        },
+        "glyphOverflow": [],
+        "glyphPaintingOverflow": []
+      },
+      "chapterLinks": 4,
+      "shader": "[]",
+      "controlOverlaps": []
+    },
+    {
+      "chapterId": 1,
+      "variant": "compact",
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "progress": 0.85,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "painting": {
+        "x": 18,
+        "y": 60,
+        "width": 1244,
+        "height": 582,
+        "top": 60,
+        "right": 1262,
+        "bottom": 642,
+        "left": 18
+      },
+      "sourceViewport": {
+        "x": 104.66666666666674,
+        "y": 0,
+        "width": 1034.6666666666665,
+        "height": 582,
+        "aspect": 1.7777777777777777
+      },
+      "sourceGate": {
+        "x": 122.66666666666674,
+        "y": 60,
+        "width": 1034.6666666666665,
+        "height": 582
+      },
+      "sourceGateExpected": {
+        "x": 122.66666666666674,
+        "y": 60,
+        "width": 1034.6666666666665,
+        "height": 582
+      },
+      "mount": {
+        "x": 18,
+        "y": 54,
+        "width": 1244,
+        "height": 594,
+        "top": 54,
+        "right": 1262,
+        "bottom": 648,
+        "left": 18
+      },
+      "controls": [
+        {
+          "selector": ".site-header",
+          "box": {
+            "x": 24,
+            "y": 0,
+            "width": 1232,
+            "height": 54,
+            "top": 0,
+            "right": 1256,
+            "bottom": 54,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".brand",
+          "box": {
+            "x": 24,
+            "y": 5,
+            "width": 210,
+            "height": 43,
+            "top": 5,
+            "right": 234,
+            "bottom": 48,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-nav",
+          "box": {
+            "x": 467.5,
+            "y": 0,
+            "width": 437,
+            "height": 53,
+            "top": 0,
+            "right": 904.5,
+            "bottom": 53,
+            "left": 467.5
+          }
+        },
+        {
+          "selector": ".settings-button",
+          "box": {
+            "x": 1138,
+            "y": 8.5,
+            "width": 55,
+            "height": 36,
+            "top": 8.5,
+            "right": 1193,
+            "bottom": 44.5,
+            "left": 1138
+          }
+        },
+        {
+          "selector": ".fullscreen-button",
+          "box": {
+            "x": 1201,
+            "y": 8.5,
+            "width": 55,
+            "height": 36,
+            "top": 8.5,
+            "right": 1256,
+            "bottom": 44.5,
+            "left": 1201
+          }
+        },
+        {
+          "selector": ".scroll-controls",
+          "box": {
+            "x": 24,
+            "y": 648,
+            "width": 1232,
+            "height": 68,
+            "top": 648,
+            "right": 1256,
+            "bottom": 716,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".current-scene",
+          "box": {
+            "x": 24,
+            "y": 655.5,
+            "width": 220,
+            "height": 17,
+            "top": 655.5,
+            "right": 244,
+            "bottom": 672.5,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-timeline",
+          "box": {
+            "x": 269,
+            "y": 650.5,
+            "width": 872,
+            "height": 27,
+            "top": 650.5,
+            "right": 1141,
+            "bottom": 677.5,
+            "left": 269
+          }
+        },
+        {
+          "selector": ".progress-caption",
+          "box": {
+            "x": 1165.21875,
+            "y": 652.5,
+            "width": 90.78125,
+            "height": 23,
+            "top": 652.5,
+            "right": 1256,
+            "bottom": 675.5,
+            "left": 1165.21875
+          }
+        },
+        {
+          "selector": ".playback-controls",
+          "box": {
+            "x": 353.65625,
+            "y": 677.5,
+            "width": 300.375,
+            "height": 36,
+            "top": 677.5,
+            "right": 654.03125,
+            "bottom": 713.5,
+            "left": 353.65625
+          }
+        },
+        {
+          "selector": ".secondary-controls",
+          "box": {
+            "x": 943.5,
+            "y": 677.5,
+            "width": 312.5,
+            "height": 36,
+            "top": 677.5,
+            "right": 1256,
+            "bottom": 713.5,
+            "left": 943.5
+          }
+        }
+      ],
+      "headerHeight": "54px",
+      "narrative": {
+        "cue": "poetic-c1-s13-1",
+        "layout": "vertical",
+        "locked": "true",
+        "heading": "两种记忆",
+        "text": "记载与传说各有来处，合成牡丹的两种记忆。",
+        "font": "18px",
+        "ink": {
+          "x": 1061.90625,
+          "y": 351,
+          "width": 156.53125,
+          "height": 212.59375,
+          "top": 351,
+          "right": 1218.4375,
+          "bottom": 563.59375,
+          "left": 1061.90625
+        },
+        "glyphOverflow": [],
+        "glyphPaintingOverflow": []
+      },
+      "chapterLinks": 4,
+      "shader": "[]",
+      "controlOverlaps": []
+    },
+    {
+      "chapterId": 1,
+      "variant": "attached",
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "progress": 0.85,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "painting": {
+        "x": 106.671875,
+        "y": 60,
+        "width": 1066.65625,
+        "height": 582,
+        "top": 60,
+        "right": 1173.328125,
+        "bottom": 642,
+        "left": 106.671875
+      },
+      "sourceViewport": {
+        "x": 15.994791666666742,
+        "y": 0,
+        "width": 1034.6666666666665,
+        "height": 582,
+        "aspect": 1.7777777777777777
+      },
+      "sourceGate": {
+        "x": 122.66666666666674,
+        "y": 60,
+        "width": 1034.6666666666665,
+        "height": 582
+      },
+      "sourceGateExpected": {
+        "x": 122.66666666666674,
+        "y": 60,
+        "width": 1034.6666666666665,
+        "height": 582
+      },
+      "mount": {
+        "x": 106.671875,
+        "y": 54,
+        "width": 1066.65625,
+        "height": 594,
+        "top": 54,
+        "right": 1173.328125,
+        "bottom": 648,
+        "left": 106.671875
+      },
+      "controls": [
+        {
+          "selector": ".site-header",
+          "box": {
+            "x": 24,
+            "y": 0,
+            "width": 1232,
+            "height": 54,
+            "top": 0,
+            "right": 1256,
+            "bottom": 54,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".brand",
+          "box": {
+            "x": 24,
+            "y": 5,
+            "width": 210,
+            "height": 43,
+            "top": 5,
+            "right": 234,
+            "bottom": 48,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-nav",
+          "box": {
+            "x": 467.5,
+            "y": 0,
+            "width": 437,
+            "height": 53,
+            "top": 0,
+            "right": 904.5,
+            "bottom": 53,
+            "left": 467.5
+          }
+        },
+        {
+          "selector": ".settings-button",
+          "box": {
+            "x": 1138,
+            "y": 8.5,
+            "width": 55,
+            "height": 36,
+            "top": 8.5,
+            "right": 1193,
+            "bottom": 44.5,
+            "left": 1138
+          }
+        },
+        {
+          "selector": ".fullscreen-button",
+          "box": {
+            "x": 1201,
+            "y": 8.5,
+            "width": 55,
+            "height": 36,
+            "top": 8.5,
+            "right": 1256,
+            "bottom": 44.5,
+            "left": 1201
+          }
+        },
+        {
+          "selector": ".scroll-controls",
+          "box": {
+            "x": 24,
+            "y": 648,
+            "width": 1232,
+            "height": 68,
+            "top": 648,
+            "right": 1256,
+            "bottom": 716,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".current-scene",
+          "box": {
+            "x": 24,
+            "y": 655.5,
+            "width": 220,
+            "height": 17,
+            "top": 655.5,
+            "right": 244,
+            "bottom": 672.5,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-timeline",
+          "box": {
+            "x": 269,
+            "y": 650.5,
+            "width": 872,
+            "height": 27,
+            "top": 650.5,
+            "right": 1141,
+            "bottom": 677.5,
+            "left": 269
+          }
+        },
+        {
+          "selector": ".progress-caption",
+          "box": {
+            "x": 1165.21875,
+            "y": 652.5,
+            "width": 90.78125,
+            "height": 23,
+            "top": 652.5,
+            "right": 1256,
+            "bottom": 675.5,
+            "left": 1165.21875
+          }
+        },
+        {
+          "selector": ".playback-controls",
+          "box": {
+            "x": 353.65625,
+            "y": 677.5,
+            "width": 300.375,
+            "height": 36,
+            "top": 677.5,
+            "right": 654.03125,
+            "bottom": 713.5,
+            "left": 353.65625
+          }
+        },
+        {
+          "selector": ".secondary-controls",
+          "box": {
+            "x": 943.5,
+            "y": 677.5,
+            "width": 312.5,
+            "height": 36,
+            "top": 677.5,
+            "right": 1256,
+            "bottom": 713.5,
+            "left": 943.5
+          }
+        }
+      ],
+      "headerHeight": "54px",
+      "narrative": {
+        "cue": "poetic-c1-s13-1",
+        "layout": "vertical",
+        "locked": "true",
+        "heading": "两种记忆",
+        "text": "记载与传说各有来处，合成牡丹的两种记忆。",
+        "font": "18px",
+        "ink": {
+          "x": 979.453125,
+          "y": 351,
+          "width": 156.53125,
+          "height": 212.59375,
+          "top": 351,
+          "right": 1135.984375,
+          "bottom": 563.59375,
+          "left": 979.453125
+        },
+        "glyphOverflow": [],
+        "glyphPaintingOverflow": []
+      },
+      "chapterLinks": 4,
+      "shader": "[]",
+      "controlOverlaps": []
+    },
+    {
+      "chapterId": 4,
+      "variant": "baseline",
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "progress": 0.4688715953307393,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "painting": {
+        "x": 34,
+        "y": 84,
+        "width": 1212,
+        "height": 519,
+        "top": 84,
+        "right": 1246,
+        "bottom": 603,
+        "left": 34
+      },
+      "sourceViewport": {
+        "x": 242.70000000000005,
+        "y": 0,
+        "width": 726.5999999999999,
+        "height": 519,
+        "aspect": 1.4
+      },
+      "sourceGate": {
+        "x": 276.70000000000005,
+        "y": 84,
+        "width": 726.5999999999999,
+        "height": 519
+      },
+      "sourceGateExpected": {
+        "x": 276.70000000000005,
+        "y": 84,
+        "width": 726.5999999999999,
+        "height": 519
+      },
+      "mount": {
+        "x": 34,
+        "y": 76,
+        "width": 1212,
+        "height": 535,
+        "top": 76,
+        "right": 1246,
+        "bottom": 611,
+        "left": 34
+      },
+      "controls": [
+        {
+          "selector": ".site-header",
+          "box": {
+            "x": 57.59375,
+            "y": 0,
+            "width": 1164.796875,
+            "height": 63,
+            "top": 0,
+            "right": 1222.390625,
+            "bottom": 63,
+            "left": 57.59375
+          }
+        },
+        {
+          "selector": ".brand",
+          "box": {
+            "x": 57.59375,
+            "y": 3.4375,
+            "width": 210,
+            "height": 55.109375,
+            "top": 3.4375,
+            "right": 267.59375,
+            "bottom": 58.546875,
+            "left": 57.59375
+          }
+        },
+        {
+          "selector": ".chapter-nav",
+          "box": {
+            "x": 467.484375,
+            "y": 0,
+            "width": 437,
+            "height": 62,
+            "top": 0,
+            "right": 904.484375,
+            "bottom": 62,
+            "left": 467.484375
+          }
+        },
+        {
+          "selector": ".settings-button",
+          "box": {
+            "x": 1104.390625,
+            "y": 13,
+            "width": 55,
+            "height": 36,
+            "top": 13,
+            "right": 1159.390625,
+            "bottom": 49,
+            "left": 1104.390625
+          }
+        },
+        {
+          "selector": ".fullscreen-button",
+          "box": {
+            "x": 1167.390625,
+            "y": 13,
+            "width": 55,
+            "height": 36,
+            "top": 13,
+            "right": 1222.390625,
+            "bottom": 49,
+            "left": 1167.390625
+          }
+        },
+        {
+          "selector": ".scroll-controls",
+          "box": {
+            "x": 57.59375,
+            "y": 611,
+            "width": 1164.796875,
+            "height": 94,
+            "top": 611,
+            "right": 1222.390625,
+            "bottom": 705,
+            "left": 57.59375
+          }
+        },
+        {
+          "selector": ".current-scene",
+          "box": {
+            "x": 57.59375,
+            "y": 627,
+            "width": 220,
+            "height": 28,
+            "top": 627,
+            "right": 277.59375,
+            "bottom": 655,
+            "left": 57.59375
+          }
+        },
+        {
+          "selector": ".chapter-timeline",
+          "box": {
+            "x": 302.59375,
+            "y": 627.5,
+            "width": 804.796875,
+            "height": 27,
+            "top": 627.5,
+            "right": 1107.390625,
+            "bottom": 654.5,
+            "left": 302.59375
+          }
+        },
+        {
+          "selector": ".progress-caption",
+          "box": {
+            "x": 1131.609375,
+            "y": 627,
+            "width": 90.78125,
+            "height": 28,
+            "top": 627,
+            "right": 1222.390625,
+            "bottom": 655,
+            "left": 1131.609375
+          }
+        },
+        {
+          "selector": ".playback-controls",
+          "box": {
+            "x": 489.796875,
+            "y": 658,
+            "width": 300.375,
+            "height": 36,
+            "top": 658,
+            "right": 790.171875,
+            "bottom": 694,
+            "left": 489.796875
+          }
+        },
+        {
+          "selector": ".secondary-controls",
+          "box": {
+            "x": 909.890625,
+            "y": 658,
+            "width": 312.5,
+            "height": 36,
+            "top": 658,
+            "right": 1222.390625,
+            "bottom": 694,
+            "left": 909.890625
+          }
+        }
+      ],
+      "headerHeight": "76px",
+      "narrative": {
+        "cue": "poetic-c4-s5-1",
+        "layout": "vertical",
+        "locked": "true",
+        "heading": "马嵬花落",
+        "text": "花仍开着，画中人的命运却已转向离散。",
+        "font": "18px",
+        "ink": {
+          "x": 1047.03125,
+          "y": 112.53125,
+          "width": 156.53125,
+          "height": 193.6875,
+          "top": 112.53125,
+          "right": 1203.5625,
+          "bottom": 306.21875,
+          "left": 1047.03125
+        },
+        "glyphOverflow": [],
+        "glyphPaintingOverflow": []
+      },
+      "chapterLinks": 4,
+      "shader": "[]",
+      "controlOverlaps": []
+    },
+    {
+      "chapterId": 4,
+      "variant": "compact",
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "progress": 0.4688715953307393,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "painting": {
+        "x": 18,
+        "y": 60,
+        "width": 1244,
+        "height": 582,
+        "top": 60,
+        "right": 1262,
+        "bottom": 642,
+        "left": 18
+      },
+      "sourceViewport": {
+        "x": 214.60000000000002,
+        "y": 0,
+        "width": 814.8,
+        "height": 582,
+        "aspect": 1.4
+      },
+      "sourceGate": {
+        "x": 232.60000000000002,
+        "y": 60,
+        "width": 814.8,
+        "height": 582
+      },
+      "sourceGateExpected": {
+        "x": 232.60000000000002,
+        "y": 60,
+        "width": 814.8,
+        "height": 582
+      },
+      "mount": {
+        "x": 18,
+        "y": 54,
+        "width": 1244,
+        "height": 594,
+        "top": 54,
+        "right": 1262,
+        "bottom": 648,
+        "left": 18
+      },
+      "controls": [
+        {
+          "selector": ".site-header",
+          "box": {
+            "x": 24,
+            "y": 0,
+            "width": 1232,
+            "height": 54,
+            "top": 0,
+            "right": 1256,
+            "bottom": 54,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".brand",
+          "box": {
+            "x": 24,
+            "y": 5,
+            "width": 210,
+            "height": 43,
+            "top": 5,
+            "right": 234,
+            "bottom": 48,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-nav",
+          "box": {
+            "x": 467.5,
+            "y": 0,
+            "width": 437,
+            "height": 53,
+            "top": 0,
+            "right": 904.5,
+            "bottom": 53,
+            "left": 467.5
+          }
+        },
+        {
+          "selector": ".settings-button",
+          "box": {
+            "x": 1138,
+            "y": 8.5,
+            "width": 55,
+            "height": 36,
+            "top": 8.5,
+            "right": 1193,
+            "bottom": 44.5,
+            "left": 1138
+          }
+        },
+        {
+          "selector": ".fullscreen-button",
+          "box": {
+            "x": 1201,
+            "y": 8.5,
+            "width": 55,
+            "height": 36,
+            "top": 8.5,
+            "right": 1256,
+            "bottom": 44.5,
+            "left": 1201
+          }
+        },
+        {
+          "selector": ".scroll-controls",
+          "box": {
+            "x": 24,
+            "y": 648,
+            "width": 1232,
+            "height": 68,
+            "top": 648,
+            "right": 1256,
+            "bottom": 716,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".current-scene",
+          "box": {
+            "x": 24,
+            "y": 655.5,
+            "width": 220,
+            "height": 17,
+            "top": 655.5,
+            "right": 244,
+            "bottom": 672.5,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-timeline",
+          "box": {
+            "x": 269,
+            "y": 650.5,
+            "width": 872,
+            "height": 27,
+            "top": 650.5,
+            "right": 1141,
+            "bottom": 677.5,
+            "left": 269
+          }
+        },
+        {
+          "selector": ".progress-caption",
+          "box": {
+            "x": 1165.21875,
+            "y": 652.5,
+            "width": 90.78125,
+            "height": 23,
+            "top": 652.5,
+            "right": 1256,
+            "bottom": 675.5,
+            "left": 1165.21875
+          }
+        },
+        {
+          "selector": ".playback-controls",
+          "box": {
+            "x": 353.65625,
+            "y": 677.5,
+            "width": 300.375,
+            "height": 36,
+            "top": 677.5,
+            "right": 654.03125,
+            "bottom": 713.5,
+            "left": 353.65625
+          }
+        },
+        {
+          "selector": ".secondary-controls",
+          "box": {
+            "x": 943.5,
+            "y": 677.5,
+            "width": 312.5,
+            "height": 36,
+            "top": 677.5,
+            "right": 1256,
+            "bottom": 713.5,
+            "left": 943.5
+          }
+        }
+      ],
+      "headerHeight": "54px",
+      "narrative": {
+        "cue": "poetic-c4-s5-1",
+        "layout": "vertical",
+        "locked": "true",
+        "heading": "马嵬花落",
+        "text": "花仍开着，画中人的命运却已转向离散。",
+        "font": "18px",
+        "ink": {
+          "x": 1061.90625,
+          "y": 92,
+          "width": 156.53125,
+          "height": 212.59375,
+          "top": 92,
+          "right": 1218.4375,
+          "bottom": 304.59375,
+          "left": 1061.90625
+        },
+        "glyphOverflow": [],
+        "glyphPaintingOverflow": []
+      },
+      "chapterLinks": 4,
+      "shader": "[]",
+      "controlOverlaps": []
+    },
+    {
+      "chapterId": 4,
+      "variant": "attached",
+      "size": {
+        "width": 1280,
+        "height": 720
+      },
+      "progress": 0.4688715953307393,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "painting": {
+        "x": 180,
+        "y": 60,
+        "width": 920,
+        "height": 582,
+        "top": 60,
+        "right": 1100,
+        "bottom": 642,
+        "left": 180
+      },
+      "sourceViewport": {
+        "x": 52.60000000000002,
+        "y": 0,
+        "width": 814.8,
+        "height": 582,
+        "aspect": 1.4
+      },
+      "sourceGate": {
+        "x": 232.60000000000002,
+        "y": 60,
+        "width": 814.8,
+        "height": 582
+      },
+      "sourceGateExpected": {
+        "x": 232.60000000000002,
+        "y": 60,
+        "width": 814.8,
+        "height": 582
+      },
+      "mount": {
+        "x": 180,
+        "y": 54,
+        "width": 920,
+        "height": 594,
+        "top": 54,
+        "right": 1100,
+        "bottom": 648,
+        "left": 180
+      },
+      "controls": [
+        {
+          "selector": ".site-header",
+          "box": {
+            "x": 24,
+            "y": 0,
+            "width": 1232,
+            "height": 54,
+            "top": 0,
+            "right": 1256,
+            "bottom": 54,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".brand",
+          "box": {
+            "x": 24,
+            "y": 5,
+            "width": 210,
+            "height": 43,
+            "top": 5,
+            "right": 234,
+            "bottom": 48,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-nav",
+          "box": {
+            "x": 467.5,
+            "y": 0,
+            "width": 437,
+            "height": 53,
+            "top": 0,
+            "right": 904.5,
+            "bottom": 53,
+            "left": 467.5
+          }
+        },
+        {
+          "selector": ".settings-button",
+          "box": {
+            "x": 1138,
+            "y": 8.5,
+            "width": 55,
+            "height": 36,
+            "top": 8.5,
+            "right": 1193,
+            "bottom": 44.5,
+            "left": 1138
+          }
+        },
+        {
+          "selector": ".fullscreen-button",
+          "box": {
+            "x": 1201,
+            "y": 8.5,
+            "width": 55,
+            "height": 36,
+            "top": 8.5,
+            "right": 1256,
+            "bottom": 44.5,
+            "left": 1201
+          }
+        },
+        {
+          "selector": ".scroll-controls",
+          "box": {
+            "x": 24,
+            "y": 648,
+            "width": 1232,
+            "height": 68,
+            "top": 648,
+            "right": 1256,
+            "bottom": 716,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".current-scene",
+          "box": {
+            "x": 24,
+            "y": 655.5,
+            "width": 220,
+            "height": 17,
+            "top": 655.5,
+            "right": 244,
+            "bottom": 672.5,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-timeline",
+          "box": {
+            "x": 269,
+            "y": 650.5,
+            "width": 872,
+            "height": 27,
+            "top": 650.5,
+            "right": 1141,
+            "bottom": 677.5,
+            "left": 269
+          }
+        },
+        {
+          "selector": ".progress-caption",
+          "box": {
+            "x": 1165.21875,
+            "y": 652.5,
+            "width": 90.78125,
+            "height": 23,
+            "top": 652.5,
+            "right": 1256,
+            "bottom": 675.5,
+            "left": 1165.21875
+          }
+        },
+        {
+          "selector": ".playback-controls",
+          "box": {
+            "x": 353.65625,
+            "y": 677.5,
+            "width": 300.375,
+            "height": 36,
+            "top": 677.5,
+            "right": 654.03125,
+            "bottom": 713.5,
+            "left": 353.65625
+          }
+        },
+        {
+          "selector": ".secondary-controls",
+          "box": {
+            "x": 943.5,
+            "y": 677.5,
+            "width": 312.5,
+            "height": 36,
+            "top": 677.5,
+            "right": 1256,
+            "bottom": 713.5,
+            "left": 943.5
+          }
+        }
+      ],
+      "headerHeight": "54px",
+      "narrative": {
+        "cue": "poetic-c4-s5-1",
+        "layout": "vertical",
+        "locked": "true",
+        "heading": "马嵬花落",
+        "text": "花仍开着，画中人的命运却已转向离散。",
+        "font": "18px",
+        "ink": {
+          "x": 911.25,
+          "y": 92,
+          "width": 156.53125,
+          "height": 212.59375,
+          "top": 92,
+          "right": 1067.78125,
+          "bottom": 304.59375,
+          "left": 911.25
+        },
+        "glyphOverflow": [],
+        "glyphPaintingOverflow": []
+      },
+      "chapterLinks": 4,
+      "shader": "[]",
+      "controlOverlaps": []
+    },
+    {
+      "chapterId": 1,
+      "variant": "baseline",
+      "size": {
+        "width": 2042,
+        "height": 1083
+      },
+      "progress": 0.85,
+      "viewport": {
+        "width": 2042,
+        "height": 1083
+      },
+      "painting": {
+        "x": 34,
+        "y": 98,
+        "width": 1974,
+        "height": 853,
+        "top": 98,
+        "right": 2008,
+        "bottom": 951,
+        "left": 34
+      },
+      "sourceViewport": {
+        "x": 228.77777777777783,
+        "y": 0,
+        "width": 1516.4444444444443,
+        "height": 853,
+        "aspect": 1.7777777777777777
+      },
+      "sourceGate": {
+        "x": 262.7777777777778,
+        "y": 98,
+        "width": 1516.4444444444443,
+        "height": 853
+      },
+      "sourceGateExpected": {
+        "x": 262.7777777777778,
+        "y": 98,
+        "width": 1516.4444444444443,
+        "height": 853
+      },
+      "mount": {
+        "x": 34,
+        "y": 88,
+        "width": 1974,
+        "height": 873,
+        "top": 88,
+        "right": 2008,
+        "bottom": 961,
+        "left": 34
+      },
+      "controls": [
+        {
+          "selector": ".site-header",
+          "box": {
+            "x": 91.890625,
+            "y": 0,
+            "width": 1858.21875,
+            "height": 72,
+            "top": 0,
+            "right": 1950.109375,
+            "bottom": 72,
+            "left": 91.890625
+          }
+        },
+        {
+          "selector": ".brand",
+          "box": {
+            "x": 91.890625,
+            "y": 7.25,
+            "width": 240,
+            "height": 56.5,
+            "top": 7.25,
+            "right": 331.890625,
+            "bottom": 63.75,
+            "left": 91.890625
+          }
+        },
+        {
+          "selector": ".chapter-nav",
+          "box": {
+            "x": 801,
+            "y": 0,
+            "width": 538,
+            "height": 71,
+            "top": 0,
+            "right": 1339,
+            "bottom": 71,
+            "left": 801
+          }
+        },
+        {
+          "selector": ".settings-button",
+          "box": {
+            "x": 1808.109375,
+            "y": 17.5,
+            "width": 65,
+            "height": 36,
+            "top": 17.5,
+            "right": 1873.109375,
+            "bottom": 53.5,
+            "left": 1808.109375
+          }
+        },
+        {
+          "selector": ".fullscreen-button",
+          "box": {
+            "x": 1885.109375,
+            "y": 17.5,
+            "width": 65,
+            "height": 36,
+            "top": 17.5,
+            "right": 1950.109375,
+            "bottom": 53.5,
+            "left": 1885.109375
+          }
+        },
+        {
+          "selector": ".scroll-controls",
+          "box": {
+            "x": 91.890625,
+            "y": 961,
+            "width": 1858.21875,
+            "height": 102,
+            "top": 961,
+            "right": 1950.109375,
+            "bottom": 1063,
+            "left": 91.890625
+          }
+        },
+        {
+          "selector": ".current-scene",
+          "box": {
+            "x": 91.890625,
+            "y": 981.5,
+            "width": 240,
+            "height": 29,
+            "top": 981.5,
+            "right": 331.890625,
+            "bottom": 1010.5,
+            "left": 91.890625
+          }
+        },
+        {
+          "selector": ".chapter-timeline",
+          "box": {
+            "x": 361.890625,
+            "y": 982.5,
+            "width": 1460.21875,
+            "height": 27,
+            "top": 982.5,
+            "right": 1822.109375,
+            "bottom": 1009.5,
+            "left": 361.890625
+          }
+        },
+        {
+          "selector": ".progress-caption",
+          "box": {
+            "x": 1859.328125,
+            "y": 981.5,
+            "width": 90.78125,
+            "height": 29,
+            "top": 981.5,
+            "right": 1950.109375,
+            "bottom": 1010.5,
+            "left": 1859.328125
+          }
+        },
+        {
+          "selector": ".playback-controls",
+          "box": {
+            "x": 863.8125,
+            "y": 1015,
+            "width": 314.375,
+            "height": 36,
+            "top": 1015,
+            "right": 1178.1875,
+            "bottom": 1051,
+            "left": 863.8125
+          }
+        },
+        {
+          "selector": ".secondary-controls",
+          "box": {
+            "x": 1506.640625,
+            "y": 1015,
+            "width": 443.46875,
+            "height": 36,
+            "top": 1015,
+            "right": 1950.109375,
+            "bottom": 1051,
+            "left": 1506.640625
+          }
+        }
+      ],
+      "headerHeight": "88px",
+      "narrative": {
+        "cue": "poetic-c1-s13-1",
+        "layout": "vertical",
+        "locked": "true",
+        "heading": "两种记忆",
+        "text": "记载与传说各有来处，合成牡丹的两种记忆。",
+        "font": "24px",
+        "ink": {
+          "x": 1744.25,
+          "y": 524.5,
+          "width": 194.640625,
+          "height": 293.890625,
+          "top": 524.5,
+          "right": 1938.890625,
+          "bottom": 818.390625,
+          "left": 1744.25
+        },
+        "glyphOverflow": [],
+        "glyphPaintingOverflow": []
+      },
+      "chapterLinks": 4,
+      "shader": "[]",
+      "controlOverlaps": []
+    },
+    {
+      "chapterId": 1,
+      "variant": "compact",
+      "size": {
+        "width": 2042,
+        "height": 1083
+      },
+      "progress": 0.85,
+      "viewport": {
+        "width": 2042,
+        "height": 1083
+      },
+      "painting": {
+        "x": 18,
+        "y": 60,
+        "width": 2006,
+        "height": 957,
+        "top": 60,
+        "right": 2024,
+        "bottom": 1017,
+        "left": 18
+      },
+      "sourceViewport": {
+        "x": 152.33333333333337,
+        "y": 0,
+        "width": 1701.3333333333333,
+        "height": 957,
+        "aspect": 1.7777777777777777
+      },
+      "sourceGate": {
+        "x": 170.33333333333337,
+        "y": 60,
+        "width": 1701.3333333333333,
+        "height": 957
+      },
+      "sourceGateExpected": {
+        "x": 170.33333333333337,
+        "y": 60,
+        "width": 1701.3333333333333,
+        "height": 957
+      },
+      "mount": {
+        "x": 18,
+        "y": 54,
+        "width": 2006,
+        "height": 969,
+        "top": 54,
+        "right": 2024,
+        "bottom": 1023,
+        "left": 18
+      },
+      "controls": [
+        {
+          "selector": ".site-header",
+          "box": {
+            "x": 24,
+            "y": 0,
+            "width": 1994,
+            "height": 54,
+            "top": 0,
+            "right": 2018,
+            "bottom": 54,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".brand",
+          "box": {
+            "x": 24,
+            "y": 4.6875,
+            "width": 210,
+            "height": 43.609375,
+            "top": 4.6875,
+            "right": 234,
+            "bottom": 48.296875,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-nav",
+          "box": {
+            "x": 790,
+            "y": 0,
+            "width": 538,
+            "height": 53,
+            "top": 0,
+            "right": 1328,
+            "bottom": 53,
+            "left": 790
+          }
+        },
+        {
+          "selector": ".settings-button",
+          "box": {
+            "x": 1884,
+            "y": 8.5,
+            "width": 62,
+            "height": 36,
+            "top": 8.5,
+            "right": 1946,
+            "bottom": 44.5,
+            "left": 1884
+          }
+        },
+        {
+          "selector": ".fullscreen-button",
+          "box": {
+            "x": 1956,
+            "y": 8.5,
+            "width": 62,
+            "height": 36,
+            "top": 8.5,
+            "right": 2018,
+            "bottom": 44.5,
+            "left": 1956
+          }
+        },
+        {
+          "selector": ".scroll-controls",
+          "box": {
+            "x": 24,
+            "y": 1023,
+            "width": 1994,
+            "height": 56,
+            "top": 1023,
+            "right": 2018,
+            "bottom": 1079,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".current-scene",
+          "box": {
+            "x": 24,
+            "y": 1042,
+            "width": 220,
+            "height": 18,
+            "top": 1042,
+            "right": 244,
+            "bottom": 1060,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-timeline",
+          "box": {
+            "x": 265,
+            "y": 1037.5,
+            "width": 862.15625,
+            "height": 27,
+            "top": 1037.5,
+            "right": 1127.15625,
+            "bottom": 1064.5,
+            "left": 265
+          }
+        },
+        {
+          "selector": ".progress-caption",
+          "box": {
+            "x": 1137.375,
+            "y": 1039.5,
+            "width": 90.78125,
+            "height": 23,
+            "top": 1039.5,
+            "right": 1228.15625,
+            "bottom": 1062.5,
+            "left": 1137.375
+          }
+        },
+        {
+          "selector": ".playback-controls",
+          "box": {
+            "x": 1244.15625,
+            "y": 1033,
+            "width": 314.375,
+            "height": 36,
+            "top": 1033,
+            "right": 1558.53125,
+            "bottom": 1069,
+            "left": 1244.15625
+          }
+        },
+        {
+          "selector": ".secondary-controls",
+          "box": {
+            "x": 1574.53125,
+            "y": 1033,
+            "width": 443.46875,
+            "height": 36,
+            "top": 1033,
+            "right": 2018,
+            "bottom": 1069,
+            "left": 1574.53125
+          }
+        }
+      ],
+      "headerHeight": "54px",
+      "narrative": {
+        "cue": "poetic-c1-s13-1",
+        "layout": "vertical",
+        "locked": "true",
+        "heading": "两种记忆",
+        "text": "记载与传说各有来处，合成牡丹的两种记忆。",
+        "font": "24px",
+        "ink": {
+          "x": 1799.9375,
+          "y": 538.5,
+          "width": 153.84375,
+          "height": 325.09375,
+          "top": 538.5,
+          "right": 1953.78125,
+          "bottom": 863.59375,
+          "left": 1799.9375
+        },
+        "glyphOverflow": [],
+        "glyphPaintingOverflow": []
+      },
+      "chapterLinks": 4,
+      "shader": "[]",
+      "controlOverlaps": []
+    },
+    {
+      "chapterId": 1,
+      "variant": "attached",
+      "size": {
+        "width": 2042,
+        "height": 1083
+      },
+      "progress": 0.85,
+      "viewport": {
+        "width": 2042,
+        "height": 1083
+      },
+      "painting": {
+        "x": 154.328125,
+        "y": 60,
+        "width": 1733.328125,
+        "height": 957,
+        "top": 60,
+        "right": 1887.65625,
+        "bottom": 1017,
+        "left": 154.328125
+      },
+      "sourceViewport": {
+        "x": 15.997395833333371,
+        "y": 0,
+        "width": 1701.3333333333333,
+        "height": 957,
+        "aspect": 1.7777777777777777
+      },
+      "sourceGate": {
+        "x": 170.32552083333337,
+        "y": 60,
+        "width": 1701.3333333333333,
+        "height": 957
+      },
+      "sourceGateExpected": {
+        "x": 170.32552083333337,
+        "y": 60,
+        "width": 1701.3333333333333,
+        "height": 957
+      },
+      "mount": {
+        "x": 154.328125,
+        "y": 54,
+        "width": 1733.328125,
+        "height": 969,
+        "top": 54,
+        "right": 1887.65625,
+        "bottom": 1023,
+        "left": 154.328125
+      },
+      "controls": [
+        {
+          "selector": ".site-header",
+          "box": {
+            "x": 24,
+            "y": 0,
+            "width": 1994,
+            "height": 54,
+            "top": 0,
+            "right": 2018,
+            "bottom": 54,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".brand",
+          "box": {
+            "x": 24,
+            "y": 4.6875,
+            "width": 210,
+            "height": 43.609375,
+            "top": 4.6875,
+            "right": 234,
+            "bottom": 48.296875,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-nav",
+          "box": {
+            "x": 790,
+            "y": 0,
+            "width": 538,
+            "height": 53,
+            "top": 0,
+            "right": 1328,
+            "bottom": 53,
+            "left": 790
+          }
+        },
+        {
+          "selector": ".settings-button",
+          "box": {
+            "x": 1884,
+            "y": 8.5,
+            "width": 62,
+            "height": 36,
+            "top": 8.5,
+            "right": 1946,
+            "bottom": 44.5,
+            "left": 1884
+          }
+        },
+        {
+          "selector": ".fullscreen-button",
+          "box": {
+            "x": 1956,
+            "y": 8.5,
+            "width": 62,
+            "height": 36,
+            "top": 8.5,
+            "right": 2018,
+            "bottom": 44.5,
+            "left": 1956
+          }
+        },
+        {
+          "selector": ".scroll-controls",
+          "box": {
+            "x": 24,
+            "y": 1023,
+            "width": 1994,
+            "height": 56,
+            "top": 1023,
+            "right": 2018,
+            "bottom": 1079,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".current-scene",
+          "box": {
+            "x": 24,
+            "y": 1042,
+            "width": 220,
+            "height": 18,
+            "top": 1042,
+            "right": 244,
+            "bottom": 1060,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-timeline",
+          "box": {
+            "x": 265,
+            "y": 1037.5,
+            "width": 862.15625,
+            "height": 27,
+            "top": 1037.5,
+            "right": 1127.15625,
+            "bottom": 1064.5,
+            "left": 265
+          }
+        },
+        {
+          "selector": ".progress-caption",
+          "box": {
+            "x": 1137.375,
+            "y": 1039.5,
+            "width": 90.78125,
+            "height": 23,
+            "top": 1039.5,
+            "right": 1228.15625,
+            "bottom": 1062.5,
+            "left": 1137.375
+          }
+        },
+        {
+          "selector": ".playback-controls",
+          "box": {
+            "x": 1244.15625,
+            "y": 1033,
+            "width": 314.375,
+            "height": 36,
+            "top": 1033,
+            "right": 1558.53125,
+            "bottom": 1069,
+            "left": 1244.15625
+          }
+        },
+        {
+          "selector": ".secondary-controls",
+          "box": {
+            "x": 1574.53125,
+            "y": 1033,
+            "width": 443.46875,
+            "height": 36,
+            "top": 1033,
+            "right": 2018,
+            "bottom": 1069,
+            "left": 1574.53125
+          }
+        }
+      ],
+      "headerHeight": "54px",
+      "narrative": {
+        "cue": "poetic-c1-s13-1",
+        "layout": "vertical",
+        "locked": "true",
+        "heading": "两种记忆",
+        "text": "记载与传说各有来处，合成牡丹的两种记忆。",
+        "font": "22.5333px",
+        "ink": {
+          "x": 1678.140625,
+          "y": 538.5,
+          "width": 148.84375,
+          "height": 325.09375,
+          "top": 538.5,
+          "right": 1826.984375,
+          "bottom": 863.59375,
+          "left": 1678.140625
+        },
+        "glyphOverflow": [],
+        "glyphPaintingOverflow": []
+      },
+      "chapterLinks": 4,
+      "shader": "[]",
+      "controlOverlaps": []
+    },
+    {
+      "chapterId": 4,
+      "variant": "baseline",
+      "size": {
+        "width": 2042,
+        "height": 1083
+      },
+      "progress": 0.4688715953307393,
+      "viewport": {
+        "width": 2042,
+        "height": 1083
+      },
+      "painting": {
+        "x": 34,
+        "y": 98,
+        "width": 1974,
+        "height": 853,
+        "top": 98,
+        "right": 2008,
+        "bottom": 951,
+        "left": 34
+      },
+      "sourceViewport": {
+        "x": 389.9000000000001,
+        "y": 5.684341886080802e-14,
+        "width": 1194.1999999999998,
+        "height": 852.9999999999999,
+        "aspect": 1.4
+      },
+      "sourceGate": {
+        "x": 423.9000000000001,
+        "y": 98.00000000000006,
+        "width": 1194.1999999999998,
+        "height": 852.9999999999999
+      },
+      "sourceGateExpected": {
+        "x": 423.9000000000001,
+        "y": 98.00000000000006,
+        "width": 1194.1999999999998,
+        "height": 852.9999999999999
+      },
+      "mount": {
+        "x": 34,
+        "y": 88,
+        "width": 1974,
+        "height": 873,
+        "top": 88,
+        "right": 2008,
+        "bottom": 961,
+        "left": 34
+      },
+      "controls": [
+        {
+          "selector": ".site-header",
+          "box": {
+            "x": 91.890625,
+            "y": 0,
+            "width": 1858.21875,
+            "height": 72,
+            "top": 0,
+            "right": 1950.109375,
+            "bottom": 72,
+            "left": 91.890625
+          }
+        },
+        {
+          "selector": ".brand",
+          "box": {
+            "x": 91.890625,
+            "y": 7.25,
+            "width": 240,
+            "height": 56.5,
+            "top": 7.25,
+            "right": 331.890625,
+            "bottom": 63.75,
+            "left": 91.890625
+          }
+        },
+        {
+          "selector": ".chapter-nav",
+          "box": {
+            "x": 801,
+            "y": 0,
+            "width": 538,
+            "height": 71,
+            "top": 0,
+            "right": 1339,
+            "bottom": 71,
+            "left": 801
+          }
+        },
+        {
+          "selector": ".settings-button",
+          "box": {
+            "x": 1808.109375,
+            "y": 17.5,
+            "width": 65,
+            "height": 36,
+            "top": 17.5,
+            "right": 1873.109375,
+            "bottom": 53.5,
+            "left": 1808.109375
+          }
+        },
+        {
+          "selector": ".fullscreen-button",
+          "box": {
+            "x": 1885.109375,
+            "y": 17.5,
+            "width": 65,
+            "height": 36,
+            "top": 17.5,
+            "right": 1950.109375,
+            "bottom": 53.5,
+            "left": 1885.109375
+          }
+        },
+        {
+          "selector": ".scroll-controls",
+          "box": {
+            "x": 91.890625,
+            "y": 961,
+            "width": 1858.21875,
+            "height": 102,
+            "top": 961,
+            "right": 1950.109375,
+            "bottom": 1063,
+            "left": 91.890625
+          }
+        },
+        {
+          "selector": ".current-scene",
+          "box": {
+            "x": 91.890625,
+            "y": 981.5,
+            "width": 240,
+            "height": 29,
+            "top": 981.5,
+            "right": 331.890625,
+            "bottom": 1010.5,
+            "left": 91.890625
+          }
+        },
+        {
+          "selector": ".chapter-timeline",
+          "box": {
+            "x": 361.890625,
+            "y": 982.5,
+            "width": 1460.21875,
+            "height": 27,
+            "top": 982.5,
+            "right": 1822.109375,
+            "bottom": 1009.5,
+            "left": 361.890625
+          }
+        },
+        {
+          "selector": ".progress-caption",
+          "box": {
+            "x": 1859.328125,
+            "y": 981.5,
+            "width": 90.78125,
+            "height": 29,
+            "top": 981.5,
+            "right": 1950.109375,
+            "bottom": 1010.5,
+            "left": 1859.328125
+          }
+        },
+        {
+          "selector": ".playback-controls",
+          "box": {
+            "x": 863.8125,
+            "y": 1015,
+            "width": 314.375,
+            "height": 36,
+            "top": 1015,
+            "right": 1178.1875,
+            "bottom": 1051,
+            "left": 863.8125
+          }
+        },
+        {
+          "selector": ".secondary-controls",
+          "box": {
+            "x": 1546.484375,
+            "y": 1015,
+            "width": 403.625,
+            "height": 36,
+            "top": 1015,
+            "right": 1950.109375,
+            "bottom": 1051,
+            "left": 1546.484375
+          }
+        }
+      ],
+      "headerHeight": "88px",
+      "narrative": {
+        "cue": "poetic-c4-s5-1",
+        "layout": "vertical",
+        "locked": "true",
+        "heading": "马嵬花落",
+        "text": "花仍开着，画中人的命运却已转向离散。",
+        "font": "24px",
+        "ink": {
+          "x": 1785.046875,
+          "y": 144.90625,
+          "width": 153.84375,
+          "height": 293.890625,
+          "top": 144.90625,
+          "right": 1938.890625,
+          "bottom": 438.796875,
+          "left": 1785.046875
+        },
+        "glyphOverflow": [],
+        "glyphPaintingOverflow": []
+      },
+      "chapterLinks": 4,
+      "shader": "[]",
+      "controlOverlaps": []
+    },
+    {
+      "chapterId": 4,
+      "variant": "compact",
+      "size": {
+        "width": 2042,
+        "height": 1083
+      },
+      "progress": 0.4688715953307393,
+      "viewport": {
+        "width": 2042,
+        "height": 1083
+      },
+      "painting": {
+        "x": 18,
+        "y": 60,
+        "width": 2006,
+        "height": 957,
+        "top": 60,
+        "right": 2024,
+        "bottom": 1017,
+        "left": 18
+      },
+      "sourceViewport": {
+        "x": 333.1,
+        "y": 0,
+        "width": 1339.8,
+        "height": 957,
+        "aspect": 1.4
+      },
+      "sourceGate": {
+        "x": 351.1,
+        "y": 60,
+        "width": 1339.8,
+        "height": 957
+      },
+      "sourceGateExpected": {
+        "x": 351.1,
+        "y": 60,
+        "width": 1339.8,
+        "height": 957
+      },
+      "mount": {
+        "x": 18,
+        "y": 54,
+        "width": 2006,
+        "height": 969,
+        "top": 54,
+        "right": 2024,
+        "bottom": 1023,
+        "left": 18
+      },
+      "controls": [
+        {
+          "selector": ".site-header",
+          "box": {
+            "x": 24,
+            "y": 0,
+            "width": 1994,
+            "height": 54,
+            "top": 0,
+            "right": 2018,
+            "bottom": 54,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".brand",
+          "box": {
+            "x": 24,
+            "y": 4.6875,
+            "width": 210,
+            "height": 43.609375,
+            "top": 4.6875,
+            "right": 234,
+            "bottom": 48.296875,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-nav",
+          "box": {
+            "x": 790,
+            "y": 0,
+            "width": 538,
+            "height": 53,
+            "top": 0,
+            "right": 1328,
+            "bottom": 53,
+            "left": 790
+          }
+        },
+        {
+          "selector": ".settings-button",
+          "box": {
+            "x": 1884,
+            "y": 8.5,
+            "width": 62,
+            "height": 36,
+            "top": 8.5,
+            "right": 1946,
+            "bottom": 44.5,
+            "left": 1884
+          }
+        },
+        {
+          "selector": ".fullscreen-button",
+          "box": {
+            "x": 1956,
+            "y": 8.5,
+            "width": 62,
+            "height": 36,
+            "top": 8.5,
+            "right": 2018,
+            "bottom": 44.5,
+            "left": 1956
+          }
+        },
+        {
+          "selector": ".scroll-controls",
+          "box": {
+            "x": 24,
+            "y": 1023,
+            "width": 1994,
+            "height": 56,
+            "top": 1023,
+            "right": 2018,
+            "bottom": 1079,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".current-scene",
+          "box": {
+            "x": 24,
+            "y": 1042,
+            "width": 220,
+            "height": 18,
+            "top": 1042,
+            "right": 244,
+            "bottom": 1060,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-timeline",
+          "box": {
+            "x": 265,
+            "y": 1037.5,
+            "width": 902,
+            "height": 27,
+            "top": 1037.5,
+            "right": 1167,
+            "bottom": 1064.5,
+            "left": 265
+          }
+        },
+        {
+          "selector": ".progress-caption",
+          "box": {
+            "x": 1177.21875,
+            "y": 1039.5,
+            "width": 90.78125,
+            "height": 23,
+            "top": 1039.5,
+            "right": 1268,
+            "bottom": 1062.5,
+            "left": 1177.21875
+          }
+        },
+        {
+          "selector": ".playback-controls",
+          "box": {
+            "x": 1284,
+            "y": 1033,
+            "width": 314.375,
+            "height": 36,
+            "top": 1033,
+            "right": 1598.375,
+            "bottom": 1069,
+            "left": 1284
+          }
+        },
+        {
+          "selector": ".secondary-controls",
+          "box": {
+            "x": 1614.375,
+            "y": 1033,
+            "width": 403.625,
+            "height": 36,
+            "top": 1033,
+            "right": 2018,
+            "bottom": 1069,
+            "left": 1614.375
+          }
+        }
+      ],
+      "headerHeight": "54px",
+      "narrative": {
+        "cue": "poetic-c4-s5-1",
+        "layout": "vertical",
+        "locked": "true",
+        "heading": "马嵬花落",
+        "text": "花仍开着，画中人的命运却已转向离散。",
+        "font": "24px",
+        "ink": {
+          "x": 1799.9375,
+          "y": 112.625,
+          "width": 153.84375,
+          "height": 325.09375,
+          "top": 112.625,
+          "right": 1953.78125,
+          "bottom": 437.71875,
+          "left": 1799.9375
+        },
+        "glyphOverflow": [],
+        "glyphPaintingOverflow": []
+      },
+      "chapterLinks": 4,
+      "shader": "[]",
+      "controlOverlaps": []
+    },
+    {
+      "chapterId": 4,
+      "variant": "attached",
+      "size": {
+        "width": 2042,
+        "height": 1083
+      },
+      "progress": 0.4688715953307393,
+      "viewport": {
+        "width": 2042,
+        "height": 1083
+      },
+      "painting": {
+        "x": 335.09375,
+        "y": 60,
+        "width": 1371.796875,
+        "height": 957,
+        "top": 60,
+        "right": 1706.890625,
+        "bottom": 1017,
+        "left": 335.09375
+      },
+      "sourceViewport": {
+        "x": 15.998437500000023,
+        "y": 0,
+        "width": 1339.8,
+        "height": 957,
+        "aspect": 1.4
+      },
+      "sourceGate": {
+        "x": 351.0921875,
+        "y": 60,
+        "width": 1339.8,
+        "height": 957
+      },
+      "sourceGateExpected": {
+        "x": 351.0921875,
+        "y": 60,
+        "width": 1339.8,
+        "height": 957
+      },
+      "mount": {
+        "x": 335.09375,
+        "y": 54,
+        "width": 1371.796875,
+        "height": 969,
+        "top": 54,
+        "right": 1706.890625,
+        "bottom": 1023,
+        "left": 335.09375
+      },
+      "controls": [
+        {
+          "selector": ".site-header",
+          "box": {
+            "x": 24,
+            "y": 0,
+            "width": 1994,
+            "height": 54,
+            "top": 0,
+            "right": 2018,
+            "bottom": 54,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".brand",
+          "box": {
+            "x": 24,
+            "y": 4.6875,
+            "width": 210,
+            "height": 43.609375,
+            "top": 4.6875,
+            "right": 234,
+            "bottom": 48.296875,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-nav",
+          "box": {
+            "x": 790,
+            "y": 0,
+            "width": 538,
+            "height": 53,
+            "top": 0,
+            "right": 1328,
+            "bottom": 53,
+            "left": 790
+          }
+        },
+        {
+          "selector": ".settings-button",
+          "box": {
+            "x": 1884,
+            "y": 8.5,
+            "width": 62,
+            "height": 36,
+            "top": 8.5,
+            "right": 1946,
+            "bottom": 44.5,
+            "left": 1884
+          }
+        },
+        {
+          "selector": ".fullscreen-button",
+          "box": {
+            "x": 1956,
+            "y": 8.5,
+            "width": 62,
+            "height": 36,
+            "top": 8.5,
+            "right": 2018,
+            "bottom": 44.5,
+            "left": 1956
+          }
+        },
+        {
+          "selector": ".scroll-controls",
+          "box": {
+            "x": 24,
+            "y": 1023,
+            "width": 1994,
+            "height": 56,
+            "top": 1023,
+            "right": 2018,
+            "bottom": 1079,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".current-scene",
+          "box": {
+            "x": 24,
+            "y": 1042,
+            "width": 220,
+            "height": 18,
+            "top": 1042,
+            "right": 244,
+            "bottom": 1060,
+            "left": 24
+          }
+        },
+        {
+          "selector": ".chapter-timeline",
+          "box": {
+            "x": 265,
+            "y": 1037.5,
+            "width": 902,
+            "height": 27,
+            "top": 1037.5,
+            "right": 1167,
+            "bottom": 1064.5,
+            "left": 265
+          }
+        },
+        {
+          "selector": ".progress-caption",
+          "box": {
+            "x": 1177.21875,
+            "y": 1039.5,
+            "width": 90.78125,
+            "height": 23,
+            "top": 1039.5,
+            "right": 1268,
+            "bottom": 1062.5,
+            "left": 1177.21875
+          }
+        },
+        {
+          "selector": ".playback-controls",
+          "box": {
+            "x": 1284,
+            "y": 1033,
+            "width": 314.375,
+            "height": 36,
+            "top": 1033,
+            "right": 1598.375,
+            "bottom": 1069,
+            "left": 1284
+          }
+        },
+        {
+          "selector": ".secondary-controls",
+          "box": {
+            "x": 1614.375,
+            "y": 1033,
+            "width": 403.625,
+            "height": 36,
+            "top": 1033,
+            "right": 2018,
+            "bottom": 1069,
+            "left": 1614.375
+          }
+        }
+      ],
+      "headerHeight": "54px",
+      "narrative": {
+        "cue": "poetic-c4-s5-1",
+        "layout": "vertical",
+        "locked": "true",
+        "heading": "马嵬花落",
+        "text": "花仍开着，画中人的命运却已转向离散。",
+        "font": "18px",
+        "ink": {
+          "x": 1530.8125,
+          "y": 112.625,
+          "width": 128.046875,
+          "height": 325.09375,
+          "top": 112.625,
+          "right": 1658.859375,
+          "bottom": 437.71875,
+          "left": 1530.8125
+        },
+        "glyphOverflow": [],
+        "glyphPaintingOverflow": []
+      },
+      "chapterLinks": 4,
+      "shader": "[]",
+      "controlOverlaps": []
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "baseline-c1-1920x1080-0_85.png",
+      "sha256": "2781434b1d7ebc70d9863c6321b65d7a0189271a956a0c16fd7a07448397a306"
+    },
+    {
+      "file": "compact-c1-1920x1080-0_85.png",
+      "sha256": "06db3129397e72751178e0d543472c759f1b927d75fde1b0e8322e28ac3c4834"
+    },
+    {
+      "file": "attached-c1-1920x1080-0_85.png",
+      "sha256": "7ae51aac90caa44558a0aa7e18bdef14604835532870f0d099d0b20bd2394c9c"
+    },
+    {
+      "file": "baseline-c4-1920x1080-0_4688715953307393.png",
+      "sha256": "b39da3795d3e1775fb48c8c7336b11af77f1a7d11ae1fa5c9a88cb63e4b86c13"
+    },
+    {
+      "file": "compact-c4-1920x1080-0_4688715953307393.png",
+      "sha256": "1f6192dcf6226f3757e7bf0ffd3876322becabbbef6ec351d99cb01b6dd57f05"
+    },
+    {
+      "file": "attached-c4-1920x1080-0_4688715953307393.png",
+      "sha256": "a2e4fb989434dc79dfbaeb52d99479b9bdfa4ffc4da1dfc742301c0312925df2"
+    },
+    {
+      "file": "baseline-c1-1280x720-0_85.png",
+      "sha256": "facfea1a060a31214f305abff2686a2b647ffb38f096ef2412406c6588b3fca0"
+    },
+    {
+      "file": "compact-c1-1280x720-0_85.png",
+      "sha256": "443904d9d7f57343bd5b78b8b86f421838433c6c2d3de2e537135b256312bb8f"
+    },
+    {
+      "file": "attached-c1-1280x720-0_85.png",
+      "sha256": "fcde00f80bd7455b92aa37d965c03b9ef5d2dd5d2bae462fa174a5bbb2adcb21"
+    },
+    {
+      "file": "baseline-c4-1280x720-0_4688715953307393.png",
+      "sha256": "ac8e7c3f3cd629de34b328e1368a42e3dd5ab81f4450e0c69cde4468eef0a9c0"
+    },
+    {
+      "file": "compact-c4-1280x720-0_4688715953307393.png",
+      "sha256": "0d04447a7d5361901e2b07d09a1324bd29e57feeaa8d764a8641d52421c2ad06"
+    },
+    {
+      "file": "attached-c4-1280x720-0_4688715953307393.png",
+      "sha256": "f0cae1feff0bf06fc64358bdbf84001d4a9ee2a7a61380990673d02f09f4cb71"
+    },
+    {
+      "file": "baseline-c1-2042x1083-0_85.png",
+      "sha256": "eddbdd26fb5e4efe5f569266cde8945223865e00c7aa37773e7e422c47e70375"
+    },
+    {
+      "file": "compact-c1-2042x1083-0_85.png",
+      "sha256": "823e58e643b993d3fb84ae7001f090564908f9b16a5d87e6a417f90a43df92ee"
+    },
+    {
+      "file": "attached-c1-2042x1083-0_85.png",
+      "sha256": "a40dcead59af941a4c9d02041d5b113cb6717615e09a85a5e8c6f5220dcb8e8a"
+    },
+    {
+      "file": "baseline-c4-2042x1083-0_4688715953307393.png",
+      "sha256": "4a1289d7a25198d97de1b3585456a58e7f6773e4640777743bd4d14b0cf3748f"
+    },
+    {
+      "file": "compact-c4-2042x1083-0_4688715953307393.png",
+      "sha256": "9819d49923cd09c245b34284517708c56dceeee7c343e00a2bca4b72929748be"
+    },
+    {
+      "file": "attached-c4-2042x1083-0_4688715953307393.png",
+      "sha256": "52b84524feefe67b7e988f5e2f10962ac311f96de1169477d68c4fd33515a320"
+    }
+  ],
+  "errors": [],
+  "checks": [
+    {
+      "name": "baseline c1 1920: controls on screen and 4 chapters retained",
+      "pass": true
+    },
+    {
+      "name": "baseline c1 1920: glyphs contained",
+      "pass": true
+    },
+    {
+      "name": "baseline c1 1920: actual source viewport retains whole aspect",
+      "pass": true
+    },
+    {
+      "name": "baseline c1 1920: separate controls do not overlap",
+      "pass": true,
+      "overlaps": []
+    },
+    {
+      "name": "compact c1 1920: controls on screen and 4 chapters retained",
+      "pass": true
+    },
+    {
+      "name": "compact c1 1920: glyphs contained",
+      "pass": true
+    },
+    {
+      "name": "compact c1 1920: actual source viewport retains whole aspect",
+      "pass": true
+    },
+    {
+      "name": "compact c1 1920: separate controls do not overlap",
+      "pass": true,
+      "overlaps": []
+    },
+    {
+      "name": "attached c1 1920: controls on screen and 4 chapters retained",
+      "pass": true
+    },
+    {
+      "name": "attached c1 1920: glyphs contained",
+      "pass": true
+    },
+    {
+      "name": "attached c1 1920: actual source viewport retains whole aspect",
+      "pass": true
+    },
+    {
+      "name": "attached c1 1920: separate controls do not overlap",
+      "pass": true,
+      "overlaps": []
+    },
+    {
+      "name": "baseline c4 1920: controls on screen and 4 chapters retained",
+      "pass": true
+    },
+    {
+      "name": "baseline c4 1920: glyphs contained",
+      "pass": true
+    },
+    {
+      "name": "baseline c4 1920: actual source viewport retains whole aspect",
+      "pass": true
+    },
+    {
+      "name": "baseline c4 1920: separate controls do not overlap",
+      "pass": true,
+      "overlaps": []
+    },
+    {
+      "name": "compact c4 1920: controls on screen and 4 chapters retained",
+      "pass": true
+    },
+    {
+      "name": "compact c4 1920: glyphs contained",
+      "pass": true
+    },
+    {
+      "name": "compact c4 1920: actual source viewport retains whole aspect",
+      "pass": true
+    },
+    {
+      "name": "compact c4 1920: separate controls do not overlap",
+      "pass": true,
+      "overlaps": []
+    },
+    {
+      "name": "attached c4 1920: controls on screen and 4 chapters retained",
+      "pass": true
+    },
+    {
+      "name": "attached c4 1920: glyphs contained",
+      "pass": true
+    },
+    {
+      "name": "attached c4 1920: actual source viewport retains whole aspect",
+      "pass": true
+    },
+    {
+      "name": "attached c4 1920: separate controls do not overlap",
+      "pass": true,
+      "overlaps": []
+    },
+    {
+      "name": "baseline c1 1280: controls on screen and 4 chapters retained",
+      "pass": true
+    },
+    {
+      "name": "baseline c1 1280: glyphs contained",
+      "pass": true
+    },
+    {
+      "name": "baseline c1 1280: actual source viewport retains whole aspect",
+      "pass": true
+    },
+    {
+      "name": "baseline c1 1280: separate controls do not overlap",
+      "pass": true,
+      "overlaps": []
+    },
+    {
+      "name": "compact c1 1280: controls on screen and 4 chapters retained",
+      "pass": true
+    },
+    {
+      "name": "compact c1 1280: glyphs contained",
+      "pass": true
+    },
+    {
+      "name": "compact c1 1280: actual source viewport retains whole aspect",
+      "pass": true
+    },
+    {
+      "name": "compact c1 1280: separate controls do not overlap",
+      "pass": true,
+      "overlaps": []
+    },
+    {
+      "name": "attached c1 1280: controls on screen and 4 chapters retained",
+      "pass": true
+    },
+    {
+      "name": "attached c1 1280: glyphs contained",
+      "pass": true
+    },
+    {
+      "name": "attached c1 1280: actual source viewport retains whole aspect",
+      "pass": true
+    },
+    {
+      "name": "attached c1 1280: separate controls do not overlap",
+      "pass": true,
+      "overlaps": []
+    },
+    {
+      "name": "baseline c4 1280: controls on screen and 4 chapters retained",
+      "pass": true
+    },
+    {
+      "name": "baseline c4 1280: glyphs contained",
+      "pass": true
+    },
+    {
+      "name": "baseline c4 1280: actual source viewport retains whole aspect",
+      "pass": true
+    },
+    {
+      "name": "baseline c4 1280: separate controls do not overlap",
+      "pass": true,
+      "overlaps": []
+    },
+    {
+      "name": "compact c4 1280: controls on screen and 4 chapters retained",
+      "pass": true
+    },
+    {
+      "name": "compact c4 1280: glyphs contained",
+      "pass": true
+    },
+    {
+      "name": "compact c4 1280: actual source viewport retains whole aspect",
+      "pass": true
+    },
+    {
+      "name": "compact c4 1280: separate controls do not overlap",
+      "pass": true,
+      "overlaps": []
+    },
+    {
+      "name": "attached c4 1280: controls on screen and 4 chapters retained",
+      "pass": true
+    },
+    {
+      "name": "attached c4 1280: glyphs contained",
+      "pass": true
+    },
+    {
+      "name": "attached c4 1280: actual source viewport retains whole aspect",
+      "pass": true
+    },
+    {
+      "name": "attached c4 1280: separate controls do not overlap",
+      "pass": true,
+      "overlaps": []
+    },
+    {
+      "name": "baseline c1 2042: controls on screen and 4 chapters retained",
+      "pass": true
+    },
+    {
+      "name": "baseline c1 2042: glyphs contained",
+      "pass": true
+    },
+    {
+      "name": "baseline c1 2042: actual source viewport retains whole aspect",
+      "pass": true
+    },
+    {
+      "name": "baseline c1 2042: separate controls do not overlap",
+      "pass": true,
+      "overlaps": []
+    },
+    {
+      "name": "compact c1 2042: controls on screen and 4 chapters retained",
+      "pass": true
+    },
+    {
+      "name": "compact c1 2042: glyphs contained",
+      "pass": true
+    },
+    {
+      "name": "compact c1 2042: actual source viewport retains whole aspect",
+      "pass": true
+    },
+    {
+      "name": "compact c1 2042: separate controls do not overlap",
+      "pass": true,
+      "overlaps": []
+    },
+    {
+      "name": "attached c1 2042: controls on screen and 4 chapters retained",
+      "pass": true
+    },
+    {
+      "name": "attached c1 2042: glyphs contained",
+      "pass": true
+    },
+    {
+      "name": "attached c1 2042: actual source viewport retains whole aspect",
+      "pass": true
+    },
+    {
+      "name": "attached c1 2042: separate controls do not overlap",
+      "pass": true,
+      "overlaps": []
+    },
+    {
+      "name": "baseline c4 2042: controls on screen and 4 chapters retained",
+      "pass": true
+    },
+    {
+      "name": "baseline c4 2042: glyphs contained",
+      "pass": true
+    },
+    {
+      "name": "baseline c4 2042: actual source viewport retains whole aspect",
+      "pass": true
+    },
+    {
+      "name": "baseline c4 2042: separate controls do not overlap",
+      "pass": true,
+      "overlaps": []
+    },
+    {
+      "name": "compact c4 2042: controls on screen and 4 chapters retained",
+      "pass": true
+    },
+    {
+      "name": "compact c4 2042: glyphs contained",
+      "pass": true
+    },
+    {
+      "name": "compact c4 2042: actual source viewport retains whole aspect",
+      "pass": true
+    },
+    {
+      "name": "compact c4 2042: separate controls do not overlap",
+      "pass": true,
+      "overlaps": []
+    },
+    {
+      "name": "attached c4 2042: controls on screen and 4 chapters retained",
+      "pass": true
+    },
+    {
+      "name": "attached c4 2042: glyphs contained",
+      "pass": true
+    },
+    {
+      "name": "attached c4 2042: actual source viewport retains whole aspect",
+      "pass": true
+    },
+    {
+      "name": "attached c4 2042: separate controls do not overlap",
+      "pass": true,
+      "overlaps": []
+    }
+  ],
+  "browser": "156.0.8078.47",
+  "bundle": [
+    {
+      "url": "./assets/index-CTrqtaDU.js",
+      "status": 200,
+      "sha256": "70a48d047600b981f7317ff38b846d8e2e0e310e9bcd904339694e806423f92a"
+    },
+    {
+      "url": "./assets/index-C5txKLE_.css",
+      "status": 200,
+      "sha256": "db346cac5c7e39fe33b73b46b0186cf37cc411ed9643163849497c5f82cc11ae"
+    }
+  ],
+  "sourceHashesAfter": {
+    "src/App.tsx": "08826e7b9c2dfd1b7744c80fb3bd8a90a92c5a93c5df8a4f8a4299b42446d55e",
+    "src/styles/poetic-exhibition.css": "1cdb65f218de010009971efdc907c4dcf51f39fe9a04abdebe104185a34237a2",
+    "src/styles/scroll-2026.css": "fcedc1c4ce9a3b362b057ac4edff3e66e89a504481012d0f28f27d4937259075",
+    "src/scene/sourceViewport.ts": "70c848adf65a400cdff3582dd0616bf68ae39c0552a86548297d1d141f1e686e",
+    "src/scene/NarrativeSpace.ts": "472edaf832b01cd1e663865bc0c1014a8a564cf0eee8f0d3da8826f43fca34d2",
+    "src/data/poeticNarrative.ts": "a39fa947d28044efd1699ac5fc022b88f98f6b498097e39b672b673c677b74a9"
+  },
+  "sourceStable": true
+}

@@ -1,0 +1,106 @@
+{
+  "status": "passed",
+  "completedAt": "2026-10-22T23:43:23.321Z",
+  "scope": "Pure clock-classifier assertions and mocked-worklet structure; not native timing proof.",
+  "helperSha256": "c3ce6432133fa6403c40a7842473ee0894f8f2631d591289c47faa00017dd4c3",
+  "driverSha256": "181140fc7e9ee6304315fcece201524a7cb49128e40832e45d9dfccf5439ce6e",
+  "cases": [
+    {
+      "name": "stable",
+      "expectedValid": true,
+      "actualValid": true
+    },
+    {
+      "name": "initial isolated frozen tag",
+      "expectedValid": true,
+      "actualValid": true
+    },
+    {
+      "name": "middle isolated frozen tag",
+      "expectedValid": true,
+      "actualValid": true
+    },
+    {
+      "name": "four quantum constant frozen tag",
+      "expectedValid": true,
+      "actualValid": true
+    },
+    {
+      "name": "initial four quantum constant frozen tag",
+      "expectedValid": true,
+      "actualValid": true
+    },
+    {
+      "name": "terminal frozen tag",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "terminal four quantum frozen tag",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "consecutive offset stale with advancing label",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "positive offset",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "persistent offset from missed process",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "persistent negative offset",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "frozen then different recovery offset",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "ambiguous anchor",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "missing process",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "counter changed",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "process reorder",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "invalid NaN label",
+      "expectedValid": false,
+      "actualValid": false
+    }
+  ],
+  "structure": {
+    "frames": 12800,
+    "packets": 52,
+    "processCount": 100,
+    "sampleForSampleFloat32Equality": true,
+    "portAndPacketSequenceContinuous": true,
+    "absoluteAnchor": 4096,
+    "frozenRunLengths": [
+      1,
+      4
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "status": "prepared-awaiting-real-C7-freeze-not-acceptance",
+  "preparedAt": "2026-10-23T02:22:29.342Z",
+  "buildDirectory": "tmp/art-candidate-7-dist",
+  "expectedFreeze": "reports/art-renewal/art-candidate-7-build.json",
+  "checker": {
+    "canonical": "reports/art-renewal/validate-tour-recording.mjs",
+    "archive": "reports/art-renewal/candidate7-tour-checker.mjs",
+    "sha256": "a5a93ac8d84dd62db46abf596757607b27cad9372f4801e143d5539245dbdb47",
+    "fullRequired": 35,
+    "endpointObservationRequired": false
+  },
+  "previousChecker": {
+    "archive": "reports/art-renewal/candidate6-tour-checker.mjs",
+    "sha256": "33d1fc388507adcec7d0bf70fecd19b57ec4367edfb324528321415c5d402ed7"
+  },
+  "recorder": {
+    "mainSha256": "95e22c96a086aa62a4f47ab9c8731d1dd5324cc13207feabe63f89e3f4c51fa2",
+    "audioHelperSha256": "c3ce6432133fa6403c40a7842473ee0894f8f2631d591289c47faa00017dd4c3",
+    "modified": false
+  },
+  "guardTests": {
+    "explicitCandidate7CannotFallBackToOldStageOrC6Manifest": {
+      "path": "reports/art-renewal/candidate7-tour-flag-guard-negative-test/metadata-validation.json",
+      "sha256": "35d4897fd03b4e788ba63437cfdd6ef4fb0752756d4fa78bdfa38fac93504ccf",
+      "status": "expected-failure",
+      "candidate": 7,
+      "identityVerified": false,
+      "failedRequired": [
+        "C7-recorded-bundle-exactly-matches-explicit-freeze",
+        "C7-integrated-renderer-present-and-bound"
+      ],
+      "manifestUsed": "Actual C6 manifest, deliberately wrong. This verifies flag dispatch only; it is not the required old-stage versus actual C7-freeze negative control."
+    },
+    "competingFlags": {
+      "status": "expected-failure-before-recording-read",
+      "exit": 1
+    }
+  },
+  "actualC7IdentityNegativeControl": {
+    "status": "pending-real-C7-manifest",
+    "reportDirectory": "reports/art-renewal/candidate7-tour-negative-stage-test"
+  },
+  "commands": {
+    "soak": [
+      "node",
+      "scripts/validate-art-renewal-soak.mjs",
+      "--build-dir",
+      "tmp/art-candidate-7-dist"
+    ],
+    "six": [
+      "node",
+      "scripts/validate-art-renewal-final.mjs",
+      "--build-dir",
+      "tmp/art-candidate-7-dist"
+    ],
+    "seal": [
+      "node",
+      "reports/art-renewal/seal-candidate-runtime.mjs",
+      "--freeze",
+      "reports/art-renewal/art-candidate-7-build.json",
+      "--soak",
+      "<actual-C7-soak-report>",
+      "--final",
+      "<actual-C7-six-report>",
+      "--output",
+      "reports/art-renewal/candidate7-runtime-seal.json"
+    ],
+    "tour": [
+      "node",
+      "reports/art-renewal/validate-tour-recording.mjs",
+      "--run-dir",
+      "<actual-C7-tour>",
+      "--report-dir",
+      "<new-C7-tour-report-dir>",
+      "--candidate7-build-manifest",
+      "reports/art-renewal/art-candidate-7-build.json",
+      "--with-pcm"
+    ]
+  },
+  "plannedDriversNotYetFrozen": {
+    "scripts/validate-art-renewal-final.mjs": "e88d14d3046d9c05d8a8547cada81f17bfe47a664ea287ee11b5a23ceaec755a",
+    "scripts/validate-art-renewal-ui.mjs": "f978cf6666001687b5268c241798edff142ba2d804712f25294bff0ae285d58f",
+    "scripts/validate-peony-soundscape.mjs": "f34fa4d41a09e02ca7bf1cd0d1e7287baa3595b1f01377007e78cbbc26449687",
+    "scripts/validate-peony2-runtime.mjs": "36364a5356fb50472d1a0525d93b8ce5d80c78864a4001fb3a753d0f5f4e5d4f",
+    "scripts/validate-peony2-regressions.mjs": "a15c0085702817803ee2397525df42c3cb137f183365db5d05734a6911dc5e4b",
+    "scripts/validate-peony2-original-driver.mjs": "fa4e9b6196a9c6f9006c426f0e3353324437dac11cf6d07c807ea3ef89673e82",
+    "scripts/validate-peony2-journey-driver.mjs": "9d74b563a223080675f2e37edeff9d9e61afdeb23d5be956cf778e20586c7e5e",
+    "scripts/validate-peony2-settings-driver.mjs": "42fef886ed1d500ddfeb4bd83a0c5826e61ec5a649c76f9c02623fec6b695fce",
+    "scripts/validate-peony2-subpath-driver.mjs": "1041f8b91fe1ddab3c95326fa12804f66dabc602a2d07f8fe4a8434c5124808d"
+  },
+  "C6Baseline": {
+    "soak": "reports/art-renewal/soak/2026-10-23T01-00-02-558Z/validation.json",
+    "six": "reports/art-renewal/final-regressions/2026-10-23T01-44-13-093Z/validation.json",
+    "seal": "reports/art-renewal/candidate6-runtime-seal.json",
+    "sealSha256": "1ebd342f381ec8747f6725483df2451ba752de9761e671bd3279e4d0ab1f34bf"
+  },
+  "limits": "No C7 build, browser, soak, six-suite acceptance or film was run. No product/audio/recorder changes. After root supplies the actual frozen package, compare real manifest/hash set, run actual C7 identity negative control, then real13-minute soak and full14-minute six-suite chain. C6 results are baseline only."
+}

@@ -1,0 +1,244 @@
+{
+  "scope": "Offline original raw PCM bytes and diagnostic metadata; no sample removal/insertion/reordering.",
+  "run": "tmp/exhibition-tour/2026-10-22T23-16-37-522Z",
+  "rawSha256": "b7fcfe89970a3d5cdd7e80317c49c353242368fe1e36cce14286bfaca7c53124",
+  "rawFrames": 7873024,
+  "writtenFrames": 7873024,
+  "spanFrames": 7873024,
+  "verifiedPacketSHA": 2137,
+  "packetSHAMismatches": [],
+  "seqViolations": [],
+  "contextStates": [
+    {
+      "state": "running",
+      "currentTime": 0,
+      "performanceNow": 6854.899999991059
+    },
+    {
+      "state": "running",
+      "currentTime": 0,
+      "performanceNow": 6860.79999999702
+    },
+    {
+      "state": "closed",
+      "currentTime": 164.272,
+      "performanceNow": 171126.09999999404
+    }
+  ],
+  "loopStarts": [
+    {
+      "when": 0.30566666666666664,
+      "offset": 0,
+      "duration": 160,
+      "channels": 2,
+      "rate": 1
+    },
+    {
+      "when": 0.30566666666666664,
+      "offset": 0,
+      "duration": 160,
+      "channels": 1,
+      "rate": 1
+    },
+    {
+      "when": 0.30566666666666664,
+      "offset": 0,
+      "duration": 24,
+      "channels": 1,
+      "rate": 1
+    }
+  ],
+  "clockOriginMedian": 1792711004.835549,
+  "clockOriginSpreadSeconds": 0.0002613067626953125,
+  "anomalies": [
+    {
+      "id": 1,
+      "parts": {
+        "previous": {
+          "processSeq": 5083,
+          "currentFrame": 662528,
+          "currentTime": 13.802666666666667,
+          "frames": 128,
+          "fingerprint": "9a620e47",
+          "rawFrameOffset": 650496,
+          "rawFNV": "9a620e47",
+          "fingerprintMatchesRaw": true,
+          "counterContextFrame": 662528,
+          "nativeMinusCounterFrames": 0
+        },
+        "current": {
+          "processSeq": 5084,
+          "currentFrame": 662528,
+          "currentTime": 13.802666666666667,
+          "frames": 128,
+          "fingerprint": "65bc8d24",
+          "rawFrameOffset": 650624,
+          "rawFNV": "65bc8d24",
+          "fingerprintMatchesRaw": true,
+          "counterContextFrame": 662656,
+          "nativeMinusCounterFrames": -128
+        },
+        "next": {
+          "processSeq": 5085,
+          "currentFrame": 662784,
+          "currentTime": 13.808,
+          "frames": 128,
+          "fingerprint": "d1d48952",
+          "rawFrameOffset": 650752,
+          "rawFNV": "d1d48952",
+          "fingerprintMatchesRaw": true,
+          "counterContextFrame": 662784,
+          "nativeMinusCounterFrames": 0
+        }
+      },
+      "previousEqualsCurrentBitwise": false,
+      "currentEqualsNextBitwise": false,
+      "boundaryStep": 0.00016635050997138023,
+      "localDiffP99": 0.0002331618885364151,
+      "boundaryStepPercentile": 85.04456110365035,
+      "previousToCurrentRMSDifference": 0.001694855897665308
+    },
+    {
+      "id": 2,
+      "parts": {
+        "previous": {
+          "processSeq": 5084,
+          "currentFrame": 662528,
+          "currentTime": 13.802666666666667,
+          "frames": 128,
+          "fingerprint": "65bc8d24",
+          "rawFrameOffset": 650624,
+          "rawFNV": "65bc8d24",
+          "fingerprintMatchesRaw": true,
+          "counterContextFrame": 662656,
+          "nativeMinusCounterFrames": -128
+        },
+        "current": {
+          "processSeq": 5085,
+          "currentFrame": 662784,
+          "currentTime": 13.808,
+          "frames": 128,
+          "fingerprint": "d1d48952",
+          "rawFrameOffset": 650752,
+          "rawFNV": "d1d48952",
+          "fingerprintMatchesRaw": true,
+          "counterContextFrame": 662784,
+          "nativeMinusCounterFrames": 0
+        },
+        "next": {
+          "processSeq": 5086,
+          "currentFrame": 662912,
+          "currentTime": 13.810666666666666,
+          "frames": 128,
+          "fingerprint": "4ac9d03d",
+          "rawFrameOffset": 650880,
+          "rawFNV": "4ac9d03d",
+          "fingerprintMatchesRaw": true,
+          "counterContextFrame": 662912,
+          "nativeMinusCounterFrames": 0
+        }
+      },
+      "previousEqualsCurrentBitwise": false,
+      "currentEqualsNextBitwise": false,
+      "boundaryStep": 9.983312338590622e-05,
+      "localDiffP99": 0.00023259793952092877,
+      "boundaryStepPercentile": 50.06714686851422,
+      "previousToCurrentRMSDifference": 0.0018319301932501412
+    },
+    {
+      "id": 3,
+      "parts": {
+        "previous": {
+          "processSeq": 32800,
+          "currentFrame": 4210304,
+          "currentTime": 87.71466666666667,
+          "frames": 128,
+          "fingerprint": "e7c790b3",
+          "rawFrameOffset": 4198272,
+          "rawFNV": "e7c790b3",
+          "fingerprintMatchesRaw": true,
+          "counterContextFrame": 4210304,
+          "nativeMinusCounterFrames": 0
+        },
+        "current": {
+          "processSeq": 32801,
+          "currentFrame": 4210304,
+          "currentTime": 87.71466666666667,
+          "frames": 128,
+          "fingerprint": "36391085",
+          "rawFrameOffset": 4198400,
+          "rawFNV": "36391085",
+          "fingerprintMatchesRaw": true,
+          "counterContextFrame": 4210432,
+          "nativeMinusCounterFrames": -128
+        },
+        "next": {
+          "processSeq": 32802,
+          "currentFrame": 4210560,
+          "currentTime": 87.72,
+          "frames": 128,
+          "fingerprint": "55d720a6",
+          "rawFrameOffset": 4198528,
+          "rawFNV": "55d720a6",
+          "fingerprintMatchesRaw": true,
+          "counterContextFrame": 4210560,
+          "nativeMinusCounterFrames": 0
+        }
+      },
+      "previousEqualsCurrentBitwise": false,
+      "currentEqualsNextBitwise": false,
+      "boundaryStep": 5.9902435168623924e-05,
+      "localDiffP99": 0.0002907128422521055,
+      "boundaryStepPercentile": 34.30594554999389,
+      "previousToCurrentRMSDifference": 0.0010740185663792629
+    },
+    {
+      "id": 4,
+      "parts": {
+        "previous": {
+          "processSeq": 32801,
+          "currentFrame": 4210304,
+          "currentTime": 87.71466666666667,
+          "frames": 128,
+          "fingerprint": "36391085",
+          "rawFrameOffset": 4198400,
+          "rawFNV": "36391085",
+          "fingerprintMatchesRaw": true,
+          "counterContextFrame": 4210432,
+          "nativeMinusCounterFrames": -128
+        },
+        "current": {
+          "processSeq": 32802,
+          "currentFrame": 4210560,
+          "currentTime": 87.72,
+          "frames": 128,
+          "fingerprint": "55d720a6",
+          "rawFrameOffset": 4198528,
+          "rawFNV": "55d720a6",
+          "fingerprintMatchesRaw": true,
+          "counterContextFrame": 4210560,
+          "nativeMinusCounterFrames": 0
+        },
+        "next": {
+          "processSeq": 32803,
+          "currentFrame": 4210688,
+          "currentTime": 87.72266666666667,
+          "frames": 128,
+          "fingerprint": "e2506651",
+          "rawFrameOffset": 4198656,
+          "rawFNV": "e2506651",
+          "fingerprintMatchesRaw": true,
+          "counterContextFrame": 4210688,
+          "nativeMinusCounterFrames": 0
+        }
+      },
+      "previousEqualsCurrentBitwise": false,
+      "currentEqualsNextBitwise": false,
+      "boundaryStep": 9.700946975499392e-06,
+      "localDiffP99": 0.0002907128422521055,
+      "boundaryStepPercentile": 2.4783298742522284,
+      "previousToCurrentRMSDifference": 0.000721734346514694
+    }
+  ],
+  "limit": "Different actual PCM and normal local boundary steps exclude exact duplicated blocks and an exceptional raw amplitude discontinuity at those boundaries. They alone do not prove the source phase never skipped; independent known-reference evidence is still required."
+}

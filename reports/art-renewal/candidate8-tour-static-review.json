@@ -1,0 +1,40 @@
+{
+  "status": "static-review-complete-capture-still-blocked",
+  "checkedAt": "2026-10-23T03:56:21.799Z",
+  "scope": "Static source review and node syntax check only. No browser, WebGL page, recording, or encoder was started.",
+  "sha256": {
+    "tmp/candidate8-recipe/capture-bound-c8-tour.mjs": "1af1e955b825113e3c3b582a99a529740a8bda94e79311bcf761fdd083e4c492",
+    "scripts/capture-exhibition-tour.mjs": "95e22c96a086aa62a4f47ab9c8731d1dd5324cc13207feabe63f89e3f4c51fa2",
+    "scripts/exhibition-tour-audio.mjs": "c3ce6432133fa6403c40a7842473ee0894f8f2631d591289c47faa00017dd4c3",
+    "reports/art-renewal/candidate8-tour-checker.mjs": "e6a9a58bffba9e09768bb679b9edbc30003aed067c662d8e0f101e496a04e481",
+    "reports/art-renewal/validate-tour-recording.mjs": "e6a9a58bffba9e09768bb679b9edbc30003aed067c662d8e0f101e496a04e481",
+    "reports/art-renewal/art-candidate-8-build.json": "305dc8b9b429415093889642ae885ffe564cdd33f156edf30a637bac4a172ea9"
+  },
+  "wrapperChangesBeforeFirstRun": [
+    "Assert the original exact C8 manifest hash, not only before/after equality.",
+    "Always perform all831 source inputs, all744 package members, exhibition inventory, recorder/checker and wrapper final identity checks after a returned failed recorder as well as successful recording. Failures remain failed.",
+    "Attach child output and exit observers before the first report write."
+  ],
+  "recorderPreserved": [
+    "1920x1080 DPR1 actual unaccelerated browser interaction, real native master PCM, no external soundtrack.",
+    "Original passive screencast and audio helper bytes; no source clocks, original fields, renderer, sampler, or asset changes.",
+    "Original screenshot/PCM failures are preserved and close only the recorder-owned browser/context/server in finally.",
+    "Original four-chapter excerpt is not four complete chapter playbacks."
+  ],
+  "execution": [
+    "Set MDGS_PLAYWRIGHT_MODULE and MDGS_TEST_BROWSER to the established local modules/executable.",
+    "Set MDGS_FFMPEG and MDGS_FFPROBE to existing executables.",
+    "After explicit root/all-GPU release and the pending six-suite issue is resolved, run node tmp/candidate8-recipe/capture-bound-c8-tour.mjs exactly once.",
+    "After encoding, give the unique run directory to sound for fixed independent35 full-PCM audit, then perform separate strict encoded decode/visual review as root directs."
+  ],
+  "pending": [
+    "C8 six-suite actual failed at chapter3 half-window wait. Its original failed run remains unchanged. Root authorized a continuous pre-registered observation probe; no result is inferred here.",
+    "No final C8 tour exists yet. GPU release alone does not remove this acceptance gate.",
+    "A successful recorder and immutable hashes do not substitute for the independent35 audit or full encoded-media decode."
+  ],
+  "bounds": [
+    "CDP captured-composite timestamps and encoded30fps do not measure original painting presentation FPS.",
+    "Wrapper all-input hashes happen before/after capture, never during the quiet recorded interval.",
+    "No runtime API override or shader/clock instrumentation. The separate post-recording checker does not re-encode, repair, or reorder PCM."
+  ]
+}

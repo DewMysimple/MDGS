@@ -1,0 +1,187 @@
+{
+  "scope": "Actual CDP platform-font usage in an immutable old-font editorial candidate; not candidate 4, not a coverage or layout certification.",
+  "started": "2026-10-22T23:35:22.561Z",
+  "driverSha256": "db80d54d0b7df7d8db7b5ba9864a157ebae66639abf1c427394ad1913f29e4f2",
+  "buildDirectory": "tmp\\editorial-candidate-dist",
+  "before": {
+    "index.html": {
+      "bytes": 902,
+      "sha256": "9312802272a1976a4644881cacf20fa07a5d671b8314a7ef4614c9a984a8ddab"
+    },
+    "fonts/wenkai-web.woff2": {
+      "bytes": 242380,
+      "sha256": "1f74e7b3639ae956b92f0c3eed77bf3ce505025bf28a66bd8c330722001dc8ed"
+    },
+    "assets/flowerLetter-B3aCvX12.js": {
+      "bytes": 2326,
+      "sha256": "7b5f47e7b8f7d86d0b6984f130b54201a5e294ba13ed5a0be8373847a4cb6137"
+    },
+    "assets/index-FbgGj4Kq.js": {
+      "bytes": 526963,
+      "sha256": "3beadbe79d715d6554cba63b813ec0cf55ee47fb28f48582ad8d82554abf3c7b"
+    },
+    "assets/index-t_pps7dt.css": {
+      "bytes": 116585,
+      "sha256": "0c50aea2a4f6674638a9312f05d2f5e617776bf5e6c3f7fcd8f80782bad550df"
+    },
+    "assets/three-w1TnP4RH.js": {
+      "bytes": 481608,
+      "sha256": "598394f34bd207f0b60b007bdfca1f8f020fac83128efe1dee2d237eaa65c1d0"
+    }
+  },
+  "nodes": [
+    {
+      "name": "花事札记真实舟桥正文",
+      "chapterId": 2,
+      "selector": ".culture-looking p",
+      "text": "依次循花、舟、桥移目，看一场春色怎样把人们联系起来。",
+      "fontFamily": "\"MDGS Kai\", KaiTi, STKaiti, \"Kaiti SC\", serif",
+      "fontSize": "15px",
+      "displayed": true,
+      "fonts": [
+        {
+          "familyName": "KaiTi",
+          "postScriptName": "KaiTi",
+          "isCustomFont": false,
+          "glyphCount": 3
+        },
+        {
+          "familyName": "霞鶩文楷",
+          "postScriptName": "LXGWWenKai-Regular",
+          "isCustomFont": true,
+          "glyphCount": 23
+        }
+      ],
+      "usesCustomAndSystemFonts": true
+    },
+    {
+      "name": "新增年代参读正文（旧字体）",
+      "chapterId": 2,
+      "selector": ".culture-transcript-note p",
+      "text": "705年中宗复位，710年睿宗再度即位，712年传位玄宗。本卷以文学笔意串联花事，赏花风尚的流转跨越更长的时光。",
+      "fontFamily": "\"MDGS Kai\", KaiTi, STKaiti, \"Kaiti SC\", serif",
+      "fontSize": "15px",
+      "displayed": true,
+      "fonts": [
+        {
+          "familyName": "KaiTi",
+          "postScriptName": "KaiTi",
+          "isCustomFont": false,
+          "glyphCount": 2
+        },
+        {
+          "familyName": "霞鶩文楷",
+          "postScriptName": "LXGWWenKai-Regular",
+          "isCustomFont": true,
+          "glyphCount": 54
+        }
+      ],
+      "usesCustomAndSystemFonts": true
+    },
+    {
+      "name": "卷二卷末真实留笺按钮",
+      "chapterId": 2,
+      "selector": ".colophon-keepsake > span",
+      "text": "留一笺春色",
+      "fontFamily": "\"MDGS Kai\", KaiTi, STKaiti, \"Kaiti SC\", serif",
+      "fontSize": "14px",
+      "displayed": true,
+      "fonts": [
+        {
+          "familyName": "KaiTi",
+          "postScriptName": "KaiTi",
+          "isCustomFont": false,
+          "glyphCount": 1
+        },
+        {
+          "familyName": "霞鶩文楷",
+          "postScriptName": "LXGWWenKai-Regular",
+          "isCustomFont": true,
+          "glyphCount": 4
+        }
+      ],
+      "usesCustomAndSystemFonts": true
+    }
+  ],
+  "errors": [],
+  "browser": "156.0.8078.47",
+  "http": [
+    {
+      "path": "/",
+      "status": 200,
+      "sha256": "9312802272a1976a4644881cacf20fa07a5d671b8314a7ef4614c9a984a8ddab"
+    },
+    {
+      "path": "fonts/wenkai-web.woff2",
+      "status": 200,
+      "bytes": 242380,
+      "sha256": "1f74e7b3639ae956b92f0c3eed77bf3ce505025bf28a66bd8c330722001dc8ed",
+      "matchesBuild": true
+    },
+    {
+      "path": "assets/flowerLetter-B3aCvX12.js",
+      "status": 200,
+      "bytes": 2326,
+      "sha256": "7b5f47e7b8f7d86d0b6984f130b54201a5e294ba13ed5a0be8373847a4cb6137",
+      "matchesBuild": true
+    },
+    {
+      "path": "assets/index-FbgGj4Kq.js",
+      "status": 200,
+      "bytes": 526963,
+      "sha256": "3beadbe79d715d6554cba63b813ec0cf55ee47fb28f48582ad8d82554abf3c7b",
+      "matchesBuild": true
+    },
+    {
+      "path": "assets/index-t_pps7dt.css",
+      "status": 200,
+      "bytes": 116585,
+      "sha256": "0c50aea2a4f6674638a9312f05d2f5e617776bf5e6c3f7fcd8f80782bad550df",
+      "matchesBuild": true
+    },
+    {
+      "path": "assets/three-w1TnP4RH.js",
+      "status": 200,
+      "bytes": 481608,
+      "sha256": "598394f34bd207f0b60b007bdfca1f8f020fac83128efe1dee2d237eaa65c1d0",
+      "matchesBuild": true
+    }
+  ],
+  "primaryHref": "https://zh.wikisource.org/wiki/舊唐書/卷7",
+  "actualFallbackObserved": true,
+  "limitations": [
+    "Platform-font entries describe the real node as a whole; CDP does not assign each individual character to a font.",
+    "Previous glyph-cell geometry checks establish bounds and collision behavior, not complete use of a single custom font.",
+    "No FontFace.check coverage assertion is used.",
+    "The old 242380-byte build font is intentional. New public-font changes are outside this immutable-build evidence."
+  ],
+  "after": {
+    "index.html": {
+      "bytes": 902,
+      "sha256": "9312802272a1976a4644881cacf20fa07a5d671b8314a7ef4614c9a984a8ddab"
+    },
+    "fonts/wenkai-web.woff2": {
+      "bytes": 242380,
+      "sha256": "1f74e7b3639ae956b92f0c3eed77bf3ce505025bf28a66bd8c330722001dc8ed"
+    },
+    "assets/flowerLetter-B3aCvX12.js": {
+      "bytes": 2326,
+      "sha256": "7b5f47e7b8f7d86d0b6984f130b54201a5e294ba13ed5a0be8373847a4cb6137"
+    },
+    "assets/index-FbgGj4Kq.js": {
+      "bytes": 526963,
+      "sha256": "3beadbe79d715d6554cba63b813ec0cf55ee47fb28f48582ad8d82554abf3c7b"
+    },
+    "assets/index-t_pps7dt.css": {
+      "bytes": 116585,
+      "sha256": "0c50aea2a4f6674638a9312f05d2f5e617776bf5e6c3f7fcd8f80782bad550df"
+    },
+    "assets/three-w1TnP4RH.js": {
+      "bytes": 481608,
+      "sha256": "598394f34bd207f0b60b007bdfca1f8f020fac83128efe1dee2d237eaa65c1d0"
+    }
+  },
+  "buildUnchanged": true,
+  "completed": "2026-10-22T23:35:29.928Z",
+  "passed": true
+}

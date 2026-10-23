@@ -1,0 +1,378 @@
+{
+  "status": "passed",
+  "startedAt": "2026-10-23T04:02:18.713Z",
+  "scope": "Real current built App at a nested HTTP prefix: truthful original-digital wording, selected stems, opt-in, failure/retry, shared home/unfurl/four-scroll clock, actual cultural/encounter/keepsake reading buttons, chapter-four withdrawal, keyboard volume, injected document visibility pause signal, fade/disposal and cancelled requests. Existing 623.8s native sync is not repeated.",
+  "checks": [
+    {
+      "test": "runtime-excludes-own-candidates-and-audition-preserves-user-original-bytes",
+      "deployed": [
+        "peony-guzheng-original.mp3",
+        "peony-guzheng-score.json",
+        "peony-v3-atmosphere.mp3",
+        "peony-v3-breath.mp3",
+        "peony-v3-manifest.json",
+        "peony-v3-provenance.json",
+        "peony-v3-score.json",
+        "peony-v3-strings.mp3",
+        "provenance.json"
+      ],
+      "passed": true
+    },
+    {
+      "test": "truthful-wording-and-no-audio-before-explicit-gesture",
+      "labels": [
+        "开启原创数字声景"
+      ],
+      "passed": true
+    },
+    {
+      "test": "actual-mp3-failure-release-retry-three-independent-synchronized-stems",
+      "first": {
+        "enabled": true,
+        "playback": "playing",
+        "volume": 52,
+        "clock": 0,
+        "contextState": "running",
+        "sourceCount": 3,
+        "loopDurations": [
+          160,
+          160,
+          24
+        ],
+        "zone": "一庭春深",
+        "targetLevels": [
+          0.24,
+          0.12,
+          0.24
+        ],
+        "levels": [
+          0.006630373187363148,
+          0.003315186593681574,
+          0.006630373187363148
+        ],
+        "musicGain": 1,
+        "reading": false,
+        "sourceEpoch": 0.30566666666666664,
+        "effects": 0,
+        "cuesPlayed": 0,
+        "decodedBuffers": 3,
+        "retiredGraphs": 0,
+        "decodedBytes": 96768000
+      },
+      "native": [
+        {
+          "when": 0.30566666666666664,
+          "offset": 0,
+          "channels": 2,
+          "context": 1,
+          "rate": 1
+        },
+        {
+          "when": 0.30566666666666664,
+          "offset": 0,
+          "channels": 1,
+          "context": 1,
+          "rate": 1
+        },
+        {
+          "when": 0.30566666666666664,
+          "offset": 0,
+          "channels": 1,
+          "context": 1,
+          "rate": 1
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "real-home-unfurl-painting-keeps-one-music-clock",
+      "loading": {
+        "enabled": true,
+        "playback": "playing",
+        "volume": 52,
+        "clock": 3.006333333333333,
+        "contextState": "running",
+        "sourceCount": 3,
+        "loopDurations": [
+          160,
+          160,
+          24
+        ],
+        "zone": "徐徐启卷",
+        "targetLevels": [
+          0.2,
+          0.08,
+          0.26
+        ],
+        "levels": [
+          0.20181341469287872,
+          0.08185140788555145,
+          0.25897979736328125
+        ],
+        "musicGain": 1,
+        "reading": false,
+        "sourceEpoch": 0.30566666666666664,
+        "effects": 1,
+        "cuesPlayed": 1,
+        "decodedBuffers": 3,
+        "retiredGraphs": 0,
+        "decodedBytes": 96768000
+      },
+      "entered": {
+        "enabled": true,
+        "playback": "playing",
+        "volume": 52,
+        "clock": 7.694333333333334,
+        "contextState": "running",
+        "sourceCount": 3,
+        "loopDurations": [
+          160,
+          160,
+          24
+        ],
+        "zone": "徐徐启卷",
+        "targetLevels": [
+          0.2,
+          0.08,
+          0.26
+        ],
+        "levels": [
+          0.20000000298023224,
+          0.07999999821186066,
+          0.25999999046325684
+        ],
+        "musicGain": 1,
+        "reading": false,
+        "sourceEpoch": 0.30566666666666664,
+        "effects": 0,
+        "cuesPlayed": 1,
+        "decodedBuffers": 3,
+        "retiredGraphs": 0,
+        "decodedBytes": 96768000
+      },
+      "passed": true
+    },
+    {
+      "test": "keyboard-volume-real-native-master-gain-storage-and-desktop-popup",
+      "volume": {
+        "saved": "25",
+        "gain": 0.25
+      },
+      "popup": {
+        "rect": {
+          "x": 1072.8125,
+          "y": 705.6319580078125,
+          "width": 242,
+          "height": 142.796875,
+          "top": 705.6319580078125,
+          "right": 1314.8125,
+          "bottom": 848.4288330078125,
+          "left": 1072.8125
+        },
+        "fonts": [
+          16,
+          13,
+          12,
+          12,
+          12,
+          12,
+          13
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test": "actual-cultural-reading-button-ducks-six-decibels-and-releases",
+      "duckDb": -5.971529558739965,
+      "passed": true
+    },
+    {
+      "test": "actual-art-encounter-opening-shares-reading-duck",
+      "musicGain": 0.5028240084648132,
+      "passed": true
+    },
+    {
+      "test": "middle-two-scrolls-keep-original-music-clock-and-three-native-sources",
+      "chapters": [
+        {
+          "chapter": 2,
+          "clock": 17.115666666666666,
+          "sourceEpoch": 0.30566666666666664,
+          "sourceCount": 3
+        },
+        {
+          "chapter": 3,
+          "clock": 23.374333333333333,
+          "sourceEpoch": 0.30566666666666664,
+          "sourceCount": 3
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "real-fourth-scroll-authored-fall-withdraws-bright-layer-without-restart",
+      "bright": {
+        "enabled": true,
+        "playback": "playing",
+        "volume": 25,
+        "clock": 32.995666666666665,
+        "contextState": "running",
+        "sourceCount": 3,
+        "loopDurations": [
+          160,
+          160,
+          24
+        ],
+        "zone": "沉香亭畔",
+        "targetLevels": [
+          1.2,
+          0.7,
+          0.15
+        ],
+        "levels": [
+          1.19972825050354,
+          0.6998237371444702,
+          0.15003398060798645
+        ],
+        "musicGain": 1,
+        "reading": false,
+        "sourceEpoch": 0.30566666666666664,
+        "effects": 0,
+        "cuesPlayed": 5,
+        "decodedBuffers": 3,
+        "retiredGraphs": 0,
+        "decodedBytes": 96768000
+      },
+      "fall": {
+        "enabled": true,
+        "playback": "playing",
+        "volume": 25,
+        "clock": 37.345,
+        "contextState": "running",
+        "sourceCount": 3,
+        "loopDurations": [
+          160,
+          160,
+          24
+        ],
+        "zone": "盛景渐远",
+        "targetLevels": [
+          0.16,
+          0,
+          0.12
+        ],
+        "levels": [
+          0.16105917096138,
+          0.0007126462878659368,
+          0.12002970278263092
+        ],
+        "musicGain": 1,
+        "reading": false,
+        "sourceEpoch": 0.30566666666666664,
+        "effects": 0,
+        "cuesPlayed": 5,
+        "decodedBuffers": 3,
+        "retiredGraphs": 0,
+        "decodedBytes": 96768000
+      },
+      "passed": true
+    },
+    {
+      "test": "reverse-progress-seeks-do-not-queue-audio-or-recreate-stems",
+      "passed": true
+    },
+    {
+      "test": "actual-end-colophon-keepsake-button-shares-reading-duck",
+      "musicGain": 0.5028327107429504,
+      "passed": true
+    },
+    {
+      "test": "return-home-and-nested-prefix-keep-shared-clock-without-refetching-or-candidate-downloads",
+      "returned": {
+        "enabled": true,
+        "playback": "playing",
+        "volume": 25,
+        "clock": 44.254333333333335,
+        "contextState": "running",
+        "sourceCount": 3,
+        "loopDurations": [
+          160,
+          160,
+          24
+        ],
+        "zone": "一庭春深",
+        "targetLevels": [
+          0.24,
+          0.12,
+          0.24
+        ],
+        "levels": [
+          0.19271278381347656,
+          0.07611344009637833,
+          0.1951419562101364
+        ],
+        "musicGain": 1,
+        "reading": false,
+        "sourceEpoch": 0.30566666666666664,
+        "effects": 0,
+        "cuesPlayed": 6,
+        "decodedBuffers": 3,
+        "retiredGraphs": 0,
+        "decodedBytes": 96768000
+      },
+      "requests": [
+        "http://127.0.0.1:10538/exhibition/audio-qa/audio/peony-v3-strings.mp3",
+        "http://127.0.0.1:10538/exhibition/audio-qa/audio/peony-v3-breath.mp3",
+        "http://127.0.0.1:10538/exhibition/audio-qa/audio/peony-v3-atmosphere.mp3"
+      ],
+      "passed": true
+    },
+    {
+      "test": "document-visibility-signal-pauses-shared-audio-clock-and-resumes",
+      "passed": true
+    },
+    {
+      "test": "fade-closes-native-context-and-reenable-restores-all-three-loop-positions-from-cache",
+      "stoppedClock": 44.305,
+      "restoredStarts": [
+        {
+          "offset": 44.305,
+          "duration": 160
+        },
+        {
+          "offset": 44.305,
+          "duration": 160
+        },
+        {
+          "offset": 20.305,
+          "duration": 24
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "cancelled-real-app-stem-request-cannot-revive-playback",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "expectedHttpFailures": [
+    "breath stem 503"
+  ],
+  "buildHtmlSha256": "72cdd4f5a1336c4cc304e4ca396abcd8b55439cba2b800ced701b5c2d4821a6d",
+  "sourceSha256": {
+    "src/audio/PeonySoundscape.ts": "94210addff2b7874449d4adb8d5aa8bda1f3ae9fe51bffd466ba9a3811b7ca28",
+    "src/audio/cueMap.ts": "56fef96db0c48640311adcc075b4f7d0cefd2bf6f3a66ce8f0915c0375d25ebb",
+    "src/hooks/usePeonySoundscape.tsx": "051ac4479ebfb79734f753d4852103740e18b8b4dc4548608b3717186da621df",
+    "src/components/AudioController.tsx": "5e8bf3fb9a301eb14069d25b3b7b272c844ac079b347d88ea51df0c8071d9bd2",
+    "src/styles/audio-controller.css": "d4a3a424990cc726bade8e32256853d930ed5418fd5c3da0b183d8083c7db3ab",
+    "scripts/validate-peony-soundscape.mjs": "f34fa4d41a09e02ca7bf1cd0d1e7287baa3595b1f01377007e78cbbc26449687"
+  },
+  "buildJavascript": {
+    "flowerLetter-BZTW5oIg.js": "be4e4214bb27df809b300edb2687ff37ebdefbc16cf0ec24f184cf7f123f9399",
+    "index-C6Ev3QbP.js": "c926a02e78aaddd5d5b6444fc6d24fd70fd8dc01a86fb3d5634ae40b610405f1",
+    "three-3iQHpLLu.js": "e6d19400e10db394ec44148367bf37b19a27b9fe57a9af3a3c5d23e543c3cd04"
+  },
+  "url": "http://127.0.0.1:10538/exhibition/audio-qa/",
+  "completedAt": "2026-10-23T04:03:06.425Z"
+}

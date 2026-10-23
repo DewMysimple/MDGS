@@ -1,0 +1,640 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-22T23:58:58.588Z",
+  "mode": "lightweight-metadata",
+  "run": "tmp/exhibition-tour/2026-10-22T23-45-43-218Z",
+  "runId": "2026-10-22T23-45-43-218Z",
+  "scope": "Actual guided excerpt. This is an independent offline audit of one recorded package, not candidate4 final acceptance or an original-rendering FPS benchmark.",
+  "buildDirectory": "tmp/shader-warmup/base-dist",
+  "recorderSha256": {
+    "scripts/capture-exhibition-tour.mjs": "95e22c96a086aa62a4f47ab9c8731d1dd5324cc13207feabe63f89e3f4c51fa2",
+    "scripts/exhibition-tour-audio.mjs": "c3ce6432133fa6403c40a7842473ee0894f8f2631d591289c47faa00017dd4c3"
+  },
+  "checks": [
+    {
+      "name": "recording-success-and-zero-reported-errors",
+      "passed": true
+    },
+    {
+      "name": "recording-bundle-before-after-identical",
+      "passed": true
+    },
+    {
+      "name": "recorder-before-after-identical",
+      "passed": true
+    },
+    {
+      "name": "archived-recorder-exact-SHA:scripts/capture-exhibition-tour.mjs",
+      "passed": true
+    },
+    {
+      "name": "archived-recorder-exact-SHA:scripts/exhibition-tour-audio.mjs",
+      "passed": true
+    },
+    {
+      "name": "recorded-build-file-SHA:index.html",
+      "passed": true
+    },
+    {
+      "name": "recorded-build-file-SHA:assets/flowerLetter-B3aCvX12.js",
+      "passed": true
+    },
+    {
+      "name": "recorded-build-file-SHA:assets/index-FbgGj4Kq.js",
+      "passed": true
+    },
+    {
+      "name": "recorded-build-file-SHA:assets/index-t_pps7dt.css",
+      "passed": true
+    },
+    {
+      "name": "recorded-build-file-SHA:assets/three-w1TnP4RH.js",
+      "passed": true
+    },
+    {
+      "name": "base-build-bundle-matches-recorded-build-binding",
+      "passed": true
+    },
+    {
+      "name": "new-font-matches-build-binding",
+      "passed": true
+    },
+    {
+      "name": "new-date-note-present-in-actual-JS",
+      "passed": true
+    },
+    {
+      "name": "base-JS-has-no-warmup-prototype-marker",
+      "passed": true
+    },
+    {
+      "name": "actual-PCM-file-bytes-equal-all-reported-counts",
+      "passed": true
+    },
+    {
+      "name": "actual-process-count-and-absolute-range",
+      "passed": true
+    },
+    {
+      "name": "zero-reported-packet-and-native-audit-issues",
+      "passed": true
+    },
+    {
+      "name": "all-packets-written-and-counted",
+      "passed": true
+    },
+    {
+      "name": "independent-packet-process-and-binding-sequences",
+      "passed": true
+    },
+    {
+      "name": "independent-every-process-clock-and-original-labels",
+      "passed": true
+    },
+    {
+      "name": "actual-three-loop-starts-share-time-offset-and-rate",
+      "passed": true
+    },
+    {
+      "name": "tap-started-before-all-music-loops",
+      "passed": true
+    },
+    {
+      "name": "context-closed-and-tail-PCM-reaches-actual-final-context-frame",
+      "passed": true
+    },
+    {
+      "name": "independent-output-epoch-median-spread-and-start-map",
+      "passed": true
+    },
+    {
+      "name": "video-audio-start-offset-is-same-clock-mapping",
+      "passed": true
+    },
+    {
+      "name": "all-source-frame-files-present-and-timestamps-strict",
+      "passed": true
+    },
+    {
+      "name": "ffconcat-preserves-recorded-time-intervals",
+      "passed": true
+    },
+    {
+      "name": "all-18-action-subtitles-exact-text-timecodes-bounds",
+      "passed": true
+    },
+    {
+      "name": "independent-ffprobe-exit-zero",
+      "passed": true
+    },
+    {
+      "name": "actual-H264-full-HD-30fps-and-stereo-48k-AAC",
+      "passed": true
+    },
+    {
+      "name": "actual-container-and-stream-durations-within-one-video-frame",
+      "passed": true
+    }
+  ],
+  "driverSha256": "34bec725a8aef0afe1e2e4d7153cba490bab062f20d3e173e76282c32f7021f7",
+  "packageIdentity": {
+    "role": "Original-renderer base build with new Wenkai subset and chapter2 curatorial date note; not candidate3-identical and not C4 final movie.",
+    "buildBinding": "tmp/shader-warmup/build-binding.json",
+    "buildBindingSha256": "309c5a5ac32833a4b9b37d04b9b4910360eebd523fceeffec1a93f738fdc63b9",
+    "originalRendererSha256": "0f06fcaf95f2ea7566c424f2b8204b6ac0f41ffbba799be408a4f72fc29d11d5",
+    "fontSha256": "c619ddc07c72b9afca0ab20b1e33ed1a67c974ae3a7d1ec44de611895a79f59d",
+    "dateNoteSourceSha256": "2984b509b75c611f9462d518f7c2cc64cd32fe1a90b98bd4af0c16d3c91e91eb"
+  },
+  "audio": {
+    "actualFrames": 7912320,
+    "actualBytes": 63298560,
+    "sampleRate": 48000,
+    "durationSeconds": 164.84,
+    "processCount": 61815,
+    "packetCount": 2146,
+    "nativeFrozenTagRuns": 0,
+    "absoluteStartFrame": 12544,
+    "absoluteEndFrame": 7924864,
+    "outputClockEpochSpreadSeconds": 0.0002372264862060547,
+    "loopStarts": [
+      {
+        "when": 0.3163333333333333,
+        "offset": 0,
+        "duration": 160,
+        "channels": 2,
+        "rate": 1
+      },
+      {
+        "when": 0.3163333333333333,
+        "offset": 0,
+        "duration": 160,
+        "channels": 1,
+        "rate": 1
+      },
+      {
+        "when": 0.3163333333333333,
+        "offset": 0,
+        "duration": 24,
+        "channels": 1,
+        "rate": 1
+      }
+    ],
+    "sourceLoopCyclesReached": [
+      1,
+      1,
+      6
+    ],
+    "nativeContextFinalState": {
+      "state": "closed",
+      "currentTime": 165.10133333333334,
+      "performanceNow": 171949.70000000298
+    },
+    "videoOffsetSeconds": 4.1582558155059814,
+    "millisecondAdelayQuantizationErrorSeconds": -0.00025581550598108294,
+    "videoTailAfterRawSoundSeconds": 0.912534236907959
+  },
+  "video": {
+    "wallDurationSeconds": 169.91078996658325,
+    "sourceCompositedFrameCount": 4159,
+    "encodedFrameCount": 5097,
+    "encodedVideoSeconds": 169.9,
+    "encodedAudioSeconds": 169.911,
+    "containerSeconds": 169.911,
+    "frameRate": "30/1",
+    "sourceFrameGapMaxSeconds": 3.072158098220825,
+    "largestSourceFrameIntervals": [
+      {
+        "seconds": 3.072158098220825,
+        "from": 58.8563289642334,
+        "to": 61.928487062454224,
+        "previous": "frames/001432.jpg",
+        "next": "frames/001433.jpg",
+        "action": {
+          "label": "展开第3卷",
+          "epoch": 1792712804.916,
+          "phase": "SCROLL_VIEWER",
+          "chapter": "2",
+          "progress": "0.112506"
+        },
+        "chapterContext": 3,
+        "subtitleSegments": [
+          {
+            "number": 9,
+            "label": "展开第3卷",
+            "startMs": 58347,
+            "endMs": 62847
+          }
+        ]
+      },
+      {
+        "seconds": 1.1666710376739502,
+        "from": 34.92262601852417,
+        "to": 36.08929705619812,
+        "previous": "frames/000831.jpg",
+        "next": "frames/000832.jpg",
+        "action": {
+          "label": "展开第2卷",
+          "epoch": 1792712780.977,
+          "phase": "SCROLL_VIEWER",
+          "chapter": "1",
+          "progress": "0.651009"
+        },
+        "chapterContext": 2,
+        "subtitleSegments": [
+          {
+            "number": 6,
+            "label": "展开第2卷",
+            "startMs": 34408,
+            "endMs": 38908
+          }
+        ]
+      },
+      {
+        "seconds": 0.638901948928833,
+        "from": 86.39544701576233,
+        "to": 87.03434896469116,
+        "previous": "frames/002004.jpg",
+        "next": "frames/002005.jpg",
+        "action": {
+          "label": "展开第4卷",
+          "epoch": 1792712832.449,
+          "phase": "SCROLL_VIEWER",
+          "chapter": "3",
+          "progress": "0.580552"
+        },
+        "chapterContext": 4,
+        "subtitleSegments": [
+          {
+            "number": 12,
+            "label": "展开第4卷",
+            "startMs": 85880,
+            "endMs": 90380
+          }
+        ]
+      },
+      {
+        "seconds": 0.6222341060638428,
+        "from": 8.700121879577637,
+        "to": 9.32235598564148,
+        "previous": "frames/000224.jpg",
+        "next": "frames/000225.jpg",
+        "action": {
+          "label": "启卷 · 入画",
+          "epoch": 1792712754.506,
+          "phase": "HOME"
+        },
+        "chapterContext": 1,
+        "subtitleSegments": [
+          {
+            "number": 3,
+            "label": "启卷 · 入画",
+            "startMs": 7937,
+            "endMs": 12437
+          }
+        ]
+      },
+      {
+        "seconds": 0.4777660369873047,
+        "from": 11.027910947799683,
+        "to": 11.505676984786987,
+        "previous": "frames/000240.jpg",
+        "next": "frames/000241.jpg",
+        "action": {
+          "label": "启卷 · 入画",
+          "epoch": 1792712754.506,
+          "phase": "HOME"
+        },
+        "chapterContext": 1,
+        "subtitleSegments": [
+          {
+            "number": 3,
+            "label": "启卷 · 入画",
+            "startMs": 7937,
+            "endMs": 12437
+          }
+        ]
+      },
+      {
+        "seconds": 0.4166910648345947,
+        "from": 10.355661869049072,
+        "to": 10.772352933883667,
+        "previous": "frames/000234.jpg",
+        "next": "frames/000235.jpg",
+        "action": {
+          "label": "启卷 · 入画",
+          "epoch": 1792712754.506,
+          "phase": "HOME"
+        },
+        "chapterContext": 1,
+        "subtitleSegments": [
+          {
+            "number": 3,
+            "label": "启卷 · 入画",
+            "startMs": 7937,
+            "endMs": 12437
+          }
+        ]
+      }
+    ],
+    "chapterMaximumSourceFrameIntervals": [
+      {
+        "chapter": 1,
+        "largestInterval": {
+          "seconds": 0.6222341060638428,
+          "from": 8.700121879577637,
+          "to": 9.32235598564148,
+          "previous": "frames/000224.jpg",
+          "next": "frames/000225.jpg",
+          "action": {
+            "label": "启卷 · 入画",
+            "epoch": 1792712754.506,
+            "phase": "HOME"
+          },
+          "chapterContext": 1,
+          "subtitleSegments": [
+            {
+              "number": 3,
+              "label": "启卷 · 入画",
+              "startMs": 7937,
+              "endMs": 12437
+            }
+          ]
+        }
+      },
+      {
+        "chapter": 2,
+        "largestInterval": {
+          "seconds": 1.1666710376739502,
+          "from": 34.92262601852417,
+          "to": 36.08929705619812,
+          "previous": "frames/000831.jpg",
+          "next": "frames/000832.jpg",
+          "action": {
+            "label": "展开第2卷",
+            "epoch": 1792712780.977,
+            "phase": "SCROLL_VIEWER",
+            "chapter": "1",
+            "progress": "0.651009"
+          },
+          "chapterContext": 2,
+          "subtitleSegments": [
+            {
+              "number": 6,
+              "label": "展开第2卷",
+              "startMs": 34408,
+              "endMs": 38908
+            }
+          ]
+        }
+      },
+      {
+        "chapter": 3,
+        "largestInterval": {
+          "seconds": 3.072158098220825,
+          "from": 58.8563289642334,
+          "to": 61.928487062454224,
+          "previous": "frames/001432.jpg",
+          "next": "frames/001433.jpg",
+          "action": {
+            "label": "展开第3卷",
+            "epoch": 1792712804.916,
+            "phase": "SCROLL_VIEWER",
+            "chapter": "2",
+            "progress": "0.112506"
+          },
+          "chapterContext": 3,
+          "subtitleSegments": [
+            {
+              "number": 9,
+              "label": "展开第3卷",
+              "startMs": 58347,
+              "endMs": 62847
+            }
+          ]
+        }
+      },
+      {
+        "chapter": 4,
+        "largestInterval": {
+          "seconds": 0.638901948928833,
+          "from": 86.39544701576233,
+          "to": 87.03434896469116,
+          "previous": "frames/002004.jpg",
+          "next": "frames/002005.jpg",
+          "action": {
+            "label": "展开第4卷",
+            "epoch": 1792712832.449,
+            "phase": "SCROLL_VIEWER",
+            "chapter": "3",
+            "progress": "0.580552"
+          },
+          "chapterContext": 4,
+          "subtitleSegments": [
+            {
+              "number": 12,
+              "label": "展开第4卷",
+              "startMs": 85880,
+              "endMs": 90380
+            }
+          ]
+        }
+      }
+    ],
+    "groupingMethod": "Nearest preceding action marker. 展开第N卷 belongs to target chapter N; this is not scene/pixel recognition.",
+    "caution": "Screencast timestamps describe captured composited frames; long holds are retained by concat/fps duplication. They do not measure original painting presentation FPS or prove the cause of a hold."
+  },
+  "subtitles": {
+    "count": 18,
+    "encoding": "UTF-8",
+    "burnedIntoVideo": false,
+    "first": {
+      "number": 1,
+      "startMs": 0,
+      "endMs": 4124,
+      "label": "以花为引 · 序厅"
+    },
+    "last": {
+      "number": 18,
+      "startMs": 163409,
+      "endMs": 167909,
+      "label": "收卷 · 归于画境"
+    }
+  },
+  "actualFfprobe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1080,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9",
+        "pix_fmt": "yuvj420p",
+        "level": 40,
+        "color_range": "pc",
+        "color_space": "bt470bg",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/15360",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 2609664,
+        "duration": "169.900000",
+        "bit_rate": "6005590",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "5097",
+        "extradata_size": 51,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc62.11.100 libx264"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 8155728,
+        "duration": "169.911000",
+        "bit_rate": "185854",
+        "nb_frames": "7966",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ],
+    "format": {
+      "filename": "E:\\数字媒体竞赛\\gitProject\\MDGS\\tmp\\exhibition-tour\\2026-10-22T23-45-43-218Z\\国色长卷-导览录像.mp4",
+      "nb_streams": 2,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "169.911000",
+      "size": "131678909",
+      "bit_rate": "6199900",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf62.3.100"
+      }
+    }
+  },
+  "evidenceFiles": {
+    "recording.json": {
+      "bytes": 9667,
+      "sha256": "4158b84e0a5053cc31e459d163d2c48aa749559014a3fb5796ac65a82ba704f0"
+    },
+    "audio-clock.json": {
+      "bytes": 26994000,
+      "sha256": "d13fd351ba24f4d45eafd80a999ca84d1a910c3714c35516753001435a8d2e1f"
+    },
+    "frames.json": {
+      "bytes": 319781,
+      "sha256": "098472f0c257edd950c625a822fec56fa3a96e366476eadf8cab2810a9ad11f8"
+    },
+    "frames.ffconcat": {
+      "bytes": 178883,
+      "sha256": "a76eaef207d0c0b26a843fe95c46ab59884c9b6e85ed9b1e158312dd5223de8f"
+    },
+    "导览字幕.srt": {
+      "bytes": 1109,
+      "sha256": "d93e03600726dffe03d9e1ee306ffe6881da589d1b17fa91c689255aa8bb738e"
+    },
+    "国色长卷·余韵花笺.png": {
+      "bytes": 3152365,
+      "sha256": "243e56a769bb3ccd302190c2c2e5134989ffefb598f6e7439d97b28da74a3caf"
+    }
+  },
+  "limits": [
+    "One actual browser/recording run only; not candidate4 final film.",
+    "Actual WebAudio PCM was retained; final JPEG/H264/AAC movie is lossy.",
+    "No browser, FFmpeg re-encode, full encoded media decode, perceptual listening or original-artwork pixel acceptance in this audit.",
+    "SRT is a separate sidecar, not a subtitle track or burned-in text.",
+    "Clock mapping is independently checked, not a sample-accurate video synchronization claim.",
+    "Original failed App/reference runs remain failed and unchanged."
+  ],
+  "summary": {
+    "passed": 31,
+    "total": 31
+  }
+}

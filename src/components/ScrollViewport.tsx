@@ -1,13 +1,17 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { SceneRenderer } from '../scene/SceneRenderer';
 import type { ScenePreparationState } from '../scene/SceneRenderer';
 import type { SceneManifest } from '../types';
 import type { NarrativeSpace } from '../scene/NarrativeSpace';
 import { dragGlide, wheelProgress } from '../hooks/scrollMotion';
+import type { ArtworkAnchorSpec, ProjectedArtAnchor } from '../data/artEncounters';
+import { releaseArtworkSnapshot, type ArtworkSnapshot } from '../scene/artworkSnapshot';
 
 export type { ScenePreparationState } from '../scene/SceneRenderer';
 
 export interface ViewportMotionState { enabled: boolean; reducedMotion: boolean; supported: boolean }
+export interface ScrollPresentationHandle { capture: () => Promise<ArtworkSnapshot> }
+const noArtworkAnchors: readonly ArtworkAnchorSpec[] = [];
 
 export interface ScrollViewportProps {
   chapterId: number; progress: number; onNudge: (delta: number) => void;
@@ -15,20 +19,32 @@ export interface ScrollViewportProps {
   onManifest?: (manifest: SceneManifest) => void;
   motionEnabled: boolean; onMotionState?: (state: ViewportMotionState) => void;
   interactive?: boolean; retryKey?: number;
+  preparationCancelled?: boolean;
   onPreparation?: (state: ScenePreparationState) => void;
   onReady?: () => void;
   onNarrativePlacement?: (placement: NarrativeSpace) => void;
   wheelSpeed?: number;
+  artworkAnchors?: readonly ArtworkAnchorSpec[];
+  onArtworkAnchors?: (anchors: ProjectedArtAnchor[]) => void;
+  onPresentationHandle?: (handle: ScrollPresentationHandle | null) => void;
+  onPresentationSnapshot?: (snapshot: ArtworkSnapshot) => void;
+  onPresentationError?: (message: string) => void;
+  playbackActive?: boolean;
 }
 
 export default function ScrollViewport({ chapterId, progress, motionEnabled, onMotionState, onNudge, onSeek, onManualInput, onManifest,
-  interactive = true, retryKey = 0, onPreparation, onReady, onNarrativePlacement, wheelSpeed = 0.5 }: ScrollViewportProps) {
+  interactive = true, retryKey = 0, preparationCancelled = false, onPreparation, onReady, onNarrativePlacement, wheelSpeed = 0.5, artworkAnchors = noArtworkAnchors, onArtworkAnchors,
+  onPresentationHandle, onPresentationSnapshot, onPresentationError, playbackActive = false }: ScrollViewportProps) {
   const host = useRef<HTMLDivElement>(null);
   const engine = useRef<SceneRenderer | null>(null);
-  const actions = useRef({ onNudge, onSeek, onManualInput, onManifest, onMotionState, onPreparation, onReady, onNarrativePlacement });
-  actions.current = { onNudge, onSeek, onManualInput, onManifest, onMotionState, onPreparation, onReady, onNarrativePlacement };
+  const actions = useRef({ onNudge, onSeek, onManualInput, onManifest, onMotionState, onPreparation, onReady, onNarrativePlacement, onArtworkAnchors, onPresentationHandle, onPresentationSnapshot, onPresentationError });
+  actions.current = { onNudge, onSeek, onManualInput, onManifest, onMotionState, onPreparation, onReady, onNarrativePlacement, onArtworkAnchors, onPresentationHandle, onPresentationSnapshot, onPresentationError };
+  const capturePrepared = useRef<(() => void) | null>(null);
+  const artworkAnchorsRef = useRef(artworkAnchors); artworkAnchorsRef.current = artworkAnchors;
   const interactiveRef = useRef(interactive);
   interactiveRef.current = interactive;
+  const preparationCancelledRef = useRef(preparationCancelled);
+  preparationCancelledRef.current = preparationCancelled;
   const wheelSpeedRef = useRef(wheelSpeed);
   wheelSpeedRef.current = wheelSpeed;
   const [status, setStatus] = useState<string | null>('正在展卷');
@@ -43,6 +59,7 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
   const inertia = useRef(0);
   const progressRef = useRef(progress);
   progressRef.current = progress;
+  const playbackRef = useRef(playbackActive); playbackRef.current = playbackActive;
 
   useEffect(() => { setRetryCount(0); retryFocus.current = false; }, [chapterId]);
 
@@ -50,6 +67,22 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
     const element = host.current!;
     let renderer: SceneRenderer;
     let alive = true;
+    let snapshotDispatched = false;
+    let firstFramePresented = false;
+    const captureReadyFrame = () => {
+      if (!alive || !firstFramePresented || snapshotDispatched || !actions.current.onPresentationSnapshot) return;
+      snapshotDispatched = true;
+      renderer.captureArtworkSnapshot().then(snapshot => {
+        if (alive && actions.current.onPresentationSnapshot) {
+          try { actions.current.onPresentationSnapshot(snapshot); }
+          catch (reason) { releaseArtworkSnapshot(snapshot); throw reason; }
+        }
+        else releaseArtworkSnapshot(snapshot);
+      }).catch(reason => {
+        if (alive && reason.name !== 'AbortError') actions.current.onPresentationError?.(reason.message || '画心暂未齐备，请重新展卷。');
+      });
+    };
+    capturePrepared.current = captureReadyFrame;
     let unsubscribeMotion: (() => void) | undefined;
     setStatus('正在展卷'); setError(false); setReady(false);
     try {
@@ -63,10 +96,14 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
       }, state => {
         if (!alive) return;
         actions.current.onPreparation?.(state);
-        if (state.stage === 'ready') { setReady(true); actions.current.onReady?.(); }
-      }, placement=> { if(alive) actions.current.onNarrativePlacement?.(placement); });
+        if (state.stage === 'ready') { firstFramePresented = true; setReady(true); actions.current.onReady?.(); captureReadyFrame(); }
+      }, placement=> { if(alive) actions.current.onNarrativePlacement?.(placement); }, anchors => { if (alive) actions.current.onArtworkAnchors?.(anchors); });
       engine.current = renderer;
+      if (preparationCancelledRef.current) renderer.cancelPreparation();
+      actions.current.onPresentationHandle?.({ capture: () => renderer.captureArtworkSnapshot() });
+      renderer.setArtworkAnchors(artworkAnchorsRef.current);
       renderer.setPreparationActive(!interactiveRef.current);
+      renderer.setNarrativePlaybackActive(playbackRef.current);
       if (element.clientWidth && element.clientHeight) renderer.resize(element.clientWidth, element.clientHeight);
       renderer.setMotionEnabled(motionRef.current);
       unsubscribeMotion = renderer.subscribeMotionState(state => { if (alive) actions.current.onMotionState?.(state); });
@@ -109,6 +146,8 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
     document.addEventListener('visibilitychange', onVisibility);
     return () => {
       alive = false; observer.disconnect();
+      if (capturePrepared.current === captureReadyFrame) capturePrepared.current = null;
+      actions.current.onPresentationHandle?.(null);
       unsubscribeMotion?.();
       element.removeEventListener('wheel', wheel);
       document.removeEventListener('visibilitychange', onVisibility);
@@ -117,7 +156,12 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
     };
   }, [chapterId, reloadKey, retryKey]);
 
+  useEffect(() => { if (ready && onPresentationSnapshot) capturePrepared.current?.(); }, [ready, onPresentationSnapshot]);
+
   useEffect(() => { engine.current?.setProgress(progress); }, [progress]);
+  useLayoutEffect(() => { if (preparationCancelled) engine.current?.cancelPreparation(); }, [preparationCancelled]);
+  useEffect(() => { engine.current?.setNarrativePlaybackActive(playbackActive); }, [playbackActive]);
+  useEffect(() => { engine.current?.setArtworkAnchors(artworkAnchors); }, [artworkAnchors]);
   useEffect(() => { engine.current?.setMotionEnabled(motionEnabled); }, [motionEnabled]);
   useEffect(() => {
     engine.current?.setPreparationActive(!interactive);

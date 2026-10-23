@@ -1,0 +1,882 @@
+{
+  "at": "2026-10-23T02:40:47.568Z",
+  "baseCommit": "e420f0e9b6d822df216a3b62ae71cd1fbca985f0",
+  "driver": "reports/art-renewal/poetic-narrative/validate.cjs",
+  "driverSha256": "e4c19dc750852aacf9e4ae42b200aa022557044abafbcd44a23fe7d0660275b4",
+  "sourceFile": "src/data/poeticNarrative.ts",
+  "sourceSha256": "a39fa947d28044efd1699ac5fc022b88f98f6b498097e39b672b673c677b74a9",
+  "originalFile": "src/data/newNarrative.ts",
+  "originalSha256": "ef6dcbc6109b9e391bb712856785c72807a29baf337c0894bf5e97482975ba3a",
+  "sourceNotes": {
+    "authorship": "全部heading与text为当代展览新题，非古诗录文，不替改25段原作正文。",
+    "edition": "peony-2.0-2026-10-23",
+    "timing": "使用传入的真实stop.progress与sourceDurationSeconds；长镜的两句分别留出纯画，短镜按同一语境并入邻景，第四卷情绪转折不跨界合并。",
+    "chapters": {
+      "1": "火焰贬花明确标作传说。欧阳修北宋《洛阳牡丹记》仅作花事记忆的文献参读，不把传说写成史实，也不新增首次栽培等绝对断代。",
+      "2": "宫墙、花舟桥、宴游与静赏按本作画面展开；唐代春游为艺术化叙事。北宋风俗只跨时代参读，不作唐代具体风俗的同时代证明。",
+      "3": "花与衣裳、锦面、器物的联系为艺术化联想，不模拟或宣称特定织造技法；吉祥寓意可参读国博辽代牡丹纹尊，不将该藏品误作唐代器物。",
+      "4": "沉香亭题诗按文学典故理解。第五停点即source progress 0.4252362423568649起转向离散、渐冷、追忆，末景表达诗意与文明记忆的延续。"
+    },
+    "references": [
+      {
+        "title": "欧阳修《洛阳牡丹记》",
+        "url": "https://zh.wikisource.org/wiki/洛陽牡丹記_(歐陽修)"
+      },
+      {
+        "title": "北京市园林绿化局：牡丹文化、传说与李白诗文",
+        "url": "https://yllhj.beijing.gov.cn/ztxx/bjhx/hhzs/201804/t20180425_118611.shtml"
+      },
+      {
+        "title": "中国国家博物馆：赤峰窑白釉黑彩剔划牡丹纹尊",
+        "url": "https://www.chnmuseum.cn/zp/zpml/csp/202203/t20220309_254242.shtml"
+      },
+      {
+        "title": "大都会艺术博物馆：Chinese Handscrolls",
+        "url": "https://www.metmuseum.org/essays/chinese-handscrolls"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "25 original paragraphs unchanged from HEAD",
+      "pass": true
+    },
+    {
+      "name": "original paragraph count is 25",
+      "pass": true
+    },
+    {
+      "name": "chapter 1: source duration matches endpoints",
+      "pass": true
+    },
+    {
+      "name": "chapter 1: input stops untouched",
+      "pass": true
+    },
+    {
+      "name": "chapter 1: every source stop represented",
+      "pass": true
+    },
+    {
+      "name": "chapter 1: 12–26 Han characters",
+      "pass": true
+    },
+    {
+      "name": "chapter 1: 3.5–8 visible seconds",
+      "pass": true
+    },
+    {
+      "name": "chapter 1: ordered and within source film",
+      "pass": true
+    },
+    {
+      "name": "chapter 1: 0.5–2 seconds of picture between cues and at ending",
+      "pass": true
+    },
+    {
+      "name": "chapter 1: exact manual source-stop seeks immediately readable",
+      "pass": true
+    },
+    {
+      "name": "chapter 2: source duration matches endpoints",
+      "pass": true
+    },
+    {
+      "name": "chapter 2: input stops untouched",
+      "pass": true
+    },
+    {
+      "name": "chapter 2: every source stop represented",
+      "pass": true
+    },
+    {
+      "name": "chapter 2: 12–26 Han characters",
+      "pass": true
+    },
+    {
+      "name": "chapter 2: 3.5–8 visible seconds",
+      "pass": true
+    },
+    {
+      "name": "chapter 2: ordered and within source film",
+      "pass": true
+    },
+    {
+      "name": "chapter 2: 0.5–2 seconds of picture between cues and at ending",
+      "pass": true
+    },
+    {
+      "name": "chapter 2: exact manual source-stop seeks immediately readable",
+      "pass": true
+    },
+    {
+      "name": "chapter 3: source duration matches endpoints",
+      "pass": true
+    },
+    {
+      "name": "chapter 3: input stops untouched",
+      "pass": true
+    },
+    {
+      "name": "chapter 3: every source stop represented",
+      "pass": true
+    },
+    {
+      "name": "chapter 3: 12–26 Han characters",
+      "pass": true
+    },
+    {
+      "name": "chapter 3: 3.5–8 visible seconds",
+      "pass": true
+    },
+    {
+      "name": "chapter 3: ordered and within source film",
+      "pass": true
+    },
+    {
+      "name": "chapter 3: 0.5–2 seconds of picture between cues and at ending",
+      "pass": true
+    },
+    {
+      "name": "chapter 3: exact manual source-stop seeks immediately readable",
+      "pass": true
+    },
+    {
+      "name": "chapter 4: source duration matches endpoints",
+      "pass": true
+    },
+    {
+      "name": "chapter 4: input stops untouched",
+      "pass": true
+    },
+    {
+      "name": "chapter 4: every source stop represented",
+      "pass": true
+    },
+    {
+      "name": "chapter 4: 12–26 Han characters",
+      "pass": true
+    },
+    {
+      "name": "chapter 4: 3.5–8 visible seconds",
+      "pass": true
+    },
+    {
+      "name": "chapter 4: ordered and within source film",
+      "pass": true
+    },
+    {
+      "name": "chapter 4: 0.5–2 seconds of picture between cues and at ending",
+      "pass": true
+    },
+    {
+      "name": "chapter 4: exact manual source-stop seeks immediately readable",
+      "pass": true
+    },
+    {
+      "name": "chapter 4: no opening caption crosses Mawei transition",
+      "pass": true
+    },
+    {
+      "name": "invalid or unknown input fails closed",
+      "pass": true
+    },
+    {
+      "name": "a 0.8-second beat is merged rather than flashed",
+      "pass": true
+    }
+  ],
+  "chapters": [
+    {
+      "chapterId": 1,
+      "sourceEdition": "peony-2.0-2026-10-23",
+      "sourceManifestSha256": "f70f469adfad2e146944447d64ddc8b157915a90bf3d6a8732c66bff75981121",
+      "sourceDurationSeconds": 100.76666666666667,
+      "sourceStops": 15,
+      "cueCount": 15,
+      "totalHanzi": 264,
+      "minimumVisibleSeconds": 4.399999999999998,
+      "maximumVisibleSeconds": 6.799999999999997,
+      "pictureOnlySeconds": 18.000000000000036,
+      "pictureOnlyAtEndingSeconds": 1.2000000000000066,
+      "rows": [
+        {
+          "id": "poetic-c1-s1-1",
+          "sourceNode": "01 · 女帝与牡丹",
+          "sourceStop": 1,
+          "heading": "花与山河",
+          "text": "女帝武则天身旁，一朵牡丹连起山河与神都的记忆。",
+          "hanzi": 21,
+          "characters": 23,
+          "startSeconds": 0,
+          "endSeconds": 5.199999999999999,
+          "visibleSeconds": 5.199999999999999,
+          "purePictureBeforeSeconds": 0,
+          "hanziPerVisibleSecond": 4.038461538461539
+        },
+        {
+          "id": "poetic-c1-s2-1",
+          "sourceNode": "02 · 从山野到国色",
+          "sourceStop": 2,
+          "heading": "山野入城",
+          "text": "山野的花走进宫苑，也走进一座城的记忆。",
+          "hanzi": 17,
+          "characters": 19,
+          "startSeconds": 6.3999999999999995,
+          "endSeconds": 12.399999999999999,
+          "visibleSeconds": 5.999999999999998,
+          "purePictureBeforeSeconds": 1.2000000000000004,
+          "hanziPerVisibleSecond": 2.8333333333333344
+        },
+        {
+          "id": "poetic-c1-s3-1",
+          "sourceNode": "03 · 深山寺院与乡野",
+          "sourceStop": 3,
+          "heading": "风露养花",
+          "text": "山间风露养花，寻常草木自有自己的春天。",
+          "hanzi": 17,
+          "characters": 19,
+          "startSeconds": 13.6,
+          "endSeconds": 18.8,
+          "visibleSeconds": 5.200000000000003,
+          "purePictureBeforeSeconds": 1.200000000000001,
+          "hanziPerVisibleSecond": 3.2692307692307674
+        },
+        {
+          "id": "poetic-c1-s4-1",
+          "sourceNode": "04 · 梅兰菊与牡丹",
+          "sourceStop": 4,
+          "heading": "各有风姿",
+          "text": "梅兰菊各有风姿，牡丹静候自己的花期。",
+          "hanzi": 16,
+          "characters": 18,
+          "startSeconds": 20,
+          "endSeconds": 24.4,
+          "visibleSeconds": 4.399999999999998,
+          "purePictureBeforeSeconds": 1.1999999999999982,
+          "hanziPerVisibleSecond": 3.6363636363636385
+        },
+        {
+          "id": "poetic-c1-s5-1",
+          "sourceNode": "05 · 隋苑初栽",
+          "sourceStop": 5,
+          "heading": "一枝入苑",
+          "text": "一枝移入苑中，山野春色渐渐走近宫墙。",
+          "hanzi": 16,
+          "characters": 18,
+          "startSeconds": 25.599999999999998,
+          "endSeconds": 30.799999999999997,
+          "visibleSeconds": 5.1999999999999975,
+          "purePictureBeforeSeconds": 1.200000000000001,
+          "hanziPerVisibleSecond": 3.0769230769230784
+        },
+        {
+          "id": "poetic-c1-s6-1",
+          "sourceNode": "06 · 神都转折",
+          "sourceStop": 6,
+          "heading": "花与洛阳",
+          "text": "花与洛阳相逢，城的记忆从此多了一重春色。",
+          "hanzi": 18,
+          "characters": 20,
+          "startSeconds": 31.999999999999996,
+          "endSeconds": 37.199999999999996,
+          "visibleSeconds": 5.1999999999999975,
+          "purePictureBeforeSeconds": 1.200000000000001,
+          "hanziPerVisibleSecond": 3.461538461538463
+        },
+        {
+          "id": "poetic-c1-s7-1",
+          "sourceNode": "07 · 武周气象",
+          "sourceStop": 7,
+          "heading": "花冠映殿",
+          "text": "殿宇与花冠相映，盛大的审美写在春光里。",
+          "hanzi": 17,
+          "characters": 19,
+          "startSeconds": 38.4,
+          "endSeconds": 43.599999999999994,
+          "visibleSeconds": 5.199999999999991,
+          "purePictureBeforeSeconds": 1.2000000000000066,
+          "hanziPerVisibleSecond": 3.2692307692307745
+        },
+        {
+          "id": "poetic-c1-s8-1",
+          "sourceNode": "08 · 西河寺引种",
+          "sourceStop": 8,
+          "heading": "远处的风",
+          "text": "花从山野来到庭前，也带来了远处的风。",
+          "hanzi": 16,
+          "characters": 18,
+          "startSeconds": 44.8,
+          "endSeconds": 50.79999999999999,
+          "visibleSeconds": 5.9999999999999885,
+          "purePictureBeforeSeconds": 1.2000000000000066,
+          "hanziPerVisibleSecond": 2.666666666666672
+        },
+        {
+          "id": "poetic-c1-s9-1",
+          "sourceNode": "09 · 洛阳牡丹始盛",
+          "sourceStop": 9,
+          "heading": "旧籍花事",
+          "text": "旧籍记下花事，洛阳的春天有了牡丹的名字。",
+          "hanzi": 18,
+          "characters": 20,
+          "startSeconds": 51.99999999999999,
+          "endSeconds": 57.20000000000001,
+          "visibleSeconds": 5.200000000000014,
+          "purePictureBeforeSeconds": 1.2000000000000066,
+          "hanziPerVisibleSecond": 3.461538461538452
+        },
+        {
+          "id": "poetic-c1-s10-1",
+          "sourceNode": "10 · 腊日宣诏",
+          "sourceStop": 10,
+          "heading": "花诏传说",
+          "text": "一纸花诏落下，寒冬与春色在传说里相望。",
+          "hanzi": 17,
+          "characters": 19,
+          "startSeconds": 58.400000000000006,
+          "endSeconds": 64.39999999999999,
+          "visibleSeconds": 5.9999999999999885,
+          "purePictureBeforeSeconds": 1.1999999999999955,
+          "hanziPerVisibleSecond": 2.833333333333339
+        },
+        {
+          "id": "poetic-c1-s11-1",
+          "sourceNode": "11 · 文学传说",
+          "sourceStop": 11,
+          "heading": "烈火寄志",
+          "text": "烈火是传说的笔墨，不屈是人们寄给花的心意。",
+          "hanzi": 19,
+          "characters": 21,
+          "startSeconds": 65.6,
+          "endSeconds": 71.6,
+          "visibleSeconds": 6,
+          "purePictureBeforeSeconds": 1.2000000000000066,
+          "hanziPerVisibleSecond": 3.1666666666666665
+        },
+        {
+          "id": "poetic-c1-s12-1",
+          "sourceNode": "12 · 文人寄志",
+          "sourceStop": 12,
+          "heading": "借花写心",
+          "text": "文人借花写自己，把不肯低头的心寄在枝间。",
+          "hanzi": 18,
+          "characters": 20,
+          "startSeconds": 72.8,
+          "endSeconds": 78,
+          "visibleSeconds": 5.200000000000003,
+          "purePictureBeforeSeconds": 1.1999999999999955,
+          "hanziPerVisibleSecond": 3.4615384615384595
+        },
+        {
+          "id": "poetic-c1-s13-1",
+          "sourceNode": "13 · 史实与传说",
+          "sourceStop": 13,
+          "heading": "两种记忆",
+          "text": "记载与传说各有来处，合成牡丹的两种记忆。",
+          "hanzi": 18,
+          "characters": 20,
+          "startSeconds": 79.2,
+          "endSeconds": 86,
+          "visibleSeconds": 6.799999999999997,
+          "purePictureBeforeSeconds": 1.2000000000000066,
+          "hanziPerVisibleSecond": 2.647058823529413
+        },
+        {
+          "id": "poetic-c1-s14-1",
+          "sourceNode": "14 · 花与女帝",
+          "sourceStop": 14,
+          "heading": "千年相逢",
+          "text": "女帝已远，花事仍新；千年回望，也是一场相逢。",
+          "hanzi": 18,
+          "characters": 22,
+          "startSeconds": 87.2,
+          "endSeconds": 92.39999999999999,
+          "visibleSeconds": 5.199999999999991,
+          "purePictureBeforeSeconds": 1.1999999999999955,
+          "hanziPerVisibleSecond": 3.4615384615384674
+        },
+        {
+          "id": "poetic-c1-s15-1",
+          "sourceNode": "15 · 洛阳花开",
+          "sourceStop": 15,
+          "heading": "春色未尽",
+          "text": "画卷渐收，春色未尽；愿这一枝花，也开进今天。",
+          "hanzi": 18,
+          "characters": 22,
+          "startSeconds": 93.6,
+          "endSeconds": 99.56666666666666,
+          "visibleSeconds": 5.966666666666665,
+          "purePictureBeforeSeconds": 1.2000000000000066,
+          "hanziPerVisibleSecond": 3.016759776536314
+        }
+      ]
+    },
+    {
+      "chapterId": 2,
+      "sourceEdition": "peony-2.0-2026-10-23",
+      "sourceManifestSha256": "3919e11d71aadc75bfaab934a1255e3bb7ddab2aada69dbd60639e827f8fb42a",
+      "sourceDurationSeconds": 71.7,
+      "sourceStops": 7,
+      "cueCount": 12,
+      "totalHanzi": 212,
+      "minimumVisibleSeconds": 3.883333333333331,
+      "maximumVisibleSeconds": 6.866666666666666,
+      "pictureOnlySeconds": 14.40000000000002,
+      "pictureOnlyAtEndingSeconds": 1.2000000000000033,
+      "rows": [
+        {
+          "id": "poetic-c2-s1-1",
+          "sourceNode": "2-1 御花与朝野 · 转折初现",
+          "sourceStop": 1,
+          "heading": "春色有路",
+          "text": "一枝花从宫墙内走来，春色便有了更远的去处。",
+          "hanzi": 19,
+          "characters": 21,
+          "startSeconds": 0,
+          "endSeconds": 6.866666666666666,
+          "visibleSeconds": 6.866666666666666,
+          "purePictureBeforeSeconds": 0,
+          "hanziPerVisibleSecond": 2.766990291262136
+        },
+        {
+          "id": "poetic-c2-s2-1",
+          "sourceNode": "2-2 走出宫墙 · 春日花市",
+          "sourceStop": 2,
+          "heading": "共此春水",
+          "text": "近处一丛牡丹，水上几叶舟，目光把彼此相连。",
+          "hanzi": 18,
+          "characters": 21,
+          "startSeconds": 8.066666666666666,
+          "endSeconds": 12.716666666666665,
+          "visibleSeconds": 4.649999999999999,
+          "purePictureBeforeSeconds": 1.2000000000000002,
+          "hanziPerVisibleSecond": 3.870967741935485
+        },
+        {
+          "id": "poetic-c2-s2-2",
+          "sourceNode": "2-2 走出宫墙 · 春日花市",
+          "sourceStop": 2,
+          "heading": "共此春水",
+          "text": "桥上人相望，一城春色，也在寻常日子里流动。",
+          "hanzi": 18,
+          "characters": 21,
+          "startSeconds": 13.916666666666666,
+          "endSeconds": 18.566666666666666,
+          "visibleSeconds": 4.65,
+          "purePictureBeforeSeconds": 1.2000000000000013,
+          "hanziPerVisibleSecond": 3.8709677419354835
+        },
+        {
+          "id": "poetic-c2-s3-1",
+          "sourceNode": "2-3 宫门内外 · 御苑的边界",
+          "sourceStop": 3,
+          "heading": "宫门内外",
+          "text": "门内有花，门外有人；春风慢慢越过高墙。",
+          "hanzi": 16,
+          "characters": 19,
+          "startSeconds": 19.766666666666666,
+          "endSeconds": 23.65,
+          "visibleSeconds": 3.883333333333331,
+          "purePictureBeforeSeconds": 1.1999999999999993,
+          "hanziPerVisibleSecond": 4.120171673819745
+        },
+        {
+          "id": "poetic-c2-s3-2",
+          "sourceNode": "2-3 宫门内外 · 御苑的边界",
+          "sourceStop": 3,
+          "heading": "宫门内外",
+          "text": "停步的人，也在花前认出彼此的春天。",
+          "hanzi": 15,
+          "characters": 17,
+          "startSeconds": 24.85,
+          "endSeconds": 28.733333333333334,
+          "visibleSeconds": 3.883333333333335,
+          "purePictureBeforeSeconds": 1.2000000000000033,
+          "hanziPerVisibleSecond": 3.8626609442060067
+        },
+        {
+          "id": "poetic-c2-s4-1",
+          "sourceNode": "2-4 士族引种 · 私园春水",
+          "sourceStop": 4,
+          "heading": "私园闲情",
+          "text": "一枝移向庭前，远山与春水也有了花的倒影。",
+          "hanzi": 18,
+          "characters": 20,
+          "startSeconds": 29.933333333333334,
+          "endSeconds": 34.81666666666667,
+          "visibleSeconds": 4.883333333333334,
+          "purePictureBeforeSeconds": 1.1999999999999993,
+          "hanziPerVisibleSecond": 3.6860068259385663
+        },
+        {
+          "id": "poetic-c2-s4-2",
+          "sourceNode": "2-4 士族引种 · 私园春水",
+          "sourceStop": 4,
+          "heading": "私园闲情",
+          "text": "园中人把酒相对，花影替他们留住片刻闲情。",
+          "hanzi": 18,
+          "characters": 20,
+          "startSeconds": 36.016666666666666,
+          "endSeconds": 40.9,
+          "visibleSeconds": 4.883333333333334,
+          "purePictureBeforeSeconds": 1.1999999999999993,
+          "hanziPerVisibleSecond": 3.6860068259385663
+        },
+        {
+          "id": "poetic-c2-s5-1",
+          "sourceNode": "2-5 宫苑宴游 · 游赏赋诗",
+          "sourceStop": 5,
+          "heading": "花前相知",
+          "text": "杯盏间有花，诗句里有春；游赏也成了相知。",
+          "hanzi": 17,
+          "characters": 20,
+          "startSeconds": 42.1,
+          "endSeconds": 46.516666666666666,
+          "visibleSeconds": 4.416666666666663,
+          "purePictureBeforeSeconds": 1.2000000000000033,
+          "hanziPerVisibleSecond": 3.8490566037735876
+        },
+        {
+          "id": "poetic-c2-s5-2",
+          "sourceNode": "2-5 宫苑宴游 · 游赏赋诗",
+          "sourceStop": 5,
+          "heading": "花前相知",
+          "text": "花前的一次相逢，把人与人的距离轻轻缩短。",
+          "hanzi": 18,
+          "characters": 20,
+          "startSeconds": 47.71666666666667,
+          "endSeconds": 52.13333333333333,
+          "visibleSeconds": 4.416666666666663,
+          "purePictureBeforeSeconds": 1.2000000000000033,
+          "hanziPerVisibleSecond": 4.07547169811321
+        },
+        {
+          "id": "poetic-c2-s6-1",
+          "sourceNode": "2-6 民间静赏 · 消遣春光",
+          "sourceStop": 6,
+          "heading": "寻常春日",
+          "text": "看花不必争奇，寻常的一朵，也能照见好心情。",
+          "hanzi": 18,
+          "characters": 21,
+          "startSeconds": 53.333333333333336,
+          "endSeconds": 58.150000000000006,
+          "visibleSeconds": 4.816666666666672,
+          "purePictureBeforeSeconds": 1.2000000000000033,
+          "hanziPerVisibleSecond": 3.737024221453283
+        },
+        {
+          "id": "poetic-c2-s6-2",
+          "sourceNode": "2-6 民间静赏 · 消遣春光",
+          "sourceStop": 6,
+          "heading": "寻常春日",
+          "text": "有人携手而来，有人独自停留；春光一同收下。",
+          "hanzi": 18,
+          "characters": 21,
+          "startSeconds": 59.35000000000001,
+          "endSeconds": 64.16666666666667,
+          "visibleSeconds": 4.816666666666656,
+          "purePictureBeforeSeconds": 1.2000000000000033,
+          "hanziPerVisibleSecond": 3.7370242214532956
+        },
+        {
+          "id": "poetic-c2-s7-1",
+          "sourceNode": "2-7 朝野共赏 · 静待盛放",
+          "sourceStop": 7,
+          "heading": "春入人间",
+          "text": "宫墙之外，花被更多目光认领，也开向今日人间。",
+          "hanzi": 19,
+          "characters": 22,
+          "startSeconds": 65.36666666666667,
+          "endSeconds": 70.5,
+          "visibleSeconds": 5.133333333333328,
+          "purePictureBeforeSeconds": 1.2000000000000033,
+          "hanziPerVisibleSecond": 3.701298701298705
+        }
+      ]
+    },
+    {
+      "chapterId": 3,
+      "sourceEdition": "peony-2.0-2026-10-23",
+      "sourceManifestSha256": "831918f3365da1e29a1d9293135a463acddd87e07e0525d7982a9e4fef071159",
+      "sourceDurationSeconds": 68.9,
+      "sourceStops": 9,
+      "cueCount": 9,
+      "totalHanzi": 155,
+      "minimumVisibleSeconds": 3.6999999999999966,
+      "maximumVisibleSeconds": 6.800000000000001,
+      "pictureOnlySeconds": 10.800000000000033,
+      "pictureOnlyAtEndingSeconds": 1.2000000000000022,
+      "rows": [
+        {
+          "id": "poetic-c3-s1-1",
+          "sourceNode": "3-1 吉祥入生活",
+          "sourceStop": 1,
+          "heading": "花入日常",
+          "text": "花在瓶上，也在掌心，把吉祥的心意送进日常。",
+          "hanzi": 18,
+          "characters": 21,
+          "startSeconds": 0,
+          "endSeconds": 6.8,
+          "visibleSeconds": 6.8,
+          "purePictureBeforeSeconds": 0,
+          "hanziPerVisibleSecond": 2.6470588235294117
+        },
+        {
+          "id": "poetic-c3-s2-1",
+          "sourceNode": "3-2 花意串联家国",
+          "sourceStop": 2,
+          "heading": "一花牵意",
+          "text": "一朵花牵起衣裳与器物，把祝愿送进寻常人家。",
+          "hanzi": 19,
+          "characters": 21,
+          "startSeconds": 8,
+          "endSeconds": 14.8,
+          "visibleSeconds": 6.800000000000001,
+          "purePictureBeforeSeconds": 1.2000000000000013,
+          "hanziPerVisibleSecond": 2.7941176470588234
+        },
+        {
+          "id": "poetic-c3-s3-1",
+          "sourceNode": "3-3 凤穿牡丹嫁衣",
+          "sourceStop": 3,
+          "heading": "花入嫁衣",
+          "text": "凤与牡丹相依，红衣托起对美好姻缘的祝愿。",
+          "hanzi": 18,
+          "characters": 20,
+          "startSeconds": 16,
+          "endSeconds": 22.8,
+          "visibleSeconds": 6.799999999999998,
+          "purePictureBeforeSeconds": 1.2000000000000002,
+          "hanziPerVisibleSecond": 2.6470588235294126
+        },
+        {
+          "id": "poetic-c3-s4-1",
+          "sourceNode": "3-4 祥瑞良缘",
+          "sourceStop": 4,
+          "heading": "相逢相守",
+          "text": "愿花开圆满，也愿相逢的人相守长久。",
+          "hanzi": 15,
+          "characters": 17,
+          "startSeconds": 24,
+          "endSeconds": 30.8,
+          "visibleSeconds": 6.8,
+          "purePictureBeforeSeconds": 1.2000000000000022,
+          "hanziPerVisibleSecond": 2.2058823529411766
+        },
+        {
+          "id": "poetic-c3-s5-1",
+          "sourceNode": "3-5 岁时灯彩",
+          "sourceStop": 5,
+          "heading": "灯照花枝",
+          "text": "灯照花枝，孩子奔向热闹，也奔向被祝福的日子。",
+          "hanzi": 19,
+          "characters": 22,
+          "startSeconds": 32,
+          "endSeconds": 38.8,
+          "visibleSeconds": 6.799999999999995,
+          "purePictureBeforeSeconds": 1.2000000000000022,
+          "hanziPerVisibleSecond": 2.7941176470588256
+        },
+        {
+          "id": "poetic-c3-s6-1",
+          "sourceNode": "3-6 岁岁圆满",
+          "sourceStop": 6,
+          "heading": "把圆满展开",
+          "text": "花被织进锦面，团聚的人把圆满轻轻展开。",
+          "hanzi": 17,
+          "characters": 19,
+          "startSeconds": 40,
+          "endSeconds": 46.79999999999999,
+          "visibleSeconds": 6.799999999999992,
+          "purePictureBeforeSeconds": 1.2000000000000022,
+          "hanziPerVisibleSecond": 2.500000000000003
+        },
+        {
+          "id": "poetic-c3-s7-1",
+          "sourceNode": "3-7 器物与太平",
+          "sourceStop": 7,
+          "heading": "安宁有形",
+          "text": "一笔一刻，花留在器物上，人把安宁放在日常里。",
+          "hanzi": 19,
+          "characters": 22,
+          "startSeconds": 48,
+          "endSeconds": 54.800000000000004,
+          "visibleSeconds": 6.8,
+          "purePictureBeforeSeconds": 1.2000000000000097,
+          "hanziPerVisibleSecond": 2.794117647058824
+        },
+        {
+          "id": "poetic-c3-s8-1",
+          "sourceNode": "3-8 端庄与自持",
+          "sourceStop": 8,
+          "heading": "笔端从容",
+          "text": "笔端花影从容，细看的人也慢慢放缓了呼吸。",
+          "hanzi": 18,
+          "characters": 20,
+          "startSeconds": 56.00000000000001,
+          "endSeconds": 62.8,
+          "visibleSeconds": 6.799999999999992,
+          "purePictureBeforeSeconds": 1.2000000000000022,
+          "hanziPerVisibleSecond": 2.647058823529415
+        },
+        {
+          "id": "poetic-c3-s9-1",
+          "sourceNode": "3-9 民俗根基",
+          "sourceStop": 9,
+          "heading": "岁岁安宁",
+          "text": "花入寻常日子，愿你岁岁安宁。",
+          "hanzi": 12,
+          "characters": 14,
+          "startSeconds": 64,
+          "endSeconds": 67.7,
+          "visibleSeconds": 3.6999999999999966,
+          "purePictureBeforeSeconds": 1.2000000000000097,
+          "hanziPerVisibleSecond": 3.243243243243246
+        }
+      ]
+    },
+    {
+      "chapterId": 4,
+      "sourceEdition": "peony-2.0-2026-10-23",
+      "sourceManifestSha256": "1274381aca06e8c7580aca7818f4cbfc1a24957084c1747a5a70d2213b3a2a63",
+      "sourceDurationSeconds": 59.96666666666667,
+      "sourceStops": 9,
+      "cueCount": 9,
+      "totalHanzi": 154,
+      "minimumVisibleSeconds": 4.7,
+      "maximumVisibleSeconds": 6.299999999999998,
+      "pictureOnlySeconds": 10.800000000000011,
+      "pictureOnlyAtEndingSeconds": 1.2000000000000024,
+      "rows": [
+        {
+          "id": "poetic-c4-s1-1",
+          "sourceNode": "4-1 · 人花合一",
+          "sourceStop": 1,
+          "heading": "人花相映",
+          "text": "花映人，人怜花；一段相逢留在春日的长卷。",
+          "hanzi": 17,
+          "characters": 20,
+          "startSeconds": 0,
+          "endSeconds": 4.7,
+          "visibleSeconds": 4.7,
+          "purePictureBeforeSeconds": 0,
+          "hanziPerVisibleSecond": 3.6170212765957444
+        },
+        {
+          "id": "poetic-c4-s2-1",
+          "sourceNode": "4-2 · 花王配美人",
+          "sourceStop": 2,
+          "heading": "花容知音",
+          "text": "花容与衣香相映，贵妃杨玉环也成了花的知音。",
+          "hanzi": 19,
+          "characters": 21,
+          "startSeconds": 5.9,
+          "endSeconds": 11.600000000000001,
+          "visibleSeconds": 5.700000000000001,
+          "purePictureBeforeSeconds": 1.2,
+          "hanziPerVisibleSecond": 3.3333333333333326
+        },
+        {
+          "id": "poetic-c4-s3-1",
+          "sourceNode": "4-3 · 沉香亭赏花题诗",
+          "sourceStop": 3,
+          "heading": "诗中相逢",
+          "text": "沉香亭的典故里，花入李白的诗，也入人间记忆。",
+          "hanzi": 19,
+          "characters": 22,
+          "startSeconds": 12.8,
+          "endSeconds": 18.26666666666667,
+          "visibleSeconds": 5.4666666666666694,
+          "purePictureBeforeSeconds": 1.199999999999999,
+          "hanziPerVisibleSecond": 3.475609756097559
+        },
+        {
+          "id": "poetic-c4-s4-1",
+          "sourceNode": "4-4 · 宫廷牡丹风尚",
+          "sourceStop": 4,
+          "heading": "一笺花容",
+          "text": "这一笺花容，把人与花的风华留在纸上。",
+          "hanzi": 16,
+          "characters": 18,
+          "startSeconds": 19.46666666666667,
+          "endSeconds": 24.3,
+          "visibleSeconds": 4.833333333333333,
+          "purePictureBeforeSeconds": 1.199999999999999,
+          "hanziPerVisibleSecond": 3.3103448275862073
+        },
+        {
+          "id": "poetic-c4-s5-1",
+          "sourceNode": "4-5 · 马嵬与盛世落幕",
+          "sourceStop": 5,
+          "heading": "马嵬花落",
+          "text": "花仍开着，画中人的命运却已转向离散。",
+          "hanzi": 16,
+          "characters": 18,
+          "startSeconds": 25.5,
+          "endSeconds": 30.73333333333333,
+          "visibleSeconds": 5.233333333333332,
+          "purePictureBeforeSeconds": 1.199999999999999,
+          "hanziPerVisibleSecond": 3.0573248407643323
+        },
+        {
+          "id": "poetic-c4-s6-1",
+          "sourceNode": "4-6 · 游宴渐冷",
+          "sourceStop": 6,
+          "heading": "花宴渐冷",
+          "text": "马蹄远去，昨日的花宴在尘烟里渐渐冷却。",
+          "hanzi": 17,
+          "characters": 19,
+          "startSeconds": 31.933333333333334,
+          "endSeconds": 37.233333333333334,
+          "visibleSeconds": 5.300000000000002,
+          "purePictureBeforeSeconds": 1.2000000000000024,
+          "hanziPerVisibleSecond": 3.2075471698113196
+        },
+        {
+          "id": "poetic-c4-s7-1",
+          "sourceNode": "4-7 · 繁花映照兴亡",
+          "sourceStop": 7,
+          "heading": "繁花回望",
+          "text": "花枝依旧，人已回身；盛景从此成为回望。",
+          "hanzi": 16,
+          "characters": 19,
+          "startSeconds": 38.43333333333334,
+          "endSeconds": 43.8,
+          "visibleSeconds": 5.366666666666661,
+          "purePictureBeforeSeconds": 1.2000000000000024,
+          "hanziPerVisibleSecond": 2.9813664596273326
+        },
+        {
+          "id": "poetic-c4-s8-1",
+          "sourceNode": "4-8 · 晚唐文人追忆",
+          "sourceStop": 8,
+          "heading": "花前无言",
+          "text": "烟尘遮住旧城，花前的沉默比欢歌更长。",
+          "hanzi": 16,
+          "characters": 18,
+          "startSeconds": 45,
+          "endSeconds": 51.266666666666666,
+          "visibleSeconds": 6.266666666666665,
+          "purePictureBeforeSeconds": 1.2000000000000024,
+          "hanziPerVisibleSecond": 2.5531914893617027
+        },
+        {
+          "id": "poetic-c4-s9-1",
+          "sourceNode": "4-9 · 千年人花诗意",
+          "sourceStop": 9,
+          "heading": "文脉余响",
+          "text": "画卷终会合拢，花与人的诗意却向今天延伸。",
+          "hanzi": 18,
+          "characters": 20,
+          "startSeconds": 52.46666666666667,
+          "endSeconds": 58.766666666666666,
+          "visibleSeconds": 6.299999999999998,
+          "purePictureBeforeSeconds": 1.2000000000000024,
+          "hanziPerVisibleSecond": 2.857142857142858
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,87 @@
+{
+  "status": "prepared-and-real-C8-soak-in-progress-not-acceptance",
+  "preparedAt": "2026-10-23T03:25:41.160Z",
+  "buildDirectory": "tmp/art-candidate-8-dist",
+  "manifest": {
+    "path": "reports/art-renewal/art-candidate-8-build.json",
+    "sha256": "305dc8b9b429415093889642ae885ffe564cdd33f156edf30a637bac4a172ea9"
+  },
+  "binding": {
+    "path": "reports/art-renewal/candidate8-runtime-binding-at-start.json",
+    "sha256": "41dcf39d0dc78733d50a127cd87f13b1535d70f4438758b3e564993876e07cd4"
+  },
+  "checker": {
+    "path": "reports/art-renewal/validate-tour-recording.mjs",
+    "archive": "reports/art-renewal/candidate8-tour-checker.mjs",
+    "sha256": "e6a9a58bffba9e09768bb679b9edbc30003aed067c662d8e0f101e496a04e481",
+    "fullRequired": 35,
+    "endpointObservationRequired": false
+  },
+  "drivers": {
+    "scripts/validate-art-renewal-final.mjs": "e88d14d3046d9c05d8a8547cada81f17bfe47a664ea287ee11b5a23ceaec755a",
+    "scripts/validate-art-renewal-ui.mjs": "f978cf6666001687b5268c241798edff142ba2d804712f25294bff0ae285d58f",
+    "scripts/validate-peony-soundscape.mjs": "f34fa4d41a09e02ca7bf1cd0d1e7287baa3595b1f01377007e78cbbc26449687",
+    "scripts/validate-peony2-runtime.mjs": "36364a5356fb50472d1a0525d93b8ce5d80c78864a4001fb3a753d0f5f4e5d4f",
+    "scripts/validate-peony2-regressions.mjs": "a15c0085702817803ee2397525df42c3cb137f183365db5d05734a6911dc5e4b",
+    "scripts/validate-peony2-original-driver.mjs": "fa4e9b6196a9c6f9006c426f0e3353324437dac11cf6d07c807ea3ef89673e82",
+    "scripts/validate-peony2-journey-driver.mjs": "9d74b563a223080675f2e37edeff9d9e61afdeb23d5be956cf778e20586c7e5e",
+    "scripts/validate-peony2-settings-driver.mjs": "42fef886ed1d500ddfeb4bd83a0c5826e61ec5a649c76f9c02623fec6b695fce",
+    "scripts/validate-peony2-subpath-driver.mjs": "1041f8b91fe1ddab3c95326fa12804f66dabc602a2d07f8fe4a8434c5124808d"
+  },
+  "negativeControl": {
+    "path": "reports/art-renewal/candidate8-tour-negative-stage-test/metadata-validation.json",
+    "sha256": "df2ad2e06435ed4426969a143997a948da38faacc86f9444887747c4fcc985b4",
+    "status": "expected-failure",
+    "candidate": 8,
+    "identityVerified": false
+  },
+  "recorder": {
+    "main": {
+      "path": "scripts/capture-exhibition-tour.mjs",
+      "sha256": "95e22c96a086aa62a4f47ab9c8731d1dd5324cc13207feabe63f89e3f4c51fa2"
+    },
+    "audio": {
+      "path": "scripts/exhibition-tour-audio.mjs",
+      "sha256": "c3ce6432133fa6403c40a7842473ee0894f8f2631d591289c47faa00017dd4c3"
+    },
+    "modified": false
+  },
+  "commands": {
+    "soak": [
+      "node",
+      "scripts/validate-art-renewal-soak.mjs",
+      "--build-dir",
+      "tmp/art-candidate-8-dist"
+    ],
+    "six": [
+      "node",
+      "scripts/validate-art-renewal-final.mjs",
+      "--build-dir",
+      "tmp/art-candidate-8-dist"
+    ],
+    "seal": [
+      "node",
+      "reports/art-renewal/seal-candidate-runtime.mjs",
+      "--freeze",
+      "reports/art-renewal/art-candidate-8-build.json",
+      "--soak",
+      "<actual-C8-soak>",
+      "--final",
+      "<actual-C8-six>",
+      "--output",
+      "reports/art-renewal/candidate8-runtime-seal.json"
+    ],
+    "tourAudit": [
+      "node",
+      "reports/art-renewal/validate-tour-recording.mjs",
+      "--run-dir",
+      "<actual-C8-tour>",
+      "--report-dir",
+      "<new-C8-tour-report-dir>",
+      "--candidate8-build-manifest",
+      "reports/art-renewal/art-candidate-8-build.json",
+      "--with-pcm"
+    ]
+  },
+  "limits": "C7 focus failure and local passes remain historical. No C8 soak/six/movie result claimed here. All future results must come from actual new same-package runs. Product/original artwork/audio/recorder untouched by this preparation."
+}

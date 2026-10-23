@@ -1,0 +1,295 @@
+{
+  "status": "fail",
+  "startedAt": "2026-10-23T03:46:04.675Z",
+  "scope": "Actual current-production four home entries, physical paper geometry, at least 4s visible loading, repeated input, return, slow resource waiting, cover failure/retry, and cancelled manifest invalidation.",
+  "checks": [
+    {
+      "test": "four-painted-foyer-layers-idle-off-reduced-hidden-resume",
+      "layers": [
+        {
+          "src": "http://127.0.0.1:1638/ui/peony-atlas/landscape.webp",
+          "width": 1672,
+          "height": 941,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:1638/ui/peony-atlas/cinnabar-peonies.webp",
+          "width": 1536,
+          "height": 1024,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:1638/ui/peony-atlas/ivory-branch.webp",
+          "width": 1536,
+          "height": 1024,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:1638/ui/peony-atlas/title.webp",
+          "width": 2172,
+          "height": 724,
+          "complete": true
+        }
+      ],
+      "idle": {
+        "phase": "HOME",
+        "ready": true,
+        "animated": true,
+        "hover": null,
+        "renderCount": 396,
+        "layers": 4,
+        "kind": "original-painted-atlas",
+        "paused": "false",
+        "pigment": "live",
+        "pigmentFrames": 119
+      },
+      "off": {
+        "phase": "HOME",
+        "ready": true,
+        "animated": false,
+        "hover": null,
+        "renderCount": 397,
+        "layers": 4,
+        "kind": "original-painted-atlas",
+        "paused": "true",
+        "pigment": "live",
+        "pigmentFrames": 122
+      },
+      "reduced": {
+        "phase": "HOME",
+        "ready": true,
+        "animated": false,
+        "hover": null,
+        "renderCount": 397,
+        "layers": 4,
+        "kind": "original-painted-atlas",
+        "paused": "true",
+        "pigment": "live",
+        "pigmentFrames": 123
+      },
+      "hidden": {
+        "phase": "HOME",
+        "ready": true,
+        "animated": false,
+        "hover": null,
+        "renderCount": 397,
+        "layers": 4,
+        "kind": "original-painted-atlas",
+        "paused": "true",
+        "pigment": "live",
+        "pigmentFrames": 123
+      },
+      "restored": {
+        "phase": "HOME",
+        "ready": true,
+        "animated": true,
+        "hover": null,
+        "renderCount": 397,
+        "layers": 4,
+        "kind": "original-painted-atlas",
+        "paused": "false",
+        "pigment": "live",
+        "pigmentFrames": 128
+      },
+      "optionalSurface": "live",
+      "note": "Wet-pigment WebGL is optional; decoded image fallback is supported. Real GL-loss/image-retry coverage is in the UI driver. Visibility uses injected document.hidden, not system-background emulation.",
+      "passed": true
+    },
+    {
+      "test": "real-entry-1-closed-coil-unfurl-four-seconds",
+      "closed": {
+        "preparationStage": "textures",
+        "paintingSrc": "./assets/new-scrolls/chapter-1/cover.webp",
+        "unfurl": "0.00000",
+        "handoffState": "waiting",
+        "presentationReady": "true",
+        "previewProgress": "0",
+        "previewFrame": "",
+        "renderCount": "6",
+        "paintingReady": "true",
+        "paintingAspect": "1.777778",
+        "paperAspect": "1.857778",
+        "artDimensions": "{\"width\":1280,\"height\":720}",
+        "rodSeparation": "0.34674",
+        "paperCurvature": "0.15292",
+        "paperThickness": "0.006136",
+        "paperVertices": "5005",
+        "paperZRange": "0.301091"
+      },
+      "half": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-1/cover.webp",
+        "unfurl": "0.43708",
+        "handoffState": "waiting",
+        "presentationReady": "true",
+        "previewProgress": "0",
+        "previewFrame": "1",
+        "renderCount": "79",
+        "paintingReady": "true",
+        "paintingAspect": "1.777778",
+        "paperAspect": "1.857778",
+        "artDimensions": "{\"width\":1280,\"height\":720}",
+        "rodSeparation": "4.34749",
+        "paperCurvature": "0.13673",
+        "paperThickness": "0.006136",
+        "paperVertices": "5005",
+        "paperZRange": "0.266517"
+      },
+      "opened": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-1/cover.webp",
+        "unfurl": "0.99945",
+        "handoffState": "waiting",
+        "presentationReady": "true",
+        "previewProgress": "0",
+        "previewFrame": "1",
+        "renderCount": "180",
+        "paintingReady": "true",
+        "paintingAspect": "1.777778",
+        "paperAspect": "1.857778",
+        "artDimensions": "{\"width\":1280,\"height\":720}",
+        "rodSeparation": "9.49499",
+        "paperCurvature": "0.11253",
+        "paperThickness": "0.006136",
+        "paperVertices": "5005",
+        "paperZRange": "0.000055"
+      },
+      "loadingMs": 4013.0999999940395,
+      "events": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 7883.699999988079
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 8110.199999988079
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 8597.89999999106
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 9032.09999999404
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 13045.199999988079
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 13298.79999999702
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 13711.39999999106
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "real-entry-2-closed-coil-unfurl-four-seconds",
+      "closed": {
+        "preparationStage": "textures",
+        "paintingSrc": "./assets/new-scrolls/chapter-2/cover.webp",
+        "unfurl": "0.00000",
+        "handoffState": "waiting",
+        "presentationReady": "true",
+        "previewProgress": "0",
+        "previewFrame": "",
+        "renderCount": "10",
+        "paintingReady": "true",
+        "paintingAspect": "1.777778",
+        "paperAspect": "1.857778",
+        "artDimensions": "{\"width\":1280,\"height\":720}",
+        "rodSeparation": "0.34674",
+        "paperCurvature": "0.15292",
+        "paperThickness": "0.006136",
+        "paperVertices": "5005",
+        "paperZRange": "0.301091"
+      },
+      "half": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-2/cover.webp",
+        "unfurl": "0.43722",
+        "handoffState": "waiting",
+        "presentationReady": "true",
+        "previewProgress": "0",
+        "previewFrame": "33",
+        "renderCount": "83",
+        "paintingReady": "true",
+        "paintingAspect": "1.777778",
+        "paperAspect": "1.857778",
+        "artDimensions": "{\"width\":1280,\"height\":720}",
+        "rodSeparation": "4.34874",
+        "paperCurvature": "0.13672",
+        "paperThickness": "0.006136",
+        "paperVertices": "5005",
+        "paperZRange": "0.266510"
+      },
+      "opened": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-2/cover.webp",
+        "unfurl": "0.99915",
+        "handoffState": "waiting",
+        "presentationReady": "true",
+        "previewProgress": "0",
+        "previewFrame": "33",
+        "renderCount": "185",
+        "paintingReady": "true",
+        "paintingAspect": "1.777778",
+        "paperAspect": "1.857778",
+        "artDimensions": "{\"width\":1280,\"height\":720}",
+        "rodSeparation": "9.49223",
+        "paperCurvature": "0.11254",
+        "paperThickness": "0.006136",
+        "paperVertices": "5005",
+        "paperZRange": "0.000109"
+      },
+      "loadingMs": 4011.9000000059605,
+      "events": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 15117.59999999404
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 15328
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 15785.5
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 16060.39999999106
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 20072.29999999702
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 20326.5
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 20743.39999999106
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "expectedHttpFailures": [],
+  "url": "http://127.0.0.1:1638/",
+  "preflight": false,
+  "httpHtmlSha256": "72cdd4f5a1336c4cc304e4ca396abcd8b55439cba2b800ced701b5c2d4821a6d",
+  "buildHtmlSha256": "72cdd4f5a1336c4cc304e4ca396abcd8b55439cba2b800ced701b5c2d4821a6d",
+  "browserVersion": "156.0.8078.4",
+  "failure": {
+    "message": "page.waitForFunction: Timeout 30000ms exceeded.",
+    "stack": "page.waitForFunction: Timeout 30000ms exceeded.\n    at E:\\数字媒体竞赛\\gitProject\\MDGS\\scripts\\validate-peony2-journey-driver.mjs:53:20"
+  },
+  "completedAt": "2026-10-23T03:47:01.883Z"
+}

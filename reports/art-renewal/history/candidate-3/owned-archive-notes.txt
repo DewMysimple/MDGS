@@ -1,0 +1,7 @@
+候选3 owned证据归档
+
+逐文件复制并SHA核实，原路径/归档路径/bytes/SHA见owned-archive-manifest.json。候选3包为tmp/art-candidate-3-dist，HTML 806eb52d...a769、JS index-C6ZfivTN.js、CSS index-Bc7VfaY-.css、旧242380B字体1f74e7b3...dc8ed；该旧字体后经实际CDP确认存在系统字体回退，故旧8058字格检查只证明几何范围/碰撞，不证明customfont全覆盖。候选4新字体的结果另立，不倒填本归档。
+
+保存poetic-narrative/encounters/artistic-review完整现有文件和一致SHA的poeticNarrative数据。此归档不是完整旧产品源码快照；C3源Renderer/App/CSS不可用当前新源码冒充。数据在此刻仍严格匹配C3 SHA a39fa947...b74a9。历史驱动相对root路径是原目录语义，若从归档执行需恢复原布局或指向冻结原包，不能直接在更深归档目录运行。
+
+每份证据保留原有范围：encounters/lifecycle是较早冻结交互实现的dev验证，不重新标作C3生产全包；artistic-review中的candidate-2首页/guide图仍是候选2；其余生产报告均按自身HTTP bundle/driver/source SHA判定。候选2历史目录未改。Root统一候选4冻结后将新测270/45/12锁位/12互动/阅读/字体和主按钮状态。

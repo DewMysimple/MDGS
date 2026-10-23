@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "verifiedAt": "2026-10-22T23:45:33.410Z",
+  "scope": "Pure JS fake renderer/GL lifecycle safety only; no GPU, shader-key, performance or pixel-fidelity claim.",
+  "helperSha256": "eb20094e6fde16a4e67712f8115805a13b543593e591c16aef47dfb08b563b30",
+  "driverSha256": "3e99e5bbd5f46076555e5ffea9e5b6b0d7908da475dc13f385cefd34c866d75b",
+  "checks": [
+    "three native variants, all-handle completion, exact state restoration, debug retained, disposal",
+    "hidden pause, restore reschedule, lost-generation invalidation, persistent return cancellation without wake",
+    "KHR absent uses original first-use path",
+    "compile exception restores material/target and returns original shader validation",
+    "bounded pending completion timeout releases initial barrier"
+  ]
+}

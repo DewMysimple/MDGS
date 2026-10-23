@@ -1,0 +1,701 @@
+{
+  "status": "awaiting-unified-candidate-4-freeze-not-run",
+  "preparedAt": "2026-10-22T23:42:21.821617+00:00",
+  "scope": "Preparatory source/driver snapshot, not candidate-4 frozen inputs or validation results. Do not start GPU tests until root provides the unified build and window.",
+  "candidate4Build": null,
+  "candidate4Freeze": null,
+  "inputsBeforeFreeze": {
+    "src/App.tsx": {
+      "bytes": 25088,
+      "sha256": "fe94952133b277fc283e384b5ffe6dec4983138f2936442b88bd60508ad00c3e"
+    },
+    "src/art/flowerLetter.ts": {
+      "bytes": 3516,
+      "sha256": "5b448f1e07dfb9f6277959428f54950f010f42f8a5c8d9583f5d5854b139381a"
+    },
+    "src/audio/cueMap.ts": {
+      "bytes": 2993,
+      "sha256": "56fef96db0c48640311adcc075b4f7d0cefd2bf6f3a66ce8f0915c0375d25ebb"
+    },
+    "src/audio/PeonySoundscape.ts": {
+      "bytes": 14053,
+      "sha256": "94210addff2b7874449d4adb8d5aa8bda1f3ae9fe51bffd466ba9a3811b7ca28"
+    },
+    "src/components/ArtEncounters.tsx": {
+      "bytes": 18277,
+      "sha256": "265fdafa82d6433e3957f74ae268ca8720991aed322acf6fa525fcb1cb95aa1e"
+    },
+    "src/components/AudioController.tsx": {
+      "bytes": 4796,
+      "sha256": "5e8bf3fb9a301eb14069d25b3b7b272c844ac079b347d88ea51df0c8071d9bd2"
+    },
+    "src/components/CulturePanel.tsx": {
+      "bytes": 7504,
+      "sha256": "4025c99888f24172b6c228337ebc1228f33d6dc042e1da9772b9a47fd3995b8c"
+    },
+    "src/components/FlowerLetterDialog.tsx": {
+      "bytes": 5881,
+      "sha256": "48a62837fac8e8d9155e214766f8dc52e9cbfb90def660eef2fd32a8ee1dde0c"
+    },
+    "src/components/NarrativeCalligraphy.tsx": {
+      "bytes": 8057,
+      "sha256": "b4ed5a08a983105e2644dd3827cf7947c6e20e946d3b64b43ad360d575a3c406"
+    },
+    "src/components/PeonyAtlasHome.tsx": {
+      "bytes": 13391,
+      "sha256": "6f829e0d956c7abef44570fa8807bcb959ebb432a5a733ce3be8f946ff6902e0"
+    },
+    "src/components/PeonyPigment.tsx": {
+      "bytes": 1704,
+      "sha256": "f5fdd1e4d3ff28dd233b361e84b86ee477ee0c72ae10d355e41b5b8e2cc316fe"
+    },
+    "src/components/ScrollColophon.tsx": {
+      "bytes": 3060,
+      "sha256": "29d88e77f15882447cc36561860e316c33065831f99d2870bed07978f73d322d"
+    },
+    "src/components/ScrollLoadingScene.tsx": {
+      "bytes": 12911,
+      "sha256": "a27f2c5199697588d67056cf8752d23485a774d27711ad400ce34ab75f1dc558"
+    },
+    "src/components/ScrollOrnaments.tsx": {
+      "bytes": 2081,
+      "sha256": "cf748040d16fd7277945478efcde2874c5415bd70f141a7fd03268239241f47c"
+    },
+    "src/components/ScrollViewport.tsx": {
+      "bytes": 14836,
+      "sha256": "af07494255f362329fcc0952a0bcfa727c1832053c505e3254ac9913cbf6f5aa"
+    },
+    "src/components/StudyAtmosphere.tsx": {
+      "bytes": 4040,
+      "sha256": "7d1fd4f50f6021dbf9b26e28dc30fbc37c88509b1ab771866be805aa6dc69d64"
+    },
+    "src/components/StudyHome.tsx": {
+      "bytes": 6843,
+      "sha256": "12bdd52a863d460b71ac584c6ee0ffaedba2813fa22ceefdf45adcbbfc47605c"
+    },
+    "src/components/ViewerSettingsPanel.tsx": {
+      "bytes": 7236,
+      "sha256": "86bfda34b3b0beae8e0591f6c813730528191a551869b4652573848df91546db"
+    },
+    "src/data/annotations.ts": {
+      "bytes": 3321,
+      "sha256": "62253ce357a79cf3ce74e6cb6a427f8448ef091d703628c967a3757e0de46b6c"
+    },
+    "src/data/artEncounters.ts": {
+      "bytes": 3269,
+      "sha256": "11625b51e66a0e2f01decd03187de846f317a256ce43861bc9f2c27739e67f27"
+    },
+    "src/data/chapters.ts": {
+      "bytes": 12380,
+      "sha256": "ca815c3ee1febd230c9128e81e18651c41780291ac89ae43ae47536be0a4d993"
+    },
+    "src/data/curatorialNotes.ts": {
+      "bytes": 6122,
+      "sha256": "2984b509b75c611f9462d518f7c2cc64cd32fe1a90b98bd4af0c16d3c91e91eb"
+    },
+    "src/data/flowerLetters.ts": {
+      "bytes": 542,
+      "sha256": "8ed21992a8e43a073a0593ec8dc8f627e69e12f74785517287ee22b00417060d"
+    },
+    "src/data/motionProfiles.ts": {
+      "bytes": 10902,
+      "sha256": "dec193ddbde08de10f9544817b81f9cdde50877e64e9cd127b93bcbee9ac7982"
+    },
+    "src/data/narrativeTrack.ts": {
+      "bytes": 5982,
+      "sha256": "f4990ecdb3ed926808166673a7fc21acc1bb6b4695c618cd8d6d339b7ee2926b"
+    },
+    "src/data/newMotionProfiles.ts": {
+      "bytes": 2945,
+      "sha256": "14946663b0eb62232e892c0f895d0bc963ea0a6cc7510a5b0b283eb99c93276a"
+    },
+    "src/data/newNarrative.ts": {
+      "bytes": 15368,
+      "sha256": "ef6dcbc6109b9e391bb712856785c72807a29baf337c0894bf5e97482975ba3a"
+    },
+    "src/data/peonyAtlas.ts": {
+      "bytes": 933,
+      "sha256": "5db913dceb282898c253f7496eeacb3dfae18e59c0ad543302501c885e90b6c3"
+    },
+    "src/data/poeticNarrative.ts": {
+      "bytes": 12561,
+      "sha256": "a39fa947d28044efd1699ac5fc022b88f98f6b498097e39b672b673c677b74a9"
+    },
+    "src/data/sceneOptions.ts": {
+      "bytes": 364,
+      "sha256": "35103a4479a7381d95a0541261cff158949842ed7f4e6b3c746de9bba36f3f9b"
+    },
+    "src/data/sourceEdition.ts": {
+      "bytes": 254,
+      "sha256": "102a88382cc5659e2b68d0ad352f74758a9f16812135d743d9bd1530df014174"
+    },
+    "src/data/study.ts": {
+      "bytes": 1044,
+      "sha256": "d96ff22d2bd7acaa89b7ac7b73145850a58f56c48d31dde0e486d391be501099"
+    },
+    "src/data/studyLayers.ts": {
+      "bytes": 994,
+      "sha256": "7fd5376fef1b325dbcf11e8c5d2c94bb0cf240602f18fcfff760b91cb2b311e9"
+    },
+    "src/data/viewerSettings.ts": {
+      "bytes": 3644,
+      "sha256": "85e6ae5fe482aae3e63feb8c88c79b6bcf31689f6c77e1bdcc18e99244dda740"
+    },
+    "src/hooks/scrollMotion.ts": {
+      "bytes": 1900,
+      "sha256": "cfece3c628e2204ceb7909144dc5d629fd3460a92fa9af118304c3b7fd712997"
+    },
+    "src/hooks/usePeonySoundscape.tsx": {
+      "bytes": 2088,
+      "sha256": "051ac4479ebfb79734f753d4852103740e18b8b4dc4548608b3717186da621df"
+    },
+    "src/hooks/useScrollController.ts": {
+      "bytes": 6395,
+      "sha256": "4ac92af3fd966ae40b0be22c2eaef973e7f1bb10c720f64f8465fcc96f35d38e"
+    },
+    "src/hooks/useStudyJourney.ts": {
+      "bytes": 10105,
+      "sha256": "9b0ef0ac6e0ce3503975b4fceba2714fe43c8a4fddf042c64e7353c068393b52"
+    },
+    "src/hooks/useStudyParallax.ts": {
+      "bytes": 2287,
+      "sha256": "55b8500e650ff4c09edaa357fab124131e8c95e3dc064d2285dddbba21ace482"
+    },
+    "src/main.tsx": {
+      "bytes": 230,
+      "sha256": "a920ec27028d3f1997c93d79da61fa77c0ff613085a6fb2a8ea2dea92cab28a9"
+    },
+    "src/scene/ArtDirectionLayer.ts": {
+      "bytes": 17882,
+      "sha256": "d51dfea871ed4363d453ce8ebaa82d920987ca1d06a0925127f3deda14d37a72"
+    },
+    "src/scene/artworkProjection.ts": {
+      "bytes": 3534,
+      "sha256": "243b219ec3addfdd87448cdabb66a462d88ccf3988776d5ea446d8f1f0813198"
+    },
+    "src/scene/artworkSnapshot.ts": {
+      "bytes": 2260,
+      "sha256": "dede3e7636b8eff422f4ce0303289a75d9d538506838f62d480162f1535c6c22"
+    },
+    "src/scene/CalligraphyLayer.css": {
+      "bytes": 4540,
+      "sha256": "707b020f2ebeaf1826e49d9dea1ce684a8511a91a5cdce649cccbef11101c250"
+    },
+    "src/scene/CalligraphyLayer.ts": {
+      "bytes": 26079,
+      "sha256": "8ce0d9d17d28330f3ff2f04b32bf2a5482848ff5b4a42ee2a5bc477ba302cabf"
+    },
+    "src/scene/GongbiBloom.ts": {
+      "bytes": 3590,
+      "sha256": "d15c82e8684d6fcb3d0592541d4d5ab0c586fb4c1679aee6dad455c0b1bfe363"
+    },
+    "src/scene/MotionDirector.ts": {
+      "bytes": 14172,
+      "sha256": "c431d9ff0be2e19bd41d6746235a6732c81236454af368a7a7c373ec5d8e7487"
+    },
+    "src/scene/NarrativeSpace.ts": {
+      "bytes": 2436,
+      "sha256": "472edaf832b01cd1e663865bc0c1014a8a564cf0eee8f0d3da8826f43fca34d2"
+    },
+    "src/scene/NewScrollAtmosphere.ts": {
+      "bytes": 4948,
+      "sha256": "e497c85073004b02c1c7210f46414494912d196076132dbdf41be040606e38d8"
+    },
+    "src/scene/PeonyBloomSurface.ts": {
+      "bytes": 10396,
+      "sha256": "0722fb6dddb0dd365a0bde9613ed56802ba6a178f570ac9f9391dacdabc43563"
+    },
+    "src/scene/prepareScene.ts": {
+      "bytes": 4056,
+      "sha256": "c7ab1f7dc505cf16f078e13c6a94a0b48d839a7b90af9e1232d6bea971c7eb41"
+    },
+    "src/scene/SceneRenderer.ts": {
+      "bytes": 53661,
+      "sha256": "0f06fcaf95f2ea7566c424f2b8204b6ac0f41ffbba799be408a4f72fc29d11d5"
+    },
+    "src/scene/scrollGeometry.ts": {
+      "bytes": 9015,
+      "sha256": "80c274b646e8c0c911c7528d2563a02705de35cd6888a58143889dee53c0e90d"
+    },
+    "src/scene/scrollHandoff.ts": {
+      "bytes": 2413,
+      "sha256": "d78a78575154c771d0f47f52eda1874f5243e61bd5dee1fc87add60228c0fe16"
+    },
+    "src/scene/ScrollUnfurlScene.ts": {
+      "bytes": 11638,
+      "sha256": "ca1c4516fc93d6344847b615e18ef570614227d6e470f20eac3dd022c33a9879"
+    },
+    "src/scene/sourceClock.ts": {
+      "bytes": 950,
+      "sha256": "add971abe2441da9cb60d28baa3257d712737e85b978fc6cc7b8f395983849fa"
+    },
+    "src/scene/SourceLighting.ts": {
+      "bytes": 21902,
+      "sha256": "e7233ba079be8355e16dbdee1861d9394ffd437929206ca0d210f3be1e7b5a89"
+    },
+    "src/scene/SourceMaterial.ts": {
+      "bytes": 17269,
+      "sha256": "78ff5a1942a75ca05a83f26b1e6920f2d57962e8ee00b9eb31ecd75097a7ecce"
+    },
+    "src/scene/SourceNoise3D.ts": {
+      "bytes": 3265,
+      "sha256": "97c4ce5460d96be8a2b049ab6eba2206a2568b6c22f4cdceed32170871926edd"
+    },
+    "src/scene/SourcePostProcessing.ts": {
+      "bytes": 19056,
+      "sha256": "d75354a4cb30c26894ffb6a95195fd35e037b08fdfbfc0467974518b6c5d4826"
+    },
+    "src/scene/sourceViewport.ts": {
+      "bytes": 1467,
+      "sha256": "70c848adf65a400cdff3582dd0616bf68ae39c0552a86548297d1d141f1e686e"
+    },
+    "src/scene/StableLayerSorting.ts": {
+      "bytes": 2485,
+      "sha256": "3fd92ed5f4b88853500081c572936366d8aec9169bc7792909b5ade1722afccf"
+    },
+    "src/scene/studyMaterials.ts": {
+      "bytes": 3533,
+      "sha256": "075d2567aa38b6acaba4621c55f31616703d842021465b74fdb30e144677f585"
+    },
+    "src/scene/StudyRoomRenderer.ts": {
+      "bytes": 23756,
+      "sha256": "e6de3f2932a1ca84efffe191c2f7e68b493c7d3792705aa2c079ef5a45f71ef8"
+    },
+    "src/styles/art-encounters.css": {
+      "bytes": 11269,
+      "sha256": "ddd069d12e8e16de8fd708cf57d90eb6f9780c6bbe35a938d32914fb0ae80966"
+    },
+    "src/styles/audio-controller.css": {
+      "bytes": 4055,
+      "sha256": "d4a3a424990cc726bade8e32256853d930ed5418fd5c3da0b183d8083c7db3ab"
+    },
+    "src/styles/curatorial-reading.css": {
+      "bytes": 3731,
+      "sha256": "0c34660d6e4b960344672922b10422388929466021c974ffe3d8b85430f1d008"
+    },
+    "src/styles/exhibition-theme.css": {
+      "bytes": 994,
+      "sha256": "cd7793ecdf9137594babbeec319bcac7409f4e347073bfa6d6602552cc0504f5"
+    },
+    "src/styles/flower-letter.css": {
+      "bytes": 4145,
+      "sha256": "316252c25ca45165027f4aeea4f312cd300a3fa97a733733e82e10141be37f2b"
+    },
+    "src/styles/handscroll.css": {
+      "bytes": 18116,
+      "sha256": "d73911deba855f1ab39085c172dabd4ea11dc0b09838eefe9e921b0be5067f21"
+    },
+    "src/styles/journey.css": {
+      "bytes": 2398,
+      "sha256": "3523627b97ccef0d0a4fb356ab3512b569924cc5d45e22ee4bf7ec7b11cec671"
+    },
+    "src/styles/layered-study.css": {
+      "bytes": 16831,
+      "sha256": "08a38e14ae4aa0a9f643c71370d501a91ee56347805dd0ba5b214c8cdad9f3f6"
+    },
+    "src/styles/narrative-calligraphy.css": {
+      "bytes": 5691,
+      "sha256": "f9e7932915357479a7fbfe0c922b3d828187eb8544577231f7db3cb641c80edd"
+    },
+    "src/styles/peony-atlas.css": {
+      "bytes": 21269,
+      "sha256": "a347dd2201b8c18bfc8c1b55d9517646f238077185ab7b77d658505815e3269c"
+    },
+    "src/styles/poetic-exhibition.css": {
+      "bytes": 13499,
+      "sha256": "1c312e68f1dd3f8dd93164f9c6d1db6094db990fb6be08b86b782d0788b12158"
+    },
+    "src/styles/reading-panel.css": {
+      "bytes": 5340,
+      "sha256": "93165db9f3ce8a35f3d574be75c9062576740376ed5dd2bdd043687b9e6f8772"
+    },
+    "src/styles/scroll-2026.css": {
+      "bytes": 7950,
+      "sha256": "fcedc1c4ce9a3b362b057ac4edff3e66e89a504481012d0f28f27d4937259075"
+    },
+    "src/styles/scroll-loading.css": {
+      "bytes": 6742,
+      "sha256": "53db52e8ab4754cf180bf4cd0a3224aceb8a4eb728aeb9acd19ff9e1988c8363"
+    },
+    "src/styles/study-home.css": {
+      "bytes": 15473,
+      "sha256": "31970fff27e6a6c788551d67fb5db1df3b41eaff5d9e5ea7b2991f6bf6f224fd"
+    },
+    "src/styles/text-backplates.css": {
+      "bytes": 5345,
+      "sha256": "580ac6eff538dd73843f39d36e186975a8a644e73e3336eb1be5a97ccc2df777"
+    },
+    "src/styles/viewer-settings.css": {
+      "bytes": 7839,
+      "sha256": "88275add1c41b5112e8906e69d5f922a16d339abdd3d59e169003c2d93e01a8c"
+    },
+    "src/styles/volume-study.css": {
+      "bytes": 8728,
+      "sha256": "865c96ff1e88699c9abdf9437e63a540ce9a7dedcbc7b9a759438e00a342983c"
+    },
+    "src/styles.css": {
+      "bytes": 304,
+      "sha256": "e92e302d8631e9e9388cc9ad5ce401c466962786a545c6033118d2abc96cee0d"
+    },
+    "src/types.ts": {
+      "bytes": 1965,
+      "sha256": "06046ecf0ef963e85b5d2d867193be8f64364aa35ca05551822f7d7bedd9df4d"
+    },
+    "package.json": {
+      "bytes": 2617,
+      "sha256": "9a9a97b97678b1947fe80fd13b01d59c061d416a975fc7354a124a09fa09073f"
+    },
+    "package-lock.json": {
+      "bytes": 65539,
+      "sha256": "25ff8e036d98dddd6fab6656e1b8a69c56dd924edc7b39d2f80f0da4a8b0ec17"
+    },
+    "vite.config.ts": {
+      "bytes": 1672,
+      "sha256": "81056aa3e5ea7ea17e9be3d88caaf43f08fd887df1769ab1089bc985d54a4215"
+    },
+    "index.html": {
+      "bytes": 725,
+      "sha256": "02226c489b708232ab9a4ff16ebda68d9f52e86e489fde7f7a40f0ad9a52b131"
+    },
+    "public/fonts/wenkai-web.woff2": {
+      "bytes": 279764,
+      "sha256": "c619ddc07c72b9afca0ab20b1e33ed1a67c974ae3a7d1ec44de611895a79f59d"
+    },
+    "public/fonts/provenance.json": {
+      "bytes": 835,
+      "sha256": "ad446104894d82010b8cee5769a0bb3d237b7ae445b161dd5925d1fa3c6bdb9e"
+    },
+    "public/fonts/OFL-WenKai.txt": {
+      "bytes": 5171,
+      "sha256": "1a25e35da1031c6c3436fde545bb9cb5aca954e9873afe510c834b8b79bd21a0"
+    },
+    "tsconfig.json": {
+      "bytes": 401,
+      "sha256": "23287477601cbe9d9a3cc6110cb2612a21dc2ae0396759d95f701a2f3bb1fa6d"
+    },
+    "public/assets/new-scrolls/chapter-1/scene.json": {
+      "bytes": 6706197,
+      "sha256": "f70f469adfad2e146944447d64ddc8b157915a90bf3d6a8732c66bff75981121"
+    },
+    "public/assets/new-scrolls/chapter-2/scene.json": {
+      "bytes": 929511,
+      "sha256": "3919e11d71aadc75bfaab934a1255e3bb7ddab2aada69dbd60639e827f8fb42a"
+    },
+    "public/assets/new-scrolls/chapter-3/scene.json": {
+      "bytes": 6496305,
+      "sha256": "831918f3365da1e29a1d9293135a463acddd87e07e0525d7982a9e4fef071159"
+    },
+    "public/assets/new-scrolls/chapter-4/scene.json": {
+      "bytes": 729974,
+      "sha256": "1274381aca06e8c7580aca7818f4cbfc1a24957084c1747a5a70d2213b3a2a63"
+    },
+    "public/ui/peony-atlas/cinnabar-peonies.webp": {
+      "bytes": 522226,
+      "sha256": "08ab2c66c08a0b417168dd65b2053ca616bb3b526bbadacab35ba2758f0f9570"
+    },
+    "public/ui/peony-atlas/ivory-branch.webp": {
+      "bytes": 336150,
+      "sha256": "0b42754463b800bdd1a4f26089d4d3ba45f737356edbe10d0136dd0017319edd"
+    },
+    "public/ui/peony-atlas/landscape.webp": {
+      "bytes": 298152,
+      "sha256": "a72d7349074c1ab618e3ec228df3ccc1264270579840649e9b7bac089d1208e3"
+    },
+    "public/ui/peony-atlas/provenance.json": {
+      "bytes": 8212,
+      "sha256": "9a789add492cacf3bbbe9c4ee262226197f2b838891a2c9721197efce1236352"
+    },
+    "public/ui/peony-atlas/title.webp": {
+      "bytes": 323286,
+      "sha256": "a9cd0b3b9a1366679f6c6eb813843fc20344a3ad213b5e6656b7113fc9893578"
+    }
+  },
+  "driversBeforeFreeze": {
+    "reports/art-renewal/poetic-narrative/validate.cjs": {
+      "bytes": 5917,
+      "sha256": "e4c19dc750852aacf9e4ae42b200aa022557044abafbcd44a23fe7d0660275b4"
+    },
+    "reports/art-renewal/poetic-narrative/verify-browser.cjs": {
+      "bytes": 15684,
+      "sha256": "9ac940d735cb2dbfe5266a8fc15fa62141caf2ba3a1f85f00282963718f763de"
+    },
+    "reports/art-renewal/poetic-narrative/verify-playback.cjs": {
+      "bytes": 7409,
+      "sha256": "31eccc9dbf11a2298200f3fbce0527577277756e5e7e7e4ae31462493511b35a"
+    },
+    "reports/art-renewal/poetic-narrative/verify-placement-lock.cjs": {
+      "bytes": 5243,
+      "sha256": "6a1340cee75af20815ffaec390e5323203217bb4dd6b7ad98bedcfea936678c8"
+    },
+    "reports/art-renewal/poetic-narrative/verify-punctuation-contact.cjs": {
+      "bytes": 4971,
+      "sha256": "262f308eef4affc9b099343ddf15e3f9a20237cb6e473612ff19ffbd1fa34dac"
+    },
+    "reports/art-renewal/encounters/verify-integrated.cjs": {
+      "bytes": 7022,
+      "sha256": "e45d4413706fe6cb1da6ac6b1c4ca7f50871c0dc6e2fee1fbdb96cd4c685a41c"
+    },
+    "scripts/validate-art-renewal-ui.mjs": {
+      "bytes": 32553,
+      "sha256": "f978cf6666001687b5268c241798edff142ba2d804712f25294bff0ae285d58f"
+    },
+    "reports/art-renewal/font-fallback/verify-final-font.cjs": {
+      "bytes": 15067,
+      "sha256": "a97661c1f88d0b7ff50777a04e58cb5dcdc52dc343466b64cabe1d51a1169190"
+    },
+    "scripts/validate-kai-font.py": {
+      "bytes": 4223,
+      "sha256": "c6b56e6cf62a899f499cdba16f19925e4152553ef10ebd5dd2fc121e13e8f621"
+    }
+  },
+  "candidate3ImmutableBuildToPreserve": {
+    "index.html": {
+      "bytes": 902,
+      "sha256": "806eb52d8a41bcc4774d1253902b58fecc4734225d77b6f889f6ec726410a769"
+    },
+    "fonts/wenkai-web.woff2": {
+      "bytes": 242380,
+      "sha256": "1f74e7b3639ae956b92f0c3eed77bf3ce505025bf28a66bd8c330722001dc8ed"
+    },
+    "assets/flowerLetter-CBm438hs.js": {
+      "bytes": 2326,
+      "sha256": "2f2f225063ed23a88fe1c9621a1c2d68dff2636c6fa69e4fb2ae307f3e7f0168"
+    },
+    "assets/index-Bc7VfaY-.css": {
+      "bytes": 116013,
+      "sha256": "6b0e414d7910db0312f3a25215c62a5d6c7ebee8e0cc7e7cdaecee6295298224"
+    },
+    "assets/index-C6ZfivTN.js": {
+      "bytes": 526185,
+      "sha256": "ae5d255e4d108e40cb08301ffbd95a4a0731584e64fdd4d3e85b6885a23e3d00"
+    },
+    "assets/three-w1TnP4RH.js": {
+      "bytes": 481608,
+      "sha256": "598394f34bd207f0b60b007bdfca1f8f020fac83128efe1dee2d237eaa65c1d0"
+    }
+  },
+  "ownedHistoricalEvidenceToPreserve": {
+    "reports/art-renewal/poetic-narrative/browser-validation.json": {
+      "bytes": 402781,
+      "sha256": "45a159c6de7906ecf39080a71c427ee3612f2a659093ce63ca02c298ebe1dca4"
+    },
+    "reports/art-renewal/poetic-narrative/candidate-3-text-diff.json": {
+      "bytes": 1996,
+      "sha256": "fc528646bc97746db61e0bac628ea883328b87c0008cf23ffc22512387e7449b"
+    },
+    "reports/art-renewal/poetic-narrative/cue-sheet.csv": {
+      "bytes": 6927,
+      "sha256": "fd73236efc4ed5d45bd1beb209e72454ad3b813d53ff934bb24535824850a4a1"
+    },
+    "reports/art-renewal/poetic-narrative/notes.txt": {
+      "bytes": 7620,
+      "sha256": "0cd2fab7076d7ae8186bada21abfb6f80067e5a9b6df688838d2b820ac2768ae"
+    },
+    "reports/art-renewal/poetic-narrative/placement-lock-validation.json": {
+      "bytes": 7503,
+      "sha256": "a9ba88909eed017b38eaa6e162836480d2d53a7f580f6a80f0e2e24caa4a0076"
+    },
+    "reports/art-renewal/poetic-narrative/playback-validation.json": {
+      "bytes": 1409515,
+      "sha256": "4d02e70062ea153345f11528cecffcdc4d8c5b3c8c41ad6e55cc71937ea713d9"
+    },
+    "reports/art-renewal/poetic-narrative/poetic-c1-s1-1920.png": {
+      "bytes": 2100785,
+      "sha256": "cc63abd6f19e89ed3fbfa4511f0c7b67595ccd0f8472000ca0cd68861610282b"
+    },
+    "reports/art-renewal/poetic-narrative/poetic-c1-s11-1920.png": {
+      "bytes": 2604160,
+      "sha256": "159eccd5f66d2183fa07a03c4d23f1c3832f2e21853f4b34b3ef95ba273e9620"
+    },
+    "reports/art-renewal/poetic-narrative/poetic-c2-s2-1920.png": {
+      "bytes": 2339309,
+      "sha256": "8228ab0e80ff4db79c6cfc2b428b263f96731dfd95ae3a0e1626fb66d3c34b70"
+    },
+    "reports/art-renewal/poetic-narrative/poetic-c3-s1-1920.png": {
+      "bytes": 2752576,
+      "sha256": "124ef3c071442c9faf68fefd09140dbd85db0e0461f9b4a659725624ecacf345"
+    },
+    "reports/art-renewal/poetic-narrative/poetic-c3-s6-1920.png": {
+      "bytes": 2664707,
+      "sha256": "2c47cec54a2c768d870eb816712b134713d15768fa655d1a52e5365a8a0d88b7"
+    },
+    "reports/art-renewal/poetic-narrative/poetic-c4-s2-1920.png": {
+      "bytes": 2330406,
+      "sha256": "fc99dc4511831b708e7088689cb9aeb446ff4f0d2490a75c6c45f69391bba2da"
+    },
+    "reports/art-renewal/poetic-narrative/poetic-c4-s3-1920.png": {
+      "bytes": 2183868,
+      "sha256": "ef88c7c9bea262ba5c10461afe6fcdc885de84e32ae2a949ffa9c07595e428c7"
+    },
+    "reports/art-renewal/poetic-narrative/poetic-c4-s4-1920.png": {
+      "bytes": 2315547,
+      "sha256": "01b8b53e1a9eb75443b277180c6adc65bd147374497b1e36c2a9a4f960f6ef7c"
+    },
+    "reports/art-renewal/poetic-narrative/poetic-c4-s5-1920.png": {
+      "bytes": 2068264,
+      "sha256": "7e76f51a5468923254973c1e58d64e9e1ee773b9a080bbf353bdd5053e01e4c2"
+    },
+    "reports/art-renewal/poetic-narrative/poetic-c4-s8-1920.png": {
+      "bytes": 2230387,
+      "sha256": "fbf1cad070369f9d788c23743dca67ef83145c7db54f2ba9a818f1d77041428d"
+    },
+    "reports/art-renewal/poetic-narrative/poetic-c4-s9-1920.png": {
+      "bytes": 2231024,
+      "sha256": "58e8b4bb1b74c1c4cbb64254fc43fa43f14cd2d22b88d94aa104525a49e465c7"
+    },
+    "reports/art-renewal/poetic-narrative/punctuation-c4-s3-2560.png": {
+      "bytes": 3720289,
+      "sha256": "1267dfd529daa2b44ade43865945b308d11371d2388afe30a2bf4927a1ac157b"
+    },
+    "reports/art-renewal/poetic-narrative/punctuation-contact-validation.json": {
+      "bytes": 2916,
+      "sha256": "e5ab808e2f93521c6c6b6aa7c19d2e920adfc3c1a128171892f2fdb0317c629b"
+    },
+    "reports/art-renewal/poetic-narrative/validate.cjs": {
+      "bytes": 5917,
+      "sha256": "e4c19dc750852aacf9e4ae42b200aa022557044abafbcd44a23fe7d0660275b4"
+    },
+    "reports/art-renewal/poetic-narrative/validation.json": {
+      "bytes": 31965,
+      "sha256": "a4fa9924074e08c1841268ed9e9f710ead91f38e4bc3d0a41b0f587979271cda"
+    },
+    "reports/art-renewal/poetic-narrative/verify-browser.cjs": {
+      "bytes": 15684,
+      "sha256": "9ac940d735cb2dbfe5266a8fc15fa62141caf2ba3a1f85f00282963718f763de"
+    },
+    "reports/art-renewal/poetic-narrative/verify-placement-lock.cjs": {
+      "bytes": 5243,
+      "sha256": "6a1340cee75af20815ffaec390e5323203217bb4dd6b7ad98bedcfea936678c8"
+    },
+    "reports/art-renewal/poetic-narrative/verify-playback.cjs": {
+      "bytes": 7409,
+      "sha256": "31eccc9dbf11a2298200f3fbce0527577277756e5e7e7e4ae31462493511b35a"
+    },
+    "reports/art-renewal/poetic-narrative/verify-punctuation-contact.cjs": {
+      "bytes": 4971,
+      "sha256": "262f308eef4affc9b099343ddf15e3f9a20237cb6e473612ff19ffbd1fa34dac"
+    },
+    "reports/art-renewal/encounters/chapter-1-1920.png": {
+      "bytes": 2173559,
+      "sha256": "a3317098c2b16cbe668d8efbda42b80ccd37bdbe10f6b6bf1a2431f036eec9d4"
+    },
+    "reports/art-renewal/encounters/chapter-2-1920.png": {
+      "bytes": 2200407,
+      "sha256": "04464a28b105b19c60f121950d7d18156cde330dcc1b02ad92c6aa5584cc2829"
+    },
+    "reports/art-renewal/encounters/chapter-3-1920.png": {
+      "bytes": 2531198,
+      "sha256": "55f40726cbf08c5b777ad9e4c4d1c559daa860037c7213c36d047b9f53ce6513"
+    },
+    "reports/art-renewal/encounters/chapter-4-1920.png": {
+      "bytes": 2218635,
+      "sha256": "f4583803088c024893cac05ce6c3122093c8c227badf04561ac311ea51a7d43b"
+    },
+    "reports/art-renewal/encounters/harness.html": {
+      "bytes": 2771,
+      "sha256": "daa49a16105bbb882fbbf3a51332a74e4f082c229ba1a9c269237e032a964ec2"
+    },
+    "reports/art-renewal/encounters/integrated.json": {
+      "bytes": 20051,
+      "sha256": "f8d6e7e80bd020f06cc6c3ab9747db3b562e313e3af63d3c1c837747326bd25f"
+    },
+    "reports/art-renewal/encounters/lifecycle.json": {
+      "bytes": 1835,
+      "sha256": "24c1803a5b94eee00368231506a7f5e442a865e084d9dc2204649f60c97bb31d"
+    },
+    "reports/art-renewal/encounters/notes.txt": {
+      "bytes": 2463,
+      "sha256": "3d43f8e7ef39ed27f99ff1eccec331a5417dbb62b392b9d289e1b81c90c3f7d6"
+    },
+    "reports/art-renewal/encounters/verify-integrated.cjs": {
+      "bytes": 7022,
+      "sha256": "e45d4413706fe6cb1da6ac6b1c4ca7f50871c0dc6e2fee1fbdb96cd4c685a41c"
+    },
+    "reports/art-renewal/encounters/verify-lifecycle.cjs": {
+      "bytes": 5504,
+      "sha256": "41174c1c035bfbdb2acf142e0ec2e91c312345606b08b540243c81df6e1106df"
+    },
+    "reports/art-renewal/artistic-review/candidate-2-guide-1280.png": {
+      "bytes": 410085,
+      "sha256": "6e42418071e0c188c081fb1a76991e70e1999823a0be78247bde60da0b2d8fde"
+    },
+    "reports/art-renewal/artistic-review/candidate-2-home-1920.png": {
+      "bytes": 2604692,
+      "sha256": "f63c06ec29799a9e9b9e125568be06aec1e75ae885d30bb2d339f2e7d5896528"
+    },
+    "reports/art-renewal/artistic-review/review.txt": {
+      "bytes": 6745,
+      "sha256": "8de1f42ba28e19c31b855d3136419a5e960433b637114cae971fab95710afb66"
+    },
+    "reports/art-renewal/artistic-review/verify-views.cjs": {
+      "bytes": 3561,
+      "sha256": "400f9c70718354e27e3b9e3924f110bc58633723b48a604d54e04a16d4085bc4"
+    },
+    "reports/art-renewal/artistic-review/views.json": {
+      "bytes": 2675,
+      "sha256": "4622cbbb951df8113d5b7ac31de0d9c52e024c069b644825f3b1656e7d5b01f7"
+    }
+  },
+  "plannedChecks": {
+    "poeticGeometryCases": 270,
+    "continuousCaptions": 45,
+    "placementLockChecks": 12,
+    "encounterDesktopLayouts": 12,
+    "readingChecks": 28,
+    "fontCdp": "actual custom-only old-fallback nodes plus real home/letter DOM",
+    "newChronologyDirectedScreens": 4,
+    "filledPrimaryActualStates": {
+      "status": "not-run",
+      "selectors": [
+        ".atlas-begin",
+        ".settings-done",
+        ".art-loading__retry",
+        ".flower-letter-primary"
+      ],
+      "states": [
+        "default",
+        "actual-pointer-hover",
+        "keyboard-focus-visible",
+        "hover-plus-focus"
+      ],
+      "computed": [
+        "color",
+        "backgroundColor",
+        "outlineColor",
+        "outlineStyle",
+        "outlineWidth",
+        "outlineOffset"
+      ],
+      "screenshots": true
+    },
+    "sealedChoices": {
+      "status": "not-run",
+      "allFourRemainDisabled": true,
+      "selectedExpectedOpacity": 1,
+      "otherExpectedOpacity": 0.65
+    }
+  },
+  "expectedApprovedFont": {
+    "bytes": 279764,
+    "sha256": "c619ddc07c72b9afca0ab20b1e33ed1a67c974ae3a7d1ec44de611895a79f59d"
+  },
+  "runOrder": [
+    "freeze-bind-and-archive-candidate3",
+    "data",
+    "270geometry",
+    "45continuous",
+    "12locks",
+    "12encounters",
+    "reading28",
+    "fontCDP",
+    "new-note-directed-layout-and-focus",
+    "final-hash-audit-and-close"
+  ],
+  "candidate3ArchiveCompleted": {
+    "manifest": "reports/art-renewal/history/candidate-3/owned-archive-manifest.json",
+    "manifestSha256": "c4302f183e0f6165a382186d865700803ba1274cc403cf2fc30496b4cf450d5a",
+    "files": 41,
+    "allCopiedHashesVerified": true,
+    "scope": "Owned poetry/encounters/editorial evidence as it stood for candidate3; nested lifecycle/dev and candidate2 artistic frames retain their own original scopes. Not a complete candidate3 product-source snapshot."
+  }
+}

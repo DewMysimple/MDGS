@@ -1,0 +1,574 @@
+{
+  "status": "pass",
+  "startedAt": "2026-10-23T01:54:18.614Z",
+  "scope": "Actual current-production four home entries, physical paper geometry, at least 4s visible loading, repeated input, return, slow resource waiting, cover failure/retry, and cancelled manifest invalidation.",
+  "checks": [
+    {
+      "test": "four-painted-foyer-layers-idle-off-reduced-hidden-resume",
+      "layers": [
+        {
+          "src": "http://127.0.0.1:6687/ui/peony-atlas/landscape.webp",
+          "width": 1672,
+          "height": 941,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:6687/ui/peony-atlas/cinnabar-peonies.webp",
+          "width": 1536,
+          "height": 1024,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:6687/ui/peony-atlas/ivory-branch.webp",
+          "width": 1536,
+          "height": 1024,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:6687/ui/peony-atlas/title.webp",
+          "width": 2172,
+          "height": 724,
+          "complete": true
+        }
+      ],
+      "idle": {
+        "phase": "HOME",
+        "ready": true,
+        "animated": true,
+        "hover": null,
+        "renderCount": 394,
+        "layers": 4,
+        "kind": "original-painted-atlas",
+        "paused": "false",
+        "pigment": "live",
+        "pigmentFrames": 120
+      },
+      "off": {
+        "phase": "HOME",
+        "ready": true,
+        "animated": false,
+        "hover": null,
+        "renderCount": 395,
+        "layers": 4,
+        "kind": "original-painted-atlas",
+        "paused": "true",
+        "pigment": "live",
+        "pigmentFrames": 122
+      },
+      "reduced": {
+        "phase": "HOME",
+        "ready": true,
+        "animated": false,
+        "hover": null,
+        "renderCount": 395,
+        "layers": 4,
+        "kind": "original-painted-atlas",
+        "paused": "true",
+        "pigment": "live",
+        "pigmentFrames": 123
+      },
+      "hidden": {
+        "phase": "HOME",
+        "ready": true,
+        "animated": false,
+        "hover": null,
+        "renderCount": 395,
+        "layers": 4,
+        "kind": "original-painted-atlas",
+        "paused": "true",
+        "pigment": "live",
+        "pigmentFrames": 123
+      },
+      "restored": {
+        "phase": "HOME",
+        "ready": true,
+        "animated": true,
+        "hover": null,
+        "renderCount": 395,
+        "layers": 4,
+        "kind": "original-painted-atlas",
+        "paused": "false",
+        "pigment": "live",
+        "pigmentFrames": 128
+      },
+      "optionalSurface": "live",
+      "note": "Wet-pigment WebGL is optional; decoded image fallback is supported. Real GL-loss/image-retry coverage is in the UI driver. Visibility uses injected document.hidden, not system-background emulation.",
+      "passed": true
+    },
+    {
+      "test": "real-entry-1-closed-coil-unfurl-four-seconds",
+      "closed": {
+        "preparationStage": "first-frame",
+        "paintingSrc": "./assets/new-scrolls/chapter-1/cover.webp",
+        "unfurl": "0.00000",
+        "handoffState": "waiting",
+        "presentationReady": "true",
+        "previewProgress": "0",
+        "previewFrame": "",
+        "renderCount": "6",
+        "paintingReady": "true",
+        "paintingAspect": "1.777778",
+        "paperAspect": "1.857778",
+        "artDimensions": "{\"width\":1280,\"height\":720}",
+        "rodSeparation": "0.34674",
+        "paperCurvature": "0.15292",
+        "paperThickness": "0.006136",
+        "paperVertices": "5005",
+        "paperZRange": "0.301091"
+      },
+      "half": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-1/cover.webp",
+        "unfurl": "0.43214",
+        "handoffState": "waiting",
+        "presentationReady": "true",
+        "previewProgress": "0",
+        "previewFrame": "1",
+        "renderCount": "91",
+        "paintingReady": "true",
+        "paintingAspect": "1.777778",
+        "paperAspect": "1.857778",
+        "artDimensions": "{\"width\":1280,\"height\":720}",
+        "rodSeparation": "4.30221",
+        "paperCurvature": "0.13692",
+        "paperThickness": "0.006136",
+        "paperVertices": "5005",
+        "paperZRange": "0.266929"
+      },
+      "opened": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-1/cover.webp",
+        "unfurl": "0.99915",
+        "handoffState": "waiting",
+        "presentationReady": "true",
+        "previewProgress": "0",
+        "previewFrame": "1",
+        "renderCount": "195",
+        "paintingReady": "true",
+        "paintingAspect": "1.777778",
+        "paperAspect": "1.857778",
+        "artDimensions": "{\"width\":1280,\"height\":720}",
+        "rodSeparation": "9.49223",
+        "paperCurvature": "0.11254",
+        "paperThickness": "0.006136",
+        "paperVertices": "5005",
+        "paperZRange": "0.000109"
+      },
+      "loadingMs": 4005.7000000029802,
+      "events": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 7750.5
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 7966.4000000059605
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 8423.20000000298
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 8692.90000000596
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 12698.60000000894
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 12949.800000011921
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 13360.10000000894
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "real-entry-2-closed-coil-unfurl-four-seconds",
+      "closed": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-2/cover.webp",
+        "unfurl": "0.00000",
+        "handoffState": "waiting",
+        "presentationReady": "true",
+        "previewProgress": "0",
+        "previewFrame": "33",
+        "renderCount": "16",
+        "paintingReady": "true",
+        "paintingAspect": "1.777778",
+        "paperAspect": "1.857778",
+        "artDimensions": "{\"width\":1280,\"height\":720}",
+        "rodSeparation": "0.34674",
+        "paperCurvature": "0.15292",
+        "paperThickness": "0.006136",
+        "paperVertices": "5005",
+        "paperZRange": "0.301091"
+      },
+      "half": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-2/cover.webp",
+        "unfurl": "0.43454",
+        "handoffState": "waiting",
+        "presentationReady": "true",
+        "previewProgress": "0",
+        "previewFrame": "33",
+        "renderCount": "119",
+        "paintingReady": "true",
+        "paintingAspect": "1.777778",
+        "paperAspect": "1.857778",
+        "artDimensions": "{\"width\":1280,\"height\":720}",
+        "rodSeparation": "4.32422",
+        "paperCurvature": "0.13683",
+        "paperThickness": "0.006136",
+        "paperVertices": "5005",
+        "paperZRange": "0.266199"
+      },
+      "opened": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-2/cover.webp",
+        "unfurl": "0.99930",
+        "handoffState": "waiting",
+        "presentationReady": "true",
+        "previewProgress": "0",
+        "previewFrame": "33",
+        "renderCount": "223",
+        "paintingReady": "true",
+        "paintingAspect": "1.777778",
+        "paperAspect": "1.857778",
+        "artDimensions": "{\"width\":1280,\"height\":720}",
+        "rodSeparation": "9.49363",
+        "paperCurvature": "0.11253",
+        "paperThickness": "0.006136",
+        "paperVertices": "5005",
+        "paperZRange": "0.000079"
+      },
+      "loadingMs": 4005.7999999970198,
+      "events": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 14568.300000011921
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 14773.5
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 15224.800000011921
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 15487.40000000596
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 19493.20000000298
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 19748.80000001192
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 20159.90000000596
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "real-entry-3-closed-coil-unfurl-four-seconds",
+      "closed": {
+        "preparationStage": "first-frame",
+        "paintingSrc": "./assets/new-scrolls/chapter-3/cover.webp",
+        "unfurl": "0.00000",
+        "handoffState": "waiting",
+        "presentationReady": "true",
+        "previewProgress": "0",
+        "previewFrame": "",
+        "renderCount": "4",
+        "paintingReady": "true",
+        "paintingAspect": "1.777778",
+        "paperAspect": "1.857778",
+        "artDimensions": "{\"width\":1280,\"height\":720}",
+        "rodSeparation": "0.34674",
+        "paperCurvature": "0.15292",
+        "paperThickness": "0.006136",
+        "paperVertices": "5005",
+        "paperZRange": "0.301091"
+      },
+      "half": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-3/cover.webp",
+        "unfurl": "0.43468",
+        "handoffState": "waiting",
+        "presentationReady": "true",
+        "previewProgress": "0",
+        "previewFrame": "1",
+        "renderCount": "85",
+        "paintingReady": "true",
+        "paintingAspect": "1.777778",
+        "paperAspect": "1.857778",
+        "artDimensions": "{\"width\":1280,\"height\":720}",
+        "rodSeparation": "4.32547",
+        "paperCurvature": "0.13682",
+        "paperThickness": "0.006136",
+        "paperVertices": "5005",
+        "paperZRange": "0.266193"
+      },
+      "opened": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-3/cover.webp",
+        "unfurl": "0.99931",
+        "handoffState": "waiting",
+        "presentationReady": "true",
+        "previewProgress": "0",
+        "previewFrame": "1",
+        "renderCount": "189",
+        "paintingReady": "true",
+        "paintingAspect": "1.777778",
+        "paperAspect": "1.857778",
+        "artDimensions": "{\"width\":1280,\"height\":720}",
+        "rodSeparation": "9.49371",
+        "paperCurvature": "0.11253",
+        "paperThickness": "0.006136",
+        "paperVertices": "5005",
+        "paperZRange": "0.000078"
+      },
+      "loadingMs": 4006.9000000059605,
+      "events": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 21297.10000000894
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 21500.30000001192
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 21959.60000000894
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 22525
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 26531.90000000596
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 26782.70000000298
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 27189.80000001192
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "real-entry-4-closed-coil-unfurl-four-seconds",
+      "closed": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-4/cover.webp",
+        "unfurl": "0.00000",
+        "handoffState": "waiting",
+        "presentationReady": "true",
+        "previewProgress": "0",
+        "previewFrame": "1",
+        "renderCount": "16",
+        "paintingReady": "true",
+        "paintingAspect": "1.400438",
+        "paperAspect": "1.514398",
+        "artDimensions": "{\"width\":1280,\"height\":914}",
+        "rodSeparation": "0.40861",
+        "paperCurvature": "0.17921",
+        "paperThickness": "0.007528",
+        "paperVertices": "5005",
+        "paperZRange": "0.352473"
+      },
+      "half": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-4/cover.webp",
+        "unfurl": "0.43468",
+        "handoffState": "waiting",
+        "presentationReady": "true",
+        "previewProgress": "0",
+        "previewFrame": "1",
+        "renderCount": "119",
+        "paintingReady": "true",
+        "paintingAspect": "1.400438",
+        "paperAspect": "1.514398",
+        "artDimensions": "{\"width\":1280,\"height\":914}",
+        "rodSeparation": "4.36044",
+        "paperCurvature": "0.16259",
+        "paperThickness": "0.007528",
+        "paperVertices": "5005",
+        "paperZRange": "0.316341"
+      },
+      "opened": {
+        "preparationStage": "ready",
+        "paintingSrc": "./assets/new-scrolls/chapter-4/cover.webp",
+        "unfurl": "0.99946",
+        "handoffState": "waiting",
+        "presentationReady": "true",
+        "previewProgress": "0",
+        "previewFrame": "1",
+        "renderCount": "223",
+        "paintingReady": "true",
+        "paintingAspect": "1.400438",
+        "paperAspect": "1.514398",
+        "artDimensions": "{\"width\":1280,\"height\":914}",
+        "rodSeparation": "9.49505",
+        "paperCurvature": "0.13803",
+        "paperThickness": "0.007528",
+        "paperVertices": "5005",
+        "paperZRange": "0.000050"
+      },
+      "loadingMs": 4001.9000000059605,
+      "events": [
+        {
+          "phase": "SCROLL_AWAKENING",
+          "at": 28372.60000000894
+        },
+        {
+          "phase": "CAMERA_ENTERING",
+          "at": 28579.60000000894
+        },
+        {
+          "phase": "ARTISTIC_TRANSITION",
+          "at": 29032
+        },
+        {
+          "phase": "SCROLL_LOADING",
+          "at": 29293.20000000298
+        },
+        {
+          "phase": "PAINTING_REVEAL",
+          "at": 33295.10000000894
+        },
+        {
+          "phase": "ENTERING_VIEWER",
+          "at": 33545.90000000596
+        },
+        {
+          "phase": "SCROLL_VIEWER",
+          "at": 33954.80000001192
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "slow-textures-wait-with-continuous-art-rendering",
+      "frames": 8,
+      "passed": true
+    },
+    {
+      "test": "chapter-specific-loading-art-error-and-full-retry",
+      "coverFailures": 2,
+      "documentState": "Same HOME document after visiting all four chapters; zero-progress entry explicitly selects the authored cover.",
+      "passed": true
+    },
+    {
+      "test": "cancelled-old-manifest-cannot-switch-or-revive-a-second-world",
+      "passed": true
+    },
+    {
+      "test": "desktop-soundscape-stem-retry-popover-return-continuity-and-fade-release",
+      "beforeReturn": {
+        "enabled": true,
+        "playback": "playing",
+        "volume": 52,
+        "clock": 0,
+        "contextState": "running",
+        "sourceCount": 3,
+        "loopDurations": [
+          160,
+          160,
+          24
+        ],
+        "zone": "女帝与牡丹",
+        "targetLevels": [
+          0.4,
+          0,
+          0.3
+        ],
+        "levels": [
+          0.011050625704228878,
+          0,
+          0.008287966251373291
+        ],
+        "musicGain": 1,
+        "reading": false,
+        "sourceEpoch": 0.3163333333333333,
+        "effects": 0,
+        "cuesPlayed": 0,
+        "decodedBuffers": 3,
+        "retiredGraphs": 0,
+        "decodedBytes": 96768000
+      },
+      "returned": {
+        "enabled": true,
+        "playback": "playing",
+        "volume": 52,
+        "clock": 1.2143333333333333,
+        "contextState": "running",
+        "sourceCount": 3,
+        "loopDurations": [
+          160,
+          160,
+          24
+        ],
+        "zone": "一庭春深",
+        "targetLevels": [
+          0.24,
+          0.12,
+          0.24
+        ],
+        "levels": [
+          0.19878558814525604,
+          0.07481768727302551,
+          0.19585037231445312
+        ],
+        "musicGain": 1,
+        "reading": false,
+        "sourceEpoch": 0.3163333333333333,
+        "effects": 0,
+        "cuesPlayed": 0,
+        "decodedBuffers": 3,
+        "retiredGraphs": 0,
+        "decodedBytes": 96768000
+      },
+      "volume": {
+        "x": 936.203125,
+        "y": 566.203125,
+        "width": 129,
+        "height": 24
+      },
+      "popup": {
+        "x": 879.203125,
+        "y": 506.203125,
+        "width": 242,
+        "height": 142.796875
+      },
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "expectedHttpFailures": [
+    "chapter-3 cover 503",
+    "chapter-3 cover 503",
+    "soundscape stem 503"
+  ],
+  "url": "http://127.0.0.1:6687/",
+  "preflight": false,
+  "httpHtmlSha256": "b7fb5104aad25eb4bf7180733c23c27e01ede328a20bbb1fb58ac63731af468e",
+  "buildHtmlSha256": "b7fb5104aad25eb4bf7180733c23c27e01ede328a20bbb1fb58ac63731af468e",
+  "browserVersion": "156.0.8078.4",
+  "completedAt": "2026-10-23T01:55:20.745Z"
+}

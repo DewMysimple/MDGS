@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "scope": "Recover missing ignored cache from byte-identical packed originals, no Blender save/render and no runtime asset edits",
+  "cache": "tmp/peony2-original-image-cache",
+  "chapters": [
+    {
+      "chapter": 1,
+      "source": "artwork/blender-reconstructed/chapter-1_reconstructed.blend",
+      "sourceSha256": "668566361fc6cfde4cf449cee615dbed5a4101f12ba6b39056ce3d7e32939c5d",
+      "images": 99,
+      "sourceUnchanged": true
+    },
+    {
+      "chapter": 2,
+      "source": "artwork/blender-reconstructed/chapter-2_reconstructed.blend",
+      "sourceSha256": "e58ac7493074b41d416de04b6456871a2a5b157b3044c94906cbcb71539ce5b0",
+      "images": 35,
+      "sourceUnchanged": true
+    },
+    {
+      "chapter": 3,
+      "source": "artwork/blender-reconstructed/chapter-3_reconstructed.blend",
+      "sourceSha256": "437d5bcaaabe36e60f699a39cd932499b948cdba546d3465591d7d85390a39fc",
+      "images": 66,
+      "sourceUnchanged": true
+    },
+    {
+      "chapter": 4,
+      "source": "artwork/blender-reconstructed/chapter-4_reconstructed.blend",
+      "sourceSha256": "dc5a1cf93c7e15eea9a00618d6d3ba8bd6927d964070cf24031edba286fd570f",
+      "images": 43,
+      "sourceUnchanged": true
+    }
+  ],
+  "failedRun": "reports/art-renewal/art-candidate-7-runs/2026-10-23T02-38-21-073Z",
+  "originalMissingCache": "C:/Users/Administrator/.codex/worktrees/b485/MDGS/.asset-cache/new-scrolls/peony-2.0-2026-10-23",
+  "extractor": "reports/art-renewal/restore-original-image-cache.py",
+  "extractorSha256": "98b1dc092019b64d294d1bcc2b0f1f6a5f376fcfc67c515982e3f7a85a140d64",
+  "recoveredAt": "2026-10-23T02:42:03.503Z",
+  "totalRecoveredOriginalImages": 243
+}

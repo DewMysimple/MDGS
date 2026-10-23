@@ -15,6 +15,7 @@ sources: []
 - [[决策/ADR-001-原场景与装裱分离.md|ADR-001 原场景与装裱分离]] — active · preserve-artwork-handscroll-ui
 - [[决策/ADR-002-每轮修改提交与远程同步.md|ADR-002 每轮修改提交与远程同步]] — active · git-delivery-per-conversation
 - [[决策/ADR-007-牡丹2.0保真整改.md|ADR-007 牡丹2.0保真整改]] — active · peony2-native-fidelity
+- [[决策/ADR-008-牡丹数字游观的艺术表达.md|ADR-008 牡丹数字游观的艺术表达]] — active · peony-art-experience
 
 ## 历史与替代
 

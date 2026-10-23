@@ -1,0 +1,28 @@
+{
+  "status": "fail",
+  "startedAt": "2026-10-23T01:34:05.666Z",
+  "runId": "2026-10-23T01-34-05-665Z",
+  "buildDirectory": "tmp/art-candidate-6-dist",
+  "freeze": {
+    "path": "reports/art-renewal/art-candidate-6-build.json",
+    "sha256": "516efd7a1d451b7e62f79e90564b22f7a706b9b14bde6cb359c8656021fbf359"
+  },
+  "code": {
+    "assets/flowerLetter-DCA_QV0r.js": "a5bac5ccca28d8ef909a70f86af801086fccf0b00ceb02122e2ee4526ba3af63",
+    "assets/index-C5txKLE_.css": "db346cac5c7e39fe33b73b46b0186cf37cc411ed9643163849497c5f82cc11ae",
+    "assets/index-CTrqtaDU.js": "70a48d047600b981f7317ff38b846d8e2e0e310e9bcd904339694e806423f92a",
+    "assets/three-BetNTb4e.js": "68f6f4af9b65531830834e41fcad5f941cfcd557e6996a7f32a8c45e83290d10",
+    "index.html": "b7fb5104aad25eb4bf7180733c23c27e01ede328a20bbb1fb58ac63731af468e"
+  },
+  "scope": "Same document.hidden override + visibilitychange dispatch as historical settings test. Isolates synchronous controller persistence from delayed React/renderer DOM commit. This is not a native OS window background or display-FPS benchmark.",
+  "rounds": [],
+  "errors": [],
+  "url": "http://127.0.0.1:4943/",
+  "browserVersion": "156.0.8078.4",
+  "httpHtmlSha256": "b7fb5104aad25eb4bf7180733c23c27e01ede328a20bbb1fb58ac63731af468e",
+  "failure": {
+    "message": "page.waitForFunction: Timeout 5000ms exceeded.",
+    "stack": "page.waitForFunction: Timeout 5000ms exceeded.\n    at E:\\数字媒体竞赛\\gitProject\\MDGS\\reports\\art-renewal\\probe-hidden-commit.mjs:97:16"
+  },
+  "completedAt": "2026-10-23T01:34:20.611Z"
+}

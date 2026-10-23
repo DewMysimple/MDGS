@@ -1,0 +1,32 @@
+候选4诗意/遇景/阅读/字体复验准备（待统一冻结，未运行）
+
+不自行build。收到root明确的冻结目录、HTML/JS/CSS/font SHA与GPU窗口后才执行；以下$taskBuild、$taskUrl、$taskRun为该次真实值。Playwright模块与Chrome路径通过既有本机环境变量提供，不写本机配置。所有浏览器任务串行执行，单次完成关闭浏览器；45句实播需约5分钟，不能因准备脚本完成就称通过。
+
+0. 冻结前，先将owned候选3历史按现状归档到 reports/art-renewal/history/candidate-3/ 并逐文件SHA核实。至少包括poetic-narrative全目录、encounters全目录、artistic-review全目录、src/data/poeticNarrative.ts；注明最后一项数据在3/4保持不变，不将新增年代札记冒称候选3。现有候选2历史保持不变。当前三个驱动可用MDGS_POETRY_REPORT_DIR独立输出；encounters和纯数据validate写固定目录，必须先归档，再运行，随后复制本次实际输出到$taskRun。冻结driver本身不改。
+
+1. 记录真正freeze输入：候选4全部HTML、主包/动态JS、CSS、font/provenance/OFL、四卷scene.json及配置的SHA；所有src TS/TSX/CSS、有关驱动前后SHA。准备时的candidate-4-qa-plan.json不代替此步骤。校验当前批准publicfont等于包font；CDP新font应为279764B、SHA c619ddc07c72b9afca0ab20b1e33ed1a67c974ae3a7d1ec44de611895a79f59d，仍以root实际freeze为准。
+
+2. 独立预览真正冻结包（不重建）：
+npx vite preview --outDir $taskBuild --host 127.0.0.1 --port 5196 --strictPort
+在同一包设置：
+$env:MDGS_POETRY_URL=$taskUrl
+$env:MDGS_POETRY_BUILD_DIR=$taskBuild
+$env:MDGS_POETRY_REPORT_DIR="$taskRun/poetic-narrative"
+$env:MDGS_ENCOUNTERS_URL=$taskUrl
+
+3. 串行执行既有冻结drivers，任一失败保存真实诊断并通知root，不放宽阈值：
+node reports/art-renewal/poetic-narrative/validate.cjs
+node reports/art-renewal/poetic-narrative/verify-browser.cjs
+node reports/art-renewal/poetic-narrative/verify-playback.cjs
+node reports/art-renewal/poetic-narrative/verify-placement-lock.cjs
+node reports/art-renewal/encounters/verify-integrated.cjs
+node scripts/validate-art-renewal-ui.mjs --build-dir $taskBuild --suite reading --report-dir "$taskRun/reading" --shots-dir "$taskRun/reading-shots"
+node reports/art-renewal/font-fallback/verify-final-font.cjs --build-dir $taskBuild --report-file "$taskRun/font-cdp.json" --expected-font-sha256 c619ddc07c72b9afca0ab20b1e33ed1a67c974ae3a7d1ec44de611895a79f59d
+
+4. 证据覆盖：270=45句×1280/1920/2560×padding12/24，实际字格边界/正文与印章汉字数字碰撞、40精确stop、三模式/保存/quiet零正文/25原文逐字；45实播必须四卷真实全长且每句出现，锁位变化<=既有.8px；12locks包含同桶/大seek/反向/resize/暂停；12遇景布局含进出、键盘入锦、展诗、滚轮恢复；reading28含四卷原作/札记来源/探索、6桌面尺寸焦点。新年代注另需1280/1920原作与札记共4张定向实际截图，并检查新增note字格/无溢出/primary href与键盘focus，现有reading28本身不证明新增note的完整细部。
+
+补充真实状态专项（待运行）：首页.atlas-begin、设置.settings-done、加载错误.art-loading__retry、花笺.flower-letter-primary四个实底按钮，逐一读取默认/实际鼠标hover/键盘focus-visible/hover+focus的computed color、backgroundColor、outlineColor/Style/Width/Offset，记录实际截图，确认深底浅字保持且键盘描边可见。花笺在钤印前/保存时均读；封印后四个choices仍disabled，selected disabled opacity=1、其余disabled=.65，保持所选可读。只补少量真实状态证据，不新建大测试框架，不以静态CSS推断冒称computed通过。原C3问题及旧PNG保留，不倒填。
+
+5. 270标点格/印章接触照实保留，新字体可能改变原先23例的数量；仍不得放宽汉字/数字碰撞。结合实际新截图审视；若需复现当前C4s3/2560标点接触，可在270输出后运行既有verify-punctuation-contact.cjs（同环境，独立输出目录）。若接触对象变化，不能把旧PNG当新包证据。
+
+6. 清理：浏览器和预览服务关闭，核对driver/source/build前后SHA，复制encounters本次4PNG+integrated.json及纯数据validation/cue-sheet至本次run。更新的是本次结论，不改候选2/3历史。不因静态覆盖或FontFace已loaded声称自定义字体覆盖；最终font CDP与真实cmap报告一起读取。

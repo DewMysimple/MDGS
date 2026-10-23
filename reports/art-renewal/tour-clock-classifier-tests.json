@@ -1,0 +1,91 @@
+{
+  "status": "passed",
+  "scope": "Pure classifier assertions, not a native capture proof",
+  "cases": [
+    {
+      "name": "stable",
+      "expectedValid": true,
+      "actualValid": true
+    },
+    {
+      "name": "initial isolated frozen tag",
+      "expectedValid": true,
+      "actualValid": true
+    },
+    {
+      "name": "middle isolated frozen tag",
+      "expectedValid": true,
+      "actualValid": true
+    },
+    {
+      "name": "four quantum constant frozen tag",
+      "expectedValid": true,
+      "actualValid": true
+    },
+    {
+      "name": "initial four quantum constant frozen tag",
+      "expectedValid": true,
+      "actualValid": true
+    },
+    {
+      "name": "terminal frozen tag",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "terminal four quantum frozen tag",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "two consecutive offset stale with advancing label",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "positive offset",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "persistent offset from actual missed process",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "persistent negative offset",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "frozen then different recovered offset",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "ambiguous anchor",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "missing process",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "counter changed",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "process reorder",
+      "expectedValid": false,
+      "actualValid": false
+    },
+    {
+      "name": "invalid NaN native label",
+      "expectedValid": false,
+      "actualValid": false
+    }
+  ]
+}

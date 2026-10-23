@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "kind": "Deterministic mocked-worklet structural test, not native browser proof",
+  "helperSha256": "d55df336019513d13ceb4efc56dc1cbc6c8f59f9c077a59278fc192d29de50e0",
+  "checks": [
+    "sample-for-sample Float32 equality across native stale labels",
+    "4096-frame packet boundary and tail per-quantum flush",
+    "strict port/packet sequence",
+    "counter contiguous and all100 process observations present",
+    "initial stale anchor recovered from stable offset",
+    "one middle stale classified without touching PCM"
+  ],
+  "frames": 12800,
+  "packets": 52,
+  "nativeLabelStales": [
+    {
+      "processSeq": 1,
+      "initialQuantum": true
+    },
+    {
+      "processSeq": 34,
+      "initialQuantum": false
+    }
+  ],
+  "absoluteAnchor": 4096
+}

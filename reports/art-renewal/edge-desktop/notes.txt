@@ -1,0 +1,17 @@
+Microsoft Edge 桌面补充兼容验证 · 候选3 · 2026-10-23
+
+本次独立运行目录为2026-10-22T22-49-32-555Z（UTC命名；上海时间06:49—06:52）。复用现有scripts/validate-art-renewal-ui.mjs和scripts/validate-peony-soundscape.mjs，先UI83，再Sound15；未修改产品、原验证器或tmp/art-candidate-3-dist。baseCommit为e420f0e；实测对象是该基线上的本轮未提交实现，具体字节以运行报告的源码及构建库存SHA为准。
+
+实际程序为本机Microsoft Edge，browser.version()为155.0.4283.62，Windows二进制ProductVersion也实查为155.0.4283.62。UI直接采集的WebGL渲染器为ANGLE / NVIDIA GeForce RTX 5070 Ti / Direct3D11，未使用Swiftshader渲染。UI沿用原验证器的--enable-unsafe-swiftshader启动参数；实际renderer记录不能由启动参数名称替代。声音入口以同一MDGS_TEST_BROWSER程序启动，未附加启动参数；Edge二进制前后SHA相同。声音报告自身不发布browser.version或GPU字段，外层明确将这两个观测值归于前面的UI运行。
+
+UI83/83通过，覆盖1100×650、1280×720、1600×1000、1920×1080、2560×1440、3440×1440六种桌面：首页画层与故障重试、动效与真实可选WebGL context loss、指南与序言焦点、四卷文化札记/原作全文/来源/进入画景、卷末与1200×1600花笺选择/钤印/下载/汉字字形。Sound15/15通过，覆盖真实App的明确启声、三轨请求失败重试、共享音乐时钟、键盘音量、文化/互动/花笺阅读降低音量、第四卷撤亮色、反向跳转、返回序厅、关闭释放与取消请求。两份报告均0运行错误；两张首页图片503及一次声部503属于原验证器明确安排的故障场景，保留在expectedFailures / expectedHttpFailures中。document.hidden为原验证器注入的可见性信号，不冒称真实操作系统后台测试。
+
+另直接审视ui-shots/home-1920x1080.png与keepsake-c4.png：书法题名、花层、首页说明与1200×1600花笺字形清楚；花笺从右列“不负春光”读至左列“不改初心”，顺序正确。原尺寸图未做后期修图。
+
+外层verify-edge-desktop.cjs只按顺序启动这两个原入口、读取文件与运行报告、核对HTTP响应，不替换页面或浏览器API。UI独立HTTP服务仍在运行时，直接请求入口HTML、3份JS与CSS共5体，逐体SHA均与冻结包一致。HTML SHA为806eb52d8a41bcc4774d1253902b58fecc4734225d77b6f889f6ec726410a769，主JS为index-C6ZfivTN.js，CSS为index-Bc7VfaY-.css；与候选3诗意、互动及原画验收为同一包。UI和Sound原报告中的buildJavascript/buildHtmlSha256也分别与实取包比对通过。
+
+edge-validation.json保存830项src/public/config/原driver库存、744项构建库存的前后SHA与逐文件记录。两组库存、两份冻结原driver及Edge二进制前后字节一致；全部状态为passed。外层driver SHA为7de9463a69fdbead0b588f47c9655373334852cd73f4d4e79dac2cb3bbe39043；两份原driver SHA分别为f978cf6666001687b5268c241798edff142ba2d804712f25294bff0ae285d58f及f34fa4d41a09e02ca7bf1cd0d1e7287baa3595b1f01377007e78cbbc26449687。ui83.log、sound15.log、ui/ui-all-validation.json、sound15-validation.json及ui-shots直接原图均保留；未覆盖Chrome或历史候选证据。
+
+复现时提供MDGS_PLAYWRIGHT_MODULE指向已安装Playwright模块，并设置MDGS_TEST_BROWSER为实际Edge程序路径。本次路径为C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe。运行：node reports/art-renewal/edge-desktop/verify-edge-desktop.cjs --build-dir tmp/art-candidate-3-dist。脚本会独占创建新的时间戳目录；也可用--run-dir指定本目录下尚不存在的独立子目录。实际底层命令及参数数组在edge-validation.json的commands中。
+
+这份证据增加的是本机Windows、该Edge版本与该GPU上的UI83和Sound15兼容范围；本次未在Edge执行270组排版组合、45句全长或长时音轨同步，也不外推为所有浏览器通过。候选3原有Chrome证据继续承担其明确标注的其他验收范围。

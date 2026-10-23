@@ -1,0 +1,700 @@
+{
+  "status": "pass",
+  "startedAt": "2026-10-22T22:36:06.173Z",
+  "mode": "runtime",
+  "preflight": false,
+  "runId": "2026-10-22T22-36-06-171Z-runtime",
+  "driver": "validate-peony2-original-driver.mjs",
+  "buildDirectory": "tmp/art-candidate-3-dist",
+  "report": "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/validation.json",
+  "mapping": [
+    {
+      "old": "Four current-edition worlds/source readiness/hidden layers/replacements",
+      "current": "Four peony-2.0 manifests, native materials ready, zero art replacement/art text/hidden visible layers",
+      "state": "retained",
+      "limitation": "Runtime diagnostics do not replace the separate native pixel-fidelity acceptance."
+    },
+    {
+      "old": "All nodes and 25 original paragraphs at two sizes",
+      "current": "Explicit narrativeMode=original, accepted 25-paragraph transcription parity, every authored node and responsive passage; 1672x941 + desktop compact 1280x720",
+      "state": "retained-with-desktop-scope",
+      "limitation": "Original DOCX is absent; accepted transcription regression only. Default poetic mode is tested separately."
+    },
+    {
+      "old": "Phone 390x844; controls above painting",
+      "current": "Compact desktop 1280x720; header then painting then controls without overlap",
+      "state": "replaced",
+      "reason": "User requested desktop only and current artwork layout places controls below the painting."
+    },
+    {
+      "old": "Extra environmental-motion clock, layers and toggle",
+      "current": "Zero extra atmosphere/motion controls; authored FPS autoplay and exact paused native source frame",
+      "state": "replaced",
+      "reason": "Native-only artwork policy."
+    },
+    {
+      "old": "__MDGS_STUDY__ / previous 3D room statistics",
+      "current": "__MDGS_ATLAS__ four decoded layers; optional pigment surface; actual idle/off/reduced/visibility/return lifecycle",
+      "state": "retired-and-replaced",
+      "reason": "Current foyer uses four painted planes. No retired StudyRoomRenderer metrics are invented."
+    },
+    {
+      "old": "Exact ending, bounded seal and local Kai typography",
+      "current": "Exact stopped end frame/render count, bounded colophon/seal and loaded local Kai",
+      "state": "retained"
+    },
+    {
+      "old": "Audio decode/volume/background/retry/disposal",
+      "current": "Shared original digital soundscape; native three-stem decode [160,160,24], output gain, suspended clock, fade disposal, retry and foyer continuity",
+      "state": "retained-with-shared-engine"
+    },
+    {
+      "old": "Four entries, repeated input, physical scroll, minimum loading, slow textures, cover failure and cancellation",
+      "current": "Actual four painted-foyer buttons and native snapshot scroll; same resource-delay/retry/stale-request assertions",
+      "state": "retained-with-captured-presentation"
+    },
+    {
+      "old": "Timeline seek and autoplay input",
+      "current": "Retain both, add real pointer drag, wheel, ArrowRight/Left and Home/End",
+      "state": "extended"
+    },
+    {
+      "old": "Settings and nested-prefix historical adapters",
+      "current": "Reviewed static settings/subpath drivers; retain source scene/material/render/cover hashes, invalid-value recovery, chapter settings, plate controls, live persistence, sampling/GL lifecycle, actual nested asset loads, dialog focus and fullscreen",
+      "state": "retained-with-current-home",
+      "limitation": "A --preflight run explicitly leaves the remaining chapters/persistence/error-path suites unrun."
+    }
+  ],
+  "inputsBefore": {
+    "src/App.tsx": "fe94952133b277fc283e384b5ffe6dec4983138f2936442b88bd60508ad00c3e",
+    "src/art/flowerLetter.ts": "5b448f1e07dfb9f6277959428f54950f010f42f8a5c8d9583f5d5854b139381a",
+    "src/audio/cueMap.ts": "56fef96db0c48640311adcc075b4f7d0cefd2bf6f3a66ce8f0915c0375d25ebb",
+    "src/audio/PeonySoundscape.ts": "94210addff2b7874449d4adb8d5aa8bda1f3ae9fe51bffd466ba9a3811b7ca28",
+    "src/components/ArtEncounters.tsx": "265fdafa82d6433e3957f74ae268ca8720991aed322acf6fa525fcb1cb95aa1e",
+    "src/components/AudioController.tsx": "5e8bf3fb9a301eb14069d25b3b7b272c844ac079b347d88ea51df0c8071d9bd2",
+    "src/components/CulturePanel.tsx": "2402ca30f5e7b9b58354efcfa34e0ae95f77a8f7a08dcb18427fcc2f62a90f2d",
+    "src/components/FlowerLetterDialog.tsx": "48a62837fac8e8d9155e214766f8dc52e9cbfb90def660eef2fd32a8ee1dde0c",
+    "src/components/NarrativeCalligraphy.tsx": "b4ed5a08a983105e2644dd3827cf7947c6e20e946d3b64b43ad360d575a3c406",
+    "src/components/PeonyAtlasHome.tsx": "6f829e0d956c7abef44570fa8807bcb959ebb432a5a733ce3be8f946ff6902e0",
+    "src/components/PeonyPigment.tsx": "f5fdd1e4d3ff28dd233b361e84b86ee477ee0c72ae10d355e41b5b8e2cc316fe",
+    "src/components/ScrollColophon.tsx": "29d88e77f15882447cc36561860e316c33065831f99d2870bed07978f73d322d",
+    "src/components/ScrollLoadingScene.tsx": "a27f2c5199697588d67056cf8752d23485a774d27711ad400ce34ab75f1dc558",
+    "src/components/ScrollOrnaments.tsx": "cf748040d16fd7277945478efcde2874c5415bd70f141a7fd03268239241f47c",
+    "src/components/ScrollViewport.tsx": "af07494255f362329fcc0952a0bcfa727c1832053c505e3254ac9913cbf6f5aa",
+    "src/components/StudyAtmosphere.tsx": "7d1fd4f50f6021dbf9b26e28dc30fbc37c88509b1ab771866be805aa6dc69d64",
+    "src/components/StudyHome.tsx": "12bdd52a863d460b71ac584c6ee0ffaedba2813fa22ceefdf45adcbbfc47605c",
+    "src/components/ViewerSettingsPanel.tsx": "86bfda34b3b0beae8e0591f6c813730528191a551869b4652573848df91546db",
+    "src/data/annotations.ts": "62253ce357a79cf3ce74e6cb6a427f8448ef091d703628c967a3757e0de46b6c",
+    "src/data/artEncounters.ts": "11625b51e66a0e2f01decd03187de846f317a256ce43861bc9f2c27739e67f27",
+    "src/data/chapters.ts": "ca815c3ee1febd230c9128e81e18651c41780291ac89ae43ae47536be0a4d993",
+    "src/data/curatorialNotes.ts": "e3f72d86e083f6f71f88d7b5aa1fc2d2eedacc4ec6ae734124cd21b24be3d7f1",
+    "src/data/flowerLetters.ts": "8ed21992a8e43a073a0593ec8dc8f627e69e12f74785517287ee22b00417060d",
+    "src/data/motionProfiles.ts": "dec193ddbde08de10f9544817b81f9cdde50877e64e9cd127b93bcbee9ac7982",
+    "src/data/narrativeTrack.ts": "f4990ecdb3ed926808166673a7fc21acc1bb6b4695c618cd8d6d339b7ee2926b",
+    "src/data/newMotionProfiles.ts": "14946663b0eb62232e892c0f895d0bc963ea0a6cc7510a5b0b283eb99c93276a",
+    "src/data/newNarrative.ts": "ef6dcbc6109b9e391bb712856785c72807a29baf337c0894bf5e97482975ba3a",
+    "src/data/peonyAtlas.ts": "5db913dceb282898c253f7496eeacb3dfae18e59c0ad543302501c885e90b6c3",
+    "src/data/poeticNarrative.ts": "a39fa947d28044efd1699ac5fc022b88f98f6b498097e39b672b673c677b74a9",
+    "src/data/sceneOptions.ts": "35103a4479a7381d95a0541261cff158949842ed7f4e6b3c746de9bba36f3f9b",
+    "src/data/sourceEdition.ts": "102a88382cc5659e2b68d0ad352f74758a9f16812135d743d9bd1530df014174",
+    "src/data/study.ts": "d96ff22d2bd7acaa89b7ac7b73145850a58f56c48d31dde0e486d391be501099",
+    "src/data/studyLayers.ts": "7fd5376fef1b325dbcf11e8c5d2c94bb0cf240602f18fcfff760b91cb2b311e9",
+    "src/data/viewerSettings.ts": "85e6ae5fe482aae3e63feb8c88c79b6bcf31689f6c77e1bdcc18e99244dda740",
+    "src/hooks/scrollMotion.ts": "cfece3c628e2204ceb7909144dc5d629fd3460a92fa9af118304c3b7fd712997",
+    "src/hooks/usePeonySoundscape.tsx": "051ac4479ebfb79734f753d4852103740e18b8b4dc4548608b3717186da621df",
+    "src/hooks/useScrollController.ts": "4ac92af3fd966ae40b0be22c2eaef973e7f1bb10c720f64f8465fcc96f35d38e",
+    "src/hooks/useStudyJourney.ts": "9b0ef0ac6e0ce3503975b4fceba2714fe43c8a4fddf042c64e7353c068393b52",
+    "src/hooks/useStudyParallax.ts": "55b8500e650ff4c09edaa357fab124131e8c95e3dc064d2285dddbba21ace482",
+    "src/main.tsx": "a920ec27028d3f1997c93d79da61fa77c0ff613085a6fb2a8ea2dea92cab28a9",
+    "src/scene/ArtDirectionLayer.ts": "d51dfea871ed4363d453ce8ebaa82d920987ca1d06a0925127f3deda14d37a72",
+    "src/scene/artworkProjection.ts": "243b219ec3addfdd87448cdabb66a462d88ccf3988776d5ea446d8f1f0813198",
+    "src/scene/artworkSnapshot.ts": "dede3e7636b8eff422f4ce0303289a75d9d538506838f62d480162f1535c6c22",
+    "src/scene/CalligraphyLayer.css": "707b020f2ebeaf1826e49d9dea1ce684a8511a91a5cdce649cccbef11101c250",
+    "src/scene/CalligraphyLayer.ts": "8ce0d9d17d28330f3ff2f04b32bf2a5482848ff5b4a42ee2a5bc477ba302cabf",
+    "src/scene/GongbiBloom.ts": "d15c82e8684d6fcb3d0592541d4d5ab0c586fb4c1679aee6dad455c0b1bfe363",
+    "src/scene/MotionDirector.ts": "c431d9ff0be2e19bd41d6746235a6732c81236454af368a7a7c373ec5d8e7487",
+    "src/scene/NarrativeSpace.ts": "472edaf832b01cd1e663865bc0c1014a8a564cf0eee8f0d3da8826f43fca34d2",
+    "src/scene/NewScrollAtmosphere.ts": "e497c85073004b02c1c7210f46414494912d196076132dbdf41be040606e38d8",
+    "src/scene/PeonyBloomSurface.ts": "0722fb6dddb0dd365a0bde9613ed56802ba6a178f570ac9f9391dacdabc43563",
+    "src/scene/prepareScene.ts": "c7ab1f7dc505cf16f078e13c6a94a0b48d839a7b90af9e1232d6bea971c7eb41",
+    "src/scene/SceneRenderer.ts": "0f06fcaf95f2ea7566c424f2b8204b6ac0f41ffbba799be408a4f72fc29d11d5",
+    "src/scene/scrollGeometry.ts": "80c274b646e8c0c911c7528d2563a02705de35cd6888a58143889dee53c0e90d",
+    "src/scene/scrollHandoff.ts": "d78a78575154c771d0f47f52eda1874f5243e61bd5dee1fc87add60228c0fe16",
+    "src/scene/ScrollUnfurlScene.ts": "ca1c4516fc93d6344847b615e18ef570614227d6e470f20eac3dd022c33a9879",
+    "src/scene/sourceClock.ts": "add971abe2441da9cb60d28baa3257d712737e85b978fc6cc7b8f395983849fa",
+    "src/scene/SourceLighting.ts": "e7233ba079be8355e16dbdee1861d9394ffd437929206ca0d210f3be1e7b5a89",
+    "src/scene/SourceMaterial.ts": "78ff5a1942a75ca05a83f26b1e6920f2d57962e8ee00b9eb31ecd75097a7ecce",
+    "src/scene/SourceNoise3D.ts": "97c4ce5460d96be8a2b049ab6eba2206a2568b6c22f4cdceed32170871926edd",
+    "src/scene/SourcePostProcessing.ts": "d75354a4cb30c26894ffb6a95195fd35e037b08fdfbfc0467974518b6c5d4826",
+    "src/scene/sourceViewport.ts": "70c848adf65a400cdff3582dd0616bf68ae39c0552a86548297d1d141f1e686e",
+    "src/scene/StableLayerSorting.ts": "3fd92ed5f4b88853500081c572936366d8aec9169bc7792909b5ade1722afccf",
+    "src/scene/studyMaterials.ts": "075d2567aa38b6acaba4621c55f31616703d842021465b74fdb30e144677f585",
+    "src/scene/StudyRoomRenderer.ts": "e6de3f2932a1ca84efffe191c2f7e68b493c7d3792705aa2c079ef5a45f71ef8",
+    "src/styles/art-encounters.css": "ddd069d12e8e16de8fd708cf57d90eb6f9780c6bbe35a938d32914fb0ae80966",
+    "src/styles/audio-controller.css": "d4a3a424990cc726bade8e32256853d930ed5418fd5c3da0b183d8083c7db3ab",
+    "src/styles/curatorial-reading.css": "db541346be621190518836687161ba84341aa8326d1030a5b4612090fed15fd3",
+    "src/styles/exhibition-theme.css": "cd7793ecdf9137594babbeec319bcac7409f4e347073bfa6d6602552cc0504f5",
+    "src/styles/flower-letter.css": "316252c25ca45165027f4aeea4f312cd300a3fa97a733733e82e10141be37f2b",
+    "src/styles/handscroll.css": "d73911deba855f1ab39085c172dabd4ea11dc0b09838eefe9e921b0be5067f21",
+    "src/styles/journey.css": "3523627b97ccef0d0a4fb356ab3512b569924cc5d45e22ee4bf7ec7b11cec671",
+    "src/styles/layered-study.css": "08a38e14ae4aa0a9f643c71370d501a91ee56347805dd0ba5b214c8cdad9f3f6",
+    "src/styles/narrative-calligraphy.css": "f9e7932915357479a7fbfe0c922b3d828187eb8544577231f7db3cb641c80edd",
+    "src/styles/peony-atlas.css": "a347dd2201b8c18bfc8c1b55d9517646f238077185ab7b77d658505815e3269c",
+    "src/styles/poetic-exhibition.css": "1c312e68f1dd3f8dd93164f9c6d1db6094db990fb6be08b86b782d0788b12158",
+    "src/styles/reading-panel.css": "93165db9f3ce8a35f3d574be75c9062576740376ed5dd2bdd043687b9e6f8772",
+    "src/styles/scroll-2026.css": "fcedc1c4ce9a3b362b057ac4edff3e66e89a504481012d0f28f27d4937259075",
+    "src/styles/scroll-loading.css": "53db52e8ab4754cf180bf4cd0a3224aceb8a4eb728aeb9acd19ff9e1988c8363",
+    "src/styles/study-home.css": "31970fff27e6a6c788551d67fb5db1df3b41eaff5d9e5ea7b2991f6bf6f224fd",
+    "src/styles/text-backplates.css": "580ac6eff538dd73843f39d36e186975a8a644e73e3336eb1be5a97ccc2df777",
+    "src/styles/viewer-settings.css": "88275add1c41b5112e8906e69d5f922a16d339abdd3d59e169003c2d93e01a8c",
+    "src/styles/volume-study.css": "865c96ff1e88699c9abdf9437e63a540ce9a7dedcbc7b9a759438e00a342983c",
+    "src/styles.css": "e92e302d8631e9e9388cc9ad5ce401c466962786a545c6033118d2abc96cee0d",
+    "src/types.ts": "06046ecf0ef963e85b5d2d867193be8f64364aa35ca05551822f7d7bedd9df4d",
+    "index.html": "02226c489b708232ab9a4ff16ebda68d9f52e86e489fde7f7a40f0ad9a52b131",
+    "scripts/validate-peony2-runtime.mjs": "36364a5356fb50472d1a0525d93b8ce5d80c78864a4001fb3a753d0f5f4e5d4f",
+    "scripts/validate-peony2-regressions.mjs": "a15c0085702817803ee2397525df42c3cb137f183365db5d05734a6911dc5e4b",
+    "scripts/validate-peony2-original-driver.mjs": "fa4e9b6196a9c6f9006c426f0e3353324437dac11cf6d07c807ea3ef89673e82",
+    "scripts/validate-new-scroll-runtime.mjs": "90f506693d4ad5095d76e031d53c85c54e276c34a88f403c205ae8744948cce4",
+    "scripts/validate-new-scroll-journey.mjs": "f4188c119075d9a09d61f8e8f958aaea7ab83229580e5fed3b5e1a97ca4bda24",
+    "scripts/validate-viewer-settings.mjs": "340f579945fd345e9d813fd9392ccaee96339366d199a079879828a076679339",
+    "scripts/validate-subpath.mjs": "a3b3267d713eb2d92a556ebdeed08646d32ff8fae0af84e5199f5ab5b36b65b8",
+    "reports/new-scrolls/narrative-source.json": "99f07e0628004dcd738c4c8984e2053e82a2a0e77cbebf268e1fd46c5bb71e40",
+    "tmp/art-candidate-3-dist/index.html": "806eb52d8a41bcc4774d1253902b58fecc4734225d77b6f889f6ec726410a769",
+    "tmp/art-candidate-3-dist/assets/flowerLetter-CBm438hs.js": "2f2f225063ed23a88fe1c9621a1c2d68dff2636c6fa69e4fb2ae307f3e7f0168",
+    "tmp/art-candidate-3-dist/assets/index-Bc7VfaY-.css": "6b0e414d7910db0312f3a25215c62a5d6c7ebee8e0cc7e7cdaecee6295298224",
+    "tmp/art-candidate-3-dist/assets/index-C6ZfivTN.js": "ae5d255e4d108e40cb08301ffbd95a4a0731584e64fdd4d3e85b6885a23e3d00",
+    "tmp/art-candidate-3-dist/assets/three-w1TnP4RH.js": "598394f34bd207f0b60b007bdfca1f8f020fac83128efe1dee2d237eaa65c1d0",
+    "public/assets/new-scrolls/chapter-1/scene.json": "f70f469adfad2e146944447d64ddc8b157915a90bf3d6a8732c66bff75981121",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-1/scene.json": "f70f469adfad2e146944447d64ddc8b157915a90bf3d6a8732c66bff75981121",
+    "public/assets/new-scrolls/chapter-1/source-materials.json": "2ba8a03264fce063d7076433b977329f596dae5e5b4e12a4e77b3771e26ffdca",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-1/source-materials.json": "2ba8a03264fce063d7076433b977329f596dae5e5b4e12a4e77b3771e26ffdca",
+    "public/assets/new-scrolls/chapter-1/render-settings.json": "1c90dca515394e0b63e09788010e5730eeff95eb81627853b780bf0b53e6c7df",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-1/render-settings.json": "1c90dca515394e0b63e09788010e5730eeff95eb81627853b780bf0b53e6c7df",
+    "public/assets/new-scrolls/chapter-1/cover.webp": "0979ba81d60f36cfb1386f3c8037192268520209043843c4f194a766d7f062b2",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-1/cover.webp": "0979ba81d60f36cfb1386f3c8037192268520209043843c4f194a766d7f062b2",
+    "public/assets/new-scrolls/chapter-2/scene.json": "3919e11d71aadc75bfaab934a1255e3bb7ddab2aada69dbd60639e827f8fb42a",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-2/scene.json": "3919e11d71aadc75bfaab934a1255e3bb7ddab2aada69dbd60639e827f8fb42a",
+    "public/assets/new-scrolls/chapter-2/source-materials.json": "41466399e00cabfbfbd039bc6b6a293f1c94930acda12c4c989ba8d7bf821e83",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-2/source-materials.json": "41466399e00cabfbfbd039bc6b6a293f1c94930acda12c4c989ba8d7bf821e83",
+    "public/assets/new-scrolls/chapter-2/render-settings.json": "e71958f291708639cb2f8e0f2e12ad185aae439c5f090e91c987045fea1c5850",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-2/render-settings.json": "e71958f291708639cb2f8e0f2e12ad185aae439c5f090e91c987045fea1c5850",
+    "public/assets/new-scrolls/chapter-2/cover.webp": "dea085cc247d1284f491aeabc508446c65f81ddfaa331b5e263f8e1b8681c9a6",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-2/cover.webp": "dea085cc247d1284f491aeabc508446c65f81ddfaa331b5e263f8e1b8681c9a6",
+    "public/assets/new-scrolls/chapter-3/scene.json": "831918f3365da1e29a1d9293135a463acddd87e07e0525d7982a9e4fef071159",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-3/scene.json": "831918f3365da1e29a1d9293135a463acddd87e07e0525d7982a9e4fef071159",
+    "public/assets/new-scrolls/chapter-3/source-materials.json": "26394d2e5987d39b3f6b8f46c1e473ff12aaf8fd796baa9c3c162622040f4792",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-3/source-materials.json": "26394d2e5987d39b3f6b8f46c1e473ff12aaf8fd796baa9c3c162622040f4792",
+    "public/assets/new-scrolls/chapter-3/render-settings.json": "f4e6baf9014ab83d76af0574a05c7c82d80a6fdc0dbc6ef07a806ee49a52077d",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-3/render-settings.json": "f4e6baf9014ab83d76af0574a05c7c82d80a6fdc0dbc6ef07a806ee49a52077d",
+    "public/assets/new-scrolls/chapter-3/cover.webp": "1ac50cab0acca146dfb911d8e6b01987e7bddbf2ffe258197498863b74e54236",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-3/cover.webp": "1ac50cab0acca146dfb911d8e6b01987e7bddbf2ffe258197498863b74e54236",
+    "public/assets/new-scrolls/chapter-4/scene.json": "1274381aca06e8c7580aca7818f4cbfc1a24957084c1747a5a70d2213b3a2a63",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-4/scene.json": "1274381aca06e8c7580aca7818f4cbfc1a24957084c1747a5a70d2213b3a2a63",
+    "public/assets/new-scrolls/chapter-4/source-materials.json": "40f31e4dfe29c69344aae7eeb54860f7e30591dff1bc9cc79778585dcd553f86",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-4/source-materials.json": "40f31e4dfe29c69344aae7eeb54860f7e30591dff1bc9cc79778585dcd553f86",
+    "public/assets/new-scrolls/chapter-4/render-settings.json": "e69109099ffe1c14fd3b9651f67b74976bf3b63ac3c840b6b015fff26f2cbcb2",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-4/render-settings.json": "e69109099ffe1c14fd3b9651f67b74976bf3b63ac3c840b6b015fff26f2cbcb2",
+    "public/assets/new-scrolls/chapter-4/cover.webp": "4252017b2a950c81557aa9dcc380024b9ae4f6442c91f4383dd198136fbe6c94",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-4/cover.webp": "4252017b2a950c81557aa9dcc380024b9ae4f6442c91f4383dd198136fbe6c94"
+  },
+  "driverSnapshot": "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/executed-driver.mjs",
+  "checks": 34,
+  "nodes": 80,
+  "inputsAfter": {
+    "src/App.tsx": "fe94952133b277fc283e384b5ffe6dec4983138f2936442b88bd60508ad00c3e",
+    "src/art/flowerLetter.ts": "5b448f1e07dfb9f6277959428f54950f010f42f8a5c8d9583f5d5854b139381a",
+    "src/audio/cueMap.ts": "56fef96db0c48640311adcc075b4f7d0cefd2bf6f3a66ce8f0915c0375d25ebb",
+    "src/audio/PeonySoundscape.ts": "94210addff2b7874449d4adb8d5aa8bda1f3ae9fe51bffd466ba9a3811b7ca28",
+    "src/components/ArtEncounters.tsx": "265fdafa82d6433e3957f74ae268ca8720991aed322acf6fa525fcb1cb95aa1e",
+    "src/components/AudioController.tsx": "5e8bf3fb9a301eb14069d25b3b7b272c844ac079b347d88ea51df0c8071d9bd2",
+    "src/components/CulturePanel.tsx": "2402ca30f5e7b9b58354efcfa34e0ae95f77a8f7a08dcb18427fcc2f62a90f2d",
+    "src/components/FlowerLetterDialog.tsx": "48a62837fac8e8d9155e214766f8dc52e9cbfb90def660eef2fd32a8ee1dde0c",
+    "src/components/NarrativeCalligraphy.tsx": "b4ed5a08a983105e2644dd3827cf7947c6e20e946d3b64b43ad360d575a3c406",
+    "src/components/PeonyAtlasHome.tsx": "6f829e0d956c7abef44570fa8807bcb959ebb432a5a733ce3be8f946ff6902e0",
+    "src/components/PeonyPigment.tsx": "f5fdd1e4d3ff28dd233b361e84b86ee477ee0c72ae10d355e41b5b8e2cc316fe",
+    "src/components/ScrollColophon.tsx": "29d88e77f15882447cc36561860e316c33065831f99d2870bed07978f73d322d",
+    "src/components/ScrollLoadingScene.tsx": "a27f2c5199697588d67056cf8752d23485a774d27711ad400ce34ab75f1dc558",
+    "src/components/ScrollOrnaments.tsx": "cf748040d16fd7277945478efcde2874c5415bd70f141a7fd03268239241f47c",
+    "src/components/ScrollViewport.tsx": "af07494255f362329fcc0952a0bcfa727c1832053c505e3254ac9913cbf6f5aa",
+    "src/components/StudyAtmosphere.tsx": "7d1fd4f50f6021dbf9b26e28dc30fbc37c88509b1ab771866be805aa6dc69d64",
+    "src/components/StudyHome.tsx": "12bdd52a863d460b71ac584c6ee0ffaedba2813fa22ceefdf45adcbbfc47605c",
+    "src/components/ViewerSettingsPanel.tsx": "86bfda34b3b0beae8e0591f6c813730528191a551869b4652573848df91546db",
+    "src/data/annotations.ts": "62253ce357a79cf3ce74e6cb6a427f8448ef091d703628c967a3757e0de46b6c",
+    "src/data/artEncounters.ts": "11625b51e66a0e2f01decd03187de846f317a256ce43861bc9f2c27739e67f27",
+    "src/data/chapters.ts": "ca815c3ee1febd230c9128e81e18651c41780291ac89ae43ae47536be0a4d993",
+    "src/data/curatorialNotes.ts": "e3f72d86e083f6f71f88d7b5aa1fc2d2eedacc4ec6ae734124cd21b24be3d7f1",
+    "src/data/flowerLetters.ts": "8ed21992a8e43a073a0593ec8dc8f627e69e12f74785517287ee22b00417060d",
+    "src/data/motionProfiles.ts": "dec193ddbde08de10f9544817b81f9cdde50877e64e9cd127b93bcbee9ac7982",
+    "src/data/narrativeTrack.ts": "f4990ecdb3ed926808166673a7fc21acc1bb6b4695c618cd8d6d339b7ee2926b",
+    "src/data/newMotionProfiles.ts": "14946663b0eb62232e892c0f895d0bc963ea0a6cc7510a5b0b283eb99c93276a",
+    "src/data/newNarrative.ts": "ef6dcbc6109b9e391bb712856785c72807a29baf337c0894bf5e97482975ba3a",
+    "src/data/peonyAtlas.ts": "5db913dceb282898c253f7496eeacb3dfae18e59c0ad543302501c885e90b6c3",
+    "src/data/poeticNarrative.ts": "a39fa947d28044efd1699ac5fc022b88f98f6b498097e39b672b673c677b74a9",
+    "src/data/sceneOptions.ts": "35103a4479a7381d95a0541261cff158949842ed7f4e6b3c746de9bba36f3f9b",
+    "src/data/sourceEdition.ts": "102a88382cc5659e2b68d0ad352f74758a9f16812135d743d9bd1530df014174",
+    "src/data/study.ts": "d96ff22d2bd7acaa89b7ac7b73145850a58f56c48d31dde0e486d391be501099",
+    "src/data/studyLayers.ts": "7fd5376fef1b325dbcf11e8c5d2c94bb0cf240602f18fcfff760b91cb2b311e9",
+    "src/data/viewerSettings.ts": "85e6ae5fe482aae3e63feb8c88c79b6bcf31689f6c77e1bdcc18e99244dda740",
+    "src/hooks/scrollMotion.ts": "cfece3c628e2204ceb7909144dc5d629fd3460a92fa9af118304c3b7fd712997",
+    "src/hooks/usePeonySoundscape.tsx": "051ac4479ebfb79734f753d4852103740e18b8b4dc4548608b3717186da621df",
+    "src/hooks/useScrollController.ts": "4ac92af3fd966ae40b0be22c2eaef973e7f1bb10c720f64f8465fcc96f35d38e",
+    "src/hooks/useStudyJourney.ts": "9b0ef0ac6e0ce3503975b4fceba2714fe43c8a4fddf042c64e7353c068393b52",
+    "src/hooks/useStudyParallax.ts": "55b8500e650ff4c09edaa357fab124131e8c95e3dc064d2285dddbba21ace482",
+    "src/main.tsx": "a920ec27028d3f1997c93d79da61fa77c0ff613085a6fb2a8ea2dea92cab28a9",
+    "src/scene/ArtDirectionLayer.ts": "d51dfea871ed4363d453ce8ebaa82d920987ca1d06a0925127f3deda14d37a72",
+    "src/scene/artworkProjection.ts": "243b219ec3addfdd87448cdabb66a462d88ccf3988776d5ea446d8f1f0813198",
+    "src/scene/artworkSnapshot.ts": "dede3e7636b8eff422f4ce0303289a75d9d538506838f62d480162f1535c6c22",
+    "src/scene/CalligraphyLayer.css": "707b020f2ebeaf1826e49d9dea1ce684a8511a91a5cdce649cccbef11101c250",
+    "src/scene/CalligraphyLayer.ts": "8ce0d9d17d28330f3ff2f04b32bf2a5482848ff5b4a42ee2a5bc477ba302cabf",
+    "src/scene/GongbiBloom.ts": "d15c82e8684d6fcb3d0592541d4d5ab0c586fb4c1679aee6dad455c0b1bfe363",
+    "src/scene/MotionDirector.ts": "c431d9ff0be2e19bd41d6746235a6732c81236454af368a7a7c373ec5d8e7487",
+    "src/scene/NarrativeSpace.ts": "472edaf832b01cd1e663865bc0c1014a8a564cf0eee8f0d3da8826f43fca34d2",
+    "src/scene/NewScrollAtmosphere.ts": "e497c85073004b02c1c7210f46414494912d196076132dbdf41be040606e38d8",
+    "src/scene/PeonyBloomSurface.ts": "0722fb6dddb0dd365a0bde9613ed56802ba6a178f570ac9f9391dacdabc43563",
+    "src/scene/prepareScene.ts": "c7ab1f7dc505cf16f078e13c6a94a0b48d839a7b90af9e1232d6bea971c7eb41",
+    "src/scene/SceneRenderer.ts": "0f06fcaf95f2ea7566c424f2b8204b6ac0f41ffbba799be408a4f72fc29d11d5",
+    "src/scene/scrollGeometry.ts": "80c274b646e8c0c911c7528d2563a02705de35cd6888a58143889dee53c0e90d",
+    "src/scene/scrollHandoff.ts": "d78a78575154c771d0f47f52eda1874f5243e61bd5dee1fc87add60228c0fe16",
+    "src/scene/ScrollUnfurlScene.ts": "ca1c4516fc93d6344847b615e18ef570614227d6e470f20eac3dd022c33a9879",
+    "src/scene/sourceClock.ts": "add971abe2441da9cb60d28baa3257d712737e85b978fc6cc7b8f395983849fa",
+    "src/scene/SourceLighting.ts": "e7233ba079be8355e16dbdee1861d9394ffd437929206ca0d210f3be1e7b5a89",
+    "src/scene/SourceMaterial.ts": "78ff5a1942a75ca05a83f26b1e6920f2d57962e8ee00b9eb31ecd75097a7ecce",
+    "src/scene/SourceNoise3D.ts": "97c4ce5460d96be8a2b049ab6eba2206a2568b6c22f4cdceed32170871926edd",
+    "src/scene/SourcePostProcessing.ts": "d75354a4cb30c26894ffb6a95195fd35e037b08fdfbfc0467974518b6c5d4826",
+    "src/scene/sourceViewport.ts": "70c848adf65a400cdff3582dd0616bf68ae39c0552a86548297d1d141f1e686e",
+    "src/scene/StableLayerSorting.ts": "3fd92ed5f4b88853500081c572936366d8aec9169bc7792909b5ade1722afccf",
+    "src/scene/studyMaterials.ts": "075d2567aa38b6acaba4621c55f31616703d842021465b74fdb30e144677f585",
+    "src/scene/StudyRoomRenderer.ts": "e6de3f2932a1ca84efffe191c2f7e68b493c7d3792705aa2c079ef5a45f71ef8",
+    "src/styles/art-encounters.css": "ddd069d12e8e16de8fd708cf57d90eb6f9780c6bbe35a938d32914fb0ae80966",
+    "src/styles/audio-controller.css": "d4a3a424990cc726bade8e32256853d930ed5418fd5c3da0b183d8083c7db3ab",
+    "src/styles/curatorial-reading.css": "db541346be621190518836687161ba84341aa8326d1030a5b4612090fed15fd3",
+    "src/styles/exhibition-theme.css": "cd7793ecdf9137594babbeec319bcac7409f4e347073bfa6d6602552cc0504f5",
+    "src/styles/flower-letter.css": "316252c25ca45165027f4aeea4f312cd300a3fa97a733733e82e10141be37f2b",
+    "src/styles/handscroll.css": "d73911deba855f1ab39085c172dabd4ea11dc0b09838eefe9e921b0be5067f21",
+    "src/styles/journey.css": "3523627b97ccef0d0a4fb356ab3512b569924cc5d45e22ee4bf7ec7b11cec671",
+    "src/styles/layered-study.css": "08a38e14ae4aa0a9f643c71370d501a91ee56347805dd0ba5b214c8cdad9f3f6",
+    "src/styles/narrative-calligraphy.css": "f9e7932915357479a7fbfe0c922b3d828187eb8544577231f7db3cb641c80edd",
+    "src/styles/peony-atlas.css": "a347dd2201b8c18bfc8c1b55d9517646f238077185ab7b77d658505815e3269c",
+    "src/styles/poetic-exhibition.css": "1c312e68f1dd3f8dd93164f9c6d1db6094db990fb6be08b86b782d0788b12158",
+    "src/styles/reading-panel.css": "93165db9f3ce8a35f3d574be75c9062576740376ed5dd2bdd043687b9e6f8772",
+    "src/styles/scroll-2026.css": "fcedc1c4ce9a3b362b057ac4edff3e66e89a504481012d0f28f27d4937259075",
+    "src/styles/scroll-loading.css": "53db52e8ab4754cf180bf4cd0a3224aceb8a4eb728aeb9acd19ff9e1988c8363",
+    "src/styles/study-home.css": "31970fff27e6a6c788551d67fb5db1df3b41eaff5d9e5ea7b2991f6bf6f224fd",
+    "src/styles/text-backplates.css": "580ac6eff538dd73843f39d36e186975a8a644e73e3336eb1be5a97ccc2df777",
+    "src/styles/viewer-settings.css": "88275add1c41b5112e8906e69d5f922a16d339abdd3d59e169003c2d93e01a8c",
+    "src/styles/volume-study.css": "865c96ff1e88699c9abdf9437e63a540ce9a7dedcbc7b9a759438e00a342983c",
+    "src/styles.css": "e92e302d8631e9e9388cc9ad5ce401c466962786a545c6033118d2abc96cee0d",
+    "src/types.ts": "06046ecf0ef963e85b5d2d867193be8f64364aa35ca05551822f7d7bedd9df4d",
+    "index.html": "02226c489b708232ab9a4ff16ebda68d9f52e86e489fde7f7a40f0ad9a52b131",
+    "scripts/validate-peony2-runtime.mjs": "36364a5356fb50472d1a0525d93b8ce5d80c78864a4001fb3a753d0f5f4e5d4f",
+    "scripts/validate-peony2-regressions.mjs": "a15c0085702817803ee2397525df42c3cb137f183365db5d05734a6911dc5e4b",
+    "scripts/validate-peony2-original-driver.mjs": "fa4e9b6196a9c6f9006c426f0e3353324437dac11cf6d07c807ea3ef89673e82",
+    "scripts/validate-new-scroll-runtime.mjs": "90f506693d4ad5095d76e031d53c85c54e276c34a88f403c205ae8744948cce4",
+    "scripts/validate-new-scroll-journey.mjs": "f4188c119075d9a09d61f8e8f958aaea7ab83229580e5fed3b5e1a97ca4bda24",
+    "scripts/validate-viewer-settings.mjs": "340f579945fd345e9d813fd9392ccaee96339366d199a079879828a076679339",
+    "scripts/validate-subpath.mjs": "a3b3267d713eb2d92a556ebdeed08646d32ff8fae0af84e5199f5ab5b36b65b8",
+    "reports/new-scrolls/narrative-source.json": "99f07e0628004dcd738c4c8984e2053e82a2a0e77cbebf268e1fd46c5bb71e40",
+    "tmp/art-candidate-3-dist/index.html": "806eb52d8a41bcc4774d1253902b58fecc4734225d77b6f889f6ec726410a769",
+    "tmp/art-candidate-3-dist/assets/flowerLetter-CBm438hs.js": "2f2f225063ed23a88fe1c9621a1c2d68dff2636c6fa69e4fb2ae307f3e7f0168",
+    "tmp/art-candidate-3-dist/assets/index-Bc7VfaY-.css": "6b0e414d7910db0312f3a25215c62a5d6c7ebee8e0cc7e7cdaecee6295298224",
+    "tmp/art-candidate-3-dist/assets/index-C6ZfivTN.js": "ae5d255e4d108e40cb08301ffbd95a4a0731584e64fdd4d3e85b6885a23e3d00",
+    "tmp/art-candidate-3-dist/assets/three-w1TnP4RH.js": "598394f34bd207f0b60b007bdfca1f8f020fac83128efe1dee2d237eaa65c1d0",
+    "public/assets/new-scrolls/chapter-1/scene.json": "f70f469adfad2e146944447d64ddc8b157915a90bf3d6a8732c66bff75981121",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-1/scene.json": "f70f469adfad2e146944447d64ddc8b157915a90bf3d6a8732c66bff75981121",
+    "public/assets/new-scrolls/chapter-1/source-materials.json": "2ba8a03264fce063d7076433b977329f596dae5e5b4e12a4e77b3771e26ffdca",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-1/source-materials.json": "2ba8a03264fce063d7076433b977329f596dae5e5b4e12a4e77b3771e26ffdca",
+    "public/assets/new-scrolls/chapter-1/render-settings.json": "1c90dca515394e0b63e09788010e5730eeff95eb81627853b780bf0b53e6c7df",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-1/render-settings.json": "1c90dca515394e0b63e09788010e5730eeff95eb81627853b780bf0b53e6c7df",
+    "public/assets/new-scrolls/chapter-1/cover.webp": "0979ba81d60f36cfb1386f3c8037192268520209043843c4f194a766d7f062b2",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-1/cover.webp": "0979ba81d60f36cfb1386f3c8037192268520209043843c4f194a766d7f062b2",
+    "public/assets/new-scrolls/chapter-2/scene.json": "3919e11d71aadc75bfaab934a1255e3bb7ddab2aada69dbd60639e827f8fb42a",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-2/scene.json": "3919e11d71aadc75bfaab934a1255e3bb7ddab2aada69dbd60639e827f8fb42a",
+    "public/assets/new-scrolls/chapter-2/source-materials.json": "41466399e00cabfbfbd039bc6b6a293f1c94930acda12c4c989ba8d7bf821e83",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-2/source-materials.json": "41466399e00cabfbfbd039bc6b6a293f1c94930acda12c4c989ba8d7bf821e83",
+    "public/assets/new-scrolls/chapter-2/render-settings.json": "e71958f291708639cb2f8e0f2e12ad185aae439c5f090e91c987045fea1c5850",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-2/render-settings.json": "e71958f291708639cb2f8e0f2e12ad185aae439c5f090e91c987045fea1c5850",
+    "public/assets/new-scrolls/chapter-2/cover.webp": "dea085cc247d1284f491aeabc508446c65f81ddfaa331b5e263f8e1b8681c9a6",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-2/cover.webp": "dea085cc247d1284f491aeabc508446c65f81ddfaa331b5e263f8e1b8681c9a6",
+    "public/assets/new-scrolls/chapter-3/scene.json": "831918f3365da1e29a1d9293135a463acddd87e07e0525d7982a9e4fef071159",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-3/scene.json": "831918f3365da1e29a1d9293135a463acddd87e07e0525d7982a9e4fef071159",
+    "public/assets/new-scrolls/chapter-3/source-materials.json": "26394d2e5987d39b3f6b8f46c1e473ff12aaf8fd796baa9c3c162622040f4792",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-3/source-materials.json": "26394d2e5987d39b3f6b8f46c1e473ff12aaf8fd796baa9c3c162622040f4792",
+    "public/assets/new-scrolls/chapter-3/render-settings.json": "f4e6baf9014ab83d76af0574a05c7c82d80a6fdc0dbc6ef07a806ee49a52077d",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-3/render-settings.json": "f4e6baf9014ab83d76af0574a05c7c82d80a6fdc0dbc6ef07a806ee49a52077d",
+    "public/assets/new-scrolls/chapter-3/cover.webp": "1ac50cab0acca146dfb911d8e6b01987e7bddbf2ffe258197498863b74e54236",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-3/cover.webp": "1ac50cab0acca146dfb911d8e6b01987e7bddbf2ffe258197498863b74e54236",
+    "public/assets/new-scrolls/chapter-4/scene.json": "1274381aca06e8c7580aca7818f4cbfc1a24957084c1747a5a70d2213b3a2a63",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-4/scene.json": "1274381aca06e8c7580aca7818f4cbfc1a24957084c1747a5a70d2213b3a2a63",
+    "public/assets/new-scrolls/chapter-4/source-materials.json": "40f31e4dfe29c69344aae7eeb54860f7e30591dff1bc9cc79778585dcd553f86",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-4/source-materials.json": "40f31e4dfe29c69344aae7eeb54860f7e30591dff1bc9cc79778585dcd553f86",
+    "public/assets/new-scrolls/chapter-4/render-settings.json": "e69109099ffe1c14fd3b9651f67b74976bf3b63ac3c840b6b015fff26f2cbcb2",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-4/render-settings.json": "e69109099ffe1c14fd3b9651f67b74976bf3b63ac3c840b6b015fff26f2cbcb2",
+    "public/assets/new-scrolls/chapter-4/cover.webp": "4252017b2a950c81557aa9dcc380024b9ae4f6442c91f4383dd198136fbe6c94",
+    "tmp/art-candidate-3-dist/assets/new-scrolls/chapter-4/cover.webp": "4252017b2a950c81557aa9dcc380024b9ae4f6442c91f4383dd198136fbe6c94"
+  },
+  "changedInputs": [],
+  "sourceStable": true,
+  "artifacts": {
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/executed-driver.mjs": {
+      "bytes": 22755,
+      "sha256": "fa4e9b6196a9c6f9006c426f0e3353324437dac11cf6d07c807ea3ef89673e82"
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-01.png": {
+      "bytes": 1601675,
+      "sha256": "2badae4303fd8aa304d068280ac702151126221c54183998717448265ffc5203"
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-01.png": {
+      "bytes": 952532,
+      "sha256": "1315fee07d8f01d0a522f1dd38c1f1f91f23ed193db08ac4b1771cc16c46de2b"
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-01.png": {
+      "bytes": 2132582,
+      "sha256": "618232cf3212ed2a1fa11e48f25ea9a958c3247eb877ae8bd123276650848208"
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-compact-01.png": {
+      "bytes": 1242264,
+      "sha256": "be4981b02ebc4b8eb25789edc8016d39c312bc376127a19978ec705327b29caa"
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-01.png": {
+      "bytes": 1997668,
+      "sha256": "297a421f457b976b72a529414701fd600e192a7b10481d31d1bd8f91f2ecf800"
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-compact-01.png": {
+      "bytes": 1162118,
+      "sha256": "e11ceab18333916ad4141b31009b72e3bfae7e1eaaa1d558c9e26f2b7a5bf3d1"
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-01.png": {
+      "bytes": 1249355,
+      "sha256": "00794613fc85c54e3d751187e6f21a2e1bedff24396f45ee071486a6a4688d73"
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-compact-01.png": {
+      "bytes": 770173,
+      "sha256": "bc7a1b2487acec6ba35875dea19c5c8b5c614047263b9621a3f7cf9add88c3a1"
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-end-c1-desktop-compact.png": {
+      "bytes": 903591,
+      "sha256": "b140851bcbc056c547909ecbc2b84147751cb7a9a3a5ff5f1210762b49dc8a81"
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-end-c1-desktop.png": {
+      "bytes": 1483260,
+      "sha256": "2cfd167419456b18fc3039e3f8604b1540f026a3ac1d31f28d07333f0eb964c7"
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-end-c2-desktop-compact.png": {
+      "bytes": 1264906,
+      "sha256": "35dad57a41ced551f960c612051634562a9f6e3f9ed3a10827a8c9dbf3766284"
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-end-c2-desktop.png": {
+      "bytes": 2212669,
+      "sha256": "6294e15703e2d5f13c300f70fb0c019bdf74fa92a7f157ce8e969bf84eb6cb84"
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-end-c3-desktop-compact.png": {
+      "bytes": 1155459,
+      "sha256": "e7ebe02447fb10ef1626c8d4139726018db47416009ff5ff72becf277e7ede76"
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-end-c3-desktop.png": {
+      "bytes": 1986571,
+      "sha256": "8a9bdf67a601d5cd430c2d8ba6d58e7655735c22cc154744d6a561db06e17726"
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-end-c4-desktop-compact.png": {
+      "bytes": 907614,
+      "sha256": "7ca7280636051a6823463755a4f7f95a0931e5bd7e88a3eae2fa1125642bc567"
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-end-c4-desktop.png": {
+      "bytes": 1498285,
+      "sha256": "5028c5b7477ef4d60851d4a9525724dc23d5437c8f022c6fb28a68651b3b0ab5"
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/validation.json": {
+      "bytes": 78367,
+      "sha256": "20fc9f024c14bcca55def1d48c99891a6a4dce5034650cd6222b4fe605fc7d89"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-02.png": {
+      "bytes": 1739780,
+      "sha256": "d8133991236a21859fc8e5aef5e87626e602dc5be0951591ec7c8a4b1c59645b"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-03.png": {
+      "bytes": 1560141,
+      "sha256": "f20320757cd9ff0f1863c6cb34876f235c540bfa1aff7d35e7f2770a4b02c77a"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-04.png": {
+      "bytes": 1746290,
+      "sha256": "50f825820ce74a6f0924d5e59a8e9c73706ad6cafa6e948867b2df3579eb13b6"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-05.png": {
+      "bytes": 1733439,
+      "sha256": "96a62057b261720aa6bc286162b85032a455e4333704e058295bee288fa6380c"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-06.png": {
+      "bytes": 1867853,
+      "sha256": "3937c6a83587c6945631031bb70cd0139dc3dfe712a4455ba9319c21167b5fe1"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-07.png": {
+      "bytes": 1789720,
+      "sha256": "69d03a199345c7d28a07c1e70c83bd0b2727d6318fe27da13202e96c33aaf68f"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-08.png": {
+      "bytes": 1547284,
+      "sha256": "de7238fe64032235474cf325d7d49e88c3a5eff85f45cbbb420631cfa3e0240e"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-09.png": {
+      "bytes": 1596041,
+      "sha256": "507280824c91032bc62b750a5e6c9e1b9f72f2e6eed73fc12a98e56c992f4213"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-10.png": {
+      "bytes": 2041537,
+      "sha256": "ac86ef70278fe200b6e63b7743bc0364a117788f8552242b1adc70b8ec085665"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-11.png": {
+      "bytes": 1776826,
+      "sha256": "8aa0da0eed98db7ad6ab6e12ed0d423a7107da2699a7161db15b5a05ade81f23"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-12.png": {
+      "bytes": 1688233,
+      "sha256": "966c4264638f629456e8154b0f847548156beb23240314ac067f6a9f849327cb"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-13.png": {
+      "bytes": 1858537,
+      "sha256": "1a4728f7523eed657e608ec7f93bddcc7ec3ed6360092fe61d50e74fe9afc9e5"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-14.png": {
+      "bytes": 1899534,
+      "sha256": "6fc2473b68c46c2dedc60e9488c95ad2830878a44f01cdb7bd3edbbe29e1b599"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-15.png": {
+      "bytes": 1288393,
+      "sha256": "6680af77b909f7534ba0f54f4399dffb4b8426bf08abf06d586fe837d1fa7367"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-02.png": {
+      "bytes": 1024889,
+      "sha256": "1b369d71874cbc9a4b1275007a58a256541ce9807ea55037c57566036b30a198"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-03.png": {
+      "bytes": 925977,
+      "sha256": "97c1dc7d32a1587f3ad8759dc51f9f34abaa8f26b7981deb71f46adb4ebe3632"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-04.png": {
+      "bytes": 1034502,
+      "sha256": "49124768cb995ce61b5dce931a25241f90634662bc56b9caad5f3c948dc95534"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-05.png": {
+      "bytes": 1020596,
+      "sha256": "58c7ec3b60b20d5752218404387a336750a40645be83dea8f138adc8e8c33310"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-06.png": {
+      "bytes": 1084045,
+      "sha256": "05df02063edcf0fa7a0bd1f2b5c3e8020baf32fa54f797991b7d167f8eebff7d"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-07.png": {
+      "bytes": 1031782,
+      "sha256": "1384e950cba3b4451f3c0d2b15e05624153f5ef9a60027637f76344d0d0405df"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-08.png": {
+      "bytes": 910156,
+      "sha256": "1e68f9e7ddf683c66a3de106574cd1dc53d9933ef3c3c5f4901c7535b4668ba3"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-09.png": {
+      "bytes": 932197,
+      "sha256": "7393871e80b03d11580daf2e06e6492671e077e232af08954557f99f4de55eac"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-10.png": {
+      "bytes": 1188467,
+      "sha256": "9d7a1a468e734972433114ea7d41d9c9c61bed3c93e5db943dc400034710bd9d"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-11.png": {
+      "bytes": 1041018,
+      "sha256": "b33abf0410c8c5f79a30e784080511332126603ddb59463cda2292a1fd689322"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-12.png": {
+      "bytes": 984431,
+      "sha256": "44b57186069c231a598ecda966ff983f0fb58c5c1faf0903653adeb2f7fff988"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-13.png": {
+      "bytes": 1070953,
+      "sha256": "a8e8e7b967a881d77718f6285d54a5f6b46a9c20bbdae1d8c685bbeded473488"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-14.png": {
+      "bytes": 1098337,
+      "sha256": "4415dac55e8ab6f65607f1de3d1ced0f2991274fb897710e9a16a11ecd53ef1a"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-15.png": {
+      "bytes": 768887,
+      "sha256": "43be89d5f2bf15af1428473fe6aead353bd4b69100e6b5ba6970c1c7cb2d57e3"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-02.png": {
+      "bytes": 1775868,
+      "sha256": "8708ac3aa4f8b756570a62e1de5ac37e0513735bb1ecfd152ddec9f6bf0280d8"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-03.png": {
+      "bytes": 2132300,
+      "sha256": "2d1535ce28a0ccd81b54b11305576065ce3931b4fb426f5851c9730308e33b87"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-04.png": {
+      "bytes": 1872184,
+      "sha256": "f0470f063b7522506407bd026142580804d1574f72d76207d0e43b40420c676f"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-05.png": {
+      "bytes": 1918381,
+      "sha256": "f562c18f74c2eabc9b18fec0e03299f43c3997b65b0c180056d6161c2b75b06a"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-06.png": {
+      "bytes": 1841770,
+      "sha256": "db4541e9c4e8cd32d221789ac43f43f6f06f8117997b710de5018e3329d2f881"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-07.png": {
+      "bytes": 2233065,
+      "sha256": "2897aeaf5c478d2a2771a1694e33b2fbb8e8a42a2195eef70bf47fc46e0ff661"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-compact-02.png": {
+      "bytes": 1071470,
+      "sha256": "8282f316aae84f6d9616b2f20176308f4427398bece2c4c0eced85c0c006ed4d"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-compact-03.png": {
+      "bytes": 1247008,
+      "sha256": "60aabf8c243d702024c8dd3767716748d4200f8544e25b0efb7958a978e505d6"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-compact-04.png": {
+      "bytes": 1111436,
+      "sha256": "f02867e55b2a8c4d3a04c59da4d94372b83fa00589b58d29d5da040883f691bd"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-compact-05.png": {
+      "bytes": 1132641,
+      "sha256": "12627934892a9b8e0985c1df58296afdb875701bc1f95235b9e29107093820c0"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-compact-06.png": {
+      "bytes": 1104001,
+      "sha256": "1fc23b32ea2ef8f05ce2c17c903e2f39be812818521e917e2eeb3b41cf1d6710"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-compact-07.png": {
+      "bytes": 1298058,
+      "sha256": "af6f1e1a717a2c8a415cbd81b7abe21fd9d6d6b53ce6fff23361bacbbf27fe9f"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-02.png": {
+      "bytes": 2128227,
+      "sha256": "9af5186e2fed70615ff47f21710590b6837faf023863b950f1366c5b5537487c"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-03.png": {
+      "bytes": 1845583,
+      "sha256": "f02391d204d8a690d67adc3c28ad21f9c75a3b932b1df5c05fdd24386f2b8994"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-04.png": {
+      "bytes": 1990971,
+      "sha256": "2510ebab70d6da42223b58ba9431e49a6a040acfff6e637c13ee1667fe7dd6e4"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-05.png": {
+      "bytes": 1995896,
+      "sha256": "0e8e129546a6abaa037193cf351c44a920515577f6e0b291c7a172b2e9d2e0c6"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-06.png": {
+      "bytes": 1923276,
+      "sha256": "92e1d0a76bab3370bf35d4245dda5463e7295c9fc55ac7c7de818c71634d7569"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-07.png": {
+      "bytes": 1868498,
+      "sha256": "2e58d130ab3d52f81f18f58993de358ec75ae07e0a0bde784c156e4ece070c74"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-08.png": {
+      "bytes": 1880074,
+      "sha256": "25038c69a61d1817a3dd38c2ad382a41b99cbddc0fa2b6aa387dcdff7b31ce07"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-09.png": {
+      "bytes": 1928032,
+      "sha256": "0c184b3afdace7ec73516af3e718a964059ebf6324730e1360bcd3f62048b105"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-compact-02.png": {
+      "bytes": 1233026,
+      "sha256": "c0db4bda8b6cc785d62d0fde7238a3563e5c326c821aff230efe4047a4567d66"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-compact-03.png": {
+      "bytes": 1070308,
+      "sha256": "c0f539225beefe2b0f0d5666b18e6075e5565afe1a3c974386419556c04f998d"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-compact-04.png": {
+      "bytes": 1147266,
+      "sha256": "c6f7b7822858f28d96969f38f28a41632f4b4dd331467c03e08017aba212a1ff"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-compact-05.png": {
+      "bytes": 1148214,
+      "sha256": "3a826f13869163acdb5e7bdccc3e0e4454c02fa5f0b2a32986a4426216a53910"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-compact-06.png": {
+      "bytes": 1114411,
+      "sha256": "92dc5b5fdf314ac88417a4466a66e92e2929241e6f9ecfdc61d7d546277eb99a"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-compact-07.png": {
+      "bytes": 1093959,
+      "sha256": "fb5ffd2c735989824dafe79c6f0c280d4a33e2eb6295c6d8e4990de82160b6d0"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-compact-08.png": {
+      "bytes": 1094691,
+      "sha256": "a28c78bec25715158ade6c7691f001c320f88e91a848bd9022e41056665c0a9d"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-compact-09.png": {
+      "bytes": 1119897,
+      "sha256": "821d7df079068c00d84eff1f5410a13d1f5c7e63c8bca307522721eb946d25d4"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-02.png": {
+      "bytes": 1762933,
+      "sha256": "7bc7c0437e25036ca199a36e9c3d55e7645fae24ac1f15f330d9b6e18cbf1af4"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-03.png": {
+      "bytes": 1762182,
+      "sha256": "1f2dbb1d6ad39821ad19f3cf1c45de9d1142adcb9fea84d090239575cdd0b4f6"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-04.png": {
+      "bytes": 1705453,
+      "sha256": "8552cc804abbec54bdaf4d523b5f4abecb31026bbc19002806562e971090cb39"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-05.png": {
+      "bytes": 1549590,
+      "sha256": "d785cb1174d900275fbaa0ec61703865b3f7b15a9c14d68f4f52a68a8e8d965f"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-06.png": {
+      "bytes": 1643338,
+      "sha256": "c4595b22a202b534b291042e09dcef1131fa6141e3aa1c790dc6965c8727798e"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-07.png": {
+      "bytes": 1523331,
+      "sha256": "a32afb38f38c35d7d1c92849b3515ab7fec7628e4d03fb1bb71f52ff6cf1e4b3"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-08.png": {
+      "bytes": 1723341,
+      "sha256": "736a621bc50a4a977608b3a9c0383bd533b05489453cad8d78b698200709676d"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-09.png": {
+      "bytes": 1612596,
+      "sha256": "3239db7c1e578a602c87f9b9d01d17e124ffe6bb7feef0ab3220f6206e3ba0dd"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-compact-02.png": {
+      "bytes": 1026301,
+      "sha256": "0344845cbdea8a8fecaa0b1a0437fe6a866118373d4a9afe2777547556f75d43"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-compact-03.png": {
+      "bytes": 1035713,
+      "sha256": "ce559804a5bd1701d551437bb0adee9bed9e739ccb1d7ce082b0f7d060cbc58a"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-compact-04.png": {
+      "bytes": 992731,
+      "sha256": "c80bda471daed6694b2e18219aaeb3e937689a8fe635ac94301ccbbcf965bd29"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-compact-05.png": {
+      "bytes": 922193,
+      "sha256": "8fc854cab7396cbaf6f691eb98ca75ea3775cafe16d7640b0fe6dac56e4c0789"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-compact-06.png": {
+      "bytes": 984503,
+      "sha256": "34723b262bf56fdaf09db091011db18a90c6637ab68cca5f30b35d2e20383ee1"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-compact-07.png": {
+      "bytes": 917402,
+      "sha256": "601bf5e4764e56257dde1a704216506957333dcd4ef8f8f0ce9a4990ba7034c3"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-compact-08.png": {
+      "bytes": 1016795,
+      "sha256": "83d4f4bc43b24c6c458a9479e16c97698b31afe0924e4c40c16eeb6817b6cc26"
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-compact-09.png": {
+      "bytes": 963725,
+      "sha256": "50ff18d74973e1c8cbe595eb480c2262d1ce288d3252299bf29f5ddcb1b5b78f"
+    }
+  },
+  "completedAt": "2026-10-22T22:43:05.502Z"
+}

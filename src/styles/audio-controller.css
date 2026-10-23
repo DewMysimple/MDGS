@@ -1,9 +1,26 @@
-.audio-control{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 10px;max-width:100%;font-family:var(--kai,"KaiTi","STKaiti","Kaiti SC",serif)}
-.audio-control .audio-button{font-family:inherit}
-.audio-volume{display:inline-flex;align-items:center;gap:5px;color:#8a7453;font:11px/1.2 var(--kai,"KaiTi","STKaiti","Kaiti SC",serif);white-space:nowrap}
-.audio-volume input{appearance:none;-webkit-appearance:none;width:66px;height:3px;min-height:3px;margin:0 3px;background:#b7a17b80;border:0;border-radius:0;cursor:pointer;accent-color:#9d7660;box-shadow:0 1px #fff5dd}
-.audio-volume input::-webkit-slider-thumb{appearance:none;width:10px;height:10px;border:1px solid #9d7660;border-radius:50%;background:#c8b18c;box-shadow:0 0 0 2px #f3e9d4}
-.audio-volume input::-moz-range-thumb{width:9px;height:9px;border:1px solid #9d7660;border-radius:50%;background:#c8b18c;box-shadow:0 0 0 2px #f3e9d4}
-.audio-volume input:focus-visible{outline:1px solid #9d7660;outline-offset:6px}
-.audio-volume output{min-width:18px;font:10px/1.2 inherit;color:#8e5d46;text-align:right;font-variant-numeric:tabular-nums}
-@media(max-width:620px){.audio-control{gap:4px 8px}.audio-volume{font-size:10px}.audio-volume input{width:55px}}
+.audio-control{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:7px;max-width:100%;font-family:var(--kai,"KaiTi","STKaiti","Kaiti SC",serif);color:var(--muted,#81745d)}
+.audio-control .audio-button{position:relative;display:inline-flex;align-items:center;gap:8px;min-height:36px;font-family:inherit;font-size:12px;letter-spacing:1.5px;transition:color .3s ease}
+.audio-control .audio-button::after{content:"";position:absolute;inset:auto 0 2px;height:1px;background:currentColor;opacity:0;transform:scaleX(.4);transform-origin:left;transition:opacity .3s ease,transform .4s ease}
+.audio-control .audio-button:hover::after,.audio-control .audio-button:focus-visible::after{opacity:.4;transform:scaleX(1)}
+.audio-control .audio-button.is-active{color:var(--cinnabar,#9b493a)}
+.audio-control .sound-indicator{display:inline-flex;align-items:center;gap:2px;width:16px;height:13px;margin-left:2px;opacity:.4}
+.audio-control .sound-indicator>i{display:block;width:1px;height:3px;background:currentColor;animation:peony-sound-breath 2.7s ease-in-out infinite;animation-play-state:paused;transform-origin:center}
+.audio-control .sound-indicator>i:nth-child(2){height:7px;animation-delay:-.8s}.audio-control .sound-indicator>i:nth-child(3){height:11px;animation-delay:-1.6s}.audio-control .sound-indicator>i:nth-child(4){height:8px;animation-delay:-.35s}.audio-control .sound-indicator>i:nth-child(5){height:4px;animation-delay:-1.15s}
+.audio-control .sound-indicator[data-sounding=true]{opacity:.85}.audio-control .sound-indicator[data-sounding=true]>i{animation-play-state:running}
+.audio-volume-trigger{display:inline-flex;align-items:center;justify-content:center;width:30px;min-width:30px;height:34px;padding:0;border:0;color:inherit;background:transparent;opacity:.65;cursor:pointer}
+.audio-volume-trigger:hover,.audio-volume-trigger[aria-expanded=true]{opacity:1}
+.audio-volume-popover{position:absolute;z-index:40;right:0;bottom:calc(100% + 12px);display:flex;flex-direction:column;gap:16px;width:242px;padding:21px 22px;background:#f2ead9f5;border:1px solid #aa916942;box-shadow:0 12px 35px #342a1c1a;backdrop-filter:blur(14px);color:#6f6048;text-align:left;animation:peony-audio-appear .28s ease both}
+.audio-control .audio-volume-popover.is-below{top:calc(100% + 12px);bottom:auto}
+.audio-score-title{display:flex;align-items:baseline;justify-content:space-between;font-size:16px;letter-spacing:3px;color:#514a3b}
+.audio-score-title small{font-size:13px;font-weight:400;letter-spacing:1px;color:#6f6654}
+.audio-score-note{font-size:13px;line-height:1.6;letter-spacing:1px;color:#6f6654}
+.audio-volume{display:flex;align-items:center;gap:10px;font:12px/1.5 var(--kai,"KaiTi","STKaiti","Kaiti SC",serif);white-space:nowrap}
+.audio-volume input{appearance:none;-webkit-appearance:none;flex:1;width:100px;height:24px;min-height:24px;margin:0;background:linear-gradient(#b7a17b70,#b7a17b70) center/100% 3px no-repeat;border:0;border-radius:0;cursor:pointer;accent-color:#9d7660}
+.audio-volume input::-webkit-slider-thumb{appearance:none;width:10px;height:10px;border:1px solid #9d7660;border-radius:50%;background:#e9d9b9;box-shadow:0 0 0 3px #f3e9d480}
+.audio-volume input::-webkit-slider-thumb:hover{box-shadow:0 0 0 5px #a67c4920}
+.audio-volume input::-moz-range-thumb{width:9px;height:9px;border:1px solid #9d7660;border-radius:50%;background:#e9d9b9;box-shadow:0 0 0 3px #f3e9d480}
+.audio-volume input:focus-visible,.audio-volume-trigger:focus-visible{outline:1px solid #9d7660;outline-offset:6px}
+.audio-volume output{min-width:23px;font-size:12px;color:#8e5d46;text-align:right;font-variant-numeric:tabular-nums}
+@keyframes peony-sound-breath{0%,100%{transform:scaleY(.45)}48%{transform:scaleY(1)}}
+@keyframes peony-audio-appear{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.audio-control .sound-indicator>i{animation:none}.audio-volume-popover{animation:none}.audio-control .audio-button,.audio-control .audio-button::after{transition:none}}

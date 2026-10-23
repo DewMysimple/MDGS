@@ -1,0 +1,51 @@
+{
+  "status": "initial-binding-and-checker-prepared-not-final-acceptance",
+  "verifiedAt": "2026-10-23T01:01:04.222Z",
+  "freeze": "reports/art-renewal/art-candidate-6-build.json",
+  "freezeSha256": "516efd7a1d451b7e62f79e90564b22f7a706b9b14bde6cb359c8656021fbf359",
+  "buildDirectory": "tmp/art-candidate-6-dist",
+  "soak": "reports/art-renewal/soak/2026-10-23T01-00-02-558Z/validation.json",
+  "sourceProductMatched": 825,
+  "configChecks": [
+    {
+      "file": "vite.config.ts",
+      "sha256": "81056aa3e5ea7ea17e9be3d88caaf43f08fd887df1769ab1089bc985d54a4215"
+    },
+    {
+      "file": "package.json",
+      "sha256": "9a9a97b97678b1947fe80fd13b01d59c061d416a975fc7354a124a09fa09073f"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "25ff8e036d98dddd6fab6656e1b8a69c56dd924edc7b39d2f80f0da4a8b0ec17"
+    },
+    {
+      "file": "tsconfig.json",
+      "sha256": "23287477601cbe9d9a3cc6110cb2612a21dc2ae0396759d95f701a2f3bb1fa6d"
+    }
+  ],
+  "bundle": {
+    "index.html": "b7fb5104aad25eb4bf7180733c23c27e01ede328a20bbb1fb58ac63731af468e",
+    "assets/flowerLetter-DCA_QV0r.js": "a5bac5ccca28d8ef909a70f86af801086fccf0b00ceb02122e2ee4526ba3af63",
+    "assets/index-C5txKLE_.css": "db346cac5c7e39fe33b73b46b0186cf37cc411ed9643163849497c5f82cc11ae",
+    "assets/index-CTrqtaDU.js": "70a48d047600b981f7317ff38b846d8e2e0e310e9bcd904339694e806423f92a",
+    "assets/three-BetNTb4e.js": "68f6f4af9b65531830834e41fcad5f941cfcd557e6996a7f32a8c45e83290d10"
+  },
+  "checkerSha256": "33d1fc388507adcec7d0bf70fecd19b57ec4367edfb324528321415c5d402ed7",
+  "checkerArchive": "reports/art-renewal/candidate6-tour-checker.mjs",
+  "fullRequiredChecks": 35,
+  "endpointObservation": {
+    "required": false,
+    "noDbThreshold": true
+  },
+  "negativeOldStageGuard": {
+    "report": "reports/art-renewal/candidate6-tour-negative-stage-test/metadata-validation.json",
+    "sha256": "6136b67ea1cdfec5ac18e4f67ed384ed99d750353a5d77bf84404e263f36f3fc",
+    "status": "expected-failure",
+    "failedRequired": [
+      "C6-recorded-bundle-exactly-matches-explicit-freeze",
+      "C6-integrated-renderer-present-and-bound"
+    ]
+  },
+  "limits": "Actual C6 soak is in progress. No C6 film exists or has passed this audit. No product/package/recorder source changed."
+}

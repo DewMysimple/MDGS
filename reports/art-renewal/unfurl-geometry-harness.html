@@ -1,0 +1,9 @@
+<!doctype html><html lang="zh"><meta charset="utf-8"><title>Unfurl geometry review</title><style>html,body{margin:0;width:100%;height:100%;background:#f0ecdf}canvas{display:block}</style><script type="module">
+import * as THREE from '/node_modules/three/build/three.module.js';
+import {createPaintedScroll} from '/src/scene/scrollGeometry.ts';
+const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(devicePixelRatio);renderer.setClearColor('#f0ecdf');renderer.outputColorSpace=THREE.SRGBColorSpace;document.body.append(renderer.domElement);
+const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(32,innerWidth/innerHeight,2,60);scene.add(new THREE.HemisphereLight('#fffaf1','#adb4a6',1.3));const l=new THREE.DirectionalLight('#fff8e8',2);l.position.set(-3,8,10);scene.add(l);
+const texture=await new THREE.TextureLoader().loadAsync('/assets/new-scrolls/chapter-1/cover.webp');texture.colorSpace=THREE.SRGBColorSpace;const height=9.5/(16/9*.91+.24),artHeight=height*.91;const scroll=createPaintedScroll({width:9.5,height,artWidth:artHeight*16/9,artHeight,painting:texture});scene.add(scroll.group);
+window.unfurlGeometry={set(p,yaw=0,pitch=0){scroll.setOpen(p);scroll.group.rotation.set(pitch,yaw,0);camera.position.set(0,0,15);camera.lookAt(0,0,0);renderer.render(scene,camera);return {...scroll.group.userData};}};window.unfurlGeometry.set(0);window.geometryReady=true;
+</script></html>
+

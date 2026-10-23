@@ -1,0 +1,276 @@
+{
+  "status": "diagnostic-interrupted",
+  "startedAt": "2026-10-22T20:10:52.385Z",
+  "suite": "home",
+  "scope": "Actual built App at nested prefix, six desktop viewports. Home decoded layers/recovery/real optional WebGL context loss/motion/dialog focus; four culture note/original tabs/source links/explore targets; four colophons and local 1200x1600 keepsake choice/seal/download/glyph evidence. No audio retest. Visibility uses an injected document.hidden signal, not system-background emulation.",
+  "sizes": [
+    {
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "width": 3440,
+      "height": 1440
+    },
+    {
+      "width": 1100,
+      "height": 650
+    }
+  ],
+  "checks": [
+    {
+      "test": "home-image-failure-disabled-entry-and-actual-visible-image-retry",
+      "passed": false,
+      "error": "Ready must mean all four currently visible HTML images decoded: [{\"src\":\"http://127.0.0.1:7961/exhibition/ui-qa/ui/peony-atlas/landscape.webp\",\"complete\":true,\"width\":1672,\"height\":941},{\"src\":\"http://127.0.0.1:7961/exhibition/ui-qa/ui/peony-atlas/cinnabar-peonies.webp\",\"complete\":true,\"width\":1536,\"height\":1024},{\"src\":\"http://127.0.0.1:7961/exhibition/ui-qa/ui/peony-atlas/ivory-branch.webp\",\"complete\":true,\"width\":1536,\"height\":1024},{\"src\":\"http://127.0.0.1:7961/exhibition/ui-qa/ui/peony-atlas/title.webp\",\"complete\":true,\"width\":0,\"height\":0}]",
+      "screenshot": "tmp/art-renewal-ui/home-image-failure-disabled-entry-and-actual-visible-image-retry.png",
+      "state": {
+        "phase": "HOME",
+        "active": "<body>\n    <div id=\"root\"><div class=\"peony-experience phase-home \" data-journey-phase=\"HOME\" style=\"--text-plate-rgb: 247 239 223; --text-plate-opacity: 0.8; --text-plate-padding: 12px; --text-plate-radius: 0px; --text-plate-border-opacity: 0;\"><div class=\"journey-study\" aria-hidden=\"false\"><section class=\"study-home peony-atlas is-ready\" data-phase=\"HOME\" data-environment=\"on\" data-paused=\"false\" aria-label=\"国色长卷·数字牡丹赋，牡丹画境\" aria-busy=\"false\" style=\"--atlas-x: 0.0000; --atlas-y: 0.0578;\"><div ",
+        "canvas": {}
+      }
+    },
+    {
+      "test": "home-layout-1280x720",
+      "passed": false,
+      "error": "{\"rect\":{\"x\":57.59375,\"y\":699.203125,\"width\":1164.8125,\"height\":33,\"top\":699.203125,\"right\":1222.40625,\"bottom\":732.203125,\"left\":57.59375},\"size\":{\"width\":1280,\"height\":720}}",
+      "screenshot": "tmp/art-renewal-ui/home-layout-1280x720.png",
+      "state": {
+        "phase": "HOME",
+        "active": "<body>\n    <div id=\"root\"><div class=\"peony-experience phase-home \" data-journey-phase=\"HOME\" style=\"--text-plate-rgb: 247 239 223; --text-plate-opacity: 0.8; --text-plate-padding: 12px; --text-plate-radius: 0px; --text-plate-border-opacity: 0;\"><div class=\"journey-study\" aria-hidden=\"false\"><section class=\"study-home peony-atlas is-ready\" data-phase=\"HOME\" data-environment=\"on\" data-paused=\"false\" aria-label=\"国色长卷·数字牡丹赋，牡丹画境\" aria-busy=\"false\"><div class=\"atlas-art\" aria-hidden=\"true\"><img clas",
+        "canvas": {}
+      }
+    },
+    {
+      "test": "home-dialog-preface-1280x720",
+      "passed": false,
+      "error": "Tab escaped .atlas-note",
+      "screenshot": "tmp/art-renewal-ui/home-dialog-preface-1280x720.png",
+      "state": {
+        "phase": "HOME",
+        "active": "<body>\n    <div id=\"root\"><div class=\"peony-experience phase-home \" data-journey-phase=\"HOME\" style=\"--text-plate-rgb: 247 239 223; --text-plate-opacity: 0.8; --text-plate-padding: 12px; --text-plate-radius: 0px; --text-plate-border-opacity: 0;\"><div class=\"journey-study\" aria-hidden=\"false\"><section class=\"study-home peony-atlas is-ready\" data-phase=\"HOME\" data-environment=\"on\" data-paused=\"false\" aria-label=\"国色长卷·数字牡丹赋，牡丹画境\" aria-busy=\"false\" style=\"--atlas-x: 0.0814; --atlas-y: -0.1755;\"><div",
+        "canvas": {}
+      }
+    },
+    {
+      "test": "home-dialog-guide-1280x720",
+      "passed": false,
+      "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '观展指南', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\">观展指南</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <dialog open=\"\" class=\"atlas-note\" aria-labelledby=\"atlas-note-title\">…</dialog> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <dialog open=\"\" class=\"atlas-note\" aria-labelledby=\"atlas-note-title\">…</dialog> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <dialog open=\"\" class=\"atlas-note\" aria-labelledby=\"atlas-note-title\">…</dialog> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "screenshot": "tmp/art-renewal-ui/home-dialog-guide-1280x720.png",
+      "state": {
+        "phase": "HOME",
+        "active": "<body>\n    <div id=\"root\"><div class=\"peony-experience phase-home \" data-journey-phase=\"HOME\" style=\"--text-plate-rgb: 247 239 223; --text-plate-opacity: 0.8; --text-plate-padding: 12px; --text-plate-radius: 0px; --text-plate-border-opacity: 0;\"><div class=\"journey-study\" aria-hidden=\"false\"><section class=\"study-home peony-atlas is-ready\" data-phase=\"HOME\" data-environment=\"on\" data-paused=\"false\" aria-label=\"国色长卷·数字牡丹赋，牡丹画境\" aria-busy=\"false\" style=\"--atlas-x: 0.2063; --atlas-y: -0.4446;\"><div",
+        "canvas": {}
+      }
+    },
+    {
+      "test": "home-layout-1600x1000",
+      "passed": true,
+      "geometry": [
+        {
+          "selector": "atlas-header",
+          "rect": {
+            "x": 72,
+            "y": 0,
+            "width": 1456,
+            "height": 96,
+            "top": 0,
+            "right": 1528,
+            "bottom": 96,
+            "left": 72
+          },
+          "scrollWidth": 1456,
+          "clientWidth": 1456
+        },
+        {
+          "selector": "atlas-intro",
+          "rect": {
+            "x": 160,
+            "y": 117.24828338623047,
+            "width": 688,
+            "height": 569.328125,
+            "top": 117.24828338623047,
+            "right": 848,
+            "bottom": 686.5764083862305,
+            "left": 160
+          },
+          "scrollWidth": 688,
+          "clientWidth": 688
+        },
+        {
+          "selector": "atlas-begin",
+          "rect": {
+            "x": 160,
+            "y": 585.576416015625,
+            "width": 216.75,
+            "height": 53,
+            "top": 585.576416015625,
+            "right": 376.75,
+            "bottom": 638.576416015625,
+            "left": 160
+          },
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "selector": "atlas-chapters",
+          "rect": {
+            "x": 0,
+            "y": 742,
+            "width": 1600,
+            "height": 218,
+            "top": 742,
+            "right": 1600,
+            "bottom": 960,
+            "left": 0
+          },
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 72,
+            "y": 788,
+            "width": 364,
+            "height": 160,
+            "top": 788,
+            "right": 436,
+            "bottom": 948,
+            "left": 72
+          },
+          "scrollWidth": 363,
+          "clientWidth": 363
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 436,
+            "y": 788,
+            "width": 364,
+            "height": 160,
+            "top": 788,
+            "right": 800,
+            "bottom": 948,
+            "left": 436
+          },
+          "scrollWidth": 363,
+          "clientWidth": 363
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 800,
+            "y": 788,
+            "width": 364,
+            "height": 160,
+            "top": 788,
+            "right": 1164,
+            "bottom": 948,
+            "left": 800
+          },
+          "scrollWidth": 363,
+          "clientWidth": 363
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 1164,
+            "y": 788,
+            "width": 364,
+            "height": 160,
+            "top": 788,
+            "right": 1528,
+            "bottom": 948,
+            "left": 1164
+          },
+          "scrollWidth": 364,
+          "clientWidth": 364
+        },
+        {
+          "selector": "atlas-footer",
+          "rect": {
+            "x": 72,
+            "y": 960,
+            "width": 1456,
+            "height": 40,
+            "top": 960,
+            "right": 1528,
+            "bottom": 1000,
+            "left": 72
+          },
+          "scrollWidth": 1456,
+          "clientWidth": 1456
+        }
+      ],
+      "images": [
+        {
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 2172,
+          "height": 724
+        }
+      ]
+    },
+    {
+      "test": "home-dialog-preface-1600x1000",
+      "passed": false,
+      "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '作品序言', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\">作品序言</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <dialog open=\"\" class=\"atlas-note\" aria-labelledby=\"atlas-note-title\">…</dialog> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <dialog open=\"\" class=\"atlas-note\" aria-labelledby=\"atlas-note-title\">…</dialog> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <dialog open=\"\" class=\"atlas-note\" aria-labelledby=\"atlas-note-title\">…</dialog> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "screenshot": "tmp/art-renewal-ui/home-dialog-preface-1600x1000.png",
+      "state": {
+        "phase": "HOME",
+        "active": "<body>\n    <div id=\"root\"><div class=\"peony-experience phase-home \" data-journey-phase=\"HOME\" style=\"--text-plate-rgb: 247 239 223; --text-plate-opacity: 0.8; --text-plate-padding: 12px; --text-plate-radius: 0px; --text-plate-border-opacity: 0;\"><div class=\"journey-study\" aria-hidden=\"false\"><section class=\"study-home peony-atlas is-ready\" data-phase=\"HOME\" data-environment=\"on\" data-paused=\"false\" aria-label=\"国色长卷·数字牡丹赋，牡丹画境\" aria-busy=\"false\" style=\"--atlas-x: 0.2063; --atlas-y: -0.4446;\"><div",
+        "canvas": {}
+      }
+    }
+  ],
+  "errors": [],
+  "expectedFailures": [
+    "Home title image 503"
+  ],
+  "buildHtmlSha256": "09bf1cf2ce5f5984e1386563e856fa6dfc15a772805cc7d5e1f1ae4dbc2cf6a4",
+  "buildJavascript": {
+    "flowerLetter-C1gixBQJ.js": "fb0c0ca09b48b0dd904b8686c62f37b6ab7c45895b6f1fd75a2177da8126edf8",
+    "index-CxxgNBWD.js": "e62c63dc22ca4663603640eeff018a16f2ccc9cbd69506724a707ce71db8f4c8",
+    "three-w1TnP4RH.js": "598394f34bd207f0b60b007bdfca1f8f020fac83128efe1dee2d237eaa65c1d0"
+  },
+  "sourceSha256": {
+    "src/components/PeonyAtlasHome.tsx": "a901ad087f989235244d753df8eecbc6eb8e5c0848584e91186147b162f1d768",
+    "src/components/PeonyPigment.tsx": "19255819f8846e72086c89ee8656e3171f12ca1ca8be418568ce038698421dc2",
+    "src/scene/PeonyBloomSurface.ts": "40affc28cd2efda346ab1e09f652d8ce2c669a1a3f2f5f77dce68c0d6e6c6cce",
+    "src/components/CulturePanel.tsx": "4ecf3d659bdf28924fc1519e5cc35e5e79477c401e6c6ce6dc350b8b5c3e1e1e",
+    "src/components/ScrollColophon.tsx": "29d88e77f15882447cc36561860e316c33065831f99d2870bed07978f73d322d",
+    "src/components/FlowerLetterDialog.tsx": "4e80ba91b3661e319bf0afcf6b7c78e0b23e68ffb0209720537b5288324683e1",
+    "src/art/flowerLetter.ts": "5b448f1e07dfb9f6277959428f54950f010f42f8a5c8d9583f5d5854b139381a",
+    "src/styles/peony-atlas.css": "08c6588e45625b7d2d61735755390c34b6df9cca8cea7e8bede723eeb33e65fb",
+    "src/styles/curatorial-reading.css": "7998434667f7f79c3d60b674e8a3ffde4aa31a96a3dfc4f5f94ed100743d93ae",
+    "src/styles/flower-letter.css": "6a161fe9e059d8c4bc9f8bac95e7c3374dbb07e47328757deb3d59b5264d3872",
+    "src/data/curatorialNotes.ts": "e3f72d86e083f6f71f88d7b5aa1fc2d2eedacc4ec6ae734124cd21b24be3d7f1",
+    "src/data/flowerLetters.ts": "8ed21992a8e43a073a0593ec8dc8f627e69e12f74785517287ee22b00417060d",
+    "scripts/validate-art-renewal-ui.mjs": "64f56e3944e6c0aaa94294c807394a2ce1cc8704dbf356151d51851fc8307311"
+  },
+  "url": "http://127.0.0.1:7961/exhibition/ui-qa/",
+  "browser": "156.0.8078.4",
+  "diagnosticNote": "Stopped preliminary driver after two real layout/image findings and a harness false positive: native modal browser-chrome focus temporarily reports document.body. Native-dialog assertion subsequently corrected; following blocked-modal click timeouts are cascading harness failures, not independent product findings."
+}

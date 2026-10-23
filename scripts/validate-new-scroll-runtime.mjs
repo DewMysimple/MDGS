@@ -42,7 +42,7 @@ try{
   const Original=window.AudioContext;
   window.AudioContext=class extends Original{constructor(...args){super(...args);window.__audioAudit.contexts.push(this);}
    createBufferSource(){const node=super.createBufferSource();window.__audioAudit.sources.push(node);return node;}
-   createGain(){const node=super.createGain();window.__audioAudit.gains.push(node);return node;}};
+   createGain(){const node=super.createGain(),connect=node.connect.bind(node);node.connect=(target,...rest)=>{if(target===this.destination)node.__mdgsOutput=true;return connect(target,...rest);};window.__audioAudit.gains.push(node);return node;}};
  });
  await page.goto(url+'#chapter-1');
  for(const id of[1,2,3,4]){
@@ -118,15 +118,24 @@ try{
  await page.evaluate(()=>document.fonts.ready);assert.equal(await page.evaluate(()=>document.fonts.check('20px "MDGS Kai"')),true);
  const fonts=await page.locator('button,h1,h2,p,input,small,strong').evaluateAll(elements=>elements.filter(element=>{const r=element.getBoundingClientRect(),s=getComputedStyle(element);return r.width>2&&r.height>2&&s.visibility!=='hidden'&&s.display!=='none';}).map(element=>({text:element.textContent?.slice(0,25),font:getComputedStyle(element).fontFamily})).filter(item=>!item.font.startsWith('"MDGS Kai"')));
  assert.deepEqual(fonts,[]);report.checks.push({test:'local-kai-loaded-and-all-visible-html-typography',passed:true});
- // Actual click unlocks the AudioContext and decodes the shipped original MP3.
- await page.getByRole('button',{name:'开启古筝意境配乐',exact:true}).click();await page.locator('[data-audio-state="playing"]').waitFor({timeout:20000});
- const audio=()=>page.evaluate(()=>({state:window.__audioAudit.contexts.at(-1)?.state,time:window.__audioAudit.contexts.at(-1)?.currentTime,duration:window.__audioAudit.sources.at(-1)?.buffer?.duration,channels:window.__audioAudit.sources.at(-1)?.buffer?.numberOfChannels,loop:window.__audioAudit.sources.at(-1)?.loop,gain:window.__audioAudit.gains.at(-1)?.gain.value}));
- const a=await audio();assert(a.duration>75&&a.channels===2&&a.loop&&a.state==='running');await page.waitForTimeout(400);assert((await audio()).time>a.time);
- await page.getByRole('slider',{name:'古筝配乐音量'}).fill('25');await page.waitForTimeout(200);assert(Math.abs((await audio()).gain-.25)<.01);
- await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,value:true});document.dispatchEvent(new Event('visibilitychange'));});await page.locator('[data-audio-state="paused"]').waitFor();const paused=await audio();await page.waitForTimeout(400);assert(Math.abs((await audio()).time-paused.time)<.02);
- await page.evaluate(()=>{delete document.hidden;document.dispatchEvent(new Event('visibilitychange'));});await page.locator('[data-audio-state="playing"]').waitFor();
- await page.getByRole('button',{name:'关闭古筝意境配乐',exact:true}).click();assert.equal((await audio()).state,'closed');
- report.checks.push({test:'actual-mp3-decode-loop-volume-background-pause-dispose',audio:a,passed:true});
+ // One click enables the shared original digital soundscape. Three loops
+ // remain on one clock; short incidental cues are intentionally not loops.
+ await page.getByRole('button',{name:'开启原创数字声景',exact:true}).click();
+ await page.waitForFunction(()=>window.__MDGS_AUDIO__?.snapshot().playback==='playing',null,{timeout:30000});
+ const audio=()=>page.evaluate(()=>({...window.__MDGS_AUDIO__.snapshot(),
+  nativeStates:window.__audioAudit.contexts.map(context=>context.state),
+  nativeLoops:window.__audioAudit.sources.filter(source=>source.loop).map(source=>({duration:source.buffer?.duration,channels:source.buffer?.numberOfChannels,rate:source.playbackRate.value})),
+  masterGain:window.__audioAudit.gains.findLast(node=>node.__mdgsOutput)?.gain.value}));
+ const a=await audio();assert.deepEqual(a.loopDurations,[160,160,24]);assert.deepEqual(a.nativeLoops.map(item=>item.channels),[2,1,1]);assert(a.nativeLoops.every(item=>item.rate===1));assert.equal(a.sourceCount,3);assert.equal(a.nativeStates.filter(state=>state==='running').length,1);
+ await page.waitForTimeout(400);assert((await audio()).clock>a.clock);
+ await page.getByRole('button',{name:'调整声景音量',exact:true}).click();
+ await page.getByRole('slider',{name:'原创数字声景音量',exact:true}).fill('25');await page.waitForTimeout(250);assert(Math.abs((await audio()).masterGain-.25)<.01);await page.keyboard.press('Escape');
+ await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,value:true});document.dispatchEvent(new Event('visibilitychange'));});
+ await page.waitForFunction(()=>window.__MDGS_AUDIO__?.snapshot().playback==='paused');const paused=await audio();await page.waitForTimeout(400);assert(Math.abs((await audio()).clock-paused.clock)<.02);
+ await page.evaluate(()=>{delete document.hidden;document.dispatchEvent(new Event('visibilitychange'));});await page.waitForFunction(()=>window.__MDGS_AUDIO__?.snapshot().playback==='playing');
+ await page.getByRole('button',{name:'关闭原创数字声景',exact:true}).click();
+ await page.waitForFunction(()=>window.__audioAudit.contexts.every(context=>context.state==='closed')&&window.__MDGS_AUDIO__.snapshot().retiredGraphs===0);
+ report.checks.push({test:'shared-original-digital-three-stem-decode-volume-background-pause-fade-dispose',audio:a,passed:true});
  assert.deepEqual(report.errors,[]);report.status='pass';console.log(JSON.stringify({status:report.status,checks:report.checks.length,nodes:report.nodes.length}));
 }catch(error){report.status='fail';report.failure={message:error.message,stack:error.stack};if(page){report.lastPage=await page.evaluate(()=>({url:location.href,phase:document.querySelector('[data-journey-phase]')?.dataset.journeyPhase,canvas:{...document.querySelector('.painting canvas')?.dataset}})).catch(()=>null);await shot('runtime-failure',true).catch(()=>{});}throw error;
 }finally{await browser?.close();if(server)await server.close();report.completedAt=new Date().toISOString();await save();}

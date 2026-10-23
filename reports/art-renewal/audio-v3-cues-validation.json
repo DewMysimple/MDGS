@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "scope": "Actual deterministic synthesis sequence of the three short cues at common desktop AudioContext sample rates; validates the conservative 0.02 cue allowance, without human audition claims.",
+  "checks": [
+    {
+      "sampleRate": 32000,
+      "cue": "unfurl",
+      "peak": 0.01859661916644712,
+      "peakDbfs": -34.611,
+      "passed": true
+    },
+    {
+      "sampleRate": 32000,
+      "cue": "note",
+      "peak": 0.01254246791534354,
+      "peakDbfs": -38.032,
+      "passed": true
+    },
+    {
+      "sampleRate": 32000,
+      "cue": "seal",
+      "peak": 0.011583772100189205,
+      "peakDbfs": -38.723,
+      "passed": true
+    },
+    {
+      "sampleRate": 44100,
+      "cue": "unfurl",
+      "peak": 0.01827887797429669,
+      "peakDbfs": -34.761,
+      "passed": true
+    },
+    {
+      "sampleRate": 44100,
+      "cue": "note",
+      "peak": 0.010530829212588322,
+      "peakDbfs": -39.551,
+      "passed": true
+    },
+    {
+      "sampleRate": 44100,
+      "cue": "seal",
+      "peak": 0.011087499511787152,
+      "peakDbfs": -39.103,
+      "passed": true
+    },
+    {
+      "sampleRate": 48000,
+      "cue": "unfurl",
+      "peak": 0.019187721749351207,
+      "peakDbfs": -34.34,
+      "passed": true
+    },
+    {
+      "sampleRate": 48000,
+      "cue": "note",
+      "peak": 0.011114655929352693,
+      "peakDbfs": -39.082,
+      "passed": true
+    },
+    {
+      "sampleRate": 48000,
+      "cue": "seal",
+      "peak": 0.011581740311706432,
+      "peakDbfs": -38.725,
+      "passed": true
+    }
+  ]
+}

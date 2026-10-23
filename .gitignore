@@ -1,5 +1,8 @@
 node_modules/
 dist/
+/dist-exhibition/
+/dist-exhibition.staging/
+/.mdgs-exhibition.lock
 *.log
 .DS_Store
 tmp/
@@ -16,3 +19,19 @@ source/
 /主线内容(2).docx
 /exec-7b9c2640-9d8b-45f3-a2e6-0debe4684e11.png
 reports/reconstruction/source-paths.local.json
+
+# QA capture workspaces stay local. Selected evidence is deliberately added
+# from reports/art-renewal/git-evidence-manifest.json; original maps are kept.
+/reports/art-renewal/**/*.png
+/reports/art-renewal/**/*.jpg
+/reports/art-renewal/**/*.jpeg
+/reports/art-renewal/**/*.webm
+/reports/art-renewal/**/*.mp4
+/reports/art-renewal/c3-profile-runs/**/trace.json
+/reports/peony2-fidelity/runs/**/*.png
+/reports/peony2-fidelity/runs/**/*.jpg
+/reports/peony2-fidelity/runs/**/*.webm
+/reports/peony2-fidelity/history/**/*.png
+/reports/peony2-fidelity/history/**/*.jpg
+!/reports/art-renewal/**/*.log
+!/reports/peony2-fidelity/**/*.log

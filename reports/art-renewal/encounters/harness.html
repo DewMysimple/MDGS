@@ -1,0 +1,19 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><link rel="icon" href="data:,"><title>真实画面遇景局部验证</title><div id="root"></div><script type="module">
+import React from '/node_modules/.vite/deps/react.js';
+import ReactDOM from '/node_modules/.vite/deps/react-dom_client.js';
+import ScrollViewport from '/src/components/ScrollViewport.tsx';
+import NarrativeCalligraphy from '/src/components/NarrativeCalligraphy.tsx';
+import ArtEncounters from '/src/components/ArtEncounters.tsx';
+import {artEncounters} from '/src/data/artEncounters.ts';
+import '/src/styles.css';
+const h=React.createElement;
+function Harness(){
+ const [chapterId,setChapter]=React.useState(1),[progress,setProgress]=React.useState(0),[anchors,setAnchors]=React.useState([]),[projections,setProjections]=React.useState([]),[manifest,setManifest]=React.useState(null),[placement,setPlacement]=React.useState(),[open,setOpen]=React.useState(false),[ready,setReady]=React.useState(false),[active,setActive]=React.useState(true),[mounted,setMounted]=React.useState(true);
+ window.artHarness={setChapter:id=>{setReady(false);setManifest(null);setChapter(id);setProgress(0);setAnchors([]);setProjections([])},setProgress,setAnchors,setActive,setMounted,get:()=>({chapterId,progress,anchors,projections,open,ready,placement,active,mounted})};
+ return h('main',{className:'app-shell',style:{height:'100dvh',width:'100%',padding:'23px',display:'flex',flexDirection:'column',gap:0,overflow:'hidden',background:'#eee4ce'}},
+  h('header',{style:{height:152,flex:'0 0 152px',display:'flex',alignItems:'center',justifyContent:'space-between'}},h('h1',{style:{fontFamily:'MDGS Kai,KaiTi,serif',fontWeight:400,fontSize:28,color:'#8a4b2e'}},'国色长卷 · 画中有遇'),h('nav',{style:{display:'flex',gap:20}},...[1,2,3,4].map(id=>h('button',{key:id,onClick:()=>window.artHarness.setChapter(id)},'卷'+id)),mounted&&h(ArtEncounters,{chapterId,progress,active,projections,onSeek:setProgress,onAnchorRequest:setAnchors,onOpenChange:setOpen}))),
+  h('div',{id:'scroll-artwork',className:'painting',style:{position:'relative',minHeight:0,flex:'1 1 auto',width:'100%',overflow:'hidden',background:'#f1e8d6',marginBottom:6}},h(ScrollViewport,{key:chapterId,chapterId,progress,onNudge:d=>setProgress(p=>p+d),onSeek:setProgress,onManualInput:()=>{},onManifest:setManifest,motionEnabled:false,interactive:true,artworkAnchors:anchors,onArtworkAnchors:setProjections,onNarrativePlacement:setPlacement,onReady:()=>setReady(true)}),manifest&&h(NarrativeCalligraphy,{chapterId,progress,stops:manifest.stops,placement,active:true,mode:'original',platePadding:12,durationSeconds:manifest.sourceDurationSeconds}))
+ );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(h(Harness));
+</script></html>

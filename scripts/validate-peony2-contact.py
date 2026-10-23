@@ -21,7 +21,9 @@ def absolute(path):
 def main():
     native = read(OUT / 'validation-native.json')
     web = read(absolute(sys.argv[1]) if len(sys.argv) > 1 else OUT / 'browser-captures.json')
-    fidelity = read(OUT / 'validation-fidelity.json')
+    fidelity = read(absolute(sys.argv[2]) if len(sys.argv) > 2 else OUT / 'validation-fidelity.json')
+    target_dir = absolute(sys.argv[3]) if len(sys.argv) > 3 else OUT
+    target_dir.mkdir(parents=True, exist_ok=True)
     references = {(row['chapter'], frame['frame']): frame
                   for row in native['chapters']
                   for frame in read(absolute(row['evidence'])).get('renders', [])}
@@ -51,7 +53,7 @@ def main():
             if result:
                 label = f'MAE {result.get("meanAbsoluteRGB8", 999):.3f}/255  p99 {result.get("p99MaximumChannelError8", 999)}  {"PASS" if result.get("passed") else "FAIL"}'
                 draw.text((x + 7, y + 186), label, fill='#216a37' if result.get('passed') else '#9b281c', font=font)
-        target = OUT / f'contact-chapter-{chapter}.jpg'
+        target = target_dir / f'contact-chapter-{chapter}.jpg'
         sheet.save(target, quality=94, subsampling=0)
         files.append(target.relative_to(ROOT).as_posix())
     print(json.dumps({'contacts': files}, separators=(',', ':')))

@@ -1,23 +1,29 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { CSSProperties, KeyboardEvent } from 'react';
-import { ArrowRight, BookOpen, ChevronLeft, ChevronRight, Maximize, Minimize, Mouse, MoveHorizontal, Pause, Play, RotateCcw, Settings, Wind } from 'lucide-react';
+import { BookOpen, ChevronLeft, ChevronRight, Maximize, Minimize, Mouse, MoveHorizontal, Pause, Play, Settings, Wind } from 'lucide-react';
 import ScrollViewport from './components/ScrollViewport';
-import type { ViewportMotionState } from './components/ScrollViewport';
+import ScrollTimeline from './components/ScrollTimeline';
+import type { ScrollPresentationHandle, ViewportMotionState } from './components/ScrollViewport';
 import CulturePanel from './components/CulturePanel';
+import ScrollColophon from './components/ScrollColophon';
+import FlowerLetterDialog from './components/FlowerLetterDialog';
 import AudioController from './components/AudioController';
-import { BrocadeBorder, ExhibitionAtmosphere, ScrollRoller } from './components/ScrollOrnaments';
+import ArtEncounters from './components/ArtEncounters';
+import { artEncounters, type ArtworkAnchorSpec, type ProjectedArtAnchor } from './data/artEncounters';
+import { SoundscapeProvider } from './hooks/usePeonySoundscape';
+import { BrocadeBorder, ScrollRoller } from './components/ScrollOrnaments';
 import { useScrollController } from './hooks/useScrollController';
 import { chapters } from './data/chapters';
-import StudyHome from './components/StudyHome';
+import StudyHome from './components/PeonyAtlasHome';
 import ScrollLoadingScene from './components/ScrollLoadingScene';
 import { useStudyJourney } from './hooks/useStudyJourney';
 import type { SceneManifest } from './types';
 import NarrativeCalligraphy from './components/NarrativeCalligraphy';
-import { narrativeChapters } from './data/newNarrative';
 import type { NarrativeSpace } from './scene/NarrativeSpace';
 import ViewerSettingsPanel from './components/ViewerSettingsPanel';
 import { readViewerSettings, textPlateVariables, viewerSettingsKey } from './data/viewerSettings';
 import { activeSourceEdition } from './data/sourceEdition';
+import { matchesArtworkSnapshot, releaseArtworkSnapshot, type ArtworkSnapshot } from './scene/artworkSnapshot';
 import './styles.css';
 
 const ordinal = ['一', '二', '三', '四'];
@@ -39,9 +45,13 @@ export default function App() {
   const [studyVisited, setStudyVisited] = useState(() => journey.phase === 'HOME');
   useEffect(() => { if (journey.phase === 'HOME' || journey.phase === 'RETURNING_HOME') setStudyVisited(true); }, [journey.phase]);
   const [cultureOpen, setCultureOpen] = useState(false);
+  const [encounterOpen, setEncounterOpen] = useState(false);
+  const [letterOpen, setLetterOpen] = useState(false);
+  const [artworkAnchors, setArtworkAnchors] = useState<ArtworkAnchorSpec[]>([]);
+  const [projectedAnchors, setProjectedAnchors] = useState<ProjectedArtAnchor[]>([]);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [settings, setSettings] = useState(readViewerSettings);
-  useEffect(() => { setSettingsOpen(false); }, [journey.phase, journey.attempt]);
+  useEffect(() => { setSettingsOpen(false); setLetterOpen(false); }, [journey.phase, journey.attempt]);
   const [fullscreen, setFullscreen] = useState(Boolean(document.fullscreenElement));
   const [notice, setNotice] = useState('');
   const [narrativePlacement,setNarrativePlacement]=useState<NarrativeSpace>();
@@ -54,6 +64,40 @@ export default function App() {
   const { progress, target, seek, nudge, playing, togglePlaying, stop } = useScrollController(chapterId, {
     smoothingMs: chapterSettings.smoothingMs, active: journey.interactive, timing: manifest,
   });
+  const presentationHandle = useRef<ScrollPresentationHandle | null>(null);
+  const snapshotCache = useRef<Record<number, ArtworkSnapshot>>({});
+  const [snapshots, setSnapshots] = useState<Record<number, ArtworkSnapshot>>({});
+  const [presentationFallback, setPresentationFallback] = useState(false);
+  // History leaves the viewer before its snapshot request. Keep the native
+  // owner alive for that one completed frame; loading cancellation stays immediate.
+  const cancelNativePreparation = journey.phase === 'RETURNING_HOME' && (
+    !journey.returningFromViewer || matchesArtworkSnapshot(snapshots[chapterId], chapterId, progress)
+    || presentationFallback || journey.returnFallback
+  );
+  const returnCapture = useRef<object | null>(null);
+  const currentJourney = useRef({ chapterId, attempt: journey.attempt, phase: journey.phase, progress });
+  currentJourney.current = { chapterId, attempt: journey.attempt, phase: journey.phase, progress };
+  const receivePresentationHandle = useCallback((handle: ScrollPresentationHandle | null) => { presentationHandle.current = handle; }, []);
+  const receivePresentationSnapshot = useCallback((snapshot: ArtworkSnapshot) => {
+    if (snapshot.chapterId !== currentJourney.current.chapterId || snapshot.sourceRevision !== activeSourceEdition) {
+      releaseArtworkSnapshot(snapshot); return;
+    }
+    const previous = snapshotCache.current[snapshot.chapterId];
+    snapshotCache.current = { ...snapshotCache.current, [snapshot.chapterId]: snapshot };
+    setSnapshots(snapshotCache.current);
+    if (previous !== snapshot) releaseArtworkSnapshot(previous);
+  }, []);
+  useEffect(() => () => {
+    Object.values(snapshotCache.current).forEach(releaseArtworkSnapshot);
+    snapshotCache.current = {}; returnCapture.current = null;
+  }, []);
+  useEffect(() => {
+    setPresentationFallback(false); returnCapture.current = null;
+  }, [chapterId, journey.attempt]);
+  const receivePresentationError = useCallback((message: string) => {
+    if (currentJourney.current.phase === 'RETURNING_HOME') setPresentationFallback(true);
+    else if (currentJourney.current.progress > 1e-7) journey.onPresentationFailure(message);
+  }, [journey.onPresentationFailure]);
   stopRef.current = stop;
   const chapterIndex = chapters.findIndex(item => item.id === chapterId);
   const chapter = chapters[chapterIndex];
@@ -78,8 +122,57 @@ export default function App() {
   }, [stop, chapterId, journey.interactive, journey.select]);
 
   const returnToStudy = useCallback(() => {
-    stop(); setCultureOpen(false); journey.returnHome();
-  }, [stop, journey.returnHome]);
+    stop(); setCultureOpen(false);
+    const current = currentJourney.current;
+    if (returnCapture.current || current.phase === 'RETURNING_HOME') return;
+    if (current.phase !== 'SCROLL_VIEWER' || !presentationHandle.current) {
+      // A prepared scroll already owns its picture and current curvature.
+      // Let that same paper close; only an unprepared stage needs a plain exit.
+      setPresentationFallback(!journey.presentationReady); journey.returnHome(); return;
+    }
+    // Stop the manual follower too: the paper must close on the exact image
+    // that is copied from the authored renderer, rather than its target.
+    seek(current.progress, true);
+    const request = {}; returnCapture.current = request;
+    presentationHandle.current.capture().then(snapshot => {
+      const live = currentJourney.current;
+      if (returnCapture.current !== request || live.chapterId !== current.chapterId || live.attempt !== current.attempt
+        || live.phase !== 'SCROLL_VIEWER' && live.phase !== 'RETURNING_HOME') {
+        releaseArtworkSnapshot(snapshot); return;
+      }
+      seek(snapshot.progress, true); receivePresentationSnapshot(snapshot);
+      if (live.phase === 'SCROLL_VIEWER') { setPresentationFallback(false); journey.returnHome(); }
+    }).catch(() => {
+      const live = currentJourney.current;
+      if (returnCapture.current === request && live.chapterId === current.chapterId && live.attempt === current.attempt
+        && (live.phase === 'SCROLL_VIEWER' || live.phase === 'RETURNING_HOME')) {
+        if (live.phase === 'SCROLL_VIEWER' || !matchesArtworkSnapshot(snapshotCache.current[live.chapterId], live.chapterId, live.progress)) setPresentationFallback(true);
+        if (live.phase === 'SCROLL_VIEWER') journey.returnHome();
+      }
+    }).finally(() => { if (returnCapture.current === request) returnCapture.current = null; });
+  }, [stop, seek, journey.presentationReady, journey.returnHome, receivePresentationSnapshot]);
+
+  useEffect(() => {
+    // Browser Back bypasses the return button. Its still-mounted native
+    // canvas remains the source until a matching image has been captured.
+    if (journey.phase !== 'RETURNING_HOME' || !journey.returningFromViewer || presentationFallback || journey.returnFallback
+      || matchesArtworkSnapshot(snapshotCache.current[chapterId], chapterId, progress) || returnCapture.current) return;
+    const handle = presentationHandle.current;
+    if (!handle) { setPresentationFallback(true); return; }
+    const attempt = journey.attempt, request = {}; returnCapture.current = request;
+    handle.capture().then(snapshot => {
+      const live = currentJourney.current;
+      if (returnCapture.current !== request || live.chapterId !== chapterId || live.attempt !== attempt || live.phase !== 'RETURNING_HOME') {
+        releaseArtworkSnapshot(snapshot); return;
+      }
+      seek(snapshot.progress, true); receivePresentationSnapshot(snapshot);
+    }).catch(() => {
+      const live = currentJourney.current;
+      if (returnCapture.current === request && live.chapterId === chapterId && live.attempt === attempt && live.phase === 'RETURNING_HOME'
+        && !matchesArtworkSnapshot(snapshotCache.current[chapterId], chapterId, live.progress)) setPresentationFallback(true);
+    })
+      .finally(() => { if (returnCapture.current === request) returnCapture.current = null; });
+  }, [chapterId, journey.attempt, journey.phase, journey.returningFromViewer, journey.returnFallback, progress, presentationFallback, receivePresentationSnapshot, seek]);
 
   useEffect(() => {
     document.title = journey.phase === 'HOME' ? '国色长卷 · 数字牡丹赋' : `${chapter.title} · 国色长卷`;
@@ -91,6 +184,15 @@ export default function App() {
     stop();
     seek(clamp(value));
   }, [seek, stop]);
+
+  const seekEncounter = useCallback((value: number) => {
+    stop();
+    seek(clamp(value), true);
+  }, [seek, stop]);
+  const receiveEncounterOpen = useCallback((open: boolean) => {
+    if (open) stopRef.current();
+    setEncounterOpen(open);
+  }, []);
 
   function previousScene() {
     const previous = [...stops].reverse().find(item => item.progress < progress - 0.002);
@@ -151,19 +253,19 @@ export default function App() {
   }
 
   return (
+    <SoundscapeProvider phase={journey.phase} chapterId={chapterId} progress={progress} reading={cultureOpen || encounterOpen || letterOpen}>
     <div className={`peony-experience phase-${journey.phase.toLowerCase().replaceAll('_', '-')} ${motionEnabled ? '' : 'environment-off'}`} data-journey-phase={journey.phase} style={textPlateVariables(settings) as CSSProperties}>
     {studyVisited && <div className="journey-study" inert={journey.phase !== 'HOME'} aria-hidden={journey.phase !== 'HOME'}>
       <StudyHome phase={journey.phase} chapterId={chapterId} onSelect={journey.select} motionEnabled={motionEnabled} onToggleMotion={() => setMotionEnabled(value => !value)} onOpenSettings={openSettings} />
     </div>}
-    {journey.viewerMounted && <div className={`app-shell journey-viewer${journey.interactive ? ' is-interactive' : ''}`} inert={!journey.interactive} aria-hidden={!journey.interactive}>
-      <ExhibitionAtmosphere />
+    {journey.viewerMounted && <div className={`app-shell poetic-viewer journey-viewer${journey.interactive ? ' is-interactive' : ''}`} inert={!journey.interactive} aria-hidden={!journey.interactive}>
       <a className="skip-link" href="#scroll-artwork" onClick={event => { event.preventDefault(); stageRef.current?.focus(); }}>跳至画卷</a>
       <header className="site-header">
-        <button className="brand" type="button" onClick={returnToStudy} aria-label="返回书房">
+        <button className="brand" type="button" onClick={returnToStudy} aria-label="返回序厅">
           <span className="brand-seal" aria-hidden="true">牡<br />丹</span>
-          <span className="brand-wordmark">国色长卷<span>返回书房 · 数字牡丹赋</span></span>
+          <span className="brand-wordmark">国色长卷<span>返回序厅 · 数字牡丹赋</span></span>
         </button>
-        <h1 className="viewer-work-title"><small>第{ordinal[chapterIndex]}卷</small>{chapter.title}</h1>
+        <h1 className="viewer-work-title visually-hidden"><small>第{ordinal[chapterIndex]}卷</small>{chapter.title}</h1>
         <nav className="chapter-nav" aria-label="四卷导航">
           {chapters.map((item, index) => (
             <button
@@ -173,6 +275,7 @@ export default function App() {
               onClick={() => changeChapter(item.id)}
               aria-current={chapterId === item.id ? 'page' : undefined}
               aria-label={`第${ordinal[index]}卷，${item.title}`}
+              title={item.subtitle}
             ><span className="chapter-numeral">{item.numeral}</span><span className="chapter-nav-name">{item.title}</span></button>
           ))}
         </nav>
@@ -202,9 +305,11 @@ export default function App() {
                 key={`${chapterId}-${journey.attempt}`}
                 chapterId={chapterId}
                 interactive={journey.interactive}
+                preparationCancelled={cancelNativePreparation}
                 onPreparation={journey.onPreparation}
                 onReady={journey.onReady}
                 progress={progress}
+                playbackActive={playing}
                 motionEnabled={motionEnabled && journey.interactive && !finished}
                 onMotionState={receiveMotionState}
                 onNarrativePlacement={setNarrativePlacement}
@@ -213,21 +318,19 @@ export default function App() {
                 onManualInput={stop}
                 onManifest={receiveManifest}
                 wheelSpeed={chapterSettings.wheelSpeed}
+                artworkAnchors={artworkAnchors}
+                onArtworkAnchors={setProjectedAnchors}
+                onPresentationHandle={receivePresentationHandle}
+                onPresentationSnapshot={receivePresentationSnapshot}
+                onPresentationError={receivePresentationError}
               />
-              {manifest && <NarrativeCalligraphy chapterId={chapterId} progress={progress} stops={manifest.stops} placement={narrativePlacement} active={journey.interactive && !finished} platePadding={settings.textPlate.padding} durationSeconds={manifest.sourceDurationSeconds} />}
-              {finished && (
-                <aside className="end-colophon" aria-label="卷末题跋">
-                  <span className="end-seal" aria-hidden="true">阅<br />毕</span>
-                  <p className="eyebrow">第{ordinal[chapterIndex]}卷 · 卷末</p>
-                  <h2>{chapter.title}</h2>
-                  <p className="end-theme-subtitle">{chapter.subtitle}</p>
-                  <p className="end-colophon-text">{narrativeChapters[chapterId]?.ending ?? chapter.colophon}</p>
-                  <div className="end-actions">
-                    <button className="text-button" type="button" onClick={() => goTo(0)}><RotateCcw size={14} strokeWidth={1.4} />再观此卷</button>
-                    <button className="text-button" type="button" onClick={() => changeChapter(chapters[(chapterIndex + 1) % chapters.length].id)}>{chapterIndex === chapters.length - 1 ? '重游四卷' : '展开下一卷'}<ArrowRight size={15} strokeWidth={1.4} /></button>
-                  </div>
-                </aside>
-              )}
+              {manifest && <NarrativeCalligraphy chapterId={chapterId} progress={progress} stops={manifest.stops} placement={narrativePlacement}
+                active={journey.interactive && !finished && !encounterOpen && !letterOpen} mode={settings.narrativeMode} playing={playing}
+                platePadding={settings.textPlate.padding} durationSeconds={manifest.sourceDurationSeconds} />}
+              {finished && <ScrollColophon chapter={chapter} ordinal={ordinal[chapterIndex]} placement={narrativePlacement}
+                last={chapterIndex === chapters.length - 1} onReplay={() => goTo(0)}
+                onNext={() => changeChapter(chapters[(chapterIndex + 1) % chapters.length].id)}
+                onKeep={() => { stop(); setLetterOpen(true); }} />}
             </div>
             <BrocadeBorder edge="bottom" />
             <ScrollRoller side="left" />
@@ -240,20 +343,8 @@ export default function App() {
             <div className="current-scene" aria-live="polite" aria-atomic="true"><span className="scene-counter">{String(currentIndex + 1).padStart(2, '0')}<i>/ {String(stops.length).padStart(2, '0')}</i></span><span className="scene-name">{currentStop.name}</span>{finished && <span className="viewed-label">此卷已阅</span>}</div>
             <span className="progress-caption"><span>{finished ? '卷末' : progress < 0.005 ? '卷首' : '游观中'}</span><b>{Math.round(progress * 100).toString().padStart(2, '0')}<small>%</small></b></span>
           </div>
-          <div className="chapter-timeline" style={{ '--progress': `${progress * 100}%` } as CSSProperties}>
-            <div className="timeline-rule" aria-hidden="true"><span /></div>
-            <input type="range" min="0" max="1" step="0.001" value={progress}
-              onInput={event => goTo(Number(event.currentTarget.value))}
-              onKeyDown={event => {
-                const keys: Record<string, number> = { Home: 0, End: 1, ArrowRight: target + 0.01, ArrowUp: target + 0.01, ArrowLeft: target - 0.01, ArrowDown: target - 0.01, PageUp: target + 0.1, PageDown: target - 0.1 };
-                if (event.key in keys) { event.preventDefault(); goTo(keys[event.key]); }
-              }}
-              aria-label="画卷游观进度" aria-valuetext={`已观赏 ${Math.round(progress * 100)}%，${currentStop.name}`} />
-            <div className="timeline-stops">
-              {stops.map((item, index) => <button type="button" key={`${index}-${item.name}`} className={`timeline-stop${index <= currentIndex ? ' is-passed' : ''}`} style={{ left: `${item.progress * 100}%` }} onClick={() => goTo(item.progress)} aria-label={`游观至${item.name}`} title={item.name}><i /></button>)}
-            </div>
-            <span className="timeline-cursor" aria-hidden="true" />
-          </div>
+          <ScrollTimeline stops={stops} progress={progress} target={target} currentIndex={currentIndex}
+            active={journey.interactive} chapterId={chapterId} onSeek={goTo} />
           <div className="control-bottomline">
             <p className="interaction-hint"><Mouse size={14} strokeWidth={1.25} /><span>滚轮游观</span><i /><MoveHorizontal size={16} strokeWidth={1.25} /><span>左右拖拽</span></p>
             <div className="playback-controls">
@@ -262,6 +353,11 @@ export default function App() {
               <button className="step-button" type="button" onClick={nextScene} disabled={finished} aria-label="下一分镜" title="下一分镜"><span>下一景</span><ChevronRight size={18} strokeWidth={1.35} /></button>
             </div>
             <div className="secondary-controls">
+              <ArtEncounters chapterId={chapterId} progress={progress}
+                active={journey.interactive && !cultureOpen && !settingsOpen && !letterOpen}
+                projections={projectedAnchors} onSeek={seekEncounter}
+                onAnchorRequest={setArtworkAnchors} onOpenChange={receiveEncounterOpen} />
+              <span className="secondary-divider" />
               {!nativeEdition && <><button type="button" className={`utility-button motion-button${motionState.enabled ? ' is-active' : ''}`}
                 onClick={() => setMotionEnabled(value => !value)}
                 aria-label="画中轻动" aria-pressed={motionState.enabled}
@@ -279,13 +375,22 @@ export default function App() {
       </main>
 
       {notice && <div className="status-notice" role="status">{notice}</div>}
-      <CulturePanel chapter={chapter} open={cultureOpen} onClose={closeCulture} />
+      <CulturePanel chapter={chapter} open={cultureOpen} onClose={closeCulture} onExplore={() => {
+        const encounter = artEncounters.find(item => item.chapterId === chapterId);
+        if (encounter) seekEncounter(encounter.progress);
+        setCultureOpen(false);
+        requestAnimationFrame(() => stageRef.current?.focus({ preventScroll: true }));
+      }} />
     </div>}
     {journey.phase !== 'HOME' && journey.phase !== 'SCROLL_VIEWER' && (!studyVisited || journey.phase !== 'SCROLL_AWAKENING' && journey.phase !== 'CAMERA_ENTERING') && <ScrollLoadingScene key={`${chapterId}-${journey.attempt}`}
       chapter={chapter} phase={journey.phase} preparation={journey.preparation} error={journey.error}
+      progress={progress} snapshot={snapshots[chapterId]} returnFallback={presentationFallback || journey.returnFallback}
+      onPresentationPending={journey.onPresentationPending} onPresentationReady={journey.onPresentationReady}
       onRetry={journey.retry} onReturn={returnToStudy} motionEnabled={motionEnabled}
       onFailure={journey.onPresentationFailure} />}
     <ViewerSettingsPanel open={settingsOpen} chapterId={chapterId} settings={settings} onChange={setSettings} onClose={closeSettings} />
+    <FlowerLetterDialog open={letterOpen} chapterId={chapterId} onClose={() => setLetterOpen(false)} />
     </div>
+    </SoundscapeProvider>
   );
 }

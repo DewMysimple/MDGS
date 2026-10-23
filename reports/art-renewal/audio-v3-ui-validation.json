@@ -1,0 +1,179 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "width": 1280,
+      "height": 720,
+      "variant": "foyer",
+      "placement": "left-top",
+      "box": {
+        "x": 12,
+        "y": 50.97053527832031,
+        "width": 288,
+        "height": 131.1875
+      },
+      "smallestFont": 12,
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "variant": "viewer",
+      "placement": "right-bottom",
+      "box": {
+        "x": 980,
+        "y": 543.8125,
+        "width": 288,
+        "height": 131.1875
+      },
+      "smallestFont": 12,
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "variant": "viewer",
+      "placement": "right-top",
+      "box": {
+        "x": 980,
+        "y": 116,
+        "width": 288,
+        "height": 131.1875
+      },
+      "smallestFont": 12,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "variant": "foyer",
+      "placement": "left-top",
+      "box": {
+        "x": 12,
+        "y": 51,
+        "width": 288,
+        "height": 131.1875
+      },
+      "smallestFont": 12,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "variant": "viewer",
+      "placement": "right-bottom",
+      "box": {
+        "x": 1140,
+        "y": 723.8125,
+        "width": 288,
+        "height": 131.1875
+      },
+      "smallestFont": 12,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "variant": "viewer",
+      "placement": "right-top",
+      "box": {
+        "x": 1140,
+        "y": 116,
+        "width": 288,
+        "height": 131.1875
+      },
+      "smallestFont": 12,
+      "passed": true
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "variant": "foyer",
+      "placement": "left-top",
+      "box": {
+        "x": 12,
+        "y": 51,
+        "width": 288,
+        "height": 131.1875
+      },
+      "smallestFont": 12,
+      "passed": true
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "variant": "viewer",
+      "placement": "right-bottom",
+      "box": {
+        "x": 1620,
+        "y": 903.8125,
+        "width": 288,
+        "height": 131.1875
+      },
+      "smallestFont": 12,
+      "passed": true
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "variant": "viewer",
+      "placement": "right-top",
+      "box": {
+        "x": 1620,
+        "y": 116,
+        "width": 288,
+        "height": 131.1875
+      },
+      "smallestFont": 12,
+      "passed": true
+    },
+    {
+      "width": 2560,
+      "height": 1440,
+      "variant": "foyer",
+      "placement": "left-top",
+      "box": {
+        "x": 12,
+        "y": 51,
+        "width": 288,
+        "height": 131.1875
+      },
+      "smallestFont": 12,
+      "passed": true
+    },
+    {
+      "width": 2560,
+      "height": 1440,
+      "variant": "viewer",
+      "placement": "right-bottom",
+      "box": {
+        "x": 2260,
+        "y": 1263.8125,
+        "width": 288,
+        "height": 131.1875
+      },
+      "smallestFont": 12,
+      "passed": true
+    },
+    {
+      "width": 2560,
+      "height": 1440,
+      "variant": "viewer",
+      "placement": "right-top",
+      "box": {
+        "x": 2260,
+        "y": 116,
+        "width": 288,
+        "height": 131.1875
+      },
+      "smallestFont": 12,
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "scope": "Isolated shared audio controls with the volume popover deliberately positioned at desktop viewport edges; not an assertion about the complete application layout.",
+  "sourceSha256": {
+    "src/components/AudioController.tsx": "283dce9896d1851011cf9c383a169f260fadd1513b2481f86c99e0e4aa2fd823",
+    "src/styles/audio-controller.css": "ed530d660dd1a095267aaf805e3e9edbc4f37b257423f82387d30060e75d76d5"
+  }
+}

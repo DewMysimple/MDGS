@@ -1,0 +1,70 @@
+{
+  "status": "observation-order-counterexample-proven-product-unchanged-new-full-chain-pending",
+  "createdAt": "2026-10-23T04:01:34.385Z",
+  "freeze": {
+    "path": "reports/art-renewal/art-candidate-8-build.json",
+    "sha256": "305dc8b9b429415093889642ae885ffe564cdd33f156edf30a637bac4a172ea9"
+  },
+  "originalFailure": {
+    "path": "reports/art-renewal/final-regressions/2026-10-23T03-36-08-829Z/validation.json",
+    "sha256": "b227c7b6663a620bf28c82d84050da2a9f77de2029557713c3e400ad197bd1f8",
+    "status": "fail",
+    "scope": "UI/audio/runtime/settings/subpath passed, journey failed waiting for half interval after PNG. Do not accept or splice this chain.",
+    "specific": "validate-peony2-journey-driver.mjs original line53, chapter3, no pageerror; final screenshot is viewer. Exact initial failure timing was not recorded, so causal attribution remains bounded."
+  },
+  "originalOrderProbe": {
+    "path": "reports/art-renewal/journey-window-probe/2026-10-23T03-51-39-866Z/validation.json",
+    "sha256": "55370917e30e93cf25a25a7bdbdc4f078c7922ff3c9c7c5b0126c19dbd3eafe0",
+    "status": "pass-9-original-checks",
+    "scope": "9531 prearmed native rAF samples. Closed PNG duration633.6–1159.3ms (half PNG617.6–732.6ms), but all half observers registered in time in this run; not a reproduction of the first failure."
+  },
+  "controlledWitness": {
+    "path": "reports/art-renewal/journey-window-probe/2026-10-23T03-55-08-721Z-stress/validation.json",
+    "sha256": "9a1716802cf83db7371852b6a6904746351cdc04abfd468b1f748a71dc5da803",
+    "status": "passed-observer-order-counterexample",
+    "closedSelection": "Original closed upper bound <.08 preserved; the controlled stress starts within .04–.08 so three actual PNGs exercise observer delay. This is a designed counterexample, not an exact first-failure reconstruction.",
+    "threePngMilliseconds": [
+      760,
+      595.3999999910593,
+      610
+    ],
+    "halfRafSamples": 146,
+    "actualRenderCount": [
+      64,
+      112
+    ],
+    "halfProgress": [
+      0.45228,
+      0.799
+    ],
+    "lateRegistration": {
+      "at": 4666.9000000059605,
+      "phase": "SCROLL_LOADING",
+      "unfurl": "0.92650"
+    },
+    "minimumLoadingMs": 4011.2,
+    "conclusion": "Native renderer actually drew the strict half interval; the delayed observer began only at .92650. No source changes, fake clock, altered playback, sleep, frame insertion or assertion tolerance."
+  },
+  "repair": {
+    "archive": {
+      "path": "reports/art-renewal/candidate8-journey-window-failure-archive/archive-manifest.json",
+      "sha256": "4399edbbe3505c78fd76cdcd2258910db22fbd110d1449846fc11ba538f2f134"
+    },
+    "preparation": {
+      "path": "reports/art-renewal/candidate8-journey-window-retest-preparation.json",
+      "sha256": "1b0438bd0768990d2da525e2a98e19742525b3d2e9729d71cde408496907327f"
+    },
+    "oldSha256": "9d74b563a223080675f2e37edeff9d9e61afdeb23d5be956cf778e20586c7e5e",
+    "newSha256": "251da9ba8cf150a517c8877c03acc61298ac81e1849ff500d811101033d50938",
+    "method": "Arm strict(.43,.8) browser callback before awaiting closed PNG; freeze paper+covered datasets in the callback and start half diagnostic PNG on that observation. PNG request/completion times are separate from exact geometry witness.",
+    "unchanged": "All 9 original checks, geometry, covered motionTime, minimum3998ms and product source/clocks/assets; only one of nine validation drivers changed."
+  },
+  "dedicatedNewJourney": {
+    "path": "reports/art-renewal/candidate8-journey-window-retest/2026-10-23T03-58-26-605Z-journey/validation.json",
+    "sha256": "a13f13e7b91ed438ec7762fba9a18b5ea483a6791c7dd416e96494741387b75f",
+    "status": "pass",
+    "checks": 9,
+    "completedAt": "2026-10-23T03:59:28.656Z"
+  },
+  "next": "New full six suites started2026-10-23T03:59 after dedicated9 passed. No pass claim until that actual chain completes; same C8 soak remains valid because the tested product and soak driver are unchanged."
+}

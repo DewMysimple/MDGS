@@ -1,0 +1,27 @@
+{
+  "milestone": "art-candidate-8",
+  "status": "passed",
+  "freeze": {
+    "path": "reports/art-renewal/art-candidate-8-build.json",
+    "sha256": "305dc8b9b429415093889642ae885ffe564cdd33f156edf30a637bac4a172ea9"
+  },
+  "focused": {
+    "checks": 10,
+    "status": "passed",
+    "startedAt": "2026-10-23T03:21:16.527Z",
+    "completedAt": "2026-10-23T03:23:14.442Z",
+    "driverSha256": "024d42f824237ee352e0a8b276c16c74c333a48c073fdf70650100e014fb79af"
+  },
+  "hardware": {
+    "checks": 17,
+    "status": "passed",
+    "startedAt": "2026-10-23T03:24:07.252Z",
+    "completedAt": "2026-10-23T03:26:03.140Z",
+    "driverSha256": "a54691c53d0521ad65f6d4340282d6e6e3fcf78e40c45332505f80eaaa4272be"
+  },
+  "sourceInputs": 831,
+  "packageFiles": 744,
+  "unchanged": true,
+  "scope": "Exact original-byte return10 and full native hardware17 evidence, each same frozen C8 package; full site acceptance is separate.",
+  "limits": "Actual GPU partial loss/recovery and target-image reupload are observed. Exact internal consumed-prefix queue reconstruction is additionally covered by real production-method CPU10 with GPU stub. KHR absence/never-ready are explicitly injected; native hidden, GLSL error and context loss use real browser/GPU paths."
+}

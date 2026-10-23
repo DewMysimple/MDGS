@@ -47,6 +47,20 @@ export default function ViewerSettingsPanel({ open, chapterId, settings, onChang
     </header>
     <div className="settings-body">
       <p className="settings-intro">调整即生效，保存在此浏览器。每卷的滚轮手感可独立设置。</p>
+      <section className="settings-narrative" aria-labelledby="settings-narrative-title">
+        <h3 id="settings-narrative-title">题跋随心</h3>
+        <p className="settings-help">诗意短章为当代新题；原作全文可在“画外拾遗”细读。</p>
+        <div className="settings-reading-modes" role="radiogroup" aria-labelledby="settings-narrative-title">
+          {([
+            ['poetic', '诗意短章', '以短句入画，留白相续'],
+            ['original', '原作叙事', '随画读原文，可暂停细赏'],
+            ['quiet', '静观画卷', '暂收题跋，只与画相对'],
+          ] as const).map(([value, title, description]) => <label key={value} className={settings.narrativeMode === value ? 'is-selected' : ''}>
+            <input type="radio" name="narrative-mode" value={value} checked={settings.narrativeMode === value} onChange={() => onChange({ ...settings, narrativeMode: value })} />
+            <span><strong>{title}</strong><small>{description}</small></span>
+          </label>)}
+        </div>
+      </section>
       <section aria-labelledby="settings-scroll-title">
         <h3 id="settings-scroll-title">滚轮游观</h3>
         <p className="settings-help">速度越低，每次移动越细。平滑时间越长，起停越柔和；越短，跟手越快。</p>
@@ -62,7 +76,7 @@ export default function ViewerSettingsPanel({ open, chapterId, settings, onChang
       </section>
       <section aria-labelledby="settings-text-title" className="settings-text">
         <h3 id="settings-text-title">文字底板</h3>
-        <p className="settings-help">统一调整题字、导航、说明和控件的纸色底板。</p>
+        <p className="settings-help">调整画卷题跋、导航与控件的文字衬底。</p>
         <label className="settings-color" htmlFor="text-plate-color"><span>底板颜色</span><span><select id="text-plate-color" value={settings.textPlate.color} onChange={event => updatePlate('color', event.currentTarget.value)}>{textPlateColors.map(color => <option key={color.value} value={color.value}>{color.label}</option>)}</select><output htmlFor="text-plate-color">{settings.textPlate.color.toUpperCase()}</output></span></label>
         <RangeSetting id="text-plate-opacity" label="底板不透明度" limits={settingLimits.opacity} value={settings.textPlate.opacity} display={`${Math.round(settings.textPlate.opacity * 100)}%`} onChange={value => updatePlate('opacity', value)} />
         <RangeSetting id="text-plate-padding" label="底板留白" limits={settingLimits.padding} value={settings.textPlate.padding} display={`${settings.textPlate.padding} px`} onChange={value => updatePlate('padding', value)} />

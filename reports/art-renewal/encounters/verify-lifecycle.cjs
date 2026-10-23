@@ -1,0 +1,37 @@
+const {chromium}=require(process.env.MDGS_PLAYWRIGHT_MODULE || 'playwright');
+const fs=require('node:fs');
+const path=require('node:path'),crypto=require('node:crypto');
+process.chdir(path.resolve(__dirname,'../../..'));
+const base=process.env.MDGS_ENCOUNTERS_URL || 'http://localhost:5188/';
+const inputs=['src/components/ArtEncounters.tsx','src/styles/art-encounters.css','src/data/artEncounters.ts'];
+const hashes=()=>Object.fromEntries(inputs.map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')]));
+const before=hashes();
+(async()=>{
+ const browser=await chromium.launch({...(process.env.MDGS_TEST_BROWSER?{executablePath:process.env.MDGS_TEST_BROWSER}:{}),headless:true});
+ const p=await browser.newPage({viewport:{width:1280,height:720},reducedMotion:'reduce'}), errors=[], checks=[];
+ p.on('pageerror',e=>errors.push(e.message));p.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
+ await p.goto(new URL('reports/art-renewal/encounters/harness.html',base).href);await p.waitForFunction(()=>window.artHarness?.get().ready);
+ await p.evaluate(()=>window.artHarness.setChapter(3));await p.waitForFunction(()=>window.artHarness.get().chapterId===3&&window.artHarness.get().ready);
+ async function open(){await p.getByRole('button',{name:/画中有遇：/}).click();await p.waitForFunction(()=>document.activeElement?.classList.contains('art-anchor'));await p.waitForTimeout(200)}
+ await open();
+ checks.push({name:'open focuses original flower',pass:await p.evaluate(()=>document.activeElement.classList.contains('art-anchor--flower'))});
+ await p.keyboard.press('Enter');await p.keyboard.press('Enter');checks.push({name:'keyboard only weaving',pass:await p.locator('.art-encounters.is-woven').count()===1});
+ const stable=await p.evaluate(()=>window.artHarness.get().progress);await p.waitForTimeout(1100);checks.push({name:'encounter leaves source time untouched',pass:await p.evaluate(v=>window.artHarness.get().progress===v,stable)});
+ checks.push({name:'reduced motion',pass:await p.locator('.art-paper').evaluate(e=>getComputedStyle(e).animationName==='none')});
+ await p.getByRole('button',{name:'重拾',exact:true}).click();
+ let source=await p.locator('.art-anchor--flower').boundingBox();await p.mouse.move(source.x+22,source.y+22);await p.mouse.down();await p.mouse.move(1100,550,{steps:12});await p.mouse.up();
+ checks.push({name:'invalid drop remains reversible',pass:await p.locator('.art-encounters.is-woven').count()===0&&await p.locator('.art-brocade-detail').getAttribute('data-phase')==='picked'});
+ await p.getByRole('button',{name:'重拾',exact:true}).click();source=await p.locator('.art-anchor--flower').boundingBox();const cloth=await p.locator('.art-anchor--cloth').boundingBox();await p.mouse.move(source.x+22,source.y+22);await p.mouse.down();await p.mouse.move(cloth.x+22,cloth.y+22,{steps:14});await p.mouse.up();await p.waitForSelector('.art-encounters.is-woven');checks.push({name:'pointer drag into actual cloth completes weaving',pass:true});
+ await p.getByRole('button',{name:'重拾',exact:true}).click();source=await p.locator('.art-anchor--flower').boundingBox();await p.mouse.move(source.x+22,source.y+22);await p.mouse.down();await p.mouse.move(800,450,{steps:8});await p.keyboard.press('Escape');await p.mouse.up();
+ await p.waitForFunction(()=>!window.artHarness.get().open&&window.artHarness.get().anchors.length===0&&!document.querySelector('.art-flower-in-hand'));
+ checks.push({name:'Escape during drag clears overlay and subscriptions',pass:true});
+ await open();const scrollBefore=await p.evaluate(()=>window.artHarness.get().progress);const canvasBox=await p.locator('#scroll-artwork').boundingBox();await p.mouse.move(canvasBox.x+canvasBox.width*.5,canvasBox.y+canvasBox.height*.4);await p.mouse.wheel(0,100);await p.waitForFunction(()=>!window.artHarness.get().open);checks.push({name:'manual wheel closes and keeps travelling',pass:await p.evaluate(v=>window.artHarness.get().progress>v&&window.artHarness.get().anchors.length===0,scrollBefore)});
+ await open();await p.evaluate(()=>window.artHarness.setProgress(.8));await p.waitForTimeout(100);checks.push({name:'manual seek closes',pass:await p.evaluate(()=>!window.artHarness.get().open&&window.artHarness.get().anchors.length===0)});
+ await open();await p.evaluate(()=>window.artHarness.setActive(false));await p.waitForTimeout(100);checks.push({name:'inactive closes',pass:await p.evaluate(()=>!window.artHarness.get().open&&!document.querySelector('.art-encounters'))});
+ await p.evaluate(()=>window.artHarness.setActive(true));await open();await p.evaluate(()=>window.artHarness.setMounted(false));await p.waitForTimeout(100);checks.push({name:'unmount clears portal, subscription and reading state',pass:await p.evaluate(()=>!window.artHarness.get().open&&window.artHarness.get().anchors.length===0&&!document.querySelector('.art-encounters'))});
+ const after=hashes(),sourceStable=inputs.every(file=>before[file]===after[file]);
+ const metadata={at:new Date().toISOString(),browser:browser.version(),base,reducedMotion:'reduce',sourceStable,sourceHashesBefore:before,sourceHashesAfter:after};
+ fs.writeFileSync(path.join(__dirname,'lifecycle.json'),JSON.stringify({metadata,checks,errors},null,2));console.log(JSON.stringify({sourceStable,checks,errors},null,2));await browser.close();
+ if(!sourceStable)process.exitCode=1;
+ if(errors.length||checks.some(c=>!c.pass))process.exitCode=1;
+})().catch(e=>{console.error(e);process.exit(1)});

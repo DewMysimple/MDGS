@@ -1,0 +1,30 @@
+{
+  "createdAt": "2026-10-23T02:39:47.239Z",
+  "scope": "Original C6 exact 10-return and 16-hardware assertions unchanged; only candidate identity and own output/profile paths adapted for true C7. Partial upload/context restoration is a separate additional test.",
+  "files": [
+    {
+      "source": "tmp/return-capture-diagnosis/c6-hardware/validate-hardware.cjs",
+      "sourceSha256": "71a205b46407b0cf09edc0d6b00b1f6e651ca22918a9e521e16bcac333f9c40c",
+      "target": "validate-hardware.cjs",
+      "targetSha256": "daf2b0e9dffe3956b62061be3a32fe314c01a2bd7fc57adb08059a254d9b53d9"
+    },
+    {
+      "source": "tmp/return-capture-diagnosis/c6-hardware/validate-native-hidden.cjs",
+      "sourceSha256": "8b0b802e9d64b797a056a83e6a3c0fdea065532c4cc7423d83cf52fa5683ddcb",
+      "target": "validate-native-hidden.cjs",
+      "targetSha256": "59ee3bc2c9cce826b87ffcfbfa12e9bc90e8d0dc2b40706de577b723bb40c98c"
+    },
+    {
+      "source": "tmp/return-capture-diagnosis/c6-hardware/native-chrome.cjs",
+      "sourceSha256": "e59f0e9fdc3cc6283a0e144a7d898e1ad57e5d4681a7338b8bc61ab37989244a",
+      "target": "native-chrome.cjs",
+      "targetSha256": "e59f0e9fdc3cc6283a0e144a7d898e1ad57e5d4681a7338b8bc61ab37989244a"
+    },
+    {
+      "source": "tmp/return-capture-diagnosis/focused-v3.cjs",
+      "sourceSha256": "cfad04006f27878d6be69237c39e1a1a6ae6dd7d4907a35caa654f3818c7cbb7",
+      "target": "focused-c7.cjs",
+      "targetSha256": "2dfed63aa14b2876c100382b981b5b4785e318c433426df42539be6d21833020"
+    }
+  ]
+}

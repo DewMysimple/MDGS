@@ -1,0 +1,17 @@
+候选6诗意、遇景、阅读、字体及定向UI验收，2026-10-23。
+
+实际对象为tmp/art-candidate-6-dist；由art-candidate-6-build.json冻结，主JS index-CTrqtaDU.js。全程重新实测，没有将候选5中断或候选4局部结果冒作同包证明。开测、末态829src/public/config、5代码、font/provenance和7冻结driver均一致；sourceReleased=true，浏览器、字体临时HTTP服务与5196预览均关闭。详细SHA与结果见inputs-before.json、inputs-after-and-summary.json。总结SHA 3c1df5440e8b40f5110b02847678908350accaa883f69052aac291eec5b4b1f4。
+
+37纯数据checks通过，25原文/45当代短章数据逐字不变，40真实停点准确。270布局（45句×1280/1920/2560×padding12/24）与31关联checks通过：8058字格无越界，汉字/数字与印章0碰撞。23句号全em格接触与印章box记录照实保留，实际点墨与印章分离；新包2560定向PNG及报告已生成，阈值不变。
+
+普通动效下四卷原速全长100.783/71.828/68.953/59.999秒，45句全部实际出现，23checks通过。各卷最短稳定阅读时间3.962/3.423/3.263/4.450秒；所有cue内x/y/宽高变化0px。没有seek或合成时钟代替影片实播。
+
+12锁位checks、12遇景桌面布局及开合/键盘入锦/展诗/滚轮恢复通过；原画UV投影锚点未改。reading28通过，四卷原作全文/札记/来源/探索与6种桌面焦点边界均实测。各JSON保留真实浏览器版本、HTTP bundle与source/driver hash，均0页面错误。
+
+字体与定向专项78checks通过。真实font响应279764B，SHA c619ddc07c72b9afca0ab20b1e33ed1a67c974ae3a7d1ec44de611895a79f59d；24个真实DOM节点全只用customfont，旧舟桥/年代注/留笺混用节点分别26/56/5 glyph全为文楷。FontFace.check不作覆盖证明。导出PNG没有DOM字体trace，需并读真实cmap及导出图文检查；不能从PNG像素倒推字体。
+
+4类实底主按钮（花笺钤印/保存分开，共5组）20态：默认、鼠标hover、键盘focus-visible、两者并存，深底浅字与可见描边均通过，最低实际对比5.3695。封印后4choices保持disabled，所选opacity1、其余.65。卷二新年代注在1280/1920的原作/札记4张定向图、字格无溢出、真实《旧唐书》卷七href、键盘来源焦点均通过。受控503只为真实加载错误retry按钮取证，列expectedFailures；冻结驱动沿用的诊断reason里C4字样是原测试标签，实际候选身份以显式build-dir、HTTP和首末冻结SHA为准。
+
+可复现：按font-fallback/candidate-4-qa-plan.txt中的通用流程，将build替换为tmp/art-candidate-6-dist，MDGS_POETRY_URL为http://127.0.0.1:5196/，独立MDGS_POETRY_REPORT_DIR为本run/poetic-narrative，encounters输出固定目录后复制到本run。reading用--suite reading与独立report/shots。font用--build-dir、--report-file、--shots-dir及expected-font-sha256。7驱动未改，font源码归档driver-font-cdp.cjs仅作字节证据，执行仍用canonical原路径。
+
+候选3归档41件SHA保持不变；候选4完整局部结果和候选5中断现场保持原身份。本组是功能验收，期间其它代理并行原画/声景测试，墙钟采样不是性能基准。整站原画像素、返回生命周期、声音与最终发布验收由独立报告覆盖，不能据本组替代。

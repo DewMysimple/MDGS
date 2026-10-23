@@ -1,0 +1,26 @@
+{
+  "status": "preflight-bound-awaiting-quiet-window",
+  "checkedAt": "2026-10-23T03:38:39.361Z",
+  "scope": "No browser or recorder started. Fixed C8 code/recorder identities checked; wait for explicit all-GPU release before capture.",
+  "buildManifest": "reports/art-renewal/art-candidate-8-build.json",
+  "buildManifestSha256": "305dc8b9b429415093889642ae885ffe564cdd33f156edf30a637bac4a172ea9",
+  "buildDirectory": "tmp/art-candidate-8-dist",
+  "code": {
+    "assets/flowerLetter-BZTW5oIg.js": "be4e4214bb27df809b300edb2687ff37ebdefbc16cf0ec24f184cf7f123f9399",
+    "assets/index-C6Ev3QbP.js": "c926a02e78aaddd5d5b6444fc6d24fd70fd8dc01a86fb3d5634ae40b610405f1",
+    "assets/index-RpqBDuXe.css": "79d6657bddb32eb3b10c8118feb3a0ea2bb43e934481e9883e5ba34aad77ff4d",
+    "assets/three-3iQHpLLu.js": "e6d19400e10db394ec44148367bf37b19a27b9fe57a9af3a3c5d23e543c3cd04",
+    "index.html": "72cdd4f5a1336c4cc304e4ca396abcd8b55439cba2b800ced701b5c2d4821a6d"
+  },
+  "recorderSha256": {
+    "scripts/capture-exhibition-tour.mjs": "95e22c96a086aa62a4f47ab9c8731d1dd5324cc13207feabe63f89e3f4c51fa2",
+    "scripts/exhibition-tour-audio.mjs": "c3ce6432133fa6403c40a7842473ee0894f8f2631d591289c47faa00017dd4c3",
+    "reports/art-renewal/validate-tour-recording.mjs": "e6a9a58bffba9e09768bb679b9edbc30003aed067c662d8e0f101e496a04e481"
+  },
+  "plannedCommand": [
+    "node",
+    "scripts/capture-exhibition-tour.mjs",
+    "--build-dir",
+    "tmp/art-candidate-8-dist"
+  ]
+}

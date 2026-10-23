@@ -1,0 +1,22 @@
+exit=1
+pid=57512
+STDOUT
+
+STDERR
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Package target must be a real directory.
+    at assertGenerated (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T00-30-00-538Z/linked-destination/project/scripts/package-exhibition.mjs:58:42)
+    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T00-30-00-538Z/linked-destination/project/scripts/package-exhibition.mjs:95:1 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.16.0
+

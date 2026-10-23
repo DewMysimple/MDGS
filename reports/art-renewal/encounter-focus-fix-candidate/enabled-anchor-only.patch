@@ -1,0 +1,20 @@
+--- a/src/components/ArtEncounters.tsx
++++ b/src/components/ArtEncounters.tsx
+@@ -74,7 +74,7 @@
+     callbacks.current.onOpenChange?.(true);
+     wasOpen.current = true;
+     const frame = requestAnimationFrame(() => {
+-      const first = layerRef.current?.querySelector<HTMLButtonElement>('.art-anchor');
++      const first = layerRef.current?.querySelector<HTMLButtonElement>('.art-anchor:not([aria-disabled="true"])');
+       (first ?? closeRef.current)?.focus({ preventScroll: true });
+       if (first) focusPending.current = false;
+     });
+@@ -97,7 +97,7 @@
+ 
+   useEffect(() => {
+     if (!open || !focusPending.current) return;
+-    const first = layerRef.current?.querySelector<HTMLButtonElement>('.art-anchor');
++    const first = layerRef.current?.querySelector<HTMLButtonElement>('.art-anchor:not([aria-disabled="true"])');
+     if (!first) return;
+     if (document.activeElement === closeRef.current || document.activeElement === entranceRef.current) first.focus({ preventScroll: true });
+     focusPending.current = false;

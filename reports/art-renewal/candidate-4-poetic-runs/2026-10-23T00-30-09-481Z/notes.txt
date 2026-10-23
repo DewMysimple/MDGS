@@ -1,0 +1,13 @@
+候选4局部验收，2026-10-23
+
+对象：tmp/art-candidate-4-dist，HTML 9ac347576eee8a92ce2fca674bf07bc489a98d8adf5d6557ac71487de64aafb2，字体279764B/c619ddc07c72b9afca0ab20b1e33ed1a67c974ae3a7d1ec44de611895a79f59d。不是整站最终通过：root另发现浏览器Back画心捕获回归，等待候选5修复。本run不倒改候选3或将其它验收结果混入。
+
+本组实际完成：270布局/8058字格/40精确stop/3模式/25原文逐字，31checks；四卷原速全长45句实际出现，23checks；12锁位、12遇景桌面布局及进出/键盘入锦/展诗/滚轮恢复；reading28；字体CDP及年代注/主按钮共78checks。23句号em-cell与印章box接触单独保留，新2560PNG已生成，汉字/数字0碰撞，未放宽阈值。11诗意1920图与4遇景1920图已目视，新增年代注1280/1920原作/札记4图已目视。
+
+24个真实DOM字体均仅customfont；旧混用舟桥/年代注/留笺节点现分别26/56/5 glyph全部文楷。浏览器实际font响应和独立包字节SHA相同。字体几何不被冒称单一字体覆盖，需并读真实cmap报告。最终PNG字体没有DOM trace，本证明不从PNG像素倒推字体。
+
+4类实底主按钮（花笺钤印/保存分成两组）共20真实状态，默认/鼠标hover/键盘focus-visible/两者并存均检查深底浅字与可见outline，最低实算对比5.3695。封印4choices均disabled、所选1、其它.65。一个明确503仅用于真实加载错误retry按钮取证，报告列expectedFailures；页面错误为0，不把受控失败当正常资源故障。
+
+829src/public/config前后一致，5包代码及font/provenance未改，7使用driver前后按各自freeze相同。font小驱动在首运行前补定向状态，冻结字节为c403c453e545fb7221ce0467e77b6d5f197b24bdc1ca534461729828e2f9b778，归档driver-font-cdp.cjs，仅作源码证据；它使用原目录相对root语义。既有270/45/锁位/遇景/reading驱动未改。历史候选3的41件SHA仍一致。
+
+复现命令见font-fallback/candidate-4-qa-plan.txt，实际参数MDGS_POETRY_URL=http://127.0.0.1:5196/、MDGS_POETRY_BUILD_DIR=tmp/art-candidate-4-dist、MDGS_POETRY_REPORT_DIR=reports/art-renewal/candidate-4-poetic-runs/2026-10-23T00-30-09-481Z/poetic-narrative；encounters输出固定目录后复制到本run。reading用--suite reading与独立report/shots目录。font用显式--build-dir、--report-file、--shots-dir及expected-font-sha256。actual运行输入/HTTP/driver与详细结果均在本目录JSON中。功能测试期间其它代理并行验收，不把这里的墙钟采样称性能基准。

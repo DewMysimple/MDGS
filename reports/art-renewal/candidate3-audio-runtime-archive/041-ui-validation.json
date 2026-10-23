@@ -1,0 +1,3630 @@
+{
+  "status": "passed",
+  "startedAt": "2026-10-22T22:32:45.778Z",
+  "suite": "all",
+  "expectedChecks": 83,
+  "scope": "Actual built App at nested prefix, six desktop viewports. Home decoded layers/recovery/real optional WebGL context loss/motion/dialog focus; four culture note/original tabs/source links/explore targets; four colophons and local 1200x1600 keepsake choice/seal/download/glyph evidence. No audio retest. Visibility uses an injected document.hidden signal, not system-background emulation.",
+  "sizes": [
+    {
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "width": 3440,
+      "height": 1440
+    },
+    {
+      "width": 1100,
+      "height": 650
+    }
+  ],
+  "checks": [
+    {
+      "test": "home-image-failure-retry-title",
+      "passed": true,
+      "failedImage": "title.webp",
+      "images": [
+        {
+          "src": "http://127.0.0.1:4604/exhibition/ui-qa/ui/peony-atlas/landscape.webp",
+          "complete": true,
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "src": "http://127.0.0.1:4604/exhibition/ui-qa/ui/peony-atlas/cinnabar-peonies.webp",
+          "complete": true,
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "src": "http://127.0.0.1:4604/exhibition/ui-qa/ui/peony-atlas/ivory-branch.webp",
+          "complete": true,
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "src": "http://127.0.0.1:4604/exhibition/ui-qa/ui/peony-atlas/title.webp",
+          "complete": true,
+          "width": 2172,
+          "height": 724
+        }
+      ]
+    },
+    {
+      "test": "home-image-failure-retry-cinnabar-peonies",
+      "passed": true,
+      "failedImage": "cinnabar-peonies.webp",
+      "images": [
+        {
+          "src": "http://127.0.0.1:4604/exhibition/ui-qa/ui/peony-atlas/landscape.webp",
+          "complete": true,
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "src": "http://127.0.0.1:4604/exhibition/ui-qa/ui/peony-atlas/cinnabar-peonies.webp",
+          "complete": true,
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "src": "http://127.0.0.1:4604/exhibition/ui-qa/ui/peony-atlas/ivory-branch.webp",
+          "complete": true,
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "src": "http://127.0.0.1:4604/exhibition/ui-qa/ui/peony-atlas/title.webp",
+          "complete": true,
+          "width": 2172,
+          "height": 724
+        }
+      ]
+    },
+    {
+      "test": "home-layout-1280x720",
+      "passed": true,
+      "geometry": [
+        {
+          "selector": "atlas-header",
+          "rect": {
+            "x": 57.59375,
+            "y": 0,
+            "width": 1164.8125,
+            "height": 80,
+            "top": 0,
+            "right": 1222.40625,
+            "bottom": 80,
+            "left": 57.59375
+          },
+          "scrollWidth": 1165,
+          "clientWidth": 1165
+        },
+        {
+          "selector": "atlas-intro",
+          "rect": {
+            "x": 115.1875,
+            "y": 72.16812133789062,
+            "width": 550.390625,
+            "height": 430.0625,
+            "top": 72.16812133789062,
+            "right": 665.578125,
+            "bottom": 502.2306213378906,
+            "left": 115.1875
+          },
+          "scrollWidth": 550,
+          "clientWidth": 550
+        },
+        {
+          "selector": "atlas-begin",
+          "rect": {
+            "x": 115.1875,
+            "y": 419.2306213378906,
+            "width": 216.75,
+            "height": 46,
+            "top": 419.2306213378906,
+            "right": 331.9375,
+            "bottom": 465.2306213378906,
+            "left": 115.1875
+          },
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "selector": "atlas-chapters",
+          "rect": {
+            "x": 0,
+            "y": 503,
+            "width": 1280,
+            "height": 184,
+            "top": 503,
+            "right": 1280,
+            "bottom": 687,
+            "left": 0
+          },
+          "scrollWidth": 1280,
+          "clientWidth": 1280
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 57.59375,
+            "y": 541,
+            "width": 291.203125,
+            "height": 135,
+            "top": 541,
+            "right": 348.796875,
+            "bottom": 676,
+            "left": 57.59375
+          },
+          "scrollWidth": 290,
+          "clientWidth": 290
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 348.796875,
+            "y": 541,
+            "width": 291.203125,
+            "height": 135,
+            "top": 541,
+            "right": 640,
+            "bottom": 676,
+            "left": 348.796875
+          },
+          "scrollWidth": 290,
+          "clientWidth": 290
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 640,
+            "y": 541,
+            "width": 291.203125,
+            "height": 135,
+            "top": 541,
+            "right": 931.203125,
+            "bottom": 676,
+            "left": 640
+          },
+          "scrollWidth": 290,
+          "clientWidth": 290
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 931.203125,
+            "y": 541,
+            "width": 291.203125,
+            "height": 135,
+            "top": 541,
+            "right": 1222.40625,
+            "bottom": 676,
+            "left": 931.203125
+          },
+          "scrollWidth": 291,
+          "clientWidth": 291
+        },
+        {
+          "selector": "atlas-footer",
+          "rect": {
+            "x": 57.59375,
+            "y": 687,
+            "width": 1164.8125,
+            "height": 33,
+            "top": 687,
+            "right": 1222.40625,
+            "bottom": 720,
+            "left": 57.59375
+          },
+          "scrollWidth": 1165,
+          "clientWidth": 1165
+        }
+      ],
+      "images": [
+        {
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 2172,
+          "height": 724
+        }
+      ]
+    },
+    {
+      "test": "home-dialog-preface-1280x720",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 190,
+          "y": 84,
+          "width": 900,
+          "height": 552,
+          "top": 84,
+          "right": 1090,
+          "bottom": 636,
+          "left": 190
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-dialog-guide-1280x720",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 190,
+          "y": 82.859375,
+          "width": 900,
+          "height": 554.265625,
+          "top": 82.859375,
+          "right": 1090,
+          "bottom": 637.125,
+          "left": 190
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-layout-1600x1000",
+      "passed": true,
+      "geometry": [
+        {
+          "selector": "atlas-header",
+          "rect": {
+            "x": 72,
+            "y": 0,
+            "width": 1456,
+            "height": 96,
+            "top": 0,
+            "right": 1528,
+            "bottom": 96,
+            "left": 72
+          },
+          "scrollWidth": 1456,
+          "clientWidth": 1456
+        },
+        {
+          "selector": "atlas-intro",
+          "rect": {
+            "x": 160,
+            "y": 112.47827911376953,
+            "width": 688,
+            "height": 578.328125,
+            "top": 112.47827911376953,
+            "right": 848,
+            "bottom": 690.8064041137695,
+            "left": 160
+          },
+          "scrollWidth": 688,
+          "clientWidth": 688
+        },
+        {
+          "selector": "atlas-begin",
+          "rect": {
+            "x": 160,
+            "y": 588.806396484375,
+            "width": 216.75,
+            "height": 53,
+            "top": 588.806396484375,
+            "right": 376.75,
+            "bottom": 641.806396484375,
+            "left": 160
+          },
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "selector": "atlas-chapters",
+          "rect": {
+            "x": 0,
+            "y": 742,
+            "width": 1600,
+            "height": 218,
+            "top": 742,
+            "right": 1600,
+            "bottom": 960,
+            "left": 0
+          },
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 72,
+            "y": 788,
+            "width": 364,
+            "height": 160,
+            "top": 788,
+            "right": 436,
+            "bottom": 948,
+            "left": 72
+          },
+          "scrollWidth": 363,
+          "clientWidth": 363
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 436,
+            "y": 788,
+            "width": 364,
+            "height": 160,
+            "top": 788,
+            "right": 800,
+            "bottom": 948,
+            "left": 436
+          },
+          "scrollWidth": 363,
+          "clientWidth": 363
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 800,
+            "y": 788,
+            "width": 364,
+            "height": 160,
+            "top": 788,
+            "right": 1164,
+            "bottom": 948,
+            "left": 800
+          },
+          "scrollWidth": 363,
+          "clientWidth": 363
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 1164,
+            "y": 788,
+            "width": 364,
+            "height": 160,
+            "top": 788,
+            "right": 1528,
+            "bottom": 948,
+            "left": 1164
+          },
+          "scrollWidth": 364,
+          "clientWidth": 364
+        },
+        {
+          "selector": "atlas-footer",
+          "rect": {
+            "x": 72,
+            "y": 960,
+            "width": 1456,
+            "height": 40,
+            "top": 960,
+            "right": 1528,
+            "bottom": 1000,
+            "left": 72
+          },
+          "scrollWidth": 1456,
+          "clientWidth": 1456
+        }
+      ],
+      "images": [
+        {
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 2172,
+          "height": 724
+        }
+      ]
+    },
+    {
+      "test": "home-dialog-preface-1600x1000",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 350,
+          "y": 184.75,
+          "width": 900,
+          "height": 630.484375,
+          "top": 184.75,
+          "right": 1250,
+          "bottom": 815.234375,
+          "left": 350
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-dialog-guide-1600x1000",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 350,
+          "y": 99,
+          "width": 900,
+          "height": 801.984375,
+          "top": 99,
+          "right": 1250,
+          "bottom": 900.984375,
+          "left": 350
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-layout-1920x1080",
+      "passed": true,
+      "geometry": [
+        {
+          "selector": "atlas-header",
+          "rect": {
+            "x": 86.390625,
+            "y": 0,
+            "width": 1747.21875,
+            "height": 96,
+            "top": 0,
+            "right": 1833.609375,
+            "bottom": 96,
+            "left": 86.390625
+          },
+          "scrollWidth": 1747,
+          "clientWidth": 1747
+        },
+        {
+          "selector": "atlas-intro",
+          "rect": {
+            "x": 192,
+            "y": 152.1300048828125,
+            "width": 825.59375,
+            "height": 579,
+            "top": 152.1300048828125,
+            "right": 1017.59375,
+            "bottom": 731.1300048828125,
+            "left": 192
+          },
+          "scrollWidth": 826,
+          "clientWidth": 826
+        },
+        {
+          "selector": "atlas-begin",
+          "rect": {
+            "x": 192,
+            "y": 629.1300048828125,
+            "width": 216.75,
+            "height": 53,
+            "top": 629.1300048828125,
+            "right": 408.75,
+            "bottom": 682.1300048828125,
+            "left": 192
+          },
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "selector": "atlas-chapters",
+          "rect": {
+            "x": 0,
+            "y": 822,
+            "width": 1920,
+            "height": 218,
+            "top": 822,
+            "right": 1920,
+            "bottom": 1040,
+            "left": 0
+          },
+          "scrollWidth": 1920,
+          "clientWidth": 1920
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 86.390625,
+            "y": 868,
+            "width": 436.796875,
+            "height": 160,
+            "top": 868,
+            "right": 523.1875,
+            "bottom": 1028,
+            "left": 86.390625
+          },
+          "scrollWidth": 436,
+          "clientWidth": 436
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 523.1875,
+            "y": 868,
+            "width": 436.8125,
+            "height": 160,
+            "top": 868,
+            "right": 960,
+            "bottom": 1028,
+            "left": 523.1875
+          },
+          "scrollWidth": 436,
+          "clientWidth": 436
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 960,
+            "y": 868,
+            "width": 436.796875,
+            "height": 160,
+            "top": 868,
+            "right": 1396.796875,
+            "bottom": 1028,
+            "left": 960
+          },
+          "scrollWidth": 436,
+          "clientWidth": 436
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 1396.796875,
+            "y": 868,
+            "width": 436.8125,
+            "height": 160,
+            "top": 868,
+            "right": 1833.609375,
+            "bottom": 1028,
+            "left": 1396.796875
+          },
+          "scrollWidth": 437,
+          "clientWidth": 437
+        },
+        {
+          "selector": "atlas-footer",
+          "rect": {
+            "x": 86.390625,
+            "y": 1040,
+            "width": 1747.21875,
+            "height": 40,
+            "top": 1040,
+            "right": 1833.609375,
+            "bottom": 1080,
+            "left": 86.390625
+          },
+          "scrollWidth": 1747,
+          "clientWidth": 1747
+        }
+      ],
+      "images": [
+        {
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 2172,
+          "height": 724
+        }
+      ]
+    },
+    {
+      "test": "home-dialog-preface-1920x1080",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 510,
+          "y": 224.75,
+          "width": 900,
+          "height": 630.484375,
+          "top": 224.75,
+          "right": 1410,
+          "bottom": 855.234375,
+          "left": 510
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-dialog-guide-1920x1080",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 510,
+          "y": 139,
+          "width": 900,
+          "height": 801.984375,
+          "top": 139,
+          "right": 1410,
+          "bottom": 940.984375,
+          "left": 510
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-layout-2560x1440",
+      "passed": true,
+      "geometry": [
+        {
+          "selector": "atlas-header",
+          "rect": {
+            "x": 115.1875,
+            "y": 0,
+            "width": 2329.625,
+            "height": 120,
+            "top": 0,
+            "right": 2444.8125,
+            "bottom": 120,
+            "left": 115.1875
+          },
+          "scrollWidth": 2330,
+          "clientWidth": 2330
+        },
+        {
+          "selector": "atlas-intro",
+          "rect": {
+            "x": 256,
+            "y": 287.6182861328125,
+            "width": 830,
+            "height": 640.328125,
+            "top": 287.6182861328125,
+            "right": 1086,
+            "bottom": 927.9464111328125,
+            "left": 256
+          },
+          "scrollWidth": 830,
+          "clientWidth": 830
+        },
+        {
+          "selector": "atlas-begin",
+          "rect": {
+            "x": 256,
+            "y": 825.9464111328125,
+            "width": 216.75,
+            "height": 53,
+            "top": 825.9464111328125,
+            "right": 472.75,
+            "bottom": 878.9464111328125,
+            "left": 256
+          },
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "selector": "atlas-chapters",
+          "rect": {
+            "x": 0,
+            "y": 1134,
+            "width": 2560,
+            "height": 260,
+            "top": 1134,
+            "right": 2560,
+            "bottom": 1394,
+            "left": 0
+          },
+          "scrollWidth": 2560,
+          "clientWidth": 2560
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 115.1875,
+            "y": 1180,
+            "width": 582.40625,
+            "height": 200,
+            "top": 1180,
+            "right": 697.59375,
+            "bottom": 1380,
+            "left": 115.1875
+          },
+          "scrollWidth": 581,
+          "clientWidth": 581
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 697.59375,
+            "y": 1180,
+            "width": 582.40625,
+            "height": 200,
+            "top": 1180,
+            "right": 1280,
+            "bottom": 1380,
+            "left": 697.59375
+          },
+          "scrollWidth": 581,
+          "clientWidth": 581
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 1280,
+            "y": 1180,
+            "width": 582.40625,
+            "height": 200,
+            "top": 1180,
+            "right": 1862.40625,
+            "bottom": 1380,
+            "left": 1280
+          },
+          "scrollWidth": 581,
+          "clientWidth": 581
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 1862.40625,
+            "y": 1180,
+            "width": 582.40625,
+            "height": 200,
+            "top": 1180,
+            "right": 2444.8125,
+            "bottom": 1380,
+            "left": 1862.40625
+          },
+          "scrollWidth": 582,
+          "clientWidth": 582
+        },
+        {
+          "selector": "atlas-footer",
+          "rect": {
+            "x": 115.1875,
+            "y": 1394,
+            "width": 2329.625,
+            "height": 46,
+            "top": 1394,
+            "right": 2444.8125,
+            "bottom": 1440,
+            "left": 115.1875
+          },
+          "scrollWidth": 2330,
+          "clientWidth": 2330
+        }
+      ],
+      "images": [
+        {
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 2172,
+          "height": 724
+        }
+      ]
+    },
+    {
+      "test": "home-dialog-preface-2560x1440",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 830,
+          "y": 404.75,
+          "width": 900,
+          "height": 630.484375,
+          "top": 404.75,
+          "right": 1730,
+          "bottom": 1035.234375,
+          "left": 830
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-dialog-guide-2560x1440",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 830,
+          "y": 319,
+          "width": 900,
+          "height": 801.984375,
+          "top": 319,
+          "right": 1730,
+          "bottom": 1120.984375,
+          "left": 830
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-layout-3440x1440",
+      "passed": true,
+      "geometry": [
+        {
+          "selector": "atlas-header",
+          "rect": {
+            "x": 154.796875,
+            "y": 0,
+            "width": 3130.40625,
+            "height": 120,
+            "top": 0,
+            "right": 3285.203125,
+            "bottom": 120,
+            "left": 154.796875
+          },
+          "scrollWidth": 3130,
+          "clientWidth": 3130
+        },
+        {
+          "selector": "atlas-intro",
+          "rect": {
+            "x": 344,
+            "y": 287.6182861328125,
+            "width": 830,
+            "height": 640.328125,
+            "top": 287.6182861328125,
+            "right": 1174,
+            "bottom": 927.9464111328125,
+            "left": 344
+          },
+          "scrollWidth": 830,
+          "clientWidth": 830
+        },
+        {
+          "selector": "atlas-begin",
+          "rect": {
+            "x": 344,
+            "y": 825.9464111328125,
+            "width": 216.75,
+            "height": 53,
+            "top": 825.9464111328125,
+            "right": 560.75,
+            "bottom": 878.9464111328125,
+            "left": 344
+          },
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "selector": "atlas-chapters",
+          "rect": {
+            "x": 0,
+            "y": 1134,
+            "width": 3440,
+            "height": 260,
+            "top": 1134,
+            "right": 3440,
+            "bottom": 1394,
+            "left": 0
+          },
+          "scrollWidth": 3440,
+          "clientWidth": 3440
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 154.796875,
+            "y": 1180,
+            "width": 782.59375,
+            "height": 200,
+            "top": 1180,
+            "right": 937.390625,
+            "bottom": 1380,
+            "left": 154.796875
+          },
+          "scrollWidth": 782,
+          "clientWidth": 782
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 937.390625,
+            "y": 1180,
+            "width": 782.609375,
+            "height": 200,
+            "top": 1180,
+            "right": 1720,
+            "bottom": 1380,
+            "left": 937.390625
+          },
+          "scrollWidth": 782,
+          "clientWidth": 782
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 1720,
+            "y": 1180,
+            "width": 782.59375,
+            "height": 200,
+            "top": 1180,
+            "right": 2502.59375,
+            "bottom": 1380,
+            "left": 1720
+          },
+          "scrollWidth": 782,
+          "clientWidth": 782
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 2502.59375,
+            "y": 1180,
+            "width": 782.609375,
+            "height": 200,
+            "top": 1180,
+            "right": 3285.203125,
+            "bottom": 1380,
+            "left": 2502.59375
+          },
+          "scrollWidth": 783,
+          "clientWidth": 783
+        },
+        {
+          "selector": "atlas-footer",
+          "rect": {
+            "x": 154.796875,
+            "y": 1394,
+            "width": 3130.40625,
+            "height": 46,
+            "top": 1394,
+            "right": 3285.203125,
+            "bottom": 1440,
+            "left": 154.796875
+          },
+          "scrollWidth": 3130,
+          "clientWidth": 3130
+        }
+      ],
+      "images": [
+        {
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 2172,
+          "height": 724
+        }
+      ]
+    },
+    {
+      "test": "home-dialog-preface-3440x1440",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 1270,
+          "y": 404.75,
+          "width": 900,
+          "height": 630.484375,
+          "top": 404.75,
+          "right": 2170,
+          "bottom": 1035.234375,
+          "left": 1270
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-dialog-guide-3440x1440",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 1270,
+          "y": 319,
+          "width": 900,
+          "height": 801.984375,
+          "top": 319,
+          "right": 2170,
+          "bottom": 1120.984375,
+          "left": 1270
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-layout-1100x650",
+      "passed": true,
+      "geometry": [
+        {
+          "selector": "atlas-header",
+          "rect": {
+            "x": 49.5,
+            "y": 0,
+            "width": 1001,
+            "height": 80,
+            "top": 0,
+            "right": 1050.5,
+            "bottom": 80,
+            "left": 49.5
+          },
+          "scrollWidth": 1001,
+          "clientWidth": 1001
+        },
+        {
+          "selector": "atlas-intro",
+          "rect": {
+            "x": 99,
+            "y": 72.86812591552734,
+            "width": 473,
+            "height": 360.0625,
+            "top": 72.86812591552734,
+            "right": 572,
+            "bottom": 432.93062591552734,
+            "left": 99
+          },
+          "scrollWidth": 473,
+          "clientWidth": 473
+        },
+        {
+          "selector": "atlas-begin",
+          "rect": {
+            "x": 99,
+            "y": 349.9306335449219,
+            "width": 216.75,
+            "height": 46,
+            "top": 349.9306335449219,
+            "right": 315.75,
+            "bottom": 395.9306335449219,
+            "left": 99
+          },
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "selector": "atlas-chapters",
+          "rect": {
+            "x": 0,
+            "y": 433,
+            "width": 1100,
+            "height": 184,
+            "top": 433,
+            "right": 1100,
+            "bottom": 617,
+            "left": 0
+          },
+          "scrollWidth": 1100,
+          "clientWidth": 1100
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 49.5,
+            "y": 471,
+            "width": 250.25,
+            "height": 135,
+            "top": 471,
+            "right": 299.75,
+            "bottom": 606,
+            "left": 49.5
+          },
+          "scrollWidth": 249,
+          "clientWidth": 249
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 299.75,
+            "y": 471,
+            "width": 250.25,
+            "height": 135,
+            "top": 471,
+            "right": 550,
+            "bottom": 606,
+            "left": 299.75
+          },
+          "scrollWidth": 249,
+          "clientWidth": 249
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 550,
+            "y": 471,
+            "width": 250.25,
+            "height": 135,
+            "top": 471,
+            "right": 800.25,
+            "bottom": 606,
+            "left": 550
+          },
+          "scrollWidth": 249,
+          "clientWidth": 249
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 800.25,
+            "y": 471,
+            "width": 250.25,
+            "height": 135,
+            "top": 471,
+            "right": 1050.5,
+            "bottom": 606,
+            "left": 800.25
+          },
+          "scrollWidth": 250,
+          "clientWidth": 250
+        },
+        {
+          "selector": "atlas-footer",
+          "rect": {
+            "x": 49.5,
+            "y": 617,
+            "width": 1001,
+            "height": 33,
+            "top": 617,
+            "right": 1050.5,
+            "bottom": 650,
+            "left": 49.5
+          },
+          "scrollWidth": 1001,
+          "clientWidth": 1001
+        }
+      ],
+      "images": [
+        {
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 2172,
+          "height": 724
+        }
+      ]
+    },
+    {
+      "test": "home-dialog-preface-1100x650",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 100,
+          "y": 58.5,
+          "width": 900,
+          "height": 533,
+          "top": 58.5,
+          "right": 1000,
+          "bottom": 591.5,
+          "left": 100
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-dialog-guide-1100x650",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 100,
+          "y": 58.5,
+          "width": 900,
+          "height": 533,
+          "top": 58.5,
+          "right": 1000,
+          "bottom": 591.5,
+          "left": 100
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-motion-off-reduced-hidden-stops-real-pigment-and-resumes",
+      "passed": true,
+      "initial": {
+        "engine": "three.js r180",
+        "role": "peony-pigment-surface",
+        "renderCount": "452",
+        "paintingTime": "15.084",
+        "reveal": "1.000"
+      },
+      "off": {
+        "engine": "three.js r180",
+        "role": "peony-pigment-surface",
+        "renderCount": "459",
+        "paintingTime": "15.311",
+        "reveal": "1.000"
+      },
+      "reduced": {
+        "engine": "three.js r180",
+        "role": "peony-pigment-surface",
+        "renderCount": "468",
+        "paintingTime": "15.517",
+        "reveal": "1.000"
+      },
+      "hidden": {
+        "engine": "three.js r180",
+        "role": "peony-pigment-surface",
+        "renderCount": "473",
+        "paintingTime": "15.650",
+        "reveal": "1.000"
+      },
+      "resumed": {
+        "engine": "three.js r180",
+        "role": "peony-pigment-surface",
+        "renderCount": "481",
+        "paintingTime": "15.894",
+        "reveal": "1.000"
+      },
+      "animationStates": [
+        "paused",
+        "paused",
+        "paused",
+        "paused",
+        "paused",
+        "paused",
+        "paused"
+      ]
+    },
+    {
+      "test": "home-optional-pigment-real-webgl-context-loss-retains-painted-fallback",
+      "passed": true,
+      "fallback": {
+        "width": 1536,
+        "visibility": "visible",
+        "hostVisibility": "hidden"
+      },
+      "viewerEntryWithStaticFallback": true
+    },
+    {
+      "test": "home-return-restores-pigment-and-selected-entry-focus",
+      "passed": true
+    },
+    {
+      "test": "culture-full-text-sources-tabs-explore-c1",
+      "passed": true,
+      "characters": 770,
+      "sources": [
+        {
+          "href": "https://zh.wikisource.org/wiki/%E6%B4%9B%E9%99%BD%E7%89%A1%E4%B8%B9%E8%A8%98_(%E6%AD%90%E9%99%BD%E4%BF%AE)",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://yllhj.beijing.gov.cn/ztxx/bjhx/hhzs/201804/t20180425_118611.shtml",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "target": 0.6510089315249752
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c1-1280x720",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 691.203125,
+          "y": 0,
+          "width": 588.796875,
+          "height": 720,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "left": 691.203125
+        },
+        "scrollWidth": 573,
+        "clientWidth": 573
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c1-1600x1000",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 980,
+          "y": 0,
+          "width": 620,
+          "height": 1000,
+          "top": 0,
+          "right": 1600,
+          "bottom": 1000,
+          "left": 980
+        },
+        "scrollWidth": 604,
+        "clientWidth": 604
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c1-1920x1080",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 1300,
+          "y": 0,
+          "width": 620,
+          "height": 1080,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "left": 1300
+        },
+        "scrollWidth": 604,
+        "clientWidth": 604
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c1-2560x1440",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 1940,
+          "y": 0,
+          "width": 620,
+          "height": 1440,
+          "top": 0,
+          "right": 2560,
+          "bottom": 1440,
+          "left": 1940
+        },
+        "scrollWidth": 604,
+        "clientWidth": 604
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c1-3440x1440",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 2820,
+          "y": 0,
+          "width": 620,
+          "height": 1440,
+          "top": 0,
+          "right": 3440,
+          "bottom": 1440,
+          "left": 2820
+        },
+        "scrollWidth": 604,
+        "clientWidth": 604
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c1-1100x650",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 594,
+          "y": 0,
+          "width": 506,
+          "height": 650,
+          "top": 0,
+          "right": 1100,
+          "bottom": 650,
+          "left": 594
+        },
+        "scrollWidth": 490,
+        "clientWidth": 490
+      }
+    },
+    {
+      "test": "culture-full-text-sources-tabs-explore-c2",
+      "passed": true,
+      "characters": 727,
+      "sources": [
+        {
+          "href": "https://zh.wikisource.org/wiki/%E6%B4%9B%E9%99%BD%E7%89%A1%E4%B8%B9%E8%A8%98_(%E6%AD%90%E9%99%BD%E4%BF%AE)",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://www.metmuseum.org/essays/chinese-handscrolls",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "target": 0.11250581125058112
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c2-1280x720",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 691.203125,
+          "y": 0,
+          "width": 588.796875,
+          "height": 720,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "left": 691.203125
+        },
+        "scrollWidth": 573,
+        "clientWidth": 573
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c2-1600x1000",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 980,
+          "y": 0,
+          "width": 620,
+          "height": 1000,
+          "top": 0,
+          "right": 1600,
+          "bottom": 1000,
+          "left": 980
+        },
+        "scrollWidth": 604,
+        "clientWidth": 604
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c2-1920x1080",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 1300,
+          "y": 0,
+          "width": 620,
+          "height": 1080,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "left": 1300
+        },
+        "scrollWidth": 604,
+        "clientWidth": 604
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c2-2560x1440",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 1940,
+          "y": 0,
+          "width": 620,
+          "height": 1440,
+          "top": 0,
+          "right": 2560,
+          "bottom": 1440,
+          "left": 1940
+        },
+        "scrollWidth": 604,
+        "clientWidth": 604
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c2-3440x1440",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 2820,
+          "y": 0,
+          "width": 620,
+          "height": 1440,
+          "top": 0,
+          "right": 3440,
+          "bottom": 1440,
+          "left": 2820
+        },
+        "scrollWidth": 604,
+        "clientWidth": 604
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c2-1100x650",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 594,
+          "y": 0,
+          "width": 506,
+          "height": 650,
+          "top": 0,
+          "right": 1100,
+          "bottom": 650,
+          "left": 594
+        },
+        "scrollWidth": 490,
+        "clientWidth": 490
+      }
+    },
+    {
+      "test": "culture-full-text-sources-tabs-explore-c3",
+      "passed": true,
+      "characters": 770,
+      "sources": [
+        {
+          "href": "https://www.chnmuseum.cn/zp/zpml/csp/202203/t20220309_254242.shtml",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://theme.npm.edu.tw/selection/Article.aspx?lang=2&sNo=04000985",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "target": 0.5805515239477503
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c3-1280x720",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 691.203125,
+          "y": 0,
+          "width": 588.796875,
+          "height": 720,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "left": 691.203125
+        },
+        "scrollWidth": 573,
+        "clientWidth": 573
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c3-1600x1000",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 980,
+          "y": 0,
+          "width": 620,
+          "height": 1000,
+          "top": 0,
+          "right": 1600,
+          "bottom": 1000,
+          "left": 980
+        },
+        "scrollWidth": 604,
+        "clientWidth": 604
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c3-1920x1080",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 1300,
+          "y": 0,
+          "width": 620,
+          "height": 1080,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "left": 1300
+        },
+        "scrollWidth": 604,
+        "clientWidth": 604
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c3-2560x1440",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 1940,
+          "y": 0,
+          "width": 620,
+          "height": 1440,
+          "top": 0,
+          "right": 2560,
+          "bottom": 1440,
+          "left": 1940
+        },
+        "scrollWidth": 604,
+        "clientWidth": 604
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c3-3440x1440",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 2820,
+          "y": 0,
+          "width": 620,
+          "height": 1440,
+          "top": 0,
+          "right": 3440,
+          "bottom": 1440,
+          "left": 2820
+        },
+        "scrollWidth": 604,
+        "clientWidth": 604
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c3-1100x650",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 594,
+          "y": 0,
+          "width": 506,
+          "height": 650,
+          "top": 0,
+          "right": 1100,
+          "bottom": 650,
+          "left": 594
+        },
+        "scrollWidth": 490,
+        "clientWidth": 490
+      }
+    },
+    {
+      "test": "culture-full-text-sources-tabs-explore-c4",
+      "passed": true,
+      "characters": 736,
+      "sources": [
+        {
+          "href": "https://yllhj.beijing.gov.cn/ztxx/bjhx/hhzs/201804/t20180425_118611.shtml",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://yllhj.beijing.gov.cn/ztxx/bjhx/hhzs/201804/t20180425_118611.shtml",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "target": 0.3246247915508616
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c4-1280x720",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 691.203125,
+          "y": 0,
+          "width": 588.796875,
+          "height": 720,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "left": 691.203125
+        },
+        "scrollWidth": 573,
+        "clientWidth": 573
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c4-1600x1000",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 980,
+          "y": 0,
+          "width": 620,
+          "height": 1000,
+          "top": 0,
+          "right": 1600,
+          "bottom": 1000,
+          "left": 980
+        },
+        "scrollWidth": 604,
+        "clientWidth": 604
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c4-1920x1080",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 1300,
+          "y": 0,
+          "width": 620,
+          "height": 1080,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "left": 1300
+        },
+        "scrollWidth": 604,
+        "clientWidth": 604
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c4-2560x1440",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 1940,
+          "y": 0,
+          "width": 620,
+          "height": 1440,
+          "top": 0,
+          "right": 2560,
+          "bottom": 1440,
+          "left": 1940
+        },
+        "scrollWidth": 604,
+        "clientWidth": 604
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c4-3440x1440",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 2820,
+          "y": 0,
+          "width": 620,
+          "height": 1440,
+          "top": 0,
+          "right": 3440,
+          "bottom": 1440,
+          "left": 2820
+        },
+        "scrollWidth": 604,
+        "clientWidth": 604
+      }
+    },
+    {
+      "test": "culture-desktop-bounds-focus-c4-1100x650",
+      "passed": true,
+      "geometry": {
+        "selector": "culture-panel",
+        "rect": {
+          "x": 594,
+          "y": 0,
+          "width": 506,
+          "height": 650,
+          "top": 0,
+          "right": 1100,
+          "bottom": 650,
+          "left": 594
+        },
+        "scrollWidth": 490,
+        "clientWidth": 490
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c1-1280x720",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-left",
+        "rect": {
+          "x": 70.359375,
+          "y": 182.90625,
+          "width": 380,
+          "height": 392.09375,
+          "top": 182.90625,
+          "right": 450.359375,
+          "bottom": 575,
+          "left": 70.359375
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 170,
+          "y": 35,
+          "width": 940,
+          "height": 650,
+          "top": 35,
+          "right": 1110,
+          "bottom": 685,
+          "left": 170
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 199,
+          "y": 72.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 72.171875,
+          "right": 630.734375,
+          "bottom": 647.828125,
+          "left": 199
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c1-1600x1000",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-left",
+        "rect": {
+          "x": 79.953125,
+          "y": 447.90625,
+          "width": 380,
+          "height": 392.09375,
+          "top": 447.90625,
+          "right": 459.953125,
+          "bottom": 840,
+          "left": 79.953125
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 330,
+          "y": 110,
+          "width": 940,
+          "height": 780,
+          "top": 110,
+          "right": 1270,
+          "bottom": 890,
+          "left": 330
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 359,
+          "y": 212.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 212.171875,
+          "right": 790.734375,
+          "bottom": 787.828125,
+          "left": 359
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c1-1920x1080",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-left",
+        "rect": {
+          "x": 89.546875,
+          "y": 527.90625,
+          "width": 380,
+          "height": 392.09375,
+          "top": 527.90625,
+          "right": 469.546875,
+          "bottom": 920,
+          "left": 89.546875
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 490,
+          "y": 150,
+          "width": 940,
+          "height": 780,
+          "top": 150,
+          "right": 1430,
+          "bottom": 930,
+          "left": 490
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 519,
+          "y": 252.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 252.171875,
+          "right": 950.734375,
+          "bottom": 827.828125,
+          "left": 519
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c1-2560x1440",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-left",
+        "rect": {
+          "x": 108.75,
+          "y": 887.90625,
+          "width": 380,
+          "height": 392.09375,
+          "top": 887.90625,
+          "right": 488.75,
+          "bottom": 1280,
+          "left": 108.75
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 810,
+          "y": 330,
+          "width": 940,
+          "height": 780,
+          "top": 330,
+          "right": 1750,
+          "bottom": 1110,
+          "left": 810
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 839,
+          "y": 432.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 432.171875,
+          "right": 1270.734375,
+          "bottom": 1007.828125,
+          "left": 839
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c1-3440x1440",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-right colophon-in-margin",
+        "rect": {
+          "x": 3010,
+          "y": 859.40625,
+          "width": 380,
+          "height": 388.09375,
+          "top": 859.40625,
+          "right": 3390,
+          "bottom": 1247.5,
+          "left": 3010
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 1250,
+          "y": 330,
+          "width": 940,
+          "height": 780,
+          "top": 330,
+          "right": 2190,
+          "bottom": 1110,
+          "left": 1250
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 1279,
+          "y": 432.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 432.171875,
+          "right": 1710.734375,
+          "bottom": 1007.828125,
+          "left": 1279
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c1-1100x650",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-left",
+        "rect": {
+          "x": 64.953125,
+          "y": 112.90625,
+          "width": 380,
+          "height": 392.09375,
+          "top": 112.90625,
+          "right": 444.953125,
+          "bottom": 505,
+          "left": 64.953125
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 80,
+          "y": 35,
+          "width": 940,
+          "height": 580,
+          "top": 35,
+          "right": 1020,
+          "bottom": 615,
+          "left": 80
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 109,
+          "y": 64,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 64,
+          "right": 540.734375,
+          "bottom": 639.65625,
+          "left": 109
+        }
+      }
+    },
+    {
+      "test": "keepsake-choice-seal-download-actual-png-and-glyphs-c1",
+      "passed": true,
+      "selected": "共赏",
+      "pngBytes": 3149756,
+      "pngSha256": "479cbb9c747ac54b5c5d05f702a0d8e888fbe4d31dda11490006dcbfef88fcc5",
+      "dimensions": [
+        1200,
+        1600
+      ],
+      "sealPixels": 2810,
+      "rasterGlyphs": {
+        "faces": [
+          {
+            "family": "MDGS Kai",
+            "status": "loaded"
+          }
+        ],
+        "missing": {
+          "hash": 1943471365,
+          "ink": 0
+        },
+        "glyphs": [
+          {
+            "character": "共",
+            "hash": 1815196515,
+            "ink": 1076
+          },
+          {
+            "character": "赏",
+            "hash": 535395954,
+            "ink": 1373
+          },
+          {
+            "character": "春",
+            "hash": 2867025774,
+            "ink": 1407
+          },
+          {
+            "character": "色",
+            "hash": 3204789941,
+            "ink": 1183
+          },
+          {
+            "character": "无",
+            "hash": 3698542695,
+            "ink": 1041
+          },
+          {
+            "character": "边",
+            "hash": 210687813,
+            "ink": 1246
+          },
+          {
+            "character": "愿",
+            "hash": 4109338503,
+            "ink": 1570
+          },
+          {
+            "character": "与",
+            "hash": 2403274706,
+            "ink": 884
+          },
+          {
+            "character": "君",
+            "hash": 777311566,
+            "ink": 1255
+          },
+          {
+            "character": "同",
+            "hash": 82012277,
+            "ink": 1246
+          },
+          {
+            "character": "留",
+            "hash": 1058906473,
+            "ink": 1475
+          },
+          {
+            "character": "芳",
+            "hash": 1209903793,
+            "ink": 1164
+          }
+        ]
+      },
+      "drawnTextCount": 128,
+      "saved": "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/ui/keepsake-c1.png",
+      "glyphLimit": "Actual loaded local Kai FontFace, distinct nonempty glyph rasters versus missing-glyph box, intercepted canvas fillText and raster seal; typographic beauty still needs exported PNG review."
+    },
+    {
+      "test": "keepsake-seal-again-focus-c1",
+      "passed": true,
+      "cycles": [
+        {
+          "cycle": 1,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        },
+        {
+          "cycle": 2,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        },
+        {
+          "cycle": 3,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        },
+        {
+          "cycle": 4,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        },
+        {
+          "cycle": 5,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        }
+      ]
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c2-1280x720",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-right",
+        "rect": {
+          "x": 829.640625,
+          "y": 182.90625,
+          "width": 380,
+          "height": 392.09375,
+          "top": 182.90625,
+          "right": 1209.640625,
+          "bottom": 575,
+          "left": 829.640625
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 170,
+          "y": 35,
+          "width": 940,
+          "height": 650,
+          "top": 35,
+          "right": 1110,
+          "bottom": 685,
+          "left": 170
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 199,
+          "y": 72.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 72.171875,
+          "right": 630.734375,
+          "bottom": 647.828125,
+          "left": 199
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c2-1600x1000",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-right",
+        "rect": {
+          "x": 1140.046875,
+          "y": 447.90625,
+          "width": 380,
+          "height": 392.09375,
+          "top": 447.90625,
+          "right": 1520.046875,
+          "bottom": 840,
+          "left": 1140.046875
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 330,
+          "y": 110,
+          "width": 940,
+          "height": 780,
+          "top": 110,
+          "right": 1270,
+          "bottom": 890,
+          "left": 330
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 359,
+          "y": 212.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 212.171875,
+          "right": 790.734375,
+          "bottom": 787.828125,
+          "left": 359
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c2-1920x1080",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-right",
+        "rect": {
+          "x": 1450.453125,
+          "y": 527.90625,
+          "width": 380,
+          "height": 392.09375,
+          "top": 527.90625,
+          "right": 1830.453125,
+          "bottom": 920,
+          "left": 1450.453125
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 490,
+          "y": 150,
+          "width": 940,
+          "height": 780,
+          "top": 150,
+          "right": 1430,
+          "bottom": 930,
+          "left": 490
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 519,
+          "y": 252.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 252.171875,
+          "right": 950.734375,
+          "bottom": 827.828125,
+          "left": 519
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c2-2560x1440",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-right",
+        "rect": {
+          "x": 2071.25,
+          "y": 887.90625,
+          "width": 380,
+          "height": 392.09375,
+          "top": 887.90625,
+          "right": 2451.25,
+          "bottom": 1280,
+          "left": 2071.25
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 810,
+          "y": 330,
+          "width": 940,
+          "height": 780,
+          "top": 330,
+          "right": 1750,
+          "bottom": 1110,
+          "left": 810
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 839,
+          "y": 432.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 432.171875,
+          "right": 1270.734375,
+          "bottom": 1007.828125,
+          "left": 839
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c2-3440x1440",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-right colophon-in-margin",
+        "rect": {
+          "x": 3010,
+          "y": 859.40625,
+          "width": 380,
+          "height": 388.09375,
+          "top": 859.40625,
+          "right": 3390,
+          "bottom": 1247.5,
+          "left": 3010
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 1250,
+          "y": 330,
+          "width": 940,
+          "height": 780,
+          "top": 330,
+          "right": 2190,
+          "bottom": 1110,
+          "left": 1250
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 1279,
+          "y": 432.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 432.171875,
+          "right": 1710.734375,
+          "bottom": 1007.828125,
+          "left": 1279
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c2-1100x650",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-right",
+        "rect": {
+          "x": 655.046875,
+          "y": 112.90625,
+          "width": 380,
+          "height": 392.09375,
+          "top": 112.90625,
+          "right": 1035.046875,
+          "bottom": 505,
+          "left": 655.046875
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 80,
+          "y": 35,
+          "width": 940,
+          "height": 580,
+          "top": 35,
+          "right": 1020,
+          "bottom": 615,
+          "left": 80
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 109,
+          "y": 64,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 64,
+          "right": 540.734375,
+          "bottom": 639.65625,
+          "left": 109
+        }
+      }
+    },
+    {
+      "test": "keepsake-choice-seal-download-actual-png-and-glyphs-c2",
+      "passed": true,
+      "selected": "圆满",
+      "pngBytes": 3149626,
+      "pngSha256": "0e4cd4e92fc75f7366a0f361f28179784f4d6992ef45e9230cd19afa9f6ebc1a",
+      "dimensions": [
+        1200,
+        1600
+      ],
+      "sealPixels": 2810,
+      "rasterGlyphs": {
+        "faces": [
+          {
+            "family": "MDGS Kai",
+            "status": "loaded"
+          }
+        ],
+        "missing": {
+          "hash": 1943471365,
+          "ink": 0
+        },
+        "glyphs": [
+          {
+            "character": "圆",
+            "hash": 1470426092,
+            "ink": 1602
+          },
+          {
+            "character": "满",
+            "hash": 1754943960,
+            "ink": 1563
+          },
+          {
+            "character": "花",
+            "hash": 981579458,
+            "ink": 1187
+          },
+          {
+            "character": "开",
+            "hash": 3942604744,
+            "ink": 1006
+          },
+          {
+            "character": "岁",
+            "hash": 3676188215,
+            "ink": 973
+          },
+          {
+            "character": "安",
+            "hash": 2684879901,
+            "ink": 1178
+          },
+          {
+            "character": "宁",
+            "hash": 2218235800,
+            "ink": 883
+          },
+          {
+            "character": "留",
+            "hash": 1058906473,
+            "ink": 1475
+          },
+          {
+            "character": "芳",
+            "hash": 1209903793,
+            "ink": 1164
+          }
+        ]
+      },
+      "drawnTextCount": 462,
+      "saved": "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/ui/keepsake-c2.png",
+      "glyphLimit": "Actual loaded local Kai FontFace, distinct nonempty glyph rasters versus missing-glyph box, intercepted canvas fillText and raster seal; typographic beauty still needs exported PNG review."
+    },
+    {
+      "test": "keepsake-seal-again-focus-c2",
+      "passed": true,
+      "cycles": [
+        {
+          "cycle": 1,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        },
+        {
+          "cycle": 2,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        },
+        {
+          "cycle": 3,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        },
+        {
+          "cycle": 4,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        },
+        {
+          "cycle": 5,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        }
+      ]
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c3-1280x720",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-left",
+        "rect": {
+          "x": 70.359375,
+          "y": 182.90625,
+          "width": 380,
+          "height": 392.09375,
+          "top": 182.90625,
+          "right": 450.359375,
+          "bottom": 575,
+          "left": 70.359375
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 170,
+          "y": 35,
+          "width": 940,
+          "height": 650,
+          "top": 35,
+          "right": 1110,
+          "bottom": 685,
+          "left": 170
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 199,
+          "y": 72.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 72.171875,
+          "right": 630.734375,
+          "bottom": 647.828125,
+          "left": 199
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c3-1600x1000",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-left",
+        "rect": {
+          "x": 79.953125,
+          "y": 447.90625,
+          "width": 380,
+          "height": 392.09375,
+          "top": 447.90625,
+          "right": 459.953125,
+          "bottom": 840,
+          "left": 79.953125
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 330,
+          "y": 110,
+          "width": 940,
+          "height": 780,
+          "top": 110,
+          "right": 1270,
+          "bottom": 890,
+          "left": 330
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 359,
+          "y": 212.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 212.171875,
+          "right": 790.734375,
+          "bottom": 787.828125,
+          "left": 359
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c3-1920x1080",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-left",
+        "rect": {
+          "x": 89.546875,
+          "y": 527.90625,
+          "width": 380,
+          "height": 392.09375,
+          "top": 527.90625,
+          "right": 469.546875,
+          "bottom": 920,
+          "left": 89.546875
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 490,
+          "y": 150,
+          "width": 940,
+          "height": 780,
+          "top": 150,
+          "right": 1430,
+          "bottom": 930,
+          "left": 490
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 519,
+          "y": 252.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 252.171875,
+          "right": 950.734375,
+          "bottom": 827.828125,
+          "left": 519
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c3-2560x1440",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-left",
+        "rect": {
+          "x": 108.75,
+          "y": 887.90625,
+          "width": 380,
+          "height": 392.09375,
+          "top": 887.90625,
+          "right": 488.75,
+          "bottom": 1280,
+          "left": 108.75
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 810,
+          "y": 330,
+          "width": 940,
+          "height": 780,
+          "top": 330,
+          "right": 1750,
+          "bottom": 1110,
+          "left": 810
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 839,
+          "y": 432.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 432.171875,
+          "right": 1270.734375,
+          "bottom": 1007.828125,
+          "left": 839
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c3-3440x1440",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-right colophon-in-margin",
+        "rect": {
+          "x": 3010,
+          "y": 859.40625,
+          "width": 380,
+          "height": 388.09375,
+          "top": 859.40625,
+          "right": 3390,
+          "bottom": 1247.5,
+          "left": 3010
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 1250,
+          "y": 330,
+          "width": 940,
+          "height": 780,
+          "top": 330,
+          "right": 2190,
+          "bottom": 1110,
+          "left": 1250
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 1279,
+          "y": 432.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 432.171875,
+          "right": 1710.734375,
+          "bottom": 1007.828125,
+          "left": 1279
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c3-1100x650",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-left",
+        "rect": {
+          "x": 64.953125,
+          "y": 112.90625,
+          "width": 380,
+          "height": 392.09375,
+          "top": 112.90625,
+          "right": 444.953125,
+          "bottom": 505,
+          "left": 64.953125
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 80,
+          "y": 35,
+          "width": 940,
+          "height": 580,
+          "top": 35,
+          "right": 1020,
+          "bottom": 615,
+          "left": 80
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 109,
+          "y": 64,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 64,
+          "right": 540.734375,
+          "bottom": 639.65625,
+          "left": 109
+        }
+      }
+    },
+    {
+      "test": "keepsake-choice-seal-download-actual-png-and-glyphs-c3",
+      "passed": true,
+      "selected": "余韵",
+      "pngBytes": 3151818,
+      "pngSha256": "97b383ac13a3e47a8ec6a4e54d4c680fb8e3c947b75fb71b9376ba72d7575447",
+      "dimensions": [
+        1200,
+        1600
+      ],
+      "sealPixels": 2810,
+      "rasterGlyphs": {
+        "faces": [
+          {
+            "family": "MDGS Kai",
+            "status": "loaded"
+          }
+        ],
+        "missing": {
+          "hash": 1943471365,
+          "ink": 0
+        },
+        "glyphs": [
+          {
+            "character": "余",
+            "hash": 3153227921,
+            "ink": 1181
+          },
+          {
+            "character": "韵",
+            "hash": 1489279070,
+            "ink": 1501
+          },
+          {
+            "character": "繁",
+            "hash": 4730515,
+            "ink": 1679
+          },
+          {
+            "character": "花",
+            "hash": 981579458,
+            "ink": 1187
+          },
+          {
+            "character": "有",
+            "hash": 4212179401,
+            "ink": 1135
+          },
+          {
+            "character": "信",
+            "hash": 1449582574,
+            "ink": 1279
+          },
+          {
+            "character": "诗",
+            "hash": 2362186731,
+            "ink": 1187
+          },
+          {
+            "character": "意",
+            "hash": 3677882073,
+            "ink": 1438
+          },
+          {
+            "character": "长",
+            "hash": 3899418111,
+            "ink": 1058
+          },
+          {
+            "character": "存",
+            "hash": 1444551698,
+            "ink": 1152
+          },
+          {
+            "character": "留",
+            "hash": 1058906473,
+            "ink": 1475
+          },
+          {
+            "character": "芳",
+            "hash": 1209903793,
+            "ink": 1164
+          }
+        ]
+      },
+      "drawnTextCount": 796,
+      "saved": "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/ui/keepsake-c3.png",
+      "glyphLimit": "Actual loaded local Kai FontFace, distinct nonempty glyph rasters versus missing-glyph box, intercepted canvas fillText and raster seal; typographic beauty still needs exported PNG review."
+    },
+    {
+      "test": "keepsake-seal-again-focus-c3",
+      "passed": true,
+      "cycles": [
+        {
+          "cycle": 1,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        },
+        {
+          "cycle": 2,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        },
+        {
+          "cycle": 3,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        },
+        {
+          "cycle": 4,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        },
+        {
+          "cycle": 5,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        }
+      ]
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c4-1280x720",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-right colophon-in-margin",
+        "rect": {
+          "x": 1019.3125,
+          "y": 156.96875,
+          "width": 210.6875,
+          "height": 420.09375,
+          "top": 156.96875,
+          "right": 1230,
+          "bottom": 577.0625,
+          "left": 1019.3125
+        },
+        "scrollWidth": 211,
+        "clientWidth": 211
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 170,
+          "y": 35,
+          "width": 940,
+          "height": 650,
+          "top": 35,
+          "right": 1110,
+          "bottom": 685,
+          "left": 170
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 199,
+          "y": 72.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 72.171875,
+          "right": 630.734375,
+          "bottom": 647.828125,
+          "left": 199
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c4-1600x1000",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-right colophon-in-margin",
+        "rect": {
+          "x": 1355,
+          "y": 372.609375,
+          "width": 195,
+          "height": 456.890625,
+          "top": 372.609375,
+          "right": 1550,
+          "bottom": 829.5,
+          "left": 1355
+        },
+        "scrollWidth": 195,
+        "clientWidth": 195
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 330,
+          "y": 110,
+          "width": 940,
+          "height": 780,
+          "top": 110,
+          "right": 1270,
+          "bottom": 890,
+          "left": 330
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 359,
+          "y": 212.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 212.171875,
+          "right": 790.734375,
+          "bottom": 787.828125,
+          "left": 359
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c4-1920x1080",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-right colophon-in-margin",
+        "rect": {
+          "x": 1571,
+          "y": 517.40625,
+          "width": 299,
+          "height": 388.09375,
+          "top": 517.40625,
+          "right": 1870,
+          "bottom": 905.5,
+          "left": 1571
+        },
+        "scrollWidth": 299,
+        "clientWidth": 299
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 490,
+          "y": 150,
+          "width": 940,
+          "height": 780,
+          "top": 150,
+          "right": 1430,
+          "bottom": 930,
+          "left": 490
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 519,
+          "y": 252.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 252.171875,
+          "right": 950.734375,
+          "bottom": 827.828125,
+          "left": 519
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c4-2560x1440",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-right colophon-in-margin",
+        "rect": {
+          "x": 2143,
+          "y": 891.40625,
+          "width": 367,
+          "height": 356.09375,
+          "top": 891.40625,
+          "right": 2510,
+          "bottom": 1247.5,
+          "left": 2143
+        },
+        "scrollWidth": 367,
+        "clientWidth": 367
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 810,
+          "y": 330,
+          "width": 940,
+          "height": 780,
+          "top": 330,
+          "right": 1750,
+          "bottom": 1110,
+          "left": 810
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 839,
+          "y": 432.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 432.171875,
+          "right": 1270.734375,
+          "bottom": 1007.828125,
+          "left": 839
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c4-3440x1440",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-right colophon-in-margin",
+        "rect": {
+          "x": 3010,
+          "y": 891.40625,
+          "width": 380,
+          "height": 356.09375,
+          "top": 891.40625,
+          "right": 3390,
+          "bottom": 1247.5,
+          "left": 3010
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 1250,
+          "y": 330,
+          "width": 940,
+          "height": 780,
+          "top": 330,
+          "right": 2190,
+          "bottom": 1110,
+          "left": 1250
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 1279,
+          "y": 432.171875,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 432.171875,
+          "right": 1710.734375,
+          "bottom": 1007.828125,
+          "left": 1279
+        }
+      }
+    },
+    {
+      "test": "colophon-keepsake-bounds-escape-c4-1100x650",
+      "passed": true,
+      "colophon": {
+        "selector": "end-colophon colophon-left",
+        "rect": {
+          "x": 64.953125,
+          "y": 144.90625,
+          "width": 380,
+          "height": 360.09375,
+          "top": 144.90625,
+          "right": 444.953125,
+          "bottom": 505,
+          "left": 64.953125
+        },
+        "scrollWidth": 380,
+        "clientWidth": 380
+      },
+      "dialog": {
+        "selector": "flower-letter-dialog",
+        "rect": {
+          "x": 80,
+          "y": 35,
+          "width": 940,
+          "height": 580,
+          "top": 35,
+          "right": 1020,
+          "bottom": 615,
+          "left": 80
+        },
+        "scrollWidth": 938,
+        "clientWidth": 938
+      },
+      "image": {
+        "width": 1200,
+        "height": 1600,
+        "rect": {
+          "x": 109,
+          "y": 64,
+          "width": 431.734375,
+          "height": 575.65625,
+          "top": 64,
+          "right": 540.734375,
+          "bottom": 639.65625,
+          "left": 109
+        }
+      }
+    },
+    {
+      "test": "keepsake-choice-seal-download-actual-png-and-glyphs-c4",
+      "passed": true,
+      "selected": "风骨",
+      "pngBytes": 3148481,
+      "pngSha256": "144eb1dc788391402b9603bf87a8d2485f99a1a06b9621d936e0fa33a7a182e9",
+      "dimensions": [
+        1200,
+        1600
+      ],
+      "sealPixels": 2810,
+      "rasterGlyphs": {
+        "faces": [
+          {
+            "family": "MDGS Kai",
+            "status": "loaded"
+          }
+        ],
+        "missing": {
+          "hash": 1943471365,
+          "ink": 0
+        },
+        "glyphs": [
+          {
+            "character": "风",
+            "hash": 2417702021,
+            "ink": 1278
+          },
+          {
+            "character": "骨",
+            "hash": 4073732379,
+            "ink": 1342
+          },
+          {
+            "character": "不",
+            "hash": 1022154508,
+            "ink": 847
+          },
+          {
+            "character": "负",
+            "hash": 458623276,
+            "ink": 1493
+          },
+          {
+            "character": "春",
+            "hash": 2867025774,
+            "ink": 1407
+          },
+          {
+            "character": "光",
+            "hash": 1379026983,
+            "ink": 1038
+          },
+          {
+            "character": "改",
+            "hash": 544037192,
+            "ink": 1235
+          },
+          {
+            "character": "初",
+            "hash": 3880536300,
+            "ink": 1267
+          },
+          {
+            "character": "心",
+            "hash": 2232373369,
+            "ink": 818
+          },
+          {
+            "character": "留",
+            "hash": 1058906473,
+            "ink": 1475
+          },
+          {
+            "character": "芳",
+            "hash": 1209903793,
+            "ink": 1164
+          }
+        ]
+      },
+      "drawnTextCount": 1130,
+      "saved": "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/ui/keepsake-c4.png",
+      "glyphLimit": "Actual loaded local Kai FontFace, distinct nonempty glyph rasters versus missing-glyph box, intercepted canvas fillText and raster seal; typographic beauty still needs exported PNG review."
+    },
+    {
+      "test": "keepsake-seal-again-focus-c4",
+      "passed": true,
+      "cycles": [
+        {
+          "cycle": 1,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        },
+        {
+          "cycle": 2,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        },
+        {
+          "cycle": 3,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        },
+        {
+          "cycle": 4,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        },
+        {
+          "cycle": 5,
+          "sealFocused": true,
+          "againFocused": true,
+          "sealState": {
+            "active": "<button class=\"flower-letter-primary\" type=\"button\"><span>存为花笺</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\"><path d=\"M21 15v4",
+            "disabled": false,
+            "busy": "false"
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "expectedFailures": [
+    "Home title.webp 503",
+    "Home cinnabar-peonies.webp 503"
+  ],
+  "buildHtmlSha256": "806eb52d8a41bcc4774d1253902b58fecc4734225d77b6f889f6ec726410a769",
+  "buildJavascript": {
+    "flowerLetter-CBm438hs.js": "2f2f225063ed23a88fe1c9621a1c2d68dff2636c6fa69e4fb2ae307f3e7f0168",
+    "index-C6ZfivTN.js": "ae5d255e4d108e40cb08301ffbd95a4a0731584e64fdd4d3e85b6885a23e3d00",
+    "three-w1TnP4RH.js": "598394f34bd207f0b60b007bdfca1f8f020fac83128efe1dee2d237eaa65c1d0"
+  },
+  "sourceSha256": {
+    "src/App.tsx": "fe94952133b277fc283e384b5ffe6dec4983138f2936442b88bd60508ad00c3e",
+    "src/components/PeonyAtlasHome.tsx": "6f829e0d956c7abef44570fa8807bcb959ebb432a5a733ce3be8f946ff6902e0",
+    "src/components/PeonyPigment.tsx": "f5fdd1e4d3ff28dd233b361e84b86ee477ee0c72ae10d355e41b5b8e2cc316fe",
+    "src/scene/PeonyBloomSurface.ts": "0722fb6dddb0dd365a0bde9613ed56802ba6a178f570ac9f9391dacdabc43563",
+    "src/components/CulturePanel.tsx": "2402ca30f5e7b9b58354efcfa34e0ae95f77a8f7a08dcb18427fcc2f62a90f2d",
+    "src/components/ScrollColophon.tsx": "29d88e77f15882447cc36561860e316c33065831f99d2870bed07978f73d322d",
+    "src/components/FlowerLetterDialog.tsx": "48a62837fac8e8d9155e214766f8dc52e9cbfb90def660eef2fd32a8ee1dde0c",
+    "src/art/flowerLetter.ts": "5b448f1e07dfb9f6277959428f54950f010f42f8a5c8d9583f5d5854b139381a",
+    "src/styles/peony-atlas.css": "a347dd2201b8c18bfc8c1b55d9517646f238077185ab7b77d658505815e3269c",
+    "src/styles/curatorial-reading.css": "db541346be621190518836687161ba84341aa8326d1030a5b4612090fed15fd3",
+    "src/styles/flower-letter.css": "316252c25ca45165027f4aeea4f312cd300a3fa97a733733e82e10141be37f2b",
+    "src/data/curatorialNotes.ts": "e3f72d86e083f6f71f88d7b5aa1fc2d2eedacc4ec6ae734124cd21b24be3d7f1",
+    "src/data/flowerLetters.ts": "8ed21992a8e43a073a0593ec8dc8f627e69e12f74785517287ee22b00417060d",
+    "src/data/chapters.ts": "ca815c3ee1febd230c9128e81e18651c41780291ac89ae43ae47536be0a4d993",
+    "src/data/artEncounters.ts": "11625b51e66a0e2f01decd03187de846f317a256ce43861bc9f2c27739e67f27",
+    "src/data/peonyAtlas.ts": "5db913dceb282898c253f7496eeacb3dfae18e59c0ad543302501c885e90b6c3",
+    "scripts/validate-art-renewal-ui.mjs": "f978cf6666001687b5268c241798edff142ba2d804712f25294bff0ae285d58f"
+  },
+  "assetSha256": {
+    "ui/peony-atlas/landscape.webp": "a72d7349074c1ab618e3ec228df3ccc1264270579840649e9b7bac089d1208e3",
+    "ui/peony-atlas/cinnabar-peonies.webp": "08ab2c66c08a0b417168dd65b2053ca616bb3b526bbadacab35ba2758f0f9570",
+    "ui/peony-atlas/ivory-branch.webp": "0b42754463b800bdd1a4f26089d4d3ba45f737356edbe10d0136dd0017319edd",
+    "ui/peony-atlas/title.webp": "a9cd0b3b9a1366679f6c6eb813843fc20344a3ad213b5e6656b7113fc9893578",
+    "fonts/wenkai-web.woff2": "1f74e7b3639ae956b92f0c3eed77bf3ce505025bf28a66bd8c330722001dc8ed"
+  },
+  "url": "http://127.0.0.1:4604/exhibition/ui-qa/",
+  "browser": "156.0.8078.4",
+  "platform": "win32",
+  "launchFlags": [
+    "--enable-unsafe-swiftshader"
+  ],
+  "webglRenderer": {
+    "vendor": "Google Inc. (NVIDIA)",
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Ti (0x00002C05) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+  },
+  "completedAt": "2026-10-22T22:35:13.664Z"
+}

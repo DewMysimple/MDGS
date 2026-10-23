@@ -111,16 +111,18 @@ try {
     });
     assert(localFont.check&&localFont.faces.some(face=>face.status==='loaded')&&localFont.computed.includes('MDGS Kai'),'The local Kai typeface must be loaded and used by the real narrative.');
     assert(localFont.resources.some(name=>name.startsWith(url)&&new URL(name).pathname.endsWith('/fonts/wenkai-web.woff2')),'Local Kai must load beneath the nested prefix.');
-    await page.getByRole('button',{name:'开启古筝意境配乐',exact:true}).click();
-    await page.waitForFunction(()=>document.querySelector('.audio-control')?.dataset.audioState==='playing',null,{timeout:30000});
-    const volume=page.getByRole('slider',{name:'古筝配乐音量',exact:true});
-    await volume.focus();await page.keyboard.press('Home');await page.keyboard.press('ArrowRight');
-    assert.equal(await volume.inputValue(),'1');
-    audio=await page.locator('.audio-control').evaluate(element=>({state:element.dataset.audioState,enabled:element.dataset.audioEnabled,resources:performance.getEntriesByType('resource').map(item=>item.name).filter(name=>name.includes('/audio/'))}));
-    assert.equal(audio.enabled,'true');
-    assert(audio.resources.includes(new URL('audio/peony-guzheng-original.mp3',url).href),'The user-enabled local score must load beneath the prefix.');
-    await page.getByRole('button',{name:'关闭古筝意境配乐',exact:true}).click();
-    await page.waitForFunction(()=>document.querySelector('.audio-control')?.dataset.audioState==='off');
+    await page.getByRole('button',{name:'开启原创数字声景',exact:true}).click();
+    await page.waitForFunction(()=>window.__MDGS_AUDIO__?.snapshot().playback==='playing',null,{timeout:30000});
+    await page.getByRole('button',{name:'调整声景音量',exact:true}).click();
+    const volume=page.getByRole('slider',{name:'原创数字声景音量',exact:true});
+    await volume.focus();await page.keyboard.press('Home');await page.keyboard.press('ArrowRight');assert.equal(await volume.inputValue(),'1');
+    audio=await page.evaluate(()=>({...window.__MDGS_AUDIO__.snapshot(),resources:performance.getEntriesByType('resource').map(item=>item.name).filter(name=>name.includes('/audio/'))}));
+    assert.equal(audio.enabled,true);assert.deepEqual(audio.loopDurations,[160,160,24]);assert.equal(audio.sourceCount,3);
+    for(const file of ['peony-v3-strings.mp3','peony-v3-breath.mp3','peony-v3-atmosphere.mp3'])assert(audio.resources.includes(new URL('audio/'+file,url).href),'Each original digital stem must load beneath the prefix.');
+    assert(!audio.resources.some(name=>/courtyard-v2|audition|guzheng-original/.test(name)),'Unselected or archived audio must not be fetched.');
+    await page.keyboard.press('Escape');await page.getByRole('button',{name:'关闭原创数字声景',exact:true}).click();
+    await page.waitForFunction(()=>window.__MDGS_AUDIO__?.snapshot().playback==='off'&&window.__MDGS_AUDIO__.snapshot().retiredGraphs===0);
+
   }
   await page.getByRole('button', { name: '打开文化解读' }).click();
   await page.getByRole('dialog').waitFor();

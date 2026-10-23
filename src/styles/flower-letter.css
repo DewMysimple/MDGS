@@ -1,0 +1,33 @@
+.flower-letter-dialog { position:fixed; inset:0; margin:auto; width:940px; max-width:calc(100vw - 80px); height:min(780px,calc(100dvh - 70px)); padding:0; border:1px solid #aa997663; background:#f2ecdc; color:#4d634e; box-shadow:0 28px 100px #2936284d; overflow:visible; }
+.flower-letter-dialog[open] { display:grid; grid-template-columns:52% 48%; }
+.flower-letter-dialog::backdrop { background:#27372b8c; backdrop-filter:blur(6px); }
+.flower-letter-close { position:absolute; right:22px; top:20px; z-index:2; display:grid; place-items:center; width:30px; height:30px; color:#6d7158; cursor:pointer; }
+.flower-letter-close:hover { color:#943e32; }
+.flower-letter-preview { position:relative; display:grid; place-items:center; padding:28px; background:#d7ceb93d; overflow:hidden; min-height:0; }
+.flower-letter-preview>img { display:block; width:auto; max-width:100%; height:auto; max-height:100%; object-fit:contain; box-shadow:3px 9px 24px #4b432621; }
+.flower-letter-preparing { font-size:14px; letter-spacing:2px; color:#8c795d; }
+.flower-letter-compose { padding:59px 40px 28px; overflow:auto; overscroll-behavior:contain; scrollbar-width:thin; }
+.flower-letter-kicker { font-size:12px; letter-spacing:3px; color:#9a825b; }
+.flower-letter-compose>h2 { font-size:34px; font-weight:400; line-height:1.65; letter-spacing:4px; margin:17px 0 20px; color:#4b634c; }
+.flower-letter-intro { font-size:15px; color:#848068; line-height:2.1; letter-spacing:1px; }
+.flower-letter-choices { display:grid; grid-template-columns:repeat(4,1fr); border-block:1px solid #ab967b55; margin:26px 0 22px; }
+.flower-letter-choices>button { display:grid; gap:9px; padding:18px 0; color:#8a876c; border:0; cursor:pointer; position:relative; }
+.flower-letter-choices>button+button::before { content:''; position:absolute; width:1px; top:27%; bottom:27%; left:0; background:#af9c7840; }
+.flower-letter-choices>button>span { font-size:18px; letter-spacing:3px; }
+.flower-letter-choices>button>small { font-size:12px; letter-spacing:1px; }
+.flower-letter-choices>button[aria-pressed=true] { color:#9b4f3b; background:#bd9f7421; }
+.flower-letter-choices>button:disabled { cursor:default; opacity:.65; }
+.flower-letter-choices>button[aria-pressed=true]:disabled { opacity:1; }
+.flower-letter-selected { color:#796a4f; font-size:17px; line-height:1.9; letter-spacing:2px; }
+.flower-letter-actions { min-height:93px; margin-top:20px; }
+.flower-letter-primary { display:flex; align-items:center; justify-content:space-between; gap:24px; width:100%; padding:15px 18px; background:#52664e; color:#f6efdb; border:1px solid #52664e; outline:1px solid #efdfb761; outline-offset:-5px; font-size:15px; letter-spacing:3px; cursor:pointer; }
+.flower-letter-primary:not(:disabled):hover { background:#3e5b43; color:#f6efdb; }.flower-letter-primary:disabled { opacity:.5; cursor:wait; }
+.flower-letter-sealed-note { color:#936249; font-size:13px; line-height:1.8; letter-spacing:2px; margin-bottom:10px; }
+.flower-letter-again { display:flex; align-items:center; gap:9px; font-size:12px; color:#82785e; margin-top:13px; cursor:pointer; }
+.flower-letter-footnote { font-size:12px; line-height:1.9; letter-spacing:1px; color:#6d7058; margin-top:12px; }
+.flower-letter-export-error { position:absolute; inset:0; display:grid; place-content:center; gap:18px; text-align:center; background:#f2ecdcf0; font-size:15px; color:#8d5840; }
+.flower-letter-export-error>button { font-size:13px; border-bottom:1px solid #b09472; padding:7px; cursor:pointer; }
+.flower-letter-dialog.is-sealed .flower-letter-preview>img { animation:flower-letter-impression .6s ease both; }
+@keyframes flower-letter-impression { from { opacity:.65; transform:translateY(3px) } to { opacity:1; transform:translateY(0) } }
+@media(max-height:850px) { .flower-letter-compose{padding:40px 35px 20px}.flower-letter-compose>h2{font-size:29px;line-height:1.5;margin:13px 0}.flower-letter-intro{font-size:14px;line-height:1.9}.flower-letter-choices{margin:19px 0 16px}.flower-letter-choices>button{padding:14px 0}.flower-letter-actions{margin-top:16px;min-height:75px}.flower-letter-footnote{font-size:12px;margin-top:10px} }
+@media(prefers-reduced-motion:reduce) { .flower-letter-dialog.is-sealed .flower-letter-preview>img{animation:none} }

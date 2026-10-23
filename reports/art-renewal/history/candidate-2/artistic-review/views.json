@@ -1,0 +1,92 @@
+{
+  "at": "2026-10-22T22:02:01.870Z",
+  "base": "http://127.0.0.1:5194/",
+  "browser": "156.0.8078.47",
+  "driver": "reports/art-renewal/artistic-review/verify-views.cjs",
+  "driverSha256": "400f9c70718354e27e3b9e3924f110bc58633723b48a604d54e04a16d4085bc4",
+  "bundle": [
+    {
+      "url": "./assets/index-BmVq5_Bq.js",
+      "status": 200,
+      "sha256": "7cfb4dfafa38339114fca9422f1fd25e3ee7ec858785db0d2ba07d10ab8a9de2"
+    },
+    {
+      "url": "./assets/index-Bc7VfaY-.css",
+      "status": 200,
+      "sha256": "6b0e414d7910db0312f3a25215c62a5d6c7ebee8e0cc7e7cdaecee6295298224"
+    }
+  ],
+  "sourceHashesBefore": {
+    "src/components/PeonyAtlasHome.tsx": "6f829e0d956c7abef44570fa8807bcb959ebb432a5a733ce3be8f946ff6902e0",
+    "src/styles/peony-atlas.css": "a347dd2201b8c18bfc8c1b55d9517646f238077185ab7b77d658505815e3269c",
+    "src/data/peonyAtlas.ts": "5db913dceb282898c253f7496eeacb3dfae18e59c0ad543302501c885e90b6c3"
+  },
+  "sourceHashesAfter": {
+    "src/components/PeonyAtlasHome.tsx": "6f829e0d956c7abef44570fa8807bcb959ebb432a5a733ce3be8f946ff6902e0",
+    "src/styles/peony-atlas.css": "a347dd2201b8c18bfc8c1b55d9517646f238077185ab7b77d658505815e3269c",
+    "src/data/peonyAtlas.ts": "5db913dceb282898c253f7496eeacb3dfae18e59c0ad543302501c885e90b6c3"
+  },
+  "sourceStable": true,
+  "views": [
+    {
+      "kind": "home",
+      "width": 1280,
+      "height": 720,
+      "overflow": false,
+      "flowerInvitationFont": "13px",
+      "bodyFont": "16px"
+    },
+    {
+      "kind": "home",
+      "width": 1920,
+      "height": 1080,
+      "overflow": false,
+      "flowerInvitationFont": "14px",
+      "bodyFont": "18px"
+    },
+    {
+      "kind": "home",
+      "width": 2560,
+      "height": 1440,
+      "overflow": false,
+      "flowerInvitationFont": "14px",
+      "bodyFont": "22px"
+    },
+    {
+      "kind": "guide",
+      "width": 1280,
+      "height": 720,
+      "bodyScrollHeight": 552,
+      "bodyClientHeight": 552,
+      "allFourActionLabels": [
+        "游观",
+        "静赏",
+        "有遇",
+        "留芳"
+      ],
+      "returnButtonInside": true,
+      "dialog": {
+        "x": 190,
+        "y": 82.92745971679688,
+        "width": 900,
+        "height": 554.265625,
+        "top": 82.92745971679688,
+        "right": 1090,
+        "bottom": 637.1930847167969,
+        "left": 190
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "candidate-2-home-1920.png",
+      "sha256": "f63c06ec29799a9e9b9e125568be06aec1e75ae885d30bb2d339f2e7d5896528"
+    },
+    {
+      "file": "candidate-2-guide-1280.png",
+      "sha256": "6e42418071e0c188c081fb1a76991e70e1999823a0be78247bde60da0b2d8fde"
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

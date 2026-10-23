@@ -1,0 +1,40 @@
+旧字体真实回退取证（2026-10-23，上海时间07:35）
+
+范围：tmp/editorial-candidate-dist 独立文案候选，旧242380B字体；不是候选4最终包。静态复读年代参读已确认705中宗复位、710睿宗再度即位、712传位玄宗的用词与《旧唐书》卷七一致。未改25原文、45短章及产品源码。本次未执行旧字体的reading28或四张新增截图；统一候选4将重新检验。
+
+实际Chrome156.0.8078.47，1920×1080，reduced-motion，真实卷二UI节点，通过CDP CSS.getPlatformFontsForNode读取：
+- .culture-looking p（依次循花、舟、桥移目…）：霞鶩文楷 custom23 glyph + KaiTi system3 glyph。
+- .culture-transcript-note p（新增年代参读）：custom54 + KaiTi2。
+- .colophon-keepsake > span（留一笺春色）：custom4 + KaiTi1。
+
+因此旧字体确实发生系统回退。CDP给出整个真实节点的字体计数，不能据此把每个计数精确分配到单字。此前字格几何/碰撞检查不等于“全部字都来自同一自定义字体”，也不证明cmap覆盖。本报告没有用FontFace.check作覆盖证明。
+
+HTTP旧font SHA256 1f74e7b3639ae956b92f0c3eed77bf3ce505025bf28a66bd8c330722001dc8ed；HTML、全部JS/CSS及font响应均记录，匹配独立包字节。构建清单前后相同。原始证据 editorial-old-font.json；冻结driver SHA256 db80d54d0b7df7d8db7b5ba9864a157ebae66639abf1c427394ad1913f29e4f2。浏览器与临时HTTP服务在finally关闭，无新增截图。
+
+复现（依赖安装Playwright，可通过MDGS_PLAYWRIGHT_MODULE指定现有模块；旧独立包必须保留）：
+node reports/art-renewal/font-fallback/verify-old-font.cjs
+可选MDGS_FONT_BUILD_DIR、MDGS_FONT_REPORT、MDGS_TEST_BROWSER。若换成新font包，本报告预期的“混用”断言不再适用，不能将新结果写回旧证据。
+
+史书实际href：https://zh.wikisource.org/wiki/舊唐書/卷7
+日期校注位于卷二原作全文caption之后、原文正文容器之外，属于当代展览参读。新字体补集与预热修复尚待统一候选冻结，本次不对它们作排版或性能认证。
+
+最终字体CDP复验准备（待运行，尚无pass）
+
+verify-final-font.cjs 为独立最终驱动，显式要求 --build-dir 冻结包路径，可另传 --report-file 独立输出、--expected-font-sha256 冻结字体SHA。真实首页按钮进卷二，通过文化按钮/原作全文tab、进度控制、留笺按钮、钤印按钮完成取证；不替换DOM内容、不注入字体、不用FontFace.check。它对旧版已混用的舟桥p、年代注p、留笺span断言实际platform fonts只来自customfont，并记录首页、来源标题链接、FlowerLetter文字/四种心意/钤印前后动作的实际CDP结果。若出现系统font贡献，须据实际文本与字体cmap解释，不能以笼统‘符号例外’放行。
+
+驱动记录browser.version、GPU、实际浏览器字体响应bytes/SHA、HTTP字体/许可/JS/CSS与冻结包SHA、当前批准publicfont匹配、source/build前后清单。导出PNG的字体不具有DOM trace，本证明明确不推断PNG每个像素的字体来源；仍须结合真实cmap覆盖及既有导出检查。准备阶段只执行node --check语法检查，未打开浏览器或生成最终验证JSON。
+
+待统一候选4：
+node reports/art-renewal/font-fallback/verify-final-font.cjs --build-dir <冻结包目录> --report-file <候选4独立run>/font-cdp.json --expected-font-sha256 <冻结字体SHA>
+
+完整270/45实播/12锁位/12遇景/reading28的冻结前输入清单与串行执行说明见 candidate-4-qa-plan.json 和 candidate-4-qa-plan.txt。该清单是准备时源快照，非尚未生成候选4的freeze证明；收到root统一包后必须重新绑定HTML/JS/CSS/font与输入hash。
+
+候选4实际结果（2026-10-23上海08:44完成，08:48源释放）
+
+统一包tmp/art-candidate-4-dist的真实复验已保存于../candidate-4-poetic-runs/2026-10-23T00-30-09-481Z/。字体/定向状态78项通过，24个实际DOM节点均只使用customfont；旧混用舟桥、年代注、留笺节点现为26/56/5 glyph全部文楷。真实浏览器font响应279764B，SHA c619ddc07c72b9afca0ab20b1e33ed1a67c974ae3a7d1ec44de611895a79f59d。最终driver为c403c453e545fb7221ce0467e77b6d5f197b24bdc1ca534461729828e2f9b778，原始字节在该run的driver-font-cdp.cjs；准备版本不同不倒填。
+
+同run已完成270布局/45句真实全长/12锁位/12遇景/reading28；新增年代注四张定向图、5组主按钮（花笺钤印/保存分开）20状态及sealed选择透明度实测。829输入与五代码、字体/provenance末态一致，sourceReleased=true。Root独立验收发现浏览器Back画心捕获回归，因此这些局部通过不等于C4整包可交付，后续C5须另冻结和验收；旧font证据与候选3历史保持不变。
+
+候选6实际结果（2026-10-23）
+
+候选5因root发现独立capture-error回退回归而中止，只有37纯数据检查及4张中途图，无270最终报告；不能将其写作全组通过。候选6重新从头执行完整同组：270/45实播/12锁位/12遇景/reading28/font78全部局部通过，24个实际字体节点custom-only、20主按钮态、年代注4尺寸/内容组合及sealed .65/1通过。真实font字节SHA不变。首末829/5代码/font/provenance/7driver一致，sourceReleased=true。详细结果、全部新截图与范围见../candidate-6-poetic-runs/2026-10-23T01-01-14-009Z/notes.txt及inputs-after-and-summary.json；未把历史证据改名为新包。

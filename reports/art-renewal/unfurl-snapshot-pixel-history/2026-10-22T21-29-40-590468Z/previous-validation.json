@@ -1,0 +1,311 @@
+{
+  "status": "passed",
+  "startedAt": "2026-10-22T21:21:21.508110+00:00",
+  "method": "Rounded actual camera/print rect; RGB Lanczos to 256px; unchanged broad unroll MAE<5 and p95<15. Narrative DOM is hidden only for clean native evidence. No artwork is edited.",
+  "checks": [
+    {
+      "test": "warm-return-reentry-0.65",
+      "comparison": "physical-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 2.0228753984517307,
+      "p95AbsoluteRGBDifference": 8.0,
+      "maxAbsoluteRGBDifference": 34.333333333333336,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    },
+    {
+      "test": "warm-return-reentry-0.65",
+      "comparison": "native-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 1.4230418943533698e-05,
+      "p95AbsoluteRGBDifference": 0.0,
+      "maxAbsoluteRGBDifference": 0.3333333333333333,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    },
+    {
+      "test": "warm-return-reentry-1",
+      "comparison": "physical-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 1.9248206967213115,
+      "p95AbsoluteRGBDifference": 7.666666666666667,
+      "maxAbsoluteRGBDifference": 43.333333333333336,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    },
+    {
+      "test": "warm-return-reentry-1",
+      "comparison": "native-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 0.0,
+      "p95AbsoluteRGBDifference": 0.0,
+      "maxAbsoluteRGBDifference": 0.0,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    },
+    {
+      "test": "cold-session-c1-0.03",
+      "comparison": "physical-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 1.5452926070601851,
+      "p95AbsoluteRGBDifference": 6.0,
+      "maxAbsoluteRGBDifference": 24.666666666666668,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "test": "cold-session-c1-0.03",
+      "comparison": "native-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 0.8208640769675926,
+      "p95AbsoluteRGBDifference": 3.6666666666666665,
+      "maxAbsoluteRGBDifference": 19.333333333333332,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "test": "cold-session-c2-0.65",
+      "comparison": "physical-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 2.2174388744212963,
+      "p95AbsoluteRGBDifference": 7.0,
+      "maxAbsoluteRGBDifference": 35.0,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "test": "cold-session-c2-0.65",
+      "comparison": "native-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 0.9980197482638888,
+      "p95AbsoluteRGBDifference": 3.3333333333333335,
+      "maxAbsoluteRGBDifference": 16.333333333333332,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "test": "cold-session-c3-0.65",
+      "comparison": "physical-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 2.2413465711805554,
+      "p95AbsoluteRGBDifference": 7.666666666666667,
+      "maxAbsoluteRGBDifference": 37.333333333333336,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "test": "cold-session-c3-0.65",
+      "comparison": "native-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 1.355324074074074,
+      "p95AbsoluteRGBDifference": 4.333333333333333,
+      "maxAbsoluteRGBDifference": 54.333333333333336,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "test": "cold-session-c4-0.65",
+      "comparison": "physical-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 2.5321820924408014,
+      "p95AbsoluteRGBDifference": 9.666666666666666,
+      "maxAbsoluteRGBDifference": 43.333333333333336,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    },
+    {
+      "test": "cold-session-c4-0.65",
+      "comparison": "native-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 0.9655410405282331,
+      "p95AbsoluteRGBDifference": 3.6666666666666665,
+      "maxAbsoluteRGBDifference": 15.333333333333334,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    },
+    {
+      "test": "cold-session-c4-1",
+      "comparison": "physical-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 2.5163365209471764,
+      "p95AbsoluteRGBDifference": 10.0,
+      "maxAbsoluteRGBDifference": 49.666666666666664,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    },
+    {
+      "test": "cold-session-c4-1",
+      "comparison": "native-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 0.9132584813296905,
+      "p95AbsoluteRGBDifference": 3.6666666666666665,
+      "maxAbsoluteRGBDifference": 16.666666666666668,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    },
+    {
+      "test": "cold-session-c4-0.65-reduce",
+      "comparison": "physical-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 2.5321820924408014,
+      "p95AbsoluteRGBDifference": 9.666666666666666,
+      "maxAbsoluteRGBDifference": 43.333333333333336,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    },
+    {
+      "test": "cold-session-c4-0.65-reduce",
+      "comparison": "native-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 0.9655410405282331,
+      "p95AbsoluteRGBDifference": 3.6666666666666665,
+      "maxAbsoluteRGBDifference": 15.333333333333334,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    },
+    {
+      "test": "cold-resumption-slow-real-source",
+      "comparison": "physical-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 2.5321820924408014,
+      "p95AbsoluteRGBDifference": 9.666666666666666,
+      "maxAbsoluteRGBDifference": 43.333333333333336,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    },
+    {
+      "test": "cold-resumption-slow-real-source",
+      "comparison": "native-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 0.9655410405282331,
+      "p95AbsoluteRGBDifference": 3.6666666666666665,
+      "maxAbsoluteRGBDifference": 15.333333333333334,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    },
+    {
+      "test": "cold-snapshot-encode-failure-retry",
+      "comparison": "physical-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 2.5321820924408014,
+      "p95AbsoluteRGBDifference": 9.666666666666666,
+      "maxAbsoluteRGBDifference": 43.333333333333336,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    },
+    {
+      "test": "cold-snapshot-encode-failure-retry",
+      "comparison": "native-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 0.9655410405282331,
+      "p95AbsoluteRGBDifference": 3.6666666666666665,
+      "maxAbsoluteRGBDifference": 15.333333333333334,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    },
+    {
+      "test": "browser-back-captures-current-frame-and-reenters-session",
+      "comparison": "physical-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 2.5321820924408014,
+      "p95AbsoluteRGBDifference": 9.666666666666666,
+      "maxAbsoluteRGBDifference": 43.333333333333336,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    },
+    {
+      "test": "browser-back-captures-current-frame-and-reenters-session",
+      "comparison": "native-versus-actual-source-snapshot",
+      "meanAbsoluteRGBDifference": 0.9655410405282331,
+      "p95AbsoluteRGBDifference": 3.6666666666666665,
+      "maxAbsoluteRGBDifference": 15.333333333333334,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "browserRunId": "2026-10-22T21-18-01-099Z",
+  "browserReportSha256": "b50f78899ab1a71629f0ecda27366333c023654714dadbd823771c440583624b",
+  "driverSha256": "a68d131fff925252a9b0c8fd1f41271a91d340ff99e36d98afd77083bef6693a",
+  "captures": {
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/warm-return-reentry-0.65-snapshot.png": "24ae006c5928ba5f54676e56f21ebcb3d2ea28037070403c1ca7025c89065945",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/warm-return-reentry-0.65-paper.png": "d64d0e70a904b96b03c3828957d400f6ac62ebfac950a91b19ffd96b2523c3f9",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/warm-return-reentry-0.65-clean-native.png": "020b09cdf6ff3b825bf5733424c4c44191bf6633460a1f6ed55133fefba2277f",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/warm-return-reentry-1-snapshot.png": "974f4d274498ffc02aef10ca11cc857d47d47ecf8f32a7d0c89cf39066db4eb6",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/warm-return-reentry-1-paper.png": "28c55db5d46b3dc080bed59a3f2b4374d0605f98586156a2c0068c30d610ee74",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/warm-return-reentry-1-clean-native.png": "0699f0cb8ba5ddfe92c60a4fd3bf3c4f13b8a447302483ccfd873674e03f9ec9",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-session-c1-0.03-snapshot.png": "55d8b44cb2f70c8a9ea888e0236ffa80100d5c29a135228c921a3bad70c2b38d",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-session-c1-0.03-paper.png": "d2a44da507d1a1ad856c0f157c4c850319a96075dc814c6c3ad7a3495be6c7ce",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-session-c1-0.03-clean-native.png": "bc8d3d878a9cd574a84a2ef70faa052f15e0882a533bca79534ce0b81ba920fb",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-session-c2-0.65-snapshot.png": "ab00d624eab80c3a121e9bfe3191d32ef0b83d3776acbf19ccad12ac52c7a1cc",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-session-c2-0.65-paper.png": "558e6e124280d9bd3f4229f8132cd681d5792b6c34bada067049cfc5bf725424",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-session-c2-0.65-clean-native.png": "22412e7a3860b479a0ed9b54815a24246158a66e6b3eae6ccb6cd56fcad05bee",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-session-c3-0.65-snapshot.png": "a1a030b17af772a0f1db78d2ed7e7a199982888b2d3c4d63537b7c6e69de4e5f",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-session-c3-0.65-paper.png": "329cb8300e6f8f196f22fb248070f986ba5d7cfb6e737c0d0e0ad5cd7abba2d1",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-session-c3-0.65-clean-native.png": "90c984db4ad1bd15424d24dc5b269c435f0b2ede5bce4adcf02cc9b557d41c35",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-session-c4-0.65-snapshot.png": "aabe05d1e33ba149520c61096341179645003900b913cc603829f1416cf388ff",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-session-c4-0.65-paper.png": "e0f17d936976980884e6a64c57d35940d74bc5243fa057dca9707735d708c020",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-session-c4-0.65-clean-native.png": "45bf17d217443de1cd183b8119c67719a44161c073785ac831a2b6301b98f9b2",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-session-c4-1-snapshot.png": "bd4dfddaf77bbe3af600476847f35c56463f7a85534d8f7230eb0390b97d5604",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-session-c4-1-paper.png": "8434746893a0aa4ccc24aff164d9c0c2d0adc6fadc66641af019a966fcbcf57e",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-session-c4-1-clean-native.png": "c3ec5df9e95bda0dd4eee81d465ab5d671e4fc18f748d62d6fb01d2566519636",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-session-c4-0.65-reduce-snapshot.png": "aabe05d1e33ba149520c61096341179645003900b913cc603829f1416cf388ff",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-session-c4-0.65-reduce-paper.png": "abdfea128004909a89a37be2b84c776c2773091742417368c0198f5b03b6e04a",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-session-c4-0.65-reduce-clean-native.png": "9d22bed2d2ee613496f97f4edb7e7bc48012b481eb74b3d3a083f96264970fb8",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-resumption-slow-real-source-snapshot.png": "aabe05d1e33ba149520c61096341179645003900b913cc603829f1416cf388ff",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-resumption-slow-real-source-paper.png": "b8a60a804b1449984a5875f37c34dfe9c48283a9ddce6f064922fc7afbe6ad4c",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-resumption-slow-real-source-clean-native.png": "068642f39e1665e4048161ae5befa7ec0135c153a5e01365f29f1dd85fba6a02",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-snapshot-encode-failure-retry-snapshot.png": "aabe05d1e33ba149520c61096341179645003900b913cc603829f1416cf388ff",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-snapshot-encode-failure-retry-paper.png": "b8a60a804b1449984a5875f37c34dfe9c48283a9ddce6f064922fc7afbe6ad4c",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/cold-snapshot-encode-failure-retry-clean-native.png": "45bf17d217443de1cd183b8119c67719a44161c073785ac831a2b6301b98f9b2",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/browser-back-captures-current-frame-and-reenters-session-snapshot.png": "561c43e0252f929c114b61a8674896b8c9c3af3d61111a116951bfecd345f646",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/browser-back-captures-current-frame-and-reenters-session-paper.png": "16a7c7c513c9bd1f019432d56f3ebe84364d3337df6058aa13d9b24c60e6acd0",
+    "unfurl-snapshot-runs/2026-10-22T21-18-01-099Z/browser-back-captures-current-frame-and-reenters-session-clean-native.png": "2da717c9cfce728cdef33423b770c99c7ba7622d3b38bbeecda09b1f2957d7f9"
+  },
+  "completedAt": "2026-10-22T21:21:22.410838+00:00"
+}

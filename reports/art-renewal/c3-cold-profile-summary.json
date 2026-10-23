@@ -1,0 +1,320 @@
+{
+  "createdAt": "2026-10-22T23:15:35.989Z",
+  "sourceReport": "reports/art-renewal/c3-profile-runs/2026-10-22T23-10-32-165Z/validation.json",
+  "sourceReportSha256": "46b02d7cb514dbebd1aebea2d0a87af369ed12ed59679299af89934a9006ed01",
+  "cpuProfileSha256": "6185a985ef0420638c208cfa925948502cb060cd94b540551365cdc3fddb11f6",
+  "method": "Exact CPU timeDelta sample overlap against the longest page longtask windows, aligned by shared CDP/userTiming mark timestamps. Statistical self-time estimates; not exclusive GPU work. Progress values are estimates from nominal source duration.",
+  "longestTasks": [
+    {
+      "at": 40545.20000000298,
+      "duration": 851,
+      "sourceProgressEstimate": 0.46264296081268563,
+      "topSelf": [
+        {
+          "functionName": "getProgramInfoLog",
+          "milliseconds": 775.283,
+          "shareOfTask": 0.9110258519388954
+        },
+        {
+          "functionName": "texSubImage2D",
+          "milliseconds": 62.902,
+          "shareOfTask": 0.07391539365452408
+        },
+        {
+          "functionName": "(program)",
+          "milliseconds": 2.523,
+          "shareOfTask": 0.002964747356051704
+        },
+        {
+          "functionName": "getShaderInfoLog",
+          "milliseconds": 1.611,
+          "shareOfTask": 0.0018930669800235017
+        },
+        {
+          "functionName": "renderBufferDirect",
+          "milliseconds": 1.534,
+          "shareOfTask": 0.0018025851938895418
+        },
+        {
+          "functionName": "bindBuffer",
+          "milliseconds": 1.533,
+          "shareOfTask": 0.0018014101057579317
+        },
+        {
+          "functionName": "zu",
+          "milliseconds": 1.532,
+          "shareOfTask": 0.001800235017626322
+        },
+        {
+          "functionName": "getProgramParameter",
+          "milliseconds": 1.53,
+          "shareOfTask": 0.0017978848413631023
+        },
+        {
+          "functionName": "r",
+          "milliseconds": 1.513,
+          "shareOfTask": 0.0017779083431257343
+        },
+        {
+          "functionName": "u",
+          "milliseconds": 1.039,
+          "shareOfTask": 0.0012209165687426557
+        }
+      ]
+    },
+    {
+      "at": 39514.90000000596,
+      "duration": 574,
+      "sourceProgressEstimate": 0.4476894049346447,
+      "topSelf": [
+        {
+          "functionName": "getProgramInfoLog",
+          "milliseconds": 567.167,
+          "shareOfTask": 0.988095818815331
+        },
+        {
+          "functionName": "getProgramParameter",
+          "milliseconds": 1.547,
+          "shareOfTask": 0.002695121951219512
+        },
+        {
+          "functionName": "u",
+          "milliseconds": 1.534,
+          "shareOfTask": 0.002672473867595819
+        },
+        {
+          "functionName": "ei",
+          "milliseconds": 1.521,
+          "shareOfTask": 0.0026498257839721252
+        },
+        {
+          "functionName": "(program)",
+          "milliseconds": 1.32,
+          "shareOfTask": 0.002299651567944251
+        },
+        {
+          "functionName": "upload",
+          "milliseconds": 0.736,
+          "shareOfTask": 0.0012822299651567945
+        },
+        {
+          "functionName": "p",
+          "milliseconds": 0.175,
+          "shareOfTask": 0.0003048780487804878
+        }
+      ]
+    },
+    {
+      "at": 23231.40000000596,
+      "duration": 373,
+      "sourceProgressEstimate": 0.21135413642956485,
+      "topSelf": [
+        {
+          "functionName": "getProgramInfoLog",
+          "milliseconds": 367.633,
+          "shareOfTask": 0.9856112600536193
+        },
+        {
+          "functionName": "m",
+          "milliseconds": 1.916,
+          "shareOfTask": 0.005136729222520107
+        },
+        {
+          "functionName": "p",
+          "milliseconds": 1.513,
+          "shareOfTask": 0.004056300268096515
+        },
+        {
+          "functionName": "getUniformLocation",
+          "milliseconds": 1.066,
+          "shareOfTask": 0.002857908847184987
+        },
+        {
+          "functionName": "(program)",
+          "milliseconds": 0.872,
+          "shareOfTask": 0.0023378016085790886
+        }
+      ]
+    },
+    {
+      "at": 23609.10000000894,
+      "duration": 329,
+      "sourceProgressEstimate": 0.21683599419448474,
+      "topSelf": [
+        {
+          "functionName": "getProgramInfoLog",
+          "milliseconds": 324.35,
+          "shareOfTask": 0.9858662613981763
+        },
+        {
+          "functionName": "upload",
+          "milliseconds": 1.533,
+          "shareOfTask": 0.004659574468085107
+        },
+        {
+          "functionName": "ei",
+          "milliseconds": 1.278,
+          "shareOfTask": 0.003884498480243161
+        },
+        {
+          "functionName": "(program)",
+          "milliseconds": 1.277,
+          "shareOfTask": 0.0038814589665653494
+        },
+        {
+          "functionName": "pr",
+          "milliseconds": 0.562,
+          "shareOfTask": 0.0017082066869300912
+        }
+      ]
+    },
+    {
+      "at": 32206.10000000894,
+      "duration": 328,
+      "sourceProgressEstimate": 0.341611030478955,
+      "topSelf": [
+        {
+          "functionName": "getProgramInfoLog",
+          "milliseconds": 319.901,
+          "shareOfTask": 0.9753079268292683
+        },
+        {
+          "functionName": "bindTexture",
+          "milliseconds": 1.803,
+          "shareOfTask": 0.005496951219512195
+        },
+        {
+          "functionName": "getShaderInfoLog",
+          "milliseconds": 1.772,
+          "shareOfTask": 0.0054024390243902435
+        },
+        {
+          "functionName": "getProgramParameter",
+          "milliseconds": 1.531,
+          "shareOfTask": 0.004667682926829268
+        },
+        {
+          "functionName": "l",
+          "milliseconds": 1.531,
+          "shareOfTask": 0.004667682926829268
+        },
+        {
+          "functionName": "(program)",
+          "milliseconds": 0.814,
+          "shareOfTask": 0.0024817073170731708
+        },
+        {
+          "functionName": "p",
+          "milliseconds": 0.648,
+          "shareOfTask": 0.001975609756097561
+        }
+      ]
+    },
+    {
+      "at": 31708.29999999702,
+      "duration": 327,
+      "sourceProgressEstimate": 0.3343860667632522,
+      "topSelf": [
+        {
+          "functionName": "getProgramInfoLog",
+          "milliseconds": 322.775,
+          "shareOfTask": 0.9870795107033639
+        },
+        {
+          "functionName": "(program)",
+          "milliseconds": 2.239,
+          "shareOfTask": 0.006847094801223242
+        },
+        {
+          "functionName": "D",
+          "milliseconds": 1.544,
+          "shareOfTask": 0.0047217125382263
+        },
+        {
+          "functionName": "ei",
+          "milliseconds": 0.442,
+          "shareOfTask": 0.0013516819571865444
+        }
+      ]
+    },
+    {
+      "at": 32677.5,
+      "duration": 288,
+      "sourceProgressEstimate": 0.34845283018854945,
+      "topSelf": [
+        {
+          "functionName": "getProgramInfoLog",
+          "milliseconds": 242.545,
+          "shareOfTask": 0.8421701388888889
+        },
+        {
+          "functionName": "texSubImage2D",
+          "milliseconds": 39.022,
+          "shareOfTask": 0.13549305555555555
+        },
+        {
+          "functionName": "(program)",
+          "milliseconds": 1.935,
+          "shareOfTask": 0.00671875
+        },
+        {
+          "functionName": "Ku",
+          "milliseconds": 1.527,
+          "shareOfTask": 0.005302083333333333
+        },
+        {
+          "functionName": "ei",
+          "milliseconds": 1.511,
+          "shareOfTask": 0.005246527777777778
+        },
+        {
+          "functionName": "getActiveUniform",
+          "milliseconds": 1.46,
+          "shareOfTask": 0.005069444444444444
+        }
+      ]
+    },
+    {
+      "at": 40092.70000000298,
+      "duration": 270,
+      "sourceProgressEstimate": 0.45607547169802665,
+      "topSelf": [
+        {
+          "functionName": "getProgramInfoLog",
+          "milliseconds": 240.292,
+          "shareOfTask": 0.8899703703703704
+        },
+        {
+          "functionName": "texSubImage2D",
+          "milliseconds": 21.848,
+          "shareOfTask": 0.08091851851851851
+        },
+        {
+          "functionName": "getShaderInfoLog",
+          "milliseconds": 3.024,
+          "shareOfTask": 0.0112
+        },
+        {
+          "functionName": "(program)",
+          "milliseconds": 1.604,
+          "shareOfTask": 0.00594074074074074
+        },
+        {
+          "functionName": "shaderSource",
+          "milliseconds": 1.536,
+          "shareOfTask": 0.005688888888888889
+        },
+        {
+          "functionName": "seqWithValue",
+          "milliseconds": 1.535,
+          "shareOfTask": 0.0056851851851851855
+        },
+        {
+          "functionName": "p",
+          "milliseconds": 0.161,
+          "shareOfTask": 0.0005962962962962963
+        }
+      ]
+    }
+  ]
+}

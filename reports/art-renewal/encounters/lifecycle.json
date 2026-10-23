@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "at": "2026-10-22T20:23:31.667Z",
+    "browser": "156.0.8078.47",
+    "base": "http://localhost:5188/",
+    "reducedMotion": "reduce",
+    "sourceStable": true,
+    "sourceHashesBefore": {
+      "src/components/ArtEncounters.tsx": "265fdafa82d6433e3957f74ae268ca8720991aed322acf6fa525fcb1cb95aa1e",
+      "src/styles/art-encounters.css": "ddd069d12e8e16de8fd708cf57d90eb6f9780c6bbe35a938d32914fb0ae80966",
+      "src/data/artEncounters.ts": "11625b51e66a0e2f01decd03187de846f317a256ce43861bc9f2c27739e67f27"
+    },
+    "sourceHashesAfter": {
+      "src/components/ArtEncounters.tsx": "265fdafa82d6433e3957f74ae268ca8720991aed322acf6fa525fcb1cb95aa1e",
+      "src/styles/art-encounters.css": "ddd069d12e8e16de8fd708cf57d90eb6f9780c6bbe35a938d32914fb0ae80966",
+      "src/data/artEncounters.ts": "11625b51e66a0e2f01decd03187de846f317a256ce43861bc9f2c27739e67f27"
+    }
+  },
+  "checks": [
+    {
+      "name": "open focuses original flower",
+      "pass": true
+    },
+    {
+      "name": "keyboard only weaving",
+      "pass": true
+    },
+    {
+      "name": "encounter leaves source time untouched",
+      "pass": true
+    },
+    {
+      "name": "reduced motion",
+      "pass": true
+    },
+    {
+      "name": "invalid drop remains reversible",
+      "pass": true
+    },
+    {
+      "name": "pointer drag into actual cloth completes weaving",
+      "pass": true
+    },
+    {
+      "name": "Escape during drag clears overlay and subscriptions",
+      "pass": true
+    },
+    {
+      "name": "manual wheel closes and keeps travelling",
+      "pass": true
+    },
+    {
+      "name": "manual seek closes",
+      "pass": true
+    },
+    {
+      "name": "inactive closes",
+      "pass": true
+    },
+    {
+      "name": "unmount clears portal, subscription and reading state",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,50 @@
+{
+  "startedAt": "2026-10-23T00:01:09.323Z",
+  "pid": 59116,
+  "scope": "Own headed offscreen/minimized Chrome profile via CDP noDefaults; no Playwright focus+visibility override, no document.hidden override.",
+  "samples": [
+    {
+      "name": "initial",
+      "hidden": false,
+      "state": "visible",
+      "focus": false
+    },
+    {
+      "name": "restore-own-offscreen-window",
+      "hidden": false,
+      "state": "visible",
+      "focus": false
+    },
+    {
+      "name": "minimize-own-window",
+      "hidden": true,
+      "state": "hidden",
+      "focus": false
+    },
+    {
+      "name": "other-own-tab-front",
+      "hidden": true,
+      "state": "hidden",
+      "focus": false
+    },
+    {
+      "name": "own-tab-front",
+      "hidden": false,
+      "state": "visible",
+      "focus": true
+    }
+  ],
+  "window": {
+    "windowId": 459607829,
+    "bounds": {
+      "left": -32000,
+      "top": -32000,
+      "width": 1265,
+      "height": 1420,
+      "windowState": "normal"
+    }
+  },
+  "nativeHiddenObserved": true,
+  "nativeVisibleObserved": true,
+  "finishedAt": "2026-10-23T00:01:10.225Z"
+}

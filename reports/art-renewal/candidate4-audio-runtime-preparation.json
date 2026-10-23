@@ -1,0 +1,40 @@
+{
+  "status": "static-package-identity-prepared",
+  "performedAt": "2026-10-23T00:23:25.186Z",
+  "scope": "Read-only package identity preparation. No browser, native playback, recording, soak, regression or C4 film acceptance has run.",
+  "manifest": "reports/art-renewal/art-candidate-4-build.json",
+  "manifestSha256": "ebbda506b0e467b1a58bf3dc0f1b9d35c1343dbe9d860cfc4e652f2c8a555ef7",
+  "buildDirectory": "tmp/art-candidate-4-dist",
+  "code": [
+    {
+      "file": "assets/flowerLetter-S1uMbzF_.js",
+      "sha256": "b9ada5f818e08b184fcd4fce739067dc54e6679bd157fc7b2830a58fac739e5a"
+    },
+    {
+      "file": "assets/index-C5txKLE_.css",
+      "sha256": "db346cac5c7e39fe33b73b46b0186cf37cc411ed9643163849497c5f82cc11ae"
+    },
+    {
+      "file": "assets/index-DBUrlwwr.js",
+      "sha256": "070201f3f072c86b3e7fda4a2e7483d7029850c618adce2aa23e4d9d4487f8b8"
+    },
+    {
+      "file": "assets/three-BetNTb4e.js",
+      "sha256": "68f6f4af9b65531830834e41fcad5f941cfcd557e6996a7f32a8c45e83290d10"
+    },
+    {
+      "file": "index.html",
+      "sha256": "9ac347576eee8a92ce2fca674bf07bc489a98d8adf5d6557ac71487de64aafb2"
+    }
+  ],
+  "fontSha256": "c619ddc07c72b9afca0ab20b1e33ed1a67c974ae3a7d1ec44de611895a79f59d",
+  "sourceInputsCount": 829,
+  "exhibitionInventorySha256": "989bcfbdc0ce6ae38b259c1d3d08735be681879fda57a361d5431c3c3ec6bd16",
+  "checkerSha256": "7dfd2346f7277c0eb913e984a28ff32ed7458645fd279a8c5d03e8204157509a",
+  "fullRequiredChecks": 35,
+  "endpointObservation": {
+    "required": false,
+    "noDbThreshold": true
+  },
+  "releaseGate": "Wait for root GPU-window release before real eight-visit soak and six-suite regression. Tour must use explicit --candidate4-build-manifest with this manifest."
+}

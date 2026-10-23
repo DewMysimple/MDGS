@@ -1,0 +1,17 @@
+《画中有遇》桌面验证，2026-10-23
+
+正式实现：src/components/ArtEncounters.tsx、src/styles/art-encounters.css、src/data/artEncounters.ts。
+默认入口位于游观控制区，交互 portal 落在 #scroll-artwork 内。四卷各一遇，8个锚点使用 peony 2.0 原画 mesh + UV，由投影 helper 追随真实相机/形态键。原画像素与原作录文未作修改。
+
+integrated.json：稳定候选2 tmp/art-candidate-2-dist，独立生产预览5194，实际HTTP index-BmVq5_Bq.js / index-Bc7VfaY-.css。依次进入四卷，验证1280×720、1920×1080、2560×1440，共12组；纸笺均在画内，不与控制区重叠；互动期间题跋收起，退出后诗意题跋恢复为唯一可见句，滚轮继续游观；键盘入锦、重拾焦点、展诗合笺焦点通过。0 console/pageerror，shaderErrors=[]，textureFailed=0。chapter-1—4-1920.png为本次同包脚本直接保存的四张整站截图，未修图。
+
+lifecycle.json：harness.html挂载真实ScrollViewport/原正文/新互动，11项通过，包括键盘、有效拖入锦面、无效落点、拖拽中Esc、源进度不变、滚轮收笺、active=false、卸载清理及reduced-motion。harness仅为开发验证页，不进入产品构建。
+
+两个JSON的metadata记录实际浏览器、基线Git提交、源文件SHA-256及运行前后一致性。integrated记录7个集成输入、driver SHA和真实HTTP bundle SHA，production=true；lifecycle记录3个互动输入，为先前冻结互动实现的独立开发harness证据，不冒充候选2生产全栈验证。本次两者sourceStable均为true。尚未部署或验证其他浏览器与实体设备；用户本轮范围为桌面。
+
+复现（项目根目录；integrated可用生产preview，lifecycle需Vite开发服务才能访问harness.html）：
+设置 MDGS_PLAYWRIGHT_MODULE 为已安装的 Playwright 模块路径；如使用系统Chrome，设置 MDGS_TEST_BROWSER 为浏览器可执行文件路径。环境变量不写入项目配置。
+可选 MDGS_ENCOUNTERS_URL，默认 http://localhost:5188/。
+node reports/art-renewal/encounters/verify-integrated.cjs
+node reports/art-renewal/encounters/verify-lifecycle.cjs
+两脚本覆盖本目录对应JSON，integrated只保留四张1920截图；失败时以非零状态退出。原始tmp诊断不作为最终证据入口。

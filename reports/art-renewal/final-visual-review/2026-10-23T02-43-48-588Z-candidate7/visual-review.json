@@ -1,0 +1,19 @@
+{
+  "candidate": "art-candidate-7",
+  "reviewedAt": "2026-10-23T02:44:54.337Z",
+  "status": "passed-for-two-reviewed-frames",
+  "method": "Root inspected both original captured images through view_image. Capture performed in interactive Node REPL with Playwright; not presented as a standalone replay script.",
+  "observations": [
+    {
+      "file": "reports/art-renewal/final-visual-review/2026-10-23T02-43-48-588Z-candidate7/user-ratio-c1-85.png",
+      "sha256": "46776390e45a4ec88ef98c1d7ad12b5cead882abe43d2a9232d2c95631b9b64d",
+      "result": "Full 16:9 authored frame, enlarged painting and reduced paper gutters; four chapter entrances, narration and all controls fit. Original burning/glow detail remains part of the authored scene. Actual CSS2042x1083 DPR1.25, source height957/width1701.333."
+    },
+    {
+      "file": "reports/art-renewal/final-visual-review/2026-10-23T02-43-48-588Z-candidate7/home-1920.png",
+      "sha256": "e2f4f021a43f51cba5f2c909e0400cc2854454b1761af84a4442079013e1b7f1",
+      "result": "Home title, dominant peony, landscape and four chapter cards form a coherent hierarchy. Entry button and labels readable; no clipped controls or broken layers observed."
+    }
+  ],
+  "limitations": "Two stable frames only; separate formal layout/interaction/pixel checks cover their recorded scope. This review is not a frame-rate or whole-browser certification."
+}

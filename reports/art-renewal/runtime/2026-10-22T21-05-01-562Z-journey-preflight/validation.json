@@ -1,0 +1,17 @@
+{
+  "status": "fail",
+  "startedAt": "2026-10-22T21:05:01.903Z",
+  "scope": "Actual current-production four home entries, physical paper geometry, at least 4s visible loading, repeated input, return, slow resource waiting, cover failure/retry, and cancelled manifest invalidation.",
+  "checks": [],
+  "errors": [],
+  "expectedHttpFailures": [],
+  "url": "http://127.0.0.1:1867/",
+  "preflight": true,
+  "httpHtmlSha256": "2aba8aa7da4360b7b750f1f6fd34904b066840741da313a17a6d26d0682e4170",
+  "buildHtmlSha256": "2aba8aa7da4360b7b750f1f6fd34904b066840741da313a17a6d26d0682e4170",
+  "failure": {
+    "message": "Expected values to be strictly equal:\n\n154 !== 242\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n154 !== 242\n\n    at foyerLifecycle (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/scripts/validate-peony2-journey-driver.mjs:105:153)\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/scripts/validate-peony2-journey-driver.mjs:26:36"
+  },
+  "completedAt": "2026-10-22T21:05:04.470Z"
+}

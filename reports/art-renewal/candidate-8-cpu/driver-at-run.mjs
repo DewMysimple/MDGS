@@ -1,0 +1,16 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import assert from 'node:assert/strict';
+import {spawn} from 'node:child_process';
+const root=path.resolve(import.meta.dirname,'../..'),directory=path.join(root,'reports/art-renewal/candidate-8-cpu'),sha=b=>crypto.createHash('sha256').update(b).digest('hex');
+const freezePath=path.join(root,'reports/art-renewal/art-candidate-8-build.json');
+const report={status:'running',startedAt:new Date().toISOString(),buildManifest:'reports/art-renewal/art-candidate-8-build.json',buildManifestSha256:sha(await fs.readFile(freezePath)),scope:'Actual unchanged C8 CPU/data eight families; GPU and full rendered fidelity are separate.',steps:[],errors:[]};
+await fs.mkdir(directory);const save=()=>fs.writeFile(path.join(directory,'validation.json'),JSON.stringify(report,null,2)+'\n');
+const freeze=JSON.parse(await fs.readFile(freezePath));
+async function inputHashes(){const result={};for(const file of Object.keys(freeze.sourceInputs))result[file]=sha(await fs.readFile(path.join(root,file)));return result;}
+try{report.inputsBefore=await inputHashes();assert.deepEqual(report.inputsBefore,freeze.sourceInputs);await save();
+const commands=[['scroll-input','scripts/validate-scroll-input.mjs'],['source-clock','scripts/validate-peony2-clock.mjs'],['artwork-projection','scripts/validate-artwork-projection.mjs'],['original-narrative','scripts/validate-peony2-narrative.mjs'],['render-performance','scripts/validate-render-performance.mjs'],['legacy-assets','scripts/validate-assets.mjs','--report-dir','reports/art-renewal/candidate-8-cpu/legacy-assets'],['current-assets','scripts/validate-assets.mjs','--assets-dir','public/assets/new-scrolls','--report-dir','reports/art-renewal/candidate-8-cpu/assets'],['viewing','scripts/validate-viewing.mjs']];
+const outcomes=await Promise.allSettled(commands.map(async([name,...args])=>{const step={name,command:['node',...args],driverSha256:sha(await fs.readFile(path.join(root,args[0]))),startedAt:new Date().toISOString()};report.steps.push(step);const chunks=[];const child=spawn(process.execPath,args,{cwd:root,env:process.env,windowsHide:true,stdio:['ignore','pipe','pipe']});child.stdout.on('data',b=>chunks.push(b));child.stderr.on('data',b=>chunks.push(b));step.exitCode=await new Promise((resolve,reject)=>{child.on('error',reject);child.on('close',resolve);});const log=Buffer.concat(chunks);step.log=name+'.log';step.logSha256=sha(log);await fs.writeFile(path.join(directory,step.log),log);step.completedAt=new Date().toISOString();assert.equal(step.exitCode,0,name+' failed');assert.equal(sha(await fs.readFile(path.join(root,args[0]))),step.driverSha256);return step;}));
+for(const result of outcomes)assert.equal(result.status,'fulfilled',result.reason?.stack);report.inputsAfter=await inputHashes();assert.deepEqual(report.inputsAfter,report.inputsBefore);report.unchanged=true;report.status='passed';
+}catch(error){report.status='failed';report.errors.push(error.stack||String(error));process.exitCode=1;}finally{report.completedAt=new Date().toISOString();await save();await fs.copyFile(new URL(import.meta.url),path.join(directory,'driver-at-run.mjs'));console.log(JSON.stringify({status:report.status,checks:report.steps.length,errors:report.errors}));}

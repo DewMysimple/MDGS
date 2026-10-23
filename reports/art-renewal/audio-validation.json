@@ -1,0 +1,75 @@
+{
+  "status": "passed",
+  "source": {
+    "peak": 0.54,
+    "peakDbfs": -5.352,
+    "rms": 0.08442618119644724,
+    "rmsDbfs": -21.47,
+    "crestFactorDb": 16.118,
+    "seamStep": 0.0006893001887210426,
+    "seamDbfs": -63.232,
+    "ordinaryStepRms": 0.007426410420819077,
+    "stereoCorrelation": 0.9153927635390902,
+    "secondsBelowMinus42Dbfs": 0,
+    "dcOffset": [
+      1.5696100566930736e-20,
+      2.997757544214229e-20
+    ],
+    "monoRms": 0.0825260810540996
+  },
+  "decodedMp3": {
+    "peak": 0.5124995708465576,
+    "peakDbfs": -5.806,
+    "rms": 0.0801921933889389,
+    "rmsDbfs": -21.917,
+    "crestFactorDb": 16.111,
+    "seamStep": 0.0005489531904459,
+    "seamDbfs": -65.209,
+    "ordinaryStepRms": 0.0070543293841183186,
+    "stereoCorrelation": 0.9153813583733044,
+    "secondsBelowMinus42Dbfs": 1,
+    "dcOffset": [
+      -2.1129720551016362e-07,
+      -1.021540811052546e-06
+    ],
+    "monoRms": 0.07838716357946396
+  },
+  "decodedFrames": 7056000,
+  "expectedFrames": 7056000,
+  "durationSeconds": 160.0,
+  "file": {
+    "created": "2026-10-23",
+    "file": "peony-courtyard-v2.mp3",
+    "bytes": 3201322,
+    "sha256": "c2cbad6d0a1f9c14d994774ac27a3c9367505aa667177d78e33323320004e9ef",
+    "durationSeconds": 160.0,
+    "sampleRate": 44100,
+    "channels": 2,
+    "codec": "MP3 160 kbps",
+    "authoringScript": "scripts/create-peony-music.py",
+    "attribution": "Original digital score with guzheng-inspired modal plucks and flute-like breath; not a human/acoustic performance.",
+    "externalAudioSources": [],
+    "technicalReferences": [
+      "https://www.dsprelated.com/freebooks/pasp/Ideal_Plucked_String.html",
+      "https://www.w3.org/TR/webaudio-1.0/"
+    ],
+    "noteCount": 55,
+    "reproducibleSeed": 20261023,
+    "validation": "reports/art-renewal/audio-validation.json"
+  },
+  "limitations": "Signal analysis verifies headroom and continuity; it does not establish subjective musical quality or physical speaker performance.",
+  "ebur128": {
+    "method": "FFmpeg ebur128=peak=true, actual MP3 decode",
+    "v2": {
+      "integratedLufs": -19.3,
+      "loudnessRangeLu": 7.6,
+      "truePeakDbfs": -5.8
+    },
+    "v1": {
+      "integratedLufs": -19.4,
+      "loudnessRangeLu": 3.3,
+      "truePeakDbfs": -3.9
+    }
+  },
+  "archivedAsset": "artwork/audio/candidates/v2/peony-courtyard-v2.mp3"
+}

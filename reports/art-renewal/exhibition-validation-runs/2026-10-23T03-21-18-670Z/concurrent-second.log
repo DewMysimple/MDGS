@@ -1,0 +1,15 @@
+exit=1
+pid=18288
+STDOUT
+
+STDERR
+file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T03-21-18-670Z/concurrent/project/scripts/package-exhibition.mjs:77
+const lock = await open(lockPath, 'wx').catch(error => { if (error.code === 'EEXIST') throw new Error('Another exhibition export may be running. Inspect .mdgs-exhibition.lock before retrying.'); throw error; });
+                                                                                            ^
+
+Error: Another exhibition export may be running. Inspect .mdgs-exhibition.lock before retrying.
+    at file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T03-21-18-670Z/concurrent/project/scripts/package-exhibition.mjs:77:93
+    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T03-21-18-670Z/concurrent/project/scripts/package-exhibition.mjs:77:14
+
+Node.js v24.16.0
+

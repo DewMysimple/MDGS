@@ -1,0 +1,337 @@
+{
+  "status": "passed",
+  "verifiedAt": "2026-10-22T19:58:22.645Z",
+  "scope": "Actual Chrome cancellation at partial geometry, reverse native-frame return, deliberate real WebGL shader compile failure, full retry and renderer cleanup.",
+  "checks": [
+    {
+      "test": "mid-unroll-return-is-continuous-and-monotonically-closes",
+      "passed": true,
+      "before": 0.20183,
+      "maxReturnOpen": 0.20813,
+      "finalOpen": 0
+    },
+    {
+      "test": "viewer-return-matches-native-print-before-closing",
+      "passed": true,
+      "samples": [
+        {
+          "at": 13134,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "opacity": 0,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13250.7,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 0.47001600000000243,
+          "imageOpacity": 1
+        },
+        {
+          "at": 13272.9,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 0.5835141121337291,
+          "imageOpacity": 1
+        },
+        {
+          "at": 13300.8,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 0.7936637879414016,
+          "imageOpacity": 1
+        },
+        {
+          "at": 13323,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 0.8793549273102896,
+          "imageOpacity": 1
+        },
+        {
+          "at": 13345.2,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 0.9877079609316309,
+          "imageOpacity": 1
+        },
+        {
+          "at": 13367.4,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 1
+        },
+        {
+          "at": 13389.7,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0.954659
+        },
+        {
+          "at": 13411.9,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0.343791
+        },
+        {
+          "at": 13434.1,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0.0674602
+        },
+        {
+          "at": 13467.4,
+          "phase": "RETURNING_HOME",
+          "open": 0.99999,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13489.7,
+          "phase": "RETURNING_HOME",
+          "open": 0.98632,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13511.9,
+          "phase": "RETURNING_HOME",
+          "open": 0.97311,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13534.1,
+          "phase": "RETURNING_HOME",
+          "open": 0.95601,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13556.3,
+          "phase": "RETURNING_HOME",
+          "open": 0.91077,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13578.5,
+          "phase": "RETURNING_HOME",
+          "open": 0.88346,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13600.7,
+          "phase": "RETURNING_HOME",
+          "open": 0.85315,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13623,
+          "phase": "RETURNING_HOME",
+          "open": 0.7853,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13645.2,
+          "phase": "RETURNING_HOME",
+          "open": 0.74837,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13667.4,
+          "phase": "RETURNING_HOME",
+          "open": 0.70927,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13689.6,
+          "phase": "RETURNING_HOME",
+          "open": 0.62778,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13711.8,
+          "phase": "RETURNING_HOME",
+          "open": 0.58549,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13739.7,
+          "phase": "RETURNING_HOME",
+          "open": 0.49974,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13761.8,
+          "phase": "RETURNING_HOME",
+          "open": 0.4566,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13784.1,
+          "phase": "RETURNING_HOME",
+          "open": 0.414,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13806.3,
+          "phase": "RETURNING_HOME",
+          "open": 0.3303,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13828.5,
+          "phase": "RETURNING_HOME",
+          "open": 0.29026,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13850.8,
+          "phase": "RETURNING_HOME",
+          "open": 0.2514,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13873,
+          "phase": "RETURNING_HOME",
+          "open": 0.17933,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13895.2,
+          "phase": "RETURNING_HOME",
+          "open": 0.14648,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13917.4,
+          "phase": "RETURNING_HOME",
+          "open": 0.11636,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13939.7,
+          "phase": "RETURNING_HOME",
+          "open": 0.06476,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13961.9,
+          "phase": "RETURNING_HOME",
+          "open": 0.04388,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 13984.1,
+          "phase": "RETURNING_HOME",
+          "open": 0.02671,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 14006.3,
+          "phase": "RETURNING_HOME",
+          "open": 0.00467,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 14028.5,
+          "phase": "RETURNING_HOME",
+          "open": 0.00039,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 14050.7,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 14073,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 14095.2,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "returning",
+          "opacity": 1,
+          "imageOpacity": 0
+        }
+      ]
+    },
+    {
+      "test": "real-shader-compile-failure-gates-entry-and-retries",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,896 @@
+{
+  "status": "pass",
+  "checkedAt": "2026-10-22T22:49:12.865Z",
+  "scope": "Read-only post-run byte verification of final reports, logs, archived copies, historical-driver artifacts, 14 actual UI screenshots/downloads and 8 native-soak end screenshots. This is an artifact check, not a rerun or new source binding.",
+  "run": "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/validation.json",
+  "runSha256": "daf040f3b0b2a0a8aa087b4b178c78ced2146af5ed9c76082fd4d2524a4a2a4e",
+  "verifiedFiles": 177,
+  "mismatches": [],
+  "files": {
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/ui.log": {
+      "expected": "1cad60590b528fb085190ae7f2b876eb93ba2cf1d7053474747f1ca09e2f028d",
+      "actual": "1cad60590b528fb085190ae7f2b876eb93ba2cf1d7053474747f1ca09e2f028d",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/ui/ui-all-validation.json": {
+      "expected": "20c85eb65477f2bf29b55b8f194654a86571a5807a29ab7a177af5133761b112",
+      "actual": "20c85eb65477f2bf29b55b8f194654a86571a5807a29ab7a177af5133761b112",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/ui-validation.json": {
+      "expected": "20c85eb65477f2bf29b55b8f194654a86571a5807a29ab7a177af5133761b112",
+      "actual": "20c85eb65477f2bf29b55b8f194654a86571a5807a29ab7a177af5133761b112",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/ui/home-1100x650.png": {
+      "expected": "6ebef2a5041e9e5722460b8786caa904c0ed109f99792159718e6cb38c56c086",
+      "actual": "6ebef2a5041e9e5722460b8786caa904c0ed109f99792159718e6cb38c56c086",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/ui/home-1280x720.png": {
+      "expected": "9c8dcb9fdc661aaa942fedeb67b20b1cb213a29fcc6d92a6db1a279a903256af",
+      "actual": "9c8dcb9fdc661aaa942fedeb67b20b1cb213a29fcc6d92a6db1a279a903256af",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/ui/home-1600x1000.png": {
+      "expected": "e11aa21631ff436c4032cbf1908368c40494229dd457f9f320acd79c36363286",
+      "actual": "e11aa21631ff436c4032cbf1908368c40494229dd457f9f320acd79c36363286",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/ui/home-1920x1080.png": {
+      "expected": "b04a091fde228a471a420e2647dbea04ae3e316aa4905ec611fb941414a3a478",
+      "actual": "b04a091fde228a471a420e2647dbea04ae3e316aa4905ec611fb941414a3a478",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/ui/home-2560x1440.png": {
+      "expected": "9074fb40eac94f87f50c50220d4af16f9d63786b0350c174c4186d2f9c962903",
+      "actual": "9074fb40eac94f87f50c50220d4af16f9d63786b0350c174c4186d2f9c962903",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/ui/home-3440x1440.png": {
+      "expected": "a7b2da9a511250732593b4edd852aabe3edf516e1e7ef2a8714dc507c6a2aa28",
+      "actual": "a7b2da9a511250732593b4edd852aabe3edf516e1e7ef2a8714dc507c6a2aa28",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/ui/keepsake-c1.png": {
+      "expected": "479cbb9c747ac54b5c5d05f702a0d8e888fbe4d31dda11490006dcbfef88fcc5",
+      "actual": "479cbb9c747ac54b5c5d05f702a0d8e888fbe4d31dda11490006dcbfef88fcc5",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/ui/keepsake-c2.png": {
+      "expected": "0e4cd4e92fc75f7366a0f361f28179784f4d6992ef45e9230cd19afa9f6ebc1a",
+      "actual": "0e4cd4e92fc75f7366a0f361f28179784f4d6992ef45e9230cd19afa9f6ebc1a",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/ui/keepsake-c3.png": {
+      "expected": "97b383ac13a3e47a8ec6a4e54d4c680fb8e3c947b75fb71b9376ba72d7575447",
+      "actual": "97b383ac13a3e47a8ec6a4e54d4c680fb8e3c947b75fb71b9376ba72d7575447",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/ui/keepsake-c4.png": {
+      "expected": "144eb1dc788391402b9603bf87a8d2485f99a1a06b9621d936e0fa33a7a182e9",
+      "actual": "144eb1dc788391402b9603bf87a8d2485f99a1a06b9621d936e0fa33a7a182e9",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/ui/keepsake-dialog-c1.png": {
+      "expected": "eee50a3e89066290b7aa46177b123131553bde53bf3133115c3be094c7d8a5bc",
+      "actual": "eee50a3e89066290b7aa46177b123131553bde53bf3133115c3be094c7d8a5bc",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/ui/keepsake-dialog-c2.png": {
+      "expected": "43ce9a05970d6903a8d024a6d34020048efcdece8563de23860c17b8949bd836",
+      "actual": "43ce9a05970d6903a8d024a6d34020048efcdece8563de23860c17b8949bd836",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/ui/keepsake-dialog-c3.png": {
+      "expected": "d7fb2c43a5bbe06e57500def690a24e6fdbc44731ad0118fe0d35c7b2f829b55",
+      "actual": "d7fb2c43a5bbe06e57500def690a24e6fdbc44731ad0118fe0d35c7b2f829b55",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/ui/keepsake-dialog-c4.png": {
+      "expected": "35d7f8631ca267aaaae97d1a7706b21c4186233dd855333c9b95159ba1ad8e42",
+      "actual": "35d7f8631ca267aaaae97d1a7706b21c4186233dd855333c9b95159ba1ad8e42",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/audio.log": {
+      "expected": "08c758cb37288dc447d7eced3b98d16fa533d3d49549fea64f18ef62212ff633",
+      "actual": "08c758cb37288dc447d7eced3b98d16fa533d3d49549fea64f18ef62212ff633",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/audio-app-validation.json": {
+      "expected": "9ad653a270fce91e454391f3a864199ade8f38dc21d0b484bd9e3977f7186a54",
+      "actual": "9ad653a270fce91e454391f3a864199ade8f38dc21d0b484bd9e3977f7186a54",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/audio-validation.json": {
+      "expected": "9ad653a270fce91e454391f3a864199ade8f38dc21d0b484bd9e3977f7186a54",
+      "actual": "9ad653a270fce91e454391f3a864199ade8f38dc21d0b484bd9e3977f7186a54",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/runtime.log": {
+      "expected": "f2b3962f29e74bdb20ce0d1b5beddbda46d0ea9454d6fba7ba76b10c21429e18",
+      "actual": "f2b3962f29e74bdb20ce0d1b5beddbda46d0ea9454d6fba7ba76b10c21429e18",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/validation.json": {
+      "expected": "20fc9f024c14bcca55def1d48c99891a6a4dce5034650cd6222b4fe605fc7d89",
+      "actual": "20fc9f024c14bcca55def1d48c99891a6a4dce5034650cd6222b4fe605fc7d89",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/runtime-validation.json": {
+      "expected": "20fc9f024c14bcca55def1d48c99891a6a4dce5034650cd6222b4fe605fc7d89",
+      "actual": "20fc9f024c14bcca55def1d48c99891a6a4dce5034650cd6222b4fe605fc7d89",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/runtime-latest.json": {
+      "expected": "be409ac8dad9ec4a5649c6750e1d0cd28dff6b9133abbcdd165e9c7c47f72aa3",
+      "actual": "be409ac8dad9ec4a5649c6750e1d0cd28dff6b9133abbcdd165e9c7c47f72aa3",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/runtime-pointer.json": {
+      "expected": "be409ac8dad9ec4a5649c6750e1d0cd28dff6b9133abbcdd165e9c7c47f72aa3",
+      "actual": "be409ac8dad9ec4a5649c6750e1d0cd28dff6b9133abbcdd165e9c7c47f72aa3",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/acceptance.json": {
+      "expected": "a7748e0f34a2f2750e7ffd90f06d169721af43ccf0af9f116123f8cc93268bf2",
+      "actual": "a7748e0f34a2f2750e7ffd90f06d169721af43ccf0af9f116123f8cc93268bf2",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/runtime-acceptance.json": {
+      "expected": "a7748e0f34a2f2750e7ffd90f06d169721af43ccf0af9f116123f8cc93268bf2",
+      "actual": "a7748e0f34a2f2750e7ffd90f06d169721af43ccf0af9f116123f8cc93268bf2",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/executed-driver.mjs": {
+      "expected": "fa4e9b6196a9c6f9006c426f0e3353324437dac11cf6d07c807ea3ef89673e82",
+      "actual": "fa4e9b6196a9c6f9006c426f0e3353324437dac11cf6d07c807ea3ef89673e82",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-01.png": {
+      "expected": "2badae4303fd8aa304d068280ac702151126221c54183998717448265ffc5203",
+      "actual": "2badae4303fd8aa304d068280ac702151126221c54183998717448265ffc5203",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-01.png": {
+      "expected": "1315fee07d8f01d0a522f1dd38c1f1f91f23ed193db08ac4b1771cc16c46de2b",
+      "actual": "1315fee07d8f01d0a522f1dd38c1f1f91f23ed193db08ac4b1771cc16c46de2b",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-01.png": {
+      "expected": "618232cf3212ed2a1fa11e48f25ea9a958c3247eb877ae8bd123276650848208",
+      "actual": "618232cf3212ed2a1fa11e48f25ea9a958c3247eb877ae8bd123276650848208",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-compact-01.png": {
+      "expected": "be4981b02ebc4b8eb25789edc8016d39c312bc376127a19978ec705327b29caa",
+      "actual": "be4981b02ebc4b8eb25789edc8016d39c312bc376127a19978ec705327b29caa",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-01.png": {
+      "expected": "297a421f457b976b72a529414701fd600e192a7b10481d31d1bd8f91f2ecf800",
+      "actual": "297a421f457b976b72a529414701fd600e192a7b10481d31d1bd8f91f2ecf800",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-compact-01.png": {
+      "expected": "e11ceab18333916ad4141b31009b72e3bfae7e1eaaa1d558c9e26f2b7a5bf3d1",
+      "actual": "e11ceab18333916ad4141b31009b72e3bfae7e1eaaa1d558c9e26f2b7a5bf3d1",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-01.png": {
+      "expected": "00794613fc85c54e3d751187e6f21a2e1bedff24396f45ee071486a6a4688d73",
+      "actual": "00794613fc85c54e3d751187e6f21a2e1bedff24396f45ee071486a6a4688d73",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-compact-01.png": {
+      "expected": "bc7a1b2487acec6ba35875dea19c5c8b5c614047263b9621a3f7cf9add88c3a1",
+      "actual": "bc7a1b2487acec6ba35875dea19c5c8b5c614047263b9621a3f7cf9add88c3a1",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-end-c1-desktop-compact.png": {
+      "expected": "b140851bcbc056c547909ecbc2b84147751cb7a9a3a5ff5f1210762b49dc8a81",
+      "actual": "b140851bcbc056c547909ecbc2b84147751cb7a9a3a5ff5f1210762b49dc8a81",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-end-c1-desktop.png": {
+      "expected": "2cfd167419456b18fc3039e3f8604b1540f026a3ac1d31f28d07333f0eb964c7",
+      "actual": "2cfd167419456b18fc3039e3f8604b1540f026a3ac1d31f28d07333f0eb964c7",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-end-c2-desktop-compact.png": {
+      "expected": "35dad57a41ced551f960c612051634562a9f6e3f9ed3a10827a8c9dbf3766284",
+      "actual": "35dad57a41ced551f960c612051634562a9f6e3f9ed3a10827a8c9dbf3766284",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-end-c2-desktop.png": {
+      "expected": "6294e15703e2d5f13c300f70fb0c019bdf74fa92a7f157ce8e969bf84eb6cb84",
+      "actual": "6294e15703e2d5f13c300f70fb0c019bdf74fa92a7f157ce8e969bf84eb6cb84",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-end-c3-desktop-compact.png": {
+      "expected": "e7ebe02447fb10ef1626c8d4139726018db47416009ff5ff72becf277e7ede76",
+      "actual": "e7ebe02447fb10ef1626c8d4139726018db47416009ff5ff72becf277e7ede76",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-end-c3-desktop.png": {
+      "expected": "8a9bdf67a601d5cd430c2d8ba6d58e7655735c22cc154744d6a561db06e17726",
+      "actual": "8a9bdf67a601d5cd430c2d8ba6d58e7655735c22cc154744d6a561db06e17726",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-end-c4-desktop-compact.png": {
+      "expected": "7ca7280636051a6823463755a4f7f95a0931e5bd7e88a3eae2fa1125642bc567",
+      "actual": "7ca7280636051a6823463755a4f7f95a0931e5bd7e88a3eae2fa1125642bc567",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-end-c4-desktop.png": {
+      "expected": "5028c5b7477ef4d60851d4a9525724dc23d5437c8f022c6fb28a68651b3b0ab5",
+      "actual": "5028c5b7477ef4d60851d4a9525724dc23d5437c8f022c6fb28a68651b3b0ab5",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-02.png": {
+      "expected": "d8133991236a21859fc8e5aef5e87626e602dc5be0951591ec7c8a4b1c59645b",
+      "actual": "d8133991236a21859fc8e5aef5e87626e602dc5be0951591ec7c8a4b1c59645b",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-03.png": {
+      "expected": "f20320757cd9ff0f1863c6cb34876f235c540bfa1aff7d35e7f2770a4b02c77a",
+      "actual": "f20320757cd9ff0f1863c6cb34876f235c540bfa1aff7d35e7f2770a4b02c77a",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-04.png": {
+      "expected": "50f825820ce74a6f0924d5e59a8e9c73706ad6cafa6e948867b2df3579eb13b6",
+      "actual": "50f825820ce74a6f0924d5e59a8e9c73706ad6cafa6e948867b2df3579eb13b6",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-05.png": {
+      "expected": "96a62057b261720aa6bc286162b85032a455e4333704e058295bee288fa6380c",
+      "actual": "96a62057b261720aa6bc286162b85032a455e4333704e058295bee288fa6380c",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-06.png": {
+      "expected": "3937c6a83587c6945631031bb70cd0139dc3dfe712a4455ba9319c21167b5fe1",
+      "actual": "3937c6a83587c6945631031bb70cd0139dc3dfe712a4455ba9319c21167b5fe1",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-07.png": {
+      "expected": "69d03a199345c7d28a07c1e70c83bd0b2727d6318fe27da13202e96c33aaf68f",
+      "actual": "69d03a199345c7d28a07c1e70c83bd0b2727d6318fe27da13202e96c33aaf68f",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-08.png": {
+      "expected": "de7238fe64032235474cf325d7d49e88c3a5eff85f45cbbb420631cfa3e0240e",
+      "actual": "de7238fe64032235474cf325d7d49e88c3a5eff85f45cbbb420631cfa3e0240e",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-09.png": {
+      "expected": "507280824c91032bc62b750a5e6c9e1b9f72f2e6eed73fc12a98e56c992f4213",
+      "actual": "507280824c91032bc62b750a5e6c9e1b9f72f2e6eed73fc12a98e56c992f4213",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-10.png": {
+      "expected": "ac86ef70278fe200b6e63b7743bc0364a117788f8552242b1adc70b8ec085665",
+      "actual": "ac86ef70278fe200b6e63b7743bc0364a117788f8552242b1adc70b8ec085665",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-11.png": {
+      "expected": "8aa0da0eed98db7ad6ab6e12ed0d423a7107da2699a7161db15b5a05ade81f23",
+      "actual": "8aa0da0eed98db7ad6ab6e12ed0d423a7107da2699a7161db15b5a05ade81f23",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-12.png": {
+      "expected": "966c4264638f629456e8154b0f847548156beb23240314ac067f6a9f849327cb",
+      "actual": "966c4264638f629456e8154b0f847548156beb23240314ac067f6a9f849327cb",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-13.png": {
+      "expected": "1a4728f7523eed657e608ec7f93bddcc7ec3ed6360092fe61d50e74fe9afc9e5",
+      "actual": "1a4728f7523eed657e608ec7f93bddcc7ec3ed6360092fe61d50e74fe9afc9e5",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-14.png": {
+      "expected": "6fc2473b68c46c2dedc60e9488c95ad2830878a44f01cdb7bd3edbbe29e1b599",
+      "actual": "6fc2473b68c46c2dedc60e9488c95ad2830878a44f01cdb7bd3edbbe29e1b599",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-15.png": {
+      "expected": "6680af77b909f7534ba0f54f4399dffb4b8426bf08abf06d586fe837d1fa7367",
+      "actual": "6680af77b909f7534ba0f54f4399dffb4b8426bf08abf06d586fe837d1fa7367",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-02.png": {
+      "expected": "1b369d71874cbc9a4b1275007a58a256541ce9807ea55037c57566036b30a198",
+      "actual": "1b369d71874cbc9a4b1275007a58a256541ce9807ea55037c57566036b30a198",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-03.png": {
+      "expected": "97c1dc7d32a1587f3ad8759dc51f9f34abaa8f26b7981deb71f46adb4ebe3632",
+      "actual": "97c1dc7d32a1587f3ad8759dc51f9f34abaa8f26b7981deb71f46adb4ebe3632",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-04.png": {
+      "expected": "49124768cb995ce61b5dce931a25241f90634662bc56b9caad5f3c948dc95534",
+      "actual": "49124768cb995ce61b5dce931a25241f90634662bc56b9caad5f3c948dc95534",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-05.png": {
+      "expected": "58c7ec3b60b20d5752218404387a336750a40645be83dea8f138adc8e8c33310",
+      "actual": "58c7ec3b60b20d5752218404387a336750a40645be83dea8f138adc8e8c33310",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-06.png": {
+      "expected": "05df02063edcf0fa7a0bd1f2b5c3e8020baf32fa54f797991b7d167f8eebff7d",
+      "actual": "05df02063edcf0fa7a0bd1f2b5c3e8020baf32fa54f797991b7d167f8eebff7d",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-07.png": {
+      "expected": "1384e950cba3b4451f3c0d2b15e05624153f5ef9a60027637f76344d0d0405df",
+      "actual": "1384e950cba3b4451f3c0d2b15e05624153f5ef9a60027637f76344d0d0405df",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-08.png": {
+      "expected": "1e68f9e7ddf683c66a3de106574cd1dc53d9933ef3c3c5f4901c7535b4668ba3",
+      "actual": "1e68f9e7ddf683c66a3de106574cd1dc53d9933ef3c3c5f4901c7535b4668ba3",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-09.png": {
+      "expected": "7393871e80b03d11580daf2e06e6492671e077e232af08954557f99f4de55eac",
+      "actual": "7393871e80b03d11580daf2e06e6492671e077e232af08954557f99f4de55eac",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-10.png": {
+      "expected": "9d7a1a468e734972433114ea7d41d9c9c61bed3c93e5db943dc400034710bd9d",
+      "actual": "9d7a1a468e734972433114ea7d41d9c9c61bed3c93e5db943dc400034710bd9d",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-11.png": {
+      "expected": "b33abf0410c8c5f79a30e784080511332126603ddb59463cda2292a1fd689322",
+      "actual": "b33abf0410c8c5f79a30e784080511332126603ddb59463cda2292a1fd689322",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-12.png": {
+      "expected": "44b57186069c231a598ecda966ff983f0fb58c5c1faf0903653adeb2f7fff988",
+      "actual": "44b57186069c231a598ecda966ff983f0fb58c5c1faf0903653adeb2f7fff988",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-13.png": {
+      "expected": "a8e8e7b967a881d77718f6285d54a5f6b46a9c20bbdae1d8c685bbeded473488",
+      "actual": "a8e8e7b967a881d77718f6285d54a5f6b46a9c20bbdae1d8c685bbeded473488",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-14.png": {
+      "expected": "4415dac55e8ab6f65607f1de3d1ced0f2991274fb897710e9a16a11ecd53ef1a",
+      "actual": "4415dac55e8ab6f65607f1de3d1ced0f2991274fb897710e9a16a11ecd53ef1a",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c1-desktop-compact-15.png": {
+      "expected": "43be89d5f2bf15af1428473fe6aead353bd4b69100e6b5ba6970c1c7cb2d57e3",
+      "actual": "43be89d5f2bf15af1428473fe6aead353bd4b69100e6b5ba6970c1c7cb2d57e3",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-02.png": {
+      "expected": "8708ac3aa4f8b756570a62e1de5ac37e0513735bb1ecfd152ddec9f6bf0280d8",
+      "actual": "8708ac3aa4f8b756570a62e1de5ac37e0513735bb1ecfd152ddec9f6bf0280d8",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-03.png": {
+      "expected": "2d1535ce28a0ccd81b54b11305576065ce3931b4fb426f5851c9730308e33b87",
+      "actual": "2d1535ce28a0ccd81b54b11305576065ce3931b4fb426f5851c9730308e33b87",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-04.png": {
+      "expected": "f0470f063b7522506407bd026142580804d1574f72d76207d0e43b40420c676f",
+      "actual": "f0470f063b7522506407bd026142580804d1574f72d76207d0e43b40420c676f",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-05.png": {
+      "expected": "f562c18f74c2eabc9b18fec0e03299f43c3997b65b0c180056d6161c2b75b06a",
+      "actual": "f562c18f74c2eabc9b18fec0e03299f43c3997b65b0c180056d6161c2b75b06a",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-06.png": {
+      "expected": "db4541e9c4e8cd32d221789ac43f43f6f06f8117997b710de5018e3329d2f881",
+      "actual": "db4541e9c4e8cd32d221789ac43f43f6f06f8117997b710de5018e3329d2f881",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-07.png": {
+      "expected": "2897aeaf5c478d2a2771a1694e33b2fbb8e8a42a2195eef70bf47fc46e0ff661",
+      "actual": "2897aeaf5c478d2a2771a1694e33b2fbb8e8a42a2195eef70bf47fc46e0ff661",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-compact-02.png": {
+      "expected": "8282f316aae84f6d9616b2f20176308f4427398bece2c4c0eced85c0c006ed4d",
+      "actual": "8282f316aae84f6d9616b2f20176308f4427398bece2c4c0eced85c0c006ed4d",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-compact-03.png": {
+      "expected": "60aabf8c243d702024c8dd3767716748d4200f8544e25b0efb7958a978e505d6",
+      "actual": "60aabf8c243d702024c8dd3767716748d4200f8544e25b0efb7958a978e505d6",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-compact-04.png": {
+      "expected": "f02867e55b2a8c4d3a04c59da4d94372b83fa00589b58d29d5da040883f691bd",
+      "actual": "f02867e55b2a8c4d3a04c59da4d94372b83fa00589b58d29d5da040883f691bd",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-compact-05.png": {
+      "expected": "12627934892a9b8e0985c1df58296afdb875701bc1f95235b9e29107093820c0",
+      "actual": "12627934892a9b8e0985c1df58296afdb875701bc1f95235b9e29107093820c0",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-compact-06.png": {
+      "expected": "1fc23b32ea2ef8f05ce2c17c903e2f39be812818521e917e2eeb3b41cf1d6710",
+      "actual": "1fc23b32ea2ef8f05ce2c17c903e2f39be812818521e917e2eeb3b41cf1d6710",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c2-desktop-compact-07.png": {
+      "expected": "af6f1e1a717a2c8a415cbd81b7abe21fd9d6d6b53ce6fff23361bacbbf27fe9f",
+      "actual": "af6f1e1a717a2c8a415cbd81b7abe21fd9d6d6b53ce6fff23361bacbbf27fe9f",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-02.png": {
+      "expected": "9af5186e2fed70615ff47f21710590b6837faf023863b950f1366c5b5537487c",
+      "actual": "9af5186e2fed70615ff47f21710590b6837faf023863b950f1366c5b5537487c",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-03.png": {
+      "expected": "f02391d204d8a690d67adc3c28ad21f9c75a3b932b1df5c05fdd24386f2b8994",
+      "actual": "f02391d204d8a690d67adc3c28ad21f9c75a3b932b1df5c05fdd24386f2b8994",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-04.png": {
+      "expected": "2510ebab70d6da42223b58ba9431e49a6a040acfff6e637c13ee1667fe7dd6e4",
+      "actual": "2510ebab70d6da42223b58ba9431e49a6a040acfff6e637c13ee1667fe7dd6e4",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-05.png": {
+      "expected": "0e8e129546a6abaa037193cf351c44a920515577f6e0b291c7a172b2e9d2e0c6",
+      "actual": "0e8e129546a6abaa037193cf351c44a920515577f6e0b291c7a172b2e9d2e0c6",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-06.png": {
+      "expected": "92e1d0a76bab3370bf35d4245dda5463e7295c9fc55ac7c7de818c71634d7569",
+      "actual": "92e1d0a76bab3370bf35d4245dda5463e7295c9fc55ac7c7de818c71634d7569",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-07.png": {
+      "expected": "2e58d130ab3d52f81f18f58993de358ec75ae07e0a0bde784c156e4ece070c74",
+      "actual": "2e58d130ab3d52f81f18f58993de358ec75ae07e0a0bde784c156e4ece070c74",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-08.png": {
+      "expected": "25038c69a61d1817a3dd38c2ad382a41b99cbddc0fa2b6aa387dcdff7b31ce07",
+      "actual": "25038c69a61d1817a3dd38c2ad382a41b99cbddc0fa2b6aa387dcdff7b31ce07",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-09.png": {
+      "expected": "0c184b3afdace7ec73516af3e718a964059ebf6324730e1360bcd3f62048b105",
+      "actual": "0c184b3afdace7ec73516af3e718a964059ebf6324730e1360bcd3f62048b105",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-compact-02.png": {
+      "expected": "c0db4bda8b6cc785d62d0fde7238a3563e5c326c821aff230efe4047a4567d66",
+      "actual": "c0db4bda8b6cc785d62d0fde7238a3563e5c326c821aff230efe4047a4567d66",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-compact-03.png": {
+      "expected": "c0f539225beefe2b0f0d5666b18e6075e5565afe1a3c974386419556c04f998d",
+      "actual": "c0f539225beefe2b0f0d5666b18e6075e5565afe1a3c974386419556c04f998d",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-compact-04.png": {
+      "expected": "c6f7b7822858f28d96969f38f28a41632f4b4dd331467c03e08017aba212a1ff",
+      "actual": "c6f7b7822858f28d96969f38f28a41632f4b4dd331467c03e08017aba212a1ff",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-compact-05.png": {
+      "expected": "3a826f13869163acdb5e7bdccc3e0e4454c02fa5f0b2a32986a4426216a53910",
+      "actual": "3a826f13869163acdb5e7bdccc3e0e4454c02fa5f0b2a32986a4426216a53910",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-compact-06.png": {
+      "expected": "92dc5b5fdf314ac88417a4466a66e92e2929241e6f9ecfdc61d7d546277eb99a",
+      "actual": "92dc5b5fdf314ac88417a4466a66e92e2929241e6f9ecfdc61d7d546277eb99a",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-compact-07.png": {
+      "expected": "fb5ffd2c735989824dafe79c6f0c280d4a33e2eb6295c6d8e4990de82160b6d0",
+      "actual": "fb5ffd2c735989824dafe79c6f0c280d4a33e2eb6295c6d8e4990de82160b6d0",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-compact-08.png": {
+      "expected": "a28c78bec25715158ade6c7691f001c320f88e91a848bd9022e41056665c0a9d",
+      "actual": "a28c78bec25715158ade6c7691f001c320f88e91a848bd9022e41056665c0a9d",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c3-desktop-compact-09.png": {
+      "expected": "821d7df079068c00d84eff1f5410a13d1f5c7e63c8bca307522721eb946d25d4",
+      "actual": "821d7df079068c00d84eff1f5410a13d1f5c7e63c8bca307522721eb946d25d4",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-02.png": {
+      "expected": "7bc7c0437e25036ca199a36e9c3d55e7645fae24ac1f15f330d9b6e18cbf1af4",
+      "actual": "7bc7c0437e25036ca199a36e9c3d55e7645fae24ac1f15f330d9b6e18cbf1af4",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-03.png": {
+      "expected": "1f2dbb1d6ad39821ad19f3cf1c45de9d1142adcb9fea84d090239575cdd0b4f6",
+      "actual": "1f2dbb1d6ad39821ad19f3cf1c45de9d1142adcb9fea84d090239575cdd0b4f6",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-04.png": {
+      "expected": "8552cc804abbec54bdaf4d523b5f4abecb31026bbc19002806562e971090cb39",
+      "actual": "8552cc804abbec54bdaf4d523b5f4abecb31026bbc19002806562e971090cb39",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-05.png": {
+      "expected": "d785cb1174d900275fbaa0ec61703865b3f7b15a9c14d68f4f52a68a8e8d965f",
+      "actual": "d785cb1174d900275fbaa0ec61703865b3f7b15a9c14d68f4f52a68a8e8d965f",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-06.png": {
+      "expected": "c4595b22a202b534b291042e09dcef1131fa6141e3aa1c790dc6965c8727798e",
+      "actual": "c4595b22a202b534b291042e09dcef1131fa6141e3aa1c790dc6965c8727798e",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-07.png": {
+      "expected": "a32afb38f38c35d7d1c92849b3515ab7fec7628e4d03fb1bb71f52ff6cf1e4b3",
+      "actual": "a32afb38f38c35d7d1c92849b3515ab7fec7628e4d03fb1bb71f52ff6cf1e4b3",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-08.png": {
+      "expected": "736a621bc50a4a977608b3a9c0383bd533b05489453cad8d78b698200709676d",
+      "actual": "736a621bc50a4a977608b3a9c0383bd533b05489453cad8d78b698200709676d",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-09.png": {
+      "expected": "3239db7c1e578a602c87f9b9d01d17e124ffe6bb7feef0ab3220f6206e3ba0dd",
+      "actual": "3239db7c1e578a602c87f9b9d01d17e124ffe6bb7feef0ab3220f6206e3ba0dd",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-compact-02.png": {
+      "expected": "0344845cbdea8a8fecaa0b1a0437fe6a866118373d4a9afe2777547556f75d43",
+      "actual": "0344845cbdea8a8fecaa0b1a0437fe6a866118373d4a9afe2777547556f75d43",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-compact-03.png": {
+      "expected": "ce559804a5bd1701d551437bb0adee9bed9e739ccb1d7ce082b0f7d060cbc58a",
+      "actual": "ce559804a5bd1701d551437bb0adee9bed9e739ccb1d7ce082b0f7d060cbc58a",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-compact-04.png": {
+      "expected": "c80bda471daed6694b2e18219aaeb3e937689a8fe635ac94301ccbbcf965bd29",
+      "actual": "c80bda471daed6694b2e18219aaeb3e937689a8fe635ac94301ccbbcf965bd29",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-compact-05.png": {
+      "expected": "8fc854cab7396cbaf6f691eb98ca75ea3775cafe16d7640b0fe6dac56e4c0789",
+      "actual": "8fc854cab7396cbaf6f691eb98ca75ea3775cafe16d7640b0fe6dac56e4c0789",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-compact-06.png": {
+      "expected": "34723b262bf56fdaf09db091011db18a90c6637ab68cca5f30b35d2e20383ee1",
+      "actual": "34723b262bf56fdaf09db091011db18a90c6637ab68cca5f30b35d2e20383ee1",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-compact-07.png": {
+      "expected": "601bf5e4764e56257dde1a704216506957333dcd4ef8f8f0ce9a4990ba7034c3",
+      "actual": "601bf5e4764e56257dde1a704216506957333dcd4ef8f8f0ce9a4990ba7034c3",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-compact-08.png": {
+      "expected": "83d4f4bc43b24c6c458a9479e16c97698b31afe0924e4c40c16eeb6817b6cc26",
+      "actual": "83d4f4bc43b24c6c458a9479e16c97698b31afe0924e4c40c16eeb6817b6cc26",
+      "passed": true
+    },
+    "tmp/art-renewal-final/2026-10-22T22-32-44-628Z/runtime/2026-10-22T22-36-06-171Z-runtime/runtime-c4-desktop-compact-09.png": {
+      "expected": "50ff18d74973e1c8cbe595eb480c2262d1ce288d3252299bf29f5ddcb1b5b78f",
+      "actual": "50ff18d74973e1c8cbe595eb480c2262d1ce288d3252299bf29f5ddcb1b5b78f",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/journey.log": {
+      "expected": "d86bcb1c170585d871e1dd80c94641a81509b07145f155547d7582eb5bf018dc",
+      "actual": "d86bcb1c170585d871e1dd80c94641a81509b07145f155547d7582eb5bf018dc",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/2026-10-22T22-43-05-565Z-journey/validation.json": {
+      "expected": "c6050c22f5a74b4d0ce6bf0a347fc2030f48326b913abe24990de5f861ab4976",
+      "actual": "c6050c22f5a74b4d0ce6bf0a347fc2030f48326b913abe24990de5f861ab4976",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/journey-validation.json": {
+      "expected": "c6050c22f5a74b4d0ce6bf0a347fc2030f48326b913abe24990de5f861ab4976",
+      "actual": "c6050c22f5a74b4d0ce6bf0a347fc2030f48326b913abe24990de5f861ab4976",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/journey-latest.json": {
+      "expected": "743b2124958ac053fd03b512369dd4b037bd7bfd450bbbdda63b53cb7daca794",
+      "actual": "743b2124958ac053fd03b512369dd4b037bd7bfd450bbbdda63b53cb7daca794",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/journey-pointer.json": {
+      "expected": "743b2124958ac053fd03b512369dd4b037bd7bfd450bbbdda63b53cb7daca794",
+      "actual": "743b2124958ac053fd03b512369dd4b037bd7bfd450bbbdda63b53cb7daca794",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/2026-10-22T22-43-05-565Z-journey/acceptance.json": {
+      "expected": "876688522347937f34ca803e221a273deaf35ced043de6af2e31e8b22f63891b",
+      "actual": "876688522347937f34ca803e221a273deaf35ced043de6af2e31e8b22f63891b",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/journey-acceptance.json": {
+      "expected": "876688522347937f34ca803e221a273deaf35ced043de6af2e31e8b22f63891b",
+      "actual": "876688522347937f34ca803e221a273deaf35ced043de6af2e31e8b22f63891b",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/2026-10-22T22-43-05-565Z-journey/executed-driver.mjs": {
+      "expected": "9d74b563a223080675f2e37edeff9d9e61afdeb23d5be956cf778e20586c7e5e",
+      "actual": "9d74b563a223080675f2e37edeff9d9e61afdeb23d5be956cf778e20586c7e5e",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/2026-10-22T22-43-05-565Z-journey/journey-c1-closed.png": {
+      "expected": "f5bf1a7b85b0f9af8fd5f3b1ae18192d260f754f9744cf1f902e9075b7cae169",
+      "actual": "f5bf1a7b85b0f9af8fd5f3b1ae18192d260f754f9744cf1f902e9075b7cae169",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/2026-10-22T22-43-05-565Z-journey/journey-c1-half.png": {
+      "expected": "53c12784f01c70d6d93578f75eaf15e23812a77adf65ec176fa11e87029d2f92",
+      "actual": "53c12784f01c70d6d93578f75eaf15e23812a77adf65ec176fa11e87029d2f92",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/2026-10-22T22-43-05-565Z-journey/journey-c1-opened.png": {
+      "expected": "f74f51f3af55ae6b228a75066d50f130c4b9a76a4cb0e048d6460c71a2d64c10",
+      "actual": "f74f51f3af55ae6b228a75066d50f130c4b9a76a4cb0e048d6460c71a2d64c10",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/2026-10-22T22-43-05-565Z-journey/journey-c2-closed.png": {
+      "expected": "60800ce7f233dab0c38abb2a16312018123cdd54d18d7200987182233448adbe",
+      "actual": "60800ce7f233dab0c38abb2a16312018123cdd54d18d7200987182233448adbe",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/2026-10-22T22-43-05-565Z-journey/journey-c2-half.png": {
+      "expected": "247d12054bf02acce0d00337b58f157ba95435784e71f46febbbc6d84cf459c7",
+      "actual": "247d12054bf02acce0d00337b58f157ba95435784e71f46febbbc6d84cf459c7",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/2026-10-22T22-43-05-565Z-journey/journey-c2-opened.png": {
+      "expected": "c9d80ecb79d1a975f5382408d73ee9d85a3523659f589d3463a57b20206b0ce5",
+      "actual": "c9d80ecb79d1a975f5382408d73ee9d85a3523659f589d3463a57b20206b0ce5",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/2026-10-22T22-43-05-565Z-journey/journey-c3-closed.png": {
+      "expected": "f8cc79b85abcf365c3cc7244687c773dc807f2f605a058ac2de72dafc321d153",
+      "actual": "f8cc79b85abcf365c3cc7244687c773dc807f2f605a058ac2de72dafc321d153",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/2026-10-22T22-43-05-565Z-journey/journey-c3-half.png": {
+      "expected": "12049561757e80b6aa3eb76ecb9a4baf7561e58ef6e2169f43341b9ee68e51e2",
+      "actual": "12049561757e80b6aa3eb76ecb9a4baf7561e58ef6e2169f43341b9ee68e51e2",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/2026-10-22T22-43-05-565Z-journey/journey-c3-opened.png": {
+      "expected": "77c5a03f8f93f2eb3702f0b9365fb8612ed86053d70c385f52b6e76ba7bfd0b6",
+      "actual": "77c5a03f8f93f2eb3702f0b9365fb8612ed86053d70c385f52b6e76ba7bfd0b6",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/2026-10-22T22-43-05-565Z-journey/journey-c4-closed.png": {
+      "expected": "539dea299698775c514d9c61ed35260d492cae1cde1fac32fc002b21955e9cc6",
+      "actual": "539dea299698775c514d9c61ed35260d492cae1cde1fac32fc002b21955e9cc6",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/2026-10-22T22-43-05-565Z-journey/journey-c4-half.png": {
+      "expected": "ed48c444bdc04c3ed00d3551f41ae3bad2afc8df48a1893e6aef2451a63bd41e",
+      "actual": "ed48c444bdc04c3ed00d3551f41ae3bad2afc8df48a1893e6aef2451a63bd41e",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/2026-10-22T22-43-05-565Z-journey/journey-c4-opened.png": {
+      "expected": "6e951fd5c2b98d2155b8ca3d7a185185ec99e3d60799b2be5a09bed1cef3217a",
+      "actual": "6e951fd5c2b98d2155b8ca3d7a185185ec99e3d60799b2be5a09bed1cef3217a",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/2026-10-22T22-43-05-565Z-journey/journey-cover-error.png": {
+      "expected": "be8f9c60e04d1c63b81612874e6bd7dfea65974a03c6ab80757ab3d4cf59ff04",
+      "actual": "be8f9c60e04d1c63b81612874e6bd7dfea65974a03c6ab80757ab3d4cf59ff04",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/2026-10-22T22-43-05-565Z-journey/journey-desktop-original-soundscape.png": {
+      "expected": "fe521e35e5bf51a7df182346d29f424775e64c99cc0e203233c46df894a59ced",
+      "actual": "fe521e35e5bf51a7df182346d29f424775e64c99cc0e203233c46df894a59ced",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/journey/2026-10-22T22-43-05-565Z-journey/journey-slow-waiting.png": {
+      "expected": "9bc2ca694b029f719fd3ece84aa1e5e5da1b93deab1c6095aa52b168c9794bbe",
+      "actual": "9bc2ca694b029f719fd3ece84aa1e5e5da1b93deab1c6095aa52b168c9794bbe",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/settings.log": {
+      "expected": "65db1f8a2a9b1096f7226208837f7377874c3e8cf20c0d94fc908746b75f1e8a",
+      "actual": "65db1f8a2a9b1096f7226208837f7377874c3e8cf20c0d94fc908746b75f1e8a",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/settings/2026-10-22T22-44-13-202Z-settings/validation.json": {
+      "expected": "f10fdbea7bcff4b8877ef1eaaccdee8a62f77a51045d88668e0df7e1e494dd89",
+      "actual": "f10fdbea7bcff4b8877ef1eaaccdee8a62f77a51045d88668e0df7e1e494dd89",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/settings-validation.json": {
+      "expected": "f10fdbea7bcff4b8877ef1eaaccdee8a62f77a51045d88668e0df7e1e494dd89",
+      "actual": "f10fdbea7bcff4b8877ef1eaaccdee8a62f77a51045d88668e0df7e1e494dd89",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/settings/settings-latest.json": {
+      "expected": "a2e385ebdce65f30e8db2c12773cef10082b38b9c2d1f0ac10a730cd70aa1a0b",
+      "actual": "a2e385ebdce65f30e8db2c12773cef10082b38b9c2d1f0ac10a730cd70aa1a0b",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/settings-pointer.json": {
+      "expected": "a2e385ebdce65f30e8db2c12773cef10082b38b9c2d1f0ac10a730cd70aa1a0b",
+      "actual": "a2e385ebdce65f30e8db2c12773cef10082b38b9c2d1f0ac10a730cd70aa1a0b",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/settings/2026-10-22T22-44-13-202Z-settings/acceptance.json": {
+      "expected": "ee5fb13df0355e09ab8ce71d22f0066e75e8562c3302e91527e2640674a870e6",
+      "actual": "ee5fb13df0355e09ab8ce71d22f0066e75e8562c3302e91527e2640674a870e6",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/settings-acceptance.json": {
+      "expected": "ee5fb13df0355e09ab8ce71d22f0066e75e8562c3302e91527e2640674a870e6",
+      "actual": "ee5fb13df0355e09ab8ce71d22f0066e75e8562c3302e91527e2640674a870e6",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/settings/2026-10-22T22-44-13-202Z-settings/chapter-1-desktop-compact-large-margin.png": {
+      "expected": "a8b46e1ec9bc4ee89ba07af991feaf924f6ec6ffdae787e3c872a67ded4f7478",
+      "actual": "a8b46e1ec9bc4ee89ba07af991feaf924f6ec6ffdae787e3c872a67ded4f7478",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/settings/2026-10-22T22-44-13-202Z-settings/chapter-1-desktop.png": {
+      "expected": "b81d3f703a90b2c1411c5a977e8564dac8fb073013e7e1fcef6b9b6938420998",
+      "actual": "b81d3f703a90b2c1411c5a977e8564dac8fb073013e7e1fcef6b9b6938420998",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/settings/2026-10-22T22-44-13-202Z-settings/chapter-2-desktop-compact-large-margin.png": {
+      "expected": "25d8c09f8b7ef90fc7b399f08f45cf65a0981ae0a7fd0858062cb885232d2982",
+      "actual": "25d8c09f8b7ef90fc7b399f08f45cf65a0981ae0a7fd0858062cb885232d2982",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/settings/2026-10-22T22-44-13-202Z-settings/chapter-2-desktop.png": {
+      "expected": "9e321baced0a3612ec18a96b2e8bcdddd8a4a03d3ebcb39a27227a4364771076",
+      "actual": "9e321baced0a3612ec18a96b2e8bcdddd8a4a03d3ebcb39a27227a4364771076",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/settings/2026-10-22T22-44-13-202Z-settings/chapter-3-desktop-compact-large-margin.png": {
+      "expected": "d87c673573fb8c30bd3a80bdcf343c54c0da6750cf472fc366b2215a4eac9f3c",
+      "actual": "d87c673573fb8c30bd3a80bdcf343c54c0da6750cf472fc366b2215a4eac9f3c",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/settings/2026-10-22T22-44-13-202Z-settings/chapter-3-desktop.png": {
+      "expected": "b81f17ccb9e23d93b155f0a6c81425d3a08c7e39b71d115150a2bcac1a914b43",
+      "actual": "b81f17ccb9e23d93b155f0a6c81425d3a08c7e39b71d115150a2bcac1a914b43",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/settings/2026-10-22T22-44-13-202Z-settings/chapter-4-desktop-compact-large-margin.png": {
+      "expected": "ebbe0da6a5c0d5b8462a899daddcda14670706f092485b4a5bfa30888c37e715",
+      "actual": "ebbe0da6a5c0d5b8462a899daddcda14670706f092485b4a5bfa30888c37e715",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/settings/2026-10-22T22-44-13-202Z-settings/chapter-4-desktop.png": {
+      "expected": "5aca3fbcf15e8249d905e3ea85b6fb258f95550280b8492570d915dbdb0dbe5f",
+      "actual": "5aca3fbcf15e8249d905e3ea85b6fb258f95550280b8492570d915dbdb0dbe5f",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/settings/2026-10-22T22-44-13-202Z-settings/executed-driver.mjs": {
+      "expected": "83a73733bb00771c5381c397b75742abb6934e78af30deac5c8dc02fc72e3564",
+      "actual": "83a73733bb00771c5381c397b75742abb6934e78af30deac5c8dc02fc72e3564",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/settings/2026-10-22T22-44-13-202Z-settings/layout-1280x720.png": {
+      "expected": "f588b9024836817311e58eba5be577a1ce02dc4901c26a0110ff73f0b4acf389",
+      "actual": "f588b9024836817311e58eba5be577a1ce02dc4901c26a0110ff73f0b4acf389",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/settings/2026-10-22T22-44-13-202Z-settings/layout-1920x1080.png": {
+      "expected": "df4c3c7b81e1c436eb7ab272789a06ff065b932b72fc99a405348464a943460f",
+      "actual": "df4c3c7b81e1c436eb7ab272789a06ff065b932b72fc99a405348464a943460f",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/settings/2026-10-22T22-44-13-202Z-settings/settings-desktop-compact.png": {
+      "expected": "b7ec4a54bffda035939563ba42358622cf1169dd2643d0d40cbca9932c4b4307",
+      "actual": "b7ec4a54bffda035939563ba42358622cf1169dd2643d0d40cbca9932c4b4307",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/settings/2026-10-22T22-44-13-202Z-settings/settings-desktop.png": {
+      "expected": "9c80b93f824810f58e6eb95ca88ae8d58961b22ce51dc4bb7648d16ce8139aa4",
+      "actual": "9c80b93f824810f58e6eb95ca88ae8d58961b22ce51dc4bb7648d16ce8139aa4",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/subpath.log": {
+      "expected": "871c9626b82bfd0ad53be5c39e99517971a73746f9df5c599bb5d9b6d99f468f",
+      "actual": "871c9626b82bfd0ad53be5c39e99517971a73746f9df5c599bb5d9b6d99f468f",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/subpath/2026-10-22T22-46-41-032Z-subpath/validation.json": {
+      "expected": "dea37df169bd5f569fa9ac37fec7c6f7cb29338984e3262c2f30afafa4472575",
+      "actual": "dea37df169bd5f569fa9ac37fec7c6f7cb29338984e3262c2f30afafa4472575",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/subpath-validation.json": {
+      "expected": "dea37df169bd5f569fa9ac37fec7c6f7cb29338984e3262c2f30afafa4472575",
+      "actual": "dea37df169bd5f569fa9ac37fec7c6f7cb29338984e3262c2f30afafa4472575",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/subpath/subpath-latest.json": {
+      "expected": "f3f0ffc75c7a224a924473214465172e206cbe0204d22ba073229e21466a340b",
+      "actual": "f3f0ffc75c7a224a924473214465172e206cbe0204d22ba073229e21466a340b",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/subpath-pointer.json": {
+      "expected": "f3f0ffc75c7a224a924473214465172e206cbe0204d22ba073229e21466a340b",
+      "actual": "f3f0ffc75c7a224a924473214465172e206cbe0204d22ba073229e21466a340b",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/subpath/2026-10-22T22-46-41-032Z-subpath/acceptance.json": {
+      "expected": "6b1a743fd6130590c4b77d2a0e76371034d33baabe982e62882f06c661857cd8",
+      "actual": "6b1a743fd6130590c4b77d2a0e76371034d33baabe982e62882f06c661857cd8",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/subpath-acceptance.json": {
+      "expected": "6b1a743fd6130590c4b77d2a0e76371034d33baabe982e62882f06c661857cd8",
+      "actual": "6b1a743fd6130590c4b77d2a0e76371034d33baabe982e62882f06c661857cd8",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/subpath/2026-10-22T22-46-41-032Z-subpath/executed-driver.mjs": {
+      "expected": "1041f8b91fe1ddab3c95326fa12804f66dabc602a2d07f8fe4a8434c5124808d",
+      "actual": "1041f8b91fe1ddab3c95326fa12804f66dabc602a2d07f8fe4a8434c5124808d",
+      "passed": true
+    },
+    "reports/art-renewal/final-regressions/2026-10-22T22-32-44-628Z/legacy/subpath/2026-10-22T22-46-41-032Z-subpath/portable-subpath-1280x720.png": {
+      "expected": "2c6adf5bb7a2427b2874f0cb26510f195a301f0285cc250ddda4db5e6daad6f3",
+      "actual": "2c6adf5bb7a2427b2874f0cb26510f195a301f0285cc250ddda4db5e6daad6f3",
+      "passed": true
+    },
+    "reports/art-renewal/soak/2026-10-22T22-18-57-289Z/validation.json": {
+      "expected": "897fc3fabc3d37e0f793f28e377dfffb6768ed15a728fdf7a4d144a1a7ed006d",
+      "actual": "897fc3fabc3d37e0f793f28e377dfffb6768ed15a728fdf7a4d144a1a7ed006d",
+      "passed": true
+    },
+    "tmp/art-renewal-soak/2026-10-22T22-18-57-289Z/r1-c1-natural-end.png": {
+      "expected": "cdfd4665201808988f4aa02a90bc2f75120c954d886dd6d2910b207c9b0c3e74",
+      "actual": "cdfd4665201808988f4aa02a90bc2f75120c954d886dd6d2910b207c9b0c3e74",
+      "passed": true
+    },
+    "tmp/art-renewal-soak/2026-10-22T22-18-57-289Z/r1-c2-natural-end.png": {
+      "expected": "d01eed69dcc9778381abd8018f9bccfb41f1210eb1b303cc8b977aac75be7b9f",
+      "actual": "d01eed69dcc9778381abd8018f9bccfb41f1210eb1b303cc8b977aac75be7b9f",
+      "passed": true
+    },
+    "tmp/art-renewal-soak/2026-10-22T22-18-57-289Z/r1-c3-natural-end.png": {
+      "expected": "f59e6578b11813544477be7740fdf95783eba4e569e91f72c6e0154c4790473f",
+      "actual": "f59e6578b11813544477be7740fdf95783eba4e569e91f72c6e0154c4790473f",
+      "passed": true
+    },
+    "tmp/art-renewal-soak/2026-10-22T22-18-57-289Z/r1-c4-natural-end.png": {
+      "expected": "e571e2000519f4bf4bd3cf20f94e3d9cacf25c2de2278ab61251b2c777e72978",
+      "actual": "e571e2000519f4bf4bd3cf20f94e3d9cacf25c2de2278ab61251b2c777e72978",
+      "passed": true
+    },
+    "tmp/art-renewal-soak/2026-10-22T22-18-57-289Z/r2-c1-natural-end.png": {
+      "expected": "40ae5a3421b139ab541113071e0430f4db8d28f3694d70512d48f8d306cae8f8",
+      "actual": "40ae5a3421b139ab541113071e0430f4db8d28f3694d70512d48f8d306cae8f8",
+      "passed": true
+    },
+    "tmp/art-renewal-soak/2026-10-22T22-18-57-289Z/r2-c2-natural-end.png": {
+      "expected": "4cae175c2decfe0c37183d921c197b29eda8b7fea84099b430bb489220eba0d4",
+      "actual": "4cae175c2decfe0c37183d921c197b29eda8b7fea84099b430bb489220eba0d4",
+      "passed": true
+    },
+    "tmp/art-renewal-soak/2026-10-22T22-18-57-289Z/r2-c3-natural-end.png": {
+      "expected": "8655be347823ae3a6c87a41e41332bb10695afad2a909481a2f783151a4a4ff9",
+      "actual": "8655be347823ae3a6c87a41e41332bb10695afad2a909481a2f783151a4a4ff9",
+      "passed": true
+    },
+    "tmp/art-renewal-soak/2026-10-22T22-18-57-289Z/r2-c4-natural-end.png": {
+      "expected": "8a970680fc37d43f6294f0c7b2ae1f54a45dcdf66385ce113d2a10a141e24b0d",
+      "actual": "8a970680fc37d43f6294f0c7b2ae1f54a45dcdf66385ce113d2a10a141e24b0d",
+      "passed": true
+    }
+  }
+}

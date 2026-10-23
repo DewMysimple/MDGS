@@ -1,0 +1,169 @@
+{
+  "status": "failed",
+  "checks": {
+    "strict_capture_passed": false,
+    "zero_transport_or_write_violations": true,
+    "zero_port_sequence_violations": true,
+    "valid_independent_native_label_audit": false,
+    "raw_bytes_equal_actual_written_bytes": true,
+    "actual_written_frames_equal_process_count": true,
+    "at_least_59_seconds_of_reference": true,
+    "ramp_max_error_below_half_sample": true,
+    "sine_correlation_above_0_99998": true,
+    "sine_max_absolute_error_below_5e_6": true
+  },
+  "run": "tmp/art-renewal/native-audio-clock-probe/2026-10-22T23-37-35-204Z",
+  "helperSha256": "d55df336019513d13ceb4efc56dc1cbc6c8f59f9c077a59278fc192d29de50e0",
+  "scope": "Independent native ConstantSource AudioParam a-rate ramp and separate 997Hz Oscillator. Reference does not use worklet currentFrame. Raw PCM is read without alteration; this does not backfill any prior failed recording.",
+  "strictCaptureStatus": "failed",
+  "reference": {
+    "when": 0.6,
+    "whenFrame": 28800,
+    "duration": 60,
+    "rate": 48000,
+    "frequency": 997,
+    "sineAmplitude": 0.0005,
+    "rampScale": 4294967296,
+    "finished": true,
+    "mutations": 181776
+  },
+  "rawFrames": 2908800,
+  "rawBytes": 23270400,
+  "rawSha256": "40197ba8aa98c1e1e87ae0736785940366f48d1da4133db987c71595303a7661",
+  "sampleRate": 48000,
+  "absoluteFirstFrame": 0,
+  "processes": 22725,
+  "acceptedSingleQuantumStales": 13,
+  "nativeLabelIssues": [
+    {
+      "kind": "unsupported-native-clock-offset",
+      "index": 1636,
+      "anchorOffset": 0,
+      "previous": {
+        "processSeq": 1636,
+        "counterFrame": 209280,
+        "currentFrame": 209280,
+        "currentTime": 4.36,
+        "frames": 128,
+        "fingerprint": "282b8126"
+      },
+      "current": {
+        "processSeq": 1637,
+        "counterFrame": 209408,
+        "currentFrame": 209280,
+        "currentTime": 4.36,
+        "frames": 128,
+        "fingerprint": "c9ef383f"
+      },
+      "next": {
+        "processSeq": 1638,
+        "counterFrame": 209536,
+        "currentFrame": 209280,
+        "currentTime": 4.36,
+        "frames": 128,
+        "fingerprint": "54d3c36a"
+      }
+    },
+    {
+      "kind": "unsupported-native-clock-offset",
+      "index": 1637,
+      "anchorOffset": 0,
+      "previous": {
+        "processSeq": 1637,
+        "counterFrame": 209408,
+        "currentFrame": 209280,
+        "currentTime": 4.36,
+        "frames": 128,
+        "fingerprint": "c9ef383f"
+      },
+      "current": {
+        "processSeq": 1638,
+        "counterFrame": 209536,
+        "currentFrame": 209280,
+        "currentTime": 4.36,
+        "frames": 128,
+        "fingerprint": "54d3c36a"
+      },
+      "next": {
+        "processSeq": 1639,
+        "counterFrame": 209664,
+        "currentFrame": 209280,
+        "currentTime": 4.36,
+        "frames": 128,
+        "fingerprint": "3e21620d"
+      }
+    },
+    {
+      "kind": "unsupported-native-clock-offset",
+      "index": 1638,
+      "anchorOffset": 0,
+      "previous": {
+        "processSeq": 1638,
+        "counterFrame": 209536,
+        "currentFrame": 209280,
+        "currentTime": 4.36,
+        "frames": 128,
+        "fingerprint": "54d3c36a"
+      },
+      "current": {
+        "processSeq": 1639,
+        "counterFrame": 209664,
+        "currentFrame": 209280,
+        "currentTime": 4.36,
+        "frames": 128,
+        "fingerprint": "3e21620d"
+      },
+      "next": {
+        "processSeq": 1640,
+        "counterFrame": 209792,
+        "currentFrame": 209280,
+        "currentTime": 4.36,
+        "frames": 128,
+        "fingerprint": "61688aee"
+      }
+    },
+    {
+      "kind": "unsupported-native-clock-offset",
+      "index": 1639,
+      "anchorOffset": 0,
+      "previous": {
+        "processSeq": 1639,
+        "counterFrame": 209664,
+        "currentFrame": 209280,
+        "currentTime": 4.36,
+        "frames": 128,
+        "fingerprint": "3e21620d"
+      },
+      "current": {
+        "processSeq": 1640,
+        "counterFrame": 209792,
+        "currentFrame": 209280,
+        "currentTime": 4.36,
+        "frames": 128,
+        "fingerprint": "61688aee"
+      },
+      "next": {
+        "processSeq": 1641,
+        "counterFrame": 209920,
+        "currentFrame": 209920,
+        "currentTime": 4.373333333333333,
+        "frames": 128,
+        "fingerprint": "ee20e1a1"
+      }
+    }
+  ],
+  "packetCount": 1255,
+  "packetViolations": 0,
+  "rampActiveSamples": 2879744,
+  "rampFrameErrorMaxAbs": 0.25,
+  "rampFrameErrorRMS": 0.14101380681229833,
+  "rampErrorsAtLeastHalfSample": 0,
+  "sineCorrelation": 0.9999895737551163,
+  "sineErrorMaxAbs": 3.954375209425751e-06,
+  "sineErrorRMS": 1.6144866071578225e-06,
+  "writtenFrames": 2908800,
+  "counterSpanFrames": 2908800,
+  "nativeLabelSpanFrames": 2908800,
+  "recordingFailure": "AssertionError [ERR_ASSERTION]: Unsupported native/process clock evidence: [{\"kind\":\"unsupported-native-clock-offset\",\"index\":1636,\"anchorOffset\":0,\"previous\":{\"processSeq\":1636,\"counterFrame\":209280,\"currentFrame\":209280,\"currentTime\":4.36,\"frames\":128,\"fingerprint\":\"282b8126\"},\"current\":{\"processSeq\":1637,\"counterFrame\":209408,\"currentFrame\":209280,\"currentTime\":4.36,\"frames\":128,\"fingerprint\":\"c9ef383f\"},\"next\":{\"processSeq\":1638,\"counterFrame\":209536,\"currentFrame\":209280,\"currentTime\":4.36,\"frames\":128,\"fingerprint\":\"54d3c36a\"}},{\"kind\":\"unsupported-native-clock-offset\",\"index\":1637,\"anchorOffset\":0,\"previous\":{\"processSeq\":1637,\"counterFrame\":209408,\"currentFrame\":209280,\"currentTime\":4.36,\"frames\":128,\"fingerprint\":\"c9ef383f\"},\"current\":{\"processSeq\":1638,\"counterFrame\":209536,\"currentFrame\":209280,\"currentTime\":4.36,\"frames\":128,\"fingerprint\":\"54d3c36a\"},\"next\":{\"processSeq\":1639,\"counterFrame\":209664,\"currentFrame\":209280,\"currentTime\":4.36,\"frames\":128,\"fingerprint\":\"3e21620d\"}},{\"kind\":\"unsupported-native-clock-offset\",\"index\":1638,\"anchorOffset\":0,\"previous\":{\"processSeq\":1638,\"counterFrame\":209536,\"currentFrame\":209280,\"currentTime\":4.36,\"frames\":128,\"fingerprint\":\"54d3c36a\"},\"current\":{\"processSeq\":1639,\"counterFrame\":209664,\"currentFrame\":209280,\"currentTime\":4.36,\"frames\":128,\"fingerprint\":\"3e21620d\"},\"next\":{\"processSeq\":1640,\"counterFrame\":209792,\"currentFrame\":209280,\"currentTime\":4.36,\"frames\":128,\"fingerprint\":\"61688aee\"}},{\"kind\":\"unsupported-native-clock-offset\",\"index\":1639,\"anchorOffset\":0,\"previous\":{\"processSeq\":1639,\"counterFrame\":209664,\"currentFrame\":209280,\"currentTime\":4.36,\"frames\":128,\"fingerprint\":\"3e21620d\"},\"current\":{\"processSeq\":1640,\"counterFrame\":209792,\"currentFrame\":209280,\"currentTime\":4.36,\"frames\":128,\"fingerprint\":\"61688aee\"},\"next\":{\"processSeq\":1641,\"counterFrame\":209920,\"currentFrame\":209920,\"currentTime\":4.373333333333333,\"frames\":128,\"fingerprint\":\"ee20e1a1\"}}]",
+  "limits": "Native-reference PCM continuity is established only for this actual run and its frozen helper. Final video alignment additionally has clock-estimate and video-frame granularity. No specific Chromium build-symbol root cause is claimed."
+}

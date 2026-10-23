@@ -1,0 +1,109 @@
+{
+  "scope": "Static diagnosis only. Overrides input-range/matrix assumptions to identify the Chrome difference. These alternate decodes do not replace the failed ordinary metadata-respecting FFmpeg reference or alter the MP4.",
+  "results": [
+    {
+      "matrix": "bt601",
+      "assumedInputRange": "tv",
+      "command": [
+        "ffmpeg",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-i",
+        "tmp\\exhibition-tour-candidate8\\2026-10-23T04-14-51-310Z\\国色长卷-导览录像.mp4",
+        "-vf",
+        "select=eq(n\\,90),scale=in_range=tv:out_range=pc:in_color_matrix=bt601",
+        "-frames:v",
+        "1",
+        "-pix_fmt",
+        "rgb24",
+        "-y",
+        "reports\\art-renewal\\candidate8-video-colour\\2026-10-23T04-22-13Z\\ffmpeg-frame90-bt601-tv.png"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "mae": 14.538735853909465,
+      "p99": 28,
+      "file": "ffmpeg-frame90-bt601-tv.png",
+      "sha256": "ef4452818f87d9a8e88261c5da1b183affcf7a3dfb257e7bad5e695c996516f3"
+    },
+    {
+      "matrix": "bt709",
+      "assumedInputRange": "pc",
+      "command": [
+        "ffmpeg",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-i",
+        "tmp\\exhibition-tour-candidate8\\2026-10-23T04-14-51-310Z\\国色长卷-导览录像.mp4",
+        "-vf",
+        "select=eq(n\\,90),scale=in_range=pc:out_range=pc:in_color_matrix=bt709",
+        "-frames:v",
+        "1",
+        "-pix_fmt",
+        "rgb24",
+        "-y",
+        "reports\\art-renewal\\candidate8-video-colour\\2026-10-23T04-22-13Z\\ffmpeg-frame90-bt709-pc.png"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "mae": 14.481408179012346,
+      "p99": 21,
+      "file": "ffmpeg-frame90-bt709-pc.png",
+      "sha256": "e09984691db6e23e6464b5b1fe628061bb1a3032d80bcb1dbbc4753c186a0568"
+    },
+    {
+      "matrix": "bt709",
+      "assumedInputRange": "tv",
+      "command": [
+        "ffmpeg",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-i",
+        "tmp\\exhibition-tour-candidate8\\2026-10-23T04-14-51-310Z\\国色长卷-导览录像.mp4",
+        "-vf",
+        "select=eq(n\\,90),scale=in_range=tv:out_range=pc:in_color_matrix=bt709",
+        "-frames:v",
+        "1",
+        "-pix_fmt",
+        "rgb24",
+        "-y",
+        "reports\\art-renewal\\candidate8-video-colour\\2026-10-23T04-22-13Z\\ffmpeg-frame90-bt709-tv.png"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "mae": 14.481408179012346,
+      "p99": 21,
+      "file": "ffmpeg-frame90-bt709-tv.png",
+      "sha256": "e09984691db6e23e6464b5b1fe628061bb1a3032d80bcb1dbbc4753c186a0568"
+    },
+    {
+      "matrix": "bt601",
+      "assumedInputRange": "pc",
+      "command": [
+        "ffmpeg",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-i",
+        "tmp\\exhibition-tour-candidate8\\2026-10-23T04-14-51-310Z\\国色长卷-导览录像.mp4",
+        "-vf",
+        "select=eq(n\\,90),scale=in_range=pc:out_range=pc:in_color_matrix=bt601",
+        "-frames:v",
+        "1",
+        "-pix_fmt",
+        "rgb24",
+        "-y",
+        "reports\\art-renewal\\candidate8-video-colour\\2026-10-23T04-22-13Z\\ffmpeg-frame90-bt601-pc.png"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "mae": 14.538735853909465,
+      "p99": 28,
+      "file": "ffmpeg-frame90-bt601-pc.png",
+      "sha256": "ef4452818f87d9a8e88261c5da1b183affcf7a3dfb257e7bad5e695c996516f3"
+    }
+  ]
+}

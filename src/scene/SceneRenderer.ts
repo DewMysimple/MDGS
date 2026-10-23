@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { ShaderWarmup } from './ShaderWarmup';
 import type { SceneManifest } from '../types';
 import { prepareScene } from './prepareScene';
 import { CalligraphyLayer } from './CalligraphyLayer';
@@ -13,8 +14,19 @@ import { fitSourceViewport, type SourceViewport } from './sourceViewport';
 import { loadSourceMaterialLibrary, type SourceMaterialLibrary, type SourceFieldBinding } from './SourceMaterial';
 import { createSourceLighting, loadSourceRenderSettings, type SourceRenderSettings, type SourceLightingState } from './SourceLighting';
 import { SourcePostProcessing } from './SourcePostProcessing';
+import { ArtworkProjector } from './artworkProjection';
+import type { ArtworkAnchorSpec, ProjectedArtAnchor } from '../data/artEncounters';
+import { createArtworkSnapshot, type ArtworkSnapshot } from './artworkSnapshot';
+import { decodeTextureImage } from './texturePreparation';
 
 interface TextureEntry { texture?: THREE.Texture; loading: boolean; lastSeen: number; bytes: number }
+interface TextureUpload { url: string; texture: THREE.Texture; entry: TextureEntry; variants: THREE.Texture[] }
+interface SnapshotRequest {
+  resolve: (snapshot: ArtworkSnapshot) => void;
+  reject: (reason: Error) => void;
+  timer: number;
+  encoding: boolean;
+}
 interface SceneObject {
   mesh: THREE.Mesh; material: THREE.MeshBasicMaterial; url?: string;
   animation?: { progress: number; matrix: number[] }[];
@@ -39,6 +51,7 @@ export class SceneRenderer {
   private manifest?: SceneManifest;
   private objects: SceneObject[] = [];
   private textures = new Map<string, TextureEntry>();
+  private textureUploads: TextureUpload[] = [];
   private loader = new THREE.TextureLoader();
   private frame = 0;
   private disposed = false;
@@ -101,6 +114,7 @@ export class SceneRenderer {
   private narrativePixels = new Uint8Array(0);
   private narrativePending = false;
   private narrativeGeneration = 0;
+  private narrativePlaybackActive = false;
   private narrativeTimer = 0;
   private narrativeReads = 0;
   private lastViewChange = 0;
@@ -116,12 +130,18 @@ export class SceneRenderer {
   private sourceLighting?: SourceLightingState;
   private sourceFocusDistance = 10;
   private sourcePost?: SourcePostProcessing;
+  private artworkProjector = new ArtworkProjector();
+  private artworkAnchors: readonly ArtworkAnchorSpec[] = [];
+  private snapshotRequests = new Set<SnapshotRequest>();
+  private shaderWarmup?: ShaderWarmup;
+  private preparationCancelled = false;
 
   private get sourceFaithful() { return this.manifest?.sourceRevision === activeSourceEdition; }
 
   constructor(private host: HTMLElement, private status: (message: string | null) => void,
     private preparation?: (state: ScenePreparationState) => void,
-    private onNarrativeSpace?: (placement: NarrativeSpace) => void) {
+    private onNarrativeSpace?: (placement: NarrativeSpace) => void,
+    private onArtworkAnchors?: (anchors: ProjectedArtAnchor[]) => void) {
     this.readingLayoutRoot = host.closest<HTMLElement>('.app-shell');
     this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'high-performance' });
     this.renderer.setPixelRatio(Math.min(devicePixelRatio, 1.65));
@@ -129,6 +149,8 @@ export class SceneRenderer {
     this.renderer.debug.onShaderError = (gl, program, vertex, fragment) => {
       this.shaderErrors.push([gl.getProgramInfoLog(program), gl.getShaderInfoLog(vertex), gl.getShaderInfoLog(fragment)].filter(Boolean).join('\n'));
       this.shaderFailed = true;
+      this.shaderWarmup?.cancel('shader-error');
+      this.rejectArtworkSnapshots(new Error('画境暂未绘成，无法留存当前画心。'));
       cancelAnimationFrame(this.frame); this.frame = 0;
       this.ready = false; this.firstFrameReady = false;
       this.status('画面暂时中断，请重新展卷');
@@ -258,6 +280,10 @@ export class SceneRenderer {
     if (!this.sourceFaithful) this.motionDirector = new MotionDirector(chapterId, this.objects, manifest.stops, atmosphere?.profile);
     this.artCounts = { replacements: art.replacements, geometryRepairs: art.geometryRepairs, edgeRepairs: art.edgeRepairs, addedLayers: art.addedLayers + (atmosphere?.objects.length ?? 0), textLayers: art.textLayers.length };
     this.loaded = true;
+    if (this.sourceFaithful && this.sourceMaterials) {
+      this.shaderWarmup = new ShaderWarmup(this.renderer, this.scene, this.camera, () => { this.dirty = true; this.requestFrame(); });
+      if (this.preparationCancelled) this.shaderWarmup.cancel('owner-return');
+    }
     this.dirty = true;
     if (!manifest.sourceRevision) this.calligraphy.load(chapterId, manifest, art.textLayers);
     this.updateReadingMinimum();
@@ -266,6 +292,82 @@ export class SceneRenderer {
     this.emitMotionState();
     this.requestFrame();
     return manifest;
+  }
+
+  /** Request a fresh completed GPU frame. An idle WebGL drawing buffer may
+   * already be cleared; copying happens inside render(), never in this call. */
+  captureArtworkSnapshot(): Promise<ArtworkSnapshot> {
+    if (this.disposed || this.contextLost || this.shaderFailed || !this.manifest || !this.loaded || !this.firstFrameReady)
+      return Promise.reject(new Error('当前画境尚未齐备，暂不能留存画心。'));
+    return new Promise((resolve, reject) => {
+      const request: SnapshotRequest = { resolve, reject, encoding: false, timer: 0 };
+      request.timer = window.setTimeout(() => {
+        if (this.snapshotRequests.delete(request)) reject(new Error('画心留存较久，请直接返回序厅。'));
+      }, 1500);
+      this.snapshotRequests.add(request);
+      this.dirty = true;
+      this.requestFrame();
+    });
+  }
+
+  /** Autoplay has a stable authored clock; it must not wait for manual-input
+   * quiet time on every frame. Sampling stays bucketed and single-inflight. */
+  setNarrativePlaybackActive(active: boolean) {
+    if (this.narrativePlaybackActive === active) return;
+    this.narrativePlaybackActive = active;
+    if (active) { this.dirty = true; this.requestFrame(); }
+  }
+
+  private rejectArtworkSnapshots(reason: Error) {
+    for (const request of this.snapshotRequests) {
+      window.clearTimeout(request.timer); request.reject(reason);
+    }
+    this.snapshotRequests.clear();
+  }
+
+  private copyPendingArtworkSnapshots() {
+    const requests = [...this.snapshotRequests].filter(request => !request.encoding);
+    if (!requests.length || !this.manifest || !this.ready || !this.firstFrameReady
+      || [...this.currentVisible].some(url => !this.textures.get(url)?.texture)) return;
+    const view = this.sourceViewport, canvas = this.renderer.domElement;
+    if (!(view.width > 1 && view.height > 1)) return;
+    const sx = canvas.width / this.width, sy = canvas.height / this.height;
+    // Small integer source ratios preserve 16:9 and 7:5 exactly after capping.
+    let unitWidth = 0, unitHeight = 0;
+    for (let denominator = 1; denominator <= 1000; denominator++) {
+      const numerator = Math.round(view.aspect * denominator);
+      if (Math.abs(numerator / denominator - view.aspect) < 1e-8) { unitWidth = numerator; unitHeight = denominator; break; }
+    }
+    const limit = Math.max(1, Math.min(1920, Math.floor(view.width * sx)));
+    const units = unitWidth ? Math.floor(limit / unitWidth) : 0;
+    const width = units > 0 ? unitWidth * units : limit;
+    const height = units > 0 ? unitHeight * units : Math.max(1, Math.round(width / view.aspect));
+    const copy = document.createElement('canvas'); copy.width = width; copy.height = height;
+    const context = copy.getContext('2d');
+    if (!context) { this.rejectArtworkSnapshots(new Error('当前浏览器暂不能留存画心。')); return; }
+    const metadata = { chapterId: this.chapterId, sourceRevision: this.manifest.sourceRevision ?? '',
+      progress: this.progress, sourceFrame: this.manifest.frameRange[0] + this.progress * (this.manifest.frameRange[1] - this.manifest.frameRange[0]), width, height };
+    requests.forEach(request => { request.encoding = true; });
+    try {
+      // Same JavaScript task as the successful final GPU composite; no DOM ink,
+      // source seek, lighting change or persistent drawing buffer is involved.
+      context.drawImage(canvas, view.x * sx, view.y * sy, view.width * sx, view.height * sy, 0, 0, width, height);
+      copy.toBlob(blob => {
+        for (const request of requests) {
+          if (!this.snapshotRequests.delete(request)) continue;
+          window.clearTimeout(request.timer);
+          if (!blob || this.disposed || this.contextLost || this.shaderFailed) request.reject(new Error('当前画心未能留存，请直接返回序厅。'));
+          else {
+            try { request.resolve(createArtworkSnapshot(blob, metadata)); }
+            catch { request.reject(new Error('画心留存资源暂不可用，请直接返回序厅。')); }
+          }
+        }
+        copy.width = copy.height = 1;
+      }, 'image/png');
+    } catch {
+      this.rejectArtworkSnapshots(new Error('当前画心未能留存，请直接返回序厅。'));
+      copy.width = copy.height = 1;
+    }
   }
 
   resize(width: number, height: number) {
@@ -289,6 +391,12 @@ export class SceneRenderer {
     } else this.readingLayoutRoot?.style.removeProperty('--reading-min-paint-height');
   }
 
+  setArtworkAnchors(anchors: readonly ArtworkAnchorSpec[]) {
+    this.artworkAnchors = anchors;
+    if (!anchors.length) this.onArtworkAnchors?.([]);
+    else { this.dirty = true; this.requestFrame(); }
+  }
+
   setProgress(progress: number) {
     if (this.progress === progress) return;
     this.travelDirection = progress > this.progress ? 1 : -1;
@@ -300,6 +408,18 @@ export class SceneRenderer {
 
   /** Keep the outer ceremony tied to the current viewport until interaction opens. */
   setPreparationActive(active: boolean) { this.preparationActive = active; }
+
+  /** Leaving the owner is final for this renderer lifetime. Late textures or
+   * restored GL resources must not start a first draw behind the closing paper. */
+  cancelPreparation(): void {
+    if (this.preparationCancelled) return;
+    this.preparationCancelled = true;
+    cancelAnimationFrame(this.frame); this.frame = 0;
+    this.shaderWarmup?.cancel('owner-return');
+    for (const upload of this.textureUploads) { upload.texture.dispose(); upload.entry.loading = false; }
+    this.textureUploads = [];
+    this.updateDiagnostics();
+  }
 
   setMotionEnabled(enabled: boolean) {
     this.motionRequested = enabled;
@@ -382,6 +502,8 @@ export class SceneRenderer {
     if (this.disposed) return;
     event.preventDefault();
     this.contextLost = true;
+    this.shaderWarmup?.loseContext();
+    this.rejectArtworkSnapshots(new Error('画境暂时中断，无法留存当前画心。'));
     // Fence results from the lost GPU belong to a different resource lifetime.
     // Detach their buffer so a late completion cannot write into a new sample.
     this.narrativeGeneration++;
@@ -403,6 +525,7 @@ export class SceneRenderer {
   private onContextRestored = () => {
     if (this.disposed) return;
     this.contextLost = false;
+    this.shaderWarmup?.restoreContext();
     this.contextRetryRequested = false;
     this.contextRestoreCount++;
     this.shaderErrors = [];
@@ -414,7 +537,19 @@ export class SceneRenderer {
     this.renderer.setClearColor(0xf8f5ed, 0);
     this.renderer.setViewport(0, 0, this.width, this.height);
     // Three.js restores its renderer state; mark retained CPU-backed resources for upload.
-    for (const entry of this.textures.values()) if (entry.texture) entry.texture.needsUpdate = true;
+    // A pending resource may have uploaded only some sampler variants before
+    // the loss. That completed prefix belonged to the old GPU lifetime too.
+    for (const upload of this.textureUploads) {
+      upload.variants = this.textureVariants(upload.url, upload.texture);
+      for (const texture of upload.variants) texture.needsUpdate = true;
+    }
+    for (const [url, entry] of this.textures) if (entry.texture) {
+      const texture = entry.texture;
+      texture.needsUpdate = true;
+      entry.texture = undefined; entry.loading = true;
+      this.assignTexture(url, null);
+      this.textureUploads.push({ url, entry, texture, variants: this.textureVariants(url, texture) });
+    }
     for (const object of this.objects) object.material.needsUpdate = true;
     this.previousFrameTime = 0;
     this.dirty = true;
@@ -425,7 +560,7 @@ export class SceneRenderer {
   };
 
   private requestFrame() {
-    if (!this.frame && !this.disposed && !this.contextLost && !this.shaderFailed && !document.hidden) this.frame = requestAnimationFrame(this.render);
+    if (!this.frame && !this.disposed && !this.contextLost && !this.shaderFailed && !this.preparationCancelled && !document.hidden) this.frame = requestAnimationFrame(this.render);
   }
 
   private bracket<T extends { progress: number }>(samples: T[], progress = this.progress) {
@@ -506,7 +641,7 @@ export class SceneRenderer {
   }
 
   private updateTextures() {
-    if (this.disposed || this.contextLost || this.shaderFailed) return;
+    if (this.disposed || this.contextLost || this.shaderFailed || this.preparationCancelled) return;
     // Enlarge the frustum to prefetch neighbouring planes before they enter the painting.
     const preloadCamera = this.preloadCamera.copy(this.camera);
     preloadCamera.fov = Math.min(125, this.camera.fov * 1.35);
@@ -556,9 +691,20 @@ export class SceneRenderer {
     }
     this.pumpQueue();
     let totalBytes = [...this.textures.values()].reduce((sum, value) => sum + value.bytes, 0);
-    const oldTextures = [...this.textures.entries()].filter(([url, entry]) => !this.currentVisible.has(url) && !this.prefetched.has(url) && !entry.loading).sort((a, b) => a[1].lastSeen - b[1].lastSeen);
+    // Visible source layers can already exceed the soft total budget. Keep a
+    // separate bounded look-behind so reversing a drag does not immediately
+    // decode and upload the sheets that just left the camera again.
+    const oldTextures = [...this.textures.entries()].filter(([url, entry]) => !this.currentVisible.has(url) && !this.prefetched.has(url) && !entry.loading).sort((a, b) => b[1].lastSeen - a[1].lastSeen);
+    let recentImageBytes = 0, recentPostBytes = 0;
     for (const [url, entry] of oldTextures) {
-      if (totalBytes < 160 * 1024 * 1024 && now - entry.lastSeen < 12000) break;
+      const post = !!this.sourcePost?.hasUrl(url);
+      const retained = post ? recentPostBytes : recentImageBytes;
+      const allowance = (post ? 24 : 96) * 1024 * 1024;
+      if (now - entry.lastSeen < 5000 && retained + entry.bytes <= allowance) {
+        if (post) recentPostBytes += entry.bytes; else recentImageBytes += entry.bytes;
+        continue;
+      }
+      if (totalBytes < 160 * 1024 * 1024 && now - entry.lastSeen < 12000) continue;
       entry.texture?.dispose();
       totalBytes -= entry.bytes;
       this.textures.delete(url);
@@ -605,7 +751,7 @@ export class SceneRenderer {
   }
 
   private pumpQueue() {
-    if (this.disposed || this.contextLost || this.shaderFailed) return;
+    if (this.disposed || this.contextLost || this.shaderFailed || this.preparationCancelled) return;
     let loadingCount = [...this.textures.values()].filter(entry => entry.loading).length;
     let speculativeLoading = [...this.textures.entries()].filter(([url, entry]) => entry.loading && !this.currentVisible.has(url)).length;
     // Newly exposed sheets take priority over speculative upcoming resources.
@@ -623,25 +769,24 @@ export class SceneRenderer {
       const load = this.sourcePost?.hasUrl(url) ? this.sourcePost.loadTexture(url, this.abort.signal)
         : this.sourceFieldUrls.has(url) && this.sourceMaterials
         ? this.sourceMaterials.loadTexture(url, this.abort.signal)
-        : this.loader.loadAsync(url);
+        : this.loader.loadAsync(url).then(texture => decodeTextureImage(texture, this.abort.signal));
       load.then(texture => {
-        if (this.disposed || this.shaderFailed) { texture.dispose(); entry.loading = false; return; }
+        if (this.disposed || this.shaderFailed || this.preparationCancelled) { texture.dispose(); entry.loading = false; return; }
         if (!(texture instanceof THREE.DataTexture)) {
           if (!this.sourceFieldUrls.has(url)) texture.colorSpace = THREE.SRGBColorSpace;
           texture.anisotropy = Math.min(4, this.renderer.capabilities.getMaxAnisotropy());
           texture.generateMipmaps = true;
           texture.minFilter = THREE.LinearMipmapLinearFilter;
         }
-        entry.texture = texture; entry.loading = false;
         const pixels = texture.image as { width: number; height: number; data?: ArrayBufferView };
         entry.bytes = pixels.data?.byteLength ?? pixels.width * pixels.height * 4 * 1.333;
-        this.assignTexture(url, texture);
-        this.dirty = true;
+        // A ready image can still trigger synchronous decode/upload at its
+        // first draw. Prepare only one texture per animation turn, and expose
+        // it to the original material only after its GPU upload has completed.
+        this.textureUploads.push({ url, texture, entry, variants: this.textureVariants(url, texture) });
         this.requestFrame();
-        this.pumpQueue();
-        this.updateTextures();
       }).catch((error: unknown) => {
-        if (this.disposed || this.shaderFailed) { entry.loading = false; return; }
+        if (this.disposed || this.shaderFailed || this.preparationCancelled) { entry.loading = false; return; }
         this.errorUrls.add(url);
         this.textureErrors.set(url, error instanceof Error ? error.message : String(error));
         this.textures.delete(url);
@@ -652,9 +797,47 @@ export class SceneRenderer {
     }
   }
 
+  private textureVariants(url: string, texture: THREE.Texture) {
+    // Image nodes retain their authored CLIP/REPEAT/MIRROR sampler states.
+    // Preparing the shared URL alone does not prepare those GPU variants.
+    const variants = [texture];
+    for (const object of this.objects) for (const field of object.fields ?? []) if (field.url === url) {
+      const sampler = field.prepare?.(texture);
+      if (sampler && !variants.includes(sampler)) variants.push(sampler);
+    }
+    return variants;
+  }
+
+  private prepareNextTexture() {
+    this.textureUploads.sort((a, b) => Number(this.currentVisible.has(b.url)) - Number(this.currentVisible.has(a.url)));
+    const upload = this.textureUploads[0];
+    if (!upload) return;
+    const { url, texture, entry } = upload;
+    try {
+      this.renderer.initTexture(upload.variants[0]);
+      if (this.contextLost) return;
+      upload.variants.shift();
+      if (upload.variants.length) { this.requestFrame(); return; }
+      this.textureUploads.shift();
+      entry.texture = texture; entry.loading = false;
+      this.assignTexture(url, texture);
+      this.dirty = true;
+    } catch (error) {
+      this.textureUploads.shift();
+      texture.dispose(); entry.loading = false;
+      this.errorUrls.add(url);
+      this.textureErrors.set(url, error instanceof Error ? error.message : String(error));
+      this.textures.delete(url);
+    }
+    this.updateTextures();
+    if (this.textureUploads.length) this.requestFrame();
+  }
+
   private render = (now: number) => {
     this.frame = 0;
-    if (this.disposed || this.contextLost || this.shaderFailed || document.hidden) return;
+    if (this.disposed || this.contextLost || this.shaderFailed || this.preparationCancelled || document.hidden) return;
+    this.prepareNextTexture();
+    if (this.contextLost || this.shaderFailed || this.preparationCancelled) return;
     this.rafTicks++;
     const motion = this.getMotionState().enabled;
     // A media query can change before its asynchronous change event arrives.
@@ -678,7 +861,13 @@ export class SceneRenderer {
       if (this.dirty) { this.updateCamera(); this.textureRefreshPending = true; }
       // During preparation, determine readiness for the actual responsive camera,
       // then upload/draw its textures before allowing the outer ceremony to reveal it.
-      if (!this.firstFrameReady) this.updateTextures();
+      if (!this.firstFrameReady || this.snapshotRequests.size) this.updateTextures();
+      this.shaderWarmup?.enqueue(this.objects);
+      if (this.preparationActive && !this.firstFrameReady && this.shaderWarmup
+        && !this.shaderWarmup.initialReady(this.objects, object => this.objectTexturesReady(object))) {
+        this.updateDiagnostics();
+        return;
+      }
       this.motionDirector?.update(this.camera, motion, this.progress);
       if (this.sourceMaterials) this.sourceLighting?.prepareShadows(this.renderer, this.scene, this.sourceMaterials, this.camera, this.sourceFocusDistance);
       if (this.sourcePost && this.sourceMaterials) {
@@ -697,8 +886,12 @@ export class SceneRenderer {
       this.renderer.setScissorTest(false);
       }
       if (this.shaderFailed) return;
+      this.copyPendingArtworkSnapshots();
       this.updateNarrativeSpace(now);
       this.calligraphy.render(this.camera, this.progress);
+      if (this.artworkAnchors.length && this.onArtworkAnchors) {
+        this.onArtworkAnchors(this.artworkProjector.project(this.scene, this.camera, this.sourceViewport, this.width, this.height, this.artworkAnchors));
+      }
       this.dirty = false;
       this.lastAmbientFrame = now;
       this.renderCount++;
@@ -717,6 +910,8 @@ export class SceneRenderer {
     // A narrow view can contain no authored independent motion at all. Keep that
     // painting quiet until resize, seek or a completed texture requests a new frame.
     if (!visibleMotion) this.previousFrameTime = 0;
+    const snapshotWaiting = [...this.snapshotRequests].some(request => !request.encoding);
+    if (snapshotWaiting && this.ready && this.firstFrameReady) this.dirty = true;
     if (!this.shaderErrors.length && this.loaded && (visibleMotion || this.textureRefreshPending || this.dirty || pointerMoving)) this.requestFrame();
     this.updateDiagnostics(!!this.frame);
   };
@@ -729,7 +924,7 @@ export class SceneRenderer {
     this.narrativeTimer = 0;
     // Placement should not chase each wheel/drag frame. A single timer asks for
     // one final sample even when the painting has no ambient animation or RAF.
-    const delay = this.preparationActive ? 0 : Math.max(0, 180 - (now - this.lastViewChange));
+    const delay = this.preparationActive || this.narrativePlaybackActive ? 0 : Math.max(0, 180 - (now - this.lastViewChange));
     if (delay) {
       this.narrativeTimer = window.setTimeout(() => {
         this.narrativeTimer = 0;
@@ -754,7 +949,8 @@ export class SceneRenderer {
     this.narrativeBucket = bucket;
     this.narrativeReads++;
     this.lastNarrativeReadProgress = this.progress;
-    const generation = this.narrativeGeneration, pixels = this.narrativePixels;
+    const generation = this.narrativeGeneration, pixels = this.narrativePixels, sampledProgress = this.progress;
+    const sampledWidth = this.width, sampledHeight = this.height;
     // WebGL2's fence-backed read avoids synchronously draining the display's
     // GPU command queue. The thumbnail and its CPU buffer remain bounded.
     this.renderer.readRenderTargetPixelsAsync(this.narrativeTarget, 0, 0, width, height, pixels).then(() => {
@@ -762,7 +958,7 @@ export class SceneRenderer {
       const currentBucket = `${this.width}:${this.height}:${Math.floor(this.progress * 24)}`;
       if (currentBucket !== bucket) { this.narrativeBucket = ''; return; }
       this.narrativeSpace = findNarrativeSpace(pixels, width, height, this.narrativeSpace, isCompactNarrativeViewport(this.width, this.height));
-      this.onNarrativeSpace?.(this.narrativeSpace);
+      this.onNarrativeSpace?.({ ...this.narrativeSpace, sampledProgress, sampledWidth, sampledHeight });
     }).catch(() => {
       // Placement is optional. A lost context must not turn it into a failed
       // painting or an unbounded readback retry loop.
@@ -811,6 +1007,7 @@ export class SceneRenderer {
       renderCount: String(this.renderCount), rafTicks: String(this.rafTicks), rafRunning: String(!!this.frame),
       firstFrameReady: String(this.firstFrameReady),
       contextLost: String(this.contextLost), contextRestores: String(this.contextRestoreCount),
+      textureUploads: String(this.textureUploads.length),
       textureCount: String(textureEntries.filter(entry => !!entry.texture).length),
       textureBytes: String(Math.round(textureEntries.reduce((sum, entry) => sum + entry.bytes, 0))),
       textureFailed: String(this.errorUrls.size), loadingTextures: String(textureEntries.filter(entry => entry.loading).length),
@@ -825,6 +1022,8 @@ export class SceneRenderer {
   dispose() {
     if (this.disposed) return;
     this.disposed = true;
+    this.shaderWarmup?.dispose();
+    this.rejectArtworkSnapshots(new DOMException('画境已离开。', 'AbortError'));
     this.narrativeGeneration++;
     this.abort.abort();
     cancelAnimationFrame(this.frame);
@@ -843,6 +1042,8 @@ export class SceneRenderer {
     this.readingLayoutRoot?.style.removeProperty('--reading-min-paint-height');
     for (const { mesh, material } of this.objects) { mesh.geometry.dispose(); material.dispose(); }
     for (const entry of this.textures.values()) entry.texture?.dispose();
+    for (const upload of this.textureUploads) upload.texture.dispose();
+    this.textureUploads = [];
     this.calligraphy.dispose();
     this.narrativeTarget?.dispose();
     this.textures.clear();

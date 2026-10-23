@@ -13,6 +13,7 @@ const moduleUrl = source => `data:text/javascript;base64,${Buffer.from(source).t
 const read = file => readFile(path.join(root, file), 'utf8');
 const placementUrl = moduleUrl(compile(await read('src/scene/NarrativeSpace.ts')));
 const viewportUrl = moduleUrl(compile(await read('src/scene/sourceViewport.ts')));
+const texturePreparationUrl = moduleUrl(compile(await read('src/scene/texturePreparation.ts')));
 const { narrativeSampleSize, findNarrativeSpace } = await import(placementUrl);
 const { fitSourceViewport } = await import(viewportUrl);
 const checks = [];
@@ -45,22 +46,28 @@ const gpuUrl = moduleUrl(`export * from ${JSON.stringify(threeUrl)};
 export class WebGLRenderer {
  debug={}; domElement={dataset:{},setAttribute(){},addEventListener(){},removeEventListener(){},remove(){}};
  capabilities={getMaxAnisotropy(){return 1;}}; info={render:{calls:0},memory:{geometries:0}};
- setPixelRatio(){} setClearColor(){} dispose(){} forceContextLoss(){}
+ setPixelRatio(){} setClearColor(){} setViewport(){} dispose(){} forceContextLoss(){}
+ preparedTextures=[]; initTexture(texture){this.preparedTextures.push(texture);}
  getContext(){return {getExtension(){return null;}};}
 }`);
 // Each presentation/GPU dependency has an explicit module boundary. A new
 // production import must be reviewed instead of silently receiving an unrelated
 // catch-all surface. Source geometry and queue/readiness methods stay real.
+const editionUrl = moduleUrl("export const activeSourceEdition='peony-2.0-2026-10-23'; export const chapterAssetBase=()=>'';");
 const imports = {
   three: gpuUrl,
   './NarrativeSpace': placementUrl,
   './sourceViewport': viewportUrl,
+  './texturePreparation': texturePreparationUrl,
+  './ShaderWarmup': moduleUrl(compile(await read('src/scene/ShaderWarmup.ts')).replace(/from (['"])three\1/g, `from ${JSON.stringify(threeUrl)}`)),
+  './artworkSnapshot': moduleUrl(compile(await read('src/scene/artworkSnapshot.ts')).replace(/from (['"])\.\.\/data\/sourceEdition\1/g, `from ${JSON.stringify(editionUrl)}`)),
+  './artworkProjection': moduleUrl(compile(await read('src/scene/artworkProjection.ts')).replace(/from (['"])three\1/g, `from ${JSON.stringify(threeUrl)}`)),
   './prepareScene': moduleUrl('export const prepareScene=x=>x;'),
   './CalligraphyLayer': moduleUrl('export class CalligraphyLayer {dispose(){}}'),
   './MotionDirector': moduleUrl('export class MotionDirector {}'),
   './StableLayerSorting': moduleUrl('export class StableLayerSorting {}'),
   '../data/motionProfiles': moduleUrl('export const getMotionProfile=()=>({enabled:false});'),
-  '../data/sourceEdition': moduleUrl("export const activeSourceEdition='peony-2.0-2026-10-23'; export const chapterAssetBase=()=>'';"),
+  '../data/sourceEdition': editionUrl,
   './ArtDirectionLayer': moduleUrl('export const applyArtDirection=()=>{};'),
   './NewScrollAtmosphere': moduleUrl('export const createNewScrollAtmosphere=()=>{};'),
   './SourceMaterial': moduleUrl('export const loadSourceMaterialLibrary=()=>{throw new Error("Unexpected GPU material construction in CPU streaming test");};'),
@@ -101,9 +108,21 @@ const current = Array.from({ length: 4 }, (_, index) => layer(`current-${index}`
 renderer.updateTextures();
 assert.deepEqual(requested.slice(1), ['current-0', 'current-1', 'current-2']);
 assert.equal(renderer.ready, false);
-const settle = async () => { for (let index = 0; index < 4; index++) await Promise.resolve(); };
-async function complete(url, texture = new THREE.Texture({ width: 4, height: 4 })) {
-  callbacks.get(url).success(texture); await settle(); return texture;
+const settle = async () => { for (let index = 0; index < 12; index++) await Promise.resolve(); };
+async function complete(url, texture = new THREE.Texture({ width: 4, height: 4 }), owner = renderer) {
+  callbacks.get(url).success(texture); await settle();
+  if (owner.shaderFailed || owner.preparationCancelled || owner.disposed) return texture;
+  const entry = owner.textures.get(url);
+  assert.equal(entry.loading, true, 'Decoded resources still occupy their bounded slot before GPU preparation.');
+  assert.equal(entry.texture, undefined, 'A decoded image cannot become render-ready before its actual GPU variants are prepared.');
+  const uploadsBefore = owner.renderer.preparedTextures.length;
+  while (owner.textureUploads.length) {
+    const before = owner.renderer.preparedTextures.length;
+    owner.prepareNextTexture();
+    assert.equal(owner.renderer.preparedTextures.length, before + 1, 'One preparation turn uploads at most one texture variant.');
+  }
+  assert(owner.renderer.preparedTextures.length > uploadsBefore);
+  return texture;
 }
 for (const object of current) await complete(object.url);
 assert.equal(renderer.ready, true);
@@ -164,13 +183,13 @@ native.updateTextures();
 assert.deepEqual(requested.slice(nativeStart), ['native-image', ...fieldUrls]);
 assert.equal(native.ready, false); assert.equal(mesh.visible, false);
 assert.equal(native.queue.length, 1, 'The fifth resource must wait for one of the four shared slots.');
-const image = await complete('native-image');
+const image = await complete('native-image', undefined, native);
 assert.equal(image.colorSpace, THREE.SRGBColorSpace);
 assert.equal(requested.at(-1), 'native-glare');
 assert.equal(native.ready, false); assert.equal(mesh.visible, false);
 for (const url of fieldUrls) {
   const field = new THREE.DataTexture(new Uint16Array(2 * 2 * 4), 2, 2, THREE.RGBAFormat, THREE.HalfFloatType);
-  await complete(url, field);
+  await complete(url, field, native);
   assert.equal(field.colorSpace, THREE.NoColorSpace, 'A native half-float field must remain linear data.');
   assert.equal(field.generateMipmaps, false, 'Field decoding controls its sampling, not the ordinary-image loader.');
   assert.equal(native.textures.get(url).bytes, 32, 'Field residency must use the actual half-float byte count.');
@@ -178,7 +197,7 @@ for (const url of fieldUrls) {
   assert.equal(mesh.visible, url === fieldUrls.at(-1));
 }
 assert.equal(native.ready, false, 'A required compositor plate must hold the current-frame gate.');
-const plate = await complete('native-glare', new THREE.DataTexture(new Uint16Array(16), 2, 2, THREE.RGBAFormat, THREE.HalfFloatType));
+const plate = await complete('native-glare', new THREE.DataTexture(new Uint16Array(16), 2, 2, THREE.RGBAFormat, THREE.HalfFloatType), native);
 assert.equal(assigned.get('native-glare'), plate); assert.equal(native.ready, true);
 assert.deepEqual(providers, [...fieldUrls.map(url => ['material', url]), ['post', 'native-glare']]);
 assert.equal(requested.filter(url => url === fieldUrls[0]).length, 1, 'Repeated field bindings share a single request.');
@@ -189,10 +208,79 @@ assert(!callbacks.has(upcomingPost[1]), 'Compositor look-ahead must respect the 
 assert.equal(native.ready, true, 'Upcoming compositor frames cannot block the authored current frame.');
 callbacks.get(upcomingPost[0]).failure(new Error('Speculative compositor frame unavailable')); await settle();
 assert.equal(requested.at(-1), upcomingPost[1]); assert.equal(native.ready, true);
-await complete(upcomingPost[1], new THREE.DataTexture(new Uint16Array(16), 2, 2, THREE.RGBAFormat, THREE.HalfFloatType));
+await complete(upcomingPost[1], new THREE.DataTexture(new Uint16Array(16), 2, 2, THREE.RGBAFormat, THREE.HalfFloatType), native);
 assert.equal(native.ready, true);
 native.dispose();
 checks.push({ test: 'native-fields-and-compositor-share-four-slots-linear-decoding-and-current-readiness', requested: requested.slice(nativeStart), decodedProviders: providers, passed: true });
+
+const { decodeTextureImage } = await import(texturePreparationUrl);
+let releaseDecode, disposed = 0;
+const decoded = new THREE.Texture({ width: 4, height: 4, decode: () => new Promise(resolve => { releaseDecode = resolve; }) });
+decoded.addEventListener('dispose', () => disposed++);
+let decodeResolved = false;
+const decoding = decodeTextureImage(decoded).then(() => { decodeResolved = true; });
+await settle(); assert.equal(decodeResolved, false);
+releaseDecode(); await decoding; assert.equal(disposed, 0);
+const invalid = new THREE.Texture({ decode: async () => { throw new Error('Intentional decode failure'); } });
+invalid.addEventListener('dispose', () => disposed++);
+await assert.rejects(decodeTextureImage(invalid), /Intentional decode failure/);
+const controller = new AbortController(); controller.abort();
+const aborted = new THREE.Texture({ width: 4, height: 4 });
+aborted.addEventListener('dispose', () => disposed++);
+await assert.rejects(decodeTextureImage(aborted, controller.signal), error => error.name === 'AbortError');
+assert.equal(disposed, 2);
+checks.push({ test: 'real-image-decode-boundary-awaits-completion-and-disposes-errors-or-owner-abort', passed: true });
+
+const variants = new SceneRenderer({ appendChild() {}, closest() { return null; } }, () => {});
+const baseTexture = new THREE.Texture({ width: 4, height: 4 }), nodeSampler = baseTexture.clone();
+nodeSampler.wrapS = THREE.RepeatWrapping;
+const variantEntry = { loading: true, bytes: 64, lastSeen: performance.now() };
+variants.textures.set('variant-image', variantEntry);
+const variantMesh = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial());
+variantMesh.userData.sourceVisible = false;
+variants.objects = [{ mesh: variantMesh, material: variantMesh.material, fields: [{ url: 'variant-image', prepare: () => nodeSampler, assign() {} }] }];
+variants.textureUploads.push({ url: 'variant-image', texture: baseTexture, entry: variantEntry, variants: [baseTexture, nodeSampler] });
+variants.prepareNextTexture();
+assert.equal(variants.renderer.preparedTextures.length, 1);
+assert.equal(variantEntry.loading, true); assert.equal(variantEntry.texture, undefined);
+assert.deepEqual(variants.textureUploads[0].variants, [nodeSampler]);
+variants.contextLost = true;
+variants.onContextRestored();
+assert.deepEqual(variants.textureUploads[0].variants, [baseTexture, nodeSampler], 'A completed upload prefix belongs to the lost GPU and must be prepared again.');
+variants.prepareNextTexture();
+assert.equal(variantEntry.loading, true); assert.equal(variantEntry.texture, undefined);
+variants.prepareNextTexture();
+assert.deepEqual(variants.renderer.preparedTextures, [baseTexture, baseTexture, nodeSampler]);
+assert.equal(variantEntry.texture, baseTexture); assert.equal(variantEntry.loading, false);
+assert.equal(nodeSampler.wrapS, THREE.RepeatWrapping, 'GPU preparation retains the actual authored node sampler state.');
+variants.dispose(); nodeSampler.dispose();
+checks.push({ test: 'actual-sampler-variants-prepare-one-per-turn-before-shared-resource-readiness', passed: true });
+checks.push({ test: 'context-restoration-restarts-every-pending-sampler-variant-including-pre-loss-completed-prefix', passed: true });
+
+const cancelled = new SceneRenderer({ appendChild() {}, closest() { return null; } }, () => {});
+cancelled.textureUploads.push({ url: 'cancelled-image', texture: decoded, entry: { loading: true, bytes: 64, lastSeen: performance.now() }, variants: [decoded] });
+cancelled.cancelPreparation();
+assert.equal(cancelled.textureUploads.length, 0);
+cancelled.frame = 0; cancelled.requestFrame(); assert.equal(cancelled.frame, 0);
+assert.equal(cancelled.renderer.preparedTextures.length, 0);
+cancelled.dispose();
+checks.push({ test: 'owner-return-discards-unprepared-textures-without-gpu-upload-or-raf', passed: true });
+
+const recent = new SceneRenderer({ appendChild() {}, closest() { return null; } }, () => {});
+recent.sourcePost = { requiredUrls: () => ['required'], prefetchUrls: () => [], hasUrl: url => url.startsWith('post-'), assign() {}, dispose() {} };
+const mb = 1024 * 1024, now = performance.now();
+recent.textures.set('required', { texture: new THREE.Texture(), loading: false, bytes: 240 * mb, lastSeen: now });
+for (let index = 0; index < 10; index++) recent.textures.set(`image-${index}`, { texture: new THREE.Texture(), loading: false, bytes: 32 * mb, lastSeen: now - index });
+for (let index = 0; index < 10; index++) recent.textures.set(`post-${index}`, { texture: new THREE.Texture(), loading: false, bytes: 12 * mb, lastSeen: now - index });
+recent.updateTextures();
+assert(recent.textures.has('required'), 'The soft cache budget never evicts unavoidable current source artwork.');
+assert.equal([...recent.textures].filter(([url]) => url.startsWith('image-')).reduce((sum, [, entry]) => sum + entry.bytes, 0), 96 * mb);
+assert.equal([...recent.textures].filter(([url]) => url.startsWith('post-')).reduce((sum, [, entry]) => sum + entry.bytes, 0), 24 * mb);
+for (const [url, entry] of recent.textures) if (url !== 'required') entry.lastSeen = now - 6000;
+recent.updateTextures();
+assert.deepEqual([...recent.textures.keys()], ['required'], 'The additional look-behind allowance expires instead of growing without bound.');
+recent.dispose();
+checks.push({ test: 'recent-cache-separately-bounded-to-96mib-images-24mib-post-and-expires-without-evicting-current', passed: true });
 const report = { status: 'pass', testedAt: new Date().toISOString(), scope: 'CPU thumbnail bounds and production streaming/failure logic with GPU stubbed. No FPS or rendered-pixel claim.', checks };
 const output = path.join(root, 'reports/peony2-fidelity');
 await mkdir(output, { recursive: true });

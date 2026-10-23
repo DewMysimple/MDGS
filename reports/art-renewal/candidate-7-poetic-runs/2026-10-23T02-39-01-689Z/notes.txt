@@ -1,0 +1,13 @@
+候选7本组验收失败，已停止并释放source/GPU。实际包tmp/art-candidate-7-dist，冻结manifest SHA1ab1ac859466a2ffbb2c069fe12086eea5ec0d0e803b220a7495f82c97653745。主包index-CpndIdbA.js，CSS index-RpqBDuXe.css。首末831 sourceInputs、5 code、build内739 public副本、完整744文件集和9个实际driver SHA均保持一致，详见inputs-before.json和inputs-after-and-failure-summary.json（SHA9ed9f59bb5ba46371f5e29d411dc43118bcddd7530b8633a5a812b55acfe71a2）。没有改产品/冻结driver或自行build。
+
+已完整通过且各自有独立JSON：37纯数据；270布局/31关联checks（8058字格0越界，16个句号全em格接触照实保留，汉字/数字0印章碰撞）；同包2560标点PNG；四卷原速全长45句/23checks（wall100.857/71.833/69.037/60.099秒，45句全部出现，cue内位置与宽高变化0px）；12锁位。四卷最短稳定读窗3.942/3.422/3.261/4.438秒。25原文保持逐字，三模式及保存恢复、40精确停点均通过。此处仅是局部范围，不称候选7整体通过。
+
+失败发生在12遇景正式driver的卷三：入口打开后按Enter两次未进入picked/woven，等待重拾按钮30秒timeout。driver异常前未生成integrated.json，旧canonical报告绝未复制来冒本包。encounters中仅2张partial-chapter-1/2 PNG是异常前实际完成的定点图，不证明完整12布局或后续操作。
+
+独立只读3轮冷context短复现均证实根因：C7逐纹理加载时cloth锚点先出现且aria-disabled=true，open/projections效果以querySelector('.art-anchor')选取该锚点、提前清除focusPending；flower稍后出现时不会纠正焦点。所有纹理ready后两次Enter仍打在cloth上，phase一直waiting/reset=false。完整MutationObserver/focusin/keydown/click时间轴、3张实际PNG、诊断脚本字节在encounter-focus-diagnosis/；该脚本为归档字节证据，原运行位置tmp/art-renewal/diagnose-encounter-initial-focus.cjs，不能直接按归档后的相对dirname推断项目根。未使用CSS注入或更改状态以规避失败。
+
+未开始：reading28、font78、compact90/四卷末12/用户视口四遇景。独立新增compact driver只完成syntax准备，不能写通过。封存C7不改变C6结果或C6+CSS临时原型的身份。
+
+已实际看本包新1920短章图：武则天/烈火、民间舟桥、近看织物、杨玉环、马嵬后、文脉余响，以及2560标点图。主角面容、织物手部及马嵬军旗与题跋分开；卷二左下次要花丛和卷一右侧次要画稿有有限纸笺叠置，不能把边界通过夸大成全部原画图层零重叠。第四卷留足纸边，没有采用会遮旗并缩字的attached试样。末章p约.92746不冒称原影片真正末帧。四卷末/四遇景艺术遮挡审视尚待后续正式包实际截图。
+
+纯外层copy曾把canonical validation.json误写成data-validation.json，浏览器开始前已改正复制并恢复流程，保留orchestration-note.txt；此为收集错误，不掩盖后面的实际产品焦点失败。所有浏览器最终关闭，5196预览退出，GPU/sourceReleased=true；root可执行下一候选的最小焦点修复。没有用固定延迟或放宽测试来隐藏问题。

@@ -1,0 +1,163 @@
+entered production scroll 1
+mode check: original
+entered production scroll 1
+mode check: quiet
+entered production scroll 1
+mode check: poetic
+entered production scroll 1
+{"chapter":1,"viewport":[1280,720],"cases":30,"overflow":0}
+{"chapter":1,"viewport":[1920,1080],"cases":60,"overflow":0}
+{"chapter":1,"viewport":[2560,1440],"cases":90,"overflow":0}
+{"chapter":2,"viewport":[1280,720],"cases":114,"overflow":0}
+{"chapter":2,"viewport":[1920,1080],"cases":138,"overflow":0}
+{"chapter":2,"viewport":[2560,1440],"cases":162,"overflow":0}
+{"chapter":3,"viewport":[1280,720],"cases":180,"overflow":0}
+{"chapter":3,"viewport":[1920,1080],"cases":198,"overflow":0}
+{"chapter":3,"viewport":[2560,1440],"cases":216,"overflow":0}
+{"chapter":4,"viewport":[1280,720],"cases":234,"overflow":0}
+{"chapter":4,"viewport":[1920,1080],"cases":252,"overflow":0}
+{"chapter":4,"viewport":[2560,1440],"cases":270,"overflow":0}
+entered production scroll 4
+{
+  "passed": true,
+  "sourceStable": true,
+  "checks": [
+    {
+      "name": "production page has no Vite HMR client",
+      "pass": true
+    },
+    {
+      "name": "first visit defaults to poetic",
+      "pass": true
+    },
+    {
+      "name": "original settings mode applied",
+      "pass": true
+    },
+    {
+      "name": "original survives full reload",
+      "pass": true
+    },
+    {
+      "name": "original: non-zero progress survives full reload",
+      "pass": true
+    },
+    {
+      "name": "quiet settings mode applied",
+      "pass": true
+    },
+    {
+      "name": "quiet has zero narrative articles and visible body",
+      "pass": true
+    },
+    {
+      "name": "quiet survives full reload",
+      "pass": true
+    },
+    {
+      "name": "quiet: non-zero progress survives full reload",
+      "pass": true
+    },
+    {
+      "name": "poetic settings mode applied",
+      "pass": true
+    },
+    {
+      "name": "poetic survives full reload",
+      "pass": true
+    },
+    {
+      "name": "poetic: non-zero progress survives full reload",
+      "pass": true
+    },
+    {
+      "name": "chapter 1: original narrative DOM retains each paragraph",
+      "pass": true,
+      "detail": {
+        "paragraphs": 6
+      }
+    },
+    {
+      "name": "chapter 1: permanent original full text exact",
+      "pass": true
+    },
+    {
+      "name": "chapter 2: original narrative DOM retains each paragraph",
+      "pass": true,
+      "detail": {
+        "paragraphs": 6
+      }
+    },
+    {
+      "name": "chapter 2: permanent original full text exact",
+      "pass": true
+    },
+    {
+      "name": "chapter 3: original narrative DOM retains each paragraph",
+      "pass": true,
+      "detail": {
+        "paragraphs": 6
+      }
+    },
+    {
+      "name": "chapter 3: permanent original full text exact",
+      "pass": true
+    },
+    {
+      "name": "chapter 4: original narrative DOM retains each paragraph",
+      "pass": true,
+      "detail": {
+        "paragraphs": 7
+      }
+    },
+    {
+      "name": "chapter 4: permanent original full text exact",
+      "pass": true
+    },
+    {
+      "name": "fourth-scroll loss and caption survive non-zero reload",
+      "pass": true
+    },
+    {
+      "name": "all 45 captions tested in all six desktop combinations",
+      "pass": true
+    },
+    {
+      "name": "every tested caption matches source contemporary writing",
+      "pass": true
+    },
+    {
+      "name": "all body and heading glyph boxes fit their ink paper",
+      "pass": true
+    },
+    {
+      "name": "all glyph boxes fit the painting viewport",
+      "pass": true
+    },
+    {
+      "name": "all ink papers fit painting viewport",
+      "pass": true
+    },
+    {
+      "name": "no letter or digit cell overlaps heading or small seal",
+      "pass": true
+    },
+    {
+      "name": "40 exact source-stop seeks read immediately",
+      "pass": true
+    },
+    {
+      "name": "all tested WebGL source frames have no shader or texture failure",
+      "pass": true
+    },
+    {
+      "name": "no page or console errors",
+      "pass": true
+    },
+    {
+      "name": "source inputs stable throughout capture",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

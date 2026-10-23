@@ -1,0 +1,82 @@
+{
+  "status": "supplemental-scope-correction-original-failure-preserved",
+  "at": "2026-10-23T03:55:38.817397+00:00",
+  "originalReport": {
+    "file": "compact-user-viewport/compact-desktop-validation.json",
+    "sha256": "46a24885b46d551ce13cb795736a14e77c136163bd7e75cfa8e030eb2d83980c",
+    "checks": 308,
+    "passed": 307,
+    "failed": 1
+  },
+  "computedProbe": {
+    "file": "transparent-heading-computed.json",
+    "sha256": "276a38c89f6764430ed002030fcb5709efeddbb28ae3d67a386f120b55f738bd"
+  },
+  "originalScreenshot": {
+    "file": "compact-user-viewport/encounter-c2-user-dpr125.png",
+    "sha256": "4341206acad4dddb288d427a9b02ac532a1ad04449befce1f43586e3c69384a9"
+  },
+  "pixelMethod": {
+    "condition": "R<110 && G<130 && G>R+5 && G>B+4",
+    "regionPhysical": [
+      309,
+      1106,
+      496,
+      1152
+    ],
+    "count": 852,
+    "bboxPhysical": [
+      313,
+      1114,
+      489,
+      1144
+    ],
+    "inkTopCss": 891.2,
+    "logicalPanelTopCss": 887.40625,
+    "inkTopInsidePanelCss": 3.7937500000000455,
+    "limitation": "Solid dark-green pixels only; antialiased edge coverage is not asserted. Original screenshot independently visually reviewed."
+  },
+  "font": {
+    "file": "public/fonts/wenkai-web.woff2",
+    "sha256": "c619ddc07c72b9afca0ab20b1e33ed1a67c974ae3a7d1ec44de611895a79f59d",
+    "unitsPerEm": 1000,
+    "glyphOutlines": [
+      {
+        "char": "共",
+        "xMin": 52,
+        "yMin": -75,
+        "xMax": 953,
+        "yMax": 798
+      },
+      {
+        "char": "此",
+        "xMin": 67,
+        "yMin": -54,
+        "xMax": 936,
+        "yMax": 770
+      },
+      {
+        "char": "一",
+        "xMin": 59,
+        "yMin": 319,
+        "xMax": 944,
+        "yMax": 430
+      },
+      {
+        "char": "城",
+        "xMin": 33,
+        "yMin": -84,
+        "xMax": 974,
+        "yMax": 808
+      },
+      {
+        "char": "春",
+        "xMin": 23,
+        "yMin": -94,
+        "xMax": 981,
+        "yMax": 822
+      }
+    ]
+  },
+  "rootReview": "Original PNG title complete, transparent borderless group, no painting clipping or foreground obstruction. No product change warranted. Do not rewrite raw 307/308 as full pass."
+}

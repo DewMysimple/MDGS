@@ -1,0 +1,1899 @@
+{
+  "status": "passed",
+  "runId": "2026-10-23T03-27-12-691Z",
+  "startedAt": "2026-10-23T03:27:12.691Z",
+  "scope": "Actual Chrome partial unroll cancellation must visibly decrease to zero without warm fallback; reverse native return; real shader compile failure/retry and cleanup. Failures always replace stale passed status and retain observations.",
+  "checks": [
+    {
+      "test": "mid-unroll-return-is-continuous-and-actually-closes-to-zero",
+      "before": 0.20183,
+      "initialPresentationReady": "true",
+      "maxReturnOpen": 0.20813,
+      "finalOpen": 0,
+      "samples": [
+        {
+          "at": 2564.3,
+          "phase": "RETURNING_HOME",
+          "open": 0.20813,
+          "state": "waiting",
+          "frames": 108,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 2570,
+          "phase": "RETURNING_HOME",
+          "open": 0.20813,
+          "state": "waiting",
+          "frames": 109,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 2742.1,
+          "phase": "RETURNING_HOME",
+          "open": 0.20813,
+          "state": "waiting",
+          "frames": 109,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 2775.4,
+          "phase": "RETURNING_HOME",
+          "open": 0.17859,
+          "state": "waiting",
+          "frames": 110,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 2886.6,
+          "phase": "RETURNING_HOME",
+          "open": 0.16795,
+          "state": "waiting",
+          "frames": 111,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 2914.4,
+          "phase": "RETURNING_HOME",
+          "open": 0.12586,
+          "state": "waiting",
+          "frames": 112,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 2942.2,
+          "phase": "RETURNING_HOME",
+          "open": 0.11442,
+          "state": "waiting",
+          "frames": 113,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 2947.7,
+          "phase": "RETURNING_HOME",
+          "open": 0.10286,
+          "state": "waiting",
+          "frames": 114,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 2953.2,
+          "phase": "RETURNING_HOME",
+          "open": 0.10286,
+          "state": "waiting",
+          "frames": 114,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 2958.8,
+          "phase": "RETURNING_HOME",
+          "open": 0.10286,
+          "state": "waiting",
+          "frames": 114,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 2964.4,
+          "phase": "RETURNING_HOME",
+          "open": 0.09596,
+          "state": "waiting",
+          "frames": 115,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 2975.5,
+          "phase": "RETURNING_HOME",
+          "open": 0.09596,
+          "state": "waiting",
+          "frames": 115,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 2981,
+          "phase": "RETURNING_HOME",
+          "open": 0.08905,
+          "state": "waiting",
+          "frames": 116,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 2986.5,
+          "phase": "RETURNING_HOME",
+          "open": 0.08905,
+          "state": "waiting",
+          "frames": 116,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 2992.1,
+          "phase": "RETURNING_HOME",
+          "open": 0.08905,
+          "state": "waiting",
+          "frames": 116,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 2997.7,
+          "phase": "RETURNING_HOME",
+          "open": 0.08223,
+          "state": "waiting",
+          "frames": 117,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3003.2,
+          "phase": "RETURNING_HOME",
+          "open": 0.08223,
+          "state": "waiting",
+          "frames": 117,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3008.7,
+          "phase": "RETURNING_HOME",
+          "open": 0.08223,
+          "state": "waiting",
+          "frames": 117,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3014.3,
+          "phase": "RETURNING_HOME",
+          "open": 0.07551,
+          "state": "waiting",
+          "frames": 118,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3019.9,
+          "phase": "RETURNING_HOME",
+          "open": 0.07551,
+          "state": "waiting",
+          "frames": 118,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3025.4,
+          "phase": "RETURNING_HOME",
+          "open": 0.07551,
+          "state": "waiting",
+          "frames": 118,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3031,
+          "phase": "RETURNING_HOME",
+          "open": 0.06886,
+          "state": "waiting",
+          "frames": 119,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3036.5,
+          "phase": "RETURNING_HOME",
+          "open": 0.06886,
+          "state": "waiting",
+          "frames": 119,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3042.2,
+          "phase": "RETURNING_HOME",
+          "open": 0.06886,
+          "state": "waiting",
+          "frames": 119,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3047.7,
+          "phase": "RETURNING_HOME",
+          "open": 0.06231,
+          "state": "waiting",
+          "frames": 120,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3053.2,
+          "phase": "RETURNING_HOME",
+          "open": 0.06231,
+          "state": "waiting",
+          "frames": 120,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3058.8,
+          "phase": "RETURNING_HOME",
+          "open": 0.06231,
+          "state": "waiting",
+          "frames": 120,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3064.3,
+          "phase": "RETURNING_HOME",
+          "open": 0.05601,
+          "state": "waiting",
+          "frames": 121,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3069.9,
+          "phase": "RETURNING_HOME",
+          "open": 0.05601,
+          "state": "waiting",
+          "frames": 121,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3075.4,
+          "phase": "RETURNING_HOME",
+          "open": 0.05601,
+          "state": "waiting",
+          "frames": 121,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3081,
+          "phase": "RETURNING_HOME",
+          "open": 0.0499,
+          "state": "waiting",
+          "frames": 122,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3086.6,
+          "phase": "RETURNING_HOME",
+          "open": 0.0499,
+          "state": "waiting",
+          "frames": 122,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3092.1,
+          "phase": "RETURNING_HOME",
+          "open": 0.0499,
+          "state": "waiting",
+          "frames": 122,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3097.7,
+          "phase": "RETURNING_HOME",
+          "open": 0.04398,
+          "state": "waiting",
+          "frames": 123,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3103.2,
+          "phase": "RETURNING_HOME",
+          "open": 0.04398,
+          "state": "waiting",
+          "frames": 123,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3108.9,
+          "phase": "RETURNING_HOME",
+          "open": 0.04398,
+          "state": "waiting",
+          "frames": 123,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3114.4,
+          "phase": "RETURNING_HOME",
+          "open": 0.03828,
+          "state": "waiting",
+          "frames": 124,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3119.8,
+          "phase": "RETURNING_HOME",
+          "open": 0.03828,
+          "state": "waiting",
+          "frames": 124,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3125.5,
+          "phase": "RETURNING_HOME",
+          "open": 0.03828,
+          "state": "waiting",
+          "frames": 124,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3131,
+          "phase": "RETURNING_HOME",
+          "open": 0.03293,
+          "state": "waiting",
+          "frames": 125,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3136.6,
+          "phase": "RETURNING_HOME",
+          "open": 0.03293,
+          "state": "waiting",
+          "frames": 125,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3142.1,
+          "phase": "RETURNING_HOME",
+          "open": 0.03293,
+          "state": "waiting",
+          "frames": 125,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3147.7,
+          "phase": "RETURNING_HOME",
+          "open": 0.02788,
+          "state": "waiting",
+          "frames": 126,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3153.2,
+          "phase": "RETURNING_HOME",
+          "open": 0.02788,
+          "state": "waiting",
+          "frames": 126,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3158.8,
+          "phase": "RETURNING_HOME",
+          "open": 0.02788,
+          "state": "waiting",
+          "frames": 126,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3164.3,
+          "phase": "RETURNING_HOME",
+          "open": 0.02313,
+          "state": "waiting",
+          "frames": 127,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3169.9,
+          "phase": "RETURNING_HOME",
+          "open": 0.02313,
+          "state": "waiting",
+          "frames": 127,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3175.5,
+          "phase": "RETURNING_HOME",
+          "open": 0.02313,
+          "state": "waiting",
+          "frames": 127,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3181,
+          "phase": "RETURNING_HOME",
+          "open": 0.01875,
+          "state": "waiting",
+          "frames": 128,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3186.6,
+          "phase": "RETURNING_HOME",
+          "open": 0.01875,
+          "state": "waiting",
+          "frames": 128,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3192.1,
+          "phase": "RETURNING_HOME",
+          "open": 0.01875,
+          "state": "waiting",
+          "frames": 128,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3197.7,
+          "phase": "RETURNING_HOME",
+          "open": 0.01478,
+          "state": "waiting",
+          "frames": 129,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3203.2,
+          "phase": "RETURNING_HOME",
+          "open": 0.01478,
+          "state": "waiting",
+          "frames": 129,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3208.8,
+          "phase": "RETURNING_HOME",
+          "open": 0.01478,
+          "state": "waiting",
+          "frames": 129,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3214.3,
+          "phase": "RETURNING_HOME",
+          "open": 0.0112,
+          "state": "waiting",
+          "frames": 130,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3220,
+          "phase": "RETURNING_HOME",
+          "open": 0.0112,
+          "state": "waiting",
+          "frames": 130,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3225.4,
+          "phase": "RETURNING_HOME",
+          "open": 0.0112,
+          "state": "waiting",
+          "frames": 130,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3230.9,
+          "phase": "RETURNING_HOME",
+          "open": 0.00808,
+          "state": "waiting",
+          "frames": 131,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3236.5,
+          "phase": "RETURNING_HOME",
+          "open": 0.00808,
+          "state": "waiting",
+          "frames": 131,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3242.1,
+          "phase": "RETURNING_HOME",
+          "open": 0.00808,
+          "state": "waiting",
+          "frames": 131,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3247.7,
+          "phase": "RETURNING_HOME",
+          "open": 0.00542,
+          "state": "waiting",
+          "frames": 132,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3253.2,
+          "phase": "RETURNING_HOME",
+          "open": 0.00542,
+          "state": "waiting",
+          "frames": 132,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3258.8,
+          "phase": "RETURNING_HOME",
+          "open": 0.00542,
+          "state": "waiting",
+          "frames": 132,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3264.3,
+          "phase": "RETURNING_HOME",
+          "open": 0.00325,
+          "state": "waiting",
+          "frames": 133,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3269.9,
+          "phase": "RETURNING_HOME",
+          "open": 0.00325,
+          "state": "waiting",
+          "frames": 133,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3275.4,
+          "phase": "RETURNING_HOME",
+          "open": 0.00325,
+          "state": "waiting",
+          "frames": 133,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3280.9,
+          "phase": "RETURNING_HOME",
+          "open": 0.00162,
+          "state": "waiting",
+          "frames": 134,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3286.6,
+          "phase": "RETURNING_HOME",
+          "open": 0.00162,
+          "state": "waiting",
+          "frames": 134,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3292.1,
+          "phase": "RETURNING_HOME",
+          "open": 0.00162,
+          "state": "waiting",
+          "frames": 134,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3297.7,
+          "phase": "RETURNING_HOME",
+          "open": 0.00054,
+          "state": "waiting",
+          "frames": 135,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3303.2,
+          "phase": "RETURNING_HOME",
+          "open": 0.00054,
+          "state": "waiting",
+          "frames": 135,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3308.8,
+          "phase": "RETURNING_HOME",
+          "open": 0.00054,
+          "state": "waiting",
+          "frames": 135,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3314.3,
+          "phase": "RETURNING_HOME",
+          "open": 0.00003,
+          "state": "waiting",
+          "frames": 136,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3319.8,
+          "phase": "RETURNING_HOME",
+          "open": 0.00003,
+          "state": "waiting",
+          "frames": 136,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3325.5,
+          "phase": "RETURNING_HOME",
+          "open": 0.00003,
+          "state": "waiting",
+          "frames": 136,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3331,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 137,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3336.6,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 137,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3342.1,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 137,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3347.7,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 138,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3353.2,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 138,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3358.8,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 138,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3364.4,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 139,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3369.9,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 139,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3375.4,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 139,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3381,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 140,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3386.6,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 140,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3392.1,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 140,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3397.6,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 141,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3403.2,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 141,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3408.8,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 141,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3414.3,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 142,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3419.9,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 142,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3425.4,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 142,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3431.1,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 143,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3436.5,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 143,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3442.2,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 143,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3447.7,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 144,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3453.2,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 144,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3458.8,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 144,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3464.3,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 145,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3469.9,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 145,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3475.5,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 145,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3481,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 146,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3486.5,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 146,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3492.1,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 146,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3497.6,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 147,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3503.2,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 147,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3508.8,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 147,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3514.3,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 148,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3519.9,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 148,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3525.4,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 148,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3531,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 149,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3536.6,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 149,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3542.2,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 149,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3547.7,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 150,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3553.2,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 150,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3558.7,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 150,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3564.4,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 151,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3570,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 151,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3575.4,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 151,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3581,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 152,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3586.6,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 152,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3592.1,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 152,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3597.7,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 153,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3603.2,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 153,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3608.8,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 153,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3614.4,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 154,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3619.9,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 154,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3625.4,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 154,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3631,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 155,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3636.5,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 155,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3642.1,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 155,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3647.7,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 156,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3653.2,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 156,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3658.8,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 156,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3664.4,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 157,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3669.9,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 157,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3675.5,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 157,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3681,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 158,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3686.6,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 158,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 3692.1,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": 158,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "viewer-return-matches-native-print-before-closing",
+      "samples": [
+        {
+          "at": 9514.4,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "waiting",
+          "frames": null,
+          "ready": "false",
+          "opacity": 0,
+          "imageOpacity": 0
+        },
+        {
+          "at": 9542.2,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "frames": 2,
+          "ready": "false",
+          "opacity": 0,
+          "imageOpacity": 0
+        },
+        {
+          "at": 9631,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "frames": 5,
+          "ready": "true",
+          "opacity": 0.28672544102178354,
+          "imageOpacity": 1
+        },
+        {
+          "at": 9653.3,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "frames": 6,
+          "ready": "true",
+          "opacity": 0.39501763241923366,
+          "imageOpacity": 1
+        },
+        {
+          "at": 9675.6,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "frames": 8,
+          "ready": "true",
+          "opacity": 0.620304329075878,
+          "imageOpacity": 1
+        },
+        {
+          "at": 9697.8,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "frames": 9,
+          "ready": "true",
+          "opacity": 0.7275143454169797,
+          "imageOpacity": 1
+        },
+        {
+          "at": 9720,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "frames": 10,
+          "ready": "true",
+          "opacity": 0.8233465756949586,
+          "imageOpacity": 1
+        },
+        {
+          "at": 9742.2,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "frames": 12,
+          "ready": "true",
+          "opacity": 0.962529755071374,
+          "imageOpacity": 1
+        },
+        {
+          "at": 9764.4,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "frames": 13,
+          "ready": "true",
+          "opacity": 0.9952227026671661,
+          "imageOpacity": 1
+        },
+        {
+          "at": 9786.6,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "frames": 14,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 1
+        },
+        {
+          "at": 9808.9,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "frames": 16,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0.583226
+        },
+        {
+          "at": 9831.1,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "frames": 17,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0.237943
+        },
+        {
+          "at": 9853.3,
+          "phase": "RETURNING_HOME",
+          "open": 1,
+          "state": "returning",
+          "frames": 18,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0.0175503
+        },
+        {
+          "at": 9875.6,
+          "phase": "RETURNING_HOME",
+          "open": 0.99723,
+          "state": "returning",
+          "frames": 20,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 9897.8,
+          "phase": "RETURNING_HOME",
+          "open": 0.98986,
+          "state": "returning",
+          "frames": 21,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 9919.9,
+          "phase": "RETURNING_HOME",
+          "open": 0.97808,
+          "state": "returning",
+          "frames": 22,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 9942.2,
+          "phase": "RETURNING_HOME",
+          "open": 0.94251,
+          "state": "returning",
+          "frames": 24,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 9964.5,
+          "phase": "RETURNING_HOME",
+          "open": 0.91929,
+          "state": "returning",
+          "frames": 25,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 9986.6,
+          "phase": "RETURNING_HOME",
+          "open": 0.893,
+          "state": "returning",
+          "frames": 26,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10008.9,
+          "phase": "RETURNING_HOME",
+          "open": 0.83156,
+          "state": "returning",
+          "frames": 28,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10031.1,
+          "phase": "RETURNING_HOME",
+          "open": 0.79733,
+          "state": "returning",
+          "frames": 29,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10053.3,
+          "phase": "RETURNING_HOME",
+          "open": 0.76081,
+          "state": "returning",
+          "frames": 30,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10075.6,
+          "phase": "RETURNING_HOME",
+          "open": 0.68287,
+          "state": "returning",
+          "frames": 32,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10097.8,
+          "phase": "RETURNING_HOME",
+          "open": 0.64178,
+          "state": "returning",
+          "frames": 33,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10120,
+          "phase": "RETURNING_HOME",
+          "open": 0.6,
+          "state": "returning",
+          "frames": 34,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10142.2,
+          "phase": "RETURNING_HOME",
+          "open": 0.51448,
+          "state": "returning",
+          "frames": 36,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10164.4,
+          "phase": "RETURNING_HOME",
+          "open": 0.47131,
+          "state": "returning",
+          "frames": 37,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10186.7,
+          "phase": "RETURNING_HOME",
+          "open": 0.42832,
+          "state": "returning",
+          "frames": 38,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10208.9,
+          "phase": "RETURNING_HOME",
+          "open": 0.34407,
+          "state": "returning",
+          "frames": 40,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10231.1,
+          "phase": "RETURNING_HOME",
+          "open": 0.30362,
+          "state": "returning",
+          "frames": 41,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10253.4,
+          "phase": "RETURNING_HOME",
+          "open": 0.26449,
+          "state": "returning",
+          "frames": 42,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10275.6,
+          "phase": "RETURNING_HOME",
+          "open": 0.19088,
+          "state": "returning",
+          "frames": 44,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10297.7,
+          "phase": "RETURNING_HOME",
+          "open": 0.15722,
+          "state": "returning",
+          "frames": 45,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10320,
+          "phase": "RETURNING_HOME",
+          "open": 0.12622,
+          "state": "returning",
+          "frames": 46,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10342.2,
+          "phase": "RETURNING_HOME",
+          "open": 0.07241,
+          "state": "returning",
+          "frames": 48,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10364.4,
+          "phase": "RETURNING_HOME",
+          "open": 0.05048,
+          "state": "returning",
+          "frames": 49,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10386.7,
+          "phase": "RETURNING_HOME",
+          "open": 0.03204,
+          "state": "returning",
+          "frames": 50,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10408.9,
+          "phase": "RETURNING_HOME",
+          "open": 0.0072,
+          "state": "returning",
+          "frames": 52,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10431.1,
+          "phase": "RETURNING_HOME",
+          "open": 0.00131,
+          "state": "returning",
+          "frames": 53,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10453.3,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "returning",
+          "frames": 54,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10475.6,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "returning",
+          "frames": 56,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10497.8,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "returning",
+          "frames": 57,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10520,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "returning",
+          "frames": 58,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10542.2,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "returning",
+          "frames": 60,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        },
+        {
+          "at": 10564.4,
+          "phase": "RETURNING_HOME",
+          "open": 0,
+          "state": "returning",
+          "frames": 61,
+          "ready": "true",
+          "opacity": 1,
+          "imageOpacity": 0
+        }
+      ],
+      "finalOpen": 0,
+      "passed": true
+    },
+    {
+      "test": "real-shader-compile-failure-gates-entry-and-retries",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "driverSha256": "7f894056e20e62f5df9620d92a2fad48e31ff2394c2726b6938fa2cf52b8e114",
+  "url": "http://127.0.0.1:11380/",
+  "browserVersion": "156.0.8078.47",
+  "verifiedAt": "2026-10-23T03:27:29.970Z",
+  "artifacts": {
+    "unfurl-cancel-midway.png": "aa3041faa6e4f1d5a53b7e4c40aac9b09d4ea377543d5f3b38714a2c1daf8a86",
+    "unfurl-return-handoff.png": "b6073cc213b145d5af275b5199f1b5a91adffd09ddfb0c6d113a8211bda7b39d",
+    "unfurl-shader-failure.png": "405a3dde96c9a6665810e9f085137fbabcbf3cf4f22a0f5b5b34abdb22dd0d81"
+  }
+}

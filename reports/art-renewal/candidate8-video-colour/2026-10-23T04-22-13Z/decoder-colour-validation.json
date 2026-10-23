@@ -1,0 +1,426 @@
+{
+  "status": "failed",
+  "startedAt": "2026-10-23T04:23:23.910Z",
+  "scope": "One actual Chrome MP4 decode at currentTime=3.0001 versus the same MP4 FFmpeg decoded frame90 (0-based,30fps). MAE<=3 and p99<=12 concern decoder colour and full-frame integrity only; not native59 fidelity, full-film frame validation, an audio audition, or a performance benchmark.",
+  "run": "tmp/exhibition-tour-candidate8/2026-10-23T04-14-51-310Z",
+  "buildDirectory": "tmp/art-candidate-8-dist",
+  "freezeFile": "reports/art-renewal/art-candidate-8-build.json",
+  "freezeSha256": "305dc8b9b429415093889642ae885ffe564cdd33f156edf30a637bac4a172ea9",
+  "driver": "reports/art-renewal/verify-video-decoder-colour.cjs",
+  "driverSha256": "57a7422859188c3f4d6cbd33ba7a1578a20ddb3c741935b2442d8c72f1795290",
+  "video": {
+    "file": "tmp/exhibition-tour-candidate8/2026-10-23T04-14-51-310Z/国色长卷-导览录像.mp4",
+    "sha256": "7b5d8311fb45b1f84f8a4628c26a1a26766b5b4c29cc7697a7e22bf4cf705c36",
+    "bytes": 144395485
+  },
+  "recordingSha256": "b34450aa55b5da7b1629a1157445c99cd93e8ffb78dc445149070558c1688b67",
+  "checks": [
+    {
+      "name": "FFprobe exits zero",
+      "pass": true
+    },
+    {
+      "name": "actual MP4 is full 1920x1080 30fps and longer than target",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg explicitly selects frame90 and exits zero",
+      "pass": true
+    },
+    {
+      "name": "actual Chrome video metadata equals full frame and duration",
+      "pass": true
+    },
+    {
+      "name": "paused actual seeked target is ready without media errors",
+      "pass": true
+    },
+    {
+      "name": "HTTP local MP4 byte-range request was served",
+      "pass": true
+    },
+    {
+      "name": "independent Pillow RGB comparison exits zero",
+      "pass": true
+    },
+    {
+      "name": "same-MP4 decoder colour MAE<=3 p99<=12",
+      "pass": false,
+      "detail": {
+        "width": 1920,
+        "height": 1080,
+        "rgbSamples": 6220800,
+        "mae": 14.538735853909465,
+        "p99": 28,
+        "pooledRgbP99": 23,
+        "max": 54,
+        "alphaExtrema": [
+          255,
+          255
+        ],
+        "note": "MAE uses RGB channel absolute differences; p99 uses the maximum channel difference per pixel. Pooled per-channel p99 is separately recorded."
+      }
+    },
+    {
+      "name": "Chrome canvas alpha is opaque full frame",
+      "pass": true
+    },
+    {
+      "name": "video/recording/driver remain byte-identical",
+      "pass": true
+    },
+    {
+      "name": "zero browser page errors",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "http": [
+    {
+      "method": "GET",
+      "range": "bytes=0-",
+      "status": 206,
+      "start": 0,
+      "end": 144395484
+    }
+  ],
+  "ffprobe": {
+    "status": 0,
+    "stdout": "{\r\n    \"streams\": [\r\n        {\r\n            \"index\": 0,\r\n            \"codec_name\": \"h264\",\r\n            \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\r\n            \"profile\": \"High\",\r\n            \"codec_type\": \"video\",\r\n            \"codec_tag_string\": \"avc1\",\r\n            \"codec_tag\": \"0x31637661\",\r\n            \"width\": 1920,\r\n            \"height\": 1080,\r\n            \"coded_width\": 1920,\r\n            \"coded_height\": 1080,\r\n            \"has_b_frames\": 2,\r\n            \"sample_aspect_ratio\": \"1:1\",\r\n            \"display_aspect_ratio\": \"16:9\",\r\n            \"pix_fmt\": \"yuvj420p\",\r\n            \"level\": 40,\r\n            \"color_range\": \"pc\",\r\n            \"color_space\": \"bt470bg\",\r\n            \"chroma_location\": \"left\",\r\n            \"field_order\": \"progressive\",\r\n            \"refs\": 1,\r\n            \"is_avc\": \"true\",\r\n            \"nal_length_size\": \"4\",\r\n            \"id\": \"0x1\",\r\n            \"r_frame_rate\": \"30/1\",\r\n            \"avg_frame_rate\": \"30/1\",\r\n            \"time_base\": \"1/15360\",\r\n            \"start_pts\": 0,\r\n            \"start_time\": \"0.000000\",\r\n            \"duration_ts\": 2551808,\r\n            \"duration\": \"166.133333\",\r\n            \"bit_rate\": \"6758812\",\r\n            \"bits_per_raw_sample\": \"8\",\r\n            \"nb_frames\": \"4984\",\r\n            \"extradata_size\": 51,\r\n            \"disposition\": {\r\n                \"default\": 1,\r\n                \"dub\": 0,\r\n                \"original\": 0,\r\n                \"comment\": 0,\r\n                \"lyrics\": 0,\r\n                \"karaoke\": 0,\r\n                \"forced\": 0,\r\n                \"hearing_impaired\": 0,\r\n                \"visual_impaired\": 0,\r\n                \"clean_effects\": 0,\r\n                \"attached_pic\": 0,\r\n                \"timed_thumbnails\": 0,\r\n                \"non_diegetic\": 0,\r\n                \"captions\": 0,\r\n                \"descriptions\": 0,\r\n                \"metadata\": 0,\r\n                \"dependent\": 0,\r\n                \"still_image\": 0,\r\n                \"multilayer\": 0\r\n            },\r\n            \"tags\": {\r\n                \"language\": \"und\",\r\n                \"handler_name\": \"VideoHandler\",\r\n                \"vendor_id\": \"[0][0][0][0]\",\r\n                \"encoder\": \"Lavc62.11.100 libx264\"\r\n            }\r\n        },\r\n        {\r\n            \"index\": 1,\r\n            \"codec_name\": \"aac\",\r\n            \"codec_long_name\": \"AAC (Advanced Audio Coding)\",\r\n            \"profile\": \"LC\",\r\n            \"codec_type\": \"audio\",\r\n            \"codec_tag_string\": \"mp4a\",\r\n            \"codec_tag\": \"0x6134706d\",\r\n            \"sample_fmt\": \"fltp\",\r\n            \"sample_rate\": \"48000\",\r\n            \"channels\": 2,\r\n            \"channel_layout\": \"stereo\",\r\n            \"bits_per_sample\": 0,\r\n            \"initial_padding\": 0,\r\n            \"id\": \"0x2\",\r\n            \"r_frame_rate\": \"0/0\",\r\n            \"avg_frame_rate\": \"0/0\",\r\n            \"time_base\": \"1/48000\",\r\n            \"start_pts\": 0,\r\n            \"start_time\": \"0.000000\",\r\n            \"duration_ts\": 7973664,\r\n            \"duration\": \"166.118000\",\r\n            \"bit_rate\": \"185594\",\r\n            \"nb_frames\": \"7788\",\r\n            \"extradata_size\": 5,\r\n            \"disposition\": {\r\n                \"default\": 1,\r\n                \"dub\": 0,\r\n                \"original\": 0,\r\n                \"comment\": 0,\r\n                \"lyrics\": 0,\r\n                \"karaoke\": 0,\r\n                \"forced\": 0,\r\n                \"hearing_impaired\": 0,\r\n                \"visual_impaired\": 0,\r\n                \"clean_effects\": 0,\r\n                \"attached_pic\": 0,\r\n                \"timed_thumbnails\": 0,\r\n                \"non_diegetic\": 0,\r\n                \"captions\": 0,\r\n                \"descriptions\": 0,\r\n                \"metadata\": 0,\r\n                \"dependent\": 0,\r\n                \"still_image\": 0,\r\n                \"multilayer\": 0\r\n            },\r\n            \"tags\": {\r\n                \"language\": \"und\",\r\n                \"handler_name\": \"SoundHandler\",\r\n                \"vendor_id\": \"[0][0][0][0]\"\r\n            }\r\n        }\r\n    ],\r\n    \"format\": {\r\n        \"filename\": \"E:\\\\数字媒体竞赛\\\\gitProject\\\\MDGS\\\\tmp\\\\exhibition-tour-candidate8\\\\2026-10-23T04-14-51-310Z\\\\国色长卷-导览录像.mp4\",\r\n        \"nb_streams\": 2,\r\n        \"nb_programs\": 0,\r\n        \"nb_stream_groups\": 0,\r\n        \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\r\n        \"format_long_name\": \"QuickTime / MOV\",\r\n        \"start_time\": \"0.000000\",\r\n        \"duration\": \"166.133333\",\r\n        \"size\": \"144395485\",\r\n        \"bit_rate\": \"6953233\",\r\n        \"probe_score\": 100,\r\n        \"tags\": {\r\n            \"major_brand\": \"isom\",\r\n            \"minor_version\": \"512\",\r\n            \"compatible_brands\": \"isomiso2avc1mp41\",\r\n            \"encoder\": \"Lavf62.3.100\"\r\n        }\r\n    }\r\n}\r\n",
+    "stderr": ""
+  },
+  "media": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1080,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9",
+        "pix_fmt": "yuvj420p",
+        "level": 40,
+        "color_range": "pc",
+        "color_space": "bt470bg",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/15360",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 2551808,
+        "duration": "166.133333",
+        "bit_rate": "6758812",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "4984",
+        "extradata_size": 51,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc62.11.100 libx264"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 7973664,
+        "duration": "166.118000",
+        "bit_rate": "185594",
+        "nb_frames": "7788",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ],
+    "format": {
+      "filename": "E:\\数字媒体竞赛\\gitProject\\MDGS\\tmp\\exhibition-tour-candidate8\\2026-10-23T04-14-51-310Z\\国色长卷-导览录像.mp4",
+      "nb_streams": 2,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "166.133333",
+      "size": "144395485",
+      "bit_rate": "6953233",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf62.3.100"
+      }
+    }
+  },
+  "ffmpeg": {
+    "executable": "ffmpeg",
+    "arguments": [
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-i",
+      "E:\\数字媒体竞赛\\gitProject\\MDGS\\tmp\\exhibition-tour-candidate8\\2026-10-23T04-14-51-310Z\\国色长卷-导览录像.mp4",
+      "-vf",
+      "select=eq(n\\,90)",
+      "-frames:v",
+      "1",
+      "-pix_fmt",
+      "rgb24",
+      "-y",
+      "E:\\数字媒体竞赛\\gitProject\\MDGS\\reports\\art-renewal\\candidate8-video-colour\\2026-10-23T04-22-13Z\\ffmpeg-frame90.png"
+    ],
+    "status": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "url": "http://127.0.0.1:7331/",
+  "browser": "156.0.8078.47",
+  "gpu": {
+    "devices": [
+      {
+        "vendorId": 4318,
+        "deviceId": 11269,
+        "subSysId": 2314604611,
+        "revision": 161,
+        "vendorString": "",
+        "deviceString": "NVIDIA GeForce RTX 5070 Ti",
+        "driverVendor": "NVIDIA",
+        "driverVersion": "32.0.16.1692"
+      },
+      {
+        "vendorId": 4318,
+        "deviceId": 11269,
+        "subSysId": 2314604611,
+        "revision": 161,
+        "vendorString": "",
+        "deviceString": "NVIDIA GeForce RTX 5070 Ti",
+        "driverVendor": "",
+        "driverVersion": "32.0.16.1692"
+      },
+      {
+        "vendorId": 4318,
+        "deviceId": 11269,
+        "subSysId": 2314604611,
+        "revision": 161,
+        "vendorString": "",
+        "deviceString": "NVIDIA GeForce RTX 5070 Ti",
+        "driverVendor": "",
+        "driverVersion": "32.0.16.1692"
+      },
+      {
+        "vendorId": 5140,
+        "deviceId": 140,
+        "subSysId": 0,
+        "revision": 0,
+        "vendorString": "",
+        "deviceString": "Microsoft Basic Render Driver",
+        "driverVendor": "",
+        "driverVersion": "10.0.26100.9711"
+      }
+    ],
+    "auxAttributes": {
+      "amdSwitchable": false,
+      "bgra8OverlaySupport": "SCALING",
+      "canSupportThreadedTextureMailbox": false,
+      "directComposition": true,
+      "directMLFeatureLevel": "Not supported",
+      "directRenderingVersion": "",
+      "displayType": "ANGLE_D3D11",
+      "dx12FeatureLevel": "Not supported",
+      "glExtensions": "GL_AMD_performance_monitor GL_ANGLE_base_vertex_base_instance_shader_builtin GL_ANGLE_blob_cache GL_ANGLE_client_arrays GL_ANGLE_clip_cull_distance GL_ANGLE_copy_texture_3d GL_ANGLE_depth_texture GL_ANGLE_framebuffer_blit GL_ANGLE_framebuffer_multisample GL_ANGLE_get_serialized_context_string GL_ANGLE_get_tex_level_parameter GL_ANGLE_instanced_arrays GL_ANGLE_memory_size GL_ANGLE_multiview_multisample GL_ANGLE_pack_reverse_row_order GL_ANGLE_polygon_mode GL_ANGLE_program_binary_readiness_query GL_ANGLE_program_cache_control GL_ANGLE_provoking_vertex GL_ANGLE_renderability_validation GL_ANGLE_request_extension GL_ANGLE_robust_client_memory GL_ANGLE_shader_pixel_local_storage GL_ANGLE_shader_pixel_local_storage_coherent GL_ANGLE_stencil_texturing GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ANGLE_texture_multisample GL_ANGLE_texture_usage GL_ANGLE_translated_shader_source GL_APPLE_clip_distance GL_ARM_rgba8 GL_CHROMIUM_bind_generates_resource GL_CHROMIUM_bind_uniform_location GL_CHROMIUM_copy_compressed_texture GL_CHROMIUM_copy_texture GL_CHROMIUM_lose_context GL_EXT_EGL_image_external_wrap_modes GL_EXT_base_instance GL_EXT_blend_func_extended GL_EXT_blend_minmax GL_EXT_clip_control GL_EXT_clip_cull_distance GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_conservative_depth GL_EXT_debug_label GL_EXT_debug_marker GL_EXT_depth_clamp GL_EXT_discard_framebuffer GL_EXT_disjoint_timer_query GL_EXT_draw_buffers GL_EXT_draw_buffers_indexed GL_EXT_draw_elements_base_vertex GL_EXT_float_blend GL_EXT_frag_depth GL_EXT_instanced_arrays GL_EXT_map_buffer_range GL_EXT_occlusion_query_boolean GL_EXT_polygon_offset_clamp GL_EXT_read_format_bgra GL_EXT_render_snorm GL_EXT_robustness GL_EXT_sRGB GL_EXT_shader_texture_lod GL_EXT_texture_border_clamp GL_EXT_texture_compression_bptc GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc_srgb GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_EXT_texture_rg GL_EXT_texture_storage GL_EXT_texture_type_2_10_10_10_REV GL_EXT_unpack_subimage GL_KHR_debug GL_KHR_parallel_shader_compile GL_KHR_robustness GL_NV_EGL_stream_consumer_external GL_NV_fence GL_NV_framebuffer_blit GL_NV_pack_subimage GL_NV_pixel_buffer_object GL_NV_shader_noperspective_interpolation GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_image_external_essl3 GL_OES_depth24 GL_OES_depth32 GL_OES_draw_buffers_indexed GL_OES_draw_elements_base_vertex GL_OES_element_index_uint GL_OES_fbo_render_mipmap GL_OES_get_program_binary GL_OES_mapbuffer GL_OES_packed_depth_stencil GL_OES_required_internalformat GL_OES_rgb8_rgba8 GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_standard_derivatives GL_OES_surfaceless_context GL_OES_texture_border_clamp GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_texture_stencil8 GL_OES_texture_storage_multisample_2d_array GL_OES_vertex_array_object GL_OVR_multiview GL_OVR_multiview2 ",
+      "glImplementationParts": "(gl=egl-angle,angle=d3d11)",
+      "glRenderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Ti (0x00002C05) Direct3D11 vs_5_0 ps_5_0, D3D11-32.0.16.1692)",
+      "glResetNotificationStrategy": 33362,
+      "glVendor": "Google Inc. (NVIDIA)",
+      "glVersion": "OpenGL ES 3.0 (ANGLE 2.1.28973 git hash: 3b89d84e9d59)",
+      "glWsExtensions": "EGL_EXT_create_context_robustness EGL_ANGLE_d3d_share_handle_client_buffer EGL_ANGLE_d3d_texture_client_buffer EGL_ANGLE_surface_d3d_texture_2d_share_handle EGL_ANGLE_query_surface_pointer EGL_ANGLE_window_fixed_size EGL_ANGLE_keyed_mutex EGL_ANGLE_surface_orientation EGL_ANGLE_direct_composition EGL_NV_post_sub_buffer EGL_KHR_create_context EGL_KHR_image EGL_KHR_image_base EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_KHR_get_all_proc_addresses EGL_KHR_stream EGL_KHR_stream_consumer_gltexture EGL_NV_stream_consumer_gltexture_yuv EGL_ANGLE_stream_producer_d3d_texture EGL_ANGLE_create_context_webgl_compatibility EGL_CHROMIUM_create_context_bind_generates_resource EGL_CHROMIUM_sync_control EGL_EXT_pixel_format_float EGL_KHR_surfaceless_context EGL_ANGLE_display_texture_share_group EGL_ANGLE_display_semaphore_share_group EGL_ANGLE_create_context_client_arrays EGL_ANGLE_program_cache_control EGL_ANGLE_robust_resource_initialization EGL_ANGLE_create_context_extensions_enabled EGL_ANDROID_blob_cache EGL_ANDROID_recordable EGL_ANGLE_image_d3d11_texture EGL_ANGLE_create_context_backwards_compatible EGL_KHR_no_config_context EGL_KHR_create_context_no_error EGL_KHR_reusable_sync EGL_ANGLE_memory_usage_report ",
+      "glWsVendor": "Google Inc. (NVIDIA)",
+      "glWsVersion": "1.5 (ANGLE 2.1.28973 git hash: 3b89d84e9d59)",
+      "inProcessGpu": false,
+      "initializationTime": 0.429729,
+      "isAsan": false,
+      "isClangCoverage": false,
+      "jpegDecodeAcceleratorSupported": false,
+      "maxMsaaSamples": "8",
+      "nv12OverlaySupport": "SCALING",
+      "optimus": false,
+      "p010OverlaySupport": "SCALING",
+      "passthroughCmdDecoder": true,
+      "pixelShaderVersion": "5.0",
+      "processCrashCount": 0,
+      "rgb10a2OverlaySupport": "SCALING",
+      "sandboxed": false,
+      "skiaBackendType": "GaneshGL",
+      "subpixelFontRendering": true,
+      "supportsD3dSharedImages": false,
+      "supportsDirectML": false,
+      "supportsDx12": false,
+      "supportsOverlays": true,
+      "supportsVulkan": false,
+      "targetCpuBits": 64,
+      "vertexShaderVersion": "5.0",
+      "visibilityCallbackCallCount": 0,
+      "vulkanVersion": "Not supported",
+      "yuy2OverlaySupport": "SCALING"
+    },
+    "featureStatus": {
+      "2d_canvas": "enabled",
+      "direct_rendering_display_compositor": "disabled_off_ok",
+      "gpu_compositing": "enabled",
+      "multiple_raster_threads": "enabled_on",
+      "opengl": "enabled_on",
+      "rasterization": "enabled",
+      "raw_draw": "disabled_off_ok",
+      "skia_graphite": "disabled_off",
+      "trees_in_viz": "disabled_off",
+      "video_decode": "enabled",
+      "video_encode": "enabled",
+      "webgl": "enabled",
+      "webgpu": "enabled",
+      "webnn": "disabled_off"
+    },
+    "driverBugWorkarounds": [
+      "disable_d3d11_vp9_ksvc_decoding",
+      "enable_webgl_timer_query_extensions",
+      "exit_on_context_lost",
+      "unpack_overlapping_rows_separately_unpack_buffer",
+      "use_g22_topleft_color_space_for_yuv_vp",
+      "disabled_extension_GL_KHR_blend_equation_advanced",
+      "disabled_extension_GL_KHR_blend_equation_advanced_coherent"
+    ],
+    "videoDecoding": [],
+    "videoEncoding": []
+  },
+  "chrome": {
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "duration": 166.133333,
+    "currentTime": 3.0001,
+    "paused": true,
+    "seeking": false,
+    "readyState": 4,
+    "error": null,
+    "failures": [],
+    "quality": {
+      "totalVideoFrames": 98,
+      "droppedVideoFrames": 0,
+      "corruptedVideoFrames": 0
+    },
+    "canvasColourSpace": "srgb"
+  },
+  "browserClosedAt": "2026-10-23T04:23:25.705Z",
+  "comparisonCommand": {
+    "python": "python",
+    "script": "import json,sys\nfrom PIL import Image,ImageChops\na=Image.open(sys.argv[1]).convert('RGBA'); b=Image.open(sys.argv[2]).convert('RGB')\nassert a.size==b.size==(1920,1080)\nrgb=a.convert('RGB'); hist=ImageChops.difference(rgb,b).histogram(); pooled=[sum(hist[c*256+i] for c in range(3)) for i in range(256)]; total=sum(pooled); mean=sum(i*n for i,n in enumerate(pooled))/total; acc=0;p99=255\nfor i,n in enumerate(pooled):\n acc+=n\n if acc>=total*.99:p99=i;break\nbands=ImageChops.difference(rgb,b).split(); ph=ImageChops.lighter(ImageChops.lighter(bands[0],bands[1]),bands[2]).histogram();pa=0;pp99=255\nfor i,n in enumerate(ph):\n pa+=n\n if pa>=a.width*a.height*.99:pp99=i;break\nprint(json.dumps({'width':a.width,'height':a.height,'rgbSamples':total,'mae':mean,'p99':pp99,'pooledRgbP99':p99,'max':max(i for i,n in enumerate(pooled) if n),'alphaExtrema':a.getchannel('A').getextrema(),'note':'MAE uses RGB channel absolute differences; p99 uses the maximum channel difference per pixel. Pooled per-channel p99 is separately recorded.'}))"
+  },
+  "comparisonProcess": {
+    "status": 0,
+    "stdout": "{\"width\": 1920, \"height\": 1080, \"rgbSamples\": 6220800, \"mae\": 14.538735853909465, \"p99\": 28, \"pooledRgbP99\": 23, \"max\": 54, \"alphaExtrema\": [255, 255], \"note\": \"MAE uses RGB channel absolute differences; p99 uses the maximum channel difference per pixel. Pooled per-channel p99 is separately recorded.\"}\r\n",
+    "stderr": ""
+  },
+  "comparison": {
+    "width": 1920,
+    "height": 1080,
+    "rgbSamples": 6220800,
+    "mae": 14.538735853909465,
+    "p99": 28,
+    "pooledRgbP99": 23,
+    "max": 54,
+    "alphaExtrema": [
+      255,
+      255
+    ],
+    "note": "MAE uses RGB channel absolute differences; p99 uses the maximum channel difference per pixel. Pooled per-channel p99 is separately recorded."
+  },
+  "screenshots": [
+    {
+      "file": "chrome-currentTime-3.0001.png",
+      "bytes": 3037703,
+      "sha256": "4d8e002212ae9642cdb2bec67548f54b3ad15907194c0aa950506930bc4b5bd7"
+    },
+    {
+      "file": "ffmpeg-frame90.png",
+      "bytes": 1892899,
+      "sha256": "ef4452818f87d9a8e88261c5da1b183affcf7a3dfb257e7bad5e695c996516f3"
+    }
+  ],
+  "browserClosed": true,
+  "serverClosed": true,
+  "finishedAt": "2026-10-23T04:23:28.074Z"
+}

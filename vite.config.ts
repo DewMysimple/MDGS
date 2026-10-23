@@ -30,7 +30,7 @@ export default defineConfig(async ({ command, isPreview }) => ({
     // Source Blender archives and generated art masters are read by offline
     // tools. Watching them can hit Windows file locks during an asset save.
     // Runtime assets in public remain watched for the current browser preview.
-    watch: { ignored: ['**/artwork/**', '**/reports/**', '**/source/**', '**/wiki_memory/**', '**/tmp/**'] },
+    watch: { ignored: ['**/artwork/**', '**/reports/**', '**/source/**', '**/wiki_memory/**', '**/tmp/**', '**/dist-exhibition/**', '**/dist-exhibition.staging/**'] },
   },
   preview: { port: 0, strictPort: false },
   build: { chunkSizeWarningLimit: 650, rollupOptions: { output: { manualChunks: { three: ['three'] } } } },

@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { ScenePreparationState } from '../components/ScrollViewport';
-import { studyGarden, studyPainting } from '../data/study';
 
 export type JourneyPhase = 'HOME' | 'SCROLL_AWAKENING' | 'CAMERA_ENTERING' | 'ARTISTIC_TRANSITION' | 'SCROLL_LOADING' | 'PAINTING_REVEAL' | 'ENTERING_VIEWER' | 'SCROLL_VIEWER' | 'RETURNING_HOME';
 export function chapterFromHash(hash = window.location.hash) {
@@ -27,9 +26,10 @@ export function useStudyJourney(onLeave: () => void) {
   const [ready, setReady] = useState(false);
   const [minimumShown, setMinimumShown] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [artReady, setArtReady] = useState(false);
-  const [artError, setArtError] = useState<string | null>(null);
   const [presentationError, setPresentationError] = useState<string | null>(null);
+  const [presentationReady, setPresentationReady] = useState(false);
+  const [returnFallback, setReturnFallback] = useState(false);
+  const [returningFromViewer, setReturningFromViewer] = useState(false);
   const phaseRef = useRef(phase);
   const phaseClock = useRef({ phase, attempt: -1, startedAt: 0 });
   const routedUrl = useRef(window.location.href);
@@ -37,17 +37,6 @@ export function useStudyJourney(onLeave: () => void) {
   const leaveRef = useRef(onLeave);
   leaveRef.current = onLeave;
   const [reduced, setReduced] = useState(() => matchMedia('(prefers-reduced-motion: reduce)').matches);
-
-  const cameraBlocked = phase === 'CAMERA_ENTERING' && !artReady && !artError;
-  useEffect(() => {
-    let alive = true;
-    setArtReady(false); setArtError(null);
-    const sources = [...new Set([studyGarden, studyPainting(chapterId)])];
-    Promise.all(sources.map(src => { const image = new Image(); image.src = src; return image.decode(); }))
-      .then(() => { if (alive) { setArtReady(true); setArtError(null); } })
-      .catch(() => { if (alive) setArtError('画境底图暂未载入，请重试展卷。'); });
-    return () => { alive = false; };
-  }, [attempt, chapterId]);
 
   useEffect(() => {
     const media = matchMedia('(prefers-reduced-motion: reduce)');
@@ -58,6 +47,7 @@ export function useStudyJourney(onLeave: () => void) {
 
   const resetPreparation = useCallback(() => {
     setReady(false); setError(null); setPresentationError(null); setPreparation(initialPreparation); setMinimumShown(false);
+    setPresentationReady(false); setReturnFallback(false); setReturningFromViewer(false);
     setAttempt(value => value + 1);
   }, []);
 
@@ -80,7 +70,9 @@ export function useStudyJourney(onLeave: () => void) {
 
   const returnHome = useCallback((fromHistory = false) => {
     if (phaseRef.current === 'HOME' || phaseRef.current === 'RETURNING_HOME') return;
+    setReturningFromViewer(phaseRef.current === 'SCROLL_VIEWER');
     leaveRef.current();
+    setPresentationReady(false); setReturnFallback(false);
     phaseRef.current = 'RETURNING_HOME';
     setPhase('RETURNING_HOME');
     setError(null); setReady(false);
@@ -117,12 +109,13 @@ export function useStudyJourney(onLeave: () => void) {
     };
     const next = sequence[phase];
     if (!next) return;
-    if (phaseClock.current.phase !== phase || phaseClock.current.attempt !== attempt) {
+    if (phase === 'RETURNING_HOME' && !presentationReady) {
+      phaseClock.current = { phase, attempt, startedAt: 0 };
+      return;
+    }
+    if (phaseClock.current.phase !== phase || phaseClock.current.attempt !== attempt || !phaseClock.current.startedAt) {
       phaseClock.current = { phase, attempt, startedAt: performance.now() };
     }
-    // Decode completion may unblock the camera, but must not restart an
-    // unrelated animation or add the camera duration a second time.
-    if (cameraBlocked) return;
     const duration = reduced ? Math.min(next[0], 140) : next[0];
     const remaining = Math.max(0, duration - (performance.now() - phaseClock.current.startedAt));
     const timer = window.setTimeout(() => {
@@ -131,7 +124,7 @@ export function useStudyJourney(onLeave: () => void) {
       setPhase(next[1]);
     }, Math.ceil(remaining));
     return () => window.clearTimeout(timer);
-  }, [phase, reduced, attempt, cameraBlocked]);
+  }, [phase, reduced, attempt, presentationReady]);
 
   useEffect(() => {
     if (phase !== 'SCROLL_LOADING') return;
@@ -139,6 +132,7 @@ export function useStudyJourney(onLeave: () => void) {
     // download progress and reduced-motion preference. A background tab does
     // not use up that time before the visitor has actually seen the scroll.
     setMinimumShown(false);
+    if (!presentationReady) return;
     let visibleElapsed = 0;
     let visibleSince: number | null = null;
     let timer = 0;
@@ -162,24 +156,32 @@ export function useStudyJourney(onLeave: () => void) {
     document.addEventListener('visibilitychange', visibility);
     resume();
     return () => { pause(); document.removeEventListener('visibilitychange', visibility); };
-  }, [phase, attempt]);
+  }, [phase, attempt, presentationReady]);
 
   useEffect(() => {
-    if (phase === 'SCROLL_LOADING' && minimumShown && ready && artReady && !error && !artError && !presentationError) {
+    if (phase === 'SCROLL_LOADING' && minimumShown && ready && presentationReady && !error && !presentationError) {
       phaseRef.current = 'PAINTING_REVEAL';
       setPhase('PAINTING_REVEAL');
     }
-  }, [phase, minimumShown, ready, error, artReady, artError, presentationError]);
+  }, [phase, minimumShown, ready, error, presentationReady, presentationError]);
 
   useEffect(() => {
-    if (phase === 'HOME' || phase === 'SCROLL_VIEWER' || phase === 'RETURNING_HOME' || ready && artReady) return;
+    if (phase !== 'RETURNING_HOME' || presentationReady) return;
+    // Back/history and a lost GPU can bypass the normal capture button path.
+    // Always offer a warm-paper exit rather than trapping the visitor here.
+    const timer = window.setTimeout(() => { setReturnFallback(true); setPresentationReady(true); }, 1700);
+    return () => window.clearTimeout(timer);
+  }, [phase, presentationReady]);
+
+  useEffect(() => {
+    if (phase === 'HOME' || phase === 'SCROLL_VIEWER' || phase === 'RETURNING_HOME' || ready && presentationReady) return;
     const timer = window.setTimeout(() => {
-      setError('画境准备较久，可重试展卷或先返回书房。');
+      setError('画境准备较久，可重试展卷或先返回序厅。');
       phaseRef.current = 'SCROLL_LOADING';
       setPhase('SCROLL_LOADING');
     }, 45000);
     return () => window.clearTimeout(timer);
-  }, [phase, attempt, ready, artReady]);
+  }, [phase, attempt, ready, presentationReady]);
 
   const onPreparation = useCallback((state: ScenePreparationState) => {
     setPreparation(state);
@@ -193,17 +195,21 @@ export function useStudyJourney(onLeave: () => void) {
   }, []);
   const onReady = useCallback(() => { setReady(true); setError(null); }, []);
   const onPresentationFailure = useCallback((message: string) => {
+    if (phaseRef.current === 'RETURNING_HOME') {
+      setReturnFallback(true); setPresentationReady(true); return;
+    }
     setPresentationError(message);
     if (['PAINTING_REVEAL', 'ENTERING_VIEWER'].includes(phaseRef.current)) {
       phaseRef.current = 'SCROLL_LOADING'; setMinimumShown(false); setPhase('SCROLL_LOADING');
     }
   }, []);
+  const onPresentationPending = useCallback(() => { setPresentationReady(false); setMinimumShown(false); }, []);
+  const onPresentationReady = useCallback(() => { setPresentationReady(true); }, []);
   const retry = useCallback(() => {
     leaveRef.current(); resetPreparation(); phaseRef.current = 'SCROLL_AWAKENING'; setPhase('SCROLL_AWAKENING');
   }, [resetPreparation]);
 
-  const observablePreparation = ready && !artReady
-    ? { ...initialPreparation, stage: 'manifest' as const, message: '正在铺设牡丹画境……' } : preparation;
-  return { chapterId, phase, attempt, preparation: observablePreparation, error: presentationError ?? error ?? artError, select, returnHome, retry, onPreparation, onReady, onPresentationFailure,
+  return { chapterId, phase, attempt, preparation, error: presentationError ?? error, select, returnHome, retry, onPreparation, onReady, onPresentationFailure,
+    onPresentationPending, onPresentationReady, presentationReady, returnFallback, returningFromViewer,
     viewerMounted: phase !== 'HOME', interactive: phase === 'SCROLL_VIEWER' };
 }

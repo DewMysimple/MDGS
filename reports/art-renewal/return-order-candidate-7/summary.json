@@ -1,0 +1,175 @@
+{
+  "milestone": "art-candidate-7",
+  "generatedAt": "2026-10-23T02:47:09.483Z",
+  "scope": "Original-byte evidence. Focused10 pass; original16 hardware pass within an initial17 report that remains FAILED at its added diagnostic sampling assertion; corrected added native partial-context case passes independently. No whole-root acceptance claim.",
+  "focused10": {
+    "startedAt": "2026-10-23T02:39:47.439Z",
+    "completedAt": "2026-10-23T02:41:45.016Z",
+    "status": "passed",
+    "checks": [
+      {
+        "name": "button-control-normal",
+        "passed": true
+      },
+      {
+        "name": "viewer-encoding-null-with-matching-cache-normal",
+        "passed": true
+      },
+      {
+        "name": "history-0.65-normal",
+        "passed": true
+      },
+      {
+        "name": "history-1-normal",
+        "passed": true
+      },
+      {
+        "name": "button-encoding-inflight-then-back-normal",
+        "passed": true
+      },
+      {
+        "name": "button-control-reduced",
+        "passed": true
+      },
+      {
+        "name": "viewer-encoding-null-with-matching-cache-reduced",
+        "passed": true
+      },
+      {
+        "name": "history-0.65-reduced",
+        "passed": true
+      },
+      {
+        "name": "history-1-reduced",
+        "passed": true
+      },
+      {
+        "name": "button-encoding-inflight-then-back-reduced",
+        "passed": true
+      }
+    ],
+    "browser": "156.0.8078.47",
+    "freeze": {
+      "path": "reports/art-renewal/art-candidate-7-build.json",
+      "sha256": "1ab1ac859466a2ffbb2c069fe12086eea5ec0d0e803b220a7495f82c97653745"
+    },
+    "inputsUnchanged": true,
+    "sourceCount": 0,
+    "packageCount": 744,
+    "driverSha256": "2dfed63aa14b2876c100382b981b5b4785e318c433426df42539be6d21833020"
+  },
+  "hardwareInitial": {
+    "startedAt": "2026-10-23T02:42:40.139Z",
+    "completedAt": "2026-10-23T02:44:33.102Z",
+    "status": "failed",
+    "checks": [
+      {
+        "name": "before-first-frame-cancel-stops-polling-and-draw",
+        "passed": true
+      },
+      {
+        "name": "ready-partial-paper-cancel-really-closes",
+        "passed": true
+      },
+      {
+        "name": "real-context-loss-during-pending-compile-restores-generation",
+        "passed": true
+      },
+      {
+        "name": "real-native-shader-error-keeps-gate-and-retries",
+        "passed": true
+      },
+      {
+        "name": "injected-KHR-absence-retains-original-native-path",
+        "passed": true
+      },
+      {
+        "name": "hidden-tab-pauses-polling-and-visible-return-resumes",
+        "passed": true
+      },
+      {
+        "name": "injected-never-ready-KHR-has-bounded-30second-fallback",
+        "passed": true
+      },
+      {
+        "name": "slow-native-texture-arrival-after-cancel-cannot-draw",
+        "passed": true
+      },
+      {
+        "name": "real-resource-503-stays-covered-and-retries",
+        "passed": true
+      },
+      {
+        "name": "normal-chapter-1-real-first-frame-and-complete-warmup",
+        "passed": true
+      },
+      {
+        "name": "normal-chapter-2-real-first-frame-and-complete-warmup",
+        "passed": true
+      },
+      {
+        "name": "normal-chapter-3-real-first-frame-and-complete-warmup",
+        "passed": true
+      },
+      {
+        "name": "normal-chapter-4-real-first-frame-and-complete-warmup",
+        "passed": true
+      },
+      {
+        "name": "reduced-motion-resize-still-has-first-frame",
+        "passed": true
+      },
+      {
+        "name": "owner-cancel-before-late-scene-json",
+        "passed": true
+      },
+      {
+        "name": "owner-cancel-before-late-source-materials-json",
+        "passed": true
+      },
+      {
+        "name": "real-context-loss-during-partial-texture-upload-reprepares-samplers",
+        "passed": false
+      }
+    ],
+    "browser": "156.0.8078.47",
+    "freeze": {
+      "path": "reports/art-renewal/art-candidate-7-build.json",
+      "sha256": "1ab1ac859466a2ffbb2c069fe12086eea5ec0d0e803b220a7495f82c97653745"
+    },
+    "inputsUnchanged": true,
+    "sourceCount": 831,
+    "packageCount": 744,
+    "driverSha256": "ea7c68f9c4267f91a3d94f74544778037a934448693b511b4e389f0322424aa9"
+  },
+  "partialNativeContext": {
+    "startedAt": "2026-10-23T02:45:34.569Z",
+    "completedAt": "2026-10-23T02:45:42.552Z",
+    "status": "passed",
+    "checks": [
+      {
+        "name": "real-context-loss-during-partial-texture-upload-reprepares-samplers",
+        "passed": true
+      }
+    ],
+    "browser": "156.0.8078.47",
+    "freeze": {
+      "path": "reports/art-renewal/art-candidate-7-build.json",
+      "sha256": "1ab1ac859466a2ffbb2c069fe12086eea5ec0d0e803b220a7495f82c97653745"
+    },
+    "inputsUnchanged": true,
+    "sourceCount": 831,
+    "packageCount": 744,
+    "driverSha256": "3941ef80dc08d18fcefb2add535f1627fce1fe42b468082bc74a44cbcc904a64"
+  },
+  "result": {
+    "focusedReturn": 10,
+    "originalHardware": 16,
+    "additionalPartialNativeContext": 1,
+    "allRequiredChecksPassedAcrossBoundRuns": true,
+    "initialCombinedReportStillFailed": true
+  },
+  "limits": "Native GPU observation proves real partial preparation context loss/recovery and re-upload, not the identity of every internal shared-source sampler call. Exact lost-prefix requeue is asserted by the production-method CPU10 regression. Synthetic KHR unavailable/never-ready probes remain API injections; actual native hidden and context loss are separately observed.",
+  "performance": "../texture-streaming-preparation/README.md",
+  "firstDiagnosticFailure": "Initial extra case read textureUploads=0 from stale diagnostics immediately after a real first upload. Trusted lost-event diagnostics already showed3 pending uploads. The corrected case checks pending preparation at the actual lost event; original16 assertions and all product/source/package bytes remain unchanged."
+}

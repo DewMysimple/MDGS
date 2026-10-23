@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "testedAt": "2026-10-22T18:38:54.862Z",
+  "scope": "Isolated current AudioController in React StrictMode with actual current v2 MP3 decode and Web Audio graph.",
+  "checks": [
+    {
+      "test": "no-context-no-fetch-before-user-gesture",
+      "passed": true
+    },
+    {
+      "test": "failed-fetch-release-and-real-decode-retry",
+      "passed": true,
+      "playing": {
+        "contexts": [
+          {
+            "state": "closed",
+            "time": 0.032
+          },
+          {
+            "state": "running",
+            "time": 0.312
+          }
+        ],
+        "sourceCount": 1,
+        "duration": 160,
+        "channels": 2,
+        "loop": true,
+        "gain": 0.07170119136571884,
+        "cutoff": 5600
+      }
+    },
+    {
+      "test": "gentle-initial-fade-to-saved-volume",
+      "passed": true,
+      "gain": 0.35939300060272217
+    },
+    {
+      "test": "smooth-volume-and-persistence",
+      "passed": true
+    },
+    {
+      "test": "visible-departure-fade-suspend-and-same-clock-resume",
+      "passed": true
+    },
+    {
+      "test": "chapter-tone-gradual-transition-without-restarting-source",
+      "passed": true,
+      "cutoff": 6022.96826171875
+    },
+    {
+      "test": "hidden-tab-stops-clock-and-resumes",
+      "passed": true
+    },
+    {
+      "test": "disable-fades-and-closes-within-260ms",
+      "passed": true
+    },
+    {
+      "test": "cancelled-fetch-cannot-revive-playback",
+      "passed": true
+    },
+    {
+      "test": "rapid-off-on-and-unmount-release-all-graphs",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "sourceSha256": {
+    "src/components/AudioController.tsx": "9ae17e4087838c4b2b9a23cfd74c6152d3ec09301dcbd8a1a9cc84f0f0427cf1",
+    "src/styles/audio-controller.css": "71487c43f3e2fbb23eb6e142d9a644e83667a39968b93c6a32bba78fb859e016",
+    "artwork/audio/candidates/v2/peony-courtyard-v2.mp3": "c2cbad6d0a1f9c14d994774ac27a3c9367505aa667177d78e33323320004e9ef"
+  },
+  "archivedAssetOriginalPath": "public/audio/peony-courtyard-v2.mp3"
+}

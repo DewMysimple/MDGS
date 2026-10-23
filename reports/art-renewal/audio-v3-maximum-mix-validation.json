@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "method": "Actual MP3 decode through FFmpeg: maximum regional A/B/C gains 1.2/0.7/0.45 simultaneously (more than any real region), music-bus Q=0.5 lowpass, no user attenuation, 160s output and ebur128 true-peak measurement. This is a conservative offline mix check, not a claim of live hardware capture.",
+  "checks": [
+    {
+      "lowpassHz": 3200,
+      "q": 0.5,
+      "truePeakDbfs": -7.3,
+      "passed": true
+    },
+    {
+      "lowpassHz": 5100,
+      "q": 0.5,
+      "truePeakDbfs": -6.8,
+      "passed": true
+    },
+    {
+      "lowpassHz": 6600,
+      "q": 0.5,
+      "truePeakDbfs": -6.7,
+      "passed": true
+    }
+  ],
+  "independentCueSamplePeakUpperBound": 0.02
+}

@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "verifiedAt": "2026-10-23T00:10:58.019Z",
+  "run": "tmp/exhibition-tour/2026-10-22T23-45-43-218Z",
+  "adoptedReport": "validation-v2.json",
+  "entries": [
+    {
+      "report": "metadata-validation.json",
+      "reportSha256": "f6263f3c1f3ef50d90f4228c5fbf2925a26daa18f89346ce52aca0bfe98202e7",
+      "driver": "checker-metadata.mjs",
+      "driverSha256": "34bec725a8aef0afe1e2e4d7153cba490bab062f20d3e173e76282c32f7021f7",
+      "status": "passed",
+      "summary": {
+        "passed": 31,
+        "total": 31
+      }
+    },
+    {
+      "report": "validation.json",
+      "reportSha256": "b7c733027b3ad82da26a7118c2461befe24eba31ca16315ad28b4c897fc7cc1a",
+      "driver": "checker-full.mjs",
+      "driverSha256": "32edcb1f8a1e246ee2ec18da3ebeda207a6e7c8f2bb81d70b9899818ac545cb3",
+      "status": "failed",
+      "summary": {
+        "passed": 35,
+        "total": 36
+      }
+    },
+    {
+      "report": "validation-v2.json",
+      "reportSha256": "41d5e48e786171b5c1e779c283ec1fe64800856715182b8b1bc17f07efc362fc",
+      "driver": "checker-final.mjs",
+      "driverSha256": "3b7c71f0a7fa2df36486af137e08f77a1422a2e47076335e575ef0685d61c56b",
+      "status": "passed",
+      "summary": {
+        "passed": 35,
+        "total": 35,
+        "requiredPassed": 35,
+        "requiredTotal": 35,
+        "nonRequiredObservations": 1
+      }
+    }
+  ],
+  "unchangedMedia": {
+    "pcmSha256": "46dde4461427ee4f7c1670de31ec2b047f02b40271ebe198e1543533a148e3a2",
+    "movieSha256": "0ae6a4722303a341b91422c5d1e5b42895324f92a4d3bbd4d63a8e15dd5c8200"
+  },
+  "criterionCorrection": {
+    "old": "Finite exponential fade must end in bitwise zero; this additional audit premise was not a product requirement.",
+    "new": "Keep exact endpoint values as required:false observations. Preserve35 required integrity checks. Introduce no retrospective dB or audibility threshold.",
+    "reason": "Actual PeonySoundscape.release uses setTargetAtTime(0,t,.045), followed by close260ms later. Root explicitly approved the observation correction after inspecting source. No product/recorder/PCM edits."
+  }
+}

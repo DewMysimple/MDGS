@@ -1,0 +1,1372 @@
+{
+  "status": "passed",
+  "startedAt": "2026-10-22T20:22:46.245Z",
+  "suite": "home",
+  "scope": "Actual built App at nested prefix, six desktop viewports. Home decoded layers/recovery/real optional WebGL context loss/motion/dialog focus; four culture note/original tabs/source links/explore targets; four colophons and local 1200x1600 keepsake choice/seal/download/glyph evidence. No audio retest. Visibility uses an injected document.hidden signal, not system-background emulation.",
+  "sizes": [
+    {
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "width": 1600,
+      "height": 1000
+    },
+    {
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "width": 3440,
+      "height": 1440
+    },
+    {
+      "width": 1100,
+      "height": 650
+    }
+  ],
+  "checks": [
+    {
+      "test": "home-image-failure-retry-title",
+      "passed": true,
+      "failedImage": "title.webp",
+      "images": [
+        {
+          "src": "http://127.0.0.1:7629/exhibition/ui-qa/ui/peony-atlas/landscape.webp",
+          "complete": true,
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "src": "http://127.0.0.1:7629/exhibition/ui-qa/ui/peony-atlas/cinnabar-peonies.webp",
+          "complete": true,
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "src": "http://127.0.0.1:7629/exhibition/ui-qa/ui/peony-atlas/ivory-branch.webp",
+          "complete": true,
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "src": "http://127.0.0.1:7629/exhibition/ui-qa/ui/peony-atlas/title.webp",
+          "complete": true,
+          "width": 2172,
+          "height": 724
+        }
+      ]
+    },
+    {
+      "test": "home-image-failure-retry-cinnabar-peonies",
+      "passed": true,
+      "failedImage": "cinnabar-peonies.webp",
+      "images": [
+        {
+          "src": "http://127.0.0.1:7629/exhibition/ui-qa/ui/peony-atlas/landscape.webp",
+          "complete": true,
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "src": "http://127.0.0.1:7629/exhibition/ui-qa/ui/peony-atlas/cinnabar-peonies.webp",
+          "complete": true,
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "src": "http://127.0.0.1:7629/exhibition/ui-qa/ui/peony-atlas/ivory-branch.webp",
+          "complete": true,
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "src": "http://127.0.0.1:7629/exhibition/ui-qa/ui/peony-atlas/title.webp",
+          "complete": true,
+          "width": 2172,
+          "height": 724
+        }
+      ]
+    },
+    {
+      "test": "home-layout-1280x720",
+      "passed": true,
+      "geometry": [
+        {
+          "selector": "atlas-header",
+          "rect": {
+            "x": 57.59375,
+            "y": 0,
+            "width": 1164.8125,
+            "height": 80,
+            "top": 0,
+            "right": 1222.40625,
+            "bottom": 80,
+            "left": 57.59375
+          },
+          "scrollWidth": 1165,
+          "clientWidth": 1165
+        },
+        {
+          "selector": "atlas-intro",
+          "rect": {
+            "x": 115.1875,
+            "y": 76.34375,
+            "width": 550.390625,
+            "height": 421.875,
+            "top": 76.34375,
+            "right": 665.578125,
+            "bottom": 498.21875,
+            "left": 115.1875
+          },
+          "scrollWidth": 550,
+          "clientWidth": 550
+        },
+        {
+          "selector": "atlas-begin",
+          "rect": {
+            "x": 115.1875,
+            "y": 416.21875,
+            "width": 216.75,
+            "height": 46,
+            "top": 416.21875,
+            "right": 331.9375,
+            "bottom": 462.21875,
+            "left": 115.1875
+          },
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "selector": "atlas-chapters",
+          "rect": {
+            "x": 0,
+            "y": 503,
+            "width": 1280,
+            "height": 184,
+            "top": 503,
+            "right": 1280,
+            "bottom": 687,
+            "left": 0
+          },
+          "scrollWidth": 1280,
+          "clientWidth": 1280
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 57.59375,
+            "y": 541,
+            "width": 291.203125,
+            "height": 135,
+            "top": 541,
+            "right": 348.796875,
+            "bottom": 676,
+            "left": 57.59375
+          },
+          "scrollWidth": 290,
+          "clientWidth": 290
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 348.796875,
+            "y": 541,
+            "width": 291.203125,
+            "height": 135,
+            "top": 541,
+            "right": 640,
+            "bottom": 676,
+            "left": 348.796875
+          },
+          "scrollWidth": 290,
+          "clientWidth": 290
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 640,
+            "y": 541,
+            "width": 291.203125,
+            "height": 135,
+            "top": 541,
+            "right": 931.203125,
+            "bottom": 676,
+            "left": 640
+          },
+          "scrollWidth": 290,
+          "clientWidth": 290
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 931.203125,
+            "y": 541,
+            "width": 291.203125,
+            "height": 135,
+            "top": 541,
+            "right": 1222.40625,
+            "bottom": 676,
+            "left": 931.203125
+          },
+          "scrollWidth": 291,
+          "clientWidth": 291
+        },
+        {
+          "selector": "atlas-footer",
+          "rect": {
+            "x": 57.59375,
+            "y": 687,
+            "width": 1164.8125,
+            "height": 33,
+            "top": 687,
+            "right": 1222.40625,
+            "bottom": 720,
+            "left": 57.59375
+          },
+          "scrollWidth": 1165,
+          "clientWidth": 1165
+        }
+      ],
+      "images": [
+        {
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 2172,
+          "height": 724
+        }
+      ]
+    },
+    {
+      "test": "home-dialog-preface-1280x720",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 190,
+          "y": 64.796875,
+          "width": 900,
+          "height": 590.390625,
+          "top": 64.796875,
+          "right": 1090,
+          "bottom": 655.1875,
+          "left": 190
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-dialog-guide-1280x720",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 190,
+          "y": 64.796875,
+          "width": 900,
+          "height": 590.390625,
+          "top": 64.796875,
+          "right": 1090,
+          "bottom": 655.1875,
+          "left": 190
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-layout-1600x1000",
+      "passed": true,
+      "geometry": [
+        {
+          "selector": "atlas-header",
+          "rect": {
+            "x": 72,
+            "y": 0,
+            "width": 1456,
+            "height": 96,
+            "top": 0,
+            "right": 1528,
+            "bottom": 96,
+            "left": 72
+          },
+          "scrollWidth": 1456,
+          "clientWidth": 1456
+        },
+        {
+          "selector": "atlas-intro",
+          "rect": {
+            "x": 160,
+            "y": 117.24828338623047,
+            "width": 688,
+            "height": 569.328125,
+            "top": 117.24828338623047,
+            "right": 848,
+            "bottom": 686.5764083862305,
+            "left": 160
+          },
+          "scrollWidth": 688,
+          "clientWidth": 688
+        },
+        {
+          "selector": "atlas-begin",
+          "rect": {
+            "x": 160,
+            "y": 585.576416015625,
+            "width": 216.75,
+            "height": 53,
+            "top": 585.576416015625,
+            "right": 376.75,
+            "bottom": 638.576416015625,
+            "left": 160
+          },
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "selector": "atlas-chapters",
+          "rect": {
+            "x": 0,
+            "y": 742,
+            "width": 1600,
+            "height": 218,
+            "top": 742,
+            "right": 1600,
+            "bottom": 960,
+            "left": 0
+          },
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 72,
+            "y": 788,
+            "width": 364,
+            "height": 160,
+            "top": 788,
+            "right": 436,
+            "bottom": 948,
+            "left": 72
+          },
+          "scrollWidth": 363,
+          "clientWidth": 363
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 436,
+            "y": 788,
+            "width": 364,
+            "height": 160,
+            "top": 788,
+            "right": 800,
+            "bottom": 948,
+            "left": 436
+          },
+          "scrollWidth": 363,
+          "clientWidth": 363
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 800,
+            "y": 788,
+            "width": 364,
+            "height": 160,
+            "top": 788,
+            "right": 1164,
+            "bottom": 948,
+            "left": 800
+          },
+          "scrollWidth": 363,
+          "clientWidth": 363
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 1164,
+            "y": 788,
+            "width": 364,
+            "height": 160,
+            "top": 788,
+            "right": 1528,
+            "bottom": 948,
+            "left": 1164
+          },
+          "scrollWidth": 364,
+          "clientWidth": 364
+        },
+        {
+          "selector": "atlas-footer",
+          "rect": {
+            "x": 72,
+            "y": 960,
+            "width": 1456,
+            "height": 40,
+            "top": 960,
+            "right": 1528,
+            "bottom": 1000,
+            "left": 72
+          },
+          "scrollWidth": 1456,
+          "clientWidth": 1456
+        }
+      ],
+      "images": [
+        {
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 2172,
+          "height": 724
+        }
+      ]
+    },
+    {
+      "test": "home-dialog-preface-1600x1000",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 350,
+          "y": 186.75,
+          "width": 900,
+          "height": 626.484375,
+          "top": 186.75,
+          "right": 1250,
+          "bottom": 813.234375,
+          "left": 350
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-dialog-guide-1600x1000",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 350,
+          "y": 113,
+          "width": 900,
+          "height": 773.984375,
+          "top": 113,
+          "right": 1250,
+          "bottom": 886.984375,
+          "left": 350
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-layout-1920x1080",
+      "passed": true,
+      "geometry": [
+        {
+          "selector": "atlas-header",
+          "rect": {
+            "x": 86.390625,
+            "y": 0,
+            "width": 1747.21875,
+            "height": 96,
+            "top": 0,
+            "right": 1833.609375,
+            "bottom": 96,
+            "left": 86.390625
+          },
+          "scrollWidth": 1747,
+          "clientWidth": 1747
+        },
+        {
+          "selector": "atlas-intro",
+          "rect": {
+            "x": 192,
+            "y": 156.89999389648438,
+            "width": 825.59375,
+            "height": 570,
+            "top": 156.89999389648438,
+            "right": 1017.59375,
+            "bottom": 726.8999938964844,
+            "left": 192
+          },
+          "scrollWidth": 826,
+          "clientWidth": 826
+        },
+        {
+          "selector": "atlas-begin",
+          "rect": {
+            "x": 192,
+            "y": 625.9000244140625,
+            "width": 216.75,
+            "height": 53,
+            "top": 625.9000244140625,
+            "right": 408.75,
+            "bottom": 678.9000244140625,
+            "left": 192
+          },
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "selector": "atlas-chapters",
+          "rect": {
+            "x": 0,
+            "y": 822,
+            "width": 1920,
+            "height": 218,
+            "top": 822,
+            "right": 1920,
+            "bottom": 1040,
+            "left": 0
+          },
+          "scrollWidth": 1920,
+          "clientWidth": 1920
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 86.390625,
+            "y": 868,
+            "width": 436.796875,
+            "height": 160,
+            "top": 868,
+            "right": 523.1875,
+            "bottom": 1028,
+            "left": 86.390625
+          },
+          "scrollWidth": 436,
+          "clientWidth": 436
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 523.1875,
+            "y": 868,
+            "width": 436.8125,
+            "height": 160,
+            "top": 868,
+            "right": 960,
+            "bottom": 1028,
+            "left": 523.1875
+          },
+          "scrollWidth": 436,
+          "clientWidth": 436
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 960,
+            "y": 868,
+            "width": 436.796875,
+            "height": 160,
+            "top": 868,
+            "right": 1396.796875,
+            "bottom": 1028,
+            "left": 960
+          },
+          "scrollWidth": 436,
+          "clientWidth": 436
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 1396.796875,
+            "y": 868,
+            "width": 436.8125,
+            "height": 160,
+            "top": 868,
+            "right": 1833.609375,
+            "bottom": 1028,
+            "left": 1396.796875
+          },
+          "scrollWidth": 437,
+          "clientWidth": 437
+        },
+        {
+          "selector": "atlas-footer",
+          "rect": {
+            "x": 86.390625,
+            "y": 1040,
+            "width": 1747.21875,
+            "height": 40,
+            "top": 1040,
+            "right": 1833.609375,
+            "bottom": 1080,
+            "left": 86.390625
+          },
+          "scrollWidth": 1747,
+          "clientWidth": 1747
+        }
+      ],
+      "images": [
+        {
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 2172,
+          "height": 724
+        }
+      ]
+    },
+    {
+      "test": "home-dialog-preface-1920x1080",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 510,
+          "y": 226.75,
+          "width": 900,
+          "height": 626.484375,
+          "top": 226.75,
+          "right": 1410,
+          "bottom": 853.234375,
+          "left": 510
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-dialog-guide-1920x1080",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 510,
+          "y": 153,
+          "width": 900,
+          "height": 773.984375,
+          "top": 153,
+          "right": 1410,
+          "bottom": 926.984375,
+          "left": 510
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-layout-2560x1440",
+      "passed": true,
+      "geometry": [
+        {
+          "selector": "atlas-header",
+          "rect": {
+            "x": 115.1875,
+            "y": 0,
+            "width": 2329.625,
+            "height": 120,
+            "top": 0,
+            "right": 2444.8125,
+            "bottom": 120,
+            "left": 115.1875
+          },
+          "scrollWidth": 2330,
+          "clientWidth": 2330
+        },
+        {
+          "selector": "atlas-intro",
+          "rect": {
+            "x": 256,
+            "y": 288.1482849121094,
+            "width": 830,
+            "height": 639.328125,
+            "top": 288.1482849121094,
+            "right": 1086,
+            "bottom": 927.4764099121094,
+            "left": 256
+          },
+          "scrollWidth": 830,
+          "clientWidth": 830
+        },
+        {
+          "selector": "atlas-begin",
+          "rect": {
+            "x": 256,
+            "y": 826.4764404296875,
+            "width": 216.75,
+            "height": 53,
+            "top": 826.4764404296875,
+            "right": 472.75,
+            "bottom": 879.4764404296875,
+            "left": 256
+          },
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "selector": "atlas-chapters",
+          "rect": {
+            "x": 0,
+            "y": 1134,
+            "width": 2560,
+            "height": 260,
+            "top": 1134,
+            "right": 2560,
+            "bottom": 1394,
+            "left": 0
+          },
+          "scrollWidth": 2560,
+          "clientWidth": 2560
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 115.1875,
+            "y": 1180,
+            "width": 582.40625,
+            "height": 200,
+            "top": 1180,
+            "right": 697.59375,
+            "bottom": 1380,
+            "left": 115.1875
+          },
+          "scrollWidth": 581,
+          "clientWidth": 581
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 697.59375,
+            "y": 1180,
+            "width": 582.40625,
+            "height": 200,
+            "top": 1180,
+            "right": 1280,
+            "bottom": 1380,
+            "left": 697.59375
+          },
+          "scrollWidth": 581,
+          "clientWidth": 581
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 1280,
+            "y": 1180,
+            "width": 582.40625,
+            "height": 200,
+            "top": 1180,
+            "right": 1862.40625,
+            "bottom": 1380,
+            "left": 1280
+          },
+          "scrollWidth": 581,
+          "clientWidth": 581
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 1862.40625,
+            "y": 1180,
+            "width": 582.40625,
+            "height": 200,
+            "top": 1180,
+            "right": 2444.8125,
+            "bottom": 1380,
+            "left": 1862.40625
+          },
+          "scrollWidth": 582,
+          "clientWidth": 582
+        },
+        {
+          "selector": "atlas-footer",
+          "rect": {
+            "x": 115.1875,
+            "y": 1394,
+            "width": 2329.625,
+            "height": 46,
+            "top": 1394,
+            "right": 2444.8125,
+            "bottom": 1440,
+            "left": 115.1875
+          },
+          "scrollWidth": 2330,
+          "clientWidth": 2330
+        }
+      ],
+      "images": [
+        {
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 2172,
+          "height": 724
+        }
+      ]
+    },
+    {
+      "test": "home-dialog-preface-2560x1440",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 830,
+          "y": 406.75,
+          "width": 900,
+          "height": 626.484375,
+          "top": 406.75,
+          "right": 1730,
+          "bottom": 1033.234375,
+          "left": 830
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-dialog-guide-2560x1440",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 830,
+          "y": 333,
+          "width": 900,
+          "height": 773.984375,
+          "top": 333,
+          "right": 1730,
+          "bottom": 1106.984375,
+          "left": 830
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-layout-3440x1440",
+      "passed": true,
+      "geometry": [
+        {
+          "selector": "atlas-header",
+          "rect": {
+            "x": 154.796875,
+            "y": 0,
+            "width": 3130.40625,
+            "height": 120,
+            "top": 0,
+            "right": 3285.203125,
+            "bottom": 120,
+            "left": 154.796875
+          },
+          "scrollWidth": 3130,
+          "clientWidth": 3130
+        },
+        {
+          "selector": "atlas-intro",
+          "rect": {
+            "x": 344,
+            "y": 288.1482849121094,
+            "width": 830,
+            "height": 639.328125,
+            "top": 288.1482849121094,
+            "right": 1174,
+            "bottom": 927.4764099121094,
+            "left": 344
+          },
+          "scrollWidth": 830,
+          "clientWidth": 830
+        },
+        {
+          "selector": "atlas-begin",
+          "rect": {
+            "x": 344,
+            "y": 826.4764404296875,
+            "width": 216.75,
+            "height": 53,
+            "top": 826.4764404296875,
+            "right": 560.75,
+            "bottom": 879.4764404296875,
+            "left": 344
+          },
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "selector": "atlas-chapters",
+          "rect": {
+            "x": 0,
+            "y": 1134,
+            "width": 3440,
+            "height": 260,
+            "top": 1134,
+            "right": 3440,
+            "bottom": 1394,
+            "left": 0
+          },
+          "scrollWidth": 3440,
+          "clientWidth": 3440
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 154.796875,
+            "y": 1180,
+            "width": 782.59375,
+            "height": 200,
+            "top": 1180,
+            "right": 937.390625,
+            "bottom": 1380,
+            "left": 154.796875
+          },
+          "scrollWidth": 782,
+          "clientWidth": 782
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 937.390625,
+            "y": 1180,
+            "width": 782.609375,
+            "height": 200,
+            "top": 1180,
+            "right": 1720,
+            "bottom": 1380,
+            "left": 937.390625
+          },
+          "scrollWidth": 782,
+          "clientWidth": 782
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 1720,
+            "y": 1180,
+            "width": 782.59375,
+            "height": 200,
+            "top": 1180,
+            "right": 2502.59375,
+            "bottom": 1380,
+            "left": 1720
+          },
+          "scrollWidth": 782,
+          "clientWidth": 782
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 2502.59375,
+            "y": 1180,
+            "width": 782.609375,
+            "height": 200,
+            "top": 1180,
+            "right": 3285.203125,
+            "bottom": 1380,
+            "left": 2502.59375
+          },
+          "scrollWidth": 783,
+          "clientWidth": 783
+        },
+        {
+          "selector": "atlas-footer",
+          "rect": {
+            "x": 154.796875,
+            "y": 1394,
+            "width": 3130.40625,
+            "height": 46,
+            "top": 1394,
+            "right": 3285.203125,
+            "bottom": 1440,
+            "left": 154.796875
+          },
+          "scrollWidth": 3130,
+          "clientWidth": 3130
+        }
+      ],
+      "images": [
+        {
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 2172,
+          "height": 724
+        }
+      ]
+    },
+    {
+      "test": "home-dialog-preface-3440x1440",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 1270,
+          "y": 406.75,
+          "width": 900,
+          "height": 626.484375,
+          "top": 406.75,
+          "right": 2170,
+          "bottom": 1033.234375,
+          "left": 1270
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-dialog-guide-3440x1440",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 1270,
+          "y": 333,
+          "width": 900,
+          "height": 773.984375,
+          "top": 333,
+          "right": 2170,
+          "bottom": 1106.984375,
+          "left": 1270
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-layout-1100x650",
+      "passed": true,
+      "geometry": [
+        {
+          "selector": "atlas-header",
+          "rect": {
+            "x": 49.5,
+            "y": 0,
+            "width": 1001,
+            "height": 80,
+            "top": 0,
+            "right": 1050.5,
+            "bottom": 80,
+            "left": 49.5
+          },
+          "scrollWidth": 1001,
+          "clientWidth": 1001
+        },
+        {
+          "selector": "atlas-intro",
+          "rect": {
+            "x": 99,
+            "y": 77.04374694824219,
+            "width": 473,
+            "height": 351.875,
+            "top": 77.04374694824219,
+            "right": 572,
+            "bottom": 428.9187469482422,
+            "left": 99
+          },
+          "scrollWidth": 473,
+          "clientWidth": 473
+        },
+        {
+          "selector": "atlas-begin",
+          "rect": {
+            "x": 99,
+            "y": 346.91876220703125,
+            "width": 216.75,
+            "height": 46,
+            "top": 346.91876220703125,
+            "right": 315.75,
+            "bottom": 392.91876220703125,
+            "left": 99
+          },
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "selector": "atlas-chapters",
+          "rect": {
+            "x": 0,
+            "y": 433,
+            "width": 1100,
+            "height": 184,
+            "top": 433,
+            "right": 1100,
+            "bottom": 617,
+            "left": 0
+          },
+          "scrollWidth": 1100,
+          "clientWidth": 1100
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 49.5,
+            "y": 471,
+            "width": 250.25,
+            "height": 135,
+            "top": 471,
+            "right": 299.75,
+            "bottom": 606,
+            "left": 49.5
+          },
+          "scrollWidth": 249,
+          "clientWidth": 249
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 299.75,
+            "y": 471,
+            "width": 250.25,
+            "height": 135,
+            "top": 471,
+            "right": 550,
+            "bottom": 606,
+            "left": 299.75
+          },
+          "scrollWidth": 249,
+          "clientWidth": 249
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 550,
+            "y": 471,
+            "width": 250.25,
+            "height": 135,
+            "top": 471,
+            "right": 800.25,
+            "bottom": 606,
+            "left": 550
+          },
+          "scrollWidth": 249,
+          "clientWidth": 249
+        },
+        {
+          "selector": "study-entry-button atlas-chapter",
+          "rect": {
+            "x": 800.25,
+            "y": 471,
+            "width": 250.25,
+            "height": 135,
+            "top": 471,
+            "right": 1050.5,
+            "bottom": 606,
+            "left": 800.25
+          },
+          "scrollWidth": 250,
+          "clientWidth": 250
+        },
+        {
+          "selector": "atlas-footer",
+          "rect": {
+            "x": 49.5,
+            "y": 617,
+            "width": 1001,
+            "height": 33,
+            "top": 617,
+            "right": 1050.5,
+            "bottom": 650,
+            "left": 49.5
+          },
+          "scrollWidth": 1001,
+          "clientWidth": 1001
+        }
+      ],
+      "images": [
+        {
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "width": 2172,
+          "height": 724
+        }
+      ]
+    },
+    {
+      "test": "home-dialog-preface-1100x650",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 100,
+          "y": 58.5,
+          "width": 900,
+          "height": 533,
+          "top": 58.5,
+          "right": 1000,
+          "bottom": 591.5,
+          "left": 100
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-dialog-guide-1100x650",
+      "passed": true,
+      "box": {
+        "selector": "atlas-note",
+        "rect": {
+          "x": 100,
+          "y": 58.5,
+          "width": 900,
+          "height": 533,
+          "top": 58.5,
+          "right": 1000,
+          "bottom": 591.5,
+          "left": 100
+        },
+        "scrollWidth": 898,
+        "clientWidth": 898
+      }
+    },
+    {
+      "test": "home-motion-off-reduced-hidden-stops-real-pigment-and-resumes",
+      "passed": true,
+      "initial": {
+        "engine": "three.js r180",
+        "role": "peony-pigment-surface",
+        "renderCount": "469",
+        "paintingTime": "15.667",
+        "reveal": "1.000"
+      },
+      "off": {
+        "engine": "three.js r180",
+        "role": "peony-pigment-surface",
+        "renderCount": "477",
+        "paintingTime": "15.917",
+        "reveal": "1.000"
+      },
+      "reduced": {
+        "engine": "three.js r180",
+        "role": "peony-pigment-surface",
+        "renderCount": "485",
+        "paintingTime": "16.128",
+        "reveal": "1.000"
+      },
+      "hidden": {
+        "engine": "three.js r180",
+        "role": "peony-pigment-surface",
+        "renderCount": "490",
+        "paintingTime": "16.361",
+        "reveal": "1.000"
+      },
+      "resumed": {
+        "engine": "three.js r180",
+        "role": "peony-pigment-surface",
+        "renderCount": "498",
+        "paintingTime": "16.606",
+        "reveal": "1.000"
+      },
+      "animationStates": [
+        "paused",
+        "paused",
+        "paused",
+        "paused",
+        "paused",
+        "paused",
+        "paused"
+      ]
+    },
+    {
+      "test": "home-optional-pigment-real-webgl-context-loss-retains-painted-fallback",
+      "passed": true,
+      "fallback": {
+        "width": 1536,
+        "visibility": "visible",
+        "hostVisibility": "hidden"
+      },
+      "viewerEntryWithStaticFallback": true
+    },
+    {
+      "test": "home-return-restores-pigment-and-selected-entry-focus",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "expectedFailures": [
+    "Home title.webp 503",
+    "Home cinnabar-peonies.webp 503"
+  ],
+  "buildHtmlSha256": "010f298aa5bd1f7adffaef1c32540dc77c1e7b5ac86c6839bf7f2ec57581b5d5",
+  "buildJavascript": {
+    "flowerLetter-DRKPr2ht.js": "0d7154098add949cbe43dd62592a7f58c2d488c8834cbcde4649288aa15e63be",
+    "index-Bor-xIou.js": "f18a288420d0c1451c8cac783550a5116a323f4f4f4f5c3db561023341e54ee0",
+    "three-w1TnP4RH.js": "598394f34bd207f0b60b007bdfca1f8f020fac83128efe1dee2d237eaa65c1d0"
+  },
+  "sourceSha256": {
+    "src/components/PeonyAtlasHome.tsx": "28fafd7af6c9d2ee350b94ed2911eda1ad2fd5b4edda6941c0eecb3a72558754",
+    "src/components/PeonyPigment.tsx": "19255819f8846e72086c89ee8656e3171f12ca1ca8be418568ce038698421dc2",
+    "src/scene/PeonyBloomSurface.ts": "40affc28cd2efda346ab1e09f652d8ce2c669a1a3f2f5f77dce68c0d6e6c6cce",
+    "src/components/CulturePanel.tsx": "2402ca30f5e7b9b58354efcfa34e0ae95f77a8f7a08dcb18427fcc2f62a90f2d",
+    "src/components/ScrollColophon.tsx": "29d88e77f15882447cc36561860e316c33065831f99d2870bed07978f73d322d",
+    "src/components/FlowerLetterDialog.tsx": "4e80ba91b3661e319bf0afcf6b7c78e0b23e68ffb0209720537b5288324683e1",
+    "src/art/flowerLetter.ts": "5b448f1e07dfb9f6277959428f54950f010f42f8a5c8d9583f5d5854b139381a",
+    "src/styles/peony-atlas.css": "18e918794f3087fa3dd9ac0091b5febae4ad9475dcfd83331dd11ffc3a753d77",
+    "src/styles/curatorial-reading.css": "7998434667f7f79c3d60b674e8a3ffde4aa31a96a3dfc4f5f94ed100743d93ae",
+    "src/styles/flower-letter.css": "6a161fe9e059d8c4bc9f8bac95e7c3374dbb07e47328757deb3d59b5264d3872",
+    "src/data/curatorialNotes.ts": "e3f72d86e083f6f71f88d7b5aa1fc2d2eedacc4ec6ae734124cd21b24be3d7f1",
+    "src/data/flowerLetters.ts": "8ed21992a8e43a073a0593ec8dc8f627e69e12f74785517287ee22b00417060d",
+    "src/data/chapters.ts": "ca815c3ee1febd230c9128e81e18651c41780291ac89ae43ae47536be0a4d993",
+    "src/data/artEncounters.ts": "11625b51e66a0e2f01decd03187de846f317a256ce43861bc9f2c27739e67f27",
+    "src/data/peonyAtlas.ts": "5db913dceb282898c253f7496eeacb3dfae18e59c0ad543302501c885e90b6c3",
+    "scripts/validate-art-renewal-ui.mjs": "4a5399fb05b4b0da5c7e489549e71ea8e23f6fcc18f97fdcc7810282ea2ed7c7"
+  },
+  "url": "http://127.0.0.1:7629/exhibition/ui-qa/",
+  "browser": "156.0.8078.4",
+  "completedAt": "2026-10-22T20:23:23.816Z"
+}

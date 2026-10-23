@@ -1,0 +1,30 @@
+{
+  "tag": "v2",
+  "verifiedAt": "2026-10-23T00:06:57.252Z",
+  "scope": "Actual helper class with fake native GL/program handles. First material creates3handles; the final material reuses only already-completed native programs and creates no new pending handle. Hardware c2 evidence independently demonstrated57/58completed.",
+  "helperSha256": "eb20094e6fde16a4e67712f8115805a13b543593e591c16aef47dfb08b563b30",
+  "driverSha256": "4c19c9447f489a0212b439c7d80297b7e64a8d2654aa751cec8b5a248b7c577c",
+  "expectedFailure": true,
+  "afterLastCompile": {
+    "prototype": true,
+    "mode": "features",
+    "extension": true,
+    "generation": 0,
+    "queue": 0,
+    "pending": 0,
+    "completed": 1,
+    "batches": 2,
+    "polls": 3,
+    "compilationMs": 0,
+    "hidden": false,
+    "contextLost": false,
+    "abandoned": false,
+    "reason": "",
+    "disposed": false,
+    "cancelled": false,
+    "checkShaderErrors": true
+  },
+  "timerCount": 0,
+  "status": "expected-failure",
+  "error": "AssertionError [ERR_ASSERTION]: A submitted final cached-program completion must schedule its settlement even with queue0/pending0\n    at Object.<anonymous> (E:\\数字媒体竞赛\\gitProject\\MDGS\\tmp\\shader-warmup\\tail-finalization-regression.cjs:10:251)\n    at Module._compile (node:internal/modules/cjs/loader:1854:14)\n    at Object..js (node:internal/modules/cjs/loader:1985:10)\n    at Module.load (node:internal/modules/cjs/loader:1577:32)\n    at Module._load (node:internal/modules/cjs/loader:1379:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47"
+}

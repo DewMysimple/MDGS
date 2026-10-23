@@ -1,0 +1,339 @@
+{
+  "status": "preflight-pass",
+  "startedAt": "2026-10-22T21:09:36.337Z",
+  "scope": "Bounded chapter-1 preflight: three sampled native nodes and first three actual original passages at each desktop size; complete chapter-1 source-character parity, ending, real inputs, native clock and shared audio lifecycle. Not a four-chapter pass.",
+  "checks": [
+    {
+      "test": "all-current-reading-nodes-1-desktop",
+      "nodes": 15,
+      "visitedNodes": 3,
+      "complete": false,
+      "paintingBounds": {
+        "x": 34,
+        "y": 98,
+        "width": 1604,
+        "height": 711
+      },
+      "headerBounds": {
+        "x": 75.234375,
+        "y": 0,
+        "width": 1521.515625,
+        "height": 72
+      },
+      "controlsBounds": {
+        "x": 75.234375,
+        "y": 819,
+        "width": 1521.515625,
+        "height": 102
+      },
+      "passed": true
+    },
+    {
+      "test": "all-responsive-transcription-passages-1-desktop",
+      "passages": 14,
+      "visitedPassages": 3,
+      "complete": false,
+      "characters": 770,
+      "passed": true
+    },
+    {
+      "test": "exact-final-frame-and-stamp-1-desktop",
+      "progress": "1.000000",
+      "renderCount": "238",
+      "stamp": {
+        "animation": "final-impression",
+        "opacity": "0.94808",
+        "rect": {
+          "x": 412.54998779296875,
+          "y": 409.7803649902344,
+          "width": 31.1187744140625,
+          "height": 52.157135009765625,
+          "top": 409.7803649902344,
+          "right": 443.66876220703125,
+          "bottom": 461.9375,
+          "left": 412.54998779296875
+        }
+      },
+      "passed": true
+    },
+    {
+      "test": "all-current-reading-nodes-1-desktop-compact",
+      "nodes": 15,
+      "visitedNodes": 3,
+      "complete": false,
+      "paintingBounds": {
+        "x": 34,
+        "y": 84,
+        "width": 1212,
+        "height": 519
+      },
+      "headerBounds": {
+        "x": 57.59375,
+        "y": 0,
+        "width": 1164.796875,
+        "height": 63
+      },
+      "controlsBounds": {
+        "x": 57.59375,
+        "y": 611,
+        "width": 1164.796875,
+        "height": 94
+      },
+      "passed": true
+    },
+    {
+      "test": "all-responsive-transcription-passages-1-desktop-compact",
+      "passages": 14,
+      "visitedPassages": 3,
+      "complete": false,
+      "characters": 770,
+      "passed": true
+    },
+    {
+      "test": "exact-final-frame-and-stamp-1-desktop-compact",
+      "progress": "1.000000",
+      "renderCount": "674",
+      "stamp": {
+        "animation": "final-impression",
+        "opacity": "0.948084",
+        "rect": {
+          "x": 400.79998779296875,
+          "y": 203.78042602539062,
+          "width": 31.1187744140625,
+          "height": 52.157073974609375,
+          "top": 203.78042602539062,
+          "right": 431.91876220703125,
+          "bottom": 255.9375,
+          "left": 400.79998779296875
+        }
+      },
+      "passed": true
+    },
+    {
+      "test": "real-wheel-drag-keyboard-1",
+      "wheelDelta": 0.005993980739343985,
+      "dragDelta": 0.019999995433779005,
+      "passed": true
+    },
+    {
+      "test": "native-source-clock-and-no-extra-motion-1",
+      "frameDelta": 21.899999999911813,
+      "expectedDelta": 22.5,
+      "passed": true
+    },
+    {
+      "test": "local-kai-loaded-and-all-visible-html-typography",
+      "passed": true
+    },
+    {
+      "test": "shared-original-digital-three-stem-decode-volume-background-pause-fade-dispose",
+      "audio": {
+        "enabled": true,
+        "playback": "playing",
+        "volume": 52,
+        "clock": 0,
+        "contextState": "running",
+        "sourceCount": 3,
+        "loopDurations": [
+          160,
+          160,
+          24
+        ],
+        "zone": "女帝与牡丹",
+        "targetLevels": [
+          0.4,
+          0,
+          0.3
+        ],
+        "levels": [
+          0.011050625704228878,
+          0,
+          0.008287966251373291
+        ],
+        "musicGain": 1,
+        "reading": false,
+        "sourceEpoch": 0.295,
+        "effects": 0,
+        "cuesPlayed": 0,
+        "decodedBuffers": 3,
+        "retiredGraphs": 0,
+        "decodedBytes": 96768000,
+        "nativeStates": [
+          "running"
+        ],
+        "nativeLoops": [
+          {
+            "duration": 160,
+            "channels": 2,
+            "rate": 1
+          },
+          {
+            "duration": 160,
+            "channels": 1,
+            "rate": 1
+          },
+          {
+            "duration": 24,
+            "channels": 1,
+            "rate": 1
+          }
+        ],
+        "masterGain": 0.02986282855272293
+      },
+      "passed": true
+    }
+  ],
+  "nodes": [
+    {
+      "chapter": 1,
+      "layout": "desktop",
+      "node": 1,
+      "name": "01 · 女帝与牡丹",
+      "progress": 0,
+      "quietFraction": 0.98,
+      "text": "世人说起牡丹，总会联想到武则天贬牡丹的传说，这个故事赋予牡丹不畏强权的傲骨。但拨开文学演绎，真实历史中的武则天并非牡丹的贬谪者，",
+      "bounds": {
+        "x": 90.125,
+        "y": 137.09375,
+        "width": 376.9375,
+        "height": 312.828125,
+        "top": 137.09375,
+        "right": 467.0625,
+        "bottom": 449.921875,
+        "left": 90.125
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [],
+      "screenshot": "runtime-c1-desktop-01.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop",
+      "node": 8,
+      "name": "08 · 西河寺引种",
+      "progress": 0.445,
+      "quietFraction": 0.669,
+      "text": "武周国力强盛，社会风气开放，皇家审美偏爱盛大饱满的风物，牡丹硕大华贵的花容，正好契合大一统王朝的气象。依据中唐舒元舆《牡丹赋・序》记载，",
+      "bounds": {
+        "x": 1204.90625,
+        "y": 137.09375,
+        "width": 376.9375,
+        "height": 312.828125,
+        "top": 137.09375,
+        "right": 1581.84375,
+        "bottom": 449.921875,
+        "left": 1204.90625
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [],
+      "screenshot": "tmp/art-renewal-runtime/2026-10-22T21-09-35-981Z-runtime-preflight/runtime-c1-desktop-08.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop",
+      "node": 15,
+      "name": "15 · 洛阳花开",
+      "progress": 0.929,
+      "quietFraction": 0.899,
+      "text": "千百年过去，女皇的功过归于史册，她与牡丹的故事代代相传。武周时代让牡丹摆脱平凡，登上花中高位；牡丹的传奇，也为武则天的一生增添诗意。",
+      "bounds": {
+        "x": 90.125,
+        "y": 453.5,
+        "width": 376.9375,
+        "height": 312.828125,
+        "top": 453.5,
+        "right": 467.0625,
+        "bottom": 766.328125,
+        "left": 90.125
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [],
+      "screenshot": "tmp/art-renewal-runtime/2026-10-22T21-09-35-981Z-runtime-preflight/runtime-c1-desktop-15.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop-compact",
+      "node": 1,
+      "name": "01 · 女帝与牡丹",
+      "progress": 0,
+      "quietFraction": 0.969,
+      "text": "世人说起牡丹，总会联想到武则天贬牡丹的传说，这个故事赋予牡丹不畏强权的傲骨。但拨开文学演绎，真实历史中的武则天并非牡丹的贬谪者，",
+      "bounds": {
+        "x": 76.40625,
+        "y": 112.53125,
+        "width": 284.8125,
+        "height": 228.359375,
+        "top": 112.53125,
+        "right": 361.21875,
+        "bottom": 340.890625,
+        "left": 76.40625
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [],
+      "screenshot": "runtime-c1-desktop-compact-01.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop-compact",
+      "node": 8,
+      "name": "08 · 西河寺引种",
+      "progress": 0.445,
+      "quietFraction": 0.669,
+      "text": "武周国力强盛，社会风气开放，皇家审美偏爱盛大饱满的风物，牡丹硕大华贵的花容，正好契合大一统王朝的气象。依据中唐舒元舆《牡丹赋・序》记载，",
+      "bounds": {
+        "x": 918.75,
+        "y": 112.53125,
+        "width": 284.8125,
+        "height": 228.359375,
+        "top": 112.53125,
+        "right": 1203.5625,
+        "bottom": 340.890625,
+        "left": 918.75
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [],
+      "screenshot": "tmp/art-renewal-runtime/2026-10-22T21-09-35-981Z-runtime-preflight/runtime-c1-desktop-compact-08.png"
+    },
+    {
+      "chapter": 1,
+      "layout": "desktop-compact",
+      "node": 15,
+      "name": "15 · 洛阳花开",
+      "progress": 0.929,
+      "quietFraction": 0.905,
+      "text": "千百年过去，女皇的功过归于史册，她与牡丹的故事代代相传。武周时代让牡丹摆脱平凡，登上花中高位；牡丹的传奇，也为武则天的一生增添诗意。",
+      "bounds": {
+        "x": 76.40625,
+        "y": 343.5,
+        "width": 284.8125,
+        "height": 228.359375,
+        "top": 343.5,
+        "right": 361.21875,
+        "bottom": 571.859375,
+        "left": 76.40625
+      },
+      "sourceHiddenVisibleLayers": "0",
+      "activeMotionNames": [],
+      "screenshot": "tmp/art-renewal-runtime/2026-10-22T21-09-35-981Z-runtime-preflight/runtime-c1-desktop-compact-15.png"
+    }
+  ],
+  "errors": [],
+  "expectedErrors": [],
+  "buildHtmlSha256": "2aba8aa7da4360b7b750f1f6fd34904b066840741da313a17a6d26d0682e4170",
+  "transcriptionParagraphs": 25,
+  "notRun": [
+    "chapters 2-4",
+    "all remaining chapter-1 nodes/passages"
+  ],
+  "url": "http://127.0.0.1:10469/",
+  "preflight": true,
+  "narrativeMode": "original",
+  "httpHtmlSha256": "2aba8aa7da4360b7b750f1f6fd34904b066840741da313a17a6d26d0682e4170",
+  "browserVersion": "156.0.8078.4",
+  "webgl": {
+    "vendor": "Google Inc. (NVIDIA)",
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Ti (0x00002C05) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+  },
+  "completedAt": "2026-10-22T21:10:27.010Z"
+}

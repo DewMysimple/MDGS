@@ -1,0 +1,18 @@
+{
+  "status": "failed",
+  "startedAt": "2026-10-22T21:27:26.836Z",
+  "scope": "Cover-only network route delayed6500ms. Camera transition remains450ms; actual decoded/GPU-drawn paper starts its own full visible4000ms. No duplicate cover gate or inferred readiness.",
+  "network": [
+    {
+      "url": "http://127.0.0.1:5276/assets/new-scrolls/chapter-2/cover.webp",
+      "delayedMs": 6503
+    }
+  ],
+  "checks": [],
+  "errors": [
+    "AssertionError [ERR_ASSERTION]: Blank paper must not spend any unfolding time before the visible picture is ready.\n    at E:\\数字媒体竞赛\\gitProject\\MDGS\\reports\\art-renewal\\unfurl-cover-timing-validate.cjs:63:3"
+  ],
+  "browserVersion": "156.0.8078.47",
+  "url": "http://127.0.0.1:5276/",
+  "verifiedAt": "2026-10-22T21:27:38.987Z"
+}

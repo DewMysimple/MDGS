@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-22T23:34:07.598135+00:00",
+  "scope": "Actual decoded WOFF2 cmap; conservative Han corpus from all src TS/TSX/CSS, including comments. Not every source character is displayed or intended to use this family.",
+  "font": {
+    "path": "E:\\数字媒体竞赛\\gitProject\\MDGS\\public\\fonts\\wenkai-web.woff2",
+    "sha256": "c619ddc07c72b9afca0ab20b1e33ed1a67c974ae3a7d1ec44de611895a79f59d",
+    "bytes": 279764,
+    "mappedCodepoints": 1402
+  },
+  "corpusFiles": 84,
+  "corpusSha256": "af4c61b47a972fc61653b0ff54645ba7d5772caa6108f016c685cefb9ee2f651",
+  "requiredHan": 1130,
+  "missingHan": [],
+  "layoutMetrics": {
+    "head.unitsPerEm": 1000,
+    "hhea.ascent": 928,
+    "hhea.descent": -256,
+    "hhea.lineGap": 0,
+    "OS/2.sTypoAscender": 880,
+    "OS/2.sTypoDescender": -120,
+    "OS/2.sTypoLineGap": 0,
+    "OS/2.usWinAscent": 1032,
+    "OS/2.usWinDescent": 285
+  },
+  "comparisons": [
+    {
+      "reference": "pinned-source",
+      "path": "tmp\\font-upstream\\LXGWWenKai-Regular.ttf",
+      "sha256": "2d73eea94ad808999d90c0000c239a84a33b09d4bc6ab6c5b8bbf1eda8a7fc8b",
+      "comparedCodepoints": 1402,
+      "missingCodepoints": [],
+      "changedOutlinesOrMetrics": [],
+      "layoutMetricsUnchanged": true
+    },
+    {
+      "reference": "previous-webfont",
+      "path": "tmp\\font-upstream\\previous-wenkai-web.woff2",
+      "sha256": "1f74e7b3639ae956b92f0c3eed77bf3ce505025bf28a66bd8c330722001dc8ed",
+      "comparedCodepoints": 1230,
+      "missingCodepoints": [],
+      "changedOutlinesOrMetrics": [],
+      "layoutMetricsUnchanged": true
+    }
+  ],
+  "errors": []
+}

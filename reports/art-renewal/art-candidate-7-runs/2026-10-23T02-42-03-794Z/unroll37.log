@@ -1,0 +1,157 @@
+passed four-second-native-frame-1-1920x1080
+passed four-second-native-frame-2-1920x1080
+passed four-second-native-frame-3-1920x1080
+passed four-second-native-frame-4-1920x1080
+passed four-second-native-frame-1-1280x720
+passed four-second-native-frame-2-1280x720
+passed four-second-native-frame-3-1280x720
+passed four-second-native-frame-4-1280x720
+passed four-second-native-frame-1-2560x1440
+passed four-second-native-frame-2-2560x1440
+passed four-second-native-frame-3-2560x1440
+passed four-second-native-frame-4-2560x1440
+passed four-second-native-frame-1-3440x1440
+passed four-second-native-frame-2-3440x1440
+passed four-second-native-frame-3-3440x1440
+passed four-second-native-frame-4-3440x1440
+passed four-second-native-frame-1-1920x1080-reduce
+passed four-second-native-frame-4-1920x1080-reduce
+{"status":"passed","checks":23}
+{"status":"passed","checks":3,"failed":[],"errors":[]}
+{"status":"passed","checks":[{"test":"slow-cover-waits-for-real-paper-then-shows-full-four-seconds","passed":true,"cameraMs":472.20000000000005,"imageWaitMs":5785.20000000298,"visibleLoadingMs":4006.2999999970198,"totalLoadingMs":9791.5}],"errors":[]}
+{
+  "status": "passed",
+  "verifiedAt": "2026-10-23T02:48:36.142Z",
+  "scope": "CPU actual exported geometry at ten openness values, native16:9/1.4, printed/next-reverse winding clearance, seam continuity, finite normals and planar endpoint. Separate browser oblique/reverse screenshots inspect visibility.",
+  "checks": [
+    {
+      "test": "finite-native-aspect-spiral-clearance-1.7777777777777777",
+      "passed": true,
+      "height": 5.113636363636363,
+      "vertices": 5005,
+      "thickness": 0.006136363636363635,
+      "minPrintedToNextReverseGap": 0.0009220413668882567,
+      "maxTangentJump": 0.00000200002708470352,
+      "finalArtZRange": 0
+    },
+    {
+      "test": "finite-native-aspect-spiral-clearance-1.4",
+      "passed": true,
+      "height": 6.274768824306473,
+      "vertices": 5005,
+      "thickness": 0.007529722589167767,
+      "minPrintedToNextReverseGap": 0.0011315968595570734,
+      "maxTangentJump": 0.0000020000270936813235,
+      "finalArtZRange": 0
+    }
+  ]
+}
+pixel captured 1
+pixel captured 2
+pixel captured 3
+pixel captured 4
+E:\数字媒体竞赛\gitProject\MDGS\reports\art-renewal\unfurl-pixel-validate.py:11: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  dif=ImageChops.difference(expected,actual); values=[sum(pixel)/3 for pixel in dif.getdata()]; values.sort(); mae=sum(values)/len(values); p95=values[int(len(values)*.95)]; maximum=max(values)
+{
+  "status": "passed",
+  "scope": "1920x1080 real Chrome screenshots sampled inside actual projected print / sourceViewport; rounded crop and common256px Lanczos comparison. This detects broad depth artifacts and colour/composition jumps, not pixel-identical source rendering. No artwork pixels were edited.",
+  "checks": [
+    {
+      "chapter": 1,
+      "comparison": "physical-versus-current-cover",
+      "meanAbsoluteRGBDifference": 1.4696994357638888,
+      "p95AbsoluteRGBDifference": 6.666666666666667,
+      "maxAbsoluteRGBDifference": 27.666666666666668,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 1,
+      "comparison": "native-versus-current-cover",
+      "meanAbsoluteRGBDifference": 0.1841091579861111,
+      "p95AbsoluteRGBDifference": 0.6666666666666666,
+      "maxAbsoluteRGBDifference": 3.6666666666666665,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 2,
+      "comparison": "physical-versus-current-cover",
+      "meanAbsoluteRGBDifference": 2.5679072627314814,
+      "p95AbsoluteRGBDifference": 9.666666666666666,
+      "maxAbsoluteRGBDifference": 33.666666666666664,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 2,
+      "comparison": "native-versus-current-cover",
+      "meanAbsoluteRGBDifference": 0.21641710069444445,
+      "p95AbsoluteRGBDifference": 0.6666666666666666,
+      "maxAbsoluteRGBDifference": 2.0,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 3,
+      "comparison": "physical-versus-current-cover",
+      "meanAbsoluteRGBDifference": 2.1799678096064814,
+      "p95AbsoluteRGBDifference": 8.0,
+      "maxAbsoluteRGBDifference": 32.666666666666664,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 3,
+      "comparison": "native-versus-current-cover",
+      "meanAbsoluteRGBDifference": 0.2121039496527778,
+      "p95AbsoluteRGBDifference": 0.6666666666666666,
+      "maxAbsoluteRGBDifference": 2.0,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 4,
+      "comparison": "physical-versus-current-cover",
+      "meanAbsoluteRGBDifference": 1.3148409039162112,
+      "p95AbsoluteRGBDifference": 6.666666666666667,
+      "maxAbsoluteRGBDifference": 34.333333333333336,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 4,
+      "comparison": "native-versus-current-cover",
+      "meanAbsoluteRGBDifference": 0.1677908697632058,
+      "p95AbsoluteRGBDifference": 0.6666666666666666,
+      "maxAbsoluteRGBDifference": 3.0,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    }
+  ]
+}
+{"status":"passed","totalChecks":37,"errors":[]}

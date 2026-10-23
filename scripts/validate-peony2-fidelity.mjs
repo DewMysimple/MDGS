@@ -11,7 +11,7 @@
  */
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
-import {readFile, writeFile, mkdir, stat, readdir} from 'node:fs/promises';
+import {readFile, writeFile, mkdir, stat, readdir, copyFile, rename, unlink} from 'node:fs/promises';
 import {spawnSync} from 'node:child_process';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -21,9 +21,13 @@ import {gunzipSync} from 'node:zlib';
 import ts from 'typescript';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
-const output = path.join(root, 'reports/peony2-fidelity');
 const args = process.argv.slice(2);
 const value = flag => args.includes(flag) ? args[args.indexOf(flag) + 1] : undefined;
+const absolute = file => path.isAbsolute(file) ? file : path.join(root, file);
+const output = absolute(value('--report-dir') || 'reports/peony2-fidelity');
+const distDirectory = absolute(value('--dist-dir') || 'dist');
+const distFile = file => path.join(distDirectory, file);
+const runId = new Date().toISOString().replace(/[:.]/g, '-');
 const structuralOnly = args.includes('--structural-only');
 const captureBrowser = args.includes('--capture-browser');
 let pixelManifest = value('--pixel-captures');
@@ -34,19 +38,54 @@ const expectedNativeFrameCounts = [3, 3, 29, 24];
 const fixedNativeFrames = [[2540, 2568, 2596], [350, 656, 955],
   [1, 31, 61, 471, 951, 1206, 1236, 1627, 1671, 1926, 1956],
   [1, 45, 90, 195, 218, 1407, 1575, 1596]];
-const report = {status: 'running', startedAt: new Date().toISOString(),
+const report = {status: 'running', startedAt: new Date().toISOString(), runId,
   mode: structuralOnly ? 'structural-only' : 'structural-and-native-pixel-comparison',
   scope: 'Current Peony 2.0 source hashes, independently reopened native evidence, exact geometry/morph/camera clocks, symmetric original image provenance and complete lossless decoded RGBA. Full mode also compares every native keyframe to a bound actual browser artwork capture.',
   chapters: [], pixels: [], errors: []};
-const absolute = file => path.isAbsolute(file) ? file : path.join(root, file);
 const json = async file => JSON.parse(await readFile(absolute(file), 'utf8'));
 const digest = async file => createHash('sha256').update(await readFile(absolute(file))).digest('hex');
 const reportFile = structuralOnly ? 'validation-structural.json' : 'validation-fidelity.json';
-const save = () => writeFile(path.join(output, reportFile), JSON.stringify(report, null, 2) + '\n');
+const save = () => writeJson(path.join(output, reportFile), report);
 const rawCache = absolute(value('--raw-cache') || '.asset-cache/new-scrolls/peony-2.0-2026-10-23');
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const canonicalSha = object => sha(JSON.stringify(object));
 const portable = file => file.split(path.sep).join('/');
+const ioRetries = report.ioRetries = [];
+let jsonWriteSequence = 0;
+
+/** Keep progress reports complete, record bounded Windows sharing/IO retries,
+ * and never touch native references or validation thresholds. */
+async function writeJson(target, object) {
+  const temporary = `${target}.${process.pid}-${++jsonWriteSequence}.tmp`;
+  const retryable = new Set(['UNKNOWN', 'EBUSY', 'EACCES', 'EPERM']);
+  try {
+    for (let attempt = 0; ; attempt++) {
+      try {
+        await writeFile(temporary, JSON.stringify(object, null, 2) + '\n');
+        await rename(temporary, target);
+        return;
+      } catch (error) {
+        if (!retryable.has(error.code) || attempt >= 4) throw error;
+        ioRetries.push({at: new Date().toISOString(), target: portable(path.relative(root, target)),
+          attempt: attempt + 1, code: error.code, syscall: error.syscall, message: error.message});
+        await new Promise(resolve => setTimeout(resolve, [25, 75, 150, 300][attempt]));
+      }
+    }
+  } finally {
+    await unlink(temporary).catch(error => { if (error.code !== 'ENOENT') throw error; });
+  }
+}
+
+/** A failed attempt must remain inspectable when a later run succeeds. */
+async function preservePreviousReport(name) {
+  const from = path.join(output, name);
+  try {
+    await stat(from);
+    const directory = path.join(output, 'history', runId);
+    await mkdir(directory, {recursive: true});
+    await copyFile(from, path.join(directory, name));
+  } catch (error) { if (error.code !== 'ENOENT') throw error; }
+}
 
 async function filesBelow(directory) {
   const result = [];
@@ -99,12 +138,13 @@ async function reproduceCurrentBuild() {
       const bytes = file.type === 'chunk' ? Buffer.from(file.code)
         : typeof file.source === 'string' ? Buffer.from(file.source) : Buffer.from(file.source);
       expected[file.fileName] = sha(bytes);
-      assert.equal(await digest(`dist/${file.fileName}`), expected[file.fileName],
+      assert.equal(await digest(distFile(file.fileName)), expected[file.fileName],
         'Actual dist differs from an independent in-memory build of the current source: ' + file.fileName);
     }
   }
   assert(expected['index.html'], 'The current build did not emit index.html.');
-  const actualCode = (await filesBelow('dist')).filter(file => /\.(?:js|css)$/.test(file)).map(file => file.slice(5));
+  const actualCode = (await filesBelow(distDirectory)).filter(file => /\.(?:js|css)$/.test(file))
+    .map(file => portable(path.relative(distDirectory, file)));
   assert.deepEqual(actualCode.sort(), Object.keys(expected).filter(file => /\.(?:js|css)$/.test(file)).sort(),
     'Dist contains stale or missing compiled JS/CSS.');
   return {method: 'independent-vite-build-write-false', passed: true,
@@ -115,7 +155,11 @@ async function captureArtifactBinding(reproduce = false) {
   assert(!args.includes('--dev'), 'Final pixel acceptance requires production dist; dev captures are diagnostic only.');
   const beforeSource = await currentSourceHashes();
   const reproduction = reproduce ? await reproduceCurrentBuild() : null;
-  const buildFiles = await hashFiles((await filesBelow('dist')).filter(file => file === 'dist/index.html' || /\.(?:js|css)$/.test(file)));
+  const buildFiles = {};
+  for (const file of await filesBelow(distDirectory)) {
+    const relative = portable(path.relative(distDirectory, file));
+    if (relative === 'index.html' || /\.(?:js|css)$/.test(relative)) buildFiles[`dist/${relative}`] = await digest(file);
+  }
   const sourceFiles = await currentSourceHashes();
   assert.deepEqual(sourceFiles, beforeSource, 'Product source changed during the independent current-build check.');
   const chapters = {};
@@ -125,7 +169,7 @@ async function captureArtifactBinding(reproduce = false) {
     for (const file of await filesBelow(directory)) {
       const relative = file.slice('public/'.length);
       files[relative] = await digest(file);
-      assert.equal(await digest(`dist/${relative}`), files[relative],
+      assert.equal(await digest(distFile(relative)), files[relative],
         'Production copy differs from the currently verified public asset: ' + relative);
     }
     chapters[chapter] = {sourceMaterialsSha256: files[`assets/new-scrolls/chapter-${chapter}/source-materials.json`],
@@ -141,7 +185,7 @@ async function bindResponseBody(relative, expected, body, contentEncoding) {
   const actual = sha(body);
   let bodyRepresentation = 'file-bytes';
   if (actual !== expected && relative.endsWith('.gz') && /\bgzip\b/.test(contentEncoding)) {
-    assert.equal(actual, sha(gunzipSync(await readFile(absolute(`dist/${relative}`)))),
+    assert.equal(actual, sha(gunzipSync(await readFile(distFile(relative)))),
       'Actual browser HTTP-decoded payload differs from bound dist: ' + relative);
     bodyRepresentation = 'http-gzip-decoded';
   } else assert.equal(actual, expected, 'Actual browser response differs from bound dist: ' + relative);
@@ -166,7 +210,7 @@ async function verifyCaptureBinding(captures, current) {
     assert.equal(response.fileSha256, expected, 'The response was bound to a different disk resource: ' + url);
     if (response.bodyRepresentation === 'http-gzip-decoded') {
       assert(/\bgzip\b/.test(response.contentEncoding), 'Decoded HTTP body lacks gzip transfer metadata.');
-      assert.equal(response.sha256, sha(gunzipSync(await readFile(absolute(`dist/${url}`)))),
+      assert.equal(response.sha256, sha(gunzipSync(await readFile(distFile(url)))),
         'Actual HTTP-decoded resource differs from the bound gzip payload: ' + url);
     } else {
       assert.equal(response.bodyRepresentation, 'file-bytes');
@@ -367,7 +411,10 @@ async function verifyNativeGlare(directory, evidence) {
 }
 
 function python(code, input) {
-  const child = spawnSync(process.env.MDGS_PYTHON || 'python', ['-c', code], {
+  // Node writes UTF-8 JSON; Windows Python otherwise reads piped stdin as GBK.
+  // The traceback can look correct after a second decode even though Path was
+  // already mojibake. Force one encoding for stdin, stdout and path transport.
+  const child = spawnSync(process.env.MDGS_PYTHON || 'python', ['-X', 'utf8', '-c', code], {
     input: JSON.stringify(input), encoding: 'utf8', maxBuffer: 16 * 1024 * 1024,
   });
   assert.equal(child.status, 0, child.stderr || 'Pixel decoder failed');
@@ -420,10 +467,13 @@ async function captureActualBrowser(nativeFrames) {
   const {chromium} = createRequire(import.meta.url)(process.env.MDGS_PLAYWRIGHT_MODULE || 'playwright');
   const {preview, createServer} = await import('vite');
   let server, browser;
-  const result = {status: 'running', startedAt: new Date().toISOString(), captures: [], errors: []};
+  const result = {status: 'running', startedAt: new Date().toISOString(), runId,
+    productionDirectory: portable(path.relative(root, distDirectory)), captures: [], errors: [],
+    bindingOnlyHTTPProbes: [], ioRetries};
   const target = path.join(output, 'browser-captures.json');
-  const directory = path.join(output, 'browser');
+  const directory = path.join(output, 'runs', runId, 'browser');
   await mkdir(directory, {recursive: true});
+  await preservePreviousReport('browser-captures.json');
   try {
     result.artifactBinding = await captureArtifactBinding(true);
     result.actualResponses = {};
@@ -432,10 +482,12 @@ async function captureActualBrowser(nativeFrames) {
       if (args.includes('--dev')) {
         server = await createServer({root, server: {host: '127.0.0.1', port: 0}, logLevel: 'error'});
         await server.listen();
-      } else server = await preview({root, preview: {host: '127.0.0.1', port: 0}, logLevel: 'error'});
+      } else server = await preview({root, build: {outDir: distDirectory}, preview: {host: '127.0.0.1', port: 0}, logLevel: 'error'});
     }
     const url = external || server.resolvedUrls.local[0];
-    browser = await chromium.launch({headless: true, executablePath: process.env.MDGS_TEST_BROWSER});
+    result.url = url;
+    browser = await chromium.launch({headless: true, executablePath: process.env.MDGS_TEST_BROWSER, args: ['--enable-unsafe-swiftshader']});
+    result.browserVersion = browser.version();
     const page = await browser.newPage({viewport: {width: 1280, height: 900}, deviceScaleFactor: 1});
     const responseTasks = [];
     const base = new URL(url);
@@ -455,10 +507,11 @@ async function captureActualBrowser(nativeFrames) {
     page.on('pageerror', error => result.errors.push(error.message));
     page.on('console', message => {if (message.type() === 'error') result.errors.push(message.text());});
     await page.addInitScript(() => localStorage.setItem('guose-fanghua:painting-motion', 'off'));
-    await page.goto(url + '#chapter-1');
+    await page.goto(new URL('#chapter-1', url).href);
     for (const chapter of [1, 2, 3, 4]) {
       if (chapter > 1) {
         await page.evaluate(() => document.getElementById('native-fidelity-capture-style')?.remove());
+        assert.equal(await page.locator('.chapter-link').count(), 4, 'The real four-volume navigation must be available.');
         await page.locator('.chapter-link').nth(chapter - 1).click();
       }
       await page.waitForFunction(() => document.querySelector('[data-journey-phase]')?.dataset.journeyPhase === 'SCROLL_VIEWER', null, {timeout: 120000});
@@ -469,7 +522,7 @@ async function captureActualBrowser(nativeFrames) {
         await page.evaluate(({width, height}) => {
           let style = document.getElementById('native-fidelity-capture-style');
           if (!style) {style = document.createElement('style'); style.id = 'native-fidelity-capture-style'; document.head.append(style);}
-          style.textContent = `.painting{position:fixed!important;left:0!important;top:0!important;width:${width}px!important;height:${height}px!important;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;z-index:2147483646!important;border:0!important;padding:0!important;margin:0!important;box-shadow:none!important;transform:none!important}.painting>.scene-viewport{width:100%!important;height:100%!important}.painting canvas{opacity:1!important;transition:none!important}.narrative-calligraphy,.end-colophon,.calligraphy-layer,.scroll-roller,.brocade-border{display:none!important}.painting::before,.painting::after{display:none!important;content:none!important}`;
+          style.textContent = `.painting{position:fixed!important;left:0!important;top:0!important;width:${width}px!important;height:${height}px!important;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;z-index:2147483646!important;border:0!important;padding:0!important;margin:0!important;box-shadow:none!important;transform:none!important}.painting>.scene-viewport{width:100%!important;height:100%!important}.painting canvas{opacity:1!important;transition:none!important}.narrative-calligraphy,.end-colophon,.calligraphy-layer,.scroll-roller,.brocade-border,.art-encounter-layer{display:none!important}.painting::before,.painting::after{display:none!important;content:none!important}`;
         }, {width, height});
         const progress = (reference.frame - reference.frameRange[0]) / (reference.frameRange[1] - reference.frameRange[0]);
         await page.locator('input[aria-label="画卷游观进度"]').evaluate((element, progress) => {
@@ -508,8 +561,22 @@ async function captureActualBrowser(nativeFrames) {
           artifactBindingSha256: result.artifactBinding.sha256,
           path: path.relative(root, file).split(path.sep).join('/'),
           sha256: await digest(file), diagnostics});
-        await writeFile(target, JSON.stringify(result, null, 2) + '\n');
+        await writeJson(target, result);
       }
+    }
+    await Promise.all(responseTasks);
+    // Some production chunks are deliberately lazy (e.g. the local keepsake
+    // exporter). Bind their served bytes too, without pretending this artwork
+    // pixel test executed their UI. Entry/module chunks are observed normally.
+    for (const file of Object.keys(result.artifactBinding.buildFiles)) {
+      const relative = file.slice(5);
+      if (result.actualResponses[relative]) continue;
+      result.bindingOnlyHTTPProbes.push(relative);
+      await page.evaluate(async relative => {
+        const response = await fetch(new URL(relative, document.baseURI));
+        if (!response.ok) throw new Error(`Compiled artifact HTTP probe failed: ${relative}`);
+        await response.arrayBuffer();
+      }, relative);
     }
     await Promise.all(responseTasks);
     assert.deepEqual(result.errors, [], 'Browser reported rendering or resource errors.');
@@ -522,31 +589,35 @@ async function captureActualBrowser(nativeFrames) {
     throw error;
   } finally {
     result.completedAt = new Date().toISOString();
-    await writeFile(target, JSON.stringify(result, null, 2) + '\n');
-    await browser?.close();
-    await server?.close();
+    try { await writeJson(target, result); }
+    finally {
+      // A report IO error must not leave Chromium/preview alive and hang its parent.
+      await Promise.allSettled([browser?.close(), server?.close()]);
+    }
   }
 }
 
 await mkdir(output, {recursive: true});
 if (args.includes('--check-binding')) {
-  const check = {status: 'running', startedAt: new Date().toISOString()};
+  await preservePreviousReport('validation-capture-binding.json');
+  const check = {status: 'running', startedAt: new Date().toISOString(), runId,
+    productionDirectory: portable(path.relative(root, distDirectory))};
   try {
     check.artifactBinding = await captureArtifactBinding(true);
     if (args.includes('--http-probe')) {
       const {preview} = await import('vite');
-      const server = await preview({root, preview: {host: '127.0.0.1', port: 0}, logLevel: 'error'});
+      const server = await preview({root, build: {outDir: distDirectory}, preview: {host: '127.0.0.1', port: 0}, logLevel: 'error'});
       try {
         check.actualHTTP = {};
-        const material = await json('dist/assets/new-scrolls/chapter-1/source-materials.json');
-        const settings = await json('dist/assets/new-scrolls/chapter-1/render-settings.json');
-        const resources = ['index.html', Object.keys(check.artifactBinding.buildFiles).find(file => file.endsWith('.js')).slice(5),
+        const material = await json(distFile('assets/new-scrolls/chapter-1/source-materials.json'));
+        const settings = await json(distFile('assets/new-scrolls/chapter-1/render-settings.json'));
+        const resources = [...Object.keys(check.artifactBinding.buildFiles).map(file => file.slice(5)),
           `assets/new-scrolls/chapter-1/${material.fields[0].url}`,
           `assets/new-scrolls/chapter-1/${settings.nativeGlareFrames.find(frame => !frame.zero).url}`];
         for (const relative of resources) {
           const response = await fetch(new URL(relative, server.resolvedUrls.local[0]));
           assert.equal(response.status, 200);
-          check.actualHTTP[relative] = await bindResponseBody(relative, await digest(`dist/${relative}`),
+          check.actualHTTP[relative] = await bindResponseBody(relative, await digest(distFile(relative)),
             Buffer.from(await response.arrayBuffer()), response.headers.get('content-encoding') || 'identity');
         }
       } finally {await server.close();}
@@ -558,6 +629,9 @@ if (args.includes('--check-binding')) {
   console.log(JSON.stringify({status: check.status, sha256: check.artifactBinding?.sha256, error: check.error?.split('\n')[0]}));
   process.exit(check.status === 'pass' ? 0 : 1);
 }
+await preservePreviousReport(reportFile);
+report.productionDirectory = portable(path.relative(root, distDirectory));
+report.validatorSha256 = await digest('scripts/validate-peony2-fidelity.mjs');
 await save();
 try {
   assert(structuralOnly || pixelManifest || captureBrowser, 'Full fidelity acceptance needs --capture-browser or --pixel-captures; use --structural-only for an explicitly limited check.');
@@ -734,7 +808,9 @@ try {
           worstFractionPixelsAbove20: Math.max(...frames.map(frame => frame.fractionPixelsAbove20))};
       })};
     await save();
-    const contact = spawnSync(process.env.MDGS_PYTHON || 'python', [absolute('scripts/validate-peony2-contact.py'), absolute(pixelManifest)], {
+    const contactDirectory = path.join(output, 'runs', runId);
+    const contact = spawnSync(process.env.MDGS_PYTHON || 'python', ['-X', 'utf8', absolute('scripts/validate-peony2-contact.py'),
+      absolute(pixelManifest), path.join(output, reportFile), contactDirectory], {
       encoding: 'utf8', maxBuffer: 1024 * 1024,
     });
     assert.equal(contact.status, 0, contact.stderr || 'Contact sheet generation failed.');

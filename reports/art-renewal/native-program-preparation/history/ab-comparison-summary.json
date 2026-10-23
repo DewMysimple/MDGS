@@ -1,0 +1,387 @@
+{
+  "status": "observed",
+  "summarizedAt": "2026-10-22T23:43:21.315Z",
+  "raw": {
+    "run": "2026-10-22T23-39-18-467Z",
+    "path": "runs/2026-10-22T23-39-18-467Z/validation.json",
+    "sha256": "18323144ef8ee2dc872a312957042cbde264f9dc6b8f2ba191fcb98db3d50e39"
+  },
+  "methodology": "Same-source isolated base/features A/B, fresh browser per case, c3 actual autoplay zero to .5. rAF window .15-.5; native cumulative renderCount is a separate CPU submission-path counter with nominal100ms DOM refresh. No clock acceleration, screenshots during measurement, private React hooks, image downgrade or source program changes. CPU profiling1000us has overhead and is applied equally. OS/GPU driver caches are not reset; ABBA order only partly controls visit/cache bias.",
+  "correction": "The raw driver field visiblePaperBeforeViewerMilliseconds subtracts the first paper-ready DOM observation, which can precede the SCROLL_LOADING visible ceremony. This summary corrects that derived label using viewerAt - max(paperReadyAt,SCROLL_LOADING.at). Raw bytes are retained unchanged. Neither field proves optical screen presentation; they document actual page stage and resource gates.",
+  "sourceAndPackagesUnchanged": true,
+  "cases": [
+    {
+      "index": 1,
+      "kind": "base",
+      "entryMilliseconds": 8572,
+      "loadingPhaseAt": 3897.3999999910593,
+      "paperReadyAt": 484.5,
+      "nativeFirstFrameDiagnosticAt": 4224.899999991059,
+      "conservativeVisiblePaperGateStart": 3897.3999999910593,
+      "visiblePaperBeforeViewerMilliseconds": 4670.5,
+      "windowMilliseconds": 24117,
+      "rAF": {
+        "count": 3243,
+        "min": 5.200000000004366,
+        "mean": 7.436632747456059,
+        "p50": 5.599999999998545,
+        "p95": 5.700000000000728,
+        "p99": 6,
+        "max": 588.9000000000015
+      },
+      "longtaskCount": 28,
+      "longtaskTotalMs": 6240,
+      "nativeCounterPerSecond": 133.64017083385164,
+      "sourceClockError": 0.00032302757619739886,
+      "cpuWholeAutoplaySelfMilliseconds": {
+        "getProgramInfoLog": 8270.215000000007,
+        "texSubImage2D": 539.5569999999999,
+        "opaqueNativeProgram": 3161.3079999999977,
+        "idle": 13568.956000000015
+      },
+      "cpuTopSelf": [
+        [
+          "(idle)",
+          13568.956000000015
+        ],
+        [
+          "getProgramInfoLog",
+          8270.215000000007
+        ],
+        [
+          "(program)",
+          3161.3079999999977
+        ],
+        [
+          "p",
+          1566.6290000000029
+        ],
+        [
+          "m",
+          843.6720000000003
+        ],
+        [
+          "ei",
+          699.5339999999998
+        ],
+        [
+          "texSubImage2D",
+          539.5569999999999
+        ],
+        [
+          "upload",
+          328.3049999999997
+        ],
+        [
+          "u",
+          313.7910000000002
+        ],
+        [
+          "(garbage collector)",
+          218.07199999999997
+        ],
+        [
+          "",
+          202.35699999999997
+        ],
+        [
+          "renderBufferDirect",
+          159.05600000000004
+        ]
+      ],
+      "heapEndpointsMiB": {
+        "before": 20.9725341796875,
+        "after": 48.64112091064453
+      }
+    },
+    {
+      "index": 2,
+      "kind": "warm",
+      "entryMilliseconds": 6220,
+      "loadingPhaseAt": 1542.5,
+      "paperReadyAt": 483.6000000089407,
+      "nativeFirstFrameDiagnosticAt": 2352.9000000059605,
+      "conservativeVisiblePaperGateStart": 1542.5,
+      "visiblePaperBeforeViewerMilliseconds": 4672,
+      "windowMilliseconds": 24116.9,
+      "rAF": {
+        "count": 4272,
+        "min": 5.299999999995634,
+        "mean": 5.645341760299626,
+        "p50": 5.599999999998545,
+        "p95": 5.700000000000728,
+        "p99": 5.700000000004366,
+        "max": 44.5
+      },
+      "longtaskCount": 0,
+      "longtaskTotalMs": 0,
+      "nativeCounterPerSecond": 175.8103238807641,
+      "sourceClockError": 0.0008835761973874923,
+      "cpuWholeAutoplaySelfMilliseconds": {
+        "getProgramInfoLog": 62.714,
+        "texSubImage2D": 560.9589999999996,
+        "opaqueNativeProgram": 4255.794999999996,
+        "idle": 17281.889000000072
+      },
+      "cpuTopSelf": [
+        [
+          "(idle)",
+          17281.889000000072
+        ],
+        [
+          "(program)",
+          4255.794999999996
+        ],
+        [
+          "p",
+          2143.0649999999996
+        ],
+        [
+          "m",
+          1123.3739999999987
+        ],
+        [
+          "ei",
+          959.2359999999982
+        ],
+        [
+          "texSubImage2D",
+          560.9589999999996
+        ],
+        [
+          "upload",
+          423.81200000000007
+        ],
+        [
+          "u",
+          389.2010000000001
+        ],
+        [
+          "renderBufferDirect",
+          280.159
+        ],
+        [
+          "",
+          276.046
+        ],
+        [
+          "Ps",
+          230.83300000000008
+        ],
+        [
+          "(garbage collector)",
+          227.29000000000002
+        ]
+      ],
+      "heapEndpointsMiB": {
+        "before": 24.753597259521484,
+        "after": 31.041732788085938
+      },
+      "warmup": {
+        "prototype": true,
+        "mode": "features",
+        "extension": true,
+        "generation": 0,
+        "queue": 0,
+        "pending": 0,
+        "completed": 79,
+        "batches": 79,
+        "polls": 2303,
+        "compilationMs": 164.90000000596046,
+        "hidden": false,
+        "contextLost": false,
+        "abandoned": false,
+        "reason": "",
+        "disposed": false,
+        "checkShaderErrors": true
+      }
+    },
+    {
+      "index": 3,
+      "kind": "warm",
+      "entryMilliseconds": 6186,
+      "loadingPhaseAt": 1516.7000000029802,
+      "paperReadyAt": 487.20000000298023,
+      "nativeFirstFrameDiagnosticAt": 2440.5,
+      "conservativeVisiblePaperGateStart": 1516.7000000029802,
+      "visiblePaperBeforeViewerMilliseconds": 4666.20000000298,
+      "windowMilliseconds": 24111.5,
+      "rAF": {
+        "count": 4268,
+        "min": 5.19999999999709,
+        "mean": 5.649367385192128,
+        "p50": 5.599999999998545,
+        "p95": 5.700000000000728,
+        "p99": 5.700000000004366,
+        "max": 33.400000000001455
+      },
+      "longtaskCount": 0,
+      "longtaskTotalMs": 0,
+      "nativeCounterPerSecond": 175.6838023349854,
+      "sourceClockError": 0.0008052017416545487,
+      "cpuWholeAutoplaySelfMilliseconds": {
+        "getProgramInfoLog": 53.937,
+        "texSubImage2D": 588.2810000000003,
+        "opaqueNativeProgram": 4103.485000000003,
+        "idle": 17251.27400000002
+      },
+      "cpuTopSelf": [
+        [
+          "(idle)",
+          17251.27400000002
+        ],
+        [
+          "(program)",
+          4103.485000000003
+        ],
+        [
+          "p",
+          2135.38
+        ],
+        [
+          "m",
+          1098.9660000000006
+        ],
+        [
+          "ei",
+          998.2639999999994
+        ],
+        [
+          "texSubImage2D",
+          588.2810000000003
+        ],
+        [
+          "u",
+          450.43600000000004
+        ],
+        [
+          "upload",
+          403.8009999999997
+        ],
+        [
+          "Ps",
+          266.79400000000004
+        ],
+        [
+          "",
+          253.23799999999991
+        ],
+        [
+          "renderBufferDirect",
+          251.404
+        ],
+        [
+          "lt",
+          222.46499999999997
+        ]
+      ],
+      "heapEndpointsMiB": {
+        "before": 22.057491302490234,
+        "after": 41.18324279785156
+      },
+      "warmup": {
+        "prototype": true,
+        "mode": "features",
+        "extension": true,
+        "generation": 0,
+        "queue": 0,
+        "pending": 0,
+        "completed": 79,
+        "batches": 79,
+        "polls": 2474,
+        "compilationMs": 238.00000001490116,
+        "hidden": false,
+        "contextLost": false,
+        "abandoned": false,
+        "reason": "",
+        "disposed": false,
+        "checkShaderErrors": true
+      }
+    },
+    {
+      "index": 4,
+      "kind": "base",
+      "entryMilliseconds": 8551,
+      "loadingPhaseAt": 3873.3999999910593,
+      "paperReadyAt": 486.29999999701977,
+      "nativeFirstFrameDiagnosticAt": 4196.0999999940395,
+      "conservativeVisiblePaperGateStart": 3873.3999999910593,
+      "visiblePaperBeforeViewerMilliseconds": 4672.29999999702,
+      "windowMilliseconds": 24111.399999999998,
+      "rAF": {
+        "count": 3203,
+        "min": 5.299999999999272,
+        "mean": 7.527755229472369,
+        "p50": 5.599999999998545,
+        "p95": 5.700000000000728,
+        "p99": 5.799999999999272,
+        "max": 633.2999999999956
+      },
+      "longtaskCount": 25,
+      "longtaskTotalMs": 6445,
+      "nativeCounterPerSecond": 131.5560274393026,
+      "sourceClockError": 0.0005637503628446727,
+      "cpuWholeAutoplaySelfMilliseconds": {
+        "getProgramInfoLog": 8441.920000000035,
+        "texSubImage2D": 574.7089999999994,
+        "opaqueNativeProgram": 3095.2029999999936,
+        "idle": 13124.418000000043
+      },
+      "cpuTopSelf": [
+        [
+          "(idle)",
+          13124.418000000043
+        ],
+        [
+          "getProgramInfoLog",
+          8441.920000000035
+        ],
+        [
+          "(program)",
+          3095.2029999999936
+        ],
+        [
+          "p",
+          1596.015000000003
+        ],
+        [
+          "m",
+          831.3389999999993
+        ],
+        [
+          "ei",
+          704.5489999999991
+        ],
+        [
+          "texSubImage2D",
+          574.7089999999994
+        ],
+        [
+          "u",
+          317.424
+        ],
+        [
+          "upload",
+          299.9320000000001
+        ],
+        [
+          "",
+          220.60499999999993
+        ],
+        [
+          "(garbage collector)",
+          202.63699999999997
+        ],
+        [
+          "renderBufferDirect",
+          158.22000000000006
+        ]
+      ],
+      "heapEndpointsMiB": {
+        "before": 22.831893920898438,
+        "after": 45.93714141845703
+      }
+    }
+  ],
+  "decision": "Promising isolated c3 result; unadopted. Hardware cancellation/context/error, all-four-scroll behavior and strict59-frame/243-original fidelity remain required. Do not generalize monitor FPS, shader GPU time or memory retention from these observations."
+}

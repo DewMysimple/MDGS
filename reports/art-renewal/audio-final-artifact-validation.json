@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-22T20:05:30.1110120Z",
+  "method": "Read actual selected and archived bytes; selected MP3 SHA256 matches manifest; current engine/cue map/provider SHA256 matches the completed real 623.8-second synchronization evidence. No new long-duration playback claimed.",
+  "longSyncReport": "reports/art-renewal/audio-v3-ten-minute-sync.json",
+  "longSyncElapsedSeconds": 623.8003791,
+  "hashes": [
+    {
+      "path": "src/audio/PeonySoundscape.ts",
+      "sha256": "94210addff2b7874449d4adb8d5aa8bda1f3ae9fe51bffd466ba9a3811b7ca28",
+      "matchedLongSync": true
+    },
+    {
+      "path": "src/audio/cueMap.ts",
+      "sha256": "56fef96db0c48640311adcc075b4f7d0cefd2bf6f3a66ce8f0915c0375d25ebb",
+      "matchedLongSync": true
+    },
+    {
+      "path": "src/hooks/usePeonySoundscape.tsx",
+      "sha256": "051ac4479ebfb79734f753d4852103740e18b8b4dc4548608b3717186da621df",
+      "matchedLongSync": true
+    },
+    {
+      "path": "public/audio/peony-v3-strings.mp3",
+      "sha256": "24fffbea7728615d4ea32a3dcf7f12545ceeb1e64c61763be1509c54e1cfd7d0",
+      "matchedManifest": true
+    },
+    {
+      "path": "public/audio/peony-v3-breath.mp3",
+      "sha256": "0e829c497875874e7942584c0cca22fbded6c5be28b1a85a3c9b5578f26fb242",
+      "matchedManifest": true
+    },
+    {
+      "path": "public/audio/peony-v3-atmosphere.mp3",
+      "sha256": "27e0f2700fc498d94a461d9e3ff7a38c56d309578a3b9e9a6b0145ee34dc51c5",
+      "matchedManifest": true
+    }
+  ],
+  "archivedOutsideRuntime": [
+    {
+      "path": "artwork/audio/peony-v3-audition.mp3",
+      "bytes": 2561739,
+      "sha256": "aaf654dd00f659e5f28dc6f859a72a6f8b3eb0ce270f3124edad2de18486075e"
+    },
+    {
+      "path": "artwork/audio/candidates/v2/peony-courtyard-v2.mp3",
+      "bytes": 3201322,
+      "sha256": "c2cbad6d0a1f9c14d994774ac27a3c9367505aa667177d78e33323320004e9ef"
+    },
+    {
+      "path": "artwork/audio/candidates/v2/peony-courtyard-v2-score.json",
+      "bytes": 10576,
+      "sha256": "cfa0ee32cabf43541e2c966e42faf421c0f019966cc0e07daa50654c15682474"
+    },
+    {
+      "path": "artwork/audio/candidates/v2/peony-courtyard-v2-provenance.json",
+      "bytes": 761,
+      "sha256": "58cde57953f93d097e4c0ea76a7820c8d9d35ba6c4fc1d126deba5b9c97ec566"
+    }
+  ],
+  "userOriginalSha256": "0bc51f9d166ab5522f2068994bb14671838fbe91d0f8c16398cf0ec2f2b30fc7"
+}

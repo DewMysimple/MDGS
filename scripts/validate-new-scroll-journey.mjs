@@ -48,7 +48,7 @@ try{
   assert(revealed.at-loaded.at>=4000);assert.equal(await page.locator('.painting canvas').getAttribute('data-chapter'),String(id));
   report.checks.push({test:`real-entry-${id}-closed-coil-unfurl-four-seconds`,closed,half,opened,loadingMs:revealed.at-loaded.at,events,passed:true});
   if(id===1)await page.getByRole('button',{name:'自动展卷',exact:true}).click();
-  await page.getByRole('button',{name:'返回书房',exact:true}).click();await home();
+  await page.getByRole('button',{name:'返回序厅',exact:true}).click();await home();
   assert.equal(await page.locator('.painting canvas').count(),0);console.log(`chapter ${id}: real entry, physical unfurl and return passed`);await save();
  }
  // A slow target texture keeps this same living scroll visible past its minimum.
@@ -60,14 +60,14 @@ try{
  assert.equal(await page.locator('.scene-viewport').getAttribute('aria-disabled'),'true');await shot('slow-waiting');
  release();await phase('SCROLL_VIEWER');await page.unroute('**/assets/new-scrolls/chapter-2/textures/**');
  report.checks.push({test:'slow-textures-wait-with-continuous-art-rendering',frames:Number(slowB.renderCount)-Number(slowA.renderCount),passed:true});
- await page.getByRole('button',{name:'返回书房',exact:true}).click();await home();
+ await page.getByRole('button',{name:'返回序厅',exact:true}).click();await home();
  // A cached chapter must still fail a new, explicitly requested cover resource.
  let failCover=true;
  await page.route('**/chapter-3/cover.webp',route=>{if(failCover){report.expectedHttpFailures.push('chapter-3 cover 503');return route.fulfill({status:503,body:'intentional cover outage'});}return route.continue();});
  await page.locator('.study-entry-button[data-chapter-id="3"]').click();await page.getByRole('button',{name:'重新展卷',exact:true}).waitFor();await shot('cover-error');
  failCover=false;await page.getByRole('button',{name:'重新展卷',exact:true}).click();await phase('SCROLL_VIEWER');await page.unroute('**/chapter-3/cover.webp');
  report.checks.push({test:'chapter-specific-loading-art-error-and-full-retry',passed:true});
- await page.getByRole('button',{name:'返回书房',exact:true}).click();await home();
+ await page.getByRole('button',{name:'返回序厅',exact:true}).click();await home();
  let pendingRoute,notify;const arrived=new Promise(resolve=>notify=resolve);
  await page.route('**/chapter-4/scene.json',route=>{pendingRoute=route;notify();});
  await page.locator('.study-entry-button[data-chapter-id="4"]').click();await arrived;await phase('SCROLL_LOADING');
@@ -75,17 +75,22 @@ try{
  await pendingRoute.continue().catch(()=>{});await page.unroute('**/chapter-4/scene.json');
  await page.locator('.study-entry-button[data-chapter-id="1"]').click();await phase('SCROLL_VIEWER');assert.equal(new URL(page.url()).hash,'#chapter-1');assert.equal(await page.locator('.painting canvas').count(),1);
  report.checks.push({test:'cancelled-old-manifest-cannot-switch-or-revive-a-second-world',passed:true});
-  await page.setViewportSize({width:390,height:844});
+  // Desktop soundscape acceptance: a missing independent stem can retry;
+  // returning to the home preserves the shared clock instead of unloading it.
+  await page.setViewportSize({width:1280,height:720});
   let failAudio=true;
-  await page.route('**/audio/peony-guzheng-original.mp3',route=>{if(failAudio){report.expectedHttpFailures.push('audio 503');return route.fulfill({status:503,body:'intentional audio outage'});}return route.continue();});
-  await page.getByRole('button',{name:'开启古筝意境配乐',exact:true}).click();await page.locator('[data-audio-state="error"]').waitFor();
-  failAudio=false;await page.getByRole('button',{name:'重试古筝意境配乐',exact:true}).click();await page.locator('[data-audio-state="playing"]').waitFor({timeout:30000});
-  const controls=await page.locator('.scroll-controls').boundingBox(),painting=await page.locator('.painting').boundingBox(),volume=await page.getByRole('slider',{name:'古筝配乐音量',exact:true}).boundingBox();
-  assert(controls.y+controls.height<=painting.y+1&&volume.y+volume.height<=painting.y+1,'Expanded mobile audio controls must stay above the painting.');
-  const toolBounds=await page.locator('.scroll-controls button,.scroll-controls input').evaluateAll(elements=>elements.map(element=>({label:element.getAttribute('aria-label')||element.textContent,rect:element.getBoundingClientRect().toJSON()})));
-  assert(toolBounds.every(item=>item.rect.bottom<=painting.y-2),'Every expanded toolbar child, including the wrapped culture button, must remain above the painting.');
-  await shot('mobile-audio-playing');await page.getByRole('button',{name:'返回书房',exact:true}).click();await home();assert.equal(await page.locator('.audio-control').count(),0);
-  report.checks.push({test:'mobile-music-failure-retry-controls-and-return-cleanup',controls,painting,volume,passed:true});
+  await page.route('**/audio/peony-v3-breath.mp3',route=>{if(failAudio){report.expectedHttpFailures.push('soundscape stem 503');return route.fulfill({status:503,body:'intentional stem outage'});}return route.continue();});
+  await page.getByRole('button',{name:'开启原创数字声景',exact:true}).click();await page.waitForFunction(()=>window.__MDGS_AUDIO__?.snapshot().playback==='error');
+  failAudio=false;await page.getByRole('button',{name:'重试原创数字声景',exact:true}).click();await page.waitForFunction(()=>window.__MDGS_AUDIO__?.snapshot().playback==='playing',null,{timeout:30000});
+  const beforeReturn=await page.evaluate(()=>window.__MDGS_AUDIO__.snapshot());assert.deepEqual(beforeReturn.loopDurations,[160,160,24]);assert.equal(beforeReturn.sourceCount,3);
+  await page.getByRole('button',{name:'调整声景音量',exact:true}).click();
+  const volume=await page.getByRole('slider',{name:'原创数字声景音量',exact:true}).boundingBox(),popup=await page.getByRole('group',{name:'原创声景音量设置',exact:true}).boundingBox();
+  assert(volume&&popup&&popup.x>=0&&popup.y>=0&&popup.x+popup.width<=1280&&popup.y+popup.height<=720,'Desktop volume popover must fit the viewport.');
+  await page.keyboard.press('Escape');await shot('desktop-original-soundscape');
+  await page.getByRole('button',{name:'返回序厅',exact:true}).click();await home();
+  const returned=await page.evaluate(()=>window.__MDGS_AUDIO__.snapshot());assert(returned.enabled&&returned.playback==='playing'&&returned.clock>beforeReturn.clock);assert.equal(returned.sourceCount,3);
+  await page.getByRole('button',{name:'关闭原创数字声景',exact:true}).click();await page.waitForFunction(()=>window.__MDGS_AUDIO__.snapshot().playback==='off'&&window.__MDGS_AUDIO__.snapshot().retiredGraphs===0);
+  report.checks.push({test:'desktop-soundscape-stem-retry-popover-return-continuity-and-fade-release',beforeReturn,returned,volume,popup,passed:true});
  assert.deepEqual(report.errors,[]);report.status='pass';console.log(JSON.stringify({status:report.status,checks:report.checks.length}));
 }catch(error){report.status='fail';report.failure={message:error.message,stack:error.stack};if(page)await shot('failure').catch(()=>{});throw error;
 }finally{await browser?.close();if(server)await server.close();report.completedAt=new Date().toISOString();await save();}

@@ -1,0 +1,35 @@
+{
+  "status": "observation-order-only-fix-ready-for-new-journey-and-six",
+  "createdAt": "2026-10-23T03:58:07.793Z",
+  "archiveManifest": {
+    "path": "reports/art-renewal/candidate8-journey-window-failure-archive/archive-manifest.json",
+    "sha256": "4399edbbe3505c78fd76cdcd2258910db22fbd110d1449846fc11ba538f2f134"
+  },
+  "failedChain": "reports/art-renewal/final-regressions/2026-10-23T03-36-08-829Z/validation.json",
+  "firstProbe": "reports/art-renewal/journey-window-probe/2026-10-23T03-51-39-866Z/validation.json",
+  "stressProof": "reports/art-renewal/journey-window-probe/2026-10-23T03-55-08-721Z-stress/validation.json",
+  "oldDrivers": {
+    "scripts/validate-art-renewal-final.mjs": "e88d14d3046d9c05d8a8547cada81f17bfe47a664ea287ee11b5a23ceaec755a",
+    "scripts/validate-art-renewal-ui.mjs": "f978cf6666001687b5268c241798edff142ba2d804712f25294bff0ae285d58f",
+    "scripts/validate-peony-soundscape.mjs": "f34fa4d41a09e02ca7bf1cd0d1e7287baa3595b1f01377007e78cbbc26449687",
+    "scripts/validate-peony2-runtime.mjs": "36364a5356fb50472d1a0525d93b8ce5d80c78864a4001fb3a753d0f5f4e5d4f",
+    "scripts/validate-peony2-regressions.mjs": "a15c0085702817803ee2397525df42c3cb137f183365db5d05734a6911dc5e4b",
+    "scripts/validate-peony2-original-driver.mjs": "fa4e9b6196a9c6f9006c426f0e3353324437dac11cf6d07c807ea3ef89673e82",
+    "scripts/validate-peony2-journey-driver.mjs": "9d74b563a223080675f2e37edeff9d9e61afdeb23d5be956cf778e20586c7e5e",
+    "scripts/validate-peony2-settings-driver.mjs": "42fef886ed1d500ddfeb4bd83a0c5826e61ec5a649c76f9c02623fec6b695fce",
+    "scripts/validate-peony2-subpath-driver.mjs": "1041f8b91fe1ddab3c95326fa12804f66dabc602a2d07f8fe4a8434c5124808d"
+  },
+  "newDrivers": {
+    "scripts/validate-art-renewal-final.mjs": "e88d14d3046d9c05d8a8547cada81f17bfe47a664ea287ee11b5a23ceaec755a",
+    "scripts/validate-art-renewal-ui.mjs": "f978cf6666001687b5268c241798edff142ba2d804712f25294bff0ae285d58f",
+    "scripts/validate-peony-soundscape.mjs": "f34fa4d41a09e02ca7bf1cd0d1e7287baa3595b1f01377007e78cbbc26449687",
+    "scripts/validate-peony2-runtime.mjs": "36364a5356fb50472d1a0525d93b8ce5d80c78864a4001fb3a753d0f5f4e5d4f",
+    "scripts/validate-peony2-regressions.mjs": "a15c0085702817803ee2397525df42c3cb137f183365db5d05734a6911dc5e4b",
+    "scripts/validate-peony2-original-driver.mjs": "fa4e9b6196a9c6f9006c426f0e3353324437dac11cf6d07c807ea3ef89673e82",
+    "scripts/validate-peony2-journey-driver.mjs": "251da9ba8cf150a517c8877c03acc61298ac81e1849ff500d811101033d50938",
+    "scripts/validate-peony2-settings-driver.mjs": "42fef886ed1d500ddfeb4bd83a0c5826e61ec5a649c76f9c02623fec6b695fce",
+    "scripts/validate-peony2-subpath-driver.mjs": "1041f8b91fe1ddab3c95326fa12804f66dabc602a2d07f8fe4a8434c5124808d"
+  },
+  "changedDriver": "scripts/validate-peony2-journey-driver.mjs",
+  "changes": "Prearm exact (.43,.8) paper+covered snapshot and half diagnostic PNG before awaiting closed PNG. Record asynchronous PNG request/completion. All geometry, >=3998ms, 9 checks and product/source clocks unchanged. New full six suites required; no C7/failed-C8 passes inherited."
+}

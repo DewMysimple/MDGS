@@ -1,0 +1,20 @@
+{
+  "recordType": "recovered-tool-stdout",
+  "provenance": "Exact JSON printed by functions.exec/native-visibility-probe.cjs at the initial native offscreen probe, before adding CalculateNativeWinOcclusion flag. The probe used a fixed output path subsequently replaced by the second probe. This is an explicitly recovered console record, not the original file or an original-file SHA claim.",
+  "record": {
+    "startedAt": "2026-10-23T00:00:39.409Z",
+    "pid": 43288,
+    "scope": "Own headed offscreen/minimized Chrome profile via CDP noDefaults; no Playwright focus+visibility override, no document.hidden override.",
+    "samples": [
+      { "name": "initial", "hidden": true, "state": "hidden", "focus": false },
+      { "name": "restore-own-offscreen-window", "hidden": true, "state": "hidden", "focus": false },
+      { "name": "minimize-own-window", "hidden": true, "state": "hidden", "focus": false },
+      { "name": "other-own-tab-front", "hidden": true, "state": "hidden", "focus": false },
+      { "name": "own-tab-front", "hidden": true, "state": "hidden", "focus": true }
+    ],
+    "window": { "windowId": 746047609, "bounds": { "left": -32000, "top": -32000, "width": 1265, "height": 1420, "windowState": "normal" } },
+    "nativeHiddenObserved": true,
+    "nativeVisibleObserved": false,
+    "finishedAt": "2026-10-23T00:00:40.352Z"
+  }
+}

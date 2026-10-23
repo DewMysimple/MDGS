@@ -1,0 +1,85 @@
+---
+type: log
+status: active
+updated: 2026-10-23
+topic: peony-art-experience-renewal
+kind: ui
+task_status: in_progress
+sources: ["用户指令：2026-10-23约10小时艺术迭代、只做电脑端、先深入调研", "reports/art-renewal/design-research.md", "src/components/PeonyAtlasHome.tsx", "src/scene/PeonyBloomSurface.ts", "src/styles/poetic-exhibition.css", "src/scene/artworkProjection.ts", "reports/art-renewal/audio-v3-notes.md"]
+---
+
+# 国色长卷艺术迭代
+
+## 目标与边界
+
+在四卷框架及牡丹2.0原作保真基础上，改善首页、加载、UI、声音、叙事与参与，形成“科技+创意，讲好中国故事”的电脑端艺术体验。用户要求先深入调研，再制作，并给出约10小时持续工作与中午验收目标。原始输入只读，既有微透明文字底及四秒真实展卷门控保留。
+
+## 已完成阶段
+
+- 开始main工作树干净，随后将远程最新保真整改fast-forward至e420f0e，不退回旧画卷。
+- 已研究用户收藏中的水彩叙事、纸张、层叠、环境与声音组织，实际浏览四卷40节点；报告区分真实体验、公开说明、超时及推导，不复制参考资产/代码。
+- 首轮原创分层首页与提示provenance、GPU花色轻拂、统一观卷UI已落盘；1920与1280桌面实际观察，修复导航网格及默认黑色焦点边线问题。
+- 三轨原创数字声景独立完成生命周期/桌面浮层/真实623.8秒同步验证；App初步全站集成，尚需整站验证。
+- 真实UV锚点投影支持形态键、源变换与画幅；node scripts/validate-artwork-projection.mjs的8项通过。ArtEncounters与薄纸启卷由并行任务继续验证，未当作最终完成。
+
+## 当前验证
+
+e420f0e加本轮未提交修改背景，npm run build已通过；初步开发浏览器首页/第一卷无新增pageerror。原画当前生产像素、整站声音、四卷遇景、完整异常恢复尚未验收。旧保真/旧UI报告不直接覆盖本轮构建。
+
+## 恢复下一步
+
+完成实际遇景集成、启卷与画心矩形接力，审视全部电脑画幅和文化/题跋表达；再做当前生产构建完整验证、候选清理、工程记忆收尾及提交推送。未部署，当前尚未Git交付，不提前称完成。
+
+## 第二轮稳定里程碑（05:55恢复点）
+
+已集成全部四卷画中有遇、花事札记/原作全文、卷末观者花笺。默认新增45条当代诗意短章，25段作者正文不变，三模式可切换。首轮270排版/40精确停点/三模式非零重载通过；完整原速四卷45句均实际出现，单句位置零漂移；随后修手动同桶缓存，并完成11条实测锁位路径。
+
+非零续看与返首页改用真实GPU成功画心；修复纹理就绪误当首帧及无用cover0重复门控。15组续卷异常/Back/GPU专项、24组快照像素通过，可见正确纸面4001.2–4009ms。保持原四秒与原画sourceViewport，未改作者时钟/几何/纹理。
+
+实际设计审视发现并修正首页音频span被分隔线压缩、音量纸笺被锦边盖住、range命中仅3px、指南关闭随滚动消失；改善辅助文字与短桌面指南。新花色pending/live/image避免完整花闪回空白，关闭风物/减少动态清除暂态湿色。原生WebGL uniform实际验证归零、恢复动态继续绘制。
+
+新增可导出的约541MB独立展示包，只筛选运行资产，不删完整工程/历史素材，不重编码原图；Node原生HTTP服务、说明/创作来源/完整5库许可同时交付。工具固定路径与marker、独占锁、lstat/realpath、源清单重新枚举与逐文件hash。原包首轮安全/HTTP/四卷互动通过，但第二轮测试期间被重导造成旧lazy chunk真实404；已保留失败并改成冻结目录验收，不能说是产品静态资源丢失或删除失败证据。
+
+第二轮统一候选为tmp/art-candidate-2-dist（BmVq5_Bq / Bc7VfaY-），dist与dist-exhibition同版。当前只文档可改，三位任务用同包重跑原画59、启卷37、续卷15/像素24、正文270+全长、83UI、15声音、runtime/journey/settings/subpath及独立包22项；连续两轮实播soak亦在执行。尚无本轮Git提交/推送、未部署，用户10小时目标仍进行中。
+
+## 第三轮候选（06:30恢复点）
+
+候选2完成22/59+243/37/15/24及270+45实播+12锁位、797.064秒8卷次21组soak。但人工读取消采样发现纸面未真实递减，仅进入warm fallback；入口明确requires-fix，自动原始passed证据独立保留。新lifecycle断言对旧候选真实失败，记录before约.20183、final约.20813以及153次fallback样本。App按presentationReady区分已备卷与未备降级，让前者从当前曲率合拢。作者源与原25段不动。
+
+采用首次观看者审视中的4条新增短章/1标题调整：武则天、杨玉环、沉香亭典故、吉祥与马嵬花落；原45句起止时窗逐项不变。候选3由正式export:exhibition构建，固定tmp/art-candidate-3-dist，C6ZfivTN/Bc7VfaY-，三个HTML同SHA806eb52d…a769，库存95c24a7b…1428。包验收中绝不重建。
+
+第三轮270排版/8058字格、40精确停点、3模式/非零重载、25原文双处比对与45句全长实播已经通过，零坐标漂移。其余锁位/互动与新同包soak/83UI/15声音/四类回归继续。原画像素捕获两次在固定JSON写入遇Windows UNKNOWN，诚实保存两轮失败；15/24与22已过，但不能代称59通过。权限/属性/空间/当前占用检查未确定历史根因；仅验证器将改隔离报告目录、原子写与有限重试，并保证finally关闭浏览器，再冻结新driver hash全跑。
+
+实际导览录制156.825秒、1920×1080、3279个墙钟JPEG采样帧与实际master声景，包含四遇、马嵬、择意钤印和真实PNG下载，包前后hash一致、0页面/HTTP错误。原始录制在忽略tmp目录，色彩/音频编码审视尚在继续，不提前宣称正式成片通过。补充CineShader/Mathis/Wild实际浏览与Monolith未越过序幕的限制写入调研。基于植物形态资料试画的修叶版因叶缘过密未采用。
+
+## 第三轮完整验收与07:10恢复点
+
+上节进行中项已实际完成：候选3在独立报告目录完整22/59+243/37/15/24通过，908输入不变，像素阈值不改。两次Windows UNKNOWN失败原样保留；修验证器唯一run、原子写与finally关闭后，本次零IO重试。270排版、45全长、12锁位/12互动均过；796.627秒8卷次soak21项与随后83UI/15声音/34runtime/9journey/18settings/1四卷子目录全过。Edge155额外83+15通过；12实际桌面DPR补验通过。依据分别为art-candidate-3-freeze、final-regression-latest、soak-latest、poetic-narrative/notes、edge-desktop/notes与desktop-dpr-validation。
+
+安静性能8个20秒实播窗口提交105–177/s，rAF109–178/s，仅为本机吞吐，非屏幕FPS保证；首访c3仍有680ms长任务，尚未profile归因，不据高平均或录像采样盲目改源。新版导览改被动原生PCM采真实master；8.78秒App样本连续通过，完整录片进行中。没有产品进一步修改或Git交付。剩余完整成片验证、首访定位、编辑终校、证据体量/本地原始捕获边界与最终推送；十小时任务继续。
+
+## 后续字体、校读与首访研究（07:45恢复点）
+
+第三轮完成后未结束任务。编辑终审采纳卷二外层705/710/712年代参读，保持25原文；实际字库cmap发现168源码Han缺失，旧包CDP证实文化正文/年代注/留笺system fallback。按原TTF同SHA补至1402码点279764B；1402与源、原1230与旧子集逐字轮廓/H/V/globalmetrics均同，1130源码Han零缺，双次制作同SHA，许可原字节不变。旧检查before真实fail保留，新字体尚待最终生产排版复验。
+
+首访c3 CPU profile指向getProgramInfoLog同步等待。隔离tmp publiccompile+KHR原型ABBA使最大间隙589/633→45/33ms、长任务28/25→0/0，初入8572/8551→6220/6186ms；原生错误检测不关、四秒门控保留、输入包前后不变。未据性能直接合src；取消首帧、GPU/错误/隐藏/KHRfallback及59像素待硬件预验。两次实际导览因原生AudioWorkletglobal标签冻结而failed保留；独立native ramp/sine证明实际PCM连续，录制器仅修错误时间标签前提，无删补/重排样本，最新60秒复核进行中，未选正式成片。
+
+## 第四轮正式候选（08:33恢复点）
+
+原型v2第二卷真实复现未结算尾项（completed57/batches58、queue0/pending0、原画0提交）；v3将submitted纳入下一次调度，真实旧反例失败、新反例通过，再完成14硬件/三冷context含.65返入/59帧及243原图预验。失败原样保存，早期无现场90秒超时未倒写成已证同因。
+
+据此采用ShaderWarmup及Renderer，App经Viewport useLayoutEffect显式取消，late load核持久owner标记；去实验URL与DOMobserver，保留原debug、像素程序与作者时钟。实际正式C4的16硬件检查全过，含两个helper晚建仍0提交、真实GPU丢失/坏GLSL/隐藏与注入KHR故障。首轮末尾driver路径ENOENT导致整轮失败，修检查器后16组完整重跑，原失败保留。依据native-program-preparation/hardware-latest.json，成功00:26:44Z唯一run；v1 ABBA仍只属隔离性能观测。
+
+四主按钮hover浅字与sealed选项可读性修正，设置完成统一方角青绿。文楷最终85文件语料、1130源码Han零缺，1402/1230逐字轮廓及全局度量一致，字库/许可/provenance独立制作字节全相同；运行元数据统一LF以匹配Git交付，三MP3和四WebP/原画原字节不动。
+
+C4经正式export:exhibition生成，tmp/art-candidate-4-dist与dist/dist-exhibition五代码文件相同：index-DBUrlwwr.js、index-C5txKLE_.css，HTML9ac34757…afb2、展示库存989bcfbd…bd16；829源输入冻结。八类CPU全过，当前原图校验一卷158.28MiB提示保留。08:30起原画/启卷/快照、诗意/字体、八卷次soak及六类回归并行验同一包；本段不提前称其通过。
+
+录制器经独立60秒原生ramp/sine图压力复核，通过有限恒定标签冻结后精确恢复交叉审计，不删补PCM。stage全片169.911秒、实际master7912320帧、2146包、spread.237ms，独立35项必需通过；额外位零断言因指数淡出的错误前提失败原档保留，纠正为观测且无事后dB门限。该片仍是原renderer的新字/年代注包，非C4终片，3.072秒CDP空档如实保留。C4将同驱动重录并用预固定身份/连续性检查器验，不复用旧片冒称。
+
+Git尚未提交/推送，未部署。中间媒体保持本地，正式像素输入及精选界面/成片按清单LFS交付；原始artifact映射不删改、不冒称所有raw已上传。十小时创作仍继续，完整结果与当前恢复入口见状态页。
+
+## C6验收与用户拖动反馈（10:26恢复点）
+
+C4/5后退与失败退出两处回归已最小修复，C6同包22/59+243/15/24/37、CPU八类、270/45/12/12/reading/font、10返回+16硬件、787.816秒soak及83/15/34/9/18/1六套全部实际通过。settings首轮错误地比较canvas请求元数据，25次探针及真实最小化证明session/实际draw/RAF冻结；修driver前提后六套重新完整通过，原失败保留。依据art-candidate-6-freeze及candidate6-hidden-commit-analysis。
+
+09:54用户要求减少左右留白、修节点拖动。C6+CSS原型18帧72边界通过，原画1080p高850→954；贴边版遮第四卷旗画/缩小题跋被弃。C7已落紧凑布局与统一时间轴手势，旧节点按钮确能截住180次拖动；真实canvas长停顿来自WebP解码/上传。渲染最小候选同UI隔离AB仍进行，C7未冻结、不借C6通过。C6终片未录，本地ZIP只是基线；正式C7复验/终片/交付推送待办。

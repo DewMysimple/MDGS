@@ -8,6 +8,7 @@ artwork/**/*.blend filter=lfs diff=lfs merge=lfs -text
 # Preserve byte-level provenance recorded by delivery reports.
 reports/** -text
 scripts/** -text
+artwork/audio/** -text
 src/scene/MotionDirector.ts -text
 reports/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
 artwork/**/*.png filter=lfs diff=lfs merge=lfs -text

@@ -4,8 +4,11 @@ export interface ChapterViewingSettings {
   smoothingMs: number;
 }
 
+export type NarrativeMode = 'poetic' | 'original' | 'quiet';
+
 export interface ViewerSettings {
   version: 2;
+  narrativeMode: NarrativeMode;
   chapters: Record<number, ChapterViewingSettings>;
   textPlate: { color: string; opacity: number; padding: number; radius: number; borderOpacity: number };
 }
@@ -27,6 +30,7 @@ export const settingLimits = {
 export function defaultViewerSettings(): ViewerSettings {
   return {
     version: 2,
+    narrativeMode: 'poetic',
     chapters: Object.fromEntries([1, 2, 3, 4].map(id => [id, { wheelSpeed: 0.5, smoothingMs: 180 }])),
     textPlate: { color: '#f7efdf', opacity: 0.8, padding: 12, radius: 0, borderOpacity: 0 },
   };
@@ -41,6 +45,7 @@ function bounded(value: unknown, fallback: number, limits: { min: number; max: n
 export function sanitizeViewerSettings(value: unknown): ViewerSettings {
   const result = defaultViewerSettings(), source = record(value);
   if (source.version !== 2) return result;
+  if (source.narrativeMode === 'poetic' || source.narrativeMode === 'original' || source.narrativeMode === 'quiet') result.narrativeMode = source.narrativeMode;
   const chapters = record(source.chapters), plate = record(source.textPlate);
   for (const id of [1, 2, 3, 4]) {
     const chapter = record(chapters[id]);

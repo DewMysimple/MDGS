@@ -1,0 +1,1232 @@
+{
+  "scope": "Independent known native AudioParam a-rate sample ramp + separate native Oscillator. Reference values do not use AudioWorklet global currentFrame. No raw PCM edits.",
+  "run": "tmp/art-renewal/native-audio-clock-probe/2026-10-22T23-26-48-570Z",
+  "helperSha256": "7226ef7c14ea282d2ae9e033e555bb2feee72eaa784791e901c518b3abfd0461",
+  "strictCaptureStatus": "failed",
+  "mutations": 181800,
+  "rawFrames": 2908800,
+  "rawSha256": "40197ba8aa98c1e1e87ae0736785940366f48d1da4133db987c71595303a7661",
+  "rate": 48000,
+  "firstFrame": 0,
+  "reference": {
+    "when": 0.6,
+    "whenFrame": 28800,
+    "duration": 60,
+    "rate": 48000,
+    "frequency": 997,
+    "sineAmplitude": 0.0005,
+    "rampScale": 4294967296,
+    "finished": true,
+    "mutations": 181800
+  },
+  "nativeAnomalies": [
+    {
+      "id": 1,
+      "expected": 199296,
+      "actual": 199168,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 1557,
+        "currentFrame": 199168,
+        "currentTime": 4.149333333333334,
+        "frames": 128,
+        "fingerprint": "191426c4"
+      },
+      "current": {
+        "processSeq": 1558,
+        "currentFrame": 199168,
+        "currentTime": 4.149333333333334,
+        "frames": 128,
+        "fingerprint": "6ffd0f35"
+      },
+      "next": {
+        "processSeq": 1559,
+        "currentFrame": 199424,
+        "currentTime": 4.1546666666666665,
+        "frames": 128,
+        "fingerprint": "278b96a5"
+      }
+    },
+    {
+      "id": 2,
+      "expected": 199296,
+      "actual": 199424,
+      "deltaFrames": 128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 1558,
+        "currentFrame": 199168,
+        "currentTime": 4.149333333333334,
+        "frames": 128,
+        "fingerprint": "6ffd0f35"
+      },
+      "current": {
+        "processSeq": 1559,
+        "currentFrame": 199424,
+        "currentTime": 4.1546666666666665,
+        "frames": 128,
+        "fingerprint": "278b96a5"
+      },
+      "next": {
+        "processSeq": 1560,
+        "currentFrame": 199552,
+        "currentTime": 4.157333333333334,
+        "frames": 128,
+        "fingerprint": "a3454f4b"
+      }
+    },
+    {
+      "id": 3,
+      "expected": 210432,
+      "actual": 210304,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 1644,
+        "currentFrame": 210304,
+        "currentTime": 4.381333333333333,
+        "frames": 128,
+        "fingerprint": "f026fd56"
+      },
+      "current": {
+        "processSeq": 1645,
+        "currentFrame": 210304,
+        "currentTime": 4.381333333333333,
+        "frames": 128,
+        "fingerprint": "993a1218"
+      },
+      "next": {
+        "processSeq": 1646,
+        "currentFrame": 210304,
+        "currentTime": 4.381333333333333,
+        "frames": 128,
+        "fingerprint": "d30c2ce8"
+      }
+    },
+    {
+      "id": 4,
+      "expected": 210432,
+      "actual": 210304,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 1645,
+        "currentFrame": 210304,
+        "currentTime": 4.381333333333333,
+        "frames": 128,
+        "fingerprint": "993a1218"
+      },
+      "current": {
+        "processSeq": 1646,
+        "currentFrame": 210304,
+        "currentTime": 4.381333333333333,
+        "frames": 128,
+        "fingerprint": "d30c2ce8"
+      },
+      "next": {
+        "processSeq": 1647,
+        "currentFrame": 210304,
+        "currentTime": 4.381333333333333,
+        "frames": 128,
+        "fingerprint": "2516f9e1"
+      }
+    },
+    {
+      "id": 5,
+      "expected": 210432,
+      "actual": 210304,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 1646,
+        "currentFrame": 210304,
+        "currentTime": 4.381333333333333,
+        "frames": 128,
+        "fingerprint": "d30c2ce8"
+      },
+      "current": {
+        "processSeq": 1647,
+        "currentFrame": 210304,
+        "currentTime": 4.381333333333333,
+        "frames": 128,
+        "fingerprint": "2516f9e1"
+      },
+      "next": {
+        "processSeq": 1648,
+        "currentFrame": 210304,
+        "currentTime": 4.381333333333333,
+        "frames": 128,
+        "fingerprint": "d77d3785"
+      }
+    },
+    {
+      "id": 6,
+      "expected": 210432,
+      "actual": 210304,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 1647,
+        "currentFrame": 210304,
+        "currentTime": 4.381333333333333,
+        "frames": 128,
+        "fingerprint": "2516f9e1"
+      },
+      "current": {
+        "processSeq": 1648,
+        "currentFrame": 210304,
+        "currentTime": 4.381333333333333,
+        "frames": 128,
+        "fingerprint": "d77d3785"
+      },
+      "next": {
+        "processSeq": 1649,
+        "currentFrame": 210944,
+        "currentTime": 4.394666666666667,
+        "frames": 128,
+        "fingerprint": "41006c03"
+      }
+    },
+    {
+      "id": 7,
+      "expected": 210432,
+      "actual": 210944,
+      "deltaFrames": 512,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 1648,
+        "currentFrame": 210304,
+        "currentTime": 4.381333333333333,
+        "frames": 128,
+        "fingerprint": "d77d3785"
+      },
+      "current": {
+        "processSeq": 1649,
+        "currentFrame": 210944,
+        "currentTime": 4.394666666666667,
+        "frames": 128,
+        "fingerprint": "41006c03"
+      },
+      "next": {
+        "processSeq": 1650,
+        "currentFrame": 211072,
+        "currentTime": 4.397333333333333,
+        "frames": 128,
+        "fingerprint": "148f6d7a"
+      }
+    },
+    {
+      "id": 8,
+      "expected": 218112,
+      "actual": 217984,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 1704,
+        "currentFrame": 217984,
+        "currentTime": 4.541333333333333,
+        "frames": 128,
+        "fingerprint": "cd3e8294"
+      },
+      "current": {
+        "processSeq": 1705,
+        "currentFrame": 217984,
+        "currentTime": 4.541333333333333,
+        "frames": 128,
+        "fingerprint": "165b40ce"
+      },
+      "next": {
+        "processSeq": 1706,
+        "currentFrame": 218240,
+        "currentTime": 4.546666666666667,
+        "frames": 128,
+        "fingerprint": "c7922ba2"
+      }
+    },
+    {
+      "id": 9,
+      "expected": 218112,
+      "actual": 218240,
+      "deltaFrames": 128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 1705,
+        "currentFrame": 217984,
+        "currentTime": 4.541333333333333,
+        "frames": 128,
+        "fingerprint": "165b40ce"
+      },
+      "current": {
+        "processSeq": 1706,
+        "currentFrame": 218240,
+        "currentTime": 4.546666666666667,
+        "frames": 128,
+        "fingerprint": "c7922ba2"
+      },
+      "next": {
+        "processSeq": 1707,
+        "currentFrame": 218368,
+        "currentTime": 4.549333333333333,
+        "frames": 128,
+        "fingerprint": "b01ca9b4"
+      }
+    },
+    {
+      "id": 10,
+      "expected": 617472,
+      "actual": 617344,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 4824,
+        "currentFrame": 617344,
+        "currentTime": 12.861333333333333,
+        "frames": 128,
+        "fingerprint": "18d2e46c"
+      },
+      "current": {
+        "processSeq": 4825,
+        "currentFrame": 617344,
+        "currentTime": 12.861333333333333,
+        "frames": 128,
+        "fingerprint": "390e2574"
+      },
+      "next": {
+        "processSeq": 4826,
+        "currentFrame": 617600,
+        "currentTime": 12.866666666666667,
+        "frames": 128,
+        "fingerprint": "5e566972"
+      }
+    },
+    {
+      "id": 11,
+      "expected": 617472,
+      "actual": 617600,
+      "deltaFrames": 128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 4825,
+        "currentFrame": 617344,
+        "currentTime": 12.861333333333333,
+        "frames": 128,
+        "fingerprint": "390e2574"
+      },
+      "current": {
+        "processSeq": 4826,
+        "currentFrame": 617600,
+        "currentTime": 12.866666666666667,
+        "frames": 128,
+        "fingerprint": "5e566972"
+      },
+      "next": {
+        "processSeq": 4827,
+        "currentFrame": 617728,
+        "currentTime": 12.869333333333334,
+        "frames": 128,
+        "fingerprint": "e17bb8ba"
+      }
+    },
+    {
+      "id": 12,
+      "expected": 792192,
+      "actual": 792064,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 6189,
+        "currentFrame": 792064,
+        "currentTime": 16.501333333333335,
+        "frames": 128,
+        "fingerprint": "6c622203"
+      },
+      "current": {
+        "processSeq": 6190,
+        "currentFrame": 792064,
+        "currentTime": 16.501333333333335,
+        "frames": 128,
+        "fingerprint": "84ea0fe7"
+      },
+      "next": {
+        "processSeq": 6191,
+        "currentFrame": 792320,
+        "currentTime": 16.506666666666668,
+        "frames": 128,
+        "fingerprint": "538371cb"
+      }
+    },
+    {
+      "id": 13,
+      "expected": 792192,
+      "actual": 792320,
+      "deltaFrames": 128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 6190,
+        "currentFrame": 792064,
+        "currentTime": 16.501333333333335,
+        "frames": 128,
+        "fingerprint": "84ea0fe7"
+      },
+      "current": {
+        "processSeq": 6191,
+        "currentFrame": 792320,
+        "currentTime": 16.506666666666668,
+        "frames": 128,
+        "fingerprint": "538371cb"
+      },
+      "next": {
+        "processSeq": 6192,
+        "currentFrame": 792448,
+        "currentTime": 16.509333333333334,
+        "frames": 128,
+        "fingerprint": "f420bde5"
+      }
+    },
+    {
+      "id": 14,
+      "expected": 824960,
+      "actual": 824832,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 6445,
+        "currentFrame": 824832,
+        "currentTime": 17.184,
+        "frames": 128,
+        "fingerprint": "da97adae"
+      },
+      "current": {
+        "processSeq": 6446,
+        "currentFrame": 824832,
+        "currentTime": 17.184,
+        "frames": 128,
+        "fingerprint": "1e7ed99a"
+      },
+      "next": {
+        "processSeq": 6447,
+        "currentFrame": 825088,
+        "currentTime": 17.189333333333334,
+        "frames": 128,
+        "fingerprint": "16e01419"
+      }
+    },
+    {
+      "id": 15,
+      "expected": 824960,
+      "actual": 825088,
+      "deltaFrames": 128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 6446,
+        "currentFrame": 824832,
+        "currentTime": 17.184,
+        "frames": 128,
+        "fingerprint": "1e7ed99a"
+      },
+      "current": {
+        "processSeq": 6447,
+        "currentFrame": 825088,
+        "currentTime": 17.189333333333334,
+        "frames": 128,
+        "fingerprint": "16e01419"
+      },
+      "next": {
+        "processSeq": 6448,
+        "currentFrame": 825216,
+        "currentTime": 17.192,
+        "frames": 128,
+        "fingerprint": "d9aceb38"
+      }
+    },
+    {
+      "id": 16,
+      "expected": 878592,
+      "actual": 878464,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 6864,
+        "currentFrame": 878464,
+        "currentTime": 18.301333333333332,
+        "frames": 128,
+        "fingerprint": "95c0d1f3"
+      },
+      "current": {
+        "processSeq": 6865,
+        "currentFrame": 878464,
+        "currentTime": 18.301333333333332,
+        "frames": 128,
+        "fingerprint": "c0786e89"
+      },
+      "next": {
+        "processSeq": 6866,
+        "currentFrame": 878720,
+        "currentTime": 18.30666666666667,
+        "frames": 128,
+        "fingerprint": "6f554414"
+      }
+    },
+    {
+      "id": 17,
+      "expected": 878592,
+      "actual": 878720,
+      "deltaFrames": 128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 6865,
+        "currentFrame": 878464,
+        "currentTime": 18.301333333333332,
+        "frames": 128,
+        "fingerprint": "c0786e89"
+      },
+      "current": {
+        "processSeq": 6866,
+        "currentFrame": 878720,
+        "currentTime": 18.30666666666667,
+        "frames": 128,
+        "fingerprint": "6f554414"
+      },
+      "next": {
+        "processSeq": 6867,
+        "currentFrame": 878848,
+        "currentTime": 18.309333333333335,
+        "frames": 128,
+        "fingerprint": "9bf60b08"
+      }
+    },
+    {
+      "id": 18,
+      "expected": 894080,
+      "actual": 893952,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 6985,
+        "currentFrame": 893952,
+        "currentTime": 18.624,
+        "frames": 128,
+        "fingerprint": "a7791c2b"
+      },
+      "current": {
+        "processSeq": 6986,
+        "currentFrame": 893952,
+        "currentTime": 18.624,
+        "frames": 128,
+        "fingerprint": "a3aa2cc6"
+      },
+      "next": {
+        "processSeq": 6987,
+        "currentFrame": 894208,
+        "currentTime": 18.629333333333335,
+        "frames": 128,
+        "fingerprint": "1df95ad6"
+      }
+    },
+    {
+      "id": 19,
+      "expected": 894080,
+      "actual": 894208,
+      "deltaFrames": 128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 6986,
+        "currentFrame": 893952,
+        "currentTime": 18.624,
+        "frames": 128,
+        "fingerprint": "a3aa2cc6"
+      },
+      "current": {
+        "processSeq": 6987,
+        "currentFrame": 894208,
+        "currentTime": 18.629333333333335,
+        "frames": 128,
+        "fingerprint": "1df95ad6"
+      },
+      "next": {
+        "processSeq": 6988,
+        "currentFrame": 894336,
+        "currentTime": 18.632,
+        "frames": 128,
+        "fingerprint": "f2370dce"
+      }
+    },
+    {
+      "id": 20,
+      "expected": 901632,
+      "actual": 901504,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 7044,
+        "currentFrame": 901504,
+        "currentTime": 18.781333333333333,
+        "frames": 128,
+        "fingerprint": "51cd3f5b"
+      },
+      "current": {
+        "processSeq": 7045,
+        "currentFrame": 901504,
+        "currentTime": 18.781333333333333,
+        "frames": 128,
+        "fingerprint": "b494782d"
+      },
+      "next": {
+        "processSeq": 7046,
+        "currentFrame": 901760,
+        "currentTime": 18.786666666666665,
+        "frames": 128,
+        "fingerprint": "2f6bf0d7"
+      }
+    },
+    {
+      "id": 21,
+      "expected": 901632,
+      "actual": 901760,
+      "deltaFrames": 128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 7045,
+        "currentFrame": 901504,
+        "currentTime": 18.781333333333333,
+        "frames": 128,
+        "fingerprint": "b494782d"
+      },
+      "current": {
+        "processSeq": 7046,
+        "currentFrame": 901760,
+        "currentTime": 18.786666666666665,
+        "frames": 128,
+        "fingerprint": "2f6bf0d7"
+      },
+      "next": {
+        "processSeq": 7047,
+        "currentFrame": 901888,
+        "currentTime": 18.78933333333333,
+        "frames": 128,
+        "fingerprint": "51ad311c"
+      }
+    },
+    {
+      "id": 22,
+      "expected": 1103232,
+      "actual": 1103104,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 8619,
+        "currentFrame": 1103104,
+        "currentTime": 22.981333333333332,
+        "frames": 128,
+        "fingerprint": "6cd1a933"
+      },
+      "current": {
+        "processSeq": 8620,
+        "currentFrame": 1103104,
+        "currentTime": 22.981333333333332,
+        "frames": 128,
+        "fingerprint": "cea29cbb"
+      },
+      "next": {
+        "processSeq": 8621,
+        "currentFrame": 1103360,
+        "currentTime": 22.986666666666668,
+        "frames": 128,
+        "fingerprint": "45c0711d"
+      }
+    },
+    {
+      "id": 23,
+      "expected": 1103232,
+      "actual": 1103360,
+      "deltaFrames": 128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 8620,
+        "currentFrame": 1103104,
+        "currentTime": 22.981333333333332,
+        "frames": 128,
+        "fingerprint": "cea29cbb"
+      },
+      "current": {
+        "processSeq": 8621,
+        "currentFrame": 1103360,
+        "currentTime": 22.986666666666668,
+        "frames": 128,
+        "fingerprint": "45c0711d"
+      },
+      "next": {
+        "processSeq": 8622,
+        "currentFrame": 1103488,
+        "currentTime": 22.989333333333335,
+        "frames": 128,
+        "fingerprint": "7407fe9d"
+      }
+    },
+    {
+      "id": 24,
+      "expected": 1124352,
+      "actual": 1124224,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 8784,
+        "currentFrame": 1124224,
+        "currentTime": 23.421333333333333,
+        "frames": 128,
+        "fingerprint": "5a9dbfcd"
+      },
+      "current": {
+        "processSeq": 8785,
+        "currentFrame": 1124224,
+        "currentTime": 23.421333333333333,
+        "frames": 128,
+        "fingerprint": "69142f01"
+      },
+      "next": {
+        "processSeq": 8786,
+        "currentFrame": 1124480,
+        "currentTime": 23.426666666666666,
+        "frames": 128,
+        "fingerprint": "ee30f93d"
+      }
+    },
+    {
+      "id": 25,
+      "expected": 1124352,
+      "actual": 1124480,
+      "deltaFrames": 128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 8785,
+        "currentFrame": 1124224,
+        "currentTime": 23.421333333333333,
+        "frames": 128,
+        "fingerprint": "69142f01"
+      },
+      "current": {
+        "processSeq": 8786,
+        "currentFrame": 1124480,
+        "currentTime": 23.426666666666666,
+        "frames": 128,
+        "fingerprint": "ee30f93d"
+      },
+      "next": {
+        "processSeq": 8787,
+        "currentFrame": 1124608,
+        "currentTime": 23.429333333333332,
+        "frames": 128,
+        "fingerprint": "b155d853"
+      }
+    },
+    {
+      "id": 26,
+      "expected": 1402880,
+      "actual": 1402752,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 10960,
+        "currentFrame": 1402752,
+        "currentTime": 29.224,
+        "frames": 128,
+        "fingerprint": "a3dd6e13"
+      },
+      "current": {
+        "processSeq": 10961,
+        "currentFrame": 1402752,
+        "currentTime": 29.224,
+        "frames": 128,
+        "fingerprint": "8c4faec1"
+      },
+      "next": {
+        "processSeq": 10962,
+        "currentFrame": 1403008,
+        "currentTime": 29.229333333333333,
+        "frames": 128,
+        "fingerprint": "bcf5f726"
+      }
+    },
+    {
+      "id": 27,
+      "expected": 1402880,
+      "actual": 1403008,
+      "deltaFrames": 128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 10961,
+        "currentFrame": 1402752,
+        "currentTime": 29.224,
+        "frames": 128,
+        "fingerprint": "8c4faec1"
+      },
+      "current": {
+        "processSeq": 10962,
+        "currentFrame": 1403008,
+        "currentTime": 29.229333333333333,
+        "frames": 128,
+        "fingerprint": "bcf5f726"
+      },
+      "next": {
+        "processSeq": 10963,
+        "currentFrame": 1403136,
+        "currentTime": 29.232,
+        "frames": 128,
+        "fingerprint": "33ddccd8"
+      }
+    },
+    {
+      "id": 28,
+      "expected": 1473792,
+      "actual": 1473664,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 11514,
+        "currentFrame": 1473664,
+        "currentTime": 30.701333333333334,
+        "frames": 128,
+        "fingerprint": "bd255976"
+      },
+      "current": {
+        "processSeq": 11515,
+        "currentFrame": 1473664,
+        "currentTime": 30.701333333333334,
+        "frames": 128,
+        "fingerprint": "ee2ff387"
+      },
+      "next": {
+        "processSeq": 11516,
+        "currentFrame": 1473920,
+        "currentTime": 30.706666666666667,
+        "frames": 128,
+        "fingerprint": "7f331d34"
+      }
+    },
+    {
+      "id": 29,
+      "expected": 1473792,
+      "actual": 1473920,
+      "deltaFrames": 128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 11515,
+        "currentFrame": 1473664,
+        "currentTime": 30.701333333333334,
+        "frames": 128,
+        "fingerprint": "ee2ff387"
+      },
+      "current": {
+        "processSeq": 11516,
+        "currentFrame": 1473920,
+        "currentTime": 30.706666666666667,
+        "frames": 128,
+        "fingerprint": "7f331d34"
+      },
+      "next": {
+        "processSeq": 11517,
+        "currentFrame": 1474048,
+        "currentTime": 30.709333333333333,
+        "frames": 128,
+        "fingerprint": "9e37db18"
+      }
+    },
+    {
+      "id": 30,
+      "expected": 1512192,
+      "actual": 1512064,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 11814,
+        "currentFrame": 1512064,
+        "currentTime": 31.501333333333335,
+        "frames": 128,
+        "fingerprint": "b82ff21a"
+      },
+      "current": {
+        "processSeq": 11815,
+        "currentFrame": 1512064,
+        "currentTime": 31.501333333333335,
+        "frames": 128,
+        "fingerprint": "f3c6bf50"
+      },
+      "next": {
+        "processSeq": 11816,
+        "currentFrame": 1512320,
+        "currentTime": 31.506666666666668,
+        "frames": 128,
+        "fingerprint": "1896e6f2"
+      }
+    },
+    {
+      "id": 31,
+      "expected": 1512192,
+      "actual": 1512320,
+      "deltaFrames": 128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 11815,
+        "currentFrame": 1512064,
+        "currentTime": 31.501333333333335,
+        "frames": 128,
+        "fingerprint": "f3c6bf50"
+      },
+      "current": {
+        "processSeq": 11816,
+        "currentFrame": 1512320,
+        "currentTime": 31.506666666666668,
+        "frames": 128,
+        "fingerprint": "1896e6f2"
+      },
+      "next": {
+        "processSeq": 11817,
+        "currentFrame": 1512448,
+        "currentTime": 31.509333333333334,
+        "frames": 128,
+        "fingerprint": "7359e753"
+      }
+    },
+    {
+      "id": 32,
+      "expected": 2151552,
+      "actual": 2151424,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 16809,
+        "currentFrame": 2151424,
+        "currentTime": 44.821333333333335,
+        "frames": 128,
+        "fingerprint": "529f0215"
+      },
+      "current": {
+        "processSeq": 16810,
+        "currentFrame": 2151424,
+        "currentTime": 44.821333333333335,
+        "frames": 128,
+        "fingerprint": "c91a59ea"
+      },
+      "next": {
+        "processSeq": 16811,
+        "currentFrame": 2151680,
+        "currentTime": 44.82666666666667,
+        "frames": 128,
+        "fingerprint": "aad89d2e"
+      }
+    },
+    {
+      "id": 33,
+      "expected": 2151552,
+      "actual": 2151680,
+      "deltaFrames": 128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 16810,
+        "currentFrame": 2151424,
+        "currentTime": 44.821333333333335,
+        "frames": 128,
+        "fingerprint": "c91a59ea"
+      },
+      "current": {
+        "processSeq": 16811,
+        "currentFrame": 2151680,
+        "currentTime": 44.82666666666667,
+        "frames": 128,
+        "fingerprint": "aad89d2e"
+      },
+      "next": {
+        "processSeq": 16812,
+        "currentFrame": 2151808,
+        "currentTime": 44.82933333333333,
+        "frames": 128,
+        "fingerprint": "ed82ac72"
+      }
+    },
+    {
+      "id": 34,
+      "expected": 2332288,
+      "actual": 2332160,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 18221,
+        "currentFrame": 2332160,
+        "currentTime": 48.586666666666666,
+        "frames": 128,
+        "fingerprint": "b6d8dc10"
+      },
+      "current": {
+        "processSeq": 18222,
+        "currentFrame": 2332160,
+        "currentTime": 48.586666666666666,
+        "frames": 128,
+        "fingerprint": "b081786f"
+      },
+      "next": {
+        "processSeq": 18223,
+        "currentFrame": 2332416,
+        "currentTime": 48.592,
+        "frames": 128,
+        "fingerprint": "2b24490f"
+      }
+    },
+    {
+      "id": 35,
+      "expected": 2332288,
+      "actual": 2332416,
+      "deltaFrames": 128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 18222,
+        "currentFrame": 2332160,
+        "currentTime": 48.586666666666666,
+        "frames": 128,
+        "fingerprint": "b081786f"
+      },
+      "current": {
+        "processSeq": 18223,
+        "currentFrame": 2332416,
+        "currentTime": 48.592,
+        "frames": 128,
+        "fingerprint": "2b24490f"
+      },
+      "next": {
+        "processSeq": 18224,
+        "currentFrame": 2332544,
+        "currentTime": 48.59466666666667,
+        "frames": 128,
+        "fingerprint": "9c328e72"
+      }
+    },
+    {
+      "id": 36,
+      "expected": 2612480,
+      "actual": 2612352,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 20410,
+        "currentFrame": 2612352,
+        "currentTime": 54.424,
+        "frames": 128,
+        "fingerprint": "1e7554d7"
+      },
+      "current": {
+        "processSeq": 20411,
+        "currentFrame": 2612352,
+        "currentTime": 54.424,
+        "frames": 128,
+        "fingerprint": "6e19db20"
+      },
+      "next": {
+        "processSeq": 20412,
+        "currentFrame": 2612608,
+        "currentTime": 54.42933333333333,
+        "frames": 128,
+        "fingerprint": "8500c66e"
+      }
+    },
+    {
+      "id": 37,
+      "expected": 2612480,
+      "actual": 2612608,
+      "deltaFrames": 128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 20411,
+        "currentFrame": 2612352,
+        "currentTime": 54.424,
+        "frames": 128,
+        "fingerprint": "6e19db20"
+      },
+      "current": {
+        "processSeq": 20412,
+        "currentFrame": 2612608,
+        "currentTime": 54.42933333333333,
+        "frames": 128,
+        "fingerprint": "8500c66e"
+      },
+      "next": {
+        "processSeq": 20413,
+        "currentFrame": 2612736,
+        "currentTime": 54.432,
+        "frames": 128,
+        "fingerprint": "7b901268"
+      }
+    },
+    {
+      "id": 38,
+      "expected": 2689408,
+      "actual": 2689280,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 21011,
+        "currentFrame": 2689280,
+        "currentTime": 56.026666666666664,
+        "frames": 128,
+        "fingerprint": "6f5739cc"
+      },
+      "current": {
+        "processSeq": 21012,
+        "currentFrame": 2689280,
+        "currentTime": 56.026666666666664,
+        "frames": 128,
+        "fingerprint": "0cc0723f"
+      },
+      "next": {
+        "processSeq": 21013,
+        "currentFrame": 2689280,
+        "currentTime": 56.026666666666664,
+        "frames": 128,
+        "fingerprint": "6d144867"
+      }
+    },
+    {
+      "id": 39,
+      "expected": 2689408,
+      "actual": 2689280,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 21012,
+        "currentFrame": 2689280,
+        "currentTime": 56.026666666666664,
+        "frames": 128,
+        "fingerprint": "0cc0723f"
+      },
+      "current": {
+        "processSeq": 21013,
+        "currentFrame": 2689280,
+        "currentTime": 56.026666666666664,
+        "frames": 128,
+        "fingerprint": "6d144867"
+      },
+      "next": {
+        "processSeq": 21014,
+        "currentFrame": 2689664,
+        "currentTime": 56.034666666666666,
+        "frames": 128,
+        "fingerprint": "03aff426"
+      }
+    },
+    {
+      "id": 40,
+      "expected": 2689408,
+      "actual": 2689664,
+      "deltaFrames": 256,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 21013,
+        "currentFrame": 2689280,
+        "currentTime": 56.026666666666664,
+        "frames": 128,
+        "fingerprint": "6d144867"
+      },
+      "current": {
+        "processSeq": 21014,
+        "currentFrame": 2689664,
+        "currentTime": 56.034666666666666,
+        "frames": 128,
+        "fingerprint": "03aff426"
+      },
+      "next": {
+        "processSeq": 21015,
+        "currentFrame": 2689792,
+        "currentTime": 56.037333333333336,
+        "frames": 128,
+        "fingerprint": "cacee6a2"
+      }
+    },
+    {
+      "id": 41,
+      "expected": 2762112,
+      "actual": 2761984,
+      "deltaFrames": -128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 21579,
+        "currentFrame": 2761984,
+        "currentTime": 57.541333333333334,
+        "frames": 128,
+        "fingerprint": "dee3e595"
+      },
+      "current": {
+        "processSeq": 21580,
+        "currentFrame": 2761984,
+        "currentTime": 57.541333333333334,
+        "frames": 128,
+        "fingerprint": "91123046"
+      },
+      "next": {
+        "processSeq": 21581,
+        "currentFrame": 2762240,
+        "currentTime": 57.54666666666667,
+        "frames": 128,
+        "fingerprint": "c17b7fe8"
+      }
+    },
+    {
+      "id": 42,
+      "expected": 2762112,
+      "actual": 2762240,
+      "deltaFrames": 128,
+      "quantum": 128,
+      "previous": {
+        "processSeq": 21580,
+        "currentFrame": 2761984,
+        "currentTime": 57.541333333333334,
+        "frames": 128,
+        "fingerprint": "91123046"
+      },
+      "current": {
+        "processSeq": 21581,
+        "currentFrame": 2762240,
+        "currentTime": 57.54666666666667,
+        "frames": 128,
+        "fingerprint": "c17b7fe8"
+      },
+      "next": {
+        "processSeq": 21582,
+        "currentFrame": 2762368,
+        "currentTime": 57.54933333333334,
+        "frames": 128,
+        "fingerprint": "638a6846"
+      }
+    }
+  ],
+  "portSeqViolations": [],
+  "packetViolationKinds": [
+    "sample-gap-or-overlap"
+  ],
+  "rampActiveSamples": 2879743,
+  "rampFrameErrorMaxAbs": 0.25,
+  "rampFrameErrorRMS": 0.14101383129604445,
+  "rampErrorCountsAtLeastHalfFrame": 0,
+  "rampErrorCountsAtLeast64Frames": 0,
+  "sineCorrelation": 0.9999895737500079,
+  "sineErrorMaxAbs": 3.954375209425751e-06,
+  "sineErrorRMS": 1.6144868874756231e-06,
+  "actualWrittenFrames": 2908800,
+  "globalSpanFrames": 2908800,
+  "contextStates": [
+    {
+      "state": "running",
+      "currentTime": 0,
+      "performanceNow": 147.3999999910593
+    },
+    {
+      "state": "running",
+      "currentTime": 0,
+      "performanceNow": 149.5
+    },
+    {
+      "state": "closed",
+      "currentTime": 60.6,
+      "performanceNow": 60753.09999999404
+    }
+  ],
+  "conclusionLimit": "This is an independent native-reference experiment, not a retroactive pass of the failed App recording. Source-byte continuity in the App still requires actual-stem/phase comparison or a separately declared capture route."
+}

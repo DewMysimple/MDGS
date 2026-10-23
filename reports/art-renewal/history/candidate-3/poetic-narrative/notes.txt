@@ -1,0 +1,39 @@
+诗意短章数据 · 当代展览新题 · 稳定候选3 · 2026-10-23
+
+纯数据位于 src/data/poeticNarrative.ts，展示与逐句锁位见 src/components/NarrativeCalligraphy.tsx。45句覆盖原作40停点：第一卷15句、第二卷12句、第三卷9句、第四卷9句。第二卷五个10—12秒长镜分别安排两句，读窗之间仍留1.2秒退墨/留白；没有把所有镜头机械切成同一长度。全部正文为12—21个汉字（字符总数另见报告），不冒充古诗。
+
+候选3仅采用4处正文与1处标题修订：开卷明确武则天；第三卷首句明确吉祥心意；第四卷第2、3句明确贵妃杨玉环与沉香亭文学典故，第5题名为“马嵬花落”。45句所有起止时间、第二卷全文、其余正文和25段原作均不变；candidate-3-text-diff.json逐项记录差异。此前候选2的33份报告、driver、截图与诗意数据快照已归档至../history/candidate-2/，poetic-archive-manifest.json保留逐文件SHA-256；该归档不是完整产品源码快照。
+
+buildPoeticTrack(chapterId, stops, durationSeconds) 返回 NarrativeCue[]。start/end均为0—1源进度。每个源停点的首句从该停点直接开始，暂停点选也能读；尾部1.2秒不再激活新字。四卷可见时长分别4.4—6.8秒、3.883—6.867秒、3.7—6.8秒、4.7—6.3秒。合计54秒处于文字窗口外；普通动效退墨0.65秒后，每次仍约有0.55秒完全纯画，reduced-motion退墨更短。若输入出现不足4.7秒的短镜，按同一语境并入邻景，避免闪字；第四卷第五景为语境边界，不跨界拼合。
+
+第四卷0.4252362423568649即马嵬/落幕起，依次为离散、渐冷、回望、花前沉默、文脉余响；前四景文字在转折前已淡出，没有把军马或烟火旧城写成庆典。画面依据为原生2.0四卷40节点的实际逐帧游观。各句对应原节点名、观察对象、文化边界在源码looking和poeticSourceNotes中保留；原始来源链接仅作参读，未引入馆藏图片。
+
+12—26字按汉字计数；validation.json也记录包含标点的字符数、每秒汉字、原节点名、秒数、源scene.json SHA-256。cue-sheet.csv供直接审阅。原25段录文与HEAD已验收转录逐字相同；验证未声称重新取得或核验本机缺失的原始DOCX字节。
+
+复现：node reports/art-renewal/poetic-narrative/validate.cjs
+依赖项目已安装的typescript；无需浏览器或网络。脚本检验原文保留、源帧时长、40节点覆盖、字数、3.5—8秒读窗、0.5—2秒纯画、手动停点可读、马嵬转折及短镜合并，并输出validation.json / cue-sheet.csv。
+
+validation.json证明纯数据与时窗；生产浏览器排版、模式与实际演播分别由下述独立报告证明。原画与源时钟不因本模块改变。
+
+生产浏览器验证（browser-validation.json）：稳定候选3为主任务统一提供的tmp/art-candidate-3-dist，独立只读预览5195，不自行重建、不覆盖主任务dist，也不使用5188开发HMR缓存。当前实测bundle为index-C6ZfivTN.js / index-Bc7VfaY-.css；HTTP响应SHA-256、driver SHA、源码前后hash、四份scene.json hash与浏览器版本在报告中。31项检查通过，sourceStable=true。未部署，不表示其他浏览器/操作系统已经验收。
+
+45句 × 1280×720 / 1920×1080 / 2560×1440 × 默认12px/最大24px留白，共270组、8058字格。正文实际18px或24px，标题/正文/序号/印章均逐字用DOM Range测量全字格，全部落于纸底及画幅内，汉字/数字与印章0碰撞，正文与标题0重叠。23组的句末全角“。”字格触及印章边框格，原始copySealCellContacts完整保留；Range的全角格不是句号墨迹。已看实际原尺寸PNG（含第四卷第5景），句号与章印可见分离；未靠缩字或删标点通过。该测试测字格几何，不能替代所有浏览器字体的像素校样。
+
+相较候选2，句号字格接触仅由第四卷第2景1280移至第3景2560；新案例用verify-punctuation-contact.cjs在同源进度、同2560×1440/12px设置另行复现。punctuation-contact-validation.json记录同一HTTP包、字格/朱印矩形与截图SHA；punctuation-c4-s3-2560.png为直接原尺寸截图。实际句号墨迹在朱印右上方，清楚分离；未改变任何碰撞阈值。该补充命令同样读取MDGS_POETRY_URL及浏览器环境变量，先运行verify-browser.cjs后再运行。
+
+三种模式均通过真实设置控件切换，并在progress=.03处完整重载，模式与非零进度均恢复；静观模式0题跋article。40原生停点精确点击均可立即读到对应短章，特别回归修复第一卷第14景/第四卷第3景的浮点边界（首句直接保留规范stop.progress，未放宽全局activeNarrativeCue语义）。四卷原作叙事DOM分片重新拼接与文化“原作全文”各25段逐字比对一致。第四卷马嵬后非零重载，仍显示离散段落。0页面/控制台/Shader/纹理错误。
+
+十一张1920直接截图保留武则天、传说边界、花舟桥、吉祥纹样、花入锦面及第四卷杨玉环/沉香亭/诗笺/马嵬/烟尘/文明回响；未经修图。截图名单与SHA-256在报告中。中间启卷未接线/非零恢复失败诊断留于tmp，不作为最终生产通过证据。
+
+playback-validation.json使用同一候选3，普通动效1920×1080连续实播四卷，不seek、不注入时钟。实际100.871/71.869/68.931/59.987秒到达卷末，45句全部实际出现。各卷>=.9不透明稳定读窗最短3.419/3.465/2.909/4.496秒，同句x/y/宽高最大变化均0px。23项检查通过，sourceStable=true。首次自动演播揭出的留白180ms防抖starvation由Renderer区分playbackActive解决，仍维持既有24分桶、小缩图和单个异步读回；NarrativeCalligraphy在每句及其退墨/留白内锁位，下一句才选择新样本。
+
+placement-lock-validation.json也绑定同包，12项检查通过：.300到.324624同桶邻cue正确显示，不额外要求GPU读回；大跳至.780、快速.12/.82/.21/.46反向后显示正确句；1280/2560/1920 resize按真实CSS采样尺寸重新就绪；读到半句暂停仍为同一坐标。样本统一使用既有.05近似范围，大幅seek等待新样本；手动起点跟随自动播放，暂停本身不触发换位。0页面错误，sourceStable=true。原作模式仍沿用原始容量与定位逻辑。
+
+浏览器复现（已安装项目依赖；另行提供MDGS_PLAYWRIGHT_MODULE与MDGS_TEST_BROWSER环境变量）：
+npx tsc -b
+npx vite build --outDir tmp/poetry-qa-dist
+npx vite preview --outDir tmp/poetry-qa-dist --host 127.0.0.1 --port 5193 --strictPort
+另一个终端：node reports/art-renewal/poetic-narrative/verify-browser.cjs
+可用MDGS_POETRY_URL更改预览地址，MDGS_POETRY_REPORT_DIR更改报告目录；默认reduced-motion:reduce，MDGS_POETRY_MOTION=no-preference可复测普通动效。页面等待真实journey ready、材质下载、当前游观分桶的留白取样和文字淡入，再测量；不注入组件状态或改源时间线。
+
+同一候选3还执行：node reports/art-renewal/poetic-narrative/verify-playback.cjs；node reports/art-renewal/poetic-narrative/verify-placement-lock.cjs。需设置MDGS_POETRY_URL=http://127.0.0.1:5195/，MDGS_POETRY_BUILD_DIR=tmp/art-candidate-3-dist，并以该目录启动生产preview。全长验证约5分钟，report逐卷保存恢复点；未完成的恢复点不会标pass。每份最终JSON记录其driver SHA及实际HTTP bundle SHA。艺术判断与采纳边界集中在../artistic-review/review.txt。

@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "verifiedAt": "2026-10-22T20:11:47.014Z",
+  "scope": "Actual Windows Python pipe stdin decoding of a Node UTF-8 JSON path under a non-ASCII workspace. This is a path transport test, not artwork pixel fidelity.",
+  "relativeFile": "public/assets/new-scrolls/chapter-1/textures/3e7036a34bd54ab5.webp",
+  "workingDirectoryContainsNonASCII": true,
+  "sha256": "cfe1579114bf365f8b6f525b7c97b99749e8d1e504d975b3477658529086f078",
+  "nodeExists": true,
+  "before": {
+    "stdinEncoding": "gbk",
+    "exists": false,
+    "decodedSize": null,
+    "unicodeRoundtrip": false
+  },
+  "after": {
+    "stdinEncoding": "utf-8",
+    "exists": true,
+    "decodedSize": [
+      1442,
+      1091
+    ],
+    "unicodeRoundtrip": true
+  },
+  "expectedFailure": "Default Python stdin GBK misdecodes UTF-8 JSON; backslash repr is unrelated."
+}

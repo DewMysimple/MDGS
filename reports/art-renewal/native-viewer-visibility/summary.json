@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "scope": "Three genuine hidden/visible cycles, not a replacement for the preserved failed six-suite C6 settings run or the independent synthetic visibility probes.",
+  "browser": "156.0.8078.47",
+  "actualGpu": {
+    "vendor": "Google Inc. (NVIDIA)",
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Ti (0x00002C05) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "sourceInputs": 829,
+  "packageFiles": 744,
+  "unchanged": true,
+  "buildBinding": {
+    "path": "reports/art-renewal/art-candidate-6-build.json",
+    "sha256": "516efd7a1d451b7e62f79e90564b22f7a706b9b14bde6cb359c8656021fbf359"
+  },
+  "driverSha256": "b8d29450604331d2067ecb9af2ca33fccd9fdb74543c05087ea5ae26e7405461",
+  "cycles": [
+    {
+      "index": 1,
+      "passed": true,
+      "requestedHiddenMilliseconds": 400,
+      "measuredHiddenPollMilliseconds": 403.58540000000175,
+      "session": "0.41761367426347995",
+      "renderCount": "257",
+      "rafTicks": "344",
+      "hiddenSamples": 8,
+      "trustedHidden": true,
+      "trustedVisible": true,
+      "diagnosticChangedWhileHidden": false,
+      "inputObservations": {
+        "properties": [
+          "0.418"
+        ],
+        "attributes": [
+          "0.41761367426347995"
+        ],
+        "steps": [
+          "0.001"
+        ]
+      },
+      "restoreSession": "0.41761367426347995",
+      "restorePlaying": "false"
+    },
+    {
+      "index": 2,
+      "passed": true,
+      "requestedHiddenMilliseconds": 500,
+      "measuredHiddenPollMilliseconds": 503.0714000000007,
+      "session": "0.41744024458027296",
+      "renderCount": "511",
+      "rafTicks": "611",
+      "hiddenSamples": 10,
+      "trustedHidden": true,
+      "trustedVisible": true,
+      "diagnosticChangedWhileHidden": false,
+      "inputObservations": {
+        "properties": [
+          "0.417"
+        ],
+        "attributes": [
+          "0.41744024458027296"
+        ],
+        "steps": [
+          "0.001"
+        ]
+      },
+      "restoreSession": "0.41744024458027296",
+      "restorePlaying": "false"
+    },
+    {
+      "index": 3,
+      "passed": true,
+      "requestedHiddenMilliseconds": 600,
+      "measuredHiddenPollMilliseconds": 609.9902999999995,
+      "session": "0.4175536409114687",
+      "renderCount": "764",
+      "rafTicks": "877",
+      "hiddenSamples": 11,
+      "trustedHidden": true,
+      "trustedVisible": true,
+      "diagnosticChangedWhileHidden": false,
+      "inputObservations": {
+        "properties": [
+          "0.418"
+        ],
+        "attributes": [
+          "0.4175536409114687"
+        ],
+        "steps": [
+          "0.001"
+        ]
+      },
+      "restoreSession": "0.4175536409114687",
+      "restorePlaying": "false"
+    }
+  ]
+}

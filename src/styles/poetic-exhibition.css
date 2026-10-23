@@ -1,0 +1,196 @@
+/* The reading room and foyer share one paper, ink and cinnabar vocabulary.
+   These rules style exhibition chrome; they do not alter authored pixels. */
+.peony-experience .app-shell.poetic-viewer {
+  --header-height:88px; --controls-height:102px; --footer-height:20px;
+  --brocade-height:10px; --roller-overhang:11px; --roller-width:17px; --scroll-inset:34px;
+  --scroll-height:calc(100dvh - var(--header-height) - var(--controls-height) - var(--footer-height));
+  min-width:1100px; min-height:650px; height:100dvh; color:#435442;
+  grid-template-rows:var(--header-height) minmax(0,1fr) var(--footer-height);
+  background-color:#f1ecdf;
+  background-image:radial-gradient(ellipse at 45% 25%,#faf7ee9c,transparent 75%),url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath filter='url(%23p)' opacity='.05' d='M0 0h180v180H0z'/%3E%3C/svg%3E");
+}
+.peony-experience .poetic-viewer .site-header {
+  width:91%; padding:0; display:grid; grid-template-columns:240px minmax(0,1fr) 65px 65px;
+  gap:12px; border-bottom:1px solid #a69a7840; margin-bottom:16px; height:calc(100% - 16px);
+}
+.poetic-viewer .brand { gap:14px; }
+.poetic-viewer .viewer-work-title.visually-hidden { position:absolute; }
+.poetic-viewer .painting:focus-visible,.poetic-viewer .scene-viewport:focus-visible { outline:1px solid #9e6e4c99; outline-offset:-3px; }
+.poetic-viewer .brand-seal { width:34px; height:43px; display:grid; place-content:center; padding:0; font-size:16px; line-height:1.2; background:#913d34; box-shadow:none; border-color:#913d34; outline-color:#e8c5aa9c; outline-offset:-3px; }
+.app-shell.poetic-viewer .brand-wordmark { color:#394b3e; font-size:23px; font-weight:400; letter-spacing:4px; }
+.app-shell.poetic-viewer .brand-wordmark>span { font-size:10px; line-height:1.7; letter-spacing:1.7px; color:#7e816a; margin-top:3px; }
+.poetic-viewer .chapter-nav { align-self:stretch; justify-self:center; gap:14px; }
+.app-shell.poetic-viewer .chapter-link { padding:6px 13px; gap:10px; color:#7c806b; font-size:15px; letter-spacing:1px; }
+.poetic-viewer .chapter-link+.chapter-link::before { display:none; }
+.poetic-viewer .chapter-link.is-current { color:#813e34; }
+.poetic-viewer .chapter-link.is-current::after { bottom:12px; left:13px; right:13px; width:auto; height:1px; border-radius:0; background:#a65d4673; }
+.poetic-viewer .chapter-numeral { font-size:23px; font-weight:400; color:#8d8162; }
+.poetic-viewer .chapter-link.is-current .chapter-numeral { color:#913d34; }
+.poetic-viewer .settings-button,.poetic-viewer .fullscreen-button { min-height:36px; padding:5px; font-size:12px; gap:7px; color:#6b735d; }
+.poetic-viewer .fullscreen-button>span { font-size:12px; }
+.poetic-viewer .settings-button:hover,.poetic-viewer .fullscreen-button:hover { color:#913d34; }
+.app-shell.poetic-viewer .exhibition { grid-template-rows:minmax(0,1fr) var(--controls-height); min-height:0; }
+.app-shell.poetic-viewer .scroll-exhibition { grid-row:1; }
+.poetic-viewer .scroll-mount { box-shadow:0 8px 22px #4a4b3220,0 0 0 1px #ac9b7330; }
+.poetic-viewer .brocade-border { background-color:#87998d; border-color:#bcad85; box-shadow:inset 0 1px #f2e8c84d,inset 0 -1px #566c5840; }
+.poetic-viewer .brocade-border__pattern { opacity:.5; }
+.poetic-viewer .scroll-roller { filter:drop-shadow(2px 3px 3px #3c342629); }
+.poetic-viewer .scroll-roller--right { filter:drop-shadow(-2px 3px 3px #3c342629); }
+.poetic-viewer .scroll-roller__paper { inset:20px 0; border-radius:45% / 1.3%; background-image:linear-gradient(90deg,#b6a0755c,#f8efda 32%,#e8dac19c 72%,#a48d635c); border:1px solid #b9a88444; box-shadow:inset 1px 0 #e4d7b9,1px 0 2px #352d1c20; }
+.poetic-viewer .scroll-roller__finial { left:2px; right:2px; height:13px; border-color:#58604a; background:linear-gradient(90deg,#374436,#6b7359 32%,#3c4839 70%,#26382d); box-shadow:inset 0 1px #c8c3a575; }
+.poetic-viewer .scroll-roller__neck { left:4px; right:4px; height:10px; background:linear-gradient(90deg,#6c6149,#aa9671 42%,#77684e); border:0; }
+.poetic-viewer .scroll-roller__neck--top { top:11px; }.poetic-viewer .scroll-roller__neck--bottom { bottom:11px; }
+.poetic-viewer .scroll-roller__band { left:-1px; right:-1px; height:7px; border-width:1px; border-color:#a89363; background:linear-gradient(90deg,#89754b,#c5b07d 35%,#a08a5a 75%,#7c6844); box-shadow:0 1px #f2e3be70; }
+.poetic-viewer .scroll-roller__band--top { top:18px; }.poetic-viewer .scroll-roller__band--bottom { bottom:18px; }
+.app-shell.poetic-viewer .scroll-controls {
+  grid-row:2; z-index:4; width:91%; max-width:none; padding:13px 0 0;
+  grid-template-columns:minmax(240px,auto) minmax(0,1fr) 98px; grid-template-rows:29px 45px;
+  gap:0 25px; align-content:center;
+}
+.poetic-viewer .current-scene { gap:14px; }
+.app-shell.poetic-viewer .scene-name { font-size:14px; letter-spacing:1.4px; color:#53604b; max-width:260px; }
+.app-shell.poetic-viewer .scene-counter { font-size:13px; letter-spacing:1px; color:#995744; }
+.poetic-viewer .scene-counter>i { color:#9b927a; font-size:10px; }
+.poetic-viewer .progress-caption { gap:12px; font-size:11px; color:#8d8b72; justify-self:end; }
+.poetic-viewer .progress-caption>b { color:#667153; font-size:17px; }
+.poetic-viewer .progress-caption small { color:#939079; font-size:10px; }
+.poetic-viewer .timeline-rule { background:#a59c784d; }
+.poetic-viewer .timeline-rule>span { background:#9c5b479c; }
+.poetic-viewer .timeline-stop>i { width:4px; height:4px; background:#b6a57b; border-color:#b6a57b; }
+.poetic-viewer .timeline-stop.is-passed>i { background:#9a5947; border-color:#9a5947; }
+.poetic-viewer .timeline-cursor { width:10px; height:10px; top:8px; border:2px solid #f1ecdf; border-radius:0; transform:translateX(-50%) rotate(45deg); background:#94503f; box-shadow:0 0 0 1px #a16a4c7d; }
+.poetic-viewer .timeline-stop::after { content:attr(title); position:absolute; bottom:28px; left:50%; transform:translate(-50%,4px); white-space:nowrap; pointer-events:none; opacity:0; font-size:12px; letter-spacing:1px; padding:8px 12px; background:#f4eedfeb; border-block:1px solid #ae997456; color:#76694b; transition:opacity .2s,transform .2s; }
+.poetic-viewer .timeline-stop:hover::after,.poetic-viewer .timeline-stop:focus-visible::after { opacity:1; transform:translate(-50%,0); }
+.app-shell.poetic-viewer .control-bottomline { height:45px; gap:24px; grid-template-columns:1fr auto 1fr; }
+.app-shell.poetic-viewer .interaction-hint { font-size:12px; color:#626a54; letter-spacing:1px; opacity:1; }
+.poetic-viewer .interaction-hint>i { background:#9d98783d; }
+.poetic-viewer .playback-controls { gap:22px; }
+.app-shell.poetic-viewer .step-button { font-size:12px; color:#81836b; letter-spacing:1px; }
+.app-shell.poetic-viewer .play-button { font-size:13px; color:#f5eedb; background:#53664e; border:1px solid #53664e; box-shadow:inset 0 0 0 2px #53664e,inset 0 0 0 3px #ded5b54d; height:36px; min-width:132px; letter-spacing:2px; }
+.poetic-viewer .play-button:not(:disabled):hover { background:#3b5743; color:#f6efdd; border-color:#3b5743; }
+.poetic-viewer .play-button.is-playing { color:#f5eedb; background:#7e5040; border-color:#7e5040; box-shadow:inset 0 0 0 2px #7e5040,inset 0 0 0 3px #e6cdb84d; }
+.poetic-viewer .secondary-controls { gap:16px; z-index:8; }
+.app-shell.poetic-viewer .utility-button { font-size:12px; letter-spacing:1px; min-height:36px; color:#6e795f; }
+.poetic-viewer .secondary-divider { height:10px; background:#aaa08066; }
+.poetic-viewer .utility-button:hover { color:#913d34; }
+.poetic-viewer .viewed-label { font-size:11px; }
+.peony-experience .app-shell.poetic-viewer .end-colophon {
+  width:var(--colophon-width,380px); max-width:calc(100% - 48px); max-height:calc(100% - 48px);
+  right:3%; bottom:28px; top:auto; padding:26px 25px 22px;
+  background:var(--text-plate-silk); border:0; border-radius:var(--text-plate-radius,0px);
+  box-shadow:none; text-shadow:none; color:#4e634b;
+}
+.peony-experience .app-shell.poetic-viewer .end-colophon.colophon-left { right:auto; left:3%; }
+.peony-experience .app-shell.poetic-viewer .end-colophon.colophon-in-margin { right:16px; bottom:5%; padding:24px 20px 20px; background:transparent; }
+.poetic-viewer .end-colophon .eyebrow { font-size:11px; line-height:1.8; letter-spacing:2px; color:#9a8462; padding-right:42px; }
+.app-shell.poetic-viewer .end-colophon h2 { font-size:34px; color:#4c634b; letter-spacing:3px; margin:18px 0 12px; }
+.app-shell.poetic-viewer .end-theme-subtitle { font-size:15px; color:#947555; letter-spacing:1px; line-height:1.9; margin-bottom:17px; }
+.app-shell.poetic-viewer .end-colophon-text { font-size:16px; line-height:2; letter-spacing:.7px; color:#5f6a50; }
+.app-shell.poetic-viewer .end-seal { font-size:18px; top:18px; right:19px; padding:5px; border-width:1px; box-shadow:none; }
+.poetic-viewer .colophon-keepsake { display:flex; align-items:center; gap:12px; width:100%; margin-top:24px; border-block:1px solid #ab99764d; padding:12px 0; color:#92523d; font-size:14px; letter-spacing:2px; pointer-events:auto; cursor:pointer; }
+.poetic-viewer .colophon-keepsake>svg:last-child { margin-left:auto; }
+.poetic-viewer .colophon-keepsake:hover { color:#5c694c; }
+.app-shell.poetic-viewer .end-actions { margin-top:17px; padding-top:0; border:0; gap:14px; }
+.app-shell.poetic-viewer .end-actions .text-button { font-size:12px; letter-spacing:1px; line-height:1.9; color:#897459; }
+.app-shell.poetic-viewer .end-actions .text-button:hover { color:#934a39; }
+.poetic-viewer .culture-panel { width:min(620px,46vw); background:#f3edde; border-color:#bcae885e; }
+.poetic-viewer .culture-topline { background:#f3eddeee; padding:24px 35px; }
+.poetic-viewer .culture-topline>span { font-size:13px; color:#72775f; }
+.poetic-viewer .culture-content { padding:33px 45px 48px; }
+.poetic-viewer .culture-content>.eyebrow { font-size:12px; color:#8d805f; }
+.poetic-viewer .culture-content>h2 { color:#4e614d; font-size:36px; font-weight:400; }
+.poetic-viewer .culture-subtitle { color:#8b7458; font-size:15px; }
+.poetic-viewer .culture-rule>span { background:#f3edde; font-size:11px; color:#8b8469; }
+.poetic-viewer .culture-lead { color:#77533e; font-size:18px; }
+.poetic-viewer .culture-prose>p { color:#5f6855; font-size:16px; line-height:2.2; }
+.poetic-viewer .culture-source>span { color:#857458; font-size:12px; }
+.poetic-viewer .culture-source>p { color:#81816b; font-size:12px; }
+.poetic-viewer .culture-content>blockquote { font-size:19px; color:#8f5a42; }
+.poetic-viewer .preface-note>summary { font-size:13px; }.poetic-viewer .preface-note>p { font-size:15px; color:#74765f; }
+.peony-experience .viewer-settings { border-radius:0; border:1px solid #b6a57a88; color:#50604c; background:#f3edde; box-shadow:0 24px 90px #26362a40; }
+.peony-experience .viewer-settings::backdrop { background:#263b2e70; backdrop-filter:blur(6px); }
+.peony-experience .settings-heading h2 { font-size:27px; color:#50644d; }
+.peony-experience .settings-done { border-radius:0; background:#52664e; border-color:#52664e; color:#f6efdb; }
+.peony-experience .settings-done:not(:disabled):hover { background:#3e5b43; color:#f6efdb; }
+.peony-experience .settings-heading,.peony-experience .settings-footer { padding:20px 28px; }
+.peony-experience .settings-body { padding-inline:28px; }
+.peony-experience .settings-body h3 { color:#6b6f53; }
+.peony-experience .settings-intro,.peony-experience .settings-help { color:#626a54; }
+.peony-experience .settings-preview { border-radius:0; background:linear-gradient(90deg,#e6e0cf70,#f4eddfb0),url('/ui/peony-atlas/landscape.webp') center 70%/cover; }
+.settings-reading-modes { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:15px 0 25px; }
+.settings-reading-modes>label { display:flex; align-items:flex-start; gap:8px; padding:15px 10px; cursor:pointer; border:1px solid #b4a38355; color:#6d745c; }
+.settings-reading-modes>label.is-selected { border-color:#9b6e5288; background:#bb9e6621; color:#8c4837; }
+.settings-reading-modes input { flex:none; width:13px; height:13px; margin-top:5px; cursor:pointer; }
+.settings-reading-modes strong { display:block; font-size:15px; font-weight:400; letter-spacing:1px; line-height:1.8; }
+.settings-reading-modes small { display:block; font-size:12px; color:#72735b; line-height:1.8; margin-top:5px; }
+.settings-reading-modes input:focus-visible { outline:1px solid #97503e; outline-offset:5px; }
+.peony-experience .settings-chapters fieldset { border-radius:0; }
+.peony-experience .settings-chapters fieldset.is-current { border-color:#9e7358; }
+.peony-experience .settings-chapters legend { border-radius:0; }
+@media(max-width:1450px) {
+  .peony-experience .poetic-viewer .site-header{grid-template-columns:210px minmax(0,1fr) 55px 55px;gap:8px}
+  .poetic-viewer .chapter-nav{gap:3px}.app-shell.poetic-viewer .chapter-link{padding-inline:10px;font-size:13px;gap:7px}
+  .app-shell.poetic-viewer .brand-wordmark{font-size:22px}.app-shell.poetic-viewer .scroll-controls{grid-template-columns:220px minmax(0,1fr) 90px;gap:0 20px}
+  .poetic-viewer .secondary-controls{gap:10px}.poetic-viewer .playback-controls{gap:15px}.app-shell.poetic-viewer .scene-name{font-size:13px;max-width:210px}
+}
+@media(max-height:800px) {
+  .peony-experience .app-shell.poetic-viewer{--header-height:76px;--controls-height:94px;--footer-height:15px;--brocade-height:8px;--roller-width:15px}
+  .peony-experience .poetic-viewer .site-header{margin-bottom:13px;height:calc(100% - 13px)}
+  .app-shell.poetic-viewer .scroll-controls{padding-top:8px;grid-template-rows:28px 42px}.app-shell.poetic-viewer .control-bottomline{height:42px}
+}
+
+/* Keep more of the viewport for the complete, uncropped original painting. */
+.peony-experience .app-shell.poetic-viewer {
+  --header-height:54px;
+  --controls-height:56px;
+  --footer-height:4px;
+  --brocade-height:6px;
+  --scroll-inset:18px;
+}
+.peony-experience .poetic-viewer .site-header {
+  width:calc(100% - 48px);
+  height:100%; margin-bottom:0;
+  grid-template-columns:210px minmax(0,1fr) 62px 62px;
+  gap:10px;
+}
+.peony-experience .poetic-viewer .brand-wordmark { line-height:1.1; }
+.peony-experience .poetic-viewer .brand-wordmark>span { line-height:1.3; margin-top:1px; }
+.peony-experience .poetic-viewer .chapter-link.is-current::after { bottom:2px; }
+.peony-experience .poetic-viewer .scroll-controls {
+  width:calc(100% - 48px); padding:4px 0;
+  grid-template-columns:minmax(180px,220px) minmax(160px,1fr) 80px max-content max-content;
+  grid-template-rows:44px; gap:0 16px;
+  align-content:center; align-items:center;
+}
+.peony-experience .poetic-viewer .current-scene { grid-column:1; grid-row:1; }
+.peony-experience .poetic-viewer .chapter-timeline { grid-column:2; grid-row:1; }
+.peony-experience .poetic-viewer .progress-caption { grid-column:3; grid-row:1; }
+.peony-experience .poetic-viewer .control-bottomline { display:contents; }
+.peony-experience .poetic-viewer .interaction-hint { display:none; }
+.peony-experience .poetic-viewer .playback-controls { grid-column:4; grid-row:1; }
+.peony-experience .poetic-viewer .secondary-controls { grid-column:5; grid-row:1; }
+
+@media(max-width:1499px) {
+  .peony-experience .app-shell.poetic-viewer { --controls-height:68px; }
+  .peony-experience .poetic-viewer .site-header { grid-template-columns:210px minmax(0,1fr) 55px 55px; gap:8px; }
+  .peony-experience .poetic-viewer .scroll-controls {
+    grid-template-columns:220px minmax(0,1fr) 90px;
+    grid-template-rows:27px 36px; gap:0 20px; padding:0;
+  }
+  .peony-experience .poetic-viewer .control-bottomline {
+    display:grid; grid-column:1 / -1; grid-row:2; height:36px;
+    grid-template-columns:minmax(0,.7fr) auto minmax(0,1.3fr); gap:12px;
+  }
+  .peony-experience .poetic-viewer .interaction-hint { display:flex; }
+  .peony-experience .poetic-viewer .playback-controls,
+  .peony-experience .poetic-viewer .secondary-controls { grid-column:auto; grid-row:auto; }
+}
+
+.peony-experience .poetic-viewer .chapter-timeline { touch-action:none; user-select:none; }
+.peony-experience .poetic-viewer .chapter-timeline.is-dragging,
+.peony-experience .poetic-viewer .chapter-timeline.is-dragging > input { cursor:grabbing; }
+
+/* Fit the four-character colophon title inside a narrow source-paper margin. */
+.peony-experience .app-shell.poetic-viewer .end-colophon.colophon-in-margin h2 {
+  font-size:clamp(28px,calc((var(--colophon-width,380px) - 48px) / 4 - 3px),34px);
+}

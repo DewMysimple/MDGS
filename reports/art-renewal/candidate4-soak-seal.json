@@ -1,0 +1,128 @@
+{
+  "status": "passed-local-soak-scope-only",
+  "sealedAt": "2026-10-23T00:43:59.951Z",
+  "candidateOverallStatus": "not-accepted-known-independent-browser-Back-preview-failure",
+  "report": "reports/art-renewal/soak/2026-10-23T00-30-06-094Z/validation.json",
+  "reportSha256": "6d609fb88e4fea2698eb488a4c9c2851e33c81a14940a81d64eeded5afb8c78b",
+  "reportBytes": 6338542,
+  "freeze": "reports/art-renewal/art-candidate-4-build.json",
+  "freezeSha256": "ebbda506b0e467b1a58bf3dc0f1b9d35c1343dbe9d860cfc4e652f2c8a555ef7",
+  "buildDirectory": "tmp/art-candidate-4-dist",
+  "bundle": {
+    "index.html": "9ac347576eee8a92ce2fca674bf07bc489a98d8adf5d6557ac71487de64aafb2",
+    "assets/flowerLetter-S1uMbzF_.js": "b9ada5f818e08b184fcd4fce739067dc54e6679bd157fc7b2830a58fac739e5a",
+    "assets/index-C5txKLE_.css": "db346cac5c7e39fe33b73b46b0186cf37cc411ed9643163849497c5f82cc11ae",
+    "assets/index-DBUrlwwr.js": "070201f3f072c86b3e7fda4a2e7483d7029850c618adce2aa23e4d9d4487f8b8",
+    "assets/three-BetNTb4e.js": "68f6f4af9b65531830834e41fcad5f941cfcd557e6996a7f32a8c45e83290d10"
+  },
+  "sourceProductMatched": 825,
+  "configChecks": [
+    {
+      "file": "vite.config.ts",
+      "sha256": "81056aa3e5ea7ea17e9be3d88caaf43f08fd887df1769ab1089bc985d54a4215"
+    },
+    {
+      "file": "package.json",
+      "sha256": "9a9a97b97678b1947fe80fd13b01d59c061d416a975fc7354a124a09fa09073f"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "25ff8e036d98dddd6fab6656e1b8a69c56dd924edc7b39d2f80f0da4a8b0ec17"
+    },
+    {
+      "file": "tsconfig.json",
+      "sha256": "23287477601cbe9d9a3cc6110cb2612a21dc2ae0396759d95f701a2f3bb1fa6d"
+    }
+  ],
+  "lifecycleCoreCount": 41,
+  "activeCoreAssetCount": 333,
+  "checks": 21,
+  "completedVisits": 8,
+  "wallClockSeconds": 787.598,
+  "samples": 820,
+  "sourceClockMaxAbsoluteErrorMs": 41.39999999701831,
+  "observedDuckDb": [
+    -5.934307845363257,
+    -5.934307845363257,
+    -5.941379496914653,
+    -5.934307845363257,
+    -5.941379496914653,
+    -5.934307845363257,
+    -5.934307845363257,
+    -5.934307845363257,
+    -5.934307845363257,
+    -5.934307845363257
+  ],
+  "duckRangeDb": {
+    "min": -5.941379496914653,
+    "max": -5.934307845363257
+  },
+  "audio": {
+    "contextCount": 1,
+    "allContextsClosed": true,
+    "loopCount": 3,
+    "allLoopsNativeStopAndDisconnect": true
+  },
+  "URLs": {
+    "snapshotsCreated": 26,
+    "snapshotsRevoked": 22,
+    "retainedCachePerChapter": [
+      2,
+      3,
+      4,
+      1
+    ],
+    "lettersCreated": 2,
+    "lettersRevoked": 2
+  },
+  "errors": {
+    "page": [],
+    "console": [],
+    "resource": [],
+    "url": []
+  },
+  "screenshots": [
+    {
+      "path": "tmp/art-renewal-soak/2026-10-23T00-30-06-094Z/r1-c1-natural-end.png",
+      "sha256": "e50ef1d465cb05bc319154ea0cc8de0561c48cd52ca18b29824532fa171a67a4",
+      "bytes": 1583226
+    },
+    {
+      "path": "tmp/art-renewal-soak/2026-10-23T00-30-06-094Z/r1-c2-natural-end.png",
+      "sha256": "fe1b34ad38ed9f34e7df877ed06b0438a00d2789fa7e80f2c8dd84856b30d873",
+      "bytes": 2410934
+    },
+    {
+      "path": "tmp/art-renewal-soak/2026-10-23T00-30-06-094Z/r1-c3-natural-end.png",
+      "sha256": "24e6abbbcdb2e3b70636314bdf4edc6f6736d0bb574d4a9e7cf74117d76c3b06",
+      "bytes": 2161186
+    },
+    {
+      "path": "tmp/art-renewal-soak/2026-10-23T00-30-06-094Z/r1-c4-natural-end.png",
+      "sha256": "ccadf1845c01e615bc4c3fd0a942fd4ddd7dfeb0021df703869b9b14aa549f9c",
+      "bytes": 1651838
+    },
+    {
+      "path": "tmp/art-renewal-soak/2026-10-23T00-30-06-094Z/r2-c1-natural-end.png",
+      "sha256": "3a6049b763a4ae362fda79537285013c2d9b84258347b82a87d83bc20473702b",
+      "bytes": 1583546
+    },
+    {
+      "path": "tmp/art-renewal-soak/2026-10-23T00-30-06-094Z/r2-c2-natural-end.png",
+      "sha256": "6070240f6cebd6ea8e5e7487a4790f86402553ea2024fc1b4cb42e0ea527652c",
+      "bytes": 2411250
+    },
+    {
+      "path": "tmp/art-renewal-soak/2026-10-23T00-30-06-094Z/r2-c3-natural-end.png",
+      "sha256": "95f9adc47d63e236e7719cdd069f85c5b19a85153836698bd75a487a848a5ccc",
+      "bytes": 2161217
+    },
+    {
+      "path": "tmp/art-renewal-soak/2026-10-23T00-30-06-094Z/r2-c4-natural-end.png",
+      "sha256": "d7ce378bc9ac4611c4f83c154fbc19a62f462d80c93b49f8f55fcbd6aea207a0",
+      "bytes": 1651767
+    }
+  ],
+  "followup": "Per root instruction no C4 six-suite regression is started. Source may be released after this seal; next complete six-suite acceptance belongs to C5 with a genuine same-bundle soak gate.",
+  "limits": "Functional tests were run concurrently with other authorized C4 checks. Wall/native observations are not an isolated FPS/performance benchmark. Independent browser-Back preview failure is not overwritten by this local pass."
+}

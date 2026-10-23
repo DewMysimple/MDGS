@@ -1,0 +1,102 @@
+{
+  "status": "passed",
+  "scope": "1920x1080 real Chrome screenshots sampled inside actual projected print / sourceViewport; rounded crop and common256px Lanczos comparison. This detects broad depth artifacts and colour/composition jumps, not pixel-identical source rendering. No artwork pixels were edited.",
+  "checks": [
+    {
+      "chapter": 1,
+      "comparison": "physical-versus-current-cover",
+      "meanAbsoluteRGBDifference": 1.4696994357638888,
+      "p95AbsoluteRGBDifference": 6.666666666666667,
+      "maxAbsoluteRGBDifference": 27.666666666666668,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 1,
+      "comparison": "native-versus-current-cover",
+      "meanAbsoluteRGBDifference": 1.1000795717592593,
+      "p95AbsoluteRGBDifference": 5.0,
+      "maxAbsoluteRGBDifference": 20.333333333333332,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 2,
+      "comparison": "physical-versus-current-cover",
+      "meanAbsoluteRGBDifference": 2.5679072627314814,
+      "p95AbsoluteRGBDifference": 9.666666666666666,
+      "maxAbsoluteRGBDifference": 33.666666666666664,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 2,
+      "comparison": "native-versus-current-cover",
+      "meanAbsoluteRGBDifference": 1.7738534432870372,
+      "p95AbsoluteRGBDifference": 6.666666666666667,
+      "maxAbsoluteRGBDifference": 30.666666666666668,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 3,
+      "comparison": "physical-versus-current-cover",
+      "meanAbsoluteRGBDifference": 2.1799678096064814,
+      "p95AbsoluteRGBDifference": 8.0,
+      "maxAbsoluteRGBDifference": 32.666666666666664,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 3,
+      "comparison": "native-versus-current-cover",
+      "meanAbsoluteRGBDifference": 2.1659342447916665,
+      "p95AbsoluteRGBDifference": 8.333333333333334,
+      "maxAbsoluteRGBDifference": 31.666666666666668,
+      "downsampledSize": [
+        256,
+        144
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 4,
+      "comparison": "physical-versus-current-cover",
+      "meanAbsoluteRGBDifference": 1.3148409039162112,
+      "p95AbsoluteRGBDifference": 6.666666666666667,
+      "maxAbsoluteRGBDifference": 34.333333333333336,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    },
+    {
+      "chapter": 4,
+      "comparison": "native-versus-current-cover",
+      "meanAbsoluteRGBDifference": 0.2140824225865209,
+      "p95AbsoluteRGBDifference": 1.0,
+      "maxAbsoluteRGBDifference": 4.0,
+      "downsampledSize": [
+        256,
+        183
+      ],
+      "passed": true
+    }
+  ]
+}

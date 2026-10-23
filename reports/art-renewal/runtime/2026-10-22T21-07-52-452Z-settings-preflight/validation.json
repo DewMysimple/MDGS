@@ -1,0 +1,124 @@
+{
+  "status": "preflight-pass",
+  "startedAt": "2026-10-22T21:07:52.917Z",
+  "scope": "Production Chromium: four independent wheel settings, bounded wheel jumps, time-based smoothing, persistent and invalid settings, text plates, desktop compact controls, large margins, idle and background lifecycle. Frame timings describe this machine only.",
+  "checks": [
+    {
+      "test": "invalid-version-corrupt-values-and-readable-palette",
+      "passed": true
+    },
+    {
+      "test": "actual-default-poetic-and-explicit-original-mode-for-reading-regression",
+      "passed": true
+    },
+    {
+      "test": "responsive-header-1280x720",
+      "passed": true
+    },
+    {
+      "test": "responsive-header-1672x941",
+      "passed": true
+    },
+    {
+      "test": "responsive-header-1920x1080",
+      "passed": true
+    },
+    {
+      "test": "responsive-header-2560x1440",
+      "passed": true
+    },
+    {
+      "test": "chapter-1-wheel-default-large-line-live-speed-and-plate",
+      "samplePixels": "28928",
+      "plate": {
+        "ink": {
+          "x": 90.125,
+          "y": 137.09375,
+          "width": 376.9375,
+          "height": 312.828125,
+          "top": 137.09375,
+          "right": 467.0625,
+          "bottom": 449.921875,
+          "left": 90.125
+        },
+        "paper": {
+          "x": 34,
+          "y": 98,
+          "width": 1604,
+          "height": 711,
+          "top": 98,
+          "right": 1638,
+          "bottom": 809,
+          "left": 34
+        },
+        "fill": "linear-gradient(90deg, rgba(247, 239, 223, 0.64), rgba(247, 239, 223, 0.8) 25%, rgba(247, 239, 223, 0.737) 75%, rgba(247, 239, 223, 0.345))",
+        "mask": "linear-gradient(0deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
+        "textOpacity": "1",
+        "overflow": [
+          {
+            "text": "壹 · 02",
+            "rect": {
+              "x": 414,
+              "y": 141.09375,
+              "width": 41.0625,
+              "height": 14,
+              "top": 141.09375,
+              "right": 455.0625,
+              "bottom": 155.09375,
+              "left": 414
+            },
+            "outside": false
+          },
+          {
+            "text": "山野芳踪",
+            "rect": {
+              "x": 414.0625,
+              "y": 163.09375,
+              "width": 42,
+              "height": 143.375,
+              "top": 163.09375,
+              "right": 456.0625,
+              "bottom": 306.46875,
+              "left": 414.0625
+            },
+            "outside": false
+          },
+          {
+            "text": "武则天掌权以前，牡丹算不上名贵花卉，大多生长在深山寺院与乡野之间。纵然花繁色艳，但地位远不及梅、兰、菊。隋朝虽在洛阳西苑少量栽植牡丹，",
+            "rect": {
+              "x": 190.625,
+              "y": 163.09375,
+              "width": 206.4375,
+              "height": 265.875,
+              "top": 163.09375,
+              "right": 397.0625,
+              "bottom": 428.96875,
+              "left": 190.625
+            },
+            "outside": false
+          }
+        ],
+        "documentOverflow": false
+      },
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "frames": [],
+  "preflight": true,
+  "buildHtmlSha256": "2aba8aa7da4360b7b750f1f6fd34904b066840741da313a17a6d26d0682e4170",
+  "url": "http://127.0.0.1:10308/",
+  "httpHtmlSha256": "2aba8aa7da4360b7b750f1f6fd34904b066840741da313a17a6d26d0682e4170",
+  "browserVersion": "156.0.8078.4",
+  "notRun": [
+    "chapters 2-4 wheel and original plates",
+    "settings persistence/reload",
+    "four-chapter compact large margins",
+    "restore defaults",
+    "idle wheel sampling",
+    "background autoplay",
+    "actual GL loss/recovery",
+    "home settings/corrupt storage"
+  ],
+  "completedAt": "2026-10-22T21:08:19.426Z"
+}

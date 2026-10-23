@@ -1,0 +1,218 @@
+{
+  "milestone": "art-candidate-6",
+  "generatedAt": "2026-10-23T01:04:32.047Z",
+  "matrix": {
+    "path": "matrix-runs/2026-10-23T00-59-28-968Z/validation.json",
+    "sha256": "29547b110d966c5660074c141f5a62f013a6b7f620d3244a3d5a67618f27b7f2",
+    "status": "passed",
+    "passed": 10,
+    "total": 10,
+    "browser": "156.0.8078.47",
+    "actualGpu": {
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Ti (0x00002C05) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "vendor": "Google Inc. (NVIDIA)"
+    },
+    "sourceCount": 829,
+    "packageFileCount": 744,
+    "inputsUnchanged": true,
+    "buildBinding": {
+      "path": "reports/art-renewal/art-candidate-6-build.json",
+      "sha256": "516efd7a1d451b7e62f79e90564b22f7a706b9b14bde6cb359c8656021fbf359"
+    },
+    "driverSha256": "cfad04006f27878d6be69237c39e1a1a6ae6dd7d4907a35caa654f3818c7cbb7",
+    "checks": [
+      {
+        "name": "button-control-normal",
+        "passed": true,
+        "progress": 0.65,
+        "preview": "0.65",
+        "handoff": "returning",
+        "newEncodings": 1,
+        "nativeSubmissions": 1
+      },
+      {
+        "name": "viewer-encoding-null-with-matching-cache-normal",
+        "passed": true,
+        "progress": 0,
+        "preview": "0",
+        "handoff": "return-fallback",
+        "newEncodings": 1,
+        "nativeSubmissions": 1
+      },
+      {
+        "name": "history-0.65-normal",
+        "passed": true,
+        "progress": 0.65,
+        "preview": "0.65",
+        "handoff": "returning",
+        "newEncodings": 1,
+        "nativeSubmissions": 1,
+        "forward": "0.65",
+        "sessionReload": "0.65"
+      },
+      {
+        "name": "history-1-normal",
+        "passed": true,
+        "progress": 1,
+        "preview": "1",
+        "handoff": "returning",
+        "newEncodings": 1,
+        "nativeSubmissions": 2,
+        "forward": "1",
+        "sessionReload": "1"
+      },
+      {
+        "name": "button-encoding-inflight-then-back-normal",
+        "passed": true,
+        "progress": 0.65,
+        "preview": "0.65",
+        "handoff": "returning",
+        "newEncodings": 1,
+        "nativeSubmissions": 2,
+        "callbackHeld": {
+          "encodedAt": 8130.9000000059605,
+          "deliveredAt": 8152.70000000298,
+          "returningAt": 8140.70000000298,
+          "cancelledAt": 8154
+        }
+      },
+      {
+        "name": "button-control-reduced",
+        "passed": true,
+        "progress": 0.65,
+        "preview": "0.65",
+        "handoff": "returning",
+        "newEncodings": 1,
+        "nativeSubmissions": 2
+      },
+      {
+        "name": "viewer-encoding-null-with-matching-cache-reduced",
+        "passed": true,
+        "progress": 0,
+        "preview": "0",
+        "handoff": "return-fallback",
+        "newEncodings": 1,
+        "nativeSubmissions": 1
+      },
+      {
+        "name": "history-0.65-reduced",
+        "passed": true,
+        "progress": 0.65,
+        "preview": "0.65",
+        "handoff": "returning",
+        "newEncodings": 1,
+        "nativeSubmissions": 2,
+        "forward": "0.65",
+        "sessionReload": "0.65"
+      },
+      {
+        "name": "history-1-reduced",
+        "passed": true,
+        "progress": 1,
+        "preview": "1",
+        "handoff": "returning",
+        "newEncodings": 1,
+        "nativeSubmissions": 8,
+        "forward": "1",
+        "sessionReload": "1"
+      },
+      {
+        "name": "button-encoding-inflight-then-back-reduced",
+        "passed": true,
+        "progress": 0.65,
+        "preview": "0.65",
+        "handoff": "returning",
+        "newEncodings": 1,
+        "nativeSubmissions": 2,
+        "callbackHeld": {
+          "encodedAt": 5772.899999991059,
+          "deliveredAt": 5797.29999999702,
+          "returningAt": 5783.5,
+          "cancelledAt": 5798.79999999702
+        }
+      }
+    ]
+  },
+  "hardware": {
+    "path": "c6-hardware/hardware-latest.json",
+    "sha256": "9bb647cc9bb2a894f15cdf983fb833fe1a6bebc5335bf69ba805119d4a8ecc90",
+    "runId": "2026-10-23T01-01-42-364Z",
+    "status": "passed",
+    "passed": 16,
+    "total": 16,
+    "inputsUnchanged": true,
+    "sourceCount": 829,
+    "packageFileCount": 744,
+    "buildBinding": {
+      "path": "reports/art-renewal/art-candidate-6-build.json",
+      "sha256": "516efd7a1d451b7e62f79e90564b22f7a706b9b14bde6cb359c8656021fbf359"
+    },
+    "driverSha256": "71a205b46407b0cf09edc0d6b00b1f6e651ca22918a9e521e16bcac333f9c40c",
+    "checks": [
+      {
+        "name": "before-first-frame-cancel-stops-polling-and-draw",
+        "passed": true
+      },
+      {
+        "name": "ready-partial-paper-cancel-really-closes",
+        "passed": true
+      },
+      {
+        "name": "real-context-loss-during-pending-compile-restores-generation",
+        "passed": true
+      },
+      {
+        "name": "real-native-shader-error-keeps-gate-and-retries",
+        "passed": true
+      },
+      {
+        "name": "injected-KHR-absence-retains-original-native-path",
+        "passed": true
+      },
+      {
+        "name": "hidden-tab-pauses-polling-and-visible-return-resumes",
+        "passed": true
+      },
+      {
+        "name": "injected-never-ready-KHR-has-bounded-30second-fallback",
+        "passed": true
+      },
+      {
+        "name": "slow-native-texture-arrival-after-cancel-cannot-draw",
+        "passed": true
+      },
+      {
+        "name": "real-resource-503-stays-covered-and-retries",
+        "passed": true
+      },
+      {
+        "name": "normal-chapter-1-real-first-frame-and-complete-warmup",
+        "passed": true
+      },
+      {
+        "name": "normal-chapter-2-real-first-frame-and-complete-warmup",
+        "passed": true
+      },
+      {
+        "name": "normal-chapter-3-real-first-frame-and-complete-warmup",
+        "passed": true
+      },
+      {
+        "name": "normal-chapter-4-real-first-frame-and-complete-warmup",
+        "passed": true
+      },
+      {
+        "name": "reduced-motion-resize-still-has-first-frame",
+        "passed": true
+      },
+      {
+        "name": "owner-cancel-before-late-scene-json",
+        "passed": true
+      },
+      {
+        "name": "owner-cancel-before-late-source-materials-json",
+        "passed": true
+      }
+    ]
+  }
+}
