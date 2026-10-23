@@ -21,18 +21,21 @@ export function fitSourceViewport(width: number, height: number, render: SceneMa
   return { x: (width - fittedWidth) / 2, y: (height - fittedHeight) / 2, width: fittedWidth, height: fittedHeight, aspect };
 }
 
-/** Fill a wide scroll window without stretching or cutting off the authored horizontal camera gate. */
+/** Fill a wide scroll window while retaining the authored vertical framing. */
 export function sourceViewportLayout(width: number, height: number, render: SceneManifest['render']): SourceViewportLayout {
   const source = fitSourceViewport(width, height, render);
   const canvasAspect = width / height;
   if (canvasAspect <= source.aspect) return { viewport: source, verticalFovScale: 1 };
   return {
     viewport: { x: 0, y: 0, width, height, aspect: canvasAspect },
-    verticalFovScale: canvasAspect / source.aspect,
+    // Widen the horizontal view to fill the window. Narrowing the vertical FOV
+    // instead crops authored heads and scroll details, most visibly at the end
+    // of chapter one where the composition rises close to the top edge.
+    verticalFovScale: 1,
   };
 }
 
-/** Zoom vertically to cover extra canvas width while retaining the full source width and proportions. */
+/** Apply an optional vertical framing scale without changing scene geometry. */
 export function sourceVerticalFov(fov: number, scale: number): number {
   if (!Number.isFinite(fov) || fov <= 0 || fov >= 180 || !Number.isFinite(scale) || scale < 1) throw new Error('画卷取景参数无效。');
   return 2 * Math.atan(Math.tan(fov * Math.PI / 360) / scale) * 180 / Math.PI;
