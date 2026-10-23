@@ -1,6 +1,6 @@
 # 牡丹2.0当前验收记录
 
-活动源为`peony-2.0-2026-10-22`。本页记录2026-10-22至23的实现与实际验证，功能、原生资源、CPU和生产浏览器验收均已完成，Git交付尚待最后核对。下面结果均引用本轮报告；上一轮`reports/new-scrolls/`的pass、截图、cover身份和提交不代表本轮。当前选择见[ADR-007](../../wiki_memory/决策/ADR-007-牡丹2点0源与全视口自然环境.md)。
+活动源为`peony-2.0-2026-10-22`。本页记录2026-10-22至23的实现与实际验证，功能、原生资源、CPU和生产浏览器验收均已完成，已按用户最新要求完成远程支线交付。下面结果均引用本轮报告；上一轮`reports/new-scrolls/`的pass、截图、cover身份和提交不代表本轮。当前选择见[ADR-007](../../wiki_memory/决策/ADR-007-牡丹2点0源与全视口自然环境.md)。
 
 | 范围 | 当前证据 | 结果与边界 |
 | --- | --- | --- |
@@ -16,7 +16,9 @@
 | 性能 | [生产取样](validation-performance.json)、[前改动基线](baseline-performance.json) | 最后修复后复跑完成，四卷冷前进与暖回退共8个8秒窗口，均无>50ms RAF间隔；冷p95为13.9/7.1/7.1/13.9ms，暖13.8/7.0/7.0/13.9ms。加载截图采样章一/四各1次>50ms，保留原始结果，不宣称稳定60FPS。旧production内容不同，且存在并行离线工作影响，不直接计算倍率。 |
 | 入卷调度 | [真实浏览器时序](validation-timing.json) | 8组pass：首次/缓存/新Hash/后退/reduce/重试均完整仪式；正常加载4.004秒、总6.662秒，缓存加载4.014秒、总5.769秒。合成hidden事件时排除1.5秒隐藏时长；真实慢纹理使加载延长至5.042秒。pageErrors为空。 |
 | 嵌套子目录 | [生产浏览器报告](validation-portable-subpath.json) | 当前2.0四卷通过`/portable/nested/`，Worker清单由真实服务器请求确认；画心/纹理/字体/音频、12类列明交互、CSS资源重写及文化抽屉通过，无pageErrors/失败资源。 |
-| Git交付 | 待最后核对 | 普通提交、推送及LFS无需再次申请授权；由根任务完成后记录实际提交和远程结果，本地提交不等于远程完成。 |
+| Git支线交付 | [功能提交](https://github.com/DewMysimple/MDGS/commit/51dfb5786d13a52d636dfa980f0edcf6c43c4bec)、[codex/peony-2-home-motion](https://github.com/DewMysimple/MDGS/tree/codex/peony-2-home-motion) | 2026-10-23已推送；HEAD、origin同名upstream及ls-remote分支均为`51dfb5786d13a52d636dfa980f0edcf6c43c4bec`，核对时工作树clean；LFS fsck HEAD通过、59/59新对象已上传。文档随后在同支线独立收口。 |
+
+本支线基于原基线`cd5bd9c`，未融合远程main新增`e420f0e`、`2dd9ccb`、`fa08c92`。所有验证限本支线已验树，不声明已适配main新增fidelity/设置系统。
 
 当前网页网格149/58/79/52，纹理99/35/66/43，正文节点15/7/9/9；完整原marker17/21/18/9另保留。帧范围1—3024/33—2184/1—2068/1—1800；第二卷原marker -3保留在authoredFrame，入口夹到33。原生与WebP最终验证JSON均pass；若修改manifest，应重跑SHA绑定验证，不能沿用当前pass。
 
