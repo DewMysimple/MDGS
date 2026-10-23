@@ -44,30 +44,37 @@ export default function NarrativeCalligraphy({ chapterId, progress, stops, activ
     ? buildPoeticTrack(chapterId, stops, durationSeconds ?? 0)
     : buildNarrativeTrack(chapterId, stops, maximum, durationSeconds), [chapterId, stops, maximum, durationSeconds, mode]);
   const cue = activeNarrativeCue(track, progress);
-  const [poeticLock, setPoeticLock] = useState<{ key: string; cueId: string; placement: NarrativePlacement } | null>(null);
+  const [poeticLock, setPoeticLock] = useState<{ key: string; chapterId: number; cueId: string; placement: NarrativePlacement } | null>(null);
   const manualOrigin = useRef(progress);
-  // Keep the same place through its short ink-out/pure-picture breath too.
+  // Hold one readable place for each caption cue.
   const layoutKey = `${chapterId}:${cue?.id ?? poeticLock?.cueId ?? ''}:${size.width}:${size.height}`;
   const manualTravel = !playing && !!poeticLock && Math.abs(progress - manualOrigin.current) >= .05;
-  const lockReady = active && poeticLock?.key === layoutKey && !manualTravel;
+  const sameCueLock = active && !!cue && poeticLock?.chapterId === chapterId && poeticLock.cueId === cue.id;
+  const lockReady = sameCueLock && poeticLock?.key === layoutKey && !manualTravel;
   const sampleReady = !!placement
     && (placement.sampledProgress === undefined || Math.abs(progress - placement.sampledProgress) < .05)
     && (placement.sampledWidth === undefined || Math.abs(placement.sampledWidth - size.width) < 1)
     && (placement.sampledHeight === undefined || Math.abs(placement.sampledHeight - size.height) < 1);
-  const effectivePlacement = mode === 'poetic' ? lockReady ? poeticLock!.placement : sampleReady ? placement : undefined : placement;
-  const placementReady = mode !== 'poetic' || !!effectivePlacement;
-  // A reading line must not chase the next thumbnail's quieter side. The next
-  // cue, a substantial manual move or a real viewport resize releases its lock.
+  // Keep ink visible while the new thumbnail is being sampled. A same-cue lock
+  // is the best resize fallback; otherwise the previous normalized sample or
+  // the CSS's safe default position is used until a current sample arrives.
+  const effectivePlacement = mode === 'poetic'
+    ? lockReady ? poeticLock!.placement : sampleReady ? placement : sameCueLock && !manualTravel ? poeticLock!.placement : placement
+    : placement;
+  const textReady = mode !== 'poetic' || active && !!cue;
+  // A reading line must not chase the next thumbnail's quieter side. Only a
+  // current sample locks its position; resize/manual movement keeps ink visible
+  // at the previous normalized position while that sample is pending.
   useLayoutEffect(() => {
     // Pausing automatic playback is not a manual jump. Keep its last position
     // as the origin for subsequent wheel/drag movement without moving the ink.
     if (playing) manualOrigin.current = progress;
     if (mode !== 'poetic' || !active) { manualOrigin.current = progress; if (poeticLock) setPoeticLock(null); return; }
-    if (cue && !lockReady && effectivePlacement) {
+    if (cue && sampleReady && !lockReady && effectivePlacement) {
       manualOrigin.current = progress;
-      setPoeticLock({ key: layoutKey, cueId: cue.id, placement: effectivePlacement });
+      setPoeticLock({ key: layoutKey, chapterId, cueId: cue.id, placement: effectivePlacement });
     }
-  }, [mode, active, cue, poeticLock, lockReady, effectivePlacement, layoutKey, progress, playing]);
+  }, [mode, active, cue, poeticLock, lockReady, sampleReady, effectivePlacement, layoutKey, chapterId, progress, playing]);
   const horizontal = effectivePlacement?.orientation === 'horizontal' || (!effectivePlacement?.orientation && isCompactNarrativeViewport(size.width, size.height));
   const [entered, setEntered] = useState(false);
   const root = useRef<HTMLDivElement>(null);
@@ -93,11 +100,10 @@ export default function NarrativeCalligraphy({ chapterId, progress, stops, activ
   } as CSSProperties : undefined;
   return <div ref={root} className={`narrative-calligraphy${effectivePlacement ? ' has-observed-placement' : ''}${effectivePlacement?.dense ? ' has-paper-veil' : ''}`}
     style={custom} aria-label={`${narrativeChapters[chapterId]?.title ?? ''}卷内题跋`} aria-live="off" hidden={mode === 'quiet'}
-    data-chapter={chapterId} data-mode={mode} data-placement-ready={placementReady} data-placement-locked={mode === 'poetic' && lockReady} data-side={(effectivePlacement?.x ?? 1) < .5 ? 'left' : 'right'} data-layout={horizontal ? 'horizontal' : 'vertical'} data-quiet-fraction={effectivePlacement?.quietFraction?.toFixed(3)} data-cue-id={cue?.id ?? ''} data-paragraph={cue ? cue.paragraphIndex + 1 : ''} data-source-node={cue?.sourceNode ?? ''}>
+    data-chapter={chapterId} data-mode={mode} data-placement-ready={!!effectivePlacement} data-placement-locked={mode === 'poetic' && lockReady} data-side={(effectivePlacement?.x ?? 1) < .5 ? 'left' : 'right'} data-layout={horizontal ? 'horizontal' : 'vertical'} data-quiet-fraction={effectivePlacement?.quietFraction?.toFixed(3)} data-cue-id={cue?.id ?? ''} data-paragraph={cue ? cue.paragraphIndex + 1 : ''} data-source-node={cue?.sourceNode ?? ''}>
     {track.map(passage => {
-      const visible = entered && active && placementReady && passage.id === cue?.id;
+      const visible = entered && textReady && passage.id === cue?.id;
       return <article key={passage.id} className={`narrative-passage${visible ? ' is-visible' : ''}`}
-        style={mode === 'poetic' && !placementReady ? { visibility: 'hidden', opacity: 0, transition: 'none' } : undefined}
         data-narrative-id={passage.id} data-range-start={passage.start} data-range-end={passage.end} aria-hidden={!visible}>
         <div className="narrative-ink">
           <span className="narrative-ordinal" aria-hidden="true">{['壹','贰','叁','肆'][chapterId - 1]} · {String(passage.paragraphIndex + 1).padStart(2, '0')}</span>

@@ -64,7 +64,7 @@ export const poeticNarrativeScenes: Readonly<Record<number, readonly PoeticScene
 export const poeticSourceNotes = {
   authorship: '全部heading与text为当代展览新题，非古诗录文，不替改25段原作正文。',
   edition: 'peony-2.0-2026-10-23',
-  timing: '使用传入的真实stop.progress与sourceDurationSeconds；长镜的两句分别留出纯画，短镜按同一语境并入邻景，第四卷情绪转折不跨界合并。',
+  timing: '使用传入的真实stop.progress与sourceDurationSeconds；每段题跋覆盖对应停点，长镜的多句连续交替并交叉淡入淡出，短镜按同一语境并入邻景，第四卷情绪转折不跨界合并。',
   chapters: {
     1: '火焰贬花明确标作传说。欧阳修北宋《洛阳牡丹记》仅作花事记忆的文献参读，不把传说写成史实，也不新增首次栽培等绝对断代。',
     2: '宫墙、花舟桥、宴游与静赏按本作画面展开；唐代春游为艺术化叙事。北宋风俗只跨时代参读，不作唐代具体风俗的同时代证明。',
@@ -89,12 +89,12 @@ interface Window {
 }
 
 const MIN_VISIBLE = 3.5;
-const MAX_VISIBLE = 8;
-const BREATH = 1.2;
+const MAX_VISIBLE = 12;
 
 /** Pure exhibition data; never changes source time, progress, pixels, or prose.
- * Each cue starts at a scene/subscene boundary so paused manual seeks remain
- * readable. Its final 1.2 seconds belong to the picture alone. */
+ * Each cue covers its scene/subscene so the supplied interpretive writing is
+ * present throughout the corresponding painting. Adjacent cues crossfade in
+ * the calligraphy layer instead of leaving an uncaptioned interval. */
 export function buildPoeticTrack(chapterId: number, stops: readonly StoryStop[], durationSeconds: number): NarrativeCue[] {
   const scenes = poeticNarrativeScenes[chapterId];
   if (!scenes || !Number.isFinite(durationSeconds) || durationSeconds <= 0) return [];
@@ -110,7 +110,7 @@ export function buildPoeticTrack(chapterId: number, stops: readonly StoryStop[],
   // The fourth scroll's loss at stop five is an explicit editorial boundary.
   for (let index = 0; index < windows.length; index++) {
     const current = windows[index];
-    if (current.end - current.start >= MIN_VISIBLE + BREATH) continue;
+    if (current.end - current.start >= MIN_VISIBLE) continue;
     const next = windows[index + 1], previous = windows[index - 1];
     if (next && next.spec.register === current.spec.register) {
       next.start = current.start; next.startProgress = current.startProgress; next.sourceNames.unshift(...current.sourceNames); windows.splice(index, 1); index--;
@@ -121,12 +121,12 @@ export function buildPoeticTrack(chapterId: number, stops: readonly StoryStop[],
 
   return windows.flatMap(window => {
     const span = window.end - window.start;
-    const count = Math.min(window.spec.passages.length, Math.floor(span / (MIN_VISIBLE + BREATH)));
+    const count = Math.min(window.spec.passages.length, Math.floor(span / MIN_VISIBLE));
     if (count < 1) return [];
     const slot = span / count;
     return window.spec.passages.slice(0, count).map((text, partIndex) => {
       const start = window.start + partIndex * slot;
-      const visible = Math.min(MAX_VISIBLE, slot - BREATH);
+      const visible = Math.min(MAX_VISIBLE, slot);
       return {
         id: `poetic-c${chapterId}-s${window.sceneIndex + 1}-${partIndex + 1}`,
         paragraphId: `poetic-c${chapterId}-s${window.sceneIndex + 1}`,
