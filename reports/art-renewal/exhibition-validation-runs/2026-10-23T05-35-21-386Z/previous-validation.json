@@ -1,0 +1,191 @@
+{
+  "status": "passed",
+  "runId": "2026-10-23T05-34-59-895Z",
+  "suite": "safety",
+  "startedAt": "2026-10-23T05:34:59.896Z",
+  "scope": "Fresh isolated tool fixtures for unmarked/symlink/lock protection, then read-only actual standalone package inventory/HTTP/Chrome four-scroll interactions/audio/PNG export. Fixture build commands are explicit stubs, not production-build proof.",
+  "checks": [
+    {
+      "test": "fixture-successful-byte-copy-and-explicit-prebuilt-association",
+      "passed": true,
+      "code": 0,
+      "pid": 48752,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/fixture-success.log",
+      "logSha256": "ae05f87f27fa81a874e7aedb35162da564b80e2d61b857aa74ca598c32a639cc",
+      "inventoryFiles": 36,
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/success/project"
+    },
+    {
+      "test": "unmarked-dist-exhibition-sentinel-preserved",
+      "passed": true,
+      "code": 1,
+      "pid": 48456,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/unmarked-dist-exhibition.log",
+      "logSha256": "6185096bcb979dbf20c98d22911fe649de88064b93fbce2432441285175df04d",
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/unmarked-dist-exhibition/project"
+    },
+    {
+      "test": "unmarked-dist-exhibition.staging-sentinel-preserved",
+      "passed": true,
+      "code": 1,
+      "pid": 8004,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/unmarked-dist-exhibition.staging.log",
+      "logSha256": "46b42f8911f34ac8b1c567fc3024c338897d62f88f16374afaedb29fbb35df5b",
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/unmarked-dist-exhibition.staging/project"
+    },
+    {
+      "test": "actual-concurrent-export-lock-rejects-second-process",
+      "passed": true,
+      "first": {
+        "code": 0,
+        "pid": 45472,
+        "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/concurrent-first.log",
+        "logSha256": "fa02f5723861d7a21bf69d8b844047ed0fc2fef24ac3140b70162cb184efd411"
+      },
+      "second": {
+        "code": 1,
+        "pid": 55968,
+        "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/concurrent-second.log",
+        "logSha256": "9203fcd90670670c3244db29b619a8279a3bf113feb11445b6d65df7241d7163"
+      }
+    },
+    {
+      "test": "reject-linked-dist-root-external-sentinel-preserved",
+      "passed": true,
+      "code": 1,
+      "pid": 50228,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/linked-dist-root.log",
+      "logSha256": "ddaffbb1ee11221efad1b295bd55db8b32f7d848f2191e0fa292588a53aca89c",
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-dist-root/project",
+      "externalSentinelSha256": "814b4d8cc2dd680f13bb97a54687b76a3893d4065a32a184613bed0a27b49ab8"
+    },
+    {
+      "test": "reject-linked-public-root-external-sentinel-preserved",
+      "passed": true,
+      "code": 1,
+      "pid": 48628,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/linked-public-root.log",
+      "logSha256": "2b43fc5c32d5d6fde9613315ac654910a40259e91f5006c942eaf51aee5c6994",
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-public-root/project",
+      "externalSentinelSha256": "3b1ef78bd945ba09a342999b2cce51ffabf175253978a34082ef9f337cb22bfa"
+    },
+    {
+      "test": "reject-linked-public-parent-external-sentinel-preserved",
+      "passed": true,
+      "code": 1,
+      "pid": 1212,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/linked-public-parent.log",
+      "logSha256": "d32bdbf15c18f7508bf56e335e40431bde56f4320e3eb6fb8441bf2ca3f52041",
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-public-parent/project",
+      "externalSentinelSha256": "307d59f3127432a663d6df47bd8eeee940347345780d27127ccea71498659d58"
+    },
+    {
+      "test": "reject-linked-public-single-file-external-sentinel-preserved",
+      "passed": true,
+      "code": 1,
+      "pid": 34104,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/linked-public-single-file.log",
+      "logSha256": "caab16c6d5889eeda766a05b2658ad7bd7af4c853bdf818366d46b552f896193",
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-public-single-file/project",
+      "externalSentinelSha256": "7d2ea6cebfb6e02caf16fee0ad0a86300428a0b0fd25c992b7e0388978b296c5"
+    },
+    {
+      "test": "reject-linked-dist-single-file-external-sentinel-preserved",
+      "passed": true,
+      "code": 1,
+      "pid": 56492,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/linked-dist-single-file.log",
+      "logSha256": "28ddc0e30d413e618968dce35751daf3ad327cedca2a38185a3728129502925f",
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-dist-single-file/project",
+      "externalSentinelSha256": "438efdabff4137d6999143211331c36e0d97b7f6b527588fbc689bddf1d9496d"
+    },
+    {
+      "test": "reject-linked-destination-external-sentinel-preserved",
+      "passed": true,
+      "code": 1,
+      "pid": 55556,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/linked-destination.log",
+      "logSha256": "00ea48160574965db0936b4324fa978179223aad1c755089987503899e9a9720",
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-destination/project",
+      "externalSentinelSha256": "d9a8c43687bcea1ec18700cd5434f043a5be8c1e3ba44f65cbe7ce2093a9d18b"
+    },
+    {
+      "test": "reject-linked-staging-external-sentinel-preserved",
+      "passed": true,
+      "code": 1,
+      "pid": 49276,
+      "log": "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/linked-staging.log",
+      "logSha256": "f495de1c6a9271f7bbd9788b70953493b2182cba9c3a65b0087ac7c879e01543",
+      "fixture": "tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-staging/project",
+      "externalSentinelSha256": "6a182b5eb393ef0f18bd4147379afc8d7d9b81d30061236f2bd61bfea4e8af88"
+    }
+  ],
+  "errors": [],
+  "expectedFailures": [
+    {
+      "fixture": "dist-exhibition",
+      "rejection": "file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/unmarked-dist-exhibition/project/scripts/package-exhibition.mjs:63\r\n      throw new Error(`Refusing to replace an unmarked directory: ${relative(directory)}`);\r\n            ^\r\n\r\nError: Refusing to replace an unmarked directory: dist-exhibition\r\n    at assertGenerated (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/unmarked-dist-exhibition/project/scripts/package-exhibition.mjs:63:13)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/unmarked-dist-exhibition/project/scripts/package-exhibition.mjs:95:1\r\n\r\nNode.js v24.16.0"
+    },
+    {
+      "fixture": "dist-exhibition.staging",
+      "rejection": "file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/unmarked-dist-exhibition.staging/project/scripts/package-exhibition.mjs:63\r\n      throw new Error(`Refusing to replace an unmarked directory: ${relative(directory)}`);\r\n            ^\r\n\r\nError: Refusing to replace an unmarked directory: dist-exhibition.staging\r\n    at assertGenerated (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/unmarked-dist-exhibition.staging/project/scripts/package-exhibition.mjs:63:13)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/unmarked-dist-exhibition.staging/project/scripts/package-exhibition.mjs:96:5\r\n\r\nNode.js v24.16.0"
+    },
+    {
+      "fixture": "dist-root",
+      "rejection": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Input parent must not redirect outside its expected location: dist/assets/new-scrolls\r\n+ actual - expected\r\n\r\n+ '..\\\\..\\\\..\\\\..\\\\external\\\\dist\\\\assets\\\\new-scrolls'\r\n- ''\r\n\r\n    at assertLocalInput (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-dist-root/project/scripts/package-exhibition.mjs:26:10)\r\n    at async walk (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-dist-root/project/scripts/package-exhibition.mjs:29:3)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-dist-root/project/scripts/package-exhibition.mjs:89:49 {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: '..\\\\..\\\\..\\\\..\\\\external\\\\dist\\\\assets\\\\new-scrolls',\r\n  expected: '',\r\n  operator: 'strictEqual',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.16.0"
+    },
+    {
+      "fixture": "public-root",
+      "rejection": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Unexpected linked or non-regular input: public/fonts\r\n    at assertLocalInput (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-public-root/project/scripts/package-exhibition.mjs:25:3)\r\n    at async walk (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-public-root/project/scripts/package-exhibition.mjs:29:3)\r\n    at async sourceInputFiles (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-public-root/project/scripts/package-exhibition.mjs:72:54)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-public-root/project/scripts/package-exhibition.mjs:80:21 {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: false,\r\n  expected: true,\r\n  operator: '==',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.16.0"
+    },
+    {
+      "fixture": "public-parent",
+      "rejection": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Input parent must not redirect outside its expected location: public/audio/peony-v3-atmosphere.mp3\r\n+ actual - expected\r\n\r\n+ '..\\\\..\\\\..\\\\..\\\\external\\\\redirected-public\\\\audio\\\\peony-v3-atmosphere.mp3'\r\n- ''\r\n\r\n    at assertLocalInput (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-public-parent/project/scripts/package-exhibition.mjs:26:10)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-public-parent/project/scripts/package-exhibition.mjs:41:78\r\n    at async Promise.all (index 5)\r\n    at async hashFiles (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-public-parent/project/scripts/package-exhibition.mjs:40:3)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-public-parent/project/scripts/package-exhibition.mjs:81:16 {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: '..\\\\..\\\\..\\\\..\\\\external\\\\redirected-public\\\\audio\\\\peony-v3-atmosphere.mp3',\r\n  expected: '',\r\n  operator: 'strictEqual',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.16.0"
+    },
+    {
+      "fixture": "public-single-file",
+      "rejection": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Unexpected linked or non-regular input: public/favicon.svg\r\n    at assertLocalInput (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-public-single-file/project/scripts/package-exhibition.mjs:25:3)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-public-single-file/project/scripts/package-exhibition.mjs:41:78\r\n    at async Promise.all (index 4)\r\n    at async hashFiles (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-public-single-file/project/scripts/package-exhibition.mjs:40:3)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-public-single-file/project/scripts/package-exhibition.mjs:81:16 {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: false,\r\n  expected: true,\r\n  operator: '==',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.16.0"
+    },
+    {
+      "fixture": "dist-single-file",
+      "rejection": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Package inputs must not be symlinks: dist/favicon.svg\r\n    at walk (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-dist-single-file/project/scripts/package-exhibition.mjs:32:5)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-dist-single-file/project/scripts/package-exhibition.mjs:94:58 {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: false,\r\n  expected: true,\r\n  operator: '==',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.16.0"
+    },
+    {
+      "fixture": "destination",
+      "rejection": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Package target must be a real directory.\r\n    at assertGenerated (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-destination/project/scripts/package-exhibition.mjs:58:42)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-destination/project/scripts/package-exhibition.mjs:95:1 {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: false,\r\n  expected: true,\r\n  operator: '==',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.16.0"
+    },
+    {
+      "fixture": "staging",
+      "rejection": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Package target must be a real directory.\r\n    at assertGenerated (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-staging/project/scripts/package-exhibition.mjs:58:42)\r\n    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-34-59-895Z/linked-staging/project/scripts/package-exhibition.mjs:96:5 {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: false,\r\n  expected: true,\r\n  operator: '==',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.16.0"
+    }
+  ],
+  "browserErrors": [],
+  "badResponses": [],
+  "failedRequests": [],
+  "externalRequests": [],
+  "inputsBefore": {
+    "scripts/package-exhibition.mjs": "0317a3bd8ed3dc9473b2c5c15e70a1d3a87fd4efc4cc2c6c299d76ec7701d862",
+    "scripts/serve-exhibition.cjs": "dcf4d549bb051100c0f8532beb8f1003667d6ff6b34cd87b659ebec66fdb0f7d",
+    "scripts/validate-exhibition-package.mjs": "b83c27b886777017d6b7fdd2ba911728496331f64df9e915930d6dacc336bbcb"
+  },
+  "inputsAfter": {
+    "scripts/package-exhibition.mjs": "0317a3bd8ed3dc9473b2c5c15e70a1d3a87fd4efc4cc2c6c299d76ec7701d862",
+    "scripts/serve-exhibition.cjs": "dcf4d549bb051100c0f8532beb8f1003667d6ff6b34cd87b659ebec66fdb0f7d",
+    "scripts/validate-exhibition-package.mjs": "b83c27b886777017d6b7fdd2ba911728496331f64df9e915930d6dacc336bbcb"
+  },
+  "artifacts": {
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/concurrent-first.log": "fa02f5723861d7a21bf69d8b844047ed0fc2fef24ac3140b70162cb184efd411",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/concurrent-second.log": "9203fcd90670670c3244db29b619a8279a3bf113feb11445b6d65df7241d7163",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/fixture-success.log": "ae05f87f27fa81a874e7aedb35162da564b80e2d61b857aa74ca598c32a639cc",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/linked-destination.log": "00ea48160574965db0936b4324fa978179223aad1c755089987503899e9a9720",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/linked-dist-root.log": "ddaffbb1ee11221efad1b295bd55db8b32f7d848f2191e0fa292588a53aca89c",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/linked-dist-single-file.log": "28ddc0e30d413e618968dce35751daf3ad327cedca2a38185a3728129502925f",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/linked-public-parent.log": "d32bdbf15c18f7508bf56e335e40431bde56f4320e3eb6fb8441bf2ca3f52041",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/linked-public-root.log": "2b43fc5c32d5d6fde9613315ac654910a40259e91f5006c942eaf51aee5c6994",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/linked-public-single-file.log": "caab16c6d5889eeda766a05b2658ad7bd7af4c853bdf818366d46b552f896193",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/linked-staging.log": "f495de1c6a9271f7bbd9788b70953493b2182cba9c3a65b0087ac7c879e01543",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/unmarked-dist-exhibition.log": "6185096bcb979dbf20c98d22911fe649de88064b93fbce2432441285175df04d",
+    "reports/art-renewal/exhibition-validation-runs/2026-10-23T05-34-59-895Z/unmarked-dist-exhibition.staging.log": "46b42f8911f34ac8b1c567fc3024c338897d62f88f16374afaedb29fbb35df5b"
+  },
+  "completedAt": "2026-10-23T05:35:01.149Z"
+}

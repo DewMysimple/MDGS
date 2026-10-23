@@ -108,6 +108,7 @@ async function fixture(name, variant = {}) {
   }
   const contents = new Map([
     ['favicon.svg', '<svg xmlns="http://www.w3.org/2000/svg"/>'], ['ui/brocade.svg', '<svg xmlns="http://www.w3.org/2000/svg"/>'],
+    ['ui/peony-line.svg', '<svg xmlns="http://www.w3.org/2000/svg"/>'], ['ui/roller-band.svg', '<svg xmlns="http://www.w3.org/2000/svg"/>'],
     ['ui/peony-atlas/provenance.json', '{}'], ['ui/peony-atlas/landscape.webp', 'fixture-bitmap'],
     ['fonts/wenkai-web.woff2', 'fixture-font'], ['fonts/OFL-WenKai.txt', 'fixture-font-license'], ['fonts/provenance.json', '{}'],
     ...['strings', 'breath', 'atmosphere'].map(name => [`audio/peony-v3-${name}.mp3`, 'fixture-sound']),
@@ -153,6 +154,8 @@ async function safety() {
     const item = await fixture('success'), result = await runFixture(item); assert.equal(result.code, 0, result.stderr);
     const inventory = JSON.parse(await readFile(path.join(item.project, 'dist-exhibition', marker), 'utf8'));
     assert.equal(inventory.status, 'ready'); assert.equal(inventory.buildSourceVerified, false);
+    for (const required of ['ui/brocade.svg', 'ui/peony-line.svg', 'ui/roller-band.svg'])
+      assert(inventory.files.some(file => file.path === required), 'Missing stylesheet dependency: ' + required);
     for (const file of inventory.files) assert.equal(await hash(path.join(item.project, 'dist-exhibition', file.path)), file.sha256);
     await item.unchanged(); return { ...(await logProcess('fixture-success', result)), inventoryFiles: inventory.files.length, fixture: portable(item.project) };
   });
@@ -228,7 +231,7 @@ async function runtime() {
     report.currentDistAssociation = { required: process.env.MDGS_EXHIBITION_REQUIRE_CURRENT_DIST === '1', matchedFiles: distBindings, mismatches,
       note: 'A later workspace build can replace hashed chunks without changing the independently runnable package. Final unified freeze requires this list to be empty.' };
     if (report.currentDistAssociation.required) assert.deepEqual(mismatches, [], 'Current mutable dist differs from the tested package.');
-    for (const required of ['serve.cjs', '创作与来源.txt', 'fonts/OFL-WenKai.txt', ...['react', 'react-dom', 'scheduler', 'three', 'lucide-react'].map(name => `third-party-licenses/${name}.txt`)])
+    for (const required of ['serve.cjs', '创作与来源.txt', 'fonts/OFL-WenKai.txt', 'ui/brocade.svg', 'ui/peony-line.svg', 'ui/roller-band.svg', ...['react', 'react-dom', 'scheduler', 'three', 'lucide-react'].map(name => `third-party-licenses/${name}.txt`)])
       assert(inventory.files.some(file => file.path === required), 'Missing runtime/source notice: ' + required);
     return { files: inventory.files.length, publicBindings, distBindings, packageBytes: inventory.bytesExcludingInventory };
   });

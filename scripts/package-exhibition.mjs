@@ -64,7 +64,7 @@ async function assertGenerated(directory) {
     } throw error; }
 }
 const roots = ['assets/new-scrolls', 'ui/peony-atlas', 'fonts'];
-const singles = ['index.html', 'favicon.svg', 'ui/brocade.svg', ...['strings', 'breath', 'atmosphere'].map(name => `audio/peony-v3-${name}.mp3`),
+const singles = ['index.html', 'favicon.svg', 'ui/brocade.svg', 'ui/peony-line.svg', 'ui/roller-band.svg', ...['strings', 'breath', 'atmosphere'].map(name => `audio/peony-v3-${name}.mp3`),
   ...['manifest', 'provenance', 'score'].map(name => `audio/peony-v3-${name}.json`)];
 const libraries = ['react', 'react-dom', 'scheduler', 'three', 'lucide-react'];
 async function sourceInputFiles() {

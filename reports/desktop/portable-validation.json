@@ -1,0 +1,383 @@
+{
+  "status": "passed",
+  "startedAt": "2026-10-23T05:48:16.183Z",
+  "runId": "2026-10-23T05-48-16-182Z",
+  "executable": "C:\\Users\\Administrator\\Desktop\\数字牡丹赋\\数字牡丹赋-Windows-x64\\数字牡丹赋.exe",
+  "scope": "Launch the final single-file portable Windows EXE with its NSIS extraction layer; attach to its bundled Chromium over CDP, reload with HTTP(S) blocked, verify local home/font/audio and chapter-one native first frame, then close the browser and require the owned portable parent to exit successfully. This is a launch smoke test, not full visual certification.",
+  "checks": [
+    {
+      "test": "portable-exe-extracts-and-starts-bundled-electron-45",
+      "passed": true,
+      "pid": 18076,
+      "runtime": {
+        "expectedElectron": "45.0.0",
+        "endpoint": {
+          "Browser": "Chrome/156.0.8078.48",
+          "File-Path-Style": "windows",
+          "Protocol-Version": "1.3",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) 数字牡丹赋/1.0.0 Chrome/156.0.8078.48 Electron/45.0.0 Safari/537.36",
+          "V8-Version": "15.6.75.19",
+          "WebKit-Version": "537.36 (@40f996fb555e345f3f6909e10406c14da3394e84)",
+          "webSocketDebuggerUrl": "ws://127.0.0.1:5060/devtools/browser/82528814-5376-4e85-9dde-ccd5dbcfd223"
+        },
+        "browserVersion": {
+          "protocolVersion": "1.3",
+          "product": "Chrome/156.0.8078.48",
+          "revision": "@40f996fb555e345f3f6909e10406c14da3394e84",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) 数字牡丹赋/1.0.0 Chrome/156.0.8078.48 Electron/45.0.0 Safari/537.36",
+          "jsVersion": "15.6.75.19"
+        },
+        "chromiumVersion": "156.0.8078.48"
+      },
+      "windowsProcesses": {
+        "processes": [
+          {
+            "ProcessId": 18076,
+            "ParentProcessId": 7020,
+            "Name": "数字牡丹赋.exe",
+            "ExecutablePath": "C:\\Users\\Administrator\\Desktop\\数字牡丹赋\\数字牡丹赋-Windows-x64\\数字牡丹赋.exe"
+          },
+          {
+            "ProcessId": 35400,
+            "ParentProcessId": 18076,
+            "Name": "数字牡丹赋.exe",
+            "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5Bw1ToX6IGiVDbJkz46cT2IMM\\数字牡丹赋.exe"
+          },
+          {
+            "ProcessId": 29264,
+            "ParentProcessId": 35400,
+            "Name": "数字牡丹赋.exe",
+            "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5Bw1ToX6IGiVDbJkz46cT2IMM\\数字牡丹赋.exe"
+          },
+          {
+            "ProcessId": 50804,
+            "ParentProcessId": 35400,
+            "Name": "数字牡丹赋.exe",
+            "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5Bw1ToX6IGiVDbJkz46cT2IMM\\数字牡丹赋.exe"
+          },
+          {
+            "ProcessId": 52844,
+            "ParentProcessId": 35400,
+            "Name": "数字牡丹赋.exe",
+            "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5Bw1ToX6IGiVDbJkz46cT2IMM\\数字牡丹赋.exe"
+          }
+        ]
+      }
+    },
+    {
+      "test": "portable-extracted-application-matches-validated-unpacked-build",
+      "passed": true,
+      "actualExecutable": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5Bw1ToX6IGiVDbJkz46cT2IMM\\数字牡丹赋.exe",
+      "bindings": [
+        {
+          "resource": "app.asar",
+          "actual": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5Bw1ToX6IGiVDbJkz46cT2IMM\\resources\\app.asar",
+          "expected": "dist-desktop/win-unpacked/resources/app.asar",
+          "actualSha256": "05484757f5171b129788209f17f753c6f6c52163f19aee1fb2412781eb47fad2",
+          "expectedSha256": "05484757f5171b129788209f17f753c6f6c52163f19aee1fb2412781eb47fad2"
+        },
+        {
+          "resource": "web/.mdgs-exhibition-package.json",
+          "actual": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5Bw1ToX6IGiVDbJkz46cT2IMM\\resources\\web\\.mdgs-exhibition-package.json",
+          "expected": "dist-desktop/win-unpacked/resources/web/.mdgs-exhibition-package.json",
+          "actualSha256": "214f3f8ef43db9902c54353bc90142c3d990bbc40d66ce4ecb08c3875d6473f5",
+          "expectedSha256": "214f3f8ef43db9902c54353bc90142c3d990bbc40d66ce4ecb08c3875d6473f5"
+        }
+      ]
+    },
+    {
+      "test": "portable-offline-home-local-font-and-four-art-layers",
+      "passed": true,
+      "security": {
+        "origin": "mdgs://app",
+        "secure": true,
+        "require": "undefined",
+        "process": "undefined"
+      },
+      "images": [
+        {
+          "src": "mdgs://app/ui/peony-atlas/landscape.webp",
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "src": "mdgs://app/ui/peony-atlas/cinnabar-peonies.webp",
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "src": "mdgs://app/ui/peony-atlas/ivory-branch.webp",
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "src": "mdgs://app/ui/peony-atlas/title.webp",
+          "width": 2172,
+          "height": 724
+        }
+      ],
+      "fonts": [
+        {
+          "family": "MDGS Kai",
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "test": "portable-offline-original-three-track-soundscape",
+      "passed": true,
+      "sound": {
+        "enabled": true,
+        "playback": "playing",
+        "volume": 52,
+        "clock": 0,
+        "contextState": "running",
+        "sourceCount": 3,
+        "loopDurations": [
+          160,
+          160,
+          24
+        ],
+        "zone": "一庭春深",
+        "targetLevels": [
+          0.24,
+          0.12,
+          0.24
+        ],
+        "levels": [
+          0,
+          0,
+          0
+        ],
+        "musicGain": 1,
+        "reading": false,
+        "sourceEpoch": 0.3163333333333333,
+        "effects": 0,
+        "cuesPlayed": 0,
+        "decodedBuffers": 3,
+        "retiredGraphs": 0,
+        "decodedBytes": 96768000
+      }
+    },
+    {
+      "test": "portable-chapter-one-native-first-frame",
+      "passed": true,
+      "canvas": {
+        "engine": "three.js r180",
+        "chapter": "1",
+        "progress": "0.000000",
+        "motionEnabled": "false",
+        "motionRequested": "true",
+        "motionSupported": "false",
+        "motionAmbientFps": "0",
+        "reducedMotion": "false",
+        "motionTime": "0.000000",
+        "motionBindings": "0",
+        "activeMotionLayers": "0",
+        "activePetals": "0",
+        "activeBridges": "0",
+        "activeMotionNames": "[]",
+        "motionClockSpeed": "1.000000",
+        "petalDensity": "1.000000",
+        "cloudDensity": "1.000000",
+        "narrativePhase": "calm",
+        "effectiveMotionBudget": "0",
+        "artReplacements": "0",
+        "artGeometryRepairs": "0",
+        "artEdgeRepairs": "0",
+        "artAddedLayers": "0",
+        "artTextLayers": "0",
+        "editionAtmosphereLayers": "0",
+        "editionAtmosphereActive": "0",
+        "editionAtmosphereOpacityMax": "0.000000",
+        "sourceHiddenVisibleLayers": "0",
+        "sourceRevision": "peony-2.0-2026-10-23",
+        "sourceFrame": "1",
+        "sourceViewport": "{\"x\":114.44444444444457,\"y\":0,\"width\":2295.111111111111,\"height\":1291,\"aspect\":1.7777777777777777}",
+        "sourceMorphObjects": "25",
+        "sourceMaterialsReady": "true",
+        "sourceMaterialFields": "103",
+        "sourcePostTextures": "0",
+        "shaderErrors": "[]",
+        "textureErrors": "{}",
+        "compactReadingReserve": "0",
+        "renderCount": "55",
+        "rafTicks": "175",
+        "rafRunning": "false",
+        "firstFrameReady": "true",
+        "contextLost": "false",
+        "contextRestores": "0",
+        "textureUploads": "0",
+        "textureCount": "14",
+        "textureBytes": "94964356",
+        "textureFailed": "0",
+        "loadingTextures": "0",
+        "visibleTextures": "14",
+        "queuedTextures": "0",
+        "prefetchedTextures": "0",
+        "narrativeReads": "1",
+        "narrativeReadPending": "false",
+        "narrativeSamplePixels": "33536",
+        "narrativeReadProgress": "0",
+        "drawCalls": "1",
+        "geometries": "20",
+        "shaderWarmup": "{\"extension\":true,\"generation\":0,\"queue\":0,\"pending\":0,\"submitted\":0,\"completed\":149,\"batches\":149,\"polls\":553,\"compilationMs\":61.09999996423721,\"hidden\":false,\"contextLost\":false,\"abandoned\":false,\"reason\":\"\",\"disposed\":false,\"cancelled\":false,\"checkShaderErrors\":true}"
+      }
+    },
+    {
+      "test": "portable-smoke-no-missing-resource-or-external-runtime-request",
+      "passed": true,
+      "requestedURLs": [
+        "mdgs://app/assets/index-C6Ev3QbP.js",
+        "mdgs://app/assets/index-RpqBDuXe.css",
+        "mdgs://app/assets/new-scrolls/chapter-1/cover.webp",
+        "mdgs://app/assets/new-scrolls/chapter-1/material-fields/efc57e665aeec1cd4ee22bfb.f16.gz",
+        "mdgs://app/assets/new-scrolls/chapter-1/render-settings.json",
+        "mdgs://app/assets/new-scrolls/chapter-1/scene.json",
+        "mdgs://app/assets/new-scrolls/chapter-1/source-materials.json",
+        "mdgs://app/assets/new-scrolls/chapter-1/textures/02e11304c2017df6.webp",
+        "mdgs://app/assets/new-scrolls/chapter-1/textures/193d747551251c10.webp",
+        "mdgs://app/assets/new-scrolls/chapter-1/textures/3e04bfd91a7644f1.webp",
+        "mdgs://app/assets/new-scrolls/chapter-1/textures/4a13b75621827763.webp",
+        "mdgs://app/assets/new-scrolls/chapter-1/textures/4bfe2c5cccd25bf3.webp",
+        "mdgs://app/assets/new-scrolls/chapter-1/textures/5d46455c79d6200f.webp",
+        "mdgs://app/assets/new-scrolls/chapter-1/textures/6548394920703cf7.webp",
+        "mdgs://app/assets/new-scrolls/chapter-1/textures/76723c1dd92b9b3a.webp",
+        "mdgs://app/assets/new-scrolls/chapter-1/textures/b78c04b61bfa618e.webp",
+        "mdgs://app/assets/new-scrolls/chapter-1/textures/c68cc7fc877955bc.webp",
+        "mdgs://app/assets/new-scrolls/chapter-1/textures/ed99a2a1017c293e.webp",
+        "mdgs://app/assets/new-scrolls/chapter-1/textures/feb3ba4cb2b5bd5b.webp",
+        "mdgs://app/assets/new-scrolls/chapter-1/textures/ffdf16c747f152bd.webp",
+        "mdgs://app/assets/new-scrolls/chapter-2/cover.webp",
+        "mdgs://app/assets/new-scrolls/chapter-3/cover.webp",
+        "mdgs://app/assets/new-scrolls/chapter-4/cover.webp",
+        "mdgs://app/assets/three-3iQHpLLu.js",
+        "mdgs://app/audio/peony-v3-atmosphere.mp3",
+        "mdgs://app/audio/peony-v3-breath.mp3",
+        "mdgs://app/audio/peony-v3-strings.mp3",
+        "mdgs://app/fonts/wenkai-web.woff2",
+        "mdgs://app/ui/brocade.svg",
+        "mdgs://app/ui/peony-atlas/cinnabar-peonies.webp",
+        "mdgs://app/ui/peony-atlas/ivory-branch.webp",
+        "mdgs://app/ui/peony-atlas/landscape.webp",
+        "mdgs://app/ui/peony-atlas/title.webp"
+      ],
+      "executableUnchanged": true,
+      "expectedDisposalAborts": 0
+    },
+    {
+      "test": "portable-parent-exits-cleanly-after-browser-close",
+      "passed": true,
+      "code": 0,
+      "signal": null
+    }
+  ],
+  "errors": [],
+  "browserErrors": [],
+  "badResponses": [],
+  "failedRequests": [],
+  "externalRequests": [],
+  "executableBytes": 623137732,
+  "executableSha256": "3d344dfe613f4a0e073b20137e61f78ece5f6beaa9988354ebc53ece7be60ca9",
+  "launch": {
+    "executable": "C:\\Users\\Administrator\\Desktop\\数字牡丹赋\\数字牡丹赋-Windows-x64\\数字牡丹赋.exe",
+    "args": [
+      "--mdgs-smoke",
+      "--mdgs-smoke-profile=E:\\数字媒体竞赛\\gitProject\\MDGS\\tmp\\portable-desktop-validation\\2026-10-23T05-48-16-182Z\\profile",
+      "--remote-debugging-port=5060"
+    ],
+    "profile": "E:\\数字媒体竞赛\\gitProject\\MDGS\\tmp\\portable-desktop-validation\\2026-10-23T05-48-16-182Z\\profile",
+    "port": 5060,
+    "windowsHide": true,
+    "pid": 18076
+  },
+  "runtime": {
+    "expectedElectron": "45.0.0",
+    "endpoint": {
+      "Browser": "Chrome/156.0.8078.48",
+      "File-Path-Style": "windows",
+      "Protocol-Version": "1.3",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) 数字牡丹赋/1.0.0 Chrome/156.0.8078.48 Electron/45.0.0 Safari/537.36",
+      "V8-Version": "15.6.75.19",
+      "WebKit-Version": "537.36 (@40f996fb555e345f3f6909e10406c14da3394e84)",
+      "webSocketDebuggerUrl": "ws://127.0.0.1:5060/devtools/browser/82528814-5376-4e85-9dde-ccd5dbcfd223"
+    },
+    "browserVersion": {
+      "protocolVersion": "1.3",
+      "product": "Chrome/156.0.8078.48",
+      "revision": "@40f996fb555e345f3f6909e10406c14da3394e84",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) 数字牡丹赋/1.0.0 Chrome/156.0.8078.48 Electron/45.0.0 Safari/537.36",
+      "jsVersion": "15.6.75.19"
+    },
+    "chromiumVersion": "156.0.8078.48"
+  },
+  "windowsProcesses": {
+    "processes": [
+      {
+        "ProcessId": 18076,
+        "ParentProcessId": 7020,
+        "Name": "数字牡丹赋.exe",
+        "ExecutablePath": "C:\\Users\\Administrator\\Desktop\\数字牡丹赋\\数字牡丹赋-Windows-x64\\数字牡丹赋.exe"
+      },
+      {
+        "ProcessId": 35400,
+        "ParentProcessId": 18076,
+        "Name": "数字牡丹赋.exe",
+        "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5Bw1ToX6IGiVDbJkz46cT2IMM\\数字牡丹赋.exe"
+      },
+      {
+        "ProcessId": 29264,
+        "ParentProcessId": 35400,
+        "Name": "数字牡丹赋.exe",
+        "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5Bw1ToX6IGiVDbJkz46cT2IMM\\数字牡丹赋.exe"
+      },
+      {
+        "ProcessId": 50804,
+        "ParentProcessId": 35400,
+        "Name": "数字牡丹赋.exe",
+        "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5Bw1ToX6IGiVDbJkz46cT2IMM\\数字牡丹赋.exe"
+      },
+      {
+        "ProcessId": 52844,
+        "ParentProcessId": 35400,
+        "Name": "数字牡丹赋.exe",
+        "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5Bw1ToX6IGiVDbJkz46cT2IMM\\数字牡丹赋.exe"
+      }
+    ]
+  },
+  "extractedBuildAssociation": {
+    "actualExecutable": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5Bw1ToX6IGiVDbJkz46cT2IMM\\数字牡丹赋.exe",
+    "bindings": [
+      {
+        "resource": "app.asar",
+        "actual": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5Bw1ToX6IGiVDbJkz46cT2IMM\\resources\\app.asar",
+        "expected": "dist-desktop/win-unpacked/resources/app.asar",
+        "actualSha256": "05484757f5171b129788209f17f753c6f6c52163f19aee1fb2412781eb47fad2",
+        "expectedSha256": "05484757f5171b129788209f17f753c6f6c52163f19aee1fb2412781eb47fad2"
+      },
+      {
+        "resource": "web/.mdgs-exhibition-package.json",
+        "actual": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5Bw1ToX6IGiVDbJkz46cT2IMM\\resources\\web\\.mdgs-exhibition-package.json",
+        "expected": "dist-desktop/win-unpacked/resources/web/.mdgs-exhibition-package.json",
+        "actualSha256": "214f3f8ef43db9902c54353bc90142c3d990bbc40d66ce4ecb08c3875d6473f5",
+        "expectedSha256": "214f3f8ef43db9902c54353bc90142c3d990bbc40d66ce4ecb08c3875d6473f5"
+      }
+    ]
+  },
+  "executableSha256After": "3d344dfe613f4a0e073b20137e61f78ece5f6beaa9988354ebc53ece7be60ca9",
+  "closeMessage": "CDP transport closed without a Browser.close reply; checking the owned parent exit.",
+  "portableParentExit": {
+    "code": 0,
+    "signal": null
+  },
+  "portableExtractionCleanup": {
+    "directory": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5Bw1ToX6IGiVDbJkz46cT2IMM",
+    "existsAfterParentExit": false
+  },
+  "launchOutput": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "completedAt": "2026-10-23T05:48:43.094Z",
+  "artifactDirectory": "tmp/portable-desktop-validation/2026-10-23T05-48-16-182Z"
+}

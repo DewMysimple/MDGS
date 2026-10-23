@@ -23,6 +23,10 @@ npm run dev
 
 需要单独展示时，运行 `npm run export:exhibition`。生成的 `dist-exhibition/` 约541MB，只包含选用四卷、美术、声音、字体及运行库许可；原图与程序场逐字节复制，完整工程和历史素材仍保留。安装Node.js 18或更新版本后，可在该文件夹双击「启动展览.cmd」，或运行 `node serve.cjs --open`，无需项目依赖或Blender。也可交给静态HTTP服务器；不要直接双击HTML。导出库存及复制校验见 `reports/art-renewal/exhibition-package.json`。
 
+Windows 独立程序使用 `npm run export:desktop -- --output "交付目录"` 制作，要求 Windows 和已安装的开发依赖。脚本构建网页、校验选用资源，使用 Electron 封装包含 Chromium、Node.js、字体、声音与四卷资源的单文件便携 EXE，再生成 ZIP 并实际解压、核对 SHA。收件人在 Windows 10/11 64 位双击「数字牡丹赋.exe」即可断网运行，无需另装浏览器或 Node.js。首次启动会释放内置文件到系统临时目录；F11 切换全屏、Esc 退出全屏，花笺使用系统保存对话框。文献参读链接按观众点击交给系统浏览器。输出目录已有同名交付时脚本拒绝覆盖。
+
+桌面壳为 `desktop/main.cjs`，只加载固定来源 `mdgs://app/` 的内置资源，独立于本机开发服务器端口；窗口启用沙箱与隔离，设置保存在当前用户的应用数据目录。`electron-builder.config.cjs` 固定 Windows x64 便携目标。构建报告见 `reports/desktop/package.json`；使用 `npm run test:desktop -- --executable "dist-desktop/win-unpacked/数字牡丹赋.exe"` 验证捆绑内核、资源原字节、四卷、音频和花笺，QA 工具沿用 `MDGS_PLAYWRIGHT_MODULE`，不随程序分发。最终便携 EXE 另由 `scripts/validate-portable-desktop.mjs --executable "实际交付EXE"` 验证真实自解压启动。
+
 ## 当前四卷
 
 | 卷名 | 原生文件 | 网格 | 独立原图 | 节点 | 源帧范围 | 端点时长 |

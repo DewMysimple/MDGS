@@ -1,0 +1,28 @@
+exit=1
+pid=3756
+STDOUT
+
+STDERR
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Input parent must not redirect outside its expected location: dist/assets/new-scrolls
++ actual - expected
+
++ '..\\..\\..\\..\\external\\dist\\assets\\new-scrolls'
+- ''
+
+    at assertLocalInput (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-35-21-386Z/linked-dist-root/project/scripts/package-exhibition.mjs:26:10)
+    at async walk (file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-35-21-386Z/linked-dist-root/project/scripts/package-exhibition.mjs:29:3)
+    at async file:///E:/%E6%95%B0%E5%AD%97%E5%AA%92%E4%BD%93%E7%AB%9E%E8%B5%9B/gitProject/MDGS/tmp/exhibition-tool-smoke/2026-10-23T05-35-21-386Z/linked-dist-root/project/scripts/package-exhibition.mjs:89:49 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: '..\\..\\..\\..\\external\\dist\\assets\\new-scrolls',
+  expected: '',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.16.0
+
