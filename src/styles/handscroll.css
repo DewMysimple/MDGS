@@ -87,7 +87,11 @@
 
 .scroll-exhibition:fullscreen{position:fixed;inset:0;z-index:999;width:100vw;height:100dvh;min-height:0;padding:0;display:block;background:var(--paper)}
 .scroll-exhibition:fullscreen::backdrop{background:var(--paper)}
-.scroll-exhibition:fullscreen .scroll-mount{height:100%}
-.scroll-exhibition:fullscreen .end-colophon{display:none}
+.scroll-exhibition:fullscreen .scroll-mount,.scroll-exhibition.is-fullscreen .scroll-mount{height:100%}
+.scroll-exhibition:fullscreen .end-colophon,.scroll-exhibition.is-fullscreen .end-colophon{display:none}
 .scroll-fullscreen-exit{position:absolute;z-index:20;top:max(14px,env(safe-area-inset-top));right:max(16px,env(safe-area-inset-right));display:flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid #87775670;border-radius:2px;background:#f4ecdcdf;color:#675840;font:12px/1 Arial,sans-serif;letter-spacing:1px;box-shadow:0 2px 12px #38291626;backdrop-filter:blur(8px)}
 .scroll-fullscreen-exit:hover{background:#fff8e9;color:#913d34}
+.peony-experience .app-shell.poetic-viewer.is-native-fullscreen{--header-height:0px;--controls-height:0px;--footer-height:0px;--scroll-height:100dvh;grid-template-rows:0 minmax(0,100dvh) 0}
+.peony-experience .app-shell.poetic-viewer.is-native-fullscreen .site-header,.peony-experience .app-shell.poetic-viewer.is-native-fullscreen .scroll-controls{display:none}
+.peony-experience .app-shell.poetic-viewer.is-native-fullscreen .exhibition{height:100%;grid-template-rows:var(--scroll-height) 0}
+.peony-experience .app-shell.poetic-viewer.is-native-fullscreen .scroll-exhibition{height:100%;padding:0}

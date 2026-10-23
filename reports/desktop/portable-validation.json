@@ -1,14 +1,14 @@
 {
   "status": "passed",
-  "startedAt": "2026-10-23T10:25:00.987Z",
-  "runId": "2026-10-23T10-25-00-986Z",
-  "executable": "C:\\Users\\Administrator\\Desktop\\数字牡丹赋\\数字牡丹赋-Windows-x64\\数字牡丹赋.exe",
+  "startedAt": "2026-10-23T11:08:12.862Z",
+  "runId": "2026-10-23T11-08-12-861Z",
+  "executable": "E:\\数字媒体竞赛\\gitProject\\MDGS\\dist-desktop\\数字牡丹赋.exe",
   "scope": "Launch the final single-file portable Windows EXE with its NSIS extraction layer; attach to its bundled Chromium over CDP, reload with HTTP(S) blocked, verify local home/font/audio and chapter-one native first frame, then close the browser and require the owned portable parent to exit successfully. This is a launch smoke test, not full visual certification.",
   "checks": [
     {
       "test": "portable-exe-extracts-and-starts-bundled-electron-45",
       "passed": true,
-      "pid": 42596,
+      "pid": 54096,
       "runtime": {
         "expectedElectron": "45.0.0",
         "endpoint": {
@@ -18,7 +18,7 @@
           "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) 数字牡丹赋/1.0.0 Chrome/156.0.8078.48 Electron/45.0.0 Safari/537.36",
           "V8-Version": "15.6.75.19",
           "WebKit-Version": "537.36 (@40f996fb555e345f3f6909e10406c14da3394e84)",
-          "webSocketDebuggerUrl": "ws://127.0.0.1:14162/devtools/browser/fcf6a95c-d13c-4b43-890c-9b0d57ebfb79"
+          "webSocketDebuggerUrl": "ws://127.0.0.1:6825/devtools/browser/4ee3568f-139a-46c0-b268-c4ede33bd9ad"
         },
         "browserVersion": {
           "protocolVersion": "1.3",
@@ -32,34 +32,34 @@
       "windowsProcesses": {
         "processes": [
           {
-            "ProcessId": 42596,
-            "ParentProcessId": 41368,
+            "ProcessId": 54096,
+            "ParentProcessId": 11916,
             "Name": "数字牡丹赋.exe",
-            "ExecutablePath": "C:\\Users\\Administrator\\Desktop\\数字牡丹赋\\数字牡丹赋-Windows-x64\\数字牡丹赋.exe"
+            "ExecutablePath": "E:\\数字媒体竞赛\\gitProject\\MDGS\\dist-desktop\\数字牡丹赋.exe"
           },
           {
-            "ProcessId": 50576,
-            "ParentProcessId": 42596,
+            "ProcessId": 52864,
+            "ParentProcessId": 54096,
             "Name": "数字牡丹赋.exe",
-            "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5jlEfxP1Dl75yND2Gwn9X1gE4\\数字牡丹赋.exe"
+            "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5p71zaGTSB31kkvbpwkJAVdVZ\\数字牡丹赋.exe"
           },
           {
-            "ProcessId": 41820,
-            "ParentProcessId": 50576,
+            "ProcessId": 15336,
+            "ParentProcessId": 52864,
             "Name": "数字牡丹赋.exe",
-            "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5jlEfxP1Dl75yND2Gwn9X1gE4\\数字牡丹赋.exe"
+            "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5p71zaGTSB31kkvbpwkJAVdVZ\\数字牡丹赋.exe"
           },
           {
-            "ProcessId": 33924,
-            "ParentProcessId": 50576,
+            "ProcessId": 55220,
+            "ParentProcessId": 52864,
             "Name": "数字牡丹赋.exe",
-            "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5jlEfxP1Dl75yND2Gwn9X1gE4\\数字牡丹赋.exe"
+            "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5p71zaGTSB31kkvbpwkJAVdVZ\\数字牡丹赋.exe"
           },
           {
-            "ProcessId": 1488,
-            "ParentProcessId": 50576,
+            "ProcessId": 6988,
+            "ParentProcessId": 52864,
             "Name": "数字牡丹赋.exe",
-            "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5jlEfxP1Dl75yND2Gwn9X1gE4\\数字牡丹赋.exe"
+            "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5p71zaGTSB31kkvbpwkJAVdVZ\\数字牡丹赋.exe"
           }
         ]
       }
@@ -67,21 +67,21 @@
     {
       "test": "portable-extracted-application-matches-validated-unpacked-build",
       "passed": true,
-      "actualExecutable": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5jlEfxP1Dl75yND2Gwn9X1gE4\\数字牡丹赋.exe",
+      "actualExecutable": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5p71zaGTSB31kkvbpwkJAVdVZ\\数字牡丹赋.exe",
       "bindings": [
         {
           "resource": "app.asar",
-          "actual": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5jlEfxP1Dl75yND2Gwn9X1gE4\\resources\\app.asar",
+          "actual": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5p71zaGTSB31kkvbpwkJAVdVZ\\resources\\app.asar",
           "expected": "dist-desktop/win-unpacked/resources/app.asar",
-          "actualSha256": "05484757f5171b129788209f17f753c6f6c52163f19aee1fb2412781eb47fad2",
-          "expectedSha256": "05484757f5171b129788209f17f753c6f6c52163f19aee1fb2412781eb47fad2"
+          "actualSha256": "448b668bc93766eacf761e3c5ce9480b9437ea16ff2a1c6180fc565541017a19",
+          "expectedSha256": "448b668bc93766eacf761e3c5ce9480b9437ea16ff2a1c6180fc565541017a19"
         },
         {
           "resource": "web/.mdgs-exhibition-package.json",
-          "actual": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5jlEfxP1Dl75yND2Gwn9X1gE4\\resources\\web\\.mdgs-exhibition-package.json",
+          "actual": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5p71zaGTSB31kkvbpwkJAVdVZ\\resources\\web\\.mdgs-exhibition-package.json",
           "expected": "dist-desktop/win-unpacked/resources/web/.mdgs-exhibition-package.json",
-          "actualSha256": "14fd9cd9acd08b48bd02329dfedfe7c57a4a55a9fbd45f073802da5118b195e0",
-          "expectedSha256": "14fd9cd9acd08b48bd02329dfedfe7c57a4a55a9fbd45f073802da5118b195e0"
+          "actualSha256": "218839e2c119be1735dd754bc96fea34dff73b9adda82083c6513a278845cbc7",
+          "expectedSha256": "218839e2c119be1735dd754bc96fea34dff73b9adda82083c6513a278845cbc7"
         }
       ]
     },
@@ -145,13 +145,13 @@
           0.24
         ],
         "levels": [
-          0.004986932501196861,
-          0.0024934662505984306,
-          0.004986932501196861
+          0,
+          0,
+          0
         ],
         "musicGain": 1,
         "reading": false,
-        "sourceEpoch": 0.327,
+        "sourceEpoch": 0.3163333333333333,
         "effects": 0,
         "cuesPlayed": 0,
         "decodedBuffers": 3,
@@ -201,8 +201,8 @@
         "shaderErrors": "[]",
         "textureErrors": "{}",
         "compactReadingReserve": "0",
-        "renderCount": "62",
-        "rafTicks": "197",
+        "renderCount": "52",
+        "rafTicks": "183",
         "rafRunning": "false",
         "firstFrameReady": "true",
         "contextLost": "false",
@@ -221,15 +221,15 @@
         "narrativeReadProgress": "0",
         "drawCalls": "1",
         "geometries": "20",
-        "shaderWarmup": "{\"extension\":true,\"generation\":0,\"queue\":0,\"pending\":0,\"submitted\":0,\"completed\":149,\"batches\":149,\"polls\":528,\"compilationMs\":65.7999999821186,\"hidden\":false,\"contextLost\":false,\"abandoned\":false,\"reason\":\"\",\"disposed\":false,\"cancelled\":false,\"checkShaderErrors\":true}"
+        "shaderWarmup": "{\"extension\":true,\"generation\":0,\"queue\":0,\"pending\":0,\"submitted\":0,\"completed\":149,\"batches\":149,\"polls\":582,\"compilationMs\":64.49999994039536,\"hidden\":false,\"contextLost\":false,\"abandoned\":false,\"reason\":\"\",\"disposed\":false,\"cancelled\":false,\"checkShaderErrors\":true}"
       }
     },
     {
       "test": "portable-smoke-no-missing-resource-or-external-runtime-request",
       "passed": true,
       "requestedURLs": [
-        "mdgs://app/assets/index-7TkD_iMM.css",
-        "mdgs://app/assets/index-BXIMl0Vy.js",
+        "mdgs://app/assets/index-D7Fs2aQX.css",
+        "mdgs://app/assets/index-DOTXdVLB.js",
         "mdgs://app/assets/new-scrolls/chapter-1/cover.webp",
         "mdgs://app/assets/new-scrolls/chapter-1/material-fields/efc57e665aeec1cd4ee22bfb.f16.gz",
         "mdgs://app/assets/new-scrolls/chapter-1/render-settings.json",
@@ -277,19 +277,19 @@
   "badResponses": [],
   "failedRequests": [],
   "externalRequests": [],
-  "executableBytes": 623140130,
-  "executableSha256": "0dac78505e929d6e6bba2fe33debf5678b1469e406bba90225b9194302f02fba",
+  "executableBytes": 623137973,
+  "executableSha256": "25124c5aabb6f680cd2146555ac95c7ebd4e4e722294c7e87436151ad91eb84b",
   "launch": {
-    "executable": "C:\\Users\\Administrator\\Desktop\\数字牡丹赋\\数字牡丹赋-Windows-x64\\数字牡丹赋.exe",
+    "executable": "E:\\数字媒体竞赛\\gitProject\\MDGS\\dist-desktop\\数字牡丹赋.exe",
     "args": [
       "--mdgs-smoke",
-      "--mdgs-smoke-profile=E:\\数字媒体竞赛\\gitProject\\MDGS\\tmp\\portable-desktop-validation\\2026-10-23T10-25-00-986Z\\profile",
-      "--remote-debugging-port=14162"
+      "--mdgs-smoke-profile=E:\\数字媒体竞赛\\gitProject\\MDGS\\tmp\\portable-desktop-validation\\2026-10-23T11-08-12-861Z\\profile",
+      "--remote-debugging-port=6825"
     ],
-    "profile": "E:\\数字媒体竞赛\\gitProject\\MDGS\\tmp\\portable-desktop-validation\\2026-10-23T10-25-00-986Z\\profile",
-    "port": 14162,
+    "profile": "E:\\数字媒体竞赛\\gitProject\\MDGS\\tmp\\portable-desktop-validation\\2026-10-23T11-08-12-861Z\\profile",
+    "port": 6825,
     "windowsHide": true,
-    "pid": 42596
+    "pid": 54096
   },
   "runtime": {
     "expectedElectron": "45.0.0",
@@ -300,7 +300,7 @@
       "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) 数字牡丹赋/1.0.0 Chrome/156.0.8078.48 Electron/45.0.0 Safari/537.36",
       "V8-Version": "15.6.75.19",
       "WebKit-Version": "537.36 (@40f996fb555e345f3f6909e10406c14da3394e84)",
-      "webSocketDebuggerUrl": "ws://127.0.0.1:14162/devtools/browser/fcf6a95c-d13c-4b43-890c-9b0d57ebfb79"
+      "webSocketDebuggerUrl": "ws://127.0.0.1:6825/devtools/browser/4ee3568f-139a-46c0-b268-c4ede33bd9ad"
     },
     "browserVersion": {
       "protocolVersion": "1.3",
@@ -314,70 +314,70 @@
   "windowsProcesses": {
     "processes": [
       {
-        "ProcessId": 42596,
-        "ParentProcessId": 41368,
+        "ProcessId": 54096,
+        "ParentProcessId": 11916,
         "Name": "数字牡丹赋.exe",
-        "ExecutablePath": "C:\\Users\\Administrator\\Desktop\\数字牡丹赋\\数字牡丹赋-Windows-x64\\数字牡丹赋.exe"
+        "ExecutablePath": "E:\\数字媒体竞赛\\gitProject\\MDGS\\dist-desktop\\数字牡丹赋.exe"
       },
       {
-        "ProcessId": 50576,
-        "ParentProcessId": 42596,
+        "ProcessId": 52864,
+        "ParentProcessId": 54096,
         "Name": "数字牡丹赋.exe",
-        "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5jlEfxP1Dl75yND2Gwn9X1gE4\\数字牡丹赋.exe"
+        "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5p71zaGTSB31kkvbpwkJAVdVZ\\数字牡丹赋.exe"
       },
       {
-        "ProcessId": 41820,
-        "ParentProcessId": 50576,
+        "ProcessId": 15336,
+        "ParentProcessId": 52864,
         "Name": "数字牡丹赋.exe",
-        "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5jlEfxP1Dl75yND2Gwn9X1gE4\\数字牡丹赋.exe"
+        "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5p71zaGTSB31kkvbpwkJAVdVZ\\数字牡丹赋.exe"
       },
       {
-        "ProcessId": 33924,
-        "ParentProcessId": 50576,
+        "ProcessId": 55220,
+        "ParentProcessId": 52864,
         "Name": "数字牡丹赋.exe",
-        "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5jlEfxP1Dl75yND2Gwn9X1gE4\\数字牡丹赋.exe"
+        "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5p71zaGTSB31kkvbpwkJAVdVZ\\数字牡丹赋.exe"
       },
       {
-        "ProcessId": 1488,
-        "ParentProcessId": 50576,
+        "ProcessId": 6988,
+        "ParentProcessId": 52864,
         "Name": "数字牡丹赋.exe",
-        "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5jlEfxP1Dl75yND2Gwn9X1gE4\\数字牡丹赋.exe"
+        "ExecutablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5p71zaGTSB31kkvbpwkJAVdVZ\\数字牡丹赋.exe"
       }
     ]
   },
   "extractedBuildAssociation": {
-    "actualExecutable": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5jlEfxP1Dl75yND2Gwn9X1gE4\\数字牡丹赋.exe",
+    "actualExecutable": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5p71zaGTSB31kkvbpwkJAVdVZ\\数字牡丹赋.exe",
     "bindings": [
       {
         "resource": "app.asar",
-        "actual": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5jlEfxP1Dl75yND2Gwn9X1gE4\\resources\\app.asar",
+        "actual": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5p71zaGTSB31kkvbpwkJAVdVZ\\resources\\app.asar",
         "expected": "dist-desktop/win-unpacked/resources/app.asar",
-        "actualSha256": "05484757f5171b129788209f17f753c6f6c52163f19aee1fb2412781eb47fad2",
-        "expectedSha256": "05484757f5171b129788209f17f753c6f6c52163f19aee1fb2412781eb47fad2"
+        "actualSha256": "448b668bc93766eacf761e3c5ce9480b9437ea16ff2a1c6180fc565541017a19",
+        "expectedSha256": "448b668bc93766eacf761e3c5ce9480b9437ea16ff2a1c6180fc565541017a19"
       },
       {
         "resource": "web/.mdgs-exhibition-package.json",
-        "actual": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5jlEfxP1Dl75yND2Gwn9X1gE4\\resources\\web\\.mdgs-exhibition-package.json",
+        "actual": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5p71zaGTSB31kkvbpwkJAVdVZ\\resources\\web\\.mdgs-exhibition-package.json",
         "expected": "dist-desktop/win-unpacked/resources/web/.mdgs-exhibition-package.json",
-        "actualSha256": "14fd9cd9acd08b48bd02329dfedfe7c57a4a55a9fbd45f073802da5118b195e0",
-        "expectedSha256": "14fd9cd9acd08b48bd02329dfedfe7c57a4a55a9fbd45f073802da5118b195e0"
+        "actualSha256": "218839e2c119be1735dd754bc96fea34dff73b9adda82083c6513a278845cbc7",
+        "expectedSha256": "218839e2c119be1735dd754bc96fea34dff73b9adda82083c6513a278845cbc7"
       }
     ]
   },
-  "executableSha256After": "0dac78505e929d6e6bba2fe33debf5678b1469e406bba90225b9194302f02fba",
+  "executableSha256After": "25124c5aabb6f680cd2146555ac95c7ebd4e4e722294c7e87436151ad91eb84b",
   "closeMessage": "cdpSession.send: Target page, context or browser has been closed",
   "portableParentExit": {
     "code": 0,
     "signal": null
   },
   "portableExtractionCleanup": {
-    "directory": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5jlEfxP1Dl75yND2Gwn9X1gE4",
+    "directory": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\3L5p71zaGTSB31kkvbpwkJAVdVZ",
     "existsAfterParentExit": false
   },
   "launchOutput": {
     "stdout": "",
     "stderr": ""
   },
-  "completedAt": "2026-10-23T10:25:29.767Z",
-  "artifactDirectory": "tmp/portable-desktop-validation/2026-10-23T10-25-00-986Z"
+  "completedAt": "2026-10-23T11:08:38.474Z",
+  "artifactDirectory": "tmp/portable-desktop-validation/2026-10-23T11-08-12-861Z"
 }

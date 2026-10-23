@@ -16,6 +16,7 @@ sources: []
 | 2026-10-23 | ui | completed | [国色长卷艺术迭代](2026-10-23-%E5%9B%BD%E8%89%B2%E9%95%BF%E5%8D%B7%E8%89%BA%E6%9C%AF%E8%BF%AD%E4%BB%A3.md) |
 | 2026-10-23 | feature | completed | [四卷滚动与微透明文字底板](2026-10-23-%E5%9B%9B%E5%8D%B7%E6%BB%9A%E5%8A%A8%E4%B8%8E%E5%BE%AE%E9%80%8F%E6%98%8E%E6%96%87%E5%AD%97%E5%BA%95%E6%9D%BF.md) |
 | 2026-10-23 | feature | completed | [四卷对称留白与离线发行](2026-10-23-%E5%9B%9B%E5%8D%B7%E5%AF%B9%E7%A7%B0%E7%95%99%E7%99%BD%E4%B8%8E%E7%A6%BB%E7%BA%BF%E5%8F%91%E8%A1%8C.md) |
+| 2026-10-23 | bug | completed | [修复画卷全屏按钮](2026-10-23-%E4%BF%AE%E5%A4%8D%E7%94%BB%E5%8D%B7%E5%85%A8%E5%B1%8F%E6%8C%89%E9%92%AE.md) |
 | 2026-10-23 | feature | completed | [当前源码重打 Windows 离线 EXE](2026-10-23-Windows%E7%A6%BB%E7%BA%BFEXE%E5%BD%93%E5%89%8D%E6%BA%90%E7%A0%81%E9%87%8D%E6%89%93%E5%8C%85.md) |
 | 2026-10-23 | feature | completed | [Windows 离线 EXE 交付](2026-10-23-Windows%E7%A6%BB%E7%BA%BFEXE%E4%BA%A4%E4%BB%98.md) |
 | 2026-10-22 | feature | completed | [新版四卷接入与参考投影首页](2026-10-22-%E6%96%B0%E7%89%88%E5%9B%9B%E5%8D%B7%E6%8E%A5%E5%85%A5%E4%B8%8E%E5%8F%82%E8%80%83%E6%8A%95%E5%BD%B1%E9%A6%96%E9%A1%B5.md) |

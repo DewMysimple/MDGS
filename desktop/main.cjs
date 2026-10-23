@@ -1,6 +1,6 @@
 /* The desktop host serves only the bundled exhibition. No local HTTP server,
  * system Node.js, browser installation or renderer Node integration is needed. */
-const { app, BrowserWindow, Menu, dialog, protocol, session, shell } = require('electron');
+const { app, BrowserWindow, Menu, dialog, ipcMain, protocol, session, shell } = require('electron');
 const fs = require('node:fs/promises');
 const path = require('node:path');
 const { pathToFileURL } = require('node:url');
@@ -28,6 +28,20 @@ const MIME = {
 };
 const CSP = "default-src 'self' data: blob:; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self' blob:; connect-src 'self' blob:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; frame-src 'none'";
 let window;
+
+function fullscreenOwner(event) {
+  const owner = BrowserWindow.fromWebContents(event.sender);
+  return owner === window ? owner : null;
+}
+
+ipcMain.handle('mdgs:fullscreen:get', event => Boolean(fullscreenOwner(event)?.isFullScreen()));
+ipcMain.handle('mdgs:fullscreen:toggle', event => {
+  const owner = fullscreenOwner(event);
+  if (!owner) return false;
+  const next = !owner.isFullScreen();
+  owner.setFullScreen(next);
+  return next;
+});
 
 function ownURL(value) {
   try { const url = new URL(value); return url.protocol === 'mdgs:' && url.hostname === 'app' && !url.port && !url.username && !url.password; }
@@ -80,11 +94,13 @@ function createWindow() {
   window = new BrowserWindow({
     title: TITLE, width: 1440, height: 960, minWidth: 1000, minHeight: 650,
     show: false, backgroundColor: '#f3edde', autoHideMenuBar: true,
-    webPreferences: { nodeIntegration: false, contextIsolation: true, sandbox: true, webSecurity: true, spellcheck: false },
+    webPreferences: { preload: path.join(__dirname, 'preload.cjs'), nodeIntegration: false, contextIsolation: true, sandbox: true, webSecurity: true, spellcheck: false },
   });
   Menu.setApplicationMenu(null);
   let referenceGestureAt = 0;
   window.once('ready-to-show', () => { window.maximize(); window.show(); });
+  window.on('enter-full-screen', () => window?.webContents.send('mdgs:fullscreen-change', true));
+  window.on('leave-full-screen', () => window?.webContents.send('mdgs:fullscreen-change', false));
   window.webContents.on('before-mouse-event', (_event, input) => {
     if (input.type === 'mouseUp') referenceGestureAt = Date.now();
   });

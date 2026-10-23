@@ -31,6 +31,16 @@ const clamp = (value: number) => Math.min(1, Math.max(0, value));
 const motionPreferenceKey = 'guose-fanghua:painting-motion';
 type ViewerManifest = Pick<SceneManifest, 'id' | 'stops' | 'sourceRevision' | 'frameRange' | 'fps' | 'fpsBase' | 'sourceDurationSeconds'>;
 
+declare global {
+  interface Window {
+    mdgsDesktop?: {
+      getFullscreenState: () => Promise<boolean>;
+      toggleFullscreen: () => Promise<boolean>;
+      onFullscreenChange: (listener: (fullscreen: boolean) => void) => () => void;
+    };
+  }
+}
+
 function readMotionPreference() {
   try { return localStorage.getItem(motionPreferenceKey) !== 'off'; }
   catch { return true; }
@@ -52,7 +62,9 @@ export default function App() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [settings, setSettings] = useState(readViewerSettings);
   useEffect(() => { setSettingsOpen(false); setLetterOpen(false); }, [journey.phase, journey.attempt]);
-  const [fullscreen, setFullscreen] = useState(Boolean(document.fullscreenElement));
+  const [browserFullscreen, setBrowserFullscreen] = useState(Boolean(document.fullscreenElement));
+  const [nativeFullscreen, setNativeFullscreen] = useState(false);
+  const fullscreen = browserFullscreen || nativeFullscreen;
   const [notice, setNotice] = useState('');
   const [narrativePlacement,setNarrativePlacement]=useState<NarrativeSpace>();
   const [motionEnabled, setMotionEnabled] = useState(readMotionPreference);
@@ -205,20 +217,37 @@ export default function App() {
     goTo(next?.progress ?? 1);
   }
 
-  async function toggleFullscreen() {
-    try {
-      if (document.fullscreenElement === scrollExhibitionRef.current) await document.exitFullscreen();
-      else await scrollExhibitionRef.current?.requestFullscreen();
-    } catch {
-      setNotice('当前浏览器暂不支持全屏显示。');
-      window.setTimeout(() => setNotice(''), 4000);
+  function reportFullscreenFailure() {
+    setNotice('当前浏览器暂不支持全屏显示。');
+    window.setTimeout(() => setNotice(''), 4000);
+  }
+
+  function toggleFullscreen() {
+    if (window.mdgsDesktop) {
+      void window.mdgsDesktop.toggleFullscreen().catch(reportFullscreenFailure);
+      return;
     }
+    const target = scrollExhibitionRef.current;
+    if (!target) return;
+    const change = document.fullscreenElement === target ? document.exitFullscreen() : target.requestFullscreen();
+    void change.catch(reportFullscreenFailure);
   }
 
   useEffect(() => {
-    const update = () => setFullscreen(document.fullscreenElement === scrollExhibitionRef.current);
-    document.addEventListener('fullscreenchange', update);
-    return () => document.removeEventListener('fullscreenchange', update);
+    const updateBrowserFullscreen = () => setBrowserFullscreen(document.fullscreenElement === scrollExhibitionRef.current);
+    document.addEventListener('fullscreenchange', updateBrowserFullscreen);
+    let receivedNativeChange = false;
+    const removeNativeListener = window.mdgsDesktop?.onFullscreenChange(value => {
+      receivedNativeChange = true;
+      setNativeFullscreen(value);
+    });
+    void window.mdgsDesktop?.getFullscreenState().then(value => {
+      if (!receivedNativeChange) setNativeFullscreen(value);
+    }).catch(reportFullscreenFailure);
+    return () => {
+      document.removeEventListener('fullscreenchange', updateBrowserFullscreen);
+      removeNativeListener?.();
+    };
   }, []);
 
   useEffect(() => {
@@ -259,7 +288,7 @@ export default function App() {
     {studyVisited && <div className="journey-study" inert={journey.phase !== 'HOME'} aria-hidden={journey.phase !== 'HOME'}>
       <StudyHome phase={journey.phase} chapterId={chapterId} onSelect={journey.select} motionEnabled={motionEnabled} onToggleMotion={() => setMotionEnabled(value => !value)} onOpenSettings={openSettings} />
     </div>}
-    {journey.viewerMounted && <div className={`app-shell poetic-viewer journey-viewer${journey.interactive ? ' is-interactive' : ''}`} inert={!journey.interactive} aria-hidden={!journey.interactive}>
+    {journey.viewerMounted && <div className={`app-shell poetic-viewer journey-viewer${journey.interactive ? ' is-interactive' : ''}${nativeFullscreen ? ' is-native-fullscreen' : ''}`} inert={!journey.interactive} aria-hidden={!journey.interactive}>
       <a className="skip-link" href="#scroll-artwork" onClick={event => { event.preventDefault(); stageRef.current?.focus(); }}>跳至画卷</a>
       <header className="site-header">
         <button className="brand" type="button" onClick={returnToStudy} aria-label="返回序厅">
@@ -290,7 +319,7 @@ export default function App() {
       <main className="exhibition">
         <h1 className="visually-hidden" id="chapter-title">第{ordinal[chapterIndex]}卷 · {chapter.title}</h1>
 
-        <section ref={scrollExhibitionRef} className="scroll-exhibition" aria-label={`第${ordinal[chapterIndex]}卷：${chapter.title}`}>
+        <section ref={scrollExhibitionRef} className={`scroll-exhibition${fullscreen ? ' is-fullscreen' : ''}`} aria-label={`第${ordinal[chapterIndex]}卷：${chapter.title}`}>
           {fullscreen && <button className="scroll-fullscreen-exit" type="button" onClick={() => void toggleFullscreen()} aria-label="退出画卷全屏" title="退出全屏">
             <Minimize size={17} strokeWidth={1.4} /><span>退出全屏</span>
           </button>}

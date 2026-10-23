@@ -5,7 +5,7 @@ module.exports = {
   directories: { app: 'desktop', output: 'dist-desktop' },
   electronVersion: require('./package.json').devDependencies.electron,
   electronDist: 'node_modules/electron/dist',
-  files: ['main.cjs', 'package.json', 'icon.ico'],
+  files: ['main.cjs', 'preload.cjs', 'package.json', 'icon.ico'],
   extraResources: [{
     from: 'dist-exhibition', to: 'web',
     filter: ['**/*', '.mdgs-exhibition-package.json', '!serve.cjs', '!启动展览.cmd', '!运行说明.txt'],

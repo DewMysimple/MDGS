@@ -1,8 +1,8 @@
 {
   "status": "passed",
-  "startedAt": "2026-10-23T10:25:39.257Z",
-  "runId": "2026-10-23T10-25-39-101Z",
-  "scope": "Actual Windows packaged Electron executable, bundled Chromium/Node versions, local inventory SHA, standard secure custom protocol, four real scrolls/encounters/original text, local audio/font/art, PNG download and F11/Escape. HTTP(S) requests are aborted throughout the reload and interactions; this is a runtime dependency test, not a complete cross-device visual fidelity certification.",
+  "startedAt": "2026-10-23T11:07:01.127Z",
+  "runId": "2026-10-23T11-07-00-957Z",
+  "scope": "Actual Windows packaged Electron executable, bundled Chromium/Node versions, local inventory SHA, standard secure custom protocol, four real scrolls/encounters/original text, native fullscreen button and F11/Escape, local audio/font/art, PNG download. HTTP(S) requests are aborted throughout the reload and interactions; this is a runtime dependency test, not a complete cross-device visual fidelity certification.",
   "executable": "dist-desktop/win-unpacked/数字牡丹赋.exe",
   "checks": [
     {
@@ -47,7 +47,7 @@
         "executable": "E:\\数字媒体竞赛\\gitProject\\MDGS\\dist-desktop\\win-unpacked\\数字牡丹赋.exe",
         "resourcesPath": "E:\\数字媒体竞赛\\gitProject\\MDGS\\dist-desktop\\win-unpacked\\resources",
         "appPath": "E:\\数字媒体竞赛\\gitProject\\MDGS\\dist-desktop\\win-unpacked\\resources\\app.asar",
-        "userData": "E:\\数字媒体竞赛\\gitProject\\MDGS\\tmp\\desktop-validation\\2026-10-23T10-25-39-101Z\\profile",
+        "userData": "E:\\数字媒体竞赛\\gitProject\\MDGS\\tmp\\desktop-validation\\2026-10-23T11-07-00-957Z\\profile",
         "preferences": {
           "allowRunningInsecureContent": false,
           "contextIsolation": true,
@@ -71,9 +71,9 @@
     {
       "test": "packaged-resource-inventory-original-bytes-and-license-files",
       "passed": true,
-      "sha256": "14fd9cd9acd08b48bd02329dfedfe7c57a4a55a9fbd45f073802da5118b195e0",
+      "sha256": "218839e2c119be1735dd754bc96fea34dff73b9adda82083c6513a278845cbc7",
       "verifiedFiles": 360,
-      "bytes": 540715443
+      "bytes": 540716512
     },
     {
       "test": "custom-protocol-gzip-mime-and-path-boundary",
@@ -221,13 +221,13 @@
           0.24
         ],
         "levels": [
-          0,
-          0,
-          0
+          0.006630373187363148,
+          0.003315186593681574,
+          0.006630373187363148
         ],
         "musicGain": 1,
         "reading": false,
-        "sourceEpoch": 0.3163333333333333,
+        "sourceEpoch": 0.295,
         "effects": 0,
         "cuesPlayed": 0,
         "decodedBuffers": 3,
@@ -302,8 +302,8 @@
         "shaderErrors": "[]",
         "textureErrors": "{}",
         "compactReadingReserve": "0",
-        "renderCount": "41",
-        "rafTicks": "180",
+        "renderCount": "46",
+        "rafTicks": "176",
         "rafRunning": "false",
         "firstFrameReady": "true",
         "contextLost": "false",
@@ -322,7 +322,7 @@
         "narrativeReadProgress": "0",
         "drawCalls": "1",
         "geometries": "20",
-        "shaderWarmup": "{\"extension\":true,\"generation\":0,\"queue\":0,\"pending\":0,\"submitted\":0,\"completed\":149,\"batches\":149,\"polls\":577,\"compilationMs\":69.80000001192093,\"hidden\":false,\"contextLost\":false,\"abandoned\":false,\"reason\":\"\",\"disposed\":false,\"cancelled\":false,\"checkShaderErrors\":true}"
+        "shaderWarmup": "{\"extension\":true,\"generation\":0,\"queue\":0,\"pending\":0,\"submitted\":0,\"completed\":149,\"batches\":149,\"polls\":567,\"compilationMs\":67.59999997913837,\"hidden\":false,\"contextLost\":false,\"abandoned\":false,\"reason\":\"\",\"disposed\":false,\"cancelled\":false,\"checkShaderErrors\":true}"
       },
       "encounter": "传说\n记载\n一花，两种记忆\n传说\n／\n史料\n\n“自唐则天已后，洛阳牡丹始盛。”\n\n画外补笺 · 北宋 · 欧阳修《洛阳牡丹记》 ↗",
       "originalCharacters": 914,
@@ -371,8 +371,8 @@
         "shaderErrors": "[]",
         "textureErrors": "{}",
         "compactReadingReserve": "0",
-        "renderCount": "17",
-        "rafTicks": "80",
+        "renderCount": "18",
+        "rafTicks": "81",
         "rafRunning": "false",
         "firstFrameReady": "true",
         "contextLost": "false",
@@ -391,7 +391,7 @@
         "narrativeReadProgress": "0",
         "drawCalls": "1",
         "geometries": "15",
-        "shaderWarmup": "{\"extension\":true,\"generation\":0,\"queue\":0,\"pending\":0,\"submitted\":0,\"completed\":58,\"batches\":58,\"polls\":267,\"compilationMs\":36.599999979138374,\"hidden\":false,\"contextLost\":false,\"abandoned\":false,\"reason\":\"\",\"disposed\":false,\"cancelled\":false,\"checkShaderErrors\":true}"
+        "shaderWarmup": "{\"extension\":true,\"generation\":0,\"queue\":0,\"pending\":0,\"submitted\":0,\"completed\":58,\"batches\":58,\"polls\":258,\"compilationMs\":34.40000003576279,\"hidden\":false,\"contextLost\":false,\"abandoned\":false,\"reason\":\"\",\"disposed\":false,\"cancelled\":false,\"checkShaderErrors\":true}"
       },
       "encounter": "花间\n舟中\n桥上\n画中游观\n共此一城春\n01花间\n02舟中\n03桥上\n\n桥上人相望，一城春色，众人同赏。\n\n画外补笺 · 共赏之意\n宋人亦记“士庶竞为游遨”。北宋 · 欧阳修《洛阳牡丹记》 ↗",
       "originalCharacters": 941,
@@ -440,8 +440,8 @@
         "shaderErrors": "[]",
         "textureErrors": "{}",
         "compactReadingReserve": "0",
-        "renderCount": "41",
-        "rafTicks": "125",
+        "renderCount": "36",
+        "rafTicks": "135",
         "rafRunning": "false",
         "firstFrameReady": "true",
         "contextLost": "false",
@@ -460,7 +460,7 @@
         "narrativeReadProgress": "0",
         "drawCalls": "1",
         "geometries": "19",
-        "shaderWarmup": "{\"extension\":true,\"generation\":0,\"queue\":0,\"pending\":0,\"submitted\":0,\"completed\":79,\"batches\":79,\"polls\":1588,\"compilationMs\":156.90000005066395,\"hidden\":false,\"contextLost\":false,\"abandoned\":false,\"reason\":\"\",\"disposed\":false,\"cancelled\":false,\"checkShaderErrors\":true}"
+        "shaderWarmup": "{\"extension\":true,\"generation\":0,\"queue\":0,\"pending\":0,\"submitted\":0,\"completed\":79,\"batches\":79,\"polls\":2498,\"compilationMs\":129.20000004768372,\"hidden\":false,\"contextLost\":false,\"abandoned\":false,\"reason\":\"\",\"disposed\":false,\"cancelled\":false,\"checkShaderErrors\":true}"
       },
       "encounter": "花意\n锦绣\n选花入锦\n重拾\n锦上之花\n\n花入锦绣，岁岁圆满。\n\n花与织物的艺术化联想\n故宫 · 万紫千红 ↗",
       "originalCharacters": 910,
@@ -509,8 +509,8 @@
         "shaderErrors": "[]",
         "textureErrors": "{}",
         "compactReadingReserve": "0",
-        "renderCount": "39",
-        "rafTicks": "74",
+        "renderCount": "40",
+        "rafTicks": "75",
         "rafRunning": "false",
         "firstFrameReady": "true",
         "contextLost": "false",
@@ -529,16 +529,39 @@
         "narrativeReadProgress": "0",
         "drawCalls": "1",
         "geometries": "11",
-        "shaderWarmup": "{\"extension\":true,\"generation\":0,\"queue\":0,\"pending\":0,\"submitted\":0,\"completed\":52,\"batches\":52,\"polls\":317,\"compilationMs\":38.299999967217445,\"hidden\":false,\"contextLost\":false,\"abandoned\":false,\"reason\":\"\",\"disposed\":false,\"cancelled\":false,\"checkShaderErrors\":true}"
+        "shaderWarmup": "{\"extension\":true,\"generation\":0,\"queue\":0,\"pending\":0,\"submitted\":0,\"completed\":52,\"batches\":52,\"polls\":312,\"compilationMs\":38.300000086426735,\"hidden\":false,\"contextLost\":false,\"abandoned\":false,\"reason\":\"\",\"disposed\":false,\"cancelled\":false,\"checkShaderErrors\":true}"
       },
       "encounter": "展读\n花容入诗\n\n云想衣裳花想容\n\n春风拂槛露华浓\n\n李白 · 清平调其一\n\n以花映人，\n以诗留春。\n\n诗文 · 北京园林 ↗\n合笺",
       "originalCharacters": 883,
       "sourceEndFrame": "1800"
     },
     {
+      "test": "scroll-fullscreen-button-enters-and-exits-native-fullscreen",
+      "passed": true,
+      "layout": {
+        "viewport": {
+          "width": 1707,
+          "height": 960
+        },
+        "scene": {
+          "x": 0,
+          "y": 0,
+          "width": 1707.3333740234375,
+          "height": 960
+        },
+        "header": "none",
+        "controls": "none",
+        "exitVisible": true,
+        "documentFullscreenElement": null,
+        "endColophon": "none"
+      },
+      "enteredAndExitedByScrollButtons": true,
+      "driver": "Electron main-process BrowserWindow.setFullScreen"
+    },
+    {
       "test": "flower-letter-real-native-download-1200x1600-png",
       "passed": true,
-      "download": "tmp/desktop-validation/2026-10-23T10-25-39-101Z/flower-letter.png",
+      "download": "tmp/desktop-validation/2026-10-23T11-07-00-957Z/flower-letter.png",
       "bytes": 3152365,
       "sha256": "243e56a769bb3ccd302190c2c2e5134989ffefb598f6e7439d97b28da74a3caf",
       "suggestedFilename": "国色长卷·余韵花笺.png"
@@ -547,9 +570,9 @@
       "test": "no-missing-resource-page-error-or-external-network-dependency",
       "passed": true,
       "requestedURLs": [
-        "mdgs://app/assets/flowerLetter-MVWSN5PG.js",
-        "mdgs://app/assets/index-7TkD_iMM.css",
-        "mdgs://app/assets/index-BXIMl0Vy.js",
+        "mdgs://app/assets/flowerLetter-S7TlJnPj.js",
+        "mdgs://app/assets/index-D7Fs2aQX.css",
+        "mdgs://app/assets/index-DOTXdVLB.js",
         "mdgs://app/assets/new-scrolls/chapter-1/cover.webp",
         "mdgs://app/assets/new-scrolls/chapter-1/material-fields/49e383a33c808a8e6321ae03.f16.gz",
         "mdgs://app/assets/new-scrolls/chapter-1/material-fields/88ea82327d0febc425929b63.f16.gz",
@@ -575,8 +598,8 @@
         "mdgs://app/assets/new-scrolls/chapter-1/textures/3e7036a34bd54ab5.webp",
         "mdgs://app/assets/new-scrolls/chapter-1/textures/3fd09c5dfd252ca1.webp",
         "mdgs://app/assets/new-scrolls/chapter-1/textures/4560ef49860878c0.webp",
-        "mdgs://app/assets/new-scrolls/chapter-1/textures/46a4b644ce449d89.webp",
         "mdgs://app/assets/new-scrolls/chapter-1/textures/4a13b75621827763.webp",
+        "mdgs://app/assets/new-scrolls/chapter-1/textures/4b35855ed5ffa59f.webp",
         "mdgs://app/assets/new-scrolls/chapter-1/textures/4bfe2c5cccd25bf3.webp",
         "mdgs://app/assets/new-scrolls/chapter-1/textures/50017de3a8408eda.webp",
         "mdgs://app/assets/new-scrolls/chapter-1/textures/57a1cbf81cb84316.webp",
@@ -590,6 +613,7 @@
         "mdgs://app/assets/new-scrolls/chapter-1/textures/77deecd75d232ec3.webp",
         "mdgs://app/assets/new-scrolls/chapter-1/textures/785c427be2863299.webp",
         "mdgs://app/assets/new-scrolls/chapter-1/textures/808754b982d784ec.webp",
+        "mdgs://app/assets/new-scrolls/chapter-1/textures/81f78acaf78c4254.webp",
         "mdgs://app/assets/new-scrolls/chapter-1/textures/82fd41e8f44ddf4b.webp",
         "mdgs://app/assets/new-scrolls/chapter-1/textures/834c9f86ced2650c.webp",
         "mdgs://app/assets/new-scrolls/chapter-1/textures/89351583b2859b80.webp",
@@ -597,7 +621,6 @@
         "mdgs://app/assets/new-scrolls/chapter-1/textures/9626fe28b66e4a17.webp",
         "mdgs://app/assets/new-scrolls/chapter-1/textures/9e4e39e56f2ccd75.webp",
         "mdgs://app/assets/new-scrolls/chapter-1/textures/abf5eafec62393e4.webp",
-        "mdgs://app/assets/new-scrolls/chapter-1/textures/ac247ff91b633456.webp",
         "mdgs://app/assets/new-scrolls/chapter-1/textures/acfc4e0d47c0a8f9.webp",
         "mdgs://app/assets/new-scrolls/chapter-1/textures/b2985031fe52d2c8.webp",
         "mdgs://app/assets/new-scrolls/chapter-1/textures/b2d3963198ef6049.webp",
@@ -687,7 +710,6 @@
         "mdgs://app/assets/new-scrolls/chapter-3/textures/141739ea495b46e4.webp",
         "mdgs://app/assets/new-scrolls/chapter-3/textures/160a260ca03505cb.webp",
         "mdgs://app/assets/new-scrolls/chapter-3/textures/20a9f98adb1ab008.webp",
-        "mdgs://app/assets/new-scrolls/chapter-3/textures/26a1dbcf3c942589.webp",
         "mdgs://app/assets/new-scrolls/chapter-3/textures/276570b9f7b76cf7.webp",
         "mdgs://app/assets/new-scrolls/chapter-3/textures/29aec8c98b606831.webp",
         "mdgs://app/assets/new-scrolls/chapter-3/textures/2bb980912949e4df.webp",
@@ -698,7 +720,6 @@
         "mdgs://app/assets/new-scrolls/chapter-3/textures/4d0cc15e983e9292.webp",
         "mdgs://app/assets/new-scrolls/chapter-3/textures/4f406a818d5f4a0a.webp",
         "mdgs://app/assets/new-scrolls/chapter-3/textures/5a59bcaea24a7389.webp",
-        "mdgs://app/assets/new-scrolls/chapter-3/textures/5aeba0d56912f4b2.webp",
         "mdgs://app/assets/new-scrolls/chapter-3/textures/5f40f69fad90d85e.webp",
         "mdgs://app/assets/new-scrolls/chapter-3/textures/65a107275085ea4f.webp",
         "mdgs://app/assets/new-scrolls/chapter-3/textures/67215efc9dab6153.webp",
@@ -706,7 +727,6 @@
         "mdgs://app/assets/new-scrolls/chapter-3/textures/6d7bc64618fc0cf2.webp",
         "mdgs://app/assets/new-scrolls/chapter-3/textures/6ec63434ab7c0e99.webp",
         "mdgs://app/assets/new-scrolls/chapter-3/textures/7118a0c582eaccd3.webp",
-        "mdgs://app/assets/new-scrolls/chapter-3/textures/75d7eb346bf6a2c0.webp",
         "mdgs://app/assets/new-scrolls/chapter-3/textures/7a72d676b9312cc5.webp",
         "mdgs://app/assets/new-scrolls/chapter-3/textures/7a896bd6e04c152d.webp",
         "mdgs://app/assets/new-scrolls/chapter-3/textures/7b72f64ecfee7311.webp",
@@ -870,7 +890,7 @@
     "executable": "E:\\数字媒体竞赛\\gitProject\\MDGS\\dist-desktop\\win-unpacked\\数字牡丹赋.exe",
     "resourcesPath": "E:\\数字媒体竞赛\\gitProject\\MDGS\\dist-desktop\\win-unpacked\\resources",
     "appPath": "E:\\数字媒体竞赛\\gitProject\\MDGS\\dist-desktop\\win-unpacked\\resources\\app.asar",
-    "userData": "E:\\数字媒体竞赛\\gitProject\\MDGS\\tmp\\desktop-validation\\2026-10-23T10-25-39-101Z\\profile",
+    "userData": "E:\\数字媒体竞赛\\gitProject\\MDGS\\tmp\\desktop-validation\\2026-10-23T11-07-00-957Z\\profile",
     "preferences": {
       "allowRunningInsecureContent": false,
       "contextIsolation": true,
@@ -891,9 +911,9 @@
     }
   },
   "inventory": {
-    "sha256": "14fd9cd9acd08b48bd02329dfedfe7c57a4a55a9fbd45f073802da5118b195e0",
+    "sha256": "218839e2c119be1735dd754bc96fea34dff73b9adda82083c6513a278845cbc7",
     "verifiedFiles": 360,
-    "bytes": 540715443
+    "bytes": 540716512
   },
   "protocolResponses": [
     {
@@ -965,6 +985,6 @@
     "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Ti (0x00002C05) Direct3D11 vs_5_0 ps_5_0, D3D11)",
     "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
   },
-  "completedAt": "2026-10-23T10:26:43.369Z",
-  "artifactDirectory": "tmp/desktop-validation/2026-10-23T10-25-39-101Z"
+  "completedAt": "2026-10-23T11:08:01.977Z",
+  "artifactDirectory": "tmp/desktop-validation/2026-10-23T11-07-00-957Z"
 }

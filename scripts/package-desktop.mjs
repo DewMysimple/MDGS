@@ -52,7 +52,7 @@ assert.equal(inventory.status, 'ready'); assert.equal(inventory.buildSourceVerif
 for (const item of inventory.sourceInputs) assert.equal(await sha256(path.join(root, item.path)), item.sha256, 'Source changed after the exhibition build: ' + item.path);
 const asar = require('@electron/asar');
 const appArchive = path.join(root, 'dist-desktop/win-unpacked/resources/app.asar');
-for (const name of ['main.cjs', 'package.json', 'icon.ico']) assert.deepEqual(asar.extractFile(appArchive, name), await readFile(path.join(root, 'desktop', name)), 'Packaged desktop host differs: ' + name);
+for (const name of ['main.cjs', 'preload.cjs', 'package.json', 'icon.ico']) assert.deepEqual(asar.extractFile(appArchive, name), await readFile(path.join(root, 'desktop', name)), 'Packaged desktop host differs: ' + name);
 assert.equal(await sha256(path.join(root, 'dist-desktop/win-unpacked/resources/web/.mdgs-exhibition-package.json')), await sha256(path.join(root, 'dist-exhibition/.mdgs-exhibition-package.json')));
 await mkdir(path.join(root, 'tmp'), { recursive: true });
 const staging = await mkdtemp(path.join(root, 'tmp/desktop-delivery-'));

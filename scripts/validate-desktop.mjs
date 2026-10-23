@@ -27,7 +27,7 @@ async function hashFile(file) { const hash = createHash('sha256'); for await (co
 const { _electron } = createRequire(import.meta.url)(process.env.MDGS_PLAYWRIGHT_MODULE || 'playwright');
 const report = {
   status: 'running', startedAt: new Date().toISOString(), runId,
-  scope: 'Actual Windows packaged Electron executable, bundled Chromium/Node versions, local inventory SHA, standard secure custom protocol, four real scrolls/encounters/original text, local audio/font/art, PNG download and F11/Escape. HTTP(S) requests are aborted throughout the reload and interactions; this is a runtime dependency test, not a complete cross-device visual fidelity certification.',
+  scope: 'Actual Windows packaged Electron executable, bundled Chromium/Node versions, local inventory SHA, standard secure custom protocol, four real scrolls/encounters/original text, native fullscreen button and F11/Escape, local audio/font/art, PNG download. HTTP(S) requests are aborted throughout the reload and interactions; this is a runtime dependency test, not a complete cross-device visual fidelity certification.',
   executable: relative(executable), checks: [], errors: [], browserErrors: [], badResponses: [], failedRequests: [], externalRequests: [],
 };
 let app, page;
@@ -81,6 +81,7 @@ try {
     assert.equal(report.runtime.preferences.sandbox, true);
     assert.equal(await page.evaluate(() => typeof window.require), 'undefined');
     assert.equal(await page.evaluate(() => typeof window.process), 'undefined');
+    assert.equal(await page.evaluate(() => typeof window.mdgsDesktop?.toggleFullscreen), 'function');
     return { runtime: report.runtime };
   });
   const web = path.join(report.runtime.resourcesPath, 'web');
@@ -196,6 +197,42 @@ try {
     await page.screenshot({ path: path.join(artifacts, `chapter-${chapter}-end.png`) });
     assert.equal((await page.evaluate(() => window.__MDGS_AUDIO__.snapshot())).playback, 'playing');
     return { chapter, canvas, encounter, originalCharacters: original.length, sourceEndFrame: await page.locator('.painting canvas').getAttribute('data-source-frame') };
+  });
+  await check('scroll-fullscreen-button-enters-and-exits-native-fullscreen', async () => {
+    const nativeFullscreen = () => app.evaluate(({ BrowserWindow }) => BrowserWindow.getAllWindows()[0].isFullScreen());
+    const waitNativeFullscreen = async value => {
+      const started = Date.now();
+      while ((await nativeFullscreen()) !== value) {
+        assert(Date.now() - started < 10000, `Native fullscreen did not become ${value}.`);
+        await new Promise(resolve => setTimeout(resolve, 100));
+      }
+    };
+    assert.equal(await nativeFullscreen(), false, 'The F11/Escape check must leave the windowed state before testing the button.');
+    await page.getByRole('button', { name: '进入全屏', exact: true }).click();
+    await waitNativeFullscreen(true);
+    await page.waitForFunction(() => document.querySelector('.journey-viewer')?.classList.contains('is-native-fullscreen'));
+    const layout = await page.evaluate(() => {
+      const scene = document.querySelector('.scroll-exhibition');
+      const rect = scene.getBoundingClientRect();
+      return {
+        viewport: { width: innerWidth, height: innerHeight },
+        scene: { x: rect.x, y: rect.y, width: rect.width, height: rect.height },
+        header: getComputedStyle(document.querySelector('.site-header')).display,
+        controls: getComputedStyle(document.querySelector('.scroll-controls')).display,
+        exitVisible: Boolean(document.querySelector('.scroll-fullscreen-exit')?.getClientRects().length),
+        documentFullscreenElement: document.fullscreenElement?.className ?? null,
+        endColophon: getComputedStyle(document.querySelector('.end-colophon')).display,
+      };
+    });
+    assert(Math.abs(layout.scene.x) < 2 && Math.abs(layout.scene.y) < 2, JSON.stringify(layout));
+    assert(Math.abs(layout.scene.width - layout.viewport.width) < 2 && Math.abs(layout.scene.height - layout.viewport.height) < 2, JSON.stringify(layout));
+    assert.equal(layout.header, 'none'); assert.equal(layout.controls, 'none'); assert.equal(layout.exitVisible, true);
+    assert.equal(layout.documentFullscreenElement, null); assert.equal(layout.endColophon, 'none');
+    await page.screenshot({ path: path.join(artifacts, 'scroll-native-fullscreen.png') });
+    await page.getByRole('button', { name: '退出画卷全屏', exact: true }).click();
+    await waitNativeFullscreen(false);
+    await page.waitForFunction(() => !document.querySelector('.journey-viewer')?.classList.contains('is-native-fullscreen'));
+    return { layout, enteredAndExitedByScrollButtons: true, driver: 'Electron main-process BrowserWindow.setFullScreen' };
   });
   await check('flower-letter-real-native-download-1200x1600-png', async () => {
     await app.evaluate(({ session }, file) => {
