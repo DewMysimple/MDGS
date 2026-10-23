@@ -1,10 +1,10 @@
 {
-  "status": "desktop-product-and-recording-accepted-final-git-pending",
+  "status": "accepted-and-source-media-delivered",
   "candidate": "art-candidate-8",
-  "reviewedAt": "2026-10-23T04:40:31.473Z",
+  "reviewedAt": "2026-10-23T04:45:54.141Z",
   "buildManifest": "reports/art-renewal/art-candidate-8-build.json",
   "buildManifestSha256": "305dc8b9b429415093889642ae885ffe564cdd33f156edf30a637bac4a172ea9",
-  "scope": "Acceptance of the desktop artwork and protected original content. Final media and actual remote Git delivery are separate pending completion items, not inferred from this file.",
+  "scope": "Desktop artwork and guided media accepted within the explicit evidence and limitations. Source and media commit actually pushed and verified; documentation closure follows in its own commit.",
   "evidence": {
     "nativeFullMilestone": "reports/art-renewal/art-candidate-8-freeze.json",
     "cpu": "reports/art-renewal/candidate-8-cpu/validation.json",
@@ -21,7 +21,10 @@
     "masterFixed35": "reports/art-renewal/tour-validation/candidate-8-2026-10-23T04-25-57-135Z/validation.json",
     "masterStrictDecode": "reports/art-renewal/candidate8-tour-decode-runs/2026-10-23T04-30-00-653Z/validation.json",
     "decoderColour": "reports/art-renewal/candidate8-video-colour/2026-10-23T04-34-compatibility/decoder-colour-validation.json",
-    "recorderRepair": "reports/art-renewal/recorder-tail-latch/validation.json"
+    "recorderRepair": "reports/art-renewal/recorder-tail-latch/validation.json",
+    "compatibleFullDecode": "reports/art-renewal/candidate8-video-colour/2026-10-23T04-34-compatibility/full-decode-validation.json",
+    "compatibilityProvenance": "reports/art-renewal/candidate8-video-colour/2026-10-23T04-34-compatibility/compatibility-provenance.json",
+    "gitDelivery": "reports/art-renewal/git-delivery-source-and-media.json"
   },
   "resolvedObservations": [
     {
@@ -44,9 +47,7 @@
     "Original Film/DOF are numeric reconstructions, not full EEVEE mathematical equivalence.",
     "Guided recording is a166s excerpt; original CDP capture has a2.688837s third-volume gap, retained at real duration. Native artwork fidelity and actual display pacing have separate evidence."
   ],
-  "remaining": [
-    "Final selected-media commit/push and engineering-memory completion verification"
-  ],
+  "remaining": [],
   "media": {
     "originalMaster": {
       "path": "reports/art-renewal/国色长卷-原始导览录像.mp4",
@@ -88,5 +89,6 @@
     "startShanghai": "2026-10-23 02:29:47",
     "tenHourBoundaryShanghai": "2026-10-23 12:29:47",
     "continuedPastBoundaryToFinishActualDelivery": true
-  }
+  },
+  "gitSourceAndMediaCommit": "202d8103e0dec486e409682373177aff60ce3c5e"
 }
