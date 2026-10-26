@@ -1,7 +1,7 @@
 ---
 type: moc
 status: active
-updated: 2026-10-23
+updated: 2026-10-27
 topic: work-log-index
 sources: []
 ---
@@ -12,6 +12,7 @@ sources: []
 
 | 日期 | 类型 | 任务结果 | 日志 |
 | --- | --- | --- | --- |
+| 2026-10-27 | bug | in_progress | [修复新版场景展卷时的噪声闪烁](2026-10-27-%E4%BF%AE%E5%A4%8D%E5%B1%95%E5%8D%B7%E5%99%AA%E5%A3%B0%E9%97%AA%E7%83%81.md) |
 | 2026-10-23 | bug | completed | [牡丹2.0保真整改](2026-10-23-%E7%89%A1%E4%B8%B92.0%E4%BF%9D%E7%9C%9F%E6%95%B4%E6%94%B9.md) |
 | 2026-10-23 | ui | completed | [国色长卷艺术迭代](2026-10-23-%E5%9B%BD%E8%89%B2%E9%95%BF%E5%8D%B7%E8%89%BA%E6%9C%AF%E8%BF%AD%E4%BB%A3.md) |
 | 2026-10-23 | feature | completed | [四卷滚动与微透明文字底板](2026-10-23-%E5%9B%9B%E5%8D%B7%E6%BB%9A%E5%8A%A8%E4%B8%8E%E5%BE%AE%E9%80%8F%E6%98%8E%E6%96%87%E5%AD%97%E5%BA%95%E6%9D%BF.md) |

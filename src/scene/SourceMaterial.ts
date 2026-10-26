@@ -260,9 +260,15 @@ export class SourceMaterialLibrary {
     texture.internalFormat = definition.channels === 1 ? 'R16F' : 'RGB16F';
     texture.unpackAlignment = 1;
     texture.colorSpace = THREE.NoColorSpace; texture.flipY = false;
-    texture.minFilter = THREE.LinearFilter; texture.magFilter = THREE.LinearFilter;
+    // These half-float textures are baked procedural noise fields used by
+    // animated ink and burn reveals. Sampling only their 1024px base level
+    // makes the high-frequency noise crawl as the source camera moves. Let
+    // implicit shader derivatives select a filtered mip level during
+    // minification, with anisotropic filtering for oblique sheet angles.
+    texture.minFilter = THREE.LinearMipmapLinearFilter; texture.magFilter = THREE.LinearFilter;
+    texture.anisotropy = 4;
     texture.wrapS = texture.wrapT = THREE.ClampToEdgeWrapping;
-    texture.generateMipmaps = false; texture.needsUpdate = true;
+    texture.generateMipmaps = true; texture.needsUpdate = true;
     return texture;
   }
 
