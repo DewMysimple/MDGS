@@ -86,19 +86,34 @@
 .art-flower-in-hand .art-detail { background: #f0e5cd; }
 .art-flower-in-hand.is-over { transform: translate(-50%, -50%) scale(.7); }
 .art-encounters--brocade.is-woven .art-anchor--cloth .art-anchor__eye { animation: art-weave-arrival 1.1s ease-out both; }
-.art-poem-paper { right: 2.8%; top: 15%; width: 10.5%; bottom: 9%; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
-.art-poem-paper .art-paper__heading { width: 100%; justify-content: center; gap: 0; }
-.art-poem-paper .art-paper__heading h2 { font-size: 19px; letter-spacing: .12em; }
-.art-poem-paper .art-close { position: absolute; right: -5px; top: -38px; }
-.art-poem-original { width: 94%; height: 165px; max-height: 35%; border-top: 1px solid #b19b71; border-bottom: 1px solid #b19b71; }
-.art-poem-original .art-detail { background: transparent; }
-.art-poem-paper .art-copy { margin: 0; line-height: 1.8; }
-.art-poem-toggle { display: inline-flex; align-items: center; gap: 5px; padding: 4px 0; color: var(--art-red); border: 0; border-bottom: 1px solid #b99864; background: transparent; font-size: 17px; letter-spacing: .1em; }
-.art-poem-lines { display: flex; flex-direction: row-reverse; justify-content: center; gap: 17px; margin-top: 2px; }
-.art-poem-lines p { margin: 0; writing-mode: vertical-rl; font-size: clamp(22px, 1.6vw, 31px); line-height: 1.5; letter-spacing: .22em; color: #485044; }
-.art-poem-attribution { margin: 0; font-size: 13px; color: #7b6243; letter-spacing: .1em; }
-.art-poem-note { margin: 0; font-size: 18px; line-height: 1.7; letter-spacing: .05em; }
-.art-poem-paper .art-source { font-size: 12px; max-width: 100%; }
+.art-poem-paper {
+  right: clamp(8px, .5vw, 14px); top: clamp(12px, 3vh, 36px); bottom: auto; width: clamp(210px, 9.5vw, 240px); max-height: calc(100% - 56px);
+  display: flex; flex-direction: column; align-items: stretch; gap: 13px; padding: 25px clamp(18px, 1.4vw, 25px) 19px;
+  text-align: center; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #b5a274 transparent;
+  color: #293e34; background: linear-gradient(145deg, #fcf8effa, #f3ead9fa); border: 1px solid #a99160;
+  box-shadow: 0 14px 34px #34271b45, inset 0 0 0 4px #fffaf0b8;
+  animation: art-poem-paper-enter .38s ease both;
+}
+.art-poem-paper::before { content: ''; position: absolute; inset: 8px; border: 1px solid #c5b38570; pointer-events: none; }
+.art-poem-paper > * { position: relative; z-index: 1; }
+.art-poem-paper .art-poem-heading { width: 100%; min-height: 48px; justify-content: flex-start; padding: 0 42px 10px 2px; border-bottom: 1px solid #bba779; }
+.art-poem-heading-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.art-poem-heading .art-kicker { color: #8a4a35; font-size: 12px; letter-spacing: .2em; }
+.art-poem-paper .art-poem-heading h2 { color: #283e34; font-size: 22px; letter-spacing: .16em; }
+.art-poem-paper .art-close { position: absolute; z-index: 2; right: 12px; top: 12px; margin: 0; color: #674f35; border: 1px solid #c5b58d; background: #f2eadb; }
+.art-poem-paper .art-close:hover { color: #fff8eb; border-color: #913b2c; background: #913b2c; }
+.art-poem-original { position: relative; width: 100%; height: auto; aspect-ratio: 1.62; max-height: 166px; flex: 0 0 auto; padding: 3px; border: 1px solid #b19b71; background: #e8ddc9; }
+.art-poem-original .art-detail { background: #e8ddc9; }
+.art-poem-intro { margin: 0; color: #344b40; font-size: 16px; line-height: 1.7; letter-spacing: .05em; }
+.art-poem-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 42px; padding: 8px 14px; color: #fff8eb; border: 1px solid #2f5140; background: #42634f; box-shadow: inset 0 1px #ffffff32; font-size: 16px; letter-spacing: .12em; transition: background-color .18s ease, border-color .18s ease; }
+.art-poem-toggle:hover { color: #fff8eb; border-color: #7d3428; background: #913b2c; }
+.art-poem-paper .art-work-note { color: #5f523e; font-size: 12px; text-align: center; }
+.art-poem-lines { display: flex; flex-direction: column; align-items: stretch; gap: 8px; width: 100%; margin: 1px 0 0; padding: 12px 13px; text-align: left; border: 1px solid #d5c6a5; border-left: 3px solid #963d2c; background: #f0e7d7; }
+.art-poem-lines p { margin: 0; writing-mode: horizontal-tb; color: #293e34; font-size: clamp(17px, 1vw, 20px); line-height: 1.55; letter-spacing: .08em; white-space: nowrap; }
+.art-poem-attribution { margin: -5px 0 0; color: #714d36; font-size: 13px; letter-spacing: .1em; text-align: right; }
+.art-poem-note { margin: 0; padding: 10px 12px; color: #365345; background: #e8eadf; border-top: 1px solid #c1cbb4; border-bottom: 1px solid #c1cbb4; font-size: 15px; line-height: 1.7; letter-spacing: .06em; }
+.art-poem-paper .art-source { color: #6d3b2e; font-size: 13px; max-width: 100%; }
+@keyframes art-poem-paper-enter { from { opacity: 0; translate: 0 7px; } to { opacity: 1; translate: 0 0; } }
 @keyframes art-paper-enter { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes art-detail-enter { from { opacity: .15; } to { opacity: 1; } }
 @keyframes art-weave-arrival { 0% { box-shadow: 0 0 0 4px #d1ae5d88; } 65% { box-shadow: 0 0 0 25px #d1ae5d00; } 100% { box-shadow: 0 0 0 7px #eee1bd55; } }
@@ -123,11 +138,13 @@
   .art-brocade-paper .art-paper__heading h2 { font-size: 21px; }
   .art-brocade-paper .art-copy { margin: 4px 0 2px; line-height: 1.4; }
   .art-brocade-detail { aspect-ratio: 5; margin: 4px 0; }
-  .art-poem-paper { top: 9%; bottom: 5%; gap: 9px; }
-  .art-poem-paper .art-paper__heading h2 { font-size: 18px; }
-  .art-poem-lines { gap: 10px; }
-  .art-poem-lines p { font-size: 23px; letter-spacing: .12em; }
-  .art-poem-note { font-size: 18px; line-height: 1.5; }
+  .art-poem-paper { top: clamp(12px, 3vh, 28px); bottom: auto; gap: 9px; padding: 21px 17px 15px; max-height: calc(100% - 28px); }
+  .art-poem-paper .art-poem-heading h2 { font-size: 20px; }
+  .art-poem-original { max-height: 130px; }
+  .art-poem-lines { gap: 6px; padding: 10px 11px; }
+  .art-poem-lines p { font-size: 17px; letter-spacing: .045em; }
+  .art-poem-note { padding: 8px 10px; font-size: 14px; line-height: 1.5; }
+  .art-poem-toggle { min-height: 38px; font-size: 15px; }
 }
 @media (min-width: 2000px) {
   .art-encounter-entrance__name { display: inline-block; }
@@ -137,6 +154,15 @@
   .art-gaze-steps button { font-size: 20px; }
   .art-anchor__label { font-size: 17px; }
   .art-poem-note { font-size: 20px; }
+  .art-poem-paper .art-poem-heading h2 { font-size: 23px; }
+  .art-poem-intro { font-size: 17px; }
+  .art-poem-lines p { font-size: 19px; }
+  .art-poem-paper .art-work-note { font-size: 13px; }
+}
+@media (max-width: 900px) {
+  .art-poem-paper { right: 14px; width: min(220px, calc(100% - 28px)); padding: 20px 16px 15px; }
+  .art-poem-paper .art-poem-heading h2 { font-size: 19px; }
+  .art-poem-lines p { font-size: 16px; letter-spacing: .035em; }
 }
 @media (prefers-reduced-motion: reduce) {
   .art-paper, .art-brocade-detail .art-detail, .art-encounters--brocade.is-woven .art-anchor--cloth .art-anchor__eye { animation: none; }

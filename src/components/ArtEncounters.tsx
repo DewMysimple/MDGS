@@ -261,7 +261,7 @@ export default function ArtEncounters({ chapterId, progress, active, projections
     {chapterId === 4 && <>
       {point('poem-paper') && <button type="button" style={pointStyle('poem-paper')} className={`art-anchor ${poem ? 'is-chosen' : ''}`} aria-label="展读原画诗笺，清平调其一" aria-expanded={poem} onClick={() => setPoem(value => !value)}><span className="art-anchor__eye" /><span className="art-anchor__label">展读</span></button>}
       <section className={`art-paper art-poem-paper ${poem ? 'is-unfolded' : ''}`}>
-        <header className="art-paper__heading"><h2 id={titleId}>{encounter.title}</h2><button ref={closeRef} className="art-close" type="button" onClick={close} aria-label="收起画中有遇"><X size={17} /></button></header>
+        <header className="art-paper__heading art-poem-heading"><div className="art-poem-heading-copy"><span className="art-kicker">画中题咏</span><h2 id={titleId}>{encounter.title}</h2></div><button ref={closeRef} className="art-close" type="button" onClick={close} aria-label="收起画中有遇"><X size={17} /></button></header>
         {poem ? <>
           <div className="art-poem-lines" aria-label="云想衣裳花想容，春风拂槛露华浓。"><p>云想衣裳花想容</p><p>春风拂槛露华浓</p></div>
           <p className="art-poem-attribution">李白 · 清平调其一</p>
@@ -269,10 +269,10 @@ export default function ArtEncounters({ chapterId, progress, active, projections
           <Source source={artSources.poem} />
         </> : <>
           <div className="art-poem-original"><Detail detail={artDetails.poem} chapterId={4} /></div>
-          <p className="art-copy">书案前，<br />一笺花容待展读。</p>
+          <p className="art-poem-intro">书案前，<br />一笺花容待展读。</p>
         </>}
-        <button type="button" className="art-poem-toggle" aria-expanded={poem} onClick={() => setPoem(value => !value)}>{poem ? '合笺' : <>展读原诗 <ArrowRight size={14} /></>}</button>
-        {!poem && <span className="art-work-note">展览补笺 · 原诗照录</span>}
+        <button type="button" className="art-poem-toggle" aria-expanded={poem} onClick={() => setPoem(value => !value)}>{poem ? '合笺' : <>展读原诗 <ArrowRight size={15} /></>}</button>
+        {!poem && <span className="art-work-note">原画诗笺 · 李白《清平调》</span>}
       </section>
     </>}
   </div>;
