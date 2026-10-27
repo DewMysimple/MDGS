@@ -194,3 +194,104 @@
 .peony-experience .app-shell.poetic-viewer .end-colophon.colophon-in-margin h2 {
   font-size:clamp(28px,calc((var(--colophon-width,380px) - 48px) / 4 - 3px),34px);
 }
+
+/* Keep small labels legible on the warm paper while retaining the sage palette. */
+.peony-experience .poetic-viewer .brand-wordmark>span,
+.poetic-viewer .chapter-link:not(.is-current),
+.poetic-viewer .chapter-numeral,
+.poetic-viewer .scene-counter>i,
+.poetic-viewer .progress-caption,
+.poetic-viewer .progress-caption small,
+.peony-experience .app-shell.poetic-viewer .step-button,
+.poetic-viewer .end-colophon .eyebrow,
+.app-shell.poetic-viewer .end-theme-subtitle,
+.poetic-viewer .culture-content>.eyebrow,
+.poetic-viewer .culture-subtitle,
+.poetic-viewer .culture-rule>span,
+.poetic-viewer .culture-source>span,
+.poetic-viewer .culture-source>p {
+  color:var(--muted);
+}
+.peony-experience .app-shell.poetic-viewer .step-button:disabled { opacity:.65; }
+.peony-experience .app-shell.poetic-viewer .utility-button { color:#5f6a50; }
+
+/* The scroll viewer has dedicated compact layouts below its desktop canvas width. */
+@media (max-width:920px) {
+  .peony-experience .app-shell.poetic-viewer {
+    min-width:0;
+    --header-height:104px;
+  }
+  .peony-experience .poetic-viewer .site-header {
+    width:calc(100% - 36px);
+    grid-template-columns:minmax(0,1fr) auto auto;
+    grid-template-rows:50px 36px;
+    gap:0 10px;
+  }
+  .peony-experience .poetic-viewer .brand { grid-column:1; grid-row:1; min-width:0; }
+  .peony-experience .poetic-viewer .settings-button { grid-column:2; grid-row:1; }
+  .peony-experience .poetic-viewer .fullscreen-button { grid-column:3; grid-row:1; }
+  .peony-experience .poetic-viewer .chapter-nav {
+    grid-column:1 / -1;
+    grid-row:2;
+    width:100%;
+    justify-content:space-between;
+    gap:0;
+  }
+  .peony-experience .poetic-viewer .chapter-link { flex:1; justify-content:center; padding-inline:5px; }
+}
+
+@media (max-width:700px) {
+  .peony-experience .app-shell.poetic-viewer {
+    --header-height:120px;
+    --controls-height:156px;
+  }
+  .peony-experience .poetic-viewer .site-header {
+    grid-template-rows:54px 34px;
+    gap:0 8px;
+  }
+  .peony-experience .poetic-viewer .brand { gap:9px; }
+  .peony-experience .poetic-viewer .brand-wordmark {
+    font-size:clamp(18px,5vw,22px);
+    letter-spacing:3px;
+    white-space:nowrap;
+  }
+  .peony-experience .poetic-viewer .brand-wordmark>span { font-size:7px; letter-spacing:1.5px; }
+  .peony-experience .poetic-viewer .chapter-link { gap:4px; padding-inline:2px; font-size:11px; }
+  .peony-experience .poetic-viewer .chapter-numeral { font-size:clamp(16px,4vw,20px); }
+  .peony-experience .app-shell.poetic-viewer .scroll-controls {
+    width:calc(100% - 36px);
+    grid-template-columns:minmax(0,1fr) auto;
+    grid-template-rows:27px 28px auto;
+    gap:2px 8px;
+    padding:8px 0 12px;
+  }
+  .peony-experience .poetic-viewer .current-scene { grid-column:1; grid-row:1; min-width:0; gap:8px; }
+  .peony-experience .app-shell.poetic-viewer .scene-name { max-width:none; min-width:0; font-size:11px; letter-spacing:.6px; }
+  .peony-experience .poetic-viewer .progress-caption { grid-column:2; grid-row:1; gap:6px; }
+  .peony-experience .poetic-viewer .chapter-timeline { grid-column:1 / -1; grid-row:2; margin-inline:8px; }
+  .peony-experience .poetic-viewer .control-bottomline {
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    justify-content:center;
+    gap:6px;
+    height:auto;
+    min-height:0;
+  }
+  .peony-experience .poetic-viewer .interaction-hint { display:none; }
+  .peony-experience .poetic-viewer .playback-controls { width:100%; justify-content:space-between; gap:6px; }
+  .peony-experience .poetic-viewer .play-button { min-width:0; padding-inline:12px; gap:6px; }
+  .peony-experience .poetic-viewer .secondary-controls { width:100%; justify-content:center; flex-wrap:wrap; gap:8px 12px; }
+  .peony-experience .app-shell.poetic-viewer .utility-button { font-size:11px; min-height:32px; }
+}
+
+@media (max-width:380px) {
+  .peony-experience .app-shell.poetic-viewer { --controls-height:184px; }
+  .peony-experience .app-shell.poetic-viewer:has(.audio-control[data-audio-enabled=true]) { --controls-height:220px; }
+  .peony-experience .poetic-viewer .brand-wordmark { font-size:19px; letter-spacing:2px; }
+  .peony-experience .poetic-viewer .settings-button { padding-inline:4px; }
+  .peony-experience .poetic-viewer .fullscreen-button { padding-inline:3px; }
+  .peony-experience .poetic-viewer .chapter-link { font-size:10px; }
+  .peony-experience .poetic-viewer .step-button { font-size:10px; }
+  .peony-experience .poetic-viewer .play-button { padding-inline:8px; letter-spacing:1px; }
+}

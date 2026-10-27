@@ -76,6 +76,7 @@ export class SceneRenderer {
   private lastTextureCheck = 0;
   private textureRefreshPending = false;
   private currentVisible = new Set<string>();
+  private lastTextureEviction = 0;
   private prefetched = new Set<string>();
   private preloadCamera = new THREE.PerspectiveCamera();
   private frustum = new THREE.Frustum();
@@ -708,25 +709,28 @@ export class SceneRenderer {
       else if (!this.pending.has(url) && !this.errorUrls.has(url)) { this.pending.add(url); this.queue.push(url); }
     }
     this.pumpQueue();
-    let totalBytes = [...this.textures.values()].reduce((sum, value) => sum + value.bytes, 0);
-    // Visible source layers can already exceed the soft total budget. Keep a
-    // separate bounded look-behind so reversing a drag does not immediately
-    // decode and upload the sheets that just left the camera again.
-    const oldTextures = [...this.textures.entries()].filter(([url, entry]) => !this.currentVisible.has(url) && !this.prefetched.has(url) && !entry.loading).sort((a, b) => b[1].lastSeen - a[1].lastSeen);
-    let recentImageBytes = 0, recentPostBytes = 0;
-    for (const [url, entry] of oldTextures) {
-      const post = !!this.sourcePost?.hasUrl(url);
-      const retained = post ? recentPostBytes : recentImageBytes;
-      const allowance = (post ? 24 : 96) * 1024 * 1024;
-      if (now - entry.lastSeen < 5000 && retained + entry.bytes <= allowance) {
-        if (post) recentPostBytes += entry.bytes; else recentImageBytes += entry.bytes;
-        continue;
+    if (now - this.lastTextureEviction >= 1000) {
+      this.lastTextureEviction = now;
+      let totalBytes = [...this.textures.values()].reduce((sum, value) => sum + value.bytes, 0);
+      // Visible source layers can already exceed the soft total budget. Keep a
+      // separate bounded look-behind so reversing a drag does not immediately
+      // decode and upload the sheets that just left the camera again.
+      const oldTextures = [...this.textures.entries()].filter(([url, entry]) => !this.currentVisible.has(url) && !this.prefetched.has(url) && !entry.loading).sort((a, b) => b[1].lastSeen - a[1].lastSeen);
+      let recentImageBytes = 0, recentPostBytes = 0;
+      for (const [url, entry] of oldTextures) {
+        const post = !!this.sourcePost?.hasUrl(url);
+        const retained = post ? recentPostBytes : recentImageBytes;
+        const allowance = (post ? 24 : 96) * 1024 * 1024;
+        if (now - entry.lastSeen < 5000 && retained + entry.bytes <= allowance) {
+          if (post) recentPostBytes += entry.bytes; else recentImageBytes += entry.bytes;
+          continue;
+        }
+        if (totalBytes < 160 * 1024 * 1024 && now - entry.lastSeen < 12000) continue;
+        entry.texture?.dispose();
+        totalBytes -= entry.bytes;
+        this.textures.delete(url);
+        this.assignTexture(url, null);
       }
-      if (totalBytes < 160 * 1024 * 1024 && now - entry.lastSeen < 12000) continue;
-      entry.texture?.dispose();
-      totalBytes -= entry.bytes;
-      this.textures.delete(url);
-      this.assignTexture(url, null);
     }
     const waiting = [...this.currentVisible].filter(url => !this.textures.get(url)?.texture && !this.errorUrls.has(url)).length;
     const failed = [...this.currentVisible].filter(url => this.errorUrls.has(url)).length;
@@ -737,7 +741,8 @@ export class SceneRenderer {
       else if (this.width > 1 && this.height > 1) this.reportPreparation('first-frame', loaded, this.currentVisible.size, '山河已绘，正在点亮画境……');
     }
     this.ready = !waiting;
-    if (!waiting) this.status(failed ? '部分画面资源未能加载，可重试补全' : null);
+    if (this.firstFrameReady) this.status(waiting ? '正在铺陈下一段画境' : failed ? '部分画面资源未能加载，可重试补全' : null);
+    else if (!waiting) this.status(failed ? '部分画面资源未能加载，可重试补全' : null);
     this.updateDiagnostics();
   }
 
@@ -879,10 +884,19 @@ export class SceneRenderer {
       if (this.dirty) { this.updateCamera(); this.textureRefreshPending = true; }
       // During preparation, determine readiness for the actual responsive camera,
       // then upload/draw its textures before allowing the outer ceremony to reveal it.
-      if (!this.firstFrameReady || this.snapshotRequests.size) this.updateTextures();
+      if (this.dirty || !this.firstFrameReady || this.snapshotRequests.size) this.updateTextures();
       this.shaderWarmup?.enqueue(this.objects);
       if (this.preparationActive && !this.firstFrameReady && this.shaderWarmup
         && !this.shaderWarmup.initialReady(this.objects, object => this.objectTexturesReady(object))) {
+        this.updateDiagnostics();
+        return;
+      }
+      // Keep the last complete source frame on screen while the next camera
+      // position's visible sheets finish loading. Hiding individual meshes
+      // first makes the source collage flash empty during normal playback.
+      if (this.sourceFaithful && this.firstFrameReady && !this.ready) {
+        this.dirty = false;
+        this.textureRefreshPending = false;
         this.updateDiagnostics();
         return;
       }

@@ -78,6 +78,25 @@
   padding: var(--text-plate-padding,12px);
   border: 0;
 }
+
+/* Resource changes hold a complete frame; keep the progress cue quiet and in the paper margin. */
+.peony-experience .scene-loading.is-streaming {
+  inset: auto 12px 12px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: calc(100% - 24px);
+  padding: 7px 11px;
+  background: var(--text-plate-fill);
+  border: 1px solid var(--text-plate-line);
+  font-size: 11px;
+  letter-spacing: .06em;
+  line-height: 1.5;
+  opacity: 0;
+  animation: scene-stream-in .16s .2s ease forwards;
+}
+.peony-experience .scene-loading.is-streaming .loading-seal { display: none; }
+@keyframes scene-stream-in { to { opacity: 1; } }
 .peony-experience .art-loading__error { background: transparent; border: 0; box-shadow: none; }
 .peony-experience .art-loading__seal { background: var(--text-plate-fill); }
 .peony-experience .scene-loading.is-partial { padding: var(--text-plate-padding,12px); }

@@ -263,7 +263,7 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
       else actions.current.onNudge(['ArrowLeft', 'PageUp'].includes(event.key) ? -0.025 : 0.025);
     }}
   >
-    {status && <div className={`scene-loading${error ? ' has-error' : ''}${status.startsWith('部分') ? ' is-partial' : ''}`} role="status">
+    {status && <div className={`scene-loading${error ? ' has-error' : ''}${status.startsWith('部分') ? ' is-partial' : ''}${status.startsWith('正在铺陈下一段') ? ' is-streaming' : ''}`} role="status">
       {!status.startsWith('部分') && <span className="loading-seal" aria-hidden="true">牡 丹</span>}
       <span>{status}</span>
       {error && (retryCount < 2 ? <button type="button" className="scene-retry" onClick={retry}>恢复画卷{retryCount ? '（最后一次）' : ''}</button> : <span className="scene-retry-limit">暂未恢复，可切换章节后再试。</span>)}
