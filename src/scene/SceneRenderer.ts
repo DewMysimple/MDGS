@@ -931,7 +931,9 @@ export class SceneRenderer {
       else if (waiting) this.reportPreparation('textures', loaded, this.currentVisible.size, '正在唤醒花影……');
       else if (this.width > 1 && this.height > 1) this.reportPreparation('first-frame', loaded, this.currentVisible.size, '山河已绘，正在点亮画境……');
     }
-    this.ready = !waiting;
+    // Failed required assets are just as incomplete as assets still loading.
+    // Keep the last complete frame until an explicit retry succeeds.
+    this.ready = !waiting && !failed;
     if (this.firstFrameReady) this.status(waiting ? '正在铺陈下一段画境' : failed ? '部分画面资源未能加载，可重试补全' : null);
     else if (!waiting) this.status(failed ? '部分画面资源未能加载，可重试补全' : null);
     this.updateDiagnostics();
@@ -1171,8 +1173,8 @@ export class SceneRenderer {
       // Keep the last complete source frame on screen while the next camera
       // position's visible sheets finish loading. Hiding individual meshes
       // first makes the source collage flash empty during normal playback.
-      if (this.sourceFaithful && this.firstFrameReady && !this.ready) {
-        this.setPlaybackBlocked(true, 'resources');
+      if (this.sourceFaithful && !this.ready && (this.firstFrameReady || this.playbackBlockReason === 'resource-error')) {
+        this.setPlaybackBlocked(true, this.playbackBlockReason === 'resource-error' ? 'resource-error' : 'resources');
         this.dirty = false;
         this.textureRefreshPending = false;
         this.updateDiagnostics();

@@ -459,6 +459,42 @@ assert.equal(presented.renderer.domElement.dataset.playbackBlocked, 'false');
 presented.dispose(); assert.equal(presented.playbackBlocked, true);
 checks.push({ test: 'autoplay-gate-follows-draw-and-retains-presented-frame-during-streaming-and-gpu-recovery', passed: true });
 
+for (const hadCompleteFrame of [false, true]) {
+  const statuses = [], events = [];
+  const failure = new SceneRenderer({ appendChild() {}, closest() { return null; } }, status => statuses.push(status),
+    undefined, undefined, undefined, blocked => events.push(blocked));
+  let draws = 0;
+  Object.assign(failure.renderer, { setScissorTest() {}, setScissor() {}, clear() {}, render() { draws++; } });
+  failure.calligraphy = { render() {}, dispose() {} };
+  failure.manifest = { id: 'chapter-1', sourceRevision: 'peony-2.0-2026-10-23', frameRange: [1, 101], cameras: [] };
+  failure.loaded = true; failure.preparationActive = false; failure.width = 640; failure.height = 360;
+  failure.firstFrameReady = hadCompleteFrame; failure.renderedSourceFrame = hadCompleteFrame ? 11 : null;
+  failure.camera.aspect = 1; failure.camera.updateProjectionMatrix(); failure.camera.updateMatrixWorld(true);
+  const failedMesh = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial());
+  failedMesh.position.z = -5; failedMesh.updateMatrixWorld(true); failedMesh.userData.sourceVisible = true; failedMesh.visible = false;
+  const url = `recover-current-${hadCompleteFrame}`;
+  failure.objects = [{ mesh: failedMesh, material: failedMesh.material, url }];
+  failure.loader = { loadAsync: load }; failure.updateCamera = () => {}; failure.sourceProgress = .2;
+  failure.updateTextures();
+  callbacks.get(url).failure(new Error('Intentional current image load failure')); await settle();
+  assert.equal(failure.ready, false, 'A failed required image is an incomplete frame.');
+  assert.equal(failure.playbackBlockReason, 'resource-error');
+  assert.equal(failure.getRecoveryState().canRetry, true);
+  assert(statuses.at(-1).startsWith('部分'), 'The existing recovery UI must expose the failed resource.');
+  failure.dirty = true; failure.render(100);
+  assert.equal(draws, 0, 'A missing required image must not replace the last complete canvas with a partial frame.');
+  assert.equal(failure.renderedSourceFrame, hadCompleteFrame ? 11 : null);
+  assert.equal(failure.playbackBlockReason, 'resource-error');
+  assert.equal(failure.retryFailedAssets(), true);
+  await complete(url, undefined, failure);
+  assert.equal(failure.ready, true);
+  failure.render(150);
+  assert.equal(draws, 1, 'A successful retry permits a complete redraw.');
+  assert.equal(failure.playbackBlocked, false); assert.equal(failure.getRecoveryState().canRetry, false);
+  failure.dispose();
+}
+checks.push({ test: 'required-resource-failure-keeps-complete-frame-and-explicit-retry-restores-drawing', passed: true });
+
 // Exercise the real post-processing target allocation policy with drawing
 // stubbed. Alternating material visibility must not reallocate GPU targets.
 const postSource = compile(await read('src/scene/SourcePostProcessing.ts'))

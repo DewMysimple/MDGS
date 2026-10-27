@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-27",
+  "baselineRevision": "3d8086c",
+  "scope": "Blender 5.2.3 只读核对四个指定原件主场景的网格、贴图、材质绑定和网页资源；补回用户指出的首卷工作视图图层，并抽取同帧画面检查。",
+  "meshInventoryBeforeRestore": [
+    { "chapter": 1, "blender": 152, "web": 151, "missing": ["主体 · 03_中央花车巡游与曲水"] },
+    { "chapter": 2, "blender": 58, "web": 58, "missing": [] },
+    { "chapter": 3, "blender": 79, "web": 79, "missing": [] },
+    { "chapter": 4, "blender": 52, "web": 52, "missing": [] }
+  ],
+  "restored": {
+    "chapter": 1,
+    "object": "主体 · 03_中央花车巡游与曲水",
+    "sourceRenderVisibility": "源整数帧 1–3024 均为 hide_render=true，工作视图可见；按用户提供的工作视图画面作为单个例外恢复。",
+    "sourceImage": "s08_02.png",
+    "sourceImageSha256": "8b4f178ca8a9504b40c83b2642350ca2a893e30da9391cf65c2f092ec0a171d0",
+    "evidence": "恢复网格坐标、UV、法线、矩阵、源材质程序与原件提取结果逐值一致；WebP 与原图解码像素无损一致。"
+  },
+  "assetAuditBeforeRestore": {
+    "objectsChecked": 340,
+    "webImagesDecodedAndCompared": 244,
+    "proceduralFieldsChecked": 34,
+    "outcome": "已导出对象均有对应源材质及网页程序，引用的图片来源一致；网页图片的哈希、尺寸和解码 RGBA 与打包原图核对通过，程序场哈希和解压尺寸通过。",
+    "limitations": "新恢复图层另行独立核验；静态检查不证明所有着色器与 Blender 节点逐像素等价。"
+  },
+  "visualSpotChecks": {
+    "frames": { "1": [193, 1451, 2377], "2": [275, 1296, 1994], "3": [241, 961, 1681], "4": [178, 585, 1351] },
+    "method": "对四个源文件使用原相机 Blender 5.2.3 渲染；网页以相同源帧、2K、原画幅独立抓图，人工并排核查主体及位置。",
+    "outcome": "所抽查画面主体和位置对应；首卷1451帧的花车按用户提供的 Blender 工作视图恢复，故有意不同于该帧 hide_render=true 的 Blender 最终渲染。",
+    "limitations": "每卷三个抽样帧，非全部源帧的逐像素或逐帧视觉验收。光照、透明度、景深和色彩处理可能存在差异。"
+  },
+  "additionalFix": "当前必要素材读取失败时保持上一完整帧、提供重试，避免绘制缺图画面；不将其误认为导致首卷本次漏导出的原因。",
+  "deliveryVerification": {
+    "packagedElectron": "独立配置下在首卷约48%确认补回主体，四卷离线画面与交互、全屏和花笺下载等12项通过。",
+    "playbackSample": "720p从首卷约48%起各采样6秒：30帧和60帧设置均无超过80毫秒的画卷提交间隔，也无资源等待；仅为本机短时采样。",
+    "exeSha256": "43a16672ee5535e4cc46625a56a9c498af91ae0b35be1c69243ec6b66fb27941",
+    "zipSha256": "b063a417b428ab1169a6ac7e0aac4d95249e62424e3cdb7ccbdbb232d3410a0e"
+  }
+}
