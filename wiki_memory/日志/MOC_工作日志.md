@@ -1,7 +1,7 @@
 ---
 type: moc
 status: active
-updated: 2026-10-27
+updated: 2026-10-28
 topic: work-log-index
 sources: []
 ---
@@ -12,6 +12,7 @@ sources: []
 
 | 日期 | 类型 | 任务结果 | 日志 |
 | --- | --- | --- | --- |
+| 2026-10-28 | feature | completed | [分场景观卷指引](2026-10-28-%E5%88%86%E5%9C%BA%E6%99%AF%E8%A7%82%E5%8D%B7%E6%8C%87%E5%BC%95.md) |
 | 2026-10-27 | bug | completed | [首卷雪山闪烁与移动适配复核](2026-10-27-%E9%A6%96%E5%8D%B7%E9%9B%AA%E5%B1%B1%E9%97%AA%E7%83%81%E4%B8%8E%E7%A7%BB%E5%8A%A8%E9%80%82%E9%85%8D%E5%A4%8D%E6%A0%B8.md) |
 | 2026-10-27 | feature | completed | [画质帧率选项与低配渲染降载](2026-10-27-%E7%94%BB%E8%B4%A8%E5%B8%A7%E7%8E%87%E9%80%89%E9%A1%B9%E4%B8%8E%E4%BD%8E%E9%85%8D%E6%B8%B2%E6%9F%93%E9%99%8D%E8%BD%BD.md) |
 | 2026-10-27 | bug | completed | [录屏闪烁根因与场景稳定修复](2026-10-27-%E5%BD%95%E5%B1%8F%E9%97%AA%E7%83%81%E6%A0%B9%E5%9B%A0%E4%B8%8E%E5%9C%BA%E6%99%AF%E7%A8%B3%E5%AE%9A%E4%BF%AE%E5%A4%8D.md) |

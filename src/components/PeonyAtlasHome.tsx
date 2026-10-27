@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { CSSProperties } from 'react';
-import { ArrowDown, ArrowRight, MoveUpRight, Settings2, Wind, X } from 'lucide-react';
+import { ArrowDown, ArrowRight, CircleHelp, MoveUpRight, Settings2, Wind, X } from 'lucide-react';
 import { chapters } from '../data/chapters';
 import { atlasArt, atlasChapters } from '../data/peonyAtlas';
 import { studyPainting } from '../data/study';
@@ -13,11 +13,12 @@ import type { FrameRateLimit, RenderQuality } from '../scene/renderQuality';
 import '../styles/peony-atlas.css';
 
 type Note = 'preface' | 'guide' | null;
-type Props = StudyHomeProps & { renderQuality?: RenderQuality; frameRateLimit?: FrameRateLimit };
+type Props = StudyHomeProps & { renderQuality?: RenderQuality; frameRateLimit?: FrameRateLimit;
+  guideReplayAvailable?: boolean; onReplayGuide?: () => void; onReadyChange?: (ready: boolean) => void };
 
 /** Painted planes form the foyer. Its text and controls remain accessible
  * HTML, independent from the four authored paintings and their timeline. */
-export default function PeonyAtlasHome({ phase, chapterId, onSelect, motionEnabled, onToggleMotion, onOpenSettings, renderQuality = '720p', frameRateLimit = 30 }: Props) {
+export default function PeonyAtlasHome({ phase, chapterId, onSelect, motionEnabled, onToggleMotion, onOpenSettings, renderQuality = '720p', frameRateLimit = 30, guideReplayAvailable = false, onReplayGuide, onReadyChange }: Props) {
   const root = useRef<HTMLElement>(null), dialog = useRef<HTMLDialogElement>(null);
   const pigment = useRef<PeonyPigmentHandle>(null);
   const pointerPacer = useRef(new FramePacer(frameRateLimit));
@@ -37,6 +38,7 @@ export default function PeonyAtlasHome({ phase, chapterId, onSelect, motionEnabl
     Promise.all(images.map(image => image.decode())).then(() => { if (alive) setReady(true); }).catch(() => { if (alive) setError(true); });
     return () => { alive = false; };
   }, [attempt]);
+  useEffect(() => { onReadyChange?.(ready && !error); }, [ready, error, onReadyChange]);
 
   useEffect(() => {
     const media = matchMedia('(prefers-reduced-motion: reduce)');
@@ -111,10 +113,11 @@ export default function PeonyAtlasHome({ phase, chapterId, onSelect, motionEnabl
       <div className="atlas-identity"><span className="atlas-brand-seal" aria-hidden="true">国<br />色</span><span>国色长卷<small>一场关于牡丹的数字游观</small></span></div>
       <nav className="atlas-header-nav" aria-label="观展信息">
         <AudioController variant="foyer" active={home} /><span />
-        <button type="button" onClick={event => openNote('preface', event.currentTarget)} disabled={!home}>作品序言</button><span />
-        <button type="button" onClick={event => openNote('guide', event.currentTarget)} disabled={!home}>观展指南</button><span />
-        <button type="button" onClick={onToggleMotion} disabled={!home} aria-label="风物轻动" aria-pressed={motionEnabled}><Wind size={16} strokeWidth={1.2} />风物<small>{motionEnabled ? '开' : '静'}</small></button>
+        <button type="button" data-guide="home-preface" onClick={event => openNote('preface', event.currentTarget)} disabled={!home}>作品序言</button><span />
+        <button type="button" data-guide="home-guide" onClick={event => openNote('guide', event.currentTarget)} disabled={!home}>观展指南</button><span />
+        <button type="button" data-guide="home-motion" onClick={onToggleMotion} disabled={!home} aria-label="风物轻动" aria-pressed={motionEnabled}><Wind size={16} strokeWidth={1.2} />风物<small>{motionEnabled ? '开' : '静'}</small></button>
         <button className="atlas-settings" type="button" onClick={onOpenSettings} disabled={!home} aria-label="打开设置" aria-haspopup="dialog"><Settings2 size={18} strokeWidth={1.2} /></button>
+        {guideReplayAvailable && <button className="guide-replay" type="button" onClick={onReplayGuide} disabled={!home} aria-label="重新查看观卷指引"><CircleHelp size={16} strokeWidth={1.3} /><span>指引</span></button>}
       </nav>
     </header>
     <main className="atlas-intro">

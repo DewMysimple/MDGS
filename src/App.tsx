@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { CSSProperties, KeyboardEvent } from 'react';
-import { BookOpen, ChevronLeft, ChevronRight, Maximize, Minimize, Mouse, MoveHorizontal, Pause, Play, Settings, Wind } from 'lucide-react';
+import { BookOpen, ChevronLeft, ChevronRight, CircleHelp, Maximize, Minimize, Mouse, MoveHorizontal, Pause, Play, Settings, Wind } from 'lucide-react';
 import ScrollViewport from './components/ScrollViewport';
 import ScrollTimeline from './components/ScrollTimeline';
 import type { ScrollPresentationHandle, ViewportMotionState } from './components/ScrollViewport';
@@ -21,6 +21,8 @@ import type { SceneManifest } from './types';
 import NarrativeCalligraphy from './components/NarrativeCalligraphy';
 import type { NarrativeSpace } from './scene/NarrativeSpace';
 import ViewerSettingsPanel from './components/ViewerSettingsPanel';
+import GuideOverlay from './components/GuideOverlay';
+import { useExhibitionGuide } from './hooks/useExhibitionGuide';
 import { readViewerSettings, textPlateVariables, viewerSettingsKey } from './data/viewerSettings';
 import { activeSourceEdition } from './data/sourceEdition';
 import { matchesArtworkSnapshot, releaseArtworkSnapshot, type ArtworkSnapshot } from './scene/artworkSnapshot';
@@ -53,6 +55,7 @@ export default function App() {
   // A deep link already names its scroll. Build the study when it is visited,
   // rather than competing with the requested world during refresh startup.
   const [studyVisited, setStudyVisited] = useState(() => journey.phase === 'HOME');
+  const [homeReady, setHomeReady] = useState(false);
   useEffect(() => { if (journey.phase === 'HOME' || journey.phase === 'RETURNING_HOME') setStudyVisited(true); }, [journey.phase]);
   const [cultureOpen, setCultureOpen] = useState(false);
   const [encounterOpen, setEncounterOpen] = useState(false);
@@ -117,6 +120,9 @@ export default function App() {
   const currentIndex = stops.reduce((latest, item, index) => progress + 0.012 >= item.progress ? index : latest, 0);
   const currentStop = stops[currentIndex];
   const finished = progress === 1;
+  const guide = useExhibitionGuide({ phase: journey.phase, homeReady, finished, fullscreen,
+    dialogOpen: cultureOpen || encounterOpen || letterOpen || settingsOpen });
+  useEffect(() => { if (guide.active) stop(); }, [guide.active, stop]);
   const stageRef = useRef<HTMLDivElement>(null);
   const scrollExhibitionRef = useRef<HTMLElement>(null);
   const closeCulture = useCallback(() => setCultureOpen(false), []);
@@ -284,11 +290,11 @@ export default function App() {
 
   return (
     <SoundscapeProvider phase={journey.phase} chapterId={chapterId} progress={progress} reading={cultureOpen || encounterOpen || letterOpen}>
-    <div className={`peony-experience phase-${journey.phase.toLowerCase().replaceAll('_', '-')} ${motionEnabled ? '' : 'environment-off'}`} data-journey-phase={journey.phase} style={textPlateVariables(settings) as CSSProperties}>
+    <div className={`peony-experience phase-${journey.phase.toLowerCase().replaceAll('_', '-')} ${motionEnabled ? '' : 'environment-off'}`} data-journey-phase={journey.phase} aria-hidden={guide.active && !browserFullscreen || undefined} style={textPlateVariables(settings) as CSSProperties}>
     {studyVisited && <div className="journey-study" inert={journey.phase !== 'HOME'} aria-hidden={journey.phase !== 'HOME'}>
-      <StudyHome phase={journey.phase} chapterId={chapterId} onSelect={journey.select} motionEnabled={motionEnabled} onToggleMotion={() => setMotionEnabled(value => !value)} onOpenSettings={openSettings} renderQuality={settings.renderQuality} frameRateLimit={settings.frameRateLimit} />
+      <StudyHome phase={journey.phase} chapterId={chapterId} onSelect={journey.select} motionEnabled={motionEnabled} onToggleMotion={() => setMotionEnabled(value => !value)} onOpenSettings={openSettings} renderQuality={settings.renderQuality} frameRateLimit={settings.frameRateLimit} guideReplayAvailable={guide.showReplay} onReplayGuide={guide.replay} onReadyChange={setHomeReady} />
     </div>}
-    {journey.viewerMounted && <div className={`app-shell poetic-viewer journey-viewer${journey.interactive ? ' is-interactive' : ''}${nativeFullscreen ? ' is-native-fullscreen' : ''}`} inert={!journey.interactive} aria-hidden={!journey.interactive}>
+    {journey.viewerMounted && <div className={`app-shell poetic-viewer journey-viewer${journey.interactive ? ' is-interactive' : ''}${nativeFullscreen ? ' is-native-fullscreen' : ''}${guide.showReplay ? ' has-guide-entry' : ''}`} inert={!journey.interactive} aria-hidden={!journey.interactive}>
       <a className="skip-link" href="#scroll-artwork" onClick={event => { event.preventDefault(); stageRef.current?.focus(); }}>跳至画卷</a>
       <header className="site-header">
         <button className="brand" type="button" onClick={returnToStudy} aria-label="返回序厅">
@@ -309,6 +315,7 @@ export default function App() {
             ><span className="chapter-numeral">{item.numeral}</span><span className="chapter-nav-name">{item.title}</span></button>
           ))}
         </nav>
+        {guide.showReplay && <button className="guide-replay" type="button" onClick={guide.replay} aria-label="重新查看观卷指引"><CircleHelp size={16} strokeWidth={1.3} /><span>指引</span></button>}
         <button className="settings-button" type="button" onClick={openSettings} aria-label="打开设置" aria-haspopup="dialog"><Settings size={17} strokeWidth={1.4} /><span>设置</span></button>
         <span className="header-divider" />
         <button className="fullscreen-button icon-button" type="button" onClick={() => void toggleFullscreen()} aria-label={fullscreen ? '退出全屏' : '进入全屏'} title={fullscreen ? '退出全屏' : '全屏观画'}>
@@ -407,7 +414,7 @@ export default function App() {
                 <small id="painting-motion-state" role="status">{motionState.reducedMotion ? '随系统静止' : !motionState.supported ? '本卷静态' : motionState.enabled ? '已开' : '已关'}</small>
               </button><span className="secondary-divider" /></>}
               <AudioController active={journey.interactive} /><span className="secondary-divider" />
-              <button type="button" className="utility-button" onClick={() => { stop(); setCultureOpen(true); }} aria-label="打开文化解读"><BookOpen size={16} strokeWidth={1.4} /><span>画外拾遗</span></button>
+              <button type="button" className="utility-button" data-guide="viewer-culture" onClick={() => { stop(); setCultureOpen(true); }} aria-label="打开文化解读"><BookOpen size={16} strokeWidth={1.4} /><span>画外拾遗</span></button>
             </div>
           </div>
         </section>
@@ -429,6 +436,7 @@ export default function App() {
       onFailure={journey.onPresentationFailure} />}
     <ViewerSettingsPanel open={settingsOpen} chapterId={chapterId} settings={settings} onChange={setSettings} onClose={closeSettings} />
     <FlowerLetterDialog open={letterOpen} chapterId={chapterId} onClose={() => setLetterOpen(false)} />
+    {guide.step && <GuideOverlay step={guide.step} stepIndex={guide.index} stepCount={guide.count} onAdvance={guide.advance} />}
     </div>
     </SoundscapeProvider>
   );

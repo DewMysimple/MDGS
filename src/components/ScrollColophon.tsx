@@ -49,8 +49,8 @@ export default function ScrollColophon({ chapter, ordinal, placement, last, onRe
     <p className="end-colophon-text">{narrativeChapters[chapter.id]?.ending ?? chapter.colophon}</p>
     <button type="button" className="colophon-keepsake" onClick={onKeep}><Flower2 size={15} strokeWidth={1.1} /><span>留一笺春色</span><ArrowRight size={15} strokeWidth={1.1} /></button>
     <div className="end-actions">
-      <button className="text-button" type="button" onClick={onReplay}><RotateCcw size={13} strokeWidth={1.3} />再观此卷</button>
-      <button className="text-button" type="button" onClick={onNext}>{last ? '重游四卷' : '展开下一卷'}<ArrowRight size={14} strokeWidth={1.3} /></button>
+      <button className="text-button" type="button" data-guide="ending-replay" onClick={onReplay}><RotateCcw size={13} strokeWidth={1.3} />再观此卷</button>
+      <button className="text-button" type="button" data-guide="ending-next" onClick={onNext}>{last ? '重游四卷' : '展开下一卷'}<ArrowRight size={14} strokeWidth={1.3} /></button>
     </div>
   </aside>;
 }

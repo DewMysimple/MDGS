@@ -1,0 +1,33 @@
+.guide-overlay{position:fixed;inset:0;z-index:2147483000;overflow:hidden;cursor:pointer;touch-action:none;color:#3f493b;font-family:var(--serif,serif)}
+.guide-shade{position:absolute;inset:0;pointer-events:none}
+.guide-halo{position:absolute;box-sizing:border-box;border:1px solid #fff0ba;border-radius:10px;box-shadow:0 0 0 2px #bd915866,0 0 17px 3px #ffe9aeaa,inset 0 0 12px #fff4c488;pointer-events:none}
+.guide-halo::after{content:'';position:absolute;inset:-5px;border:1px solid #f7dfaa99;border-radius:14px;animation:guide-breathe 2.4s ease-in-out infinite;pointer-events:none}
+@keyframes guide-breathe{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.025)}}
+.guide-card{position:absolute;left:50%;top:50%;width:min(344px,calc(100vw - 28px));transform:none;padding:19px 21px 16px;box-sizing:border-box;background:#f7efdf;color:#354332;border:1px solid #b59b70;box-shadow:0 12px 36px #1c18164d,inset 0 0 0 3px #efe2cb;cursor:pointer;outline:none;max-height:calc(100dvh - 28px);overflow:auto}
+.guide-card:not([style]){transform:translate(-50%,-50%)}
+.guide-card-top,.guide-card-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.guide-card-top{font-size:11px;letter-spacing:.24em;color:#8e614b}
+.guide-count{font-size:12px;letter-spacing:.06em;font-variant-numeric:tabular-nums;color:#8c7351;white-space:nowrap}.guide-count i{font-style:normal;opacity:.55}
+.guide-card h2{margin:10px 0 8px;font-size:22px;line-height:1.35;letter-spacing:.12em;font-weight:500;color:#52654e}
+.guide-card p{margin:0;font-size:15px;line-height:1.8;letter-spacing:.04em;color:#3f4c3b}
+.guide-card .guide-unavailable{margin-top:9px;padding:8px 10px;border-left:2px solid #9d5139;background:#eee1ce;font-size:13px;line-height:1.6;color:#704032}
+.guide-card-bottom{margin-top:13px;padding-top:10px;border-top:1px solid #bfa98680;font-size:12px;line-height:1.5;letter-spacing:.06em;color:#80503d}
+.guide-card-bottom span:last-child{font-size:19px;line-height:1}
+@media(max-width:480px){.guide-card{padding:14px 16px 12px}.guide-card h2{font-size:19px;margin:7px 0}.guide-card p{font-size:14px;line-height:1.65}.guide-card-bottom{margin-top:9px;padding-top:8px}}
+@media(prefers-reduced-motion:reduce){.guide-halo::after{animation:none}}
+
+/* The replay entry shares the existing navigation rather than covering it. */
+.peony-experience .poetic-viewer.has-guide-entry .site-header{grid-template-columns:210px minmax(0,1fr) 62px 62px 62px}
+.peony-experience .poetic-viewer .guide-replay{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:36px;padding:5px;border:0;background:transparent;color:#6b735d;font:inherit;font-size:12px;white-space:nowrap;cursor:pointer}
+.peony-experience .poetic-viewer .guide-replay:hover{color:#913d34}
+.peony-experience .poetic-viewer .guide-replay:focus-visible{outline:2px solid #9d5139;outline-offset:3px}
+.atlas-header-nav:has(.guide-replay){gap:clamp(9px,1.5vw,24px)}
+.atlas-header-nav .guide-replay{white-space:nowrap;gap:6px}
+@media(max-width:1499px){.peony-experience .poetic-viewer.has-guide-entry .site-header{grid-template-columns:210px minmax(0,1fr) 55px 55px 55px}}
+@media(max-width:920px){
+  .peony-experience .poetic-viewer.has-guide-entry .site-header{grid-template-columns:minmax(0,1fr) auto auto auto}
+  .peony-experience .poetic-viewer.has-guide-entry .guide-replay{grid-column:2;grid-row:1}
+  .peony-experience .poetic-viewer.has-guide-entry .settings-button{grid-column:3;grid-row:1}
+  .peony-experience .poetic-viewer.has-guide-entry .fullscreen-button{grid-column:4;grid-row:1}
+}
+@media(max-width:380px){.peony-experience .poetic-viewer .guide-replay{gap:2px;padding-inline:2px;font-size:11px}}
