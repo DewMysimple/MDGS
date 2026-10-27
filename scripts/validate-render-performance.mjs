@@ -67,6 +67,7 @@ const imports = {
   three: gpuUrl,
   './NarrativeSpace': placementUrl,
   './sourceViewport': viewportUrl,
+  './SourceVisibility': moduleUrl(compile(await read('src/scene/SourceVisibility.ts'))),
   './texturePreparation': texturePreparationUrl,
   './ShaderWarmup': moduleUrl(compile(await read('src/scene/ShaderWarmup.ts')).replace(/from (['"])three\1/g, `from ${JSON.stringify(threeUrl)}`)),
   './artworkSnapshot': moduleUrl(compile(await read('src/scene/artworkSnapshot.ts')).replace(/from (['"])\.\.\/data\/sourceEdition\1/g, `from ${JSON.stringify(editionUrl)}`)),
@@ -281,16 +282,68 @@ const mb = 1024 * 1024, now = performance.now();
 recent.textures.set('required', { texture: new THREE.Texture(), loading: false, bytes: 240 * mb, lastSeen: now });
 for (let index = 0; index < 10; index++) recent.textures.set(`image-${index}`, { texture: new THREE.Texture(), loading: false, bytes: 32 * mb, lastSeen: now - index });
 for (let index = 0; index < 10; index++) recent.textures.set(`post-${index}`, { texture: new THREE.Texture(), loading: false, bytes: 12 * mb, lastSeen: now - index });
+// Exercise an eviction turn explicitly rather than depending on process uptime.
+recent.lastTextureEviction = -Infinity;
 recent.updateTextures();
 assert(recent.textures.has('required'), 'The soft cache budget never evicts unavoidable current source artwork.');
 assert.equal([...recent.textures].filter(([url]) => url.startsWith('image-')).reduce((sum, [, entry]) => sum + entry.bytes, 0), 96 * mb);
 assert.equal([...recent.textures].filter(([url]) => url.startsWith('post-')).reduce((sum, [, entry]) => sum + entry.bytes, 0), 24 * mb);
 for (const [url, entry] of recent.textures) if (url !== 'required') entry.lastSeen = now - 6000;
+recent.lastTextureEviction = -Infinity;
 recent.updateTextures();
 assert.deepEqual([...recent.textures.keys()], ['required'], 'The additional look-behind allowance expires instead of growing without bound.');
 recent.dispose();
 checks.push({ test: 'recent-cache-separately-bounded-to-96mib-images-24mib-post-and-expires-without-evicting-current', passed: true });
-const report = { status: 'pass', testedAt: new Date().toISOString(), scope: 'CPU thumbnail bounds and production streaming/failure logic with GPU stubbed. No FPS or rendered-pixel claim.', checks };
+
+const shadowGate = new SceneRenderer({ appendChild() {}, closest() { return null; } }, () => {});
+const offscreenShadow = layer('shadow-only-image', true);
+offscreenShadow.mesh.position.x = 100; offscreenShadow.mesh.updateMatrixWorld(true);
+shadowGate.objects = [offscreenShadow];
+shadowGate.sourceLighting = { requiredShadowCasters: () => new Set([offscreenShadow.mesh]), dispose() {} };
+shadowGate.loader = { loadAsync: () => new Promise(() => {}) };
+shadowGate.camera.updateMatrixWorld(true);
+shadowGate.updateTextures();
+assert(shadowGate.currentVisible.has('shadow-only-image'), 'A shadow-only alpha image must enter the hard readiness gate.');
+assert.equal(shadowGate.ready, false);
+const shadowImage = new THREE.Texture();
+shadowGate.textures.set('shadow-only-image', { texture: shadowImage, loading: false, bytes: 64, lastSeen: performance.now() - 20000 });
+shadowGate.assignTexture('shadow-only-image', shadowImage); shadowGate.lastTextureEviction = -Infinity;
+shadowGate.updateTextures();
+assert.equal(shadowGate.ready, true); assert(shadowGate.textures.has('shadow-only-image'), 'A required offscreen caster texture cannot be evicted.');
+shadowGate.dispose();
+checks.push({ test: 'offscreen-shadow-alpha-textures-block-incomplete-frames-and-remain-pinned', passed: true });
+
+const presentationEvents = [];
+const presented = new SceneRenderer({ appendChild() {}, closest() { return null; } }, () => {}, undefined, undefined, undefined,
+  blocked => presentationEvents.push(blocked ? 'blocked' : 'resumed'));
+let presentationDraws = 0;
+Object.assign(presented.renderer, { setScissorTest() {}, setScissor() {}, clear() {}, render() { presentationDraws++; presentationEvents.push('draw'); } });
+presented.calligraphy = { render() {}, dispose() {} };
+presented.manifest = { id: 'chapter-1', sourceRevision: 'peony-2.0-2026-10-23', frameRange: [1, 101], cameras: [] };
+presented.loaded = true; presented.preparationActive = false; presented.width = 640; presented.height = 360;
+presented.updateCamera = () => {}; presented.updateTextures = () => {}; presented.ready = true; presented.sourceProgress = .1;
+assert.equal(presented.playbackBlocked, true); assert.equal(presented.renderedSourceFrame, null);
+presented.render(10);
+assert.equal(presentationDraws, 1); assert.equal(presented.renderedSourceFrame, 11); assert.equal(presented.playbackBlocked, false);
+assert.deepEqual(presentationEvents, ['blocked', 'draw', 'resumed'], 'The clock resumes only after drawing a complete frame.');
+presented.ready = false; presented.sourceProgress = .2; presented.dirty = true; presented.render(20);
+assert.equal(presentationDraws, 1); assert.equal(presented.renderedSourceFrame, 11, 'A held image retains its actual source frame.');
+assert.equal(presented.playbackBlocked, true);
+presented.ready = true;
+assert.equal(presented.playbackBlocked, true, 'Resource arrival alone cannot resume the clock.');
+presented.dirty = true; presented.render(30);
+assert.equal(presentationDraws, 2); assert.equal(presented.renderedSourceFrame, 21); assert.equal(presented.playbackBlocked, false);
+presented.onContextLost({ preventDefault() {} });
+assert.equal(presented.playbackBlocked, true);
+presented.onContextRestored();
+assert.equal(presented.playbackBlocked, true, 'GPU restoration must wait for the first complete redraw.');
+presented.render(40);
+assert.equal(presentationDraws, 3); assert.equal(presented.playbackBlocked, false);
+assert.equal(presented.renderer.domElement.dataset.renderedSourceFrame, '21');
+assert.equal(presented.renderer.domElement.dataset.playbackBlocked, 'false');
+presented.dispose(); assert.equal(presented.playbackBlocked, true);
+checks.push({ test: 'autoplay-gate-follows-draw-and-retains-presented-frame-during-streaming-and-gpu-recovery', passed: true });
+const report = { status: 'pass', testedAt: new Date().toISOString(), scope: 'CPU thumbnail bounds, production streaming/failure logic and presentation feedback lifecycle with GPU stubbed. No FPS or rendered-pixel claim.', checks };
 const output = path.join(root, 'reports/peony2-fidelity');
 await mkdir(output, { recursive: true });
 await writeFile(path.join(output, 'render-performance-validation.json'), JSON.stringify(report, null, 2) + '\n');

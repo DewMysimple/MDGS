@@ -20,6 +20,8 @@ export interface SourceRenderSettings {
 }
 
 export interface SourceLightingState extends SourceLighting {
+  readonly shadowSubpixelBits: number | null;
+  requiredShadowCasters(scene: THREE.Scene, viewCamera: THREE.PerspectiveCamera, focusDistance: number): ReadonlySet<THREE.Mesh>;
   prepareShadows(renderer: THREE.WebGLRenderer, scene: THREE.Scene, materials: SourceMaterialLibrary,
     viewCamera: THREE.PerspectiveCamera, focusDistance: number): void;
   dispose(): void;
@@ -29,6 +31,12 @@ interface LampShadow {
   prefix: string; lamp: NativeLamp; target: THREE.WebGLRenderTarget;
   camera: THREE.OrthographicCamera | THREE.PerspectiveCamera;
   matrix: THREE.Matrix4; frustum: THREE.Vector2; parameters: THREE.Vector4;
+  casters: Set<THREE.Mesh>; vertices: WeakMap<THREE.Mesh, ShadowGeometry>;
+}
+
+interface ShadowGeometry {
+  geometry: THREE.BufferGeometry; positionVersion: number; indexVersion: number;
+  matrix: THREE.Matrix4; morph: number[]; points: THREE.Vector3[]; bounds: THREE.Box3;
 }
 
 function createLampShadow(lamp: NativeLamp, prefix: string): LampShadow {
@@ -41,7 +49,69 @@ function createLampShadow(lamp: NativeLamp, prefix: string): LampShadow {
   const camera = lamp.type === 'SUN' ? new THREE.OrthographicCamera(-1, 1, 1, -1, .01, 1000)
     : new THREE.PerspectiveCamera(175, 1, .01, 1000);
   return { prefix, lamp, target, camera, matrix: new THREE.Matrix4(),
-    frustum: new THREE.Vector2(), parameters: new THREE.Vector4() };
+    frustum: new THREE.Vector2(), parameters: new THREE.Vector4(), casters: new Set(), vertices: new WeakMap() };
+}
+
+/** Authored visibility is separate from texture residency's mesh.visible. */
+function isSourceCaster(object: THREE.Object3D): object is THREE.Mesh {
+  if (!(object instanceof THREE.Mesh)) return false;
+  for (let parent: THREE.Object3D | null = object; parent; parent = parent.parent) {
+    if (parent.userData.sourceVisible === false || parent.userData.artHidden) return false;
+  }
+  return true;
+}
+
+function shadowGeometry(shadow: LampShadow, mesh: THREE.Mesh, lightView: THREE.Matrix4): ShadowGeometry {
+  const geometry = mesh.geometry, position = geometry.getAttribute('position');
+  const positionVersion = 'version' in position ? position.version : position.data.version;
+  const indexVersion = geometry.index?.version ?? 0, morph = mesh.morphTargetInfluences ?? [];
+  const cached = shadow.vertices.get(mesh);
+  if (cached && cached.geometry === geometry && cached.positionVersion === positionVersion && cached.indexVersion === indexVersion
+    && cached.matrix.equals(mesh.matrixWorld) && cached.morph.length === morph.length && cached.morph.every((value, i) => value === morph[i])) return cached;
+  const transform = new THREE.Matrix4().multiplyMatrices(lightView, mesh.matrixWorld);
+  const points: THREE.Vector3[] = [], bounds = new THREE.Box3();
+  for (let index = 0; index < position.count; index++) {
+    const point = mesh.getVertexPosition(index, new THREE.Vector3()).applyMatrix4(transform);
+    points.push(point); bounds.expandByPoint(point);
+  }
+  const result = { geometry, positionVersion, indexVersion, matrix: mesh.matrixWorld.clone(), morph: [...morph], points, bounds };
+  shadow.vertices.set(mesh, result);
+  return result;
+}
+
+/** Clip actual triangles to the light's receiver volume. A long paper sheet's
+ * remote end must not expand depth just because its whole AABB intersects it. */
+function shadowDepthRange(mesh: THREE.Mesh, geometry: ShadowGeometry, planes: THREE.Plane[]) {
+  const { bounds, points } = geometry;
+  let inside = true;
+  for (const plane of planes) {
+    const n = plane.normal;
+    const maximum = plane.constant + n.x * (n.x >= 0 ? bounds.max.x : bounds.min.x)
+      + n.y * (n.y >= 0 ? bounds.max.y : bounds.min.y) + n.z * (n.z >= 0 ? bounds.max.z : bounds.min.z);
+    if (maximum < 0) return undefined;
+    const minimum = plane.constant + n.x * (n.x >= 0 ? bounds.min.x : bounds.max.x)
+      + n.y * (n.y >= 0 ? bounds.min.y : bounds.max.y) + n.z * (n.z >= 0 ? bounds.min.z : bounds.max.z);
+    inside &&= minimum >= 0;
+  }
+  if (inside) return [bounds.min.z, bounds.max.z] as const;
+  let minimum = Infinity, maximum = -Infinity;
+  const indices = mesh.geometry.index, count = indices?.count ?? points.length;
+  for (let index = 0; index + 2 < count; index += 3) {
+    let polygon = [0, 1, 2].map(offset => points[indices ? indices.getX(index + offset) : index + offset]);
+    for (const plane of planes) {
+      const clipped: THREE.Vector3[] = [];
+      for (let current = 0; current < polygon.length; current++) {
+        const a = polygon[current], b = polygon[(current + 1) % polygon.length];
+        const da = plane.distanceToPoint(a), db = plane.distanceToPoint(b);
+        if (da >= 0) clipped.push(a);
+        if ((da >= 0) !== (db >= 0)) clipped.push(a.clone().lerp(b, da / (da - db)));
+      }
+      polygon = clipped;
+      if (!polygon.length) break;
+    }
+    for (const point of polygon) { minimum = Math.min(minimum, point.z); maximum = Math.max(maximum, point.z); }
+  }
+  return Number.isFinite(minimum) ? [minimum, maximum] as const : undefined;
 }
 
 function fitLampShadow(shadow: LampShadow, scene: THREE.Scene, viewCamera: THREE.PerspectiveCamera, focusDistance: number) {
@@ -55,45 +125,69 @@ function fitLampShadow(shadow: LampShadow, scene: THREE.Scene, viewCamera: THREE
     const ray = new THREE.Vector3(x, y, .5).unproject(viewCamera).sub(viewPosition).normalize();
     corners.push(ray.multiplyScalar(depth / Math.max(1e-5, ray.dot(viewDirection))).add(viewPosition));
   }
-  const region = new THREE.Box3().setFromPoints(corners), sphere = region.getBoundingSphere(new THREE.Sphere());
+  const sphere = new THREE.Box3().setFromPoints(corners).getBoundingSphere(new THREE.Sphere());
   camera.up.fromArray(lamp.axisY).normalize();
-  if (lamp.type === 'SUN') camera.position.copy(sphere.center).addScaledVector(direction, -Math.max(1, sphere.radius * 2));
+  if (lamp.type === 'SUN') camera.position.set(0, 0, 0);
   else camera.position.fromArray(lamp.position);
   camera.lookAt(camera.position.clone().add(direction)); camera.updateMatrixWorld(true);
   const projected = corners.map(point => point.clone().applyMatrix4(camera.matrixWorldInverse));
   const bounds = new THREE.Box3().setFromPoints(projected);
-  const casters = new THREE.Box3();
-  scene.traverseVisible(object => {
-    if (!(object instanceof THREE.Mesh)) return;
-    const box = new THREE.Box3().setFromObject(object, false);
-    if (box.isEmpty()) return;
-    for (const x of [box.min.x, box.max.x]) for (const y of [box.min.y, box.max.y]) for (const z of [box.min.z, box.max.z]) {
-      casters.expandByPoint(new THREE.Vector3(x, y, z).applyMatrix4(camera.matrixWorldInverse));
-    }
-  });
-  if (!casters.isEmpty()) { bounds.min.z = Math.min(bounds.min.z, casters.min.z); bounds.max.z = Math.max(bounds.max.z, casters.max.z); }
+  const lightView = camera.matrixWorldInverse.clone(), planes: THREE.Plane[] = [];
+  let extent = 0;
   if (camera instanceof THREE.OrthographicCamera) {
     const padding = sphere.radius * Math.tan((lamp.angle ?? 0) * .5);
-    camera.left = bounds.min.x - padding; camera.right = bounds.max.x + padding;
-    camera.bottom = bounds.min.y - padding; camera.top = bounds.max.y + padding;
-    const shift = Math.max(0, bounds.max.z + .01);
-    camera.position.addScaledVector(direction, -shift); camera.updateMatrixWorld(true);
-    camera.near = .001; camera.far = Math.max(1, -bounds.min.z + shift + .01);
-    shadow.frustum.set(camera.right - camera.left, camera.top - camera.bottom);
-    shadow.parameters.set(camera.near, camera.far, Math.tan((lamp.angle ?? 0) * .5), 1);
+    // Quantized scale and an origin snapped in the light's fixed world basis
+    // keep moving-camera samples on the same shadow texels.
+    extent = 2 ** Math.ceil(Math.log2(Math.max(1, bounds.max.x - bounds.min.x, bounds.max.y - bounds.min.y) + padding * 2));
+    const texel = extent / shadow.target.width;
+    const centreX = Math.round((bounds.min.x + bounds.max.x) * .5 / texel) * texel;
+    const centreY = Math.round((bounds.min.y + bounds.max.y) * .5 / texel) * texel;
+    const left = centreX - extent * .5, right = centreX + extent * .5;
+    const bottom = centreY - extent * .5, top = centreY + extent * .5;
+    planes.push(new THREE.Plane(new THREE.Vector3(1, 0, 0), -left), new THREE.Plane(new THREE.Vector3(-1, 0, 0), right),
+      new THREE.Plane(new THREE.Vector3(0, 1, 0), -bottom), new THREE.Plane(new THREE.Vector3(0, -1, 0), top));
+    camera.position.set(0, 0, 0)
+      .addScaledVector(new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 0), centreX)
+      .addScaledVector(new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 1), centreY);
+    camera.left = camera.bottom = -extent * .5; camera.right = camera.top = extent * .5;
   } else {
     let tangent = 0;
     for (const point of projected) if (point.z < -.001) tangent = Math.max(tangent, Math.abs(point.x / point.z), Math.abs(point.y / point.z));
     camera.fov = THREE.MathUtils.clamp(2 * THREE.MathUtils.radToDeg(Math.atan(tangent * 1.05)), 1, 179);
-    // A perspective map needs its near plane close to actual receivers/casters.
-    // An arbitrary .001 near plane wastes almost all fixed-point precision for
-    // sheets tens of scene units from an AREA light.
-    camera.near = Math.max(.001, -bounds.max.z - .01);
-    camera.far = Math.max(camera.near + 1, -bounds.min.z + .01); camera.aspect = 1;
+    const slope = Math.tan(THREE.MathUtils.degToRad(camera.fov * .5));
+    planes.push(new THREE.Plane(new THREE.Vector3(1, 0, -slope), 0), new THREE.Plane(new THREE.Vector3(-1, 0, -slope), 0),
+      new THREE.Plane(new THREE.Vector3(0, 1, -slope), 0), new THREE.Plane(new THREE.Vector3(0, -1, -slope), 0),
+      new THREE.Plane(new THREE.Vector3(0, 0, -1), -.001));
+    camera.aspect = 1;
+  }
+  planes.push(new THREE.Plane(new THREE.Vector3(0, 0, 1), -bounds.min.z));
+  shadow.casters.clear();
+  let casterMinimum = Infinity, casterMaximum = -Infinity;
+  scene.traverse(object => {
+    if (!isSourceCaster(object)) return;
+    const range = shadowDepthRange(object, shadowGeometry(shadow, object, lightView), planes);
+    if (!range) return;
+    shadow.casters.add(object);
+    casterMinimum = Math.min(casterMinimum, range[0]); casterMaximum = Math.max(casterMaximum, range[1]);
+  });
+  if (camera instanceof THREE.OrthographicCamera) {
+    // Keep the depth encoding stable too. Remote triangles excluded above
+    // cannot consume precision or change it as their textures enter the cache.
+    const quantum = extent / 4;
+    const minimum = Math.floor(Math.min(bounds.min.z, casterMinimum) / quantum) * quantum;
+    const maximum = Math.ceil(Math.max(bounds.max.z, casterMaximum) / quantum) * quantum;
+    camera.position.addScaledVector(new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 2), maximum + .001);
+    camera.near = .001; camera.far = Math.max(1, maximum - minimum + .001);
+    shadow.frustum.set(extent, extent);
+    shadow.parameters.set(camera.near, camera.far, Math.tan((lamp.angle ?? 0) * .5), 1);
+  } else {
+    camera.near = Math.max(.001, -(Number.isFinite(casterMaximum) ? casterMaximum : bounds.max.z) - .01);
+    camera.far = Math.max(camera.near + 1, -(Number.isFinite(casterMinimum) ? casterMinimum : bounds.min.z) + .01);
     const diameter = 2 * Math.tan(THREE.MathUtils.degToRad(camera.fov * .5));
     shadow.frustum.set(diameter, diameter);
     shadow.parameters.set(camera.near, camera.far, .5 * Math.max(lamp.size ?? 0, lamp.shape === 'RECTANGLE' || lamp.shape === 'ELLIPSE' ? lamp.size_y ?? 0 : lamp.size ?? 0), 0);
   }
+  camera.updateMatrixWorld(true);
   camera.updateProjectionMatrix();
   shadow.matrix.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
 }
@@ -154,6 +248,7 @@ export function createSourceLighting(settings: SourceRenderSettings): SourceLigh
     sourceWorldRadiance: { value: vectors(settings.world.color).multiplyScalar(settings.world.strength) },
     sourceGgxIntegral: { value: ggxIntegral() },
     sourceShadowsEnabled: { value: 0 },
+    sourceShadowRasterHalfStep: { value: 0 },
   };
   const shadows: LampShadow[] = [];
   const declarations: string[] = [], contributions: string[] = [];
@@ -216,9 +311,31 @@ export function createSourceLighting(settings: SourceRenderSettings): SourceLigh
         sourceIncident(N,V,normalize(delta),${prefix}Color/(4.0*SOURCE_LIGHT_PI*distance2),${prefix}Factors,roughness,F0,evaluateSpecular,diffuseRadiance,specularRadiance);}`);
     } else throw new Error(`源灯类型尚未接入：${lamp.type}`);
   }
-  return { uniforms,
+  const requiredCasters = new Set<THREE.Mesh>();
+  let rasterContext: WebGLRenderingContext | WebGL2RenderingContext | null = null;
+  let rasterBits: number | null = null;
+  const collectCasters = (scene: THREE.Scene, viewCamera: THREE.PerspectiveCamera, focusDistance: number) => {
+    requiredCasters.clear();
+    scene.updateMatrixWorld(true);
+    for (const shadow of shadows) {
+      fitLampShadow(shadow, scene, viewCamera, focusDistance);
+      for (const mesh of shadow.casters) requiredCasters.add(mesh);
+    }
+    return requiredCasters;
+  };
+  return { uniforms, requiredShadowCasters: collectCasters, get shadowSubpixelBits() { return rasterBits; },
     prepareShadows(renderer, scene, materials, viewCamera, focusDistance) {
       if (!shadows.length) return;
+      const gl = renderer.getContext();
+      if (gl !== rasterContext) {
+        const bits: unknown = gl.getParameter(gl.SUBPIXEL_BITS);
+        if (typeof bits !== 'number' || !Number.isFinite(bits) || bits < 0) throw new Error('阴影栅格精度读取失败。');
+        rasterContext = gl; rasterBits = bits;
+        uniforms.sourceShadowRasterHalfStep.value = .5 / (2048 * 2 ** bits);
+      }
+      collectCasters(scene, viewCamera, focusDistance);
+      const visibility = new Map<THREE.Mesh, boolean>();
+      scene.traverse(object => { if (object instanceof THREE.Mesh) visibility.set(object, object.visible); });
       const target = renderer.getRenderTarget(), viewport = renderer.getViewport(new THREE.Vector4());
       const scissor = renderer.getScissor(new THREE.Vector4()), scissorTest = renderer.getScissorTest();
       const clearColor = renderer.getClearColor(new THREE.Color()).clone(), clearAlpha = renderer.getClearAlpha();
@@ -229,11 +346,12 @@ export function createSourceLighting(settings: SourceRenderSettings): SourceLigh
         materials.setPass('depth'); scene.background = null; renderer.autoClear = true;
         renderer.setScissorTest(false); renderer.setClearColor(0, 0); scene.updateMatrixWorld(true);
         for (const shadow of shadows) {
-          fitLampShadow(shadow, scene, viewCamera, focusDistance);
+          for (const [mesh, visible] of visibility) mesh.visible = visible && shadow.casters.has(mesh);
           renderer.setRenderTarget(shadow.target);
           renderer.clear(true, true, false); renderer.render(scene, shadow.camera);
         }
       } finally {
+        for (const [mesh, visible] of visibility) mesh.visible = visible;
         materials.setPass('color'); scene.background = background; renderer.autoClear = autoClear;
         renderer.setRenderTarget(target); renderer.setClearColor(clearColor, clearAlpha);
         renderer.setViewport(viewport); renderer.setScissor(scissor); renderer.setScissorTest(scissorTest);
@@ -241,10 +359,10 @@ export function createSourceLighting(settings: SourceRenderSettings): SourceLigh
         uniforms.sourceShadowsEnabled.value = 1;
       }
     },
-    dispose() { for (const shadow of shadows) { shadow.target.depthTexture?.dispose(); shadow.target.dispose(); } },
+    dispose() { requiredCasters.clear(); for (const shadow of shadows) { shadow.casters.clear(); shadow.target.depthTexture?.dispose(); shadow.target.dispose(); } },
     fragment: `
     const float SOURCE_LIGHT_PI=3.141592653589793;
-    uniform vec3 sourceWorldRadiance;uniform sampler2D sourceGgxIntegral;uniform float sourceShadowsEnabled;
+    uniform vec3 sourceWorldRadiance;uniform sampler2D sourceGgxIntegral;uniform float sourceShadowsEnabled,sourceShadowRasterHalfStep;
     ${declarations.join('\n')}
     float sourceShadowDistance(float depth,vec4 parameters){
       return parameters.w>.5?mix(parameters.x,parameters.y,depth):parameters.x*parameters.y/max(1e-6,parameters.y-depth*(parameters.y-parameters.x));
@@ -256,16 +374,23 @@ export function createSourceLighting(settings: SourceRenderSettings): SourceLigh
       // PCF samples on a sloped sheet must compare its depth at each sampled
       // texel centre, rather than the centre fragment's depth. Otherwise the
       // same sheet incorrectly shadows itself across most of the filter disk.
-      vec3 dx=dFdx(p),dy=dFdy(p);
+      // World derivatives are evaluated before the material's peel discard.
+      // Transform them analytically instead of differentiating a depth near 1
+      // after divergent fragment termination and subtracting rounded values.
+      vec4 clipDx=projection*vec4(sourceWorldDx,0.0),clipDy=projection*vec4(sourceWorldDy,0.0);
+      vec3 dx=.5*(clipDx.xyz-(clip.xyz/clip.w)*clipDx.w)/clip.w;
+      vec3 dy=.5*(clipDy.xyz-(clip.xyz/clip.w)*clipDy.w)/clip.w;
       float determinant=dx.x*dy.y-dx.y*dy.x;
       vec2 depthGradient=abs(determinant)>1e-16
         ?vec2(dx.z*dy.y-dx.y*dy.z,dx.x*dy.z-dx.z*dy.x)/determinant:vec2(0.0);
       if(p.x<=0.0||p.y<=0.0||p.x>=1.0||p.y>=1.0||p.z<=0.0||p.z>=1.0)return 1.0;
       const float mapSize=2048.0;
-      // WebGL's UnsignedInt depth attachment uses DEPTH_COMPONENT24. Keep a
-      // two-quantum rounding allowance in that normalized encoding; world-space
-      // precision follows the actual near/far range above for both projections.
-      const float depthBias=2.0/16777215.0;
+      // Vertices are snapped to the GPU's SUBPIXEL_BITS grid before raster
+      // interpolation. Correcting with the ideal receiver plane leaves a
+      // slope-dependent residual even with a perfect DEPTH_COMPONENT24 map.
+      // Barycentric weights sum to one, so half a raster grid step per axis
+      // bounds that residual. Add only two depth quanta for depth rounding.
+      float depthBias=2.0/16777215.0+dot(abs(depthGradient),vec2(sourceShadowRasterHalfStep));
       vec2 centreUv=(clamp(floor(p.xy*mapSize),vec2(0.0),vec2(mapSize-1.0))+.5)/mapSize;
       float centreDepth=texture2D(map,centreUv).r-dot(depthGradient,centreUv-p.xy);
       float receiver=sourceShadowDistance(p.z,parameters),blocker=sourceShadowDistance(centreDepth,parameters);

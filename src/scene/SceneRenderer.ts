@@ -18,6 +18,7 @@ import { ArtworkProjector } from './artworkProjection';
 import type { ArtworkAnchorSpec, ProjectedArtAnchor } from '../data/artEncounters';
 import { createArtworkSnapshot, type ArtworkSnapshot } from './artworkSnapshot';
 import { decodeTextureImage } from './texturePreparation';
+import { shouldUseSourceVisibility } from './SourceVisibility';
 
 interface TextureEntry { texture?: THREE.Texture; loading: boolean; lastSeen: number; bytes: number }
 interface TextureUpload { url: string; texture: THREE.Texture; entry: TextureEntry; variants: THREE.Texture[] }
@@ -65,6 +66,11 @@ export class SceneRenderer {
   private dirty = true;
   private ready = false;
   private firstFrameReady = false;
+  private playbackBlocked = true;
+  private playbackBlockReason = 'preparing';
+  private playbackBlockedSince = performance.now();
+  private playbackBlockedMs = 0;
+  private renderedSourceFrame: number | null = null;
   private preparationActive = true;
   private preparationSignature = '';
   private loaded = false;
@@ -133,6 +139,7 @@ export class SceneRenderer {
   private sourceFieldUrls = new Set<string>();
   private sourceRenderSettings?: SourceRenderSettings;
   private sourceLighting?: SourceLightingState;
+  private sourceShadowCasterCount = 0;
   private sourceFocusDistance = 10;
   private sourcePost?: SourcePostProcessing;
   private artworkProjector = new ArtworkProjector();
@@ -146,7 +153,9 @@ export class SceneRenderer {
   constructor(private host: HTMLElement, private status: (message: string | null) => void,
     private preparation?: (state: ScenePreparationState) => void,
     private onNarrativeSpace?: (placement: NarrativeSpace) => void,
-    private onArtworkAnchors?: (anchors: ProjectedArtAnchor[]) => void) {
+    private onArtworkAnchors?: (anchors: ProjectedArtAnchor[]) => void,
+    private onPlaybackBlocked?: (blocked: boolean) => void) {
+    this.onPlaybackBlocked?.(true);
     this.readingLayoutRoot = host.closest<HTMLElement>('.app-shell');
     this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'high-performance' });
     this.renderer.setPixelRatio(Math.min(devicePixelRatio, 1.65));
@@ -158,6 +167,7 @@ export class SceneRenderer {
       this.rejectArtworkSnapshots(new Error('画境暂未绘成，无法留存当前画心。'));
       cancelAnimationFrame(this.frame); this.frame = 0;
       this.ready = false; this.firstFrameReady = false;
+      this.setPlaybackBlocked(true, 'shader-error');
       this.status('画面暂时中断，请重新展卷');
       this.reportPreparation('error', 0, this.currentVisible.size, '画境未能绘就，请重新展卷。');
       this.updateDiagnostics();
@@ -258,7 +268,7 @@ export class SceneRenderer {
       mesh.updateMatrixWorld(true);
       mesh.visible = !definition.texture;
       this.scene.add(mesh);
-      this.objects.push({ mesh, material, url: definition.texture ? new URL(`${base}${definition.texture}`, document.baseURI).href : undefined, animation: manifest.animations?.[source.name], visibility: manifest.visibility?.[source.name], morphWeights: source.morphWeights, fields: nativeMaterial?.fields });
+      this.objects.push({ mesh, material, url: definition.texture ? new URL(`${base}${definition.texture}`, document.baseURI).href : undefined, animation: manifest.animations?.[source.name], visibility: shouldUseSourceVisibility(manifest, source.name) ? manifest.visibility?.[source.name] : undefined, morphWeights: source.morphWeights, fields: nativeMaterial?.fields });
     }
     // Source manifests stay untouched. Replacements and new world-space bridges share
     // this same streaming queue and disposal lifecycle, never a second texture loader.
@@ -379,6 +389,7 @@ export class SceneRenderer {
     if (width === this.width && height === this.height) return;
     if (this.preparationActive && (width !== this.width || height !== this.height)) this.firstFrameReady = false;
     this.width = width; this.height = height;
+    this.setPlaybackBlocked(true, 'viewport');
     this.lastViewChange = performance.now();
     this.updateReadingMinimum();
     this.renderer.setSize(width, height);
@@ -429,6 +440,7 @@ export class SceneRenderer {
   cancelPreparation(): void {
     if (this.preparationCancelled) return;
     this.preparationCancelled = true;
+    this.setPlaybackBlocked(true, 'cancelled');
     cancelAnimationFrame(this.frame); this.frame = 0;
     this.shaderWarmup?.cancel('owner-return');
     for (const upload of this.textureUploads) { upload.texture.dispose(); upload.entry.loading = false; }
@@ -481,6 +493,7 @@ export class SceneRenderer {
     this.errorUrls.clear();
     this.textureErrors.clear();
     this.ready = false;
+    this.setPlaybackBlocked(true, 'resources');
     this.status('正在恢复画卷');
     this.updateTextures();
     this.dirty = true;
@@ -517,6 +530,7 @@ export class SceneRenderer {
     if (this.disposed) return;
     event.preventDefault();
     this.contextLost = true;
+    this.setPlaybackBlocked(true, 'context-lost');
     this.shaderWarmup?.loseContext();
     this.rejectArtworkSnapshots(new Error('画境暂时中断，无法留存当前画心。'));
     // Fence results from the lost GPU belong to a different resource lifetime.
@@ -540,6 +554,7 @@ export class SceneRenderer {
   private onContextRestored = () => {
     if (this.disposed) return;
     this.contextLost = false;
+    this.setPlaybackBlocked(true, 'restoring');
     this.shaderWarmup?.restoreContext();
     this.contextRetryRequested = false;
     this.contextRestoreCount++;
@@ -671,6 +686,10 @@ export class SceneRenderer {
     const now = performance.now();
     this.currentVisible.clear();
     this.prefetched.clear();
+    // Source-visible sheets can cast into the painting while outside the main
+    // camera. Their alpha textures belong to the same complete-frame gate.
+    const shadowCasters = this.sourceLighting?.requiredShadowCasters(this.scene, this.camera, this.sourceFocusDistance);
+    this.sourceShadowCasterCount = shadowCasters?.size ?? 0;
     for (const object of this.objects) {
       const urls = this.objectTextureUrls(object);
       if (!urls.length) continue;
@@ -684,7 +703,7 @@ export class SceneRenderer {
         for (const key of object.visibility) { if (key.progress > nextSource) break; upcoming = key.visible; }
         upcoming ||= object.visibility.some(key => key.visible && key.progress >= Math.min(this.sourceProgress, nextSource) && key.progress <= Math.max(this.sourceProgress, nextSource));
       }
-      if ((sourceVisible && this.frustum.intersectsObject(object.mesh)) || upcoming) {
+      if ((sourceVisible && (this.frustum.intersectsObject(object.mesh) || shadowCasters?.has(object.mesh))) || upcoming) {
         for (const url of urls) {
           if (sourceVisible) this.currentVisible.add(url);
           else this.prefetched.add(url);
@@ -735,6 +754,7 @@ export class SceneRenderer {
     const waiting = [...this.currentVisible].filter(url => !this.textures.get(url)?.texture && !this.errorUrls.has(url)).length;
     const failed = [...this.currentVisible].filter(url => this.errorUrls.has(url)).length;
     const loaded = this.currentVisible.size - waiting - failed;
+    if (waiting || failed) this.setPlaybackBlocked(true, failed ? 'resource-error' : 'resources');
     if (!this.firstFrameReady) {
       if (failed) this.reportPreparation('error', loaded, this.currentVisible.size, '部分画境未能绘就，请重试。');
       else if (waiting) this.reportPreparation('textures', loaded, this.currentVisible.size, '正在唤醒花影……');
@@ -888,6 +908,7 @@ export class SceneRenderer {
       this.shaderWarmup?.enqueue(this.objects);
       if (this.preparationActive && !this.firstFrameReady && this.shaderWarmup
         && !this.shaderWarmup.initialReady(this.objects, object => this.objectTexturesReady(object))) {
+        this.setPlaybackBlocked(true, 'preparing');
         this.updateDiagnostics();
         return;
       }
@@ -895,6 +916,7 @@ export class SceneRenderer {
       // position's visible sheets finish loading. Hiding individual meshes
       // first makes the source collage flash empty during normal playback.
       if (this.sourceFaithful && this.firstFrameReady && !this.ready) {
+        this.setPlaybackBlocked(true, 'resources');
         this.dirty = false;
         this.textureRefreshPending = false;
         this.updateDiagnostics();
@@ -917,7 +939,10 @@ export class SceneRenderer {
       this.renderer.render(this.scene, this.camera);
       this.renderer.setScissorTest(false);
       }
-      if (this.shaderFailed) return;
+      if (this.shaderFailed || this.contextLost) return;
+      this.renderedSourceFrame = this.manifest.frameRange[0]
+        + this.sourceProgress * (this.manifest.frameRange[1] - this.manifest.frameRange[0]);
+      this.renderer.domElement.dataset.renderedSourceFrame = String(this.renderedSourceFrame);
       this.copyPendingArtworkSnapshots();
       this.updateNarrativeSpace(now);
       this.calligraphy.render(this.camera, this.visualProgress);
@@ -931,6 +956,12 @@ export class SceneRenderer {
         && ![...this.currentVisible].some(url => !this.textures.get(url)?.texture)) {
         this.firstFrameReady = true;
         this.reportPreparation('ready', this.currentVisible.size, this.currentVisible.size, '长卷已备，邀君共赏。');
+      }
+      // Resource arrival only makes a frame drawable. Resume the film after
+      // that complete frame has actually been composited, including recovery.
+      if (this.firstFrameReady && this.ready && !this.contextLost && this.width > 1 && this.height > 1
+        && [...this.currentVisible].every(url => !!this.textures.get(url)?.texture)) {
+        this.setPlaybackBlocked(false, 'none');
       }
     }
     if (this.textureRefreshPending && this.manifest && this.loaded && now - this.lastTextureCheck > 100) {
@@ -1004,6 +1035,18 @@ export class SceneRenderer {
     });
   }
 
+  private setPlaybackBlocked(blocked: boolean, reason: string) {
+    this.playbackBlockReason = reason;
+    this.renderer.domElement.dataset.playbackBlocked = String(blocked);
+    this.renderer.domElement.dataset.playbackBlockReason = reason;
+    if (this.playbackBlocked === blocked) return;
+    const now = performance.now();
+    if (blocked) this.playbackBlockedSince = now;
+    else this.playbackBlockedMs += now - this.playbackBlockedSince;
+    this.playbackBlocked = blocked;
+    this.onPlaybackBlocked?.(blocked);
+  }
+
   /** Read-only canvas data is intentionally absent from the product interface. */
   private updateDiagnostics(throttled = false) {
     const now = performance.now();
@@ -1028,9 +1071,14 @@ export class SceneRenderer {
       sourceHiddenVisibleLayers: String(this.objects.filter(object => object.mesh.userData.sourceVisible === false && object.mesh.visible).length),
       sourceRevision: this.manifest?.sourceRevision ?? '',
       sourceFrame: this.manifest ? String(this.manifest.frameRange[0] + this.visualProgress * (this.manifest.frameRange[1] - this.manifest.frameRange[0])) : '',
+      renderedSourceFrame: this.renderedSourceFrame === null ? '' : String(this.renderedSourceFrame),
+      playbackBlocked: String(this.playbackBlocked), playbackBlockReason: this.playbackBlockReason,
+      playbackBlockedMs: (this.playbackBlockedMs + (this.playbackBlocked ? now - this.playbackBlockedSince : 0)).toFixed(2),
       sourceViewport: JSON.stringify(this.sourceViewport),
       sourceMorphObjects: String(this.objects.filter(object => object.morphWeights?.length).length),
       sourceMaterialsReady: String(!!this.sourceMaterials),
+      sourceShadowCasters: String(this.sourceShadowCasterCount),
+      sourceShadowSubpixelBits: this.sourceLighting?.shadowSubpixelBits === null ? '' : String(this.sourceLighting?.shadowSubpixelBits ?? ''),
       sourceMaterialFields: String(this.sourceFieldUrls.size),
       sourcePostTextures: String(this.sourcePost?.requiredUrls().length ?? 0),
       shaderErrors: JSON.stringify(this.shaderErrors),
@@ -1054,6 +1102,7 @@ export class SceneRenderer {
   dispose() {
     if (this.disposed) return;
     this.disposed = true;
+    this.setPlaybackBlocked(true, 'disposed');
     this.shaderWarmup?.dispose();
     this.rejectArtworkSnapshots(new DOMException('画境已离开。', 'AbortError'));
     this.narrativeGeneration++;

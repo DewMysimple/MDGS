@@ -11,7 +11,7 @@ export function sourceDuration(timing: SourceTiming | undefined, legacyDuration:
   return duration;
 }
 
-/** Wall time is retained even when a browser cannot draw every authored frame. */
+/** Advance by caller-approved source time; the controller excludes waits and caps slow ticks. */
 export function advanceSourceProgress(progress: number, elapsedSeconds: number, duration: number): number {
   return Math.min(1, Math.max(0, progress + Math.max(0, elapsedSeconds) / duration));
 }

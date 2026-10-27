@@ -1,7 +1,7 @@
 {
   "status": "pass",
-  "testedAt": "2026-10-23T10:05:25.050Z",
-  "scope": "CPU thumbnail bounds and production streaming/failure logic with GPU stubbed. No FPS or rendered-pixel claim.",
+  "testedAt": "2026-10-27T09:22:27.560Z",
+  "scope": "CPU thumbnail bounds, production streaming/failure logic and presentation feedback lifecycle with GPU stubbed. No FPS or rendered-pixel claim.",
   "checks": [
     {
       "test": "placement-buffer-bounded-through-8k-and-distinguishes-paper-from-ink",
@@ -87,6 +87,14 @@
     },
     {
       "test": "recent-cache-separately-bounded-to-96mib-images-24mib-post-and-expires-without-evicting-current",
+      "passed": true
+    },
+    {
+      "test": "offscreen-shadow-alpha-textures-block-incomplete-frames-and-remain-pinned",
+      "passed": true
+    },
+    {
+      "test": "autoplay-gate-follows-draw-and-retains-presented-frame-during-streaming-and-gpu-recovery",
       "passed": true
     }
   ]

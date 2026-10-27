@@ -37,7 +37,7 @@ float sourceSmooth(float t){return t*t*(3.0-2.0*t);}
 float sourceSmoother(float t){return t*t*t*(t*(t*6.0-15.0)+10.0);}
 float sourceImageCoverage(vec2 uv){return float(all(greaterThanEqual(uv,vec2(0.0)))&&all(lessThanEqual(uv,vec2(1.0))));}
 vec3 sourceBump(vec3 N,float height,float heightDx,float heightDy,float strength,float distance,float filterWidth){
-  vec3 dx=dFdx(vSourceWorldPosition),dy=dFdy(vSourceWorldPosition);
+  vec3 dx=sourceWorldDx,dy=sourceWorldDy;
   vec3 rx=cross(dy,N),ry=cross(N,dx);
   float determinant=dot(dx,rx);
   if(abs(determinant)<1e-12)return N;
@@ -186,8 +186,13 @@ export class SourceMaterialLibrary {
       Object.assign(shader.uniforms, uniforms, this.lighting.uniforms ?? {});
       shader.vertexShader = shader.vertexShader.replace('#include <common>', `#include <common>\nattribute vec2 sourceMaterialUv;uniform mat3 sourceNormalMatrix;${header}`)
         .replace('#include <project_vertex>', `#include <project_vertex>\nvec3 sourceObjectNormal=normal;\n#ifdef USE_MORPHNORMALS\nsourceObjectNormal*=morphTargetBaseInfluence;\nfor(int sourceMorph=0;sourceMorph<MORPHTARGETS_COUNT;sourceMorph++){sourceObjectNormal+=getMorph(gl_VertexID,sourceMorph,1).xyz*morphTargetInfluences[sourceMorph];}\n#endif\nvSourceUv=sourceMaterialUv;vSourcePosition=transformed;vSourceWorldPosition=(modelMatrix*vec4(transformed,1.0)).xyz;vSourceNormal=normalize(sourceNormalMatrix*sourceObjectNormal);`);
-      shader.fragmentShader = shader.fragmentShader.replace('#include <common>', `#include <common>\n${header}\nuniform float sourceRenderPass;uniform float sourceImageLodBias;\nuniform sampler2D sourcePeelPrevious,sourcePeelNext;uniform vec2 sourcePeelPresent,sourcePeelSize;\n${declarations.join('\n')}\n${SOURCE_NOISE_3D}\n${FUNCTIONS}\n${this.lighting.fragment}`)
+      shader.fragmentShader = shader.fragmentShader.replace('#include <common>', `#include <common>\n${header}\nvec3 sourceWorldDx,sourceWorldDy;\nuniform float sourceRenderPass;uniform float sourceImageLodBias;\nuniform sampler2D sourcePeelPrevious,sourcePeelNext;uniform vec2 sourcePeelPresent,sourcePeelSize;\n${declarations.join('\n')}\n${SOURCE_NOISE_3D}\n${FUNCTIONS}\n${this.lighting.fragment}`)
         .replace('#include <map_fragment>', `
+          // Quad derivatives must be evaluated before per-pixel peel discards.
+          // Shadows reuse these derivatives instead of differentiating a
+          // nearly-one normalized depth after neighbouring lanes have exited.
+          sourceWorldDx=dFdx(vSourceWorldPosition);
+          sourceWorldDy=dFdy(vSourceWorldPosition);
           if(sourceRenderPass<-.5){
             vec2 sourcePeelUv=gl_FragCoord.xy/sourcePeelSize;
             float previousDepth=sourcePeelPresent.x>.5?texture2D(sourcePeelPrevious,sourcePeelUv).r:0.0;

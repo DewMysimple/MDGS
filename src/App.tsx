@@ -73,7 +73,7 @@ export default function App() {
   const manifest = manifests[chapterId];
   const nativeEdition = manifest?.sourceRevision === activeSourceEdition;
   const chapterSettings = settings.chapters[chapterId];
-  const { progress, target, seek, nudge, playing, togglePlaying, stop } = useScrollController(chapterId, {
+  const { progress, target, seek, nudge, playing, togglePlaying, stop, setPlaybackBlocked } = useScrollController(chapterId, {
     smoothingMs: chapterSettings.smoothingMs, active: journey.interactive, timing: manifest,
   });
   const presentationHandle = useRef<ScrollPresentationHandle | null>(null);
@@ -343,6 +343,7 @@ export default function App() {
                 onReady={journey.onReady}
                 progress={progress}
                 playbackActive={playing}
+                onPlaybackBlocked={setPlaybackBlocked}
                 motionEnabled={motionEnabled && journey.interactive && !finished}
                 onMotionState={receiveMotionState}
                 onNarrativePlacement={setNarrativePlacement}

@@ -20,6 +20,7 @@
     "test": "node scripts/validate-viewing.mjs",
     "test:scroll-input": "node scripts/validate-scroll-input.mjs",
     "test:render-performance": "node scripts/validate-render-performance.mjs",
+    "test:scene-stability": "node scripts/validate-source-visibility.mjs && node scripts/validate-streaming-playback.mjs && node scripts/validate-source-shadows.mjs && node scripts/validate-render-performance.mjs",
     "test:viewer-settings": "node scripts/validate-viewer-settings.mjs",
     "test:new-narrative": "node scripts/validate-new-narrative.mjs",
     "test:new-motion": "node scripts/validate-new-motion.mjs",

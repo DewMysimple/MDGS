@@ -1,0 +1,66 @@
+{
+  "status": "pass",
+  "date": "2026-10-27",
+  "baselineRevision": "209fdfb",
+  "scope": "Local scene rendering and playback repair; original web layout, artwork assets and authored material entrance tracks preserved.",
+  "regressions": {
+    "command": "npm run test:scene-stability",
+    "visibility": 4,
+    "playback": 12,
+    "shadows": 10,
+    "rendererResourcesAndLifecycle": 12,
+    "total": 38,
+    "passed": true
+  },
+  "build": { "command": "npm run build", "passed": true },
+  "gpu": {
+    "chapter": 1,
+    "sourceFrames": [1, 420],
+    "samplingGridPerDitheredLayer": [64, 36],
+    "backgroundSamplePixels": 291973,
+    "backgroundIncorrectSelfOcclusionSamples": 0,
+    "subpixelBits": 4,
+    "frame128Before": { "samplePixels": 1181, "incorrectSelfOcclusionPixels": 854 },
+    "frame128After": { "samplePixels": 1181, "incorrectSelfOcclusionPixels": 0 },
+    "frame129Before": { "samplePixels": 1176, "incorrectSelfOcclusionPixels": 112 },
+    "frame129After": { "samplePixels": 1176, "incorrectSelfOcclusionPixels": 0 },
+    "realOtherObjectOcclusionRemains": true,
+    "shadowResidueMaximumAdjacentMAEBefore": 0.02706929,
+    "shadowResidueMaximumAdjacentMAEAfter": 0.00003448,
+    "shadowResidueFrameRange": [120, 140],
+    "notFullPixelOrAllChapterTimelineCertification": true
+  },
+  "productionBrowser": {
+    "url": "http://127.0.0.1:4175/",
+    "viewport": [2560, 1348],
+    "firstChapterAutoplayPresentedSourceFrameObserved": 1364.58799999991,
+    "observedTargetAndPresentedFramesMatched": true,
+    "manualSnowViewSourceFrame": 127.966,
+    "manualMountainViewSourceFrame": 191.449,
+    "shaderErrors": [],
+    "textureErrors": {},
+    "allChapterFirstFrames": [
+      { "chapter": 1, "sourceFrame": 1, "ready": true },
+      { "chapter": 2, "sourceFrame": 33, "ready": true },
+      { "chapter": 3, "sourceFrame": 1, "ready": true },
+      { "chapter": 4, "sourceFrame": 1, "ready": true }
+    ],
+    "screenshots": ["production-snow-after.jpg", "production-frame-191.jpg"]
+  },
+  "sourcePreservation": {
+    "originalBlendHashesUnchanged": 4,
+    "authoredEntranceMaterialTracksUnchanged": 11,
+    "reviewedFirstChapterResidencyWindowsBypassed": 120,
+    "otherSourcesAndObjectsKeepAuthoredVisibility": true,
+    "publicArtworkAndModelAssetsModified": false
+  },
+  "delivery": {
+    "packagedSourceInputHashesMatched": 416,
+    "zipIntegrityAndExtractedFileHashesPassed": true,
+    "activeDirectory": "E:/动效网页/提交材料/数字牡丹赋-Windows-x64",
+    "executableSha256": "b74122735f8d714591bd623249c4b94973f47fcb27e16dc4014e5cf8cc5c80d3",
+    "zipSha256": "9bfff150db47b87a79957d03d0d326cca718f412d28cd3f4b20eaedff532997a",
+    "githubPush": false,
+    "nativeElectronInteractiveSuiteRunThisTurn": false
+  }
+}

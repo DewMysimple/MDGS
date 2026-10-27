@@ -31,15 +31,16 @@ export interface ScrollViewportProps {
   onPresentationSnapshot?: (snapshot: ArtworkSnapshot) => void;
   onPresentationError?: (message: string) => void;
   playbackActive?: boolean;
+  onPlaybackBlocked?: (blocked: boolean) => void;
 }
 
 export default function ScrollViewport({ chapterId, progress, motionEnabled, onMotionState, onNudge, onSeek, onManualInput, onManifest,
   interactive = true, retryKey = 0, preparationCancelled = false, onPreparation, onReady, onNarrativePlacement, wheelSpeed = 0.5, sideMarginPercent = 8, artworkAnchors = noArtworkAnchors, onArtworkAnchors,
-  onPresentationHandle, onPresentationSnapshot, onPresentationError, playbackActive = false }: ScrollViewportProps) {
+  onPresentationHandle, onPresentationSnapshot, onPresentationError, playbackActive = false, onPlaybackBlocked }: ScrollViewportProps) {
   const host = useRef<HTMLDivElement>(null);
   const engine = useRef<SceneRenderer | null>(null);
-  const actions = useRef({ onNudge, onSeek, onManualInput, onManifest, onMotionState, onPreparation, onReady, onNarrativePlacement, onArtworkAnchors, onPresentationHandle, onPresentationSnapshot, onPresentationError });
-  actions.current = { onNudge, onSeek, onManualInput, onManifest, onMotionState, onPreparation, onReady, onNarrativePlacement, onArtworkAnchors, onPresentationHandle, onPresentationSnapshot, onPresentationError };
+  const actions = useRef({ onNudge, onSeek, onManualInput, onManifest, onMotionState, onPreparation, onReady, onNarrativePlacement, onArtworkAnchors, onPresentationHandle, onPresentationSnapshot, onPresentationError, onPlaybackBlocked });
+  actions.current = { onNudge, onSeek, onManualInput, onManifest, onMotionState, onPreparation, onReady, onNarrativePlacement, onArtworkAnchors, onPresentationHandle, onPresentationSnapshot, onPresentationError, onPlaybackBlocked };
   const capturePrepared = useRef<(() => void) | null>(null);
   const artworkAnchorsRef = useRef(artworkAnchors); artworkAnchorsRef.current = artworkAnchors;
   const interactiveRef = useRef(interactive);
@@ -98,7 +99,8 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
         if (!alive) return;
         actions.current.onPreparation?.(state);
         if (state.stage === 'ready') { firstFramePresented = true; setReady(true); actions.current.onReady?.(); captureReadyFrame(); }
-      }, placement=> { if(alive) actions.current.onNarrativePlacement?.(placement); }, anchors => { if (alive) actions.current.onArtworkAnchors?.(anchors); });
+      }, placement=> { if(alive) actions.current.onNarrativePlacement?.(placement); }, anchors => { if (alive) actions.current.onArtworkAnchors?.(anchors); },
+      blocked => { if (alive) actions.current.onPlaybackBlocked?.(blocked); });
       engine.current = renderer;
       renderer.setSideMarginPercent(sideMarginPercent);
       if (preparationCancelledRef.current) renderer.cancelPreparation();
@@ -118,6 +120,7 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
         }
       });
     } catch {
+      actions.current.onPlaybackBlocked?.(true);
       const message = '当前浏览器无法开启画卷，请重试或使用支持 WebGL 的浏览器。';
       setError(true); setStatus(message);
       actions.current.onPreparation?.({ stage: 'error', loaded: 0, total: 0, message });

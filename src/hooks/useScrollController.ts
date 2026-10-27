@@ -29,6 +29,8 @@ export function useScrollController(chapterId: number, { smoothingMs = 180, acti
   const position = useRef(progress);
   const destination = useRef(progress);
   const playingRef = useRef(false);
+  const playbackBlocked = useRef(true);
+  const playbackEpoch = useRef(0);
   const chapterRef = useRef(chapterId);
   const reducedMotion = useRef(false);
   const options = useRef({ smoothingMs, active });
@@ -47,6 +49,14 @@ export function useScrollController(chapterId: number, { smoothingMs = 180, acti
   }, []);
 
   const stop = useCallback(() => { playingRef.current = false; setPlaying(false); }, []);
+  const setPlaybackBlocked = useCallback((blocked: boolean) => {
+    if (playbackBlocked.current === blocked) return;
+    playbackBlocked.current = blocked;
+    // A resource wait is not elapsed film time. Invalidate the previous RAF
+    // timestamp even when a manual seek keeps that RAF loop running.
+    playbackEpoch.current++;
+    wake.current();
+  }, []);
   const seek = useCallback((p: number, immediate = false) => {
     if (!Number.isFinite(p)) return;
     destination.current = clamp(p);
@@ -65,7 +75,15 @@ export function useScrollController(chapterId: number, { smoothingMs = 180, acti
   const togglePlaying = useCallback(() => {
     if (!options.current.active || document.hidden) return;
     if (position.current > 0.999) seek(0, true);
-    playingRef.current = !playingRef.current;
+    const starting = !playingRef.current;
+    if (starting) {
+      // A manual follower can still have an outstanding target and RAF. Start
+      // the film from the displayed position and discard that input's clock.
+      destination.current = position.current;
+      setTarget(destination.current);
+      playbackEpoch.current++;
+    }
+    playingRef.current = starting;
     setPlaying(playingRef.current);
     wake.current();
   }, [seek]);
@@ -77,26 +95,32 @@ export function useScrollController(chapterId: number, { smoothingMs = 180, acti
     position.current = destination.current = restored;
     setProgress(restored);
     setTarget(restored);
+    setPlaybackBlocked(true);
     stop();
-  }, [chapterId, stop]);
+  }, [chapterId, stop, setPlaybackBlocked]);
 
   useEffect(() => {
     let frame = 0;
     let previous = 0;
+    let clockEpoch = playbackEpoch.current;
     let lastSaved = performance.now();
     const save = () => { persistProgress(chapterRef.current, position.current); lastSaved = performance.now(); };
     const animate = (now: number) => {
       frame = 0;
       if (document.hidden || !options.current.active) return;
       const elapsed = Math.max(0, (now - previous) / 1000);
+      const playbackElapsed = clockEpoch === playbackEpoch.current ? elapsed : 0;
+      clockEpoch = playbackEpoch.current;
       const dt = Math.min(elapsed, 0.25);
       previous = now;
-      if (playingRef.current) {
+      if (playingRef.current && !playbackBlocked.current) {
         const duration = sourceDuration(timingRef.current, sceneOptions[chapterRef.current]?.autoplayDuration ?? 154);
         const nativeClock = !!timingRef.current?.sourceRevision;
-        destination.current = advanceSourceProgress(destination.current, nativeClock ? elapsed : dt, duration);
-        // Smoothing remains for manual navigation. Playback follows the source
-        // clock directly, so easing and a low display rate cannot slow the film.
+        const maximumStep = nativeClock ? (timingRef.current!.fpsBase ?? 1) / timingRef.current!.fps : .25;
+        destination.current = advanceSourceProgress(destination.current, Math.min(playbackElapsed, maximumStep), duration);
+        // Smoothing remains for manual navigation. Playback follows source
+        // time with waits excluded. Under load it intentionally slows instead
+        // of skipping authored entrance frames to catch up with wall time.
         if (nativeClock) {
           position.current = destination.current;
           setProgress(position.current);
@@ -111,13 +135,14 @@ export function useScrollController(chapterId: number, { smoothingMs = 180, acti
         savedProgress.set(chapterRef.current, next);
       }
       if (playingRef.current && destination.current >= 1 && position.current === 1) stop();
-      const moving = playingRef.current || position.current !== destination.current;
+      const moving = (playingRef.current && !playbackBlocked.current) || position.current !== destination.current;
       if (!moving || now - lastSaved > 1000) save();
       if (moving) frame = requestAnimationFrame(animate);
     };
     wake.current = () => {
-      if (frame || document.hidden || !options.current.active || !playingRef.current && position.current === destination.current) return;
+      if (frame || document.hidden || !options.current.active || ((!playingRef.current || playbackBlocked.current) && position.current === destination.current)) return;
       previous = performance.now();
+      clockEpoch = playbackEpoch.current;
       frame = requestAnimationFrame(animate);
     };
     suspend.current = () => {
@@ -140,5 +165,5 @@ export function useScrollController(chapterId: number, { smoothingMs = 180, acti
 
   useEffect(() => { if (active) wake.current(); else suspend.current(); }, [active]);
 
-  return { progress, target, seek, nudge, playing, togglePlaying, stop };
+  return { progress, target, seek, nudge, playing, togglePlaying, stop, setPlaybackBlocked };
 }
