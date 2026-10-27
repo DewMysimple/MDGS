@@ -73,8 +73,8 @@ export default function App() {
   const manifest = manifests[chapterId];
   const nativeEdition = manifest?.sourceRevision === activeSourceEdition;
   const chapterSettings = settings.chapters[chapterId];
-  const { progress, target, seek, nudge, playing, togglePlaying, stop, setPlaybackBlocked } = useScrollController(chapterId, {
-    smoothingMs: chapterSettings.smoothingMs, active: journey.interactive, timing: manifest, frameRateLimit: settings.frameRateLimit,
+  const { progress, target, seek, nudge, playing, togglePlaying, stop, setPlaybackBlocked, driveFrame, setFrameDriverWake } = useScrollController(chapterId, {
+    smoothingMs: chapterSettings.smoothingMs, active: journey.interactive, timing: manifest,
   });
   const presentationHandle = useRef<ScrollPresentationHandle | null>(null);
   const snapshotCache = useRef<Record<number, ArtworkSnapshot>>({});
@@ -344,6 +344,8 @@ export default function App() {
                 progress={progress}
                 playbackActive={playing}
                 onPlaybackBlocked={setPlaybackBlocked}
+                onFrame={driveFrame}
+                onFrameDriverWake={setFrameDriverWake}
                 motionEnabled={motionEnabled && journey.interactive && !finished}
                 onMotionState={receiveMotionState}
                 onNarrativePlacement={setNarrativePlacement}

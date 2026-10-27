@@ -1,6 +1,6 @@
 {
   "status": "pass",
-  "testedAt": "2026-10-27T09:22:27.560Z",
+  "testedAt": "2026-10-27T13:58:00.025Z",
   "scope": "CPU thumbnail bounds, production streaming/failure logic and presentation feedback lifecycle with GPU stubbed. No FPS or rendered-pixel claim.",
   "checks": [
     {
@@ -13,21 +13,32 @@
       "passed": true
     },
     {
-      "test": "visible-resource-priority-single-speculative-slot-readiness-source-visibility-and-failure",
+      "test": "expanded-frustum-is-speculative-until-actual-camera-entry-then-gates-complete-frame",
+      "passed": true
+    },
+    {
+      "test": "near-shadow-priority-stays-bounded-and-resets-on-reverse-and-chapter-remount",
+      "passed": true
+    },
+    {
+      "test": "visible-resource-priority-two-speculative-slots-readiness-source-visibility-and-failure",
       "requested": [
         "future-a",
+        "future-b",
         "current-0",
         "current-1",
+        "edge-prefetch",
+        "forecast-shadow",
+        "forecast-camera",
         "current-2",
-        "current-3",
-        "future-b"
+        "current-3"
       ],
       "passed": true
     },
     {
       "test": "shader-failure-invalidates-first-frame-and-survives-late-texture-success-failure",
-      "queuedStartsBeforeFailure": 10,
-      "queuedStartsAfterFailure": 10,
+      "queuedStartsBeforeFailure": 13,
+      "queuedStartsAfterFailure": 13,
       "passed": true
     },
     {
@@ -82,11 +93,23 @@
       "passed": true
     },
     {
+      "test": "identical-sampler-registrations-batch-to-32-distinct-states-remain-separate-and-gated",
+      "passed": true
+    },
+    {
       "test": "owner-return-discards-unprepared-textures-without-gpu-upload-or-raf",
       "passed": true
     },
     {
-      "test": "recent-cache-separately-bounded-to-96mib-images-24mib-post-and-expires-without-evicting-current",
+      "test": "recent-cache-720p-bounded-to-32mib-images-24mib-post-and-expires-without-evicting-current",
+      "passed": true
+    },
+    {
+      "test": "recent-cache-1080p-bounded-to-64mib-images-24mib-post-and-expires-without-evicting-current",
+      "passed": true
+    },
+    {
+      "test": "recent-cache-2k-bounded-to-96mib-images-24mib-post-and-expires-without-evicting-current",
       "passed": true
     },
     {
@@ -95,6 +118,10 @@
     },
     {
       "test": "autoplay-gate-follows-draw-and-retains-presented-frame-during-streaming-and-gpu-recovery",
+      "passed": true
+    },
+    {
+      "test": "transient-pass-visibility-retains-targets-and-quality-change-releases-them",
       "passed": true
     }
   ]

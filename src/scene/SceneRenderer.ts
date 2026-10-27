@@ -40,6 +40,17 @@ interface SceneObject {
   fields?: SourceFieldBinding[];
 }
 const clamp = (v: number) => Math.min(1, Math.max(0, v));
+// Three r180 caches a WebGL texture by source plus these sampler parameters.
+// Initializing another clone with the same key only registers its reference;
+// it does not upload the image again. Different keys still need separate turns.
+function sameGpuTextureState(a: THREE.Texture, b: THREE.Texture) {
+  return a.source === b.source && a.wrapS === b.wrapS && a.wrapT === b.wrapT
+    && ((a as THREE.Data3DTexture).wrapR ?? 0) === ((b as THREE.Data3DTexture).wrapR ?? 0)
+    && a.magFilter === b.magFilter && a.minFilter === b.minFilter && a.anisotropy === b.anisotropy
+    && a.internalFormat === b.internalFormat && a.format === b.format && a.type === b.type
+    && a.generateMipmaps === b.generateMipmaps && a.premultiplyAlpha === b.premultiplyAlpha
+    && a.flipY === b.flipY && a.unpackAlignment === b.unpackAlignment && a.colorSpace === b.colorSpace;
+}
 // The final source frames of scroll one pull the camera away from the intended
 // ending composition. Hold the last composed frame through the end card.
 const chapterOneCompositionEnd = 0.99;
@@ -64,6 +75,7 @@ export class SceneRenderer {
   private frame = 0;
   private frameTimer = 0;
   private framePacer = new FramePacer(30);
+  private frameDriver: ((now: number, elapsedMs: number) => { progress: number; active: boolean }) | null = null;
   private renderQuality: RenderQuality = '720p';
   private frameRateLimit: FrameRateLimit = 30;
   private drawingBufferDirty = true;
@@ -94,7 +106,17 @@ export class SceneRenderer {
   private lastTextureEviction = 0;
   private prefetched = new Set<string>();
   private preloadCamera = new THREE.PerspectiveCamera();
+  private futureCamera = new THREE.PerspectiveCamera();
+  private futureSoonCamera = new THREE.PerspectiveCamera();
   private frustum = new THREE.Frustum();
+  private preloadFrustum = new THREE.Frustum();
+  private futureFrustum = new THREE.Frustum();
+  private futureSoonFrustum = new THREE.Frustum();
+  private futureShadowCasters = new Set<THREE.Mesh>();
+  private futureSoonShadowCasters = new Set<THREE.Mesh>();
+  private futurePredictionAt = -1;
+  private futurePredictionDirection = 0;
+  private futurePredictionLayout = '';
   private projection = new THREE.Matrix4();
   private q1 = new THREE.Quaternion();
   private q2 = new THREE.Quaternion();
@@ -457,12 +479,25 @@ export class SceneRenderer {
   }
 
   setProgress(progress: number) {
-    if (this.progress === progress) return;
+    if (this.applyProgress(progress)) this.requestFrame();
+  }
+
+  private applyProgress(progress: number) {
+    if (this.progress === progress) return false;
     this.travelDirection = progress > this.progress ? 1 : -1;
     this.lastViewChange = performance.now();
     if (this.preparationActive) this.firstFrameReady = false;
-    this.progress = clamp(progress); this.dirty = true; this.requestFrame();
+    this.progress = clamp(progress); this.dirty = true;
+    return true;
   }
+
+  /** Advance interaction and draw from the same accepted presentation tick. */
+  setFrameDriver(driver: ((now: number, elapsedMs: number) => { progress: number; active: boolean }) | null) {
+    this.frameDriver = driver;
+    if (driver) this.requestFrame();
+  }
+
+  wakeFrameDriver() { this.requestFrame(); }
   setSideMarginPercent(value: number) {
     if (this.sideMarginPercent === value) return;
     this.sideMarginPercent = value;
@@ -745,16 +780,50 @@ export class SceneRenderer {
 
   private updateTextures() {
     if (this.disposed || this.contextLost || this.shaderFailed || this.preparationCancelled) return;
-    // Enlarge the frustum to prefetch neighbouring planes before they enter the painting.
+    // Only the actual camera (plus shadow casters) can hold the complete-frame
+    // gate. Neighbouring planes in the enlarged frustum are speculative.
+    this.projection.multiplyMatrices(this.camera.projectionMatrix, this.camera.matrixWorldInverse);
+    this.frustum.setFromProjectionMatrix(this.projection);
     const preloadCamera = this.preloadCamera.copy(this.camera);
     preloadCamera.fov = Math.min(125, this.camera.fov * 1.35);
     preloadCamera.aspect *= 1.45;
     preloadCamera.updateProjectionMatrix();
     this.projection.multiplyMatrices(preloadCamera.projectionMatrix, this.camera.matrixWorldInverse);
-    this.frustum.setFromProjectionMatrix(this.projection);
+    this.preloadFrustum.setFromProjectionMatrix(this.projection);
     const now = performance.now();
     this.currentVisible.clear();
     this.prefetched.clear();
+    const manifest = this.manifest;
+    const frameSpan = manifest ? manifest.frameRange[1] - manifest.frameRange[0] : 0;
+    const secondsInProgress = manifest && frameSpan > 0 ? manifest.fps / (manifest.fpsBase || 1) / frameSpan : 0;
+    const predictionLayout = `${this.width}:${this.height}:${this.sideMarginPercent}`;
+    const predict = !!(this.sourceFaithful && manifest?.cameras.length && secondsInProgress);
+    if (predict && (Math.abs(this.visualProgress - this.futurePredictionAt) >= secondsInProgress * .5
+      || this.futurePredictionDirection !== this.travelDirection || this.futurePredictionLayout !== predictionLayout)) {
+      const layout = sourceViewportLayout(this.width, this.height, manifest!.render, this.sideMarginPercent);
+      const fitPrediction = (camera: THREE.PerspectiveCamera, frustum: THREE.Frustum, seconds: number, margin: number) => {
+        const futureProgress = clamp(this.visualProgress + this.travelDirection * secondsInProgress * seconds);
+        const { a, b, t } = this.bracket(manifest!.cameras, futureProgress);
+        camera.copy(this.camera);
+        camera.position.fromArray(a.position).lerp(new THREE.Vector3().fromArray(b.position), t);
+        camera.quaternion.fromArray(a.quaternion).normalize().slerp(new THREE.Quaternion().fromArray(b.quaternion).normalize(), t);
+        const fov = THREE.MathUtils.clamp(THREE.MathUtils.lerp(a.fov, b.fov, t), 5, 115);
+        camera.fov = Math.min(125, sourceVerticalFov(fov, layout.verticalFovScale) * margin);
+        camera.aspect = layout.viewport.aspect * margin;
+        camera.updateProjectionMatrix(); camera.updateMatrixWorld(true);
+        this.projection.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
+        frustum.setFromProjectionMatrix(this.projection);
+        const focus = THREE.MathUtils.lerp(a.dof?.focusDistance ?? 10, b.dof?.focusDistance ?? 10, t);
+        return new Set(this.sourceLighting?.requiredShadowCasters(this.scene, camera, focus) ?? []);
+      };
+      // The expanded two-second view supplies candidates; the unexpanded
+      // one-second view prioritizes the casters that will be needed sooner.
+      this.futureShadowCasters = fitPrediction(this.futureCamera, this.futureFrustum, 2, 1.2);
+      this.futureSoonShadowCasters = fitPrediction(this.futureSoonCamera, this.futureSoonFrustum, 1, 1);
+      this.futurePredictionAt = this.visualProgress;
+      this.futurePredictionDirection = this.travelDirection;
+      this.futurePredictionLayout = predictionLayout;
+    }
     // Source-visible sheets can cast into the painting while outside the main
     // camera. Their alpha textures belong to the same complete-frame gate.
     const shadowCasters = this.sourceLighting?.requiredShadowCasters(this.scene, this.camera, this.sourceFocusDistance);
@@ -766,15 +835,19 @@ export class SceneRenderer {
       // Source-hidden sheets previously started loading only after their first
       // visible frame. Warm a short authored interval without displaying them
       // early or making future resources part of the entry readiness gate.
-      const nextSource = clamp(this.sourceProgress + this.travelDirection * .012);
+      const nextSource = clamp(this.sourceProgress + this.travelDirection * Math.max(.012, secondsInProgress * 2));
       let upcoming = false;
       if (!sourceVisible && object.visibility?.length) {
         for (const key of object.visibility) { if (key.progress > nextSource) break; upcoming = key.visible; }
         upcoming ||= object.visibility.some(key => key.visible && key.progress >= Math.min(this.sourceProgress, nextSource) && key.progress <= Math.max(this.sourceProgress, nextSource));
       }
-      if ((sourceVisible && (this.frustum.intersectsObject(object.mesh) || shadowCasters?.has(object.mesh))) || upcoming) {
+      const inCamera = sourceVisible && this.frustum.intersectsObject(object.mesh);
+      const castsShadow = sourceVisible && !!shadowCasters?.has(object.mesh);
+      const required = inCamera || castsShadow;
+      const speculative = !required && ((sourceVisible && this.preloadFrustum.intersectsObject(object.mesh)) || upcoming);
+      if (required || speculative) {
         for (const url of urls) {
-          if (sourceVisible) this.currentVisible.add(url);
+          if (required) this.currentVisible.add(url);
           else this.prefetched.add(url);
           const entry = this.textures.get(url);
           if (entry) { entry.lastSeen = now; this.queueImageUpgrade(url, entry); }
@@ -782,6 +855,33 @@ export class SceneRenderer {
             this.pending.add(url); this.queue.push(url);
           }
         }
+      }
+    }
+    if (predict) {
+      // Bound speculative residency independently of the mandatory frame.
+      // Nearest candidates are examined first; the existing queue still gives
+      // missing current-frame resources priority over every prefetch.
+      const candidates = this.objects.filter(object => object.mesh.userData.sourceVisible !== false && !object.mesh.userData.artHidden
+        && (this.futureFrustum.intersectsObject(object.mesh) || this.futureShadowCasters.has(object.mesh)
+          || this.futureSoonFrustum.intersectsObject(object.mesh) || this.futureSoonShadowCasters.has(object.mesh)))
+        .map(object => ({ object,
+          soon: this.futureSoonShadowCasters.has(object.mesh) || this.futureSoonFrustum.intersectsObject(object.mesh),
+          distance: this.futureCamera.position.distanceToSquared(object.mesh.getWorldPosition(this.p1)) }))
+        .sort((a, b) => Number(b.soon) - Number(a.soon) || a.distance - b.distance);
+      const cap = 12, byteBudget = 64 * 1024 * 1024;
+      // Unknown resource sizes use a conservative 1024px RGBA mipmapped
+      // estimate. Once decoded, the actual byte count informs the next scan.
+      const estimatedBytes = 1024 * 1024 * 4 * 4 / 3;
+      let selected = 0, selectedBytes = 0;
+      for (const { object } of candidates) for (const url of this.objectTextureUrls(object)) {
+        if (this.currentVisible.has(url) || this.prefetched.has(url)) continue;
+        const entry = this.textures.get(url);
+        const bytes = entry?.bytes || estimatedBytes;
+        if (selected >= cap || selectedBytes + bytes > byteBudget) continue;
+        selected++; selectedBytes += bytes;
+        this.prefetched.add(url);
+        if (entry) { entry.lastSeen = now; this.queueImageUpgrade(url, entry); }
+        else if (!this.pending.has(url) && !this.errorUrls.has(url)) { this.pending.add(url); this.queue.push(url); }
       }
     }
     for (const url of this.sourcePost?.requiredUrls() ?? []) {
@@ -905,8 +1005,8 @@ export class SceneRenderer {
     // Newly exposed sheets take priority over speculative upcoming resources.
     this.queue.sort((a, b) => Number(this.currentVisible.has(b)) - Number(this.currentVisible.has(a)));
     while (this.queue.length && loadingCount < 4) {
-      // Keep three download slots available for currently exposed artwork.
-      if (!this.currentVisible.has(this.queue[0]) && this.prefetched.has(this.queue[0]) && speculativeLoading >= 1) break;
+      // Keep two download slots available for currently exposed artwork.
+      if (!this.currentVisible.has(this.queue[0]) && this.prefetched.has(this.queue[0]) && speculativeLoading >= 2) break;
       const url = this.queue.shift()!;
       this.pending.delete(url);
       if (!this.currentVisible.has(url) && !this.prefetched.has(url)) continue;
@@ -939,8 +1039,8 @@ export class SceneRenderer {
         const pixels = texture.image as { width: number; height: number; data?: ArrayBufferView };
         const bytes = pixels.data?.byteLength ?? pixels.width * pixels.height * 4 * 1.333;
         // A ready image can still trigger synchronous decode/upload at its
-        // first draw. Prepare only one texture per animation turn, and expose
-        // it to the original material only after its GPU upload has completed.
+        // first draw. Prepare one distinct GPU texture per animation turn, and
+        // expose the image only after its sampler variants have been prepared.
         const upload: TextureUpload = { url, texture, entry, variants: [], imageMaxEdge, bytes };
         try { upload.variants = this.textureVariants(url, texture); }
         catch (error) { this.discardTextureUpload(upload); throw error; }
@@ -990,9 +1090,19 @@ export class SceneRenderer {
       return;
     }
     try {
-      this.renderer.initTexture(upload.variants[0]);
-      if (this.contextLost) return;
-      upload.variants.shift();
+      const first = upload.variants[0];
+      // A shared image can have dozens of node-specific Texture clones. Three
+      // reuses one GPU texture for identical keys, so registering those clones
+      // together avoids occupying the streaming slot for dozens of frames.
+      let initialized = 0;
+      for (let i = 0; i < upload.variants.length && initialized < 32;) {
+        const variant = upload.variants[i];
+        if (!sameGpuTextureState(first, variant)) { i++; continue; }
+        this.renderer.initTexture(variant);
+        if (this.contextLost) return;
+        upload.variants.splice(i, 1);
+        initialized++;
+      }
       if (upload.variants.length) { this.requestFrame(); return; }
       this.textureUploads.shift();
       const previous = entry.texture;
@@ -1024,6 +1134,8 @@ export class SceneRenderer {
     if (this.disposed || this.contextLost || this.shaderFailed || this.preparationCancelled || document.hidden) return;
     this.rafTicks++;
     if (!this.framePacer.shouldRender(now)) { this.requestFrame(); return; }
+    const driven = this.frameDriver?.(now, this.framePacer.elapsedMs);
+    if (driven && Number.isFinite(driven.progress)) this.applyProgress(driven.progress);
     this.prepareNextTexture();
     if (this.contextLost || this.shaderFailed || this.preparationCancelled) return;
     const motion = this.getMotionState().enabled;
@@ -1123,7 +1235,7 @@ export class SceneRenderer {
     if (!visibleMotion) this.previousFrameTime = 0;
     const snapshotWaiting = [...this.snapshotRequests].some(request => !request.encoding);
     if (snapshotWaiting && this.ready && this.firstFrameReady) this.dirty = true;
-    if (!this.shaderErrors.length && this.loaded && (visibleMotion || this.textureRefreshPending || this.dirty || pointerMoving)) this.requestFrame();
+    if (!this.shaderErrors.length && this.loaded && (driven?.active || visibleMotion || this.textureRefreshPending || this.dirty || pointerMoving)) this.requestFrame();
     this.updateDiagnostics(!!this.frame);
   };
 

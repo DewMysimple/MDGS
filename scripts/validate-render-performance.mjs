@@ -118,11 +118,11 @@ function layer(url, visible) {
 const future = [layer('future-a', false), layer('future-b', false)];
 renderer.objects = objects;
 renderer.updateTextures();
-assert.equal(requested.length, 1, 'Only one speculative image may occupy the four download slots.');
+assert.equal(requested.length, 2, 'At most two speculative images may occupy the four download slots.');
 assert.equal(renderer.ready, true, 'Upcoming hidden layers cannot hold the current frame readiness gate.');
 const current = Array.from({ length: 4 }, (_, index) => layer(`current-${index}`, true));
 renderer.updateTextures();
-assert.deepEqual(requested.slice(1), ['current-0', 'current-1', 'current-2']);
+assert.deepEqual(requested.slice(2), ['current-0', 'current-1']);
 assert.equal(renderer.ready, false);
 const settle = async () => { for (let index = 0; index < 12; index++) await Promise.resolve(); };
 async function complete(url, texture = new THREE.Texture({ width: 4, height: 4 }), owner = renderer) {
@@ -140,16 +140,85 @@ async function complete(url, texture = new THREE.Texture({ width: 4, height: 4 }
   assert(owner.renderer.preparedTextures.length > uploadsBefore);
   return texture;
 }
+
+// A source-visible plane outside the camera but inside its expanded prefetch
+// frustum is not part of the displayed frame until it enters the camera.
+const edge = new SceneRenderer({ appendChild() {}, closest() { return null; } }, () => {});
+edge.loader = { loadAsync: load };
+edge.camera.aspect = 1; edge.camera.updateProjectionMatrix(); edge.camera.updateMatrixWorld(true);
+const edgeMesh = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial());
+edgeMesh.position.set(3.5, 0, -5); edgeMesh.updateMatrixWorld(true);
+edgeMesh.userData.sourceVisible = true; edgeMesh.visible = false;
+edge.objects = [{ mesh: edgeMesh, material: edgeMesh.material, url: 'edge-prefetch' }];
+edge.updateTextures();
+assert(edge.prefetched.has('edge-prefetch') && !edge.currentVisible.has('edge-prefetch'));
+assert.equal(edge.ready, true, 'A prefetch-only plane cannot block the completed current image.');
+edgeMesh.position.x = 0; edgeMesh.updateMatrixWorld(true); edge.updateTextures();
+assert(edge.currentVisible.has('edge-prefetch'));
+assert.equal(edge.ready, false, 'A plane entering the camera must still gate the next frame until uploaded.');
+assert.equal(edgeMesh.visible, false, 'An unready plane must not be drawn.');
+assert.equal(requested.filter(url => url === 'edge-prefetch').length, 1, 'Promoting a prefetch must reuse its in-flight request.');
+await complete('edge-prefetch', undefined, edge);
+assert.equal(edge.ready, true); assert.equal(edgeMesh.visible, true);
+edge.dispose();
+checks.push({ test: 'expanded-frustum-is-speculative-until-actual-camera-entry-then-gates-complete-frame', passed: true });
+
+const futureView = new SceneRenderer({ appendChild() {}, closest() { return null; } }, () => {});
+futureView.loader = { loadAsync: load };
+futureView.width = 640; futureView.height = 360;
+const cameraSample = (progress, x) => ({ progress, position: [x, 0, 0], quaternion: [0, 0, 0, 1], fov: 45 });
+futureView.manifest = { sourceRevision: 'peony-2.0-2026-10-23', frameRange: [1, 301], fps: 30, fpsBase: 1,
+  cameras: [cameraSample(0, 0), cameraSample(1, 100)], render: { width: 1920, height: 1080, pixelAspectX: 1, pixelAspectY: 1 } };
+futureView.progress = .3; futureView.sourceProgress = .3;
+futureView.camera.position.x = 30; futureView.camera.aspect = 16 / 9;
+futureView.camera.updateProjectionMatrix(); futureView.camera.updateMatrixWorld(true);
+const distantLayer = (url, x) => {
+  const mesh = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial());
+  mesh.position.set(x, 0, -5); mesh.updateMatrixWorld(true); mesh.visible = false; mesh.userData.sourceVisible = true;
+  return { mesh, material: mesh.material, url };
+};
+const nextLayer = distantLayer('forecast-camera', 50), futureShadow = distantLayer('forecast-shadow', 100), reverseLayer = distantLayer('reverse-camera', 10);
+futureView.objects = [nextLayer, futureShadow, reverseLayer];
+const fitted = [];
+futureView.sourceLighting = { requiredShadowCasters(scene, camera) {
+  fitted.push(camera.position.x);
+  return new Set(camera.position.x >= 40 ? [futureShadow.mesh] : []);
+}, dispose() {} };
+futureView.updateTextures();
+assert.deepEqual(fitted, [50, 40, 30], 'Prediction must restore the real camera shadow fit after both speculative fits.');
+assert(futureView.prefetched.has('forecast-camera') && futureView.prefetched.has('forecast-shadow'));
+assert(!futureView.currentVisible.has('forecast-camera') && !futureView.currentVisible.has('forecast-shadow'));
+assert.equal(futureView.ready, true); assert.equal(nextLayer.mesh.visible, false);
+const competitors = Array.from({ length: 15 }, (_, index) => distantLayer(`forecast-budget-${index}`, 50));
+futureView.objects.push(...competitors); futureView.updateTextures();
+assert(futureView.prefetched.has('forecast-shadow'), 'A soon-required offscreen caster wins priority over farther-future planes.');
+futureView.objects.splice(-competitors.length);
+futureView.travelDirection = -1; futureView.updateTextures();
+assert(futureView.prefetched.has('reverse-camera'), 'Direction reversal must replace the predicted look-ahead.');
+assert(!futureView.prefetched.has('forecast-camera') && !futureView.prefetched.has('forecast-shadow'));
+assert.equal(fitted.at(-1), 30, 'Actual shadow projection remains fitted to the displayed camera.');
+futureView.objects.push(...Array.from({ length: 15 }, (_, index) => distantLayer(`reverse-budget-${index}`, 10)));
+futureView.updateTextures();
+assert.equal(futureView.prefetched.size, 12, 'The 720p future-camera reserve remains bounded even with many candidates.');
+futureView.textures.set('reverse-camera', { texture: new THREE.Texture(), bytes: 60 * 1024 * 1024, lastSeen: performance.now(), loading: false });
+futureView.updateTextures();
+assert.equal(futureView.prefetched.size, 1, 'Decoded resource bytes count toward the future-camera budget.');
+futureView.dispose();
+const nextChapter = new SceneRenderer({ appendChild() {}, closest() { return null; } }, () => {});
+assert.equal(nextChapter.futurePredictionAt, -1, 'A newly mounted chapter starts without the previous prediction.');
+assert.equal(nextChapter.futureSoonShadowCasters.size, 0); assert.equal(nextChapter.futureShadowCasters.size, 0);
+nextChapter.dispose();
+checks.push({ test: 'near-shadow-priority-stays-bounded-and-resets-on-reverse-and-chapter-remount', passed: true });
+
 for (const object of current) await complete(object.url);
 assert.equal(renderer.ready, true);
-assert.equal(requested.filter(url => url.startsWith('future')).length, 1);
+assert.equal(requested.filter(url => url.startsWith('future-')).length, 2);
 assert(future.every(object => !object.mesh.visible), 'Prefetch must preserve the source hidden state.');
 await complete('future-a');
-assert.equal(requested.at(-1), 'future-b');
 assert.equal(renderer.ready, true, 'An unfinished speculative image must not turn off current readiness.');
 callbacks.get('future-b').failure(new Error('Speculative source image unavailable')); await settle();
 assert.equal(statuses.at(-1), null, 'A speculative failure must not report missing current artwork.');
-checks.push({ test: 'visible-resource-priority-single-speculative-slot-readiness-source-visibility-and-failure', requested: [...requested], passed: true });
+checks.push({ test: 'visible-resource-priority-two-speculative-slots-readiness-source-visibility-and-failure', requested: [...requested], passed: true });
 // Fail a shader while four visible textures are in flight and a fifth is
 // queued. Their late completions must leave the failure and recovery intact.
 for (let index = 0; index < 5; index++) layer(`shader-late-${index}`, true);
@@ -220,11 +289,10 @@ assert.deepEqual(providers, [...fieldUrls.map(url => ['material', url]), ['post'
 assert.equal(requested.filter(url => url === fieldUrls[0]).length, 1, 'Repeated field bindings share a single request.');
 upcomingPost = ['native-glare-future-a', 'native-glare-future-b'];
 native.updateTextures();
-assert.equal(requested.at(-1), upcomingPost[0]);
-assert(!callbacks.has(upcomingPost[1]), 'Compositor look-ahead must respect the single speculative slot.');
+assert.deepEqual(requested.slice(-2), upcomingPost, 'Compositor look-ahead may use two speculative slots.');
 assert.equal(native.ready, true, 'Upcoming compositor frames cannot block the authored current frame.');
 callbacks.get(upcomingPost[0]).failure(new Error('Speculative compositor frame unavailable')); await settle();
-assert.equal(requested.at(-1), upcomingPost[1]); assert.equal(native.ready, true);
+assert.equal(native.ready, true);
 await complete(upcomingPost[1], new THREE.DataTexture(new Uint16Array(16), 2, 2, THREE.RGBAFormat, THREE.HalfFloatType), native);
 assert.equal(native.ready, true);
 native.dispose();
@@ -274,6 +342,41 @@ variants.dispose(); nodeSampler.dispose();
 checks.push({ test: 'actual-sampler-variants-prepare-one-per-turn-before-shared-resource-readiness', passed: true });
 checks.push({ test: 'context-restoration-restarts-every-pending-sampler-variant-including-pre-loss-completed-prefix', passed: true });
 
+const shared = new SceneRenderer({ appendChild() {}, closest() { return null; } }, () => {});
+const sharedBase = new THREE.Texture({ width: 4, height: 4 });
+const identical = Array.from({ length: 40 }, () => sharedBase.clone());
+const differentWrap = sharedBase.clone(); differentWrap.wrapS = THREE.RepeatWrapping;
+const differentColor = sharedBase.clone(); differentColor.colorSpace = THREE.SRGBColorSpace;
+const otherStates = [
+  ['wrapT', THREE.RepeatWrapping], ['wrapR', THREE.RepeatWrapping], ['magFilter', THREE.NearestFilter],
+  ['minFilter', THREE.NearestFilter], ['anisotropy', 2], ['internalFormat', 'RGBA8'], ['format', THREE.RGBFormat],
+  ['type', THREE.FloatType], ['generateMipmaps', false], ['premultiplyAlpha', true], ['flipY', false], ['unpackAlignment', 8],
+].map(([key, value]) => { const texture = sharedBase.clone(); texture[key] = value; return texture; });
+const differentSource = new THREE.Texture(sharedBase.image);
+const sharedEntry = { loading: true, bytes: 64, lastSeen: performance.now() };
+shared.textures.set('shared-image', sharedEntry);
+shared.textureUploads.push({ url: 'shared-image', texture: sharedBase, entry: sharedEntry,
+  variants: [sharedBase, ...identical, differentWrap, differentColor, ...otherStates, differentSource], imageMaxEdge: 1024, bytes: 64 });
+shared.prepareNextTexture();
+assert.equal(shared.renderer.preparedTextures.length, 32, 'A single turn is bounded to 32 identical sampler registrations.');
+assert.equal(sharedEntry.texture, undefined, 'The resource remains gated until every sampler group has been prepared.');
+shared.prepareNextTexture();
+assert.equal(shared.renderer.preparedTextures.length, 41, 'The remaining identical-source, identical-state clones share the next turn.');
+assert.equal(sharedEntry.texture, undefined);
+shared.prepareNextTexture();
+assert.equal(shared.renderer.preparedTextures.length, 42, 'A different wrap mode gets a separate GPU-upload turn.');
+assert.equal(sharedEntry.texture, undefined);
+shared.prepareNextTexture();
+assert.equal(shared.renderer.preparedTextures.length, 43, 'A different color space gets a separate GPU-upload turn.');
+assert.equal(sharedEntry.texture, undefined);
+for (const [index] of [...otherStates, differentSource].entries()) {
+  shared.prepareNextTexture();
+  assert.equal(shared.renderer.preparedTextures.length, 44 + index, 'Different cache keys and sources require separate turns.');
+}
+assert.equal(sharedEntry.texture, sharedBase); assert.equal(sharedEntry.loading, false);
+shared.dispose(); for (const texture of [...identical, differentWrap, differentColor, ...otherStates, differentSource]) texture.dispose();
+checks.push({ test: 'identical-sampler-registrations-batch-to-32-distinct-states-remain-separate-and-gated', passed: true });
+
 const cancelled = new SceneRenderer({ appendChild() {}, closest() { return null; } }, () => {});
 cancelled.textureUploads.push({ url: 'cancelled-image', texture: decoded, entry: { loading: true, bytes: 64, lastSeen: performance.now() }, variants: [decoded], imageMaxEdge: 1024, bytes: 64 });
 cancelled.cancelPreparation();
@@ -283,24 +386,29 @@ assert.equal(cancelled.renderer.preparedTextures.length, 0);
 cancelled.dispose();
 checks.push({ test: 'owner-return-discards-unprepared-textures-without-gpu-upload-or-raf', passed: true });
 
-const recent = new SceneRenderer({ appendChild() {}, closest() { return null; } }, () => {});
-recent.sourcePost = { requiredUrls: () => ['required'], prefetchUrls: () => [], hasUrl: url => url.startsWith('post-'), getDiagnostics: () => null, assign() {}, dispose() {} };
-const mb = 1024 * 1024, now = performance.now();
-recent.textures.set('required', { texture: new THREE.Texture(), loading: false, bytes: 240 * mb, lastSeen: now });
-for (let index = 0; index < 10; index++) recent.textures.set(`image-${index}`, { texture: new THREE.Texture(), loading: false, bytes: 32 * mb, lastSeen: now - index });
-for (let index = 0; index < 10; index++) recent.textures.set(`post-${index}`, { texture: new THREE.Texture(), loading: false, bytes: 12 * mb, lastSeen: now - index });
-// Exercise an eviction turn explicitly rather than depending on process uptime.
-recent.lastTextureEviction = -Infinity;
-recent.updateTextures();
-assert(recent.textures.has('required'), 'The soft cache budget never evicts unavoidable current source artwork.');
-assert.equal([...recent.textures].filter(([url]) => url.startsWith('image-')).reduce((sum, [, entry]) => sum + entry.bytes, 0), 96 * mb);
-assert.equal([...recent.textures].filter(([url]) => url.startsWith('post-')).reduce((sum, [, entry]) => sum + entry.bytes, 0), 24 * mb);
-for (const [url, entry] of recent.textures) if (url !== 'required') entry.lastSeen = now - 6000;
-recent.lastTextureEviction = -Infinity;
-recent.updateTextures();
-assert.deepEqual([...recent.textures.keys()], ['required'], 'The additional look-behind allowance expires instead of growing without bound.');
-recent.dispose();
-checks.push({ test: 'recent-cache-separately-bounded-to-96mib-images-24mib-post-and-expires-without-evicting-current', passed: true });
+// The look-behind budget follows the selected quality tier; exercise every
+// tier explicitly instead of assuming the pre-quality-settings 96 MiB default.
+for (const [quality, imageBudget] of [['720p', 32], ['1080p', 64], ['2k', 96]]) {
+  const recent = new SceneRenderer({ appendChild() {}, closest() { return null; } }, () => {});
+  recent.renderQuality = quality;
+  recent.sourcePost = { requiredUrls: () => ['required'], prefetchUrls: () => [], hasUrl: url => url.startsWith('post-'), getDiagnostics: () => null, assign() {}, dispose() {} };
+  const mb = 1024 * 1024, now = performance.now();
+  recent.textures.set('required', { texture: new THREE.Texture(), loading: false, bytes: 240 * mb, lastSeen: now });
+  for (let index = 0; index < 10; index++) recent.textures.set(`image-${index}`, { texture: new THREE.Texture(), loading: false, bytes: 32 * mb, lastSeen: now - index });
+  for (let index = 0; index < 10; index++) recent.textures.set(`post-${index}`, { texture: new THREE.Texture(), loading: false, bytes: 12 * mb, lastSeen: now - index });
+  // Exercise an eviction turn explicitly rather than depending on process uptime.
+  recent.lastTextureEviction = -Infinity;
+  recent.updateTextures();
+  assert(recent.textures.has('required'), 'The soft cache budget never evicts unavoidable current source artwork.');
+  assert.equal([...recent.textures].filter(([url]) => url.startsWith('image-')).reduce((sum, [, entry]) => sum + entry.bytes, 0), imageBudget * mb, `${quality} image look-behind budget`);
+  assert.equal([...recent.textures].filter(([url]) => url.startsWith('post-')).reduce((sum, [, entry]) => sum + entry.bytes, 0), 24 * mb);
+  for (const [url, entry] of recent.textures) if (url !== 'required') entry.lastSeen = now - 6000;
+  recent.lastTextureEviction = -Infinity;
+  recent.updateTextures();
+  assert.deepEqual([...recent.textures.keys()], ['required'], 'The additional look-behind allowance expires instead of growing without bound.');
+  recent.dispose();
+  checks.push({ test: `recent-cache-${quality}-bounded-to-${imageBudget}mib-images-24mib-post-and-expires-without-evicting-current`, passed: true });
+}
 
 const shadowGate = new SceneRenderer({ appendChild() {}, closest() { return null; } }, () => {});
 const offscreenShadow = layer('shadow-only-image', true);
@@ -350,6 +458,43 @@ assert.equal(presented.renderer.domElement.dataset.renderedSourceFrame, '21');
 assert.equal(presented.renderer.domElement.dataset.playbackBlocked, 'false');
 presented.dispose(); assert.equal(presented.playbackBlocked, true);
 checks.push({ test: 'autoplay-gate-follows-draw-and-retains-presented-frame-during-streaming-and-gpu-recovery', passed: true });
+
+// Exercise the real post-processing target allocation policy with drawing
+// stubbed. Alternating material visibility must not reallocate GPU targets.
+const postSource = compile(await read('src/scene/SourcePostProcessing.ts'))
+  .replace(/from (['"])three\1/g, `from ${JSON.stringify(threeUrl)}`)
+  .replace(/from (['"])\.\/sourceViewport\1/g, `from ${JSON.stringify(viewportUrl)}`)
+  .replace(/from (['"])\.\/renderQuality\1/g, `from ${JSON.stringify(renderQualityUrl)}`);
+const { SourcePostProcessing } = await import(moduleUrl(postSource));
+const post = new SourcePostProcessing('', { compositor: { nodes: [] }, world: { color: [1, 1, 1], strength: 1 }, filmTransparent: false });
+const postScene = new THREE.Scene(), postCamera = new THREE.PerspectiveCamera(45, 16 / 9, .1, 100);
+postCamera.position.z = 5; postCamera.updateMatrixWorld(); postCamera.updateProjectionMatrix();
+const postMesh = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), new THREE.MeshBasicMaterial());
+postScene.add(postMesh); postScene.updateMatrixWorld(true);
+const postRenderer = { autoClear: true, getPixelRatio: () => 1, getClearColor: color => color.set(0), getClearAlpha: () => 1,
+  setScissorTest() {}, setClearColor() {}, setRenderTarget() {}, render() {}, setViewport() {}, clear() {}, setScissor() {} };
+const postLibrary = { setImageLodBias() {}, setPeelDepths() {}, setPass() {} };
+const postView = { x: 0, y: 0, width: 1280, height: 720, aspect: 16 / 9 };
+const drawPost = () => post.render(postRenderer, postScene, postCamera, postLibrary, postView, 1280, 720);
+const allocations = [];
+for (const target of [post.color, post.accumulation, post.blended, post.depth, ...post.slices]) {
+  const resize = target.setSize.bind(target);
+  target.setSize = (width, height) => { allocations.push([width, height]); resize(width, height); };
+}
+postMesh.material.userData.sourceRenderMethod = 'BLENDED'; drawPost(); allocations.length = 0;
+postMesh.visible = false; drawPost(); postMesh.visible = true; drawPost();
+assert.equal(allocations.length, 0, 'Transient BLENDED visibility must not resize retained render targets.');
+postMesh.material.userData.sourceRenderMethod = 'DITHERED'; drawPost(); allocations.length = 0;
+postMesh.visible = false; drawPost(); postMesh.visible = true; drawPost();
+assert.equal(allocations.length, 0, 'Transient DITHERED visibility must not resize retained render targets.');
+post.dofEnabled = true; drawPost(); allocations.length = 0;
+post.dofEnabled = false; drawPost(); post.dofEnabled = true; drawPost();
+assert.equal(allocations.length, 0, 'Transient depth-of-field changes must not resize retained targets.');
+post.setRenderQuality('1080p');
+assert(allocations.some(([width, height]) => width === 1 && height === 1), 'A quality change releases old-sized targets.');
+post.dispose(); postMesh.geometry.dispose(); postMesh.material.dispose();
+checks.push({ test: 'transient-pass-visibility-retains-targets-and-quality-change-releases-them', passed: true });
+
 const report = { status: 'pass', testedAt: new Date().toISOString(), scope: 'CPU thumbnail bounds, production streaming/failure logic and presentation feedback lifecycle with GPU stubbed. No FPS or rendered-pixel claim.', checks };
 const output = path.join(root, 'reports/peony2-fidelity');
 await mkdir(output, { recursive: true });

@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-27",
+  "baselineRevision": "0ed4897",
+  "recording": {
+    "framesInspected": 460,
+    "recordingFps": 30,
+    "durationSeconds": 15.33,
+    "scope": "第一卷自动展卷，约13秒后手动暂停；录屏没有显示画质和帧率选项。",
+    "observation": "播放区段存在连续约100毫秒画面近乎不变；录屏本身不能区分采集和应用造成的停顿。"
+  },
+  "measurement": {
+    "device": "Windows, Intel i5-14600KF, NVIDIA RTX 5060 Ti, 2560x1440 / 250 Hz",
+    "method": "隔离配置启动打包后的 Electron 应用，从首卷53%处自动展卷约12秒，以画卷实际提交的源帧变化时间统计；不是系统呈现帧率。",
+    "quality": "720p",
+    "cases": [
+      { "settingFps": 30, "version": "baseline", "sourceFrameChanges": 318, "gapsOver80ms": 9, "maximumGapMs": 234.5, "resourceWaitMs": 1167.5 },
+      { "settingFps": 30, "version": "delivery", "sourceFrameChanges": 361, "gapsOver80ms": 0, "maximumGapMs": 68.5, "resourceWaitMs": 0 },
+      { "settingFps": 60, "version": "baseline", "sourceFrameChanges": 659, "gapsOver80ms": 6, "maximumGapMs": 134, "resourceWaitMs": 822.1 },
+      { "settingFps": 60, "version": "delivery", "sourceFrameChanges": 718, "gapsOver80ms": 0, "maximumGapMs": 46.7, "resourceWaitMs": 0 }
+    ],
+    "limits": "每档各一次采样；未测完整四卷全程、学校低配电脑、显示器实际呈现或所有画质。此前候选版本四卷中段各6秒及2K首卷采样另见任务日志。"
+  },
+  "checks": {
+    "sceneStability": "passed: visibility 4, streaming 14, shadows 10, rendering 18",
+    "scrollInput": "passed: 22",
+    "sourceClock": "passed: four chapter timings and rendering memory budget",
+    "packagedDesktop": "passed: 12 offline and interaction checks, including four scrolls, fullscreen and flower-letter download",
+    "originalArtwork": "copied without reencoding; package and extracted files hash verified"
+  },
+  "delivery": {
+    "exeSha256": "9d080642bc57ea7838bf51f9dd1a51f67994cf27c1313f877d4ff33da25969d8",
+    "zipSha256": "9e2bda4a7cf612910fd8e3da873aad311acf980c71cf47e24fa9d164e6435ea2",
+    "oldExeSha256": "134e8654ee39f3cf0f158f388bfde23e0a011b3b1ce91ca5af2ca24612772837"
+  }
+}

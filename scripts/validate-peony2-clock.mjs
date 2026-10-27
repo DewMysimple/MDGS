@@ -7,7 +7,12 @@ import ts from 'typescript';
 const root = fileURLToPath(new URL('../', import.meta.url));
 async function sourceModule(name) {
   const source = await fs.readFile(path.join(root, 'src/scene', name + '.ts'), 'utf8');
-  const js = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ES2022 } }).outputText;
+  let js = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ES2022 } }).outputText;
+  if (name === 'sourceViewport') {
+    const quality = await fs.readFile(path.join(root, 'src/scene/renderQuality.ts'), 'utf8');
+    const compiled = ts.transpileModule(quality, { compilerOptions: { module: ts.ModuleKind.ES2022 } }).outputText;
+    js = js.replace("'./renderQuality'", JSON.stringify('data:text/javascript;base64,' + Buffer.from(compiled).toString('base64')));
+  }
   return import('data:text/javascript;base64,' + Buffer.from(js).toString('base64'));
 }
 const { sourceDuration, advanceSourceProgress } = await sourceModule('sourceClock');

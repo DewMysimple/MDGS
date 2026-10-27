@@ -4,8 +4,8 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import ts from 'typescript';
 
-// Execute the production hook with deterministic React hook cells and RAF.
-// No renderer/GPU is mocked here; renderer feedback is covered separately.
+// Execute the production hook with deterministic React hook cells and a
+// renderer-driven clock. GPU presentation is checked separately.
 const root = fileURLToPath(new URL('../', import.meta.url));
 const read = file => readFile(path.join(root, file), 'utf8');
 const moduleUrl = source => `data:text/javascript;base64,${Buffer.from(source).toString('base64')}`;
@@ -29,18 +29,14 @@ globalThis.hooks = {
     if (!cells[index] || !same(cells[index].deps, deps)) { cells[index] = { deps }; effects.push(callback); }
   },
 };
-let time = 0, nextId = 0, raf = new Map(), timers = new Map();
+let time = 0, lastDrawTime = 0, requested = false;
 globalThis.performance = { now: () => time };
 globalThis.document = { hidden: false, addEventListener() {}, removeEventListener() {} };
 globalThis.window = {
   addEventListener() {}, removeEventListener() {},
-  setTimeout(callback, delay) { const id = ++nextId; timers.set(id, { at: time + delay, callback }); return id; },
-  clearTimeout(id) { timers.delete(id); },
 };
 globalThis.sessionStorage = { getItem() { return null; }, setItem() {} };
 globalThis.matchMedia = () => ({ matches: false, addEventListener() {}, removeEventListener() {} });
-globalThis.requestAnimationFrame = callback => { const id = ++nextId; raf.set(id, callback); return id; };
-globalThis.cancelAnimationFrame = id => raf.delete(id);
 const imports = {
   react: moduleUrl('export const {useCallback,useEffect,useRef,useState}=globalThis.hooks;'),
   '../data/sceneOptions': moduleUrl('export const sceneOptions={};'),
@@ -55,24 +51,28 @@ const { useScrollController } = await import(moduleUrl(source));
 const timing = { sourceRevision: 'test', frameRange: [1, 101], fps: 10 };
 let controller;
 function render() {
-  cursor = 0; controller = useScrollController(1, { timing, frameRateLimit: 60 });
+  cursor = 0; controller = useScrollController(1, { timing });
   const pending = effects; effects = []; pending.forEach(callback => callback());
 }
-function tick(at) {
+function tick(at, gridElapsed = at - lastDrawTime) {
   time = at;
-  for (const [id, timer] of [...timers]) if (timer.at <= at) { timers.delete(id); timer.callback(); }
-  const pending = [...raf.values()]; raf.clear();
-  pending.forEach(callback => callback(at)); render();
+  if (!requested) return;
+  requested = false;
+  const drawn = controller.driveFrame(at, gridElapsed);
+  lastDrawTime = at;
+  if (drawn.active) requested = true;
+  render();
+  assert.equal(drawn.progress, controller.progress, 'Each renderer tick uses the same progress sent to the UI');
 }
-render(); controller.togglePlaying(); tick(5000);
+render(); controller.setFrameDriverWake(() => { requested = true; }); controller.togglePlaying(); tick(5000);
 assert.equal(controller.progress, 0, 'Initial preparation must stop autoplay');
-assert.equal(raf.size, 0);
+assert.equal(requested, false);
 controller.setPlaybackBlocked(false); tick(5000); tick(5100);
 assert(Math.abs(controller.progress - .01) < 1e-12);
 controller.setPlaybackBlocked(true); tick(5200);
 const held = controller.progress; tick(15200);
 assert.equal(controller.progress, held, 'Ten seconds of resource wait must not advance the film');
-assert.equal(raf.size, 0, 'An idle streaming wait must not keep the controller RAF alive');
+assert.equal(requested, false, 'An idle streaming wait must not keep requesting frames');
 controller.setPlaybackBlocked(false); tick(15200); tick(15300);
 assert(Math.abs(controller.progress - held - .01) < 1e-12, 'Resume must exclude all waiting time');
 controller.setPlaybackBlocked(true); controller.seek(.4, true); render();
@@ -96,13 +96,34 @@ const beforeFractionalRate = controller.progress;
 tick(34632);
 assert(Math.abs(controller.progress - beforeFractionalRate - .01) < 1e-12, 'Source fps_base is honored for the one-frame cap');
 const beforeFineStep = controller.progress;
-tick(34649);
+tick(34649, 1000 / 60);
 assert(Math.abs(controller.progress - beforeFineStep - (1 / 60) / (100 * 1.001 / 30)) < 1e-12,
-  'Accepted display ticks retain their exact sub-frame clock interval');
+  'Playback follows the accepted display grid');
+// 250 Hz cannot divide either target rate evenly. Verify that the accepted
+// 32/36 ms and 16/20 ms refresh intervals retain the intended source speed.
+const { FramePacer } = await import(imports['../scene/FramePacer']);
+timing.frameRange = [1, 30001]; timing.fps = 30; timing.fpsBase = 1;
+for (const rate of [30, 60]) {
+  const pacer = new FramePacer(rate);
+  const start = time + 100;
+  const before = controller.progress;
+  let accepted = 0, approvedMs = 0;
+  for (let step = 0; step <= 5000; step++) {
+    const now = start + step * 4;
+    if (!pacer.shouldRender(now)) continue;
+    if (accepted > 0) approvedMs += Math.min(pacer.elapsedMs, 1000 / 30);
+    tick(now, pacer.elapsedMs);
+    accepted++;
+  }
+  assert(Math.abs(accepted - rate * 20) <= 2, `${rate} fps at 250 Hz keeps its intended cadence`);
+  assert(Math.abs(controller.progress - before - approvedMs / 1000000) < 1e-9,
+    `${rate} fps preserves source speed across fractional refresh intervals`);
+}
 console.log(JSON.stringify({ status: 'pass', checks: [
   'initial-first-frame-gate', 'autoplay-pauses-during-wait', 'resume-excludes-wait-duration',
   'idle-wait-has-no-raf-loop', 'manual-immediate-seek-while-blocked', 'manual-smoothing-while-blocked',
   'resume-during-manual-raf-resets-clock',
   'manual-to-play-discards-pending-target', 'manual-to-play-resets-existing-raf-clock',
-  'slow-raf-cannot-skip-authored-frames', 'source-fps-base-is-honored', 'fast-raf-keeps-sub-frame-timing',
+  'slow-frame-cannot-skip-authored-frames', 'source-fps-base-is-honored', 'display-ticks-keep-grid-time',
+  'renderer-and-ui-use-same-progress', '30-and-60fps-on-250hz-display',
 ] }));

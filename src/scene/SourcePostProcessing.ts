@@ -194,6 +194,13 @@ export class SourcePostProcessing {
   }
 
   setRenderQuality(quality: RenderQuality) {
+    if (quality !== this.quality) {
+      // Discard the old budget once at an explicit quality change, so an
+      // unused high-resolution target cannot linger on a lower-memory tier.
+      for (const target of [this.color, this.accumulation, this.blended, this.depth, ...this.slices]) {
+        if (target.width !== 1 || target.height !== 1) target.setSize(1, 1);
+      }
+    }
     this.quality = quality;
     const profile = renderQualityProfile(quality);
     this.uniforms.filmSamplesPerAxis.value = profile.filmSamplesPerAxis;
@@ -323,9 +330,12 @@ export class SourcePostProcessing {
     view: SourceViewport, width: number, height: number) {
     const ratio = renderer.getPixelRatio();
     const { width: w, height: h, scale } = sourceTargetSize(view.width, view.height, ratio, this.quality);
+    const sizeChanged = this.lastTargetSize.width !== w || this.lastTargetSize.height !== h;
     this.lastTargetSize = { width: w, height: h };
-    const depthWidth = this.dofEnabled ? w : 1, depthHeight = this.dofEnabled ? h : 1;
-    if (this.depth.width !== depthWidth || this.depth.height !== depthHeight) this.depth.setSize(depthWidth, depthHeight);
+    // Keep allocated targets resident when a pass becomes temporarily unused.
+    // Reallocating them as sheets cross the view can stall the GPU mid-scroll.
+    if (this.dofEnabled && (this.depth.width !== w || this.depth.height !== h)) this.depth.setSize(w, h);
+    else if (!this.dofEnabled && sizeChanged && (this.depth.width !== 1 || this.depth.height !== 1)) this.depth.setSize(1, 1);
     (this.uniforms.pixelSize.value as THREE.Vector2).set(1 / w, 1 / h);
     (this.uniforms.filmPixelSize.value as THREE.Vector2).set(1 / Math.max(1, view.width * ratio), 1 / Math.max(1, view.height * ratio));
     library.setImageLodBias(Math.log2(scale * (this.settings.sampling?.filmReconstruction.textureLodFootprintScale ?? 1)));
@@ -343,8 +353,8 @@ export class SourcePostProcessing {
     const layerCount = maximumOverlap(rectangles);
     this.lastLayerCount = layerCount; this.lastMeshCount = rectangles.length;
     const resizeTarget = (target: THREE.WebGLRenderTarget, needed: boolean) => {
-      const tw = needed ? w : 1, th = needed ? h : 1;
-      if (target.width !== tw || target.height !== th) target.setSize(tw, th);
+      if (needed && (target.width !== w || target.height !== h)) target.setSize(w, h);
+      else if (!needed && sizeChanged && (target.width !== 1 || target.height !== 1)) target.setSize(1, 1);
     };
     resizeTarget(this.color, true); resizeTarget(this.accumulation, layerCount > 0);
     resizeTarget(this.blended, hasBlended);

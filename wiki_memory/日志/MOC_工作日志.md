@@ -16,6 +16,7 @@ sources: []
 | 2026-10-27 | feature | completed | [画质帧率选项与低配渲染降载](2026-10-27-%E7%94%BB%E8%B4%A8%E5%B8%A7%E7%8E%87%E9%80%89%E9%A1%B9%E4%B8%8E%E4%BD%8E%E9%85%8D%E6%B8%B2%E6%9F%93%E9%99%8D%E8%BD%BD.md) |
 | 2026-10-27 | bug | completed | [录屏闪烁根因与场景稳定修复](2026-10-27-%E5%BD%95%E5%B1%8F%E9%97%AA%E7%83%81%E6%A0%B9%E5%9B%A0%E4%B8%8E%E5%9C%BA%E6%99%AF%E7%A8%B3%E5%AE%9A%E4%BF%AE%E5%A4%8D.md) |
 | 2026-10-27 | bug | completed | [展卷闪烁复核与离线包更新](2026-10-27-%E5%B1%95%E5%8D%B7%E9%97%AA%E7%83%81%E5%A4%8D%E6%A0%B8%E4%B8%8E%E7%A6%BB%E7%BA%BF%E5%8C%85%E6%9B%B4%E6%96%B0.md) |
+| 2026-10-27 | bug | completed | [展卷卡顿逐帧定位与预加载修复](2026-10-27-%E5%B1%95%E5%8D%B7%E5%8D%A1%E9%A1%BF%E9%80%90%E5%B8%A7%E5%AE%9A%E4%BD%8D%E4%B8%8E%E9%A2%84%E5%8A%A0%E8%BD%BD%E4%BF%AE%E5%A4%8D.md) |
 | 2026-10-27 | bug | in_progress | [修复新版场景展卷时的噪声闪烁](2026-10-27-%E4%BF%AE%E5%A4%8D%E5%B1%95%E5%8D%B7%E5%99%AA%E5%A3%B0%E9%97%AA%E7%83%81.md) |
 | 2026-10-23 | bug | completed | [牡丹2.0保真整改](2026-10-23-%E7%89%A1%E4%B8%B92.0%E4%BF%9D%E7%9C%9F%E6%95%B4%E6%94%B9.md) |
 | 2026-10-23 | ui | completed | [国色长卷艺术迭代](2026-10-23-%E5%9B%BD%E8%89%B2%E9%95%BF%E5%8D%B7%E8%89%BA%E6%9C%AF%E8%BF%AD%E4%BB%A3.md) |

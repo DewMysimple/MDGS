@@ -36,11 +36,13 @@ export interface ScrollViewportProps {
   onPresentationError?: (message: string) => void;
   playbackActive?: boolean;
   onPlaybackBlocked?: (blocked: boolean) => void;
+  onFrame: (now: number, elapsedMs: number) => { progress: number; active: boolean };
+  onFrameDriverWake: (request: (() => void) | null) => void;
 }
 
 export default function ScrollViewport({ chapterId, progress, motionEnabled, onMotionState, onNudge, onSeek, onManualInput, onManifest,
   interactive = true, retryKey = 0, preparationCancelled = false, onPreparation, onReady, onNarrativePlacement, wheelSpeed = 0.5, sideMarginPercent = 8, artworkAnchors = noArtworkAnchors, onArtworkAnchors,
-  onPresentationHandle, onPresentationSnapshot, onPresentationError, playbackActive = false, onPlaybackBlocked, renderQuality = '720p', frameRateLimit = 30 }: ScrollViewportProps) {
+  onPresentationHandle, onPresentationSnapshot, onPresentationError, playbackActive = false, onPlaybackBlocked, onFrame, onFrameDriverWake, renderQuality = '720p', frameRateLimit = 30 }: ScrollViewportProps) {
   const host = useRef<HTMLDivElement>(null);
   const engine = useRef<SceneRenderer | null>(null);
   const actions = useRef({ onNudge, onSeek, onManualInput, onManifest, onMotionState, onPreparation, onReady, onNarrativePlacement, onArtworkAnchors, onPresentationHandle, onPresentationSnapshot, onPresentationError, onPlaybackBlocked });
@@ -121,6 +123,8 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
       renderer.setMotionEnabled(motionRef.current);
       unsubscribeMotion = renderer.subscribeMotionState(state => { if (alive) actions.current.onMotionState?.(state); });
       renderer.setProgress(progressRef.current);
+      renderer.setFrameDriver(onFrame);
+      onFrameDriverWake(() => renderer.wakeFrameDriver());
       renderer.load(chapterId).then(manifest => { if (alive) actions.current.onManifest?.(manifest); }).catch(reason => {
         if (alive && reason.name !== 'AbortError') {
           const message = reason.message || '画卷加载失败，请重试';
@@ -134,7 +138,7 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
       setError(true); setStatus(message);
       actions.current.onPreparation?.({ stage: 'error', loaded: 0, total: 0, message });
       actions.current.onMotionState?.({ enabled: false, reducedMotion: matchMedia('(prefers-reduced-motion: reduce)').matches, supported: false });
-      return () => { alive = false; unsubscribeMotion?.(); engine.current?.dispose(); engine.current = null; };
+      return () => { alive = false; onFrameDriverWake(null); unsubscribeMotion?.(); engine.current?.dispose(); engine.current = null; };
     }
     const observer = new ResizeObserver(entries => {
       const { width, height } = entries[0].contentRect;
@@ -162,17 +166,17 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
       alive = false; observer.disconnect();
       if (capturePrepared.current === captureReadyFrame) capturePrepared.current = null;
       actions.current.onPresentationHandle?.(null);
+      onFrameDriverWake(null);
       unsubscribeMotion?.();
       element.removeEventListener('wheel', wheel);
       document.removeEventListener('visibilitychange', onVisibility);
       cancelAnimationFrame(inertia.current);
       renderer.dispose(); engine.current = null;
     };
-  }, [chapterId, reloadKey, retryKey]);
+  }, [chapterId, reloadKey, retryKey, onFrame, onFrameDriverWake]);
 
   useEffect(() => { if (ready && onPresentationSnapshot) capturePrepared.current?.(); }, [ready, onPresentationSnapshot]);
 
-  useEffect(() => { engine.current?.setProgress(progress); }, [progress]);
   useEffect(() => { engine.current?.setSideMarginPercent(sideMarginPercent); }, [sideMarginPercent]);
   useEffect(() => { engine.current?.setRenderQuality(renderQuality); }, [renderQuality]);
   useEffect(() => { engine.current?.setFrameRateLimit(frameRateLimit); }, [frameRateLimit]);

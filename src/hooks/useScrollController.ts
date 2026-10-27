@@ -3,7 +3,6 @@ import { sceneOptions } from '../data/sceneOptions';
 import { nudgedTarget, smoothProgress } from './scrollMotion';
 import { activeSourceEdition } from '../data/sourceEdition';
 import { advanceSourceProgress, sourceDuration, type SourceTiming } from '../scene/sourceClock';
-import { FramePacer, type FrameRateLimit } from '../scene/FramePacer';
 
 const savedProgress = new Map<number, number>();
 const clamp = (n: number) => Math.max(0, Math.min(1, n));
@@ -20,10 +19,10 @@ function persistProgress(id: number, value: number) {
   try { sessionStorage.setItem(progressKey(id), String(value)); } catch { /* Private storage can be disabled. */ }
 }
 
-interface ScrollControllerOptions { smoothingMs?: number; active?: boolean; timing?: SourceTiming; frameRateLimit?: FrameRateLimit }
+interface ScrollControllerOptions { smoothingMs?: number; active?: boolean; timing?: SourceTiming }
 
 /** All input shares one time-based follower; idle and covered scrolls have no RAF loop. */
-export function useScrollController(chapterId: number, { smoothingMs = 180, active = true, timing, frameRateLimit = 30 }: ScrollControllerOptions = {}) {
+export function useScrollController(chapterId: number, { smoothingMs = 180, active = true, timing }: ScrollControllerOptions = {}) {
   const [progress, setProgress] = useState(() => restoreProgress(chapterId));
   const [target, setTarget] = useState(progress);
   const [playing, setPlaying] = useState(false);
@@ -32,10 +31,11 @@ export function useScrollController(chapterId: number, { smoothingMs = 180, acti
   const playingRef = useRef(false);
   const playbackBlocked = useRef(true);
   const playbackEpoch = useRef(0);
+  const frameClock = useRef<{ previous?: number; epoch: number; lastSaved: number }>({ epoch: 0, lastSaved: 0 });
   const chapterRef = useRef(chapterId);
   const reducedMotion = useRef(false);
-  const options = useRef({ smoothingMs, active, frameRateLimit });
-  options.current = { smoothingMs, active, frameRateLimit };
+  const options = useRef({ smoothingMs, active });
+  options.current = { smoothingMs, active };
   const wake = useRef<() => void>(() => {});
   const suspend = useRef<() => void>(() => {});
   const timingRef = useRef(timing);
@@ -50,6 +50,11 @@ export function useScrollController(chapterId: number, { smoothingMs = 180, acti
   }, []);
 
   const stop = useCallback(() => { playingRef.current = false; setPlaying(false); }, []);
+  const setFrameDriverWake = useCallback((request: (() => void) | null) => {
+    wake.current = request ?? (() => {});
+    frameClock.current.previous = undefined;
+    if (request && options.current.active && (playingRef.current || position.current !== destination.current)) request();
+  }, []);
   const setPlaybackBlocked = useCallback((blocked: boolean) => {
     if (playbackBlocked.current === blocked) return;
     playbackBlocked.current = blocked;
@@ -100,47 +105,22 @@ export function useScrollController(chapterId: number, { smoothingMs = 180, acti
     stop();
   }, [chapterId, stop, setPlaybackBlocked]);
 
-  useEffect(() => {
-    let frame = 0;
-    let timer = 0;
-    let previous = 0;
-    let clockEpoch = playbackEpoch.current;
-    let appliedFrameRateLimit = options.current.frameRateLimit;
-    const pacer = new FramePacer(appliedFrameRateLimit);
-    let lastSaved = performance.now();
-    const save = () => { persistProgress(chapterRef.current, position.current); lastSaved = performance.now(); };
-    const schedule = (): void => {
-      if (frame || timer) return;
-      // Sleep through most of the capped interval on high-refresh screens;
-      // RAF still chooses the actual display opportunity near the deadline.
-      const delay = pacer.timeUntilDue(performance.now()) - 8;
-      if (delay > 0) timer = window.setTimeout(() => {
-        timer = 0;
-        frame = requestAnimationFrame(animate);
-      }, delay);
-      else frame = requestAnimationFrame(animate);
-    };
-    const animate = (now: number): void => {
-      frame = 0;
-      if (document.hidden || !options.current.active) return;
-      if (appliedFrameRateLimit !== options.current.frameRateLimit) {
-        appliedFrameRateLimit = options.current.frameRateLimit;
-        pacer.setLimit(appliedFrameRateLimit);
-        previous = now;
-        clockEpoch = playbackEpoch.current;
+  // The renderer owns the only display-rate gate. Advancing immediately before
+  // its draw prevents separately phased RAF loops from presenting stale or
+  // skipping intermediate controller positions.
+  const driveFrame = useCallback((now: number, elapsedMs: number): { progress: number; active: boolean } => {
+      const clock = frameClock.current;
+      if (document.hidden || !options.current.active) {
+        clock.previous = undefined;
+        return { progress: position.current, active: false };
       }
-      if (!pacer.shouldRender(now)) {
-        schedule();
-        return;
-      }
-      const elapsed = Math.max(0, (now - previous) / 1000);
-      // Accepted clock slots retain their time when intermediate RAFs were
-      // skipped. Ideal grid deltas also avoid losing time to 144/250 Hz RAF
-      // jitter before the one-source-frame slow-tick cap is applied below.
-      const playbackElapsed = clockEpoch === playbackEpoch.current ? pacer.elapsedMs / 1000 : 0;
-      clockEpoch = playbackEpoch.current;
+      const elapsed = clock.previous === undefined || now < clock.previous ? 0 : (now - clock.previous) / 1000;
+      // Carry fractional refresh intervals on the display grid; clipping each
+      // 32/36 ms interval individually would make 30 fps playback run slow.
+      const playbackElapsed = clock.previous !== undefined && clock.epoch === playbackEpoch.current ? Math.max(0, elapsedMs) / 1000 : 0;
+      clock.epoch = playbackEpoch.current;
+      clock.previous = now;
       const dt = Math.min(elapsed, 0.25);
-      previous = now;
       if (playingRef.current && !playbackBlocked.current) {
         const duration = sourceDuration(timingRef.current, sceneOptions[chapterRef.current]?.autoplayDuration ?? 154);
         const nativeClock = !!timingRef.current?.sourceRevision;
@@ -164,22 +144,18 @@ export function useScrollController(chapterId: number, { smoothingMs = 180, acti
       }
       if (playingRef.current && destination.current >= 1 && position.current === 1) stop();
       const moving = (playingRef.current && !playbackBlocked.current) || position.current !== destination.current;
-      if (!moving || now - lastSaved > 1000) save();
-      if (moving) schedule();
-    };
-    wake.current = () => {
-      if (frame || timer || document.hidden || !options.current.active || ((!playingRef.current || playbackBlocked.current) && position.current === destination.current)) return;
-      previous = performance.now();
-      clockEpoch = playbackEpoch.current;
-      appliedFrameRateLimit = options.current.frameRateLimit;
-      pacer.setLimit(appliedFrameRateLimit);
-      pacer.reset();
-      schedule();
-    };
+      if (!moving || now - clock.lastSaved > 1000) {
+        persistProgress(chapterRef.current, position.current);
+        clock.lastSaved = now;
+      }
+      if (!moving) clock.previous = undefined;
+      return { progress: position.current, active: moving };
+  }, [stop]);
+
+  useEffect(() => {
+    const save = () => { persistProgress(chapterRef.current, position.current); };
     suspend.current = () => {
-      cancelAnimationFrame(frame); frame = 0;
-      window.clearTimeout(timer); timer = 0;
-      pacer.reset();
+      frameClock.current.previous = undefined;
       stop();
       destination.current = position.current;
       setTarget(position.current);
@@ -188,16 +164,13 @@ export function useScrollController(chapterId: number, { smoothingMs = 180, acti
     const onVisibility = () => { if (document.hidden) suspend.current(); else wake.current(); };
     document.addEventListener('visibilitychange', onVisibility);
     window.addEventListener('pagehide', save);
-    wake.current();
     return () => {
-      save(); cancelAnimationFrame(frame);
-      window.clearTimeout(timer);
-      wake.current = () => {}; suspend.current = () => {};
+      save(); suspend.current = () => {};
       document.removeEventListener('visibilitychange', onVisibility); window.removeEventListener('pagehide', save);
     };
   }, [stop]);
 
   useEffect(() => { if (active) wake.current(); else suspend.current(); }, [active]);
 
-  return { progress, target, seek, nudge, playing, togglePlaying, stop, setPlaybackBlocked };
+  return { progress, target, seek, nudge, playing, togglePlaying, stop, setPlaybackBlocked, driveFrame, setFrameDriverWake };
 }
