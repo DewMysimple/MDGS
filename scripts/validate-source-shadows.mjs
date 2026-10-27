@@ -8,9 +8,14 @@ import * as THREE from 'three';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const threeUrl = pathToFileURL(path.join(root, 'node_modules/three/build/three.module.js')).href;
+const qualityCompiled = ts.transpileModule(await readFile(path.join(root, 'src/scene/renderQuality.ts'), 'utf8'), {
+  compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 },
+}).outputText;
+const qualityUrl = `data:text/javascript;base64,${Buffer.from(qualityCompiled).toString('base64')}`;
 const compiled = ts.transpileModule(await readFile(path.join(root, 'src/scene/SourceLighting.ts'), 'utf8'), {
   compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 },
-}).outputText.replace(/from (['"])three\1/g, `from ${JSON.stringify(threeUrl)}`);
+}).outputText.replace(/from (['"])three\1/g, `from ${JSON.stringify(threeUrl)}`)
+  .replace(/from (['"])\.\/renderQuality\1/g, `from ${JSON.stringify(qualityUrl)}`);
 const { createSourceLighting } = await import(`data:text/javascript;base64,${Buffer.from(compiled).toString('base64')}`);
 const settings = type => ({
   world: { color: [0, 0, 0], strength: 0 }, lights: [{ name: 'fixture', type, color: [1, 1, 1], energy: 1,
@@ -32,6 +37,7 @@ const hidden = sheet(scene, 'author-hidden', 2, 2, 0, 0, -4); hidden.userData.so
 const artHidden = sheet(scene, 'art-hidden', 2, 2, 0, 0, -3); artHidden.userData.artHidden = true;
 const longPaper = sheet(scene, 'long-paper', 20000, 2, 0, -1, -10);
 const lighting = createSourceLighting(settings('SUN'));
+lighting.setRenderQuality('2k'); // Preserve this fixture's existing 2048px raster oracle.
 let casters = new Set(lighting.requiredShadowCasters(scene, camera, 6));
 assert(casters.has(receiver));
 assert(casters.has(offscreen), 'A source-visible unloaded caster outside the main camera must be required.');
@@ -88,6 +94,7 @@ for (const gradient of [[3, 0], [-2, 4], [.02, -.01]]) for (const weights of [[1
 }
 lighting.dispose();
 const area = createSourceLighting(settings('AREA'));
+area.setRenderQuality('2k');
 const areaBefore = new Set(area.requiredShadowCasters(scene, camera, 6));
 receiver.visible = false;
 assert.deepEqual(new Set(area.requiredShadowCasters(scene, camera, 6)), areaBefore, 'AREA caster selection also ignores residency.');

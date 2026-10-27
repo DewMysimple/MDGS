@@ -1,4 +1,6 @@
 import * as THREE from 'three';
+import { FramePacer } from './FramePacer';
+import { renderPixelRatio, type FrameRateLimit, type RenderQuality } from './renderQuality';
 
 const vertex = `
   varying vec2 vUv;
@@ -65,6 +67,7 @@ export class PeonyBloomSurface {
   private mesh: THREE.Mesh;
   private observer: ResizeObserver;
   private frame = 0;
+  private wakeTimer = 0;
   private disposed = false;
   private ready = false;
   private active = true;
@@ -72,7 +75,9 @@ export class PeonyBloomSurface {
   private reduced = matchMedia('(prefers-reduced-motion: reduce)');
   private clock = 0;
   private lastTime = 0;
-  private lastPaint = 0;
+  private renderQuality: RenderQuality = '720p';
+  private frameRateLimit: FrameRateLimit = 30;
+  private pacer = new FramePacer(this.frameRateLimit);
   private reveal = 0;
   private touches = Array.from({ length: 8 }, () => new THREE.Vector4(-10, -10, -100, 0));
   private nextTouch = 0;
@@ -85,13 +90,15 @@ export class PeonyBloomSurface {
   private renderCount = 0;
   private failed = false;
   private hitMask?: { pixels: Uint8ClampedArray; width: number; height: number };
-  private visibility = () => { this.lastTime = 0; this.schedule(); };
-  private preference = () => { this.reveal = 1; if (this.reduced.matches) this.clearTouches(); this.schedule(); };
-  private loss = (event: Event) => { event.preventDefault(); this.failed = true; cancelAnimationFrame(this.frame); this.frame = 0; this.onState(false); };
+  private visibility = () => {
+    this.lastTime = 0; this.pacer.reset();
+    this.cancelScheduled(); this.schedule();
+  };
+  private preference = () => { this.lastTime = 0; this.pacer.reset(); this.cancelScheduled(); this.reveal = 1; if (this.reduced.matches) this.clearTouches(); this.schedule(); };
+  private loss = (event: Event) => { event.preventDefault(); this.failed = true; this.cancelScheduled(); this.onState(false); };
 
   constructor(private host: HTMLElement, url: string, private onState: (ready: boolean) => void, private onBrush: () => void) {
     this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'low-power' });
-    this.renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     this.renderer.setClearColor(0x000000, 0);
     this.renderer.debug.checkShaderErrors = true;
@@ -123,7 +130,8 @@ export class PeonyBloomSurface {
 
   private resize() {
     this.width = Math.max(1, this.host.clientWidth); this.height = Math.max(1, this.host.clientHeight);
-    this.renderer.setSize(this.width, this.height, false);
+    this.renderer.setDrawingBufferSize(this.width, this.height, renderPixelRatio(this.width, this.height, devicePixelRatio, this.renderQuality));
+    this.renderer.domElement.dataset.renderQuality = this.renderQuality;
     const aspect = this.width / this.height;
     this.fitX = Math.min(1, this.artAspect / aspect); this.fitY = Math.min(1, aspect / this.artAspect);
     this.mesh.scale.set(this.fitX, this.fitY, 1); this.schedule();
@@ -157,7 +165,8 @@ export class PeonyBloomSurface {
   }
 
   setState(active: boolean, motion: boolean) {
-    this.active = active; this.motion = motion; this.lastTime = 0;
+    this.active = active; this.motion = motion; this.lastTime = 0; this.pacer.reset();
+    this.cancelScheduled();
     // A transient wash belongs to the current encounter with the flower.
     // Pausing wind or leaving the foyer should not freeze a damp mark there.
     if (!active || !motion || this.reduced.matches) this.clearTouches();
@@ -165,35 +174,58 @@ export class PeonyBloomSurface {
     this.schedule();
   }
 
+  setRenderQuality(quality: RenderQuality) {
+    if (quality === this.renderQuality) return;
+    this.renderQuality = quality;
+    if (!this.disposed && !this.failed) this.resize();
+  }
+
+  setFrameRateLimit(limit: FrameRateLimit) {
+    if (limit === this.frameRateLimit) return;
+    this.frameRateLimit = limit; this.pacer.setLimit(limit);
+    this.renderer.domElement.dataset.frameRateLimit = String(limit);
+    this.schedule();
+  }
+
   private schedule() {
-    if (!this.disposed && !this.failed && !this.frame && this.active && !document.hidden) this.frame = requestAnimationFrame(this.paint);
+    if (this.disposed || this.failed || this.frame || this.wakeTimer || !this.active || document.hidden) return;
+    // Wake close to the ideal deadline, then align with display refresh. This
+    // avoids running flower updates at a 144/250Hz monitor's callback rate.
+    const delay = this.pacer.timeUntilDue(performance.now()) - 8;
+    if (delay > 1) this.wakeTimer = window.setTimeout(() => { this.wakeTimer = 0; this.schedule(); }, delay);
+    else this.frame = requestAnimationFrame(this.paint);
+  }
+
+  private cancelScheduled() {
+    cancelAnimationFrame(this.frame); window.clearTimeout(this.wakeTimer);
+    this.frame = 0; this.wakeTimer = 0;
   }
 
   private paint = (now: number) => {
     this.frame = 0;
     if (this.disposed || this.failed || !this.active || document.hidden || !this.ready) return;
+    if (!this.pacer.shouldRender(now)) { this.schedule(); return; }
     const moving = this.motion && !this.reduced.matches;
     if (!moving) { this.clearTouches(); this.reveal = 1; }
-    const elapsed = this.lastTime ? Math.min(.1, (now - this.lastTime) / 1000) : 0;
+    const elapsed = this.lastTime ? Math.max(0, (now - this.lastTime) / 1000) : 0;
     this.lastTime = now;
     if (moving) { this.clock += elapsed; this.reveal = Math.min(1, this.reveal + elapsed / 2.2); }
-    if (now - this.lastPaint >= 1000 / 30 - .5 || !moving) {
-      this.material.uniforms.uReveal.value = this.reveal;
-      this.material.uniforms.uTime.value = this.clock;
-      this.material.uniforms.uMotion.value = moving ? 1 : 0;
-      try { this.renderer.render(this.scene, this.camera); }
-      catch { this.failed = true; this.onState(false); return; }
-      if (this.failed) return;
-      this.lastPaint = now; this.renderCount++;
-      if (this.renderCount === 1) this.onState(true);
-      const canvas = this.renderer.domElement;
-      canvas.dataset.renderCount = String(this.renderCount); canvas.dataset.paintingTime = this.clock.toFixed(3); canvas.dataset.reveal = this.reveal.toFixed(3);
-    }
+    this.material.uniforms.uReveal.value = this.reveal;
+    this.material.uniforms.uTime.value = this.clock;
+    this.material.uniforms.uMotion.value = moving ? 1 : 0;
+    try { this.renderer.render(this.scene, this.camera); }
+    catch { this.failed = true; this.onState(false); return; }
+    if (this.failed) return;
+    this.renderCount++;
+    if (this.renderCount === 1) this.onState(true);
+    const canvas = this.renderer.domElement;
+    canvas.dataset.renderCount = String(this.renderCount); canvas.dataset.paintingTime = this.clock.toFixed(3); canvas.dataset.reveal = this.reveal.toFixed(3);
+    canvas.dataset.frameRateLimit = String(this.frameRateLimit);
     if (moving) this.schedule();
   };
 
   dispose() {
-    this.disposed = true; cancelAnimationFrame(this.frame); this.observer.disconnect();
+    this.disposed = true; this.cancelScheduled(); this.observer.disconnect();
     document.removeEventListener('visibilitychange', this.visibility); this.reduced.removeEventListener('change', this.preference);
     const canvas = this.renderer.domElement; canvas.removeEventListener('webglcontextlost', this.loss); canvas.removeEventListener('pointermove', this.pointer);
     this.texture?.dispose(); this.geometry.dispose(); this.material.dispose(); this.renderer.dispose(); this.renderer.forceContextLoss(); canvas.remove();

@@ -1,14 +1,17 @@
 import type { SceneManifest } from '../types';
+import { renderPixelRatio, renderQualityProfile, type RenderQuality } from './renderQuality';
 
 export interface SourceViewport { x: number; y: number; width: number; height: number; aspect: number }
 export interface SourceViewportLayout { viewport: SourceViewport; verticalFovScale: number }
 
 /** All six HDR and three depth buffers share this bounded pixel budget. */
-export function sourceTargetSize(width: number, height: number, pixelRatio: number) {
+export function sourceTargetSize(width: number, height: number, pixelRatio: number, quality?: RenderQuality) {
   if (![width, height, pixelRatio].every(Number.isFinite) || width < 0 || height < 0 || pixelRatio <= 0) throw new Error('画卷绘制尺寸无效。');
   const physicalWidth = Math.max(1, width * pixelRatio), physicalHeight = Math.max(1, height * pixelRatio);
-  const scale = Math.min(2, 4096 / physicalWidth, 4096 / physicalHeight,
-    Math.sqrt(4 * 1024 * 1024 / (physicalWidth * physicalHeight)));
+  // Preserve the public legacy helper when no profile is supplied; production
+  // renderers always supply their explicit quality and share the output cap.
+  const scale = quality ? renderPixelRatio(physicalWidth, physicalHeight, renderQualityProfile(quality).sourceSupersampling, quality)
+    : Math.min(2, 4096 / physicalWidth, 4096 / physicalHeight, Math.sqrt(4 * 1024 * 1024 / (physicalWidth * physicalHeight)));
   return { width: Math.max(1, Math.floor(physicalWidth * scale)), height: Math.max(1, Math.floor(physicalHeight * scale)), scale };
 }
 

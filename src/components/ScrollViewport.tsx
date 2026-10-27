@@ -6,6 +6,8 @@ import type { NarrativeSpace } from '../scene/NarrativeSpace';
 import { dragGlide, wheelProgress } from '../hooks/scrollMotion';
 import type { ArtworkAnchorSpec, ProjectedArtAnchor } from '../data/artEncounters';
 import { releaseArtworkSnapshot, type ArtworkSnapshot } from '../scene/artworkSnapshot';
+import type { FrameRateLimit, RenderQuality } from '../scene/renderQuality';
+import { FramePacer } from '../scene/FramePacer';
 
 export type { ScenePreparationState } from '../scene/SceneRenderer';
 
@@ -25,6 +27,8 @@ export interface ScrollViewportProps {
   onNarrativePlacement?: (placement: NarrativeSpace) => void;
   wheelSpeed?: number;
   sideMarginPercent?: number;
+  renderQuality?: RenderQuality;
+  frameRateLimit?: FrameRateLimit;
   artworkAnchors?: readonly ArtworkAnchorSpec[];
   onArtworkAnchors?: (anchors: ProjectedArtAnchor[]) => void;
   onPresentationHandle?: (handle: ScrollPresentationHandle | null) => void;
@@ -36,7 +40,7 @@ export interface ScrollViewportProps {
 
 export default function ScrollViewport({ chapterId, progress, motionEnabled, onMotionState, onNudge, onSeek, onManualInput, onManifest,
   interactive = true, retryKey = 0, preparationCancelled = false, onPreparation, onReady, onNarrativePlacement, wheelSpeed = 0.5, sideMarginPercent = 8, artworkAnchors = noArtworkAnchors, onArtworkAnchors,
-  onPresentationHandle, onPresentationSnapshot, onPresentationError, playbackActive = false, onPlaybackBlocked }: ScrollViewportProps) {
+  onPresentationHandle, onPresentationSnapshot, onPresentationError, playbackActive = false, onPlaybackBlocked, renderQuality = '720p', frameRateLimit = 30 }: ScrollViewportProps) {
   const host = useRef<HTMLDivElement>(null);
   const engine = useRef<SceneRenderer | null>(null);
   const actions = useRef({ onNudge, onSeek, onManualInput, onManifest, onMotionState, onPreparation, onReady, onNarrativePlacement, onArtworkAnchors, onPresentationHandle, onPresentationSnapshot, onPresentationError, onPlaybackBlocked });
@@ -62,6 +66,9 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
   const progressRef = useRef(progress);
   progressRef.current = progress;
   const playbackRef = useRef(playbackActive); playbackRef.current = playbackActive;
+  const qualityRef = useRef(renderQuality); qualityRef.current = renderQuality;
+  const frameRateRef = useRef(frameRateLimit); frameRateRef.current = frameRateLimit;
+  const marginRef = useRef(sideMarginPercent); marginRef.current = sideMarginPercent;
 
   useEffect(() => { setRetryCount(0); retryFocus.current = false; }, [chapterId]);
 
@@ -102,7 +109,9 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
       }, placement=> { if(alive) actions.current.onNarrativePlacement?.(placement); }, anchors => { if (alive) actions.current.onArtworkAnchors?.(anchors); },
       blocked => { if (alive) actions.current.onPlaybackBlocked?.(blocked); });
       engine.current = renderer;
-      renderer.setSideMarginPercent(sideMarginPercent);
+      renderer.setRenderQuality(qualityRef.current);
+      renderer.setFrameRateLimit(frameRateRef.current);
+      renderer.setSideMarginPercent(marginRef.current);
       if (preparationCancelledRef.current) renderer.cancelPreparation();
       actions.current.onPresentationHandle?.({ capture: () => renderer.captureArtworkSnapshot() });
       renderer.setArtworkAnchors(artworkAnchorsRef.current);
@@ -165,6 +174,8 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
 
   useEffect(() => { engine.current?.setProgress(progress); }, [progress]);
   useEffect(() => { engine.current?.setSideMarginPercent(sideMarginPercent); }, [sideMarginPercent]);
+  useEffect(() => { engine.current?.setRenderQuality(renderQuality); }, [renderQuality]);
+  useEffect(() => { engine.current?.setFrameRateLimit(frameRateLimit); }, [frameRateLimit]);
   useLayoutEffect(() => { if (preparationCancelled) engine.current?.cancelPreparation(); }, [preparationCancelled]);
   useEffect(() => { engine.current?.setNarrativePlaybackActive(playbackActive); }, [playbackActive]);
   useEffect(() => { engine.current?.setArtworkAnchors(artworkAnchors); }, [artworkAnchors]);
@@ -235,9 +246,12 @@ export default function ScrollViewport({ chapterId, progress, motionEnabled, onM
       event.currentTarget.style.cursor = 'grab';
       if (!interactiveRef.current || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       let previous = performance.now();
+      const pacer = new FramePacer(frameRateRef.current);
       const glide = (now: number) => {
         inertia.current = 0;
         if (!interactiveRef.current || document.hidden || Math.abs(velocity) < 0.0006) return;
+        pacer.setLimit(frameRateRef.current);
+        if (!pacer.shouldRender(now)) { inertia.current = requestAnimationFrame(glide); return; }
         const step = dragGlide(velocity, Math.min(0.25, Math.max(0, (now - previous) / 1000)));
         previous = now; velocity = step.velocity;
         actions.current.onNudge(step.distance);

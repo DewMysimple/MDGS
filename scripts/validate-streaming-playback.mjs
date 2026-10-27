@@ -29,10 +29,14 @@ globalThis.hooks = {
     if (!cells[index] || !same(cells[index].deps, deps)) { cells[index] = { deps }; effects.push(callback); }
   },
 };
-let time = 0, nextId = 0, raf = new Map();
+let time = 0, nextId = 0, raf = new Map(), timers = new Map();
 globalThis.performance = { now: () => time };
 globalThis.document = { hidden: false, addEventListener() {}, removeEventListener() {} };
-globalThis.window = { addEventListener() {}, removeEventListener() {} };
+globalThis.window = {
+  addEventListener() {}, removeEventListener() {},
+  setTimeout(callback, delay) { const id = ++nextId; timers.set(id, { at: time + delay, callback }); return id; },
+  clearTimeout(id) { timers.delete(id); },
+};
 globalThis.sessionStorage = { getItem() { return null; }, setItem() {} };
 globalThis.matchMedia = () => ({ matches: false, addEventListener() {}, removeEventListener() {} });
 globalThis.requestAnimationFrame = callback => { const id = ++nextId; raf.set(id, callback); return id; };
@@ -42,7 +46,7 @@ const imports = {
   '../data/sceneOptions': moduleUrl('export const sceneOptions={};'),
   '../data/sourceEdition': moduleUrl("export const activeSourceEdition='test';"),
 };
-for (const [name, file] of [['./scrollMotion', 'src/hooks/scrollMotion.ts'], ['../scene/sourceClock', 'src/scene/sourceClock.ts']]) {
+for (const [name, file] of [['./scrollMotion', 'src/hooks/scrollMotion.ts'], ['../scene/sourceClock', 'src/scene/sourceClock.ts'], ['../scene/FramePacer', 'src/scene/FramePacer.ts']]) {
   imports[name] = moduleUrl(compile(await read(file)));
 }
 const source = compile(await read('src/hooks/useScrollController.ts'))
@@ -51,23 +55,25 @@ const { useScrollController } = await import(moduleUrl(source));
 const timing = { sourceRevision: 'test', frameRange: [1, 101], fps: 10 };
 let controller;
 function render() {
-  cursor = 0; controller = useScrollController(1, { timing });
+  cursor = 0; controller = useScrollController(1, { timing, frameRateLimit: 60 });
   const pending = effects; effects = []; pending.forEach(callback => callback());
 }
 function tick(at) {
-  time = at; const pending = [...raf.values()]; raf.clear();
+  time = at;
+  for (const [id, timer] of [...timers]) if (timer.at <= at) { timers.delete(id); timer.callback(); }
+  const pending = [...raf.values()]; raf.clear();
   pending.forEach(callback => callback(at)); render();
 }
 render(); controller.togglePlaying(); tick(5000);
 assert.equal(controller.progress, 0, 'Initial preparation must stop autoplay');
 assert.equal(raf.size, 0);
-controller.setPlaybackBlocked(false); tick(5100);
+controller.setPlaybackBlocked(false); tick(5000); tick(5100);
 assert(Math.abs(controller.progress - .01) < 1e-12);
 controller.setPlaybackBlocked(true); tick(5200);
 const held = controller.progress; tick(15200);
 assert.equal(controller.progress, held, 'Ten seconds of resource wait must not advance the film');
 assert.equal(raf.size, 0, 'An idle streaming wait must not keep the controller RAF alive');
-controller.setPlaybackBlocked(false); tick(15300);
+controller.setPlaybackBlocked(false); tick(15200); tick(15300);
 assert(Math.abs(controller.progress - held - .01) < 1e-12, 'Resume must exclude all waiting time');
 controller.setPlaybackBlocked(true); controller.seek(.4, true); render();
 assert.equal(controller.progress, .4, 'Immediate manual seek remains effective while blocked');
@@ -90,9 +96,9 @@ const beforeFractionalRate = controller.progress;
 tick(34632);
 assert(Math.abs(controller.progress - beforeFractionalRate - .01) < 1e-12, 'Source fps_base is honored for the one-frame cap');
 const beforeFineStep = controller.progress;
-tick(34640);
-assert(Math.abs(controller.progress - beforeFineStep - .008 / (100 * 1.001 / 30)) < 1e-12,
-  'Fast RAF ticks retain their exact sub-frame timing');
+tick(34649);
+assert(Math.abs(controller.progress - beforeFineStep - (1 / 60) / (100 * 1.001 / 30)) < 1e-12,
+  'Accepted display ticks retain their exact sub-frame clock interval');
 console.log(JSON.stringify({ status: 'pass', checks: [
   'initial-first-frame-gate', 'autoplay-pauses-during-wait', 'resume-excludes-wait-duration',
   'idle-wait-has-no-raf-loop', 'manual-immediate-seek-while-blocked', 'manual-smoothing-while-blocked',

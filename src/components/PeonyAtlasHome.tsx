@@ -8,15 +8,20 @@ import type { StudyHomeProps } from './StudyHome';
 import AudioController from './AudioController';
 import PeonyPigment from './PeonyPigment';
 import type { PeonyPigmentHandle } from './PeonyPigment';
+import { FramePacer } from '../scene/FramePacer';
+import type { FrameRateLimit, RenderQuality } from '../scene/renderQuality';
 import '../styles/peony-atlas.css';
 
 type Note = 'preface' | 'guide' | null;
+type Props = StudyHomeProps & { renderQuality?: RenderQuality; frameRateLimit?: FrameRateLimit };
 
 /** Painted planes form the foyer. Its text and controls remain accessible
  * HTML, independent from the four authored paintings and their timeline. */
-export default function PeonyAtlasHome({ phase, chapterId, onSelect, motionEnabled, onToggleMotion, onOpenSettings }: StudyHomeProps) {
+export default function PeonyAtlasHome({ phase, chapterId, onSelect, motionEnabled, onToggleMotion, onOpenSettings, renderQuality = '720p', frameRateLimit = 30 }: Props) {
   const root = useRef<HTMLElement>(null), dialog = useRef<HTMLDialogElement>(null);
   const pigment = useRef<PeonyPigmentHandle>(null);
+  const pointerPacer = useRef(new FramePacer(frameRateLimit));
+  const stopPointer = useRef<() => void>(() => {});
   const noteTrigger = useRef<HTMLElement | null>(null), previousHome = useRef(phase === 'HOME');
   const [ready, setReady] = useState(false), [error, setError] = useState(false), [attempt, setAttempt] = useState(0);
   const [hover, setHover] = useState<number | null>(null), [note, setNote] = useState<Note>(null);
@@ -24,6 +29,7 @@ export default function PeonyAtlasHome({ phase, chapterId, onSelect, motionEnabl
   const [reduced, setReduced] = useState(() => matchMedia('(prefers-reduced-motion: reduce)').matches);
   const home = phase === 'HOME', animated = motionEnabled && !reduced && visible && home;
   const latest = useRef({ phase, ready, animated, hover }); latest.current = { phase, ready, animated, hover };
+  useEffect(() => { pointerPacer.current.setLimit(frameRateLimit); }, [frameRateLimit]);
 
   useEffect(() => {
     let alive = true; setReady(false); setError(false);
@@ -41,33 +47,45 @@ export default function PeonyAtlasHome({ phase, chapterId, onSelect, motionEnabl
 
   useEffect(() => {
     const element = root.current; if (!element) return;
-    let frame = 0, x = 0, y = 0, targetX = 0, targetY = 0, then = 0, frames = 0;
+    let frame = 0, timer = 0, x = 0, y = 0, targetX = 0, targetY = 0, then = 0, frames = 0;
+    const schedule = () => {
+      if (frame || timer) return;
+      const delay = pointerPacer.current.timeUntilDue(performance.now()) - 8;
+      if (delay > 1) timer = window.setTimeout(() => { timer = 0; schedule(); }, delay);
+      else frame = requestAnimationFrame(paint);
+    };
+    const halt = () => {
+      cancelAnimationFrame(frame); window.clearTimeout(timer); frame = timer = 0;
+      x = y = targetX = targetY = then = 0; pointerPacer.current.reset();
+      element.style.setProperty('--atlas-x', '0'); element.style.setProperty('--atlas-y', '0');
+    };
+    stopPointer.current = halt;
     const paint = (now: number) => {
-      if (!latest.current.animated) { x = y = targetX = targetY = 0; frame = 0; }
-      else {
-        const dt = then ? Math.min(64, now - then) : 16; then = now;
-        const blend = 1 - Math.exp(-dt / 320);
-        x += (targetX - x) * blend; y += (targetY - y) * blend;
-        frame = Math.abs(targetX - x) + Math.abs(targetY - y) > .0008 ? requestAnimationFrame(paint) : 0;
-      }
+      frame = 0;
+      if (!latest.current.animated) { halt(); return; }
+      if (!pointerPacer.current.shouldRender(now)) { schedule(); return; }
+      const dt = then ? Math.max(0, now - then) : 16; then = now;
+      const blend = 1 - Math.exp(-dt / 320);
+      x += (targetX - x) * blend; y += (targetY - y) * blend;
       element.style.setProperty('--atlas-x', x.toFixed(4)); element.style.setProperty('--atlas-y', y.toFixed(4)); frames++;
+      if (Math.abs(targetX - x) + Math.abs(targetY - y) > .0008) schedule();
     };
     const move = (event: PointerEvent) => {
       if (!latest.current.animated || event.pointerType === 'touch') return;
       const rect = element.getBoundingClientRect();
       targetX = (event.clientX - rect.left) / rect.width - .5; targetY = (event.clientY - rect.top) / rect.height - .5;
-      if (!frame) { then = 0; frame = requestAnimationFrame(paint); }
+      if (!frame && !timer) { then = 0; schedule(); }
     };
-    const reset = () => { targetX = targetY = 0; if (!frame) { then = 0; frame = requestAnimationFrame(paint); } };
+    const reset = () => { if (!latest.current.animated) { halt(); return; } targetX = targetY = 0; if (!frame && !timer) { then = 0; schedule(); } };
     element.addEventListener('pointermove', move); element.addEventListener('pointerleave', reset);
     const diagnostics = { snapshot: () => ({ ...latest.current, renderCount: frames, layers: 4, kind: 'original-painted-atlas' }) };
     const diagnosticWindow = window as unknown as { __MDGS_ATLAS__?: typeof diagnostics };
     diagnosticWindow.__MDGS_ATLAS__ = diagnostics;
-    return () => { cancelAnimationFrame(frame); element.removeEventListener('pointermove', move); element.removeEventListener('pointerleave', reset); if (diagnosticWindow.__MDGS_ATLAS__ === diagnostics) delete diagnosticWindow.__MDGS_ATLAS__; };
+    return () => { halt(); stopPointer.current = () => {}; element.removeEventListener('pointermove', move); element.removeEventListener('pointerleave', reset); if (diagnosticWindow.__MDGS_ATLAS__ === diagnostics) delete diagnosticWindow.__MDGS_ATLAS__; };
   }, []);
 
   useEffect(() => {
-    if (!animated) { root.current?.style.setProperty('--atlas-x', '0'); root.current?.style.setProperty('--atlas-y', '0'); }
+    if (!animated) stopPointer.current();
   }, [animated]);
   useEffect(() => {
     if (!home) { setNote(null); setHover(null); }
@@ -84,7 +102,7 @@ export default function PeonyAtlasHome({ phase, chapterId, onSelect, motionEnabl
     <div className="atlas-art" aria-hidden="true">
       <img key={`landscape-${attempt}`} className="atlas-landscape" src={atlasArt.landscape} alt="" fetchPriority="high" />
       <div className="atlas-light" /><div className="atlas-haze atlas-haze-one" /><div className="atlas-haze atlas-haze-two" />
-      <div className="atlas-peony-plane"><PeonyPigment key={`peonies-${attempt}`} ref={pigment} active={home} motionEnabled={motionEnabled && !reduced} onBrush={() => setFlowerTouched(true)} /><div className="atlas-flower-glow" /></div>
+      <div className="atlas-peony-plane"><PeonyPigment key={`peonies-${attempt}`} ref={pigment} active={home} motionEnabled={motionEnabled && !reduced} renderQuality={renderQuality} frameRateLimit={frameRateLimit} onBrush={() => setFlowerTouched(true)} /><div className="atlas-flower-glow" /></div>
       <img key={`branch-${attempt}`} className="atlas-ivory-branch" src={atlasArt.branch} alt="" />
       <div className="atlas-petals">{Array.from({ length: 5 }, (_, i) => <i key={i} style={{ '--petal': i } as CSSProperties} />)}</div>
       <div className="atlas-paper-grain" />

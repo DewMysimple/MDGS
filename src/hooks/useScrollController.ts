@@ -3,6 +3,7 @@ import { sceneOptions } from '../data/sceneOptions';
 import { nudgedTarget, smoothProgress } from './scrollMotion';
 import { activeSourceEdition } from '../data/sourceEdition';
 import { advanceSourceProgress, sourceDuration, type SourceTiming } from '../scene/sourceClock';
+import { FramePacer, type FrameRateLimit } from '../scene/FramePacer';
 
 const savedProgress = new Map<number, number>();
 const clamp = (n: number) => Math.max(0, Math.min(1, n));
@@ -19,10 +20,10 @@ function persistProgress(id: number, value: number) {
   try { sessionStorage.setItem(progressKey(id), String(value)); } catch { /* Private storage can be disabled. */ }
 }
 
-interface ScrollControllerOptions { smoothingMs?: number; active?: boolean; timing?: SourceTiming }
+interface ScrollControllerOptions { smoothingMs?: number; active?: boolean; timing?: SourceTiming; frameRateLimit?: FrameRateLimit }
 
 /** All input shares one time-based follower; idle and covered scrolls have no RAF loop. */
-export function useScrollController(chapterId: number, { smoothingMs = 180, active = true, timing }: ScrollControllerOptions = {}) {
+export function useScrollController(chapterId: number, { smoothingMs = 180, active = true, timing, frameRateLimit = 30 }: ScrollControllerOptions = {}) {
   const [progress, setProgress] = useState(() => restoreProgress(chapterId));
   const [target, setTarget] = useState(progress);
   const [playing, setPlaying] = useState(false);
@@ -33,8 +34,8 @@ export function useScrollController(chapterId: number, { smoothingMs = 180, acti
   const playbackEpoch = useRef(0);
   const chapterRef = useRef(chapterId);
   const reducedMotion = useRef(false);
-  const options = useRef({ smoothingMs, active });
-  options.current = { smoothingMs, active };
+  const options = useRef({ smoothingMs, active, frameRateLimit });
+  options.current = { smoothingMs, active, frameRateLimit };
   const wake = useRef<() => void>(() => {});
   const suspend = useRef<() => void>(() => {});
   const timingRef = useRef(timing);
@@ -101,15 +102,42 @@ export function useScrollController(chapterId: number, { smoothingMs = 180, acti
 
   useEffect(() => {
     let frame = 0;
+    let timer = 0;
     let previous = 0;
     let clockEpoch = playbackEpoch.current;
+    let appliedFrameRateLimit = options.current.frameRateLimit;
+    const pacer = new FramePacer(appliedFrameRateLimit);
     let lastSaved = performance.now();
     const save = () => { persistProgress(chapterRef.current, position.current); lastSaved = performance.now(); };
-    const animate = (now: number) => {
+    const schedule = (): void => {
+      if (frame || timer) return;
+      // Sleep through most of the capped interval on high-refresh screens;
+      // RAF still chooses the actual display opportunity near the deadline.
+      const delay = pacer.timeUntilDue(performance.now()) - 8;
+      if (delay > 0) timer = window.setTimeout(() => {
+        timer = 0;
+        frame = requestAnimationFrame(animate);
+      }, delay);
+      else frame = requestAnimationFrame(animate);
+    };
+    const animate = (now: number): void => {
       frame = 0;
       if (document.hidden || !options.current.active) return;
+      if (appliedFrameRateLimit !== options.current.frameRateLimit) {
+        appliedFrameRateLimit = options.current.frameRateLimit;
+        pacer.setLimit(appliedFrameRateLimit);
+        previous = now;
+        clockEpoch = playbackEpoch.current;
+      }
+      if (!pacer.shouldRender(now)) {
+        schedule();
+        return;
+      }
       const elapsed = Math.max(0, (now - previous) / 1000);
-      const playbackElapsed = clockEpoch === playbackEpoch.current ? elapsed : 0;
+      // Accepted clock slots retain their time when intermediate RAFs were
+      // skipped. Ideal grid deltas also avoid losing time to 144/250 Hz RAF
+      // jitter before the one-source-frame slow-tick cap is applied below.
+      const playbackElapsed = clockEpoch === playbackEpoch.current ? pacer.elapsedMs / 1000 : 0;
       clockEpoch = playbackEpoch.current;
       const dt = Math.min(elapsed, 0.25);
       previous = now;
@@ -137,16 +165,21 @@ export function useScrollController(chapterId: number, { smoothingMs = 180, acti
       if (playingRef.current && destination.current >= 1 && position.current === 1) stop();
       const moving = (playingRef.current && !playbackBlocked.current) || position.current !== destination.current;
       if (!moving || now - lastSaved > 1000) save();
-      if (moving) frame = requestAnimationFrame(animate);
+      if (moving) schedule();
     };
     wake.current = () => {
-      if (frame || document.hidden || !options.current.active || ((!playingRef.current || playbackBlocked.current) && position.current === destination.current)) return;
+      if (frame || timer || document.hidden || !options.current.active || ((!playingRef.current || playbackBlocked.current) && position.current === destination.current)) return;
       previous = performance.now();
       clockEpoch = playbackEpoch.current;
-      frame = requestAnimationFrame(animate);
+      appliedFrameRateLimit = options.current.frameRateLimit;
+      pacer.setLimit(appliedFrameRateLimit);
+      pacer.reset();
+      schedule();
     };
     suspend.current = () => {
       cancelAnimationFrame(frame); frame = 0;
+      window.clearTimeout(timer); timer = 0;
+      pacer.reset();
       stop();
       destination.current = position.current;
       setTarget(position.current);
@@ -158,6 +191,7 @@ export function useScrollController(chapterId: number, { smoothingMs = 180, acti
     wake.current();
     return () => {
       save(); cancelAnimationFrame(frame);
+      window.clearTimeout(timer);
       wake.current = () => {}; suspend.current = () => {};
       document.removeEventListener('visibilitychange', onVisibility); window.removeEventListener('pagehide', save);
     };

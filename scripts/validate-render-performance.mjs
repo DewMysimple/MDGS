@@ -11,8 +11,11 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const compile = source => ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
 const moduleUrl = source => `data:text/javascript;base64,${Buffer.from(source).toString('base64')}`;
 const read = file => readFile(path.join(root, file), 'utf8');
+const framePacerUrl = moduleUrl(compile(await read('src/scene/FramePacer.ts')));
+const renderQualityUrl = moduleUrl(compile(await read('src/scene/renderQuality.ts')));
 const placementUrl = moduleUrl(compile(await read('src/scene/NarrativeSpace.ts')));
-const viewportUrl = moduleUrl(compile(await read('src/scene/sourceViewport.ts')));
+const viewportUrl = moduleUrl(compile(await read('src/scene/sourceViewport.ts'))
+  .replace(/from (['"])\.\/renderQuality\1/g, `from ${JSON.stringify(renderQualityUrl)}`));
 const texturePreparationUrl = moduleUrl(compile(await read('src/scene/texturePreparation.ts')));
 const { narrativeSampleSize, findNarrativeSpace } = await import(placementUrl);
 const { fitSourceViewport, sourceViewportLayout } = await import(viewportUrl);
@@ -53,9 +56,10 @@ checks.push({ test: 'whole-source-camera-gate-centered-with-adjustable-equal-pap
 const threeUrl = pathToFileURL(path.join(root, 'node_modules/three/build/three.module.js')).href;
 const gpuUrl = moduleUrl(`export * from ${JSON.stringify(threeUrl)};
 export class WebGLRenderer {
- debug={}; domElement={dataset:{},setAttribute(){},addEventListener(){},removeEventListener(){},remove(){}};
+ debug={}; domElement={dataset:{},style:{},setAttribute(){},addEventListener(){},removeEventListener(){},remove(){}};
  capabilities={getMaxAnisotropy(){return 1;}}; info={render:{calls:0},memory:{geometries:0}};
  setPixelRatio(){} setClearColor(){} setViewport(){} dispose(){} forceContextLoss(){}
+ setDrawingBufferSize(width,height,ratio){this.domElement.width=Math.floor(width*ratio);this.domElement.height=Math.floor(height*ratio);}
  preparedTextures=[]; initTexture(texture){this.preparedTextures.push(texture);}
  getContext(){return {getExtension(){return null;}};}
 }`);
@@ -67,6 +71,8 @@ const imports = {
   three: gpuUrl,
   './NarrativeSpace': placementUrl,
   './sourceViewport': viewportUrl,
+  './FramePacer': framePacerUrl,
+  './renderQuality': renderQualityUrl,
   './SourceVisibility': moduleUrl(compile(await read('src/scene/SourceVisibility.ts'))),
   './texturePreparation': texturePreparationUrl,
   './ShaderWarmup': moduleUrl(compile(await read('src/scene/ShaderWarmup.ts')).replace(/from (['"])three\1/g, `from ${JSON.stringify(threeUrl)}`)),
@@ -184,6 +190,7 @@ native.sourceFieldUrls = new Set(fieldUrls);
 native.sourceMaterials = { loadTexture(url, signal) { assert(signal instanceof AbortSignal); providers.push(['material', url]); return load(url); }, dispose() {} };
 native.sourcePost = {
   requiredUrls: () => ['native-glare'], prefetchUrls: () => upcomingPost, hasUrl: url => url.startsWith('native-glare'),
+  getDiagnostics: () => null,
   loadTexture(url, signal) { assert(signal instanceof AbortSignal); providers.push(['post', url]); return load(url); },
   assign(url, texture) { assigned.set(url, texture); }, dispose() {},
 };
@@ -249,7 +256,7 @@ variants.textures.set('variant-image', variantEntry);
 const variantMesh = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial());
 variantMesh.userData.sourceVisible = false;
 variants.objects = [{ mesh: variantMesh, material: variantMesh.material, fields: [{ url: 'variant-image', prepare: () => nodeSampler, assign() {} }] }];
-variants.textureUploads.push({ url: 'variant-image', texture: baseTexture, entry: variantEntry, variants: [baseTexture, nodeSampler] });
+variants.textureUploads.push({ url: 'variant-image', texture: baseTexture, entry: variantEntry, variants: [baseTexture, nodeSampler], imageMaxEdge: 1024, bytes: 64 });
 variants.prepareNextTexture();
 assert.equal(variants.renderer.preparedTextures.length, 1);
 assert.equal(variantEntry.loading, true); assert.equal(variantEntry.texture, undefined);
@@ -268,7 +275,7 @@ checks.push({ test: 'actual-sampler-variants-prepare-one-per-turn-before-shared-
 checks.push({ test: 'context-restoration-restarts-every-pending-sampler-variant-including-pre-loss-completed-prefix', passed: true });
 
 const cancelled = new SceneRenderer({ appendChild() {}, closest() { return null; } }, () => {});
-cancelled.textureUploads.push({ url: 'cancelled-image', texture: decoded, entry: { loading: true, bytes: 64, lastSeen: performance.now() }, variants: [decoded] });
+cancelled.textureUploads.push({ url: 'cancelled-image', texture: decoded, entry: { loading: true, bytes: 64, lastSeen: performance.now() }, variants: [decoded], imageMaxEdge: 1024, bytes: 64 });
 cancelled.cancelPreparation();
 assert.equal(cancelled.textureUploads.length, 0);
 cancelled.frame = 0; cancelled.requestFrame(); assert.equal(cancelled.frame, 0);
@@ -277,7 +284,7 @@ cancelled.dispose();
 checks.push({ test: 'owner-return-discards-unprepared-textures-without-gpu-upload-or-raf', passed: true });
 
 const recent = new SceneRenderer({ appendChild() {}, closest() { return null; } }, () => {});
-recent.sourcePost = { requiredUrls: () => ['required'], prefetchUrls: () => [], hasUrl: url => url.startsWith('post-'), assign() {}, dispose() {} };
+recent.sourcePost = { requiredUrls: () => ['required'], prefetchUrls: () => [], hasUrl: url => url.startsWith('post-'), getDiagnostics: () => null, assign() {}, dispose() {} };
 const mb = 1024 * 1024, now = performance.now();
 recent.textures.set('required', { texture: new THREE.Texture(), loading: false, bytes: 240 * mb, lastSeen: now });
 for (let index = 0; index < 10; index++) recent.textures.set(`image-${index}`, { texture: new THREE.Texture(), loading: false, bytes: 32 * mb, lastSeen: now - index });
@@ -326,18 +333,18 @@ assert.equal(presented.playbackBlocked, true); assert.equal(presented.renderedSo
 presented.render(10);
 assert.equal(presentationDraws, 1); assert.equal(presented.renderedSourceFrame, 11); assert.equal(presented.playbackBlocked, false);
 assert.deepEqual(presentationEvents, ['blocked', 'draw', 'resumed'], 'The clock resumes only after drawing a complete frame.');
-presented.ready = false; presented.sourceProgress = .2; presented.dirty = true; presented.render(20);
+presented.ready = false; presented.sourceProgress = .2; presented.dirty = true; presented.render(50);
 assert.equal(presentationDraws, 1); assert.equal(presented.renderedSourceFrame, 11, 'A held image retains its actual source frame.');
 assert.equal(presented.playbackBlocked, true);
 presented.ready = true;
 assert.equal(presented.playbackBlocked, true, 'Resource arrival alone cannot resume the clock.');
-presented.dirty = true; presented.render(30);
+presented.dirty = true; presented.render(90);
 assert.equal(presentationDraws, 2); assert.equal(presented.renderedSourceFrame, 21); assert.equal(presented.playbackBlocked, false);
 presented.onContextLost({ preventDefault() {} });
 assert.equal(presented.playbackBlocked, true);
 presented.onContextRestored();
 assert.equal(presented.playbackBlocked, true, 'GPU restoration must wait for the first complete redraw.');
-presented.render(40);
+presented.render(130);
 assert.equal(presentationDraws, 3); assert.equal(presented.playbackBlocked, false);
 assert.equal(presented.renderer.domElement.dataset.renderedSourceFrame, '21');
 assert.equal(presented.renderer.domElement.dataset.playbackBlocked, 'false');

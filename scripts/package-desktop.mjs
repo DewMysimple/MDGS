@@ -59,7 +59,9 @@ const staging = await mkdtemp(path.join(root, 'tmp/desktop-delivery-'));
 const folder = path.join(staging, folderName);
 await mkdir(folder);
 await copyFile(portable, path.join(folder, '数字牡丹赋.exe'));
+const performanceGuide = '画质与帧率：在首页或画卷右上角打开“设置”，可选择720p、1080p、2K与30帧、60帧上限。默认720p / 30帧，适合先在旧设备上开启；更高画质与帧率会提高设备性能要求。实际帧率取决于设备与当前画面，播放卡顿时建议720p / 30帧。设置会保存在本机。\r\n\r\n';
 await writeFile(path.join(folder, '运行说明.txt'), '\ufeff国色长卷 · 数字牡丹赋\r\n\r\n双击“数字牡丹赋.exe”即可运行，无需安装。\r\n适用于 Windows 10/11 64位。程序已内置 Chromium 浏览器内核、Node.js、四卷原画与模型、字体、声音及全部运行资源，无需安装浏览器、Node.js、Python或Blender；作品可以断网运行。\r\n首次启动需把内置运行文件释放到系统临时目录，请等待窗口出现。\r\n\r\nF11：切换全屏；Esc：退出全屏。窗口关闭即退出。\r\n点击“启声”开启原创数字声景。使用滚轮、拖拽、方向键、分镜或自动展卷游观。\r\n卷末可择意钤印并保存花笺PNG，保存时自行选择文件夹。设置保存在当前Windows用户的应用数据目录，更新EXE不清空设置。\r\n文献与馆藏参读链接会在系统浏览器打开，仅此类外部网页需要联网。\r\n\r\n无需管理员权限。请保留原始EXE；程序不安装服务，不下载运行依赖。内置作品来源及第三方许可随EXE收录。\r\n', 'utf8');
+await writeFile(path.join(folder, '运行说明.txt'), (await readFile(path.join(folder, '运行说明.txt'), 'utf8')) + '\r\n' + performanceGuide, 'utf8');
 const desktopMetadata = JSON.parse(await readFile(path.join(root, 'desktop/package.json'), 'utf8'));
 const manifest = {
   generator: 'MDGS Windows portable delivery', version: desktopMetadata.version,

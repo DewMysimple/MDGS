@@ -3,6 +3,24 @@ import type { CameraSample, SceneManifest } from '../types';
 import type { SourceMaterialLibrary } from './SourceMaterial';
 import type { SourceRenderSettings } from './SourceLighting';
 import { sourceTargetSize, type SourceViewport } from './sourceViewport';
+import { renderQualityProfile, type RenderQuality } from './renderQuality';
+
+interface ScreenBounds { left: number; right: number; bottom: number; top: number }
+
+/** A rectangle overlap count is an upper bound on per-pixel sheet depth.
+ * It only removes empty peel iterations, never a source layer or alpha. */
+function maximumOverlap(rectangles: ScreenBounds[]) {
+  let maximum = 0;
+  const xs = rectangles.flatMap(rectangle => [rectangle.left, rectangle.right]);
+  for (const x of xs) {
+    const events = rectangles.filter(rectangle => rectangle.left <= x && rectangle.right >= x)
+      .flatMap(rectangle => [{ y: rectangle.bottom, delta: 1 }, { y: rectangle.top, delta: -1 }])
+      .sort((a, b) => a.y - b.y || b.delta - a.delta);
+    let count = 0;
+    for (const event of events) { count += event.delta; maximum = Math.max(maximum, count); }
+  }
+  return maximum;
+}
 
 interface NativeGlareFrame {
   frame: number; url: string | null; width: number; height: number; channels: number;
@@ -36,9 +54,15 @@ export class SourcePostProcessing {
   private sourceFrame = 0;
   private dofEnabled = false;
   private disposed = false;
+  private quality: RenderQuality = '720p';
+  private lastLayerCount = 0;
+  private lastMeshCount = 0;
+  private lastTargetSize = { width: 1, height: 1 };
+  private projectedBounds = new WeakMap<THREE.Mesh, { geometry: THREE.BufferGeometry; matrix: THREE.Matrix4; morph: number[];
+    positionVersion: number; morphVersions: number[]; bounds: THREE.Box3 }>();
   private accumulationUniforms: Record<string, THREE.IUniform> = {
     previousColor: { value: null }, blendedColor: { value: null }, ditheredColor: { value: null },
-    hasPrevious: { value: false }, hasDithered: { value: false }, finish: { value: false },
+    hasPrevious: { value: false }, hasDithered: { value: false }, hasBlended: { value: false }, finish: { value: false },
     backgroundColor: { value: new THREE.Vector3() }, backgroundAlpha: { value: 1 },
   };
   private uniforms: Record<string, THREE.IUniform> = {
@@ -52,6 +76,7 @@ export class SourcePostProcessing {
     useDof: { value: false },
     filmPixelSize: { value: new THREE.Vector2(1, 1) },
     filmRadius: { value: 0 }, filmSigma: { value: .284 },
+    filmSamplesPerAxis: { value: 2 }, dofSampleCount: { value: 8 },
   };
 
   constructor(private base: string, private settings: NativePostSettings) {
@@ -89,12 +114,12 @@ export class SourcePostProcessing {
       fragmentShader: `
         varying vec2 vUv;
         uniform sampler2D previousColor,blendedColor,ditheredColor;
-        uniform bool hasPrevious,hasDithered,finish;
+        uniform bool hasPrevious,hasDithered,hasBlended,finish;
         uniform vec3 backgroundColor;uniform float backgroundAlpha;
         void main(){
           vec4 accumulated=hasPrevious?texture2D(previousColor,vUv):vec4(0.0);
           // Normal alpha blending into an empty target stores premultiplied RGB.
-          vec4 interval=texture2D(blendedColor,vUv);
+          vec4 interval=hasBlended?texture2D(blendedColor,vUv):vec4(0.0);
           vec4 layer=hasDithered?texture2D(ditheredColor,vUv):vec4(0.0);
           vec4 section=interval+(1.0-interval.a)*vec4(layer.rgb*layer.a,layer.a);
           accumulated+=(1.0-accumulated.a)*section;
@@ -112,6 +137,7 @@ export class SourcePostProcessing {
         uniform sampler2D sceneColor,sceneDepth,glareA,glareB;
         uniform vec2 glarePresent,pixelSize,filmPixelSize;
         uniform float filmRadius,filmSigma;
+        uniform int filmSamplesPerAxis,dofSampleCount;
         uniform float glareMix,focusMeters,lensMeters,apertureMeters,sensorMeters,unitMeters;
         uniform float apertureBlades,apertureRotation,apertureRatio;
         uniform bool useDof;
@@ -124,7 +150,8 @@ export class SourcePostProcessing {
           if(filmRadius>0.0){
             vec4 filtered=vec4(0.0);float weightSum=0.0;
             for(int y=0;y<6;y++)for(int x=0;x<6;x++){
-              vec2 offset=(vec2(float(x),float(y))-2.5)*.5;
+              if(y>=filmSamplesPerAxis||x>=filmSamplesPerAxis)continue;
+              vec2 offset=(vec2(float(x),float(y))-(float(filmSamplesPerAxis)-1.0)*.5)*.5;
               float weight=exp(-.5*dot(offset,offset)/(filmSigma*filmSigma*filmRadius*filmRadius));
               filtered+=texture2D(sceneColor,clamp(vUv+offset*filmPixelSize,pixelSize*.5,vec2(1.0)-pixelSize*.5))*weight;
               weightSum+=weight;
@@ -139,8 +166,9 @@ export class SourcePostProcessing {
             if(z>0.0 && radius/filmPixelSize.x>.5){
               vec4 sum=color;float weight=1.0;
               for(int i=0;i<32;i++){
+                if(i>=dofSampleCount)break;
                 float angle=float(i)*2.399963229728653+apertureRotation;
-                float ring=sqrt((float(i)+.5)/32.0);
+                float ring=sqrt((float(i)+.5)/float(dofSampleCount));
                 if(apertureBlades>=3.0){
                   float sector=6.28318530718/apertureBlades;
                   ring*=cos(sector*.5)/cos(mod(angle-apertureRotation+sector*.5,sector)-sector*.5);
@@ -163,6 +191,48 @@ export class SourcePostProcessing {
       `,
     });
     this.scene.add(new THREE.Mesh(this.geometry, this.material));
+  }
+
+  setRenderQuality(quality: RenderQuality) {
+    this.quality = quality;
+    const profile = renderQualityProfile(quality);
+    this.uniforms.filmSamplesPerAxis.value = profile.filmSamplesPerAxis;
+    this.uniforms.dofSampleCount.value = profile.dofSamples;
+  }
+
+  getDiagnostics() {
+    return { ...this.lastTargetSize, peelLayers: this.lastLayerCount, ditheredMeshes: this.lastMeshCount };
+  }
+
+  private screenBounds(mesh: THREE.Mesh, width: number, height: number): ScreenBounds {
+    const geometry = mesh.geometry, position = geometry.getAttribute('position');
+    const positionVersion = 'version' in position ? position.version : position.data.version;
+    const morph = mesh.morphTargetInfluences ?? [], attributes = geometry.morphAttributes.position ?? [];
+    const morphVersions = attributes.map(attribute => 'version' in attribute ? attribute.version : attribute.data.version);
+    let cached = this.projectedBounds.get(mesh);
+    if (!cached || cached.geometry !== geometry || !cached.matrix.equals(mesh.matrixWorld) || cached.positionVersion !== positionVersion
+      || cached.morph.length !== morph.length || !cached.morph.every((value, i) => value === morph[i])
+      || cached.morphVersions.length !== morphVersions.length || !cached.morphVersions.every((value, i) => value === morphVersions[i])) {
+      const bounds = new THREE.Box3(), vertex = new THREE.Vector3();
+      for (let index = 0; index < position.count; index++) bounds.expandByPoint(mesh.getVertexPosition(index, vertex).applyMatrix4(mesh.matrixWorld));
+      cached = { geometry, matrix: mesh.matrixWorld.clone(), morph: [...morph], positionVersion, morphVersions, bounds };
+      this.projectedBounds.set(mesh, cached);
+    }
+    const rectangle = { left: Infinity, right: -Infinity, bottom: Infinity, top: -Infinity };
+    const { min, max } = cached.bounds;
+    for (const x of [min.x, max.x]) for (const y of [min.y, max.y]) for (const z of [min.z, max.z]) {
+      const point = new THREE.Vector4(x, y, z, 1).applyMatrix4(this.sliceProjection);
+      // A box crossing the eye/near plane has an unbounded perspective hull.
+      // Treat it as covering the whole image instead of clipping its source.
+      if (![point.x, point.y, point.z, point.w].every(Number.isFinite) || point.w <= 1e-8 || point.z < -point.w) {
+        return { left: -1, right: 1, bottom: -1, top: 1 };
+      }
+      rectangle.left = Math.min(rectangle.left, point.x / point.w); rectangle.right = Math.max(rectangle.right, point.x / point.w);
+      rectangle.bottom = Math.min(rectangle.bottom, point.y / point.w); rectangle.top = Math.max(rectangle.top, point.y / point.w);
+    }
+    // Expand by a whole target pixel so raster edge coverage is conservative.
+    return { left: Math.max(-1, rectangle.left - 2 / width), right: Math.min(1, rectangle.right + 2 / width),
+      bottom: Math.max(-1, rectangle.bottom - 2 / height), top: Math.min(1, rectangle.top + 2 / height) };
   }
 
   private absolute(url: string) { return new URL(url, new URL(this.base, document.baseURI)).href; }
@@ -252,12 +322,8 @@ export class SourcePostProcessing {
   render(renderer: THREE.WebGLRenderer, scene: THREE.Scene, camera: THREE.Camera, library: SourceMaterialLibrary,
     view: SourceViewport, width: number, height: number) {
     const ratio = renderer.getPixelRatio();
-    // Six RGBA16F targets and three depth buffers use at most 240 MiB here.
-    // Bound total pixels as well as each edge on high-DPI desktop displays.
-    const { width: w, height: h, scale } = sourceTargetSize(view.width, view.height, ratio);
-    if (this.color.width !== w || this.color.height !== h) {
-      for (const target of [this.color, this.accumulation, this.blended, ...this.slices]) target.setSize(w, h);
-    }
+    const { width: w, height: h, scale } = sourceTargetSize(view.width, view.height, ratio, this.quality);
+    this.lastTargetSize = { width: w, height: h };
     const depthWidth = this.dofEnabled ? w : 1, depthHeight = this.dofEnabled ? h : 1;
     if (this.depth.width !== depthWidth || this.depth.height !== depthHeight) this.depth.setSize(depthWidth, depthHeight);
     (this.uniforms.pixelSize.value as THREE.Vector2).set(1 / w, 1 / h);
@@ -267,11 +333,22 @@ export class SourcePostProcessing {
     const clearColor = renderer.getClearColor(new THREE.Color()).clone(), clearAlpha = renderer.getClearAlpha();
     this.sliceProjection.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
     this.sliceFrustum.setFromProjectionMatrix(this.sliceProjection);
-    let layerCount = 0;
+    const rectangles: ScreenBounds[] = [];
+    let hasBlended = false;
     scene.traverse(object => {
-      if (object instanceof THREE.Mesh && object.visible && !Array.isArray(object.material)
-        && object.material.userData.sourceRenderMethod === 'DITHERED' && this.sliceFrustum.intersectsObject(object)) layerCount++;
+      if (!(object instanceof THREE.Mesh) || !object.visible || Array.isArray(object.material) || !this.sliceFrustum.intersectsObject(object)) return;
+      if (object.material.userData.sourceRenderMethod === 'DITHERED') rectangles.push(this.screenBounds(object, w, h));
+      else if (object.material.userData.sourceRenderMethod === 'BLENDED') hasBlended = true;
     });
+    const layerCount = maximumOverlap(rectangles);
+    this.lastLayerCount = layerCount; this.lastMeshCount = rectangles.length;
+    const resizeTarget = (target: THREE.WebGLRenderTarget, needed: boolean) => {
+      const tw = needed ? w : 1, th = needed ? h : 1;
+      if (target.width !== tw || target.height !== th) target.setSize(tw, th);
+    };
+    resizeTarget(this.color, true); resizeTarget(this.accumulation, layerCount > 0);
+    resizeTarget(this.blended, hasBlended);
+    for (const target of this.slices) resizeTarget(target, layerCount > 0);
     let previousDepth: THREE.Texture | null = null;
     let previousColor: THREE.Texture | null = null;
     try {
@@ -286,14 +363,17 @@ export class SourcePostProcessing {
           library.setPeelDepths(previousDepth, null, w, h); library.setPass('dithered');
           renderer.setRenderTarget(slice); renderer.render(scene, camera);
         }
-        library.setPeelDepths(previousDepth, tail ? null : slice.depthTexture, w, h); library.setPass('blended');
-        renderer.setRenderTarget(this.blended); renderer.render(scene, camera);
+        if (hasBlended) {
+          library.setPeelDepths(previousDepth, tail ? null : slice.depthTexture, w, h); library.setPass('blended');
+          renderer.setRenderTarget(this.blended); renderer.render(scene, camera);
+        }
         const destination = layerIndex % 2 === 0 ? this.color : this.accumulation;
         this.accumulationUniforms.previousColor.value = previousColor;
         this.accumulationUniforms.blendedColor.value = this.blended.texture;
         this.accumulationUniforms.ditheredColor.value = tail ? null : slice.texture;
         this.accumulationUniforms.hasPrevious.value = !!previousColor;
         this.accumulationUniforms.hasDithered.value = !tail;
+        this.accumulationUniforms.hasBlended.value = hasBlended;
         this.accumulationUniforms.finish.value = tail;
         renderer.setRenderTarget(destination); renderer.render(this.accumulationScene, this.camera);
         previousColor = destination.texture;

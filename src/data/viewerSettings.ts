@@ -1,3 +1,5 @@
+import type { FrameRateLimit, RenderQuality } from '../scene/renderQuality';
+
 export interface ChapterViewingSettings {
   /** Percent of the whole scroll travelled by 100 CSS pixels of wheel input. */
   wheelSpeed: number;
@@ -8,6 +10,9 @@ export type NarrativeMode = 'poetic' | 'original' | 'quiet';
 
 export interface ViewerSettings {
   version: 2;
+  renderQuality: RenderQuality;
+  /** Rendering cadence ceiling; device performance can yield fewer frames. */
+  frameRateLimit: FrameRateLimit;
   narrativeMode: NarrativeMode;
   /** Equal left/right paper gutter as a percent of the painting width. */
   sideMarginPercent: number;
@@ -33,6 +38,8 @@ export const settingLimits = {
 export function defaultViewerSettings(): ViewerSettings {
   return {
     version: 2,
+    renderQuality: '720p',
+    frameRateLimit: 30,
     narrativeMode: 'poetic',
     sideMarginPercent: 8,
     chapters: Object.fromEntries([1, 2, 3, 4].map(id => [id, { wheelSpeed: 0.5, smoothingMs: 180 }])),
@@ -49,6 +56,8 @@ function bounded(value: unknown, fallback: number, limits: { min: number; max: n
 export function sanitizeViewerSettings(value: unknown): ViewerSettings {
   const result = defaultViewerSettings(), source = record(value);
   if (source.version !== 2) return result;
+  if (source.renderQuality === '720p' || source.renderQuality === '1080p' || source.renderQuality === '2k') result.renderQuality = source.renderQuality;
+  if (source.frameRateLimit === 30 || source.frameRateLimit === 60) result.frameRateLimit = source.frameRateLimit;
   if (source.narrativeMode === 'poetic' || source.narrativeMode === 'original' || source.narrativeMode === 'quiet') result.narrativeMode = source.narrativeMode;
   result.sideMarginPercent = bounded(source.sideMarginPercent, result.sideMarginPercent, settingLimits.sideMarginPercent);
   const chapters = record(source.chapters), plate = record(source.textPlate);

@@ -74,7 +74,7 @@ export default function App() {
   const nativeEdition = manifest?.sourceRevision === activeSourceEdition;
   const chapterSettings = settings.chapters[chapterId];
   const { progress, target, seek, nudge, playing, togglePlaying, stop, setPlaybackBlocked } = useScrollController(chapterId, {
-    smoothingMs: chapterSettings.smoothingMs, active: journey.interactive, timing: manifest,
+    smoothingMs: chapterSettings.smoothingMs, active: journey.interactive, timing: manifest, frameRateLimit: settings.frameRateLimit,
   });
   const presentationHandle = useRef<ScrollPresentationHandle | null>(null);
   const snapshotCache = useRef<Record<number, ArtworkSnapshot>>({});
@@ -286,7 +286,7 @@ export default function App() {
     <SoundscapeProvider phase={journey.phase} chapterId={chapterId} progress={progress} reading={cultureOpen || encounterOpen || letterOpen}>
     <div className={`peony-experience phase-${journey.phase.toLowerCase().replaceAll('_', '-')} ${motionEnabled ? '' : 'environment-off'}`} data-journey-phase={journey.phase} style={textPlateVariables(settings) as CSSProperties}>
     {studyVisited && <div className="journey-study" inert={journey.phase !== 'HOME'} aria-hidden={journey.phase !== 'HOME'}>
-      <StudyHome phase={journey.phase} chapterId={chapterId} onSelect={journey.select} motionEnabled={motionEnabled} onToggleMotion={() => setMotionEnabled(value => !value)} onOpenSettings={openSettings} />
+      <StudyHome phase={journey.phase} chapterId={chapterId} onSelect={journey.select} motionEnabled={motionEnabled} onToggleMotion={() => setMotionEnabled(value => !value)} onOpenSettings={openSettings} renderQuality={settings.renderQuality} frameRateLimit={settings.frameRateLimit} />
     </div>}
     {journey.viewerMounted && <div className={`app-shell poetic-viewer journey-viewer${journey.interactive ? ' is-interactive' : ''}${nativeFullscreen ? ' is-native-fullscreen' : ''}`} inert={!journey.interactive} aria-hidden={!journey.interactive}>
       <a className="skip-link" href="#scroll-artwork" onClick={event => { event.preventDefault(); stageRef.current?.focus(); }}>跳至画卷</a>
@@ -353,6 +353,8 @@ export default function App() {
                 onManifest={receiveManifest}
                 wheelSpeed={chapterSettings.wheelSpeed}
                 sideMarginPercent={settings.sideMarginPercent}
+                renderQuality={settings.renderQuality}
+                frameRateLimit={settings.frameRateLimit}
                 artworkAnchors={artworkAnchors}
                 onArtworkAnchors={setProjectedAnchors}
                 onPresentationHandle={receivePresentationHandle}

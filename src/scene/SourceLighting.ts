@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import type { SceneManifest } from '../types';
 import type { SourceLighting, SourceMaterialLibrary } from './SourceMaterial';
+import { renderQualityProfile, type RenderQuality } from './renderQuality';
 
 export interface NativeLamp {
   name: string; type: 'SUN' | 'AREA' | 'POINT' | 'SPOT'; color: number[]; energy: number;
@@ -21,6 +22,7 @@ export interface SourceRenderSettings {
 
 export interface SourceLightingState extends SourceLighting {
   readonly shadowSubpixelBits: number | null;
+  setRenderQuality(quality: RenderQuality): void;
   requiredShadowCasters(scene: THREE.Scene, viewCamera: THREE.PerspectiveCamera, focusDistance: number): ReadonlySet<THREE.Mesh>;
   prepareShadows(renderer: THREE.WebGLRenderer, scene: THREE.Scene, materials: SourceMaterialLibrary,
     viewCamera: THREE.PerspectiveCamera, focusDistance: number): void;
@@ -40,7 +42,7 @@ interface ShadowGeometry {
 }
 
 function createLampShadow(lamp: NativeLamp, prefix: string): LampShadow {
-  const size = 2048;
+  const size = renderQualityProfile('720p').shadowMapSize;
   const target = new THREE.WebGLRenderTarget(size, size, { depthBuffer: true,
     minFilter: THREE.NearestFilter, magFilter: THREE.NearestFilter });
   target.depthTexture = new THREE.DepthTexture(size, size, THREE.UnsignedIntType);
@@ -244,11 +246,17 @@ export async function loadSourceRenderSettings(base: string, manifest: SceneMani
 /** Source energy stays in scene units; image emission is evaluated separately by its node graph. */
 export function createSourceLighting(settings: SourceRenderSettings): SourceLightingState {
   const vectors = (v: number[]) => new THREE.Vector3().fromArray(v);
+  let profile = renderQualityProfile('720p');
   const uniforms: Record<string, THREE.IUniform> = {
     sourceWorldRadiance: { value: vectors(settings.world.color).multiplyScalar(settings.world.strength) },
     sourceGgxIntegral: { value: ggxIntegral() },
     sourceShadowsEnabled: { value: 0 },
     sourceShadowRasterHalfStep: { value: 0 },
+    sourceShadowMapSize: { value: profile.shadowMapSize },
+    sourceShadowSampleCount: { value: profile.shadowSamples },
+    sourceSunSampleCount: { value: profile.sunSamples },
+    sourceAreaSampleCount: { value: profile.areaSamples },
+    sourceAreaColumns: { value: profile.areaSamples / 4 },
   };
   const shadows: LampShadow[] = [];
   const declarations: string[] = [], contributions: string[] = [];
@@ -277,11 +285,12 @@ export function createSourceLighting(settings: SourceRenderSettings): SourceLigh
       uniforms[`${prefix}CosRadius`] = { value: 1 / Math.sqrt(1 + radius * radius) };
       declarations.push(`uniform vec3 ${prefix}X,${prefix}Y;uniform float ${prefix}CosRadius;`);
       contributions.push(`{float visibility=${visibility};for(int sampleIndex=0;sampleIndex<16;sampleIndex++){
-        float cosine=mix(1.0,${prefix}CosRadius,(float(sampleIndex)+.5)/16.0);
+        if(sampleIndex>=sourceSunSampleCount)break;
+        float cosine=mix(1.0,${prefix}CosRadius,(float(sampleIndex)+.5)/float(sourceSunSampleCount));
         float radius=sqrt(max(0.0,1.0-cosine*cosine));
         float angle=float(sampleIndex)*2.399963229728653;
         vec3 L=normalize(cosine*${prefix}Direction+radius*(cos(angle)*${prefix}X+sin(angle)*${prefix}Y));
-        sourceIncident(N,V,L,${prefix}Color*(2.0*visibility/(16.0*(1.0+${prefix}CosRadius))),${prefix}Factors,roughness,F0,evaluateSpecular,diffuseRadiance,specularRadiance);
+        sourceIncident(N,V,L,${prefix}Color*(2.0*visibility/(float(sourceSunSampleCount)*(1.0+${prefix}CosRadius))),${prefix}Factors,roughness,F0,evaluateSpecular,diffuseRadiance,specularRadiance);
       }}`);
     } else if (lamp.type === 'AREA') {
       uniforms[`${prefix}Position`] = { value: vectors(lamp.position) };
@@ -296,12 +305,13 @@ export function createSourceLighting(settings: SourceRenderSettings): SourceLigh
       const emitterArea = (lamp.size ?? 1) * height * (circular ? Math.PI / 4 : 1);
       const normalization = lamp.normalize === false ? emitterArea : 1;
       contributions.push(`{float visibility=${visibility};for(int sampleIndex=0;sampleIndex<32;sampleIndex++){
+        if(sampleIndex>=sourceAreaSampleCount)break;
         ${circular
-          ? 'float radius=.5*sqrt((float(sampleIndex)+.5)/32.0);float angle=float(sampleIndex)*2.399963229728653;vec2 emitterPoint=radius*vec2(cos(angle),sin(angle));'
-          : 'int x=sampleIndex-8*(sampleIndex/8);int y=sampleIndex/8;vec2 emitterPoint=vec2((float(x)+.5)/8.0-.5,(float(y)+.5)/4.0-.5);'}
+          ? 'float radius=.5*sqrt((float(sampleIndex)+.5)/float(sourceAreaSampleCount));float angle=float(sampleIndex)*2.399963229728653;vec2 emitterPoint=radius*vec2(cos(angle),sin(angle));'
+          : 'int x=sampleIndex-sourceAreaColumns*(sampleIndex/sourceAreaColumns);int y=sampleIndex/sourceAreaColumns;vec2 emitterPoint=vec2((float(x)+.5)/float(sourceAreaColumns)-.5,(float(y)+.5)/4.0-.5);'}
         vec3 lightPosition=${prefix}Position+${prefix}X*emitterPoint.x+${prefix}Y*emitterPoint.y;
         vec3 delta=lightPosition-vSourceWorldPosition;float distance2=max(dot(delta,delta),1e-8);vec3 L=delta*inversesqrt(distance2);
-        vec3 incident=${prefix}Color*(visibility*${normalization.toPrecision(12)})*max(dot(${prefix}Direction,-L),0.0)/(32.0*SOURCE_LIGHT_PI*distance2);
+        vec3 incident=${prefix}Color*(visibility*${normalization.toPrecision(12)})*max(dot(${prefix}Direction,-L),0.0)/(float(sourceAreaSampleCount)*SOURCE_LIGHT_PI*distance2);
         sourceIncident(N,V,L,incident,${prefix}Factors,roughness,F0,evaluateSpecular,diffuseRadiance,specularRadiance);
       }}`);
     } else if (lamp.type === 'POINT') {
@@ -324,6 +334,16 @@ export function createSourceLighting(settings: SourceRenderSettings): SourceLigh
     return requiredCasters;
   };
   return { uniforms, requiredShadowCasters: collectCasters, get shadowSubpixelBits() { return rasterBits; },
+    setRenderQuality(quality) {
+      profile = renderQualityProfile(quality);
+      uniforms.sourceShadowMapSize.value = profile.shadowMapSize;
+      uniforms.sourceShadowSampleCount.value = profile.shadowSamples;
+      uniforms.sourceSunSampleCount.value = profile.sunSamples;
+      uniforms.sourceAreaSampleCount.value = profile.areaSamples;
+      uniforms.sourceAreaColumns.value = profile.areaSamples / 4;
+      if (rasterBits !== null) uniforms.sourceShadowRasterHalfStep.value = .5 / (profile.shadowMapSize * 2 ** rasterBits);
+      for (const shadow of shadows) if (shadow.target.width !== profile.shadowMapSize) shadow.target.setSize(profile.shadowMapSize, profile.shadowMapSize);
+    },
     prepareShadows(renderer, scene, materials, viewCamera, focusDistance) {
       if (!shadows.length) return;
       const gl = renderer.getContext();
@@ -331,7 +351,7 @@ export function createSourceLighting(settings: SourceRenderSettings): SourceLigh
         const bits: unknown = gl.getParameter(gl.SUBPIXEL_BITS);
         if (typeof bits !== 'number' || !Number.isFinite(bits) || bits < 0) throw new Error('阴影栅格精度读取失败。');
         rasterContext = gl; rasterBits = bits;
-        uniforms.sourceShadowRasterHalfStep.value = .5 / (2048 * 2 ** bits);
+        uniforms.sourceShadowRasterHalfStep.value = .5 / (profile.shadowMapSize * 2 ** bits);
       }
       collectCasters(scene, viewCamera, focusDistance);
       const visibility = new Map<THREE.Mesh, boolean>();
@@ -363,6 +383,8 @@ export function createSourceLighting(settings: SourceRenderSettings): SourceLigh
     fragment: `
     const float SOURCE_LIGHT_PI=3.141592653589793;
     uniform vec3 sourceWorldRadiance;uniform sampler2D sourceGgxIntegral;uniform float sourceShadowsEnabled,sourceShadowRasterHalfStep;
+    uniform float sourceShadowMapSize;
+    uniform int sourceShadowSampleCount,sourceSunSampleCount,sourceAreaSampleCount,sourceAreaColumns;
     ${declarations.join('\n')}
     float sourceShadowDistance(float depth,vec4 parameters){
       return parameters.w>.5?mix(parameters.x,parameters.y,depth):parameters.x*parameters.y/max(1e-6,parameters.y-depth*(parameters.y-parameters.x));
@@ -384,7 +406,7 @@ export function createSourceLighting(settings: SourceRenderSettings): SourceLigh
       vec2 depthGradient=abs(determinant)>1e-16
         ?vec2(dx.z*dy.y-dx.y*dy.z,dx.x*dy.z-dx.z*dy.x)/determinant:vec2(0.0);
       if(p.x<=0.0||p.y<=0.0||p.x>=1.0||p.y>=1.0||p.z<=0.0||p.z>=1.0)return 1.0;
-      const float mapSize=2048.0;
+      float mapSize=sourceShadowMapSize;
       // Vertices are snapped to the GPU's SUBPIXEL_BITS grid before raster
       // interpolation. Correcting with the ideal receiver plane leaves a
       // slope-dependent residual even with a perfect DEPTH_COMPONENT24 map.
@@ -396,17 +418,18 @@ export function createSourceLighting(settings: SourceRenderSettings): SourceLigh
       float receiver=sourceShadowDistance(p.z,parameters),blocker=sourceShadowDistance(centreDepth,parameters);
       float separation=max(0.0,receiver-blocker);
       float penumbra=parameters.z*separation/(parameters.w>.5?1.0:max(1e-5,blocker));
-      vec2 filterRadius=max(vec2(.75/2048.0),vec2(penumbra)/max(vec2(1e-5),frustum*(parameters.w>.5?1.0:receiver)));
+      vec2 filterRadius=max(vec2(.75/mapSize),vec2(penumbra)/max(vec2(1e-5),frustum*(parameters.w>.5?1.0:receiver)));
       float visibility=0.0;
       for(int sampleIndex=0;sampleIndex<16;sampleIndex++){
-        float radius=sqrt((float(sampleIndex)+.5)/16.0),angle=float(sampleIndex)*2.399963229728653;
+        if(sampleIndex>=sourceShadowSampleCount)break;
+        float radius=sqrt((float(sampleIndex)+.5)/float(sourceShadowSampleCount)),angle=float(sampleIndex)*2.399963229728653;
         vec2 uv=p.xy+filterRadius*radius*vec2(cos(angle),sin(angle));
         vec2 texelUv=(clamp(floor(uv*mapSize),vec2(0.0),vec2(mapSize-1.0))+.5)/mapSize;
         float depth=texture2D(map,texelUv).r;
         float receiverDepth=p.z+dot(depthGradient,texelUv-p.xy);
         visibility+=receiverDepth-depthBias<=depth?1.0:0.0;
       }
-      return visibility/16.0;
+      return visibility/float(sourceShadowSampleCount);
     }
     float sourceSmithG1(float nx,float alpha2){
       return 2.0*nx/max(1e-8,nx+sqrt(alpha2+(1.0-alpha2)*nx*nx));

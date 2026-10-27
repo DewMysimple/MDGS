@@ -24,7 +24,7 @@ interface NativeMaterialData {
   programs: Record<string, Program>; tracks: Record<string, SourceTrack>;
   coordinateTracks: Record<string, SourceTrack>;
 }
-export interface SourceFieldBinding { url: string; prepare?(texture: THREE.Texture): THREE.Texture | undefined; assign(texture: THREE.Texture | null): void }
+export interface SourceFieldBinding { url: string; prepare?(texture: THREE.Texture | null): THREE.Texture | undefined; assign(texture: THREE.Texture | null): void }
 export interface SourceLighting {
   /** Defines sourceLighting, sourceDiffuse and sourcePrincipled source closures. */
   fragment: string;
@@ -157,24 +157,37 @@ export class SourceMaterialLibrary {
       declarations.push(`uniform sampler2D ${field.uniform};`);
       uniforms[field.uniform] = { value: null };
       let sampler: THREE.Texture | undefined;
+      let assignedImage: THREE.Texture | null = null;
       let preparedImage: THREE.Texture | null = null;
+      let preparedSampler: THREE.Texture | undefined;
+      const discardPrepared = () => {
+        if (preparedSampler) { this.imageSamplers.delete(preparedSampler); preparedSampler.dispose(); }
+        preparedSampler = undefined; preparedImage = null;
+      };
       const prepare = (texture: THREE.Texture | null) => {
-        if (texture === preparedImage) return sampler;
-        if (sampler) { this.imageSamplers.delete(sampler); sampler.dispose(); sampler = undefined; }
+        if (texture === assignedImage) { discardPrepared(); return sampler; }
+        if (texture === preparedImage) return preparedSampler;
+        discardPrepared();
         preparedImage = texture;
         if (texture && field.encoding === 'image') {
           // One source image can be used by both CLIP and REPEAT nodes. Keep
           // each node's sampler state without mutating the shared URL cache.
-          sampler = texture.clone();
-          sampler.wrapS = sampler.wrapT = field.extension === 'REPEAT' ? THREE.RepeatWrapping
+          preparedSampler = texture.clone();
+          preparedSampler.wrapS = preparedSampler.wrapT = field.extension === 'REPEAT' ? THREE.RepeatWrapping
             : field.extension === 'MIRROR' ? THREE.MirroredRepeatWrapping : THREE.ClampToEdgeWrapping;
-          sampler.colorSpace = field.colorSpace === 'Non-Color' ? THREE.NoColorSpace : THREE.SRGBColorSpace;
-          sampler.needsUpdate = true; this.imageSamplers.add(sampler);
+          preparedSampler.colorSpace = field.colorSpace === 'Non-Color' ? THREE.NoColorSpace : THREE.SRGBColorSpace;
+          preparedSampler.needsUpdate = true; this.imageSamplers.add(preparedSampler);
         }
-        return sampler;
+        return preparedSampler;
       };
       return { url: this.absolute(field.url), prepare, assign: texture => {
-        uniforms[field.uniform].value = prepare(texture) ?? texture;
+        const next = prepare(texture);
+        // A lower/higher resolution candidate can upload while the current
+        // sampler still draws. Retire it only at the successful assignment.
+        if (sampler && sampler !== next) { this.imageSamplers.delete(sampler); sampler.dispose(); }
+        sampler = next; assignedImage = texture;
+        preparedSampler = undefined; preparedImage = null;
+        uniforms[field.uniform].value = sampler ?? texture;
       } };
     });
     const material = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: !program.opaque,

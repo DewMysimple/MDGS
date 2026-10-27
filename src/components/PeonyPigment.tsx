@@ -1,13 +1,14 @@
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { PeonyBloomSurface } from '../scene/PeonyBloomSurface';
 import { atlasArt } from '../data/peonyAtlas';
+import type { FrameRateLimit, RenderQuality } from '../scene/renderQuality';
 
 export interface PeonyPigmentHandle { flourish: () => void }
-interface Props { active: boolean; motionEnabled: boolean; onBrush: () => void }
+interface Props { active: boolean; motionEnabled: boolean; onBrush: () => void; renderQuality?: RenderQuality; frameRateLimit?: FrameRateLimit }
 
-const PeonyPigment = forwardRef<PeonyPigmentHandle, Props>(function PeonyPigment({ active, motionEnabled, onBrush }, ref) {
+const PeonyPigment = forwardRef<PeonyPigmentHandle, Props>(function PeonyPigment({ active, motionEnabled, onBrush, renderQuality = '720p', frameRateLimit = 30 }, ref) {
   const host = useRef<HTMLDivElement>(null), surface = useRef<PeonyBloomSurface | null>(null);
-  const latest = useRef({ active, motionEnabled, onBrush }); latest.current = { active, motionEnabled, onBrush };
+  const latest = useRef({ active, motionEnabled, onBrush, renderQuality, frameRateLimit }); latest.current = { active, motionEnabled, onBrush, renderQuality, frameRateLimit };
   const [state, setState] = useState<'pending' | 'live' | 'image'>('pending');
   useImperativeHandle(ref, () => ({ flourish: () => surface.current?.flourish() }), []);
   useEffect(() => {
@@ -15,11 +16,15 @@ const PeonyPigment = forwardRef<PeonyPigmentHandle, Props>(function PeonyPigment
     let alive = true;
     try {
       const painting = new PeonyBloomSurface(host.current, atlasArt.peonies, ready => { if (alive) setState(ready ? 'live' : 'image'); }, () => latest.current.onBrush());
-      surface.current = painting; painting.setState(latest.current.active, latest.current.motionEnabled);
+      surface.current = painting;
+      painting.setRenderQuality(latest.current.renderQuality); painting.setFrameRateLimit(latest.current.frameRateLimit);
+      painting.setState(latest.current.active, latest.current.motionEnabled);
       return () => { alive = false; surface.current = null; painting.dispose(); };
     } catch { setState('image'); }
   }, []);
   useEffect(() => { surface.current?.setState(active, motionEnabled); }, [active, motionEnabled]);
+  useEffect(() => { surface.current?.setRenderQuality(renderQuality); }, [renderQuality]);
+  useEffect(() => { surface.current?.setFrameRateLimit(frameRateLimit); }, [frameRateLimit]);
   return <div className={`atlas-pigment${state === 'live' ? ' is-painted' : ''}`} data-pigment-state={state}>
     <img className="atlas-peonies" src={atlasArt.peonies} alt="" />
     <div className="atlas-pigment-host" ref={host} />

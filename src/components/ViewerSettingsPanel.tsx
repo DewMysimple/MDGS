@@ -47,6 +47,38 @@ export default function ViewerSettingsPanel({ open, chapterId, settings, onChang
     </header>
     <div className="settings-body">
       <p className="settings-intro">调整即生效，保存在此浏览器。每卷的滚轮手感可独立设置。</p>
+      <section className="settings-render" aria-labelledby="settings-render-title">
+        <h3 id="settings-render-title">画质与帧率</h3>
+        <p className="settings-help" id="settings-render-help">修改画质与帧率会改变画面清晰度和运动流畅度；画质、帧率越高，对设备性能要求越高。设备较旧或播放卡顿时，建议720p、30帧。</p>
+        <fieldset aria-describedby="settings-render-help">
+          <legend>画面清晰度</legend>
+          <div className="settings-quality-options">
+            {([
+              ['720p', '720p', '省资源，适合旧设备'],
+              ['1080p', '1080p', '更清晰，细节更丰富'],
+              ['2k', '2K', '更精细，性能要求较高'],
+            ] as const).map(([value, title, description]) => <label key={value} className={`settings-render-choice${settings.renderQuality === value ? ' is-selected' : ''}`}>
+              <input type="radio" name="render-quality" value={value} checked={settings.renderQuality === value}
+                onChange={() => onChange({ ...settings, renderQuality: value })} />
+              <span><strong>{title}</strong><small>{description}</small></span>
+            </label>)}
+          </div>
+        </fieldset>
+        <fieldset aria-describedby="settings-render-help settings-framerate-help">
+          <legend>帧率上限</legend>
+          <div className="settings-framerate-options">
+            {([
+              [30, '30帧 / 秒', '上限30帧，较省资源'],
+              [60, '60帧 / 秒', '上限60帧，运动更流畅'],
+            ] as const).map(([value, title, description]) => <label key={value} className={`settings-render-choice${settings.frameRateLimit === value ? ' is-selected' : ''}`}>
+              <input type="radio" name="frame-rate-limit" value={value} checked={settings.frameRateLimit === value}
+                onChange={() => onChange({ ...settings, frameRateLimit: value })} />
+              <span><strong>{title}</strong><small>{description}</small></span>
+            </label>)}
+          </div>
+          <p className="settings-help settings-framerate-help" id="settings-framerate-help">所选帧率仅为上限，实际流畅度取决于设备与当前画面。</p>
+        </fieldset>
+      </section>
       <section className="settings-narrative" aria-labelledby="settings-narrative-title">
         <h3 id="settings-narrative-title">题跋随心</h3>
         <p className="settings-help">诗意短章为当代新题；原作全文可在“画外拾遗”细读。</p>
