@@ -15,7 +15,7 @@ const steps: Record<GuideStage, GuideOverlayStep[]> = {
     { selector: '[data-guide="home-motion"]', title: '风物轻动', description: '随心开启或关闭首页花影与环境中的轻动。' },
     { selector: '.atlas-settings', title: '设置', description: '可调整画质、帧率、文字和游观方式。' },
     { selector: '.atlas-begin', title: '启卷 · 入画', description: '从第一卷出发，让画卷徐徐展开。' },
-    { selector: '.atlas-flower-invitation', title: '轻拂花影', description: '轻触这里，唤醒首页的牡丹花色。' },
+    { selector: '.atlas-flower-invitation', title: '轻拂花影', description: '点击让牡丹花色轻亮，也可以再次轻拂。' },
     { selector: '.atlas-chapter-grid', title: '择卷而入', description: '四卷可以自由选择。进入画卷后，还有更多游观指引。' },
   ],
   viewer: [

@@ -23,10 +23,12 @@ export default function PeonyAtlasHome({ phase, chapterId, onSelect, motionEnabl
   const pigment = useRef<PeonyPigmentHandle>(null);
   const pointerPacer = useRef(new FramePacer(frameRateLimit));
   const stopPointer = useRef<() => void>(() => {});
+  const flowerFeedbackTimer = useRef(0);
   const noteTrigger = useRef<HTMLElement | null>(null), previousHome = useRef(phase === 'HOME');
   const [ready, setReady] = useState(false), [error, setError] = useState(false), [attempt, setAttempt] = useState(0);
   const [hover, setHover] = useState<number | null>(null), [note, setNote] = useState<Note>(null);
-  const [flowerTouched, setFlowerTouched] = useState(false), [visible, setVisible] = useState(!document.hidden);
+  const [flowerTouched, setFlowerTouched] = useState(false), [flowerResponding, setFlowerResponding] = useState(false);
+  const [flowerResponseCount, setFlowerResponseCount] = useState(0), [visible, setVisible] = useState(!document.hidden);
   const [reduced, setReduced] = useState(() => matchMedia('(prefers-reduced-motion: reduce)').matches);
   const home = phase === 'HOME', animated = motionEnabled && !reduced && visible && home;
   const latest = useRef({ phase, ready, animated, hover }); latest.current = { phase, ready, animated, hover };
@@ -94,17 +96,30 @@ export default function PeonyAtlasHome({ phase, chapterId, onSelect, motionEnabl
     if (home && !previousHome.current) requestAnimationFrame(() => root.current?.querySelector<HTMLButtonElement>(`.study-entry-button[data-chapter-id="${chapterId}"]`)?.focus({ preventScroll: true }));
     previousHome.current = home;
   }, [home, chapterId]);
+  useEffect(() => {
+    if (!home) { window.clearTimeout(flowerFeedbackTimer.current); setFlowerResponding(false); }
+    return () => window.clearTimeout(flowerFeedbackTimer.current);
+  }, [home]);
   useEffect(() => { if (note && !dialog.current?.open) dialog.current?.showModal(); if (!note && dialog.current?.open) dialog.current.close(); }, [note]);
   function openNote(value: Note, trigger: HTMLElement) { noteTrigger.current = trigger; setNote(value); }
   function closeNote() { setNote(null); noteTrigger.current?.focus({ preventScroll: true }); }
   function choose(id: number) { if (home && ready && !error) onSelect(id); }
+  function awakenFlower() {
+    if (!home || !ready || error) return;
+    pigment.current?.flourish();
+    setFlowerTouched(true);
+    setFlowerResponseCount(value => value + 1);
+    setFlowerResponding(true);
+    window.clearTimeout(flowerFeedbackTimer.current);
+    flowerFeedbackTimer.current = window.setTimeout(() => setFlowerResponding(false), 2600);
+  }
 
-  return <section ref={root} className={`study-home peony-atlas${ready ? ' is-ready' : ''}${!home ? ' is-travelling' : ''}${flowerTouched ? ' is-flower-touched' : ''}`}
-    data-phase={phase} data-environment={motionEnabled ? 'on' : 'off'} data-paused={!animated} aria-label="国色长卷·数字牡丹赋，牡丹画境" aria-busy={!ready || !home}>
+  return <section ref={root} className={`study-home peony-atlas${ready ? ' is-ready' : ''}${!home ? ' is-travelling' : ''}${flowerTouched ? ' is-flower-touched' : ''}${flowerResponding ? ' is-flower-responding' : ''}`}
+    data-phase={phase} data-environment={motionEnabled ? 'on' : 'off'} data-paused={!animated} data-flower-cycle={flowerResponseCount % 2} aria-label="国色长卷·数字牡丹赋，牡丹画境" aria-busy={!ready || !home}>
     <div className="atlas-art" aria-hidden="true">
       <img key={`landscape-${attempt}`} className="atlas-landscape" src={atlasArt.landscape} alt="" fetchPriority="high" />
       <div className="atlas-light" /><div className="atlas-haze atlas-haze-one" /><div className="atlas-haze atlas-haze-two" />
-      <div className="atlas-peony-plane"><PeonyPigment key={`peonies-${attempt}`} ref={pigment} active={home} motionEnabled={motionEnabled && !reduced} renderQuality={renderQuality} frameRateLimit={frameRateLimit} onBrush={() => setFlowerTouched(true)} /><div className="atlas-flower-glow" /></div>
+      <div className="atlas-peony-plane"><PeonyPigment key={`peonies-${attempt}`} ref={pigment} active={home} motionEnabled={motionEnabled && !reduced} renderQuality={renderQuality} frameRateLimit={frameRateLimit} onBrush={() => setFlowerTouched(true)} /><div key={flowerResponseCount} className="atlas-flower-glow" /></div>
       <img key={`branch-${attempt}`} className="atlas-ivory-branch" src={atlasArt.branch} alt="" />
       <div className="atlas-petals">{Array.from({ length: 5 }, (_, i) => <i key={i} style={{ '--petal': i } as CSSProperties} />)}</div>
       <div className="atlas-paper-grain" />
@@ -128,7 +143,7 @@ export default function PeonyAtlasHome({ phase, chapterId, onSelect, motionEnabl
       <button type="button" className="atlas-begin" onClick={() => choose(1)} disabled={!home || !ready || error}><span>启卷 · 入画</span><ArrowRight size={19} strokeWidth={1.1} /><i /></button>
       <p className="atlas-begin-note">四卷相续 · 移步成景 · 以心观花</p>
     </main>
-    <button type="button" className="atlas-flower-invitation" disabled={!home || !ready} onClick={() => { pigment.current?.flourish(); setFlowerTouched(true); }} aria-label="轻拂花影，唤醒牡丹花色"><span className="atlas-flower-dot"><i /></span><span>{flowerTouched ? '花开于纸，也开在人间' : '轻拂花影 · 唤醒花色'}</span></button>
+    <button type="button" className="atlas-flower-invitation" disabled={!home || !ready || error} onClick={awakenFlower} aria-label="轻拂花影，唤醒牡丹花色" title="点击唤醒牡丹花色，可再次轻拂"><span className="atlas-flower-dot"><i /></span><span aria-live="polite">{flowerResponding ? flowerResponseCount % 2 ? '花开于纸，也开在人间' : '花色轻醒 · 春意盈枝' : '轻拂花影 · 唤醒花色'}</span></button>
     <section className="atlas-chapters" aria-label="案上四卷">
       <div className="atlas-chapters-heading"><span><i />择卷而入</span><small>四段花事，一脉国色</small><ArrowDown size={14} strokeWidth={1} /></div>
       <div className="atlas-chapter-grid">{chapters.map((chapter, i) => <button key={chapter.id} type="button"

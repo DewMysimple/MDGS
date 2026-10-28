@@ -17,12 +17,20 @@
 .atlas-peony-plane { position:absolute; right:4.8%; top:13%; width:51%; height:65%; transform-origin:76% 85%; transform:translate(calc(var(--atlas-x)*-22px),calc(var(--atlas-y)*-15px)) rotate(calc(var(--atlas-x)*.65deg)); transition:filter 1.2s; }
 .atlas-peonies { width:100%; height:100%; object-fit:contain; filter:saturate(.83); animation:atlas-flower-breathe 15s ease-in-out infinite alternate; }
 .atlas-pigment,.atlas-pigment-host { position:absolute; inset:0; }
+.atlas-pigment { transition:filter .65s ease; }
+.is-flower-responding .atlas-pigment { filter:saturate(1.26) brightness(1.045); }
+.peony-atlas[data-paused=true] .atlas-pigment { transition:none; }
+.peony-atlas[data-paused=true][data-flower-cycle="0"].is-flower-responding .atlas-pigment { filter:saturate(1.16) brightness(1.025); }
 .atlas-pigment-host canvas { display:block; width:100%; height:100%; pointer-events:auto; }
 .atlas-pigment:not(.is-painted) .atlas-pigment-host { visibility:hidden; }
 .atlas-pigment[data-pigment-state=pending]>.atlas-peonies { visibility:hidden; }
 .atlas-pigment.is-painted>.atlas-peonies { visibility:hidden; }
 .atlas-flower-glow { position:absolute; inset:8% 15% 12% 10%; background:radial-gradient(ellipse,#e0b98818,transparent 66%); opacity:0; transform:scale(.7); transition:opacity 1.2s,transform 2s; }
 .is-flower-touched .atlas-flower-glow { opacity:1; transform:scale(1.15); }
+.is-flower-responding .atlas-flower-glow { background:radial-gradient(ellipse,#f5c68c5c,#d9876d26 38%,transparent 70%); opacity:.9; transform:scale(1.12); }
+.peony-atlas[data-paused=false].is-flower-responding .atlas-flower-glow { animation:atlas-flower-awaken 2.6s ease-out both; }
+.peony-atlas[data-paused=true] .atlas-flower-glow { transition:none; }
+@keyframes atlas-flower-awaken { 0%{opacity:.25;transform:scale(.84)} 28%{opacity:1;transform:scale(1.1)} 100%{opacity:.3;transform:scale(1.2)} }
 .atlas-ivory-branch { position:absolute; width:24%; height:auto; left:-9%; bottom:21%; transform:translate(calc(var(--atlas-x)*-32px),calc(var(--atlas-y)*-18px)) rotate(-10deg); opacity:.7; filter:saturate(.65); }
 .atlas-botanical-rule { position:absolute; width:29%; height:40%; right:10%; top:17%; border-right:1px solid #b1975438; border-bottom:1px solid #b1975438; transform:translate(calc(var(--atlas-x)*-13px),calc(var(--atlas-y)*-8px)); }
 .atlas-botanical-rule>span { position:absolute; width:7px; height:7px; right:-4px; bottom:-4px; border:1px solid #b1975480; transform:rotate(45deg); background:#ede6d6; }
