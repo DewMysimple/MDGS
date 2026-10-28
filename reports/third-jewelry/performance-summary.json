@@ -1,0 +1,954 @@
+{
+  "machine": "Windows, RTX 5060 Ti, isolated Electron profile",
+  "measurement": "DOM observation of rendered source frame updates; not physical display presentation",
+  "sourceSha256": "b8ca4c4e704f592f336aa46d2902cfaa229b5f06b2c983cd799474b7c248719a",
+  "samples": {
+    "chapter3-jewelry-before-unpacked-20261028": {
+      "cases": [
+        {
+          "rate": 30,
+          "quality": "720p",
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 360,
+          "elapsedMs": 11965.199999999255,
+          "intervalMs": {
+            "p50": 33.100000001490116,
+            "p95": 36.19999999925494,
+            "p99": 37,
+            "max": 42.69999999925494
+          },
+          "gapsOver50ms": 0,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1.0000000000004547
+        },
+        {
+          "rate": 60,
+          "quality": "720p",
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 721,
+          "elapsedMs": 11998.900000002235,
+          "intervalMs": {
+            "p50": 16.099999997764826,
+            "p95": 20.199999999254942,
+            "p99": 20.600000001490116,
+            "max": 22.599999997764826
+          },
+          "gapsOver50ms": 0,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 0.5000000000006821
+        }
+      ],
+      "errors": []
+    },
+    "chapter3-jewelry-after-20261028": {
+      "cases": [
+        {
+          "rate": 30,
+          "quality": "720p",
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 361,
+          "elapsedMs": 11998.300000000745,
+          "intervalMs": {
+            "p50": 33,
+            "p95": 36.30000000074506,
+            "p99": 37.599999997764826,
+            "max": 38.29999999701977
+          },
+          "gapsOver50ms": 0,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1.0000000000004547
+        },
+        {
+          "rate": 60,
+          "quality": "720p",
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 721,
+          "elapsedMs": 11999.800000000745,
+          "intervalMs": {
+            "p50": 16.099999997764826,
+            "p95": 20.199999999254942,
+            "p99": 21,
+            "max": 21.800000000745058
+          },
+          "gapsOver50ms": 0,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 0.5000000000004547
+        }
+      ],
+      "errors": []
+    },
+    "jewelry-four-chapter-20261028": {
+      "cases": [
+        {
+          "chapter": 1,
+          "rate": 30,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 6,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 181,
+          "elapsedMs": 6001.599999997765,
+          "intervalMs": {
+            "p50": 32.5,
+            "p95": 44.599999997764826,
+            "p99": 62.80000000074506,
+            "max": 65.89999999850988
+          },
+          "gapsOver50ms": 6,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1.0000000000002274,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 1,
+          "rate": 60,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 6,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 362,
+          "elapsedMs": 6018,
+          "intervalMs": {
+            "p50": 16.100000001490116,
+            "p95": 20.600000001490116,
+            "p99": 33,
+            "max": 35.600000001490116
+          },
+          "gapsOver50ms": 0,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 0.5000000000002274,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 2,
+          "rate": 30,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 6,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 181,
+          "elapsedMs": 5999.699999999255,
+          "intervalMs": {
+            "p50": 32.5,
+            "p95": 36.100000001490116,
+            "p99": 50.399999998509884,
+            "max": 54.100000001490116
+          },
+          "gapsOver50ms": 2,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1.0000000000004547,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 2,
+          "rate": 60,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 6,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 360,
+          "elapsedMs": 5999.400000002235,
+          "intervalMs": {
+            "p50": 16,
+            "p95": 20.199999999254942,
+            "p99": 22.200000002980232,
+            "max": 40.099999997764826
+          },
+          "gapsOver50ms": 0,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 3,
+          "rate": 30,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 6,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 181,
+          "elapsedMs": 6001.800000000745,
+          "intervalMs": {
+            "p50": 33.19999999925494,
+            "p95": 36.29999999701977,
+            "p99": 37.30000000074506,
+            "max": 38.399999998509884
+          },
+          "gapsOver50ms": 0,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1.0000000000002274,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 3,
+          "rate": 60,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 6,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 362,
+          "elapsedMs": 6015.70000000298,
+          "intervalMs": {
+            "p50": 16,
+            "p95": 20.199999999254942,
+            "p99": 21.5,
+            "max": 23.100000001490116
+          },
+          "gapsOver50ms": 0,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 0.5000000000002274,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 4,
+          "rate": 30,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 6,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 181,
+          "elapsedMs": 6000.199999999255,
+          "intervalMs": {
+            "p50": 32.899999998509884,
+            "p95": 36.19999999925494,
+            "p99": 44.20000000298023,
+            "max": 49.900000002235174
+          },
+          "gapsOver50ms": 0,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 4,
+          "rate": 60,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 6,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 362,
+          "elapsedMs": 6016.199999999255,
+          "intervalMs": {
+            "p50": 16.099999997764826,
+            "p95": 20.199999999254942,
+            "p99": 21.799999997019768,
+            "max": 28.100000001490116
+          },
+          "gapsOver50ms": 0,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 0.5,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        }
+      ],
+      "errors": []
+    },
+    "jewelry-repeat-chapters12-20261028": {
+      "cases": [
+        {
+          "chapter": 1,
+          "rate": 30,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 12,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 361,
+          "elapsedMs": 12001.099999997765,
+          "intervalMs": {
+            "p50": 32.80000000074506,
+            "p95": 37.5,
+            "p99": 51.900000002235174,
+            "max": 65
+          },
+          "gapsOver50ms": 7,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1.0000000000006821,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 1,
+          "rate": 60,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 12,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 717,
+          "elapsedMs": 12016.699999999255,
+          "intervalMs": {
+            "p50": 16.099999997764826,
+            "p95": 21.100000001490116,
+            "p99": 32.69999999925494,
+            "max": 47.399999998509884
+          },
+          "gapsOver50ms": 0,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1.0000000000002274,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 2,
+          "rate": 30,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 12,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 361,
+          "elapsedMs": 11999.89999999851,
+          "intervalMs": {
+            "p50": 32.400000002235174,
+            "p95": 36.20000000298023,
+            "p99": 48.900000002235174,
+            "max": 55.400000002235174
+          },
+          "gapsOver50ms": 3,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1.0000000000004547,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 2,
+          "rate": 60,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 12,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 719,
+          "elapsedMs": 11999.39999999851,
+          "intervalMs": {
+            "p50": 16,
+            "p95": 20.100000001490116,
+            "p99": 21,
+            "max": 54.5
+          },
+          "gapsOver50ms": 2,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        }
+      ],
+      "errors": []
+    },
+    "jewelry-third-2k-20261028": {
+      "cases": [
+        {
+          "chapter": 3,
+          "rate": 30,
+          "quality": "2k",
+          "startProgress": 0.8,
+          "durationSeconds": 12,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 361,
+          "elapsedMs": 12000.10000000149,
+          "intervalMs": {
+            "p50": 33,
+            "p95": 36.20000000298023,
+            "p99": 36.80000000074506,
+            "max": 41.5
+          },
+          "gapsOver50ms": 0,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1.0000000000004547,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 3,
+          "rate": 60,
+          "quality": "2k",
+          "startProgress": 0.8,
+          "durationSeconds": 12,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 718,
+          "elapsedMs": 12066.10000000149,
+          "intervalMs": {
+            "p50": 16.100000001490116,
+            "p95": 23.699999999254942,
+            "p99": 29.699999999254942,
+            "max": 33.899999998509884
+          },
+          "gapsOver50ms": 0,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1.0000000000004547,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        }
+      ],
+      "errors": []
+    },
+    "jewelry-bitmap-trial12-20261028": {
+      "cases": [
+        {
+          "chapter": 1,
+          "rate": 30,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 12,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 361,
+          "elapsedMs": 12022.5,
+          "intervalMs": {
+            "p50": 32.80000000074506,
+            "p95": 38.80000000074506,
+            "p99": 64.60000000149012,
+            "max": 83.5
+          },
+          "gapsOver50ms": 10,
+          "gapsOver80ms": 1,
+          "maxSourceStep": 1.0000000000006821,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 1,
+          "rate": 60,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 12,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 709,
+          "elapsedMs": 12016.5,
+          "intervalMs": {
+            "p50": 16.099999997764826,
+            "p95": 21,
+            "p99": 38.20000000298023,
+            "max": 54.19999999925494
+          },
+          "gapsOver50ms": 1,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1.0000000000002274,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 2,
+          "rate": 30,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 12,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 359,
+          "elapsedMs": 11968.10000000149,
+          "intervalMs": {
+            "p50": 32.900000002235174,
+            "p95": 36.19999999925494,
+            "p99": 53.900000002235174,
+            "max": 71.69999999925494
+          },
+          "gapsOver50ms": 4,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1.0000000000004547,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 2,
+          "rate": 60,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 12,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 714,
+          "elapsedMs": 11999.39999999851,
+          "intervalMs": {
+            "p50": 16.099999997764826,
+            "p95": 20.100000001490116,
+            "p99": 21.099999997764826,
+            "max": 63.600000001490116
+          },
+          "gapsOver50ms": 2,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        }
+      ],
+      "errors": []
+    },
+    "jewelry-single-prefetch-trial12-20261028": {
+      "cases": [
+        {
+          "chapter": 1,
+          "rate": 30,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 12,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 360,
+          "elapsedMs": 11969.400000002235,
+          "intervalMs": {
+            "p50": 33.099999997764826,
+            "p95": 37.5,
+            "p99": 54.19999999925494,
+            "max": 63.600000001490116
+          },
+          "gapsOver50ms": 6,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1.0000000000006821,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 1,
+          "rate": 60,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 12,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 722,
+          "elapsedMs": 12017.10000000149,
+          "intervalMs": {
+            "p50": 16.099999997764826,
+            "p95": 20.699999999254942,
+            "p99": 32.899999998509884,
+            "max": 41.80000000074506
+          },
+          "gapsOver50ms": 0,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 0.5000000000004547,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 2,
+          "rate": 30,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 12,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 360,
+          "elapsedMs": 11968,
+          "intervalMs": {
+            "p50": 32.79999999701977,
+            "p95": 36.30000000074506,
+            "p99": 47.099999997764826,
+            "max": 54.70000000298023
+          },
+          "gapsOver50ms": 2,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1.0000000000004547,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 2,
+          "rate": 60,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 12,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 718,
+          "elapsedMs": 12000.300000000745,
+          "intervalMs": {
+            "p50": 16.099999997764826,
+            "p95": 20.199999999254942,
+            "p99": 30.599999997764826,
+            "max": 38.79999999701977
+          },
+          "gapsOver50ms": 0,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        }
+      ],
+      "errors": []
+    },
+    "jewelry-medium-smoothing-trial12-20261028": {
+      "cases": [
+        {
+          "chapter": 1,
+          "rate": 30,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 12,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 361,
+          "elapsedMs": 12001.5,
+          "intervalMs": {
+            "p50": 33,
+            "p95": 37.69999999925494,
+            "p99": 53.69999999925494,
+            "max": 64.69999999925494
+          },
+          "gapsOver50ms": 8,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1.0000000000006821,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 1,
+          "rate": 60,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 12,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 718,
+          "elapsedMs": 12000.70000000298,
+          "intervalMs": {
+            "p50": 16.099999997764826,
+            "p95": 21.300000000745058,
+            "p99": 33.30000000074506,
+            "max": 53.100000001490116
+          },
+          "gapsOver50ms": 1,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 2,
+          "rate": 30,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 12,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 360,
+          "elapsedMs": 11968.10000000149,
+          "intervalMs": {
+            "p50": 32.600000001490116,
+            "p95": 36.399999998509884,
+            "p99": 48.900000002235174,
+            "max": 56.5
+          },
+          "gapsOver50ms": 3,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1.0000000000004547,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 2,
+          "rate": 60,
+          "quality": "720p",
+          "startProgress": 0.53,
+          "durationSeconds": 12,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 719,
+          "elapsedMs": 11999.800000000745,
+          "intervalMs": {
+            "p50": 16.099999997764826,
+            "p95": 20.199999999254942,
+            "p99": 21,
+            "max": 53.099999997764826
+          },
+          "gapsOver50ms": 1,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        }
+      ],
+      "errors": []
+    },
+    "jewelry-third-full-20261028": {
+      "cases": [
+        {
+          "chapter": 3,
+          "rate": 30,
+          "quality": "720p",
+          "startProgress": 0,
+          "durationSeconds": 75,
+          "endedBeforeTimeout": false,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 168,
+          "elapsedMs": 76296.39999999851,
+          "intervalMs": {
+            "p50": 36.100000001490116,
+            "p95": 1004.5,
+            "p99": 1005.3999999985099,
+            "max": 1005.5
+          },
+          "gapsOver50ms": 73,
+          "gapsOver80ms": 73,
+          "maxSourceStep": 1.0000000000000284,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        },
+        {
+          "chapter": 3,
+          "rate": 60,
+          "quality": "720p",
+          "startProgress": 0,
+          "durationSeconds": 75,
+          "endedBeforeTimeout": true,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 4134,
+          "elapsedMs": 68916,
+          "intervalMs": {
+            "p50": 16.099999997764826,
+            "p95": 20.199999999254942,
+            "p99": 20.599999997764826,
+            "max": 59.69999999925494
+          },
+          "gapsOver50ms": 1,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        }
+      ],
+      "errors": []
+    },
+    "jewelry-third-full-30-repeat-20261028": {
+      "cases": [
+        {
+          "chapter": 3,
+          "rate": 30,
+          "quality": "720p",
+          "startProgress": 0,
+          "durationSeconds": 75,
+          "endedBeforeTimeout": true,
+          "hidden": false,
+          "dpr": 1.25,
+          "screen": {
+            "width": 2048,
+            "height": 1152
+          },
+          "frames": 2068,
+          "elapsedMs": 68930.5,
+          "intervalMs": {
+            "p50": 32.600000001490116,
+            "p95": 36.20000000298023,
+            "p99": 36.80000000074506,
+            "max": 76.19999999925494
+          },
+          "gapsOver50ms": 1,
+          "gapsOver80ms": 0,
+          "maxSourceStep": 1.0000000000006821,
+          "waitCount": 0,
+          "completedWaitMs": 0,
+          "longTasks": 0
+        }
+      ],
+      "errors": []
+    }
+  },
+  "anomalousSample": "The initial full 30fps run advanced only to 8.1% with approximately one-second intervals; excluded as an invalid full-playback sample. The independent repeat reached the end."
+}
