@@ -1,21 +1,19 @@
-import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { PeonyBloomSurface } from '../scene/PeonyBloomSurface';
 import { atlasArt } from '../data/peonyAtlas';
 import type { FrameRateLimit, RenderQuality } from '../scene/renderQuality';
 
-export interface PeonyPigmentHandle { flourish: () => void }
-interface Props { active: boolean; motionEnabled: boolean; onBrush: () => void; renderQuality?: RenderQuality; frameRateLimit?: FrameRateLimit }
+interface Props { active: boolean; motionEnabled: boolean; renderQuality?: RenderQuality; frameRateLimit?: FrameRateLimit }
 
-const PeonyPigment = forwardRef<PeonyPigmentHandle, Props>(function PeonyPigment({ active, motionEnabled, onBrush, renderQuality = '720p', frameRateLimit = 30 }, ref) {
+export default function PeonyPigment({ active, motionEnabled, renderQuality = '720p', frameRateLimit = 30 }: Props) {
   const host = useRef<HTMLDivElement>(null), surface = useRef<PeonyBloomSurface | null>(null);
-  const latest = useRef({ active, motionEnabled, onBrush, renderQuality, frameRateLimit }); latest.current = { active, motionEnabled, onBrush, renderQuality, frameRateLimit };
+  const latest = useRef({ active, motionEnabled, renderQuality, frameRateLimit }); latest.current = { active, motionEnabled, renderQuality, frameRateLimit };
   const [state, setState] = useState<'pending' | 'live' | 'image'>('pending');
-  useImperativeHandle(ref, () => ({ flourish: () => surface.current?.flourish() }), []);
   useEffect(() => {
     if (!host.current) return;
     let alive = true;
     try {
-      const painting = new PeonyBloomSurface(host.current, atlasArt.peonies, ready => { if (alive) setState(ready ? 'live' : 'image'); }, () => latest.current.onBrush());
+      const painting = new PeonyBloomSurface(host.current, atlasArt.peonies, ready => { if (alive) setState(ready ? 'live' : 'image'); });
       surface.current = painting;
       painting.setRenderQuality(latest.current.renderQuality); painting.setFrameRateLimit(latest.current.frameRateLimit);
       painting.setState(latest.current.active, latest.current.motionEnabled);
@@ -29,5 +27,4 @@ const PeonyPigment = forwardRef<PeonyPigmentHandle, Props>(function PeonyPigment
     <img className="atlas-peonies" src={atlasArt.peonies} alt="" />
     <div className="atlas-pigment-host" ref={host} />
   </div>;
-});
-export default PeonyPigment;
+}

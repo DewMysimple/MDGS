@@ -21,8 +21,6 @@ const fragment = `
   uniform sampler2D uPainting;
   uniform float uReveal;
   uniform float uTime;
-  uniform vec4 uTouches[8];
-  uniform float uAspect;
   varying vec2 vUv;
   float grain(vec2 p) {
     vec2 cell = floor(p), f = fract(p);
@@ -36,27 +34,12 @@ const fragment = `
     if (pigment.a < 0.001) discard;
     float wash = grain(vUv * 13.0) * 0.58 + grain(vUv * 37.0) * 0.28 + grain(vUv * 93.0) * 0.14;
     float emerging = smoothstep(wash - 0.22, wash + 0.22, uReveal * 1.5 - 0.25);
-    float touched = 0.0;
-    for (int i = 0; i < 8; i++) {
-      vec4 touch = uTouches[i];
-      float age = max(0.0, uTime - touch.z);
-      vec2 distance = (vUv - touch.xy) * vec2(uAspect, 1.0);
-      float spread = 0.047 + min(age, 4.0) * 0.012;
-      float wet = exp(-dot(distance, distance) / (spread * spread));
-      wet *= exp(-age * 0.48) * touch.w;
-      touched = max(touched, wet);
-    }
-    float density = clamp(touched * (0.82 + wash * 0.18), 0.0, 1.0);
-    float grey = dot(pigment.rgb, vec3(0.2126, 0.7152, 0.0722));
-    vec3 wetted = mix(vec3(grey), pigment.rgb, 1.15) * 0.94;
-    vec3 colour = mix(pigment.rgb, wetted, density * 0.8);
-    gl_FragColor = vec4(colour, pigment.a * emerging);
+    gl_FragColor = vec4(pigment.rgb, pigment.a * emerging);
     #include <colorspace_fragment>
   }
 `;
 
-/** A small, optional painted surface: the source artwork remains intact.
- * Pointer traces briefly deepen its pigment, like a damp brush on paper. */
+/** An optional painted surface for the foyer's ambient flower animation. */
 export class PeonyBloomSurface {
   readonly renderer: THREE.WebGLRenderer;
   private scene = new THREE.Scene();
@@ -79,9 +62,6 @@ export class PeonyBloomSurface {
   private frameRateLimit: FrameRateLimit = 30;
   private pacer = new FramePacer(this.frameRateLimit);
   private reveal = 0;
-  private touches = Array.from({ length: 8 }, () => new THREE.Vector4(-10, -10, -100, 0));
-  private nextTouch = 0;
-  private lastTouch = -1;
   private width = 1;
   private height = 1;
   private artAspect = 1.5;
@@ -89,15 +69,14 @@ export class PeonyBloomSurface {
   private fitY = 1;
   private renderCount = 0;
   private failed = false;
-  private hitMask?: { pixels: Uint8ClampedArray; width: number; height: number };
   private visibility = () => {
     this.lastTime = 0; this.pacer.reset();
     this.cancelScheduled(); this.schedule();
   };
-  private preference = () => { this.lastTime = 0; this.pacer.reset(); this.cancelScheduled(); this.reveal = 1; if (this.reduced.matches) this.clearTouches(); this.schedule(); };
+  private preference = () => { this.lastTime = 0; this.pacer.reset(); this.cancelScheduled(); this.reveal = 1; this.schedule(); };
   private loss = (event: Event) => { event.preventDefault(); this.failed = true; this.cancelScheduled(); this.onState(false); };
 
-  constructor(private host: HTMLElement, url: string, private onState: (ready: boolean) => void, private onBrush: () => void) {
+  constructor(private host: HTMLElement, url: string, private onState: (ready: boolean) => void) {
     this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'low-power' });
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     this.renderer.setClearColor(0x000000, 0);
@@ -105,10 +84,10 @@ export class PeonyBloomSurface {
     this.renderer.debug.onShaderError = () => { this.failed = true; this.onState(false); };
     this.camera.position.z = 2;
     this.material = new THREE.ShaderMaterial({ vertexShader: vertex, fragmentShader: fragment, transparent: true,
-      uniforms: { uPainting: { value: null }, uReveal: { value: 0 }, uTime: { value: 0 }, uMotion: { value: 1 }, uTouches: { value: this.touches }, uAspect: { value: this.artAspect } } });
+      uniforms: { uPainting: { value: null }, uReveal: { value: 0 }, uTime: { value: 0 }, uMotion: { value: 1 } } });
     this.mesh = new THREE.Mesh(this.geometry, this.material); this.scene.add(this.mesh);
     const canvas = this.renderer.domElement; canvas.setAttribute('aria-hidden', 'true'); canvas.dataset.role = 'peony-pigment-surface';
-    canvas.addEventListener('webglcontextlost', this.loss); canvas.addEventListener('pointermove', this.pointer);
+    canvas.addEventListener('webglcontextlost', this.loss);
     this.host.appendChild(canvas);
     this.observer = new ResizeObserver(() => this.resize()); this.observer.observe(this.host); this.resize();
     document.addEventListener('visibilitychange', this.visibility); this.reduced.addEventListener('change', this.preference);
@@ -116,13 +95,7 @@ export class PeonyBloomSurface {
       if (this.disposed) { texture.dispose(); return; }
       this.texture = texture; texture.colorSpace = THREE.SRGBColorSpace;
       this.artAspect = texture.image.width / texture.image.height;
-      const mask = document.createElement('canvas'); mask.width = 192; mask.height = Math.max(1, Math.round(192 / this.artAspect));
-      const context = mask.getContext('2d', { willReadFrequently: true });
-      if (context) {
-        context.drawImage(texture.image, 0, 0, mask.width, mask.height);
-        this.hitMask = { pixels: context.getImageData(0, 0, mask.width, mask.height).data, width: mask.width, height: mask.height };
-      }
-      this.material.uniforms.uPainting.value = texture; this.material.uniforms.uAspect.value = this.artAspect;
+      this.material.uniforms.uPainting.value = texture;
       this.ready = true; this.reveal = this.reduced.matches || !this.motion ? 1 : 0;
       this.resize(); this.schedule();
     }, undefined, () => { if (!this.disposed) { this.failed = true; this.onState(false); } });
@@ -137,39 +110,9 @@ export class PeonyBloomSurface {
     this.mesh.scale.set(this.fitX, this.fitY, 1); this.schedule();
   }
 
-  private pointer = (event: PointerEvent) => {
-    if (!this.active || !this.motion || this.reduced.matches || event.pointerType === 'touch' || this.clock - this.lastTouch < .12) return;
-    const rect = this.renderer.domElement.getBoundingClientRect();
-    const u = ((event.clientX - rect.left) / rect.width - .5) / this.fitX + .5;
-    const v = (.5 - (event.clientY - rect.top) / rect.height) / this.fitY + .5;
-    if (u < 0 || u > 1 || v < 0 || v > 1) return;
-    if (this.hitMask) {
-      const mask = this.hitMask, x = Math.min(mask.width - 1, Math.floor(u * mask.width));
-      const y = Math.min(mask.height - 1, Math.floor((1 - v) * mask.height));
-      if (mask.pixels[(y * mask.width + x) * 4 + 3] < 70) return;
-    }
-    this.touches[this.nextTouch].set(u, v, this.clock, 1); this.nextTouch = (this.nextTouch + 1) % this.touches.length;
-    this.lastTouch = this.clock; this.onBrush(); this.schedule();
-  };
-
-  flourish() {
-    if (!this.ready || this.failed) return;
-    if (!this.active || !this.motion || this.reduced.matches || document.hidden) { this.onBrush(); return; }
-    this.touches[0].set(.53, .71, this.clock, 1.4); this.touches[1].set(.27, .47, this.clock, 1.2);
-    this.onBrush(); this.schedule();
-  }
-
-  private clearTouches() {
-    this.touches.forEach(touch => touch.set(-10, -10, -100, 0));
-    this.nextTouch = 0; this.lastTouch = -1;
-  }
-
   setState(active: boolean, motion: boolean) {
     this.active = active; this.motion = motion; this.lastTime = 0; this.pacer.reset();
     this.cancelScheduled();
-    // A transient wash belongs to the current encounter with the flower.
-    // Pausing wind or leaving the foyer should not freeze a damp mark there.
-    if (!active || !motion || this.reduced.matches) this.clearTouches();
     if (!motion || this.reduced.matches) this.reveal = 1;
     this.schedule();
   }
@@ -206,7 +149,7 @@ export class PeonyBloomSurface {
     if (this.disposed || this.failed || !this.active || document.hidden || !this.ready) return;
     if (!this.pacer.shouldRender(now)) { this.schedule(); return; }
     const moving = this.motion && !this.reduced.matches;
-    if (!moving) { this.clearTouches(); this.reveal = 1; }
+    if (!moving) this.reveal = 1;
     const elapsed = this.lastTime ? Math.max(0, (now - this.lastTime) / 1000) : 0;
     this.lastTime = now;
     if (moving) { this.clock += elapsed; this.reveal = Math.min(1, this.reveal + elapsed / 2.2); }
@@ -227,7 +170,7 @@ export class PeonyBloomSurface {
   dispose() {
     this.disposed = true; this.cancelScheduled(); this.observer.disconnect();
     document.removeEventListener('visibilitychange', this.visibility); this.reduced.removeEventListener('change', this.preference);
-    const canvas = this.renderer.domElement; canvas.removeEventListener('webglcontextlost', this.loss); canvas.removeEventListener('pointermove', this.pointer);
+    const canvas = this.renderer.domElement; canvas.removeEventListener('webglcontextlost', this.loss);
     this.texture?.dispose(); this.geometry.dispose(); this.material.dispose(); this.renderer.dispose(); this.renderer.forceContextLoss(); canvas.remove();
   }
 }

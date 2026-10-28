@@ -17,20 +17,10 @@
 .atlas-peony-plane { position:absolute; right:4.8%; top:13%; width:51%; height:65%; transform-origin:76% 85%; transform:translate(calc(var(--atlas-x)*-22px),calc(var(--atlas-y)*-15px)) rotate(calc(var(--atlas-x)*.65deg)); transition:filter 1.2s; }
 .atlas-peonies { width:100%; height:100%; object-fit:contain; filter:saturate(.83); animation:atlas-flower-breathe 15s ease-in-out infinite alternate; }
 .atlas-pigment,.atlas-pigment-host { position:absolute; inset:0; }
-.atlas-pigment { transition:filter .65s ease; }
-.is-flower-responding .atlas-pigment { filter:saturate(1.26) brightness(1.045); }
-.peony-atlas[data-paused=true] .atlas-pigment { transition:none; }
-.peony-atlas[data-paused=true][data-flower-cycle="0"].is-flower-responding .atlas-pigment { filter:saturate(1.16) brightness(1.025); }
-.atlas-pigment-host canvas { display:block; width:100%; height:100%; pointer-events:auto; }
+.atlas-pigment-host canvas { display:block; width:100%; height:100%; pointer-events:none; }
 .atlas-pigment:not(.is-painted) .atlas-pigment-host { visibility:hidden; }
 .atlas-pigment[data-pigment-state=pending]>.atlas-peonies { visibility:hidden; }
 .atlas-pigment.is-painted>.atlas-peonies { visibility:hidden; }
-.atlas-flower-glow { position:absolute; inset:8% 15% 12% 10%; background:radial-gradient(ellipse,#e0b98818,transparent 66%); opacity:0; transform:scale(.7); transition:opacity 1.2s,transform 2s; }
-.is-flower-touched .atlas-flower-glow { opacity:1; transform:scale(1.15); }
-.is-flower-responding .atlas-flower-glow { background:radial-gradient(ellipse,#f5c68c5c,#d9876d26 38%,transparent 70%); opacity:.9; transform:scale(1.12); }
-.peony-atlas[data-paused=false].is-flower-responding .atlas-flower-glow { animation:atlas-flower-awaken 2.6s ease-out both; }
-.peony-atlas[data-paused=true] .atlas-flower-glow { transition:none; }
-@keyframes atlas-flower-awaken { 0%{opacity:.25;transform:scale(.84)} 28%{opacity:1;transform:scale(1.1)} 100%{opacity:.3;transform:scale(1.2)} }
 .atlas-ivory-branch { position:absolute; width:24%; height:auto; left:-9%; bottom:21%; transform:translate(calc(var(--atlas-x)*-32px),calc(var(--atlas-y)*-18px)) rotate(-10deg); opacity:.7; filter:saturate(.65); }
 .atlas-botanical-rule { position:absolute; width:29%; height:40%; right:10%; top:17%; border-right:1px solid #b1975438; border-bottom:1px solid #b1975438; transform:translate(calc(var(--atlas-x)*-13px),calc(var(--atlas-y)*-8px)); }
 .atlas-botanical-rule>span { position:absolute; width:7px; height:7px; right:-4px; bottom:-4px; border:1px solid #b1975480; transform:rotate(45deg); background:#ede6d6; }
@@ -73,11 +63,6 @@
 .atlas-flower-aside>p { writing-mode:vertical-rl; font:13px/2 var(--kai,var(--serif)); letter-spacing:4px; }
 .atlas-flower-aside em { font-style:normal; color:#935744; }
 .atlas-flower-aside>span { width:1px; height:82px; background:linear-gradient(#a58e5b9c,transparent); margin-top:4px; }
-.atlas-flower-invitation { position:absolute; right:16.5%; bottom:30.5%; display:flex; gap:12px; align-items:center; border:0; background:radial-gradient(ellipse,#f4eedfe8,#f4eedf73 65%,transparent 75%); color:#58634d; font-size:14px; letter-spacing:2px; z-index:3; padding:12px; }
-.atlas-flower-dot { position:relative; width:28px; height:28px; border:1px solid #9f84559c; border-radius:50%; display:grid; place-items:center; transition:transform .6s,border-color .6s; }
-.atlas-flower-dot>i { width:5px; height:5px; border-radius:50%; background:#a04f40; }
-.atlas-flower-dot::before { content:''; position:absolute; inset:-5px; border:1px solid #b3a27550; border-radius:50%; }
-.atlas-flower-invitation:hover .atlas-flower-dot { transform:rotate(90deg); border-color:#913d34; }
 .atlas-chapters { grid-row:3; position:relative; z-index:3; padding:0 4.5%; background:linear-gradient(0deg,#f4eddfed,#f4eddfba 82%,#f4eddf00); }
 .atlas-chapters-heading { display:flex; align-items:center; gap:16px; padding:12px 0 16px; border-bottom:1px solid var(--atlas-rule); color:#817454; }
 .atlas-chapters-heading>span { display:flex; align-items:center; gap:9px; font-size:13px; letter-spacing:3px; }
@@ -159,7 +144,7 @@
   .atlas-title{margin-top:8px;max-width:clamp(300px,calc(300dvh - 1650px),550px)}.atlas-title-caption{margin-bottom:16px}.atlas-prologue{font-size:16px;line-height:1.7}
   .atlas-prologue>span{font-size:14px;line-height:1.8;margin-top:5px}.atlas-begin{margin-top:17px;height:46px}.atlas-begin-note{margin-top:10px!important}
   .atlas-chapter-grid{height:135px}.atlas-chapter-image{height:68px;width:100px;flex-basis:100px}.atlas-chapters-heading{padding:8px 0 12px}
-  .atlas-chapter-copy{gap:8px}.atlas-chapter-copy>strong{font-size:22px}.atlas-peony-plane{top:12%;height:63%}.atlas-flower-invitation{bottom:31%;font-size:13px}
+  .atlas-chapter-copy{gap:8px}.atlas-chapter-copy>strong{font-size:22px}.atlas-peony-plane{top:12%;height:63%}
   .atlas-chapter-copy>em{display:none}
 }
 @media(max-width:1400px) {

@@ -19,7 +19,7 @@
 .art-anchor {
   position: absolute; transform: translate(-50%, -50%); min-width: 44px; min-height: 44px;
   display: grid; place-items: center; padding: 0; border: 0; background: transparent;
-  color: var(--art-red); pointer-events: auto; touch-action: none; z-index: 2;
+  color: var(--art-red); pointer-events: auto; touch-action: none; z-index: 4;
 }
 .art-anchor__eye {
   width: 25px; height: 25px; display: block; border: 1px solid currentColor; border-radius: 50%;
@@ -82,7 +82,7 @@
 .art-brocade-paper .art-reset { margin-left: auto; }
 .art-brocade-paper .art-reset + .art-close { margin-left: 0; }
 .art-brocade-paper .art-source { font-size: 12px; }
-.art-flower-in-hand { position: absolute; transform: translate(-50%, -50%); width: 76px; height: 76px; border-radius: 50%; overflow: hidden; border: 1px solid #b99551; pointer-events: none; opacity: .92; z-index: 3; box-shadow: 0 0 0 5px #f2e3ba66; }
+.art-flower-in-hand { position: absolute; transform: translate(-50%, -50%); width: 76px; height: 76px; border-radius: 50%; overflow: hidden; border: 1px solid #b99551; pointer-events: none; opacity: .92; z-index: 5; box-shadow: 0 0 0 5px #f2e3ba66; }
 .art-flower-in-hand .art-detail { background: #f0e5cd; }
 .art-flower-in-hand.is-over { transform: translate(-50%, -50%) scale(.7); }
 .art-encounters--brocade.is-woven .art-anchor--cloth .art-anchor__eye { animation: art-weave-arrival 1.1s ease-out both; }
@@ -171,4 +171,39 @@
 @media (prefers-reduced-motion: reduce) {
   .art-paper, .art-brocade-detail .art-detail, .art-encounters--brocade.is-woven .art-anchor--cloth .art-anchor__eye { animation: none; }
   .art-anchor__eye { transition: none; }
+}
+
+/* Reading slips sit beside the selected mark, on a soft wash of paper. */
+.art-paper.art-local-paper {
+  left: var(--paper-x); top: var(--paper-y); right: auto; bottom: auto;
+  z-index: 3; box-sizing: border-box; width: min(300px, calc(100% - 24px));
+  max-width: none; max-height: calc(100% - 24px); overflow-y: auto;
+  display: flex; flex-direction: column; align-items: stretch; gap: 8px;
+  padding: 18px; color: #293e34; text-align: left;
+  background: radial-gradient(ellipse at center, #f6efe2fa 0%, #f3eadbf5 68%, #f3eadbdc 100%);
+  border: 0; box-shadow: 0 0 20px 8px #f3eadb9c;
+  animation: art-paper-enter .3s ease both;
+  overscroll-behavior: contain;
+}
+.art-local-paper::before { display: none; }
+.art-local-paper > * { position: relative; z-index: 1; }
+.art-local-paper .art-paper__heading { display: flex; align-items: center; gap: 9px; min-height: 32px; padding-bottom: 6px; border-bottom: 1px solid #b89c6d99; }
+.art-local-paper .art-paper__heading h2 { margin: 0; color: #293e34; font-size: 20px; line-height: 1.3; letter-spacing: .12em; font-weight: 400; white-space: normal; text-shadow: none; }
+.art-local-paper .art-kicker { color: #8a4a35; font-size: 12px; letter-spacing: .12em; }
+.art-local-paper .art-close { position: static; margin-left: auto; flex: 0 0 32px; }
+.art-local-paper .art-copy, .art-encounters .art-local-paper .art-copy { margin: 0; color: #293e34; font-size: 17px; line-height: 1.65; letter-spacing: .045em; }
+.art-local-paper .art-copy p { margin: 0; }
+.art-local-paper .art-source-line, .art-local-paper .art-work-note { color: #655238; font-size: 12px; line-height: 1.6; }
+.art-local-paper .art-source { color: #713d2e; font-size: 13px; overflow-wrap: anywhere; }
+.art-local-paper .art-brocade-detail { margin: 0; aspect-ratio: 2.8; }
+.art-local-paper .art-brocade-foot { gap: 4px 10px; }
+.art-local-paper .art-poem-heading-copy { min-width: 0; flex-wrap: wrap; gap: 4px 9px; }
+.art-local-paper .art-poem-lines p { font-size: 17px; letter-spacing: .04em; white-space: normal; }
+.art-local-paper .art-poem-note { margin: 0; color: #365345; font-size: 15px; }
+.art-local-paper .art-poem-original { max-height: 130px; }
+@media (max-height: 520px) {
+  .art-paper.art-local-paper { padding: 12px 16px; gap: 5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .art-paper.art-local-paper { animation: none; }
 }
