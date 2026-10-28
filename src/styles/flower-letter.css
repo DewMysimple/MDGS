@@ -18,6 +18,16 @@
 .flower-letter-choices>button[aria-pressed=true] { color:#9b4f3b; background:#bd9f7421; }
 .flower-letter-choices>button:disabled { cursor:default; opacity:.65; }
 .flower-letter-choices>button[aria-pressed=true]:disabled { opacity:1; }
+.flower-letter-designs { display:grid; grid-template-columns:max-content repeat(2,minmax(0,1fr)); align-items:stretch; gap:8px; margin:0 0 16px; }
+.flower-letter-designs::before { content:'本卷画笺'; align-self:center; color:#766c55; font-size:12px; letter-spacing:1px; white-space:nowrap; }
+.flower-letter-design { display:grid; align-content:center; gap:3px; min-width:0; min-height:44px; padding:6px 9px; border:1px solid #b9a78880; background:#f8f1e280; color:#5a6651; text-align:left; cursor:pointer; }
+.flower-letter-design>span { font-size:14px; line-height:1.3; letter-spacing:1px; }
+.flower-letter-design>small { color:#746d58; font-size:11px; line-height:1.3; letter-spacing:.5px; }
+.flower-letter-design[aria-pressed=true] { border-color:#a55c48; background:#e9ddc9; color:#8c4233; }
+.flower-letter-design:not(:disabled):hover { border-color:#a55c48; background:#ede2d0; }
+.flower-letter-design:focus-visible { outline:2px solid #8d4838; outline-offset:2px; }
+.flower-letter-design:disabled { cursor:default; opacity:.65; }
+.flower-letter-design[aria-pressed=true]:disabled { opacity:1; }
 .flower-letter-selected { color:#796a4f; font-size:17px; line-height:1.9; letter-spacing:2px; }
 .flower-letter-actions { min-height:93px; margin-top:20px; }
 .flower-letter-primary { display:flex; align-items:center; justify-content:space-between; gap:24px; width:100%; padding:15px 18px; background:#52664e; color:#f6efdb; border:1px solid #52664e; outline:1px solid #efdfb761; outline-offset:-5px; font-size:15px; letter-spacing:3px; cursor:pointer; }
@@ -30,4 +40,5 @@
 .flower-letter-dialog.is-sealed .flower-letter-preview>img { animation:flower-letter-impression .6s ease both; }
 @keyframes flower-letter-impression { from { opacity:.65; transform:translateY(3px) } to { opacity:1; transform:translateY(0) } }
 @media(max-height:850px) { .flower-letter-compose{padding:40px 35px 20px}.flower-letter-compose>h2{font-size:29px;line-height:1.5;margin:13px 0}.flower-letter-intro{font-size:14px;line-height:1.9}.flower-letter-choices{margin:19px 0 16px}.flower-letter-choices>button{padding:14px 0}.flower-letter-actions{margin-top:16px;min-height:75px}.flower-letter-footnote{font-size:12px;margin-top:10px} }
+@media(max-width:760px) { .flower-letter-designs{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.flower-letter-designs::before{grid-column:1/-1}.flower-letter-design{padding:6px} }
 @media(prefers-reduced-motion:reduce) { .flower-letter-dialog.is-sealed .flower-letter-preview>img{animation:none} }

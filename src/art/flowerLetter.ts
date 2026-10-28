@@ -1,5 +1,6 @@
 import { atlasArt } from '../data/peonyAtlas';
 import type { FlowerLetter } from '../data/flowerLetters';
+import type { FlowerLetterDesign } from '../data/flowerLetterDesigns';
 
 const images = new Map<string, Promise<HTMLImageElement>>();
 function loadImage(src: string) {
@@ -18,9 +19,9 @@ function vertical(context: CanvasRenderingContext2D, text: string, x: number, y:
 
 /** A local visitor keepsake, composed from the work's own painted layers and
  * live type. No screenshot of a reference site, remote image or external API. */
-export async function createFlowerLetter(letter: FlowerLetter, sealed = true): Promise<Blob> {
-  const [landscape, peonies, title] = await Promise.all([
-    loadImage(atlasArt.landscape), loadImage(atlasArt.peonies), loadImage(atlasArt.title),
+export async function createFlowerLetter(letter: FlowerLetter, design: FlowerLetterDesign, sealed = true): Promise<Blob> {
+  const [landscape, artwork, title] = await Promise.all([
+    loadImage(atlasArt.landscape), loadImage(design.image), loadImage(atlasArt.title),
     document.fonts.load('40px "MDGS Kai"'),
   ]);
   const canvas = document.createElement('canvas'); canvas.width = 1200; canvas.height = 1600;
@@ -36,7 +37,12 @@ export async function createFlowerLetter(letter: FlowerLetter, sealed = true): P
   ctx.drawImage(title, 83, 94, 600, 200);
   ctx.fillStyle = '#8b7e5f'; ctx.font = '24px "MDGS Kai", KaiTi, serif';
   ctx.fillText('数 字 牡 丹 赋  ·  观 者 花 笺', 99, 322);
-  ctx.drawImage(peonies, 320, 460, 1035, 690);
+  // Keep the selected painted layer within the image area and away from the
+  // vertical message. The same canvas supplies both preview and saved PNG.
+  const artWidth = 835, artHeight = 680;
+  const artScale = Math.min(artWidth / artwork.naturalWidth, artHeight / artwork.naturalHeight);
+  const drawWidth = artwork.naturalWidth * artScale, drawHeight = artwork.naturalHeight * artScale;
+  ctx.drawImage(artwork, 335 + (artWidth - drawWidth) / 2, 450 + (artHeight - drawHeight) / 2, drawWidth, drawHeight);
   ctx.fillStyle = '#475b45'; ctx.font = '100px "MDGS Kai", KaiTi, serif';
   vertical(ctx, letter.word, 96, 495, 124);
   ctx.fillStyle = '#7a6449'; ctx.font = '39px "MDGS Kai", KaiTi, serif';
