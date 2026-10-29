@@ -39,7 +39,7 @@ export class PeonySoundscape {
   private activity = 0;
   private alive = false;
   private offset = 0;
-  private input: SoundscapeInput = { phase: 'HOME', chapterId: 1, progress: 0, reading: false };
+  private input: SoundscapeInput = { phase: 'HOME', chapterId: 1, progress: 0, reading: false, narration: false };
   private applied: SoundRegion | null = null;
   private pendingRegion = '';
   private mixTimer = 0;
@@ -165,7 +165,9 @@ export class PeonySoundscape {
     }
     const graph = this.graph;
     if (!graph || !graph.sources.length) return;
-    if (previous.reading !== input.reading) approach(graph.music.gain, input.reading ? .501187 : 1, graph.context.currentTime, input.reading ? .07 : .23);
+    const wasDucked = previous.reading || previous.narration;
+    const isDucked = input.reading || input.narration;
+    if (wasDucked !== isDucked) approach(graph.music.gain, isDucked ? .501187 : 1, graph.context.currentTime, isDucked ? .07 : .23);
     const region = soundRegion(this.input);
     if (region.name === this.applied?.name) { window.clearTimeout(this.mixTimer); this.pendingRegion = ''; return; }
     if (region.name === this.pendingRegion) return;
@@ -184,7 +186,7 @@ export class PeonySoundscape {
     const constant = region.name === '盛景渐远' ? .55 : .38;
     graph.layers.forEach((layer, index) => approach(layer.gain, region.levels[index] * layerCalibration[index], time, constant));
     approach(graph.filter.frequency, region.cutoff, time, .65);
-    if (initial) graph.music.gain.value = this.input.reading ? .501187 : 1;
+    if (initial) graph.music.gain.value = this.input.reading || this.input.narration ? .501187 : 1;
   }
   cue = (kind: Cue) => {
     const graph = this.graph;
@@ -213,7 +215,7 @@ export class PeonySoundscape {
     return { ...this.state, clock: this.clock(), contextState: graph?.context.state ?? 'closed', sourceCount: graph?.sources.length ?? 0,
       loopDurations: graph?.sources.map(source => source.buffer?.duration) ?? [], zone: this.applied?.name ?? '',
       targetLevels: this.applied?.levels.map((level, index) => level * layerCalibration[index]) ?? [], levels: graph?.layers.map(layer => layer.gain.value) ?? [],
-      musicGain: graph?.music.gain.value ?? 1, reading: this.input.reading, sourceEpoch: graph?.epoch ?? null,
+      musicGain: graph?.music.gain.value ?? 1, reading: this.input.reading, narration: this.input.narration, sourceEpoch: graph?.epoch ?? null,
       effects: graph?.effects.size ?? 0, cuesPlayed: this.cueCount, decodedBuffers: this.buffers.size, retiredGraphs: this.retired.size,
       decodedBytes: [...this.buffers.values()].reduce((sum, buffer) => sum + buffer.length * buffer.numberOfChannels * 4, 0) };
   };
