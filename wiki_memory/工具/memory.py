@@ -875,7 +875,8 @@ def wiki(page: Page):
 def log_table_link(page: Page):
     title = page.title.replace("\\", "\\\\").replace("[", "\\[").replace("]", "\\]").replace("|", "\\|")
     relative = Path(os.path.relpath(page.path, LOG_INDEX.parent)).as_posix()
-    return f"[{title}]({quote(relative, safe='/')})"
+    target = "".join(quote(char, safe="/") if ord(char) < 128 else char for char in relative)
+    return f"[{title}]({target})"
 
 
 def index_contents(pages: list[Page]):
