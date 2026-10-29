@@ -13,9 +13,9 @@ export interface SoundscapeProviderProps extends SoundscapeInput { children: Rea
 
 /** Wrap the complete application once, outside conditional home/viewer layers.
  * Multiple AudioController views share this one graph and one opt-in state.
- * `reading` means an opened flower-note/cultural reading panel, not every
- * ordinary paragraph already printed alongside the painting. */
-export function SoundscapeProvider({ phase, chapterId, progress, reading, children }: SoundscapeProviderProps) {
+ * Reading panels and voice-over duck the score; only reading panels trigger
+ * the note cue. */
+export function SoundscapeProvider({ phase, chapterId, progress, reading, narration, children }: SoundscapeProviderProps) {
   const [engine] = useState(() => new PeonySoundscape());
   const state = useSyncExternalStore(engine.subscribe, engine.getState, engine.getState);
   useEffect(() => {
@@ -24,7 +24,7 @@ export function SoundscapeProvider({ phase, chapterId, progress, reading, childr
     const debug = { snapshot: engine.snapshot }; target.__MDGS_AUDIO__ = debug;
     return () => { if (target.__MDGS_AUDIO__ === debug) delete target.__MDGS_AUDIO__; engine.dispose(); };
   }, [engine]);
-  useEffect(() => { engine.update({ phase, chapterId, progress, reading }); }, [engine, phase, chapterId, progress, reading]);
+  useEffect(() => { engine.update({ phase, chapterId, progress, reading, narration }); }, [engine, phase, chapterId, progress, reading, narration]);
   const value = useMemo(() => ({ ...state, chapterId, toggle: engine.toggle, setVolume: engine.setVolume, cue: engine.cue }), [state, chapterId, engine]);
   return <SoundscapeContext.Provider value={value}>{children}</SoundscapeContext.Provider>;
 }

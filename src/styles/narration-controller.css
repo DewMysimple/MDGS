@@ -1,0 +1,7 @@
+.narration-control{position:relative;display:inline-flex;align-items:center;max-width:100%;font-family:var(--kai,"KaiTi","STKaiti","Kaiti SC",serif);color:var(--muted,#81745d)}
+.narration-button{position:relative;display:inline-flex;align-items:center;gap:7px;min-height:36px;font-family:inherit;font-size:12px;letter-spacing:1.4px;transition:color .3s ease}
+.narration-button.is-active{color:var(--cinnabar,#9b493a)}
+.narration-button i{font-size:10px;font-style:normal;letter-spacing:.5px;opacity:.62}
+.narration-play-mark{width:8px;opacity:.55}
+.narration-button:focus-visible{outline:1px solid currentColor;outline-offset:5px}
+@media(prefers-reduced-motion:reduce){.narration-button{transition:none}}
