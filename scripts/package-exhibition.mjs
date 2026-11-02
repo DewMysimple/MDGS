@@ -64,7 +64,7 @@ async function assertGenerated(directory) {
     } throw error; }
 }
 const roots = ['assets/new-scrolls', 'ui/peony-atlas', 'fonts'];
-const singles = ['index.html', 'favicon.svg', 'ui/brocade.svg', 'ui/peony-line.svg', 'ui/roller-band.svg', 'audio/home.mp3', ...[1, 2, 3, 4].map(chapter => `audio/chapter-${chapter}.mp3`)];
+const singles = ['index.html', 'favicon.svg', 'ui/brocade.svg', 'ui/peony-line.svg', 'ui/roller-band.svg', 'audio/home.mp3', ...[1, 2, 3, 4].map(chapter => `audio/chapter-${chapter}.mp3`), 'audio/narration/manifest.json', ...[1, 2, 3, 4].flatMap(chapter => [`audio/narration/chapter-${chapter}.mp3`, `audio/narration/chapter-${chapter}.srt`])];
 const libraries = ['react', 'react-dom', 'scheduler', 'three', 'lucide-react'];
 async function sourceInputFiles() {
   const publicFiles = singles.filter(file => file !== 'index.html').map(file => path.join(root, 'public', file));

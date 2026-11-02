@@ -75,7 +75,7 @@ export class PeonySoundscape {
   private activity = 0;
   private alive = false;
   private resumeAt: { chapter: number; offset: number } | null = null;
-  private input: SoundscapeInput = { phase: 'HOME', chapterId: 1, progress: 0, reading: false };
+  private input: SoundscapeInput = { phase: 'HOME', chapterId: 1, progress: 0, reading: false, narration: false };
   private cueTimes = new Map<Cue, number>();
   private lastCue = -Infinity;
   private visit = 0;
@@ -171,7 +171,7 @@ export class PeonySoundscape {
       // resume promise until our gesture handler receives the first input.
       const context = new AudioContext();
       const graph: Graph = { context, music: context.createGain(), master: context.createGain(), voices: new Set(), current: null, effects: new Set(), effectBuffers: new Map() };
-      this.graph = graph; graph.master.gain.value = 0; graph.music.gain.value = this.input.reading ? .501187 : 1;
+      this.graph = graph; graph.master.gain.value = 0; graph.music.gain.value = this.input.reading || this.input.narration ? .501187 : 1;
       graph.music.connect(graph.master); graph.master.connect(context.destination);
       this.cueTimes.clear(); this.lastCue = -Infinity; this.suppressSealUntil = 0;
       const resumed = context.resume();
@@ -251,7 +251,9 @@ export class PeonySoundscape {
     }
     const graph = this.graph;
     if (!graph || !this.state.enabled) return;
-    if (previous.reading !== input.reading) approach(graph.music.gain, input.reading ? .501187 : 1, graph.context.currentTime, input.reading ? .07 : .23);
+    const wasDucked = previous.reading || previous.narration;
+    const isDucked = input.reading || input.narration;
+    if (wasDucked !== isDucked) approach(graph.music.gain, isDucked ? .501187 : 1, graph.context.currentTime, isDucked ? .07 : .23);
     const chapter = this.chapter();
     if (chapter !== this.requestedChapter) {
       if (this.resumeAt?.chapter !== chapter) this.resumeAt = null;
@@ -286,7 +288,7 @@ export class PeonySoundscape {
       desiredChapter: this.chapter(), requestedChapter: this.requestedChapter, activeChapter: graph?.current?.chapter ?? null,
       sourceCount: graph?.voices.size ?? 0, loopDurations: [...(graph?.voices ?? [])].map(voice => voice.source.buffer?.duration),
       levels: [...(graph?.voices ?? [])].map(voice => voice.gain.gain.value), musicGain: graph?.music.gain.value ?? 1,
-      reading: this.input.reading, effects: graph?.effects.size ?? 0, cuesPlayed: this.cueCount,
+      reading: this.input.reading, narration: this.input.narration, effects: graph?.effects.size ?? 0, cuesPlayed: this.cueCount,
       decodedBuffers: this.cached ? 1 : 0, retiredGraphs: this.retired.size,
       decodedBytes: this.cached ? this.cached.buffer.length * this.cached.buffer.numberOfChannels * 4 : 0 };
   };

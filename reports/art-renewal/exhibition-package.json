@@ -1,7 +1,7 @@
 {
   "generator": "MDGS exhibition package",
   "status": "ready",
-  "createdAt": "2026-11-02T15:21:42.852Z",
+  "createdAt": "2026-11-02T15:48:16.566Z",
   "sourceAssociation": "TypeScript and Vite build executed between matching source snapshots.",
   "buildSourceVerified": true,
   "sourceStable": true,
@@ -1572,6 +1572,51 @@
       "sha256": "9827d8329cb64b7dadf12bb9c37698ab5ccb8644bdfcfcefedabfe79d32cf334"
     },
     {
+      "path": "public/audio/narration/chapter-1.mp3",
+      "bytes": 1506228,
+      "sha256": "13125e0e0cdef02063e21ecac9a52f8c1ff95444b809a95d91bfaaee0cd1890c"
+    },
+    {
+      "path": "public/audio/narration/chapter-1.srt",
+      "bytes": 1409,
+      "sha256": "e89cf6005f4af46d0e093daa65fac75a1961fa6c437e2c41c14c5105b818c402"
+    },
+    {
+      "path": "public/audio/narration/chapter-2.mp3",
+      "bytes": 1232052,
+      "sha256": "29a5acfeea4d37dd0aa32b8099494bbaa8df60e5078bd0755049f8166254acfa"
+    },
+    {
+      "path": "public/audio/narration/chapter-2.srt",
+      "bytes": 1139,
+      "sha256": "1ee46b283edd52de5de1b45a415dc6f38fdb34f88199d61bf34b3f9f5e61affe"
+    },
+    {
+      "path": "public/audio/narration/chapter-3.mp3",
+      "bytes": 892212,
+      "sha256": "efb0df7741fbc2444e4b9b6ddd69eb89a675226cd7d35014d8f7888126cb55ec"
+    },
+    {
+      "path": "public/audio/narration/chapter-3.srt",
+      "bytes": 833,
+      "sha256": "a9e19f2a5a7f82b303a9fc9a1570f51d15710417d70231e89d18c570e4bd3ca4"
+    },
+    {
+      "path": "public/audio/narration/chapter-4.mp3",
+      "bytes": 930804,
+      "sha256": "46a50f4606a332c4bcc8482f2dca3351a36464cc1b83400f89ed71786f1b2ce7"
+    },
+    {
+      "path": "public/audio/narration/chapter-4.srt",
+      "bytes": 830,
+      "sha256": "886d7ff37c5ab323171f6541c83f6365140fbe4b61de0da856dda25766cbdf3f"
+    },
+    {
+      "path": "public/audio/narration/manifest.json",
+      "bytes": 9278,
+      "sha256": "e029961b6326842096e6c8372810dd9991f37ce2d2a607d9396a8307843c5940"
+    },
+    {
       "path": "public/favicon.svg",
       "bytes": 434,
       "sha256": "88cf0da65928acbc6b704d13e25dc9e62563291f74768e3cbd917061963e4cc0"
@@ -1678,8 +1723,8 @@
     },
     {
       "path": "scripts/package-exhibition.mjs",
-      "bytes": 12629,
-      "sha256": "21c53e5c135db144c57b4991f48c4d5511fccd424fb9099bd0966873a6164653"
+      "bytes": 12784,
+      "sha256": "311e83cec77a91c535b9b920d4c16d9b5bc1de1cd91f8bf327bd439a32f5a4b0"
     },
     {
       "path": "scripts/serve-exhibition.cjs",
@@ -1688,8 +1733,8 @@
     },
     {
       "path": "src/App.tsx",
-      "bytes": 28195,
-      "sha256": "c4ba7c76868bc989dd5816350c74e5f9fe2eb14b2f95feadbc147ad9503b350b"
+      "bytes": 28655,
+      "sha256": "3b8a4f582145958392d11db2cafae231bfa624ecaa59f2823dbe111b4453cf4d"
     },
     {
       "path": "src/art/flowerLetter.ts",
@@ -1698,13 +1743,13 @@
     },
     {
       "path": "src/audio/PeonySoundscape.ts",
-      "bytes": 17596,
-      "sha256": "04e1fc594ef312bcb9be927e34592a0ccb41522641a26016956ea44b22ea9652"
+      "bytes": 17765,
+      "sha256": "18b55aca861c27a7515015d402ec6423a1ddba19f83036157d18fd2796c33606"
     },
     {
       "path": "src/audio/cueMap.ts",
-      "bytes": 2993,
-      "sha256": "56fef96db0c48640311adcc075b4f7d0cefd2bf6f3a66ce8f0915c0375d25ebb"
+      "bytes": 3026,
+      "sha256": "ec29c804c8583fadb2b82bf8721188178fc8c60b3ccaa685b95a0fcc53174853"
     },
     {
       "path": "src/components/ArtEncounters.tsx",
@@ -1730,6 +1775,11 @@
       "path": "src/components/GuideOverlay.tsx",
       "bytes": 11841,
       "sha256": "4653f5ea562d9b9e5206350fba78b7adb80003cb9158ee6a4675164933c288d4"
+    },
+    {
+      "path": "src/components/NarrationController.tsx",
+      "bytes": 2657,
+      "sha256": "ece898ca4a791095384adbf26fb9de845e4d6c35b2d0294e38041a8e74389584"
     },
     {
       "path": "src/components/NarrativeCalligraphy.tsx",
@@ -1888,8 +1938,8 @@
     },
     {
       "path": "src/hooks/usePeonySoundscape.tsx",
-      "bytes": 2086,
-      "sha256": "c8487480c6247a7883786fe5248f91ff6cec76cb5a9c2679733c81e5ae9efbb4"
+      "bytes": 2075,
+      "sha256": "88f052a3d0a38d43dc1891f681adcdc79aae1b1f73f3105bb3987da2784003ed"
     },
     {
       "path": "src/hooks/useScrollController.ts",
@@ -2102,6 +2152,11 @@
       "sha256": "08a38e14ae4aa0a9f643c71370d501a91ee56347805dd0ba5b214c8cdad9f3f6"
     },
     {
+      "path": "src/styles/narration-controller.css",
+      "bytes": 705,
+      "sha256": "c308b1f0651b464cac18bbfb4f3444bb04d951c478ba62852aed0014fa6d3aaf"
+    },
+    {
       "path": "src/styles/narrative-calligraphy.css",
       "bytes": 5725,
       "sha256": "42fb15189313a674e1583dbb8c0f6ce9ad890fdf66112165b68fde509125ee7a"
@@ -2164,22 +2219,22 @@
   ],
   "files": [
     {
-      "path": "assets/flowerLetter-D_yRa3nF.js",
+      "path": "assets/flowerLetter-BCocnrY6.js",
       "bytes": 2441,
-      "sha256": "f1389ffebadef585c4b44a16ab5b54e31f1c3bf7b1acad3deefcb9d4a9998ba4",
-      "origin": "dist/assets/flowerLetter-D_yRa3nF.js"
+      "sha256": "8d5096072ef319adf6a0ee37468118847b966baea1cf2653f284f4d3d9dcf3d3",
+      "origin": "dist/assets/flowerLetter-BCocnrY6.js"
     },
     {
-      "path": "assets/index-C_uTzxei.js",
-      "bytes": 584349,
-      "sha256": "d48afd3be1cf36cec85805d64c6ea06fad93f0a298fcecc4bed3a90fac09b4d5",
-      "origin": "dist/assets/index-C_uTzxei.js"
+      "path": "assets/index-DZa0FnRF.js",
+      "bytes": 586133,
+      "sha256": "4cb8cdeae0d3294cbb43637d5e87567d26a556bdb9f1129079a100f9143d90bf",
+      "origin": "dist/assets/index-DZa0FnRF.js"
     },
     {
-      "path": "assets/index-CmEnA7dJ.css",
-      "bytes": 136153,
-      "sha256": "5c1deadbb3386479379b769a8457f812f00ca825d6b13c5e9b18dfbe17e12def",
-      "origin": "dist/assets/index-CmEnA7dJ.css"
+      "path": "assets/index-DfimPEXq.css",
+      "bytes": 136851,
+      "sha256": "db03c7a1c2d7428edc6d018d00ebb81586d71afd92d4625b28724ded1aba48aa",
+      "origin": "dist/assets/index-DfimPEXq.css"
     },
     {
       "path": "assets/new-scrolls/chapter-1/cover.webp",
@@ -3988,6 +4043,60 @@
       "origin": "dist/audio/home.mp3"
     },
     {
+      "path": "audio/narration/chapter-1.mp3",
+      "bytes": 1506228,
+      "sha256": "13125e0e0cdef02063e21ecac9a52f8c1ff95444b809a95d91bfaaee0cd1890c",
+      "origin": "dist/audio/narration/chapter-1.mp3"
+    },
+    {
+      "path": "audio/narration/chapter-1.srt",
+      "bytes": 1409,
+      "sha256": "e89cf6005f4af46d0e093daa65fac75a1961fa6c437e2c41c14c5105b818c402",
+      "origin": "dist/audio/narration/chapter-1.srt"
+    },
+    {
+      "path": "audio/narration/chapter-2.mp3",
+      "bytes": 1232052,
+      "sha256": "29a5acfeea4d37dd0aa32b8099494bbaa8df60e5078bd0755049f8166254acfa",
+      "origin": "dist/audio/narration/chapter-2.mp3"
+    },
+    {
+      "path": "audio/narration/chapter-2.srt",
+      "bytes": 1139,
+      "sha256": "1ee46b283edd52de5de1b45a415dc6f38fdb34f88199d61bf34b3f9f5e61affe",
+      "origin": "dist/audio/narration/chapter-2.srt"
+    },
+    {
+      "path": "audio/narration/chapter-3.mp3",
+      "bytes": 892212,
+      "sha256": "efb0df7741fbc2444e4b9b6ddd69eb89a675226cd7d35014d8f7888126cb55ec",
+      "origin": "dist/audio/narration/chapter-3.mp3"
+    },
+    {
+      "path": "audio/narration/chapter-3.srt",
+      "bytes": 833,
+      "sha256": "a9e19f2a5a7f82b303a9fc9a1570f51d15710417d70231e89d18c570e4bd3ca4",
+      "origin": "dist/audio/narration/chapter-3.srt"
+    },
+    {
+      "path": "audio/narration/chapter-4.mp3",
+      "bytes": 930804,
+      "sha256": "46a50f4606a332c4bcc8482f2dca3351a36464cc1b83400f89ed71786f1b2ce7",
+      "origin": "dist/audio/narration/chapter-4.mp3"
+    },
+    {
+      "path": "audio/narration/chapter-4.srt",
+      "bytes": 830,
+      "sha256": "886d7ff37c5ab323171f6541c83f6365140fbe4b61de0da856dda25766cbdf3f",
+      "origin": "dist/audio/narration/chapter-4.srt"
+    },
+    {
+      "path": "audio/narration/manifest.json",
+      "bytes": 9278,
+      "sha256": "e029961b6326842096e6c8372810dd9991f37ce2d2a607d9396a8307843c5940",
+      "origin": "dist/audio/narration/manifest.json"
+    },
+    {
       "path": "favicon.svg",
       "bytes": 434,
       "sha256": "88cf0da65928acbc6b704d13e25dc9e62563291f74768e3cbd917061963e4cc0",
@@ -4014,7 +4123,7 @@
     {
       "path": "index.html",
       "bytes": 902,
-      "sha256": "f792dd3685677243f0b55235231114e1689ca378b6a9c88b83fd890c82cb0544",
+      "sha256": "6b5edacff987d4bec2fdb5eb5625dcf3e624ca2bb28b45ffab743ecf683a0608",
       "origin": "dist/index.html"
     },
     {
@@ -4181,10 +4290,10 @@
     }
   ],
   "runtimeEdition": "peony-2.0-2026-10-23",
-  "bytesExcludingInventory": 494657501,
-  "fullBuildBytes": 753876214,
+  "bytesExcludingInventory": 499234768,
+  "fullBuildBytes": 758453481,
   "excludedHistoricalBytes": 259230719,
   "copiedOriginalArtworkWithoutReencoding": true,
-  "inventorySha256": "aafc7273af2c4be419c452f79a24a2239476ac13f5c4b58cc056277917cadf10",
+  "inventorySha256": "6cc4c1c79f942dcbd8ad65f024117fe1167cb3d81375e74daa28ece0edcb6edb",
   "outputDirectory": "dist-exhibition"
 }

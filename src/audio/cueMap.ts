@@ -1,8 +1,8 @@
 /** Sound direction for the actual peony-2.0-2026-10-23 source stops.
  * These are contemporary digital colors, not a reconstruction of Tang music.
  * A=short string phrases, B=harmonic/breath answers, C=unpitched atmosphere.
- * Boundaries refer to authored camera time; reading duck uses live UI state. */
-export interface SoundscapeInput { phase: string; chapterId: number; progress: number; reading: boolean }
+ * Boundaries refer to authored camera time; reading and narration duck use live UI state. */
+export interface SoundscapeInput { phase: string; chapterId: number; progress: number; reading: boolean; narration: boolean }
 export type Levels = readonly [number, number, number];
 export interface SoundRegion { end: number; name: string; levels: Levels; cutoff: number }
 export const soundRegions: Record<number, readonly SoundRegion[]> = {

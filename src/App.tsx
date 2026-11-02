@@ -8,6 +8,7 @@ import CulturePanel from './components/CulturePanel';
 import ScrollColophon from './components/ScrollColophon';
 import FlowerLetterDialog from './components/FlowerLetterDialog';
 import AudioController from './components/AudioController';
+import NarrationController from './components/NarrationController';
 import ArtEncounters from './components/ArtEncounters';
 import { artEncounters, type ArtworkAnchorSpec, type ProjectedArtAnchor } from './data/artEncounters';
 import { SoundscapeProvider } from './hooks/usePeonySoundscape';
@@ -60,6 +61,7 @@ export default function App() {
   const [cultureOpen, setCultureOpen] = useState(false);
   const [encounterOpen, setEncounterOpen] = useState(false);
   const [letterOpen, setLetterOpen] = useState(false);
+  const [narrationPlaying, setNarrationPlaying] = useState(false);
   const [artworkAnchors, setArtworkAnchors] = useState<ArtworkAnchorSpec[]>([]);
   const [projectedAnchors, setProjectedAnchors] = useState<ProjectedArtAnchor[]>([]);
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -289,7 +291,7 @@ export default function App() {
   }
 
   return (
-    <SoundscapeProvider phase={journey.phase} chapterId={chapterId} progress={progress} reading={cultureOpen || encounterOpen || letterOpen}>
+    <SoundscapeProvider phase={journey.phase} chapterId={chapterId} progress={progress} reading={cultureOpen || encounterOpen || letterOpen} narration={narrationPlaying}>
     <div className={`peony-experience phase-${journey.phase.toLowerCase().replaceAll('_', '-')} ${motionEnabled ? '' : 'environment-off'}`} data-journey-phase={journey.phase} aria-hidden={guide.active && !browserFullscreen || undefined} style={textPlateVariables(settings) as CSSProperties}>
     {studyVisited && <div className="journey-study" inert={journey.phase !== 'HOME'} aria-hidden={journey.phase !== 'HOME'}>
       <StudyHome phase={journey.phase} chapterId={chapterId} onSelect={journey.select} motionEnabled={motionEnabled} onToggleMotion={() => setMotionEnabled(value => !value)} onOpenSettings={openSettings} renderQuality={settings.renderQuality} frameRateLimit={settings.frameRateLimit} guideReplayAvailable={guide.showReplay} onReplayGuide={guide.replay} onReadyChange={setHomeReady} />
@@ -403,6 +405,10 @@ export default function App() {
                 active={journey.interactive && !cultureOpen && !settingsOpen && !letterOpen}
                 projections={projectedAnchors} onSeek={seekEncounter}
                 onAnchorRequest={setArtworkAnchors} onOpenChange={receiveEncounterOpen} />
+              <span className="secondary-divider" />
+              <NarrationController chapterId={chapterId}
+                active={journey.interactive && !guide.active && !cultureOpen && !encounterOpen && !letterOpen && !settingsOpen}
+                onPlaybackChange={setNarrationPlaying} />
               <span className="secondary-divider" />
               {!nativeEdition && <><button type="button" className={`utility-button motion-button${motionState.enabled ? ' is-active' : ''}`}
                 onClick={() => setMotionEnabled(value => !value)}
