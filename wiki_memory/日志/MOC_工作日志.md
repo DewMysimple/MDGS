@@ -1,7 +1,7 @@
 ---
 type: moc
 status: active
-updated: 2026-10-28
+updated: 2026-11-02
 topic: work-log-index
 sources: []
 ---
@@ -12,6 +12,7 @@ sources: []
 
 | 日期 | 类型 | 任务结果 | 日志 |
 | --- | --- | --- | --- |
+| 2026-11-02 | feature | completed | [四卷配乐替换与实测](2026-11-02-%E5%9B%9B%E5%8D%B7%E9%85%8D%E4%B9%90%E6%9B%BF%E6%8D%A2%E4%B8%8E%E5%AE%9E%E6%B5%8B.md) |
 | 2026-10-28 | bug | completed | [首页花影交互反馈修复](2026-10-28-%E9%A6%96%E9%A1%B5%E8%8A%B1%E5%BD%B1%E4%BA%A4%E4%BA%92%E5%8F%8D%E9%A6%88%E4%BF%AE%E5%A4%8D.md) |
 | 2026-10-28 | bug | completed | [第三卷首饰罐盒补全与流畅度检查](2026-10-28-%E7%AC%AC%E4%B8%89%E5%8D%B7%E9%A6%96%E9%A5%B0%E7%BD%90%E7%9B%92%E8%A1%A5%E5%85%A8%E4%B8%8E%E6%B5%81%E7%95%85%E5%BA%A6%E6%A3%80%E6%9F%A5.md) |
 | 2026-10-28 | ui | completed | [画中有遇就近展开与首页入口移除](2026-10-28-%E7%94%BB%E4%B8%AD%E6%9C%89%E9%81%87%E5%B0%B1%E8%BF%91%E5%B1%95%E5%BC%80%E4%B8%8E%E9%A6%96%E9%A1%B5%E5%85%A5%E5%8F%A3%E7%A7%BB%E9%99%A4.md) |

@@ -1,0 +1,368 @@
+{
+  "started": "2026-11-02T10:44:06.924Z",
+  "checks": [
+    {
+      "test": "reading-ducks-and-restores-music",
+      "passed": true
+    },
+    {
+      "test": "chapter-playback",
+      "chapter": 1,
+      "state": {
+        "enabled": true,
+        "playback": "playing",
+        "volume": 52,
+        "clock": 2.0906666666666665,
+        "contextState": "running",
+        "desiredChapter": 1,
+        "requestedChapter": 1,
+        "activeChapter": 1,
+        "sourceCount": 1,
+        "loopDurations": [
+          148.03591666666668
+        ],
+        "levels": [
+          0.800000011920929
+        ],
+        "musicGain": 0.9017051458358765,
+        "reading": false,
+        "effects": 0,
+        "cuesPlayed": 1,
+        "decodedBuffers": 1,
+        "retiredGraphs": 0,
+        "decodedBytes": 56845792
+      },
+      "observed": {
+        "peak": 0.3093166947364807,
+        "rms": 0.07822802878289065,
+        "nonSilent": 43,
+        "clipped": 0,
+        "maxAdjacent": 0.029672618955373764
+      },
+      "passed": true
+    },
+    {
+      "test": "chapter-loop-boundary",
+      "chapter": 1,
+      "boundary": {
+        "peak": 0.18218912184238434,
+        "rms": 0.032445660082437766,
+        "nonSilent": 79,
+        "clipped": 0,
+        "maxAdjacent": 0.018277625553309917
+      },
+      "loopPcm": {
+        "frames": 165888,
+        "peak": 0.2044711858034134,
+        "clipped": 0,
+        "maxAdjacent": 0.12243906501680613,
+        "last": [
+          0.008004759438335896,
+          0.05913309380412102
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test": "chapter-transition",
+      "chapter": 2,
+      "sound": {
+        "peak": 0.19847606122493744,
+        "rms": 0.032965736748696135,
+        "nonSilent": 38,
+        "clipped": 0,
+        "maxAdjacent": 0.0636135870590806
+      },
+      "passed": true
+    },
+    {
+      "test": "chapter-playback",
+      "chapter": 2,
+      "state": {
+        "enabled": true,
+        "playback": "playing",
+        "volume": 52,
+        "clock": 6.650666666666667,
+        "contextState": "running",
+        "desiredChapter": 2,
+        "requestedChapter": 2,
+        "activeChapter": 2,
+        "sourceCount": 1,
+        "loopDurations": [
+          90.0440625
+        ],
+        "levels": [
+          0.800000011920929
+        ],
+        "musicGain": 1,
+        "reading": false,
+        "effects": 0,
+        "cuesPlayed": 2,
+        "decodedBuffers": 1,
+        "retiredGraphs": 0,
+        "decodedBytes": 34576920
+      },
+      "observed": {
+        "peak": 0.16494083404541016,
+        "rms": 0.021989914491288717,
+        "nonSilent": 49,
+        "clipped": 0,
+        "maxAdjacent": 0.0563034862279892
+      },
+      "passed": true
+    },
+    {
+      "test": "chapter-loop-boundary",
+      "chapter": 2,
+      "boundary": {
+        "peak": 0.17504684627056122,
+        "rms": 0.015876873926769435,
+        "nonSilent": 79,
+        "clipped": 0,
+        "maxAdjacent": 0.12050078436732292
+      },
+      "loopPcm": {
+        "frames": 165888,
+        "peak": 0.21753910183906555,
+        "clipped": 0,
+        "maxAdjacent": 0.1271455604583025,
+        "last": [
+          -0.014085987582802773,
+          -0.0019153336761519313
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test": "chapter-transition",
+      "chapter": 3,
+      "sound": {
+        "peak": 0.20087645947933197,
+        "rms": 0.018057485926812968,
+        "nonSilent": 29,
+        "clipped": 0,
+        "maxAdjacent": 0.16287048906087875
+      },
+      "passed": true
+    },
+    {
+      "test": "chapter-playback",
+      "chapter": 3,
+      "state": {
+        "enabled": true,
+        "playback": "playing",
+        "volume": 52,
+        "clock": 6.72,
+        "contextState": "running",
+        "desiredChapter": 3,
+        "requestedChapter": 3,
+        "activeChapter": 3,
+        "sourceCount": 1,
+        "loopDurations": [
+          90.0440625
+        ],
+        "levels": [
+          0.800000011920929
+        ],
+        "musicGain": 1,
+        "reading": false,
+        "effects": 0,
+        "cuesPlayed": 3,
+        "decodedBuffers": 1,
+        "retiredGraphs": 0,
+        "decodedBytes": 34576920
+      },
+      "observed": {
+        "peak": 0.14857307076454163,
+        "rms": 0.012888000624524497,
+        "nonSilent": 49,
+        "clipped": 0,
+        "maxAdjacent": 0.13149131275713444
+      },
+      "passed": true
+    },
+    {
+      "test": "chapter-loop-boundary",
+      "chapter": 3,
+      "boundary": {
+        "peak": 0.2018323838710785,
+        "rms": 0.012097665260814855,
+        "nonSilent": 74,
+        "clipped": 0,
+        "maxAdjacent": 0.1629747673869133
+      },
+      "loopPcm": {
+        "frames": 165888,
+        "peak": 0.2599598169326782,
+        "clipped": 0,
+        "maxAdjacent": 0.21367649734020233,
+        "last": [
+          -0.026446206495165825,
+          -0.022033706307411194
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test": "chapter-transition",
+      "chapter": 4,
+      "sound": {
+        "peak": 0.132327139377594,
+        "rms": 0.019659996495561896,
+        "nonSilent": 39,
+        "clipped": 0,
+        "maxAdjacent": 0.05877947807312012
+      },
+      "passed": true
+    },
+    {
+      "test": "chapter-playback",
+      "chapter": 4,
+      "state": {
+        "enabled": true,
+        "playback": "playing",
+        "volume": 52,
+        "clock": 6.68,
+        "contextState": "running",
+        "desiredChapter": 4,
+        "requestedChapter": 4,
+        "activeChapter": 4,
+        "sourceCount": 1,
+        "loopDurations": [
+          180.03591666666668
+        ],
+        "levels": [
+          0.800000011920929
+        ],
+        "musicGain": 1,
+        "reading": false,
+        "effects": 0,
+        "cuesPlayed": 4,
+        "decodedBuffers": 1,
+        "retiredGraphs": 0,
+        "decodedBytes": 69133792
+      },
+      "observed": {
+        "peak": 0.3081461787223816,
+        "rms": 0.061798432995682634,
+        "nonSilent": 49,
+        "clipped": 0,
+        "maxAdjacent": 0.020641427487134933
+      },
+      "passed": true
+    },
+    {
+      "test": "chapter-loop-boundary",
+      "chapter": 4,
+      "boundary": {
+        "peak": 0.33589088916778564,
+        "rms": 0.02255000021946931,
+        "nonSilent": 78,
+        "clipped": 0,
+        "maxAdjacent": 0.022722788155078888
+      },
+      "loopPcm": {
+        "frames": 165888,
+        "peak": 0.34189853072166443,
+        "clipped": 0,
+        "maxAdjacent": 0.10063784569501877,
+        "last": [
+          0.10179086774587631,
+          0.14218227565288544
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test": "continuous-master-pcm",
+      "pcm": {
+        "frames": 165888,
+        "peak": 0.34189853072166443,
+        "clipped": 0,
+        "maxAdjacent": 0.10063784569501877,
+        "last": [
+          0.10179086774587631,
+          0.14218227565288544
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test": "volume-and-clipping",
+      "muted": {
+        "peak": 0,
+        "rms": 0,
+        "nonSilent": 0,
+        "clipped": 0,
+        "maxAdjacent": 0
+      },
+      "loud": {
+        "peak": 0.425844669342041,
+        "rms": 0.1006956408378157,
+        "nonSilent": 24,
+        "clipped": 0,
+        "maxAdjacent": 0.03208625316619873
+      },
+      "passed": true
+    },
+    {
+      "test": "loop-boundary",
+      "loop": {
+        "peak": 0.6459440588951111,
+        "rms": 0.043812146348486423,
+        "nonSilent": 81,
+        "clipped": 0,
+        "maxAdjacent": 0.04369768500328064
+      },
+      "passed": true
+    },
+    {
+      "test": "visibility-suspend-and-resume",
+      "passed": true
+    },
+    {
+      "test": "return-home-uses-first-track",
+      "state": {
+        "enabled": true,
+        "playback": "playing",
+        "volume": 100,
+        "clock": 4.890666666666666,
+        "contextState": "running",
+        "desiredChapter": 1,
+        "requestedChapter": 1,
+        "activeChapter": 1,
+        "sourceCount": 1,
+        "loopDurations": [
+          148.03591666666668
+        ],
+        "levels": [
+          0.7945499420166016
+        ],
+        "musicGain": 1,
+        "reading": false,
+        "effects": 0,
+        "cuesPlayed": 4,
+        "decodedBuffers": 1,
+        "retiredGraphs": 0,
+        "decodedBytes": 56845792
+      },
+      "passed": true
+    },
+    {
+      "test": "missing-audio-error-and-retry",
+      "passed": true
+    }
+  ],
+  "requests": [
+    "mdgs://app/audio/chapter-1.mp3",
+    "mdgs://app/audio/chapter-2.mp3",
+    "mdgs://app/audio/chapter-3.mp3",
+    "mdgs://app/audio/chapter-4.mp3",
+    "mdgs://app/audio/chapter-1.mp3",
+    "mdgs://app/audio/chapter-2.mp3"
+  ],
+  "errors": [],
+  "status": "passed",
+  "finished": "2026-11-02T10:45:04.502Z",
+  "scope": "Windows packaged unpacked Electron app using mdgs:// protocol; analyser and continuous PCM tap at live Web Audio master output, isolated smoke profile. Signal checks are not a human listening assessment."
+}

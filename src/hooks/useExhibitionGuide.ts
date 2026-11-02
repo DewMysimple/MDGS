@@ -9,7 +9,7 @@ const emptyProgress = (): GuideProgress => ({ home: false, viewer: false, ending
 
 const steps: Record<GuideStage, GuideOverlayStep[]> = {
   home: [
-    { selector: '.audio-control--foyer .audio-button', title: '听春 · 声景', description: '开启或关闭原创声景；开启后还可以调节音量。' },
+    { selector: '.audio-control--foyer .audio-button', title: '听春 · 声景', description: '开启或关闭画卷配乐；开启后还可以调节音量。' },
     { selector: '[data-guide="home-preface"]', title: '作品序言', description: '在这里读一读作品的缘起和创作思路。' },
     { selector: '[data-guide="home-guide"]', title: '观展指南', description: '这里收录了游观画卷、画中互动和留笺的方法。' },
     { selector: '[data-guide="home-motion"]', title: '风物轻动', description: '随心开启或关闭首页花影与环境中的轻动。' },

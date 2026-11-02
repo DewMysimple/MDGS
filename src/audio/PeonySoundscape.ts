@@ -1,18 +1,15 @@
-import { soundRegion, type SoundRegion, type SoundscapeInput } from './cueMap';
+import type { SoundscapeInput } from './cueMap';
 
 export type SoundscapePlayback = 'off' | 'loading' | 'playing' | 'paused' | 'error';
 export interface SoundscapeState { enabled: boolean; playback: SoundscapePlayback; volume: number }
-export const soundscapeFiles = ['peony-v3-strings.mp3', 'peony-v3-breath.mp3', 'peony-v3-atmosphere.mp3'] as const;
+export const soundscapeFiles = ['chapter-1.mp3', 'chapter-2.mp3', 'chapter-3.mp3', 'chapter-4.mp3'] as const;
 const volumeKey = 'guose-fanghua:music-volume';
 const clamp = (value: number) => Math.min(100, Math.max(0, value));
-// The authored files retain conservative peaks. Calibration makes the normal
-// regional mix audible at a comfortable user volume; even maximum region
-// coefficients leave >3 dB headroom, including the quiet incidental cues.
-const layerCalibration = [2, 2, 1] as const;
 type Cue = 'unfurl' | 'note' | 'seal';
+interface Voice { source: AudioBufferSourceNode; gain: GainNode; chapter: number; started: number; offset: number }
 interface Graph {
-  context: AudioContext; sources: AudioBufferSourceNode[]; layers: GainNode[];
-  filter: BiquadFilterNode; music: GainNode; master: GainNode; epoch: number;
+  context: AudioContext; music: GainNode; master: GainNode;
+  voices: Set<Voice>; current: Voice | null;
   effects: Set<AudioBufferSourceNode>; effectBuffers: Map<Cue, AudioBuffer>;
 }
 function storedVolume() {
@@ -24,25 +21,40 @@ function approach(parameter: AudioParam, target: number, time: number, constant:
   else { const value = parameter.value; parameter.cancelScheduledValues(time); parameter.setValueAtTime(value, time); }
   parameter.setTargetAtTime(target, time, constant);
 }
+function hold(parameter: AudioParam, time: number) {
+  if (typeof parameter.cancelAndHoldAtTime === 'function') parameter.cancelAndHoldAtTime(time);
+  else { const value = parameter.value; parameter.cancelScheduledValues(time); parameter.setValueAtTime(value, time); }
+}
+/** Apply a short envelope only to the in-memory loop boundaries; source MP3s
+ * remain unchanged. This avoids an abrupt waveform step on a repeated track. */
+function softenLoop(buffer: AudioBuffer) {
+  const count = Math.min(Math.floor(buffer.length / 4), Math.round(buffer.sampleRate * .04));
+  for (let channel = 0; channel < buffer.numberOfChannels; channel++) {
+    const samples = buffer.getChannelData(channel);
+    for (let i = 0; i < count; i++) {
+      const gain = i / count;
+      samples[i] *= gain;
+      samples[buffer.length - 1 - i] *= gain;
+    }
+  }
+}
 
-/** One gesture-enabled, site-wide audio clock. Routes change a mix, never a song
- * position. All instruments, atmosphere and short cues are original synthesis.
- * No graph or network request exists before the visitor explicitly enables it. */
+/** One opt-in graph for the whole visit. The original file for each scroll is
+ * decoded on demand; transitions crossfade, and only one decoded track is cached. */
 export class PeonySoundscape {
   private state: SoundscapeState = { enabled: false, playback: 'off', volume: storedVolume() };
   private listeners = new Set<() => void>();
   private graph: Graph | null = null;
-  private buffers = new Map<string, AudioBuffer>();
   private retired = new Map<Graph, number>();
+  private cached: { chapter: number; buffer: AudioBuffer } | null = null;
   private request: AbortController | null = null;
   private generation = 0;
+  private trackVersion = 0;
+  private requestedChapter = 0;
   private activity = 0;
   private alive = false;
-  private offset = 0;
+  private resumeAt: { chapter: number; offset: number } | null = null;
   private input: SoundscapeInput = { phase: 'HOME', chapterId: 1, progress: 0, reading: false };
-  private applied: SoundRegion | null = null;
-  private pendingRegion = '';
-  private mixTimer = 0;
   private cueTimes = new Map<Cue, number>();
   private lastCue = -Infinity;
   private visit = 0;
@@ -60,25 +72,32 @@ export class PeonySoundscape {
   mount() { this.alive = true; document.addEventListener('visibilitychange', this.visibility); }
   dispose() {
     this.alive = false; document.removeEventListener('visibilitychange', this.visibility);
-    this.release(false); this.buffers.clear();
+    this.release(false); this.cached = null;
     for (const [graph, timer] of this.retired) { window.clearTimeout(timer); this.close(graph); }
     this.retired.clear(); this.publish({ enabled: false, playback: 'off' });
   }
-  private clock(graph = this.graph) { return graph?.sources.length ? Math.max(0, graph.context.currentTime - graph.epoch) : this.offset; }
+  private chapter() {
+    if (this.input.phase === 'HOME' || this.input.phase === 'RETURNING_HOME') return 1;
+    return Number.isInteger(this.input.chapterId) && this.input.chapterId >= 1 && this.input.chapterId <= 4 ? this.input.chapterId : 1;
+  }
+  private clock(graph = this.graph) { return graph?.context.currentTime ?? 0; }
+  private voiceOffset(voice: Voice, graph: Graph) {
+    const duration = voice.source.buffer?.duration ?? 0;
+    return duration ? (voice.offset + Math.max(0, graph.context.currentTime - voice.started)) % duration : 0;
+  }
   private close(graph: Graph) {
     this.retired.delete(graph);
-    for (const source of [...graph.sources, ...graph.effects]) { try { source.stop(); } catch { /* Already ended. */ } source.disconnect(); }
-    graph.layers.forEach(layer => layer.disconnect()); graph.filter.disconnect(); graph.music.disconnect(); graph.master.disconnect();
-    graph.effects.clear(); graph.effectBuffers.clear();
+    for (const voice of graph.voices) { try { voice.source.stop(); } catch { /* Already ended. */ } voice.source.disconnect(); voice.gain.disconnect(); }
+    for (const source of graph.effects) { try { source.stop(); } catch { /* Already ended. */ } source.disconnect(); }
+    graph.voices.clear(); graph.effects.clear(); graph.effectBuffers.clear(); graph.music.disconnect(); graph.master.disconnect();
     if (graph.context.state !== 'closed') void graph.context.close().catch(() => {});
   }
   private release(fade: boolean) {
-    this.generation++; this.activity++; this.request?.abort(); this.request = null;
-    window.clearTimeout(this.mixTimer); this.mixTimer = 0; this.pendingRegion = '';
-    const graph = this.graph; this.graph = null; this.applied = null;
+    this.generation++; this.trackVersion++; this.activity++; this.request?.abort(); this.request = null; this.requestedChapter = 0;
+    const graph = this.graph; this.graph = null;
     if (!graph) return;
-    this.offset = this.clock(graph);
-    if (fade && graph.sources.length && graph.context.state === 'running') {
+    if (graph.current) this.resumeAt = { chapter: graph.current.chapter, offset: this.voiceOffset(graph.current, graph) };
+    if (fade && graph.voices.size && graph.context.state === 'running') {
       approach(graph.master.gain, 0, graph.context.currentTime, .045);
       this.retired.set(graph, window.setTimeout(() => this.close(graph), 260));
     } else this.close(graph);
@@ -98,93 +117,92 @@ export class PeonySoundscape {
     if (!this.alive) return;
     const generation = ++this.generation;
     this.publish({ enabled: true, playback: 'loading' });
-    const request = new AbortController(); this.request = request;
-    let context: AudioContext | null = null;
     try {
-      // This synchronous construction/resume remains inside the click gesture.
-      context = new AudioContext();
-      const graph: Graph = { context, sources: [], layers: [], filter: context.createBiquadFilter(), music: context.createGain(), master: context.createGain(), epoch: context.currentTime - this.offset, effects: new Set(), effectBuffers: new Map() };
-      this.graph = graph; graph.master.gain.value = 0;
-      graph.filter.type = 'lowpass'; graph.filter.Q.value = .5;
-      graph.filter.connect(graph.music); graph.music.connect(graph.master); graph.master.connect(context.destination);
+      // Construct and resume synchronously inside the visitor's click gesture.
+      const context = new AudioContext();
+      const graph: Graph = { context, music: context.createGain(), master: context.createGain(), voices: new Set(), current: null, effects: new Set(), effectBuffers: new Map() };
+      this.graph = graph; graph.master.gain.value = 0; graph.music.gain.value = this.input.reading ? .501187 : 1;
+      graph.music.connect(graph.master); graph.master.connect(context.destination);
+      this.cueTimes.clear(); this.lastCue = -Infinity; this.suppressSealUntil = 0;
       await context.resume();
       if (!this.current(generation, graph)) return;
-      const buffers = await Promise.all(soundscapeFiles.map(async file => {
-        const cached = this.buffers.get(file); if (cached) return cached;
-        const response = await fetch(`${import.meta.env.BASE_URL}audio/${file}`, { signal: request.signal });
-        if (!response.ok) throw new Error('The original soundscape could not be loaded.');
-        const buffer = await context!.decodeAudioData(await response.arrayBuffer());
-        if (this.current(generation, graph)) this.buffers.set(file, buffer);
-        return buffer;
-      }));
-      if (!this.current(generation, graph)) return;
-      if (buffers.some((buffer, i) => Math.abs(buffer.duration - (i === 2 ? 24 : 160)) > .01)) throw new Error('Soundscape stems have inconsistent durations.');
-      this.request = null;
-      const when = context.currentTime + .055; graph.epoch = when - this.offset;
-      buffers.forEach((buffer, index) => {
-        const source = context!.createBufferSource(), gain = context!.createGain();
-        source.buffer = buffer; source.loop = true; source.loopEnd = buffer.duration; gain.gain.value = 0;
-        source.connect(gain); gain.connect(index === 2 ? graph.master : graph.filter);
-        graph.sources.push(source); graph.layers.push(gain);
-        source.start(when, this.offset % buffer.duration);
-      });
-      this.applyMix(soundRegion(this.input), true);
-      await this.synchronize();
+      await this.selectTrack(this.chapter(), graph, generation);
     } catch {
       if (generation !== this.generation || !this.alive) return;
       this.release(false); this.publish({ enabled: false, playback: 'error' });
     }
   }
   private current(generation: number, graph: Graph) { return this.alive && generation === this.generation && this.graph === graph; }
+  private async selectTrack(chapter: number, graph: Graph, generation: number) {
+    const version = ++this.trackVersion;
+    this.request?.abort(); this.request = null; this.requestedChapter = chapter;
+    if (graph.current?.chapter === chapter) { await this.synchronize(); return; }
+    const request = new AbortController(); this.request = request;
+    this.publish({ playback: 'loading' });
+    try {
+      let buffer = this.cached?.chapter === chapter ? this.cached.buffer : null;
+      if (!buffer) {
+        const response = await fetch(`${import.meta.env.BASE_URL}audio/${soundscapeFiles[chapter - 1]}`, { signal: request.signal });
+        if (!response.ok) throw new Error('Chapter music could not be loaded');
+        buffer = await graph.context.decodeAudioData(await response.arrayBuffer());
+        if (!(buffer.duration > 1) || !Number.isFinite(buffer.duration)) throw new Error('Invalid chapter music');
+        if (!this.current(generation, graph) || version !== this.trackVersion || request.signal.aborted) return;
+        softenLoop(buffer);
+      }
+      if (!this.current(generation, graph) || version !== this.trackVersion || request.signal.aborted || this.chapter() !== chapter) return;
+      this.request = null; this.cached = { chapter, buffer };
+      const now = graph.context.currentTime, start = now + .035, fade = .8;
+      for (const previous of graph.voices) {
+        hold(previous.gain.gain, now); previous.gain.gain.linearRampToValueAtTime(0, now + fade);
+        try { previous.source.stop(now + fade + .02); } catch { /* Already scheduled to stop. */ }
+      }
+      const source = graph.context.createBufferSource(), gain = graph.context.createGain();
+      const offset = this.resumeAt?.chapter === chapter ? this.resumeAt.offset % buffer.duration : 0;
+      this.resumeAt = null;
+      source.buffer = buffer; source.loop = true; source.loopEnd = buffer.duration;
+      gain.gain.setValueAtTime(0, now); gain.gain.linearRampToValueAtTime(.8, start + fade);
+      source.connect(gain); gain.connect(graph.music);
+      const voice: Voice = { source, gain, chapter, started: start, offset };
+      graph.voices.add(voice); graph.current = voice;
+      source.onended = () => { graph.voices.delete(voice); source.disconnect(); gain.disconnect(); };
+      source.start(start, offset);
+      await this.synchronize();
+    } catch (error) {
+      if (!this.current(generation, graph) || version !== this.trackVersion || request.signal.aborted) return;
+      this.release(false); this.publish({ enabled: false, playback: 'error' });
+    }
+  }
   private async synchronize() {
     const graph = this.graph;
     if (!graph || !this.state.enabled || graph.context.state === 'closed') return;
-    const activity = ++this.activity, generation = this.generation;
-    const visible = !document.hidden;
+    const activity = ++this.activity, generation = this.generation, visible = !document.hidden;
     try {
       if (visible) await graph.context.resume();
       else { graph.master.gain.cancelScheduledValues(graph.context.currentTime); graph.master.gain.setValueAtTime(0, graph.context.currentTime); await graph.context.suspend(); }
-      if (!this.current(generation, graph) || activity !== this.activity) return;
-      if (!graph.sources.length) return;
+      if (!this.current(generation, graph) || activity !== this.activity || !graph.current) return;
       if (visible) approach(graph.master.gain, this.state.volume / 100, graph.context.currentTime, .18);
       this.publish({ playback: visible ? 'playing' : 'paused' });
     } catch { if (this.current(generation, graph) && activity === this.activity) this.publish({ playback: 'paused' }); }
   }
   update(input: SoundscapeInput) {
-    const previous = this.input; this.input = { ...input, progress: Number.isFinite(input.progress) ? Math.min(1, Math.max(0, input.progress)) : 0 };
+    const previous = this.input;
+    this.input = { ...input, progress: Number.isFinite(input.progress) ? Math.min(1, Math.max(0, input.progress)) : 0 };
     if (previous.chapterId !== input.chapterId || previous.phase === 'HOME' && input.phase !== 'HOME') this.visit++;
     if (previous.phase !== 'SCROLL_LOADING' && input.phase === 'SCROLL_LOADING') this.cue('unfurl');
     if (!previous.reading && input.reading) this.cue('note');
-    const smallAdvance = this.input.progress - previous.progress;
-    // The visual controller smooths large seeks into small later increments.
-    // Remember a detected jump through that settling interval, so its final
-    // tiny increment cannot masquerade as continuously arriving at the end.
-    if (Math.abs(smallAdvance) > .035 || previous.chapterId !== input.chapterId) this.suppressSealUntil = this.clock() + 3;
-    if (input.phase === 'SCROLL_VIEWER' && previous.phase === 'SCROLL_VIEWER' && previous.chapterId === input.chapterId && this.input.progress >= .9999 && previous.progress < .9999 && smallAdvance > 0 && smallAdvance < .045 && this.clock() >= this.suppressSealUntil && this.sealedVisit !== this.visit) {
+    const advance = this.input.progress - previous.progress;
+    if (Math.abs(advance) > .035 || previous.chapterId !== input.chapterId) this.suppressSealUntil = this.clock() + 3;
+    if (input.phase === 'SCROLL_VIEWER' && previous.phase === 'SCROLL_VIEWER' && previous.chapterId === input.chapterId && this.input.progress >= .9999 && previous.progress < .9999 && advance > 0 && advance < .045 && this.clock() >= this.suppressSealUntil && this.sealedVisit !== this.visit) {
       this.sealedVisit = this.visit; this.cue('seal');
     }
     const graph = this.graph;
-    if (!graph || !graph.sources.length) return;
+    if (!graph || !this.state.enabled) return;
     if (previous.reading !== input.reading) approach(graph.music.gain, input.reading ? .501187 : 1, graph.context.currentTime, input.reading ? .07 : .23);
-    const region = soundRegion(this.input);
-    if (region.name === this.applied?.name) { window.clearTimeout(this.mixTimer); this.pendingRegion = ''; return; }
-    if (region.name === this.pendingRegion) return;
-    window.clearTimeout(this.mixTimer); this.pendingRegion = region.name;
-    // Coalesce rapid/reverse seeks. This sets only the final current mix; it
-    // never walks skipped nodes or queues a sequence of incidental sounds.
-    this.mixTimer = window.setTimeout(() => {
-      this.mixTimer = 0; this.pendingRegion = '';
-      if (this.graph === graph) this.applyMix(soundRegion(this.input));
-    }, input.phase === 'SCROLL_VIEWER' ? 350 : 0);
-  }
-  private applyMix(region: SoundRegion, initial = false) {
-    const graph = this.graph; if (!graph || graph.context.state === 'closed') return;
-    this.applied = region;
-    const time = graph.context.currentTime;
-    const constant = region.name === '盛景渐远' ? .55 : .38;
-    graph.layers.forEach((layer, index) => approach(layer.gain, region.levels[index] * layerCalibration[index], time, constant));
-    approach(graph.filter.frequency, region.cutoff, time, .65);
-    if (initial) graph.music.gain.value = this.input.reading ? .501187 : 1;
+    const chapter = this.chapter();
+    if (chapter !== this.requestedChapter) {
+      if (this.resumeAt?.chapter !== chapter) this.resumeAt = null;
+      void this.selectTrack(chapter, graph, this.generation);
+    }
   }
   cue = (kind: Cue) => {
     const graph = this.graph;
@@ -210,11 +228,12 @@ export class PeonySoundscape {
   };
   snapshot = () => {
     const graph = this.graph;
-    return { ...this.state, clock: this.clock(), contextState: graph?.context.state ?? 'closed', sourceCount: graph?.sources.length ?? 0,
-      loopDurations: graph?.sources.map(source => source.buffer?.duration) ?? [], zone: this.applied?.name ?? '',
-      targetLevels: this.applied?.levels.map((level, index) => level * layerCalibration[index]) ?? [], levels: graph?.layers.map(layer => layer.gain.value) ?? [],
-      musicGain: graph?.music.gain.value ?? 1, reading: this.input.reading, sourceEpoch: graph?.epoch ?? null,
-      effects: graph?.effects.size ?? 0, cuesPlayed: this.cueCount, decodedBuffers: this.buffers.size, retiredGraphs: this.retired.size,
-      decodedBytes: [...this.buffers.values()].reduce((sum, buffer) => sum + buffer.length * buffer.numberOfChannels * 4, 0) };
+    return { ...this.state, clock: this.clock(), contextState: graph?.context.state ?? 'closed',
+      desiredChapter: this.chapter(), requestedChapter: this.requestedChapter, activeChapter: graph?.current?.chapter ?? null,
+      sourceCount: graph?.voices.size ?? 0, loopDurations: [...(graph?.voices ?? [])].map(voice => voice.source.buffer?.duration),
+      levels: [...(graph?.voices ?? [])].map(voice => voice.gain.gain.value), musicGain: graph?.music.gain.value ?? 1,
+      reading: this.input.reading, effects: graph?.effects.size ?? 0, cuesPlayed: this.cueCount,
+      decodedBuffers: this.cached ? 1 : 0, retiredGraphs: this.retired.size,
+      decodedBytes: this.cached ? this.cached.buffer.length * this.cached.buffer.numberOfChannels * 4 : 0 };
   };
 }
