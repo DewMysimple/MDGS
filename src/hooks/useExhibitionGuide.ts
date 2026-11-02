@@ -4,12 +4,12 @@ import type { JourneyPhase } from './useStudyJourney';
 
 type GuideStage = 'home' | 'viewer' | 'ending';
 type GuideProgress = Record<GuideStage, boolean>;
-const guideKey = 'guose-fanghua:exhibition-guide:v1';
 const emptyProgress = (): GuideProgress => ({ home: false, viewer: false, ending: false });
+const completedProgress = (): GuideProgress => ({ home: true, viewer: true, ending: true });
 
 const steps: Record<GuideStage, GuideOverlayStep[]> = {
   home: [
-    { selector: '.audio-control--foyer .audio-button', title: '听春 · 声景', description: '开启或关闭画卷配乐；开启后还可以调节音量。' },
+    { selector: '.audio-control--foyer .audio-button', title: '听春 · 首页配乐', description: '开启或关闭首页配乐；开启后还可以调节音量，进入画卷后会切换为相应卷的配乐。' },
     { selector: '[data-guide="home-preface"]', title: '作品序言', description: '在这里读一读作品的缘起和创作思路。' },
     { selector: '[data-guide="home-guide"]', title: '观展指南', description: '这里收录了游观画卷、画中互动和留笺的方法。' },
     { selector: '[data-guide="home-motion"]', title: '风物轻动', description: '随心开启或关闭首页花影与环境中的轻动。' },
@@ -35,17 +35,6 @@ const steps: Record<GuideStage, GuideOverlayStep[]> = {
   ],
 };
 
-function readProgress(): GuideProgress {
-  try {
-    const saved: unknown = JSON.parse(localStorage.getItem(guideKey) ?? 'null');
-    if (saved && typeof saved === 'object') {
-      const value = saved as Partial<GuideProgress>;
-      return { home: value.home === true, viewer: value.viewer === true, ending: value.ending === true };
-    }
-  } catch { /* A blocked or malformed store should not prevent viewing. */ }
-  return emptyProgress();
-}
-
 interface Options {
   phase: JourneyPhase;
   homeReady: boolean;
@@ -54,11 +43,10 @@ interface Options {
   dialogOpen: boolean;
 }
 
-/** Each part is introduced once, when the viewer actually arrives there. */
+/** Introduce each part once per launch, when the viewer arrives there. */
 export function useExhibitionGuide({ phase, homeReady, finished, fullscreen, dialogOpen }: Options) {
-  const [completed, setCompleted] = useState(readProgress);
-  // A replay is scoped to this visit. The original completion record remains
-  // intact if the viewer leaves before revisiting every scene.
+  const [completed, setCompleted] = useState(emptyProgress);
+  // A replay is scoped to this visit and does not change previous choices.
   const [replayPending, setReplayPending] = useState<GuideProgress | null>(null);
   const [stage, setStage] = useState<GuideStage | null>(null);
   const [index, setIndex] = useState(0);
@@ -69,11 +57,6 @@ export function useExhibitionGuide({ phase, homeReady, finished, fullscreen, dia
     document.addEventListener('visibilitychange', update);
     return () => document.removeEventListener('visibilitychange', update);
   }, []);
-
-  useEffect(() => {
-    try { localStorage.setItem(guideKey, JSON.stringify(completed)); }
-    catch { /* The current visit still keeps progress in memory. */ }
-  }, [completed]);
 
   const seen = replayPending ?? completed;
   const location: GuideStage | null = phase === 'HOME' && homeReady ? 'home'
@@ -120,11 +103,17 @@ export function useExhibitionGuide({ phase, homeReady, finished, fullscreen, dia
     setStage(phase === 'HOME' ? 'home' : 'viewer');
   }, [phase]);
 
+  const skip = useCallback(() => {
+    setCompleted(completedProgress());
+    setReplayPending(null);
+    setStage(null); setIndex(0);
+  }, []);
+
   return {
     active: stage !== null,
     step: stage ? steps[stage][index] : null,
     index, count: stage ? steps[stage].length : 0,
     showReplay: completed.home || completed.viewer || completed.ending,
-    advance, replay,
+    advance, replay, skip,
   };
 }

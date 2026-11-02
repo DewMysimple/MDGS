@@ -12,7 +12,8 @@
 .guide-card p{margin:0;font-size:15px;line-height:1.8;letter-spacing:.04em;color:#3f4c3b}
 .guide-card .guide-unavailable{margin-top:9px;padding:8px 10px;border-left:2px solid #9d5139;background:#eee1ce;font-size:13px;line-height:1.6;color:#704032}
 .guide-card-bottom{margin-top:13px;padding-top:10px;border-top:1px solid #bfa98680;font-size:12px;line-height:1.5;letter-spacing:.06em;color:#80503d}
-.guide-card-bottom span:last-child{font-size:19px;line-height:1}
+.guide-card-bottom button{flex:none;color:#80503d;font:inherit;letter-spacing:.04em;border-bottom:1px solid #ac795f;cursor:pointer}
+.guide-card-bottom button:hover{color:#923f30}.guide-card-bottom button:focus-visible{outline:2px solid #9d5139;outline-offset:3px}
 @media(max-width:480px){.guide-card{padding:14px 16px 12px}.guide-card h2{font-size:19px;margin:7px 0}.guide-card p{font-size:14px;line-height:1.65}.guide-card-bottom{margin-top:9px;padding-top:8px}}
 @media(prefers-reduced-motion:reduce){.guide-halo::after{animation:none}}
 

@@ -436,7 +436,7 @@ export default function App() {
       onFailure={journey.onPresentationFailure} />}
     <ViewerSettingsPanel open={settingsOpen} chapterId={chapterId} settings={settings} onChange={setSettings} onClose={closeSettings} />
     <FlowerLetterDialog open={letterOpen} chapterId={chapterId} onClose={() => setLetterOpen(false)} />
-    {guide.step && <GuideOverlay step={guide.step} stepIndex={guide.index} stepCount={guide.count} onAdvance={guide.advance} />}
+    {guide.step && <GuideOverlay step={guide.step} stepIndex={guide.index} stepCount={guide.count} onAdvance={guide.advance} onSkip={guide.skip} />}
     </div>
     </SoundscapeProvider>
   );

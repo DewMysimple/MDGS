@@ -12,7 +12,7 @@ const SoundscapeContext = createContext<SoundscapeContextValue | null>(null);
 export interface SoundscapeProviderProps extends SoundscapeInput { children: ReactNode }
 
 /** Wrap the complete application once, outside conditional home/viewer layers.
- * Multiple AudioController views share this one graph and one opt-in state.
+ * Multiple AudioController views share this one graph and playback state.
  * `reading` means an opened flower-note/cultural reading panel, not every
  * ordinary paragraph already printed alongside the painting. */
 export function SoundscapeProvider({ phase, chapterId, progress, reading, children }: SoundscapeProviderProps) {

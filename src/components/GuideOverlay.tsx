@@ -13,6 +13,7 @@ interface Props {
   stepIndex: number;
   stepCount: number;
   onAdvance: () => void;
+  onSkip: () => void;
 }
 
 interface Geometry {
@@ -101,14 +102,16 @@ function sameGeometry(a: Geometry | null, b: Geometry | null) {
 }
 
 /** Draws the guide in the document's active fullscreen tree, without activating the highlighted control. */
-export default function GuideOverlay({ step, stepIndex, stepCount, onAdvance }: Props) {
+export default function GuideOverlay({ step, stepIndex, stepCount, onAdvance, onSkip }: Props) {
   const [geometry, setGeometry] = useState<Geometry | null>(null);
   const [unavailable, setUnavailable] = useState(false);
   const [portalTarget, setPortalTarget] = useState<Element>(() => document.fullscreenElement ?? document.body);
   const dialog = useRef<HTMLDivElement>(null);
   const advanceRef = useRef(onAdvance);
+  const skipRef = useRef(onSkip);
   const canAdvanceRef = useRef(false);
   advanceRef.current = onAdvance;
+  skipRef.current = onSkip;
   canAdvanceRef.current = !!geometry || unavailable;
 
   useEffect(() => {
@@ -187,6 +190,9 @@ export default function GuideOverlay({ step, stepIndex, stepCount, onAdvance }: 
     const onKey = (event: KeyboardEvent) => {
       event.preventDefault();
       event.stopImmediatePropagation();
+      if (!event.repeat && !event.isComposing && (event.key === 'Escape' || (event.key === 'Enter' || event.key === ' ') && event.target instanceof Element && event.target.closest('[data-guide-skip]'))) {
+        skipRef.current(); return;
+      }
       if (!event.repeat && !event.isComposing && canAdvanceRef.current) advanceRef.current();
     };
     const stopWheel = (event: WheelEvent) => { event.preventDefault(); event.stopImmediatePropagation(); };
@@ -215,7 +221,7 @@ export default function GuideOverlay({ step, stepIndex, stepCount, onAdvance }: 
         <p id="guide-description">{step.description}</p>
         {unavailable && <p className="guide-unavailable">当前控件暂不可见，请点击屏幕或按任意键继续。</p>}
       </div>
-      <div className="guide-card-bottom"><span>点击屏幕或按任意键继续</span><span aria-hidden="true">→</span></div>
+      <div className="guide-card-bottom"><span>点击屏幕或按其他键继续</span><button type="button" data-guide-skip onClick={event => { event.preventDefault(); event.stopPropagation(); onSkip(); }}>Esc 跳过指引</button></div>
     </div>
   </div>, portalTarget);
 }

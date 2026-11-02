@@ -64,7 +64,7 @@ async function assertGenerated(directory) {
     } throw error; }
 }
 const roots = ['assets/new-scrolls', 'ui/peony-atlas', 'fonts'];
-const singles = ['index.html', 'favicon.svg', 'ui/brocade.svg', 'ui/peony-line.svg', 'ui/roller-band.svg', ...[1, 2, 3, 4].map(chapter => `audio/chapter-${chapter}.mp3`)];
+const singles = ['index.html', 'favicon.svg', 'ui/brocade.svg', 'ui/peony-line.svg', 'ui/roller-band.svg', 'audio/home.mp3', ...[1, 2, 3, 4].map(chapter => `audio/chapter-${chapter}.mp3`)];
 const libraries = ['react', 'react-dom', 'scheduler', 'three', 'lucide-react'];
 async function sourceInputFiles() {
   const publicFiles = singles.filter(file => file !== 'index.html').map(file => path.join(root, 'public', file));
@@ -111,8 +111,8 @@ for (const file of selected) {
 const extras = {
   'serve.cjs': await readFile(path.join(root, 'scripts/serve-exhibition.cjs')),
   '启动展览.cmd': Buffer.from('@echo off\r\nsetlocal\r\npushd "%~dp0"\r\nnode serve.cjs --open\r\npopd\r\npause\r\n', 'utf8'),
-  '运行说明.txt': Buffer.from('国色长卷 · 数字牡丹赋\n\n电脑端数字艺术作品。此目录为完整运行文件，无需项目源码、npm依赖、Blender或外部字体。\n\nWindows：安装Node.js 18或更新版本后，双击“启动展览.cmd”。\n其他系统：在本目录运行 node serve.cjs --open。\n也可以将本目录交给任意支持静态文件的HTTP服务器。请通过HTTP地址进入，勿直接双击index.html。\n\n首次点击“启声”开启画卷配乐。四卷可滚轮、拖拽、方向键游观或自动展卷；“画中有遇”参与画中叙事，卷末可保存观者花笺。\n\n展示包仅收录当前四卷及选用美术、声音与字体。原画纹理与程序场逐字节复制；工程、旧版素材、可编辑原件和创作报告保留在完整仓库。\n', 'utf8'),
-  '创作与来源.txt': Buffer.from('国色长卷 · 数字牡丹赋\n\n一朵花，如何进入中国人的生活与想象？本作以四卷国画连接山野、御苑、人间与诗意，让游观、辨读、入锦与落印成为观众参与叙事的方式。\n\n四卷原作：用户提供的“牡丹2.0”。本轮保留作者图层、几何、镜头、材质、动画及25段原文；新增诗意短章、花事札记与观者花笺为当代展览新题。贬花烈火明确为传说；第三卷入锦为艺术化联想，不模拟特定织造技法。\n\n首页美术：内置image_gen辅助生成四幅独立画层，再进行原创分层布局、风动、湿色与指针交互。没有将参考网站的画面、代码或音轨复制进作品。提示、尺寸与哈希见ui/peony-atlas/provenance.json；原始PNG与完整调研在工程仓库。\n\n声音：四卷配乐由用户提供，按各卷分别播放。首页使用第一卷配乐，切卷时平滑过渡。\n\n字体：本地霞鹜文楷，OFL许可全文见fonts/OFL-WenKai.txt。程序运行库与许可见third-party-licenses/NOTICE.txt。新增文化札记在网页内直接提供文献、馆藏参读链接，未把这些馆藏图片收入作品。\n', 'utf8'),
+  '运行说明.txt': Buffer.from('国色长卷 · 数字牡丹赋\n\n电脑端数字艺术作品。此目录为完整运行文件，无需项目源码、npm依赖、Blender或外部字体。\n\nWindows：安装Node.js 18或更新版本后，双击“启动展览.cmd”。\n其他系统：在本目录运行 node serve.cjs --open。\n也可以将本目录交给任意支持静态文件的HTTP服务器。请通过HTTP地址进入，勿直接双击index.html。\n\n画卷配乐默认开启；若浏览器限制自动播放，轻触页面后即可听到配乐。可使用“听春”关闭或重新开启。四卷可滚轮、拖拽、方向键游观或自动展卷；“画中有遇”参与画中叙事，卷末可保存观者花笺。\n\n展示包仅收录当前四卷及选用美术、声音与字体。原画纹理与程序场逐字节复制；工程、旧版素材、可编辑原件和创作报告保留在完整仓库。\n', 'utf8'),
+  '创作与来源.txt': Buffer.from('国色长卷 · 数字牡丹赋\n\n一朵花，如何进入中国人的生活与想象？本作以四卷国画连接山野、御苑、人间与诗意，让游观、辨读、入锦与落印成为观众参与叙事的方式。\n\n四卷原作：用户提供的“牡丹2.0”。本轮保留作者图层、几何、镜头、材质、动画及25段原文；新增诗意短章、花事札记与观者花笺为当代展览新题。贬花烈火明确为传说；第三卷入锦为艺术化联想，不模拟特定织造技法。\n\n首页美术：内置image_gen辅助生成四幅独立画层，再进行原创分层布局、风动、湿色与指针交互。没有将参考网站的画面、代码或音轨复制进作品。提示、尺寸与哈希见ui/peony-atlas/provenance.json；原始PNG与完整调研在工程仓库。\n\n声音：首页和四卷配乐由用户提供，各自播放，切换时平滑过渡。\n\n字体：本地霞鹜文楷，OFL许可全文见fonts/OFL-WenKai.txt。程序运行库与许可见third-party-licenses/NOTICE.txt。新增文化札记在网页内直接提供文献、馆藏参读链接，未把这些馆藏图片收入作品。\n', 'utf8'),
 };
 const notices = [];
 for (const name of libraries) {

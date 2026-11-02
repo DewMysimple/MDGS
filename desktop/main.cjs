@@ -9,6 +9,9 @@ const TITLE = '国色长卷 · 数字牡丹赋';
 const ORIGIN = 'mdgs://app';
 const smoke = process.argv.includes('--mdgs-smoke');
 const profileArgument = process.argv.find(argument => argument.startsWith('--mdgs-smoke-profile='));
+// The exhibition is a local, self-contained audio-visual work. Let its own
+// soundscape begin at launch; ordinary browsers retain their autoplay policy.
+app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required');
 if (smoke) app.setPath('userData', profileArgument
   ? path.resolve(profileArgument.slice('--mdgs-smoke-profile='.length))
   : path.join(app.getPath('temp'), `mdgs-desktop-smoke-${process.pid}`));

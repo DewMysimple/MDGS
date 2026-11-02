@@ -76,6 +76,13 @@ export default function NarrativeCalligraphy({ chapterId, progress, stops, activ
     }
   }, [mode, active, cue, poeticLock, lockReady, sampleReady, effectivePlacement, layoutKey, chapterId, progress, playing]);
   const horizontal = effectivePlacement?.orientation === 'horizontal' || (!effectivePlacement?.orientation && isCompactNarrativeViewport(size.width, size.height));
+  // The previous cue can still be fading when the next quiet area is found.
+  // Retain its own position and orientation until that fade finishes instead of
+  // moving both pieces of ink to the incoming cue's location at once.
+  const cuePlacements = useRef(new Map<string, { placement?: NarrativePlacement; horizontal: boolean }>());
+  useLayoutEffect(() => {
+    if (cue && active) cuePlacements.current.set(cue.id, { placement: effectivePlacement, horizontal });
+  }, [cue, active, effectivePlacement, horizontal]);
   const [entered, setEntered] = useState(false);
   const root = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -89,21 +96,26 @@ export default function NarrativeCalligraphy({ chapterId, progress, stops, activ
   useEffect(() => {
     setEntered(false);
     if (!active) return;
-    const frame = requestAnimationFrame(() => setEntered(true));
-    return () => cancelAnimationFrame(frame);
+    let secondFrame = 0;
+    const firstFrame = requestAnimationFrame(() => { secondFrame = requestAnimationFrame(() => setEntered(true)); });
+    return () => { cancelAnimationFrame(firstFrame); cancelAnimationFrame(secondFrame); };
   }, [active, chapterId, mode]);
-  const custom = effectivePlacement ? {
-    '--narrative-x': `${Math.max(0, Math.min(1 - effectivePlacement.width, effectivePlacement.x)) * 100}%`,
-    '--narrative-y': horizontal && effectivePlacement.y > .5 ? 'auto' : `${Math.max(0, effectivePlacement.y) * 100}%`,
-    '--narrative-bottom': horizontal && effectivePlacement.y > .5 ? `${Math.max(0, 1 - effectivePlacement.y - effectivePlacement.height) * 100}%` : 'auto',
-    '--narrative-width': `${Math.min(1, effectivePlacement.width) * 100}%`, '--narrative-height': `${Math.min(1, effectivePlacement.height) * 100}%`,
-  } as CSSProperties : undefined;
   return <div ref={root} className={`narrative-calligraphy${effectivePlacement ? ' has-observed-placement' : ''}${effectivePlacement?.dense ? ' has-paper-veil' : ''}`}
-    style={custom} aria-label={`${narrativeChapters[chapterId]?.title ?? ''}卷内题跋`} aria-live="off" hidden={mode === 'quiet'}
+    aria-label={`${narrativeChapters[chapterId]?.title ?? ''}卷内题跋`} aria-live="off" hidden={mode === 'quiet'}
     data-chapter={chapterId} data-mode={mode} data-placement-ready={!!effectivePlacement} data-placement-locked={mode === 'poetic' && lockReady} data-side={(effectivePlacement?.x ?? 1) < .5 ? 'left' : 'right'} data-layout={horizontal ? 'horizontal' : 'vertical'} data-quiet-fraction={effectivePlacement?.quietFraction?.toFixed(3)} data-cue-id={cue?.id ?? ''} data-paragraph={cue ? cue.paragraphIndex + 1 : ''} data-source-node={cue?.sourceNode ?? ''}>
     {track.map(passage => {
       const visible = entered && textReady && passage.id === cue?.id;
-      return <article key={passage.id} className={`narrative-passage${visible ? ' is-visible' : ''}`}
+      const retained = !visible ? cuePlacements.current.get(passage.id) : undefined;
+      const position = retained ? retained.placement : effectivePlacement;
+      const isHorizontal = retained?.horizontal ?? horizontal;
+      const custom = position ? {
+        '--narrative-x': `${Math.max(0, Math.min(1 - position.width, position.x)) * 100}%`,
+        '--narrative-y': isHorizontal && position.y > .5 ? 'auto' : `${Math.max(0, position.y) * 100}%`,
+        '--narrative-bottom': isHorizontal && position.y > .5 ? `${Math.max(0, 1 - position.y - position.height) * 100}%` : 'auto',
+        '--narrative-width': `${Math.min(1, position.width) * 100}%`, '--narrative-height': `${Math.min(1, position.height) * 100}%`,
+      } as CSSProperties : undefined;
+      return <article key={passage.id} className={`narrative-passage${visible ? ' is-visible' : ''}${position ? ' has-placement' : ''}`}
+        style={custom} data-layout={isHorizontal ? 'horizontal' : 'vertical'} data-side={(position?.x ?? 1) < .5 ? 'left' : 'right'}
         data-narrative-id={passage.id} data-range-start={passage.start} data-range-end={passage.end} aria-hidden={!visible}>
         <div className="narrative-ink">
           <span className="narrative-ordinal" aria-hidden="true">{['壹','贰','叁','肆'][chapterId - 1]} · {String(passage.paragraphIndex + 1).padStart(2, '0')}</span>
