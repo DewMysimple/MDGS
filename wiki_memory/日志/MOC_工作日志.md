@@ -1,7 +1,7 @@
 ---
 type: moc
 status: active
-updated: 2026-11-02
+updated: 2026-11-04
 topic: work-log-index
 sources: []
 ---
@@ -12,6 +12,7 @@ sources: []
 
 | 日期 | 类型 | 任务结果 | 日志 |
 | --- | --- | --- | --- |
+| 2026-11-04 | feature | completed | [四卷旁白本地交付](2026-11-04-四卷旁白本地交付.md) |
 | 2026-11-02 | feature | completed | [首页配乐与每次启动指引](2026-11-02-首页配乐与每次启动指引.md) |
 | 2026-11-02 | feature | completed | [配乐默认开启](2026-11-02-配乐默认开启.md) |
 | 2026-11-02 | bug | completed | [四卷题跋淡入淡出](2026-11-02-四卷题跋淡入淡出.md) |
